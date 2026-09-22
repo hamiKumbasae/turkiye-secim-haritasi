@@ -115,9 +115,10 @@ def main():
             errors.append(f"{path.name}: {e}")
 
     if errors:
-        print(f"{len(errors)} HATA:")
+        print(f"{len(errors)} HATA — cikti dosyasi YAZILMADI:")
         for e in errors:
             print(" ", e)
+        raise SystemExit(1)
 
     OUT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"yazildi: {OUT_PATH} ({len(result)} il)")

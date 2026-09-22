@@ -7,6 +7,8 @@ build.py'ye gomulu DEGIL — ayri, elle veya CI'da calistirilir.
 Kullanim:
   python3 tests/validate_elections.py
 """
+import base64
+import gzip
 import hashlib
 import json
 import pathlib
@@ -147,19 +149,35 @@ def check_dist_size():
     )
 
 
+def extract_embedded(html_text):
+    """index.html'deki window.__EMBEDDED_GZ__ objesini {anahtar: cozülmüş JSON} olarak döner."""
+    start_marker = "window.__EMBEDDED_GZ__ = "
+    start = html_text.find(start_marker)
+    end = html_text.find(";\n</script>", start)
+    gz_obj = json.loads(html_text[start + len(start_marker):end])
+    return {k: json.loads(gzip.decompress(base64.b64decode(v))) for k, v in gz_obj.items()}
+
+
 def check_index_in_sync_with_sources():
     """Diskteki (commit'li) index.html, data/normalized/ + geo/normalized/'den
-    TAZE bir build.py çalıştırmasıyla üretilenle aynı mı? Kaynak dosyaları
-    değiştirip index.html'i yeniden üretmeyi/commit'lemeyi unutmak — build.py
-    zaten çalıştığı için check_reproducibility bunu YAKALAMAZ (iki taze build'i
-    birbiriyle karşılaştırır, commit'li dosyayla değil). Bu kontrol commit'li
-    dosyanın hash'ini build ÖNCESİ alıp build SONRASIYLA karşılaştırır."""
+    TAZE bir build.py çalıştırmasıyla üretilenle AYNI VERİYİ mi taşıyor?
+    Kaynak dosyaları değiştirip index.html'i yeniden üretmeyi/commit'lemeyi
+    unutmak — build.py zaten çalıştığı için check_reproducibility bunu
+    YAKALAMAZ (iki taze build'i birbiriyle karşılaştırır, commit'li dosyayla
+    değil). Bu kontrol commit'li dosyanın içeriğini build ÖNCESİ alıp build
+    SONRASIYLA karşılaştırır.
+
+    NOT: BAYT karşılaştırması DEĞİL, DEKOMPRESE EDİLMİŞ JSON içeriği
+    karşılaştırılıyor — gzip'in ham baytları, aynı içerik için bile farklı
+    zlib sürümleri arasında (örn. yerel macOS ile CI'daki Ubuntu runner)
+    FARKLI çıkabiliyor (mtime=0 olsa bile). İçerik aynıysa bu ortam farkı
+    yanlış pozitif üretmemeli — gerçek "veri güncel mi" sorusu budur."""
     if not DIST.exists():
         check("index.html kaynaklarla senkron", False, "dosya yok")
         return
-    before = hashlib.sha256(DIST.read_bytes()).hexdigest()
+    before = extract_embedded(DIST.read_text(encoding="utf-8"))
     r = subprocess.run([sys.executable, str(ROOT / "scripts" / "build.py")], cwd=ROOT, capture_output=True)
-    after = hashlib.sha256(DIST.read_bytes()).hexdigest() if DIST.exists() else None
+    after = extract_embedded(DIST.read_text(encoding="utf-8")) if DIST.exists() else None
     ok = r.returncode == 0 and after == before
     check(
         "index.html kaynaklarla (data/normalized/, geo/normalized/) senkron",
