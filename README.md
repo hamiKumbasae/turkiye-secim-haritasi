@@ -1,32 +1,90 @@
 # Türkiye Seçim Haritası
 
-1950-2024 arası tüm genel seçim, yerel seçim, referandum ve cumhurbaşkanlığı seçimi
-sonuçlarını gösteren interaktif harita.
+1950-2024 arası tüm genel seçim, yerel seçim, referandum ve cumhurbaşkanlığı
+seçimi sonuçlarını gösteren interaktif harita — 15 seçimde mahalle/muhtarlık
+düzeyine kadar iniyor.
 
 ## Nasıl açılır
 
-**Tek dosya.** Tüm veri (~17 MB) doğrudan `index.html`'in içine gömülü — sunucu,
-internet bağlantısı veya kurulum gerekmez. `index.html`'e çift tıklamanız yeterli,
-tarayıcınızda direkt açılır ve internet olmasa da çalışır.
+**Tek dosya.** `dist/index.html`'e çift tıklayın — tüm veri (~21 MB, gzip
+sıkıştırılmış) doğrudan dosyanın içine gömülü, sunucu veya internet
+bağlantısı gerekmez.
 
-(Not: Sayfa açılışta Google Fonts'tan bir yazı tipi çekmeye çalışır — internet yoksa
-bu sessizce atlanır ve tarayıcının varsayılan yazı tipiyle devam eder, harita/veri
-işlevselliğini etkilemez.)
+(Not: Sayfa açılışta Google Fonts'tan bir yazı tipi çekmeye çalışır — internet
+yoksa bu sessizce atlanır, harita/veri işlevselliğini etkilemez.)
 
-## Web'e yayınlama (GitHub Pages)
+## Veri mimarisi: raw → normalized → build
 
-Bu klasör tek başına statik bir site — repo'ya push edilip Settings → Pages'ten
-yayınlanabilir, build adımı gerekmez. Aynı `index.html` hem yerelde hem canlıda
-değişiklik yapmadan çalışır.
+Veri kaynağı ve uygulama kodu artık ayrı. Hiçbir sayı elle `dist/index.html`
+içinde düzenlenmez:
+
+```
+data/raw/          Dış kaynakların checksum'lı, pinlenmiş snapshot'ları
+                    (mertnuhoglu/secim_verileri, eski proje çıktısı) —
+                    canlı bağımlılık yok. Boşluklar NOTICE.md'de açık.
+geo/raw/            ttezer/OSM için pin bilgisi (dosyaların kendisi değil,
+                    çok büyükler — nasıl yeniden indirileceği belgeli)
+geo/historical/     Tarihsel il/ilçe sınır dönüşümleri (bu projenin kendi
+                    türetilmiş katmanı, kaynak geometri DEĞİL)
+
+data/normalized/    Seçim türüne göre ayrılmış, kayıpsız veri
+                    (cumhurbaskanligi/genel_secimler/yerel_secimler/
+                    referandumlar/mahalle/meclis_2024)
+geo/normalized/     Güncel, basitleştirilmiş il/ilçe/mahalle geometrisi
+
+src/index.template.html   Uygulamanın HTML/CSS/JS'i (veri hariç, ~66KB)
+scripts/build.py           Yukarıdakileri birleştirip dist/index.html üretir
+scripts/validate.py         build.py'ye gömülü hızlı yapısal kontrol (gate)
+tests/validate_elections.py Ayrı, yavaş/analitik kontrol seti
+
+dist/index.html      TEK GERÇEK/ÇALIŞAN DOSYA — build.py'nin çıktısı, commit'lenir
+```
+
+Her klasörün kendi `PROVENANCE.md`'si var (nereden geldiği, nasıl
+doğrulandığı). Kaynakların tam listesi için bkz. [`SOURCES.md`](SOURCES.md)
+(okunabilir) ve [`sources.yml`](sources.yml) (makine-okunur, her seçimin
+birincil/yedek kaynağı + bilinen sorunlar).
 
 ## Veriyi güncellemek
 
-Bu `index.html`, ayrı veri dosyalarını (`secim_tarihi_data.json`, GeoJSON'lar vb.)
-tek dosyada birleştiren bir üretim script'inin çıktısıdır. Veri güncellenince bu
-dosya elle düzenlenmez, script yeniden çalıştırılıp `index.html` yeniden üretilir.
+1. `data/normalized/` veya `geo/normalized/` altındaki ilgili dosyayı
+   düzenleyin (yeni bir seçim ekliyorsanız yeni bir `data/normalized/
+   mahalle/<yil>.json` gibi).
+2. ```bash
+   python3 scripts/build.py
+   ```
+   Bu, önce `scripts/validate.py`'nin yapısal kontrollerinden geçirir (hatalı
+   veri build'i durdurur), sonra `dist/index.html`'i yeniden üretir.
+   Deterministiktir: aynı veriden iki kez çalıştırınca bayt-bayt aynı çıktı.
+3. İsteğe bağlı, daha kapsamlı kontrol:
+   ```bash
+   python3 tests/validate_elections.py
+   ```
+4. `dist/index.html`'i commit'leyin.
 
-## Veri kaynağı ve kapsam
+`scripts/mahalle-veri-pipeline/` klasörü, mahalle düzeyi verinin YSK Açık
+Veri Portalı'ndan nasıl çekildiğinin/işlendiğinin kaydı — yeni bir seçim
+eklerken oradaki script'ler `data/normalized/mahalle/` için ham girdiyi
+üretir (bkz. o klasörün kendi README'si).
 
-Ayrıntılı kaynak listesi, kapsam sınırları ve bilinen veri kalitesi notları için
-`~/Desktop/2023_Secim_Verileri/OKUBENI.md` dosyasına bakın — bu sitedeki veri
-oradaki `1950_2023_tam_veri_seti.json` ile birebir aynıdır.
+## Web'e yayınlama (GitHub Pages)
+
+**Not:** GitHub Pages'in "Deploy from a branch" modu sadece kök dizini veya
+`/docs`'u kaynak olarak destekliyor, `/dist`'i değil. Pages ile yayınlamak
+isterseniz ya `dist/index.html`'i ayrıca köke/`docs/`'a kopyalamanız ya da
+GitHub Actions tabanlı bir deploy akışı kurmanız gerekir — bu depoda henüz
+otomatik bir deploy adımı yok.
+
+## Bilinen kapsam sınırları
+
+- 1950-1961 genel seçimlerinde vekil/sandalye dağılımı yok (kaynakta hiç yok).
+- 1965-1987 genel seçimlerinde ilçe düzeyi veri yok, sadece il düzeyi.
+- 2002 Siirt ilçe kırılımı bozuk (kaynak hatası, düzeltilemedi — bkz. `sources.yml`).
+- 2014 yerel seçiminde BDP il/ilçe verisi hatalı (gerçek oylar mahalle
+  düzeyinde "HDP" altında bulundu, il/ilçe düzeyi düzeltilmedi).
+- 2010 referandumunun ilçe düzeyi oy SAYILARI tahmini (`~300 oy/sandık`
+  varsayımı) — yüzdeler gerçek.
+- `data/raw/{ysk,haberturk,wikipedia}/` şu an boş — bu kaynakların orijinal
+  ham çıktısı hiç saklanmamış veya yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
+
+Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).

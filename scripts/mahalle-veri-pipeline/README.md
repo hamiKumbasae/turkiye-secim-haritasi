@@ -48,8 +48,14 @@ build/gom_ve_sikistir.py                Üretilen mahalle_<yil>.json dosyaların
    örnekler).
 3. `build_mahalle_aday_bazli.py <yil_anahtari>` veya `build_mahalle_parti_bazli.py
    muhtarlik_..json <yil_anahtari>` ile işleyin.
-4. `gom_ve_sikistir.py ../../index.html <yil_anahtari>=mahalle_<yil>.json` ile
-   `index.html`'e gömün.
+4. **(Güncel akış, `gom_ve_sikistir.py` yerine — bkz. kök `README.md`):**
+   `build_mahalle_aday_bazli.py`/`build_mahalle_parti_bazli.py`'nin ürettiği
+   `mahalle_<yil>.json`'daki oy verisini `data/normalized/mahalle/<yil_anahtari>.json`
+   olarak kaydedin; yeni geometri varsa `geo/normalized/mahalle_geo.json`'a
+   osm_id bazında ekleyin. Ardından `python3 scripts/build.py` ile
+   `dist/index.html`'i yeniden üretin. (`gom_ve_sikistir.py` artık kullanılmıyor
+   — kök `index.html` kaldırıldı, tek gerçek dosya `dist/index.html`; script
+   referans/tarihsel kayıt olarak duruyor.)
 
 ## Önemli notlar / bilinen sınırlar
 
