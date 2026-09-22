@@ -134,6 +134,27 @@ def check_dist_size():
     )
 
 
+def check_index_in_sync_with_sources():
+    """Diskteki (commit'li) index.html, data/normalized/ + geo/normalized/'den
+    TAZE bir build.py çalıştırmasıyla üretilenle aynı mı? Kaynak dosyaları
+    değiştirip index.html'i yeniden üretmeyi/commit'lemeyi unutmak — build.py
+    zaten çalıştığı için check_reproducibility bunu YAKALAMAZ (iki taze build'i
+    birbiriyle karşılaştırır, commit'li dosyayla değil). Bu kontrol commit'li
+    dosyanın hash'ini build ÖNCESİ alıp build SONRASIYLA karşılaştırır."""
+    if not DIST.exists():
+        check("index.html kaynaklarla senkron", False, "dosya yok")
+        return
+    before = hashlib.sha256(DIST.read_bytes()).hexdigest()
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "build.py")], cwd=ROOT, capture_output=True)
+    after = hashlib.sha256(DIST.read_bytes()).hexdigest() if DIST.exists() else None
+    ok = r.returncode == 0 and after == before
+    check(
+        "index.html kaynaklarla (data/normalized/, geo/normalized/) senkron",
+        ok,
+        "index.html eski — scripts/build.py çalıştırıp sonucu commit edin" if not ok else "",
+    )
+
+
 def check_reproducibility():
     r1 = subprocess.run([sys.executable, str(ROOT / "scripts" / "build.py")], cwd=ROOT, capture_output=True)
     h1 = hashlib.sha256(DIST.read_bytes()).hexdigest() if DIST.exists() else None
@@ -149,6 +170,7 @@ def main():
     check_referandum_oranlari()
     check_known_issue_2014yerel_bdp()
     check_dist_size()
+    check_index_in_sync_with_sources()
     check_reproducibility()
 
     failed = [name for name, ok, _ in results if not ok]

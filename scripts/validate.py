@@ -11,6 +11,11 @@ import pathlib
 import re
 import sys
 
+try:
+    import yaml
+except ImportError:
+    yaml = None
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_NORM = ROOT / "data" / "normalized"
 GEO_NORM = ROOT / "geo" / "normalized"
@@ -23,6 +28,20 @@ def load_json(path: pathlib.Path):
 
 def sources_yml_election_keys() -> set:
     text = SOURCES_YML.read_text(encoding="utf-8")
+
+    if yaml is not None:
+        doc = yaml.safe_load(text)
+        return {
+            key for key, entry in doc["elections"].items()
+            if not entry.get("not_an_embedded_key")
+        }
+
+    # pyyaml kurulu degil (bkz. requirements.txt — `pip install -r
+    # requirements.txt` calistirin). Gercek parser'a gore daha kirilgan bir
+    # yedek: YAML bicimi degisirse sessizce yanlis sonuc verebilir, bu yuzden
+    # acikca uyariyoruz.
+    print("UYARI: pyyaml kurulu degil, sources.yml regex ile ayristiriliyor "
+          "(daha kirilgan). `pip install -r requirements.txt` onerilir.", file=sys.stderr)
     section = text.split("elections:", 1)[1].split("geometry:", 1)[0]
     keys = set(re.findall(r'^  "([^"]+)":', section, re.M))
     keys.discard("yurtdisi-secmen")

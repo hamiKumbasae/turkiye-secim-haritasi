@@ -1,0 +1,32 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bağımlılıkları kur
+        run: pip install -r requirements.txt
+
+      - name: Hızlı yapısal doğrulama
+        run: python3 scripts/validate.py
+
+      - name: Analitik doğrulama (checksum, ulusal toplamlar, senkron/reproducibility)
+        run: python3 tests/validate_elections.py
+
+      - name: index.html'i yeniden üret
+        run: python3 scripts/build.py
+
+      - name: Commit'li index.html güncel mi (build sonrası fark olmamalı)
+        run: git diff --exit-code index.html
