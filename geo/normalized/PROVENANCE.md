@@ -8,15 +8,12 @@ için `../historical/`'a bakın.
 - `turkiye_il_sinirlari.geojson` — il: 387k → 15k nokta
 - `turkiye_ilce_sinirlari.geojson` — ilçe: 663k → 73.5k nokta
 
-Mahalle düzeyi geometri (`mahalle_geo.json`, çok daha büyük) henüz burada
-değil — `index.html`'in gömülü verisinde kalmaya devam ediyor, `data/
-normalized/` + `scripts/build.py` v1 ile birlikte (bkz. proje planı,
-Milestone 6-7) buraya taşınacak.
+- `mahalle_geo.json` — mahalle/muhtarlık düzeyi poligonlar, osm_id bazında
+  tekilleştirilmiş (bkz. `../../data/normalized/PROVENANCE.md` — oy verisi
+  ayrı, `data/normalized/mahalle/`'de), `scripts/normalize.py` ile üretildi
 
 ## Doğrulama
 
-Bu iki dosyanın içeriği (JSON düzeyinde, sıralı anahtar/girinti ile
-karşılaştırıldığında), 2026-09-22 itibarıyla `index.html`'e gömülü
-`turkiye_il_sinirlari.geojson` / `turkiye_ilce_sinirlari.geojson`
-anahtarlarıyla BİREBİR AYNI — bu bir kopya değil, şu an gerçekten
-kullanılan geometrinin kendisi.
+Üç dosyanın içeriği de (Python derin eşitlik ile), 2026-09-22 itibarıyla
+`index.html`'e gömülü karşılıklarıyla BİREBİR AYNI doğrulandı — bunlar birer
+kopya değil, şu an gerçekten kullanılan geometrinin kendisi.

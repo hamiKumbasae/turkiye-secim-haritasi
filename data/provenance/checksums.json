@@ -1,5 +1,32 @@
 {
   "folders": {
+    "data/normalized": {
+      "checksum_file": "data/normalized/checksums.sha256",
+      "file_count": 21,
+      "files": {
+        "cumhurbaskanligi.json": "b3f425aa9b08f6230a67bbe1ed857a539513c0dd3a4a03b4dbb28ddc08e60c66",
+        "genel_secimler.json": "93cc8ab0c9bf9e0e8d76e57bf5d1c7cd525fb5c4128f6ab31cf6fc53927177c1",
+        "mahalle/2009yerel.json": "e5aa60fa532f377ca1fe5c0f3e1e324b634de25d565b6f567c33df1383e6a965",
+        "mahalle/2010referandum.json": "7e1b52f275342397a2bb2c496b0090c597ecc6f015566e4e361307098e5bea1c",
+        "mahalle/2011.json": "c9a1eeb95fd0691e753a9107ae48d30dc6d45fec9cc7a30cd608f148ca2b78aa",
+        "mahalle/2014cb.json": "9fef4404047bf89e381e8a486719e042b67698346cc419529716009e2c0958d4",
+        "mahalle/2014yerel.json": "24d20d39f24cc2cb9c0dcbf7082c42fdcf38c81bf427656cdc4fb5a75e9a6782",
+        "mahalle/2015Haziran.json": "13c63d4e7c0b4be2c8965eafaef39e95c329108e350549d72c13bb64f68d4091",
+        "mahalle/2015Kasim.json": "4d6abf6fee00e7b0d8f09783b4caf0c8c6d363ac33f95cf74017f85e0f1ae8d3",
+        "mahalle/2017referandum.json": "408df8db3d8941a2d2766c5b92d7e16ce00940672666c72de1f3a055458578c8",
+        "mahalle/2018.json": "bb6ff26ca63f0ff329748d3489146e2343a2d41c27017c7f1619464b65d775ef",
+        "mahalle/2018cb.json": "3272dba3b2ed872943c2481589d9b658b64c6e2d6f3a7faf1600d6b64959b278",
+        "mahalle/2019yerel.json": "1a9856c67376c2ff6f33e3137e0865bb4550a1a1d05bc397685ecbc1e9f0d6a4",
+        "mahalle/2023.json": "b5a4ceb0745fe1627155b45f44cd4db43d0b06e4887fb74acc846364aa9808ff",
+        "mahalle/2023cb1tur.json": "ee9111f7bae48878e91a41da70887d5c1dbc5d5ab4e0bd67106c2d75500ab447",
+        "mahalle/2023cb2tur.json": "8f0e654f3bc95777c780df6d306046664fe43a56f78353b04c9a9424e0703cb4",
+        "mahalle/2024yerel.json": "803419e9b4c3ade3bfddc37fb27b67ab2537c4577a520f407d749dc4ee29d9ac",
+        "meclis_2024.json": "61cd860e5ba2d3602035dfd50652328d854a746e1223425704ee0b0f6de5182e",
+        "partiler.json": "ffa1fb98db2202df383165d7a7ce82509ba747f221a96499dc465a7e3166f8f0",
+        "referandumlar.json": "11260040f7b4516752cfab59048998a86d9991bf948c2739361e5434542d34a3",
+        "yerel_secimler.json": "f563b265bdf9eb85e9a676b30a700a57d208c08140742d454e1be79093d61106"
+      }
+    },
     "data/raw/legacy-preprocessed": {
       "checksum_file": "data/raw/legacy-preprocessed/checksums.sha256",
       "file_count": 15,
@@ -216,8 +243,9 @@
     },
     "geo/normalized": {
       "checksum_file": "geo/normalized/checksums.sha256",
-      "file_count": 2,
+      "file_count": 3,
       "files": {
+        "mahalle_geo.json": "1e3463eeef1cd3562639fe92dc763182584f8414f6e9f27220f6bcd4b22b4ebd",
         "turkiye_il_sinirlari.geojson": "4e8aa349fbbbf1bc5ad63731820d91f7e9090f87d5eb00a95e1877fff2230e9d",
         "turkiye_ilce_sinirlari.geojson": "072428816f6db0032510aa89406b77f9d074717dc05e53bd4f686fa91213966c"
       }
