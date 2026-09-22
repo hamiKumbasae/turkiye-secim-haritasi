@@ -17,6 +17,9 @@ import gzip
 import base64
 import pathlib
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import validate as _validate  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "src" / "index.template.html"
 OUT = ROOT / "dist" / "index.html"
@@ -56,12 +59,24 @@ def assemble_embedded() -> dict:
     for path in sorted((DATA_NORM / "mahalle").glob("*.json")):
         mahalle_votes[path.stem] = load_json(path)
 
+    mahalle_geo = load_json(GEO_NORM / "mahalle_geo.json")
+    meclis_2024 = load_json(DATA_NORM / "meclis_2024.json")
+
+    # Pre-flight gate: sikistirip yazmadan once yapisal dogrulama (bkz.
+    # scripts/validate.py). Hata varsa build burada durur.
+    errors = _validate.validate_structural(secim_tarihi_data, mahalle_votes, mahalle_geo, meclis_2024)
+    if errors:
+        print(f"{len(errors)} DOGRULAMA HATASI, build durduruldu:")
+        for e in errors:
+            print(f"  - {e}")
+        raise SystemExit(1)
+
     eras = {name: load_json(GEO_HIST / f"turkiye_il_sinirlari_{name}.geojson") for name in ERA_ADLARI}
 
     embedded = {
-        "mahalle_geo.json": gzip_b64(load_json(GEO_NORM / "mahalle_geo.json")),
+        "mahalle_geo.json": gzip_b64(mahalle_geo),
         "mahalle_votes.json": gzip_b64(mahalle_votes),
-        "meclis_2024.json": gzip_b64(load_json(DATA_NORM / "meclis_2024.json")),
+        "meclis_2024.json": gzip_b64(meclis_2024),
         "secim_tarihi_data.json": gzip_b64(secim_tarihi_data),
         "turkiye_il_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_il_sinirlari.geojson")),
         "turkiye_ilce_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_ilce_sinirlari.geojson")),
