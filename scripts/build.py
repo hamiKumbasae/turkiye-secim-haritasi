@@ -21,15 +21,31 @@ import validate as _validate  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "src" / "index.template.html"
+STYLES = ROOT / "src" / "styles" / "main.css"
+JS_DIR = ROOT / "src" / "js"
 OUT = ROOT / "index.html"
 DATA_NORM = ROOT / "data" / "normalized"
 GEO_NORM = ROOT / "geo" / "normalized"
 GEO_HIST = ROOT / "geo" / "historical"
 
-PLACEHOLDER = '"__BUILD_WILL_INSERT_EMBEDDED_GZ_JSON__"'
+DATA_PLACEHOLDER = '"__BUILD_WILL_INSERT_EMBEDDED_GZ_JSON__"'
+CSS_PLACEHOLDER = "/*__BUILD_WILL_INSERT_CSS__*/"
+JS_PLACEHOLDER = "//__BUILD_WILL_INSERT_JS__"
 
 TUR_DOSYALARI = ["cumhurbaskanligi", "genel_secimler", "yerel_secimler", "referandumlar"]
 ERA_ADLARI = ["era1950", "era1954", "era1957_1987", "era1991", "era1995", "era1999"]
+
+# src/js/*.js, tek bir paylasimli closure'a (async IIFE) derlenecek sekilde
+# BU SIRAYLA concatenate edilir — modul degil, dogrudan metin birlestirme
+# (build.py bunlari tek <script> icine "inline" eder). Sira onemli: alt
+# bolumler ustteki let/const'lari referans alir (ayni async IIFE govdesinde
+# calisir, fonksiyon hoisting'i sayesinde fonksiyon SIRASI onemli degil ama
+# ilk calisan top-level kod olan data-loader.js'in en basta olmasi gerekir).
+JS_FILES = [
+    "data-loader.js", "election-config.js", "state.js", "seatbar.js",
+    "map.js", "tooltip.js", "detail-panel.js", "search.js", "nav.js",
+    "table.js", "app.js",
+]
 
 
 def load_json(path: pathlib.Path):
@@ -87,10 +103,20 @@ def main():
     embedded = assemble_embedded()
 
     template_html = TEMPLATE.read_text(encoding="utf-8")
-    if PLACEHOLDER not in template_html:
-        raise SystemExit(f"Placeholder sablonda bulunamadi: {TEMPLATE}")
+    for placeholder in (DATA_PLACEHOLDER, CSS_PLACEHOLDER, JS_PLACEHOLDER):
+        if placeholder not in template_html:
+            raise SystemExit(f"Placeholder sablonda bulunamadi: {placeholder!r} ({TEMPLATE})")
+
+    # rstrip: kaynak dosyalar standart sekilde sondaki \n ile bitiyor, ama
+    # sablondaki placeholder'in KENDI satirinda zaten bir \n var — ikisini
+    # birden birakmak (orijinalde olmayan) fazladan bos satir yaratir.
+    css = STYLES.read_text(encoding="utf-8").rstrip("\n")
+    js = "".join((JS_DIR / name).read_text(encoding="utf-8") for name in JS_FILES).rstrip("\n")
     embedded_json_str = json.dumps(embedded, ensure_ascii=False, separators=(",", ":"))
-    out_html = template_html.replace(PLACEHOLDER, embedded_json_str, 1)
+
+    out_html = template_html.replace(CSS_PLACEHOLDER, css, 1)
+    out_html = out_html.replace(JS_PLACEHOLDER, js, 1)
+    out_html = out_html.replace(DATA_PLACEHOLDER, embedded_json_str, 1)
 
     OUT.write_text(out_html, encoding="utf-8")
     print(f"yazildi: {OUT} ({len(out_html)} bayt)")
