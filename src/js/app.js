@@ -49,6 +49,8 @@
     $('#pageTitle').textContent = DATA.ad+titleSuffix;
     const scopeLine = isRef ? 'Halk Oylaması' : (isYerel ? 'Belediye başkanlığı' : (isCB ? 'Cumhurbaşkanlığı' : (DATA.toplamSandalye!=null ? DATA.toplamSandalye+' milletvekilliği' : 'Milletvekili genel seçimi')));
     const kaynakLine = currentYear==='2014cb' ? 'Kaynak: YSK Açık Veri Portalı (acikveri.ysk.gov.tr, resmi API)'
+      : currentYear==='2007referandum' ? 'Kaynak: YSK (resmi il+ilçe bazlı birleştirme tutanakları)'
+      : YEARS_YSK_OFFICIAL_IL.has(currentYear) ? 'Kaynak: YSK (resmi, TÜİK kaynaklı il-bazlı arşiv — sadece il seviyesi)'
       : YEARS_IL_ONLY.has(currentYear) ? 'Kaynak: Türkçe Wikipedia (YSK kesin sonuçlarına dayalı, sadece il seviyesi)'
       : (currentYear==='2009yerel'||currentYear==='2004yerel') ? 'Kaynak: Türkçe Wikipedia (YSK/basın kaynaklı il alt-sayfaları)'
       : 'Kaynak: secim.haberturk.com (YSK kesin sonuçlarına dayalı)';

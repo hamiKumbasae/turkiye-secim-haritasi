@@ -13,7 +13,12 @@
   // 1950-1987 genel secimlerinde ve 1961/1982/1987/1988/2007 referandumlarinda ilce-bazli
   // kaynak yok - sadece il seviyesinde veri var.
   const YEARS_IL_ONLY = new Set(['1950','1954','1957','1961','1965','1969','1973','1977','1983','1987',
-    '1961referandum','1982referandum','1987referandum','1988referandum','2007referandum']);
+    '1961referandum','1982referandum','1987referandum','1988referandum']);
+  // 2026-09-22: YSK'nin resmi il-bazli (1950/1954/1957/1961 genel,
+  // 1961/1982/1987/1988 referandum) veya il+ilce-bazli (2007referandum,
+  // 2014cb) arsivlerine yukseltilen yillar — kaynakLine bunlar icin ozel.
+  const YEARS_YSK_OFFICIAL_IL = new Set(['1950','1954','1957','1961','1965','1969','1973','1977',
+    '1961referandum','1982referandum','1987referandum','1988referandum']);
   const CB_YEAR_ORDER = ['2023cb2tur','2023cb1tur','2018cb','2014cb'];
   const CB_YEAR_LABEL = {'2023cb2tur':'2023 (2.Tur)','2023cb1tur':'2023 (1.Tur)','2018cb':'2018','2014cb':'2014'};
 

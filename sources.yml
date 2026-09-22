@@ -304,16 +304,28 @@ elections:
   # — bkz. scripts/referandum-pipeline/verify_and_merge_old_referandum.py.
   "2007referandum":
     type: referandum
-    primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
-    coverage: ["ilçe verisi yok"]
+    primary:
+      authority: YSK
+      url: "ysk.gov.tr/doc/dosyalar/docs/2007Referandum/KesinSonuclar/ (81 il, imzalı Birleştirme Tutanağı PDF'leri)"
+      retrieved_at: "2026-09-22"
+      level: [il, ilce]
+      status: official
+    legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
+    verification: ["906/923 ilçe (%98,2) eşleşti; il-ilçe toplam tutarlılığı doğrulandı (10 'Merkez' istisnası hariç %5 altı fark)."]
+    known_issues:
+      - scope: "ilce: 10 il (Aydın, Denizli, Hatay, Kocaeli, Mardin, Muğla, Ordu, Sakarya, Tekirdağ, Trabzon) — Merkez ilçesi"
+        status: reported
+        description: >
+          Bu 10 ilin "Merkez" ilçesi haritada eksik — geo/historical/
+          district_splits.json'da bu iller icin henuz hazir tarihsel
+          (bolunme-oncesi) geometri yok (12 baska il icin var ve kullanildi).
+          Oy verisi o ilin IL TOPLAMINDA mevcut, sadece ilce-duzeyi haritada
+          o tek ilce goruntulenmiyor.
+      - scope: "ilce: 7 küçük ilçe (Kale/Antalya, Akköy/Denizli, Ilıca/Erzurum, Çağlıyancerit/Kahramanmaraş, Hadım/Konya, Ondokuzmayıs/Samsun, Aydınlar/Siirt)"
+        status: reported
+        description: "scripts/mahalle-veri-pipeline/eslesme/ysk_ilce_matched.json referans listesinde yok (o liste farklı bir amaçla oluşturulmuştu). Oy verisi il toplamında mevcut."
     notes:
-      - >
-        YSK'nin kendi 2007 referandum arsivinde ("İlçe Bazında İl Sonuçları")
-        81 il icin GERCEK, imzali ilce-duzeyi "Birlestirme Tutanagi" PDF'leri
-        var (data/raw/ysk/referandum/2007-ilce/) — bu, il-only kapsamini
-        tamamen kapatabilir. Entegrasyonu, PDF'lerdeki Turkce karakter
-        (Ğ/İ/Ş) font-kodlama sorunu cozuldukten sonra AYRI bir adimda
-        yapilacak (bkz. sources.yml ust notu / proje ilerleme kaydi).
+      - "Ayrıntı ve tam eşleşmeyen liste: data/raw/ysk/referandum-2007-ilce/PROVENANCE.md ve unmatched.txt."
   "1988referandum": {type: referandum, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/1988Referandum/25-Eylul-1988-Halk-Oylamasi.pdf", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, coverage: ["ilçe verisi yok"], verification: ["67/67 il, 4 alan (seçmen/geçerli oy/evet/hayır) YSK PDF'iyle birebir eşleşti."], notes: ["25 Eylül 1988, yerel seçimlerin bir yıl öne alınması teklifi — reddedildi.", "YSK PDF'inde ayrıca 4 gümrük/sınır kapısı satırı var, entegre edilmedi (bkz. PROVENANCE.md)."]}
   "1987referandum": {type: referandum, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/1987Referandum/6-Eylul-1987-Halkoylamasi.pdf", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, coverage: ["ilçe verisi yok"], verification: ["67/67 il, 4 alan YSK PDF'iyle birebir eşleşti."], notes: ["6 Eylül 1987, siyasi yasakların kaldırılması — %50,2 Evet, çok yakın sonuç."]}
   "1982referandum": {type: referandum, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/1982Referandum/7-Kasim-1982-Halk-Oylamasi.pdf", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, coverage: ["ilçe verisi yok"], verification: ["67/67 il, 4 alan YSK PDF'iyle birebir eşleşti. Ulusal sonuç %91,37/%8,63."], notes: ["7 Kasım 1982, 1982 Anayasası — Kenan Evren'in cumhurbaşkanlığı seçimiyle birleşik oylama."]}
