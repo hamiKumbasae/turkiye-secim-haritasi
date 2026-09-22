@@ -266,7 +266,7 @@
     else if(mode==='chp'){ key = isRef ? 'Hayır' : (isCB ? MAJOR[1] : 'CHP'); hue=355; }
     else { key=null; hue=210; }
     const noKatilimData = !key && entities.every(e => e.katilim==null);
-    let vals = entities.map(e => key ? (e.oy[key]?e.oy[key].oran:0) : (e.katilim!=null?e.katilim:0));
+    let vals = entities.map(e => key ? (e.oy[key]&&e.oy[key].oran!=null?e.oy[key].oran:0) : (e.katilim!=null?e.katilim:0));
     const vmin = Math.min(...vals), vmax = Math.max(...vals);
     $('#seqMin').textContent = noKatilimData ? '—' : (vmin||0).toFixed(2)+'%';
     $('#seqMax').textContent = noKatilimData ? '—' : (vmax||0).toFixed(2)+'%';
@@ -274,7 +274,7 @@
     for(const e of entities){
       const el = pathFor(e); if(!el) continue;
       if(noKatilimData){ el.setAttribute('fill','var(--map-empty)'); continue; }
-      const v = key ? (e.oy[key]?e.oy[key].oran:0) : (e.katilim!=null?e.katilim:0);
+      const v = key ? (e.oy[key]&&e.oy[key].oran!=null?e.oy[key].oran:0) : (e.katilim!=null?e.katilim:0);
       const t = vmax>vmin ? (v-vmin)/(vmax-vmin) : 0.5;
       el.setAttribute('fill', seqColor(t,hue));
     }

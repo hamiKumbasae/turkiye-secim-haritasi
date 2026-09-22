@@ -33,14 +33,14 @@
     const isOranTip = DATA.tur === 'referandum' || DATA.tur === 'yerel' || DATA.tur === 'cumhurbaskanligi' || YEARS_NO_VEKIL.has(currentYear);
     if(mode==='winner'){
       const wOy = obj.oy[obj.kazanan];
-      const seatInfo = isOranTip ? ('%'+(wOy?wOy.oran.toFixed(2):'0.00')+(wOy?' · '+fmt(wOy.oy)+' oy':''))
+      const seatInfo = isOranTip ? ('%'+(wOy&&wOy.oran!=null?wOy.oran.toFixed(2):'0.00')+(wOy?' · '+fmt(wOy.oy)+' oy':''))
         : (info.kind==='il' ? (obj.toplamVekil+' vekil') : ('ilçe kazananı'));
       html += '<div class="row"><span>'+ (obj.kazanan? (PARTY[obj.kazanan]?PARTY[obj.kazanan].short:obj.kazanan) : '—') +' önde</span><span>'+seatInfo+'</span></div>';
     } else if(mode==='akp' || mode==='chp'){
       const isCBTip = DATA.tur === 'cumhurbaskanligi';
       const key = isRefTip ? (mode==='akp'?'Evet':'Hayır') : (isCBTip ? (mode==='akp'?MAJOR[0]:MAJOR[1]) : (mode==='akp' ? 'AK Parti':'CHP'));
       const o = obj.oy[key];
-      html += '<div class="row"><span>'+(PARTY[key]?PARTY[key].short:key)+'</span><span>%'+(o?o.oran.toFixed(2):'0.00')+(o?' · '+fmt(o.oy)+' oy':'')+'</span></div>';
+      html += '<div class="row"><span>'+(PARTY[key]?PARTY[key].short:key)+'</span><span>%'+(o&&o.oran!=null?o.oran.toFixed(2):'0.00')+(o?' · '+fmt(o.oy)+' oy':'')+'</span></div>';
     } else {
       html += '<div class="row"><span>Katılım</span><span>'+(obj.katilim!=null?'%'+obj.katilim.toFixed(2):'—')+'</span></div>';
     }

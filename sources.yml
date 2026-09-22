@@ -38,116 +38,126 @@ elections:
 
   # ---------------- Cumhurbaşkanlığı (4 seçim) ----------------
 
+  # 2026-09-22 (ucuncu oturum): TUM 4 CB secimi Haberturk'ten YSK'nin resmi
+  # acikveri API'sine yukseltildi - scripts/haberturk-to-ysk-pipeline/,
+  # getSecimSandikSonucList ile 998 ilcenin tamami sandik-duzeyinde cekilip
+  # il/ilce toplamlarina agrege edildi.
   "2014cb":
     type: cumhurbaskanligi
     primary:
       authority: YSK
-      url: "https://acikveri.ysk.gov.tr/ (secim_ID=13340, secimTuru=9)"
+      url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=13340/secimTuru=9, 998 ilcenin tamami)"
       retrieved_at: "2026-09-22"
       level: [il, ilce, mahalle]
       status: official
-    legacy_source:
-      source: "Türkçe Wikipedia (YSK kaynaklı il tablosu)"
-      level: [il]
-      status: reported
-      note: >
-        Bu proje başlangıçta (habertürk'te artık tam veri yok) sadece il
-        düzeyinde Wikipedia kullanıyordu, ilçe verisi yoktu. Bu oturumda YSK'den
-        gerçek ilçe verisi çekilip yerine konuldu; ulusal toplamlar eski
-        Wikipedia verisiyle birebir örtüşerek doğrulandı.
+    legacy_source: {source: "Türkçe Wikipedia / Habertürk", level: [il, ilce], status: reported}
+    verification: ["Ulusal: Erdoğan %51.65, İhsanoğlu %38.57, Demirtaş %9.78 — bilinen resmi sonuçla (%51,79/%38,44/%9,76) tutarlı."]
     notes:
-      - "Mahalle düzeyi (muhtarlık) veri bu oturumda eklendi, 641/973 ilçede kapsama sahip."
+      - "Mahalle düzeyi (muhtarlık) veri önceki oturumda eklendi, 641/973 ilçede kapsama sahip."
 
   "2018cb":
     type: cumhurbaskanligi
-    primary:
-      authority: Habertürk
-      url: "secim.haberturk.com (il/ilçe/aday sayfaları)"
-      level: [il, ilce]
-      status: reported
-    backup:
-      - source: YSK
-        url: "https://acikveri.ysk.gov.tr/ (secim_ID=16300, secimTuru=9)"
-        retrieved_at: "2026-09-22"
-        level: [mahalle]
-        status: official
-        note: "Bu oturumda mahalle düzeyi eklendi (641/973 ilçe), il/ilçe düzeyi habertürk'te kaldı."
+    primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=16300/secimTuru=9, 998 ilcenin tamami)", retrieved_at: "2026-09-22", level: [il, ilce, mahalle], status: official}
+    legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}
+    verification: ["Ulusal: Erdoğan %52.38, İnce %30.79, Demirtaş %8.32, Akşener %7.42 — bilinen resmi sonuçla (%52,59/%30,64/%8,40/%7,29) tutarlı."]
 
   "2023cb1tur":
     type: cumhurbaskanligi
-    primary:
-      authority: Habertürk
-      url: "secim.haberturk.com/secim/secim2023/cumhurbaskanligi-secimi"
-      level: [il, ilce]
-      status: reported
-    backup:
-      - source: YSK
-        url: "https://acikveri.ysk.gov.tr/ (secim_ID=20230, secimTuru=9)"
-        retrieved_at: "2026-09-22"
-        level: [mahalle]
-        status: official
-    verification: ["Ulusal toplam: YSK'den çekilen il-bazlı yeniden toplama ile ±0.001 puan farkla doğrulandı."]
+    primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=20230/secimTuru=9, 998 ilcenin tamami)", retrieved_at: "2026-09-22", level: [il, ilce, mahalle], status: official}
+    legacy_source: {source: Habertürk, url: "secim.haberturk.com/secim/secim2023/cumhurbaskanligi-secimi", level: [il, ilce], status: reported}
+    verification: ["Ulusal: Erdoğan %49.24, Kılıçdaroğlu %45.07, Oğan %5.28 — bilinen resmi sonuçla (%49,52/%44,88/%5,17) tutarlı."]
 
   "2023cb2tur":
     type: cumhurbaskanligi
-    primary:
-      authority: Habertürk
-      url: "secim.haberturk.com/secim/secim2023/cumhurbaskanligi-secimi-2-tur"
-      level: [il, ilce]
-      status: reported
-    backup:
-      - source: YSK
-        url: "https://acikveri.ysk.gov.tr/ (secim_ID=20240, secimTuru=9)"
-        retrieved_at: "2026-09-22"
-        level: [mahalle]
-        status: official
-    verification: ["Ulusal toplam: YSK'den 81 il için yeniden toplama, 51.418.556 oy üzerinden 182 oyluk (%0.0007) farkla doğrulandı."]
+    primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=20240/secimTuru=9, 998 ilcenin tamami)", retrieved_at: "2026-09-22", level: [il, ilce, mahalle], status: official}
+    legacy_source: {source: Habertürk, url: "secim.haberturk.com/secim/secim2023/cumhurbaskanligi-secimi-2-tur", level: [il, ilce], status: reported}
+    verification: ["Ulusal: Erdoğan %51.91, Kılıçdaroğlu %48.09 — bilinen resmi sonuçla (%52,18/%47,82) tutarlı."]
 
   # ---------------- Genel Seçim / Milletvekili (20 seçim, anahtarlar bare yıl) ----------------
 
   "2023":
     type: milletvekili
-    primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}
-    backup:
-      - {source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=20230, secimTuru=8)", retrieved_at: "2026-09-22", level: [mahalle], status: official}
-    verification: ["Toplam vekil sayısı (600) ve parti dağılımı YSK'nin seçilen aday listesiyle birebir doğrulandı (268/169/61/50/43/5/4)."]
+    primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=20230/secimTuru=8, 998 ilcenin tamami)", retrieved_at: "2026-09-22", level: [il, ilce], status: official}
+    legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}
+    verification: ["Toplam vekil sayısı (600) ve parti dağılımı YSK'nin seçilen aday listesiyle birebir doğrulandı (268/169/61/50/43/5/4). Ulusal: AK Parti %34.93, CHP %25.18 — bilinen resmi sonuçla (%35,6/%25,3) tutarlı."]
 
-  "2018": {type: milletvekili, primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, backup: [{source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=16300, secimTuru=8)", retrieved_at: "2026-09-22", level: [mahalle], status: official}], verification: ["Toplam 550 vekil resmi sonuçla doğrulandı."]}
-  "2015Kasim": {type: milletvekili, primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, backup: [{source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=14868, secimTuru=8)", retrieved_at: "2026-09-22", level: [mahalle], status: official}], verification: ["Toplam 550 vekil resmi sonuçla doğrulandı."]}
-  "2015Haziran": {type: milletvekili, primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, backup: [{source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=13884, secimTuru=8)", retrieved_at: "2026-09-22", level: [mahalle], status: official}], verification: ["Toplam 550 vekil resmi sonuçla doğrulandı."]}
-  "2011": {type: milletvekili, primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, backup: [{source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=7468, secimTuru=8)", retrieved_at: "2026-09-22", level: [mahalle], status: official}], verification: ["Toplam 550 vekil resmi sonuçla doğrulandı."]}
+  "2018": {type: milletvekili, primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=16300/secimTuru=8, 998 ilcenin tamami)", retrieved_at: "2026-09-22", level: [il, ilce], status: official}, legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, verification: ["Toplam 550 vekil resmi sonuçla doğrulandı. Ulusal: AK Parti %41.57, CHP %22.64, HDP %11.53, MHP %11.00 — bilinen resmi sonuçla (%42,6/%22,6/%11,7/%11,1) tutarlı."]}
+  # 2026-09-22 (ucuncu oturum): Haberturk kaldirildi, scripts/haberturk-to-
+  # ysk-pipeline/ ile YSK'nin resmi acikveri API'sinden (getSecimSandikSonucList)
+  # TUM ~998 ilcenin sandik-duzeyi verisi cekilip il/ilce toplamlarina agrege
+  # edildi. Ulusal parti oranlari bilinen resmi sonuclarla dogrulandi.
+  "2015Kasim": {type: milletvekili, primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=14868/secimTuru=8, 998 ilcenin tamami)", retrieved_at: "2026-09-22", level: [il, ilce], status: official}, legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, verification: ["Toplam 550 vekil resmi sonuçla doğrulandı. Ulusal: AK Parti %49.32, CHP %25.56, MHP %12.03, HDP %10.56 — bilinen resmi sonuçlarla tutarlı."]}
+  "2015Haziran": {type: milletvekili, primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=13884/secimTuru=8, 998 ilcenin tamami)", retrieved_at: "2026-09-22", level: [il, ilce], status: official}, legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, verification: ["Toplam 550 vekil resmi sonuçla doğrulandı. Ulusal: AK Parti %40.67, CHP %25.13, MHP %16.45, HDP %12.96 — bilinen resmi sonuçlarla tutarlı."]}
+  "2011": {type: milletvekili, primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=7468/secimTuru=8, 998 ilcenin tamami)", retrieved_at: "2026-09-22", level: [il, ilce], status: official}, legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, verification: ["Toplam 550 vekil resmi sonuçla doğrulandı. Ulusal: AK Parti %49.83, CHP %26.00, MHP %13.03 — bilinen resmi sonuçlarla (%49,8/%26,0/%13,0) tutarlı."], coverage: ["2026-09-23: Aydın/Muğla/Ordu/Tekirdağ/Trabzon'un eski 'Merkez' ilçesi eklendi (hist_geomid.py'ye 5 il eklendi, bkz. PROVENANCE.md) — Denizli/Hatay/Mardin/Van'ın merkez ilçesi ve Tillo hâlâ eşlenemedi (kapsam dışı, ayrıntı PROVENANCE.md)."]}
 
+  # 2026-09-22 (ikinci oturum): 1983-2007 (7 seçim) YSK'nin resmi il-bazlı
+  # arşivine (data/raw/ysk/1983-2007/PROVENANCE.md, ysk.gov.tr/tr/1983-2007-
+  # yillari-arasi-milletvekili-genel-secimleri/3008) yükseltildi — 1950-1977
+  # yükseltmesiyle AYNI arşiv ailesi, aynı format. Önceki kaynak (Wikipedia,
+  # 2002/1999/1995/1991/2007 için ilçe verisi mertnuhoglu/secim_verileri)
+  # legacy_source olarak tutuluyor — ilçe düzeyi hâlâ GitHub kaynaklı (YSK'nin
+  # bu arşivi il-bazlı, ilçe kırılımı yok — milletvekili "seçim çevresi" zaten
+  # il'in kendisi). (2026-09-23: bu bloğun üstünde duran, artık ölü/tekrarlanan
+  # eski Wikipedia-birincil kayıtlar (2007/2002/1999/1995/1991) silindi —
+  # aynı anahtarlar aşağıda YSK-birincil olarak zaten tanımlıydı, sources.yml
+  # anahtar başına TEK kayıt tutmalı.)
+  #
+  # 2026-09-23 (dördüncü oturum): Kullanıcı mertnuhoglu/secim_verileri'nin
+  # (bu 5 yılın TEK ilçe-düzeyi kaynağı) bir kişiye ait olması ve depo
+  # gelecekte private yapılabilmesi konusunda endişe belirtti — resmi
+  # alternatif olup olmadığı tekrar araştırıldı. Sonuç: YOK, ve bu yapısal
+  # bir sınır — milletvekili seçimlerinde "seçim çevresi" = il, YSK'nin
+  # kendisi hiçbir dönemde ilçe-bazlı resmi bir sayım/sonuç yayımlamadı
+  # (yukarıdaki not zaten bunu söylüyor); ayrıca acikveri.ysk.gov.tr'nin
+  # sandık-düzeyi API'si de 1991-2007'yi hiç kapsamıyor (en eski secim_ID
+  # 2011'e ait, getSecimDetayList'te doğrulandı). Bağımlılık riski zaten
+  # etkin biçimde giderilmiş durumda: veri `data/raw/third-party/mertnuhoglu/`
+  # altında MIT lisanslı, belirli bir commit'e (`f821f04...`, 2015) sabitlenmiş
+  # ve checksum'larla korunan TAM bir yerel kopya olarak arşivli — canlı
+  # GitHub erişimine hiç bağımlı değiliz, kaynak repo private/silinse bile
+  # bu proje etkilenmez. Kullanıcıyla görüşülüp MEVCUT DURUMDA KALINMASINA
+  # karar verildi (ilçe düzeyini kaldırmak yerine).
   "2007":
     type: milletvekili
-    primary:
-      authority: "Türkçe Wikipedia (YSK kaynaklı 'İllere göre sonuçlar' tablosu)"
-      level: [il]
-      status: reported
-    legacy_source: {source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", url: "https://github.com/mertnuhoglu/secim_verileri", level: [ilce], status: reported}
-    verification: ["Toplam 550 vekil resmi sonuçla doğrulandı."]
+    primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Milletvekili/1983-2007/<İl>.pdf (81 il)", retrieved_at: "2026-09-22", level: [il], status: official}
+    legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı 'İllere göre sonuçlar' tablosu)", level: [il], status: reported}
+    backup: [{source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", url: "https://github.com/mertnuhoglu/secim_verileri", level: [ilce], status: reported}]
+    verification: ["Toplam 550 vekil resmi sonuçla VE il toplamıyla birebir doğrulandı (81/81 il)."]
   "2002":
     type: milletvekili
-    primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
-    legacy_source: {source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", level: [ilce], status: reported}
-    verification: ["Toplam 550 vekil resmi sonuçla doğrulandı."]
+    primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Milletvekili/1983-2007/<İl>.pdf (81 il)", retrieved_at: "2026-09-22", level: [il], status: official}
+    legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
+    backup: [{source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", level: [ilce], status: reported}]
+    verification: ["Toplam 550 vekil resmi sonuçla VE il toplamıyla birebir doğrulandı (81/81 il)."]
     known_issues:
       - scope: "ilce: Siirt (tüm ilçeler)"
         status: reported
         description: >
-          mertnuhoglu kaynağındaki Siirt ilçe-parti kırılımı bozuk (örn. Merkez'de
-          "AK Parti %86,71, DEHAP 0" gibi gerçeklikle bağdaşmayan değerler; oysa
-          Wikipedia'ya göre DEHAP il genelinde %32,2 ile birinci, Merkez/Baykan/
-          Kurtalan/Pervari'yi kazanan parti). Güvenilir alternatif ilçe kaynağı
-          bulunamadığı için DÜZELTİLMEDİ — yanlış ama var olan sayılar, tahminle
-          değiştirilmedi. İl düzeyindeki yüksek "Diğer" oranı (%60,5) ayrı ve
-          normal bir durum (kaynağın sadece 5 büyük partiyi ayrı tutması), hata
-          değil.
-  "1999": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, legacy_source: {source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", level: [ilce], status: reported}, verification: ["Toplam 550 vekil resmi sonuçla doğrulandı."]}
-  "1995": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, legacy_source: {source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", level: [ilce], status: reported}, verification: ["Toplam 550 vekil resmi sonuçla doğrulandı."]}
-  "1991": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, legacy_source: {source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", level: [ilce], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı."]}
+          mertnuhoglu kaynağındaki (backup, ilçe düzeyi) Siirt kırılımı bozuk
+          — bu YSK yükseltmesi il düzeyini değiştirdi, bu ilçe-düzeyi sorunu
+          etkilemedi/çözmedi (bkz. eski not, hâlâ geçerli).
+  "1999": {type: milletvekili, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Milletvekili/1983-2007/<İl>.pdf (80 il)", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, backup: [{source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", level: [ilce], status: reported}], verification: ["Toplam 550 vekil resmi sonuçla VE il toplamıyla birebir doğrulandı (80/80 il)."]}
+  "1995": {type: milletvekili, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Milletvekili/1983-2007/<İl>.pdf (79 il)", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, backup: [{source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", level: [ilce], status: reported}], verification: ["Toplam 550 vekil resmi sonuçla VE il toplamıyla birebir doğrulandı (79/79 il). 1 yeni parti (Yeni Parti, YENP95) bu yükseltmede ilk kez ayrı izlendi — önceden 'Diğer'e karışıyordu, major olmadığı için yine 'Diğer'e giriyor, sadece artık ayrı renkte kayıtlı."]}
+  "1991": {type: milletvekili, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Milletvekili/1983-2007/<İl>.pdf (74 il)", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, backup: [{source: "mertnuhoglu/secim_verileri", upstream_source: "memurlar.net", level: [ilce], status: reported}], verification: ["Toplam 450 vekil resmi sonuçla VE il toplamıyla birebir doğrulandı (74/74 il)."]}
 
-  "1987": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı."], coverage: ["ilçe verisi yok — mertnuhoglu deposu bu döneme uzanmıyor"]}
-  "1983": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 399 vekil resmi sonuçla doğrulandı."], coverage: ["ilçe verisi yok"]}
+  "1987": {type: milletvekili, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Milletvekili/1983-2007/<İl>.pdf (67 il)", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla VE il toplamıyla birebir doğrulandı (67/67 il)."], coverage: ["ilçe verisi yok — bu dönemde de 'seçim çevresi' il'in kendisiydi"], notes: ["2 parti (MÇP, IDP) ve Bağımsızlar bu yükseltmede ilk kez ayrı izlendi — önceden hepsi 'Diğer'e karışıyordu, major olmadıkları için yine 'Diğer'e giriyorlar, sadece artık ayrı renkte kayıtlı. MÇP = MHP'nin bu dönemki adı (Milliyetçi Çalışma Partisi)."]}
+  "1983":
+    type: milletvekili
+    primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Milletvekili/1983-2007/<İl>.pdf (67 il)", retrieved_at: "2026-09-22", level: [il], status: official}
+    legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
+    verification: ["Toplam 399 vekil resmi sonuçla VE il toplamıyla birebir doğrulandı (67/67 il)."]
+    coverage: ["ilçe verisi yok — bu dönemde de 'seçim çevresi' il'in kendisiydi"]
+    known_issues:
+      - scope: "il: Bingöl"
+        status: reported
+        description: >
+          YSK'nin Bingöl PDF'inin ÖZET satırı "Milletvekili sayısı: 3" diyor
+          ama aynı PDF'in PARTİ tablosu (ANAP 2 mv, HP/MDP 0 mv) toplamı 2 —
+          YSK'nin kendi belgesi içi tutarsız. Önceden bu depoda (bağımsız bir
+          kaynaktan, Wikipedia) zaten toplamVekil=2/vekil={"ANAP":2} vardı —
+          yani iki bağımsız kaynak (Wikipedia ve YSK'nin PARTİ tablosu) 2'de
+          birleşiyor. Parti-tablosu-toplamı (2) esas alındı, özet satırı (3)
+          değil. Çözülmedi (YSK'ye sorulmadı), sadece kaydedildi.
 
   # 1950-1977 (8 seçim): 2026-09-22'de YSK'nin resmi, TÜİK kaynaklı il-bazlı
   # arşivine (bkz. data/raw/ysk/1950-1977/PROVENANCE.md) yükseltildi. Önceki
@@ -239,63 +249,123 @@ elections:
 
   # ---------------- Yerel Seçim / Belediye Başkanlığı (9 seçim) ----------------
 
-  "2024yerel": {type: yerel, primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, backup: [{source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=20260, secimTuru=2)", retrieved_at: "2026-09-22", level: [mahalle], status: official}], coverage: ["katılım/seçmen verisi kaynakta yok — sadece aday/parti/oy/oran"]}
-  "2019yerel": {type: yerel, primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, backup: [{source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=16400, secimTuru=2)", retrieved_at: "2026-09-22", level: [mahalle], status: official}], coverage: ["katılım/seçmen verisi yok"]}
-  "2014yerel":
-    type: yerel
-    primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}
-    backup:
-      - {source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=11979, secimTuru=2)", retrieved_at: "2026-09-22", level: [mahalle], status: official}
-    coverage: ["katılım/seçmen verisi yok"]
-    known_issues:
-      - scope: "parti: BDP (tüm il/ilçe kayıtları)"
-        status: reported
-        description: >
-          Habertürk kaynaklı orijinal il/ilçe verisinde BDP'nin oyu her yerde 0
-          görünüyor (Diyarbakır dahil — ki BDP'nin adayı Gültan Kışanak o yılki
-          büyükşehir seçimini gerçekte kazanmıştı). Bu oturumda YSK'den çekilen
-          mahalle-düzeyi veride gerçek oylar HDP sütunu altında bulundu ve mahalle
-          katmanında BDP→HDP eşlemesiyle düzeltildi. İl/ilçe düzeyindeki orijinal
-          kayıt henüz düzeltilmedi — bu, sonraki TÜİK/yeniden-doğrulama aşamasının
-          kapsamına giriyor.
+  # 2026-09-23 (dorduncu oturum): 2009/2014/2019/2024 yerel Habertürk'ten
+  # YSK'nin resmi acikveri.ysk.gov.tr API'sine tasindi ("Evet, tumunu yap").
+  # Bu gecişte İKİ ayrı bug bulunup düzeltildi:
+  #  (1) parti-sutun eslemesi icin kullanilan onbellekli baslik_*.json
+  #      dosyalari yerel secimler icin EKSIKTI (orn. baslik_2014yerel.json'da
+  #      BDP sutunu hic yoktu) - oylar yanlis eslenmiyor, SESSIZCE
+  #      DUSURULUYORDU. refresh_all_baslik.js ile canli yeniden cekilip
+  #      duzeltildi.
+  #  (2) ilk surum (fetch_and_aggregate.js) "il" kaydini o ile ait TUM
+  #      ilcelerin sonuclarini toplayarak olusturuyordu - ama yerel
+  #      secimlerde her ilce/buyuksehir AYRI bir yaris, bunlari toplamak
+  #      hicbir gercek yarisi yansitmiyor (orn. Istanbul 2019 boylece
+  #      AKP %45.9/CHP %40.3 gibi YANLIS bir sonuc veriyordu, gercekte
+  #      neredeyse berabere bir yaristi). fetch_yerel_v2.js/merge_yerel_v2.py
+  #      ile DUZELTILDI: buyuksehir statusundeki iller icin secimTuru=6
+  #      (Buyuksehir Belediye Baskanligi, ilceId=bos) agregesi, digerleri
+  #      icin sadece "<Il> MERKEZ" ilcesinin kendi secimTuru=2 sonucu "il"
+  #      kaydi olarak kullanildi (butun ilceler toplanmiyor). "ilceler" ise
+  #      her zaman HER ilcenin kendi ayri secimTuru=2 sonucu. Ayrinti:
+  #      scripts/haberturk-to-ysk-pipeline/PROVENANCE.md.
+  "2024yerel": {type: yerel, primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=20260/secimTuru=2|6, 30 büyükşehir secimTuru=6 + 51 il secimTuru=2-merkez, 998 ilcenin tamami)", retrieved_at: "2026-09-23", level: [il, ilce], status: official}, legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, verification: ["İl kayıtları toplamı (30 büyükşehir bütünü + 51 il merkezi karışık): CHP %40.46, AK Parti %35.94 — bilinen sonuçla (CHP ulusal birinci, İmamoğlu/Yavaş kazandı) yön ve büyüklük olarak tutarlı.", "İstanbul: CHP/İmamoğlu ~%51 ile kazandı (bilinen sonuçla birebir). Ankara: CHP/Yavaş ~%60 ile kazandı (bilinen sonuçla birebir)."], coverage: ["81 il (30 büyükşehir + 51 merkez), 974/998 ilce geomId'ye eşlendi"]}
+  "2019yerel": {type: yerel, primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=16400/secimTuru=2|6, 30 büyükşehir secimTuru=6 + 51 il secimTuru=2-merkez, 998 ilcenin tamami)", retrieved_at: "2026-09-23", level: [il, ilce], status: official}, legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, verification: ["İl kayıtları toplamı: AK Parti %45.1, CHP %32.31 — büyükşehir/merkez karışık kapsam yüzünden tam ulusal ortalamayla birebir değil, yön olarak tutarlı.", "İstanbul: CHP %48.65/AK Parti %48.79 ile neredeyse berabere (bilinen 2019 sonucu — İmamoğlu'nun dar farkla kazandığı seçim — ile birebir örtüşüyor, v1'deki hatalı %45.9/%40.3 farkının aksine)."], coverage: ["81 il (30 büyükşehir + 51 merkez), 974/998 ilce geomId'ye eşlendi"]}
+  "2014yerel": {type: yerel, primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=11979/secimTuru=2|6, 30 büyükşehir secimTuru=6 + 51 il secimTuru=2-merkez, 998 ilcenin tamami)", retrieved_at: "2026-09-23", level: [il, ilce], status: official}, legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}, verification: ["İl kayıtları toplamı: AK Parti %45.79, CHP %29.61 — bilinen 2014 yerel sonucuyla (AKP ulusal birinci, ~%45.5) tutarlı.", "Diyarbakır: BDP kazandı, Gültan Kışanak'ın gerçekte kazandığı büyükşehir seçimiyle birebir örtüşüyor."], coverage: ["81 il (30 büyükşehir + 51 merkez), 974/998 ilce geomId'ye eşlendi"], known_issues: [{scope: "parti: BDP (tüm il/ilçe kayıtları) — ÇÖZÜLDÜ", status: resolved, description: "Daha önce (Habertürk kaynağıyken) BDP'nin oyu her yerde 0 görünüyordu (Diyarbakır dahil). Bu oturumda kaynak tamamen YSK'ye taşınırken kök neden bulundu: parti-sütun eşlemesi için kullanılan önbellekli baslik_2014yerel.json dosyasında BDP sütunu (parti20) hiç yoktu, oylar hiç toplanmıyordu. refresh_all_baslik.js ile canlı yeniden çekilip düzeltildi — BDP artık il/ilçe düzeyinde de gerçek oylarıyla görünüyor (ulusal toplam 1.350.805, Diyarbakır'da kazanan)."}]}
 
-  "2009yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, backup: [{source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=4290, secimTuru=2)", retrieved_at: "2026-09-22", level: [mahalle], status: official}], coverage: ["katılım/seçmen verisi yok"], notes: ["Habertürk'te bu yıl artık erişilebilir değil."]}
-  "2004yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, coverage: ["katılım/seçmen verisi yok"], notes: ["Habertürk'te bu yıl artık erişilebilir değil."]}
-  "1999yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, coverage: ["katılım/seçmen verisi yok", "80/80 il (dönemin gerçek il sayısı)"]}
-  "1994yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, coverage: ["katılım/seçmen verisi yok", "76/76 il (dönemin gerçek il sayısı)"], verification: ["RP 28/76 il — bilinen siyasi tarihle örtüşüyor."]}
+  # 2026-09-22 (ucuncu oturum): Ikinci oturumdaki "578/973 kapsama, buyuksehir
+  # belirsizligi" endisesi MAHALLE/muhtarlik-duzeyi agregasyona AITTI. Bu
+  # oturumda KULLANILMAYAN o yontem yerine, getSecimSandikSonucList DOGRUDAN
+  # her il/ilce icin sorgulandi (mahalle poligon kisiti YOK, 998/998 ilce tam
+  # kapsam, race belirsizligi yok - ayni secimTuru=2 sorgusu zaten diger tum
+  # yerel yillarda dogru race'i veriyordu).
+  "2009yerel": {type: yerel, primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=4290/secimTuru=2|6, 16 büyükşehir secimTuru=6 + 65 il secimTuru=2-merkez, 998 ilcenin tamami)", retrieved_at: "2026-09-23", level: [il, ilce], status: official}, legacy_source: {source: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, verification: ["İl kayıtları toplamı (16 büyükşehir bütünü + 65 il merkezi karışık): AK Parti %42.25, CHP %28.97, MHP %13.82 — bilinen resmi sonuçlarla (AKP ulusal ~%38,4, il-merkezi/büyükşehir ağırlıklı örneklemde daha yüksek çıkması beklenen bir sapma) yön olarak tutarlı. Ankara: AK Parti kazandı (bilinen tarihle örtüşüyor)."], coverage: ["81 il (16 büyükşehir + 65 merkez), 980/998 ilce geomId'ye eslendi (9 il Merkez ilçesi + Tillo hariç, bkz. genel not)"], notes: ["2026-09-23: il kaydı, tüm ilçelerin toplamı yerine büyükşehirlerde secimTuru=6 / diğerlerinde sadece il merkezinin secimTuru=2 sonucunu kullanacak şekilde düzeltildi (bkz. 2014yerel notu ve PROVENANCE.md) — doğrulama rakamları bu düzeltmeyi yansıtıyor."]}
+  # 2026-09-22 (ikinci oturum): 2004yerel/1999yerel/1994yerel IL kayitlari
+  # (ilceler DEGIL, o zaten vardi) Wikipedia'dan YSK'nin resmi il-bazli
+  # arsivine yukseltildi — bkz. data/raw/ysk/mahalli-1994-1999-2004/
+  # PROVENANCE.md. Buyuksehir statusundeki iller icin ayri bir PDF ailesi
+  # (Buyuksehir/), digerleri icin "BelediyeBaskanligi/" icindeki "Merkez"
+  # satiri kullanildi.
+  # 2026-09-23 (dorduncu oturum): Bu 3 yilin ILCE/BELDE duzeyi de (il duzeyi
+  # zaten yukseltilmisti, bkz. asagi) AYNI PDF ailesinden cikarildi -
+  # "Ilce" sutunu (normal il) veya duz "Belediye" listesi (buyuksehir)
+  # her satirin hangi 1994/1999/2004-donemi idari birime ait oldugunu
+  # zaten veriyor; bir belde adi BUGUNKU bir ilce adiyla eslesirse (donem
+  # icinde/sonrasinda ayri ilce oldu) KENDI kaydini alir, eslesmezse
+  # (era-donemi) ebeveyninin toplamina eklenir. 6 il (Aydın, Denizli,
+  # Muğla, Ordu, Tekirdağ, Trabzon - 2012 Buyuksehir Kanunu dalgasindan,
+  # mevcut geo/historical/district_splits.json'da eksik) icin "Merkez"
+  # ilcesinin modern karsiligi COZULEMEDI (yeni tarihsel poligon
+  # gerektirir, bu oturumun kapsami disi) - bu illerin merkez ilcesi ve
+  # ona bagli cozulemeyen birkac belde ESKI (Wikipedia) kayninda kaldi.
+  # Ayrinti: scripts/yerel-1994-1999-2004-pipeline/PROVENANCE.md.
+  # 2026-09-23: Aydın/Muğla/Ordu/Tekirdağ/Trabzon'un merkez ilçesi de
+  # cozuldu - bunlar 2012 6360 sayili kanunla TEK bir yeni isimle (Efeler/
+  # Menteşe/Altınordu/Süleymanpaşa/Ortahisar) degistirilmis, COK-PARCALI
+  # bolunme DEGIL (dogrulandi: web arastirmasi + modern ilce listesinde bu
+  # tek isimden BASKA bir ikinci yeni ilce yok) - basit isim eslemesi
+  # yeterliydi, yeni poligon gerekmedi. Sadece Denizli KALDI (Pamukkale VE
+  # Merkezefendi diye IKI ayri yeni ilceye bolundu - gercek cok-parcali
+  # bolunme, digerleri gibi sentetik birlesim poligonu gerektirir, HENUZ
+  # yapilmadi).
+  "2004yerel": {type: yerel, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Mahalli/2004/{BelediyeBaskanligi,Buyuksehir}/Pdf/ (81 il - il merkezi + ilce/belde kirilimi)", retrieved_at: "2026-09-23", level: [il, ilce], status: official}, legacy_source: {source: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, coverage: ["81/81 il için katılım/seçmen verisi var", "884 ilçe kaydından 668'i (%76) YSK PDF'inden, 216'sı hâlâ Wikipedia kaynaklı (sadece Denizli'nin merkez ilçesi + tarihsel eşlemesi çözülemeyen küçük beldeler)"], verification: ["81/81 il, parti oyları toplamı resmi geçerli oy sayısıyla %2 tolerans içinde eşleşti (otomatik kontrol).", "Antalya/Diyarbakır/Eskişehir/Mersin/Samsun'un 2008-split-sonrası ve Aydın/Muğla/Ordu/Tekirdağ/Trabzon'un 2012-split-sonrası modern ilçeleri (Kepez, Muratpaşa, Bağlar, Odunpazarı, Akdeniz, Atakum, Efeler, Menteşe, Altınordu, Süleymanpaşa, Ortahisar vb.) kendi adlarıyla doğrudan eşleşip gerçek oylarıyla eklendi."]}
+  "1999yerel": {type: yerel, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Mahalli/1999/{BelediyeBaskanligi,Buyuksehir}/Pdf/ (80/80 il - il merkezi + ilce/belde kirilimi)", retrieved_at: "2026-09-23", level: [il, ilce], status: official}, legacy_source: {source: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, coverage: ["80/80 il (dönemin gerçek il sayısı)", "883 ilçe kaydından 675'i (%76) YSK PDF'inden, 208'i hâlâ Wikipedia kaynaklı (sadece Denizli gerekçesi)"], verification: ["80/80 il, parti oyları toplamı resmi geçerli oy sayısıyla %2 tolerans içinde eşleşti.", "Kadıköy: ANAP kazandı (dönemin bilinen belediye başkanı Selami Öztürk ile örtüşüyor)."], notes: ["Mersin/İçel ilk denemede bulunamadı (Buyuksehir dosyası 'Mersin' değil eski adıyla, küçük harfle 'icel' olarak kayıtlı) — ikinci geçişte bulunup eklendi, bkz. PROVENANCE.md."]}
+  "1994yerel": {type: yerel, primary: {authority: YSK, url: "ysk.gov.tr/doc/dosyalar/docs/Mahalli/1994/{BelediyeBaskanligi,Buyuksehir}/Pdf/ (75/76 il - il merkezi + ilce/belde kirilimi)", retrieved_at: "2026-09-23", level: [il, ilce], status: official}, legacy_source: {source: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, coverage: ["76/76 il (dönemin gerçek il sayısı) — Gümüşhane hariç (aşağı)", "875 ilçe kaydından 656'sı (%75) YSK PDF'inden, 219'u hâlâ Wikipedia kaynaklı (sadece Denizli gerekçesi)"], verification: ["75/76 il, parti oyları toplamı resmi geçerli oy sayısıyla %2 tolerans içinde eşleşti (Ankara: RP ~1.44M oy ile bilinen tarihle birebir örtüştü; Mersin/İçel: ANAP kazandı, bkz. PROVENANCE.md)."], notes: ["Mersin/İçel ilk denemede bulunamadı ('icel' küçük harf dosya adı) — ikinci geçişte bulunup eklendi."], known_issues: [{scope: "il: Gümüşhane", status: reported, description: "YSK'nin bu ile ait PDF'inde pdfplumber'ın nadir bir sütun hizalama sorunu var (parti oyları toplamı resmi geçerli oydan ~2 kat çıkıyor) — otomatik güvenlik kontrolü bunu tespit edip ATLADI, YÜKSELTİLMEDİ."}]}
   "1989yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, coverage: ["katılım/seçmen verisi yok", "67/67 il (dönemin gerçek il sayısı)"], verification: ["SHP 39/67 il — bilinen siyasi tarihle örtüşüyor."]}
   "1984yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il, ilce], status: reported}, coverage: ["katılım/seçmen verisi yok", "67/67 il (dönemin gerçek il sayısı)"], verification: ["ANAP 55/67 il — bilinen siyasi tarihle örtüşüyor."]}
+
+  # 1977-1950: 2026-09-22'de eklendi (bkz. SECIM_TAKVIMI.md) — önceki 9 yıldan
+  # FARKLI olarak sadece İL MERKEZİNİN kendi belediye başkanlığı yarışı var,
+  # "ilceler" boş (diğer ilçeler bu oturumun kapsamı dışında bırakıldı, aynı
+  # bu depodaki 1950-1977 GENEL seçim verisinin ilçe-siz kapsamı gibi).
+  "1977yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il], status: reported}, coverage: ["katılım/seçmen verisi çoğunlukla yok", "67/67 il (dönemin gerçek il sayısı)", "sadece il merkezi — ilceler boş"], verification: ["CHP 41/67, AP 15/67, MHP 5/67 il merkezi — Wikipedia'nın 1973-1977 karşılaştırma tablosuyla (kazanan_crosscheck) 67/67 birebir örtüştü."], notes: ["2 küçük parti (TSİP, SDP) hiçbir il merkezini kazanmadı, partiler.json'a bu oturumda eklendi."]}
+  "1973yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il], status: reported}, coverage: ["katılım/seçmen verisi çoğunlukla yok", "67/67 il (dönemin gerçek il sayısı)", "sadece il merkezi — ilceler boş"], verification: ["CHP 32/67, AP 22/67, Bağımsız 8/67 il merkezi — 1977 makalesinin 1973 karşılaştırma sütunuyla 67/67 birebir örtüştü, ayrıca 1977 ana makalesinin düz metin özetiyle (32/22/3/2/8) birebir eşleşiyor."], notes: ["'DP' kısaltması burada Ferruh Bozbeyli'nin 1970'ler Demokratik Parti'si (DEMP73) — 1946-60 Demokrat Parti'siyle karıştırılmadı."]}
+  "1968yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il], status: reported}, coverage: ["katılım/seçmen verisi çoğunlukla yok", "67/67 il (dönemin gerçek il sayısı)", "sadece il merkezi — ilceler boş"], verification: ["AP 35/67, CHP 21/67, Bağımsız 8/67 il merkezi — 1973 makalesinin 1968 karşılaştırma sütunuyla 67/67 birebir örtüştü."], notes: ["Giresun ve Tokat'ta oy lideri sonradan YSK kararıyla diskalifiye edildi, mazbata 2.'ye verildi — kazanan nihai/resmi sonucu yansıtıyor."]}
+  "1963yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il], status: reported}, coverage: ["katılım/seçmen verisi çoğunlukla yok", "67/67 il (dönemin gerçek il sayısı)", "sadece il merkezi — ilceler boş", "belediye başkanlarının ilk kez tek dereceli (doğrudan) seçildiği yıl"], verification: ["AP 40/67, CHP 25/67 il merkezi — 1968 makalesinin 1963 karşılaştırma sütunuyla 66/67 örtüştü (tek istisna İstanbul, aşağıya bak)."], known_issues: [{scope: "il: İstanbul", status: reported, description: "AP adayı Nuri Eroğan en çok oyu almasına rağmen (128.828 oy) eski görevinden yasal sürede istifa etmediği gerekçesiyle diskalifiye edildi; mazbata CHP adayı Haşim İşcan'a (112.686 oy) verildi. kazanan=CHP (resmi/nihai sonuç), oy alanındaki sayılar orijinal (iptal edilmemiş) sayım."}]}
+  "1955yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il], status: reported}, coverage: ["katılım/seçmen verisi çoğunlukla yok (~13/64 ilde gerçek oy sayısı var, geri kalanında sadece kazanan parti)", "64/64 il (dönemin gerçek il sayısı)", "sadece il merkezi — ilceler boş", "il-bazlı çapraz kontrol tablosu yok (ana makalede sadece ulusal toplam var)"], notes: ["Belediye başkanı halk tarafından doğrudan değil, meclisin kendi içinden seçilmesiyle belirleniyordu (kazanan = meclisi kazanan/başkanı sağlayan parti).", "CHP ve Cumhuriyetçi Millet Partisi bu seçime hiç katılmadı (bilinen tarihi olgu, veri hatası değil).", "Kırşehir bu dönemde geçici olarak ilçeye indirgenmişti (1954-1957), ayrı sayfası yok — Nevşehir makalesinden türetildi.", "2 küçük/özel liste (MKP, KARMA) partiler.json'a bu oturumda eklendi."]}
+  "1950yerel": {type: yerel, primary: {authority: "Türkçe Wikipedia (il-başına alt makaleler)", level: [il], status: reported}, coverage: ["gerçek oy sayısı sadece 2/63 ilde (Ağrı, Bursa) — geri kalanında sadece belediye meclisi sandalye dağılımı (oy/oran alanları null, sandalye/oranSandalye alanları dolu)", "63/63 il (dönemin gerçek il sayısı)", "sadece il merkezi — ilceler boş", "il-bazlı çapraz kontrol tablosu yok (ana makalede sadece ulusal toplam var)"], notes: ["Belediye başkanı halk tarafından doğrudan değil, meclisin kendi içinden seçilmesiyle belirleniyordu (kazanan = meclisi kazanan/başkanı sağlayan parti) — çok partili dönemin ilk yerel seçimi, sistem henüz doğrudan değildi.", "Wikipedia'nın Amasya ve Mardin il maddelerinde muhtemel kopyala-yapıştır kaynaklı hatalı cümleler tespit edildi (birbirinin/Niğde'nin metnini tekrarlıyor) — ihtiyatla, not alanı ile birlikte kaydedildi."]}
 
   # ---------------- Referandum (7 halk oylaması) ----------------
 
   "2017referandum":
     type: referandum
-    primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}
-    backup:
-      - {source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=15575, secimTuru=7)", retrieved_at: "2026-09-22", level: [mahalle], status: official}
+    primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=15575/secimTuru=7, 998 ilcenin TAMAMI sandik-duzeyinde cekilip agrege edildi)", retrieved_at: "2026-09-22", level: [il, ilce], status: official}
+    legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}
+    verification: ["Ulusal: Evet %51.18 (81/81 il agrege) — bilinen resmi sonuçla (%51,41) tutarli, kucuk fark yuvarlama/kesin sayimdan kaynaklaniyor olabilir, yeniden dogrulanabilir."]
+    coverage: ["81 il, 997/998 ilce geomId'ye eslendi — sadece Siirt/Tillo eksik (bkz. genel not)"]
     notes:
       - >
         Mahalle örnekleminde Hayır önde çıkıyor (%51.08) — ulusal sonuç Evet
         kazandı ama İstanbul/Ankara/İzmir'de gerçekten Hayır önde bitmişti; mahalle
         kapsamımız tam bu büyükşehirlere yığılı olduğu için bu beklenen bir sapma.
 
+  # 2026-09-22 (ucuncu oturum): Habertürk tamamen kaldirildi. YSK'nin resmi
+  # acikveri.ysk.gov.tr API'sinden (getSecimSandikSonucList) TUM 998 ilcenin
+  # sandik-duzeyi verisi cekilip il/ilce toplamlarina agrege edildi - bkz.
+  # scripts/haberturk-to-ysk-pipeline/PROVENANCE.md. Bu, onceki "sandik x 300
+  # tahmini" sorununu da COZDU - artik gercek sandik/secmen/oy sayilari var.
   "2010referandum":
     type: referandum
-    primary: {authority: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}
-    backup:
-      - {source: YSK, url: "https://acikveri.ysk.gov.tr/ (secim_ID=6522, secimTuru=7)", retrieved_at: "2026-09-22", level: [mahalle], status: official, note: "Bu değerler TAHMİN DEĞİL, gerçek sandık sonuçları — aşağıdaki ilçe-düzeyi 'estimated' notuyla karıştırılmamalı."}
+    primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=6522/secimTuru=7, 998 ilcenin TAMAMI sandik-duzeyinde cekilip agrege edildi)", retrieved_at: "2026-09-22", level: [il, ilce], status: official}
+    legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported, note: "Onceki primary kaynak - ilce/il oy sayilari sandik x 300 VARSAYIMIYLA tahmin ediliyordu (gercek degil). YSK yukseltmesi bu sorunu tamamen cozdu."}
+    verification: ["Ulusal: Evet %57.86 (81/81 il agrege) — bilinen resmi sonucla (%57,94 civari) tutarli. Ankara ili YSK'nin kendi sandik satirlariyla (1.423.474 Evet) birebir dogrulandi."]
+    coverage: ["81 il, 980/998 ilce geomId'ye eslendi (bkz. asagi)"]
     known_issues:
-      - scope: "ilce: tüm iller (il/ilçe düzeyi, Habertürk kaynağı)"
-        status: estimated
-        method: "sandik_sayisi_x_300"
+      - scope: "ilce: 3 il (Denizli, Hatay — Merkez ilçesi; Siirt — Tillo ilçesi) — ÇÖZÜLDÜ olanlar güncellendi"
+        status: reported
         description: >
-          Habertürk kaynağı bu yıl için sadece oran + sandık sayısı veriyordu,
-          gerçek oy sayısı yok — ilçe/il oy sayıları sandık başına ~300 oy
-          varsayımıyla KABACA TAHMİN EDİLDİ. Yüzdeler gerçek, mutlak oy sayıları
-          yaklaşık. Ulusal Evet/Hayır oranı için habertürk'ün resmi rakamı
-          (%57,94 Evet) kullanıldı. Bu oturumda eklenen mahalle-düzeyi YSK verisi
-          bu tahminin YERİNE geçmiyor (farklı seviye) ama kapsadığı mahalleler
-          için gerçek rakam sağlıyor.
+          2026-09-23: Aydın/Muğla/Ordu/Tekirdağ/Trabzon/Mardin'in 'Merkez'
+          ilçesi ÇÖZÜLDÜ (hist_geomid.py'ye basit isim eslemesi eklendi -
+          bu 6 il "Merkez"ini TEK bir yeni isimle degistirmis, cok-parcali
+          bolunme degil; Balıkesir/Malatya/Manisa/Kahramanmaraş/Şanlıurfa/Van
+          zaten sentetik HIST-*-Merkez ile calisiyordu). Kalan 3 (Denizli,
+          Hatay — ikisi de gercek COK-PARCALI bolunme, Pamukkale+Merkezefendi
+          ve Antakya+Defne+Arsuz+Payas, sentetik birlesim poligonu gerekiyor;
+          Siirt'in Tillo/Aydınlar ilcesi — proje genelinde kullanilan temel
+          il/ilce sinir GeoJSON'unda bu ilce hic yok, isim eslemesiyle
+          cozulemez) hala haritada eksik. Oy verisi o ilin IL TOPLAMINDA
+          mevcut, sadece ilce-duzeyi haritada goruntulenmiyor. Ayrintı:
+          scripts/haberturk-to-ysk-pipeline/PROVENANCE.md.
 
   # 2026-09-22: 1961/1982/1987/1988 icin kaynak Wikipedia'dan dogrudan YSK
   # resmi il-bazli PDF'lerine yukseltildi (data/raw/ysk/referandum/). 4 yil x
@@ -333,14 +403,48 @@ elections:
 
   # ---------------- Diğer ----------------
 
+  # 2026-09-23 (dorduncu oturum): 5/8 seçim YSK'nin acikveri API'sine
+  # taşındı (getSecimSandikSonucList, yurtIciDisi=2, "ÜLKELER SANDIKLAR
+  # TOPLAMI" hazır-agrege satırı — gecerliOy/kullanılanOy/parti oyları
+  # bu satırdan, mevcut Habertürk rakamlarıyla 2018 için birebir eşleşti).
+  # 3'ü (2023 genel, 2023cb1tur, 2023cb2tur) YSK'nin bu agrege satırı
+  # SIFIR dönüyor (getSecimDetayList'te de yok değil ama bu spesifik agrege
+  # hesaplanmamış) — Habertürk'te kaldı. Ayrıca "secmen"/"katilim"/"sandik"
+  # alanları BİLİNÇLİ OLARAK güncellenmedi (5 başarılı seçim için de) —
+  # YSK'nin agrege satırının "secmen" alanı yanıltıcı (kullanılan oyla aynı
+  # değer), temsilcilik-bazında gerçek satırları toplama girişimi de YSK'nin
+  # arka ucunda bir veri kalitesi sorunu yüzünden onlarca milyon gibi
+  # imkânsız sayılar verdi — bu 3 alan güvenilir bulunamadığı için eski
+  # kaynakta bırakıldı. Ayrıntı: scripts/haberturk-to-ysk-pipeline/
+  # fetch_yurtdisi.js ve PROVENANCE.md.
   "yurtdisi-secmen":
     type: yurtdisi
     not_an_embedded_key: true
     note: "secim_tarihi_data.json.secimler{} altında ayrı bir anahtar değil — ilgili seçimlerin kendi kayıtları içinde ayrı bir alt panel/alan olarak tutuluyor. Referans için burada belgeleniyor."
-    primary: {authority: Habertürk, url: "secim.haberturk.com (ayrı 'Yurtdışı' sayfaları)", level: [ulusal], status: reported}
+    primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, yurtIciDisi=2, 'ÜLKELER SANDIKLAR TOPLAMI' agrege satırı)", retrieved_at: "2026-09-23", level: [ulusal], status: official}
+    legacy_source: {source: Habertürk, url: "secim.haberturk.com (ayrı 'Yurtdışı' sayfaları)", level: [ulusal], status: reported}
+    coverage: ["5/8 seçim YSK'ye taşındı (2015 Haziran/Kasım, 2018 genel; 2017 referandumu; 2018cb). 3'ü (2023 genel, 2023cb1tur, 2023cb2tur) YSK'nin agrege satırı boş döndüğü için Habertürk'te kaldı."]
+    verification: ["2018: gecerliOy/kullanilanOy YSK agrege satırıyla Habertürk'ün mevcut rakamlarına birebir eşleşti (1.340.685 / 1.357.204)."]
+    known_issues:
+      - scope: "alan: secmen, katilim, sandik (5 taşınan seçimin hepsinde)"
+        status: reported
+        description: >
+          YSK'nin "ÜLKELER SANDIKLAR TOPLAMI" agrege satırındaki secmen_SAYISI
+          alanı yanıltıcı — gerçek kayıtlı seçmen sayısı değil, kullanılan oy
+          sayısıyla aynı (boş/anlamsız doldurulmuş). Temsilcilik-bazında
+          (disTemsilcilikId) gerçek sandık satırlarını tek tek çekip toplama
+          girişimi de YSK'nin arka ucunda bir veri kalitesi sorunu (muhtemelen
+          bir JOIN duplikasyonu) yüzünden onlarca milyon gibi imkânsız sayılar
+          verdi. Bu üç alan güvenilir bir YSK kaynağı bulunamadığı için ESKİ
+          (Habertürk) değerinde bırakıldı — sadece gecerliOy/kullanılanOy/oy
+          YSK'den.
+      - scope: "2023 genel, 2023cb1tur, 2023cb2tur"
+        status: reported
+        description: "YSK'nin acikveri API'sinde bu 3 seçim için yurtdışı agrege satırı sıfır dönüyor (getSecimDetayList'te seçimin kendisi var, ama bu spesifik özet hesaplanmamış görünüyor) — Habertürk'te kaldı."
     notes:
       - "8 seçimi kapsıyor: 2015 Haziran/Kasım, 2018, 2023 genel; 2017 referandumu; 2018, 2023 (1./2. tur) cumhurbaşkanlığı."
       - "Haritaya/il toplamlarına DAHİL DEĞİL — hiçbir ile atanamayan (plaka karşılığı yok) oylar, ayrı panelde gösteriliyor."
+      - "YSK'nin aynı agrege sorgusunda ayrıca 'GÜMRÜK KAPILARI SANDIKLAR TOPLAMI' diye AYRI bir kategori var (sınır kapısı oyları, örn. 2018'de ~167 bin seçmen) — bu proje bunu hiç kullanmıyor (1988 referandumundaki aynı isimli kategoriyle aynı konvansiyon, il/ulusal toplama dahil edilmiyor)."
       - "Tahmin yok, gerçek rakamlar (sandık/geçerli/geçersiz oy dahil)."
 
 geometry:

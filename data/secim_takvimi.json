@@ -1,0 +1,401 @@
+{
+  "meta": {
+    "aciklama": "Türkiye'de 1950-2024 arasinda yapilan ulusal capli secimlerin tam takvimi ve bu projedeki veri kapsamı — 'hepsi bizde var mi' sorusuna cevap vermek icin derlendi.",
+    "derlendi": "2026-09-22",
+    "yontem": "'ana_kategoriler' listesindeki 40 kayit (tur: genel/yerel/referandum/cumhurbaskanligi) dogrudan bu depodaki data/normalized/*.json dosyalarinin 'ad' alanindan programatik cekildi — bu depo tarafindan zaten YSK/Habertürk/Wikipedia ile capraz dogrulanmis birincil veri (bkz. SOURCES.md, sources.yml). Depoda EKSIK olan 6 yerel secim (1950/1955/1963/1968/1973/1977) ve kapsam-disi kategoriler (ara secim, senato, ozel yenileme) bu oturumda Turkce/Ingilizce Wikipedia ve ysk.gov.tr sayfalari taranarak tespit edildi — bunlarin tarihleri bu deponun geri kalaniyla AYNI TITIZLIKTE (checksum, coklu-kaynak capraz dogrulama) teyit EDILMEDI; her kaydin 'tarih_kesinligi'/'not' alanina bakin.",
+    "kategoriler": {
+      "genel": "Milletvekili genel secimi (TBMM)",
+      "yerel": "Mahalli idareler (belediye baskanligi / il genel meclisi) genel secimi",
+      "referandum": "Halkoylamasi",
+      "cumhurbaskanligi": "Cumhurbaskanligi secimi — sadece halk oyuyla yapilanlar (2014 sonrasi; 2014 oncesi TBMM tarafindan sececilirdi, bu bir 'secim' degil, kapsam disi)"
+    },
+    "guncellendi_2026_09_22": "Baslangicta 40/46 idi (6 yerel secim eksikti). Bu oturumda 6si da Wikipedia il-alt-makalelerinden cekilip data/normalized/yerel_secimler.json a eklendi (sadece il merkezi, ilceler haric) — simdi 46/46."
+  },
+  "ana_kategoriler": [
+    {
+      "yil": 1950,
+      "tur": "genel",
+      "tarih": "14 Mayıs 1950",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1950"
+    },
+    {
+      "yil": 1950,
+      "tur": "yerel",
+      "tarih": "13 Ağustos - 15 Ekim 1950 (3 aşamalı)",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1950yerel",
+      "not": "Depoda hic yok. Cok asamali (il gruplarina bolunmus) ilk cok partili donem yerel secimi. [2026-09-22 GUNCELLEME: bu oturumda eklendi, sadece il merkezi (ilceler haric) — bkz SOURCES.md]",
+      "tarih_kesinligi": "yaklasik — YSK/TUIK arsiviyle teyit edilmedi"
+    },
+    {
+      "yil": 1954,
+      "tur": "genel",
+      "tarih": "2 Mayıs 1954",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1954"
+    },
+    {
+      "yil": 1955,
+      "tur": "yerel",
+      "tarih": "25 Eylül - 13 Kasım 1955 (2 aşamalı)",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1955yerel",
+      "not": "Depoda hic yok. [2026-09-22 GUNCELLEME: bu oturumda eklendi, sadece il merkezi (ilceler haric) — bkz SOURCES.md]",
+      "tarih_kesinligi": "yaklasik — YSK/TUIK arsiviyle teyit edilmedi"
+    },
+    {
+      "yil": 1957,
+      "tur": "genel",
+      "tarih": "27 Ekim 1957",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1957"
+    },
+    {
+      "yil": 1961,
+      "tur": "genel",
+      "tarih": "15 Ekim 1961",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1961"
+    },
+    {
+      "yil": 1961,
+      "tur": "referandum",
+      "tarih": "9 Temmuz 1961",
+      "veride_var": true,
+      "veri_anahtari": "referandumlar.1961referandum"
+    },
+    {
+      "yil": 1963,
+      "tur": "yerel",
+      "tarih": "17 Kasım 1963",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1963yerel",
+      "not": "Depoda hic yok. Ilk kez tek dereceli (dogrudan) olarak yapilan yerel secim. [2026-09-22 GUNCELLEME: bu oturumda eklendi, sadece il merkezi (ilceler haric) — bkz SOURCES.md]",
+      "tarih_kesinligi": "orta — birden fazla ikincil kaynakta tutarli, YSK birincil arsivle teyit edilmedi"
+    },
+    {
+      "yil": 1965,
+      "tur": "genel",
+      "tarih": "10 Ekim 1965",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1965"
+    },
+    {
+      "yil": 1968,
+      "tur": "yerel",
+      "tarih": "2 Haziran 1968",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1968yerel",
+      "not": "Depoda hic yok. YSK'nin kendi sitesinde sayfa basligi olarak dogrulandi ('2 Haziran 1968 Mahalli Idareler Genel Secimleri'). [2026-09-22 GUNCELLEME: bu oturumda eklendi, sadece il merkezi (ilceler haric) — bkz SOURCES.md]",
+      "tarih_kesinligi": "yuksek — ysk.gov.tr sayfa basligiyla dogrulandi"
+    },
+    {
+      "yil": 1969,
+      "tur": "genel",
+      "tarih": "12 Ekim 1969",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1969"
+    },
+    {
+      "yil": 1973,
+      "tur": "genel",
+      "tarih": "14 Ekim 1973",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1973"
+    },
+    {
+      "yil": 1973,
+      "tur": "yerel",
+      "tarih": "9 Aralık 1973",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1973yerel",
+      "not": "Depoda hic yok. [2026-09-22 GUNCELLEME: bu oturumda eklendi, sadece il merkezi (ilceler haric) — bkz SOURCES.md]",
+      "tarih_kesinligi": "orta — ikincil kaynak, YSK birincil arsivle teyit edilmedi"
+    },
+    {
+      "yil": 1977,
+      "tur": "genel",
+      "tarih": "5 Haziran 1977",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1977"
+    },
+    {
+      "yil": 1977,
+      "tur": "yerel",
+      "tarih": "11 Aralık 1977",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1977yerel",
+      "not": "Depoda hic yok. [2026-09-22 GUNCELLEME: bu oturumda eklendi, sadece il merkezi (ilceler haric) — bkz SOURCES.md]",
+      "tarih_kesinligi": "orta — ikincil kaynak, YSK birincil arsivle teyit edilmedi"
+    },
+    {
+      "yil": 1982,
+      "tur": "referandum",
+      "tarih": "7 Kasım 1982",
+      "veride_var": true,
+      "veri_anahtari": "referandumlar.1982referandum"
+    },
+    {
+      "yil": 1983,
+      "tur": "genel",
+      "tarih": "6 Kasım 1983",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1983"
+    },
+    {
+      "yil": 1984,
+      "tur": "yerel",
+      "tarih": "25 Mart 1984",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1984yerel"
+    },
+    {
+      "yil": 1987,
+      "tur": "genel",
+      "tarih": "29 Kasım 1987",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1987"
+    },
+    {
+      "yil": 1987,
+      "tur": "referandum",
+      "tarih": "6 Eylül 1987",
+      "veride_var": true,
+      "veri_anahtari": "referandumlar.1987referandum"
+    },
+    {
+      "yil": 1988,
+      "tur": "referandum",
+      "tarih": "25 Eylül 1988",
+      "veride_var": true,
+      "veri_anahtari": "referandumlar.1988referandum"
+    },
+    {
+      "yil": 1989,
+      "tur": "yerel",
+      "tarih": "26 Mart 1989",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1989yerel"
+    },
+    {
+      "yil": 1991,
+      "tur": "genel",
+      "tarih": "20 Ekim 1991",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1991"
+    },
+    {
+      "yil": 1994,
+      "tur": "yerel",
+      "tarih": "27 Mart 1994",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1994yerel"
+    },
+    {
+      "yil": 1995,
+      "tur": "genel",
+      "tarih": "24 Aralık 1995",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1995"
+    },
+    {
+      "yil": 1999,
+      "tur": "genel",
+      "tarih": "18 Nisan 1999",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.1999"
+    },
+    {
+      "yil": 1999,
+      "tur": "yerel",
+      "tarih": "18 Nisan 1999",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.1999yerel"
+    },
+    {
+      "yil": 2002,
+      "tur": "genel",
+      "tarih": "3 Kasım 2002",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.2002"
+    },
+    {
+      "yil": 2004,
+      "tur": "yerel",
+      "tarih": "28 Mart 2004",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.2004yerel"
+    },
+    {
+      "yil": 2007,
+      "tur": "genel",
+      "tarih": "22 Temmuz 2007",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.2007"
+    },
+    {
+      "yil": 2007,
+      "tur": "referandum",
+      "tarih": "21 Ekim 2007",
+      "veride_var": true,
+      "veri_anahtari": "referandumlar.2007referandum"
+    },
+    {
+      "yil": 2009,
+      "tur": "yerel",
+      "tarih": "29 Mart 2009",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.2009yerel"
+    },
+    {
+      "yil": 2010,
+      "tur": "referandum",
+      "tarih": "12 Eylül 2010",
+      "veride_var": true,
+      "veri_anahtari": "referandumlar.2010referandum"
+    },
+    {
+      "yil": 2011,
+      "tur": "genel",
+      "tarih": "12 Haziran 2011",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.2011"
+    },
+    {
+      "yil": 2014,
+      "tur": "yerel",
+      "tarih": "30 Mart 2014",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.2014yerel"
+    },
+    {
+      "yil": 2014,
+      "tur": "cumhurbaskanligi",
+      "tarih": "10 Ağustos 2014",
+      "veride_var": true,
+      "veri_anahtari": "cumhurbaskanligi.2014cb"
+    },
+    {
+      "yil": 2015,
+      "tur": "genel",
+      "tarih": "1 Kasım 2015",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.2015Kasim"
+    },
+    {
+      "yil": 2015,
+      "tur": "genel",
+      "tarih": "7 Haziran 2015",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.2015Haziran"
+    },
+    {
+      "yil": 2017,
+      "tur": "referandum",
+      "tarih": "16 Nisan 2017",
+      "veride_var": true,
+      "veri_anahtari": "referandumlar.2017referandum"
+    },
+    {
+      "yil": 2018,
+      "tur": "genel",
+      "tarih": "24 Haziran 2018",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.2018"
+    },
+    {
+      "yil": 2018,
+      "tur": "cumhurbaskanligi",
+      "tarih": "24 Haziran 2018",
+      "veride_var": true,
+      "veri_anahtari": "cumhurbaskanligi.2018cb"
+    },
+    {
+      "yil": 2019,
+      "tur": "yerel",
+      "tarih": "31 Mart 2019",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.2019yerel"
+    },
+    {
+      "yil": 2023,
+      "tur": "genel",
+      "tarih": "14 Mayıs 2023",
+      "veride_var": true,
+      "veri_anahtari": "genel_secimler.2023"
+    },
+    {
+      "yil": 2023,
+      "tur": "cumhurbaskanligi",
+      "tarih": "14 Mayıs 2023 (1. Tur)",
+      "veride_var": true,
+      "veri_anahtari": "cumhurbaskanligi.2023cb1tur"
+    },
+    {
+      "yil": 2023,
+      "tur": "cumhurbaskanligi",
+      "tarih": "14 Mayıs 2023 (2. Tur)",
+      "veride_var": true,
+      "veri_anahtari": "cumhurbaskanligi.2023cb2tur"
+    },
+    {
+      "yil": 2024,
+      "tur": "yerel",
+      "tarih": "31 Mart 2024",
+      "veride_var": true,
+      "veri_anahtari": "yerel_secimler.2024yerel"
+    }
+  ],
+  "kapsam_disi_kategoriler": {
+    "ara_secim": {
+      "aciklama": "Milletvekili ara secimi: genel secimler arasinda, olum/istifa/dusurulme gibi nedenlerle bosalan tek tek koltuklari doldurmak icin yapilan, birkaç ilde ayni gun duzenlenen kucuk olcekli secimler. Haritanin kapsadigi 'genel secim' kategorisinden nitelik olarak farkli (butun ulkede tum sandiklar acilmiyor).",
+      "durum": "Projede yok, kapsam disi birakildi (haritanin kendi README'sindeki tanimli kapsama girmiyor).",
+      "bilinen_yillar_1950_2024": [
+        1951,
+        1966,
+        1968,
+        1975,
+        1979,
+        1986,
+        1992,
+        2003
+      ],
+      "not": "Bu yil listesi ikincil kaynaklardan (Turkce/Ingilizce Wikipedia, TESAV) derlendi ve TAM/KESIN degil — bazi kaynaklar farkli sayida ara secim gunu bildiriyor (ör. bir kaynak 1936'dan bu yana 'toplam 59 ara secim' derken, sayfa icindeki tablo satir sayisi 113'e yakin bir toplam veriyor; bu tutarsizlik cozulmedi). Kesin/eksiksiz bir ara secim takvimi icin ayri, ozel bir arastirma oturumu gerekir.",
+      "kaynak": "tr.wikipedia.org/wiki/Türkiye_ara_seçimleri_listesi, tesav.org.tr (capraz kontrol, TAM DOGRULANMADI)"
+    },
+    "cumhuriyet_senatosu": {
+      "aciklama": "Cumhuriyet Senatosu (TBMM'nin ikinci kanadi, 1961 Anayasasi ile kuruldu) uye secimleri — uyelerin ucte biri her 2 yilda bir yenilenirdi.",
+      "durum": "Projede yok, kapsam disi birakildi. Kurum 1980 darbesi sonrasi 1982 Anayasasi ile tamamen kaldirildi, bugun karsiligi yok.",
+      "tarihler": [
+        "15 Ekim 1961",
+        "7 Haziran 1964",
+        "5 Haziran 1966",
+        "2 Haziran 1968",
+        "14 Ekim 1973",
+        "12 Ekim 1975",
+        "7 Haziran 1977",
+        "14 Ekim 1979"
+      ],
+      "not": "8 secim gunu. Tarihler ikincil kaynaktan (Ingilizce Wikipedia) alindi, YSK birincil arsivle teyit edilmedi.",
+      "kaynak": "en.wikipedia.org/wiki/Elections_in_Turkey (TAM DOGRULANMADI)"
+    },
+    "ozel_yenileme_secimleri": {
+      "aciklama": "Tekil il/ilce duzeyinde, iptal/yenileme karariyla yapilan ozel secimler (butun ulke degil, tek yer).",
+      "durum": "Projenin kendi SOURCES.md dosyasinda zaten 'kapsam disi / henuz yapilmadi' olarak not edilmis, bu oturumda degistirilmedi.",
+      "bilinen_ornekler": [
+        "2019 İstanbul Büyükşehir Belediyesi yenileme secimi (YSK'nin 31 Mart 2019 sonucunu iptal etmesi uzerine 23 Haziran 2019'da tekrarlandi)",
+        "2024 Yenileme Secimi (SOURCES.md'de adi geciyor, bu oturumda hangi il/ilce oldugu ayrica arastirilmadi)",
+        "2026 Ara Secimi (SOURCES.md'de adi geciyor, bu oturumda ayrintisi arastirilmadi)"
+      ],
+      "kaynak": "SOURCES.md (bu depo, satir ~146-147)"
+    }
+  },
+  "ozet": {
+    "toplam_ana_kategori_secim_1950_2024": 46,
+    "veride_var": 46,
+    "veride_yok": 0,
+    "veride_yok_detay": [],
+    "not": "2026-09-22 GUNCELLEME: 46/46 ana kategori artik veride var (il merkezi duzeyinde) — 1950-1977 arasi 6 yerel secim bu oturumda Wikipedia il-alt-makalelerinden cekilip eklendi, ilceler haric. Ayrintilar SOURCES.md ve sources.yml ilgili girislerde."
+  }
+}

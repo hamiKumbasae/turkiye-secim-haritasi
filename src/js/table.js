@@ -25,8 +25,8 @@
     renderTableHead();
     const rows = [...DATA.iller];
     rows.sort((a,b)=>{
-      const va = sortKey==='ad' ? a.ad : (MAJOR.includes(sortKey) ? (oranMode ? (a.oy[sortKey]?a.oy[sortKey].oran:-1) : (a.vekil[sortKey]||0)) : a[sortKey]);
-      const vb = sortKey==='ad' ? b.ad : (MAJOR.includes(sortKey) ? (oranMode ? (b.oy[sortKey]?b.oy[sortKey].oran:-1) : (b.vekil[sortKey]||0)) : b[sortKey]);
+      const va = sortKey==='ad' ? a.ad : (MAJOR.includes(sortKey) ? (oranMode ? (a.oy[sortKey]&&a.oy[sortKey].oran!=null?a.oy[sortKey].oran:-1) : (a.vekil[sortKey]||0)) : a[sortKey]);
+      const vb = sortKey==='ad' ? b.ad : (MAJOR.includes(sortKey) ? (oranMode ? (b.oy[sortKey]&&b.oy[sortKey].oran!=null?b.oy[sortKey].oran:-1) : (b.vekil[sortKey]||0)) : b[sortKey]);
       if(typeof va==='string') return sortDir*va.localeCompare(vb,'tr');
       return sortDir*(va-vb);
     });
@@ -36,9 +36,9 @@
       // Parti yuzde hucrelerine, gercek oy sayisini da (hover ile) her zaman
       // erisilebilir tutmak icin title niteligi ekleniyor.
       const cells = oranMode
-        ? [[p.ad,null], ...MAJOR.map(m=>[p.oy[m]?p.oy[m].oran.toFixed(2):'—', p.oy[m]?fmt(p.oy[m].oy)+' oy':null]),
+        ? [[p.ad,null], ...MAJOR.map(m=>[p.oy[m]&&p.oy[m].oran!=null?p.oy[m].oran.toFixed(2):'—', p.oy[m]?fmt(p.oy[m].oy)+' oy':null]),
            [p.katilim!=null?p.katilim.toFixed(2):'—', null], [fmt(p.secmen), null]]
-        : [[p.ad,null], [p.toplamVekil,null], ...MAJOR.map(m=>[p.vekil[m]||'—', p.oy[m]?fmt(p.oy[m].oy)+' oy · %'+p.oy[m].oran.toFixed(2):null]),
+        : [[p.ad,null], [p.toplamVekil,null], ...MAJOR.map(m=>[p.vekil[m]||'—', p.oy[m]?fmt(p.oy[m].oy)+' oy'+(p.oy[m].oran!=null?' · %'+p.oy[m].oran.toFixed(2):''):null]),
            [p.katilim!=null?p.katilim.toFixed(2):'—', null], [fmt(p.secmen), null]];
       tr.innerHTML = cells.map(([c,title],i)=>'<td'+(i===0?'':' class="num"')+(title?' title="'+title+'"':'')+'>'+c+'</td>').join('');
       tr.style.cursor='pointer';

@@ -9,6 +9,15 @@ karşılık gelen kesimiyle Python `==` (derin eşitlik) ile tek tek karşılaş
 — partiler, 4 tür dosyası, 15 mahalle yıl dosyası, meclis_2024.json: **22/22
 kontrol geçti**.
 
+**Ek (2026-09-22, aynı gün ikinci bir oturumda):** `yerel_secimler.json`'a
+1950/1955/1963/1968/1973/1977 için 6 yeni anahtar eklendi (sadece il merkezi,
+`ilceler` boş) — bunlar YUKARIDAKİ index.html-kaynaklı doğrulamanın DIŞINDA,
+çünkü index.html'de hiç yoktu (bu oturumda ilk kez Wikipedia'nın il-bazlı alt
+makalelerinden çekildi). Yöntem, çapraz kontroller ve bilinen sınırlar için
+bkz. [`../../SECIM_TAKVIMI.md`](../../SECIM_TAKVIMI.md) ve `sources.yml`'deki
+ilgili 6 giriş. `partiler.json`'a bu eklemeyle birlikte 4 yeni parti girdi
+(TSİP, SDP, MKP, KARMA).
+
 ## Dosyalar
 
 - `partiler.json` — tüm seçimler arası paylaşılan parti adı→renk/kısaltma

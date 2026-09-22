@@ -120,21 +120,24 @@ def check_referandum_oranlari():
 
 
 def check_known_issue_2014yerel_bdp():
-    """sources.yml'nin known_issues'ta belgelediği 2014yerel BDP=0 bug'ı hâlâ
-    orada mı — belge ile veri arasında sessiz bir sürüklenme olmadığını doğrular
-    (bug sessizce düzeltilmiş de olabilir, o zaman sources.yml güncellenmeli)."""
+    """sources.yml'de RESOLVED olarak belgelenen 2014yerel BDP=0 bug'ının
+    (eski Habertürk kaynağında BDP oyu her yerde 0 görünüyordu, YSK'ye
+    taşınırken düzeltildi — bkz. sources.yml known_issues) geri gelmediğini
+    doğrular: BDP toplamı 0'dan büyük olmalı ve Diyarbakır'ı kazanmış olmalı
+    (bilinen tarihsel sonuç, Gültan Kışanak)."""
     yerel = load_json(DATA_NORM / "yerel_secimler.json")
     secim = yerel["2014yerel"]
     bdp_total = 0
+    diyarbakir_kazanan = None
     for il in secim["iller"]:
         bdp_total += il.get("oy", {}).get("BDP", {}).get("oy", 0)
-    # documented bug: BDP toplami 0 olmali. 0 DEGILSE, sources.yml'deki
-    # known_issues artik gecersiz demektir — bu da bir FAIL, cunku belge
-    # veriyle senkron degil.
+        if il.get("plaka") == 21:
+            diyarbakir_kazanan = il.get("kazanan")
+    ok = bdp_total > 0 and diyarbakir_kazanan == "BDP"
     check(
-        "2014yerel BDP known_issue hâlâ sources.yml ile tutarlı",
-        bdp_total == 0,
-        f"BDP toplamı artık {bdp_total} (sources.yml'in known_issues'ı güncellenmeli)",
+        "2014yerel BDP known_issue hâlâ çözülmüş durumda (regresyon yok)",
+        ok,
+        f"BDP toplamı={bdp_total}, Diyarbakır kazananı={diyarbakir_kazanan} (beklenen: >0 ve BDP)",
     )
 
 

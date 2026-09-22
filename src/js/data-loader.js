@@ -1,7 +1,7 @@
   const $ = (s,el=document) => el.querySelector(s);
   const $$ = (s,el=document) => [...el.querySelectorAll(s)];
-  const fmt = n => n.toLocaleString('tr-TR');
-  const fmt1 = n => n.toLocaleString('tr-TR',{maximumFractionDigits:1,minimumFractionDigits:1});
+  const fmt = n => n==null ? '—' : n.toLocaleString('tr-TR');
+  const fmt1 = n => n==null ? '—' : n.toLocaleString('tr-TR',{maximumFractionDigits:1,minimumFractionDigits:1});
 
   // Gomulu veri window.__EMBEDDED_GZ__ altinda gzip+base64 olarak tutuluyor (boyutu
   // ~5 kat kucultmek icin) - DecompressionStream (tum modern tarayicilarda var) ile aciliyor.

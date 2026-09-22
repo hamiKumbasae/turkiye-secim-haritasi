@@ -120,3 +120,7 @@ etkinleştirmeniz yeterli.
   yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
 
 Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
+- 1984 öncesi 6 yerel seçimin (1950, 1955, 1963, 1968, 1973, 1977) sadece
+  il merkezi düzeyi var, ilçeler yok — bkz.
+  [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md) (1950-2024 arası tüm seçimlerin tam
+  takvimi ve bu projedeki kapsam durumu).

@@ -30,7 +30,7 @@
       const el = document.createElement('div'); el.className='party-row';
       el.innerHTML = '<span class="dot" style="background:'+partyColor(r.name)+'"></span>'+
         '<span class="name">'+short+'</span>'+
-        '<span class="oy">%'+r.oy.oran.toFixed(2)+' · '+fmt(r.oy.oy)+' oy</span>'+
+        '<span class="oy">'+(r.oy.oran!=null?'%'+r.oy.oran.toFixed(2)+' · ':'')+fmt(r.oy.oy)+' oy</span>'+
         '<span class="vekil">'+(r.vekil>0? r.vekil : '')+'</span>';
       return el;
     }
@@ -74,7 +74,7 @@
       const el = document.createElement('div'); el.className='party-row';
       el.innerHTML = '<span class="dot" style="background:'+partyColor(r.name)+'"></span>'+
         '<span class="name">'+short+'</span>'+
-        '<span class="oy">%'+r.oy.oran.toFixed(2)+' · '+fmt(r.oy.oy)+' oy</span>'+
+        '<span class="oy">'+(r.oy.oran!=null?'%'+r.oy.oran.toFixed(2)+' · ':'')+fmt(r.oy.oy)+' oy</span>'+
         '<span class="vekil"></span>';
       wrap.appendChild(el);
     }
@@ -96,7 +96,7 @@
       if(d.geomId) row.dataset.geomId = d.geomId;
       const short = d.kazanan ? (PARTY[d.kazanan]?PARTY[d.kazanan].short:d.kazanan) : '—';
       row.innerHTML = '<span class="dname">'+d.ad+'</span>'+
-        '<span class="dwinner"><span class="ddot" style="background:'+(d.kazanan?partyColor(d.kazanan):'var(--map-empty)')+'"></span>'+short+' · '+(d.oy[d.kazanan]?('%'+d.oy[d.kazanan].oran.toFixed(2)+' · '+fmt(d.oy[d.kazanan].oy)+' oy'):'–')+'</span>';
+        '<span class="dwinner"><span class="ddot" style="background:'+(d.kazanan?partyColor(d.kazanan):'var(--map-empty)')+'"></span>'+short+' · '+(d.oy[d.kazanan]?((d.oy[d.kazanan].oran!=null?'%'+d.oy[d.kazanan].oran.toFixed(2)+' · ':'')+fmt(d.oy[d.kazanan].oy)+' oy'):'–')+'</span>';
       if(d.geomId && pathByGeomId[d.geomId]){
         row.addEventListener('mouseenter', ()=> pathByGeomId[d.geomId].classList.add('selected'));
         row.addEventListener('mouseleave', ()=> pathByGeomId[d.geomId].classList.remove('selected'));

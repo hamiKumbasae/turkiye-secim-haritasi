@@ -1,8 +1,8 @@
 # Veri Kaynakları
 
-Bu belge, `index.html`'e gömülü 40 seçimin her birinin verisinin **nereden**
+Bu belge, `index.html`'e gömülü 46 seçimin her birinin verisinin **nereden**
 geldiğinin okunabilir özetidir. Makine-okunur, tam ayrıntılı hâli
-[`sources.yml`](sources.yml)'dedir — her iki dosya da aynı 40 anahtarı kapsar
+[`sources.yml`](sources.yml)'dedir — her iki dosya da aynı 46 anahtarı kapsar
 (anahtarlar `index.html` içindeki `secim_tarihi_data.json`'daki seçim
 anahtarlarıyla birebir aynıdır, örn. `2023`, `2014yerel`, `2017referandum`,
 `2023cb2tur`).
@@ -36,23 +36,44 @@ anahtarlarıyla birebir aynıdır, örn. `2023`, `2014yerel`, `2017referandum`,
 
 | Yıl | İl/İlçe kaynağı | Mahalle kaynağı |
 |---|---|---|
-| 2014cb | **YSK** (bu oturumda Wikipedia'nın yerine geçti) | YSK, 641/973 ilçe |
-| 2018cb | Habertürk | YSK, 641/973 ilçe |
-| 2023cb1tur | Habertürk | YSK, 641/973 ilçe |
-| 2023cb2tur | Habertürk | YSK, 641/973 ilçe |
+| **2014cb, 2018cb, 2023cb1tur, 2023cb2tur** | **YSK (acikveri API, sandık-düzeyi agrege)** | YSK, 641/973 ilçe |
 
-2014cb için: eski Wikipedia kaynağı sadece il düzeyindeydi. Bu oturumda YSK'den
-gerçek ilçe verisi çekildi; ulusal toplamlar eski veriyle birebir örtüştüğü
-doğrulandı.
+**2026-09-22 (üçüncü oturum):** Habertürk tamamen kaldırıldı — 4 seçimin de
+il/ilçe düzeyi artık `getSecimSandikSonucList` ile 998 ilçenin tamamından
+agrege ediliyor. Ulusal sonuçlar bilinen resmi rakamlarla (Erdoğan/İhsanoğlu/
+Demirtaş 2014, Erdoğan/İnce/Demirtaş/Akşener 2018, Erdoğan/Kılıçdaroğlu/Oğan
+2023) tutarlı — ayrıntı `sources.yml`.
 
 ## Genel Seçim / Milletvekili (20 seçim)
 
 | Dönem | İl kaynağı | İlçe kaynağı | Bilinen sorun / kapsam sınırı |
 |---|---|---|---|
-| 2011, 2015×2, 2018, 2023 | Habertürk | Habertürk | — (mahalle düzeyi de YSK'den eklendi) |
-| 1991, 1995, 1999, 2002, 2007 | Wikipedia | mertnuhoglu | **2002 Siirt**: kaynaktaki ilçe kırılımı bozuk, düzeltilmedi (bkz. aşağı) |
-| 1983, 1987 | Wikipedia | — | İlçe verisi yok |
+| **2011, 2015 Haziran, 2015 Kasım, 2018, 2023** | **YSK (acikveri API, sandık-düzeyi agrege)** | **YSK (aynı)** | Habertürk tamamen kaldırıldı (2026-09-22, üçüncü oturum) — bkz. aşağı |
+| **1983, 1987, 1991, 1995, 1999, 2002, 2007** | **YSK (il-bazlı resmi arşiv)** | mertnuhoglu (sadece 1991-2007) | İlçe düzeyi hâlâ GitHub kaynaklı — YSK'nin bu arşivi il-bazlı, ilçe kırılımı yok. **2002 Siirt**: mertnuhoglu kaynağındaki ilçe kırılımı bozuk, düzeltilmedi (bkz. aşağı) |
 | **1950, 1954, 1957, 1961, 1965, 1969, 1973, 1977** | **YSK (TÜİK kaynaklı)** | — | "Seçim çevresi" = il'in kendisiydi, ilçe düzeyi hiç var olmadı — bu bir kaynak eksikliği değil |
+
+**Habertürk → YSK geçişi (2026-09-22, üçüncü oturum):** Kullanıcının "Habertürk
+verisini silsek o verileri YSK'de bulamıyor muyuz?" sorusu üzerine —
+`scripts/haberturk-to-ysk-pipeline/` ile YSK'nin resmi `acikveri.ysk.gov.tr`
+API'sinden (`getSecimSandikSonucList`) **Türkiye'deki tüm ~998 ilçenin**
+sandık-düzeyi ham verisi çekilip il/ilçe toplamlarına agrege edildi —
+mahalle özelliğindeki poligon-geometri kısıtı burada yok (sadece sayı
+toplanıyor), bu yüzden 2009 sonrası **her** seçim için eksiksiz kapsanabiliyor.
+Habertürk primary olduğu 15 seçimin hepsi bu şekilde yükseltiliyor (genel
+2011-2023, yerel 2009-2024, CB 2014-2023, referandum 2010/2017) — devam eden
+bir işlem, tamamlanan seçimler yukarıdaki tabloda işaretli. Ayrıntı:
+`scripts/haberturk-to-ysk-pipeline/PROVENANCE.md`.
+
+**1983-2007 YSK güncellemesi (2026-09-22, ikinci oturum):** Bu 7 seçimin il
+düzeyi verisi de (1950-1977 ile AYNI arşiv ailesinden,
+`ysk.gov.tr/doc/dosyalar/docs/Milletvekili/1983-2007/<İl>.pdf`, 81/81 il)
+Wikipedia'dan YSK'nin resmi arşivine yükseltildi. 529 il×yıl kaydının
+528'inde parti-vekil toplamı YSK'nin özet rakamıyla birebir eşleşti (tek
+istisna: Bingöl 1983, YSK'nin kendi belgesi içi tutarsız — bkz.
+`sources.yml`). 7 yılın hepsinde il toplamları bilinen resmi ulusal
+sandalye sayılarıyla (399/450/450/550/550/550/550) birebir örtüştü. 2 parti
+(MÇP, YENP95) ilk kez ayrı izlendi, önceden "Diğer"e karışıyordu. Ayrıntı:
+`data/raw/ysk/1983-2007/PROVENANCE.md`.
 
 **Çoklu kaynak doğrulaması (2026-09-22, sadece 1950 için, kanıt amaçlı):**
 YSK'nin kendi il-bazlı PDF'lerinden topladığımız ulusal toplam, YSK'nin AYRI
@@ -85,42 +106,61 @@ o ildeki gerçek birinciliğini (il geneli %32,2) yansıtmıyor — Merkez ilçe
 kaynağı bulunamadığı için bu hatalı sayılar tahminle değiştirilmedi, olduğu
 gibi bırakıldı.
 
-## Yerel Seçim / Belediye Başkanlığı (9 seçim)
+## Yerel Seçim / Belediye Başkanlığı (15 seçim)
 
 | Yıl | Kaynak | Not |
 |---|---|---|
-| 2024, 2019, 2014, 2009 | Habertürk / Wikipedia | Mahalle düzeyi YSK'den eklendi |
-| 2004, 1999, 1994, 1989, 1984 | Wikipedia (il başına alt makaleler) | Katılım/seçmen verisi kaynakta yok |
+| **2024, 2019, 2014, 2009** | **YSK (acikveri API, sandık-düzeyi agrege — il+ilçe)** | Habertürk tamamen kaldırıldı (2026-09-23, dördüncü oturum) — bkz. aşağı |
+| **2004, 1999, 1994** | **YSK resmi arşiv (il + ilçe/belde, ~%75-76)** | 2026-09-22'de il düzeyi, 2026-09-23'te ilçe/belde düzeyi yükseltildi (bkz. aşağı); kalan ~%24-25 (sadece Denizli'nin merkez ilçesi + Gümüşhane 1994 istisnası) eski Wikipedia kaynağında kaldı |
+| 1989, 1984 | Wikipedia (il başına alt makaleler) | Katılım/seçmen verisi kaynakta yok — il VE ilçe düzeyi var; YSK'de sadece ulusal toplam PDF'i var, il-bazlı yok |
+| 1977, 1973, 1968, 1963, 1955, 1950 | Wikipedia (il başına alt makaleler) | 2026-09-22'de eklendi (bkz. [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md)) — **sadece il merkezi**, ilçeler boş; 1950/1955'te dolaylı seçim sistemi (kazanan = meclisi/başkanlığı sağlayan parti); ayrıntı için `sources.yml`'deki ilgili girişlere bakın |
 
-**2014 BDP/HDP sorunu:** Habertürk kaynaklı il/ilçe verisinde BDP'nin oyu her
-yerde 0 görünüyor (Diyarbakır dahil, oysa BDP o seçimi orada gerçekten
-kazanmıştı). Bu oturumda YSK'den çekilen mahalle-düzeyi veride gerçek oylar
-"HDP" sütunu altında bulundu ve mahalle katmanında BDP→HDP eşlemesiyle
-düzeltildi. **İl/ilçe düzeyindeki orijinal kayıt henüz düzeltilmedi** —
-sonraki yeniden-doğrulama aşamasının kapsamında.
+**Habertürk → YSK geçişi, yerel seçimler (2026-09-23, dördüncü oturum):**
+Genel/CB/referandum ile aynı `getSecimSandikSonucList` API'si kullanıldı, ama
+yerel seçimlerde her ilçe (ve büyükşehirlerde ayrıca bütün büyükşehir) AYRI
+bir yarış olduğu için genel seçimdeki gibi "ile ait tüm ilçeleri topla"
+yöntemi YANLIŞ sonuç verir (örn. İstanbul 2019'da tüm ilçeleri toplamak
+AKP %45,9/CHP %40,3 gibi hatalı bir fark üretiyordu — gerçekte neredeyse
+berabere bir seçimdi). Bunun yerine: **büyükşehir statüsündeki iller için
+`secimTuru=6` (Büyükşehir Belediye Başkanlığı, ilçeId=boş) agregesi**,
+**diğer iller için sadece "`<İl> MERKEZ`" ilçesinin kendi `secimTuru=2`
+sonucu** "il" kaydı olarak kullanıldı (2009/2014'te 16→30 büyükşehir,
+Kanun 6360 ile). "ilçeler" her zaman ilgili ilçenin kendi ayrı
+`secimTuru=2` sonucu. Bu düzeltme sırasında ayrıca **2014'ün BDP oy
+sorunu da tamamen çözüldü**: parti-sütun eşlemesi için kullanılan
+önbellekli `baslik_2014yerel.json` dosyasında BDP sütunu hiç yoktu (oylar
+sessizce toplanmıyordu) — canlı yeniden çekilip düzeltildi, BDP artık
+Diyarbakır'ı (ve il/ilçe toplamlarını) doğru yansıtıyor. Ayrıntı:
+`scripts/haberturk-to-ysk-pipeline/PROVENANCE.md`.
 
 ## Referandum (7 halk oylaması)
 
 | Yıl | Kaynak | Not |
 |---|---|---|
-| 2017 | Habertürk (il/ilçe) + YSK (mahalle) | — |
-| 2010 | Habertürk (il/ilçe) + YSK (mahalle) | **İlçe düzeyi oy SAYILARI tahmini** (bkz. aşağı); mahalle düzeyi gerçek |
+| **2017, 2010** | **YSK (acikveri API, sandık-düzeyi agrege — il+ilçe)** | Habertürk kaldırıldı (2026-09-22) — 2010'un eski "sandık×300 tahmini" sorunu da çözüldü, artık gerçek sayılar |
 | 2007, 1988, 1987, 1982, 1961 | Wikipedia | İlçe verisi yok, gerçek oy sayıları (tahmin değil) |
 
-**2010 referandum tahmini:** Habertürk kaynağı bu yıl için sadece oran +
-sandık sayısı veriyordu, gerçek oy sayısı yoktu. İlçe/il oy sayıları **sandık
-başına ~300 oy** varsayımıyla kabaca tahmin edildi (`status: estimated`,
-`method: sandik_sayisi_x_300` — bkz. `sources.yml`). Yüzdeler gerçek, mutlak
-sayılar yaklaşık. Bu oturumda eklenen mahalle-düzeyi YSK verisi bu tahminin
-yerine geçmiyor (farklı granülerlik) ama kapsadığı mahalleler için gerçek
-rakam sağlıyor.
+**2010 referandum — eski tahmin sorunu ÇÖZÜLDÜ (2026-09-22):** Önceden
+Habertürk kaynağı sadece oran + sandık sayısı veriyordu, ilçe/il oy sayıları
+sandık başına ~300 oy varsayımıyla tahmin ediliyordu. Artık YSK'nin
+`getSecimSandikSonucList` API'sinden 998 ilçenin TAMAMI sandık-düzeyinde
+çekilip toplandı — gerçek seçmen/geçerli/geçersiz/Evet/Hayır sayıları.
+Ulusal sonuç (%57,86 Evet) bilinen resmi rakamla tutarlı.
 
 ## Yurtdışı seçmen verisi
 
 2015 Haziran/Kasım, 2018, 2023 genel; 2017 referandumu; 2018, 2023 (1./2.
-tur) CB seçimlerinde yurtdışı sandıklarının oyu Habertürk'ten ayrı bir panelde
-tutuluyor, hiçbir ile atanmıyor (haritaya dahil değil). Tahmin yok, gerçek
-rakamlar.
+tur) CB seçimlerinde yurtdışı sandıklarının oyu ayrı bir panelde tutuluyor,
+hiçbir ile atanmıyor (haritaya dahil değil). Tahmin yok, gerçek rakamlar.
+
+**2026-09-23 güncellemesi:** 8 seçimin 5'i (2015 Haziran/Kasım, 2018 genel;
+2017 referandumu; 2018cb) Habertürk'ten YSK'nin `acikveri.ysk.gov.tr`
+API'sine taşındı ("ÜLKELER SANDIKLAR TOPLAMI" hazır-agrege satırı — geçerli
+oy/kullanılan oy/parti dağılımı; 2018 için Habertürk'ün rakamlarıyla birebir
+eşleşti). Kalan 3'ü (2023 genel, 2023cb1tur, 2023cb2tur) YSK'de bu agrege
+sıfır döndüğü için Habertürk'te kaldı. Taşınan 5 seçimde bile "seçmen/katılım/
+sandık" alanları eski kaynakta bırakıldı — YSK'nin bu üç alan için verdiği
+sayılar güvenilmez çıktı (ayrıntı `sources.yml`'deki known_issue).
 
 ## Harita geometrisi
 
@@ -136,12 +176,42 @@ rakamlar.
 
 ## Kapsam dışı / henüz yapılmadı
 
-- **TÜİK ile 2009 öncesi GENEL seçimlerin doğrulanması** kısmen tamamlandı:
-  1950-1977 (8 seçim) artık YSK'nin TÜİK kaynaklı arşivinden. 1983/1987 genel
-  seçimleri ve tüm 1950-2007 referandum/yerel seçimleri hâlâ Wikipedia
-  kaynaklı — YSK'nin sitesinde bunlar için benzer bir arşiv bulunamadı
-  (aranmadıysa ayrı bir araştırma gerekir).
+- **GENEL seçimlerin il/ilçe düzeyi artık tamamlandı:** 1950-2023 arası tüm
+  20 genel seçim ya YSK'nin resmi il-bazlı arşivinden (1950-2007) ya da
+  `acikveri.ysk.gov.tr` sandık-düzeyi agregesinden (2011+, bkz. yukarı).
+  Sadece 1991-2007'nin İLÇE düzeyi hâlâ GitHub/mertnuhoglu kaynaklı (YSK'nin
+  bu dönem için resmi ilçe-bazlı arşivi yok) — bkz. altındaki madde.
+- **Yerel 1994/1999/2004 il düzeyi (2026-09-22) ve ilçe/belde düzeyi
+  (2026-09-23) YSK'ye yükseltildi** (bkz. yukarıdaki tablo) — aynı PDF'lerin
+  ilçe/belde kırılımı bu oturumda da çıkarıldı (~%75-76 kapsama, 100'e
+  yakın ilçe kaydı önceden Wikipedia'da da hiç yoktu, tamamen yeni eklendi). 2012 Büyükşehir
+  Kanunu'yla "Merkez" ilçesini TEK bir yeni isimle değiştiren 5 il (Aydın→
+  Efeler, Muğla→Menteşe, Ordu→Altınordu, Tekirdağ→Süleymanpaşa, Trabzon→
+  Ortahisar) basit isim eşlemesiyle çözüldü (poligon gerekmedi, doğrulanmış
+  1:1 yeniden adlandırma). Kalan ~%24-25 sadece Denizli'nin merkez ilçesi —
+  bu il "Merkez"i Pamukkale VE Merkezefendi diye İKİ ayrı ilçeye böldü,
+  `geo/historical/district_splits.json` tarzı gerçek bir sentetik birleşim
+  poligonu gerektiriyor (ayrı bir GIS işi, henüz yapılmadı) — eski
+  Wikipedia kaynağında kaldı. Ayrıntı: `scripts/yerel-1994-1999-2004-pipeline/
+  PROVENANCE.md`.
+- Yerel 1984/1989'da sadece ULUSAL toplam PDF'i var (il bazlı yok, 1963-1977
+  gibi) — bu ikisi Wikipedia'da kalacak.
+- Referandum 2010/2017 için YSK'nin `halkoylamasi-arsivi/2648` sayfasındaki
+  ayrı yıl sayfaları (`16-nisan-2017-.../5002`, `12-eylul-2010-.../5003`)
+  henüz taranmadı — il-bazlı resmi PDF olup olmadığı bilinmiyor (not:
+  sandık-düzeyi `getSecimSandikSonucList` verisi zaten primary kaynak,
+  bu madde sadece ek bir PDF-arşiv çapraz kontrolü için).
+- 1991-2007 genel seçimlerin İLÇE düzeyi hâlâ GitHub (mertnuhoglu) kaynaklı
+  — YSK'nin bu dönem için resmi bir ilçe-bazlı arşivi bulunamadı ("seçim
+  çevresi" zaten il'in kendisiydi, ayrı bir ilçe sayımı hiç yapılmamış
+  olabilir).
 - Wikipedia/Habertürk kaynaklı kalan verilerin tek tek YSK/TÜİK ile çapraz
   doğrulanıp gerekirse değiştirilmesi.
 - 2019 İstanbul BB Yenileme, 2024 Yenileme Seçimi, 2026 Ara Seçimi (tekil/özel
   seçimler) — henüz eklenmedi.
+- **1984 öncesi 6 yerel seçimin (1950-1977) ilçe düzeyi verisi** — 2026-09-22'de
+  bu 6 yılın İL MERKEZİ düzeyi eklendi (bkz. yukarıdaki tablo ve
+  [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md)), ama ilçeler (Adıyaman'ın Besni'si
+  gibi, 1984+ verisinde olduğu gibi) hâlâ yok — `ilceler` bu 6 yıl için boş.
+  Ara seçim ve Cumhuriyet Senatosu seçimleri gibi kapsam-dışı kategoriler için
+  bkz. [`data/secim_takvimi.json`](data/secim_takvimi.json).
