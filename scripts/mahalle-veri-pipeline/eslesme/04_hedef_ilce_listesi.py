@@ -1,6 +1,9 @@
 import json
+import os
+from pathlib import Path
 
-OUT = "/private/tmp/claude-501/-Users-hamikumbasar-Desktop-Turkiye-Secim-Haritasi/09ece001-ee3a-4169-9c6c-01e7aec72612/scratchpad/osm_mahalle"
+WORKDIR = os.environ.get("MAHALLE_WORKDIR") or str(Path(__file__).resolve().parent.parent / ".work")
+OUT = f"{WORKDIR}/osm_mahalle"
 
 matched_ilce = json.load(open(f"{OUT}/ysk_ilce_matched.json", encoding="utf-8"))
 counts = json.load(open(f"{OUT}/ilce_mahalle_counts.json", encoding="utf-8"))

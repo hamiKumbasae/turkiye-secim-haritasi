@@ -1,11 +1,17 @@
 import json
+import os
 import sys
 import unicodedata
 from collections import defaultdict
+from pathlib import Path
 
-OSM = "/private/tmp/claude-501/-Users-hamikumbasar-Desktop-Turkiye-Secim-Haritasi/09ece001-ee3a-4169-9c6c-01e7aec72612/scratchpad/osm_mahalle"
-TTZ = "/private/tmp/claude-501/-Users-hamikumbasar-Desktop-Turkiye-Secim-Haritasi/09ece001-ee3a-4169-9c6c-01e7aec72612/scratchpad/ttezer_mahalle"
-ROOT = "/private/tmp/claude-501/-Users-hamikumbasar-Desktop-Turkiye-Secim-Haritasi/09ece001-ee3a-4169-9c6c-01e7aec72612/scratchpad"
+# Calisma dizini: varsayilan olarak bu pipeline klasorunun icinde .work/
+# (gitignore'da) — fetch/eslesme script'lerinin ara ciktilarini tutar.
+# MAHALLE_WORKDIR env degiskeniyle ezilebilir.
+WORKDIR = os.environ.get("MAHALLE_WORKDIR") or str(Path(__file__).resolve().parent.parent / ".work")
+OSM = f"{WORKDIR}/osm_mahalle"
+TTZ = f"{WORKDIR}/ttezer_mahalle"
+ROOT = WORKDIR
 
 def fold(s):
     if s is None: return ""

@@ -1,5 +1,7 @@
 import json
+import os
 import unicodedata
+from pathlib import Path
 
 def fold(s):
     if s is None:
@@ -15,10 +17,14 @@ def fold(s):
     s = " ".join(s.split())
     return s
 
-OUT = "/private/tmp/claude-501/-Users-hamikumbasar-Desktop-Turkiye-Secim-Haritasi/09ece001-ee3a-4169-9c6c-01e7aec72612/scratchpad/osm_mahalle"
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+WORKDIR = os.environ.get("MAHALLE_WORKDIR") or str(Path(__file__).resolve().parent.parent / ".work")
+OUT = f"{WORKDIR}/osm_mahalle"
 
 # project's authoritative ilce list (plaka, ad, geomId) from the CB 2023 2nd tur bundle
-proj = json.load(open("/Users/hamikumbasar/Desktop/2023_Secim_Verileri/1950_2023_tam_veri_seti.json", encoding="utf-8"))
+# — artik repo icinde, data/raw/legacy-preprocessed/'de snapshot'lanmis durumda
+# (bkz. o klasorun PROVENANCE.md'si).
+proj = json.load(open(REPO_ROOT / "data" / "raw" / "legacy-preprocessed" / "1950_2023_tam_veri_seti.json", encoding="utf-8"))
 proj_ilceler = proj["secimler"]["2023cb2tur"]["ilceler"]
 proj_index = {}
 for row in proj_ilceler:

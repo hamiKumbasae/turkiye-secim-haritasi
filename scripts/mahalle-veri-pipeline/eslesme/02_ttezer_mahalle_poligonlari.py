@@ -1,9 +1,12 @@
 import json
 import glob
+import os
 import unicodedata
 from collections import Counter, defaultdict
+from pathlib import Path
 
-DIR = "/private/tmp/claude-501/-Users-hamikumbasar-Desktop-Turkiye-Secim-Haritasi/09ece001-ee3a-4169-9c6c-01e7aec72612/scratchpad/ttezer_mahalle"
+WORKDIR = os.environ.get("MAHALLE_WORKDIR") or str(Path(__file__).resolve().parent.parent / ".work")
+DIR = f"{WORKDIR}/ttezer_mahalle"
 
 features_by_geomid = defaultdict(list)
 type_counter = Counter()

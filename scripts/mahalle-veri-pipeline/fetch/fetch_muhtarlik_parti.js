@@ -1,6 +1,5 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
-const OUT = '/private/tmp/claude-501/-Users-hamikumbasar-Desktop-Turkiye-Secim-Haritasi/09ece001-ee3a-4169-9c6c-01e7aec72612/scratchpad';
 
 // usage: node fetch_muhtarlik_parti.js <secimId> <secimTuru> <outFile> <targetsFile> <majorMapJson>
 const SECIM_ID = parseInt(process.argv[2]);
@@ -18,7 +17,9 @@ const sumBagimsizNames = Object.entries(MAJOR_MAP).filter(([,v]) => v === 'SUM_B
 
 (async () => {
   const targets = JSON.parse(fs.readFileSync(TARGETS_FILE, 'utf8'));
-  const browser = await chromium.launch({ executablePath: '/Users/hamikumbasar/Library/Caches/ms-playwright/chromium-1234/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing' });
+  // executablePath verilmezse Playwright'in kendi indirdigi Chromium'u kullanir
+  // (bkz. package.json — `npx playwright install chromium`).
+  const browser = await chromium.launch();
   const page = await browser.newPage();
   await page.goto('https://acikveri.ysk.gov.tr/', { waitUntil: 'networkidle', timeout: 60000 });
   await page.waitForTimeout(1000);
