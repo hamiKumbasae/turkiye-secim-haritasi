@@ -23,7 +23,7 @@
         "mahalle/2024yerel.json": "803419e9b4c3ade3bfddc37fb27b67ab2537c4577a520f407d749dc4ee29d9ac",
         "meclis_2024.json": "61cd860e5ba2d3602035dfd50652328d854a746e1223425704ee0b0f6de5182e",
         "partiler.json": "33fd52da7ee58977d2cd07419480cf7b6a4fff924a4b8063608d17b03bf0a38a",
-        "referandumlar.json": "11260040f7b4516752cfab59048998a86d9991bf948c2739361e5434542d34a3",
+        "referandumlar.json": "5bb5a9eec96d9e73ab65b4e31fcbcb723f97c08c71481db45b9bc3cc4b181437",
         "yerel_secimler.json": "f563b265bdf9eb85e9a676b30a700a57d208c08140742d454e1be79093d61106"
       }
     },
@@ -306,6 +306,20 @@
       "file_count": 1,
       "files": {
         "1950_Secim_Sonuclari_il_bazli_ayri_sayfa.pdf": "6bf24e6ab7b5708c04f698fd5274984e806f58bad3e1cf807773b09735350638"
+      }
+    },
+    "data/raw/ysk/referandum": {
+      "checksum_file": "data/raw/ysk/referandum/checksums.sha256",
+      "file_count": 8,
+      "files": {
+        "1961.pdf": "b7affb3086bdf74e9136b038912a6b028d3dd0285d7c7c62e4e17500bacc585b",
+        "1961_parsed.json": "55c80416f2dd8448c990e467b3280ab8c09f3b5e561c5578177b1dcc96a1074a",
+        "1982.pdf": "a1e194e4d909e21bbdc17208b7bbb314045becf617b811d233e5d4efc4bbc5ba",
+        "1982_parsed.json": "da3d29b74176d25888cb2235e57753d1e917c2b4b6a76ee2a8166438c44b269a",
+        "1987.pdf": "d7d184c836d7b4dd0438e5861d2b24dd7edeccdad2250fc0feaa0e4d094b5e0b",
+        "1987_parsed.json": "ff7a971a4c94c1de22d0acdfba573722051146f5c002d41f9fa313387a81f183",
+        "1988.pdf": "32508c39e383b1d7c49909f08b059307f380104b6048b4a0bdc2883fc4ec8627",
+        "1988_parsed.json": "374fa6f63e9c3e7d36b2cfbd33e06ddeef81a9735e8240785ba02298010d3603"
       }
     },
     "geo/historical": {
