@@ -13,6 +13,17 @@ dosyanın içine gömülü, sunucu veya internet bağlantısı gerekmez.
 (Not: Sayfa açılışta Google Fonts'tan bir yazı tipi çekmeye çalışır — internet
 yoksa bu sessizce atlanır, harita/veri işlevselliğini etkilemez.)
 
+## Performans
+
+Mahalle/muhtarlık düzeyi oy verisi (15 seçim, açık haliyle ~75MB) sayfa
+açılışında DEĞİL, kullanıcı gerçekten bir ilçeye tıklayıp o yılın mahalle
+verisine indiğinde, sadece o yıl için lazy-load edilir (bkz. `src/js/
+data-loader.js` + `map.js`). Mahalle poligonları (`mahalle_geo.json`, ~17MB
+açık, yıllar arası paylaşımlı) hâlâ eager yükleniyor — bu bilinçli bir
+basitleştirme: il/ilçe bazında da bölünebilirdi ama görece küçük olduğu ve
+her yeni seçimde büyümediği (sadece yeni ilçe eklenince büyür) için şimdilik
+gerekli görülmedi.
+
 ## Veri mimarisi: raw → normalized → build
 
 Veri kaynağı ve uygulama kodu artık ayrı. Hiçbir sayı elle `index.html`
@@ -32,13 +43,23 @@ data/normalized/    Seçim türüne göre ayrılmış, kayıpsız veri
                     referandumlar/mahalle/meclis_2024)
 geo/normalized/     Güncel, basitleştirilmiş il/ilçe/mahalle geometrisi
 
-src/index.template.html   Uygulamanın HTML/CSS/JS'i (veri hariç, ~66KB)
-scripts/build.py           Yukarıdakileri birleştirip index.html üretir
+src/index.template.html   HTML iskeleti (veri hariç, placeholder'lı)
+src/styles/main.css        Uygulamanın tüm CSS'i
+src/js/*.js                 Uygulamanın JS'i, 11 dosyaya bölünmüş (data-loader,
+                             election-config, state, seatbar, map, tooltip,
+                             detail-panel, search, nav, table, app)
+scripts/build.py            Yukarıdakileri birleştirip index.html üretir
 scripts/validate.py         build.py'ye gömülü hızlı yapısal kontrol (gate)
 tests/validate_elections.py Ayrı, yavaş/analitik kontrol seti
+.github/workflows/validate.yml  Her push/PR'da validate.py + validate_elections.py +
+                                 build.py + "index.html güncel mi" kontrolü
 
 index.html (repo kökü)   TEK GERÇEK/ÇALIŞAN DOSYA — build.py'nin çıktısı, commit'lenir
 ```
+
+`src/js/*.js` gerçek ES modülleri değil — build.py bunları tanımlı bir
+sırayla tek `<script>` içine metin olarak birleştirir (aynı paylaşımlı
+closure/state korunur). Kaynakta ayrı dosyalar, dağıtımda hâlâ tek dosya.
 
 Her klasörün kendi `PROVENANCE.md`'si var (nereden geldiği, nasıl
 doğrulandığı). Kaynakların tam listesi için bkz. [`SOURCES.md`](SOURCES.md)
@@ -47,10 +68,13 @@ birincil/yedek kaynağı + bilinen sorunlar).
 
 ## Veriyi güncellemek
 
-1. `data/normalized/` veya `geo/normalized/` altındaki ilgili dosyayı
-   düzenleyin (yeni bir seçim ekliyorsanız yeni bir `data/normalized/
-   mahalle/<yil>.json` gibi).
+1. `data/normalized/`, `geo/normalized/`, `src/styles/`, `src/js/` veya
+   `src/index.template.html` altındaki ilgili dosyayı düzenleyin (yeni bir
+   seçim ekliyorsanız yeni bir `data/normalized/mahalle/<yil>.json` gibi —
+   mahalle verisi için elle yerine `scripts/mahalle-veri-pipeline/transform/
+   import_mahalle.py` kullanın, aşağıya bakın).
 2. ```bash
+   pip install -r requirements.txt   # ilk kurulumda bir kez (pyyaml)
    python3 scripts/build.py
    ```
    Bu, önce `scripts/validate.py`'nin yapısal kontrollerinden geçirir (hatalı
@@ -60,12 +84,18 @@ birincil/yedek kaynağı + bilinen sorunlar).
    ```bash
    python3 tests/validate_elections.py
    ```
-4. `index.html`'i commit'leyin.
+4. `index.html`'i commit'leyin. `.github/workflows/validate.yml` her push/PR'da
+   aynı kontrolleri + "commit'li `index.html` kaynaklarla senkron mu" kontrolünü
+   otomatik çalıştırır — eski/senkron olmayan bir `index.html` ana dala giremez.
 
 `scripts/mahalle-veri-pipeline/` klasörü, mahalle düzeyi verinin YSK Açık
-Veri Portalı'ndan nasıl çekildiğinin/işlendiğinin kaydı — yeni bir seçim
-eklerken oradaki script'ler `data/normalized/mahalle/` için ham girdiyi
-üretir (bkz. o klasörün kendi README'si).
+Veri Portalı'ndan nasıl çekildiğinin/işlendiğinin kaydı (kurulum: `cd
+scripts/mahalle-veri-pipeline && npm install && npx playwright install
+chromium`). Yeni bir seçim eklerken `transform/import_mahalle.py --year
+<yil> --input mahalle_<yil>.json --build` komutu veriyi doğru yerlere
+otomatik yerleştirip doğrular (bkz. o klasörün kendi README'si).
+`scripts/legacy/` altındaki iki script (mimarinin eski, ters yönlü hâline
+ait) artık kullanılmıyor, sadece tarihsel referans.
 
 ## Web'e yayınlama (GitHub Pages)
 
