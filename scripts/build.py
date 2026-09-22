@@ -1,36 +1,32 @@
 """
 src/index.template.html + data/normalized/ + geo/normalized/ + geo/historical/
-kaynaklarindan dist/index.html uretir.
+kaynaklarindan index.html uretir (repo kokunde — GitHub'dan indirip cift
+tiklayarak acmak icin, ayrica GitHub Pages "Deploy from branch" kok dizin
+modunu de destekler).
 
-v1: artik kok index.html'i OKUMUYOR — tamamen yeni raw->normalized hattindan
-gercek assembly yapiyor. gzip mtime=0 ile deterministik (iki calistirma
-bayt-bayt ayni cikti uretir).
+gzip mtime=0 ile deterministik: ayni veriden iki calistirma bayt-bayt ayni
+cikti uretir.
 
 Kullanim:
   python3 scripts/build.py
-  python3 scripts/build.py --verify-against-legacy   # eski kok index.html ile
-                                                        # JSON derin-esitlik kanit
 """
-import sys
 import json
 import gzip
 import base64
 import pathlib
+import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import validate as _validate  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "src" / "index.template.html"
-OUT = ROOT / "dist" / "index.html"
+OUT = ROOT / "index.html"
 DATA_NORM = ROOT / "data" / "normalized"
 GEO_NORM = ROOT / "geo" / "normalized"
 GEO_HIST = ROOT / "geo" / "historical"
-LEGACY_INDEX = ROOT / "index.html"
 
 PLACEHOLDER = '"__BUILD_WILL_INSERT_EMBEDDED_GZ_JSON__"'
-START_MARKER = "window.__EMBEDDED_GZ__ = "
-END_MARKER = ";\n</script>"
 
 TUR_DOSYALARI = ["cumhurbaskanligi", "genel_secimler", "yerel_secimler", "referandumlar"]
 ERA_ADLARI = ["era1950", "era1954", "era1957_1987", "era1991", "era1995", "era1999"]
@@ -87,51 +83,17 @@ def assemble_embedded() -> dict:
     return embedded
 
 
-def extract_embedded_from_html(html: str) -> dict:
-    start = html.find(START_MARKER)
-    end = html.find(END_MARKER, start)
-    if start == -1 or end == -1:
-        raise SystemExit("window.__EMBEDDED_GZ__ blogu bulunamadi")
-    return json.loads(html[start + len(START_MARKER):end])
-
-
-def decompress(b64: str):
-    return json.loads(gzip.decompress(base64.b64decode(b64)))
-
-
-def verify_against_legacy(new_embedded: dict):
-    legacy_html = LEGACY_INDEX.read_text(encoding="utf-8")
-    legacy_embedded = extract_embedded_from_html(legacy_html)
-
-    all_ok = True
-    for key in legacy_embedded:
-        old_val = decompress(legacy_embedded[key])
-        new_val = decompress(new_embedded[key])
-        ok = old_val == new_val
-        all_ok &= ok
-        print(f"  {'OK ' if ok else 'FARK'}  {key}")
-    if not all_ok:
-        raise SystemExit("KAYIPSIZLIK KANITI BASARISIZ — eski ve yeni veri arasinda fark var")
-    print("KAYIPSIZLIK KANITI: TUMU GECTI (eski index.html == yeni dist/index.html, JSON derin esitlik)")
-
-
 def main():
-    verify = "--verify-against-legacy" in sys.argv
-
     embedded = assemble_embedded()
 
     template_html = TEMPLATE.read_text(encoding="utf-8")
     if PLACEHOLDER not in template_html:
         raise SystemExit(f"Placeholder sablonda bulunamadi: {TEMPLATE}")
     embedded_json_str = json.dumps(embedded, ensure_ascii=False, separators=(",", ":"))
-    dist_html = template_html.replace(PLACEHOLDER, embedded_json_str, 1)
+    out_html = template_html.replace(PLACEHOLDER, embedded_json_str, 1)
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(dist_html, encoding="utf-8")
-    print(f"yazildi: {OUT} ({len(dist_html)} bayt)")
-
-    if verify:
-        verify_against_legacy(embedded)
+    OUT.write_text(out_html, encoding="utf-8")
+    print(f"yazildi: {OUT} ({len(out_html)} bayt)")
 
 
 if __name__ == "__main__":

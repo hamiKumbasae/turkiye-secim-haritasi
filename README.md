@@ -6,16 +6,16 @@ düzeyine kadar iniyor.
 
 ## Nasıl açılır
 
-**Tek dosya.** `dist/index.html`'e çift tıklayın — tüm veri (~21 MB, gzip
-sıkıştırılmış) doğrudan dosyanın içine gömülü, sunucu veya internet
-bağlantısı gerekmez.
+**Tek dosya.** Bu depoyu indirin (Code → Download ZIP, ya da `git clone`) ve
+`index.html`'e çift tıklayın — tüm veri (~21 MB, gzip sıkıştırılmış) doğrudan
+dosyanın içine gömülü, sunucu veya internet bağlantısı gerekmez.
 
 (Not: Sayfa açılışta Google Fonts'tan bir yazı tipi çekmeye çalışır — internet
 yoksa bu sessizce atlanır, harita/veri işlevselliğini etkilemez.)
 
 ## Veri mimarisi: raw → normalized → build
 
-Veri kaynağı ve uygulama kodu artık ayrı. Hiçbir sayı elle `dist/index.html`
+Veri kaynağı ve uygulama kodu artık ayrı. Hiçbir sayı elle `index.html`
 içinde düzenlenmez:
 
 ```
@@ -33,11 +33,11 @@ data/normalized/    Seçim türüne göre ayrılmış, kayıpsız veri
 geo/normalized/     Güncel, basitleştirilmiş il/ilçe/mahalle geometrisi
 
 src/index.template.html   Uygulamanın HTML/CSS/JS'i (veri hariç, ~66KB)
-scripts/build.py           Yukarıdakileri birleştirip dist/index.html üretir
+scripts/build.py           Yukarıdakileri birleştirip index.html üretir
 scripts/validate.py         build.py'ye gömülü hızlı yapısal kontrol (gate)
 tests/validate_elections.py Ayrı, yavaş/analitik kontrol seti
 
-dist/index.html      TEK GERÇEK/ÇALIŞAN DOSYA — build.py'nin çıktısı, commit'lenir
+index.html (repo kökü)   TEK GERÇEK/ÇALIŞAN DOSYA — build.py'nin çıktısı, commit'lenir
 ```
 
 Her klasörün kendi `PROVENANCE.md`'si var (nereden geldiği, nasıl
@@ -54,13 +54,13 @@ birincil/yedek kaynağı + bilinen sorunlar).
    python3 scripts/build.py
    ```
    Bu, önce `scripts/validate.py`'nin yapısal kontrollerinden geçirir (hatalı
-   veri build'i durdurur), sonra `dist/index.html`'i yeniden üretir.
+   veri build'i durdurur), sonra `index.html`'i yeniden üretir.
    Deterministiktir: aynı veriden iki kez çalıştırınca bayt-bayt aynı çıktı.
 3. İsteğe bağlı, daha kapsamlı kontrol:
    ```bash
    python3 tests/validate_elections.py
    ```
-4. `dist/index.html`'i commit'leyin.
+4. `index.html`'i commit'leyin.
 
 `scripts/mahalle-veri-pipeline/` klasörü, mahalle düzeyi verinin YSK Açık
 Veri Portalı'ndan nasıl çekildiğinin/işlendiğinin kaydı — yeni bir seçim
@@ -69,11 +69,9 @@ eklerken oradaki script'ler `data/normalized/mahalle/` için ham girdiyi
 
 ## Web'e yayınlama (GitHub Pages)
 
-**Not:** GitHub Pages'in "Deploy from a branch" modu sadece kök dizini veya
-`/docs`'u kaynak olarak destekliyor, `/dist`'i değil. Pages ile yayınlamak
-isterseniz ya `dist/index.html`'i ayrıca köke/`docs/`'a kopyalamanız ya da
-GitHub Actions tabanlı bir deploy akışı kurmanız gerekir — bu depoda henüz
-otomatik bir deploy adımı yok.
+`index.html` repo kökünde olduğu için GitHub Pages'in "Deploy from a branch"
+modu (kök dizin) ek bir adım gerektirmeden çalışır — Settings → Pages'ten
+etkinleştirmeniz yeterli.
 
 ## Bilinen kapsam sınırları
 

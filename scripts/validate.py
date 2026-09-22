@@ -1,6 +1,6 @@
 """
 Hizli, yapisal dogrulama — scripts/build.py'ye gomulu bir pre-flight gate
-olarak calisir (assembly sonrasi, dist/index.html yazilmadan once). Yavas/
+olarak calisir (assembly sonrasi, index.html yazilmadan once). Yavas/
 analitik kontroller icin bkz. tests/validate_elections.py.
 
 Bagimsiz calistirmak icin:

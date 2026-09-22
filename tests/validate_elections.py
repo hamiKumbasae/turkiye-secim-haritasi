@@ -15,7 +15,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_NORM = ROOT / "data" / "normalized"
-DIST = ROOT / "dist" / "index.html"
+DIST = ROOT / "index.html"
 
 # GitHub'in tek dosya limiti 100MB; erken uyari icin cok daha dusuk bir esik.
 DIST_SIZE_CEILING = 90 * 1024 * 1024
@@ -125,11 +125,11 @@ def check_known_issue_2014yerel_bdp():
 
 def check_dist_size():
     if not DIST.exists():
-        check("dist/index.html boyut tavanı", False, "dosya yok — önce scripts/build.py çalıştırın")
+        check("index.html boyut tavanı", False, "dosya yok — önce scripts/build.py çalıştırın")
         return
     size = DIST.stat().st_size
     check(
-        f"dist/index.html boyutu GitHub 100MB sınırının altında (şu an {size/1024/1024:.1f}MB)",
+        f"index.html boyutu GitHub 100MB sınırının altında (şu an {size/1024/1024:.1f}MB)",
         size < DIST_SIZE_CEILING,
     )
 
