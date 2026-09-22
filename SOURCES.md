@@ -54,6 +54,18 @@ doğrulandı.
 | 1983, 1987 | Wikipedia | — | İlçe verisi yok |
 | **1950, 1954, 1957, 1961, 1965, 1969, 1973, 1977** | **YSK (TÜİK kaynaklı)** | — | "Seçim çevresi" = il'in kendisiydi, ilçe düzeyi hiç var olmadı — bu bir kaynak eksikliği değil |
 
+**Çoklu kaynak doğrulaması (2026-09-22, sadece 1950 için, kanıt amaçlı):**
+YSK'nin kendi il-bazlı PDF'lerinden topladığımız ulusal toplam, YSK'nin AYRI
+bir "ulusal özet" sayfasından ve TBMM'nin kendi seçim veritabanından farklı
+çıkıyor — üçü de birbirinden az çok sapıyor. İlginç olan: bizim il-bazlı
+toplamımız, YSK'nin KENDİ ulusal özetinden çok TBMM'ye yakın (DP/CHP/Millet
+Partisi için %0,01-0,27 fark) — yani YSK'nin kendi sitesi bile kendi
+içinde tam tutarlı değil. Bu, `sources.yml`'de `1950` altında
+`discrepancies` olarak (çözülmeden, sadece kaydedilerek) belgelendi. Aynı
+derinlikte doğrulama diğer 19 genel seçim yılı için henüz yapılmadı — bu,
+onaylanmış bir sonraki adım (bkz. `scripts/genel-1950-1977-pipeline/
+verify_national_totals.py`).
+
 **1950-1977 YSK/TÜİK güncellemesi (2026-09-22):** Bu 8 seçimin il düzeyi
 verisi, YSK'nin `ysk.gov.tr`'de yayımladığı ve kendi notuna göre "Türkiye
 İstatistik Kurumu verileri esas alınarak hazırlanmış" resmi bir arşivden

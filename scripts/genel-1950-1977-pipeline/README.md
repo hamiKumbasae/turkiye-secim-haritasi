@@ -22,7 +22,36 @@ merge_into_normalized.py   Çıkan JSON'u data/normalized/genel_secimler.json'a
                             sayısıyla TAM eşleştiğini doğrular (eşleşmezse
                             hiçbir şey yazmadan durur), partiler.json'a yeni
                             parti renkleri ekler.
+
+ysk_national_totals.json   YSK'nin "Türkiye Geneli" (ulusal özet — il-bazlı
+                            PDF'lerden AYRI bir sayfa) rakamları + (sadece
+                            1950 için) TBMM'nin seçim veritabanı rakamları.
+
+verify_national_totals.py  data/normalized/genel_secimler.json'daki il
+                            kayıtlarını toplayıp ysk_national_totals.json'daki
+                            iki bağımsız kaynakla karşılaştırır (SADECE ulusal
+                            toplam düzeyinde — il/ilçe zinciri henüz yok).
+                            Farkları ÇÖZMEYE çalışmaz, sadece ölçüp raporlar.
 ```
+
+## Çoklu kaynak doğrulaması (verify_national_totals.py)
+
+`python3 verify_national_totals.py` çalıştırıldığında 8 yılın her biri için
+il-bazlı toplamımızı YSK'nin kendi ulusal özet sayfasıyla (ve 1950 için
+ayrıca TBMM'nin veritabanıyla) karşılaştırır. 1965/1969/1977 için toplamlar
+neredeyse birebir örtüşüyor (%0-0,5 fark); 1950/1954/1957'de %1-1,7 fark var.
+
+**En dikkat çekici bulgu:** 1950'de bizim il-bazlı toplamımız, YSK'nin
+KENDİ ulusal özetinden çok TBMM'nin veritabanına yakın çıkıyor (DP/CHP/
+Millet Partisi için %0,01-0,27 fark, YSK özetiyle %0,88-3,16 fark) — yani
+YSK'nin kendi sitesindeki iki farklı sayfa (il-bazlı tablolar vs. ulusal
+özet) bile birbiriyle tam tutarlı değil. Bu, `sources.yml`'de `1950` altında
+`discrepancies` olarak kaydedildi, çözülmedi.
+
+**Kapsam dışı (bilinçli, onay bekliyor):** Diğer 19 genel seçim yılı (1983-
+2023) için TBMM/TÜİK ile aynı derinlikte çapraz doğrulama henüz yapılmadı.
+İl/ilçe seviyesinde aşağıdan-yukarı matematiksel zincir doğrulaması
+(mahalle→ilçe→il→Türkiye) da henüz yok.
 
 ## Yeniden çalıştırmak için
 

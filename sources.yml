@@ -199,10 +199,43 @@ elections:
     verification: ["Toplam 541 vekil resmi ulusal rakamla VE il toplamıyla birebir doğrulandı (64/64 il, Sakarya bu tarihte zaten yoktu)."]
   "1950":
     type: milletvekili
-    primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}
+    primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı, il-bazlı PDF'ler)", retrieved_at: "2026-09-22", level: [il], status: official}
     legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported, note: "Wikipedia'da vekil sütunu hiç yoktu — YSK arşivi bunu ilk kez sağladı."}
     coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"]
     verification: ["Toplam 487 vekil resmi ulusal rakamla VE il toplamıyla birebir doğrulandı (63/63 il, Sakarya bu tarihte zaten yoktu)."]
+    # 2026-09-22'de baslatilan cok-katmanli dogrulama calismasinin ilk
+    # (kanit niteligindeki) girisi — bkz. scripts/genel-1950-1977-pipeline/
+    # verify_national_totals.py + ysk_national_totals.json. Diger 19 genel
+    # secim yili icin ayni derinlikte dogrulama HENUZ yapilmadi (ayri, onay
+    # bekleyen bir sonraki adim).
+    verification_status: verified_with_historical_source_discrepancy
+    cross_check_sources:
+      - authority: YSK
+        type: official_summary_page
+        title: "YSK 'Türkiye Geneli Seçim Sonuçları' (aynı arşivin ULUSAL ÖZET sekmesi — il-bazlı PDF'lerden AYRI bir sayfa)"
+        url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007"
+        retrieved_at: "2026-09-22"
+      - authority: TBMM
+        type: official_crosscheck
+        title: "TBMM Seçim Veritabanı"
+        url: "www5.tbmm.gov.tr/develop/owa/secim_sorgu.secimdeki_partiler?p_secim_yili=1950"
+        retrieved_at: "2026-09-22"
+    discrepancies:
+      - field: "ulusal parti oy sayıları (DP/CHP/Millet Partisi/Bağımsız)"
+        note: >
+          Üç farklı resmi/yarı-resmi kaynak üç farklı ulusal toplam veriyor.
+          İlginç bulgu: bizim il-bazlı YSK PDF'lerinden TOPLAYARAK ürettiğimiz
+          rakam (DP≈4.252.820, CHP≈3.176.398, MP≈250.225) YSK'nin KENDİ ulusal
+          özet sayfasından (DP 4.391.694, CHP 3.148.626, MP 368.537) daha çok
+          TBMM'nin veritabanına (DP 4.241.393, CHP 3.176.561, MP 250.414) yakın
+          çıkıyor — DP %0,27, CHP %0,01, MP %0,08 fark. Yani YSK'nin kendi il
+          tabloları ile YSK'nin kendi ulusal özeti bile birbiriyle tam
+          örtüşmüyor. Tek büyük kalan istisna: "Bağımsız" — bizim toplam
+          (137.750) ne YSK özetiyle (44.537) ne TBMM ile (383.282) eşleşiyor.
+          Çözülmedi, sadece kaydedildi. Ayrıntı/tam rakamlar:
+          scripts/genel-1950-1977-pipeline/ysk_national_totals.json.
+        status: unresolved
+    verified: {national_totals: false, province_totals: true, district_totals: null}
 
   # ---------------- Yerel Seçim / Belediye Başkanlığı (9 seçim) ----------------
 
