@@ -1,20 +1,17 @@
 """
-build/mahalle_<yil>.json dosyalarini index.html'in gomulu, gzip+base64
-sikistirilmis window.__EMBEDDED_GZ__ objesine ekler.
+TARIHSEL / ARTIK KULLANILMIYOR — bkz. scripts/legacy/README.md.
 
-Kullanim:
-  python3 gom_ve_sikistir.py <index.html yolu> <yil_anahtari>=<mahalle_json yolu> [<yil_anahtari>=<yol> ...]
+index.html artik scripts/build.py'nin URETTIGI dosya; bu script'in yaptigi
+gibi index.html'i DOGRUDAN elle duzenleyip icine veri splice etmek, build.py
+tarafindan bir sonraki calistirmada SESSIZCE UZERINE YAZILIR (build.py hep
+data/normalized/ + geo/normalized/'den yeniden uretir). Yeni bir yil eklemek
+icin bkz. scripts/mahalle-veri-pipeline/transform/import_mahalle.py.
 
-Ornek:
-  python3 gom_ve_sikistir.py ../../../index.html 2023cb2tur=mahalle_2023cb2tur.json 2018cb=mahalle_2018cb.json
+Orijinal aciklama: build/mahalle_<yil>.json dosyalarini index.html'in gomulu,
+gzip+base64 sikistirilmis window.__EMBEDDED_GZ__ objesine ekler.
 
-Her <mahalle_json>, build_mahalle_aday_bazli.py veya build_mahalle_parti_bazli.py
-tarafindan uretilen {geomId: [{id, ad, geometry, secmen, sandik, katilim, kazanan, oy}, ...]}
-formatindaki dosyadir. Bu script:
-  1. index.html'deki window.__EMBEDDED_GZ__ objesini gzip+base64'ten geri acar,
-  2. mahalle_geo.json'a yeni geometrileri (osm_id bazinda tekillestirerek) ekler,
-  3. mahalle_votes.json'a yeni yil(lar)in oy verisini ekler,
-  4. hepsini yeniden gzip+base64'e sikistirip index.html'e geri yazar.
+Kullanim (sadece tarihsel referans icin):
+  python3 gom_ve_sikistir.py --i-know-this-is-backwards <index.html yolu> <yil_anahtari>=<mahalle_json yolu> [...]
 """
 import sys
 import json
@@ -32,8 +29,17 @@ def compress(obj):
 
 
 def main():
-    index_path = sys.argv[1]
-    year_args = sys.argv[2:]
+    args = sys.argv[1:]
+    if "--i-know-this-is-backwards" not in args:
+        print(
+            "Bu script tarihsel/artik kullanilmiyor (bkz. dosya basindaki not). "
+            "Gercekten calistirmak istiyorsan --i-know-this-is-backwards ekle."
+        )
+        sys.exit(1)
+    args.remove("--i-know-this-is-backwards")
+
+    index_path = args[0]
+    year_args = args[1:]
     if not year_args:
         print("En az bir <yil>=<dosya> argumani gerekli"); sys.exit(1)
 

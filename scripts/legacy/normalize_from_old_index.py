@@ -1,17 +1,26 @@
 """
-Kok index.html'deki (henuz dokunulmamis, tek kaynak) window.__EMBEDDED_GZ__
-verisini data/normalized/ ve geo/normalized/ altina TUR BAZINDA, KAYIPSIZ
-olarak ayristirir. Hicbir deger degistirilmez — sadece dosya konumu/gruplama.
+TARIHSEL / ARTIK KULLANILMIYOR — bkz. scripts/legacy/README.md.
 
-Kullanim:
-  python3 scripts/normalize.py
+Bu script index.html'i "tek kaynak" sayip data/normalized/ + geo/normalized/'i
+ONDAN uretiyordu. Mimari artik TERS YONDE calisiyor: data/normalized/ +
+geo/normalized/ kaynak, index.html scripts/build.py'nin URETTIGI dosya.
+Bu script'i bugun calistirmak, en iyi ihtimalle index.html'i kendi uzerine
+okuyup ayni seyi geri yazar (no-op); en kotu ihtimalle biri index.html'i elle
+duzenlediyse o hatali degisikligi "kaynak" sanip data/normalized/'in uzerine
+yazar. SADECE bir kerelik gecis kanit'i (2026-09-22, commit 895494e) icin
+yazilmisti, referans/tarihsel kayit olarak duruyor.
+
+Orijinal aciklama: Kok index.html'deki window.__EMBEDDED_GZ__ verisini
+data/normalized/ ve geo/normalized/ altina TUR BAZINDA, KAYIPSIZ olarak
+ayristirir. Hicbir deger degistirilmez — sadece dosya konumu/gruplama.
 """
 import json
 import gzip
 import base64
 import pathlib
+import sys
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 LEGACY_INDEX = ROOT / "index.html"
 DATA_OUT = ROOT / "data" / "normalized"
 GEO_OUT = ROOT / "geo" / "normalized"
@@ -46,6 +55,12 @@ def write_json(path: pathlib.Path, obj) -> int:
 
 
 def main():
+    if "--i-know-this-is-backwards" not in sys.argv:
+        raise SystemExit(
+            "Bu script tarihsel/artik kullanilmiyor (bkz. dosya basindaki not ve "
+            "scripts/legacy/README.md). Gercekten calistirmak istiyorsan "
+            "--i-know-this-is-backwards ekle."
+        )
     html = LEGACY_INDEX.read_text(encoding="utf-8")
     start = html.find(START_MARKER)
     end = html.find(END_MARKER, start)

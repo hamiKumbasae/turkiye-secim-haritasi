@@ -16,6 +16,14 @@ seçim verisinin nasıl üretildiğinin kaydı. 15 seçim (4 Cumhurbaşkanlığ�
   - [`osadikoglu/turkey-admin-units-osm`](https://github.com/osadikoglu/turkey-admin-units-osm)
     + OpenStreetMap (kalan 56 ilde, OSM'in mahalle-poligonu çizdiği yerler kadar)
 
+## Kurulum
+
+```bash
+cd scripts/mahalle-veri-pipeline
+npm install
+npx playwright install chromium
+```
+
 ## Pipeline aşamaları
 
 ```
@@ -29,12 +37,16 @@ fetch/fetch_muhtarlik_votes.js          Aday-bazlı seçimler (CB, Referandum) i
 fetch/fetch_muhtarlik_parti.js          Parti-bazlı seçimler (Genel, Yerel) için çeker — ayrıca il başına
                                          parti→sütun eşlemesi gerekir (bkz. parti-sutun-eslemeleri/)
 
-build/build_mahalle_aday_bazli.py       Çekilen veriyi mahalle poligonlarıyla eşleştirip index.html'e
-build/build_mahalle_parti_bazli.py      gömülecek {geomId: [{id, ad, geometry, oy, ...}]} formatına çevirir
+transform/build_mahalle_aday_bazli.py   Çekilen veriyi mahalle poligonlarıyla eşleştirip
+transform/build_mahalle_parti_bazli.py  {geomId: [{id, ad, geometry, oy, ...}]} formatına çevirir
 
-build/gom_ve_sikistir.py                Üretilen mahalle_<yil>.json dosyalarını index.html'in gzip+base64
-                                         sıkıştırılmış window.__EMBEDDED_GZ__ objesine ekler
+transform/import_mahalle.py             Yukarıdakinin çıktısını data/normalized/mahalle/<yıl>.json +
+                                         geo/normalized/mahalle_geo.json'a otomatik yerleştirir, doğrular
 ```
+
+Ara çıktılar (fetch/eslesme aşamalarının dosyaları) varsayılan olarak
+`.work/` altında tutulur (`.gitignore`'da) — farklı bir konum için
+`MAHALLE_WORKDIR` ortam değişkenini kullanın.
 
 ## Yeni bir seçim eklemek için (örn. 2028 sonrası)
 
@@ -43,18 +55,21 @@ build/gom_ve_sikistir.py                Üretilen mahalle_<yil>.json dosyaların
    komutunu yeni seçimin `secimId`'siyle çalıştırın (secim_ID'yi bulmak için
    YSK'nin `getSecimDetayList` uç noktasına bakın).
 2. Parti-bazlı bir seçimse, önce `getSandikSecimSonucBaslikList` ile o seçimin
-   parti→sütun eşlemesini çıkarıp `build_mahalle_parti_bazli.py`'deki `CONFIGS`
-   sözlüğüne yeni bir giriş ekleyin (bkz. `parti-sutun-eslemeleri/` klasöründeki
-   örnekler).
-3. `build_mahalle_aday_bazli.py <yil_anahtari>` veya `build_mahalle_parti_bazli.py
-   muhtarlik_..json <yil_anahtari>` ile işleyin.
-4. **(Güncel akış, `gom_ve_sikistir.py` yerine — bkz. kök `README.md`):**
-   `build_mahalle_aday_bazli.py`/`build_mahalle_parti_bazli.py`'nin ürettiği
-   `mahalle_<yil>.json`'daki oy verisini `data/normalized/mahalle/<yil_anahtari>.json`
-   olarak kaydedin; yeni geometri varsa `geo/normalized/mahalle_geo.json`'a
-   osm_id bazında ekleyin. Ardından `python3 scripts/build.py` ile kök
-   `index.html`'i yeniden üretin. (`gom_ve_sikistir.py` artık kullanılmıyor —
-   script referans/tarihsel kayıt olarak duruyor.)
+   parti→sütun eşlemesini çıkarıp `transform/build_mahalle_parti_bazli.py`'deki
+   `CONFIGS` sözlüğüne yeni bir giriş ekleyin (bkz. `parti-sutun-eslemeleri/`
+   klasöründeki örnekler).
+3. `transform/build_mahalle_aday_bazli.py <yil_anahtari>` veya
+   `transform/build_mahalle_parti_bazli.py muhtarlik_..json <yil_anahtari>` ile
+   işleyin — bu `mahalle_<yil_anahtari>.json` üretir.
+4. ```bash
+   python3 scripts/mahalle-veri-pipeline/transform/import_mahalle.py \
+       --year <yil_anahtari> --input mahalle_<yil_anahtari>.json --build
+   ```
+   Bu, oy verisini `data/normalized/mahalle/<yil_anahtari>.json`'a, yeni
+   geometriyi `geo/normalized/mahalle_geo.json`'a (osm_id bazında, var olanı
+   koruyarak) otomatik yazar, `scripts/validate.py` ile doğrular ve
+   `--build` ile kök `index.html`'i yeniden üretir. Elle dosya
+   kopyalamaya gerek yok.
 
 ## Önemli notlar / bilinen sınırlar
 
