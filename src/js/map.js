@@ -104,10 +104,19 @@
     applyMapMode();
   }
 
-  function mahalleDataForDistrict(geomId){
+  // Ucuz, senkron on-kontrol: bu ilcenin HIC mahalle poligonu var mi (yildan
+  // bagimsiz, MAHALLE_GEO hep eager yuklu). Gercek oy verisi (yil bazli,
+  // lazy) icin mahalleDataForDistrict'i await edin.
+  function mahalleGeoExistsForDistrict(geomId){
+    return !!MAHALLE_GEO[geomId];
+  }
+
+  async function mahalleDataForDistrict(geomId){
     const geoRows = MAHALLE_GEO[geomId];
-    const voteRows = (MAHALLE_VOTES[currentYear]||{})[geomId];
-    if(!geoRows || !voteRows) return null;
+    if(!geoRows) return null;
+    const votesForYear = await loadMahalleVotesForYear(currentYear);
+    const voteRows = votesForYear[geomId];
+    if(!voteRows) return null;
     const rows = [];
     for(const osmId in voteRows){
       const g = geoRows[osmId]; if(!g) continue;
@@ -149,9 +158,13 @@
       el.dataset.geomId = geomId;
       el.addEventListener('mousemove', e=>showTooltip(e, {kind:'ilce', plaka, geomId}));
       el.addEventListener('mouseleave', hideTooltip);
-      el.addEventListener('click', ()=>{
+      el.addEventListener('click', async ()=>{
         if($('#mapMode').value==='meclis2024') renderMeclisIlceMap(plaka, geomId);
-        else if(mahalleDataForDistrict(geomId)) drillIntoDistrict(plaka, geomId);
+        else if(mahalleGeoExistsForDistrict(geomId)){
+          const rows = await mahalleDataForDistrict(geomId);
+          if(rows) renderMahalleMap(plaka, geomId, rows);
+          else highlightDistrictRow(geomId);
+        }
         else highlightDistrictRow(geomId);
       });
       svg.appendChild(el);
@@ -175,13 +188,12 @@
   // ---------------- mahalle (ilce icinde ucuncu seviye) ----------------
   let currentMahalleRows = [];
   let pathByMahalleId = {};
-  function drillIntoDistrict(plaka, geomId){
-    renderMahalleMap(plaka, geomId);
-  }
 
-  function renderMahalleMap(plaka, geomId){
-    const rows = mahalleDataForDistrict(geomId) || [];
-    if(!rows.length) return;
+  // rows: mahalleDataForDistrict(geomId)'nin (async, cagiran yerde await
+  // edilmis) sonucu — burada tekrar hesaplanmiyor, cagri yerinde (renderProvinceMap'in
+  // click handler'i) zaten cozulmus olarak veriliyor.
+  function renderMahalleMap(plaka, geomId, rows){
+    if(!rows || !rows.length) return;
     setMeclisOptionVisible(false);
     view = {level:'mahalle', plaka, geomId};
     currentMahalleRows = rows;

@@ -19,20 +19,29 @@
     return EMBEDDED_CACHE[key];
   }
 
-  let BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MAHALLE_VOTES, MECLIS_2024;
+  let BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MECLIS_2024;
   try{
-    [BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MAHALLE_VOTES, MECLIS_2024] = await Promise.all([
+    // mahalle_votes.json ARTIK burada YOK: 15 yilin tamami acik haliyle ~75MB,
+    // her sayfa acilisinda (kullanici mahalle seviyesine hic inmese bile)
+    // hepsini decompress etmek gereksizdi. Yil basina ayri gomulu anahtar
+    // olarak (mahalle_votes_<yil>.json) sadece kullanici o yilin bir ilcesine
+    // tikladiginda lazy-load edilir (bkz. map.js: mahalleDataForDistrict).
+    // mahalle_geo.json (poligonlar, ~5MB) yillar arasi paylasimli ve nispeten
+    // kucuk oldugu icin hala eager yukleniyor.
+    [BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MECLIS_2024] = await Promise.all([
       loadEmbeddedCached("secim_tarihi_data.json"),
       loadEmbeddedCached("turkiye_il_sinirlari.geojson"),
       loadEmbeddedCached("turkiye_ilce_sinirlari.geojson"),
       loadEmbeddedCached("turkiye_ilce_sinirlari_hist_splits.geojson"),
       loadEmbeddedCached("mahalle_geo.json", {}),
-      loadEmbeddedCached("mahalle_votes.json", {}),
       loadEmbeddedCached("meclis_2024.json", {})
     ]);
   }catch(e){
     document.body.innerHTML = '<div class="wrap"><p>Veri yüklenemedi: '+e+'</p></div>';
     return;
+  }
+  function loadMahalleVotesForYear(year){
+    return loadEmbeddedCached("mahalle_votes_"+year+".json", {});
   }
   const geoFeatureById = {};
   for(const f of GEO_ILCE.features){ geoFeatureById[f.properties.id] = f; }

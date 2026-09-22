@@ -86,8 +86,14 @@ def assemble_embedded() -> dict:
     eras = {name: load_json(GEO_HIST / f"turkiye_il_sinirlari_{name}.geojson") for name in ERA_ADLARI}
 
     embedded = {
+        # mahalle_geo.json TEK blok kaliyor (tum yillar arasinda paylasimli,
+        # ~5MB sikistirilmis — buyumesi yeni ilce eklenince olur, yeni yil
+        # eklenince degil). mahalle_votes ise YIL BASINA ayri anahtar: sayfa
+        # acilisinda 15 yilin TAMAMINI (75MB acik veri) decompress etmek
+        # yerine, JS sadece kullanicinin gercekten actigi yili lazy-load
+        # ediyor (bkz. src/js/data-loader.js + map.js).
         "mahalle_geo.json": gzip_b64(mahalle_geo),
-        "mahalle_votes.json": gzip_b64(mahalle_votes),
+        **{f"mahalle_votes_{year}.json": gzip_b64(rows) for year, rows in mahalle_votes.items()},
         "meclis_2024.json": gzip_b64(meclis_2024),
         "secim_tarihi_data.json": gzip_b64(secim_tarihi_data),
         "turkiye_il_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_il_sinirlari.geojson")),
