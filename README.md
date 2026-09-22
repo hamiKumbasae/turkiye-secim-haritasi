@@ -105,14 +105,18 @@ etkinleştirmeniz yeterli.
 
 ## Bilinen kapsam sınırları
 
-- 1950-1961 genel seçimlerinde vekil/sandalye dağılımı yok (kaynakta hiç yok).
-- 1965-1987 genel seçimlerinde ilçe düzeyi veri yok, sadece il düzeyi.
+- 1950-1977 genel seçimlerinde (ve 1961/1982/1987/1988/2007 referandumlarında)
+  ilçe düzeyi veri yok, sadece il düzeyi — bu dönemde "seçim çevresi" il'in
+  kendisiydi, ilçe bazlı sistem hiç var olmadı (kaynak eksikliği değil).
+- 1957/1961 genel seçimlerinde Sakarya'nın vekil dağılımı yok (YSK'nin
+  1950-1977 arşivinde bu il hiç yok, bkz. `data/raw/ysk/1950-1977/PROVENANCE.md`).
 - 2002 Siirt ilçe kırılımı bozuk (kaynak hatası, düzeltilemedi — bkz. `sources.yml`).
 - 2014 yerel seçiminde BDP il/ilçe verisi hatalı (gerçek oylar mahalle
   düzeyinde "HDP" altında bulundu, il/ilçe düzeyi düzeltilmedi).
 - 2010 referandumunun ilçe düzeyi oy SAYILARI tahmini (`~300 oy/sandık`
   varsayımı) — yüzdeler gerçek.
-- `data/raw/{ysk,haberturk,wikipedia}/` şu an boş — bu kaynakların orijinal
-  ham çıktısı hiç saklanmamış veya yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
+- `data/raw/{haberturk,wikipedia}/` ve `data/raw/ysk/`'nin mahalle-düzeyi
+  kısmı şu an boş — bu kaynakların orijinal ham çıktısı hiç saklanmamış veya
+  yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
 
 Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).

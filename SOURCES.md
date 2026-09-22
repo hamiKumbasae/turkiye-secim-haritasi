@@ -12,11 +12,15 @@ anahtarlarıyla birebir aynıdır, örn. `2023`, `2014yerel`, `2017referandum`,
 1. **YSK Açık Veri Portalı** (`acikveri.ysk.gov.tr`) — resmi, 2009 ve sonrası
    seçimleri kapsar. Bu depoda **mahalle/muhtarlık düzeyi** verinin tamamı ve
    **2014 Cumhurbaşkanlığı seçiminin il/ilçe düzeyi** doğrudan buradan.
+1b. **YSK'nin 1950-1977 arşivi** (`ysk.gov.tr`, ayrı bir sayfa, açık API değil
+   — indirilebilir PDF) — **TÜİK verisine dayanan resmi il-bazlı arşiv**,
+   1950/1954/1957/1961/1965/1969/1973/1977 genel seçimlerinin il düzeyi
+   verisinin kaynağı (bkz. aşağı).
 2. **Habertürk** (`secim.haberturk.com`) — 2011 sonrası genel/yerel/CB
    seçimleri ile 2010/2017 referandumlarının il/ilçe düzeyi verisinin
    kaynağı. Resmi değil ama YSK'nin açıkladığı sonuçları raporluyor.
-3. **Türkçe Wikipedia** (YSK kaynaklı tablolar) — 1950-2009 arası, Habertürk'ün
-   kapsamadığı yıllar için il düzeyi veri.
+3. **Türkçe Wikipedia** (YSK kaynaklı tablolar) — 1950-2009 arası, YSK'nin
+   1950-1977 arşivinin ve Habertürk'ün kapsamadığı yıllar için il düzeyi veri.
 4. **mertnuhoglu/secim_verileri** (GitHub, memurlar.net kaynaklı) — 1991-2007
    genel seçimlerinin ilçe düzeyi kırılımı (Wikipedia sadece il düzeyi veriyor).
 
@@ -47,23 +51,27 @@ doğrulandı.
 |---|---|---|---|
 | 2011, 2015×2, 2018, 2023 | Habertürk | Habertürk | — (mahalle düzeyi de YSK'den eklendi) |
 | 1991, 1995, 1999, 2002, 2007 | Wikipedia | mertnuhoglu | **2002 Siirt**: kaynaktaki ilçe kırılımı bozuk, düzeltilmedi (bkz. aşağı) |
-| 1965–1987 (6 seçim) | Wikipedia | — | İlçe verisi yok |
-| 1950–1961 (4 seçim) | Wikipedia | — | İlçe verisi yok, **vekil/sandalye dağılımı da yok** (sadece kazanan parti + oran) |
+| 1983, 1987 | Wikipedia | — | İlçe verisi yok |
+| **1950, 1954, 1957, 1961, 1965, 1969, 1973, 1977** | **YSK (TÜİK kaynaklı)** | — | "Seçim çevresi" = il'in kendisiydi, ilçe düzeyi hiç var olmadı — bu bir kaynak eksikliği değil |
+
+**1950-1977 YSK/TÜİK güncellemesi (2026-09-22):** Bu 8 seçimin il düzeyi
+verisi, YSK'nin `ysk.gov.tr`'de yayımladığı ve kendi notuna göre "Türkiye
+İstatistik Kurumu verileri esas alınarak hazırlanmış" resmi bir arşivden
+güncellendi. En büyük kazanım: **1950/1954/1957/1961'de önceden hiç
+olmayan il bazında milletvekili (sandalye) dağılımı artık var** — 66 il ×
+8 yıl için, YSK'nin kendi belirttiği toplam milletvekili sayısıyla
+bire bir eşleştiği doğrulanarak. Tek istisna: **Sakarya, YSK'nin bu
+arşivinde hiç yok** (67 değil 66 il listeleniyor) — Sakarya'nın verisi
+eski Wikipedia kaynağıyla kaldı, bu yüzden 1957/1961'in il-toplamı resmi
+ulusal rakamdan Sakarya'nın sandalyesi kadar düşük çıkar (ulusal toplam
+alanı yine de doğru). Ayrıntı: `data/raw/ysk/1950-1977/PROVENANCE.md` ve
+`scripts/genel-1950-1977-pipeline/`.
 
 **2002 Siirt sorunu:** mertnuhoglu kaynağındaki Siirt ilçe kırılımı, DEHAP'ın
 o ildeki gerçek birinciliğini (il geneli %32,2) yansıtmıyor — Merkez ilçede
 "AK Parti %86,71" gibi gerçek dışı bir değer var. Güvenilir alternatif ilçe
 kaynağı bulunamadığı için bu hatalı sayılar tahminle değiştirilmedi, olduğu
 gibi bırakıldı.
-
-**1954 Bilecik:** kaynak tabloda satırı eksikti, ayrı bir Wikipedia
-tablosundan bulunup eklendi.
-
-**1961:** vekil dağılımı hesaplanamadı çünkü o yıla özgü "millî bakiye"
-sistemi basit D'Hondt ile yeniden üretilemiyor.
-
-**1957:** kaynak tablodaki vekil sütunu resmi 610 sandalye toplamıyla
-uyuşmuyordu, güvenilmez kabul edilip atlandı.
 
 ## Yerel Seçim / Belediye Başkanlığı (9 seçim)
 
@@ -116,9 +124,12 @@ rakamlar.
 
 ## Kapsam dışı / henüz yapılmadı
 
-- **TÜİK** (Türkiye İstatistik Kurumu) ile 2009 öncesi genel seçimlerin
-  yeniden doğrulanması — ayrı, sonraki bir aşama.
-- Wikipedia/Habertürk kaynaklı verilerin tek tek YSK/TÜİK ile çapraz
+- **TÜİK ile 2009 öncesi GENEL seçimlerin doğrulanması** kısmen tamamlandı:
+  1950-1977 (8 seçim) artık YSK'nin TÜİK kaynaklı arşivinden. 1983/1987 genel
+  seçimleri ve tüm 1950-2007 referandum/yerel seçimleri hâlâ Wikipedia
+  kaynaklı — YSK'nin sitesinde bunlar için benzer bir arşiv bulunamadı
+  (aranmadıysa ayrı bir araştırma gerekir).
+- Wikipedia/Habertürk kaynaklı kalan verilerin tek tek YSK/TÜİK ile çapraz
   doğrulanıp gerekirse değiştirilmesi.
 - 2019 İstanbul BB Yenileme, 2024 Yenileme Seçimi, 2026 Ara Seçimi (tekil/özel
   seçimler) — henüz eklenmedi.

@@ -148,35 +148,61 @@ elections:
 
   "1987": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı."], coverage: ["ilçe verisi yok — mertnuhoglu deposu bu döneme uzanmıyor"]}
   "1983": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 399 vekil resmi sonuçla doğrulandı."], coverage: ["ilçe verisi yok"]}
-  "1977": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı."], coverage: ["ilçe verisi yok"]}
-  "1973": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı."], coverage: ["ilçe verisi yok"]}
-  "1969": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı."], coverage: ["ilçe verisi yok"]}
-  "1965": {type: milletvekili, primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı."], coverage: ["ilçe verisi yok"]}
+
+  # 1950-1977 (8 seçim): 2026-09-22'de YSK'nin resmi, TÜİK kaynaklı il-bazlı
+  # arşivine (bkz. data/raw/ysk/1950-1977/PROVENANCE.md) yükseltildi. Önceki
+  # kaynak (Türkçe Wikipedia) legacy_source olarak tutuluyor. Bu YSK arşivinin
+  # kendi notu: "1950-1977 Milletvekili Genel Seçimleri çalışması Türkiye
+  # İstatistik Kurumu verileri esas alınarak hazırlanmıştır."
+  "1977":
+    type: milletvekili
+    primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}
+    legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
+    verification: ["Toplam 450 vekil resmi sonuçla doğrulandı (il toplamı = ulusal rakam, Sakarya farkı yok)."]
+    coverage: ["ilçe verisi yok — bu dönemde 'seçim çevresi' il'in kendisiydi, ilçe bazlı sistem hiç yoktu"]
+    known_issues: [{scope: "il: Sakarya", status: reported, description: "YSK'nin bu arşivinde Sakarya hiç yok (66/67 il) — Sakarya eski Wikipedia verisiyle kaldı, bkz. data/raw/ysk/1950-1977/PROVENANCE.md."}]
+  "1973": {type: milletvekili, primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı (il toplamı = ulusal rakam, Sakarya farkı yok)."], coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"], known_issues: [{scope: "il: Sakarya", status: reported, description: "YSK'nin bu arşivinde Sakarya yok (66/67 il), eski Wikipedia verisiyle kaldı."}]}
+  "1969": {type: milletvekili, primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı (il toplamı = ulusal rakam, Sakarya farkı yok)."], coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"], known_issues: [{scope: "il: Sakarya", status: reported, description: "YSK'nin bu arşivinde Sakarya yok (66/67 il), eski Wikipedia verisiyle kaldı."}]}
+  "1965": {type: milletvekili, primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}, legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}, verification: ["Toplam 450 vekil resmi sonuçla doğrulandı (il toplamı = ulusal rakam, Sakarya farkı yok)."], coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"], known_issues: [{scope: "il: Sakarya", status: reported, description: "YSK'nin bu arşivinde Sakarya yok (66/67 il), eski Wikipedia verisiyle kaldı."}]}
 
   "1961":
     type: milletvekili
-    primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
-    coverage:
-      - "ilçe verisi yok"
-      - "vekil (sandalye) dağılımı yok — sadece il bazında kazanan parti ve oy oranı. 1961'e özgü 'millî bakiye' sistemi D'Hondt ile yeniden hesaplanamadığı için."
+    primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}
+    legacy_source:
+      source: "Türkçe Wikipedia (YSK kaynaklı)"
+      level: [il]
+      status: reported
+      note: "Wikipedia'da vekil dağılımı yoktu (sadece kazanan+oran) — YSK arşivi bunu ilk kez sağladı."
+    coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"]
+    verification: ["Toplam 450 vekil resmi ulusal rakamla doğrulandı; il toplamı Sakarya hariç 444 (bkz. known_issues)."]
+    known_issues: [{scope: "il: Sakarya", status: reported, description: "YSK'nin bu arşivinde Sakarya yok (66/67 il) — il toplamı bu yüzden resmi ulusal rakamdan (450) Sakarya'nın sandalye sayısı kadar düşük çıkar (444). toplamSandalye alanı yine de doğru resmi rakamı (450) taşıyor. Sakarya'nın kendisi eski Wikipedia verisiyle kaldı."}]
   "1957":
     type: milletvekili
-    primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
-    coverage:
-      - "ilçe verisi yok"
-      - "vekil dağılımı yok — kaynak tablodaki 'Mv' sütunu iki en büyük parti için aynı/tutarsız değer taşıyor ve toplamı resmi 610 sandalyeyle uyuşmuyor, güvenilmez kabul edildi."
+    primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}
+    legacy_source:
+      source: "Türkçe Wikipedia (YSK kaynaklı)"
+      level: [il]
+      status: reported
+      note: "Wikipedia'daki 'Mv' sütunu güvenilmez bulunup kullanılmamıştı (bkz. eski not) — YSK arşivi güvenilir, doğrulanmış vekil dağılımı sağladı."
+    coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"]
+    verification: ["Toplam 610 vekil resmi ulusal rakamla doğrulandı; il toplamı Sakarya hariç 602 (bkz. known_issues)."]
+    known_issues: [{scope: "il: Sakarya", status: reported, description: "YSK'nin bu arşivinde Sakarya yok (66/67 il) — il toplamı resmi ulusal rakamdan (610) Sakarya'nın sandalye sayısı kadar düşük (602). toplamSandalye alanı doğru resmi rakamı (610) taşıyor."}]
   "1954":
     type: milletvekili
-    primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
+    primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}
+    legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported, note: "Wikipedia'da sadece ilin toplam sandalye büyüklüğü vardı, parti başına dağılım yoktu."}
     known_issues:
       - scope: "il: Bilecik"
         status: reported
-        description: "Kaynak tabloda satırı atlanmıştı (63 değil 64 il olmalıydı); ayrı bir Wikipedia tablosundan (Bilecik ili genel seçim sonuçları) bulunup eklendi (2026-09-20)."
-    coverage: ["ilçe verisi yok", "vekil dağılımı yok — sadece ilin TOPLAM sandalye büyüklüğü var, parti başına dağılım yok"]
+        description: "Eski (Wikipedia) kaynak tabloda satırı atlanmıştı; ayrı bir Wikipedia tablosundan bulunup eklenmişti (2026-09-20). YSK arşivinde Bilecik doğrudan var, bu düzeltme artık gereksiz ama tarihsel kayıt olarak tutuluyor."
+    coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"]
+    verification: ["Toplam 541 vekil resmi ulusal rakamla VE il toplamıyla birebir doğrulandı (64/64 il, Sakarya bu tarihte zaten yoktu)."]
   "1950":
     type: milletvekili
-    primary: {authority: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported}
-    coverage: ["ilçe verisi yok", "vekil dağılımı yok — kaynak tabloda vekil sütunu hiç yok (dönemin çoğunluk/blok liste sistemi)"]
+    primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı)", retrieved_at: "2026-09-22", level: [il], status: official}
+    legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported, note: "Wikipedia'da vekil sütunu hiç yoktu — YSK arşivi bunu ilk kez sağladı."}
+    coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"]
+    verification: ["Toplam 487 vekil resmi ulusal rakamla VE il toplamıyla birebir doğrulandı (63/63 il, Sakarya bu tarihte zaten yoktu)."]
 
   # ---------------- Yerel Seçim / Belediye Başkanlığı (9 seçim) ----------------
 

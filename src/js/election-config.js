@@ -5,9 +5,11 @@
   const REF_YEAR_LABEL = {'2017referandum':'2017','2010referandum':'2010','2007referandum':'2007','1988referandum':'1988','1987referandum':'1987','1982referandum':'1982','1961referandum':'1961'};
   const YEREL_YEAR_ORDER = ['2024yerel','2019yerel','2014yerel','2009yerel','2004yerel','1999yerel','1994yerel','1989yerel','1984yerel'];
   const YEREL_YEAR_LABEL = {'2024yerel':'2024','2019yerel':'2019','2014yerel':'2014','2009yerel':'2009','2004yerel':'2004','1999yerel':'1999','1994yerel':'1994','1989yerel':'1989','1984yerel':'1984'};
-  // 1950-1961 genel secimlerinde vekil (sandalye) verisi kaynakta guvenilir sekilde
-  // yok (bkz. build_gen_voteonly_bundle.py) - bu yillarda sadece kazanan/oy gosterilir.
-  const YEARS_NO_VEKIL = new Set(['1950','1954','1957','1961']);
+  // 1950-1961 genel secimlerinde vekil (sandalye) verisi onceden (Wikipedia
+  // kaynakli) yoktu; artik YSK'nin resmi, TUIK kaynakli 1950-1977 il arsivinden
+  // var (bkz. scripts/genel-1950-1977-pipeline/). Bos kalirsa (gelecekte baska
+  // bir yil icin ayni durum olursa) buraya eklenebilir.
+  const YEARS_NO_VEKIL = new Set([]);
   // 1950-1987 genel secimlerinde ve 1961/1982/1987/1988/2007 referandumlarinda ilce-bazli
   // kaynak yok - sadece il seviyesinde veri var.
   const YEARS_IL_ONLY = new Set(['1950','1954','1957','1961','1965','1969','1973','1977','1983','1987',

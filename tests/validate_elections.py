@@ -20,10 +20,14 @@ DIST = ROOT / "index.html"
 # GitHub'in tek dosya limiti 100MB; erken uyari icin cok daha dusuk bir esik.
 DIST_SIZE_CEILING = 90 * 1024 * 1024
 
-# 1965'ten itibaren, guvenilir resmi toplam sandalye sayisi bilinen genel
-# secimler (bkz. sources.yml verification notlari). 1950-61 kasitli disarida
-# (coverage: vekil verisi yok).
+# Guvenilir resmi toplam sandalye sayisi bilinen genel secimler (bkz.
+# sources.yml verification notlari). 1950/1954/1957/1961: YSK'nin resmi
+# "Turkiye Geneli" rakamlari (scripts/genel-1950-1977-pipeline/) — il bazli
+# vekil toplami Sakarya eksik oldugu icin 1957/1961'de bundan biraz dusuk
+# cikar (bilinen, belgelenmis fark), o yuzden burada il toplamindan degil
+# dogrudan resmi ulusal rakamdan kontrol ediliyor.
 EXPECTED_SANDALYE = {
+    "1950": 487, "1954": 541, "1957": 610, "1961": 450,
     "1965": 450, "1969": 450, "1973": 450, "1977": 450, "1983": 399, "1987": 450,
     "1991": 450, "1995": 550, "1999": 550, "2002": 550, "2007": 550, "2011": 550,
     "2015Haziran": 550, "2015Kasim": 550,
@@ -68,6 +72,14 @@ def check_checksums():
     check("checksums.json ile diskteki dosyalar eslesiyor", all_ok, "; ".join(bad[:5]))
 
 
+# 1957/1961: YSK'nin 1950-1977 il arsivinde Sakarya YOK (bilinen, belgelenmis
+# kaynak boslugu — bkz. scripts/genel-1950-1977-pipeline/PROVENANCE.md). Bu
+# yuzden il-bazli vekil toplami resmi ulusal rakamdan Sakarya'nin sandalye
+# sayisi kadar dusuk cikar; bu YILLAR icin sadece 'declared' (resmi rakam)
+# kontrol edilir, il toplami degil.
+SANDALYE_ILLER_TOPLAMI_ISTISNA = {"1957", "1961"}
+
+
 def check_sandalye_totals():
     genel = load_json(DATA_NORM / "genel_secimler.json")
     all_ok = True
@@ -79,7 +91,8 @@ def check_sandalye_totals():
             sum(il.get("vekil", {}).values()) if isinstance(il.get("vekil"), dict) else 0
             for il in secim["iller"]
         )
-        if declared != expected or summed != expected:
+        summed_ok = summed == expected or year in SANDALYE_ILLER_TOPLAMI_ISTISNA
+        if declared != expected or not summed_ok:
             all_ok = False
             bad.append(f"{year}: beklenen={expected} toplamSandalye={declared} iller_toplami={summed}")
     check(f"genel seçim sandalye toplamları ({len(EXPECTED_SANDALYE)} yıl)", all_ok, "; ".join(bad))

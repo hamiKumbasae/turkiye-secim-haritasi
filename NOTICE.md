@@ -4,7 +4,15 @@ Bu belge, "her dış veri kaynağını bir kez `data/raw/`'a checksum'lı snapsh
 olarak sakla, canlı bağımlılığı kaldır" hedefinin **şu an tam olarak
 karşılanamadığı** yerleri saklamadan listeler.
 
-## `data/raw/ysk/` — BOŞ
+## `data/raw/ysk/1950-1977/` — DOLU (2026-09-22'de eklendi)
+
+YSK'nin 1950-1977 genel seçimleri için resmi, TÜİK kaynaklı il-bazlı
+arşivi (66 il PDF'i + ulusal özet) burada, pinlenmiş/checksum'lı bir
+snapshot olarak duruyor. Ayrıntı: `data/raw/ysk/1950-1977/PROVENANCE.md`
+ve `scripts/genel-1950-1977-pipeline/`. Bu, aşağıdaki paragraftaki genel
+"mahalle düzeyi YSK verisi" boşluğundan AYRI ve TAMAMLANMIŞ bir kaynak.
+
+## `data/raw/ysk/` (mahalle düzeyi kısmı) — BOŞ
 
 YSK Açık Veri Portalı'ndan (`acikveri.ysk.gov.tr`) bu depoya gömülü tüm
 mahalle/muhtarlık düzeyi veri (15 seçim, `scripts/mahalle-veri-pipeline/`
@@ -56,6 +64,7 @@ canlı ve script hazır, sadece bu oturumda çalıştırılmadı.
 
 ## Etkilenmeyen kısım
 
-`data/raw/third-party/mertnuhoglu/` ve `data/raw/legacy-preprocessed/` GERÇEK
-snapshot'lar — pinlenmiş commit / checksum'lı, canlı bağımlılık yok. Bu
-belgedeki boşluklar sadece yukarıdaki üç klasörü kapsıyor.
+`data/raw/third-party/mertnuhoglu/`, `data/raw/legacy-preprocessed/` ve
+`data/raw/ysk/1950-1977/` GERÇEK snapshot'lar — pinlenmiş/checksum'lı, canlı
+bağımlılık yok. Bu belgedeki boşluklar sadece haberturk/wikipedia
+klasörlerini ve mahalle-düzeyi ysk verisini kapsıyor.
