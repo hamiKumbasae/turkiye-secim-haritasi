@@ -18,8 +18,10 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA_NORM = ROOT / "data" / "normalized"
-YEREL_PATH = DATA_NORM / "yerel_secimler.json"
 PARTILER_PATH = DATA_NORM / "partiler.json"
+
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
 
 STATIC_MAP = {
     "ANAP": "ANAP", "BAĞIMSIZLAR": "Bağımsız", "BBP": "BBP", "BP": "BP",
@@ -46,11 +48,9 @@ def main():
     parsed_path = pathlib.Path(sys.argv[2])
     parsed = json.loads(parsed_path.read_text(encoding="utf-8"))
 
-    yerel = json.loads(YEREL_PATH.read_text(encoding="utf-8"))
-    partiler = json.loads(PARTILER_PATH.read_text(encoding="utf-8"))
-
     key = f"{year}yerel"
-    secim = yerel[key]
+    secim = load_election(key)
+    partiler = json.loads(PARTILER_PATH.read_text(encoding="utf-8"))
     major = set(secim["majorPartiler"])
 
     updated = 0
@@ -111,9 +111,7 @@ def main():
     if skipped_no_match:
         print(f"UYARI: {len(skipped_no_match)} il eslesmedi: {skipped_no_match}")
 
-    YEREL_PATH.write_text(
-        json.dumps(yerel, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
+    save_election(key, secim)
     PARTILER_PATH.write_text(
         json.dumps(partiler, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
     )

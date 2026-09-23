@@ -18,6 +18,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import validate as _validate  # noqa: E402
+from common.election_io import load_all_elections  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEMPLATE = ROOT / "src" / "index.template.html"
@@ -32,7 +33,6 @@ DATA_PLACEHOLDER = '"__BUILD_WILL_INSERT_EMBEDDED_GZ_JSON__"'
 CSS_PLACEHOLDER = "/*__BUILD_WILL_INSERT_CSS__*/"
 JS_PLACEHOLDER = "//__BUILD_WILL_INSERT_JS__"
 
-TUR_DOSYALARI = ["cumhurbaskanligi", "genel_secimler", "yerel_secimler", "referandumlar"]
 ERA_ADLARI = ["era1950", "era1954", "era1957_1987", "era1991", "era1995", "era1999"]
 
 # src/js/*.js, tek bir paylasimli closure'a (async IIFE) derlenecek sekilde
@@ -62,9 +62,7 @@ def gzip_b64(obj) -> str:
 
 def assemble_embedded() -> dict:
     partiler = load_json(DATA_NORM / "partiler.json")
-    secimler = {}
-    for name in TUR_DOSYALARI:
-        secimler.update(load_json(DATA_NORM / f"{name}.json"))
+    secimler = load_all_elections()
     secim_tarihi_data = {"partiler": partiler, "secimler": secimler}
 
     mahalle_votes = {}

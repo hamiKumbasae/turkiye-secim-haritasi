@@ -12,7 +12,8 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
-REF_PATH = ROOT / "data" / "normalized" / "referandumlar.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
 
 TURKCE_KUCUK = str.maketrans("İIŞÜÖÇĞ", "iışüöçğ")
 
@@ -34,8 +35,7 @@ def main():
     parsed_path = pathlib.Path(sys.argv[1])
     parsed = json.loads(parsed_path.read_text(encoding="utf-8"))
 
-    referandumlar = json.loads(REF_PATH.read_text(encoding="utf-8"))
-    secim = referandumlar["2007referandum"]
+    secim = load_election("2007referandum")
 
     il_by_plaka = {il["plaka"]: il for il in secim["iller"]}
     plaka_by_ad = {il["ad"]: il["plaka"] for il in secim["iller"]}
@@ -89,10 +89,8 @@ def main():
             validation.append(f"plaka {plaka} ({il['ad']}): ilçe toplamı evet={sums['evet']} "
                                f"il kaydı evet={il_evet} (%{diff_pct:.1f} fark)")
 
-    REF_PATH.write_text(
-        json.dumps(referandumlar, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
-    print(f"{len(ilceler)} ilçe eklendi -> {REF_PATH}")
+    save_election("2007referandum", secim)
+    print(f"{len(ilceler)} ilçe eklendi -> 2007referandum")
     if validation:
         print(f"\n{len(validation)} il için büyük fark (>%5, muhtemelen eksik 'Merkez' ilçesi olan büyükşehirler):")
         for v in validation:

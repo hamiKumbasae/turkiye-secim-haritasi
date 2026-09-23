@@ -15,8 +15,12 @@ secim_yili < splitYear ise HIST-*-Merkez geomId'sini dondurur.
 """
 import json
 import pathlib
+import sys
 
 ROOT = pathlib.Path("/Users/hamikumbasar/Desktop/Turkiye_Secim_Haritasi")
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election  # noqa: E402
+
 _splits = json.loads((ROOT / "geo" / "historical" / "district_splits.json").read_text(encoding="utf-8"))
 
 # plaka -> [(syntheticId, splitYear), ...]
@@ -59,7 +63,7 @@ MERKEZ_TEK_ISIM_YENIDEN_ADLANDIRMA = {
 #    bolundu (Tusba + Ipekyolu, ikisi de 2012'de kuruldu) - web
 #    arastirmasiyla dogrulandi.
 
-_GENEL2023 = json.loads((ROOT / "data" / "normalized" / "genel_secimler.json").read_text(encoding="utf-8"))["2023"]
+_GENEL2023 = load_election("2023")
 _MODERN_GEOMID_BY_PLAKA_AD = {}
 for _i in _GENEL2023["ilceler"]:
     _MODERN_GEOMID_BY_PLAKA_AD.setdefault(_i["plaka"], {})[_i["ad"]] = _i["geomId"]

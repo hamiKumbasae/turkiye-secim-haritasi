@@ -6,9 +6,12 @@ liste) plaka+isim bazinda eslestirir. Cikti: {"<ilId>-<ilceId>": "<geomId>"}.
 """
 import json
 import pathlib
+import sys
 import unicodedata
 
 ROOT = pathlib.Path("/Users/hamikumbasar/Desktop/Turkiye_Secim_Haritasi")
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election  # noqa: E402
 
 
 def fold(s):
@@ -27,8 +30,7 @@ def fold(s):
 
 
 ysk = json.loads((ROOT / "data" / "raw" / "ysk" / "acikveri-il-ilce-listesi.json").read_text(encoding="utf-8"))
-proj = json.loads((ROOT / "data" / "normalized" / "genel_secimler.json").read_text(encoding="utf-8"))
-proj_ilceler = proj["2023"]["ilceler"]
+proj_ilceler = load_election("2023")["ilceler"]
 
 proj_index = {}
 for row in proj_ilceler:

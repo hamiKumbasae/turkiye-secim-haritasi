@@ -17,15 +17,18 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from party_map_helper import build_auto_map  # noqa: E402
 
 ROOT = pathlib.Path("/Users/hamikumbasar/Desktop/Turkiye_Secim_Haritasi")
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
+
 BASLIK_DIR = ROOT / "scripts" / "mahalle-veri-pipeline" / "parti-sutun-eslemeleri"
 CB_ALIAS = json.loads((ROOT / "scripts" / "haberturk-to-ysk-pipeline" / "cb_name_alias.json").read_text(encoding="utf-8"))
 
 TARGETS = {
-    "2015Haziran": ("data/normalized/genel_secimler.json", "genel", "baslik_2015Haziran.json"),
-    "2015Kasim": ("data/normalized/genel_secimler.json", "genel", "baslik_2015Kasim.json"),
-    "2018": ("data/normalized/genel_secimler.json", "genel", "baslik_2018.json"),
-    "2017referandum": ("data/normalized/referandumlar.json", "referandum", "baslik_2017referandum.json"),
-    "2018cb": ("data/normalized/cumhurbaskanligi.json", "cb", "baslik_2018cb.json"),
+    "2015Haziran": ("genel", "baslik_2015Haziran.json"),
+    "2015Kasim": ("genel", "baslik_2015Kasim.json"),
+    "2018": ("genel", "baslik_2018.json"),
+    "2017referandum": ("referandum", "baslik_2017referandum.json"),
+    "2018cb": ("cb", "baslik_2018cb.json"),
 }
 
 PARTI_COL_RE = re.compile(r"^(parti|ittifak)\d+_ALDIGI_OY$")
@@ -95,15 +98,13 @@ def build_oy_cb(row, baslik):
 def main():
     raw = json.loads(pathlib.Path(sys.argv[1]).read_text(encoding="utf-8"))
     updated = []
-    for key, (relpath, kind, baslik_fname) in TARGETS.items():
+    for key, (kind, baslik_fname) in TARGETS.items():
         entry = raw.get(key)
         if not entry or not entry.get("ulkeler"):
             print(f"{key}: veri yok, atlandi")
             continue
         row = entry["ulkeler"]
-        target_path = ROOT / relpath
-        target = json.loads(target_path.read_text(encoding="utf-8"))
-        secim = target[key]
+        secim = load_election(key)
         major = set(secim["majorPartiler"])
 
         if kind == "genel":
@@ -126,9 +127,7 @@ def main():
         yd["oy"] = oy
         # secmen/katilim/sandik BILINCLI olarak DOKUNULMUYOR (bkz. dosya basi not)
 
-        target_path.write_text(
-            json.dumps(target, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-        )
+        save_election(key, secim)
         updated.append(key)
         print(f"{key}: yurtdisi.gecerliOy={yd['gecerliOy']} kullanilanOy={yd['kullanilanOy']} parti_sayisi={len(oy)}")
 

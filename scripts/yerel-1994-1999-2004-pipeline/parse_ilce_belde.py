@@ -31,10 +31,13 @@ from party_map_helper import fold  # noqa: E402
 from hist_geomid import resolve_historical_merkez  # noqa: E402
 
 ROOT = pathlib.Path("/Users/hamikumbasar/Desktop/Turkiye_Secim_Haritasi")
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election  # noqa: E402
+
 RAW = ROOT / "data" / "raw" / "ysk" / "mahalli-1994-1999-2004"
 MAPPING = json.loads((RAW / "il_dosya_eslemesi.json").read_text(encoding="utf-8"))
 
-_GENEL2023 = json.loads((ROOT / "data" / "normalized" / "genel_secimler.json").read_text(encoding="utf-8"))["2023"]
+_GENEL2023 = load_election("2023")
 MODERN_BY_PLAKA = {}
 AD_BY_GEOMID = {}
 for i in _GENEL2023["ilceler"]:

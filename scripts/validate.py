@@ -16,6 +16,9 @@ try:
 except ImportError:
     yaml = None
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from common.election_io import load_all_elections  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_NORM = ROOT / "data" / "normalized"
 GEO_NORM = ROOT / "geo" / "normalized"
@@ -97,9 +100,7 @@ def validate_structural(secim_tarihi: dict, mahalle_votes: dict, mahalle_geo: di
 
 def main():
     partiler = load_json(DATA_NORM / "partiler.json")
-    secimler = {}
-    for name in ["cumhurbaskanligi", "genel_secimler", "yerel_secimler", "referandumlar"]:
-        secimler.update(load_json(DATA_NORM / f"{name}.json"))
+    secimler = load_all_elections()
     secim_tarihi = {"partiler": partiler, "secimler": secimler}
 
     mahalle_votes = {p.stem: load_json(p) for p in sorted((DATA_NORM / "mahalle").glob("*.json"))}

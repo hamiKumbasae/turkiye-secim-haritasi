@@ -16,7 +16,9 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
-REF_PATH = ROOT / "data" / "normalized" / "referandumlar.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
+
 YSK_DIR = ROOT / "data" / "raw" / "ysk" / "referandum"
 
 YEARS = {"1961referandum": "1961", "1982referandum": "1982", "1987referandum": "1987", "1988referandum": "1988"}
@@ -30,7 +32,7 @@ def turkish_upper(s: str) -> str:
 
 
 def main():
-    referandumlar = json.loads(REF_PATH.read_text(encoding="utf-8"))
+    secimler = {k: load_election(k) for k in YEARS}
     all_ok = True
     updated_fields = 0
 
@@ -38,7 +40,7 @@ def main():
         parsed_path = YSK_DIR / f"{ysk_year}_parsed.json"
         ysk = json.loads(parsed_path.read_text(encoding="utf-8"))["iller"]
 
-        secim = referandumlar[proj_key]
+        secim = secimler[proj_key]
         for il in secim["iller"]:
             ysk_il = ysk.get(turkish_upper(il["ad"]))
             if ysk_il is None:
@@ -71,9 +73,8 @@ def main():
         print("\nBAZI FARKLAR VAR — yukarida listelendi. Hicbir sey yazilmadi.")
         sys.exit(1)
 
-    REF_PATH.write_text(
-        json.dumps(referandumlar, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
+    for proj_key in YEARS:
+        save_election(proj_key, secimler[proj_key])
     print(f"\nTüm 4 yıl × 67 il TAM EŞLEŞTİ (secmen/gecerliOy/evet/hayir). "
           f"{updated_fields} alan (sandik/gecersizOy) YSK'den eklendi/güncellendi.")
 

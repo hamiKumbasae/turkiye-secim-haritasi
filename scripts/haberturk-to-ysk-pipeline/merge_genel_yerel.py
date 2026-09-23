@@ -19,8 +19,11 @@ from party_map_helper import build_auto_map, fold  # noqa: E402
 from hist_geomid import resolve_historical_merkez  # noqa: E402
 
 ROOT = pathlib.Path("/Users/hamikumbasar/Desktop/Turkiye_Secim_Haritasi")
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
+
 GEOMID_MAP_PATH = ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi.json"
-_GENEL2023 = json.loads((ROOT / "data" / "normalized" / "genel_secimler.json").read_text(encoding="utf-8"))["2023"]
+_GENEL2023 = load_election("2023")
 IL_ADI_BY_PLAKA = {i["plaka"]: i["ad"] for i in _GENEL2023["iller"]}
 ILCE_ADI_BY_GEOMID = {i["geomId"]: i["ad"] for i in _GENEL2023["ilceler"]}
 
@@ -90,17 +93,16 @@ def build_record(ad, plaka, agg, col_to_key, major, vekil=None, toplam_vekil=0):
 
 
 def main():
+    # dosya argumani artik sadece geriye-uyumluluk icin okunuyor - hangi
+    # dosyaya yazilacagi artik anahtarin kendisinden (common/election_io.py
+    # tur_of()) otomatik cikariliyor.
     dosya = sys.argv[1]  # "genel" | "yerel"
     key = sys.argv[2]
     agrege = json.loads(pathlib.Path(sys.argv[3]).read_text(encoding="utf-8"))
     extra_alias = json.loads(pathlib.Path(sys.argv[4]).read_text(encoding="utf-8")) if len(sys.argv) > 4 else {}
     geomid_map = json.loads(GEOMID_MAP_PATH.read_text(encoding="utf-8"))
 
-    target_path = ROOT / "data" / "normalized" / (
-        "genel_secimler.json" if dosya == "genel" else "yerel_secimler.json"
-    )
-    target = json.loads(target_path.read_text(encoding="utf-8"))
-    secim = target[key]
+    secim = load_election(key)
     major = set(secim["majorPartiler"])
 
     existing_keys = set()
@@ -164,10 +166,7 @@ def main():
 
     secim["iller"] = new_iller
     secim["ilceler"] = new_ilceler
-    target[key] = secim
-    target_path.write_text(
-        json.dumps(target, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
+    save_election(key, secim)
 
     print(f"{key}: {len(new_iller)} il, {len(new_ilceler)} ilce guncellendi.")
     print("parti eslemesi (sutun->anahtar, benzersiz adlar):")

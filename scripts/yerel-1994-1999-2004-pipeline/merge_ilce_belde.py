@@ -18,7 +18,9 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA_NORM = ROOT / "data" / "normalized"
-YEREL_PATH = DATA_NORM / "yerel_secimler.json"
+
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
 
 STATIC_MAP = {
     "ANAP": "ANAP", "BAĞIMSIZLAR": "Bağımsız", "BBP": "BBP", "BP": "BP",
@@ -33,7 +35,7 @@ STATIC_MAP = {
 
 MAX_GECERLI_OY_SAPMA = 0.02  # %2
 
-_GENEL2023 = json.loads((DATA_NORM / "genel_secimler.json").read_text(encoding="utf-8"))["2023"]
+_GENEL2023 = load_election("2023")
 AD_BY_GEOMID_PLAKA = {i["geomId"]: i["plaka"] for i in _GENEL2023["ilceler"]}
 
 
@@ -42,9 +44,8 @@ def main():
     parsed = json.loads(pathlib.Path(sys.argv[2]).read_text(encoding="utf-8"))
     buckets = parsed["buckets"]
 
-    yerel = json.loads(YEREL_PATH.read_text(encoding="utf-8"))
     key = f"{year}yerel"
-    secim = yerel[key]
+    secim = load_election(key)
     major = set(secim["majorPartiler"])
 
     by_geomid = {i["geomId"]: i for i in secim["ilceler"]}
@@ -119,9 +120,7 @@ def main():
             print(f"   {ad}: parti_toplami={s} resmi={o}")
 
     secim["ilceler"].sort(key=lambda x: (x["plaka"] or 0, x["ad"]))
-    YEREL_PATH.write_text(
-        json.dumps(yerel, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
+    save_election(key, secim)
     print(f"{year}: guncellenen ilce sayisi: {updated} / {len(secim['ilceler'])} (bunun {new_count[0]} tanesi YENI eklendi)")
 
 

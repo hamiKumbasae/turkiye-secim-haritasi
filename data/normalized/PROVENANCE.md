@@ -29,10 +29,25 @@ edilmiyor, çünkü tam da bu tür tekrarlar zamanla birbirinden kopuyor.
 
 - `partiler.json` — tüm seçimler arası paylaşılan parti adı→renk/kısaltma
   eşlemesi
-- `cumhurbaskanligi.json`, `genel_secimler.json`, `yerel_secimler.json`,
-  `referandumlar.json` — il/ilçe düzeyi seçim sonuçları, seçim türüne göre
-  ayrılmış (anahtarlar `sources.yml`'deki ile birebir aynı, örn. `"2023"`,
-  `"2014yerel"`, `"2017referandum"`, `"2023cb2tur"`)
+- `elections/<tur>/<anahtar>.json` — il/ilçe düzeyi seçim sonuçları, HER
+  SEÇİM AYRI BİR DOSYA (2026-09-23'te 4 büyük birleşik dosyadan — eski
+  `genel_secimler.json`/`yerel_secimler.json`/`referandumlar.json`/
+  `cumhurbaskanligi.json` — bu yapıya bölündü; `tur` klasörü `genel`,
+  `yerel`, `referandum`, `cumhurbaskanligi`'den biri, `anahtar` dosya adı
+  `sources.yml`'deki ile birebir aynı, örn. `elections/genel/2023.json`,
+  `elections/yerel/2014yerel.json`, `elections/referandum/2017referandum.json`,
+  `elections/cumhurbaskanligi/2023cb2tur.json`). Amaç: her seçimin
+  değişikliği kendi dosyasında görünsün (git diff/checksum izolasyonu) —
+  önceki tek-dosya-per-tür yapısında 20 yıllık genel seçim verisi tek bir
+  ~MB'lık JSON'da birlikte tutuluyor, herhangi bir yıla dokunmak tüm
+  dosyanın checksum'ını/diff'ini değiştiriyordu. Okuma/yazma HER ZAMAN
+  `scripts/common/election_io.py`'deki `load_election`/`save_election`/
+  `load_all_elections`/`load_elections_by_tur` yardımcılarıyla yapılır —
+  hangi seçimin hangi `tur` klasörüne gideceği anahtarın kendi sonekinden
+  (`tur_of()`) otomatik çıkarılır, hiçbir script artık bu dosya yollarını
+  elle bilmek zorunda değil. `scripts/build.py` bu 46+ dosyayı okuyup TEK
+  bir `secimler` sözlüğünde birleştirerek `index.html`'e gömer (frontend
+  hâlâ tek bir bütünleşik JSON görür, bölünme sadece disk/git düzeyinde).
 - `mahalle/<secim_anahtari>.json` — mahalle/muhtarlık düzeyi oy verisi,
   her biri bir seçim (bkz. `sources.yml`'deki YSK ilgili girişleri)
 - `meclis_2024.json` — 2024 yerel seçiminin il meclisi üye dağılımı (ayrı,

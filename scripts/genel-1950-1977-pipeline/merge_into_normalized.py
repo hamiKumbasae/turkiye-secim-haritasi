@@ -22,8 +22,10 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA_NORM = ROOT / "data" / "normalized"
-GENEL_PATH = DATA_NORM / "genel_secimler.json"
 PARTILER_PATH = DATA_NORM / "partiler.json"
+
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
 
 YEARS = ["1950", "1954", "1957", "1961", "1965", "1969", "1973", "1977"]
 
@@ -86,7 +88,7 @@ def main():
     parsed = json.loads(parsed_path.read_text(encoding="utf-8"))
     filename_to_label = load_filename_to_label(pathlib.Path(sys.argv[2]))
 
-    genel = json.loads(GENEL_PATH.read_text(encoding="utf-8"))
+    genel = {y: load_election(y) for y in YEARS}
     partiler = json.loads(PARTILER_PATH.read_text(encoding="utf-8"))
 
     for key, color in NEW_PARTY_COLORS.items():
@@ -169,9 +171,8 @@ def main():
     for year, total in NATIONAL_TOTAL_SEATS.items():
         genel[year]["toplamSandalye"] = total
 
-    GENEL_PATH.write_text(
-        json.dumps(genel, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
+    for year in YEARS:
+        save_election(year, genel[year])
     PARTILER_PATH.write_text(
         json.dumps(partiler, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
     )

@@ -26,7 +26,9 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from merge_into_normalized import map_party  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
-GENEL_PATH = ROOT / "data" / "normalized" / "genel_secimler.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election  # noqa: E402
+
 TOTALS_PATH = pathlib.Path(__file__).resolve().parent / "ysk_national_totals.json"
 
 YEARS = ["1950", "1954", "1957", "1961", "1965", "1969", "1973", "1977"]
@@ -80,7 +82,7 @@ def compare(label: str, computed: dict, declared_raw: dict, major: set, year: st
 
 
 def main():
-    genel = json.loads(GENEL_PATH.read_text(encoding="utf-8"))
+    genel = {y: load_election(y) for y in YEARS}
     totals = json.loads(TOTALS_PATH.read_text(encoding="utf-8"))
 
     report = {}

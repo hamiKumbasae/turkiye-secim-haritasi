@@ -14,13 +14,15 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from hist_geomid import resolve_historical_merkez  # noqa: E402
 
 ROOT = pathlib.Path("/Users/hamikumbasar/Desktop/Turkiye_Secim_Haritasi")
-REF_PATH = ROOT / "data" / "normalized" / "referandumlar.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
+
 GEOMID_MAP_PATH = ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi.json"
 
 # Dogru Turkce buyuk/kucuk harf donusumu icin YSK'nin UPPERCASE isimlerini
 # kullanmak yerine projenin KENDI (zaten dogru yazilmis) il/ilce adlarini
 # esas al - plaka+ilceId uzerinden.
-_GENEL2023 = json.loads((ROOT / "data" / "normalized" / "genel_secimler.json").read_text(encoding="utf-8"))["2023"]
+_GENEL2023 = load_election("2023")
 IL_ADI_BY_PLAKA = {i["plaka"]: i["ad"] for i in _GENEL2023["iller"]}
 ILCE_ADI_BY_GEOMID = {i["geomId"]: i["ad"] for i in _GENEL2023["ilceler"]}
 
@@ -65,8 +67,7 @@ def main():
     agrege = json.loads(pathlib.Path(sys.argv[2]).read_text(encoding="utf-8"))
     geomid_map = json.loads(GEOMID_MAP_PATH.read_text(encoding="utf-8"))
 
-    ref = json.loads(REF_PATH.read_text(encoding="utf-8"))
-    secim = ref[key]
+    secim = load_election(key)
     col_to_label = agrege["colToName"]
 
     # ilce sayisi per il (gecmis kayittan koru, il basina kac ilce oldugunu
@@ -128,10 +129,7 @@ def main():
             "hayir_oran": round(total_hayir / total * 100, 2) if total else None,
         }
 
-    ref[key] = secim
-    REF_PATH.write_text(
-        json.dumps(ref, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
+    save_election(key, secim)
 
     print(f"{key}: {len(new_iller)} il, {len(new_ilceler)} ilce guncellendi.")
     print(f"Ulusal: Evet %{total_evet/total*100:.2f}, Hayir %{total_hayir/total*100:.2f}")

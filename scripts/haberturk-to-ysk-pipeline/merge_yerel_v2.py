@@ -17,9 +17,11 @@ from party_map_helper import build_auto_map  # noqa: E402
 from hist_geomid import resolve_historical_merkez  # noqa: E402
 
 ROOT = pathlib.Path("/Users/hamikumbasar/Desktop/Turkiye_Secim_Haritasi")
-YEREL_PATH = ROOT / "data" / "normalized" / "yerel_secimler.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
+
 GEOMID_MAP_PATH = ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi.json"
-_GENEL2023 = json.loads((ROOT / "data" / "normalized" / "genel_secimler.json").read_text(encoding="utf-8"))["2023"]
+_GENEL2023 = load_election("2023")
 IL_ADI_BY_PLAKA = {i["plaka"]: i["ad"] for i in _GENEL2023["iller"]}
 ILCE_ADI_BY_GEOMID = {i["geomId"]: i["ad"] for i in _GENEL2023["ilceler"]}
 
@@ -94,8 +96,7 @@ def main():
     extra_alias = json.loads(pathlib.Path(sys.argv[3]).read_text(encoding="utf-8")) if len(sys.argv) > 3 else {}
     geomid_map = json.loads(GEOMID_MAP_PATH.read_text(encoding="utf-8"))
 
-    yerel = json.loads(YEREL_PATH.read_text(encoding="utf-8"))
-    secim = yerel[key]
+    secim = load_election(key)
     major = set(secim["majorPartiler"])
 
     existing_keys = set()
@@ -149,10 +150,7 @@ def main():
 
     secim["iller"] = new_iller
     secim["ilceler"] = new_ilceler
-    yerel[key] = secim
-    YEREL_PATH.write_text(
-        json.dumps(yerel, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
+    save_election(key, secim)
 
     print(f"{key}: {len(new_iller)} il, {len(new_ilceler)} ilce guncellendi.")
     print("il turu dagilimi:", kind_summary)

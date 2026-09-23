@@ -19,6 +19,9 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_NORM = ROOT / "data" / "normalized"
 DIST = ROOT / "index.html"
 
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_elections_by_tur  # noqa: E402
+
 # GitHub'in tek dosya limiti 100MB; erken uyari icin cok daha dusuk bir esik.
 DIST_SIZE_CEILING = 90 * 1024 * 1024
 
@@ -121,7 +124,7 @@ SANDALYE_ILLER_TOPLAMI_ISTISNA = {"1957", "1961"}
 
 
 def check_sandalye_totals():
-    genel = load_json(DATA_NORM / "genel_secimler.json")
+    genel = load_elections_by_tur()["genel"]
     all_ok = True
     bad = []
     for year, expected in EXPECTED_SANDALYE.items():
@@ -139,7 +142,7 @@ def check_sandalye_totals():
 
 
 def check_referandum_oranlari():
-    ref = load_json(DATA_NORM / "referandumlar.json")
+    ref = load_elections_by_tur()["referandum"]
     all_ok = True
     bad = []
     for key, expected in EXPECTED_REFERANDUM_ORAN.items():
@@ -163,7 +166,7 @@ def check_known_issue_2014yerel_bdp():
     taşınırken düzeltildi — bkz. sources.yml known_issues) geri gelmediğini
     doğrular: BDP toplamı 0'dan büyük olmalı ve Diyarbakır'ı kazanmış olmalı
     (bilinen tarihsel sonuç, Gültan Kışanak)."""
-    yerel = load_json(DATA_NORM / "yerel_secimler.json")
+    yerel = load_elections_by_tur()["yerel"]
     secim = yerel["2014yerel"]
     bdp_total = 0
     diyarbakir_kazanan = None

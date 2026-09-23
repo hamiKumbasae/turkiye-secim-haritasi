@@ -15,9 +15,11 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from hist_geomid import resolve_historical_merkez  # noqa: E402
 
 ROOT = pathlib.Path("/Users/hamikumbasar/Desktop/Turkiye_Secim_Haritasi")
-CB_PATH = ROOT / "data" / "normalized" / "cumhurbaskanligi.json"
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.election_io import load_election, save_election  # noqa: E402
+
 GEOMID_MAP_PATH = ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi.json"
-_GENEL2023 = json.loads((ROOT / "data" / "normalized" / "genel_secimler.json").read_text(encoding="utf-8"))["2023"]
+_GENEL2023 = load_election("2023")
 IL_ADI_BY_PLAKA = {i["plaka"]: i["ad"] for i in _GENEL2023["iller"]}
 ILCE_ADI_BY_GEOMID = {i["geomId"]: i["ad"] for i in _GENEL2023["ilceler"]}
 
@@ -87,8 +89,7 @@ def main():
     name_alias = json.loads(name_alias_path.read_text(encoding="utf-8")) if name_alias_path else {}
     geomid_map = json.loads(GEOMID_MAP_PATH.read_text(encoding="utf-8"))
 
-    cb = json.loads(CB_PATH.read_text(encoding="utf-8"))
-    secim = cb[key]
+    secim = load_election(key)
     col_to_name = agrege["colToName"]
 
     old_ilce_sayisi = {i["plaka"]: i["ilceSayisi"] for i in secim["iller"]}
@@ -135,10 +136,7 @@ def main():
 
     secim["iller"] = new_iller
     secim["ilceler"] = new_ilceler
-    cb[key] = secim
-    CB_PATH.write_text(
-        json.dumps(cb, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8"
-    )
+    save_election(key, secim)
 
     all_names = set()
     for i in new_iller:
