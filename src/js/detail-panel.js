@@ -24,26 +24,18 @@
     $('#dHeroPct').textContent = pct!=null ? '%'+pct.toFixed(2) : '';
   }
 
-  // 1950/1955 yerel secimlerinde belediye baskani halk oyuyla degil, meclisin
-  // kendi icinden seciliyordu - o yillarda 'oy'/'oran' alanlari null, bunun
-  // yerine 'sandalye'/'oranSandalye' (meclis sandalye dagilimi) dolu (bkz.
-  // yerel_secimler.json ust-seviye contestType/resultBasis alanlari). Bu
-  // fonksiyon her iki durumu da doğru etiketle gosterir - gercek oy yuzdesini
-  // meclis sandalye payiyla KARISTIRMAZ.
-  function isSeatBased(oy){ return (oy.oy==null || oy.oy===0) && oy.sandalye!=null; }
+  // isSeatBased/resultPercent/resultQuantity artik result-utils.js'te (paylasimli,
+  // tooltip.js/table.js/map.js ile AYNI mantik) - burada tekrar tanimlanmiyor.
 
   function partyRowEl(r){
     const short = PARTY[r.name] ? PARTY[r.name].short : r.name;
-    const seatBased = isSeatBased(r.oy);
-    const pct = seatBased ? (r.oy.oranSandalye!=null?r.oy.oranSandalye:0) : (r.oy.oran!=null ? r.oy.oran : 0);
-    const pctLabel = seatBased ? (r.oy.oranSandalye!=null?'%'+r.oy.oranSandalye.toFixed(1):'—') : (r.oy.oran!=null?'%'+r.oy.oran.toFixed(2):'—');
-    const qtyLabel = seatBased ? (r.oy.sandalye!=null?r.oy.sandalye+' meclis sandalyesi':'—') : (fmt(r.oy.oy)+' oy');
+    const pct = resultPercent(r.oy) || 0;
     const el = document.createElement('div'); el.className='party-row';
     el.innerHTML = '<div class="prow-top">'+
         '<span class="dot" style="background:'+partyColor(r.name)+'"></span>'+
         '<span class="name">'+short+'</span>'+
-        '<span class="pct">'+pctLabel+'</span>'+
-        '<span class="oy">'+qtyLabel+'</span>'+
+        '<span class="pct">'+resultPercentLabel(r.oy)+'</span>'+
+        '<span class="oy">'+resultQuantity(r.oy)+'</span>'+
         (r.vekil>0 ? '<span class="vekil">'+r.vekil+'</span>' : '')+
       '</div>'+
       '<div class="bar-track"><div class="bar-fill" style="width:'+Math.max(pct,0)+'%; background:'+partyColor(r.name)+'"></div></div>';
@@ -76,11 +68,19 @@
       : heroSeatBased ? 'Meclis Çoğunluğu'
       : isIndirectElection ? 'Belediye Meclisi Seçiminde Birinci'
       : 'Kazanan';
-    const heroPct = heroOy ? (heroSeatBased ? heroOy.oranSandalye : heroOy.oran) : null;
+    const heroPct = heroOy ? resultPercent(heroOy) : null;
     setHero(heroLabel, p.kazanan && PARTY[p.kazanan]?PARTY[p.kazanan].short:p.kazanan, p.kazanan, heroPct);
 
+    // council_seats (1950): TUM iller sandalye-bazli, tek aciklama yeterli.
+    // mixed (1955): bazi illerde gercek oy sayisi da biliniyor - kullaniciya
+    // bunun il'e gore DEGISTIGINI de soylemek gerekiyor, tek cumlelik
+    // "meclis dagilimi" aciklamasi burada yaniltici olurdu.
     $('#dInfoNote').style.display = isIndirectElection ? 'flex' : 'none';
-    if(isIndirectElection) $('#dInfoNote').textContent = 'ⓘ Bu seçimde belediye başkanı doğrudan halk tarafından seçilmiyordu. Sonuçlar belediye meclisi dağılımını temel alır.';
+    if(isIndirectElection){
+      $('#dInfoNote').textContent = DATA.resultBasis==='mixed'
+        ? 'ⓘ Bu seçimde belediye başkanı doğrudan halk tarafından seçilmiyordu. Kaynak kapsamına göre bazı illerde oy sonuçları, bazı illerde meclis sandalye dağılımı gösterilir.'
+        : 'ⓘ Bu seçimde belediye başkanı doğrudan halk tarafından seçilmiyordu. Sonuçlar belediye meclisi dağılımını temel alır.';
+    }
 
     $('#dSeatsLabel').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? 'Vekil / Sandalye' : 'Milletvekili';
     $('#dSeats').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? (p.toplamVekil || '—') : p.toplamVekil;
@@ -102,8 +102,7 @@
     // gecmiyorsa) en cok oy alan birkac partiyi one al, kalanlari "digerleri"ne birak.
     const rows = primary.length ? primary : extra.splice(0, Math.min(5, extra.length));
     if(DATA.tur !== 'yerel' && p.digerOy>0) rows.push({name:'Diğer', oy:{oy:p.digerOy, oran:p.digerOran}, vekil:0});
-    $('#dResultsHead').textContent = (DATA.resultBasis==='council_seats') ? 'Belediye Meclisi Sandalye Dağılımı'
-      : (DATA.resultBasis==='mixed') ? 'Sonuçlar (bazı illerde meclis sandalye dağılımı)' : 'Sonuçlar';
+    $('#dResultsHead').textContent = (DATA.resultBasis==='council_seats') ? 'Meclis Sandalye Dağılımı' : 'Sonuçlar';
     const wrap = $('#dParties'); wrap.innerHTML='';
     for(const r of rows) wrap.appendChild(partyRowEl(r));
     if(extra.length){
@@ -135,7 +134,7 @@
     $('#dPlaka').textContent = [d?d.ad:null, p?p.ad:null].filter(Boolean).join(', ');
 
     const heroOy = row.kazanan ? row.oy[row.kazanan] : null;
-    setHero('Kazanan', row.kazanan && PARTY[row.kazanan]?PARTY[row.kazanan].short:row.kazanan, row.kazanan, heroOy && heroOy.oran!=null ? heroOy.oran : null);
+    setHero('Kazanan', row.kazanan && PARTY[row.kazanan]?PARTY[row.kazanan].short:row.kazanan, row.kazanan, heroOy ? resultPercent(heroOy) : null);
 
     const gecerli = Object.values(row.oy||{}).reduce((s,o)=>s+(o.oy||0),0);
     $('#dSeatsLabel').textContent = 'Sandık';
@@ -167,8 +166,11 @@
       const row = document.createElement('div'); row.className='district-row';
       if(d.geomId) row.dataset.geomId = d.geomId;
       const short = d.kazanan ? (PARTY[d.kazanan]?PARTY[d.kazanan].short:d.kazanan) : '—';
+      const dOy = d.oy[d.kazanan];
+      const dPctLabel = dOy ? resultPercentLabel(dOy) : '—';
+      const dInfo = dOy ? ((dPctLabel!=='—' ? dPctLabel+' · ' : '')+resultQuantity(dOy)) : '–';
       row.innerHTML = '<span class="dname">'+d.ad+'</span>'+
-        '<span class="dwinner"><span class="ddot" style="background:'+(d.kazanan?partyColor(d.kazanan):'var(--map-empty)')+'"></span>'+short+' · '+(d.oy[d.kazanan]?((d.oy[d.kazanan].oran!=null?'%'+d.oy[d.kazanan].oran.toFixed(2)+' · ':'')+fmt(d.oy[d.kazanan].oy)+' oy'):'–')+'</span>';
+        '<span class="dwinner"><span class="ddot" style="background:'+(d.kazanan?partyColor(d.kazanan):'var(--map-empty)')+'"></span>'+short+' · '+dInfo+'</span>';
       if(d.geomId && pathByGeomId[d.geomId]){
         row.addEventListener('mouseenter', ()=> pathByGeomId[d.geomId].classList.add('selected'));
         row.addEventListener('mouseleave', ()=> pathByGeomId[d.geomId].classList.remove('selected'));
@@ -294,7 +296,10 @@
     const rows = Object.entries(m.partiler).sort((a,b)=>b[1]-a[1]);
     const wrap = $('#dParties'); wrap.innerHTML='';
     for(const [name, n] of rows){
-      wrap.appendChild(partyRowEl({name, oy:{oy:n, oran: m.toplam ? n/m.toplam*100 : null}, vekil:0}));
+      // Meclis UYE SAYISI - oy DEGIL. {oy:n} sekli isSeatBased()'i yanlislikla
+      // atlatip "n oy" yazdiriyordu (bkz. son inceleme) - dogru sekil, partyRowEl'in
+      // (result-utils.js uzerinden) sandalye dalina girmesini saglar: "n meclis sandalyesi".
+      wrap.appendChild(partyRowEl({name, oy:{oy:null, sandalye:n, oranSandalye: m.toplam ? n/m.toplam*100 : null}, vekil:0}));
     }
   }
 

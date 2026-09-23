@@ -30,3 +30,17 @@ jobs:
 
       - name: Commit'li index.html güncel mi (build sonrası fark olmamalı)
         run: git diff --exit-code index.html
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Tarayıcı smoke test bağımlılıklarını kur
+        working-directory: tests
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+
+      - name: Tarayıcı smoke testleri (2023 genel, 1950/1955 yerel, 2024 ilçe meclisi, referandum)
+        working-directory: tests
+        run: node browser_smoke.js

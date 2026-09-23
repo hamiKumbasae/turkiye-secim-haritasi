@@ -79,7 +79,11 @@
     const totals = {};
     for(const p of DATA.iller){ for(const [cand, info] of Object.entries(p.oy)){ totals[cand] = (totals[cand]||0) + info.oy; } }
     const grand = Object.values(totals).reduce((a,b)=>a+b, 0);
-    $('#seatbarTitle').textContent = 'Ulusal Oy Dağılımı';
+    // Bu toplam sadece DATA.iller'den (yurt ici) geliyor - yurtdisi secmeni
+    // olan secimlerde "Ulusal" baslik yaniltici olur (bkz. renderNationalSummary
+    // ayni gerekce).
+    const hasYurtdisi = !!(DATA.yurtdisi && DATA.yurtdisi.oy && Object.keys(DATA.yurtdisi.oy).length);
+    $('#seatbarTitle').textContent = hasYurtdisi ? 'Yurt İçi Oy Dağılımı' : 'Ulusal Oy Dağılımı';
     $('#majoritySub').textContent = 'Kazanmak için geçerli oyların yarısından fazlası gerekir';
     for(const cand of MAJOR){
       const n = totals[cand] || 0;
@@ -145,8 +149,14 @@
     for(const p of DATA.iller){ wins[p.kazanan] = (wins[p.kazanan]||0) + 1; }
     const total = DATA.iller.length;
     const order = [...MAJOR];
-    $('#seatbarTitle').textContent = 'İl Belediyeleri — Parti Bazında Kazanılan İl Sayısı';
-    $('#majoritySub').textContent = total+' il/büyükşehir belediye başkanlığı';
+    // 1950/1955 (contestType=municipal_indirect): belediye baskani halk
+    // tarafindan DOGRUDAN secilmiyordu - "belediye başkanlığı" ifadesi
+    // modern dogrudan secimlerle ayni sekilde kullanilamaz.
+    const isIndirect = DATA.contestType === 'municipal_indirect';
+    $('#seatbarTitle').textContent = isIndirect
+      ? 'İl Meclisleri — Parti Bazında Çoğunluk Sağlanan İl Sayısı'
+      : 'İl Belediyeleri — Parti Bazında Kazanılan İl Sayısı';
+    $('#majoritySub').textContent = total+(isIndirect ? ' il meclisi çoğunluğu' : ' il/büyükşehir belediye başkanlığı');
     for(const party of order){
       const n = wins[party] || 0;
       if(n<=0) continue;

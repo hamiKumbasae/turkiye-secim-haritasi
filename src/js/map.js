@@ -99,8 +99,16 @@
     $('#partySelect').style.display = mode==='parti' ? '' : 'none';
     applyMapMode();
   }
+  // council_seats/mixed (1950/1955 yerel): oy oranlari ile sandalye paylari
+  // AYNI renk skalasinda karsilastirilamaz (biri gercek oy yuzdesi, digeri
+  // meclis sandalye payi) - v1 icin bu sadece "Parti" modunu bu yillarda
+  // gizler (bkz. son inceleme), yeni bir "Meclis Payı" modu EKLEMEZ.
+  function partiModeAvailable(){
+    return DATA.resultBasis !== 'council_seats' && DATA.resultBasis !== 'mixed';
+  }
   function resetMapModeUI(){
     populatePartySelect();
+    $('#modeGroup button[data-mode="parti"]').hidden = !partiModeAvailable();
     setMapMode('winner');
   }
   $$('#modeGroup button').forEach(b=>{
@@ -314,7 +322,7 @@
     if(mode==='parti'){ key = currentMapParty; hue = key ? colorToHue(partyColor(key)) : 210; }
     else { key=null; hue=210; }
     const noKatilimData = !key && entities.every(e => e.katilim==null);
-    let vals = entities.map(e => key ? (e.oy[key]&&e.oy[key].oran!=null?e.oy[key].oran:0) : (e.katilim!=null?e.katilim:0));
+    let vals = entities.map(e => key ? (resultPercent(e.oy[key]) ?? 0) : (e.katilim!=null?e.katilim:0));
     const vmin = Math.min(...vals), vmax = Math.max(...vals);
     $('#seqMin').textContent = noKatilimData ? '—' : (vmin||0).toFixed(2)+'%';
     $('#seqMax').textContent = noKatilimData ? '—' : (vmax||0).toFixed(2)+'%';
@@ -322,7 +330,7 @@
     for(const e of entities){
       const el = pathFor(e); if(!el) continue;
       if(noKatilimData){ el.setAttribute('fill','var(--map-empty)'); continue; }
-      const v = key ? (e.oy[key]&&e.oy[key].oran!=null?e.oy[key].oran:0) : (e.katilim!=null?e.katilim:0);
+      const v = key ? (resultPercent(e.oy[key]) ?? 0) : (e.katilim!=null?e.katilim:0);
       const t = vmax>vmin ? (v-vmin)/(vmax-vmin) : 0.5;
       el.setAttribute('fill', seqColor(t,hue));
     }

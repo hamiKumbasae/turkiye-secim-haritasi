@@ -20,15 +20,17 @@
     const isOranTip = DATA.tur === 'referandum' || DATA.tur === 'yerel' || DATA.tur === 'cumhurbaskanligi' || YEARS_NO_VEKIL.has(currentYear);
     if(mode==='winner'){
       const wOy = obj.oy[obj.kazanan];
-      const wSeatBased = wOy && isSeatBased(wOy);
-      const seatInfo = wSeatBased ? ('%'+(wOy.oranSandalye!=null?wOy.oranSandalye.toFixed(1):'0.0')+' meclis payı'+(wOy.sandalye!=null?' · '+wOy.sandalye+' sandalye':''))
-        : isOranTip ? ('%'+(wOy&&wOy.oran!=null?wOy.oran.toFixed(2):'0.00')+(wOy?' · '+fmt(wOy.oy)+' oy':''))
+      const wSeatBased = isSeatBased(wOy);
+      const partyLabel = obj.kazanan ? (PARTY[obj.kazanan]?PARTY[obj.kazanan].short:obj.kazanan) : '—';
+      const rowLabel = wSeatBased ? ('Meclis çoğunluğu: '+partyLabel) : (partyLabel+' önde');
+      const seatInfo = wSeatBased ? (resultPercentLabel(wOy)+' meclis payı'+(wOy.sandalye!=null?' · '+wOy.sandalye+' sandalye':''))
+        : isOranTip ? (resultPercentLabel(wOy)+(wOy?' · '+resultQuantity(wOy):''))
         : (info.kind==='il' ? (obj.toplamVekil+' vekil') : ('ilçe kazananı'));
-      html += '<div class="row"><span>'+ (obj.kazanan? (PARTY[obj.kazanan]?PARTY[obj.kazanan].short:obj.kazanan) : '—') +' önde</span><span>'+seatInfo+'</span></div>';
+      html += '<div class="row"><span>'+rowLabel+'</span><span>'+seatInfo+'</span></div>';
     } else if(mode==='parti'){
       const key = currentMapParty;
       const o = obj.oy[key];
-      html += '<div class="row"><span>'+(PARTY[key]?PARTY[key].short:key)+'</span><span>%'+(o&&o.oran!=null?o.oran.toFixed(2):'0.00')+(o?' · '+fmt(o.oy)+' oy':'')+'</span></div>';
+      html += '<div class="row"><span>'+(PARTY[key]?PARTY[key].short:key)+'</span><span>'+resultPercentLabel(o)+(o?' · '+resultQuantity(o):'')+'</span></div>';
     } else {
       html += '<div class="row"><span>Katılım</span><span>'+(obj.katilim!=null?'%'+obj.katilim.toFixed(2):'—')+'</span></div>';
     }
