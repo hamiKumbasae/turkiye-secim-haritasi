@@ -1,139 +1,182 @@
 {
-  "8": [
-    {
-      "hideIds": [
-        "TR-D-08-005",
-        "TR-D-08-006"
-      ],
-      "splitYear": 2017,
-      "syntheticId": "HIST-Artvin-Hopa"
-    }
-  ],
-  "7": [
-    {
-      "hideIds": [
-        "TR-D-07-018",
-        "TR-D-07-013"
-      ],
-      "splitYear": 2008,
-      "syntheticId": "HIST-Antalya-Merkez"
-    }
-  ],
-  "10": [
-    {
-      "hideIds": [
-        "TR-D-10-014",
-        "TR-D-10-001"
-      ],
-      "splitYear": 2014,
-      "syntheticId": "HIST-Balıkesir-Merkez"
-    }
-  ],
-  "21": [
-    {
-      "hideIds": [
-        "TR-D-21-001",
-        "TR-D-21-011",
-        "TR-D-21-016",
-        "TR-D-21-017"
-      ],
-      "splitYear": 2008,
-      "syntheticId": "HIST-Diyarbakır-Merkez"
-    }
-  ],
-  "26": [
-    {
-      "hideIds": [
-        "TR-D-26-010",
-        "TR-D-26-014"
-      ],
-      "splitYear": 2008,
-      "syntheticId": "HIST-Eskişehir-Merkez"
-    }
-  ],
-  "45": [
-    {
-      "hideIds": [
-        "TR-D-45-015",
-        "TR-D-45-017"
-      ],
-      "splitYear": 2014,
-      "syntheticId": "HIST-Manisa-Merkez"
-    }
-  ],
-  "44": [
-    {
-      "hideIds": [
-        "TR-D-44-004",
-        "TR-D-44-013"
-      ],
-      "splitYear": 2014,
-      "syntheticId": "HIST-Malatya-Merkez"
-    }
-  ],
-  "46": [
-    {
-      "hideIds": [
-        "TR-D-46-004",
-        "TR-D-46-009"
-      ],
-      "splitYear": 2014,
-      "syntheticId": "HIST-Kahramanmaraş-Merkez"
-    }
-  ],
-  "33": [
-    {
-      "hideIds": [
-        "TR-D-33-001",
-        "TR-D-33-008",
-        "TR-D-33-012",
-        "TR-D-33-013"
-      ],
-      "splitYear": 2008,
-      "syntheticId": "HIST-Mersin-Merkez"
-    }
-  ],
-  "63": [
-    {
-      "hideIds": [
-        "TR-D-63-005",
-        "TR-D-63-007",
-        "TR-D-63-010"
-      ],
-      "splitYear": 2014,
-      "syntheticId": "HIST-Şanlıurfa-Merkez"
-    }
-  ],
-  "65": [
-    {
-      "hideIds": [
-        "TR-D-65-009",
-        "TR-D-65-013"
-      ],
-      "splitYear": 2011,
-      "syntheticId": "HIST-Van-Merkez"
-    }
-  ],
-  "55": [
-    {
-      "hideIds": [
-        "TR-D-55-004",
-        "TR-D-55-007",
-        "TR-D-55-010",
-        "TR-D-55-014"
-      ],
-      "splitYear": 2014,
-      "syntheticId": "HIST-Samsun-Merkez"
-    }
-  ],
-  "25": [
-    {
-      "hideIds": [
-        "TR-D-25-020",
-        "TR-D-25-013"
-      ],
-      "splitYear": 2008,
-      "syntheticId": "HIST-Erzurum-Merkez"
-    }
-  ]
+ "8": [
+  {
+   "hideIds": [
+    "TR-D-08-005",
+    "TR-D-08-006"
+   ],
+   "splitYear": 2017,
+   "syntheticId": "HIST-Artvin-Hopa"
+  }
+ ],
+ "7": [
+  {
+   "hideIds": [
+    "TR-D-07-018",
+    "TR-D-07-013"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Antalya-Merkez"
+  }
+ ],
+ "10": [
+  {
+   "hideIds": [
+    "TR-D-10-014",
+    "TR-D-10-001"
+   ],
+   "splitYear": 2014,
+   "syntheticId": "HIST-Balıkesir-Merkez"
+  }
+ ],
+ "21": [
+  {
+   "hideIds": [
+    "TR-D-21-001",
+    "TR-D-21-011",
+    "TR-D-21-016",
+    "TR-D-21-017"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Diyarbakır-Merkez"
+  }
+ ],
+ "26": [
+  {
+   "hideIds": [
+    "TR-D-26-010",
+    "TR-D-26-014"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Eskişehir-Merkez"
+  }
+ ],
+ "45": [
+  {
+   "hideIds": [
+    "TR-D-45-015",
+    "TR-D-45-017"
+   ],
+   "splitYear": 2014,
+   "syntheticId": "HIST-Manisa-Merkez"
+  }
+ ],
+ "44": [
+  {
+   "hideIds": [
+    "TR-D-44-004",
+    "TR-D-44-013"
+   ],
+   "splitYear": 2014,
+   "syntheticId": "HIST-Malatya-Merkez"
+  }
+ ],
+ "46": [
+  {
+   "hideIds": [
+    "TR-D-46-004",
+    "TR-D-46-009"
+   ],
+   "splitYear": 2014,
+   "syntheticId": "HIST-Kahramanmaraş-Merkez"
+  }
+ ],
+ "33": [
+  {
+   "hideIds": [
+    "TR-D-33-001",
+    "TR-D-33-008",
+    "TR-D-33-012",
+    "TR-D-33-013"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Mersin-Merkez"
+  }
+ ],
+ "63": [
+  {
+   "hideIds": [
+    "TR-D-63-005",
+    "TR-D-63-007",
+    "TR-D-63-010"
+   ],
+   "splitYear": 2014,
+   "syntheticId": "HIST-Şanlıurfa-Merkez"
+  }
+ ],
+ "65": [
+  {
+   "hideIds": [
+    "TR-D-65-009",
+    "TR-D-65-013"
+   ],
+   "splitYear": 2011,
+   "syntheticId": "HIST-Van-Merkez"
+  }
+ ],
+ "55": [
+  {
+   "hideIds": [
+    "TR-D-55-004",
+    "TR-D-55-007",
+    "TR-D-55-010",
+    "TR-D-55-014"
+   ],
+   "splitYear": 2014,
+   "syntheticId": "HIST-Samsun-Merkez"
+  }
+ ],
+ "25": [
+  {
+   "hideIds": [
+    "TR-D-25-020",
+    "TR-D-25-013"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Erzurum-Merkez"
+  }
+ ],
+ "34": [
+  {
+   "hideIds": [
+    "TR-D-34-012",
+    "TR-D-34-014"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Istanbul-Buyukcekmece"
+  },
+  {
+   "hideIds": [
+    "TR-D-34-003",
+    "TR-D-34-016",
+    "TR-D-34-037"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Istanbul-Umraniye"
+  },
+  {
+   "hideIds": [
+    "TR-D-34-003",
+    "TR-D-34-023"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Istanbul-Kadikoy"
+  },
+  {
+   "hideIds": [
+    "TR-D-34-003",
+    "TR-D-34-038"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Istanbul-Uskudar"
+  },
+  {
+   "hideIds": [
+    "TR-D-34-003",
+    "TR-D-34-025"
+   ],
+   "splitYear": 2008,
+   "syntheticId": "HIST-Istanbul-Kartal"
+  }
+ ]
 }

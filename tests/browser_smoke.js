@@ -84,8 +84,62 @@ async function scenario_istanbul1994geometri(browser) {
       ? await page.$eval('.il-path-nodata', (el) => getComputedStyle(el).cursor)
       : null;
     check('1994 yerel İstanbul: veri olmayan ilçe tıklanabilir görünmüyor (cursor=default)', nodataCursor === 'default', 'cursor=' + nodataCursor);
+
+    // Buyukcekmece (Beylikduzu'nun eski, tek-ebeveynli hali) ve Umraniye
+    // (Cekmekoy'un eski hali) icin gercek tarihsel birlesim poligonu var
+    // (bkz. scripts/haberturk-to-ysk-pipeline/apply_verified_district_merges.py) -
+    // hem sentetik HIST- poligon render edilmeli HEM DE ust uste binen eski
+    // modern (kucuk) sekilleri AYRICA "veri yok" olarak cizilmemeli.
+    const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+      els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+    const expectedHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
+      'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar', 'HIST-Istanbul-Kartal'];
+    check('1994 yerel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor (Büyükçekmece/Ümraniye/Kadıköy/Üsküdar/Kartal)',
+      expectedHist.every((id) => histIds.includes(id)), JSON.stringify(histIds));
+    // Ataşehir (TR-D-34-003) 4 ebeveyne (Kadıköy/Üsküdar/Ümraniye/Kartal) TAM
+    // dağıtıldığı için (16/16 mahalle, kalıntı yok) artık ayrıca "veri yok"
+    // gösterilmemeli - bkz. geo/historical/district_mahalle_merges.yaml.
+    const staleDuplicates = await page.$$eval(
+      ['TR-D-34-014', 'TR-D-34-037', 'TR-D-34-012', 'TR-D-34-016',
+        'TR-D-34-003', 'TR-D-34-023', 'TR-D-34-038', 'TR-D-34-025']
+        .map((id) => `path.il-path[data-geom-id="${id}"]`).join(', '),
+      (els) => els.length);
+    check('1994 yerel İstanbul: birleşimin parçası olan eski modern şekiller ayrıca (üst üste) çizilmiyor', staleDuplicates === 0, 'count=' + staleDuplicates);
   });
   check('1994 yerel İstanbul geometrisi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+// Bir secimde HIC ilce-duzeyi veri yoksa (orn. 1965 genel - sadece il
+// duzeyinde kaynak var), il TEK PARCA olarak gosterilmeli - 39 parcaya
+// bolup "veri yok" katmani cizmek de yaniltici (bilmedigimiz bir seyi
+// biliyormus gibi parcalamak) - bkz. son inceleme regresyonu (bu davranis
+// bir onceki turda yanlislikla kirilmis, kullanici fark etti).
+async function scenario_ilOnlyYearsTekParca(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(400);
+    const found1965 = await clickYear(page, '1965');
+    check('1965 genel: yıl seçilebildi', found1965);
+    await page.waitForTimeout(400);
+    await page.fill('#searchBox', 'İstanbul');
+    await page.waitForTimeout(300);
+    let nodata = await page.$$eval('.il-path-nodata', (els) => els.length);
+    let whole = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
+    check('1965 genel (hiç ilçe verisi yok): İstanbul tek parça, ilçe alt katmanı yok', nodata === 0 && whole === 1, 'nodata=' + nodata + ' whole=' + whole);
+
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.click('#btnTurYerel');
+    await page.waitForTimeout(400);
+    const found1977 = await clickYear(page, '1977');
+    check('1977 yerel: yıl seçilebildi', found1977);
+    await page.waitForTimeout(400);
+    await page.fill('#searchBox', 'İstanbul');
+    await page.waitForTimeout(300);
+    nodata = await page.$$eval('.il-path-nodata', (els) => els.length);
+    whole = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
+    check('1977 yerel (hiç ilçe verisi yok): İstanbul tek parça, ilçe alt katmanı yok', nodata === 0 && whole === 1, 'nodata=' + nodata + ' whole=' + whole);
+  });
+  check('il-only yıllar: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
 async function scenario_1950yerel(browser) {
@@ -176,6 +230,7 @@ async function main() {
   try {
     await scenario_2023genel(browser);
     await scenario_istanbul1994geometri(browser);
+    await scenario_ilOnlyYearsTekParca(browser);
     await scenario_1950yerel(browser);
     await scenario_1955yerel(browser);
     await scenario_2024meclis(browser);

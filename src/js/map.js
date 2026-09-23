@@ -193,6 +193,26 @@
     return rows.length ? rows : null;
   }
 
+  // Bir kac secili (simdilik SADECE tek-ebeveynli, yuksek-guven arastirmayla
+  // dogrulanmis) ilce icin gercek tarihsel poligon birlesimi var (bkz.
+  // geo/historical/district_splits.json + turkiye_ilce_sinirlari_hist_splits.geojson,
+  // orn. HIST-Istanbul-Buyukcekmece = Buyukcekmece+Beylikduzu). Bu secimde
+  // o birlesik (sentetik) id GERCEKTEN kullanildiysa (veri satirinin geomId'si
+  // ona esitse), birlesimin PARCASI olan modern id'leri (orn. Beylikduzu'nun
+  // kendi modern poligonu) AYRICA "veri yok" katmaninda gostermiyoruz -
+  // yoksa ayni alan iki kez (bir kere dogru renkli birlesim, bir kere de
+  // notr/gri kendi parcasi olarak) cizilmis olur.
+  function hiddenModernIdsForProvince(plaka, dataGeomIds){
+    const hidden = new Set();
+    const splits = DISTRICT_SPLITS[String(plaka)] || [];
+    for(const entry of splits){
+      if(dataGeomIds.has(entry.syntheticId)){
+        for(const hid of entry.hideIds) hidden.add(hid);
+      }
+    }
+    return hidden;
+  }
+
   function renderProvinceMap(plaka){
     view = {level:'province', plaka};
     const allDataFeats = districtFeaturesForProvince(plaka);
@@ -200,26 +220,28 @@
     // son inceleme: veri olmayan yerde yaniltici bir "tiklama alani" gorunmemeli).
     const dataFeats = allDataFeats.filter(f => districtHasRealData(districtByGeomId[f.properties.id]));
     const dataGeomIds = new Set(dataFeats.map(f=>f.properties.id));
-    // Bu ilin GUNCEL (modern) tum ilce sinirlari - o yil icin veri OLMAYAN
-    // ilceleri (orn. 2008 oncesi Istanbul'da henuz ayri ilce olmamis Ataşehir/
-    // Sancaktepe/Çekmeköy vb.) haritada tamamen BOS/delik birakmak yerine notr,
-    // TIKLANAMAZ bir alt katman olarak gosterir. BILEREK gercek tarihsel
-    // sinirlari "uydurmuyor" - 2008 bolunmesi mahalle bazinda birden fazla
-    // ilceden parca aldigi icin (bkz. son inceleme arastirmasi, Ataşehir=
-    // Kadıköy+Üsküdar+Kartal karisimi gibi) güvenilir bir kaynak olmadan
-    // dogru poligon birlestirmesi yapilamaz - modern siniri "bu donem icin
-    // veri yok" olarak gostermek, hicbir sey gostermemekten (delik) VEYA
-    // yanlis tarihsel sinir uydurmaktan daha dogru.
-    const modernFeats = GEO_ILCE.features.filter(f=>f.properties.plaka===plaka);
-    const noDataFeats = modernFeats.filter(f=>!dataGeomIds.has(f.properties.id));
+    const hiddenByMerge = hiddenModernIdsForProvince(plaka, dataGeomIds);
+    // Bu ilin GUNCEL (modern) tum ilce sinirlari - SADECE bu il/yil icin
+    // GERCEKTEN kismi ilce verisi varsa (dataFeats.length>0, yani bazi
+    // ilceler biliniyor bazilari bilinmiyor) devreye girer: bilinmeyenleri
+    // notr/TIKLANAMAZ bir alt katman olarak gosterir (orn. 2008 oncesi
+    // Istanbul'da Ataşehir/Sancaktepe vb.) - BILEREK gercek tarihsel
+    // sinirlari "uydurmuyor". Eger bu il/yil icin HIC ilce verisi yoksa
+    // (dataFeats bos - orn. 1950-1977/1983-1987 genel, sadece il-duzeyi
+    // kaynak), bu katman HIC HESAPLANMAZ/GOSTERILMEZ - asagidaki "tek
+    // parca il" fallback'i kullanilir (bkz. son inceleme: bilmedigimiz
+    // bir seyi 39 parcaya bolup "veri yok" diye gostermek de yaniltici -
+    // sadece GERCEKTEN KISMEN bildigimiz durumlarda parcali gosterim yapilir).
+    const modernFeats = dataFeats.length ? GEO_ILCE.features.filter(f=>f.properties.plaka===plaka) : [];
+    const noDataFeats = modernFeats.filter(f=>!dataGeomIds.has(f.properties.id) && !hiddenByMerge.has(f.properties.id));
     const fallbackFeats = GEO.features.filter(f=>f.properties.plaka===plaka);
     const allFeats = dataFeats.length ? [...dataFeats, ...noDataFeats] : fallbackFeats;
     const project = computeProjection(allFeats.length?allFeats:fallbackFeats, PAD);
     svg.innerHTML = '';
     pathByPlaka = {}; pathByGeomId = {};
-    if(!dataFeats.length && !noDataFeats.length){
-      // Bu yil icin ilce verisi VE modern ilce geometrisi hic yok - il sinirini
-      // tek parca olarak, ilin kendi kazanan rengiyle goster.
+    if(!dataFeats.length){
+      // Bu yil icin ilce verisi hic yok - il sinirini tek parca olarak,
+      // ilin kendi kazanan rengiyle goster.
       const p = ilByPlaka[plaka];
       for(const f of fallbackFeats){
         const el = document.createElementNS(NS,'path');

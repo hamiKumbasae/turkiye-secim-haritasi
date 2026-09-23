@@ -1,0 +1,180 @@
+# Tarihsel ilce/mahalle birlesim kaydi — "eski (once-2008 vb.) ilce X aslinda
+# bugunku hangi ilce+mahallelerin toplamiydi" sorusunun CEVABI, resmi kanun
+# metnine dayali olarak.
+#
+# NEDEN BU DOSYA VAR: buyuksehir ilcelerinin 2008 (5747 sayili kanun) ve
+# sonrasindaki bolunmeleri COGUNLUKLA mahalle bazinda, BIRDEN FAZLA eski
+# ilceden parca alinarak yapildi (orn. Atasehir = Kadikoy'den 7 + Uskudar'dan
+# 3 + Kartal'dan 1 mahalle). Bu yuzden "yeni ilce X'in TUMUNU eski ilce Y'ye
+# geri ver" gibi basit bir es-esleme YANLIS olur - dogru sonuc icin YENI
+# ilcenin HANGI MAHALLESININ HANGI ESKI ILCEDEN geldigini bilmek gerekir.
+#
+# KAYNAK: 5747 sayili "Buyuksehir Belediyesi Sinirlari Icerisinde Ilce
+# Kurulmasi..." Kanunu (Kabul: 6 Mart 2008, Resmi Gazete: 22 Mart 2008).
+# Mahalle listeleri kanunun ekli (15,16,17,20,21,22 sayili) listelerinden -
+# lexpera.com.tr uzerinden 2026-09-23'te dogrulandi (bkz. asagidaki her
+# girisin "law_list_no" alani).
+#
+# confidence alani:
+#   verified   — kanunun EKLI LISTESINDEKI mahalle isimleri, GUNCEL mahalle_geo.json
+#                ile TAM (isim+sayi) eslesti, kalinti/artik parca YOK (butun
+#                yeni ilce mahalleleri eski ebeveynlere TAM dagitildi - dogrulama:
+#                toplam mahalle sayisi kanunun kendi rakamiyla (orn. "13
+#                mahalleden") eslesiyor).
+#   partial    — kanun metni var ama GUNCEL mahalle sinirlariyla TAM
+#                eslesmiyor (orn. yol/karayolu sinirli kismi bolunmeler,
+#                "Mahalle X'in ... kuzeyinde kalan kismi" gibi - modern
+#                mahalle bu ayrimi yansitmiyorsa GUVENLE birlestirilemez).
+#                BU SEVIYEDEKILER SU AN ISLENMIYOR (script atliyor).
+#   research_needed — kaynak (orn. hangi "Ilk Kademe Belediyesi"nin hangi
+#                ilceye bagli oldugu) net degil / kanunun kendisinde ayrica
+#                arastirma gerektiriyor - henuz mahalle listesi bile
+#                dogrulanmadi.
+
+istanbul_2008:
+  law: "5747 sayılı Kanun (6 Mart 2008 kabul, 22 Mart 2008 Resmî Gazete)"
+  split_year: 2008
+  # Bu buyuksehirde etkilenen secimler (yeni ilcelerin HENUZ kurulmadigi,
+  # dolayisiyla eski ilcelerin GENISLETILMIS halinin gosterilmesi gereken
+  # yerel secimler).
+  affected_years: [1994yerel, 1999yerel, 2004yerel]
+
+  # --- Beylikduzu/Cekmekoy: TEK ebeveynli, apply_verified_district_merges.py
+  # icindeki VERIFIED_MERGES ile ZATEN uygulandi (bu YAML'a henuz tasinmadi -
+  # ileride bu dosyada birlesebilirler, simdilik iki ayri mekanizma).
+
+  # --- Atasehir: 4 ebeveynden mahalle bazinda, TAM dogrulandi -------------
+  atasehir:
+    new_district_geomid: TR-D-34-003
+    new_district_name: Ataşehir
+    law_list_no: 16
+    law_says_mahalle_count: 13  # kanun metni boyle diyor, ama GUNCEL mahalle_geo.json'da 16 mahalle var (bkz. not)
+    note: >
+      Kanunun kendi metni "13 mahalleden olusmak kaydiyla" diyor ama bazi
+      mahalleler sonradan (2008 sonrasi) ayrica bolunmus olabilir - GUNCEL
+      mahalle_geo.json'da Atasehir'in 16 mahallesi var, bunlarin TAMAMI
+      asagidaki 4 kaynaktan birine 1-1 eslendi (7+3+5+1=16, kalinti YOK).
+    confidence: verified
+    sources:
+      - old_district_geomid: TR-D-34-023
+        old_district_name: Kadıköy
+        mahalle_names:
+          - "YENİSAHRA MAH."
+          - "İÇERENKÖY MAH."
+          - "İNÖNÜ MAH."
+          - "KAYIŞDAĞI MAH."
+          - "BARBAROS MAH."
+          - "KÜÇÜKBAKKALKÖY MAH."
+          - "ATATÜRK MAH."
+      - old_district_geomid: TR-D-34-038
+        old_district_name: Üsküdar
+        mahalle_names:
+          - "FETİH MAH."
+          - "ESATPAŞA MAH."
+          - "ÖRNEK MAH."
+      - old_district_geomid: TR-D-34-037
+        old_district_name: Ümraniye
+        mahalle_names:
+          - "YENİ ÇAMLICA MAH."
+          - "YENİŞEHİR MAH."
+          - "MİMAR SİNAN MAH."
+          - "MEVLANA MAH."
+          - "MUSTAFA KEMAL MAH."
+      - old_district_geomid: TR-D-34-025
+        old_district_name: Kartal
+        mahalle_names:
+          - "FERHATPAŞA MAH."
+
+  # --- Sancaktepe: 16/18 mahalle Umraniye(Sarigazi+Yenidogan)/Kartal(Samandira)
+  # kaynagina TAM eslesti, 2 mahalle (Hilal, Pasakoy) kanunun verdigim ekli
+  # liste ozetinde YOK - bunlar ya sonradan kurulmus/bolunmus mahalleler ya
+  # da arastirmadigim baska bir kaynaktan (koy vb.) geliyor olabilir. Bu 2
+  # mahalle BILEREK disarida birakildi (union'a dahil edilmedi) - Sancaktepe
+  # kendi modern haliyle (kucuk, sadece bu 2 mahalleyi kapsayan bir "artik"
+  # alan olarak degil, HALA TAM sekliyle) "veri yok" gri katmaninda kalmaya
+  # devam eder (bkz. asagidaki not - bu KASITLI bir esitsizlik, script bunu
+  # otomatik cozmuyor).
+  sancaktepe:
+    new_district_geomid: TR-D-34-029
+    new_district_name: Sancaktepe
+    law_list_no: 21
+    confidence: partial
+    note: >
+      16/18 mahalle Umraniye (Sarigazi+Yenidogan beldeleri araciligiyla) ve
+      Kartal (Samandira beldesi araciligiyla) kaynagina eslendi. "Hilal" ve
+      "Pasakoy" mahalleleri kanunun bu ozetinde gecmiyor - kokenleri
+      ARASTIRILMADI, union'a DAHIL EDILMEDI (bkz. confidence: partial - bu
+      yuzden script bu girisi ISLEMIYOR, sadece kayit/dokumantasyon amacli).
+    sources:
+      - old_district_geomid: TR-D-34-037
+        old_district_name: Ümraniye
+        via: "Sarıgazi + Yenidoğan İlk Kademe Belediyeleri"
+        mahalle_names:
+          - "MECLİS MAH."
+          - "İNÖNÜ MAH."
+          - "EMEK MAH."
+          - "KEMAL TÜRKLER MAH."
+          - "ATATÜRK MAH."
+          - "YUNUS EMRE MAH."
+          - "SAFA MAH."
+          - "MEVLANA MAH."
+          - "MERVE MAH."
+      - old_district_geomid: TR-D-34-025
+        old_district_name: Kartal
+        via: "Samandıra İlk Kademe Belediyesi"
+        mahalle_names:
+          - "ABDURRAHMANGAZİ MAH."
+          - "AKPINAR MAH."
+          - "OSMANGAZİ MAH."
+          - "VEYSEL KARANİ MAH."
+          - "EYÜP SULTAN MAH."
+          - "FATİH MAH."
+    unresolved_mahalle_names: ["HİLAL MAH.", "PAŞAKÖY MAH."]
+
+  # --- Sultangazi, Basaksehir, Arnavutkoy, Esenyurt: kanun metni bulundu
+  # (bkz. son oturum arastirmasi) ama GUNCEL mahalle_geo.json ile TAM
+  # eslesme HENUZ dogrulanmadi (kismi/yol-sinirli parcalar, "Ilk Kademe
+  # Belediyesi" gibi ucuncu-taraf eski birimlerin KENDI ebeveyni belirsiz,
+  # vs.) - confidence: research_needed, script bunlari ISLEMIYOR. Ileride
+  # bu girisler "verified"e yukseltilip islenebilir.
+  sultangazi:
+    new_district_geomid: TR-D-34-033
+    confidence: research_needed
+    note: >
+      Kaynak (Gaziosmanpasa 13 mahalle + Eyup'ten Yayla + Esenler'den
+      sinirli-tanimli bir "Habipler" parcasi) biliniyor ama Gaziosmanpasa'nin
+      KENDI mahalle_geo.json kaydi YOK (bu ilce icin mahalle geometrisi bu
+      depoda hic cekilmemis) - bu yuzden Gaziosmanpasa'nin "geri kalani"
+      hesaplanamiyor, sadece Sultangazi'nin GUNCEL mahalleleri Gaziosmanpasa'ya
+      eklenebilir ama Gaziosmanpasa'nin KENDI modern sinirinin dogru olup
+      olmadigi ayrica dogrulanmadi.
+  basaksehir:
+    new_district_geomid: TR-D-34-008
+    confidence: research_needed
+    note: >
+      3 kaynak (Kucukcekmece, Esenler, "Bahcesehir Ilk Kademe Belediyesi")
+      var ama Bahcesehir Ilk Kademe Belediyesi'nin KENDISI hangi ilceye bagliydi
+      net degil (Buyukcekmece mi, Esenyurt'un o zamanki hali mi?) - ayrica
+      GUNCEL mahalle listesinde ("Basak", "Samlar") kanunun listesinde
+      GECMEYEN isimler var, muhtemelen 2008 sonrasi yeniden bolunme.
+  arnavutkoy:
+    new_district_geomid: TR-D-34-002
+    confidence: research_needed
+    note: >
+      8 FARKLI "Ilk Kademe Belediyesi"nden (Arnavutkoy, Bogazkoy, Bolluca,
+      Haracci, Tasoluk, Hadimkoy, Durusu) + Catalca ilce belediyesinden
+      mahalle aldi - hepsi ONCEDEN Catalca ilcesine bagliydi (Catalca cok
+      genis bir ilceydi) ama bunu TEK TEK dogrulamak (her Ilk Kademe
+      Belediyesi'nin GERCEKTEN Catalca'ya bagli oldugunu) ayrica arastirma
+      gerektiriyor.
+  esenyurt:
+    new_district_geomid: TR-D-34-018
+    confidence: research_needed
+    note: >
+      5 kaynak (Esenyurt Ilk Kademe, Kirac Ilk Kademe, Yakuplu Ilk Kademe,
+      Avcilar, Bahcesehir Ilk Kademe) - web aramasi CELISKILI sonuclar
+      verdi (bir kaynak "sadece Buyukcekmece" derken digeri "Kirac+Avcilar+
+      Bahcesehir parcalari da var" dedi) - kanunun ekli 20 sayili listesi
+      bulundu (bkz. yukarida sultangazi/basaksehir notlarindaki gibi ham
+      veri) ama TUM kaynaklarin (Kirac, Yakuplu, Avcilar, Bahcesehir) HANGI
+      ilceye bagli oldugu net degil.

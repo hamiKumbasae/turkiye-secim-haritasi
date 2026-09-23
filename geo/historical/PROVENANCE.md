@@ -28,14 +28,40 @@ provenance/checksums.json` (tüm snapshot klasörlerinin konsolide kaydı).
   — ardından kurulan yeni illerin (Ardahan/Iğdır/Aksaray/Bayburt/Karaman/
   Kırıkkale/Batman/Şırnak vb.) sırayla eklenmesiyle değişen il sayıları
   (73→74→79→80)
-- `district_splits.json` — büyükşehir "Merkez" ilçelerinin 2008-2014
-  bölünmelerinin (örn. Antalya Merkez → Muratpaşa+Kepez) hangi eski seçim
-  yıllarında geri alınması gerektiğinin eşleme mantığı
+- `district_splits.json` — bölünmüş/birleştirilmiş ilçelerin hangi eski
+  seçim yıllarında sentetik (HIST-*) poligonla gösterilmesi gerektiğinin
+  eşleme mantığı. İKİ FARKLI kaynaktan geliyor (bkz. 2026-09-23 notu):
+  - plaka 34 DIŞINDAKİ 13 il: büyükşehir "Merkez" ilçelerinin 2008-2014
+    bölünmeleri (örn. Antalya Merkez → Muratpaşa+Kepez) — bu isimler YSK
+    kaynağında hâlâ tek bir "<İl> MERKEZ" satırı olarak geldiği için,
+    `scripts/haberturk-to-ysk-pipeline/hist_geomid.py` bunu VERİ ÇEKME
+    sırasında (pipeline ingestion) otomatik çözer.
+  - plaka 34 (İstanbul), `HIST-Istanbul-Buyukcekmece`/`HIST-Istanbul-Umraniye`:
+    FARKLI bir mekanizma — bu ilçeler YSK kaynağında hâlâ KENDİ (Büyükçekmece/
+    Ümraniye) adlarıyla geldiği için isim-çözümlemeye hiç girmiyor, veri
+    satırı zaten doğru eşleşiyor ama MODERN (2008-sonrası, küçülmüş)
+    sınırıyla. `scripts/haberturk-to-ysk-pipeline/apply_verified_district_merges.py`
+    bunu veri çekildikten SONRA, tek seferlik bir düzeltme adımı olarak
+    uygular (idempotent, tekrar çalıştırılabilir) — hem geometriyi üretir
+    hem de 1994/1999/2004 yerel'deki ilgili satırların `geomId` alanını
+    günceller. Sadece TEK-EBEVEYNLİ ve birden fazla kaynaktan TUTARLI
+    doğrulanmış vakalar işlendi (Beylikdüzü←Büyükçekmece, Çekmeköy←Ümraniye) —
+    çok-ebeveynli (Ataşehir, Sancaktepe, Başakşehir, Sultangazi, Arnavutköy,
+    Esenyurt) veya kaynakları çelişen vakalar BİLEREK atlandı, `scripts/
+    audit_district_coverage.py` ile envanteri çıkarılabilir.
 - `turkiye_ilce_sinirlari_hist_splits.geojson` — yukarıdaki eşlemeye karşılık
   gelen, bölünmüş ilçelerin birleştirilmiş (eski hâle döndürülmüş) poligonları
 
 ## Nasıl kullanılıyor
 
 `index.html` içindeki `GEO_ERAS` / `eras` mantığı, seçilen seçim yılına göre
-bu dosyalardan uygun olanı seçip haritayı ona göre çiziyor. Davranış bu
-taşımayla DEĞİŞMEDİ — sadece dosyaların diskteki konumu.
+il-sınırı dosyalarından uygun olanı seçip haritayı ona göre çiziyor. Davranış
+bu taşımayla DEĞİŞMEDİ — sadece dosyaların diskteki konumu.
+
+`district_splits.json` ise (2026-09-23'ten itibaren) hem Python pipeline'da
+(ingestion sırasında) HEM DE doğrudan frontend'de (`src/js/map.js`,
+`DISTRICT_SPLITS` embedded değişkeni) kullanılıyor — haritada bir sentetik
+HIST-* poligon o yıl gerçekten kullanılıyorsa, `hideIds` alanındaki modern
+ilçe id'leri (birleşimin PARÇASI oldukları için) AYRICA "veri yok" katmanında
+çizilmiyor; yoksa aynı alan iki kez (bir doğru renkli, bir de yanlışlıkla
+gri) görünürdü.
