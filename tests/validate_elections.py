@@ -20,7 +20,7 @@ DATA_NORM = ROOT / "data" / "normalized"
 DIST = ROOT / "index.html"
 
 sys.path.insert(0, str(ROOT / "scripts"))
-from common.election_io import load_elections_by_tur  # noqa: E402
+from common.election_io import load_elections_by_tur, load_all_elections  # noqa: E402
 
 # GitHub'in tek dosya limiti 100MB; erken uyari icin cok daha dusuk bir esik.
 DIST_SIZE_CEILING = 90 * 1024 * 1024
@@ -182,6 +182,77 @@ def check_known_issue_2014yerel_bdp():
     )
 
 
+def check_kazanan_has_oy_entry():
+    """Her il/ilce kaydinda 'kazanan' alani, 'oy' sozlugunde KENDI anahtariyla
+    karsiligi olmalidir. 2026-09-23'te bulunan gercek bug: bir parti/bagimsiz
+    bir il/ilce'yi KAZANDIGI HALDE o yilin majorPartiler listesinde degilse,
+    merge script'leri (build_record()) onun oylarini SESSIZCE 'Diger'e
+    dokuyordu - kazanan alani dogru kalirken (ham veriden hesaplaniyor), oy
+    sozlugunde o partinin KENDI kaydı hic olmuyordu (partinin gercek oy
+    sayisi/yuzdesi hicbir yerde gorunmuyor, sonuc listesinde bile cikmiyordu).
+    En carpici ornek: HDP'nin atasi DTP'nin 2007'de bagimsiz aday stratejisiyle
+    kazandigi Diyarbakir/Hakkari/Mus/Tunceli/Sirnak/Igdir - "Bagimsiz"
+    majorPartiler'de olmadigi icin bu 6 ilin kazanan partisinin oyu "Diger"e
+    karisiyordu (bkz. 1965/1969/1973/1977/1987/1995/1999/2002/2007 genel +
+    1999yerel Sinop icin ayni bug, hepsi bu oturumda duzeltildi)."""
+    secimler = load_all_elections()
+    bad = []
+    for key, secim in secimler.items():
+        for scope in ("iller", "ilceler"):
+            for row in secim.get(scope) or []:
+                kazanan = row.get("kazanan")
+                if kazanan and kazanan not in (row.get("oy") or {}):
+                    bad.append(f"{key}/{scope}/{row.get('ad')}: kazanan={kazanan!r} oy'da yok")
+    check(
+        "her kaydın 'kazanan'ı 'oy' sözlüğünde kendi anahtarıyla var (majorPartiler eksikliği 'Diğer'e gizlemiyor)",
+        not bad,
+        "; ".join(bad[:5]) + (f" (+{len(bad)-5} tane daha)" if len(bad) > 5 else ""),
+    )
+
+
+def check_dtp_bdp_bagimsiz_attribution():
+    """2007/2011 genel'de "Bağımsız" olarak sayılan oylar, gercekte DTP/BDP'nin
+    (o donem 10% baraji nedeniyle bagimsiz aday stratejisiyle giren, HDP'nin
+    atalarindan) adaylariydi - ama bu SADECE o partinin GERCEKTEN KAZANDIGI
+    illerde (2007: Diyarbakir/Hakkari/Mus/Tunceli/Sirnak/Igdir - DTP; 2011:
+    Diyarbakir/Hakkari/Mardin/Mus/Van/Batman/Sirnak - BDP) dogru bicimde
+    "DTP"/"BDP" olarak yeniden adlandirildi. "Bagimsiz" ayni yillarda BASKA
+    (Rize, Istanbul, Ankara vb.) illerde de GERCEK oy aliyor - bunlar farkli
+    (DTP/BDP'yle ilgisiz veya dogrulanmamis) bagimsiz adaylar oldugu icin
+    BILEREK "Bagimsiz" olarak birakildi, "DTP"ye donusturulmedi (kor/toptan
+    yeniden etiketleme YANLIS olurdu - bkz. session notlari, Rize'de 2007'de
+    %22.7 "Bagimsiz" var ama bunun DTP oldugu dogrulanamadi)."""
+    genel = load_elections_by_tur()["genel"]
+    problems = []
+
+    WINS = {
+        "2007": ("DTP", {"Diyarbakır", "Hakkari", "Muş", "Tunceli", "Şırnak", "Iğdır"}),
+        "2011": ("BDP", {"Diyarbakır", "Hakkari", "Mardin", "Muş", "Van", "Batman", "Şırnak"}),
+    }
+    for year, (party, win_iller) in WINS.items():
+        secim = genel[year]
+        for il in secim["iller"]:
+            if il["ad"] in win_iller:
+                if il.get("kazanan") != party or party not in il.get("oy", {}):
+                    problems.append(f"{year}/{il['ad']}: kazanan={il.get('kazanan')} (beklenen {party})")
+            elif il.get("kazanan") == party:
+                problems.append(f"{year}/{il['ad']}: kazanmadigi halde kazanan={party}")
+
+    # Rize gibi DTP/BDP'nin KAZANMADIGI illerde "Bağımsız" hala kendi
+    # adiyla durmali - toptan yeniden etiketleme yapilmadigini dogrular.
+    for year, (party, win_iller) in WINS.items():
+        secim = genel[year]
+        rize = next((il for il in secim["iller"] if il["ad"] == "Rize"), None)
+        if rize and "Bağımsız" not in rize.get("oy", {}):
+            problems.append(f"{year}/Rize: 'Bağımsız' kaybolmuş (toptan yeniden etiketleme riski)")
+
+    check(
+        "DTP/BDP 2007/2011'de sadece kazandığı illerde doğru etiketli, diğer illerde 'Bağımsız' korunuyor",
+        not problems,
+        "; ".join(problems[:5]),
+    )
+
+
 def check_dist_size():
     if not DIST.exists():
         check("index.html boyut tavanı", False, "dosya yok — önce scripts/build.py çalıştırın")
@@ -245,6 +316,8 @@ def main():
     check_sandalye_totals()
     check_referandum_oranlari()
     check_known_issue_2014yerel_bdp()
+    check_kazanan_has_oy_entry()
+    check_dtp_bdp_bagimsiz_attribution()
     check_dist_size()
     check_index_in_sync_with_sources()
     check_reproducibility()
