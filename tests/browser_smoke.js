@@ -288,6 +288,45 @@ async function scenario_referandum(browser) {
   check('referandum akışı: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// 2007referandum'da Eminönü ve Fatih (2008'de Eminönü kaldırılıp Fatih'e
+// katılmadan once) AYNI modern geomId'ye (TR-D-34-020) düşüyordu - ikisi de
+// gerçek, farklı oy verisiyle kayıtlıydı ama harita sadece birini
+// gösterebiliyordu (digeri sessizce eziliyordu). Kalıcı regresyon testi.
+async function scenario_2007referandumEminonuFatih(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurReferandum');
+    await page.waitForTimeout(500);
+    const found = await clickYear(page, '2007');
+    check('2007 referandum: yıl seçilebildi', found);
+    await page.waitForTimeout(500);
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(400);
+
+    const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+      els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+    check('2007 referandum İstanbul: Eminönü/Fatih ayrı tarihsel poligonlarla çiziliyor',
+      histIds.includes('HIST-Istanbul-Eminonu') && histIds.includes('HIST-Istanbul-Fatih'), JSON.stringify(histIds));
+
+    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Eminonu"]');
+    await page.waitForTimeout(300);
+    const eminonuName = await page.$eval('#dName', (el) => el.textContent);
+    const eminonuSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+    check('2007 referandum: Eminönü kendi (25.771 seçmenlik) verisini gösteriyor',
+      eminonuName === 'Eminönü' && eminonuSecmen === '25.771', 'dName=' + eminonuName + ' dSecmen=' + eminonuSecmen);
+
+    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Fatih"]');
+    await page.waitForTimeout(300);
+    const fatihName = await page.$eval('#dName', (el) => el.textContent);
+    const fatihSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+    check('2007 referandum: Fatih kendi (292.980 seçmenlik) verisini gösteriyor - Eminönü ile karışmıyor',
+      fatihName === 'Fatih' && fatihSecmen === '292.980', 'dName=' + fatihName + ' dSecmen=' + fatihSecmen);
+
+    const staleModern = await page.$$eval('path.il-path[data-geom-id="TR-D-34-020"]', (els) => els.length);
+    check('2007 referandum: eski/modern Fatih şekli ayrıca (üst üste) çizilmiyor', staleModern === 0, 'count=' + staleModern);
+  });
+  check('2007 referandum Eminönü/Fatih: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function main() {
   const browser = await chromium.launch();
   try {
@@ -299,6 +338,7 @@ async function main() {
     await scenario_1955yerel(browser);
     await scenario_2024meclis(browser);
     await scenario_referandum(browser);
+    await scenario_2007referandumEminonuFatih(browser);
   } finally {
     await browser.close();
   }

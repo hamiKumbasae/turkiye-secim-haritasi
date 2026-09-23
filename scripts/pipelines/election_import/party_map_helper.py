@@ -7,6 +7,7 @@ alaniyla karsilastirma. Eslesmeyenler icin None doner (elle cozulmeli).
 """
 import json
 import pathlib
+import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
@@ -14,6 +15,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from common.turkish_text import fold_party as fold  # noqa: E402
 
 PARTILER = json.loads((ROOT / "data" / "normalized" / "partiler.json").read_text(encoding="utf-8"))
+
+PARTI_COL_RE = re.compile(r"^(parti|ittifak)\d+_ALDIGI_OY$")
 
 
 # YSK baslik listesindeki kisa/farkli yazimlar icin bilinen manuel eslemeler
@@ -64,6 +67,21 @@ def build_auto_map(baslik_names, existing_keys):
         else:
             unmatched.append(name)
     return mapping, unmatched
+
+
+def build_party_mapping(col_to_name, existing_keys, extra_alias):
+    """col_to_name: {column_NAME: ad} (parti/ittifak sutunlari icin).
+    Returns {column_NAME: proje_anahtari}."""
+    party_cols = {c: n for c, n in col_to_name.items() if PARTI_COL_RE.match(c)}
+    names = sorted(set(party_cols.values()))
+    mapping_by_name, unmatched = build_auto_map(names, existing_keys)
+    for name in unmatched:
+        if name in extra_alias:
+            mapping_by_name[name] = extra_alias[name]
+    still_unmatched = [n for n in names if n not in mapping_by_name]
+    if still_unmatched:
+        raise SystemExit(f"ESLENEMEYEN PARTI ADLARI (extra_alias ile cozulmeli): {still_unmatched}")
+    return {c: mapping_by_name[n] for c, n in party_cols.items()}
 
 
 def proper_case_tr(s: str) -> str:

@@ -125,6 +125,67 @@ istanbul_2008:
         mahalle_names:
           - "FERHATPAŞA MAH."
 
+  # --- Eminonu/Fatih: DIGER vakalardan (Atasehir, Sancaktepe vb.) FARKLI bir
+  # tur - yeni bir ilce KURULMADI, VAR OLAN bir ilce (Eminonu) TAMAMEN
+  # KALDIRILIP mahalleleriyle birlikte Fatih'e katildi (5747 Madde 2 Fikra 2:
+  # "Eminonu Belediyesinin tuzel kisiligi kaldirilarak mahalleleriyle
+  # birlikte Fatih Belediyesine katilmistir" - ekli-liste/kismi-mahalle
+  # ayrimi YOK, TUM mahalleleriyle). Bu yuzden apply_verified_district_merges.py'nin
+  # modeli (eski ebeveynin GUNCEL sekli + emilen cocugun mahalleleri) UYMUYOR -
+  # ne "eski Eminonu" ne "eski Fatih" bugun ayri bir modern ilce, ikisi de
+  # modern Fatih'in (TR-D-34-020) mahallelerinin bir ALT KUMESI. Ayrica
+  # SADECE 2007referandum'da (2008 oncesi ilce-duzeyi Istanbul verisi olan TEK
+  # secim, digerlerinde Istanbul ya il-duzeyinde ya da zaten 2008-sonrasi) bu
+  # ikisi HALA AYRI oy kayitlariyla var - TEK bir birlesik poligonda
+  # GOSTERILEMEZ (biri digerini gizler, kesfedildi: ikisi de ayni modern
+  # geomId'ye TR-D-34-020 dusuyordu, Fatih'in kaydi Eminonu'nunkini
+  # SESSIZCE eziyordu). Ayri script ile isleniyor:
+  # scripts/pipelines/historical_geo/split_eminonu_fatih.py (affected_years:
+  # SADECE 2007referandum).
+  eminonu_fatih:
+    new_district_geomid: TR-D-34-020  # ikisinin de KAYNAGI (modern Fatih), ikisi de "yeni" degil
+    new_district_name: "Eminönü + Fatih (Eminönü öncesi)"
+    law_madde: "Madde 2, Fıkra 2 (ekli liste YOK, tüm mahalleleriyle)"
+    source:
+      - "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/2af6a825-3e55-49e3-8b03-3d0b85ad6503.html"
+      - "https://tr.wikipedia.org/wiki/Eminönü (33 mahalle sayısı doğrulaması)"
+    # DIKKAT: bilerek "verified" DEGIL - apply_verified_district_merges.py'nin
+    # load_yaml_verified_sources() fonksiyonu confidence=="verified" olan HER
+    # girisi kendi (buraya UYMAYAN) sources semasiyla islemeye calisir ve
+    # CRASH eder (denendi, dogrulandi). Bu giris zaten uretildi/uygulandi
+    # (bkz. split_eminonu_fatih.py), burada SADECE dokumantasyon icin duruyor.
+    confidence: verified_separate_script
+    geometry_basis: >
+      scripts/pipelines/historical_geo/split_eminonu_fatih.py ile uretildi -
+      Eminonu'nun (33 mahalle, Wikipedia'nin "33 mahalleden olusuyordu"
+      bilgisiyle SAYICA dogrulandi) ve eski Fatih'in (kalan 24 mahalle)
+      modern Fatih mahalle_geo.json parcalarinin ayri ayri birlesimi -
+      33+24=57, modern Fatih'in TUM mahalle sayisiyla tam eslesiyor, kalinti
+      YOK. apply_verified_district_merges.py'nin YAML-okuma mekanizmasi
+      BUNU islemiyor (farkli script), bu giris SADECE dokumantasyon.
+    note: >
+      Eminonu'nun 33 mahallesi (Alemdar, Balaban Aga, Binbirdirek, Beyazit,
+      Cankurtaran, Demirtas, Emin Sinan, Haci Kadin, Hobyar, Hoca Giyasettin,
+      Hocapasa, Kalenderhane, Katip Kasim, Kemalpasa, Kucuk Ayasofya, Mimar
+      Hayrettin, Mimar Kemalettin, Mercan, Mesihpasa, Molla Fenari, Molla
+      Husrev, Muhsine Hatun, Nisanca, Sehsuvar Bey, Rustempasa, Sarac Ishak,
+      Saridemir, Suleymaniye, Sultan Ahmet, Sururi, Tahtakale, Taya Hatun,
+      Yavuz Sinan) modern Fatih'in (TR-D-34-020) 57 mahallesiyle ISIM
+      BAZINDA (kisaltma/bosluk farklariyla) TAM eslesti - 33/33, kalinti
+      yok. Kalan 24 mahalle eski Fatih'in kendisi.
+    sources:
+      - synthetic_id: HIST-Istanbul-Eminonu
+        mahalle_names: ["ALEMDAR MAH.", "BALABANAĞA MAH.", "BİNBİRDİREK MAH.", "BEYAZIT MAH.",
+          "CANKURTARAN MAH.", "DEMİRTAŞ MAH.", "EMİN SİNAN MAH.", "HACI KADIN MAH.", "HOBYAR MAH.",
+          "HOCA GIYASETTİN MAH.", "HOCAPAŞA MAH.", "KALENDERHANE MAH.", "KATİP KASIM MAH.",
+          "KEMALPAŞA MAH.", "KÜÇÜK AYASOFYA MAH.", "MİMAR HAYRETTİN MAH.", "MİMAR KEMALETTİN MAH.",
+          "MERCAN MAH.", "MESİHPAŞA MAH.", "MOLLA FENARİ MAH.", "MOLLA HÜSREV MAH.",
+          "MUHSİNE HATUN MAH.", "NİŞANCA MAH.", "ŞEHSUVAR BEY MAH.", "RÜSTEMPAŞA MAH.",
+          "SARAÇ İSHAK MAH.", "SARIDEMİR MAH.", "SÜLEYMANİYE MAH.", "SULTAN AHMET MAH.",
+          "SURURİ MAH.", "TAHTAKALE MAH.", "TAYA HATUN MAH.", "YAVUZ SİNAN MAH."]
+      - synthetic_id: HIST-Istanbul-Fatih
+        mahalle_names: "modern Fatih'in kalan 24 mahallesi (Eminönü'nün 33'ü dışındaki tümü)"
+
   # --- Sancaktepe: kanunun (21) sayili listesi 2026-09-23'te BIREBIR (2
   # bagimsiz birincil kaynaktan) okundu - onceki oturumdaki "Hilal ve Pasakoy
   # kanunda yok" notu KISMEN YANLISTI: Pasakoy VE Kurtdogmus AslInda kanunda

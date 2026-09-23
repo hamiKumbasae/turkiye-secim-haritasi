@@ -15,7 +15,7 @@ import sys
 import pathlib
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from party_map_helper import build_auto_map, fold  # noqa: E402
+from party_map_helper import build_auto_map, build_party_mapping, fold  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -27,23 +27,7 @@ _GENEL2023 = load_election("2023")
 IL_ADI_BY_PLAKA = {i["plaka"]: i["ad"] for i in _GENEL2023["iller"]}
 ILCE_ADI_BY_GEOMID = {i["geomId"]: i["ad"] for i in _GENEL2023["ilceler"]}
 
-PARTI_COL_RE = re.compile(r"^(parti|ittifak)\d+_ALDIGI_OY$")
 BAGIMSIZ_COL_RE = re.compile(r"^bagimsiz\d+_ALDIGI_OY$")
-
-
-def build_party_mapping(col_to_name, existing_keys, extra_alias):
-    """col_to_name: {column_NAME: ad} (parti/ittifak sutunlari icin).
-    Returns {column_NAME: proje_anahtari}."""
-    party_cols = {c: n for c, n in col_to_name.items() if PARTI_COL_RE.match(c)}
-    names = sorted(set(party_cols.values()))
-    mapping_by_name, unmatched = build_auto_map(names, existing_keys)
-    for name in unmatched:
-        if name in extra_alias:
-            mapping_by_name[name] = extra_alias[name]
-    still_unmatched = [n for n in names if n not in mapping_by_name]
-    if still_unmatched:
-        raise SystemExit(f"ESLENEMEYEN PARTI ADLARI (extra_alias ile cozulmeli): {still_unmatched}")
-    return {c: mapping_by_name[n] for c, n in party_cols.items()}
 
 
 def build_record(ad, plaka, agg, col_to_key, major, vekil=None, toplam_vekil=0):
