@@ -12,7 +12,7 @@ kendi arasında tutarlı.
 
 TBMM'nin `www5.tbmm.gov.tr/develop/owa/secim_sorgu.secimdeki_partiler?
 p_secim_yili=1950` sayfasının rakamları için (PDF/indirilebilir dosya değil,
-dinamik sorgu sonucu) `../../../scripts/genel-1950-1977-pipeline/
+dinamik sorgu sonucu) `../../../scripts/pipelines/genel_1950_1977/
 ysk_national_totals.json`'daki `_tbmm_1950` anahtarına bakın — orada kaynak
 URL ve çekilme tarihiyle birlikte kayıtlı.
 

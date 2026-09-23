@@ -27,7 +27,7 @@ DIST_SIZE_CEILING = 90 * 1024 * 1024
 
 # Guvenilir resmi toplam sandalye sayisi bilinen genel secimler (bkz.
 # sources.yml verification notlari). 1950/1954/1957/1961: YSK'nin resmi
-# "Turkiye Geneli" rakamlari (scripts/genel-1950-1977-pipeline/) — il bazli
+# "Turkiye Geneli" rakamlari (scripts/pipelines/genel_1950_1977/) — il bazli
 # vekil toplami Sakarya eksik oldugu icin 1957/1961'de bundan biraz dusuk
 # cikar (bilinen, belgelenmis fark), o yuzden burada il toplamindan degil
 # dogrudan resmi ulusal rakamdan kontrol ediliyor.
@@ -116,7 +116,7 @@ def check_raw_checksum_coverage():
 
 
 # 1957/1961: YSK'nin 1950-1977 il arsivinde Sakarya YOK (bilinen, belgelenmis
-# kaynak boslugu — bkz. scripts/genel-1950-1977-pipeline/PROVENANCE.md). Bu
+# kaynak boslugu — bkz. scripts/pipelines/genel_1950_1977/PROVENANCE.md). Bu
 # yuzden il-bazli vekil toplami resmi ulusal rakamdan Sakarya'nin sandalye
 # sayisi kadar dusuk cikar; bu YILLAR icin sadece 'declared' (resmi rakam)
 # kontrol edilir, il toplami degil.

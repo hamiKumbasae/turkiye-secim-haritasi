@@ -54,7 +54,7 @@ Demirtaş 2014, Erdoğan/İnce/Demirtaş/Akşener 2018, Erdoğan/Kılıçdaroğl
 
 **Habertürk → YSK geçişi (2026-09-22, üçüncü oturum):** Kullanıcının "Habertürk
 verisini silsek o verileri YSK'de bulamıyor muyuz?" sorusu üzerine —
-`scripts/haberturk-to-ysk-pipeline/` ile YSK'nin resmi `acikveri.ysk.gov.tr`
+`scripts/pipelines/election_import/` ile YSK'nin resmi `acikveri.ysk.gov.tr`
 API'sinden (`getSecimSandikSonucList`) **Türkiye'deki tüm ~998 ilçenin**
 sandık-düzeyi ham verisi çekilip il/ilçe toplamlarına agrege edildi —
 mahalle özelliğindeki poligon-geometri kısıtı burada yok (sadece sayı
@@ -62,7 +62,7 @@ toplanıyor), bu yüzden 2009 sonrası **her** seçim için eksiksiz kapsanabili
 Habertürk primary olduğu 15 seçimin hepsi bu şekilde yükseltiliyor (genel
 2011-2023, yerel 2009-2024, CB 2014-2023, referandum 2010/2017) — devam eden
 bir işlem, tamamlanan seçimler yukarıdaki tabloda işaretli. Ayrıntı:
-`scripts/haberturk-to-ysk-pipeline/PROVENANCE.md`.
+`scripts/pipelines/election_import/PROVENANCE.md`.
 
 **1983-2007 YSK güncellemesi (2026-09-22, ikinci oturum):** Bu 7 seçimin il
 düzeyi verisi de (1950-1977 ile AYNI arşiv ailesinden,
@@ -84,7 +84,7 @@ Partisi için %0,01-0,27 fark) — yani YSK'nin kendi sitesi bile kendi
 içinde tam tutarlı değil. Bu, `sources.yml`'de `1950` altında
 `discrepancies` olarak (çözülmeden, sadece kaydedilerek) belgelendi. Aynı
 derinlikte doğrulama diğer 19 genel seçim yılı için henüz yapılmadı — bu,
-onaylanmış bir sonraki adım (bkz. `scripts/genel-1950-1977-pipeline/
+onaylanmış bir sonraki adım (bkz. `scripts/pipelines/genel_1950_1977/
 verify_national_totals.py`).
 
 **1950-1977 YSK/TÜİK güncellemesi (2026-09-22):** Bu 8 seçimin il düzeyi
@@ -98,7 +98,7 @@ arşivinde hiç yok** (67 değil 66 il listeleniyor) — Sakarya'nın verisi
 eski Wikipedia kaynağıyla kaldı, bu yüzden 1957/1961'in il-toplamı resmi
 ulusal rakamdan Sakarya'nın sandalyesi kadar düşük çıkar (ulusal toplam
 alanı yine de doğru). Ayrıntı: `data/raw/ysk/1950-1977/PROVENANCE.md` ve
-`scripts/genel-1950-1977-pipeline/`.
+`scripts/pipelines/genel_1950_1977/`.
 
 **2002 Siirt sorunu:** mertnuhoglu kaynağındaki Siirt ilçe kırılımı, DEHAP'ın
 o ildeki gerçek birinciliğini (il geneli %32,2) yansıtmıyor — Merkez ilçede
@@ -131,7 +131,7 @@ sorunu da tamamen çözüldü**: parti-sütun eşlemesi için kullanılan
 önbellekli `baslik_2014yerel.json` dosyasında BDP sütunu hiç yoktu (oylar
 sessizce toplanmıyordu) — canlı yeniden çekilip düzeltildi, BDP artık
 Diyarbakır'ı (ve il/ilçe toplamlarını) doğru yansıtıyor. Ayrıntı:
-`scripts/haberturk-to-ysk-pipeline/PROVENANCE.md`.
+`scripts/pipelines/election_import/PROVENANCE.md`.
 
 ## Referandum (7 halk oylaması)
 
@@ -192,7 +192,7 @@ sayılar güvenilmez çıktı (ayrıntı `sources.yml`'deki known_issue).
   bu il "Merkez"i Pamukkale VE Merkezefendi diye İKİ ayrı ilçeye böldü,
   `geo/historical/district_splits.json` tarzı gerçek bir sentetik birleşim
   poligonu gerektiriyor (ayrı bir GIS işi, henüz yapılmadı) — eski
-  Wikipedia kaynağında kaldı. Ayrıntı: `scripts/yerel-1994-1999-2004-pipeline/
+  Wikipedia kaynağında kaldı. Ayrıntı: `scripts/pipelines/yerel_1994_1999_2004/
   PROVENANCE.md`.
 - Yerel 1984/1989'da sadece ULUSAL toplam PDF'i var (il bazlı yok, 1963-1977
   gibi) — bu ikisi Wikipedia'da kalacak.

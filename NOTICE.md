@@ -9,13 +9,13 @@ karşılanamadığı** yerleri saklamadan listeler.
 YSK'nin 1950-1977 genel seçimleri için resmi, TÜİK kaynaklı il-bazlı
 arşivi (66 il PDF'i + ulusal özet) burada, pinlenmiş/checksum'lı bir
 snapshot olarak duruyor. Ayrıntı: `data/raw/ysk/1950-1977/PROVENANCE.md`
-ve `scripts/genel-1950-1977-pipeline/`. Bu, aşağıdaki paragraftaki genel
+ve `scripts/pipelines/genel_1950_1977/`. Bu, aşağıdaki paragraftaki genel
 "mahalle düzeyi YSK verisi" boşluğundan AYRI ve TAMAMLANMIŞ bir kaynak.
 
 ## `data/raw/ysk/` (mahalle düzeyi kısmı) — BOŞ
 
 YSK Açık Veri Portalı'ndan (`acikveri.ysk.gov.tr`) bu depoya gömülü tüm
-mahalle/muhtarlık düzeyi veri (15 seçim, `scripts/mahalle-veri-pipeline/`
+mahalle/muhtarlık düzeyi veri (15 seçim, `scripts/pipelines/mahalle_veri/`
 ile üretildi) ve 2014 Cumhurbaşkanlığı seçiminin il/ilçe düzeyi veri, önceki
 bir oturumda çekildi. O oturumun **ara ham JSON çıktıları** (her `fetch_*.js`
 çalıştırmasının `<outFile>` argümanına yazdığı dosyalar) session-özel bir
@@ -24,7 +24,7 @@ son hâli** (`index.html`'e gömülü `mahalle_geo.json`/`mahalle_votes.json`) h
 kaldı, ham API yanıtları değil.
 
 **Bu kalıcı bir kayıp değil, yeniden üretilebilir:** YSK'nin API'si hâlâ canlı
-ve `scripts/mahalle-veri-pipeline/fetch/fetch_muhtarlik_votes.js` /
+ve `scripts/pipelines/mahalle_veri/fetch/fetch_muhtarlik_votes.js` /
 `fetch_muhtarlik_parti.js` script'leri her `secimId` için aynı veriyi tekrar
 çekebilir (bkz. `sources.yml`'deki her CB/genel/yerel/referandum girişinin
 `backup[].url` alanındaki `secim_ID` değerleri). Tahmini süre: seçim başına

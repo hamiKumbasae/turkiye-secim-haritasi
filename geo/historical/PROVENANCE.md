@@ -34,13 +34,13 @@ provenance/checksums.json` (tüm snapshot klasörlerinin konsolide kaydı).
   - plaka 34 DIŞINDAKİ 13 il: büyükşehir "Merkez" ilçelerinin 2008-2014
     bölünmeleri (örn. Antalya Merkez → Muratpaşa+Kepez) — bu isimler YSK
     kaynağında hâlâ tek bir "<İl> MERKEZ" satırı olarak geldiği için,
-    `scripts/haberturk-to-ysk-pipeline/hist_geomid.py` bunu VERİ ÇEKME
+    `scripts/pipelines/election_import/hist_geomid.py` bunu VERİ ÇEKME
     sırasında (pipeline ingestion) otomatik çözer.
   - plaka 34 (İstanbul), `HIST-Istanbul-Buyukcekmece`/`HIST-Istanbul-Umraniye`:
     FARKLI bir mekanizma — bu ilçeler YSK kaynağında hâlâ KENDİ (Büyükçekmece/
     Ümraniye) adlarıyla geldiği için isim-çözümlemeye hiç girmiyor, veri
     satırı zaten doğru eşleşiyor ama MODERN (2008-sonrası, küçülmüş)
-    sınırıyla. `scripts/haberturk-to-ysk-pipeline/apply_verified_district_merges.py`
+    sınırıyla. `scripts/pipelines/election_import/apply_verified_district_merges.py`
     bunu veri çekildikten SONRA, tek seferlik bir düzeltme adımı olarak
     uygular (idempotent, tekrar çalıştırılabilir) — hem geometriyi üretir
     hem de 1994/1999/2004 yerel'deki ilgili satırların `geomId` alanını

@@ -69,7 +69,7 @@ Yukarıdaki iş SADECE "il" kaydını (il merkezinin/büyükşehirin kendi
 yarışı) YSK'ye taşımıştı; "ilçeler" listesi hâlâ Wikipedia kaynaklıydı.
 Kullanıcının "Wikipedia kaynaklarına YSK alternatifi var mı, varsa
 kaynakları değiştir" talimatı üzerine, AYNI (zaten indirilmiş) PDF'lerin
-ilçe/belde kırılımı da `scripts/yerel-1994-1999-2004-pipeline/
+ilçe/belde kırılımı da `scripts/pipelines/yerel_1994_1999_2004/
 parse_ilce_belde.py` + `merge_ilce_belde.py` ile çıkarıldı.
 
 **Format (normal il, "BelediyeBaskanligi"):** "İlçe" sütunu sadece yeni
@@ -152,11 +152,11 @@ zaten var olan anahtarlara eşlendi.
 
 ```bash
 # il duzeyi
-python3 scripts/yerel-1994-1999-2004-pipeline/parse_ysk_pdfs.py 1994 data/raw/ysk/mahalli-1994-1999-2004/il_dosya_eslemesi.json data/raw/ysk/mahalli-1994-1999-2004 /tmp/parsed.json
-python3 scripts/yerel-1994-1999-2004-pipeline/merge_into_normalized.py 1994 /tmp/parsed.json
+python3 scripts/pipelines/yerel_1994_1999_2004/parse_ysk_pdfs.py 1994 data/raw/ysk/mahalli-1994-1999-2004/il_dosya_eslemesi.json data/raw/ysk/mahalli-1994-1999-2004 /tmp/parsed.json
+python3 scripts/pipelines/yerel_1994_1999_2004/merge_into_normalized.py 1994 /tmp/parsed.json
 # ilce/belde duzeyi
-python3 scripts/yerel-1994-1999-2004-pipeline/parse_ilce_belde.py 1994 /tmp/ilce_1994.json
-python3 scripts/yerel-1994-1999-2004-pipeline/merge_ilce_belde.py 1994 /tmp/ilce_1994.json
+python3 scripts/pipelines/yerel_1994_1999_2004/parse_ilce_belde.py 1994 /tmp/ilce_1994.json
+python3 scripts/pipelines/yerel_1994_1999_2004/merge_ilce_belde.py 1994 /tmp/ilce_1994.json
 # (1999, 2004 icin tekrarlayin)
 ```
 

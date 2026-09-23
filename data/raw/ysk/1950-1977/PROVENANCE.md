@@ -44,7 +44,7 @@ eksikliği değil — böyle bir ayrım hiç var olmadı.
 
 ## Nasıl işlendi
 
-`scripts/genel-1950-1977-pipeline/` — `parse_ysk_pdfs.py` (pdfplumber ile
+`scripts/pipelines/genel_1950_1977/` — `parse_ysk_pdfs.py` (pdfplumber ile
 tablo hücrelerini konumuna göre okur, bazı PDF'lerdeki font/render
 kaynaklı karakter ikizlenmesini düzeltir) + `merge_into_normalized.py`
 (`data/normalized/genel_secimler.json`'a işler, parti eşlemesi yapar,

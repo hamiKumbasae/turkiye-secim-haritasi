@@ -71,8 +71,8 @@ anahtarları vardı).
 ## Yeniden çalıştırmak için
 
 ```bash
-python3 scripts/genel-1983-2007-pipeline/parse_ysk_pdfs.py data/raw/ysk/1983-2007 /tmp/parsed.json
-python3 scripts/genel-1983-2007-pipeline/merge_into_normalized.py /tmp/parsed.json data/raw/ysk/1983-2007/il_dosya_adi_eslemesi.txt
+python3 scripts/pipelines/genel_1983_2007/parse_ysk_pdfs.py data/raw/ysk/1983-2007 /tmp/parsed.json
+python3 scripts/pipelines/genel_1983_2007/merge_into_normalized.py /tmp/parsed.json data/raw/ysk/1983-2007/il_dosya_adi_eslemesi.txt
 ```
 
 Ardından kök dizinde `python3 scripts/build.py` ile `index.html`'i yeniden

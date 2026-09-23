@@ -87,7 +87,7 @@ async function scenario_istanbul1994geometri(browser) {
 
     // Buyukcekmece (Beylikduzu'nun eski, tek-ebeveynli hali) ve Umraniye
     // (Cekmekoy'un eski hali) icin gercek tarihsel birlesim poligonu var
-    // (bkz. scripts/haberturk-to-ysk-pipeline/apply_verified_district_merges.py) -
+    // (bkz. scripts/pipelines/election_import/apply_verified_district_merges.py) -
     // hem sentetik HIST- poligon render edilmeli HEM DE ust uste binen eski
     // modern (kucuk) sekilleri AYRICA "veri yok" olarak cizilmemeli.
     const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>

@@ -5,7 +5,7 @@ index.html artik scripts/build.py'nin URETTIGI dosya; bu script'in yaptigi
 gibi index.html'i DOGRUDAN elle duzenleyip icine veri splice etmek, build.py
 tarafindan bir sonraki calistirmada SESSIZCE UZERINE YAZILIR (build.py hep
 data/normalized/ + geo/normalized/'den yeniden uretir). Yeni bir yil eklemek
-icin bkz. scripts/mahalle-veri-pipeline/transform/import_mahalle.py.
+icin bkz. scripts/pipelines/mahalle_veri/transform/import_mahalle.py.
 
 Orijinal aciklama: build/mahalle_<yil>.json dosyalarini index.html'in gomulu,
 gzip+base64 sikistirilmis window.__EMBEDDED_GZ__ objesine ekler.

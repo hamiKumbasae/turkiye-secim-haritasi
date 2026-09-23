@@ -31,7 +31,7 @@ curl -sL https://codeload.github.com/ttezer/turkiye-harita-verisi/tar.gz/83eeb7a
 
 - `osadikoglu/turkey-admin-units-osm` (`https://github.com/osadikoglu/turkey-admin-units-osm`)
   — küçük, sadece admin_level=8 OSM relation ID'lerinin bir indeksi (geometri
-  içermiyor), pipeline'da `scripts/mahalle-veri-pipeline/eslesme/01_osm_mahalle_poligonlari.py`
+  içermiyor), pipeline'da `scripts/pipelines/mahalle_veri/eslesme/01_osm_mahalle_poligonlari.py`
   tarafından kullanılıyor.
 - Asıl geometri **Geofabrik'in Türkiye `.osm.pbf` özütünden** (`osmium
   tags-filter` + `osmium export` ile işlenerek) çıkarıldı. **Dürüst boşluk:**

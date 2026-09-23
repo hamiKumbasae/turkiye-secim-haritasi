@@ -71,7 +71,7 @@ birincil/yedek kaynağı + bilinen sorunlar).
 1. `data/normalized/`, `geo/normalized/`, `src/styles/`, `src/js/` veya
    `src/index.template.html` altındaki ilgili dosyayı düzenleyin (yeni bir
    seçim ekliyorsanız yeni bir `data/normalized/mahalle/<yil>.json` gibi —
-   mahalle verisi için elle yerine `scripts/mahalle-veri-pipeline/transform/
+   mahalle verisi için elle yerine `scripts/pipelines/mahalle_veri/transform/
    import_mahalle.py` kullanın, aşağıya bakın).
 2. ```bash
    pip install -r requirements.txt   # ilk kurulumda bir kez (pyyaml)
@@ -88,9 +88,9 @@ birincil/yedek kaynağı + bilinen sorunlar).
    aynı kontrolleri + "commit'li `index.html` kaynaklarla senkron mu" kontrolünü
    otomatik çalıştırır — eski/senkron olmayan bir `index.html` ana dala giremez.
 
-`scripts/mahalle-veri-pipeline/` klasörü, mahalle düzeyi verinin YSK Açık
+`scripts/pipelines/mahalle_veri/` klasörü, mahalle düzeyi verinin YSK Açık
 Veri Portalı'ndan nasıl çekildiğinin/işlendiğinin kaydı (kurulum: `cd
-scripts/mahalle-veri-pipeline && npm install && npx playwright install
+scripts/pipelines/mahalle_veri && npm install && npx playwright install
 chromium`). Yeni bir seçim eklerken `transform/import_mahalle.py --year
 <yil> --input mahalle_<yil>.json --build` komutu veriyi doğru yerlere
 otomatik yerleştirip doğrular (bkz. o klasörün kendi README'si).

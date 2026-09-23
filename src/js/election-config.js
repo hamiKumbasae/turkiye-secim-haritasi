@@ -7,7 +7,7 @@
   const YEREL_YEAR_LABEL = {'2024yerel':'2024','2019yerel':'2019','2014yerel':'2014','2009yerel':'2009','2004yerel':'2004','1999yerel':'1999','1994yerel':'1994','1989yerel':'1989','1984yerel':'1984','1977yerel':'1977','1973yerel':'1973','1968yerel':'1968','1963yerel':'1963','1955yerel':'1955','1950yerel':'1950'};
   // 1950-1961 genel secimlerinde vekil (sandalye) verisi onceden (Wikipedia
   // kaynakli) yoktu; artik YSK'nin resmi, TUIK kaynakli 1950-1977 il arsivinden
-  // var (bkz. scripts/genel-1950-1977-pipeline/). Bos kalirsa (gelecekte baska
+  // var (bkz. scripts/pipelines/genel_1950_1977/). Bos kalirsa (gelecekte baska
   // bir yil icin ayni durum olursa) buraya eklenebilir.
   const YEARS_NO_VEKIL = new Set([]);
   // 1950-1987 genel secimlerinde ve 1961/1982/1987/1988/2007 referandumlarinda ilce-bazli

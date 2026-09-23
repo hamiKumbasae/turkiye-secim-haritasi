@@ -16,9 +16,9 @@ Bu PDF'lerin bir kısmında Türkçe **Ğ, İ, Ş** harfleri metin çıkarımın
 kayboluyor veya boşluğa dönüşüyor (örn. "KARAİSALI" → "KARA SALI",
 "ALADAĞ" → "ALADA "). **Sayısal hücreler etkilenmiyor.** Çözüm: hem PDF'ten
 çıkan bozuk ilçe adı hem de projenin güvenilir ilçe listesi
-(`scripts/mahalle-veri-pipeline/eslesme/ysk_ilce_matched.json`) bu üç
+(`scripts/pipelines/mahalle_veri/eslesme/ysk_ilce_matched.json`) bu üç
 harften ve boşluklardan arındırılıp öyle karşılaştırılıyor — bkz.
-`scripts/referandum-pipeline/parse_2007_ilce_pdfs.py`.
+`scripts/pipelines/referandum/parse_2007_ilce_pdfs.py`.
 
 ## Eşleşme sonucu (2026-09-22)
 

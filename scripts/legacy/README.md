@@ -14,7 +14,7 @@ bayrağı olmadan çalışmayı reddediyor.
   kayıpsız olarak çıkardı. O geçiş tamamlandı, script artık gerekmiyor.
 - **`gom_ve_sikistir.py`** — mahalle pipeline'ının ilk sürümünde, yeni bir
   yılın mahalle verisini doğrudan `index.html`'in gömülü blobuna spliceleyen
-  script. Yerini `scripts/mahalle-veri-pipeline/transform/import_mahalle.py`
+  script. Yerini `scripts/pipelines/mahalle_veri/transform/import_mahalle.py`
   aldı (o, `data/normalized/mahalle/` + `geo/normalized/mahalle_geo.json`'a
   yazıp `scripts/build.py`'yi tetikliyor — mimariyle tutarlı).
 
