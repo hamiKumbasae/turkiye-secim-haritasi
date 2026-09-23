@@ -1,33 +1,40 @@
 # Normalize edilmiş veri
 
-`scripts/normalize.py` ile kök `index.html`'in gömülü verisinden (henüz
-dokunulmamış, tek kaynak) **tür bazında** ayrıştırılmış, kayıpsız çıktı.
-Hiçbir sayı/değer değiştirilmedi — sadece dosya konumu ve gruplama.
+Bu klasördeki dosyalar, projenin **ortak veri modeli**ni oluşturur —
+`scripts/build.py`'nin doğrudan okuyup `index.html`'e gömdüğü tek kaynak
+bunlardır. Kendileri de bir kaynak değil, `data/raw/`'daki ham
+kaynaklardan (YSK PDF/API, TÜİK, ikincil kaynaklar) seçim türü/pipeline'a
+özel `scripts/<pipeline-adı>/parse_*.py` + `merge_*.py` script'leriyle
+üretilmiş **türetilmiş** çıktıdır:
 
-**Doğrulama (2026-09-22):** Her dosyanın içeriği, kaynağı olan gömülü JSON'un
-karşılık gelen kesimiyle Python `==` (derin eşitlik) ile tek tek karşılaştırıldı
-— partiler, 4 tür dosyası, 15 mahalle yıl dosyası, meclis_2024.json: **22/22
-kontrol geçti**.
+```
+data/raw/<kaynak>/  →  scripts/<pipeline>/parse+merge  →  data/normalized/*.json  →  scripts/build.py  →  index.html
+```
 
-**Ek (2026-09-22, aynı gün ikinci bir oturumda):** `yerel_secimler.json`'a
-1950/1955/1963/1968/1973/1977 için 6 yeni anahtar eklendi (sadece il merkezi,
-`ilceler` boş) — bunlar YUKARIDAKİ index.html-kaynaklı doğrulamanın DIŞINDA,
-çünkü index.html'de hiç yoktu (bu oturumda ilk kez Wikipedia'nın il-bazlı alt
-makalelerinden çekildi). Yöntem, çapraz kontroller ve bilinen sınırlar için
-bkz. [`../../SECIM_TAKVIMI.md`](../../SECIM_TAKVIMI.md) ve `sources.yml`'deki
-ilgili 6 giriş. `partiler.json`'a bu eklemeyle birlikte 4 yeni parti girdi
-(TSİP, SDP, MKP, KARMA).
+**Tarihsel not:** Bu klasör ilk oluşturulduğunda (2026-09-22, ilk oturum)
+gerçekten tersti — o zamanki tek veri kaynağı zaten var olan bir
+`index.html`'in gömülü JSON'uydu, `scripts/legacy/normalize_from_old_index.py`
+onu tür bazında ayrıştırıyordu. Proje o günden bu yana raw→pipeline→normalized
+mimarisine geçti; o script artık **legacy** ve kullanılmıyor (`scripts/legacy/`
+altında, sadece tarihsel referans için duruyor). Her yeni seçim/kaynak
+yükseltmesi artık doğrudan bu klasördeki dosyaları elle/pipeline'la
+günceller, `index.html`'den asla geri okumaz.
+
+Hangi seçimin hangi ham kaynaktan/pipeline'dan geldiği için tek referans
+[`../../sources.yml`](../../sources.yml) (makine-okunur) ve
+[`../../SOURCES.md`](../../SOURCES.md) (insan-okunur) — burada tekrar
+edilmiyor, çünkü tam da bu tür tekrarlar zamanla birbirinden kopuyor.
 
 ## Dosyalar
 
 - `partiler.json` — tüm seçimler arası paylaşılan parti adı→renk/kısaltma
-  eşlemesi (94 parti)
+  eşlemesi
 - `cumhurbaskanligi.json`, `genel_secimler.json`, `yerel_secimler.json`,
   `referandumlar.json` — il/ilçe düzeyi seçim sonuçları, seçim türüne göre
   ayrılmış (anahtarlar `sources.yml`'deki ile birebir aynı, örn. `"2023"`,
   `"2014yerel"`, `"2017referandum"`, `"2023cb2tur"`)
 - `mahalle/<secim_anahtari>.json` — mahalle/muhtarlık düzeyi oy verisi,
-  15 dosya, her biri bir seçim (bkz. `sources.yml`'deki YSK `backup` girişleri)
+  her biri bir seçim (bkz. `sources.yml`'deki YSK ilgili girişleri)
 - `meclis_2024.json` — 2024 yerel seçiminin il meclisi üye dağılımı (ayrı,
   küçük bir veri kümesi)
 
@@ -44,4 +51,7 @@ görünmesi değil.
 
 ## Bütünlük
 
-`checksums.sha256` — 2026-09-22 itibarıyla.
+`checksums.sha256` (bu klasör) + merkezi manifest
+[`../provenance/checksums.json`](../provenance/checksums.json) —
+`tests/validate_elections.py` her ikisini de diskteki dosyalarla
+karşılaştırır.

@@ -4,7 +4,7 @@
       "checksum_file": "data/normalized/checksums.sha256",
       "file_count": 21,
       "files": {
-        "cumhurbaskanligi.json": "d375cf5e6f9f014a0c9b12e491f4d27e3e6d6ba1ecf8facd06765f487b6ed206",
+        "cumhurbaskanligi.json": "8209b19fc78ce9dfe8199ac87a4acee64471e202f7c45d3951e3cc9ae83edd16",
         "genel_secimler.json": "c0e27c88d36112ee13a564fd267823dbe6a3ff0c5f155fdad0cd2d56d6836317",
         "mahalle/2009yerel.json": "e5aa60fa532f377ca1fe5c0f3e1e324b634de25d565b6f567c33df1383e6a965",
         "mahalle/2010referandum.json": "7e1b52f275342397a2bb2c496b0090c597ecc6f015566e4e361307098e5bea1c",
@@ -24,7 +24,7 @@
         "meclis_2024.json": "61cd860e5ba2d3602035dfd50652328d854a746e1223425704ee0b0f6de5182e",
         "partiler.json": "356cdea9f9a11fe304162cb7b6231240142efff348ed04450514f5b7b05ebe4e",
         "referandumlar.json": "7e56182189dd10486b1b50870dc50a56b799e757607f83c20c91d3d83beb1a15",
-        "yerel_secimler.json": "c7bdf6c1e689de5d0dd731d9e93b0e2b3b1d57f186dd1e4e988c9c0bca5621d6"
+        "yerel_secimler.json": "ba7e79ebcb330f8cbef41722e6721e1b03f7994c2a84f5b02d7568421f0fe750"
       }
     },
     "data/raw/legacy-preprocessed": {
@@ -438,7 +438,7 @@
     },
     "data/raw/ysk/1983-2007": {
       "checksum_file": "data/raw/ysk/1983-2007/checksums.sha256",
-      "file_count": 82,
+      "file_count": 83,
       "files": {
         "Adana.pdf": "26e4cbacf5eef5d4efe89a0035bc0d5342661047138d0bdc96ba75a0528d0d5a",
         "Adiyaman.pdf": "454ed5a1acc06afa8f21ef79e7e2b240585f7eee629eea49e191b06354ae0175",
@@ -519,6 +519,7 @@
         "Yozgat.pdf": "b2ab033fe30f0a1bcfb46350dd1a850872bdc3778cf41aabb70546b108431d76",
         "Zonguldak.pdf": "f91e6f631d7d08371c793b7c49d8383b661257417eff7ef1cc582e20e0595d38",
         "igdir.pdf": "77d91a823b332fe69e13f893dae19c345a8d1160f2d2829063fb5bcc80c2c21a",
+        "il_dosya_adi_eslemesi.txt": "af9228012958143511a1a99000246434d0fd70b6b06089dcb16a5982d24666df",
         "isparta.pdf": "668b45a492a0ab4b0ebe0aa6d184fa800922d3e35573e6203083c3cae832048e",
         "istanbul.pdf": "7b58d41079c8e27b398c509ccd2b3aa2182e0a053fc03081732637f59668ffee",
         "izmir.pdf": "ceebfc1fd8ef772aaf0aee8fa99c76b582a5abded022e03ece919105d08a76a3"
@@ -526,7 +527,7 @@
     },
     "data/raw/ysk/mahalli-1994-1999-2004": {
       "checksum_file": "data/raw/ysk/mahalli-1994-1999-2004/checksums.sha256",
-      "file_count": 239,
+      "file_count": 240,
       "files": {
         "1994/BelediyeBaskanligi/Adiyaman.pdf": "fab8b0b7db2c9e232309706c515f905f9b4f254fff9c5360228106c7a5db241b",
         "1994/BelediyeBaskanligi/Afyon.pdf": "0414da2654b565e5435bc87ec770ddd42c6742e6ffcd3711910e3df84d07dccc",
@@ -766,7 +767,42 @@
         "2004/Buyuksehir/Sakarya.pdf": "5aa8e8cbe921820430ee4226d0e1fb1a9a588ec03680fe9172726f5f304a9e3c",
         "2004/Buyuksehir/Samsun.pdf": "395ef168376ce30c7347fd0b93819cd37dfe8c13280b7f274992e38d3c784718",
         "2004/Buyuksehir/istanbul.pdf": "74dad17c56a812403dd405a01d01a529fe8110cecd31e3dc4afeaa763ed18eed",
-        "2004/Buyuksehir/izmir.pdf": "3c285e17b1507961ff91eb888357c5aaac09bb9add4d29e05c6f499f1a21faf0"
+        "2004/Buyuksehir/izmir.pdf": "3c285e17b1507961ff91eb888357c5aaac09bb9add4d29e05c6f499f1a21faf0",
+        "il_dosya_eslemesi.json": "d5cf74eed85f3bed09a30ae52bbb8bbb7d5ba220e06a925746452b36da0f96b4"
+      }
+    },
+    "data/raw/wikipedia/yerel-1950-1977": {
+      "checksum_file": "data/raw/wikipedia/yerel-1950-1977/checksums.sha256",
+      "file_count": 6,
+      "files": {
+        "yerel_1950.json": "b3c03b0b9d04419d0490166e515367fbdc85861c9c33ea9bab687755c6944e86",
+        "yerel_1955.json": "ecf34f6efefb506c4e5adeb32174f34df6aa551e9ff26dda898d759b08b0910a",
+        "yerel_1963.json": "8c2ccbeaa7ade9ee878456432b64414e835002750f979fab30394a55b120c093",
+        "yerel_1968.json": "569ea7cbdaeed33d22ff8abb3e1444dec841584023e5ce2f694bf5d6b38ecbe8",
+        "yerel_1973.json": "dda3843c7c5d1ba65ee73ac018826f157c6e3123c94b25bc728351b24190eb16",
+        "yerel_1977.json": "424aa786d0f508ae5417cf106b2ccb6c6f813851033b26e06e540434a43e37a8"
+      }
+    },
+    "data/raw/ysk/mahalli-1963-1977": {
+      "checksum_file": "data/raw/ysk/mahalli-1963-1977/checksums.sha256",
+      "file_count": 8,
+      "files": {
+        "1963_belediye.pdf": "5f476d72f3cf4416d3a1c82c709a4a20ac941e372b3058b568aa72b75384bd0d",
+        "1963_ilgenel.pdf": "fd2568ec31d0f4ead73febbd6f42b5f17d7a7b00014168629416f39815ade437",
+        "1968_belediye.pdf": "f19c6edeea9e7d94b8c1995dd8230a28f5cbbbb3d16ab8f36ebd28a47c7f9649",
+        "1968_ilgenel.pdf": "a5af5063f1e12d885384926b4ea38c9cfee61c134c35757d7b2d6d86e95d1b30",
+        "1973_belediye.pdf": "20a59a80d82a38eb87fe8cb369f924037cdb2bafe261237cce369f1527b98a26",
+        "1973_ilgenel.pdf": "2b1ea64e5f30e09ca43c7e4c536332b2bd2fdbefe7e6ba3a6a4495d8e5b04a77",
+        "1977_belediye.pdf": "81448fcecb4819df274973f9a668bc09c4b426ad487f6faf6611eb19a6368390",
+        "1977_ilgenel.pdf": "6775be2ec795a920397757273ba3192067497f70e127ba0ce4596552a20439bd"
+      }
+    },
+    "data/raw/ysk": {
+      "checksum_file": "data/raw/ysk/checksums.sha256",
+      "file_count": 2,
+      "files": {
+        "acikveri-il-ilce-listesi.json": "555b4ecad6444ca2f0c01eb03d8bdb9f32e6cabe71eded626a58b13d39369643",
+        "acikveri-ilce-geomid-eslemesi.json": "6370d16fca5ce679317ee8be56b9c7445674eda82b5c7779ce02cdc8e183793d"
       }
     }
   },

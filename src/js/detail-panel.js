@@ -8,15 +8,26 @@
     $('#dHeroPct').textContent = pct!=null ? '%'+pct.toFixed(2) : '';
   }
 
+  // 1950/1955 yerel secimlerinde belediye baskani halk oyuyla degil, meclisin
+  // kendi icinden seciliyordu - o yillarda 'oy'/'oran' alanlari null, bunun
+  // yerine 'sandalye'/'oranSandalye' (meclis sandalye dagilimi) dolu (bkz.
+  // yerel_secimler.json ust-seviye contestType/resultBasis alanlari). Bu
+  // fonksiyon her iki durumu da doğru etiketle gosterir - gercek oy yuzdesini
+  // meclis sandalye payiyla KARISTIRMAZ.
+  function isSeatBased(oy){ return (oy.oy==null || oy.oy===0) && oy.sandalye!=null; }
+
   function partyRowEl(r){
     const short = PARTY[r.name] ? PARTY[r.name].short : r.name;
-    const pct = r.oy.oran!=null ? r.oy.oran : 0;
+    const seatBased = isSeatBased(r.oy);
+    const pct = seatBased ? (r.oy.oranSandalye!=null?r.oy.oranSandalye:0) : (r.oy.oran!=null ? r.oy.oran : 0);
+    const pctLabel = seatBased ? (r.oy.oranSandalye!=null?'%'+r.oy.oranSandalye.toFixed(1):'—') : (r.oy.oran!=null?'%'+r.oy.oran.toFixed(2):'—');
+    const qtyLabel = seatBased ? (r.oy.sandalye!=null?r.oy.sandalye+' meclis sandalyesi':'—') : (fmt(r.oy.oy)+' oy');
     const el = document.createElement('div'); el.className='party-row';
     el.innerHTML = '<div class="prow-top">'+
         '<span class="dot" style="background:'+partyColor(r.name)+'"></span>'+
         '<span class="name">'+short+'</span>'+
-        '<span class="pct">'+(r.oy.oran!=null?'%'+r.oy.oran.toFixed(2):'—')+'</span>'+
-        '<span class="oy">'+fmt(r.oy.oy)+' oy</span>'+
+        '<span class="pct">'+pctLabel+'</span>'+
+        '<span class="oy">'+qtyLabel+'</span>'+
         (r.vekil>0 ? '<span class="vekil">'+r.vekil+'</span>' : '')+
       '</div>'+
       '<div class="bar-track"><div class="bar-fill" style="width:'+Math.max(pct,0)+'%; background:'+partyColor(r.name)+'"></div></div>';
@@ -33,7 +44,10 @@
     $('#dPlaka').textContent = 'Plaka '+String(plaka).padStart(2,'0');
 
     const heroOy = p.kazanan ? p.oy[p.kazanan] : null;
-    setHero(DATA.tur==='referandum' ? 'Sonuç' : 'Kazanan', p.kazanan && PARTY[p.kazanan]?PARTY[p.kazanan].short:p.kazanan, p.kazanan, heroOy && heroOy.oran!=null ? heroOy.oran : null);
+    const heroSeatBased = heroOy && isSeatBased(heroOy);
+    const heroLabel = DATA.tur==='referandum' ? 'Sonuç' : (heroSeatBased ? 'Meclisi Kazanan Parti' : 'Kazanan');
+    const heroPct = heroOy ? (heroSeatBased ? heroOy.oranSandalye : heroOy.oran) : null;
+    setHero(heroLabel, p.kazanan && PARTY[p.kazanan]?PARTY[p.kazanan].short:p.kazanan, p.kazanan, heroPct);
 
     $('#dSeatsLabel').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? 'Vekil / Sandalye' : 'Milletvekili';
     $('#dSeats').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? (p.toplamVekil || '—') : p.toplamVekil;
@@ -44,15 +58,18 @@
     // Butun il/ilce'de gercekten oy alan HER parti (baraj alti kucuk partiler ve
     // bagimsizlar dahil) - MAJOR listesi sadece hangilerinin ilk sirada, hangilerinin
     // "digerleri" acilir-kapanir bolumune gidecegini belirliyor.
+    const rank = r => isSeatBased(r.oy) ? (r.oy.sandalye||0) : (r.oy.oy||0);
     const allNamed = Object.entries(p.oy).map(([name,oy])=>({name, oy, vekil:(p.vekil&&p.vekil[name])||0}))
-      .filter(r=>r.oy && r.oy.oy>0);
+      .filter(r=>r.oy && (r.oy.oy>0 || r.oy.sandalye>0));
     const majorSet = new Set(MAJOR);
-    const primary = allNamed.filter(r=>majorSet.has(r.name)).sort((a,b)=> b.oy.oy - a.oy.oy);
-    const extra = allNamed.filter(r=>!majorSet.has(r.name)).sort((a,b)=> b.oy.oy - a.oy.oy);
+    const primary = allNamed.filter(r=>majorSet.has(r.name)).sort((a,b)=> rank(b) - rank(a));
+    const extra = allNamed.filter(r=>!majorSet.has(r.name)).sort((a,b)=> rank(b) - rank(a));
     // primary bossa (orn. yerel'de MAJOR il-kazananlari listesi bu ilde/ilcede hic
     // gecmiyorsa) en cok oy alan birkac partiyi one al, kalanlari "digerleri"ne birak.
     const rows = primary.length ? primary : extra.splice(0, Math.min(5, extra.length));
     if(DATA.tur !== 'yerel' && p.digerOy>0) rows.push({name:'Diğer', oy:{oy:p.digerOy, oran:p.digerOran}, vekil:0});
+    $('#dResultsHead').textContent = (DATA.resultBasis==='council_seats') ? 'Belediye Meclisi Sandalye Dağılımı'
+      : (DATA.resultBasis==='mixed') ? 'Sonuçlar (bazı illerde meclis sandalye dağılımı)' : 'Sonuçlar';
     const wrap = $('#dParties'); wrap.innerHTML='';
     for(const r of rows) wrap.appendChild(partyRowEl(r));
     if(extra.length){

@@ -32,7 +32,9 @@
     const isOranTip = DATA.tur === 'referandum' || DATA.tur === 'yerel' || DATA.tur === 'cumhurbaskanligi' || YEARS_NO_VEKIL.has(currentYear);
     if(mode==='winner'){
       const wOy = obj.oy[obj.kazanan];
-      const seatInfo = isOranTip ? ('%'+(wOy&&wOy.oran!=null?wOy.oran.toFixed(2):'0.00')+(wOy?' · '+fmt(wOy.oy)+' oy':''))
+      const wSeatBased = wOy && isSeatBased(wOy);
+      const seatInfo = wSeatBased ? ('%'+(wOy.oranSandalye!=null?wOy.oranSandalye.toFixed(1):'0.0')+' meclis payı'+(wOy.sandalye!=null?' · '+wOy.sandalye+' sandalye':''))
+        : isOranTip ? ('%'+(wOy&&wOy.oran!=null?wOy.oran.toFixed(2):'0.00')+(wOy?' · '+fmt(wOy.oy)+' oy':''))
         : (info.kind==='il' ? (obj.toplamVekil+' vekil') : ('ilçe kazananı'));
       html += '<div class="row"><span>'+ (obj.kazanan? (PARTY[obj.kazanan]?PARTY[obj.kazanan].short:obj.kazanan) : '—') +' önde</span><span>'+seatInfo+'</span></div>';
     } else if(mode==='parti'){
