@@ -161,7 +161,7 @@
       el.dataset.plaka = plaka;
       el.addEventListener('mousemove', e=>showTooltip(e, {kind:'il', plaka}));
       el.addEventListener('mouseleave', hideTooltip);
-      el.addEventListener('click', ()=>drillIntoProvince(plaka));
+      el.addEventListener('click', ()=>goToProvince(plaka));
       svg.appendChild(el);
       pathByPlaka[plaka]=el;
     }
@@ -307,6 +307,21 @@
   function drillIntoProvince(plaka){
     renderProvinceMap(plaka);
     selectProvince(plaka);
+  }
+
+  // Tiklanan/aranan ile HANGI gorunume gidilecegini tek yerden karar verir:
+  // ilce verisi varsa normal ilce-haritasina in (drillIntoProvince); yoksa
+  // (o il/yil icin hic ilce-duzeyi veri bilmiyorsak) HARITA ulke goruminde
+  // KALIR - olmayan bir "ilce gorunumu"ne (39/81 parcali ya da tek-parca-il
+  // gosterip "İlçe Sonuçları" baslikli sahte bir alt seviye) hic gecilmez,
+  // sadece sag panelde ilin kendi sonucu gosterilir (bkz. son inceleme).
+  function goToProvince(plaka){
+    if(provinceHasDistrictData(plaka)){
+      drillIntoProvince(plaka);
+    } else {
+      if(view.level!=='country') renderCountryMap();
+      selectProvince(plaka);
+    }
   }
 
   // ---------------- mahalle (ilce icinde ucuncu seviye) ----------------

@@ -110,10 +110,13 @@ async function scenario_istanbul1994geometri(browser) {
 }
 
 // Bir secimde HIC ilce-duzeyi veri yoksa (orn. 1965 genel - sadece il
-// duzeyinde kaynak var), il TEK PARCA olarak gosterilmeli - 39 parcaya
-// bolup "veri yok" katmani cizmek de yaniltici (bilmedigimiz bir seyi
-// biliyormus gibi parcalamak) - bkz. son inceleme regresyonu (bu davranis
-// bir onceki turda yanlislikla kirilmis, kullanici fark etti).
+// duzeyinde kaynak var), "ilce gorunumu"ne HIC GECILMEMELI - ne 39 parcaya
+// bolup "veri yok" katmani cizmek, ne de zoom yapip tek-parca-il gosterip
+// sahte bir "İlçe Sonuçları" alt seviyesi sunmak. Harita ULKE goruminde
+// KALMALI, sag panel sadece ilin kendi sonucunu gostermeli ve "İlçeler"
+// basligi/arama/liste bolumu hic gorunmemeli (bkz. son inceleme: bir onceki
+// turda "tek parca" fallback dogruydu ama cevresindeki UI hala sahte bir
+// ilce-seviyesi gorunumu gibi davraniyordu).
 async function scenario_ilOnlyYearsTekParca(browser) {
   const errors = await withPage(browser, async (page) => {
     await page.click('#btnTurGenel');
@@ -124,10 +127,29 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     await page.fill('#searchBox', 'İstanbul');
     await page.waitForTimeout(300);
     let nodata = await page.$$eval('.il-path-nodata', (els) => els.length);
-    let whole = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
-    check('1965 genel (hiç ilçe verisi yok): İstanbul tek parça, ilçe alt katmanı yok', nodata === 0 && whole === 1, 'nodata=' + nodata + ' whole=' + whole);
+    let countryPaths = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
+    let breadcrumbHidden = await page.$eval('#mapBreadcrumb', (el) => getComputedStyle(el).display === 'none');
+    let dName = await page.$eval('#dName', (el) => el.textContent);
+    let selectedPlaka = await page.$eval('path.il-path.selected', (el) => el.dataset.plaka).catch(() => null);
+    check('1965 genel (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok', nodata === 0, 'nodata=' + nodata);
+    check('1965 genel (hiç ilçe verisi yok): harita ülke görünümünde kaldı (tek ile zoom yapmadı)', countryPaths > 1, 'countryPaths=' + countryPaths);
+    check('1965 genel (hiç ilçe verisi yok): "İlçe Sonuçları" breadcrumb\'ı hiç açılmadı', breadcrumbHidden);
+    check('1965 genel (hiç ilçe verisi yok): sağ panelde il doğru seçili', dName === 'İstanbul' && selectedPlaka === '34', 'dName=' + dName + ' selectedPlaka=' + selectedPlaka);
 
-    await page.click('#btnBackCountry').catch(() => {});
+    const districtsHidden = await page.$eval('#dDistrictsLabel', (el) => getComputedStyle(el).display === 'none')
+      && await page.$eval('#districtSearch', (el) => getComputedStyle(el).display === 'none')
+      && await page.$eval('#dDistrictList', (el) => getComputedStyle(el).display === 'none');
+    check('1965 genel (hiç ilçe verisi yok): "İlçeler" başlığı/arama/listesi hiç gösterilmiyor', districtsHidden);
+
+    // Katilim/Parti moduna gecince de (bkz. onceki bug: bos entity listesi
+    // yuzunden "Infinity%" gibi bozuk bir legend olusuyordu) hata olmamali -
+    // artik province-view'a hic girilmedigi icin bu sorun tasarim geregi yok.
+    await page.click('#modeGroup button[data-mode="katilim"]').catch(() => {});
+    await page.waitForTimeout(200);
+    const seqMinText = await page.$eval('#seqMin', (el) => el.textContent);
+    check('1965 genel (hiç ilçe verisi yok): Katılım moduna geçince legend bozulmuyor (Infinity/NaN yok)', !/Infinity|NaN/.test(seqMinText), seqMinText);
+    await page.click('#modeGroup button[data-mode="winner"]').catch(() => {});
+
     await page.click('#btnTurYerel');
     await page.waitForTimeout(400);
     const found1977 = await clickYear(page, '1977');
@@ -136,8 +158,12 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     await page.fill('#searchBox', 'İstanbul');
     await page.waitForTimeout(300);
     nodata = await page.$$eval('.il-path-nodata', (els) => els.length);
-    whole = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
-    check('1977 yerel (hiç ilçe verisi yok): İstanbul tek parça, ilçe alt katmanı yok', nodata === 0 && whole === 1, 'nodata=' + nodata + ' whole=' + whole);
+    countryPaths = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
+    breadcrumbHidden = await page.$eval('#mapBreadcrumb', (el) => getComputedStyle(el).display === 'none');
+    dName = await page.$eval('#dName', (el) => el.textContent);
+    check('1977 yerel (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok, ülke görünümünde kaldı, breadcrumb açılmadı',
+      nodata === 0 && countryPaths > 1 && breadcrumbHidden && dName === 'İstanbul',
+      'nodata=' + nodata + ' countryPaths=' + countryPaths + ' breadcrumbHidden=' + breadcrumbHidden + ' dName=' + dName);
   });
   check('il-only yıllar: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }

@@ -4,7 +4,7 @@
     if(q.length<2) return;
     if(view.level==='country'){
       const match = DATA.iller.find(p=>p.ad.toLocaleLowerCase('tr').startsWith(q));
-      if(match) drillIntoProvince(match.plaka);
+      if(match) goToProvince(match.plaka);
     } else if(view.level==='mahalle'){
       const match = currentMahalleRows.find(r=>r.ad.toLocaleLowerCase('tr').startsWith(q));
       if(match && pathByMahalleId[match.id]){

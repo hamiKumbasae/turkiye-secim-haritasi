@@ -53,7 +53,7 @@
           }), [p.katilim!=null?p.katilim.toFixed(2):'—', null], [fmt(p.secmen), null]];
       tr.innerHTML = cells.map(([c,title],i)=>'<td'+(i===0?'':' class="num"')+(title?' title="'+title+'"':'')+'>'+c+'</td>').join('');
       tr.style.cursor='pointer';
-      tr.addEventListener('click', ()=>{ $('#btnMapView').click(); drillIntoProvince(p.plaka); });
+      tr.addEventListener('click', ()=>{ $('#btnMapView').click(); goToProvince(p.plaka); });
       body.appendChild(tr);
     }
     $$('#ilTable th').forEach(th=>th.classList.toggle('sorted', th.dataset.key===sortKey));

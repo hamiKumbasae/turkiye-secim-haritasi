@@ -92,12 +92,21 @@
     $('#dResultsHead').textContent = (DATA.resultBasis==='council_seats') ? 'Meclis Sandalye Dağılımı' : 'Sonuçlar';
     renderPartyResults(p);
 
+    // Bu il icin HIC ilce-duzeyi veri yoksa (orn. 1965 genel), "İlçeler"
+    // basligi/arama/liste bolumunu hic gostermiyoruz - olmayan bir alt
+    // seviyeyi varmis gibi sunmak yaniltici olurdu (bkz. son inceleme).
+    const hasDistricts = provinceHasDistrictData(plaka);
     $('#dDistrictsLabel').textContent = 'İlçeler';
-    $('#districtSearch').style.display='';
-    $('#dDistrictList').style.display='';
-    renderDistrictList(plaka, '');
-    $('#districtSearch').value='';
-    $('#districtSearch').oninput = e => renderDistrictList(plaka, e.target.value);
+    $('#dDistrictsLabel').style.display = hasDistricts ? '' : 'none';
+    $('#districtSearch').style.display = hasDistricts ? '' : 'none';
+    $('#dDistrictList').style.display = hasDistricts ? '' : 'none';
+    if(hasDistricts){
+      renderDistrictList(plaka, '');
+      $('#districtSearch').value='';
+      $('#districtSearch').oninput = e => renderDistrictList(plaka, e.target.value);
+    } else {
+      $('#dDistrictList').innerHTML='';
+    }
   }
 
   // il (p) VEYA ilce (d) kaydinin oy['<parti>'] sozlugunu #dParties'e cizer -
@@ -167,15 +176,16 @@
     return !!d && !!d.oy && Object.keys(d.oy).length > 0;
   }
 
+  // Bu ilin bu YIL icin GERCEKTEN ilce-duzeyi verisi var mi - map.js'teki
+  // renderProvinceMap'in dataFeats.length kontrolüyle AYNI mantik (bkz.
+  // goToProvince, selectProvince).
+  function provinceHasDistrictData(plaka){
+    return (districtsByPlaka[plaka]||[]).some(districtHasRealData);
+  }
+
   function renderDistrictList(plaka, filter){
     const list = (districtsByPlaka[plaka]||[]).filter(d => d.ad.toLocaleLowerCase('tr').includes(filter.toLocaleLowerCase('tr')));
     const el = $('#dDistrictList'); el.innerHTML='';
-    if(list.length===0 && YEARS_IL_ONLY.has(currentYear)){
-      const msg = document.createElement('div'); msg.className='district-row'; msg.style.opacity=0.6; msg.style.cursor='default';
-      msg.textContent = 'Bu dönem için ilçe bazlı veri kaynakta mevcut değil (sadece il seviyesi).';
-      el.appendChild(msg);
-      return;
-    }
     const withData = list.filter(districtHasRealData);
     const withoutData = list.filter(d=>!districtHasRealData(d));
     for(const d of withData){
