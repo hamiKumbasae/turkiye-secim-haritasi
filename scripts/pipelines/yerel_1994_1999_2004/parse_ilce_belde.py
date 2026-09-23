@@ -28,11 +28,11 @@ import pdfplumber
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "election_import"))
 from party_map_helper import fold  # noqa: E402
-from common.hist_geomid import resolve_historical_merkez  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election  # noqa: E402
+from common.hist_geomid import resolve_historical_merkez  # noqa: E402
 
 RAW = ROOT / "data" / "raw" / "ysk" / "mahalli-1994-1999-2004"
 MAPPING = json.loads((RAW / "il_dosya_eslemesi.json").read_text(encoding="utf-8"))

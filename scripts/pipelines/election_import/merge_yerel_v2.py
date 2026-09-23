@@ -14,11 +14,11 @@ import pathlib
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from party_map_helper import build_auto_map  # noqa: E402
-from common.hist_geomid import resolve_historical_merkez  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election, save_election  # noqa: E402
+from common.hist_geomid import resolve_historical_merkez  # noqa: E402
 
 GEOMID_MAP_PATH = ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi.json"
 _GENEL2023 = load_election("2023")
@@ -26,7 +26,7 @@ IL_ADI_BY_PLAKA = {i["plaka"]: i["ad"] for i in _GENEL2023["iller"]}
 ILCE_ADI_BY_GEOMID = {i["geomId"]: i["ad"] for i in _GENEL2023["ilceler"]}
 
 PARTI_COL_RE = re.compile(r"^(parti|ittifak)\d+_ALDIGI_OY$")
-BAGIMSIZ_COL_RE = re.compile(r"^bagimsiz\d*_ALDIGI_OY$")
+BAGIMSIZ_COL_RE = re.compile(r"^bagimsiz\d+_ALDIGI_OY$")  # diger 3 merge script'iyle tutarli (YSK sutunlari her zaman numarali)
 
 
 def build_party_mapping(col_to_name, existing_keys, extra_alias):

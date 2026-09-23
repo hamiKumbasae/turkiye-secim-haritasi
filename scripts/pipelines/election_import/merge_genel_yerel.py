@@ -16,11 +16,11 @@ import pathlib
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from party_map_helper import build_auto_map, fold  # noqa: E402
-from common.hist_geomid import resolve_historical_merkez  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election, save_election  # noqa: E402
+from common.hist_geomid import resolve_historical_merkez  # noqa: E402
 
 GEOMID_MAP_PATH = ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi.json"
 _GENEL2023 = load_election("2023")
@@ -58,7 +58,13 @@ def build_record(ad, plaka, agg, col_to_key, major, vekil=None, toplam_vekil=0):
             continue
         key = col_to_key.get(col)
         if key is None:
-            continue  # sifir olmayan ama haritalanmamis (olmamali, guard var)
+            # build_party_mapping() normalde HER parti sutununu esler (esles-
+            # tiremediginde SystemExit atar) - buraya dusmek beklenmez, ama
+            # dusulurse oyu sessizce KAYBETMEK yerine Diger'e ekle (bkz.
+            # merge_yerel_v2.py'deki ayni kontrol - iki script farkli
+            # davraniyordu, bu kopya kodun kazayla ayrildigi bir yerdi).
+            diger_oy += v
+            continue
         if key in major:
             oy[key] = oy.get(key, {"oy": 0}); oy[key]["oy"] += v
         else:
@@ -114,6 +120,13 @@ def main():
     col_to_key = build_party_mapping(agrege["colToName"], existing_keys, extra_alias)
 
     old_ilce_sayisi = {i["plaka"]: i["ilceSayisi"] for i in secim["iller"]}
+    # Sandik-duzeyi oy API'si sandalye dagilimi icermiyor - il kaydinin
+    # vekil/toplamVekil alanlari, bu script calismadan ONCEKI (zaten dogru,
+    # baska bir kaynaktan gelen) degerlerden korunur, yoksa build_record'un
+    # varsayilanlariyla (0/{}) SESSIZCE sifirlanir (bkz. PROVENANCE.md'deki
+    # "Genel secim vekil/sandalye alani korunmasi" notu - bu koruma daha once
+    # elle/tek seferlik yapilmisti, artik her calistirmada otomatik).
+    old_vekil = {i["plaka"]: (i.get("vekil") or {}, i.get("toplamVekil") or 0) for i in secim["iller"]}
     sandik_by_il = {}
     for agg in agrege["ilceler"].values():
         sandik_by_il[agg["ilId"]] = sandik_by_il.get(agg["ilId"], 0) + agg.get("sandikSayisi", 0)
@@ -122,7 +135,8 @@ def main():
     for il_id_str, agg in agrege["iller"].items():
         plaka = int(il_id_str)
         ad = IL_ADI_BY_PLAKA.get(plaka, agg["ilAdi"].title())
-        rec = build_record(ad, plaka, agg, col_to_key, major)
+        vekil, toplam_vekil = old_vekil.get(plaka, ({}, 0))
+        rec = build_record(ad, plaka, agg, col_to_key, major, vekil=vekil, toplam_vekil=toplam_vekil)
         rec["ilceSayisi"] = old_ilce_sayisi.get(plaka, 0)
         rec["sandik"] = sandik_by_il.get(plaka, 0)
         new_iller.append(rec)

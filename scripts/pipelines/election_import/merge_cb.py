@@ -11,12 +11,10 @@ import re
 import sys
 import pathlib
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from common.hist_geomid import resolve_historical_merkez  # noqa: E402
-
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election, save_election  # noqa: E402
+from common.hist_geomid import resolve_historical_merkez  # noqa: E402
 
 GEOMID_MAP_PATH = ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi.json"
 _GENEL2023 = load_election("2023")

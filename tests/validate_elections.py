@@ -77,11 +77,13 @@ def check_checksums():
     check("checksums.json ile diskteki dosyalar eslesiyor", all_ok, "; ".join(bad[:5]))
 
 
-# data/raw/ altindaki her dosya ya checksums.json manifestinde olmali, ya da
-# burada acikca "neden disarida" diye belirtilmeli - manifestte olmayan bir
-# ham kaynak dosyasi degisirse checksum kontrolu bunu SESSIZCE atlar (bkz.
-# check_checksums - sadece manifestte LISTELI dosyalari kontrol eder, eksik
-# olani fark etmez). Bu kontrol o boslugu kapatiyor.
+# checksums.json'da TAKIP EDILEN her klasordeki (sadece data/raw/ degil -
+# data/normalized, geo/normalized, geo/historical dahil TUM 13 klasor)
+# her dosya ya manifestte olmali, ya da burada acikca "neden disarida" diye
+# belirtilmeli - manifestte olmayan bir dosya degisirse/eklenirse checksum
+# kontrolu bunu SESSIZCE atlar (bkz. check_checksums - sadece manifestte
+# LISTELI dosyalari kontrol eder, eksik olani fark etmez). Bu kontrol o
+# boslugu (ONCEDEN sadece data/raw/ icin kapatiliyordu) TUM klasorler icin kapatir.
 CHECKSUM_ALLOWLIST_DISI = {
     # Her klasorun kendi PROVENANCE.md/checksums.sha256'si manifestin
     # disinda tutuluyor (kendi kendini referans etmemesi icin) - bunlar
@@ -91,27 +93,39 @@ CHECKSUM_ALLOWLIST_DISI = {
 
 def check_raw_checksum_coverage():
     prov = load_json(ROOT / "data" / "provenance" / "checksums.json")
+    folders = list(prov["folders"].keys())
+
+    # TEK, BIRLESIK manifest kumesi (tum klasorlerden) - bazi klasorler
+    # ic ice gecmis (orn. "data/raw/ysk" hem kendi basina bir giris HEM DE
+    # "data/raw/ysk/1950-1977" gibi alt klasorlerin ebeveyni) - klasor
+    # basina ayri ayri kiyaslamak, bir alt klasorun kendi manifestinde
+    # DOGRU listeli bir dosyayi ebeveyninin (rglob ile recursive taranan)
+    # listesinde YOK sanip yanlis pozitif uretir. Tek kume + SADECE en
+    # dis/ebeveyn klasorlerden tarama bunu onler.
     manifest_files = set()
     for folder, info in prov["folders"].items():
         for rel_path in info["files"]:
             manifest_files.add(str((ROOT / folder / rel_path).resolve()))
 
+    root_folders = [f for f in folders if not any(f != g and f.startswith(g + "/") for g in folders)]
+
     disk_files = set()
-    for p in (ROOT / "data" / "raw").rglob("*"):
-        if not p.is_file():
-            continue
-        if p.name in ("PROVENANCE.md", "checksums.sha256", ".DS_Store"):
-            continue
-        rel = str(p.resolve())
-        if rel in CHECKSUM_ALLOWLIST_DISI:
-            continue
-        disk_files.add(rel)
+    for folder in root_folders:
+        for p in (ROOT / folder).rglob("*"):
+            if not p.is_file():
+                continue
+            if p.name in ("PROVENANCE.md", "checksums.sha256", ".DS_Store"):
+                continue
+            rel = str(p.resolve())
+            if rel in CHECKSUM_ALLOWLIST_DISI:
+                continue
+            disk_files.add(rel)
 
     missing = sorted(disk_files - manifest_files)
     check(
-        "data/raw/ altindaki her dosya checksums.json manifestinde",
+        "checksums.json'daki her klasör altında her dosya manifestte",
         not missing,
-        f"{len(missing)} dosya manifestte yok (ornek): " + "; ".join(m.replace(str(ROOT) + '/', '') for m in missing[:5]),
+        f"{len(missing)} dosya manifestte yok (örnek): " + "; ".join(m.replace(str(ROOT) + '/', '') for m in missing[:5]),
     )
 
 
