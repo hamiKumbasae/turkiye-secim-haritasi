@@ -16,6 +16,12 @@ import sys
 
 import pdfplumber
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent.parent))
+from common.tr_numbers import to_int as _to_int  # noqa: E402
+
+def to_int(s):
+    return _to_int(s, strict=False)
+
 COL_ALIASES = {
     "il_kodu": ["İL KODU"],
     "il_adi": ["İL ADI", "GÜMRÜK ADI"],
@@ -27,13 +33,6 @@ COL_ALIASES = {
     "evet": ['"EVET" OYU\nVERENLERİN SAYISI'],
     "hayir": ['"HAYIR" OYU\nVERENLERİN SAYISI'],
 }
-
-
-def to_int(s):
-    if s is None:
-        return None
-    s = s.replace(".", "").strip()
-    return int(s) if s and s.lstrip("-").isdigit() else None
 
 
 def find_col(header_row, aliases):

@@ -22,18 +22,8 @@ DATA_NORM = ROOT / "data" / "normalized"
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election, save_election  # noqa: E402
 
-STATIC_MAP = {
-    "ANAP": "ANAP", "BAĞIMSIZLAR": "Bağımsız", "BBP": "BBP", "BP": "BP",
-    "CHP": "CHP", "DP": "DP", "DSP": "DSP", "DYP": "DYP", "MHP": "MHP",
-    "MİLLET PARTİSİ": "MP92", "RP": "RP", "SBP": "SBP", "SHP": "SHP",
-    "YDP": "YDP", "İP": "İP", "DBP": "DBP99", "DEHAP": "DEHAP",
-    "DEPAR": "DEPAR", "DTP": "DEMTP", "EMEP": "EMEP", "FP": "FP",
-    "HADEP": "HADEP", "LDP": "LDP", "SİP": "SİP", "ÖDP": "ÖDP",
-    "AK PARTİ": "AK Parti", "ATP": "ATP", "BTP": "BTP", "GENÇ PARTİ": "GP",
-    "SAADET PARTİSİ": "SP", "TKP": "TKP", "YTP": "YTP02",
-}
-
-MAX_GECERLI_OY_SAPMA = 0.02  # %2
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from party_map import STATIC_MAP, MAX_GECERLI_OY_SAPMA  # noqa: E402
 
 _GENEL2023 = load_election("2023")
 AD_BY_GEOMID_PLAKA = {i["geomId"]: i["plaka"] for i in _GENEL2023["ilceler"]}
@@ -80,6 +70,12 @@ def main():
         if diger_oy:
             oy["Diğer"] = {"oy": diger_oy}
 
+        # merge_into_normalized.py (il-duzeyi) PDF'nin KENDI parti-basina oran
+        # sutununu dogrudan kullanir - burada oyle bir sutun YOK (parse_ilce_belde.py
+        # SADECE ham oy sayisi cikariyor), bu yuzden oran BURADA (bucketlanmis
+        # toplamlara gore) yeniden hesaplanir. Bu KASITLI bir fark (farkli girdi
+        # sekli), kopyala-yapistir sapmasi degil - iki script'i "tutarli" yapmak
+        # icin degistirilmemeli.
         total = sum(v["oy"] for v in oy.values())
         for k in oy:
             oy[k]["oran"] = round(oy[k]["oy"] / total * 100, 2) if total else None

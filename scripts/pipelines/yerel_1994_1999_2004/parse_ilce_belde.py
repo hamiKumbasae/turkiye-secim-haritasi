@@ -33,6 +33,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election  # noqa: E402
 from common.hist_geomid import resolve_historical_merkez  # noqa: E402
+from common.tr_numbers import to_int  # noqa: E402
 
 RAW = ROOT / "data" / "raw" / "ysk" / "mahalli-1994-1999-2004"
 MAPPING = json.loads((RAW / "il_dosya_eslemesi.json").read_text(encoding="utf-8"))
@@ -117,11 +118,6 @@ def match_place(plaka, name):
             if gid:
                 return gid
     return None
-
-
-def to_int(s):
-    s = (s or "").replace(".", "").strip()
-    return int(s) if s else None
 
 
 def extract_rows(path):

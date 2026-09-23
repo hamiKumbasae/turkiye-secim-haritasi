@@ -23,18 +23,8 @@ PARTILER_PATH = DATA_NORM / "partiler.json"
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election, save_election  # noqa: E402
 
-STATIC_MAP = {
-    "ANAP": "ANAP", "BAĞIMSIZLAR": "Bağımsız", "BBP": "BBP", "BP": "BP",
-    "CHP": "CHP", "DP": "DP", "DSP": "DSP", "DYP": "DYP", "MHP": "MHP",
-    "MİLLET PARTİSİ": "MP92", "RP": "RP", "SBP": "SBP", "SHP": "SHP",
-    "YDP": "YDP", "İP": "İP", "DBP": "DBP99", "DEHAP": "DEHAP",
-    "DEPAR": "DEPAR", "DTP": "DEMTP", "EMEP": "EMEP", "FP": "FP",
-    "HADEP": "HADEP", "LDP": "LDP", "SİP": "SİP", "ÖDP": "ÖDP",
-    "AK PARTİ": "AK Parti", "ATP": "ATP", "BTP": "BTP", "GENÇ PARTİ": "GP",
-    "SAADET PARTİSİ": "SP", "TKP": "TKP", "YTP": "YTP02",
-}
-
-MAX_GECERLI_OY_SAPMA = 0.02  # %2
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from party_map import STATIC_MAP, MAX_GECERLI_OY_SAPMA  # noqa: E402
 
 
 def map_party(ysk_code):

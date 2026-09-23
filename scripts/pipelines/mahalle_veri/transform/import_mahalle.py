@@ -25,7 +25,7 @@ import pathlib
 import subprocess
 import sys
 
-REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
+REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent.parent
 DATA_NORM = REPO_ROOT / "data" / "normalized"
 GEO_NORM = REPO_ROOT / "geo" / "normalized"
 

@@ -11,6 +11,9 @@ import re
 import sys
 import pathlib
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from party_map_helper import proper_case_tr  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election, save_election  # noqa: E402
@@ -20,22 +23,6 @@ GEOMID_MAP_PATH = ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi
 _GENEL2023 = load_election("2023")
 IL_ADI_BY_PLAKA = {i["plaka"]: i["ad"] for i in _GENEL2023["iller"]}
 ILCE_ADI_BY_GEOMID = {i["geomId"]: i["ad"] for i in _GENEL2023["ilceler"]}
-
-
-def proper_case_tr(s: str) -> str:
-    """YSK'nin TUM BUYUK isimlerini projenin kullandigi Turkce Baslik Harfli
-    forma cevirir (orn. 'RECEP TAYYİP ERDOĞAN' -> 'Recep Tayyip Erdoğan')."""
-    tr_lower_map = str.maketrans("İIŞĞÜÇÖ", "iışğüçö")
-    words = s.split(" ")
-    out = []
-    for w in words:
-        if not w:
-            continue
-        first, rest = w[0], w[1:]
-        rest_lower = rest.translate(tr_lower_map).lower()
-        first_upper = {"i": "İ"}.get(first.lower(), first.upper())
-        out.append(first_upper + rest_lower)
-    return " ".join(out)
 
 
 BAGIMSIZ_NUMBERED_RE = re.compile(r"^bagimsiz\d+_ALDIGI_OY$")

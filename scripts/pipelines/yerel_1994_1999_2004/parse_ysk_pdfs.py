@@ -24,15 +24,8 @@ import sys
 
 import pdfplumber
 
-
-def to_int(s):
-    s = (s or "").replace(".", "").strip()
-    return int(s) if s else None
-
-
-def to_float(s):
-    s = (s or "").replace(",", ".").strip()
-    return float(s) if s else None
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent.parent))
+from common.tr_numbers import to_int, to_float  # noqa: E402
 
 
 def parse_belediye_pdf(path: pathlib.Path):

@@ -23,6 +23,12 @@ import unicodedata
 import pdfplumber
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.tr_numbers import to_int as _to_int  # noqa: E402
+
+def to_int(s):
+    return _to_int(s, strict=False)
+
 ILCE_MATCH_PATH = ROOT / "scripts" / "pipelines" / "mahalle_veri" / "eslesme" / "ysk_ilce_matched.json"
 DISTRICT_SPLITS_PATH = ROOT / "geo" / "historical" / "district_splits.json"
 
@@ -58,11 +64,6 @@ def strip_corrupt_chars(s: str) -> str:
     return s
 
 
-def to_int(s):
-    if s is None:
-        return None
-    s = s.replace(".", "").strip()
-    return int(s) if s and s.lstrip("-").isdigit() else None
 
 
 def load_merkez_synthetic_ids():

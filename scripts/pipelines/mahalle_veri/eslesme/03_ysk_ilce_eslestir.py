@@ -1,23 +1,11 @@
 import json
 import os
-import unicodedata
+import sys
 from pathlib import Path
 
-def fold(s):
-    if s is None:
-        return ""
-    s = s.strip()
-    s = s.replace("İ", "I").replace("ı", "i").replace("Ğ", "G").replace("ğ", "g")
-    s = s.replace("Ü", "U").replace("ü", "u").replace("Ş", "S").replace("ş", "s")
-    s = s.replace("Ö", "O").replace("ö", "o").replace("Ç", "C").replace("ç", "c")
-    s = s.upper()
-    s = unicodedata.normalize("NFKD", s)
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    s = s.replace(".", "").replace("-", " ").replace("'", "")
-    s = " ".join(s.split())
-    return s
-
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+from common.turkish_text import fold  # noqa: E402
 WORKDIR = os.environ.get("MAHALLE_WORKDIR") or str(Path(__file__).resolve().parent.parent / ".work")
 OUT = f"{WORKDIR}/osm_mahalle"
 

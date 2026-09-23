@@ -9,20 +9,13 @@ import sys
 
 import pdfplumber
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent.parent))
+from common.tr_numbers import to_int, to_float  # noqa: E402
+
 YEARS = ["1977", "1973", "1969", "1965", "1961", "1957", "1954", "1950"]
 
 PDF_DIR = pathlib.Path(sys.argv[1])
 OUT_PATH = pathlib.Path(sys.argv[2])
-
-
-def to_int(s):
-    s = (s or "").replace(".", "").strip()
-    return int(s) if s else None
-
-
-def to_float(s):
-    s = (s or "").replace(",", ".").strip()
-    return float(s) if s else None
 
 
 def dedupe_doubled(s: str) -> str:

@@ -6,28 +6,14 @@ isim karsilastirmasi, sonra partiler.json'daki TUM anahtarlarin 'short'
 alaniyla karsilastirma. Eslesmeyenler icin None doner (elle cozulmeli).
 """
 import json
-import re
-import unicodedata
 import pathlib
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from common.turkish_text import fold_party as fold  # noqa: E402
+
 PARTILER = json.loads((ROOT / "data" / "normalized" / "partiler.json").read_text(encoding="utf-8"))
-
-
-def fold(s):
-    if s is None:
-        return ""
-    s = s.strip()
-    s = (s.replace("İ", "I").replace("ı", "i").replace("Ğ", "G").replace("ğ", "g")
-           .replace("Ü", "U").replace("ü", "u").replace("Ş", "S").replace("ş", "s")
-           .replace("Ö", "O").replace("ö", "o").replace("Ç", "C").replace("ç", "c"))
-    s = s.upper()
-    s = unicodedata.normalize("NFKD", s)
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    s = re.sub(r"\bPARTISI\b|\bPARTI\b|\(.*?\)", "", s)
-    s = s.replace(".", "").replace("-", " ").replace("'", "")
-    s = " ".join(s.split())
-    return s
 
 
 # YSK baslik listesindeki kisa/farkli yazimlar icin bilinen manuel eslemeler
@@ -78,3 +64,18 @@ def build_auto_map(baslik_names, existing_keys):
         else:
             unmatched.append(name)
     return mapping, unmatched
+
+
+def proper_case_tr(s: str) -> str:
+    """YSK'nin TUM BUYUK isimlerini projenin kullandigi Turkce Baslik Harfli
+    forma cevirir (orn. 'RECEP TAYYİP ERDOĞAN' -> 'Recep Tayyip Erdoğan')."""
+    tr_lower_map = str.maketrans("İIŞĞÜÇÖ", "iışğüçö")
+    out = []
+    for w in s.split(" "):
+        if not w:
+            continue
+        first, rest = w[0], w[1:]
+        rest_lower = rest.translate(tr_lower_map).lower()
+        first_upper = {"i": "İ"}.get(first.lower(), first.upper())
+        out.append(first_upper + rest_lower)
+    return " ".join(out)

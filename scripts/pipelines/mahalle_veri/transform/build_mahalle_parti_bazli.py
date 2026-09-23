@@ -1,34 +1,16 @@
 import json
 import os
 import sys
-import unicodedata
 from collections import defaultdict
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent.parent.parent / "scripts"))
+from common.turkish_text import fold, fold_mahalle  # noqa: E402
 
 WORKDIR = os.environ.get("MAHALLE_WORKDIR") or str(Path(__file__).resolve().parent.parent / ".work")
 OSM = f"{WORKDIR}/osm_mahalle"
 TTZ = f"{WORKDIR}/ttezer_mahalle"
 ROOT = WORKDIR
-
-def fold(s):
-    if s is None: return ""
-    s = s.strip()
-    s = s.replace("İ","I").replace("ı","i").replace("Ğ","G").replace("ğ","g")
-    s = s.replace("Ü","U").replace("ü","u").replace("Ş","S").replace("ş","s")
-    s = s.replace("Ö","O").replace("ö","o").replace("Ç","C").replace("ç","c")
-    s = s.upper()
-    s = unicodedata.normalize("NFKD", s)
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    s = s.replace(".", "").replace("-", " ").replace("'", "")
-    return " ".join(s.split())
-
-SUFFIXES = ["MAHALLESI", "MAH", "KOYU", "KOY", "BELDESI", "BELDE"]
-def fold_mahalle(s):
-    f = fold(s)
-    parts = f.split(" ")
-    while parts and parts[-1] in SUFFIXES:
-        parts.pop()
-    return " ".join(parts)
 
 def votes_to_row(osm_id, ad, geometry, v):
     gecerli = v["gecerli"] or 1

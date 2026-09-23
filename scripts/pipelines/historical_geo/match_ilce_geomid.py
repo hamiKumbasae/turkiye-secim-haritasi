@@ -7,26 +7,11 @@ liste) plaka+isim bazinda eslestirir. Cikti: {"<ilId>-<ilceId>": "<geomId>"}.
 import json
 import pathlib
 import sys
-import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election  # noqa: E402
-
-
-def fold(s):
-    if s is None:
-        return ""
-    s = s.strip()
-    s = (s.replace("İ", "I").replace("ı", "i").replace("Ğ", "G").replace("ğ", "g")
-           .replace("Ü", "U").replace("ü", "u").replace("Ş", "S").replace("ş", "s")
-           .replace("Ö", "O").replace("ö", "o").replace("Ç", "C").replace("ç", "c"))
-    s = s.upper()
-    s = unicodedata.normalize("NFKD", s)
-    s = "".join(c for c in s if not unicodedata.combining(c))
-    s = s.replace(".", "").replace("-", " ").replace("'", "")
-    s = " ".join(s.split())
-    return s
+from common.turkish_text import fold  # noqa: E402
 
 
 ysk = json.loads((ROOT / "data" / "raw" / "ysk" / "acikveri-il-ilce-listesi.json").read_text(encoding="utf-8"))
