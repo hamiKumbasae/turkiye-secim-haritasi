@@ -43,7 +43,7 @@ ERA_ADLARI = ["era1950", "era1954", "era1957_1987", "era1991", "era1995", "era19
 # ilk calisan top-level kod olan data-loader.js'in en basta olmasi gerekir).
 JS_FILES = [
     "data-loader.js", "election-config.js", "state.js", "seatbar.js",
-    "map.js", "tooltip.js", "detail-panel.js", "search.js", "nav.js",
+    "summary.js", "map.js", "tooltip.js", "detail-panel.js", "search.js", "nav.js",
     "table.js", "app.js",
 ]
 

@@ -40,6 +40,8 @@
   let pathByPlaka = {};
   let pathByGeomId = {};
   let view = {level:'country', plaka:null};
+  let currentMapMode = 'winner'; // 'winner' | 'katilim' | 'parti' | 'meclis2024'
+  let currentMapParty = null;
 
   // ---------------- tarihsel idari sinirlar (sonradan il olan ilceler) ----------------
   // Ardahan/Igdir (1992), Aksaray/Bayburt/Karaman/Kirikkale/Batman/Sirnak/Bartin (1989-91),
@@ -77,8 +79,67 @@
 
   const MECLIS_PROVINCES = new Set([34,35,6,16]);
   function setMeclisOptionVisible(visible){
-    $('#optMeclis').hidden = !visible;
-    if(!visible && $('#mapMode').value==='meclis2024'){ $('#mapMode').value='winner'; }
+    $('#btnModeMeclis').hidden = !visible;
+    if(!visible && currentMapMode==='meclis2024'){ setMapMode('winner'); }
+  }
+
+  // ---------------- harita modu / parti secici ----------------
+  function populatePartySelect(){
+    const sel = $('#partySelect'); sel.innerHTML='';
+    for(const name of MAJOR){
+      const opt = document.createElement('option');
+      opt.value = name; opt.textContent = PARTY[name] ? PARTY[name].short : name;
+      sel.appendChild(opt);
+    }
+    currentMapParty = MAJOR[0] || null;
+    sel.value = currentMapParty;
+  }
+  function setMapMode(mode){
+    currentMapMode = mode;
+    $$('#modeGroup button').forEach(b=>b.classList.toggle('active', b.dataset.mode===mode));
+    $('#partySelect').style.display = mode==='parti' ? '' : 'none';
+    applyMapMode();
+  }
+  function resetMapModeUI(){
+    populatePartySelect();
+    setMapMode('winner');
+  }
+  $$('#modeGroup button').forEach(b=>{
+    b.addEventListener('click', ()=> setMapMode(b.dataset.mode));
+  });
+  $('#partySelect').addEventListener('change', e=>{ currentMapParty = e.target.value; applyMapMode(); });
+
+  // hex/renk stringini hue'ya cevirir (parti oran gradyani icin) - canvas
+  // normalizasyonu kullanir, boylece partiler.json'daki her renk formati
+  // (hex, rgb, isim) guvenilir sekilde HSL hue'ya donusur.
+  let _hueCanvasCtx = null;
+  function colorToHue(colorStr){
+    if(!_hueCanvasCtx) _hueCanvasCtx = document.createElement('canvas').getContext('2d');
+    _hueCanvasCtx.fillStyle = '#000'; _hueCanvasCtx.fillStyle = colorStr;
+    const norm = _hueCanvasCtx.fillStyle;
+    if(!norm.startsWith('#') || norm.length<7) return 210;
+    const r = parseInt(norm.slice(1,3),16)/255, g = parseInt(norm.slice(3,5),16)/255, b = parseInt(norm.slice(5,7),16)/255;
+    const max=Math.max(r,g,b), min=Math.min(r,g,b);
+    let h=0;
+    if(max!==min){
+      const d = max-min;
+      if(max===r) h = ((g-b)/d + (g<b?6:0));
+      else if(max===g) h = (b-r)/d + 2;
+      else h = (r-g)/d + 4;
+      h *= 60;
+    }
+    return Math.round(h);
+  }
+
+  function renderWinnerLegend(entities){
+    const counts = {};
+    for(const e of entities){ if(e.kazanan) counts[e.kazanan] = (counts[e.kazanan]||0)+1; }
+    const names = Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+    const wrap = $('#winnerLegend');
+    if(!names.length){ wrap.innerHTML=''; return; }
+    wrap.innerHTML = names.map(n=>
+      '<span class="wl-item"><span class="swatch" style="background:'+partyColor(n)+'"></span>'+(PARTY[n]?PARTY[n].short:n)+'</span>'
+    ).join('');
   }
 
   function renderCountryMap(){
@@ -159,7 +220,7 @@
       el.addEventListener('mousemove', e=>showTooltip(e, {kind:'ilce', plaka, geomId}));
       el.addEventListener('mouseleave', hideTooltip);
       el.addEventListener('click', async ()=>{
-        if($('#mapMode').value==='meclis2024') renderMeclisIlceMap(plaka, geomId);
+        if(currentMapMode==='meclis2024') renderMeclisIlceMap(plaka, geomId);
         else if(mahalleGeoExistsForDistrict(geomId)){
           const rows = await mahalleDataForDistrict(geomId);
           if(rows) renderMahalleMap(plaka, geomId, rows);
@@ -233,7 +294,7 @@
     return 'hsl('+hue+' '+s+'% '+l+'%)';
   }
   function applyMapMode(){
-    const mode = $('#mapMode').value;
+    const mode = currentMapMode;
     $('#seqLegendWrap').style.display = (mode==='winner' || mode==='meclis2024') ? 'none' : 'flex';
     const entities = view.level==='country' ? DATA.iller : (view.level==='mahalle' ? currentMahalleRows : (districtsByPlaka[view.plaka]||[]));
     const pathFor = view.level==='country' ? (e=>pathByPlaka[e.plaka])
@@ -250,8 +311,10 @@
           if(!districtByGeomId[gid]) el.setAttribute('fill','var(--map-empty)');
         }
       }
+      renderWinnerLegend(entities);
       return;
     }
+    $('#winnerLegend').innerHTML='';
     if(mode==='meclis2024'){
       for(const [gid, el] of Object.entries(pathByGeomId)){
         const m = MECLIS_2024[gid];
@@ -260,10 +323,7 @@
       return;
     }
     let key, hue;
-    const isRef = DATA.tur === 'referandum';
-    const isCB = DATA.tur === 'cumhurbaskanligi';
-    if(mode==='akp'){ key = isRef ? 'Evet' : (isCB ? MAJOR[0] : 'AK Parti'); hue=32; }
-    else if(mode==='chp'){ key = isRef ? 'Hayır' : (isCB ? MAJOR[1] : 'CHP'); hue=355; }
+    if(mode==='parti'){ key = currentMapParty; hue = key ? colorToHue(partyColor(key)) : 210; }
     else { key=null; hue=210; }
     const noKatilimData = !key && entities.every(e => e.katilim==null);
     let vals = entities.map(e => key ? (e.oy[key]&&e.oy[key].oran!=null?e.oy[key].oran:0) : (e.katilim!=null?e.katilim:0));

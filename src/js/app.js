@@ -14,11 +14,13 @@
     const labels = TUR_LABELS[currentTur];
     for(const y of order){
       const btn = document.createElement('button');
-      btn.className = 'year-btn' + (y===currentYear ? ' active' : '');
+      btn.className = 'year-item' + (y===currentYear ? ' active' : '');
       btn.textContent = labels[y];
       btn.addEventListener('click', ()=> loadYear(y));
       wrap.appendChild(btn);
     }
+    const active = wrap.querySelector('.year-item.active');
+    if(active) active.scrollIntoView({inline:'center', block:'nearest'});
   }
 
   function switchTur(tur){
@@ -45,32 +47,18 @@
     const isRef = DATA.tur === 'referandum';
     const isYerel = DATA.tur === 'yerel';
     const isCB = DATA.tur === 'cumhurbaskanligi';
-    const titleSuffix = isRef ? ' Referandumu Sonuçları' : (isYerel ? ' Yerel Seçim Sonuçları' : (isCB ? ' Cumhurbaşkanlığı Seçimi Sonuçları' : ' Seçim Sonuçları'));
-    $('#pageTitle').textContent = DATA.ad+titleSuffix;
-    const scopeLine = isRef ? 'Halk Oylaması' : (isYerel ? 'Belediye başkanlığı' : (isCB ? 'Cumhurbaşkanlığı' : (DATA.toplamSandalye!=null ? DATA.toplamSandalye+' milletvekilliği' : 'Milletvekili genel seçimi')));
-    const kaynakLine = currentYear==='2014cb' ? 'Kaynak: YSK Açık Veri Portalı (acikveri.ysk.gov.tr, resmi API)'
-      : currentYear==='2007referandum' ? 'Kaynak: YSK (resmi il+ilçe bazlı birleştirme tutanakları)'
-      : YEARS_YSK_OFFICIAL_IL.has(currentYear) ? 'Kaynak: YSK (resmi il-bazlı arşiv — sadece il seviyesi)'
-      : YEARS_IL_YSK_ILCE_GITHUB.has(currentYear) ? 'Kaynak: İl — YSK (resmi arşiv) · İlçe — mertnuhoglu/secim_verileri (GitHub, memurlar.net kaynaklı)'
-      : YEARS_YEREL_IL_YSK_ILCE_WIKI.has(currentYear) ? 'Kaynak: İl merkezi — YSK (resmi arşiv) · İlçeler — Türkçe Wikipedia'
-      : YEARS_YEREL_1950_1977.has(currentYear) ? 'Kaynak: Türkçe Wikipedia (il alt-sayfaları, YSK ulusal toplamıyla çapraz kontrol edildi — sadece il merkezi)'
-      : YEARS_IL_ONLY.has(currentYear) ? 'Kaynak: Türkçe Wikipedia (YSK kesin sonuçlarına dayalı, sadece il seviyesi)'
-      : (currentYear==='2009yerel'||currentYear==='2004yerel') ? 'Kaynak: Türkçe Wikipedia (YSK/basın kaynaklı il alt-sayfaları)'
-      : 'Kaynak: secim.haberturk.com (YSK kesin sonuçlarına dayalı)';
-    $('#metaLine').innerHTML = kaynakLine+'<br>'+
-      scopeLine+' · '+DATA.iller.length+' il · '+DATA.ilceler.length+' ilçe';
+
     $('#detailEmpty').style.display='block';
     $('#detailBody').style.display='none';
     $('#detailEmpty').textContent = 'Bir ile tıklayarak veya arayarak detayları görün.';
     $('#btnTableViewCount').textContent = DATA.iller.length;
-    $('#dSeatsLabel').textContent = isRef ? 'Sonuç' : (isYerel || isCB || YEARS_NO_VEKIL.has(currentYear) ? 'Kazanan' : 'Vekil');
-    $('#eyebrowText').textContent = isRef ? 'Türkiye · Halk Oylaması (Referandum) · 1961–2017'
-      : (isYerel ? 'Türkiye · Yerel Seçimler (Belediye Başkanlığı) · 1984–2024'
-      : (isCB ? 'Türkiye · Cumhurbaşkanlığı Seçimleri · 2014–2023' : 'Türkiye · Milletvekili Genel Seçimleri · 1950–2023'));
-    $('#mapMode').querySelector('option[value="winner"]').textContent = isRef ? 'Evet / Hayır' : 'Kazanan parti';
-    $('#optAkp').textContent = isRef ? 'Evet oy oranı' : (isCB ? '1. Aday oy oranı' : 'AK Parti oy oranı');
-    $('#optChp').textContent = isRef ? 'Hayır oy oranı' : (isCB ? '2. Aday oy oranı' : 'CHP oy oranı');
+    $('#dSeatsLabel').textContent = isRef ? 'Sonuç' : (isYerel || isCB || YEARS_NO_VEKIL.has(currentYear) ? 'Kazanan' : 'Milletvekili');
+    $('#tableTitle').textContent = 'Türkiye · '+DATA.ad+' · İl Sonuçları';
 
+    resetMapModeUI();
+
+    renderElectionBar();
+    renderNationalSummary();
     renderYearPicker();
     renderSeatBar();
     renderYurtdisiCard();
@@ -83,4 +71,4 @@
   $('#btnTurYerel').addEventListener('click', ()=> switchTur('yerel'));
   $('#btnTurCB').addEventListener('click', ()=> switchTur('cumhurbaskanligi'));
 
-  loadYear(CB_YEAR_ORDER[0]);
+  switchTur('genel');

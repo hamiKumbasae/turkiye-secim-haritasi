@@ -8,7 +8,7 @@
     const legend = $('#seatLegend'); legend.innerHTML = '';
     const seatTotals = {};
     for(const p of DATA.iller){ for(const [party,n] of Object.entries(p.vekil)){ seatTotals[party]=(seatTotals[party]||0)+n; } }
-    const order = [...MAJOR, 'Diğer'];
+    const order = MAJOR.includes('Diğer') ? [...MAJOR] : [...MAJOR, 'Diğer'];
     const total = DATA.toplamSandalye;
     const majority = Math.floor(total/2)+1;
     $('#seatbarTitle').textContent = 'Meclis Dağılımı — '+total+' Sandalye';

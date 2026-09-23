@@ -1,5 +1,28 @@
   // ---------------- province detail ----------------
   let selectedPlaka = null;
+
+  function setHero(label, name, colorKey, pct){
+    $('#dHeroLabel').textContent = label;
+    $('#dHeroDot').style.background = colorKey ? partyColor(colorKey) : 'var(--map-empty)';
+    $('#dHeroName').textContent = name || '—';
+    $('#dHeroPct').textContent = pct!=null ? '%'+pct.toFixed(2) : '';
+  }
+
+  function partyRowEl(r){
+    const short = PARTY[r.name] ? PARTY[r.name].short : r.name;
+    const pct = r.oy.oran!=null ? r.oy.oran : 0;
+    const el = document.createElement('div'); el.className='party-row';
+    el.innerHTML = '<div class="prow-top">'+
+        '<span class="dot" style="background:'+partyColor(r.name)+'"></span>'+
+        '<span class="name">'+short+'</span>'+
+        '<span class="pct">'+(r.oy.oran!=null?'%'+r.oy.oran.toFixed(2):'—')+'</span>'+
+        '<span class="oy">'+fmt(r.oy.oy)+' oy</span>'+
+        (r.vekil>0 ? '<span class="vekil">'+r.vekil+'</span>' : '')+
+      '</div>'+
+      '<div class="bar-track"><div class="bar-fill" style="width:'+Math.max(pct,0)+'%; background:'+partyColor(r.name)+'"></div></div>';
+    return el;
+  }
+
   function selectProvince(plaka){
     selectedPlaka = plaka;
     $$('.il-path').forEach(p=>p.classList.toggle('selected', +p.dataset.plaka===plaka));
@@ -8,43 +31,40 @@
     $('#detailBody').style.display='block';
     $('#dName').textContent = p.ad;
     $('#dPlaka').textContent = 'Plaka '+String(plaka).padStart(2,'0');
-    $('#dSeats').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? (PARTY[p.kazanan]?PARTY[p.kazanan].short:p.kazanan) : p.toplamVekil;
+
+    const heroOy = p.kazanan ? p.oy[p.kazanan] : null;
+    setHero(DATA.tur==='referandum' ? 'Sonuç' : 'Kazanan', p.kazanan && PARTY[p.kazanan]?PARTY[p.kazanan].short:p.kazanan, p.kazanan, heroOy && heroOy.oran!=null ? heroOy.oran : null);
+
+    $('#dSeatsLabel').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? 'Vekil / Sandalye' : 'Milletvekili';
+    $('#dSeats').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? (p.toplamVekil || '—') : p.toplamVekil;
     $('#dTurnout').textContent = p.katilim!=null ? '%'+p.katilim.toFixed(2) : '—';
-    $('#dDistricts').textContent = p.ilceSayisi;
+    $('#dSecmen').textContent = p.secmen!=null ? fmt(p.secmen) : '—';
+    $('#dGecerli').textContent = p.gecerliOy!=null ? fmt(p.gecerliOy) : '—';
 
     // Butun il/ilce'de gercekten oy alan HER parti (baraj alti kucuk partiler ve
     // bagimsizlar dahil) - MAJOR listesi sadece hangilerinin ilk sirada, hangilerinin
-    // "kucuk partiler" acilir-kapanir bolumune gidecegini belirliyor.
+    // "digerleri" acilir-kapanir bolumune gidecegini belirliyor.
     const allNamed = Object.entries(p.oy).map(([name,oy])=>({name, oy, vekil:(p.vekil&&p.vekil[name])||0}))
       .filter(r=>r.oy && r.oy.oy>0);
     const majorSet = new Set(MAJOR);
     const primary = allNamed.filter(r=>majorSet.has(r.name)).sort((a,b)=> b.oy.oy - a.oy.oy);
     const extra = allNamed.filter(r=>!majorSet.has(r.name)).sort((a,b)=> b.oy.oy - a.oy.oy);
     // primary bossa (orn. yerel'de MAJOR il-kazananlari listesi bu ilde/ilcede hic
-    // gecmiyorsa) en cok oy alan birkac partiyi one al, kalanlari "kucuk partiler"e birak.
+    // gecmiyorsa) en cok oy alan birkac partiyi one al, kalanlari "digerleri"ne birak.
     const rows = primary.length ? primary : extra.splice(0, Math.min(5, extra.length));
     if(DATA.tur !== 'yerel' && p.digerOy>0) rows.push({name:'Diğer', oy:{oy:p.digerOy, oran:p.digerOran}, vekil:0});
     const wrap = $('#dParties'); wrap.innerHTML='';
-    function partyRowEl(r){
-      const short = PARTY[r.name] ? PARTY[r.name].short : r.name;
-      const el = document.createElement('div'); el.className='party-row';
-      el.innerHTML = '<span class="dot" style="background:'+partyColor(r.name)+'"></span>'+
-        '<span class="name">'+short+'</span>'+
-        '<span class="oy">'+(r.oy.oran!=null?'%'+r.oy.oran.toFixed(2)+' · ':'')+fmt(r.oy.oy)+' oy</span>'+
-        '<span class="vekil">'+(r.vekil>0? r.vekil : '')+'</span>';
-      return el;
-    }
     for(const r of rows) wrap.appendChild(partyRowEl(r));
     if(extra.length){
       const details = document.createElement('details'); details.className='party-more';
       const summary = document.createElement('summary');
-      summary.textContent = extra.length+' küçük parti / bağımsız daha göster';
+      summary.textContent = 'Diğer partileri ve bağımsızları göster ('+extra.length+')';
       details.appendChild(summary);
       for(const r of extra) details.appendChild(partyRowEl(r));
       wrap.appendChild(details);
     }
 
-    $('#dDistrictsLabel').textContent = 'İlçe';
+    $('#dDistrictsLabel').textContent = 'İlçeler';
     $('#districtSearch').style.display='';
     $('#dDistrictList').style.display='';
     renderDistrictList(plaka, '');
@@ -60,24 +80,22 @@
     $('#detailBody').style.display='block';
     $('#dName').textContent = row.ad;
     $('#dPlaka').textContent = [d?d.ad:null, p?p.ad:null].filter(Boolean).join(', ');
-    $('#dSeats').textContent = row.kazanan ? (PARTY[row.kazanan]?PARTY[row.kazanan].short:row.kazanan) : '—';
+
+    const heroOy = row.kazanan ? row.oy[row.kazanan] : null;
+    setHero('Kazanan', row.kazanan && PARTY[row.kazanan]?PARTY[row.kazanan].short:row.kazanan, row.kazanan, heroOy && heroOy.oran!=null ? heroOy.oran : null);
+
+    const gecerli = Object.values(row.oy||{}).reduce((s,o)=>s+(o.oy||0),0);
+    $('#dSeatsLabel').textContent = 'Sandık';
+    $('#dSeats').textContent = row.sandik!=null ? fmt(row.sandik) : '—';
     $('#dTurnout').textContent = row.katilim!=null ? '%'+row.katilim.toFixed(2) : '—';
-    $('#dDistrictsLabel').textContent = 'Seçmen';
-    $('#dDistricts').textContent = row.secmen!=null ? fmt(row.secmen) : '—';
+    $('#dSecmen').textContent = row.secmen!=null ? fmt(row.secmen) : '—';
+    $('#dGecerli').textContent = gecerli ? fmt(gecerli) : '—';
 
     const allNamed = Object.entries(row.oy).map(([name,oy])=>({name, oy}))
       .filter(r=>r.oy && r.oy.oy>0)
       .sort((a,b)=> b.oy.oy - a.oy.oy);
     const wrap = $('#dParties'); wrap.innerHTML='';
-    for(const r of allNamed){
-      const short = PARTY[r.name] ? PARTY[r.name].short : r.name;
-      const el = document.createElement('div'); el.className='party-row';
-      el.innerHTML = '<span class="dot" style="background:'+partyColor(r.name)+'"></span>'+
-        '<span class="name">'+short+'</span>'+
-        '<span class="oy">'+(r.oy.oran!=null?'%'+r.oy.oran.toFixed(2)+' · ':'')+fmt(r.oy.oy)+' oy</span>'+
-        '<span class="vekil"></span>';
-      wrap.appendChild(el);
-    }
+    for(const r of allNamed) wrap.appendChild(partyRowEl(r));
     $('#districtSearch').style.display='none';
     $('#dDistrictList').style.display='none';
   }
@@ -86,7 +104,7 @@
     const list = (districtsByPlaka[plaka]||[]).filter(d => d.ad.toLocaleLowerCase('tr').includes(filter.toLocaleLowerCase('tr')));
     const el = $('#dDistrictList'); el.innerHTML='';
     if(list.length===0 && YEARS_IL_ONLY.has(currentYear)){
-      const msg = document.createElement('div'); msg.className='district-row'; msg.style.opacity=0.6;
+      const msg = document.createElement('div'); msg.className='district-row'; msg.style.opacity=0.6; msg.style.cursor='default';
       msg.textContent = 'Bu dönem için ilçe bazlı veri kaynakta mevcut değil (sadece il seviyesi).';
       el.appendChild(msg);
       return;
@@ -101,6 +119,16 @@
         row.addEventListener('mouseenter', ()=> pathByGeomId[d.geomId].classList.add('selected'));
         row.addEventListener('mouseleave', ()=> pathByGeomId[d.geomId].classList.remove('selected'));
       }
+      row.addEventListener('click', async ()=>{
+        if(!d.geomId) return;
+        if(currentMapMode==='meclis2024'){ renderMeclisIlceMap(plaka, d.geomId); return; }
+        if(mahalleGeoExistsForDistrict(d.geomId)){
+          const rows = await mahalleDataForDistrict(d.geomId);
+          if(rows){ renderMahalleMap(plaka, d.geomId, rows); return; }
+        }
+        highlightDistrictRow(d.geomId);
+        if(pathByGeomId[d.geomId]) pathByGeomId[d.geomId].scrollIntoView({block:'nearest'});
+      });
       el.appendChild(row);
     }
   }
@@ -154,30 +182,22 @@
     if(!m){
       $('#dName').textContent = (districtByGeomId[geomId]?districtByGeomId[geomId].ad:'');
       $('#dPlaka').textContent = p?p.ad:'';
-      $('#dSeats').textContent = '—';
-      $('#dTurnout').textContent = '—';
-      $('#dDistrictsLabel').textContent = 'Üye';
-      $('#dDistricts').textContent = '—';
+      setHero('Çoğunluk', null, null, null);
+      $('#dTurnout').textContent = '—'; $('#dSecmen').textContent = '—'; $('#dGecerli').textContent = '—';
+      $('#dSeatsLabel').textContent = 'Üye'; $('#dSeats').textContent = '—';
       $('#dParties').innerHTML = '<div style="padding:10px 2px; color:var(--ink-3); font-size:12.5px;">2024 yerel ilçe meclisi verisi bu ilçe için mevcut değil.</div>';
       return;
     }
     $('#dName').textContent = m.ad;
     $('#dPlaka').textContent = (p?p.ad:'')+' — 2024 İlçe Meclisi';
-    $('#dSeats').textContent = PARTY[m.kazanan] ? PARTY[m.kazanan].short : m.kazanan;
-    $('#dTurnout').textContent = '—';
-    $('#dDistrictsLabel').textContent = 'Üye';
-    $('#dDistricts').textContent = m.toplam;
+    const majPct = m.toplam ? (m.partiler[m.kazanan]||0)/m.toplam*100 : null;
+    setHero('Çoğunluk', PARTY[m.kazanan] ? PARTY[m.kazanan].short : m.kazanan, m.kazanan, majPct);
+    $('#dTurnout').textContent = '—'; $('#dSecmen').textContent = '—'; $('#dGecerli').textContent = '—';
+    $('#dSeatsLabel').textContent = 'Üye'; $('#dSeats').textContent = m.toplam;
 
     const rows = Object.entries(m.partiler).sort((a,b)=>b[1]-a[1]);
     const wrap = $('#dParties'); wrap.innerHTML='';
     for(const [name, n] of rows){
-      const short = PARTY[name] ? PARTY[name].short : name;
-      const el = document.createElement('div'); el.className='party-row';
-      el.innerHTML = '<span class="dot" style="background:'+partyColor(name)+'"></span>'+
-        '<span class="name">'+short+'</span>'+
-        '<span class="oy">%'+(n/m.toplam*100).toFixed(1)+'</span>'+
-        '<span class="vekil">'+n+'</span>';
-      wrap.appendChild(el);
+      wrap.appendChild(partyRowEl({name, oy:{oy:n, oran: m.toplam ? n/m.toplam*100 : null}, vekil:0}));
     }
   }
-

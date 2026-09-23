@@ -8,15 +8,6 @@
     if(view.plaka!=null){ renderProvinceMap(view.plaka); selectProvince(view.plaka); }
   });
 
-  $('#mapMode').addEventListener('change', applyMapMode);
-
-  $('#methodNoteToggle').addEventListener('click', ()=>{
-    const el = $('#methodNoteText');
-    const expanded = el.classList.toggle('clamped')===false;
-    $('#methodNoteToggle').textContent = expanded ? 'Daha az göster' : 'Devamını oku';
-    $('#methodNoteToggle').setAttribute('aria-expanded', expanded ? 'true' : 'false');
-  });
-
   // ---------------- view toggle ----------------
   $('#btnMapView').addEventListener('click', ()=>{
     $('#btnMapView').classList.add('active'); $('#btnTableView').classList.remove('active');
