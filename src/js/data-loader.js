@@ -19,7 +19,7 @@
     return EMBEDDED_CACHE[key];
   }
 
-  let BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MECLIS_2024;
+  let BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MECLIS_2024, MAHALLE_COVERAGE;
   try{
     // mahalle_votes.json ARTIK burada YOK: 15 yilin tamami acik haliyle ~75MB,
     // her sayfa acilisinda (kullanici mahalle seviyesine hic inmese bile)
@@ -28,13 +28,14 @@
     // tikladiginda lazy-load edilir (bkz. map.js: mahalleDataForDistrict).
     // mahalle_geo.json (poligonlar, ~5MB) yillar arasi paylasimli ve nispeten
     // kucuk oldugu icin hala eager yukleniyor.
-    [BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MECLIS_2024] = await Promise.all([
+    [BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MECLIS_2024, MAHALLE_COVERAGE] = await Promise.all([
       loadEmbeddedCached("secim_tarihi_data.json"),
       loadEmbeddedCached("turkiye_il_sinirlari.geojson"),
       loadEmbeddedCached("turkiye_ilce_sinirlari.geojson"),
       loadEmbeddedCached("turkiye_ilce_sinirlari_hist_splits.geojson"),
       loadEmbeddedCached("mahalle_geo.json", {}),
-      loadEmbeddedCached("meclis_2024.json", {})
+      loadEmbeddedCached("meclis_2024.json", {}),
+      loadEmbeddedCached("mahalle_coverage.json", {})
     ]);
   }catch(e){
     document.body.innerHTML = '<div class="wrap"><p>Veri yüklenemedi: '+e+'</p></div>';

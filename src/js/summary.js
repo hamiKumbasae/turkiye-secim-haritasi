@@ -3,6 +3,19 @@
   // artik hem rozet (kisa) hem drawer (uzun) icin yeniden kullaniliyor.
   const YEARS_KAYNAK_UYUSMAZLIGI = new Set(['1950']);
 
+  // Ust bardaki tek-satir rozette "(İl)"/"Veri" gibi ekler artik gereksiz -
+  // seviye zaten ayni satirda "· Ayrıntı: X" olarak ayrica gosteriliyor
+  // (bkz. renderElectionBar). sourceInfo()'nun kendi badge metnini
+  // DEGISTIRMEDEN (drawer'da hala tam haliyle kullaniliyor), sadece rozette
+  // kisaltilmis halini gostermek icin kucuk bir esleme.
+  const SHORT_BADGE = {
+    'YSK Resmî Veri': 'YSK Resmî',
+    'YSK Resmî Veri (İl)': 'YSK Resmî',
+    'YSK (İl) + İkincil (İlçe)': 'YSK + İkincil',
+    'YSK + İkincil Kaynak': 'YSK + İkincil',
+    'İkincil Kaynak': 'İkincil Kaynak',
+  };
+
   function sourceInfo(){
     if(currentYear==='2014cb')
       return {cat:'full', badge:'YSK Resmî Veri', detail:'YSK Açık Veri Portalı (acikveri.ysk.gov.tr, resmi API) — il+ilçe düzeyi.'};
@@ -26,7 +39,13 @@
   function computeLevels(){
     const ilceTotal = DATA.ilceler.length;
     const ilceWithData = DATA.ilceler.filter(d=>d.oy && Object.keys(d.oy).length>0).length;
-    const mahalleDistricts = DATA.ilceler.filter(d=>d.geomId && MAHALLE_GEO[d.geomId]).length;
+    // MAHALLE_GEO sadece poligon var mi'yi soyler (yildan bagimsiz, hep yuklu) -
+    // bu yilin GERCEKTEN mahalle-duzeyi oy verisi olup olmadigini (build.py'nin
+    // her yil icin data/normalized/mahalle/<yil>.json'daki ilce sayisini onceden
+    // hesaplayip gomdugu MAHALLE_COVERAGE) ayrica kontrol ediyoruz - yoksa
+    // "Mahalleye kadar" rozeti, o yil hic mahalle oyu olmasa bile sadece
+    // geometri var diye yanlislikla gorunebilirdi.
+    const mahalleDistricts = MAHALLE_COVERAGE[currentYear] || 0;
     return {ilceTotal, ilceWithData, ilceOn: ilceWithData>0, mahalleDistricts, mahalleOn: mahalleDistricts>0};
   }
 
@@ -41,13 +60,10 @@
     const src = sourceInfo();
     const dot = $('#sourceBadgeDot');
     dot.className = 'dot' + (src.cat==='secondary' ? ' secondary' : src.cat==='mixed' ? ' mixed' : '');
-    $('#sourceBadgeText').textContent = src.badge;
 
     const lv = computeLevels();
-    const levelHtml = ['<span><i class="ld on"></i>İl</span>'];
-    levelHtml.push(lv.ilceOn ? '<span><i class="ld on"></i>İlçe '+lv.ilceWithData+'/'+lv.ilceTotal+'</span>' : '<span><i class="ld"></i>İlçe</span>');
-    levelHtml.push(lv.mahalleOn ? '<span><i class="ld on"></i>Mahalle ('+lv.mahalleDistricts+' ilçe)</span>' : '<span><i class="ld"></i>Mahalle</span>');
-    $('#levelDots').innerHTML = levelHtml.join('');
+    const detailLevel = lv.mahalleOn ? 'Mahalleye kadar' : (lv.ilceOn ? 'İlçe' : 'İl düzeyi');
+    $('#sourceBadgeText').textContent = (SHORT_BADGE[src.badge] || src.badge) + ' · Ayrıntı: ' + detailLevel;
 
     if(YEARS_KAYNAK_UYUSMAZLIGI.has(currentYear)){
       $('#sourceBadgeDot').className = 'dot conflict';
@@ -62,10 +78,16 @@
     const katilimDen = iller.reduce((s,i)=> s + (i.katilim!=null && i.secmen!=null ? i.secmen : 0), 0);
     const katilim = katilimDen>0 ? katilimNum/katilimDen : null;
 
+    // Bu toplamlar sadece il kayitlarindan (DATA.iller) geliyor - yurtdisi
+    // secmen ayri bir kapsamda tutuluyor (hicbir ile bagli degil, bkz.
+    // renderYurtdisiCard). O yuzden bu secimde yurtdisi verisi VARSA
+    // etiketleri "Yurt İçi ..." yaparak yaniltici bir "ulusal toplam"
+    // izlenimi vermiyoruz.
+    const hasYurtdisi = !!(DATA.yurtdisi && DATA.yurtdisi.oy && Object.keys(DATA.yurtdisi.oy).length);
     const items = [
       ['Katılım', katilim!=null ? '%'+katilim.toFixed(2) : '—'],
-      ['Seçmen', secmen ? fmt(secmen) : '—'],
-      ['Geçerli Oy', gecerli ? fmt(gecerli) : '—'],
+      [hasYurtdisi ? 'Yurt İçi Seçmen' : 'Seçmen', secmen ? fmt(secmen) : '—'],
+      [hasYurtdisi ? 'Yurt İçi Geçerli Oy' : 'Geçerli Oy', gecerli ? fmt(gecerli) : '—'],
     ];
     if(DATA.tur === 'genel' && DATA.toplamSandalye!=null) items.push(['Sandalye', fmt(DATA.toplamSandalye)]);
     items.push(['İl', iller.length]);
@@ -108,6 +130,7 @@
     $('#kaynaklarDrawer').classList.remove('open');
     $('#drawerOverlay').classList.remove('open');
   }
+  $('#sourceBadgeBtn').addEventListener('click', openDrawer);
   $('#btnKaynaklar').addEventListener('click', openDrawer);
   $('#footerKaynaklar').addEventListener('click', openDrawer);
   $('#drawerClose').addEventListener('click', closeDrawer);

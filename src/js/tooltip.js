@@ -16,18 +16,6 @@
       if(!obj){ tip.innerHTML = '<b>Veri eşleşmedi</b>'; positionTip(e); return; }
       name = obj.ad; sandikVal = obj.sandik;
     }
-    if(mode==='meclis2024' && info.kind==='ilce'){
-      const m = MECLIS_2024[info.geomId];
-      let mhtml = '<b>'+name+'</b>';
-      if(m){
-        mhtml += '<div class="row"><span>'+(PARTY[m.kazanan]?PARTY[m.kazanan].short:m.kazanan)+' çoğunluğu</span><span>'+(m.partiler[m.kazanan]||0)+'/'+m.toplam+' üye</span></div>';
-      } else {
-        mhtml += '<div class="row"><span>2024 meclis verisi</span><span>—</span></div>';
-      }
-      tip.innerHTML = mhtml;
-      positionTip(e);
-      return;
-    }
     let html = '<b>'+name+'</b>';
     const isOranTip = DATA.tur === 'referandum' || DATA.tur === 'yerel' || DATA.tur === 'cumhurbaskanligi' || YEARS_NO_VEKIL.has(currentYear);
     if(mode==='winner'){

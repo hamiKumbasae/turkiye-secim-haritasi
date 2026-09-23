@@ -69,6 +69,12 @@ def assemble_embedded() -> dict:
     for path in sorted((DATA_NORM / "mahalle").glob("*.json")):
         mahalle_votes[path.stem] = load_json(path)
 
+    # Yil basina GERCEKTEN mahalle-duzeyi oy verisi olan ilce sayisi (mahalle_votes
+    # dosyasinin ust-seviye anahtar sayisi = {geomId: {osmId:...}} seklinde) -
+    # frontend'in (summary.js computeLevels()) sadece poligon (MAHALLE_GEO) degil,
+    # gercek oy verisi olup olmadigini soylemesi icin kucuk, eager-yuklu bir ozet.
+    mahalle_coverage = {year: len(rows) for year, rows in mahalle_votes.items()}
+
     mahalle_geo = load_json(GEO_NORM / "mahalle_geo.json")
     meclis_2024 = load_json(DATA_NORM / "meclis_2024.json")
 
@@ -91,6 +97,7 @@ def assemble_embedded() -> dict:
         # yerine, JS sadece kullanicinin gercekten actigi yili lazy-load
         # ediyor (bkz. src/js/data-loader.js + map.js).
         "mahalle_geo.json": gzip_b64(mahalle_geo),
+        "mahalle_coverage.json": gzip_b64(mahalle_coverage),
         **{f"mahalle_votes_{year}.json": gzip_b64(rows) for year, rows in mahalle_votes.items()},
         "meclis_2024.json": gzip_b64(meclis_2024),
         "secim_tarihi_data.json": gzip_b64(secim_tarihi_data),

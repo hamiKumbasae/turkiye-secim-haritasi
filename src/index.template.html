@@ -44,30 +44,11 @@
         <span class="dot" id="sourceBadgeDot"></span>
         <span id="sourceBadgeText">YSK Resmî Veri</span>
       </button>
-      <div class="level-dots" id="levelDots"></div>
-      <button class="link-btn" id="btnKaynaklar">Kaynaklar ve metodoloji →</button>
+      <button class="link-btn" id="btnKaynaklar">Kaynaklar →</button>
     </div>
   </div>
 
   <div class="national-summary" id="nationalSummary"></div>
-
-  <section class="seatbar-card" id="seatbarCard">
-    <div class="seatbar-head">
-      <h2 id="seatbarTitle">Meclis Dağılımı</h2>
-      <div class="sub" id="majoritySub"></div>
-    </div>
-    <div class="seatbar-track" id="seatTrack"></div>
-    <div class="legend" id="seatLegend"></div>
-  </section>
-
-  <section class="seatbar-card" id="yurtdisiCard" style="display:none">
-    <div class="seatbar-head">
-      <h2>Yurtdışı Seçmen Sonuçları</h2>
-      <div class="sub" id="yurtdisiSub"></div>
-    </div>
-    <div class="seatbar-track" id="yurtdisiTrack"></div>
-    <div class="legend" id="yurtdisiLegend"></div>
-  </section>
 
   <div class="view-toggle">
     <button id="btnMapView" class="active">Harita</button>
@@ -90,7 +71,6 @@
             <button data-mode="winner" class="active">Kazanan</button>
             <button data-mode="katilim">Katılım</button>
             <button data-mode="parti">Parti</button>
-            <button data-mode="meclis2024" id="btnModeMeclis" hidden>2024 İlçe Meclisi</button>
           </div>
           <select id="partySelect" style="display:none"></select>
           <div class="search-wrap">
@@ -116,6 +96,11 @@
             <h3 id="dName"></h3>
             <span class="plaka" id="dPlaka"></span>
           </div>
+          <div class="detail-view-toggle" id="detailViewToggle" style="display:none">
+            <button class="active" data-view="baskanlik">Belediye Başkanlığı</button>
+            <button data-view="meclis">İlçe Meclisi</button>
+          </div>
+          <div class="detail-info-note" id="dInfoNote" style="display:none"></div>
           <div class="detail-hero" id="detailHero">
             <span class="detail-hero-label" id="dHeroLabel">Kazanan</span>
             <div class="detail-hero-row">
@@ -156,6 +141,24 @@
       </div>
     </div>
   </div>
+
+  <section class="seatbar-card" id="seatbarCard">
+    <div class="seatbar-head">
+      <h2 id="seatbarTitle">Meclis Dağılımı</h2>
+      <div class="sub" id="majoritySub"></div>
+    </div>
+    <div class="seatbar-track" id="seatTrack"></div>
+    <div class="legend" id="seatLegend"></div>
+  </section>
+
+  <section class="seatbar-card" id="yurtdisiCard" style="display:none">
+    <div class="seatbar-head">
+      <h2>Yurtdışı Seçmen Sonuçları</h2>
+      <div class="sub" id="yurtdisiSub"></div>
+    </div>
+    <div class="seatbar-track" id="yurtdisiTrack"></div>
+    <div class="legend" id="yurtdisiLegend"></div>
+  </section>
 
   <footer>
     <div class="footer-brand">Türkiye Seçim Tarihi Atlası</div>

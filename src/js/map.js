@@ -40,7 +40,7 @@
   let pathByPlaka = {};
   let pathByGeomId = {};
   let view = {level:'country', plaka:null};
-  let currentMapMode = 'winner'; // 'winner' | 'katilim' | 'parti' | 'meclis2024'
+  let currentMapMode = 'winner'; // 'winner' | 'katilim' | 'parti'
   let currentMapParty = null;
 
   // ---------------- tarihsel idari sinirlar (sonradan il olan ilceler) ----------------
@@ -77,11 +77,10 @@
     countryProject = computeProjection(GEO.features, PAD);
   }
 
+  // 2024 yerel seciminde ilce meclisi verisi olan 4 buyuksehir - artik bir
+  // harita modu degil, sag paneldeki "İlçe Meclisi" gorunum sekmesinin hangi
+  // illerde gorunecegini belirlemek icin detail-panel.js tarafindan kullaniliyor.
   const MECLIS_PROVINCES = new Set([34,35,6,16]);
-  function setMeclisOptionVisible(visible){
-    $('#btnModeMeclis').hidden = !visible;
-    if(!visible && currentMapMode==='meclis2024'){ setMapMode('winner'); }
-  }
 
   // ---------------- harita modu / parti secici ----------------
   function populatePartySelect(){
@@ -144,7 +143,6 @@
 
   function renderCountryMap(){
     view = {level:'country', plaka:null};
-    setMeclisOptionVisible(false);
     svg.innerHTML = '';
     pathByPlaka = {}; pathByGeomId = {};
     for(const f of GEO.features){
@@ -189,7 +187,6 @@
 
   function renderProvinceMap(plaka){
     view = {level:'province', plaka};
-    setMeclisOptionVisible(MECLIS_PROVINCES.has(plaka));
     const feats = districtFeaturesForProvince(plaka);
     const fallbackFeats = GEO.features.filter(f=>f.properties.plaka===plaka);
     const project = computeProjection(feats.length?feats:fallbackFeats, PAD);
@@ -220,8 +217,7 @@
       el.addEventListener('mousemove', e=>showTooltip(e, {kind:'ilce', plaka, geomId}));
       el.addEventListener('mouseleave', hideTooltip);
       el.addEventListener('click', async ()=>{
-        if(currentMapMode==='meclis2024') renderMeclisIlceMap(plaka, geomId);
-        else if(mahalleGeoExistsForDistrict(geomId)){
+        if(mahalleGeoExistsForDistrict(geomId)){
           const rows = await mahalleDataForDistrict(geomId);
           if(rows) renderMahalleMap(plaka, geomId, rows);
           else highlightDistrictRow(geomId);
@@ -255,7 +251,6 @@
   // click handler'i) zaten cozulmus olarak veriliyor.
   function renderMahalleMap(plaka, geomId, rows){
     if(!rows || !rows.length) return;
-    setMeclisOptionVisible(false);
     view = {level:'mahalle', plaka, geomId};
     currentMahalleRows = rows;
     const feats = rows.map(r=>({geometry:r.geometry}));
@@ -295,7 +290,7 @@
   }
   function applyMapMode(){
     const mode = currentMapMode;
-    $('#seqLegendWrap').style.display = (mode==='winner' || mode==='meclis2024') ? 'none' : 'flex';
+    $('#seqLegendWrap').style.display = (mode==='winner') ? 'none' : 'flex';
     const entities = view.level==='country' ? DATA.iller : (view.level==='mahalle' ? currentMahalleRows : (districtsByPlaka[view.plaka]||[]));
     const pathFor = view.level==='country' ? (e=>pathByPlaka[e.plaka])
       : (view.level==='mahalle' ? (e=>pathByMahalleId[e.id]) : (e=>e.geomId && pathByGeomId[e.geomId]));
@@ -315,13 +310,6 @@
       return;
     }
     $('#winnerLegend').innerHTML='';
-    if(mode==='meclis2024'){
-      for(const [gid, el] of Object.entries(pathByGeomId)){
-        const m = MECLIS_2024[gid];
-        el.setAttribute('fill', m ? partyColor(m.kazanan) : 'var(--map-empty)');
-      }
-      return;
-    }
     let key, hue;
     if(mode==='parti'){ key = currentMapParty; hue = key ? colorToHue(partyColor(key)) : 210; }
     else { key=null; hue=210; }

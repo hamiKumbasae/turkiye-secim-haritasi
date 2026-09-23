@@ -51,6 +51,8 @@
     $('#detailEmpty').style.display='block';
     $('#detailBody').style.display='none';
     $('#detailEmpty').textContent = 'Bir ile tıklayarak veya arayarak detayları görün.';
+    $('#detailViewToggle').style.display='none';
+    detailView = 'baskanlik';
     $('#btnTableViewCount').textContent = DATA.iller.length;
     $('#dSeatsLabel').textContent = isRef ? 'Sonuç' : (isYerel || isCB || YEARS_NO_VEKIL.has(currentYear) ? 'Kazanan' : 'Milletvekili');
     $('#tableTitle').textContent = 'Türkiye · '+DATA.ad+' · İl Sonuçları';
