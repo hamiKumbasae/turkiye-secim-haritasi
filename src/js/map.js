@@ -195,14 +195,31 @@
 
   function renderProvinceMap(plaka){
     view = {level:'province', plaka};
-    const feats = districtFeaturesForProvince(plaka);
+    const allDataFeats = districtFeaturesForProvince(plaka);
+    // Sadece GERCEKTEN sonucu olan ilceler tiklanabilir/etkilesimli olsun (bkz.
+    // son inceleme: veri olmayan yerde yaniltici bir "tiklama alani" gorunmemeli).
+    const dataFeats = allDataFeats.filter(f => districtHasRealData(districtByGeomId[f.properties.id]));
+    const dataGeomIds = new Set(dataFeats.map(f=>f.properties.id));
+    // Bu ilin GUNCEL (modern) tum ilce sinirlari - o yil icin veri OLMAYAN
+    // ilceleri (orn. 2008 oncesi Istanbul'da henuz ayri ilce olmamis Ataşehir/
+    // Sancaktepe/Çekmeköy vb.) haritada tamamen BOS/delik birakmak yerine notr,
+    // TIKLANAMAZ bir alt katman olarak gosterir. BILEREK gercek tarihsel
+    // sinirlari "uydurmuyor" - 2008 bolunmesi mahalle bazinda birden fazla
+    // ilceden parca aldigi icin (bkz. son inceleme arastirmasi, Ataşehir=
+    // Kadıköy+Üsküdar+Kartal karisimi gibi) güvenilir bir kaynak olmadan
+    // dogru poligon birlestirmesi yapilamaz - modern siniri "bu donem icin
+    // veri yok" olarak gostermek, hicbir sey gostermemekten (delik) VEYA
+    // yanlis tarihsel sinir uydurmaktan daha dogru.
+    const modernFeats = GEO_ILCE.features.filter(f=>f.properties.plaka===plaka);
+    const noDataFeats = modernFeats.filter(f=>!dataGeomIds.has(f.properties.id));
     const fallbackFeats = GEO.features.filter(f=>f.properties.plaka===plaka);
-    const project = computeProjection(feats.length?feats:fallbackFeats, PAD);
+    const allFeats = dataFeats.length ? [...dataFeats, ...noDataFeats] : fallbackFeats;
+    const project = computeProjection(allFeats.length?allFeats:fallbackFeats, PAD);
     svg.innerHTML = '';
     pathByPlaka = {}; pathByGeomId = {};
-    if(!feats.length){
-      // Bu yil icin ilce verisi yok (bkz. YEARS_IL_ONLY) - il sinirini tek parca olarak,
-      // ilin kendi kazanan rengiyle goster.
+    if(!dataFeats.length && !noDataFeats.length){
+      // Bu yil icin ilce verisi VE modern ilce geometrisi hic yok - il sinirini
+      // tek parca olarak, ilin kendi kazanan rengiyle goster.
       const p = ilByPlaka[plaka];
       for(const f of fallbackFeats){
         const el = document.createElementNS(NS,'path');
@@ -216,7 +233,23 @@
         pathByPlaka[plaka]=el;
       }
     }
-    for(const f of feats){
+    for(const f of noDataFeats){
+      const geomId = f.properties.id;
+      const el = document.createElementNS(NS,'path');
+      el.setAttribute('d', geomToPath(project, f.geometry));
+      el.setAttribute('class','il-path il-path-nodata');
+      el.setAttribute('fill','var(--map-empty)');
+      el.dataset.geomId = geomId;
+      el.addEventListener('mousemove', e=>{
+        const d = districtByGeomId[geomId];
+        tip.innerHTML = '<b>'+(d?d.ad:'')+'</b><div class="row"><span>Bu dönem için veri yok</span></div>';
+        positionTip(e);
+      });
+      el.addEventListener('mouseleave', hideTooltip);
+      svg.appendChild(el);
+      pathByGeomId[geomId]=el;
+    }
+    for(const f of dataFeats){
       const geomId = f.properties.id;
       const el = document.createElementNS(NS,'path');
       el.setAttribute('d', geomToPath(project, f.geometry));
@@ -225,12 +258,16 @@
       el.addEventListener('mousemove', e=>showTooltip(e, {kind:'ilce', plaka, geomId}));
       el.addEventListener('mouseleave', hideTooltip);
       el.addEventListener('click', async ()=>{
+        const d = districtByGeomId[geomId];
+        // Mahalle haritasina inerken bile once ilcenin KENDI verisini panelde
+        // goster (bkz. son inceleme: tiklama, eski/genel veriyi degil TIKLANAN
+        // yerin verisini gostermeli) - kullanici sonra istedigi mahalleye
+        // tiklayip daha da detaya inebilir.
+        if(d) selectDistrict(d, plaka);
         if(mahalleGeoExistsForDistrict(geomId)){
           const rows = await mahalleDataForDistrict(geomId);
-          if(rows) renderMahalleMap(plaka, geomId, rows);
-          else highlightDistrictRow(geomId);
+          if(rows){ renderMahalleMap(plaka, geomId, rows); return; }
         }
-        else highlightDistrictRow(geomId);
       });
       svg.appendChild(el);
       pathByGeomId[geomId]=el;

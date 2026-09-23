@@ -89,11 +89,25 @@
     $('#dGecerli').textContent = p.gecerliOy!=null ? fmt(p.gecerliOy) : '—';
     hideEmptyStatRows();
 
-    // Butun il/ilce'de gercekten oy alan HER parti (baraj alti kucuk partiler ve
-    // bagimsizlar dahil) - MAJOR listesi sadece hangilerinin ilk sirada, hangilerinin
-    // "digerleri" acilir-kapanir bolumune gidecegini belirliyor.
+    $('#dResultsHead').textContent = (DATA.resultBasis==='council_seats') ? 'Meclis Sandalye Dağılımı' : 'Sonuçlar';
+    renderPartyResults(p);
+
+    $('#dDistrictsLabel').textContent = 'İlçeler';
+    $('#districtSearch').style.display='';
+    $('#dDistrictList').style.display='';
+    renderDistrictList(plaka, '');
+    $('#districtSearch').value='';
+    $('#districtSearch').oninput = e => renderDistrictList(plaka, e.target.value);
+  }
+
+  // il (p) VEYA ilce (d) kaydinin oy['<parti>'] sozlugunu #dParties'e cizer -
+  // selectProvince ve selectDistrict AYNI mantigi paylasir (kod tekrari yok).
+  // Butun il/ilce'de gercekten oy alan HER parti (baraj alti kucuk partiler ve
+  // bagimsizlar dahil) - MAJOR listesi sadece hangilerinin ilk sirada, hangilerinin
+  // "digerleri" acilir-kapanir bolumune gidecegini belirliyor.
+  function renderPartyResults(entity){
     const rank = r => isSeatBased(r.oy) ? (r.oy.sandalye||0) : (r.oy.oy||0);
-    const allNamed = Object.entries(p.oy).map(([name,oy])=>({name, oy, vekil:(p.vekil&&p.vekil[name])||0}))
+    const allNamed = Object.entries(entity.oy||{}).map(([name,oy])=>({name, oy, vekil:(entity.vekil&&entity.vekil[name])||0}))
       .filter(r=>r.oy && (r.oy.oy>0 || r.oy.sandalye>0));
     const majorSet = new Set(MAJOR);
     const primary = allNamed.filter(r=>majorSet.has(r.name)).sort((a,b)=> rank(b) - rank(a));
@@ -101,8 +115,7 @@
     // primary bossa (orn. yerel'de MAJOR il-kazananlari listesi bu ilde/ilcede hic
     // gecmiyorsa) en cok oy alan birkac partiyi one al, kalanlari "digerleri"ne birak.
     const rows = primary.length ? primary : extra.splice(0, Math.min(5, extra.length));
-    if(DATA.tur !== 'yerel' && p.digerOy>0) rows.push({name:'Diğer', oy:{oy:p.digerOy, oran:p.digerOran}, vekil:0});
-    $('#dResultsHead').textContent = (DATA.resultBasis==='council_seats') ? 'Meclis Sandalye Dağılımı' : 'Sonuçlar';
+    if(DATA.tur !== 'yerel' && entity.digerOy>0) rows.push({name:'Diğer', oy:{oy:entity.digerOy, oran:entity.digerOran}, vekil:0});
     const wrap = $('#dParties'); wrap.innerHTML='';
     for(const r of rows) wrap.appendChild(partyRowEl(r));
     if(extra.length){
@@ -113,13 +126,6 @@
       for(const r of extra) details.appendChild(partyRowEl(r));
       wrap.appendChild(details);
     }
-
-    $('#dDistrictsLabel').textContent = 'İlçeler';
-    $('#districtSearch').style.display='';
-    $('#dDistrictList').style.display='';
-    renderDistrictList(plaka, '');
-    $('#districtSearch').value='';
-    $('#districtSearch').oninput = e => renderDistrictList(plaka, e.target.value);
   }
 
   function selectMahalle(row, plaka, geomId){
@@ -153,6 +159,14 @@
     $('#dDistrictList').style.display='none';
   }
 
+  // Bir ilce kaydinda GERCEK sonuc var mi (bos/hic olusturulmamis 'oy' sozlugu
+  // degil) - hem harita (map.js) hem bu panel, tiklanabilir/etkilesimli
+  // gosterecegi ilceleri bu kontrolden gecirir (bkz. son inceleme: veri
+  // olmayan yerde tiklama alani gorunmemeli).
+  function districtHasRealData(d){
+    return !!d && !!d.oy && Object.keys(d.oy).length > 0;
+  }
+
   function renderDistrictList(plaka, filter){
     const list = (districtsByPlaka[plaka]||[]).filter(d => d.ad.toLocaleLowerCase('tr').includes(filter.toLocaleLowerCase('tr')));
     const el = $('#dDistrictList'); el.innerHTML='';
@@ -162,7 +176,9 @@
       el.appendChild(msg);
       return;
     }
-    for(const d of list){
+    const withData = list.filter(districtHasRealData);
+    const withoutData = list.filter(d=>!districtHasRealData(d));
+    for(const d of withData){
       const row = document.createElement('div'); row.className='district-row';
       if(d.geomId) row.dataset.geomId = d.geomId;
       const short = d.kazanan ? (PARTY[d.kazanan]?PARTY[d.kazanan].short:d.kazanan) : '—';
@@ -177,24 +193,53 @@
       }
       row.addEventListener('click', async ()=>{
         if(!d.geomId) return;
+        selectDistrict(d, plaka);
         if(mahalleGeoExistsForDistrict(d.geomId)){
           const rows = await mahalleDataForDistrict(d.geomId);
           if(rows){ renderMahalleMap(plaka, d.geomId, rows); return; }
         }
-        highlightDistrictRow(d.geomId);
         if(pathByGeomId[d.geomId]) pathByGeomId[d.geomId].scrollIntoView({block:'nearest'});
       });
       el.appendChild(row);
     }
+    // Kayit var ama gercek sonuc yok (nadir) - tiklanamaz, soluk, "Veri yok" -
+    // hicbir sey listeden tamamen KAYBOLMUYOR ama yaniltici bicimde
+    // etkilesimli de gorunmuyor.
+    for(const d of withoutData){
+      const row = document.createElement('div'); row.className='district-row district-row-empty';
+      if(d.geomId) row.dataset.geomId = d.geomId;
+      row.innerHTML = '<span class="dname">'+d.ad+'</span><span class="dwinner">Veri yok</span>';
+      el.appendChild(row);
+    }
   }
 
-  function highlightDistrictRow(geomId){
-    const d = districtByGeomId[geomId];
-    $$('.district-row').forEach(r=>r.classList.toggle('dselected', r.dataset.geomId===geomId));
-    if(d){
-      const row = $('.district-row[data-geom-id="'+geomId+'"]');
-      if(row) row.scrollIntoView({block:'nearest', behavior:'smooth'});
-    }
+  function selectDistrict(d, plaka){
+    $$('.il-path').forEach(p=>p.classList.toggle('selected', p.dataset.geomId===d.geomId));
+    $$('.district-row').forEach(r=>r.classList.toggle('dselected', r.dataset.geomId===d.geomId));
+    const p = ilByPlaka[plaka];
+    $('#detailEmpty').style.display='none';
+    $('#detailBody').style.display='block';
+    $('#detailViewToggle').style.display='none';
+    $('#dInfoNote').style.display='none';
+    $('#dName').textContent = d.ad;
+    $('#dPlaka').textContent = p ? p.ad : '';
+
+    const heroOy = d.kazanan ? d.oy[d.kazanan] : null;
+    const heroLabel = DATA.tur==='referandum' ? 'Sonuç' : 'Kazanan';
+    setHero(heroLabel, d.kazanan && PARTY[d.kazanan]?PARTY[d.kazanan].short:d.kazanan, d.kazanan, heroOy ? resultPercent(heroOy) : null);
+
+    // Milletvekili sandalyesi il duzeyinde tahsis edilir (secim cevresi = il),
+    // ilce kaydinin toplamVekil'i anlamsizdir (hep 0) - bunun yerine ilcenin
+    // kendi sandik sayisini goster (yerel/referandum/CB'de zaten anlamli olan alan).
+    $('#dSeatsLabel').textContent = DATA.tur==='genel' ? 'Milletvekili' : 'Sandık';
+    $('#dSeats').textContent = DATA.tur==='genel' ? (d.toplamVekil || '—') : (d.sandik!=null ? fmt(d.sandik) : '—');
+    $('#dTurnout').textContent = d.katilim!=null ? '%'+d.katilim.toFixed(2) : '—';
+    $('#dSecmen').textContent = d.secmen!=null ? fmt(d.secmen) : '—';
+    $('#dGecerli').textContent = d.gecerliOy!=null ? fmt(d.gecerliOy) : '—';
+    hideEmptyStatRows();
+
+    $('#dResultsHead').textContent = 'Sonuçlar';
+    renderPartyResults(d);
   }
 
   // ---------------- 2024 yerel: ilce meclisi ikincil gorunumu (sag panel) ----------------

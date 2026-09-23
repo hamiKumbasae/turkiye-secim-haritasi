@@ -13,7 +13,7 @@
     } else {
       const list = districtsByPlaka[view.plaka]||[];
       const match = list.find(d=>d.ad.toLocaleLowerCase('tr').startsWith(q));
-      if(match && match.geomId && pathByGeomId[match.geomId]) highlightDistrictRow(match.geomId);
+      if(match && match.geomId && pathByGeomId[match.geomId] && districtHasRealData(match)) selectDistrict(match, view.plaka);
       renderDistrictList(view.plaka, e.target.value);
     }
   });

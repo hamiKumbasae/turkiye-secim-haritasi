@@ -148,6 +148,14 @@
   .il-path{stroke:var(--map-stroke); stroke-width:1; cursor:pointer; transition:filter .1s;}
   .il-path:hover{filter:brightness(1.12); stroke-width:1.6;}
   .il-path.selected{stroke:var(--ink-1); stroke-width:2.2;}
+  /* Bu donem icin gercek sonucu olmayan ilce (orn. henuz kurulmamis modern
+     ilce) - haritada bos birakmamak icin cizilir ama tiklanabilir/vurgulanir
+     GORUNMEZ, yaniltici bir "veri var" izlenimi vermez. */
+  .il-path-nodata{cursor:default; opacity:.55;}
+  .il-path-nodata:hover{filter:none; stroke-width:1;}
+
+  .district-row-empty{cursor:default; opacity:.55;}
+  .district-row-empty:hover{background:none;}
 
   #tooltip{position:fixed; pointer-events:none; background:var(--ink-1); color:var(--surface-0); font-size:12px; padding:7px 10px; border-radius:8px; line-height:1.45; box-shadow:var(--shadow); z-index:50; max-width:220px; opacity:0; transform:translate(-50%,-100%); transition:opacity .08s;}
   #tooltip b{font-size:12.5px;}

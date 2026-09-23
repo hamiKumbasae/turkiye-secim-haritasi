@@ -48,8 +48,44 @@ async function scenario_2023genel(browser) {
     check('2023 genel: varsayılan yıl 2023', activeYear === '2023', 'active=' + activeYear);
     check('2023 genel: başlıkta "2023" geçiyor', title.includes('2023'), title);
     check('2023 genel: ulusal özet dolu (>=4 kalem)', nsCount >= 4, 'count=' + nsCount);
+
+    // Il -> ilce tiklamasi il'in DEGIL, tiklanan ilcenin KENDI verisini
+    // gostermeli (bkz. regresyon: bir donem ilce tiklamasi eski/il-genel
+    // veriyi degistirmeden birakiyordu).
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(400);
+    const provinceSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+    await page.click('path.il-path[data-geom-id="TR-D-34-001"]'); // Adalar
+    await page.waitForTimeout(400);
+    const dName = await page.$eval('#dName', (el) => el.textContent);
+    const districtSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+    check('2023 genel: ilçe tıklaması kendi adını gösteriyor', dName === 'Adalar', dName);
+    check('2023 genel: ilçe tıklaması il-geneli değil kendi seçmen sayısını gösteriyor',
+      districtSecmen !== provinceSecmen, 'il=' + provinceSecmen + ' ilçe=' + districtSecmen);
   });
   check('2023 genel: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+async function scenario_istanbul1994geometri(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurYerel');
+    await page.waitForTimeout(500);
+    const found = await clickYear(page, '1994');
+    check('1994 yerel: yıl seçilebildi', found);
+    await page.waitForTimeout(500);
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(400);
+    // 2008 sonrasi kurulan ilceler (Ataşehir, Sancaktepe vb.) 1994'te veri
+    // satırı olarak yok - haritada "delik" birakmak yerine notr/tiklanamaz
+    // gosterilmeli (bkz. son inceleme: İstanbul'un değişen ilçe sınırları).
+    const nodataCount = await page.$$eval('.il-path-nodata', (els) => els.length);
+    check('1994 yerel İstanbul: veri olmayan ilçeler nötr/tıklanamaz gösteriliyor (harita deliksiz)', nodataCount > 0, 'count=' + nodataCount);
+    const nodataCursor = nodataCount > 0
+      ? await page.$eval('.il-path-nodata', (el) => getComputedStyle(el).cursor)
+      : null;
+    check('1994 yerel İstanbul: veri olmayan ilçe tıklanabilir görünmüyor (cursor=default)', nodataCursor === 'default', 'cursor=' + nodataCursor);
+  });
+  check('1994 yerel İstanbul geometrisi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
 async function scenario_1950yerel(browser) {
@@ -139,6 +175,7 @@ async function main() {
   const browser = await chromium.launch();
   try {
     await scenario_2023genel(browser);
+    await scenario_istanbul1994geometri(browser);
     await scenario_1950yerel(browser);
     await scenario_1955yerel(browser);
     await scenario_2024meclis(browser);
