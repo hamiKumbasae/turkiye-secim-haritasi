@@ -105,8 +105,45 @@ async function scenario_istanbul1994geometri(browser) {
         .map((id) => `path.il-path[data-geom-id="${id}"]`).join(', '),
       (els) => els.length);
     check('1994 yerel İstanbul: birleşimin parçası olan eski modern şekiller ayrıca (üst üste) çizilmiyor', staleDuplicates === 0, 'count=' + staleDuplicates);
+
+    // Tarihsel (HIST-*) bir ilçeye tıklamak, o ilçenin KENDİ (genişletilmiş)
+    // gerçek oy verisini göstermeli - sentetik geomId'ye geçiş sadece haritayı
+    // etkilemeli, panel/veri akışını bozmamalı.
+    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Kadikoy"]');
+    await page.waitForTimeout(400);
+    const histDName = await page.$eval('#dName', (el) => el.textContent);
+    const histDSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+    check('1994 yerel: tarihsel Kadıköy poligonuna tıklama doğru ilçeyi ve gerçek veriyi gösteriyor',
+      histDName === 'Kadıköy' && histDSecmen !== '—' && histDSecmen !== '',
+      'dName=' + histDName + ' dSecmen=' + histDSecmen);
   });
   check('1994 yerel İstanbul geometrisi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+// 1994 disinda 1999/2004 yerel de (5747'nin split_year'i 2008 oldugu icin)
+// AYNI 5 tarihsel birlesimi kullanmali - sadece 1994'u test edip digerlerini
+// varsaymak riskli (bkz. son inceleme: "tıklanan tarihsel ilçe doğru 1994/
+// 1999/2004 verisini göstermeli").
+async function scenario_istanbul19992004Gecmisi(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurYerel');
+    await page.waitForTimeout(500);
+    const expectedHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
+      'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar', 'HIST-Istanbul-Kartal'];
+    for (const year of ['1999', '2004']) {
+      const found = await clickYear(page, year);
+      check(year + ' yerel: yıl seçilebildi', found);
+      await page.waitForTimeout(400);
+      await page.click('path[data-plaka="34"]');
+      await page.waitForTimeout(400);
+      const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+        els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+      check(year + ' yerel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor',
+        expectedHist.every((id) => histIds.includes(id)), JSON.stringify(histIds));
+      await page.click('#btnBackCountry').catch(() => {});
+    }
+  });
+  check('1999/2004 yerel İstanbul geometrisi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
 // Bir secimde HIC ilce-duzeyi veri yoksa (orn. 1965 genel - sadece il
@@ -256,6 +293,7 @@ async function main() {
   try {
     await scenario_2023genel(browser);
     await scenario_istanbul1994geometri(browser);
+    await scenario_istanbul19992004Gecmisi(browser);
     await scenario_ilOnlyYearsTekParca(browser);
     await scenario_1950yerel(browser);
     await scenario_1955yerel(browser);

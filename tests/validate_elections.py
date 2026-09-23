@@ -253,6 +253,88 @@ def check_dtp_bdp_bagimsiz_attribution():
     )
 
 
+def check_historical_district_geometry():
+    """Bkz. son inceleme (Istanbul tarihsel sinirlari): apply_verified_district_merges.py'nin
+    urettigi tarihsel (HIST-*) ilce poligonlari (1) birbiriyle ve GUNCEL modern
+    ilce poligonlariyla UST USTE BINMEMELI, (2) bir ilin TOPLAM alanini (HIST-*
+    poligonlari + gizlenmemis GUNCEL modern ilceler) KORUMALI - ne bir ACIKLANAMAYAN
+    DELIK (bir parca hicbir poligonda yok) ne de CIFT SAYIM (bir parca hem HIST-*
+    poligonun icinde hem AYRICA kendi guncel/modern seklinde gorunuyor) olusmamali.
+    shapely yoksa (CI/dev ortaminda kurulu degilse) bu kontrol atlanir (UYARI ile)."""
+    try:
+        from shapely.geometry import shape
+        from shapely.ops import unary_union
+    except ImportError:
+        check("tarihsel (HIST-*) ilce geometrisi: üst üste binme/delik yok (shapely kurulu değil, ATLANDI)", True)
+        return
+
+    hist_geo = load_json(ROOT / "geo" / "historical" / "turkiye_ilce_sinirlari_hist_splits.geojson")
+    modern_geo = load_json(ROOT / "geo" / "normalized" / "turkiye_ilce_sinirlari.geojson")
+    splits = load_json(ROOT / "geo" / "historical" / "district_splits.json")
+
+    # .buffer(0): bazı kaynak poligonlarda (bu kontrolle ilgisiz, önceden var
+    # olan) küçük öz-kesişim/geçersizlik hataları GEOS'un intersection/area
+    # hesaplarını çökertebiliyor - bu standart shapely deyimi şekli
+    # değiştirmeden geçersizliği onarır.
+    def clean(geom):
+        return geom if geom.is_valid else geom.buffer(0)
+
+    hist_by_id = {f["properties"]["id"]: clean(shape(f["geometry"])) for f in hist_geo["features"]}
+    modern_by_plaka = {}
+    for f in modern_geo["features"]:
+        p = f["properties"]
+        modern_by_plaka.setdefault(p["plaka"], {})[p["id"]] = clean(shape(f["geometry"]))
+
+    problems = []
+    for plaka_str, entries in splits.items():
+        plaka = int(plaka_str)
+        active = [e for e in entries if e["syntheticId"] in hist_by_id]
+        if not active:
+            continue
+        hidden = set()
+        for e in active:
+            hidden.update(e["hideIds"])
+        modern_ids = modern_by_plaka.get(plaka, {})
+        visible_modern = {gid: poly for gid, poly in modern_ids.items() if gid not in hidden}
+        ids = [e["syntheticId"] for e in active] + list(visible_modern.keys())
+        polys = [hist_by_id[e["syntheticId"]] for e in active] + list(visible_modern.values())
+        hist_idx = set(range(len(active)))  # sadece HIST-* iceren ciftler kontrol edilir
+
+        # (1) ikili ust-uste binme, SADECE en az biri HIST-* olan ciftler icin:
+        # komsu GUNCEL modern ilceler arasinda (bu kontrolun/oturumun konusu
+        # OLMAYAN, onceden var olan) kucuk sinir-cizgisi/hassasiyet farkliliklari
+        # zaten var (dogrulandi: orn. TR-D-34-009 x TR-D-34-019 gibi HIC bir
+        # HIST-* icermeyen ciftlerde de ~%1-2 sliver var) - bunlar bu kontrolun
+        # kapsami DISINDA. Hicbir cift, kucuk olanin alaninin %1'inden fazlasini
+        # paylasmamali.
+        for i in range(len(polys)):
+            for j in range(i + 1, len(polys)):
+                if i not in hist_idx and j not in hist_idx:
+                    continue
+                inter_area = polys[i].intersection(polys[j]).area
+                smaller = min(polys[i].area, polys[j].area)
+                if smaller > 0 and inter_area / smaller > 0.01:
+                    problems.append(f"plaka {plaka}: {ids[i]}/{ids[j]} arasında üst üste binme (oran={inter_area/smaller:.3f})")
+
+        # (2) alan korunumu: HIST-* + gizlenmemis modern ilcelerin TOPLAM alani,
+        # ilin TUM guncel modern ilcelerinin toplam alanina (delik/cift-sayim
+        # olmadan) esit olmali (+-%1 tolerans, projeksiyon/yuvarlama icin).
+        union_area = unary_union(polys).area
+        sum_area = sum(p.area for p in polys)
+        total_modern_area = sum(p.area for p in modern_ids.values())
+        if total_modern_area > 0:
+            if abs(union_area - sum_area) / total_modern_area > 0.01:
+                problems.append(f"plaka {plaka}: parçalar arası çift-sayım/örtüşme (union={union_area:.6f} sum={sum_area:.6f})")
+            if abs(union_area - total_modern_area) / total_modern_area > 0.01:
+                problems.append(f"plaka {plaka}: toplam alan korunmuyor - delik veya fazla alan (union={union_area:.6f} modern_toplam={total_modern_area:.6f})")
+
+    check(
+        "tarihsel (HIST-*) ilçe geometrisi: üst üste binme/delik/çift-sayım yok",
+        not problems,
+        "; ".join(problems[:5]),
+    )
+
+
 def check_dist_size():
     if not DIST.exists():
         check("index.html boyut tavanı", False, "dosya yok — önce scripts/build.py çalıştırın")
@@ -318,6 +400,7 @@ def main():
     check_known_issue_2014yerel_bdp()
     check_kazanan_has_oy_entry()
     check_dtp_bdp_bagimsiz_attribution()
+    check_historical_district_geometry()
     check_dist_size()
     check_index_in_sync_with_sources()
     check_reproducibility()
