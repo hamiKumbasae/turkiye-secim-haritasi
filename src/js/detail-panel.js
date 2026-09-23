@@ -66,16 +66,21 @@
 
     const heroOy = p.kazanan ? p.oy[p.kazanan] : null;
     const heroSeatBased = heroOy && isSeatBased(heroOy);
-    const heroLabel = DATA.tur==='referandum' ? 'Sonuç' : (heroSeatBased ? 'Meclis Çoğunluğu' : 'Kazanan');
+    // contestType='municipal_indirect' TUM SECIM icin gecerli (1950/1955 yerel) -
+    // 1955'te bazi illerde gercek oy sayisi de olsa (resultBasis='mixed'), o ilin
+    // belediye baskani YINE meclis tarafindan seciliyordu, sadece oy SAYISI
+    // biliniyor. Bu yuzden not/etiket heroSeatBased'e (o ilin veri TURUNE) degil,
+    // DATA.contestType'a (secimin KENDI doga bicimine) bakmali.
+    const isIndirectElection = DATA.contestType === 'municipal_indirect';
+    const heroLabel = DATA.tur==='referandum' ? 'Sonuç'
+      : heroSeatBased ? 'Meclis Çoğunluğu'
+      : isIndirectElection ? 'Belediye Meclisi Seçiminde Birinci'
+      : 'Kazanan';
     const heroPct = heroOy ? (heroSeatBased ? heroOy.oranSandalye : heroOy.oran) : null;
     setHero(heroLabel, p.kazanan && PARTY[p.kazanan]?PARTY[p.kazanan].short:p.kazanan, p.kazanan, heroPct);
 
-    // 1950/1955 yerel: belediye baskani halk oyuyla degil, meclisin kendi
-    // icinden seciliyordu (contestType=municipal_indirect) - kullaniciyi bunun
-    // modern bir "kazanan %" olmadigi konusunda uyar (bkz. resultBasis).
-    const showSeatNote = DATA.resultBasis==='council_seats' || (DATA.resultBasis==='mixed' && heroSeatBased);
-    $('#dInfoNote').style.display = showSeatNote ? 'flex' : 'none';
-    if(showSeatNote) $('#dInfoNote').textContent = 'ⓘ Bu seçimde belediye başkanı doğrudan halk tarafından seçilmiyordu. Sonuçlar belediye meclisi dağılımını temel alır.';
+    $('#dInfoNote').style.display = isIndirectElection ? 'flex' : 'none';
+    if(isIndirectElection) $('#dInfoNote').textContent = 'ⓘ Bu seçimde belediye başkanı doğrudan halk tarafından seçilmiyordu. Sonuçlar belediye meclisi dağılımını temel alır.';
 
     $('#dSeatsLabel').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? 'Vekil / Sandalye' : 'Milletvekili';
     $('#dSeats').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? (p.toplamVekil || '—') : p.toplamVekil;
@@ -188,35 +193,6 @@
       const row = $('.district-row[data-geom-id="'+geomId+'"]');
       if(row) row.scrollIntoView({block:'nearest', behavior:'smooth'});
     }
-  }
-
-  function renderMeclisIlceMap(plaka, geomId){
-    view = {level:'meclis-ilce', plaka, geomId};
-    const f = geoFeatureById[geomId];
-    if(!f) return;
-    const project = computeProjection([f], PAD);
-    svg.innerHTML = '';
-    pathByPlaka = {}; pathByGeomId = {};
-    const el = document.createElementNS(NS,'path');
-    el.setAttribute('d', geomToPath(project, f.geometry));
-    el.setAttribute('class','il-path selected');
-    el.dataset.geomId = geomId;
-    el.addEventListener('mousemove', e=>showTooltip(e, {kind:'ilce', plaka, geomId}));
-    el.addEventListener('mouseleave', hideTooltip);
-    svg.appendChild(el);
-    pathByGeomId[geomId]=el;
-    const m = MECLIS_2024[geomId];
-    el.setAttribute('fill', m ? partyColor(m.kazanan) : 'var(--map-empty)');
-
-    const p = ilByPlaka[plaka];
-    const d = districtByGeomId[geomId];
-    $('#mapBreadcrumb').style.display='flex';
-    $('#btnBackProvince').style.display='inline-flex';
-    $('#mapTitleCountry').style.display='none';
-    $('#mapBreadcrumbName').textContent = (p?p.ad:'')+' — '+(d?d.ad:'')+' — 2024 İlçe Meclisi';
-    $('#searchBox').value='';
-    $('#seqLegendWrap').style.display='none';
-    selectMeclisIlce(geomId, plaka);
   }
 
   // ---------------- 2024 yerel: ilce meclisi ikincil gorunumu (sag panel) ----------------

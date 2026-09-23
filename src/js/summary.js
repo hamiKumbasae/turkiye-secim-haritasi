@@ -85,7 +85,7 @@
     // izlenimi vermiyoruz.
     const hasYurtdisi = !!(DATA.yurtdisi && DATA.yurtdisi.oy && Object.keys(DATA.yurtdisi.oy).length);
     const items = [
-      ['Katılım', katilim!=null ? '%'+katilim.toFixed(2) : '—'],
+      [hasYurtdisi ? 'Yurt İçi Katılım' : 'Katılım', katilim!=null ? '%'+katilim.toFixed(2) : '—'],
       [hasYurtdisi ? 'Yurt İçi Seçmen' : 'Seçmen', secmen ? fmt(secmen) : '—'],
       [hasYurtdisi ? 'Yurt İçi Geçerli Oy' : 'Geçerli Oy', gecerli ? fmt(gecerli) : '—'],
     ];
