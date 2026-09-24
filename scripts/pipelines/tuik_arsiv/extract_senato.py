@@ -65,6 +65,20 @@ KITAPLAR = {
                   ["secmen", "oyKullanan", "%", "muteber", "AP", "%", "CHP", "%"],
                   ["CGP", "%", "DEMP73", "%", "MP62", "%", "MHP", "%", "MSP", "%", "TBP73", "%", "Bağımsız", "%"])],
     },
+    "1975senato": {
+        "demirbas": "0015581", "sha256": None,
+        "baslik": "DİE, Cumhuriyet Senatosu Üyeleri ve Milletvekili Ara Seçim Sonuçları, 12 Ekim 1975 (1976)",
+        "cift": [(26, 38, "1975senato",
+                  ["secmen", "oyKullanan", "%", "muteber", "AP", "%"],
+                  ["CHP", "%", "DEMP73", "%", "MHP", "%", "MSP", "%", "TBP73", "%", "Bağımsız", "%"])],
+    },
+    "1979senato": {
+        "demirbas": "0015789", "sha256": None,
+        "baslik": "DİE, Cumhuriyet Senatosu Üyeleri Üçtebir Yenileme ve Milletvekili Ara Seçimi Sonuçları, 14 Ekim 1979 (1980)",
+        "cift": [(20, 32, "1979senato",
+                  ["secmen", "oyKullanan", "%", "muteber", "AP", "%", "CHP", "%", "CGP", "%"],
+                  ["MHP", "%", "MSP", "%", "SDP", "%", "TBP73", "%", "TİP", "%", "TSİP", "%", "Bağımsız", "%"])],
+    },
     "1977senato": {
         "demirbas": "0015631", "sha256": None,
         "baslik": "DİE, 5 Haziran 1977 Milletvekili Genel ve Cumhuriyet Senatosu Üyeleri Üçtebir Yenileme Seçimi Sonuçları (1977)",
@@ -111,6 +125,8 @@ def satir_turu(etiket):
         return "genel"
     if "TOPLAM" in f:
         return "il"
+    if re.search(r"\s(IL)$", f) and f.split()[0] not in ("MERKEZ",):  # "A. KARAHİSAR İL" (TOPLAMI kaymis)
+        return "il"
     if set(re.findall(r"[A-Z]+", f)) & set(BASLIK_KELIME):  # tam kelime ("Sandıklı", "Yenişehir" baslik degil)
         return None
     return "ilce"
@@ -121,8 +137,9 @@ def ad_temizle(etiket, tur):
     s = re.split(r"\(", etiket)[0] if re.search(r"\w\s*\(", etiket) else etiket
     s = re.sub(r"[»•*'|!(),]", " ", s)
     # "<Il> İl Toplamı" ve OCR bozulmalari ("II", "fl", "tl", "Ü", "Il" ya da hic yok)
-    s = re.sub(r"\s+\S{0,2}\s*(Toplam[ıi]?|TOPLAM[IİıÎ])\b.*$", "", s)
-    s = re.sub(r"\s+(Toplam[ıi]?|TOPLAM[IİıÎ])\b.*$", "", s)
+    s = re.sub(r"\s+\S{0,2}\s*(Toplam[ıi]?|TOPLAM[IİıÎ])\b.*$", "", s, flags=re.I)
+    s = re.sub(r"\s+(Toplam[ıi]?|TOPLAM[IİıÎ])\b.*$", "", s, flags=re.I)
+    s = re.sub(r"\s+(İL|IL|İl|il)$", "", s)  # "A. KARAHİSAR İL" (TOPLAMI alt satira kaymis)
     s = re.sub(r"\b(İlçesi|ilçesi|İLÇESİ|ilçe)\b", "", s)
     return " ".join(s.split()).strip(" .-—")
 
@@ -192,6 +209,37 @@ def tablo_oku(pdf, ilk, son, sutunlar):
     return satirlar, sorunlu_sayfa
 
 
+def _hizala(L, R):
+    """Sirayi koruyan hizalama: sol ve sag satirlar y farkina gore eslenir,
+    her iki taraftan satir atlanabilir. Ofset: ilk satirlarin farkinin medyani."""
+    ofs = sorted(R[k][2] - L[k][2] for k in range(min(len(L), len(R), 5)))[min(len(L), len(R), 5) // 2]
+    INF = float("inf")
+    n, m = len(L), len(R)
+    dp = [[INF] * (m + 1) for _ in range(n + 1)]
+    geri = [[None] * (m + 1) for _ in range(n + 1)]
+    dp[0][0] = 0
+    ATLA = 6.0
+    for i in range(n + 1):
+        for j in range(m + 1):
+            if dp[i][j] == INF:
+                continue
+            if i < n and j < m:
+                c = dp[i][j] + abs(R[j][2] - ofs - L[i][2])
+                if c < dp[i + 1][j + 1]:
+                    dp[i + 1][j + 1], geri[i + 1][j + 1] = c, (i, j, "e")
+            if i < n and dp[i][j] + ATLA < dp[i + 1][j]:
+                dp[i + 1][j], geri[i + 1][j] = dp[i][j] + ATLA, (i, j, "l")
+            if j < m and dp[i][j] + ATLA < dp[i][j + 1]:
+                dp[i][j + 1], geri[i][j + 1] = dp[i][j] + ATLA, (i, j, "r")
+    out, i, j = [], n, m
+    while (i, j) != (0, 0):
+        pi, pj, t = geri[i][j]
+        if t == "e":
+            out.append((L[pi], R[pj]))
+        i, j = pi, pj
+    return list(reversed(out))
+
+
 def cift_oku(pdf, ilk, son, sol, sag):
     """Karsilikli sayfa tablosu: sol sayfalar ilk, ilk+2, ... ; sag = sol+1.
     Satirlar sirayla eslenir (sag sayfa birkac puan kayik basildigi icin y ile
@@ -218,9 +266,8 @@ def cift_oku(pdf, ilk, son, sol, sag):
         if len(L) == len(R):
             eslesme = list(zip(L, R))
         else:
-            ofs = sorted(r[2] for r in R)[len(R) // 2] - sorted(l[2] for l in L)[len(L) // 2]
-            eslesme = [(l, min(R, key=lambda r: abs(r[2] - ofs - l[2]))) for l in L]
-            sorunlu.append(f"{no}: satir sayisi sol {len(L)} / sag {len(R)} (y ile eslendi)")
+            eslesme = _hizala(L, R)
+            sorunlu.append(f"{no}: satir sayisi sol {len(L)} / sag {len(R)} (sirali hizalama)")
         rows = [(l[0], l[1] + r[1], l[2], None) for l, r in eslesme]
         satirlar += _kayitlar(rows, no, sutunlar, once, partiler)
     return satirlar, sorunlu

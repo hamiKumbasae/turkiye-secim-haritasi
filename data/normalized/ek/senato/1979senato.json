@@ -1,7 +1,7541 @@
 {
  "secim": "1979senato",
  "tur": "senato",
- "kaynak": "wikipedia",
+ "kaynak": "wikipedia + tuik (ilçe oyları)",
+ "ilceOylariTuik": {
+  "kaynak": {
+   "ana": "tuik",
+   "yayin": "DİE, Cumhuriyet Senatosu Üyeleri Üçtebir Yenileme ve Milletvekili Ara Seçimi Sonuçları, 14 Ekim 1979 (1980)",
+   "yayinUrl": "https://kutuphane.tuik.gov.tr/pdf/0015789.pdf",
+   "pdfSha256": "3048562bf849a5660864fc0129a6199d47fbc84a4249ae93d5b976ca278a8bde",
+   "sayfalar": [
+    20,
+    33
+   ],
+   "metinKlasoru": "data/raw/tuik/senato-metin/0015789",
+   "kaynakKatmani": "data/kaynaklar/tuik/senato/1979senato.json"
+  },
+  "dogrulama": {
+   "wikipediaIlSonuclariyla": {
+    "tutan": 21,
+    "farkli": [
+     {
+      "il": "İstanbul",
+      "fark": {
+       "Bağımsız": [
+        27709,
+        7494
+       ],
+       "?": [
+        0,
+        20215
+       ]
+      }
+     },
+     {
+      "il": "Kütahya",
+      "fark": {
+       "TİP": [
+        0.7,
+        1025
+       ],
+       "TBP73": [
+        1,
+        1123
+       ]
+      }
+     },
+     {
+      "il": "Manisa",
+      "fark": {
+       "TİP": [
+        0.5,
+        2669
+       ],
+       "TBP73": [
+        1,
+        1473
+       ]
+      }
+     },
+     {
+      "il": "Van",
+      "fark": {
+       "TSİP": [
+        2508,
+        490
+       ],
+       "TİP": [
+        490,
+        2508
+       ]
+      }
+     }
+    ]
+   },
+   "ilceToplamiIlToplamiTutmayan": [
+    {
+     "il": "Ağrı",
+     "alan": "secmen",
+     "ilDegeri": 110829,
+     "ilceToplami": 110869
+    },
+    {
+     "il": "Amasya",
+     "alan": "secmen",
+     "ilDegeri": 142148,
+     "ilceToplami": 146247
+    },
+    {
+     "il": "Antalya",
+     "alan": "secmen",
+     "ilDegeri": 308845,
+     "ilceToplami": 308824
+    },
+    {
+     "il": "Antalya",
+     "alan": "muteber",
+     "ilDegeri": 233407,
+     "ilceToplami": 233408
+    },
+    {
+     "il": "Antalya",
+     "alan": "TBP73",
+     "ilDegeri": 1433,
+     "ilceToplami": 1443
+    },
+    {
+     "il": "Artvin",
+     "alan": "secmen",
+     "ilDegeri": 95459,
+     "ilceToplami": 95461
+    },
+    {
+     "il": "Balıkesir",
+     "alan": "TİP",
+     "ilDegeri": 1943,
+     "ilceToplami": 1761
+    },
+    {
+     "il": "Bitlis",
+     "alan": "MHP",
+     "ilDegeri": 559,
+     "ilceToplami": 423
+    },
+    {
+     "il": "Burdur",
+     "alan": "secmen",
+     "ilDegeri": 108653,
+     "ilceToplami": 67122
+    },
+    {
+     "il": "Burdur",
+     "alan": "oyKullanan",
+     "ilDegeri": 81253,
+     "ilceToplami": 51013
+    },
+    {
+     "il": "Burdur",
+     "alan": "muteber",
+     "ilDegeri": 78528,
+     "ilceToplami": 49148
+    },
+    {
+     "il": "Burdur",
+     "alan": "AP",
+     "ilDegeri": 40345,
+     "ilceToplami": 26598
+    },
+    {
+     "il": "Burdur",
+     "alan": "CHP",
+     "ilDegeri": 22599,
+     "ilceToplami": 11770
+    },
+    {
+     "il": "Burdur",
+     "alan": "CGP",
+     "ilDegeri": 1395,
+     "ilceToplami": 966
+    },
+    {
+     "il": "Burdur",
+     "alan": "MHP",
+     "ilDegeri": 8994,
+     "ilceToplami": 6397
+    },
+    {
+     "il": "Burdur",
+     "alan": "MSP",
+     "ilDegeri": 3234,
+     "ilceToplami": 2010
+    },
+    {
+     "il": "Burdur",
+     "alan": "SDP",
+     "ilDegeri": 505,
+     "ilceToplami": 371
+    },
+    {
+     "il": "Burdur",
+     "alan": "TBP73",
+     "ilDegeri": 497,
+     "ilceToplami": 349
+    },
+    {
+     "il": "Burdur",
+     "alan": "TİP",
+     "ilDegeri": 392,
+     "ilceToplami": 260
+    },
+    {
+     "il": "Burdur",
+     "alan": "TSİP",
+     "ilDegeri": 567,
+     "ilceToplami": 427
+    },
+    {
+     "il": "Erzincan",
+     "alan": "secmen",
+     "ilDegeri": 100995,
+     "ilceToplami": 100992
+    },
+    {
+     "il": "Erzincan",
+     "alan": "MSP",
+     "ilDegeri": 3069,
+     "ilceToplami": 2034
+    },
+    {
+     "il": "Erzurum",
+     "alan": "oyKullanan",
+     "ilDegeri": 223864,
+     "ilceToplami": 148017
+    },
+    {
+     "il": "Erzurum",
+     "alan": "muteber",
+     "ilDegeri": 217922,
+     "ilceToplami": 204341
+    },
+    {
+     "il": "Erzurum",
+     "alan": "CHP",
+     "ilDegeri": 30116,
+     "ilceToplami": 30115
+    },
+    {
+     "il": "Erzurum",
+     "alan": "CGP",
+     "ilDegeri": 2857,
+     "ilceToplami": 2852
+    },
+    {
+     "il": "Erzurum",
+     "alan": "MSP",
+     "ilDegeri": 38175,
+     "ilceToplami": 33827
+    },
+    {
+     "il": "Erzurum",
+     "alan": "TİP",
+     "ilDegeri": 948,
+     "ilceToplami": 865
+    },
+    {
+     "il": "Erzurum",
+     "alan": "TSİP",
+     "ilDegeri": 907,
+     "ilceToplami": 878
+    },
+    {
+     "il": "Hatay",
+     "alan": "muteber",
+     "ilDegeri": 216648,
+     "ilceToplami": 216647
+    },
+    {
+     "il": "Hatay",
+     "alan": "AP",
+     "ilDegeri": 83822,
+     "ilceToplami": 74888
+    },
+    {
+     "il": "İstanbul",
+     "alan": "secmen",
+     "ilDegeri": 2173962,
+     "ilceToplami": 2144521
+    },
+    {
+     "il": "İstanbul",
+     "alan": "oyKullanan",
+     "ilDegeri": 1300209,
+     "ilceToplami": 1235177
+    },
+    {
+     "il": "İstanbul",
+     "alan": "muteber",
+     "ilDegeri": 1274392,
+     "ilceToplami": 1273349
+    },
+    {
+     "il": "İstanbul",
+     "alan": "Bağımsız",
+     "ilDegeri": 27709,
+     "ilceToplami": 26655
+    },
+    {
+     "il": "İstanbul",
+     "alan": "AP",
+     "ilDegeri": 509463,
+     "ilceToplami": 509493
+    },
+    {
+     "il": "İstanbul",
+     "alan": "CHP",
+     "ilDegeri": 483365,
+     "ilceToplami": 483368
+    },
+    {
+     "il": "İstanbul",
+     "alan": "CGP",
+     "ilDegeri": 39590,
+     "ilceToplami": 39585
+    },
+    {
+     "il": "İstanbul",
+     "alan": "MHP",
+     "ilDegeri": 46682,
+     "ilceToplami": 46661
+    },
+    {
+     "il": "İstanbul",
+     "alan": "MSP",
+     "ilDegeri": 110474,
+     "ilceToplami": 100232
+    },
+    {
+     "il": "İstanbul",
+     "alan": "TBP73",
+     "ilDegeri": 25869,
+     "ilceToplami": 25813
+    },
+    {
+     "il": "İstanbul",
+     "alan": "TİP",
+     "ilDegeri": 12616,
+     "ilceToplami": 12617
+    },
+    {
+     "il": "Kars",
+     "alan": "MHP",
+     "ilDegeri": 15064,
+     "ilceToplami": 14953
+    },
+    {
+     "il": "Kars",
+     "alan": "MSP",
+     "ilDegeri": 7383,
+     "ilceToplami": 5570
+    },
+    {
+     "il": "Kars",
+     "alan": "SDP",
+     "ilDegeri": 1832,
+     "ilceToplami": 1676
+    },
+    {
+     "il": "Kars",
+     "alan": "TBP73",
+     "ilDegeri": 1333,
+     "ilceToplami": 1248
+    },
+    {
+     "il": "Kars",
+     "alan": "TİP",
+     "ilDegeri": 1843,
+     "ilceToplami": 1724
+    },
+    {
+     "il": "Kars",
+     "alan": "TSİP",
+     "ilDegeri": 3568,
+     "ilceToplami": 3566
+    },
+    {
+     "il": "Kütahya",
+     "alan": "secmen",
+     "ilDegeri": 220575,
+     "ilceToplami": 220617
+    },
+    {
+     "il": "Kütahya",
+     "alan": "CHP",
+     "ilDegeri": 33098,
+     "ilceToplami": 33100
+    },
+    {
+     "il": "Kütahya",
+     "alan": "CGP",
+     "ilDegeri": 3695,
+     "ilceToplami": 3199
+    },
+    {
+     "il": "Kütahya",
+     "alan": "TBP73",
+     "ilDegeri": 1,
+     "ilceToplami": 0
+    },
+    {
+     "il": "Kütahya",
+     "alan": "TİP",
+     "ilDegeri": 0.7,
+     "ilceToplami": 4.9
+    },
+    {
+     "il": "Manisa",
+     "alan": "secmen",
+     "ilDegeri": 435317,
+     "ilceToplami": 412681
+    },
+    {
+     "il": "Manisa",
+     "alan": "MSP",
+     "ilDegeri": 17907,
+     "ilceToplami": 17911
+    },
+    {
+     "il": "Manisa",
+     "alan": "TBP73",
+     "ilDegeri": 1,
+     "ilceToplami": 0
+    },
+    {
+     "il": "Manisa",
+     "alan": "TİP",
+     "ilDegeri": 0.5,
+     "ilceToplami": 1569.5
+    },
+    {
+     "il": "Mardin",
+     "alan": "oyKullanan",
+     "ilDegeri": 123992,
+     "ilceToplami": 119228
+    },
+    {
+     "il": "Mardin",
+     "alan": "MSP",
+     "ilDegeri": 21015,
+     "ilceToplami": 21012
+    },
+    {
+     "il": "Mus",
+     "alan": "secmen",
+     "ilDegeri": 75,
+     "ilceToplami": 75813
+    },
+    {
+     "il": "Mus",
+     "alan": "TBP73",
+     "ilDegeri": 247,
+     "ilceToplami": 39
+    },
+    {
+     "il": "Rize",
+     "alan": "secmen",
+     "ilDegeri": 150941,
+     "ilceToplami": 143406
+    },
+    {
+     "il": "Rize",
+     "alan": "AP",
+     "ilDegeri": 55891,
+     "ilceToplami": 55941
+    },
+    {
+     "il": "Rize",
+     "alan": "SDP",
+     "ilDegeri": 745,
+     "ilceToplami": 613
+    },
+    {
+     "il": "Samsun",
+     "alan": "secmen",
+     "ilDegeri": 386287,
+     "ilceToplami": 386585
+    },
+    {
+     "il": "Samsun",
+     "alan": "muteber",
+     "ilDegeri": 288109,
+     "ilceToplami": 288110
+    },
+    {
+     "il": "Samsun",
+     "alan": "AP",
+     "ilDegeri": 159422,
+     "ilceToplami": 159424
+    },
+    {
+     "il": "Samsun",
+     "alan": "CGP",
+     "ilDegeri": 5185,
+     "ilceToplami": 5175
+    },
+    {
+     "il": "Samsun",
+     "alan": "SDP",
+     "ilDegeri": 1873,
+     "ilceToplami": 1871
+    },
+    {
+     "il": "Samsun",
+     "alan": "TİP",
+     "ilDegeri": 1821,
+     "ilceToplami": 1818
+    },
+    {
+     "il": "Samsun",
+     "alan": "TSİP",
+     "ilDegeri": 1592,
+     "ilceToplami": 1597
+    },
+    {
+     "il": "Tokat",
+     "alan": "MSP",
+     "ilDegeri": 20586,
+     "ilceToplami": 19853
+    },
+    {
+     "il": "Van",
+     "alan": "secmen",
+     "ilDegeri": 119165,
+     "ilceToplami": 124310
+    },
+    {
+     "il": "Van",
+     "alan": "oyKullanan",
+     "ilDegeri": 94200,
+     "ilceToplami": 92737
+    },
+    {
+     "il": "Van",
+     "alan": "MHP",
+     "ilDegeri": 1193,
+     "ilceToplami": 1046
+    },
+    {
+     "il": "Van",
+     "alan": "MSP",
+     "ilDegeri": 19530,
+     "ilceToplami": 21530
+    },
+    {
+     "il": "Van",
+     "alan": "SDP",
+     "ilDegeri": 391,
+     "ilceToplami": 392
+    },
+    {
+     "il": "Van",
+     "alan": "TİP",
+     "ilDegeri": 490,
+     "ilceToplami": 488
+    },
+    {
+     "il": "Van",
+     "alan": "TSİP",
+     "ilDegeri": 2508,
+     "ilceToplami": 2507
+    },
+    {
+     "il": "Yozgat",
+     "alan": "secmen",
+     "ilDegeri": 186996,
+     "ilceToplami": 171261
+    },
+    {
+     "il": "Yozgat",
+     "alan": "oyKullanan",
+     "ilDegeri": 153023,
+     "ilceToplami": 140013
+    },
+    {
+     "il": "Yozgat",
+     "alan": "muteber",
+     "ilDegeri": 148617,
+     "ilceToplami": 135936
+    },
+    {
+     "il": "Yozgat",
+     "alan": "AP",
+     "ilDegeri": 44741,
+     "ilceToplami": 40842
+    },
+    {
+     "il": "Yozgat",
+     "alan": "CHP",
+     "ilDegeri": 32675,
+     "ilceToplami": 31071
+    },
+    {
+     "il": "Yozgat",
+     "alan": "CGP",
+     "ilDegeri": 1752,
+     "ilceToplami": 1615
+    },
+    {
+     "il": "Yozgat",
+     "alan": "MHP",
+     "ilDegeri": 46363,
+     "ilceToplami": 41347
+    },
+    {
+     "il": "Yozgat",
+     "alan": "MSP",
+     "ilDegeri": 19336,
+     "ilceToplami": 17606
+    },
+    {
+     "il": "Yozgat",
+     "alan": "SDP",
+     "ilDegeri": 798,
+     "ilceToplami": 731
+    },
+    {
+     "il": "Yozgat",
+     "alan": "TBP73",
+     "ilDegeri": 889,
+     "ilceToplami": 817
+    },
+    {
+     "il": "Yozgat",
+     "alan": "TİP",
+     "ilDegeri": 915,
+     "ilceToplami": 842
+    },
+    {
+     "il": "Yozgat",
+     "alan": "TSİP",
+     "ilDegeri": 1148,
+     "ilceToplami": 1065
+    }
+   ],
+   "ozet": {
+    "il": 25,
+    "ilce": 241,
+    "kisitlaCozulen": 0,
+    "ocrDuzeltilen": 2,
+    "satirIciTutarsiz": 54,
+    "ilceToplamiIlToplamiTutmayan": 91,
+    "okunamayanSayfa": [
+     "22: satir sayisi sol 44 / sag 45 (sirali hizalama)",
+     "24: satir sayisi sol 40 / sag 42 (sirali hizalama)",
+     "26: satir sayisi sol 47 / sag 51 (sirali hizalama)",
+     "28: satir sayisi sol 40 / sag 41 (sirali hizalama)",
+     "32: satir sayisi sol 19 / sag 18 (sirali hizalama)"
+    ]
+   },
+   "not": "dogrulanamayanAlanlar: ilçe toplamı il toplamını tutmayan alanlar (OCR ya da kaynak hatası)."
+  },
+  "iller": [
+   {
+    "il": "Ağrı",
+    "plaka": 4,
+    "sandik": null,
+    "secmen": 110829,
+    "oyKullanan": 83794,
+    "muteber": 81267,
+    "oy": {
+     "AP": 39938,
+     "CHP": 19707,
+     "CGP": 775,
+     "MHP": 657,
+     "MSP": 18901,
+     "SDP": 362,
+     "TBP73": 0,
+     "TİP": 483,
+     "TSİP": 444
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 20,
+     "adKaynakta": "Ağrı il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-04-001",
+      "sandik": null,
+      "secmen": 26402,
+      "oyKullanan": 19629,
+      "muteber": 18716,
+      "oy": {
+       "AP": 8940,
+       "CHP": 4466,
+       "CGP": 210,
+       "MHP": 161,
+       "MSP": 4483,
+       "SDP": 104,
+       "TBP73": 0,
+       "TİP": 159,
+       "TSİP": 193
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Diyadin",
+      "geomId": "TR-D-04-002",
+      "sandik": null,
+      "secmen": 8831,
+      "oyKullanan": 6683,
+      "muteber": 6501,
+      "oy": {
+       "AP": 2111,
+       "CHP": 2588,
+       "CGP": 34,
+       "MHP": 14,
+       "MSP": 1671,
+       "SDP": 22,
+       "TBP73": 0,
+       "TİP": 35,
+       "TSİP": 26
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Diyadin"
+      }
+     },
+     {
+      "ilce": "Doğubeyazıt",
+      "geomId": "TR-D-04-003",
+      "sandik": null,
+      "secmen": 18549,
+      "oyKullanan": 10693,
+      "muteber": 10392,
+      "oy": {
+       "AP": 1885,
+       "CHP": 4419,
+       "CGP": 98,
+       "MHP": 68,
+       "MSP": 3604,
+       "SDP": 110,
+       "TBP73": 0,
+       "TİP": 101,
+       "TSİP": 107
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Doğubeyazıt"
+      }
+     },
+     {
+      "ilce": "Eleşkirt",
+      "geomId": "TR-D-04-004",
+      "sandik": null,
+      "secmen": 14849,
+      "oyKullanan": 12147,
+      "muteber": 11788,
+      "oy": {
+       "AP": 9771,
+       "CHP": 1162,
+       "CGP": 141,
+       "MHP": 67,
+       "MSP": 536,
+       "SDP": 30,
+       "TBP73": 0,
+       "TİP": 40,
+       "TSİP": 41
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Eleşkirt"
+      }
+     },
+     {
+      "ilce": "Hamur",
+      "geomId": "TR-D-04-005",
+      "sandik": null,
+      "secmen": 6854,
+      "oyKullanan": 6275,
+      "muteber": 6159,
+      "oy": {
+       "AP": 2103,
+       "CHP": 849,
+       "CGP": 20,
+       "MHP": 9,
+       "MSP": 3144,
+       "SDP": 7,
+       "TBP73": 0,
+       "TİP": 12,
+       "TSİP": 15
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Hamur"
+      }
+     },
+     {
+      "ilce": "Patnos",
+      "geomId": "TR-D-04-006",
+      "sandik": null,
+      "secmen": 19153,
+      "oyKullanan": 15357,
+      "muteber": 15057,
+      "oy": {
+       "AP": 8687,
+       "CHP": 3589,
+       "CGP": 126,
+       "MHP": 37,
+       "MSP": 2493,
+       "SDP": 28,
+       "TBP73": 0,
+       "TİP": 78,
+       "TSİP": 19
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Patnos"
+      }
+     },
+     {
+      "ilce": "Taşlıçay",
+      "geomId": "TR-D-04-007",
+      "sandik": null,
+      "secmen": 5826,
+      "oyKullanan": 4561,
+      "muteber": 4385,
+      "oy": {
+       "AP": 1798,
+       "CHP": 1425,
+       "CGP": 77,
+       "MHP": 33,
+       "MSP": 962,
+       "SDP": 45,
+       "TBP73": 0,
+       "TİP": 23,
+       "TSİP": 22
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Taşlıçay"
+      }
+     },
+     {
+      "ilce": "Tutak",
+      "geomId": "TR-D-04-008",
+      "sandik": null,
+      "secmen": 10405,
+      "oyKullanan": 8449,
+      "muteber": 8269,
+      "oy": {
+       "AP": 4643,
+       "CHP": 1209,
+       "CGP": 69,
+       "MHP": 268,
+       "MSP": 2008,
+       "SDP": 16,
+       "TBP73": 0,
+       "TİP": 35,
+       "TSİP": 21
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Tutak"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Amasya",
+    "plaka": 5,
+    "sandik": null,
+    "secmen": 142148,
+    "oyKullanan": 117404,
+    "muteber": 114166,
+    "oy": {
+     "AP": 57467,
+     "CHP": 37839,
+     "CGP": 1988,
+     "MHP": 6202,
+     "MSP": 6447,
+     "SDP": 778,
+     "TBP73": 1765,
+     "TİP": 883,
+     "TSİP": 797
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 20,
+     "adKaynakta": "Amasya il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-05-001",
+      "sandik": null,
+      "secmen": 47602,
+      "oyKullanan": 38253,
+      "muteber": 37004,
+      "oy": {
+       "AP": 17178,
+       "CHP": 13240,
+       "CGP": 655,
+       "MHP": 2124,
+       "MSP": 2148,
+       "SDP": 266,
+       "TBP73": 778,
+       "TİP": 425,
+       "TSİP": 190
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Göynücek",
+      "geomId": "TR-D-05-002",
+      "sandik": null,
+      "secmen": 8632,
+      "oyKullanan": 7495,
+      "muteber": 7272,
+      "oy": {
+       "AP": 3226,
+       "CHP": 2453,
+       "CGP": 94,
+       "MHP": 767,
+       "MSP": 514,
+       "SDP": 51,
+       "TBP73": 99,
+       "TİP": 42,
+       "TSİP": 26
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Göynücek"
+      }
+     },
+     {
+      "ilce": "Gümüşhacıköy",
+      "geomId": "TR-D-05-003",
+      "sandik": null,
+      "secmen": 21749,
+      "oyKullanan": 18212,
+      "muteber": 17758,
+      "oy": {
+       "AP": 7922,
+       "CHP": 7626,
+       "CGP": 303,
+       "MHP": 439,
+       "MSP": 724,
+       "SDP": 136,
+       "TBP73": 235,
+       "TİP": 94,
+       "TSİP": 279
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Gümüşhacıköy"
+      }
+     },
+     {
+      "ilce": "Merzifon",
+      "geomId": "TR-D-05-005",
+      "sandik": null,
+      "secmen": 27631,
+      "oyKullanan": 21402,
+      "muteber": 21075,
+      "oy": {
+       "AP": 10950,
+       "CHP": 6917,
+       "CGP": 311,
+       "MHP": 1171,
+       "MSP": 947,
+       "SDP": 129,
+       "TBP73": 405,
+       "TİP": 99,
+       "TSİP": 146
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Merzifon"
+      }
+     },
+     {
+      "ilce": "Suluova",
+      "geomId": "TR-D-05-006",
+      "sandik": null,
+      "secmen": 16784,
+      "oyKullanan": 13264,
+      "muteber": 13005,
+      "oy": {
+       "AP": 8142,
+       "CHP": 2891,
+       "CGP": 228,
+       "MHP": 708,
+       "MSP": 760,
+       "SDP": 58,
+       "TBP73": 119,
+       "TİP": 64,
+       "TSİP": 35
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Suluova"
+      }
+     },
+     {
+      "ilce": "Taşova",
+      "geomId": "TR-D-05-007",
+      "sandik": null,
+      "secmen": 23849,
+      "oyKullanan": 18778,
+      "muteber": 18052,
+      "oy": {
+       "AP": 10049,
+       "CHP": 4712,
+       "CGP": 397,
+       "MHP": 993,
+       "MSP": 1354,
+       "SDP": 138,
+       "TBP73": 129,
+       "TİP": 159,
+       "TSİP": 121
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Taşova"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Antalya",
+    "plaka": 7,
+    "sandik": null,
+    "secmen": 308845,
+    "oyKullanan": 239895,
+    "muteber": 233407,
+    "oy": {
+     "AP": 154259,
+     "CHP": 53817,
+     "CGP": 2981,
+     "MHP": 7731,
+     "MSP": 6136,
+     "SDP": 1445,
+     "TBP73": 1433,
+     "TİP": 1190,
+     "TSİP": 1313
+    },
+    "Bağımsız": 3102,
+    "dogrulanamayanAlanlar": [
+     "TBP73",
+     "muteber",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 20,
+     "adKaynakta": "Antalya il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "HIST-Antalya-Merkez",
+      "sandik": null,
+      "secmen": 104829,
+      "oyKullanan": 75405,
+      "muteber": 74007,
+      "oy": {
+       "AP": 48839,
+       "CHP": 17929,
+       "CGP": 890,
+       "MHP": 1448,
+       "MSP": 1877,
+       "SDP": 499,
+       "TBP73": 324,
+       "TİP": 359,
+       "TSİP": 489
+      },
+      "Bağımsız": 1353,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Akseki",
+      "geomId": "TR-D-07-001",
+      "sandik": null,
+      "secmen": 10624,
+      "oyKullanan": 7933,
+      "muteber": 7661,
+      "oy": {
+       "AP": 4133,
+       "CHP": 2360,
+       "CGP": 131,
+       "MHP": 238,
+       "MSP": 389,
+       "SDP": 52,
+       "TBP73": 77,
+       "TİP": 88,
+       "TSİP": 91
+      },
+      "Bağımsız": 102,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Akseki"
+      }
+     },
+     {
+      "ilce": "Alanya",
+      "geomId": "TR-D-07-003",
+      "sandik": null,
+      "secmen": 28964,
+      "oyKullanan": 22680,
+      "muteber": 21782,
+      "oy": {
+       "AP": 15571,
+       "CHP": 3871,
+       "CGP": 267,
+       "MHP": 1055,
+       "MSP": 490,
+       "SDP": 104,
+       "TBP73": 181,
+       "TİP": 91,
+       "TSİP": 92
+      },
+      "Bağımsız": 60,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Alanya"
+      }
+     },
+     {
+      "ilce": "Elmalı",
+      "geomId": "TR-D-07-006",
+      "sandik": null,
+      "secmen": 19970,
+      "oyKullanan": 15879,
+      "muteber": 15504,
+      "oy": {
+       "AP": 9762,
+       "CHP": 4259,
+       "CGP": 148,
+       "MHP": 523,
+       "MSP": 296,
+       "SDP": 66,
+       "TBP73": 83,
+       "TİP": 54,
+       "TSİP": 52
+      },
+      "Bağımsız": 261,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Elmalı"
+      }
+     },
+     {
+      "ilce": "Finike",
+      "geomId": "TR-D-07-007",
+      "sandik": null,
+      "secmen": 11735,
+      "oyKullanan": 9549,
+      "muteber": 9318,
+      "oy": {
+       "AP": 5914,
+       "CHP": 2383,
+       "CGP": 82,
+       "MHP": 303,
+       "MSP": 226,
+       "SDP": 70,
+       "TBP73": 60,
+       "TİP": 92,
+       "TSİP": 49
+      },
+      "Bağımsız": 139,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Finike"
+      }
+     },
+     {
+      "ilce": "Gazipaşa",
+      "geomId": "TR-D-07-008",
+      "sandik": null,
+      "secmen": 12179,
+      "oyKullanan": 9844,
+      "muteber": 9461,
+      "oy": {
+       "AP": 4658,
+       "CHP": 3473,
+       "CGP": 156,
+       "MHP": 477,
+       "MSP": 278,
+       "SDP": 82,
+       "TBP73": 99,
+       "TİP": 66,
+       "TSİP": 84
+      },
+      "Bağımsız": 88,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Gazipaşa"
+      }
+     },
+     {
+      "ilce": "Gündoğmuş",
+      "geomId": "TR-D-07-009",
+      "sandik": null,
+      "secmen": 8253,
+      "oyKullanan": 6738,
+      "muteber": 6423,
+      "oy": {
+       "AP": 4167,
+       "CHP": 1281,
+       "CGP": 159,
+       "MHP": 403,
+       "MSP": 159,
+       "SDP": 57,
+       "TBP73": 94,
+       "TİP": 46,
+       "TSİP": 30
+      },
+      "Bağımsız": 37,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Gündoğmuş",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=6433 != muteber=6423"
+      }
+     },
+     {
+      "ilce": "Kaş",
+      "geomId": "TR-D-07-011",
+      "sandik": null,
+      "secmen": 21545,
+      "oyKullanan": 17652,
+      "muteber": 16955,
+      "oy": {
+       "AP": 13213,
+       "CHP": 2340,
+       "CGP": 226,
+       "MHP": 352,
+       "MSP": 326,
+       "SDP": 99,
+       "TBP73": 106,
+       "TİP": 72,
+       "TSİP": 56
+      },
+      "Bağımsız": 165,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Kaş"
+      }
+     },
+     {
+      "ilce": "Korkuteli",
+      "geomId": "TR-D-07-015",
+      "sandik": null,
+      "secmen": 22389,
+      "oyKullanan": 16917,
+      "muteber": 16440,
+      "oy": {
+       "AP": 9765,
+       "CHP": 4290,
+       "CGP": 290,
+       "MHP": 699,
+       "MSP": 728,
+       "SDP": 111,
+       "TBP73": 104,
+       "TİP": 80,
+       "TSİP": 95
+      },
+      "Bağımsız": 277,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Korkuteli",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=16439 != muteber=16440"
+      }
+     },
+     {
+      "ilce": "Kumluca",
+      "geomId": "TR-D-07-016",
+      "sandik": null,
+      "secmen": 13263,
+      "oyKullanan": 11271,
+      "muteber": 11005,
+      "oy": {
+       "AP": 7465,
+       "CHP": 2558,
+       "CGP": 111,
+       "MHP": 206,
+       "MSP": 363,
+       "SDP": 98,
+       "TBP73": 68,
+       "TİP": 31,
+       "TSİP": 46
+      },
+      "Bağımsız": 59,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Kumluca"
+      }
+     },
+     {
+      "ilce": "Manavgat",
+      "geomId": "TR-D-07-017",
+      "sandik": null,
+      "secmen": 28438,
+      "oyKullanan": 22457,
+      "muteber": 21806,
+      "oy": {
+       "AP": 12975,
+       "CHP": 5977,
+       "CGP": 291,
+       "MHP": 1073,
+       "MSP": 639,
+       "SDP": 133,
+       "TBP73": 147,
+       "TİP": 134,
+       "TSİP": 148
+      },
+      "Bağımsız": 289,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Manavgat"
+      }
+     },
+     {
+      "ilce": "Serik",
+      "geomId": "TR-D-07-019",
+      "sandik": null,
+      "secmen": 26635,
+      "oyKullanan": 23570,
+      "muteber": 23046,
+      "oy": {
+       "AP": 17797,
+       "CHP": 3096,
+       "CGP": 230,
+       "MHP": 954,
+       "MSP": 365,
+       "SDP": 74,
+       "TBP73": 100,
+       "TİP": 77,
+       "TSİP": 81
+      },
+      "Bağımsız": 272,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Serik"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Artvin",
+    "plaka": 8,
+    "sandik": null,
+    "secmen": 95459,
+    "oyKullanan": 61874,
+    "muteber": 60229,
+    "oy": {
+     "AP": 31496,
+     "CHP": 24202,
+     "CGP": 0,
+     "MHP": 713,
+     "MSP": 2268,
+     "SDP": 477,
+     "TBP73": 435,
+     "TİP": 314,
+     "TSİP": 324
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 20,
+     "adKaynakta": "Artvin il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-08-003",
+      "sandik": null,
+      "secmen": 12772,
+      "oyKullanan": 8726,
+      "muteber": 8476,
+      "oy": {
+       "AP": 3970,
+       "CHP": 4017,
+       "CGP": 0,
+       "MHP": 41,
+       "MSP": 261,
+       "SDP": 62,
+       "TBP73": 49,
+       "TİP": 45,
+       "TSİP": 31
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Ardanuç",
+      "geomId": "TR-D-08-001",
+      "sandik": null,
+      "secmen": 9850,
+      "oyKullanan": 4956,
+      "muteber": 4794,
+      "oy": {
+       "AP": 937,
+       "CHP": 3501,
+       "CGP": 0,
+       "MHP": 29,
+       "MSP": 167,
+       "SDP": 63,
+       "TBP73": 25,
+       "TİP": 43,
+       "TSİP": 29
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Ardanuç"
+      }
+     },
+     {
+      "ilce": "Arhavi",
+      "geomId": "TR-D-08-002",
+      "sandik": null,
+      "secmen": 8461,
+      "oyKullanan": 6534,
+      "muteber": 6370,
+      "oy": {
+       "AP": 3914,
+       "CHP": 2050,
+       "CGP": 0,
+       "MHP": 59,
+       "MSP": 218,
+       "SDP": 52,
+       "TBP73": 30,
+       "TİP": 26,
+       "TSİP": 21
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Arhavi"
+      }
+     },
+     {
+      "ilce": "Borçka",
+      "geomId": "TR-D-08-004",
+      "sandik": null,
+      "secmen": 17562,
+      "oyKullanan": 13531,
+      "muteber": 13296,
+      "oy": {
+       "AP": 8032,
+       "CHP": 4563,
+       "CGP": 0,
+       "MHP": 115,
+       "MSP": 327,
+       "SDP": 74,
+       "TBP73": 86,
+       "TİP": 46,
+       "TSİP": 53
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Borçka"
+      }
+     },
+     {
+      "ilce": "Hopa",
+      "geomId": "HIST-Artvin-Hopa",
+      "sandik": null,
+      "secmen": 10913,
+      "oyKullanan": 7924,
+      "muteber": 7771,
+      "oy": {
+       "AP": 2977,
+       "CHP": 4301,
+       "CGP": 0,
+       "MHP": 118,
+       "MSP": 184,
+       "SDP": 63,
+       "TBP73": 43,
+       "TİP": 36,
+       "TSİP": 49
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Hopa"
+      }
+     },
+     {
+      "ilce": "Şavşat",
+      "geomId": "TR-D-08-008",
+      "sandik": null,
+      "secmen": 17897,
+      "oyKullanan": 7930,
+      "muteber": 7628,
+      "oy": {
+       "AP": 3893,
+       "CHP": 2852,
+       "CGP": 0,
+       "MHP": 110,
+       "MSP": 476,
+       "SDP": 72,
+       "TBP73": 79,
+       "TİP": 61,
+       "TSİP": 85
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Şavşat"
+      }
+     },
+     {
+      "ilce": "Yusufeli",
+      "geomId": "TR-D-08-009",
+      "sandik": null,
+      "secmen": 18006,
+      "oyKullanan": 12273,
+      "muteber": 11894,
+      "oy": {
+       "AP": 7773,
+       "CHP": 2918,
+       "CGP": 0,
+       "MHP": 241,
+       "MSP": 635,
+       "SDP": 91,
+       "TBP73": 123,
+       "TİP": 57,
+       "TSİP": 56
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 20,
+       "adKaynakta": "Yusufeli"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Balıkesir",
+    "plaka": 10,
+    "sandik": null,
+    "secmen": 430243,
+    "oyKullanan": 327024,
+    "muteber": 319212,
+    "oy": {
+     "AP": 188080,
+     "CHP": 84912,
+     "CGP": 6690,
+     "MHP": 13244,
+     "MSP": 18394,
+     "SDP": 2399,
+     "TBP73": 1577,
+     "TİP": 1943,
+     "TSİP": 1973
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "TİP"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 22,
+     "adKaynakta": "Balıkesir il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "HIST-Balıkesir-Merkez",
+      "sandik": null,
+      "secmen": 95695,
+      "oyKullanan": 72562,
+      "muteber": 71085,
+      "oy": {
+       "AP": 44857,
+       "CHP": 16229,
+       "CGP": 1371,
+       "MHP": 3118,
+       "MSP": 4074,
+       "SDP": 458,
+       "TBP73": 315,
+       "TİP": 315,
+       "TSİP": 348
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Ayvalık",
+      "geomId": "TR-D-10-002",
+      "sandik": null,
+      "secmen": 18782,
+      "oyKullanan": 13587,
+      "muteber": 13365,
+      "oy": {
+       "AP": 6846,
+       "CHP": 5024,
+       "CGP": 171,
+       "MHP": 779,
+       "MSP": 260,
+       "SDP": 109,
+       "TBP73": 31,
+       "TİP": 63,
+       "TSİP": 82
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Ayvalık"
+      }
+     },
+     {
+      "ilce": "Balya",
+      "geomId": "TR-D-10-003",
+      "sandik": null,
+      "secmen": 13894,
+      "oyKullanan": 11051,
+      "muteber": 10751,
+      "oy": {
+       "AP": 6130,
+       "CHP": 2859,
+       "CGP": 304,
+       "MHP": 436,
+       "MSP": 580,
+       "SDP": 114,
+       "TBP73": 102,
+       "TİP": 179,
+       "TSİP": 47
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Balya"
+      }
+     },
+     {
+      "ilce": "Bandırma",
+      "geomId": "TR-D-10-004",
+      "sandik": null,
+      "secmen": 42949,
+      "oyKullanan": 29629,
+      "muteber": 29289,
+      "oy": {
+       "AP": 18039,
+       "CHP": 8056,
+       "CGP": 659,
+       "MHP": 785,
+       "MSP": 938,
+       "SDP": 247,
+       "TBP73": 79,
+       "TİP": 194,
+       "TSİP": 292
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Bandırma"
+      }
+     },
+     {
+      "ilce": "Bigadiç",
+      "geomId": "TR-D-10-005",
+      "sandik": null,
+      "secmen": 23591,
+      "oyKullanan": 18405,
+      "muteber": 17893,
+      "oy": {
+       "AP": 10094,
+       "CHP": 4965,
+       "CGP": 427,
+       "MHP": 662,
+       "MSP": 1237,
+       "SDP": 175,
+       "TBP73": 120,
+       "TİP": 119,
+       "TSİP": 94
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Bigadiç"
+      }
+     },
+     {
+      "ilce": "Burhaniye",
+      "geomId": "TR-D-10-006",
+      "sandik": null,
+      "secmen": 19357,
+      "oyKullanan": 13687,
+      "muteber": 13399,
+      "oy": {
+       "AP": 5998,
+       "CHP": 5779,
+       "CGP": 182,
+       "MHP": 388,
+       "MSP": 687,
+       "SDP": 102,
+       "TBP73": 36,
+       "TİP": 47,
+       "TSİP": 180
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Burhaniye •"
+      }
+     },
+     {
+      "ilce": "Dursunbey",
+      "geomId": "TR-D-10-007",
+      "sandik": null,
+      "secmen": 23165,
+      "oyKullanan": 19070,
+      "muteber": 18210,
+      "oy": {
+       "AP": 10820,
+       "CHP": 2474,
+       "CGP": 451,
+       "MHP": 986,
+       "MSP": 3066,
+       "SDP": 102,
+       "TBP73": 124,
+       "TİP": 105,
+       "TSİP": 82
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Dursunbey"
+      }
+     },
+     {
+      "ilce": "Edremit",
+      "geomId": "TR-D-10-008",
+      "sandik": null,
+      "secmen": 23452,
+      "oyKullanan": 16977,
+      "muteber": 16594,
+      "oy": {
+       "AP": 9269,
+       "CHP": 5749,
+       "CGP": 274,
+       "MHP": 375,
+       "MSP": 533,
+       "SDP": 123,
+       "TBP73": 48,
+       "TİP": 117,
+       "TSİP": 106
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Edremit"
+      }
+     },
+     {
+      "ilce": "Erdek",
+      "geomId": "TR-D-10-009",
+      "sandik": null,
+      "secmen": 14121,
+      "oyKullanan": 10211,
+      "muteber": 10048,
+      "oy": {
+       "AP": 5744,
+       "CHP": 3478,
+       "CGP": 242,
+       "MHP": 89,
+       "MSP": 301,
+       "SDP": 83,
+       "TBP73": 20,
+       "TİP": 31,
+       "TSİP": 60
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Erdek"
+      }
+     },
+     {
+      "ilce": "Gönen",
+      "geomId": "TR-D-10-011",
+      "sandik": null,
+      "secmen": 33213,
+      "oyKullanan": 25172,
+      "muteber": 24607,
+      "oy": {
+       "AP": 14015,
+       "CHP": 6204,
+       "CGP": 650,
+       "MHP": 1428,
+       "MSP": 1686,
+       "SDP": 144,
+       "TBP73": 100,
+       "TİP": 159,
+       "TSİP": 221
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Gönen"
+      }
+     },
+     {
+      "ilce": "Havran",
+      "geomId": "TR-D-10-012",
+      "sandik": null,
+      "secmen": 13622,
+      "oyKullanan": 11112,
+      "muteber": 10880,
+      "oy": {
+       "AP": 6489,
+       "CHP": 3231,
+       "CGP": 189,
+       "MHP": 196,
+       "MSP": 552,
+       "SDP": 67,
+       "TBP73": 62,
+       "TİP": 55,
+       "TSİP": 39
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Havran"
+      }
+     },
+     {
+      "ilce": "İvrindi",
+      "geomId": "TR-D-10-013",
+      "sandik": null,
+      "secmen": 19776,
+      "oyKullanan": 14848,
+      "muteber": 14383,
+      "oy": {
+       "AP": 8275,
+       "CHP": 3237,
+       "CGP": 313,
+       "MHP": 1224,
+       "MSP": 892,
+       "SDP": 135,
+       "TBP73": 132,
+       "TİP": 105,
+       "TSİP": 70
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "İvrindi"
+      }
+     },
+     {
+      "ilce": "Kepsut",
+      "geomId": "TR-D-10-015",
+      "sandik": null,
+      "secmen": 16396,
+      "oyKullanan": 13198,
+      "muteber": 12694,
+      "oy": {
+       "AP": 8713,
+       "CHP": 2262,
+       "CGP": 280,
+       "MHP": 317,
+       "MSP": 824,
+       "SDP": 75,
+       "TBP73": 96,
+       "TİP": 78,
+       "TSİP": 49
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Kepsut"
+      }
+     },
+     {
+      "ilce": "Manyas",
+      "geomId": "TR-D-10-016",
+      "sandik": null,
+      "secmen": 16506,
+      "oyKullanan": 12193,
+      "muteber": 11902,
+      "oy": {
+       "AP": 6896,
+       "CHP": 3162,
+       "CGP": 280,
+       "MHP": 574,
+       "MSP": 663,
+       "SDP": 82,
+       "TBP73": 66,
+       "TİP": 58,
+       "TSİP": 121
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Manyas"
+      }
+     },
+     {
+      "ilce": "Savaştepe",
+      "geomId": "TR-D-10-018",
+      "sandik": null,
+      "secmen": 10845,
+      "oyKullanan": 9026,
+      "muteber": 8790,
+      "oy": {
+       "AP": 5413,
+       "CHP": 1811,
+       "CGP": 189,
+       "MHP": 838,
+       "MSP": 337,
+       "SDP": 59,
+       "TBP73": 58,
+       "TİP": 62,
+       "TSİP": 23
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Savaştepe"
+      }
+     },
+     {
+      "ilce": "Sındırgı",
+      "geomId": "TR-D-10-019",
+      "sandik": null,
+      "secmen": 22248,
+      "oyKullanan": 18554,
+      "muteber": 17929,
+      "oy": {
+       "AP": 9220,
+       "CHP": 6181,
+       "CGP": 318,
+       "MHP": 698,
+       "MSP": 1156,
+       "SDP": 118,
+       "TBP73": 107,
+       "TİP": 74,
+       "TSİP": 57
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Sındırgı"
+      }
+     },
+     {
+      "ilce": "Susurluk",
+      "geomId": "TR-D-10-020",
+      "sandik": null,
+      "secmen": 22631,
+      "oyKullanan": 17742,
+      "muteber": 17393,
+      "oy": {
+       "AP": 11262,
+       "CHP": 4211,
+       "CGP": 390,
+       "MHP": 351,
+       "MSP": 608,
+       "SDP": 206,
+       "TBP73": 81,
+       "TİP": null,
+       "TSİP": 102
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Susurluk",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=17211 != muteber=17393"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Bitlis",
+    "plaka": 13,
+    "sandik": null,
+    "secmen": 63730,
+    "oyKullanan": 48818,
+    "muteber": 47481,
+    "oy": {
+     "AP": 17482,
+     "CHP": 8830,
+     "CGP": 11449,
+     "MHP": 559,
+     "MSP": 8287,
+     "SDP": 171,
+     "TBP73": 0,
+     "TİP": 152,
+     "TSİP": 551
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "MHP"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 22,
+     "adKaynakta": "Bitlis il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-13-003",
+      "sandik": null,
+      "secmen": 19487,
+      "oyKullanan": 14133,
+      "muteber": 13690,
+      "oy": {
+       "AP": 3366,
+       "CHP": 2862,
+       "CGP": 3729,
+       "MHP": 80,
+       "MSP": 3217,
+       "SDP": 58,
+       "TBP73": 0,
+       "TİP": 50,
+       "TSİP": 328
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Adilcevaz",
+      "geomId": "TR-D-13-001",
+      "sandik": null,
+      "secmen": 5302,
+      "oyKullanan": 4143,
+      "muteber": 4026,
+      "oy": {
+       "AP": 1797,
+       "CHP": 1034,
+       "CGP": 675,
+       "MHP": null,
+       "MSP": 343,
+       "SDP": 15,
+       "TBP73": 0,
+       "TİP": 14,
+       "TSİP": 12
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Adilcevaz",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=3890 != muteber=4026"
+      }
+     },
+     {
+      "ilce": "Ahlat",
+      "geomId": "TR-D-13-002",
+      "sandik": null,
+      "secmen": 6085,
+      "oyKullanan": 5145,
+      "muteber": 5053,
+      "oy": {
+       "AP": 1393,
+       "CHP": 1307,
+       "CGP": 1297,
+       "MHP": 215,
+       "MSP": 808,
+       "SDP": 18,
+       "TBP73": 0,
+       "TİP": 7,
+       "TSİP": 8
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Ahlat"
+      }
+     },
+     {
+      "ilce": "Hizan",
+      "geomId": "TR-D-13-005",
+      "sandik": null,
+      "secmen": 9017,
+      "oyKullanan": 7302,
+      "muteber": 7115,
+      "oy": {
+       "AP": 5527,
+       "CHP": 786,
+       "CGP": 79,
+       "MHP": 39,
+       "MSP": 624,
+       "SDP": 15,
+       "TBP73": 0,
+       "TİP": 28,
+       "TSİP": 17
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Hizan"
+      }
+     },
+     {
+      "ilce": "Mutki",
+      "geomId": "TR-D-13-006",
+      "sandik": null,
+      "secmen": 8789,
+      "oyKullanan": 6893,
+      "muteber": 6721,
+      "oy": {
+       "AP": 1009,
+       "CHP": 1277,
+       "CGP": 3517,
+       "MHP": 21,
+       "MSP": 835,
+       "SDP": 26,
+       "TBP73": 0,
+       "TİP": 13,
+       "TSİP": 23
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Mutki"
+      }
+     },
+     {
+      "ilce": "Tatvan",
+      "geomId": "TR-D-13-007",
+      "sandik": null,
+      "secmen": 15050,
+      "oyKullanan": 11202,
+      "muteber": 10876,
+      "oy": {
+       "AP": 4390,
+       "CHP": 1564,
+       "CGP": 2152,
+       "MHP": 68,
+       "MSP": 2460,
+       "SDP": 39,
+       "TBP73": 0,
+       "TİP": 40,
+       "TSİP": 163
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Tatvan"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Burdur",
+    "plaka": 15,
+    "sandik": null,
+    "secmen": 108653,
+    "oyKullanan": 81253,
+    "muteber": 78528,
+    "oy": {
+     "AP": 40345,
+     "CHP": 22599,
+     "CGP": 1395,
+     "MHP": 8994,
+     "MSP": 3234,
+     "SDP": 505,
+     "TBP73": 497,
+     "TİP": 392,
+     "TSİP": 567
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "AP",
+     "CGP",
+     "CHP",
+     "MHP",
+     "MSP",
+     "SDP",
+     "TBP73",
+     "TSİP",
+     "TİP",
+     "muteber",
+     "oyKullanan",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 22,
+     "adKaynakta": "Burdur il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Ağlasun",
+      "geomId": "TR-D-15-001",
+      "sandik": null,
+      "secmen": 5236,
+      "oyKullanan": 4300,
+      "muteber": 4114,
+      "oy": {
+       "AP": 2703,
+       "CHP": 737,
+       "CGP": 102,
+       "MHP": 286,
+       "MSP": 169,
+       "SDP": 30,
+       "TBP73": 30,
+       "TİP": 26,
+       "TSİP": 31
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Ağlasun"
+      }
+     },
+     {
+      "ilce": "Bucak",
+      "geomId": "TR-D-15-003",
+      "sandik": null,
+      "secmen": 19973,
+      "oyKullanan": 15797,
+      "muteber": 15307,
+      "oy": {
+       "AP": 9196,
+       "CHP": 2644,
+       "CGP": 272,
+       "MHP": 2274,
+       "MSP": 606,
+       "SDP": 81,
+       "TBP73": 105,
+       "TİP": 59,
+       "TSİP": 70
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Bucak"
+      }
+     },
+     {
+      "ilce": "Gölhisar",
+      "geomId": "TR-D-15-007",
+      "sandik": null,
+      "secmen": 17682,
+      "oyKullanan": 12858,
+      "muteber": 12373,
+      "oy": {
+       "AP": 7100,
+       "CHP": 2532,
+       "CGP": 220,
+       "MHP": 1546,
+       "MSP": 613,
+       "SDP": 98,
+       "TBP73": 91,
+       "TİP": 84,
+       "TSİP": 89
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Gölhisar"
+      }
+     },
+     {
+      "ilce": "Tefenni",
+      "geomId": "TR-D-15-010",
+      "sandik": null,
+      "secmen": 10806,
+      "oyKullanan": 8163,
+      "muteber": 7802,
+      "oy": {
+       "AP": 3656,
+       "CHP": 2240,
+       "CGP": 210,
+       "MHP": 1334,
+       "MSP": 137,
+       "SDP": 75,
+       "TBP73": 51,
+       "TİP": 38,
+       "TSİP": 61
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Tefenni"
+      }
+     },
+     {
+      "ilce": "Yeşilova",
+      "geomId": "TR-D-15-011",
+      "sandik": null,
+      "secmen": 13425,
+      "oyKullanan": 9895,
+      "muteber": 9552,
+      "oy": {
+       "AP": 3943,
+       "CHP": 3617,
+       "CGP": 162,
+       "MHP": 957,
+       "MSP": 485,
+       "SDP": 87,
+       "TBP73": 72,
+       "TİP": 53,
+       "TSİP": 176
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Yeşilova"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Çanakkale",
+    "plaka": 17,
+    "sandik": null,
+    "secmen": 205032,
+    "oyKullanan": 159892,
+    "muteber": 157030,
+    "oy": {
+     "AP": 93187,
+     "CHP": 47119,
+     "CGP": 2644,
+     "MHP": 3535,
+     "MSP": 6815,
+     "SDP": 1154,
+     "TBP73": 738,
+     "TİP": 843,
+     "TSİP": 995
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 22,
+     "adKaynakta": "Çanakkale il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-17-006",
+      "sandik": null,
+      "secmen": 30020,
+      "oyKullanan": 23321,
+      "muteber": 23004,
+      "oy": {
+       "AP": 13969,
+       "CHP": 7314,
+       "CGP": 281,
+       "MHP": 287,
+       "MSP": 546,
+       "SDP": 154,
+       "TBP73": 112,
+       "TİP": 156,
+       "TSİP": 185
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Ayvacık",
+      "geomId": "TR-D-17-001",
+      "sandik": null,
+      "secmen": 15813,
+      "oyKullanan": 12559,
+      "muteber": 12370,
+      "oy": {
+       "AP": 6503,
+       "CHP": 4733,
+       "CGP": 178,
+       "MHP": 264,
+       "MSP": 356,
+       "SDP": 89,
+       "TBP73": 66,
+       "TİP": 44,
+       "TSİP": 137
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Ayvacık"
+      }
+     },
+     {
+      "ilce": "Bayramiç",
+      "geomId": "TR-D-17-002",
+      "sandik": null,
+      "secmen": 17960,
+      "oyKullanan": 14087,
+      "muteber": 13787,
+      "oy": {
+       "AP": 7307,
+       "CHP": 5129,
+       "CGP": 245,
+       "MHP": 159,
+       "MSP": 497,
+       "SDP": 103,
+       "TBP73": 86,
+       "TİP": 107,
+       "TSİP": 154
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Bayramiç"
+      }
+     },
+     {
+      "ilce": "Biga",
+      "geomId": "TR-D-17-003",
+      "sandik": null,
+      "secmen": 40518,
+      "oyKullanan": 30807,
+      "muteber": 30327,
+      "oy": {
+       "AP": 18095,
+       "CHP": 7857,
+       "CGP": 562,
+       "MHP": 669,
+       "MSP": 2526,
+       "SDP": 222,
+       "TBP73": 123,
+       "TİP": 153,
+       "TSİP": 120
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Biga"
+      }
+     },
+     {
+      "ilce": "Bozcaada",
+      "geomId": "TR-D-17-004",
+      "sandik": null,
+      "secmen": 935,
+      "oyKullanan": 668,
+      "muteber": 656,
+      "oy": {
+       "AP": 309,
+       "CHP": 288,
+       "CGP": 11,
+       "MHP": 25,
+       "MSP": 9,
+       "SDP": 3,
+       "TBP73": 2,
+       "TİP": 7,
+       "TSİP": 2
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Bozcaada"
+      }
+     },
+     {
+      "ilce": "Çan",
+      "geomId": "TR-D-17-005",
+      "sandik": null,
+      "secmen": 22890,
+      "oyKullanan": 18276,
+      "muteber": 17998,
+      "oy": {
+       "AP": 11496,
+       "CHP": 4363,
+       "CGP": 360,
+       "MHP": 620,
+       "MSP": 818,
+       "SDP": 124,
+       "TBP73": 78,
+       "TİP": 63,
+       "TSİP": 76
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Çan"
+      }
+     },
+     {
+      "ilce": "Eceabat",
+      "geomId": "TR-D-17-007",
+      "sandik": null,
+      "secmen": 5261,
+      "oyKullanan": 4040,
+      "muteber": 3969,
+      "oy": {
+       "AP": 1944,
+       "CHP": 1723,
+       "CGP": 70,
+       "MHP": 17,
+       "MSP": 102,
+       "SDP": 45,
+       "TBP73": 18,
+       "TİP": 30,
+       "TSİP": 20
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Eceabat"
+      }
+     },
+     {
+      "ilce": "Ezine",
+      "geomId": "TR-D-17-008",
+      "sandik": null,
+      "secmen": 16597,
+      "oyKullanan": 13111,
+      "muteber": 12870,
+      "oy": {
+       "AP": 8052,
+       "CHP": 3671,
+       "CGP": 189,
+       "MHP": 248,
+       "MSP": 387,
+       "SDP": 109,
+       "TBP73": 50,
+       "TİP": 84,
+       "TSİP": 80
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Ezine"
+      }
+     },
+     {
+      "ilce": "Gelibolu",
+      "geomId": "TR-D-17-009",
+      "sandik": null,
+      "secmen": 17549,
+      "oyKullanan": 13186,
+      "muteber": 12919,
+      "oy": {
+       "AP": 6346,
+       "CHP": 5592,
+       "CGP": 205,
+       "MHP": 135,
+       "MSP": 340,
+       "SDP": 115,
+       "TBP73": 52,
+       "TİP": 62,
+       "TSİP": 72
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Gelibolu"
+      }
+     },
+     {
+      "ilce": "İmroz",
+      "geomId": "TR-D-17-010",
+      "sandik": null,
+      "secmen": 2264,
+      "oyKullanan": 1582,
+      "muteber": 1512,
+      "oy": {
+       "AP": 825,
+       "CHP": 427,
+       "CGP": 46,
+       "MHP": 116,
+       "MSP": 27,
+       "SDP": 28,
+       "TBP73": 8,
+       "TİP": 18,
+       "TSİP": 17
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "İmroz (Gökçeada)"
+      }
+     },
+     {
+      "ilce": "Lapseki",
+      "geomId": "TR-D-17-011",
+      "sandik": null,
+      "secmen": 13125,
+      "oyKullanan": 10498,
+      "muteber": 10214,
+      "oy": {
+       "AP": 6558,
+       "CHP": 2665,
+       "CGP": 140,
+       "MHP": 211,
+       "MSP": 462,
+       "SDP": 62,
+       "TBP73": 38,
+       "TİP": 35,
+       "TSİP": 43
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Lapseki"
+      }
+     },
+     {
+      "ilce": "Yenice",
+      "geomId": "TR-D-17-012",
+      "sandik": null,
+      "secmen": 22100,
+      "oyKullanan": 17757,
+      "muteber": 17404,
+      "oy": {
+       "AP": 11783,
+       "CHP": 3357,
+       "CGP": 357,
+       "MHP": 784,
+       "MSP": 745,
+       "SDP": 100,
+       "TBP73": 105,
+       "TİP": 84,
+       "TSİP": 89
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 22,
+       "adKaynakta": "Yenice"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Erzincan",
+    "plaka": 24,
+    "sandik": null,
+    "secmen": 100995,
+    "oyKullanan": 84112,
+    "muteber": 82440,
+    "oy": {
+     "AP": 34324,
+     "CHP": 28629,
+     "CGP": 781,
+     "MHP": 13794,
+     "MSP": 3069,
+     "SDP": 633,
+     "TBP73": 464,
+     "TİP": 399,
+     "TSİP": 347
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "MSP",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 24,
+     "adKaynakta": "Erzincan il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-24-002",
+      "sandik": null,
+      "secmen": 49874,
+      "oyKullanan": 41813,
+      "muteber": 40986,
+      "oy": {
+       "AP": 17716,
+       "CHP": 13557,
+       "CGP": 265,
+       "MHP": 7613,
+       "MSP": 1,
+       "SDP": 242,
+       "TBP73": 178,
+       "TİP": 185,
+       "TSİP": 194
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Merkez",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=39951 != muteber=40986"
+      }
+     },
+     {
+      "ilce": "Çayırlı",
+      "geomId": "TR-D-24-001",
+      "sandik": null,
+      "secmen": 9920,
+      "oyKullanan": 8346,
+      "muteber": 8213,
+      "oy": {
+       "AP": 2801,
+       "CHP": 3597,
+       "CGP": 68,
+       "MHP": 1344,
+       "MSP": 210,
+       "SDP": 80,
+       "TBP73": 49,
+       "TİP": 33,
+       "TSİP": 31
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Çayırlı"
+      }
+     },
+     {
+      "ilce": "İliç",
+      "geomId": "TR-D-24-003",
+      "sandik": null,
+      "secmen": 5458,
+      "oyKullanan": 4587,
+      "muteber": 4467,
+      "oy": {
+       "AP": 1717,
+       "CHP": 1275,
+       "CGP": 51,
+       "MHP": 1170,
+       "MSP": 125,
+       "SDP": 37,
+       "TBP73": 45,
+       "TİP": 28,
+       "TSİP": 19
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "İliç"
+      }
+     },
+     {
+      "ilce": "Kemah",
+      "geomId": "TR-D-24-004",
+      "sandik": null,
+      "secmen": 7866,
+      "oyKullanan": 6359,
+      "muteber": 6222,
+      "oy": {
+       "AP": 2142,
+       "CHP": 2171,
+       "CGP": 71,
+       "MHP": 882,
+       "MSP": 791,
+       "SDP": 45,
+       "TBP73": 60,
+       "TİP": 37,
+       "TSİP": 23
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Kemah"
+      }
+     },
+     {
+      "ilce": "Kemaliye",
+      "geomId": "TR-D-24-005",
+      "sandik": null,
+      "secmen": 5462,
+      "oyKullanan": 4152,
+      "muteber": 4046,
+      "oy": {
+       "AP": 1425,
+       "CHP": 1250,
+       "CGP": 126,
+       "MHP": 579,
+       "MSP": 515,
+       "SDP": 45,
+       "TBP73": 43,
+       "TİP": 33,
+       "TSİP": 30
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Kemaliye"
+      }
+     },
+     {
+      "ilce": "Refahiye",
+      "geomId": "TR-D-24-007",
+      "sandik": null,
+      "secmen": 10583,
+      "oyKullanan": 9177,
+      "muteber": 9057,
+      "oy": {
+       "AP": 5179,
+       "CHP": 2376,
+       "CGP": 102,
+       "MHP": 1017,
+       "MSP": 264,
+       "SDP": 35,
+       "TBP73": 40,
+       "TİP": 24,
+       "TSİP": 20
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Refahiye"
+      }
+     },
+     {
+      "ilce": "Tercan",
+      "geomId": "TR-D-24-008",
+      "sandik": null,
+      "secmen": 11829,
+      "oyKullanan": 9678,
+      "muteber": 9449,
+      "oy": {
+       "AP": 3344,
+       "CHP": 4403,
+       "CGP": 98,
+       "MHP": 1189,
+       "MSP": 128,
+       "SDP": 149,
+       "TBP73": 49,
+       "TİP": 59,
+       "TSİP": 30
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Tercan"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Erzurum",
+    "plaka": 25,
+    "sandik": null,
+    "secmen": 277284,
+    "oyKullanan": 223864,
+    "muteber": 217922,
+    "oy": {
+     "AP": 109421,
+     "CHP": 30116,
+     "CGP": 2857,
+     "MHP": 34499,
+     "MSP": 38175,
+     "SDP": 999,
+     "TBP73": 0,
+     "TİP": 948,
+     "TSİP": 907
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "CGP",
+     "CHP",
+     "MSP",
+     "TSİP",
+     "TİP",
+     "muteber",
+     "oyKullanan"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 24,
+     "adKaynakta": "Erzurum il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "HIST-Erzurum-Merkez",
+      "sandik": null,
+      "secmen": 97890,
+      "oyKullanan": 75,
+      "muteber": 73994,
+      "oy": {
+       "AP": 42625,
+       "CHP": 7205,
+       "CGP": 782,
+       "MHP": 11841,
+       "MSP": 10920,
+       "SDP": 204,
+       "TBP73": null,
+       "TİP": 189,
+       "TSİP": 223
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Merkez",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=73989 != muteber=73994"
+      }
+     },
+     {
+      "ilce": "Aşkale",
+      "geomId": "TR-D-25-001",
+      "sandik": null,
+      "secmen": 16373,
+      "oyKullanan": 14046,
+      "muteber": 13,
+      "oy": {
+       "AP": 6600,
+       "CHP": 2559,
+       "CGP": 156,
+       "MHP": 3051,
+       "MSP": 1229,
+       "SDP": 112,
+       "TBP73": 0,
+       "TİP": 45,
+       "TSİP": 40
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Aşkale",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=13792 != muteber=13"
+      }
+     },
+     {
+      "ilce": "Çat",
+      "geomId": "TR-D-25-003",
+      "sandik": null,
+      "secmen": 8974,
+      "oyKullanan": 7538,
+      "muteber": 7402,
+      "oy": {
+       "AP": 3528,
+       "CHP": 1504,
+       "CGP": 104,
+       "MHP": 849,
+       "MSP": 1320,
+       "SDP": 24,
+       "TBP73": 0,
+       "TİP": 29,
+       "TSİP": 44
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Çat"
+      }
+     },
+     {
+      "ilce": "Hınıs",
+      "geomId": "TR-D-25-004",
+      "sandik": null,
+      "secmen": 15969,
+      "oyKullanan": 12190,
+      "muteber": 12012,
+      "oy": {
+       "AP": 5191,
+       "CHP": 3132,
+       "CGP": 78,
+       "MHP": 757,
+       "MSP": 2671,
+       "SDP": 69,
+       "TBP73": 0,
+       "TİP": 44,
+       "TSİP": 70
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Hınıs"
+      }
+     },
+     {
+      "ilce": "Horasan",
+      "geomId": "TR-D-25-005",
+      "sandik": null,
+      "secmen": 14675,
+      "oyKullanan": 12427,
+      "muteber": 11946,
+      "oy": {
+       "AP": 6534,
+       "CHP": 1286,
+       "CGP": 128,
+       "MHP": 2026,
+       "MSP": 1874,
+       "SDP": 29,
+       "TBP73": 0,
+       "TİP": 40,
+       "TSİP": null
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Horasan",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=11917 != muteber=11946"
+      }
+     },
+     {
+      "ilce": "İspir",
+      "geomId": "TR-D-25-006",
+      "sandik": null,
+      "secmen": 23619,
+      "oyKullanan": 18395,
+      "muteber": 17747,
+      "oy": {
+       "AP": 7950,
+       "CHP": 2574,
+       "CGP": 287,
+       "MHP": 2275,
+       "MSP": 4,
+       "SDP": 94,
+       "TBP73": 0,
+       "TİP": 142,
+       "TSİP": 73
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "İspir",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=13399 != muteber=17747"
+      }
+     },
+     {
+      "ilce": "Karayazı",
+      "geomId": "TR-D-25-008",
+      "sandik": null,
+      "secmen": 10496,
+      "oyKullanan": 8707,
+      "muteber": 8774,
+      "oy": {
+       "AP": 5003,
+       "CHP": 815,
+       "CGP": 32,
+       "MHP": 284,
+       "MSP": 2347,
+       "SDP": 20,
+       "TBP73": 0,
+       "TİP": 33,
+       "TSİP": 40
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Karayazı",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=8574 != muteber=8774"
+      }
+     },
+     {
+      "ilce": "Narman",
+      "geomId": "TR-D-25-010",
+      "sandik": null,
+      "secmen": 7505,
+      "oyKullanan": 5970,
+      "muteber": 5724,
+      "oy": {
+       "AP": 2171,
+       "CHP": 488,
+       "CGP": 139,
+       "MHP": 1411,
+       "MSP": 1399,
+       "SDP": 30,
+       "TBP73": 0,
+       "TİP": 39,
+       "TSİP": 47
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Narman"
+      }
+     },
+     {
+      "ilce": "Oltu",
+      "geomId": "TR-D-25-011",
+      "sandik": null,
+      "secmen": 14549,
+      "oyKullanan": 12017,
+      "muteber": 11660,
+      "oy": {
+       "AP": 4814,
+       "CHP": 1205,
+       "CGP": 188,
+       "MHP": 3376,
+       "MSP": 1863,
+       "SDP": 74,
+       "TBP73": 0,
+       "TİP": 72,
+       "TSİP": 68
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Oltu"
+      }
+     },
+     {
+      "ilce": "Olur",
+      "geomId": "TR-D-25-012",
+      "sandik": null,
+      "secmen": 7670,
+      "oyKullanan": 6347,
+      "muteber": 6062,
+      "oy": {
+       "AP": 2093,
+       "CHP": 700,
+       "CGP": 127,
+       "MHP": 1967,
+       "MSP": 1020,
+       "SDP": 66,
+       "TBP73": 0,
+       "TİP": 48,
+       "TSİP": 41
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Olur"
+      }
+     },
+     {
+      "ilce": "Pasinler",
+      "geomId": "TR-D-25-014",
+      "sandik": null,
+      "secmen": 17984,
+      "oyKullanan": 16046,
+      "muteber": 15563,
+      "oy": {
+       "AP": 9766,
+       "CHP": 1191,
+       "CGP": 219,
+       "MHP": 2665,
+       "MSP": 1566,
+       "SDP": 45,
+       "TBP73": 0,
+       "TİP": 60,
+       "TSİP": 51
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Pasinler"
+      }
+     },
+     {
+      "ilce": "Şenkaya",
+      "geomId": "TR-D-25-016",
+      "sandik": null,
+      "secmen": 14362,
+      "oyKullanan": 11469,
+      "muteber": 11139,
+      "oy": {
+       "AP": 3802,
+       "CHP": 5090,
+       "CGP": 247,
+       "MHP": 1266,
+       "MSP": 449,
+       "SDP": 126,
+       "TBP73": 0,
+       "TİP": 103,
+       "TSİP": 56
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Şenkaya"
+      }
+     },
+     {
+      "ilce": "Tekman",
+      "geomId": "TR-D-25-017",
+      "sandik": null,
+      "secmen": 9249,
+      "oyKullanan": 8119,
+      "muteber": 7996,
+      "oy": {
+       "AP": 2554,
+       "CHP": 1501,
+       "CGP": 14,
+       "MHP": 36,
+       "MSP": 3782,
+       "SDP": 36,
+       "TBP73": 0,
+       "TİP": 21,
+       "TSİP": 52
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Tekman"
+      }
+     },
+     {
+      "ilce": "Tortum",
+      "geomId": "TR-D-25-018",
+      "sandik": null,
+      "secmen": 17969,
+      "oyKullanan": 14671,
+      "muteber": 14309,
+      "oy": {
+       "AP": 6790,
+       "CHP": 865,
+       "CGP": 351,
+       "MHP": 2695,
+       "MSP": 3383,
+       "SDP": 70,
+       "TBP73": null,
+       "TİP": null,
+       "TSİP": 73
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Tortum",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=14227 != muteber=14309"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Hakkâri",
+    "plaka": 30,
+    "sandik": null,
+    "secmen": 41520,
+    "oyKullanan": 33201,
+    "muteber": 32276,
+    "oy": {
+     "AP": 13307,
+     "CHP": 10823,
+     "CGP": 222,
+     "MHP": 0,
+     "MSP": 5784,
+     "SDP": 148,
+     "TBP73": 0,
+     "TİP": 236,
+     "TSİP": 1756
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 24,
+     "adKaynakta": "Hakkâri il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-30-002",
+      "sandik": null,
+      "secmen": 11338,
+      "oyKullanan": 9256,
+      "muteber": 8930,
+      "oy": {
+       "AP": 4701,
+       "CHP": 1841,
+       "CGP": 66,
+       "MHP": 0,
+       "MSP": 1855,
+       "SDP": 40,
+       "TBP73": 0,
+       "TİP": 71,
+       "TSİP": 356
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Beytüşşebap",
+      "geomId": "TR-D-73-001",
+      "sandik": null,
+      "secmen": 4383,
+      "oyKullanan": 3703,
+      "muteber": 3651,
+      "oy": {
+       "AP": 1606,
+       "CHP": 1317,
+       "CGP": 6,
+       "MHP": 0,
+       "MSP": 409,
+       "SDP": 4,
+       "TBP73": 0,
+       "TİP": 18,
+       "TSİP": 291
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Beytüşşebap"
+      }
+     },
+     {
+      "ilce": "Çukurca",
+      "geomId": "TR-D-30-001",
+      "sandik": null,
+      "secmen": 3615,
+      "oyKullanan": 2715,
+      "muteber": 2619,
+      "oy": {
+       "AP": 1571,
+       "CHP": 672,
+       "CGP": 55,
+       "MHP": 0,
+       "MSP": 236,
+       "SDP": 23,
+       "TBP73": 0,
+       "TİP": 24,
+       "TSİP": 38
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Çukurca"
+      }
+     },
+     {
+      "ilce": "Şemdinli",
+      "geomId": "TR-D-30-003",
+      "sandik": null,
+      "secmen": 4042,
+      "oyKullanan": 2923,
+      "muteber": 2894,
+      "oy": {
+       "AP": 1139,
+       "CHP": 851,
+       "CGP": 11,
+       "MHP": 0,
+       "MSP": 783,
+       "SDP": 9,
+       "TBP73": 0,
+       "TİP": 8,
+       "TSİP": 93
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Şemdinli"
+      }
+     },
+     {
+      "ilce": "Uludere",
+      "geomId": "TR-D-73-007",
+      "sandik": null,
+      "secmen": 7076,
+      "oyKullanan": 5211,
+      "muteber": 5099,
+      "oy": {
+       "AP": 1591,
+       "CHP": 2216,
+       "CGP": 59,
+       "MHP": 0,
+       "MSP": 292,
+       "SDP": 38,
+       "TBP73": 0,
+       "TİP": 83,
+       "TSİP": 820
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Uludere"
+      }
+     },
+     {
+      "ilce": "Yüksekova",
+      "geomId": "TR-D-30-004",
+      "sandik": null,
+      "secmen": 11066,
+      "oyKullanan": 9393,
+      "muteber": 9083,
+      "oy": {
+       "AP": 2699,
+       "CHP": 3926,
+       "CGP": 25,
+       "MHP": 0,
+       "MSP": 2209,
+       "SDP": 34,
+       "TBP73": 0,
+       "TİP": 32,
+       "TSİP": 158
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Yüksekova"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Hatay",
+    "plaka": 31,
+    "sandik": null,
+    "secmen": 299805,
+    "oyKullanan": 221457,
+    "muteber": 216648,
+    "oy": {
+     "AP": 83822,
+     "CHP": 89914,
+     "CGP": 1564,
+     "MHP": 22097,
+     "MSP": 11638,
+     "SDP": 916,
+     "TBP73": 801,
+     "TİP": 1194,
+     "TSİP": 3310
+    },
+    "Bağımsız": 1392,
+    "dogrulanamayanAlanlar": [
+     "AP",
+     "muteber"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 24,
+     "adKaynakta": "Hatay il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-31-002",
+      "sandik": null,
+      "secmen": 76386,
+      "oyKullanan": 60047,
+      "muteber": 58757,
+      "oy": {
+       "AP": 19948,
+       "CHP": 30904,
+       "CGP": 306,
+       "MHP": 4463,
+       "MSP": 1639,
+       "SDP": 193,
+       "TBP73": 186,
+       "TİP": 495,
+       "TSİP": 405
+      },
+      "Bağımsız": 218,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Altınözü",
+      "geomId": "TR-D-31-001",
+      "sandik": null,
+      "secmen": 16380,
+      "oyKullanan": 11398,
+      "muteber": 11069,
+      "oy": {
+       "AP": 4643,
+       "CHP": 3678,
+       "CGP": 127,
+       "MHP": 780,
+       "MSP": 1293,
+       "SDP": 61,
+       "TBP73": 62,
+       "TİP": 72,
+       "TSİP": 116
+      },
+      "Bağımsız": 237,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Altınözü"
+      }
+     },
+     {
+      "ilce": "Dörtyol",
+      "geomId": "TR-D-31-006",
+      "sandik": null,
+      "secmen": 37498,
+      "oyKullanan": 28176,
+      "muteber": 27551,
+      "oy": {
+       "AP": 13479,
+       "CHP": 7197,
+       "CGP": 232,
+       "MHP": 3931,
+       "MSP": 2272,
+       "SDP": 120,
+       "TBP73": 96,
+       "TİP": 86,
+       "TSİP": 66
+      },
+      "Bağımsız": 72,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Dörtyol"
+      }
+     },
+     {
+      "ilce": "Hassa",
+      "geomId": "TR-D-31-008",
+      "sandik": null,
+      "secmen": 12358,
+      "oyKullanan": 10857,
+      "muteber": 10621,
+      "oy": {
+       "AP": 6168,
+       "CHP": 1166,
+       "CGP": 112,
+       "MHP": 1724,
+       "MSP": 1264,
+       "SDP": 33,
+       "TBP73": 56,
+       "TİP": 48,
+       "TSİP": 35
+      },
+      "Bağımsız": 15,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Hassa"
+      }
+     },
+     {
+      "ilce": "İskenderun",
+      "geomId": "TR-D-31-009",
+      "sandik": null,
+      "secmen": 77888,
+      "oyKullanan": 53938,
+      "muteber": 52902,
+      "oy": {
+       "AP": 19795,
+       "CHP": 23267,
+       "CGP": 411,
+       "MHP": 5301,
+       "MSP": 2866,
+       "SDP": 285,
+       "TBP73": 183,
+       "TİP": 197,
+       "TSİP": 377
+      },
+      "Bağımsız": 220,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "İskenderun"
+      }
+     },
+     {
+      "ilce": "Kırıkhan",
+      "geomId": "TR-D-31-010",
+      "sandik": null,
+      "secmen": 24813,
+      "oyKullanan": 18498,
+      "muteber": 18152,
+      "oy": {
+       "AP": 8,
+       "CHP": 4710,
+       "CGP": 174,
+       "MHP": 3080,
+       "MSP": 928,
+       "SDP": 67,
+       "TBP73": 62,
+       "TİP": 85,
+       "TSİP": 53
+      },
+      "Bağımsız": 51,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Kırıkhan",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=9218 != muteber=18152"
+      }
+     },
+     {
+      "ilce": "Reyhanlı",
+      "geomId": "TR-D-31-013",
+      "sandik": null,
+      "secmen": 18243,
+      "oyKullanan": 12163,
+      "muteber": 11849,
+      "oy": {
+       "AP": 3660,
+       "CHP": 5066,
+       "CGP": 68,
+       "MHP": 1491,
+       "MSP": 961,
+       "SDP": 63,
+       "TBP73": 34,
+       "TİP": 60,
+       "TSİP": 57
+      },
+      "Bağımsız": 389,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Reyhanlı"
+      }
+     },
+     {
+      "ilce": "Saman dağı",
+      "geomId": "TR-D-31-014",
+      "sandik": null,
+      "secmen": 26940,
+      "oyKullanan": 18306,
+      "muteber": 17847,
+      "oy": {
+       "AP": 2499,
+       "CHP": 12505,
+       "CGP": 55,
+       "MHP": 113,
+       "MSP": 80,
+       "SDP": 66,
+       "TBP73": 68,
+       "TİP": 102,
+       "TSİP": 2178
+      },
+      "Bağımsız": 182,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Saman dağı",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=17848 != muteber=17847",
+       "adDuzeltme": "OCR/dönem adı 'Saman dağı' → 'Samandağı'"
+      }
+     },
+     {
+      "ilce": "Yayladağı",
+      "geomId": "TR-D-31-015",
+      "sandik": null,
+      "secmen": 9299,
+      "oyKullanan": 8074,
+      "muteber": 7899,
+      "oy": {
+       "AP": 4688,
+       "CHP": 1421,
+       "CGP": 79,
+       "MHP": 1214,
+       "MSP": 335,
+       "SDP": 28,
+       "TBP73": 54,
+       "TİP": 49,
+       "TSİP": 23
+      },
+      "Bağımsız": 8,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 24,
+       "adKaynakta": "Yayladağı"
+      }
+     }
+    ]
+   },
+   {
+    "il": "İsparta",
+    "plaka": 32,
+    "sandik": null,
+    "secmen": 142394,
+    "oyKullanan": 102028,
+    "muteber": 99222,
+    "oy": {
+     "AP": 72085,
+     "CHP": 11963,
+     "CGP": 1383,
+     "MHP": 8147,
+     "MSP": 3587,
+     "SDP": 695,
+     "TBP73": 481,
+     "TİP": 388,
+     "TSİP": 493
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 26,
+     "adKaynakta": "İsparta il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-32-006",
+      "sandik": null,
+      "secmen": 45908,
+      "oyKullanan": 34018,
+      "muteber": 33514,
+      "oy": {
+       "AP": 26611,
+       "CHP": 3080,
+       "CGP": 303,
+       "MHP": 1827,
+       "MSP": 1216,
+       "SDP": 192,
+       "TBP73": 74,
+       "TİP": 96,
+       "TSİP": 115
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Atabey",
+      "geomId": "TR-D-32-002",
+      "sandik": null,
+      "secmen": 3351,
+      "oyKullanan": 2598,
+      "muteber": 2538,
+      "oy": {
+       "AP": 2138,
+       "CHP": 237,
+       "CGP": 15,
+       "MHP": 45,
+       "MSP": 79,
+       "SDP": 14,
+       "TBP73": 1,
+       "TİP": 8,
+       "TSİP": 1
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Atabey"
+      }
+     },
+     {
+      "ilce": "Eğridir",
+      "geomId": "TR-D-32-003",
+      "sandik": null,
+      "secmen": 18042,
+      "oyKullanan": 13496,
+      "muteber": 13062,
+      "oy": {
+       "AP": 9461,
+       "CHP": 1958,
+       "CGP": 175,
+       "MHP": 872,
+       "MSP": 330,
+       "SDP": 95,
+       "TBP73": 83,
+       "TİP": 46,
+       "TSİP": 42
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Eğridir"
+      }
+     },
+     {
+      "ilce": "Gelendost",
+      "geomId": "TR-D-32-004",
+      "sandik": null,
+      "secmen": 8487,
+      "oyKullanan": 5407,
+      "muteber": 5255,
+      "oy": {
+       "AP": 3604,
+       "CHP": 954,
+       "CGP": 113,
+       "MHP": 248,
+       "MSP": 179,
+       "SDP": 65,
+       "TBP73": 30,
+       "TİP": 13,
+       "TSİP": 49
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Gelendost"
+      }
+     },
+     {
+      "ilce": "Keçiborlu",
+      "geomId": "TR-D-32-007",
+      "sandik": null,
+      "secmen": 10912,
+      "oyKullanan": 8523,
+      "muteber": 8297,
+      "oy": {
+       "AP": 5591,
+       "CHP": 1701,
+       "CGP": 130,
+       "MHP": 352,
+       "MSP": 300,
+       "SDP": 92,
+       "TBP73": 37,
+       "TİP": 39,
+       "TSİP": 55
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Keçiborlu"
+      }
+     },
+     {
+      "ilce": "Senirkent",
+      "geomId": "TR-D-32-008",
+      "sandik": null,
+      "secmen": 8653,
+      "oyKullanan": 6813,
+      "muteber": 6635,
+      "oy": {
+       "AP": 4834,
+       "CHP": 536,
+       "CGP": 78,
+       "MHP": 984,
+       "MSP": 125,
+       "SDP": 20,
+       "TBP73": 23,
+       "TİP": 12,
+       "TSİP": 23
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Senirkent"
+      }
+     },
+     {
+      "ilce": "Sütçüler",
+      "geomId": "TR-D-32-009",
+      "sandik": null,
+      "secmen": 8883,
+      "oyKullanan": 6463,
+      "muteber": 6235,
+      "oy": {
+       "AP": 4928,
+       "CHP": 507,
+       "CGP": 132,
+       "MHP": 222,
+       "MSP": 277,
+       "SDP": 33,
+       "TBP73": 67,
+       "TİP": 41,
+       "TSİP": 28
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Sütçüler"
+      }
+     },
+     {
+      "ilce": "Şarkikaraağaç",
+      "geomId": "TR-D-32-010",
+      "sandik": null,
+      "secmen": 13454,
+      "oyKullanan": 8619,
+      "muteber": 8127,
+      "oy": {
+       "AP": 5051,
+       "CHP": 984,
+       "CGP": 185,
+       "MHP": 1408,
+       "MSP": 231,
+       "SDP": 89,
+       "TBP73": 72,
+       "TİP": 47,
+       "TSİP": 60
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Şarkikaraağaç"
+      }
+     },
+     {
+      "ilce": "Uluborlu",
+      "geomId": "TR-D-32-011",
+      "sandik": null,
+      "secmen": 3248,
+      "oyKullanan": 1840,
+      "muteber": 1804,
+      "oy": {
+       "AP": 1070,
+       "CHP": 400,
+       "CGP": 27,
+       "MHP": 129,
+       "MSP": 96,
+       "SDP": 16,
+       "TBP73": 8,
+       "TİP": 14,
+       "TSİP": 44
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Uluborlu"
+      }
+     },
+     {
+      "ilce": "Yalvaç",
+      "geomId": "TR-D-32-012",
+      "sandik": null,
+      "secmen": 21456,
+      "oyKullanan": 14251,
+      "muteber": 13755,
+      "oy": {
+       "AP": 8797,
+       "CHP": 1606,
+       "CGP": 225,
+       "MHP": 2060,
+       "MSP": 754,
+       "SDP": 79,
+       "TBP73": 86,
+       "TİP": 72,
+       "TSİP": 76
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Yalvaç"
+      }
+     }
+    ]
+   },
+   {
+    "il": "İstanbul",
+    "plaka": 34,
+    "sandik": null,
+    "secmen": 2173962,
+    "oyKullanan": 1300209,
+    "muteber": 1274392,
+    "oy": {
+     "AP": 509463,
+     "CHP": 483365,
+     "CGP": 39590,
+     "MHP": 46682,
+     "MSP": 110474,
+     "SDP": 13101,
+     "TBP73": 25869,
+     "TİP": 12616,
+     "TSİP": 5523
+    },
+    "Bağımsız": 27709,
+    "dogrulanamayanAlanlar": [
+     "AP",
+     "Bağımsız",
+     "CGP",
+     "CHP",
+     "MHP",
+     "MSP",
+     "TBP73",
+     "TİP",
+     "muteber",
+     "oyKullanan",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 26,
+     "adKaynakta": "İstanbul il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Adalar",
+      "geomId": "TR-D-34-001",
+      "sandik": null,
+      "secmen": 6663,
+      "oyKullanan": 4600,
+      "muteber": 4532,
+      "oy": {
+       "AP": 1689,
+       "CHP": 1845,
+       "CGP": 173,
+       "MHP": 169,
+       "MSP": 132,
+       "SDP": 31,
+       "TBP73": 258,
+       "TİP": 121,
+       "TSİP": 17
+      },
+      "Bağımsız": 97,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Adalar »"
+      }
+     },
+     {
+      "ilce": "Bakırköy",
+      "geomId": "HIST-Istanbul-Bakirkoy",
+      "sandik": null,
+      "secmen": 359837,
+      "oyKullanan": 200620,
+      "muteber": 197141,
+      "oy": {
+       "AP": 75152,
+       "CHP": 77735,
+       "CGP": 5566,
+       "MHP": 6824,
+       "MSP": 17325,
+       "SDP": 2288,
+       "TBP73": 4313,
+       "TİP": 2172,
+       "TSİP": 1141
+      },
+      "Bağımsız": 4566,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Bakırköy",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=197082 != muteber=197141"
+      }
+     },
+     {
+      "ilce": "Beşiktaş",
+      "geomId": "TR-D-34-010",
+      "sandik": null,
+      "secmen": 101186,
+      "oyKullanan": 77,
+      "muteber": 63056,
+      "oy": {
+       "AP": 24051,
+       "CHP": 28626,
+       "CGP": 2458,
+       "MHP": 1482,
+       "MSP": 2804,
+       "SDP": 663,
+       "TBP73": 597,
+       "TİP": 614,
+       "TSİP": 229
+      },
+      "Bağımsız": 1532,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Beşiktaş"
+      }
+     },
+     {
+      "ilce": "Beykoz",
+      "geomId": "TR-D-34-011",
+      "sandik": null,
+      "secmen": 49953,
+      "oyKullanan": 35084,
+      "muteber": 34335,
+      "oy": {
+       "AP": 15100,
+       "CHP": 10112,
+       "CGP": 1003,
+       "MHP": 1873,
+       "MSP": 3974,
+       "SDP": 295,
+       "TBP73": 226,
+       "TİP": 449,
+       "TSİP": 144
+      },
+      "Bağımsız": 1159,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Beykoz"
+      }
+     },
+     {
+      "ilce": "Beyoğlu",
+      "geomId": "TR-D-34-013",
+      "sandik": null,
+      "secmen": 109622,
+      "oyKullanan": 64385,
+      "muteber": 62774,
+      "oy": {
+       "AP": 23249,
+       "CHP": 23543,
+       "CGP": 1995,
+       "MHP": 1969,
+       "MSP": 6677,
+       "SDP": 587,
+       "TBP73": 2940,
+       "TİP": 534,
+       "TSİP": 271
+      },
+      "Bağımsız": 1009,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Beyoğlu"
+      }
+     },
+     {
+      "ilce": "Eminönü",
+      "geomId": "HIST-Istanbul-Eminonu",
+      "sandik": null,
+      "secmen": 43916,
+      "oyKullanan": 24843,
+      "muteber": 24230,
+      "oy": {
+       "AP": 9017,
+       "CHP": 9805,
+       "CGP": 627,
+       "MHP": 1055,
+       "MSP": 2446,
+       "SDP": 163,
+       "TBP73": 326,
+       "TİP": 289,
+       "TSİP": 83
+      },
+      "Bağımsız": 419,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Eminönü"
+      }
+     },
+     {
+      "ilce": "Eyüp",
+      "geomId": "TR-D-34-019",
+      "sandik": null,
+      "secmen": 146511,
+      "oyKullanan": 89821,
+      "muteber": 87240,
+      "oy": {
+       "AP": 34097,
+       "CHP": 31880,
+       "CGP": 2451,
+       "MHP": 2907,
+       "MSP": 9466,
+       "SDP": 1019,
+       "TBP73": 1501,
+       "TİP": 1082,
+       "TSİP": 451
+      },
+      "Bağımsız": 2387,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Eyüp",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=87241 != muteber=87240"
+      }
+     },
+     {
+      "ilce": "Fatih",
+      "geomId": "HIST-Istanbul-Fatih",
+      "sandik": null,
+      "secmen": 234911,
+      "oyKullanan": 137177,
+      "muteber": 134809,
+      "oy": {
+       "AP": 54200,
+       "CHP": 50617,
+       "CGP": 4454,
+       "MHP": 5037,
+       "MSP": 14434,
+       "SDP": 1172,
+       "TBP73": 1079,
+       "TİP": 1041,
+       "TSİP": 475
+      },
+      "Bağımsız": 2300,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Fatih"
+      }
+     },
+     {
+      "ilce": "Gaziosmanpaşa",
+      "geomId": "TR-D-34-021",
+      "sandik": null,
+      "secmen": 91311,
+      "oyKullanan": 53624,
+      "muteber": 52207,
+      "oy": {
+       "AP": 20447,
+       "CHP": 18185,
+       "CGP": 1567,
+       "MHP": 1583,
+       "MSP": 5261,
+       "SDP": 564,
+       "TBP73": 1790,
+       "TİP": 759,
+       "TSİP": 274
+      },
+      "Bağımsız": 1777,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Gaziosmanpaşa"
+      }
+     },
+     {
+      "ilce": "Kadıköy",
+      "geomId": "TR-D-34-023",
+      "sandik": null,
+      "secmen": 250393,
+      "oyKullanan": 148413,
+      "muteber": 146093,
+      "oy": {
+       "AP": 55810,
+       "CHP": 64599,
+       "CGP": 5374,
+       "MHP": 4881,
+       "MSP": 8378,
+       "SDP": 1523,
+       "TBP73": 1157,
+       "TİP": 1338,
+       "TSİP": 486
+      },
+      "Bağımsız": 2547,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Kadıköy"
+      }
+     },
+     {
+      "ilce": "Sarıyer",
+      "geomId": "TR-D-34-030",
+      "sandik": null,
+      "secmen": 53781,
+      "oyKullanan": 32496,
+      "muteber": 31936,
+      "oy": {
+       "AP": 11772,
+       "CHP": 12490,
+       "CGP": 1084,
+       "MHP": 1084,
+       "MSP": 2563,
+       "SDP": 314,
+       "TBP73": 1331,
+       "TİP": 241,
+       "TSİP": 130
+      },
+      "Bağımsız": 927,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Sarıyer"
+      }
+     },
+     {
+      "ilce": "Şişli",
+      "geomId": "TR-D-34-035",
+      "sandik": null,
+      "secmen": 227855,
+      "oyKullanan": 131575,
+      "muteber": 128843,
+      "oy": {
+       "AP": 52218,
+       "CHP": 46301,
+       "CGP": 4211,
+       "MHP": 4323,
+       "MSP": 11262,
+       "SDP": 1271,
+       "TBP73": 5029,
+       "TİP": 1023,
+       "TSİP": 581
+      },
+      "Bağımsız": 2624,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Şişli"
+      }
+     },
+     {
+      "ilce": "Üsküdar",
+      "geomId": "TR-D-34-038",
+      "sandik": null,
+      "secmen": 162426,
+      "oyKullanan": 100455,
+      "muteber": 98340,
+      "oy": {
+       "AP": 39782,
+       "CHP": 35746,
+       "CGP": 3056,
+       "MHP": 4684,
+       "MSP": 9415,
+       "SDP": 1095,
+       "TBP73": 1708,
+       "TİP": 728,
+       "TSİP": 356
+      },
+      "Bağımsız": 1770,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Üsküdar"
+      }
+     },
+     {
+      "ilce": "Zeytinburnu",
+      "geomId": "TR-D-34-039",
+      "sandik": null,
+      "secmen": 58896,
+      "oyKullanan": 35848,
+      "muteber": 34996,
+      "oy": {
+       "AP": 13396,
+       "CHP": 13719,
+       "CGP": 1039,
+       "MHP": 1384,
+       "MSP": 3248,
+       "SDP": 433,
+       "TBP73": 607,
+       "TİP": 347,
+       "TSİP": 197
+      },
+      "Bağımsız": 626,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Zeytinburnu"
+      }
+     },
+     {
+      "ilce": "Çatalca",
+      "geomId": "TR-D-34-015",
+      "sandik": null,
+      "secmen": 38008,
+      "oyKullanan": 26594,
+      "muteber": 26077,
+      "oy": {
+       "AP": 15548,
+       "CHP": 7198,
+       "CGP": 839,
+       "MHP": 884,
+       "MSP": 615,
+       "SDP": 212,
+       "TBP73": 207,
+       "TİP": 144,
+       "TSİP": 107
+      },
+      "Bağımsız": 323,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Çatalca"
+      }
+     },
+     {
+      "ilce": "Kartal",
+      "geomId": "HIST-Istanbul-Kartal8489",
+      "sandik": null,
+      "secmen": 142558,
+      "oyKullanan": 102119,
+      "muteber": 100119,
+      "oy": {
+       "AP": 38754,
+       "CHP": 36128,
+       "CGP": 2636,
+       "MHP": 4655,
+       "MSP": 10,
+       "SDP": 1153,
+       "TBP73": 2563,
+       "TİP": 1405,
+       "TSİP": 410
+      },
+      "Bağımsız": 2163,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Kartal",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=89877 != muteber=100119"
+      }
+     },
+     {
+      "ilce": "Silivri",
+      "geomId": "TR-D-34-031",
+      "sandik": null,
+      "secmen": 23760,
+      "oyKullanan": 16991,
+      "muteber": 16779,
+      "oy": {
+       "AP": 9198,
+       "CHP": 6058,
+       "CGP": 318,
+       "MHP": 324,
+       "MSP": 258,
+       "SDP": 122,
+       "TBP73": 74,
+       "TİP": 152,
+       "TSİP": 63
+      },
+      "Bağımsız": 212,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Silivri"
+      }
+     },
+     {
+      "ilce": "Şile",
+      "geomId": "TR-D-34-034",
+      "sandik": null,
+      "secmen": 9828,
+      "oyKullanan": 7874,
+      "muteber": 7682,
+      "oy": {
+       "AP": 5111,
+       "CHP": 1432,
+       "CGP": 234,
+       "MHP": 327,
+       "MSP": 390,
+       "SDP": 30,
+       "TBP73": 32,
+       "TİP": 52,
+       "TSİP": 24
+      },
+      "Bağımsız": 50,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Şile"
+      }
+     },
+     {
+      "ilce": "Yalova",
+      "geomId": "TR-D-77-006",
+      "sandik": null,
+      "secmen": 33106,
+      "oyKullanan": 22581,
+      "muteber": 22160,
+      "oy": {
+       "AP": 10902,
+       "CHP": 7349,
+       "CGP": 500,
+       "MHP": 1216,
+       "MSP": 1574,
+       "SDP": 166,
+       "TBP73": 75,
+       "TİP": 126,
+       "TSİP": 84
+      },
+      "Bağımsız": 167,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Yalova",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=22159 != muteber=22160"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Kars",
+    "plaka": 36,
+    "sandik": null,
+    "secmen": 227332,
+    "oyKullanan": 135719,
+    "muteber": 131660,
+    "oy": {
+     "AP": 45750,
+     "CHP": 52721,
+     "CGP": 2166,
+     "MHP": 15064,
+     "MSP": 7383,
+     "SDP": 1832,
+     "TBP73": 1333,
+     "TİP": 1843,
+     "TSİP": 3568
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "MHP",
+     "MSP",
+     "SDP",
+     "TBP73",
+     "TSİP",
+     "TİP"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 26,
+     "adKaynakta": "Kars il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-36-005",
+      "sandik": null,
+      "secmen": 34611,
+      "oyKullanan": 13547,
+      "muteber": 13091,
+      "oy": {
+       "AP": 3615,
+       "CHP": 6552,
+       "CGP": 170,
+       "MHP": 400,
+       "MSP": 708,
+       "SDP": 170,
+       "TBP73": 115,
+       "TİP": 255,
+       "TSİP": 1104
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Merkez",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=13089 != muteber=13091"
+      }
+     },
+     {
+      "ilce": "Aralık",
+      "geomId": "TR-D-76-001",
+      "sandik": null,
+      "secmen": 5415,
+      "oyKullanan": 4465,
+      "muteber": 4356,
+      "oy": {
+       "AP": 1072,
+       "CHP": 2358,
+       "CGP": 41,
+       "MHP": 629,
+       "MSP": 80,
+       "SDP": 35,
+       "TBP73": 14,
+       "TİP": 52,
+       "TSİP": 75
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Aralık"
+      }
+     },
+     {
+      "ilce": "Ardahan",
+      "geomId": "TR-D-75-001",
+      "sandik": null,
+      "secmen": 21273,
+      "oyKullanan": 12170,
+      "muteber": 11900,
+      "oy": {
+       "AP": 4622,
+       "CHP": 5562,
+       "CGP": 233,
+       "MHP": 236,
+       "MSP": 500,
+       "SDP": 218,
+       "TBP73": 103,
+       "TİP": 263,
+       "TSİP": 163
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Ardahan"
+      }
+     },
+     {
+      "ilce": "Arpaçay",
+      "geomId": "TR-D-36-002",
+      "sandik": null,
+      "secmen": 19038,
+      "oyKullanan": 8890,
+      "muteber": 8675,
+      "oy": {
+       "AP": 2572,
+       "CHP": 3335,
+       "CGP": 122,
+       "MHP": 1253,
+       "MSP": 430,
+       "SDP": 127,
+       "TBP73": 57,
+       "TİP": 142,
+       "TSİP": 637
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Arpaçay"
+      }
+     },
+     {
+      "ilce": "Çıldır",
+      "geomId": "TR-D-75-002",
+      "sandik": null,
+      "secmen": 8666,
+      "oyKullanan": 5850,
+      "muteber": 5692,
+      "oy": {
+       "AP": 2252,
+       "CHP": 2527,
+       "CGP": 169,
+       "MHP": 190,
+       "MSP": 178,
+       "SDP": 129,
+       "TBP73": 47,
+       "TİP": 67,
+       "TSİP": 133
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Çıldır"
+      }
+     },
+     {
+      "ilce": "Digor",
+      "geomId": "TR-D-36-003",
+      "sandik": null,
+      "secmen": 9073,
+      "oyKullanan": 5115,
+      "muteber": 4875,
+      "oy": {
+       "AP": 956,
+       "CHP": 2835,
+       "CGP": 116,
+       "MHP": 42,
+       "MSP": 562,
+       "SDP": 115,
+       "TBP73": 33,
+       "TİP": 110,
+       "TSİP": 106
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Digor"
+      }
+     },
+     {
+      "ilce": "78 Göle",
+      "geomId": "TR-D-75-004",
+      "sandik": null,
+      "secmen": 19951,
+      "oyKullanan": 10435,
+      "muteber": 10117,
+      "oy": {
+       "AP": 3032,
+       "CHP": 5494,
+       "CGP": 205,
+       "MHP": null,
+       "MSP": null,
+       "SDP": null,
+       "TBP73": null,
+       "TİP": null,
+       "TSİP": 124
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "78* Göle",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=8855 != muteber=10117",
+       "adDuzeltme": "OCR adı '78 Göle' → 'Göle' (en yakın ilçe adı)"
+      }
+     },
+     {
+      "ilce": "Hanak",
+      "geomId": "TR-D-75-005",
+      "sandik": null,
+      "secmen": 12448,
+      "oyKullanan": 8440,
+      "muteber": 8256,
+      "oy": {
+       "AP": 1422,
+       "CHP": 5412,
+       "CGP": 117,
+       "MHP": 118,
+       "MSP": 237,
+       "SDP": 203,
+       "TBP73": 383,
+       "TİP": 256,
+       "TSİP": 108
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Hanak"
+      }
+     },
+     {
+      "ilce": "İğdır",
+      "geomId": "TR-D-76-002",
+      "sandik": null,
+      "secmen": 26702,
+      "oyKullanan": 17508,
+      "muteber": 17099,
+      "oy": {
+       "AP": 4113,
+       "CHP": 4693,
+       "CGP": 130,
+       "MHP": 7134,
+       "MSP": 387,
+       "SDP": 148,
+       "TBP73": 75,
+       "TİP": 163,
+       "TSİP": 256
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "İğdır"
+      }
+     },
+     {
+      "ilce": "Kağızman",
+      "geomId": "TR-D-36-004",
+      "sandik": null,
+      "secmen": 14059,
+      "oyKullanan": 9352,
+      "muteber": 8980,
+      "oy": {
+       "AP": 4946,
+       "CHP": 2101,
+       "CGP": 168,
+       "MHP": 854,
+       "MSP": 495,
+       "SDP": 80,
+       "TBP73": 92,
+       "TİP": 80,
+       "TSİP": 164
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Kağızman"
+      }
+     },
+     {
+      "ilce": "Posof",
+      "geomId": "TR-D-75-006",
+      "sandik": null,
+      "secmen": 9510,
+      "oyKullanan": 6391,
+      "muteber": 6142,
+      "oy": {
+       "AP": 2874,
+       "CHP": 1692,
+       "CGP": 254,
+       "MHP": 207,
+       "MSP": 759,
+       "SDP": 129,
+       "TBP73": 68,
+       "TİP": 66,
+       "TSİP": 93
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Posof"
+      }
+     },
+     {
+      "ilce": "Sarıkamış",
+      "geomId": "TR-D-36-006",
+      "sandik": null,
+      "secmen": 18711,
+      "oyKullanan": 14725,
+      "muteber": 14156,
+      "oy": {
+       "AP": 6575,
+       "CHP": 3469,
+       "CGP": 216,
+       "MHP": 2541,
+       "MSP": null,
+       "SDP": 76,
+       "TBP73": 84,
+       "TİP": 86,
+       "TSİP": 87
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Sarıkamış",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=13134 != muteber=14156"
+      }
+     },
+     {
+      "ilce": "Selim",
+      "geomId": "TR-D-36-007",
+      "sandik": null,
+      "secmen": 12183,
+      "oyKullanan": 8643,
+      "muteber": 8416,
+      "oy": {
+       "AP": 2756,
+       "CHP": 3557,
+       "CGP": 101,
+       "MHP": 792,
+       "MSP": 569,
+       "SDP": 102,
+       "TBP73": 121,
+       "TİP": 86,
+       "TSİP": 332
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Selim"
+      }
+     },
+     {
+      "ilce": "Susuz",
+      "geomId": "TR-D-36-008",
+      "sandik": null,
+      "secmen": 5937,
+      "oyKullanan": 3289,
+      "muteber": 3190,
+      "oy": {
+       "AP": 817,
+       "CHP": 1772,
+       "CGP": 48,
+       "MHP": 63,
+       "MSP": 204,
+       "SDP": 80,
+       "TBP73": 19,
+       "TİP": 50,
+       "TSİP": 137
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Susuz"
+      }
+     },
+     {
+      "ilce": "Tuzluca",
+      "geomId": "TR-D-76-004",
+      "sandik": null,
+      "secmen": 9755,
+      "oyKullanan": 6899,
+      "muteber": 6715,
+      "oy": {
+       "AP": 4126,
+       "CHP": 1362,
+       "CGP": 76,
+       "MHP": 494,
+       "MSP": 461,
+       "SDP": 64,
+       "TBP73": 37,
+       "TİP": 48,
+       "TSİP": 47
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 26,
+       "adKaynakta": "Tuzluca"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Kütahya",
+    "plaka": 43,
+    "sandik": null,
+    "secmen": 220575,
+    "oyKullanan": 174529,
+    "muteber": 169223,
+    "oy": {
+     "AP": 103589,
+     "CHP": 33098,
+     "CGP": 3695,
+     "MHP": 10888,
+     "MSP": 14954,
+     "SDP": null,
+     "TBP73": 1,
+     "TİP": 0.7,
+     "TSİP": 851
+    },
+    "Bağımsız": null,
+    "dogrulanamayanAlanlar": [
+     "CGP",
+     "CHP",
+     "TBP73",
+     "TİP",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 28,
+     "adKaynakta": "Kütahya il toplamı",
+     "kaynakIciTutarsizlik": "partiler+bagimsiz=167076.7 != muteber=169223"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-43-009",
+      "sandik": null,
+      "secmen": 71172,
+      "oyKullanan": 55247,
+      "muteber": 54047,
+      "oy": {
+       "AP": 34049,
+       "CHP": 9770,
+       "CGP": 1172,
+       "MHP": 3210,
+       "MSP": 5046,
+       "SDP": null,
+       "TBP73": null,
+       "TİP": 0.4,
+       "TSİP": 270
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Merkez",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=53517.4 != muteber=54047"
+      }
+     },
+     {
+      "ilce": "Altıntaş",
+      "geomId": "TR-D-43-001",
+      "sandik": null,
+      "secmen": 12117,
+      "oyKullanan": 9454,
+      "muteber": 9090,
+      "oy": {
+       "AP": 4978,
+       "CHP": 1967,
+       "CGP": 186,
+       "MHP": 913,
+       "MSP": 829,
+       "SDP": null,
+       "TBP73": null,
+       "TİP": 0.5,
+       "TSİP": 57
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Altıntaş",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=8930.5 != muteber=9090"
+      }
+     },
+     {
+      "ilce": "Domaniç",
+      "geomId": "TR-D-43-004",
+      "sandik": null,
+      "secmen": 9170,
+      "oyKullanan": 7875,
+      "muteber": 7614,
+      "oy": {
+       "AP": 4772,
+       "CHP": 1653,
+       "CGP": 150,
+       "MHP": 377,
+       "MSP": 547,
+       "SDP": 0,
+       "TBP73": null,
+       "TİP": 0.7,
+       "TSİP": 20
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Domaniç",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=7519.7 != muteber=7614"
+      }
+     },
+     {
+      "ilce": "Enet",
+      "geomId": "TR-D-43-006",
+      "sandik": null,
+      "secmen": 25303,
+      "oyKullanan": 19019,
+      "muteber": 18122,
+      "oy": {
+       "AP": 10739,
+       "CHP": 3443,
+       "CGP": 408,
+       "MHP": 1507,
+       "MSP": 1662,
+       "SDP": 0,
+       "TBP73": null,
+       "TİP": 0.9,
+       "TSİP": 92
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Enet",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=17851.9 != muteber=18122",
+       "adDuzeltme": "OCR/dönem adı 'Enet' → 'Emet'"
+      }
+     },
+     {
+      "ilce": "Gediz",
+      "geomId": "TR-D-43-007",
+      "sandik": null,
+      "secmen": 28174,
+      "oyKullanan": 23417,
+      "muteber": 22472,
+      "oy": {
+       "AP": 14130,
+       "CHP": 4848,
+       "CGP": 512,
+       "MHP": 1421,
+       "MSP": 1095,
+       "SDP": 0,
+       "TBP73": null,
+       "TİP": 0.9,
+       "TSİP": 98
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Gediz",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=22104.9 != muteber=22472"
+      }
+     },
+     {
+      "ilce": "Simav",
+      "geomId": "TR-D-43-011",
+      "sandik": null,
+      "secmen": 37116,
+      "oyKullanan": 29198,
+      "muteber": 28301,
+      "oy": {
+       "AP": 17613,
+       "CHP": 5517,
+       "CGP": 771,
+       "MHP": 2211,
+       "MSP": 1587,
+       "SDP": 0,
+       "TBP73": null,
+       "TİP": 1.0,
+       "TSİP": 149
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Simav",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=27849.0 != muteber=28301"
+      }
+     },
+     {
+      "ilce": "Tavşanlı",
+      "geomId": "TR-D-43-013",
+      "sandik": null,
+      "secmen": 37565,
+      "oyKullanan": 30319,
+      "muteber": 29577,
+      "oy": {
+       "AP": 17308,
+       "CHP": 5902,
+       "CGP": null,
+       "MHP": 1249,
+       "MSP": 4188,
+       "SDP": null,
+       "TBP73": null,
+       "TİP": 0.5,
+       "TSİP": 165
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Tavşanlı",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=28812.5 != muteber=29577"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Manisa",
+    "plaka": 45,
+    "sandik": null,
+    "secmen": 435317,
+    "oyKullanan": 325175,
+    "muteber": 315028,
+    "oy": {
+     "AP": 179099,
+     "CHP": 89666,
+     "CGP": 5353,
+     "MHP": 14823,
+     "MSP": 17907,
+     "SDP": 2258,
+     "TBP73": 1,
+     "TİP": 0.5,
+     "TSİP": 1780
+    },
+    "Bağımsız": null,
+    "dogrulanamayanAlanlar": [
+     "MSP",
+     "TBP73",
+     "TİP",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 28,
+     "adKaynakta": "Manisa il toplamı",
+     "kaynakIciTutarsizlik": "partiler+bagimsiz=310887.5 != muteber=315028"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "HIST-Manisa-Merkez",
+      "sandik": null,
+      "secmen": 71562,
+      "oyKullanan": 53118,
+      "muteber": 51382,
+      "oy": {
+       "AP": 30037,
+       "CHP": 13244,
+       "CGP": 890,
+       "MHP": 2773,
+       "MSP": 3271,
+       "SDP": 305,
+       "TBP73": null,
+       "TİP": 0.3,
+       "TSİP": 277
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Merkez",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=50797.3 != muteber=51382"
+      }
+     },
+     {
+      "ilce": "Akhisar",
+      "geomId": "TR-D-45-002",
+      "sandik": null,
+      "secmen": 66894,
+      "oyKullanan": 46835,
+      "muteber": 45687,
+      "oy": {
+       "AP": 25748,
+       "CHP": 14468,
+       "CGP": 789,
+       "MHP": 953,
+       "MSP": 2505,
+       "SDP": 484,
+       "TBP73": null,
+       "TİP": 0.4,
+       "TSİP": 212
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Akhisar",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=45159.4 != muteber=45687"
+      }
+     },
+     {
+      "ilce": "Alaşehir",
+      "geomId": "TR-D-45-003",
+      "sandik": null,
+      "secmen": 34719,
+      "oyKullanan": 27798,
+      "muteber": 26876,
+      "oy": {
+       "AP": 14551,
+       "CHP": 9685,
+       "CGP": 457,
+       "MHP": 827,
+       "MSP": 714,
+       "SDP": 182,
+       "TBP73": null,
+       "TİP": 0.6,
+       "TSİP": 146
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Alaşehir",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=26562.6 != muteber=26876"
+      }
+     },
+     {
+      "ilce": "Demirci",
+      "geomId": "TR-D-45-004",
+      "sandik": null,
+      "secmen": 24489,
+      "oyKullanan": 20446,
+      "muteber": 19691,
+      "oy": {
+       "AP": 13176,
+       "CHP": 2969,
+       "CGP": 341,
+       "MHP": 1367,
+       "MSP": 1507,
+       "SDP": 99,
+       "TBP73": null,
+       "TİP": 0.6,
+       "TSİP": 54
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Demirci",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=19513.6 != muteber=19691"
+      }
+     },
+     {
+      "ilce": "Gördes",
+      "geomId": "TR-D-45-006",
+      "sandik": null,
+      "secmen": 22,
+      "oyKullanan": 17589,
+      "muteber": 16929,
+      "oy": {
+       "AP": 9917,
+       "CHP": 3968,
+       "CGP": 257,
+       "MHP": 1212,
+       "MSP": 1196,
+       "SDP": 81,
+       "TBP73": null,
+       "TİP": 0.6,
+       "TSİP": 90
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Gördes",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=16721.6 != muteber=16929"
+      }
+     },
+     {
+      "ilce": "Kırkağaç",
+      "geomId": "TR-D-45-007",
+      "sandik": null,
+      "secmen": 19340,
+      "oyKullanan": 14786,
+      "muteber": 14321,
+      "oy": {
+       "AP": 9350,
+       "CHP": 3031,
+       "CGP": 202,
+       "MHP": 573,
+       "MSP": 903,
+       "SDP": 54,
+       "TBP73": null,
+       "TİP": 82,
+       "TSİP": 71
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Kırkağaç",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=14266 != muteber=14321"
+      }
+     },
+     {
+      "ilce": "Kula",
+      "geomId": "TR-D-45-009",
+      "sandik": null,
+      "secmen": 18419,
+      "oyKullanan": 14401,
+      "muteber": 13806,
+      "oy": {
+       "AP": 8179,
+       "CHP": 3587,
+       "CGP": 279,
+       "MHP": 943,
+       "MSP": 529,
+       "SDP": 106,
+       "TBP73": null,
+       "TİP": 59,
+       "TSİP": 36
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Kula",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=13718 != muteber=13806"
+      }
+     },
+     {
+      "ilce": "Salihli",
+      "geomId": "TR-D-45-010",
+      "sandik": null,
+      "secmen": 50383,
+      "oyKullanan": 36837,
+      "muteber": 35750,
+      "oy": {
+       "AP": 19171,
+       "CHP": 11735,
+       "CGP": 554,
+       "MHP": 1989,
+       "MSP": 801,
+       "SDP": 257,
+       "TBP73": null,
+       "TİP": 710,
+       "TSİP": 367
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Salihli",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=35584 != muteber=35750"
+      }
+     },
+     {
+      "ilce": "Sarıgöl",
+      "geomId": "TR-D-45-011",
+      "sandik": null,
+      "secmen": 15043,
+      "oyKullanan": 11454,
+      "muteber": 11019,
+      "oy": {
+       "AP": 5564,
+       "CHP": 4264,
+       "CGP": 199,
+       "MHP": 298,
+       "MSP": 266,
+       "SDP": 119,
+       "TBP73": null,
+       "TİP": 142,
+       "TSİP": 95
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Sarıgöl",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=10947 != muteber=11019"
+      }
+     },
+     {
+      "ilce": "Saruhanlı",
+      "geomId": "TR-D-45-012",
+      "sandik": null,
+      "secmen": 29001,
+      "oyKullanan": 23198,
+      "muteber": 22437,
+      "oy": {
+       "AP": 11091,
+       "CHP": 7778,
+       "CGP": 264,
+       "MHP": 1087,
+       "MSP": 1689,
+       "SDP": 164,
+       "TBP73": null,
+       "TİP": 145,
+       "TSİP": 112
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Saruhanlı",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=22330 != muteber=22437"
+      }
+     },
+     {
+      "ilce": "Selendi",
+      "geomId": "TR-D-45-013",
+      "sandik": null,
+      "secmen": 10203,
+      "oyKullanan": 7821,
+      "muteber": 7612,
+      "oy": {
+       "AP": 5235,
+       "CHP": 1301,
+       "CGP": 130,
+       "MHP": 387,
+       "MSP": 445,
+       "SDP": 31,
+       "TBP73": null,
+       "TİP": 30,
+       "TSİP": 12
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Selendi",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=7571 != muteber=7612"
+      }
+     },
+     {
+      "ilce": "Soma",
+      "geomId": "TR-D-45-014",
+      "sandik": null,
+      "secmen": 27014,
+      "oyKullanan": 19781,
+      "muteber": 19291,
+      "oy": {
+       "AP": 10550,
+       "CHP": 5542,
+       "CGP": 423,
+       "MHP": 970,
+       "MSP": 1287,
+       "SDP": 145,
+       "TBP73": null,
+       "TİP": 184,
+       "TSİP": 78
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Soma",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=19179 != muteber=19291"
+      }
+     },
+     {
+      "ilce": "Turgutlu",
+      "geomId": "TR-D-45-016",
+      "sandik": null,
+      "secmen": 45592,
+      "oyKullanan": 31111,
+      "muteber": 30227,
+      "oy": {
+       "AP": 16530,
+       "CHP": 8094,
+       "CGP": 568,
+       "MHP": 1444,
+       "MSP": 2798,
+       "SDP": 231,
+       "TBP73": null,
+       "TİP": 215,
+       "TSİP": 230
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Turgutlu",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=30110 != muteber=30227"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Mardin",
+    "plaka": 47,
+    "sandik": null,
+    "secmen": 185255,
+    "oyKullanan": 123992,
+    "muteber": 122486,
+    "oy": {
+     "AP": 33708,
+     "CHP": 25485,
+     "CGP": 301,
+     "MHP": 132,
+     "MSP": 21015,
+     "SDP": 329,
+     "TBP73": 0,
+     "TİP": 409,
+     "TSİP": 16679
+    },
+    "Bağımsız": 24428,
+    "dogrulanamayanAlanlar": [
+     "MSP",
+     "oyKullanan"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 28,
+     "adKaynakta": "Mardin il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-47-001",
+      "sandik": null,
+      "secmen": 25939,
+      "oyKullanan": 13351,
+      "muteber": 13204,
+      "oy": {
+       "AP": 5899,
+       "CHP": 4013,
+       "CGP": 51,
+       "MHP": 18,
+       "MSP": 1645,
+       "SDP": 48,
+       "TBP73": 0,
+       "TİP": 45,
+       "TSİP": 1034
+      },
+      "Bağımsız": 451,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Cizre",
+      "geomId": "TR-D-73-002",
+      "sandik": null,
+      "secmen": 8354,
+      "oyKullanan": 6491,
+      "muteber": 6353,
+      "oy": {
+       "AP": 1326,
+       "CHP": 56,
+       "CGP": 39,
+       "MHP": 8,
+       "MSP": 280,
+       "SDP": 20,
+       "TBP73": 0,
+       "TİP": 34,
+       "TSİP": 2456
+      },
+      "Bağımsız": 2134,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Cizre"
+      }
+     },
+     {
+      "ilce": "Derik",
+      "geomId": "TR-D-47-003",
+      "sandik": null,
+      "secmen": 18675,
+      "oyKullanan": 8660,
+      "muteber": 8612,
+      "oy": {
+       "AP": 3908,
+       "CHP": 708,
+       "CGP": 1,
+       "MHP": 4,
+       "MSP": 1011,
+       "SDP": 3,
+       "TBP73": 0,
+       "TİP": 7,
+       "TSİP": 2314
+      },
+      "Bağımsız": 656,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Derik"
+      }
+     },
+     {
+      "ilce": "Gercüş",
+      "geomId": "TR-D-72-003",
+      "sandik": null,
+      "secmen": 13547,
+      "oyKullanan": 9504,
+      "muteber": 9338,
+      "oy": {
+       "AP": 1363,
+       "CHP": 1405,
+       "CGP": 30,
+       "MHP": 12,
+       "MSP": 3276,
+       "SDP": 36,
+       "TBP73": 0,
+       "TİP": 27,
+       "TSİP": 378
+      },
+      "Bağımsız": 2811,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Gercüş"
+      }
+     },
+     {
+      "ilce": "İdil",
+      "geomId": "TR-D-73-004",
+      "sandik": null,
+      "secmen": 6362,
+      "oyKullanan": 5278,
+      "muteber": 5213,
+      "oy": {
+       "AP": 400,
+       "CHP": 983,
+       "CGP": 13,
+       "MHP": 3,
+       "MSP": 624,
+       "SDP": 22,
+       "TBP73": 0,
+       "TİP": 25,
+       "TSİP": 1588
+      },
+      "Bağımsız": 1555,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "İdil"
+      }
+     },
+     {
+      "ilce": "Kızıltepe",
+      "geomId": "TR-D-47-004",
+      "sandik": null,
+      "secmen": 26514,
+      "oyKullanan": 21292,
+      "muteber": 21179,
+      "oy": {
+       "AP": 4325,
+       "CHP": 7478,
+       "CGP": 6,
+       "MHP": 0,
+       "MSP": 2902,
+       "SDP": 23,
+       "TBP73": 0,
+       "TİP": 31,
+       "TSİP": 4970
+      },
+      "Bağımsız": 1444,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Kızıltepe"
+      }
+     },
+     {
+      "ilce": "Mazıdağı",
+      "geomId": "TR-D-47-005",
+      "sandik": null,
+      "secmen": 8489,
+      "oyKullanan": 6028,
+      "muteber": 5839,
+      "oy": {
+       "AP": 1689,
+       "CHP": 1428,
+       "CGP": 32,
+       "MHP": 4,
+       "MSP": 1847,
+       "SDP": 25,
+       "TBP73": 0,
+       "TİP": 29,
+       "TSİP": 730
+      },
+      "Bağımsız": 55,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Mazıdağı"
+      }
+     },
+     {
+      "ilce": "Midyat",
+      "geomId": "TR-D-47-006",
+      "sandik": null,
+      "secmen": 32685,
+      "oyKullanan": 25469,
+      "muteber": 25368,
+      "oy": {
+       "AP": 5004,
+       "CHP": 3587,
+       "CGP": 28,
+       "MHP": 37,
+       "MSP": 6809,
+       "SDP": 40,
+       "TBP73": 0,
+       "TİP": 45,
+       "TSİP": 986
+      },
+      "Bağımsız": 8832,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Midyat"
+      }
+     },
+     {
+      "ilce": "Nusaybin",
+      "geomId": "TR-D-47-007",
+      "sandik": null,
+      "secmen": 22519,
+      "oyKullanan": 11760,
+      "muteber": 11547,
+      "oy": {
+       "AP": 3518,
+       "CHP": 1665,
+       "CGP": 29,
+       "MHP": 13,
+       "MSP": 754,
+       "SDP": 28,
+       "TBP73": 0,
+       "TİP": 105,
+       "TSİP": 1468
+      },
+      "Bağımsız": 3964,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Nusaybin",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=11544 != muteber=11547"
+      }
+     },
+     {
+      "ilce": "Ömerli",
+      "geomId": "TR-D-47-008",
+      "sandik": null,
+      "secmen": 6051,
+      "oyKullanan": 4,
+      "muteber": 4707,
+      "oy": {
+       "AP": 2117,
+       "CHP": 1836,
+       "CGP": 10,
+       "MHP": 8,
+       "MSP": 416,
+       "SDP": 12,
+       "TBP73": 0,
+       "TİP": 10,
+       "TSİP": 126
+      },
+      "Bağımsız": 172,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Ömerli"
+      }
+     },
+     {
+      "ilce": "Savur",
+      "geomId": "TR-D-47-009",
+      "sandik": null,
+      "secmen": 11366,
+      "oyKullanan": 7472,
+      "muteber": 7398,
+      "oy": {
+       "AP": 2950,
+       "CHP": 2101,
+       "CGP": 29,
+       "MHP": 15,
+       "MSP": 1143,
+       "SDP": 48,
+       "TBP73": 0,
+       "TİP": 17,
+       "TSİP": 253
+      },
+      "Bağımsız": 842,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Savur"
+      }
+     },
+     {
+      "ilce": "Silopi",
+      "geomId": "TR-D-73-005",
+      "sandik": null,
+      "secmen": 4754,
+      "oyKullanan": 3919,
+      "muteber": 3728,
+      "oy": {
+       "AP": 1209,
+       "CHP": 225,
+       "CGP": 33,
+       "MHP": 10,
+       "MSP": 305,
+       "SDP": 24,
+       "TBP73": 0,
+       "TİP": 34,
+       "TSİP": 376
+      },
+      "Bağımsız": 1512,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Silopi"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Mus",
+    "plaka": 49,
+    "sandik": null,
+    "secmen": 75,
+    "oyKullanan": 56916,
+    "muteber": 55677,
+    "oy": {
+     "AP": 17858,
+     "CHP": 13522,
+     "CGP": 0,
+     "MHP": 1872,
+     "MSP": 19525,
+     "SDP": 0,
+     "TBP73": 247,
+     "TİP": 156,
+     "TSİP": 535
+    },
+    "Bağımsız": 1962,
+    "dogrulanamayanAlanlar": [
+     "TBP73",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 28,
+     "adKaynakta": "Mus il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-49-005",
+      "sandik": null,
+      "secmen": 41166,
+      "oyKullanan": 32888,
+      "muteber": 32175,
+      "oy": {
+       "AP": 9749,
+       "CHP": 6708,
+       "CGP": null,
+       "MHP": 1610,
+       "MSP": 12798,
+       "SDP": null,
+       "TBP73": null,
+       "TİP": 62,
+       "TSİP": 79
+      },
+      "Bağımsız": 1047,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Merkez",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=32053 != muteber=32175"
+      }
+     },
+     {
+      "ilce": "Bulanık",
+      "geomId": "TR-D-49-001",
+      "sandik": null,
+      "secmen": 14127,
+      "oyKullanan": 10423,
+      "muteber": 10208,
+      "oy": {
+       "AP": 3566,
+       "CHP": 1708,
+       "CGP": 0,
+       "MHP": 153,
+       "MSP": 4152,
+       "SDP": 0,
+       "TBP73": null,
+       "TİP": 54,
+       "TSİP": 205
+      },
+      "Bağımsız": 307,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Bulanık",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=10145 != muteber=10208"
+      }
+     },
+     {
+      "ilce": "Malazgirt",
+      "geomId": "TR-D-49-004",
+      "sandik": null,
+      "secmen": 8951,
+      "oyKullanan": 5758,
+      "muteber": 5657,
+      "oy": {
+       "AP": 2890,
+       "CHP": 937,
+       "CGP": 0,
+       "MHP": 48,
+       "MSP": 1472,
+       "SDP": 0,
+       "TBP73": null,
+       "TİP": 28,
+       "TSİP": 192
+      },
+      "Bağımsız": 67,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Malazgirt",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=5634 != muteber=5657"
+      }
+     },
+     {
+      "ilce": "Varto",
+      "geomId": "TR-D-49-006",
+      "sandik": null,
+      "secmen": 11569,
+      "oyKullanan": 7847,
+      "muteber": 7637,
+      "oy": {
+       "AP": 1653,
+       "CHP": 4169,
+       "CGP": 0,
+       "MHP": 61,
+       "MSP": 1103,
+       "SDP": 0,
+       "TBP73": 39,
+       "TİP": 12,
+       "TSİP": 59
+      },
+      "Bağımsız": 541,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 28,
+       "adKaynakta": "Varto"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Rize",
+    "plaka": 53,
+    "sandik": null,
+    "secmen": 150941,
+    "oyKullanan": 107138,
+    "muteber": 104753,
+    "oy": {
+     "AP": 55891,
+     "CHP": 27065,
+     "CGP": 1561,
+     "MHP": 5291,
+     "MSP": 13058,
+     "SDP": 745,
+     "TBP73": 0,
+     "TİP": 768,
+     "TSİP": 374
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "AP",
+     "SDP",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 30,
+     "adKaynakta": "Rize il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-53-012",
+      "sandik": null,
+      "secmen": 63682,
+      "oyKullanan": 46571,
+      "muteber": 45518,
+      "oy": {
+       "AP": 24671,
+       "CHP": 11052,
+       "CGP": 603,
+       "MHP": 1638,
+       "MSP": 6883,
+       "SDP": 274,
+       "TBP73": 0,
+       "TİP": 264,
+       "TSİP": 133
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Ardeşen",
+      "geomId": "TR-D-53-001",
+      "sandik": null,
+      "secmen": 12897,
+      "oyKullanan": 8664,
+      "muteber": 8429,
+      "oy": {
+       "AP": 3875,
+       "CHP": 3087,
+       "CGP": 152,
+       "MHP": 292,
+       "MSP": 888,
+       "SDP": 82,
+       "TBP73": 0,
+       "TİP": 68,
+       "TSİP": 35
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Ardeşen",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=8479 != muteber=8429"
+      }
+     },
+     {
+      "ilce": "Çamlıhemşin",
+      "geomId": "TR-D-53-002",
+      "sandik": null,
+      "secmen": 5031,
+      "oyKullanan": 2532,
+      "muteber": 2460,
+      "oy": {
+       "AP": 948,
+       "CHP": 956,
+       "CGP": 61,
+       "MHP": 71,
+       "MSP": 340,
+       "SDP": 32,
+       "TBP73": 0,
+       "TİP": 30,
+       "TSİP": 22
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Çamlıhemşin"
+      }
+     },
+     {
+      "ilce": "Çayeli",
+      "geomId": "TR-D-53-003",
+      "sandik": null,
+      "secmen": 24590,
+      "oyKullanan": 18316,
+      "muteber": 18015,
+      "oy": {
+       "AP": 11015,
+       "CHP": 2484,
+       "CGP": 187,
+       "MHP": 2015,
+       "MSP": 2155,
+       "SDP": 65,
+       "TBP73": 0,
+       "TİP": 60,
+       "TSİP": 34
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Çayeli"
+      }
+     },
+     {
+      "ilce": "Fındıklı",
+      "geomId": "TR-D-53-005",
+      "sandik": null,
+      "secmen": 7,
+      "oyKullanan": 5200,
+      "muteber": 5105,
+      "oy": {
+       "AP": 2239,
+       "CHP": 2204,
+       "CGP": 101,
+       "MHP": 101,
+       "MSP": 313,
+       "SDP": 79,
+       "TBP73": 0,
+       "TİP": 30,
+       "TSİP": 38
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Fındıklı"
+      }
+     },
+     {
+      "ilce": "İkizdere",
+      "geomId": "TR-D-53-008",
+      "sandik": null,
+      "secmen": 6832,
+      "oyKullanan": 4315,
+      "muteber": 4172,
+      "oy": {
+       "AP": 1623,
+       "CHP": 992,
+       "CGP": 93,
+       "MHP": 374,
+       "MSP": 936,
+       "SDP": 49,
+       "TBP73": 0,
+       "TİP": 61,
+       "TSİP": 44
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "İkizdere"
+      }
+     },
+     {
+      "ilce": "Kalkandere",
+      "geomId": "TR-D-53-010",
+      "sandik": null,
+      "secmen": 8856,
+      "oyKullanan": 7190,
+      "muteber": 7063,
+      "oy": {
+       "AP": 3635,
+       "CHP": 2272,
+       "CGP": 86,
+       "MHP": 396,
+       "MSP": 597,
+       "SDP": 32,
+       "TBP73": 0,
+       "TİP": 28,
+       "TSİP": 17
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Kalkandere"
+      }
+     },
+     {
+      "ilce": "Pazar",
+      "geomId": "TR-D-53-011",
+      "sandik": null,
+      "secmen": 21511,
+      "oyKullanan": 14350,
+      "muteber": 13991,
+      "oy": {
+       "AP": 7935,
+       "CHP": 4018,
+       "CGP": 278,
+       "MHP": 404,
+       "MSP": 946,
+       "SDP": null,
+       "TBP73": null,
+       "TİP": 227,
+       "TSİP": 51
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Pazar",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=13859 != muteber=13991"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Samsun",
+    "plaka": 55,
+    "sandik": null,
+    "secmen": 386287,
+    "oyKullanan": 294472,
+    "muteber": 288109,
+    "oy": {
+     "AP": 159422,
+     "CHP": 73523,
+     "CGP": 5185,
+     "MHP": 15317,
+     "MSP": 25966,
+     "SDP": 1873,
+     "TBP73": 0,
+     "TİP": 1821,
+     "TSİP": 1592
+    },
+    "Bağımsız": 3410,
+    "dogrulanamayanAlanlar": [
+     "AP",
+     "CGP",
+     "SDP",
+     "TSİP",
+     "TİP",
+     "muteber",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 30,
+     "adKaynakta": "Samsun il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "HIST-Samsun-Merkez",
+      "sandik": null,
+      "secmen": 125291,
+      "oyKullanan": 92204,
+      "muteber": 90417,
+      "oy": {
+       "AP": 48096,
+       "CHP": 25146,
+       "CGP": 1726,
+       "MHP": 4640,
+       "MSP": 8045,
+       "SDP": 641,
+       "TBP73": 0,
+       "TİP": 490,
+       "TSİP": 419
+      },
+      "Bağımsız": 1214,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Alaçam",
+      "geomId": "TR-D-55-002",
+      "sandik": null,
+      "secmen": 21304,
+      "oyKullanan": 16791,
+      "muteber": 16304,
+      "oy": {
+       "AP": 8241,
+       "CHP": 4075,
+       "CGP": 407,
+       "MHP": 816,
+       "MSP": 1510,
+       "SDP": 150,
+       "TBP73": 0,
+       "TİP": 266,
+       "TSİP": 125
+      },
+      "Bağımsız": 714,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Alaçam"
+      }
+     },
+     {
+      "ilce": "Bafra",
+      "geomId": "TR-D-55-006",
+      "sandik": null,
+      "secmen": 60538,
+      "oyKullanan": 48200,
+      "muteber": 47299,
+      "oy": {
+       "AP": 27174,
+       "CHP": 10372,
+       "CGP": 812,
+       "MHP": 3634,
+       "MSP": 3994,
+       "SDP": 258,
+       "TBP73": 0,
+       "TİP": 250,
+       "TSİP": 386
+      },
+      "Bağımsız": 419,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Bafra"
+      }
+     },
+     {
+      "ilce": "Çarşamba",
+      "geomId": "TR-D-55-008",
+      "sandik": null,
+      "secmen": 59458,
+      "oyKullanan": 44477,
+      "muteber": 43502,
+      "oy": {
+       "AP": 25731,
+       "CHP": 10434,
+       "CGP": 656,
+       "MHP": 1940,
+       "MSP": 3492,
+       "SDP": 267,
+       "TBP73": 0,
+       "TİP": 241,
+       "TSİP": 229
+      },
+      "Bağımsız": 512,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Çarşamba"
+      }
+     },
+     {
+      "ilce": "Havza",
+      "geomId": "TR-D-55-009",
+      "sandik": null,
+      "secmen": 21309,
+      "oyKullanan": 16699,
+      "muteber": 16388,
+      "oy": {
+       "AP": 8300,
+       "CHP": 5417,
+       "CGP": 306,
+       "MHP": 702,
+       "MSP": 1365,
+       "SDP": 104,
+       "TBP73": 0,
+       "TİP": 81,
+       "TSİP": 57
+      },
+      "Bağımsız": 47,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Havza",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=16379 != muteber=16388"
+      }
+     },
+     {
+      "ilce": "Kavak",
+      "geomId": "TR-D-55-011",
+      "sandik": null,
+      "secmen": 18554,
+      "oyKullanan": 14208,
+      "muteber": 13827,
+      "oy": {
+       "AP": 7938,
+       "CHP": 3132,
+       "CGP": 334,
+       "MHP": 468,
+       "MSP": 1500,
+       "SDP": 99,
+       "TBP73": 0,
+       "TİP": 100,
+       "TSİP": 82
+      },
+      "Bağımsız": 174,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Kavak"
+      }
+     },
+     {
+      "ilce": "Ladik",
+      "geomId": "TR-D-55-012",
+      "sandik": null,
+      "secmen": 12148,
+      "oyKullanan": 9791,
+      "muteber": 9496,
+      "oy": {
+       "AP": 3610,
+       "CHP": 2944,
+       "CGP": 116,
+       "MHP": 1242,
+       "MSP": 1368,
+       "SDP": 59,
+       "TBP73": 0,
+       "TİP": 83,
+       "TSİP": 47
+      },
+      "Bağımsız": 27,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Ladik"
+      }
+     },
+     {
+      "ilce": "Terme",
+      "geomId": "TR-D-55-015",
+      "sandik": null,
+      "secmen": 37638,
+      "oyKullanan": 28126,
+      "muteber": 27557,
+      "oy": {
+       "AP": 14243,
+       "CHP": 7609,
+       "CGP": 410,
+       "MHP": 1177,
+       "MSP": 3441,
+       "SDP": 176,
+       "TBP73": 0,
+       "TİP": 159,
+       "TSİP": 118
+      },
+      "Bağımsız": 224,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Terme"
+      }
+     },
+     {
+      "ilce": "Vezirköprü",
+      "geomId": "TR-D-55-016",
+      "sandik": null,
+      "secmen": 30345,
+      "oyKullanan": 23976,
+      "muteber": 23320,
+      "oy": {
+       "AP": 16091,
+       "CHP": 4394,
+       "CGP": 408,
+       "MHP": 698,
+       "MSP": 1251,
+       "SDP": 117,
+       "TBP73": 0,
+       "TİP": 148,
+       "TSİP": 134
+      },
+      "Bağımsız": 79,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Vezirköprü"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Siirt",
+    "plaka": 56,
+    "sandik": null,
+    "secmen": 124757,
+    "oyKullanan": 89649,
+    "muteber": 87462,
+    "oy": {
+     "AP": 22821,
+     "CHP": 13198,
+     "CGP": 603,
+     "MHP": 601,
+     "MSP": 36571,
+     "SDP": 494,
+     "TBP73": 234,
+     "TİP": 459,
+     "TSİP": 12481
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 30,
+     "adKaynakta": "Siirt il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-56-005",
+      "sandik": null,
+      "secmen": 18625,
+      "oyKullanan": 10791,
+      "muteber": 10502,
+      "oy": {
+       "AP": 3352,
+       "CHP": 2062,
+       "CGP": 93,
+       "MHP": 81,
+       "MSP": 4463,
+       "SDP": 39,
+       "TBP73": 20,
+       "TİP": 63,
+       "TSİP": 329
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "1Z5 Batman",
+      "geomId": "TR-D-72-001",
+      "sandik": null,
+      "secmen": 29441,
+      "oyKullanan": 18399,
+      "muteber": 17510,
+      "oy": {
+       "AP": 4828,
+       "CHP": 958,
+       "CGP": 226,
+       "MHP": 366,
+       "MSP": 8202,
+       "SDP": 230,
+       "TBP73": 66,
+       "TİP": 135,
+       "TSİP": 2499
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "1Z5 Batman",
+       "adDuzeltme": "OCR adı '1Z5 Batman' → 'Batman' (en yakın ilçe adı)"
+      }
+     },
+     {
+      "ilce": "Baykan",
+      "geomId": "TR-D-56-001",
+      "sandik": null,
+      "secmen": 6842,
+      "oyKullanan": 5050,
+      "muteber": 4872,
+      "oy": {
+       "AP": 1132,
+       "CHP": 779,
+       "CGP": 23,
+       "MHP": 10,
+       "MSP": 2480,
+       "SDP": 12,
+       "TBP73": 15,
+       "TİP": 14,
+       "TSİP": 407
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Baykan"
+      }
+     },
+     {
+      "ilce": "Beşiri",
+      "geomId": "TR-D-72-002",
+      "sandik": null,
+      "secmen": 5686,
+      "oyKullanan": 4705,
+      "muteber": 4546,
+      "oy": {
+       "AP": 1575,
+       "CHP": 819,
+       "CGP": 31,
+       "MHP": 4,
+       "MSP": 1175,
+       "SDP": 27,
+       "TBP73": 20,
+       "TİP": 25,
+       "TSİP": 870
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Beşiri"
+      }
+     },
+     {
+      "ilce": "Eruh",
+      "geomId": "TR-D-56-002",
+      "sandik": null,
+      "secmen": 10021,
+      "oyKullanan": 8073,
+      "muteber": 7992,
+      "oy": {
+       "AP": 1736,
+       "CHP": 700,
+       "CGP": 47,
+       "MHP": 14,
+       "MSP": 3909,
+       "SDP": 49,
+       "TBP73": 24,
+       "TİP": 40,
+       "TSİP": 1473
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Eruh"
+      }
+     },
+     {
+      "ilce": "Kozluk",
+      "geomId": "TR-D-72-005",
+      "sandik": null,
+      "secmen": 12599,
+      "oyKullanan": 10930,
+      "muteber": 10794,
+      "oy": {
+       "AP": 1791,
+       "CHP": 2106,
+       "CGP": 51,
+       "MHP": 9,
+       "MSP": 3917,
+       "SDP": 29,
+       "TBP73": 21,
+       "TİP": 39,
+       "TSİP": 2831
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Kozluk"
+      }
+     },
+     {
+      "ilce": "Kurtalan",
+      "geomId": "TR-D-56-003",
+      "sandik": null,
+      "secmen": 14656,
+      "oyKullanan": 11657,
+      "muteber": 11464,
+      "oy": {
+       "AP": 2760,
+       "CHP": 2205,
+       "CGP": 17,
+       "MHP": 38,
+       "MSP": 5590,
+       "SDP": 31,
+       "TBP73": 22,
+       "TİP": 37,
+       "TSİP": 764
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Kurtalan"
+      }
+     },
+     {
+      "ilce": "Pervari",
+      "geomId": "TR-D-56-004",
+      "sandik": null,
+      "secmen": 3904,
+      "oyKullanan": 2588,
+      "muteber": 2527,
+      "oy": {
+       "AP": 1374,
+       "CHP": 537,
+       "CGP": 22,
+       "MHP": 5,
+       "MSP": 463,
+       "SDP": 18,
+       "TBP73": 16,
+       "TİP": 7,
+       "TSİP": 85
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Pervari"
+      }
+     },
+     {
+      "ilce": "Sason",
+      "geomId": "TR-D-72-006",
+      "sandik": null,
+      "secmen": 9115,
+      "oyKullanan": 7933,
+      "muteber": 7860,
+      "oy": {
+       "AP": 1316,
+       "CHP": 1697,
+       "CGP": 18,
+       "MHP": 0,
+       "MSP": 2527,
+       "SDP": 17,
+       "TBP73": 7,
+       "TİP": 28,
+       "TSİP": 2250
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Sason"
+      }
+     },
+     {
+      "ilce": "Şırnak",
+      "geomId": "TR-D-73-006",
+      "sandik": null,
+      "secmen": 7413,
+      "oyKullanan": 4575,
+      "muteber": 4473,
+      "oy": {
+       "AP": 1041,
+       "CHP": 864,
+       "CGP": 61,
+       "MHP": 32,
+       "MSP": 1459,
+       "SDP": 31,
+       "TBP73": 16,
+       "TİP": 37,
+       "TSİP": 932
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Şırnak"
+      }
+     },
+     {
+      "ilce": "Şirvan",
+      "geomId": "TR-D-56-006",
+      "sandik": null,
+      "secmen": 6455,
+      "oyKullanan": 4948,
+      "muteber": 4922,
+      "oy": {
+       "AP": 1916,
+       "CHP": 471,
+       "CGP": 14,
+       "MHP": 42,
+       "MSP": 2386,
+       "SDP": 11,
+       "TBP73": 7,
+       "TİP": 34,
+       "TSİP": 41
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Şirvan"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Tokat",
+    "plaka": 60,
+    "sandik": null,
+    "secmen": 255196,
+    "oyKullanan": 207518,
+    "muteber": 202483,
+    "oy": {
+     "AP": 80773,
+     "CHP": 43826,
+     "CGP": 2432,
+     "MHP": 33843,
+     "MSP": 20586,
+     "SDP": 1045,
+     "TBP73": 16415,
+     "TİP": 1184,
+     "TSİP": 1289
+    },
+    "Bağımsız": 1090,
+    "dogrulanamayanAlanlar": [
+     "MSP"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 30,
+     "adKaynakta": "Tokat il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-60-009",
+      "sandik": null,
+      "secmen": 54452,
+      "oyKullanan": 44913,
+      "muteber": 43855,
+      "oy": {
+       "AP": 18518,
+       "CHP": 7528,
+       "CGP": 469,
+       "MHP": 7341,
+       "MSP": 5866,
+       "SDP": 163,
+       "TBP73": 3508,
+       "TİP": 183,
+       "TSİP": 139
+      },
+      "Bağımsız": 140,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Almus",
+      "geomId": "TR-D-60-001",
+      "sandik": null,
+      "secmen": 11687,
+      "oyKullanan": 8731,
+      "muteber": 8565,
+      "oy": {
+       "AP": 2430,
+       "CHP": 2419,
+       "CGP": 167,
+       "MHP": 888,
+       "MSP": 707,
+       "SDP": 77,
+       "TBP73": 1642,
+       "TİP": 99,
+       "TSİP": 68
+      },
+      "Bağımsız": 68,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Almus"
+      }
+     },
+     {
+      "ilce": "Artova",
+      "geomId": "TR-D-60-002",
+      "sandik": null,
+      "secmen": 14236,
+      "oyKullanan": 12183,
+      "muteber": 11968,
+      "oy": {
+       "AP": 5549,
+       "CHP": 2273,
+       "CGP": 176,
+       "MHP": 1888,
+       "MSP": 1239,
+       "SDP": 59,
+       "TBP73": 470,
+       "TİP": 71,
+       "TSİP": 151
+      },
+      "Bağımsız": 92,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Artova"
+      }
+     },
+     {
+      "ilce": "Erbaa",
+      "geomId": "TR-D-60-004",
+      "sandik": null,
+      "secmen": 37221,
+      "oyKullanan": 29420,
+      "muteber": 28490,
+      "oy": {
+       "AP": 13240,
+       "CHP": 6671,
+       "CGP": 438,
+       "MHP": 4626,
+       "MSP": 2367,
+       "SDP": 161,
+       "TBP73": 494,
+       "TİP": 161,
+       "TSİP": 119
+      },
+      "Bağımsız": 213,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Erbaa"
+      }
+     },
+     {
+      "ilce": "Niksar",
+      "geomId": "TR-D-60-005",
+      "sandik": null,
+      "secmen": 32984,
+      "oyKullanan": 25824,
+      "muteber": 24961,
+      "oy": {
+       "AP": 8801,
+       "CHP": 5863,
+       "CGP": 328,
+       "MHP": 4290,
+       "MSP": 3815,
+       "SDP": 190,
+       "TBP73": 1184,
+       "TİP": 175,
+       "TSİP": 150
+      },
+      "Bağımsız": 165,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Niksar"
+      }
+     },
+     {
+      "ilce": "Reşadiye",
+      "geomId": "TR-D-60-007",
+      "sandik": null,
+      "secmen": 22930,
+      "oyKullanan": 18414,
+      "muteber": 17834,
+      "oy": {
+       "AP": 9729,
+       "CHP": 3109,
+       "CGP": 225,
+       "MHP": 2074,
+       "MSP": 1304,
+       "SDP": 115,
+       "TBP73": 835,
+       "TİP": 141,
+       "TSİP": 95
+      },
+      "Bağımsız": 207,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Reşadiye"
+      }
+     },
+     {
+      "ilce": "Turhal",
+      "geomId": "TR-D-60-010",
+      "sandik": null,
+      "secmen": 41501,
+      "oyKullanan": 34316,
+      "muteber": 33620,
+      "oy": {
+       "AP": 11872,
+       "CHP": 4951,
+       "CGP": 400,
+       "MHP": 5606,
+       "MSP": 4555,
+       "SDP": 149,
+       "TBP73": 5391,
+       "TİP": 175,
+       "TSİP": 363
+      },
+      "Bağımsız": 158,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Turhal"
+      }
+     },
+     {
+      "ilce": "Zile",
+      "geomId": "TR-D-60-012",
+      "sandik": null,
+      "secmen": 40185,
+      "oyKullanan": 33717,
+      "muteber": 33190,
+      "oy": {
+       "AP": 10634,
+       "CHP": 11012,
+       "CGP": 229,
+       "MHP": 7130,
+       "MSP": null,
+       "SDP": 131,
+       "TBP73": 2891,
+       "TİP": 179,
+       "TSİP": 204
+      },
+      "Bağımsız": 47,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 30,
+       "adKaynakta": "Zile",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=32457 != muteber=33190"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Van",
+    "plaka": 65,
+    "sandik": null,
+    "secmen": 119165,
+    "oyKullanan": 94200,
+    "muteber": 90853,
+    "oy": {
+     "AP": 26725,
+     "CHP": 19634,
+     "CGP": 20382,
+     "MHP": 1193,
+     "MSP": 19530,
+     "SDP": 391,
+     "TBP73": 0,
+     "TİP": 490,
+     "TSİP": 2508
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "MHP",
+     "MSP",
+     "SDP",
+     "TSİP",
+     "TİP",
+     "oyKullanan",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 32,
+     "adKaynakta": "Van il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "J83 Merkez",
+      "geomId": "HIST-Van-Merkez",
+      "sandik": null,
+      "secmen": 38407,
+      "oyKullanan": 25619,
+      "muteber": 25819,
+      "oy": {
+       "AP": 7696,
+       "CHP": 4173,
+       "CGP": 8343,
+       "MHP": 340,
+       "MSP": 4570,
+       "SDP": 107,
+       "TBP73": 0,
+       "TİP": 109,
+       "TSİP": 481
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "J83 Merkez"
+      }
+     },
+     {
+      "ilce": "Başkale",
+      "geomId": "TR-D-65-002",
+      "sandik": null,
+      "secmen": 7855,
+      "oyKullanan": 6388,
+      "muteber": 5994,
+      "oy": {
+       "AP": 1373,
+       "CHP": 1087,
+       "CGP": 1683,
+       "MHP": 16,
+       "MSP": 785,
+       "SDP": 26,
+       "TBP73": 0,
+       "TİP": 36,
+       "TSİP": 988
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Başkale"
+      }
+     },
+     {
+      "ilce": "Çatak",
+      "geomId": "TR-D-65-004",
+      "sandik": null,
+      "secmen": 6113,
+      "oyKullanan": 4284,
+      "muteber": 4187,
+      "oy": {
+       "AP": 507,
+       "CHP": 1957,
+       "CGP": 450,
+       "MHP": 11,
+       "MSP": 938,
+       "SDP": 31,
+       "TBP73": 0,
+       "TİP": 40,
+       "TSİP": 253
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Çatak"
+      }
+     },
+     {
+      "ilce": "Erciş",
+      "geomId": "TR-D-65-006",
+      "sandik": null,
+      "secmen": 15445,
+      "oyKullanan": 11369,
+      "muteber": 10923,
+      "oy": {
+       "AP": 3762,
+       "CHP": 1806,
+       "CGP": 867,
+       "MHP": 492,
+       "MSP": 722,
+       "SDP": 41,
+       "TBP73": 0,
+       "TİP": 55,
+       "TSİP": 178
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Erciş",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=7923 != muteber=10923"
+      }
+     },
+     {
+      "ilce": "Gevaş",
+      "geomId": "TR-D-65-007",
+      "sandik": null,
+      "secmen": 12451,
+      "oyKullanan": 9753,
+      "muteber": 9397,
+      "oy": {
+       "AP": 1307,
+       "CHP": 3171,
+       "CGP": 2391,
+       "MHP": 66,
+       "MSP": 7216,
+       "SDP": 53,
+       "TBP73": 0,
+       "TİP": 59,
+       "TSİP": 134
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Gevaş",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=14397 != muteber=9397"
+      }
+     },
+     {
+      "ilce": "Gürpınar",
+      "geomId": "TR-D-65-008",
+      "sandik": null,
+      "secmen": 12047,
+      "oyKullanan": 10525,
+      "muteber": 10239,
+      "oy": {
+       "AP": 3790,
+       "CHP": 688,
+       "CGP": 2551,
+       "MHP": 26,
+       "MSP": 2852,
+       "SDP": 16,
+       "TBP73": 0,
+       "TİP": 16,
+       "TSİP": 298
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Gürpınar",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=10237 != muteber=10239"
+      }
+     },
+     {
+      "ilce": "Muradiye",
+      "geomId": "TR-D-65-010",
+      "sandik": null,
+      "secmen": 17464,
+      "oyKullanan": 13326,
+      "muteber": 13326,
+      "oy": {
+       "AP": 5523,
+       "CHP": 2901,
+       "CGP": 2518,
+       "MHP": 79,
+       "MSP": 2106,
+       "SDP": 53,
+       "TBP73": 0,
+       "TİP": 77,
+       "TSİP": 69
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Muradiye"
+      }
+     },
+     {
+      "ilce": "Özalp",
+      "geomId": "TR-D-65-011",
+      "sandik": null,
+      "secmen": 14528,
+      "oyKullanan": 11473,
+      "muteber": 10968,
+      "oy": {
+       "AP": 2767,
+       "CHP": 3851,
+       "CGP": 1579,
+       "MHP": 16,
+       "MSP": 2341,
+       "SDP": 65,
+       "TBP73": null,
+       "TİP": 96,
+       "TSİP": 106
+      },
+      "Bağımsız": null,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Özalp",
+       "kaynakIciTutarsizlik": "partiler+bagimsiz=10821 != muteber=10968"
+      }
+     }
+    ]
+   },
+   {
+    "il": "Yozgat",
+    "plaka": 66,
+    "sandik": null,
+    "secmen": 186996,
+    "oyKullanan": 153023,
+    "muteber": 148617,
+    "oy": {
+     "AP": 44741,
+     "CHP": 32675,
+     "CGP": 1752,
+     "MHP": 46363,
+     "MSP": 19336,
+     "SDP": 798,
+     "TBP73": 889,
+     "TİP": 915,
+     "TSİP": 1148
+    },
+    "Bağımsız": 0,
+    "dogrulanamayanAlanlar": [
+     "AP",
+     "CGP",
+     "CHP",
+     "MHP",
+     "MSP",
+     "SDP",
+     "TBP73",
+     "TSİP",
+     "TİP",
+     "muteber",
+     "oyKullanan",
+     "secmen"
+    ],
+    "kaynak": {
+     "ana": "tuik",
+     "sayfa": 32,
+     "adKaynakta": "Yozgat il toplamı"
+    },
+    "ilceler": [
+     {
+      "ilce": "Merkez",
+      "geomId": "TR-D-66-014",
+      "sandik": null,
+      "secmen": 36724,
+      "oyKullanan": 29670,
+      "muteber": 29074,
+      "oy": {
+       "AP": 6960,
+       "CHP": 7184,
+       "CGP": 302,
+       "MHP": 10767,
+       "MSP": 3216,
+       "SDP": 147,
+       "TBP73": 138,
+       "TİP": 150,
+       "TSİP": 210
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Merkez"
+      }
+     },
+     {
+      "ilce": "Akdağmadeni",
+      "geomId": "TR-D-66-001",
+      "sandik": null,
+      "secmen": 20957,
+      "oyKullanan": 17452,
+      "muteber": 16815,
+      "oy": {
+       "AP": 5711,
+       "CHP": 3118,
+       "CGP": 259,
+       "MHP": 4856,
+       "MSP": 2412,
+       "SDP": 98,
+       "TBP73": 144,
+       "TİP": 99,
+       "TSİP": 118
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Akdağmadeni"
+      }
+     },
+     {
+      "ilce": "Boğazlıyan",
+      "geomId": "TR-D-66-003",
+      "sandik": null,
+      "secmen": 22354,
+      "oyKullanan": 17719,
+      "muteber": 17078,
+      "oy": {
+       "AP": 5654,
+       "CHP": 5764,
+       "CGP": 250,
+       "MHP": 3247,
+       "MSP": 1450,
+       "SDP": 127,
+       "TBP73": 94,
+       "TİP": 158,
+       "TSİP": 334
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Boğazlıyan"
+      }
+     },
+     {
+      "ilce": "Çayıralan",
+      "geomId": "TR-D-66-005",
+      "sandik": null,
+      "secmen": 13045,
+      "oyKullanan": 10404,
+      "muteber": 9938,
+      "oy": {
+       "AP": 2724,
+       "CHP": 3363,
+       "CGP": 141,
+       "MHP": 2764,
+       "MSP": 616,
+       "SDP": 72,
+       "TBP73": 80,
+       "TİP": 103,
+       "TSİP": 75
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Çayıralan"
+      }
+     },
+     {
+      "ilce": "Çekerek",
+      "geomId": "TR-D-66-006",
+      "sandik": null,
+      "secmen": 22201,
+      "oyKullanan": 18717,
+      "muteber": 18160,
+      "oy": {
+       "AP": 5828,
+       "CHP": 3769,
+       "CGP": 227,
+       "MHP": 3995,
+       "MSP": 3923,
+       "SDP": 93,
+       "TBP73": 137,
+       "TİP": 89,
+       "TSİP": 99
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Çekerek"
+      }
+     },
+     {
+      "ilce": "Sorgun",
+      "geomId": "TR-D-66-010",
+      "sandik": null,
+      "secmen": 28461,
+      "oyKullanan": 24155,
+      "muteber": 23664,
+      "oy": {
+       "AP": 8397,
+       "CHP": 3601,
+       "CGP": 245,
+       "MHP": 7054,
+       "MSP": 3949,
+       "SDP": 84,
+       "TBP73": 108,
+       "TİP": 122,
+       "TSİP": 104
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Sorgun"
+      }
+     },
+     {
+      "ilce": "Şefaatli",
+      "geomId": "TR-D-66-011",
+      "sandik": null,
+      "secmen": 11507,
+      "oyKullanan": 9422,
+      "muteber": 9112,
+      "oy": {
+       "AP": 2267,
+       "CHP": 1963,
+       "CGP": 70,
+       "MHP": 3895,
+       "MSP": 681,
+       "SDP": 52,
+       "TBP73": 52,
+       "TİP": 57,
+       "TSİP": 75
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Şefaatli"
+      }
+     },
+     {
+      "ilce": "Yerköy",
+      "geomId": "TR-D-66-013",
+      "sandik": null,
+      "secmen": 16012,
+      "oyKullanan": 12474,
+      "muteber": 12095,
+      "oy": {
+       "AP": 3301,
+       "CHP": 2309,
+       "CGP": 121,
+       "MHP": 4769,
+       "MSP": 1359,
+       "SDP": 58,
+       "TBP73": 64,
+       "TİP": 64,
+       "TSİP": 50
+      },
+      "Bağımsız": 0,
+      "kaynak": {
+       "ana": "tuik",
+       "sayfa": 32,
+       "adKaynakta": "Yerköy"
+      }
+     }
+    ]
+   }
+  ]
+ },
  "aciklama": "Cumhuriyet Senatosu uye secimi (1961 Anayasasi; uyelerin ucte biri 2 yilda bir yenilenirdi, 1980'de kaldirildi).",
  "kapsam": {
   "senator": {

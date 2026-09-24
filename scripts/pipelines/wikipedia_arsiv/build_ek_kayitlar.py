@@ -48,7 +48,8 @@ YAKIN = {"1961senato": "1961", "1964senato": "1965", "1966senato": "1965", "1968
 DOGRU_AD = {}  # (plaka, fold(ad)) -> projedeki yazim
 # OCR bozulmasi ya da donem adi -> referans ilce adi (yalnizca emin olunanlar)
 OCR_ALIAS = {"MAGARA": "Tufanbeyli", "S KOCHISAR": "Şereflikoçhisar", "CINI": "Çine", "ENES": "Enez",
-             "OITA": "Oltu", "AKKIIS": "Akkuş"}
+             "OITA": "Oltu", "AKKIIS": "Akkuş", "YALAVO": "Yalova", "E ME": "Eşme", "I ILUBEY": "Ulubey",
+             "M KEMALPASA": "Mustafakemalpaşa", "SAMAN DAGI": "Samandağı", "ENET": "Emet"}
 OCR_IL = {"SURT": 56}  # OCR'in bozdugu il adlari
 
 
