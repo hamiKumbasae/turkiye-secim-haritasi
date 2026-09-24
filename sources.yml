@@ -472,6 +472,10 @@ ek_kayitlar:
     files: "data/normalized/ek/milletvekilleri/<secim>.json (1950-2023, 20 seçim)"
     source: {authority: "Türkçe Wikipedia (il sayfalarının Seçilenler bölümü)", status: reported, raw: "data/raw/wikipedia/il-sayfalari/genel/"}
     coverage: "tam: 1969, 1995, 2002; diğerlerinde eksik ya da fazla — dosyadaki kapsam.durum alanına bakın"
+  yenileme_ara:
+    files: "data/normalized/ek/yenileme_ara/<ad>.json (2019 İstanbul BB yenilemesi, 2024 yenileme, 2026 mahalli ara seçimi)"
+    source: {authority: YSK, url: "acikveri.ysk.gov.tr getSecimSandikSonucList (secimId 16643, 20273, 21272)", status: official, raw: "data/raw/ysk/acikveri-belde-agrege/"}
+    content: [il / ilçe / belde bazında seçmen, oy kullanan, geçerli, geçersiz, parti oyları]
   beldeler:
     files: "data/normalized/ek/beldeler/<secim>.json (yerel 1950-2024)"
     source: {authority: "Türkçe Wikipedia (il sayfalarının belde tabloları)", status: reported, raw: "data/raw/wikipedia/il-sayfalari/yerel/"}

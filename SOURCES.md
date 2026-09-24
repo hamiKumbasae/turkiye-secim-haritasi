@@ -235,3 +235,10 @@ il alt makaleleri, her kayıtta sayfa + revid, her dosyada `kapsam` (bulunan/bek
 Sonuçları 2007, 1988, 1987, 1982, 1961* (2008) yayınından eklendi (il ve ilçe,
 şehir/köy kırılımıyla). İl düzeyi YSK'de kaldı; TÜİK il toplamları YSK ile birebir
 aynı. Ayrıntı: `data/raw/tuik/halkoylamasi-0018260/PROVENANCE.md`.
+
+## Yenileme ve ara seçimler (2026-09-24)
+
+YSK açık veri API'sinden, il/ilçe/belde bazında: 23 Haziran 2019 İstanbul BB
+yenilemesi, 2 Haziran 2024 yenileme seçimi, 7 Haziran 2026 mahalli idareler ara
+seçimi → `data/normalized/ek/yenileme_ara/`. Haritaya bağlı değil. Ayrıntı:
+`data/raw/ysk/acikveri-belde-agrege/PROVENANCE.md`.

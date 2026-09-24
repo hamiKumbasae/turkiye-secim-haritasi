@@ -1,0 +1,327 @@
+{
+ "secim": "2024yenileme_belediye_baskanligi",
+ "tur": "yenileme_ara",
+ "aciklama": "2 Haziran 2024 yenileme seçimi — belediye başkanlığı",
+ "kaynak": {
+  "ana": "ysk",
+  "api": "acikveri.ysk.gov.tr/api/getSecimSandikSonucList",
+  "secimId": 20273,
+  "secimTuru": 2,
+  "cekildi": "2026-09-24",
+  "hamDosya": "data/raw/ysk/acikveri-belde-agrege/2024yenileme_baskan.json",
+  "not": "Sandık düzeyi veriden il/ilçe/belde bazında toplandı; YSK kesin sonuç ilanından birkaç yüz oy farklı olabilir."
+ },
+ "partiEslemesi": {
+  "SAADET": "SP",
+  "BTP": "BTP",
+  "DEM Parti": "DEM Parti",
+  "ZAFER PARTİSİ": "ZP",
+  "İYİ PARTİ": "İYİ Parti",
+  "DSP": "DSP",
+  "DP": "DP",
+  "MHP": "MHP",
+  "HÜDA PAR": "HÜDAPAR",
+  "DEVA PARTİSİ": "DEVA",
+  "YENİDEN REFAH": "YENİDEN REFAH",
+  "AK PARTİ": "AK Parti",
+  "CHP": "CHP",
+  "MİLLET": "MP92",
+  "BÜYÜK BİRLİK": "BBP"
+ },
+ "eslenemeyenPartiler": [],
+ "ozet": {
+  "birim": 7,
+  "belde": 4,
+  "il": 6,
+  "geomIdsiz": 0,
+  "cekimHatasi": 0
+ },
+ "iller": [
+  {
+   "il": "Kayseri",
+   "plaka": 38,
+   "sandik": 141,
+   "secmen": 18960,
+   "oyKullanan": 14057,
+   "gecerliOy": 13696,
+   "gecersizOy": 361,
+   "oy": {
+    "CHP": 6827,
+    "MHP": 6509,
+    "DEVA": 145,
+    "YENİDEN REFAH": 91,
+    "İYİ Parti": 57,
+    "BTP": 36,
+    "ZP": 18,
+    "SP": 13
+   },
+   "kazanan": "CHP"
+  },
+  {
+   "il": "Kırklareli",
+   "plaka": 39,
+   "sandik": 16,
+   "secmen": 4950,
+   "oyKullanan": 4537,
+   "gecerliOy": 4423,
+   "gecersizOy": 114,
+   "oy": {
+    "CHP": 2286,
+    "DSP": 2101,
+    "AK Parti": 14,
+    "YENİDEN REFAH": 11,
+    "MHP": 8,
+    "SP": 3
+   },
+   "kazanan": "CHP"
+  },
+  {
+   "il": "Sivas",
+   "plaka": 58,
+   "sandik": 5,
+   "secmen": 1147,
+   "oyKullanan": 1021,
+   "gecerliOy": 987,
+   "gecersizOy": 34,
+   "oy": {
+    "AK Parti": 556,
+    "MHP": 406,
+    "YENİDEN REFAH": 20,
+    "SP": 5
+   },
+   "kazanan": "AK Parti"
+  },
+  {
+   "il": "Tunceli",
+   "plaka": 62,
+   "sandik": 10,
+   "secmen": 1700,
+   "oyKullanan": 1341,
+   "gecerliOy": 1301,
+   "gecersizOy": 40,
+   "oy": {
+    "AK Parti": 644,
+    "CHP": 421,
+    "DEM Parti": 220,
+    "MHP": 10,
+    "YENİDEN REFAH": 5,
+    "SP": 1
+   },
+   "kazanan": "AK Parti"
+  },
+  {
+   "il": "Şanlıurfa",
+   "plaka": 63,
+   "sandik": 124,
+   "secmen": 27686,
+   "oyKullanan": 20432,
+   "gecerliOy": 19546,
+   "gecersizOy": 886,
+   "oy": {
+    "DEM Parti": 10720,
+    "AK Parti": 7476,
+    "YENİDEN REFAH": 935,
+    "Bağımsız": 89,
+    "CHP": 80,
+    "İYİ Parti": 75,
+    "SP": 46,
+    "BBP": 43,
+    "BTP": 41,
+    "DP": 41
+   },
+   "kazanan": "DEM Parti"
+  },
+  {
+   "il": "Aksaray",
+   "plaka": 68,
+   "sandik": 16,
+   "secmen": 3816,
+   "oyKullanan": 3401,
+   "gecerliOy": 3318,
+   "gecersizOy": 83,
+   "oy": {
+    "AK Parti": 1622,
+    "MHP": 1093,
+    "İYİ Parti": 588,
+    "CHP": 6,
+    "BTP": 5,
+    "YENİDEN REFAH": 3,
+    "SP": 1
+   },
+   "kazanan": "AK Parti"
+  }
+ ],
+ "birimler": [
+  {
+   "il": "Kayseri",
+   "plaka": 38,
+   "ilce": "Pınarbaşı",
+   "yskIlceId": 469,
+   "geomId": "TR-D-38-010",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 141,
+   "secmen": 18960,
+   "oyKullanan": 14057,
+   "gecerliOy": 13696,
+   "gecersizOy": 361,
+   "katilim": 74.14,
+   "oy": {
+    "CHP": 6827,
+    "MHP": 6509,
+    "DEVA": 145,
+    "YENİDEN REFAH": 91,
+    "İYİ Parti": 57,
+    "BTP": 36,
+    "ZP": 18,
+    "SP": 13
+   },
+   "kazanan": "CHP"
+  },
+  {
+   "il": "Kırklareli",
+   "plaka": 39,
+   "ilce": "Lüleburgaz",
+   "yskIlceId": 398,
+   "geomId": "TR-D-39-005",
+   "beldeId": 4226,
+   "belde": null,
+   "sandik": 16,
+   "secmen": 4950,
+   "oyKullanan": 4537,
+   "gecerliOy": 4423,
+   "gecersizOy": 114,
+   "katilim": 91.66,
+   "oy": {
+    "CHP": 2286,
+    "DSP": 2101,
+    "AK Parti": 14,
+    "YENİDEN REFAH": 11,
+    "MHP": 8,
+    "SP": 3
+   },
+   "kazanan": "CHP"
+  },
+  {
+   "il": "Sivas",
+   "plaka": 58,
+   "ilce": "Yıldızeli",
+   "yskIlceId": 624,
+   "geomId": "TR-D-58-016",
+   "beldeId": 3800,
+   "belde": null,
+   "sandik": 5,
+   "secmen": 1147,
+   "oyKullanan": 1021,
+   "gecerliOy": 987,
+   "gecersizOy": 34,
+   "katilim": 89.01,
+   "oy": {
+    "AK Parti": 556,
+    "MHP": 406,
+    "YENİDEN REFAH": 20,
+    "SP": 5
+   },
+   "kazanan": "AK Parti"
+  },
+  {
+   "il": "Tunceli",
+   "plaka": 62,
+   "ilce": "Mazgirt",
+   "yskIlceId": 411,
+   "geomId": "TR-D-62-003",
+   "beldeId": 3949,
+   "belde": null,
+   "sandik": 10,
+   "secmen": 1700,
+   "oyKullanan": 1341,
+   "gecerliOy": 1301,
+   "gecersizOy": 40,
+   "katilim": 78.88,
+   "oy": {
+    "AK Parti": 644,
+    "CHP": 421,
+    "DEM Parti": 220,
+    "MHP": 10,
+    "YENİDEN REFAH": 5,
+    "SP": 1
+   },
+   "kazanan": "AK Parti"
+  },
+  {
+   "il": "Şanlıurfa",
+   "plaka": 63,
+   "ilce": "Hilvan",
+   "yskIlceId": 290,
+   "geomId": "TR-D-63-009",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 124,
+   "secmen": 27686,
+   "oyKullanan": 20432,
+   "gecerliOy": 19546,
+   "gecersizOy": 886,
+   "katilim": 73.8,
+   "oy": {
+    "DEM Parti": 10720,
+    "AK Parti": 7476,
+    "YENİDEN REFAH": 935,
+    "Bağımsız": 89,
+    "CHP": 80,
+    "İYİ Parti": 75,
+    "SP": 46,
+    "BBP": 43,
+    "BTP": 41,
+    "DP": 41
+   },
+   "kazanan": "DEM Parti"
+  },
+  {
+   "il": "Aksaray",
+   "plaka": 68,
+   "ilce": "Aksaray Merkez",
+   "yskIlceId": 20,
+   "geomId": "TR-D-68-002",
+   "beldeId": 4061,
+   "belde": null,
+   "sandik": 7,
+   "secmen": 1784,
+   "oyKullanan": 1597,
+   "gecerliOy": 1569,
+   "gecersizOy": 28,
+   "katilim": 89.52,
+   "oy": {
+    "MHP": 806,
+    "AK Parti": 748,
+    "İYİ Parti": 8,
+    "BTP": 4,
+    "YENİDEN REFAH": 3
+   },
+   "kazanan": "MHP"
+  },
+  {
+   "il": "Aksaray",
+   "plaka": 68,
+   "ilce": "Güzelyurt",
+   "yskIlceId": 754,
+   "geomId": "TR-D-68-005",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 9,
+   "secmen": 2032,
+   "oyKullanan": 1804,
+   "gecerliOy": 1749,
+   "gecersizOy": 55,
+   "katilim": 88.78,
+   "oy": {
+    "AK Parti": 874,
+    "İYİ Parti": 580,
+    "MHP": 287,
+    "CHP": 6,
+    "BTP": 1,
+    "SP": 1
+   },
+   "kazanan": "AK Parti"
+  }
+ ]
+}
