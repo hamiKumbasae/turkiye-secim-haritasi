@@ -1,0 +1,328 @@
+{
+ "secim": "1986mv_ara",
+ "tur": "yenileme_ara",
+ "aciklama": "28 Eylül 1986 milletvekili ara seçimi (11 seçim çevresi) — seçim çevresi düzeyi",
+ "duzey": "il / seçim çevresi (ilçe kırılımı bildiride yok)",
+ "kaynak": {
+  "ana": "resmi_gazete",
+  "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+  "url": "https://www.resmigazete.gov.tr/arsiv/19247.pdf",
+  "hamDosya": "data/raw/resmi_gazete/19247.pdf",
+  "kaynakKatmani": "data/kaynaklar/resmi_gazete/genel/1986ara.json"
+ },
+ "dogrulama": {
+  "tesavUlusalToplam": {
+   "tutan": 8,
+   "farkli": {}
+  },
+  "not": "TESAV 'Milletvekili Ara Seçim Sonuçları' (DİE kaynaklı) ulusal toplamlarıyla karşılaştırma"
+ },
+ "eslenemeyenPartiler": {
+  "BAYRAK PARTISI": 9058,
+  "BUYUK VATAN PARTISI": 32303,
+  "HUR DEMOKRAT PARTI": 34317,
+  "VATANDAS PARTISI": 25814,
+  "BUYUK ANADOLU PARTISI": 13497
+ },
+ "iller": [
+  {
+   "il": "Ankara",
+   "plaka": 6,
+   "secimCevresi": "2",
+   "secmen": 344556,
+   "oyKullanan": 285289,
+   "gecerliOy": 278000,
+   "oy": {
+    "ANAP": 103674,
+    "SHP": 55697,
+    "DYP": 54960,
+    "DSP": 21355,
+    "MÇP": 12318,
+    "RP": 11762,
+    "HUR DEMOKRAT PARTI": 7857,
+    "BUYUK VATAN PARTISI": 3658,
+    "IDP": 2687,
+    "VATANDAS PARTISI": 2186,
+    "Bağımsız": 1004,
+    "BAYRAK PARTISI": 842
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "Bingöl",
+   "plaka": 12,
+   "secimCevresi": null,
+   "secmen": 75440,
+   "oyKullanan": 68258,
+   "gecerliOy": 64140,
+   "oy": {
+    "ANAP": 21743,
+    "SHP": 14577,
+    "DYP": 13369,
+    "RP": 9202,
+    "DSP": 1324,
+    "MÇP": 1008,
+    "HUR DEMOKRAT PARTI": 692,
+    "BUYUK VATAN PARTISI": 536,
+    "BUYUK ANADOLU PARTISI": 428,
+    "IDP": 394,
+    "VATANDAS PARTISI": 372,
+    "Bağımsız": 332,
+    "BAYRAK PARTISI": 163
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "Burdur",
+   "plaka": 15,
+   "secimCevresi": null,
+   "secmen": 125085,
+   "oyKullanan": 117828,
+   "gecerliOy": 113081,
+   "oy": {
+    "ANAP": 41975,
+    "DYP": 28502,
+    "SHP": 21291,
+    "DSP": 5889,
+    "RP": 3950,
+    "MÇP": 3789,
+    "BUYUK VATAN PARTISI": 1872,
+    "VATANDAS PARTISI": 1502,
+    "HUR DEMOKRAT PARTI": 1442,
+    "BUYUK ANADOLU PARTISI": 1204,
+    "IDP": 1077,
+    "BAYRAK PARTISI": 588
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "Gaziantep",
+   "plaka": 27,
+   "secimCevresi": null,
+   "secmen": 351406,
+   "oyKullanan": 305039,
+   "gecerliOy": 295337,
+   "oy": {
+    "ANAP": 104516,
+    "SHP": 88941,
+    "DYP": 52083,
+    "RP": 17283,
+    "DSP": 10140,
+    "MÇP": 8326,
+    "BUYUK VATAN PARTISI": 3933,
+    "HUR DEMOKRAT PARTI": 3120,
+    "VATANDAS PARTISI": 2280,
+    "IDP": 2015,
+    "BUYUK ANADOLU PARTISI": 1846,
+    "BAYRAK PARTISI": 854
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "İstanbul",
+   "plaka": 34,
+   "secimCevresi": "6",
+   "secmen": 484642,
+   "oyKullanan": 376942,
+   "gecerliOy": 364492,
+   "oy": {
+    "ANAP": 138840,
+    "SHP": 74256,
+    "DSP": 50280,
+    "DYP": 47958,
+    "RP": 31247,
+    "BUYUK VATAN PARTISI": 4422,
+    "HUR DEMOKRAT PARTI": 3909,
+    "MÇP": 3891,
+    "VATANDAS PARTISI": 3717,
+    "BUYUK ANADOLU PARTISI": 1993,
+    "Bağımsız": 1972,
+    "IDP": 1107,
+    "BAYRAK PARTISI": 900
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "İzmir",
+   "plaka": 35,
+   "secimCevresi": "2",
+   "secmen": 419210,
+   "oyKullanan": 374520,
+   "gecerliOy": 363703,
+   "oy": {
+    "SHP": 125568,
+    "ANAP": 106735,
+    "DYP": 70907,
+    "DSP": 33529,
+    "RP": 7787,
+    "BUYUK VATAN PARTISI": 4055,
+    "MÇP": 3454,
+    "VATANDAS PARTISI": 3296,
+    "HUR DEMOKRAT PARTI": 3260,
+    "BUYUK ANADOLU PARTISI": 1686,
+    "Bağımsız": 1392,
+    "IDP": 1207,
+    "BAYRAK PARTISI": 827
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "Manisa",
+   "plaka": 45,
+   "secimCevresi": "1",
+   "secmen": 331535,
+   "oyKullanan": 311641,
+   "gecerliOy": 302673,
+   "oy": {
+    "DYP": 99798,
+    "ANAP": 82481,
+    "SHP": 68077,
+    "DSP": 18688,
+    "RP": 14585,
+    "MÇP": 5070,
+    "BUYUK VATAN PARTISI": 3745,
+    "VATANDAS PARTISI": 3030,
+    "HUR DEMOKRAT PARTI": 2824,
+    "BUYUK ANADOLU PARTISI": 1974,
+    "IDP": 1352,
+    "BAYRAK PARTISI": 1049
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "Manisa",
+   "plaka": 45,
+   "secimCevresi": "2",
+   "secmen": 193287,
+   "oyKullanan": 184049,
+   "gecerliOy": 178325,
+   "oy": {
+    "DYP": 64823,
+    "ANAP": 48624,
+    "SHP": 35103,
+    "DSP": 11216,
+    "RP": 6897,
+    "MÇP": 2526,
+    "BUYUK VATAN PARTISI": 2131,
+    "VATANDAS PARTISI": 1902,
+    "HUR DEMOKRAT PARTI": 1823,
+    "BUYUK ANADOLU PARTISI": 1494,
+    "IDP": 1106,
+    "BAYRAK PARTISI": 680
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "Niğde",
+   "plaka": 51,
+   "secimCevresi": null,
+   "secmen": 212004,
+   "oyKullanan": 188702,
+   "gecerliOy": 180777,
+   "oy": {
+    "ANAP": 56537,
+    "DYP": 49109,
+    "SHP": 31973,
+    "RP": 16206,
+    "DSP": 9135,
+    "MÇP": 6732,
+    "HUR DEMOKRAT PARTI": 2852,
+    "BUYUK VATAN PARTISI": 2802,
+    "VATANDAS PARTISI": 2627,
+    "IDP": 1707,
+    "BAYRAK PARTISI": 1097
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "Samsun",
+   "plaka": 55,
+   "secimCevresi": "2",
+   "secmen": 178325,
+   "oyKullanan": 162906,
+   "gecerliOy": 158555,
+   "oy": {
+    "DYP": 52870,
+    "ANAP": 47079,
+    "SHP": 26165,
+    "DSP": 13565,
+    "RP": 6252,
+    "MÇP": 4359,
+    "BUYUK VATAN PARTISI": 2190,
+    "VATANDAS PARTISI": 1796,
+    "HUR DEMOKRAT PARTI": 1782,
+    "IDP": 1177,
+    "BAYRAK PARTISI": 714,
+    "Bağımsız": 606
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  },
+  {
+   "il": "Zonguldak",
+   "plaka": 67,
+   "secimCevresi": "2",
+   "secmen": 234664,
+   "oyKullanan": 217578,
+   "gecerliOy": 208129,
+   "oy": {
+    "DYP": 55690,
+    "ANAP": 53063,
+    "DSP": 38047,
+    "SHP": 28407,
+    "RP": 12314,
+    "HUR DEMOKRAT PARTI": 4756,
+    "MÇP": 3671,
+    "VATANDAS PARTISI": 3106,
+    "BUYUK VATAN PARTISI": 2959,
+    "BUYUK ANADOLU PARTISI": 2872,
+    "IDP": 1900,
+    "BAYRAK PARTISI": 1344
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 19247 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/19247.pdf"
+   }
+  }
+ ]
+}

@@ -1,0 +1,141 @@
+{
+ "secim": "1968mv_ara",
+ "tur": "yenileme_ara",
+ "aciklama": "2 Haziran 1968 milletvekili ara seçimi (Adana, Çorum, Diyarbakır, İstanbul, Urfa) — il düzeyi",
+ "duzey": "il / seçim çevresi (ilçe kırılımı bildiride yok)",
+ "kaynak": {
+  "ana": "resmi_gazete",
+  "yayin": "Resmî Gazete sayı 12922 — Yüksek Seçim Kurulu bildirisi",
+  "url": "https://www.resmigazete.gov.tr/arsiv/12922.pdf",
+  "hamDosya": "data/raw/resmi_gazete/12922.pdf",
+  "kaynakKatmani": "data/kaynaklar/resmi_gazete/genel/1968ara.json"
+ },
+ "dogrulama": {
+  "tesavUlusalToplam": {
+   "tutan": 6,
+   "farkli": {
+    "TİP": [
+     67503,
+     67502
+    ]
+   }
+  },
+  "not": "TESAV 'Milletvekili Ara Seçim Sonuçları' (DİE kaynaklı) ulusal toplamlarıyla karşılaştırma"
+ },
+ "eslenemeyenPartiler": {},
+ "iller": [
+  {
+   "il": "Adana",
+   "plaka": 1,
+   "secimCevresi": null,
+   "secmen": 377314,
+   "oyKullanan": 249003,
+   "gecerliOy": 232204,
+   "oy": {
+    "AP": 107441,
+    "CHP": 76114,
+    "CGP": 25685,
+    "TİP": 10584,
+    "CKMP": 7135,
+    "MP62": 5245
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 12922 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/12922.pdf"
+   }
+  },
+  {
+   "il": "Çorum",
+   "plaka": 19,
+   "secimCevresi": null,
+   "secmen": 232143,
+   "oyKullanan": 141292,
+   "gecerliOy": 125364,
+   "oy": {
+    "AP": 57266,
+    "CHP": 33172,
+    "CGP": 13009,
+    "MP62": 10107,
+    "TİP": 7011,
+    "CKMP": 3651,
+    "Bağımsız": 1148
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 12922 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/12922.pdf"
+   }
+  },
+  {
+   "il": "Diyarbakır",
+   "plaka": 21,
+   "secimCevresi": null,
+   "secmen": 205275,
+   "oyKullanan": null,
+   "gecerliOy": 126421,
+   "oy": {
+    "AP": 59892,
+    "MP62": 45786,
+    "CHP": 12139,
+    "TİP": 5576,
+    "CKMP": 3028
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 12922 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/12922.pdf"
+   }
+  },
+  {
+   "il": "İstanbul",
+   "plaka": 34,
+   "secimCevresi": null,
+   "secmen": 1138151,
+   "oyKullanan": 503803,
+   "gecerliOy": 458648,
+   "oy": {
+    "AP": 226871,
+    "CHP": 140434,
+    "TİP": 39146,
+    "CGP": 20407,
+    "MP62": 19750,
+    "CKMP": 9634,
+    "Bağımsız": 2430
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 12922 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/12922.pdf",
+    "kaynakIciTutarsizlik": "partiler toplami 458672 != gecerli 458648"
+   }
+  },
+  {
+   "il": "Urfa",
+   "plaka": 63,
+   "secimCevresi": null,
+   "secmen": 178986,
+   "oyKullanan": 112514,
+   "gecerliOy": 105921,
+   "oy": {
+    "AP": 55771,
+    "CHP": 33210,
+    "CGP": 6978,
+    "TİP": 5186,
+    "MP62": 4777
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 12922 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/12922.pdf",
+    "ocrDuzeltme": {
+     "alan": "CHP",
+     "okunan": 35210,
+     "duzeltilen": 33210,
+     "neden": "OCR '3S210': rakam yerine harf; basili rakamlara uyan adaylardan toplam kisitina en yakini"
+    },
+    "kaynakIciTutarsizlik": "partiler toplami 105922 != gecerli 105921"
+   }
+  }
+ ]
+}

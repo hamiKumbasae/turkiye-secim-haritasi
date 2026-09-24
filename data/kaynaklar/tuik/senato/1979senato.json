@@ -67,52 +67,52 @@
    {
     "il": "İstanbul",
     "fark": {
-     "Bağımsız": [
-      27709,
-      7494
-     ],
      "?": [
       0,
       20215
+     ],
+     "Bağımsız": [
+      27709,
+      7494
      ]
     }
    },
    {
     "il": "Kütahya",
     "fark": {
-     "TİP": [
-      0.7,
-      1025
-     ],
      "TBP73": [
       1,
       1123
+     ],
+     "TİP": [
+      0.7,
+      1025
      ]
     }
    },
    {
     "il": "Manisa",
     "fark": {
-     "TİP": [
-      0.5,
-      2669
-     ],
      "TBP73": [
       1,
       1473
+     ],
+     "TİP": [
+      0.5,
+      2669
      ]
     }
    },
    {
     "il": "Van",
     "fark": {
-     "TSİP": [
-      2508,
-      490
-     ],
      "TİP": [
       490,
       2508
+     ],
+     "TSİP": [
+      2508,
+      490
      ]
     }
    }
@@ -710,7 +710,8 @@
      "ad": "Merkez",
      "sayfa": 20,
      "y": 245.0,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 8831,
@@ -732,7 +733,8 @@
      "adKaynakta": "Diyadin",
      "ad": "Diyadin",
      "sayfa": 20,
-     "y": 255.8
+     "y": 255.8,
+     "adGuvenli": true
     },
     {
      "secmen": 18549,
@@ -754,7 +756,8 @@
      "adKaynakta": "Doğubeyazıt",
      "ad": "Doğubeyazıt",
      "sayfa": 20,
-     "y": 266.4
+     "y": 266.4,
+     "adGuvenli": true
     },
     {
      "secmen": 14849,
@@ -776,7 +779,8 @@
      "adKaynakta": "Eleşkirt",
      "ad": "Eleşkirt",
      "sayfa": 20,
-     "y": 277.0
+     "y": 277.0,
+     "adGuvenli": true
     },
     {
      "secmen": 6854,
@@ -798,7 +802,8 @@
      "adKaynakta": "Hamur",
      "ad": "Hamur",
      "sayfa": 20,
-     "y": 287.8
+     "y": 287.8,
+     "adGuvenli": true
     },
     {
      "secmen": 19153,
@@ -820,7 +825,8 @@
      "adKaynakta": "Patnos",
      "ad": "Patnos",
      "sayfa": 20,
-     "y": 298.6
+     "y": 298.6,
+     "adGuvenli": true
     },
     {
      "secmen": 5826,
@@ -842,7 +848,8 @@
      "adKaynakta": "Taşlıçay",
      "ad": "Taşlıçay",
      "sayfa": 20,
-     "y": 309.3
+     "y": 309.3,
+     "adGuvenli": true
     },
     {
      "secmen": 10405,
@@ -865,7 +872,8 @@
      "ad": "Tutak",
      "sayfa": 20,
      "y": 319.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -914,7 +922,8 @@
      "adKaynakta": "Merkez",
      "ad": "Merkez",
      "sayfa": 20,
-     "y": 384.0
+     "y": 384.0,
+     "adGuvenli": true
     },
     {
      "secmen": 8632,
@@ -936,7 +945,8 @@
      "adKaynakta": "Göynücek",
      "ad": "Göynücek",
      "sayfa": 20,
-     "y": 394.8
+     "y": 394.8,
+     "adGuvenli": true
     },
     {
      "secmen": 21749,
@@ -958,7 +968,8 @@
      "adKaynakta": "Gümüşhacıköy",
      "ad": "Gümüşhacıköy",
      "sayfa": 20,
-     "y": 405.4
+     "y": 405.4,
+     "adGuvenli": true
     },
     {
      "secmen": 27631,
@@ -980,7 +991,8 @@
      "adKaynakta": "Merzifon",
      "ad": "Merzifon",
      "sayfa": 20,
-     "y": 416.2
+     "y": 416.2,
+     "adGuvenli": true
     },
     {
      "secmen": 16784,
@@ -1002,7 +1014,8 @@
      "adKaynakta": "Suluova",
      "ad": "Suluova",
      "sayfa": 20,
-     "y": 427.0
+     "y": 427.0,
+     "adGuvenli": true
     },
     {
      "secmen": 23849,
@@ -1025,7 +1038,8 @@
      "ad": "Taşova",
      "sayfa": 20,
      "y": 437.8,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -1074,7 +1088,8 @@
      "adKaynakta": "Merkez",
      "ad": "Merkez",
      "sayfa": 20,
-     "y": 501.7
+     "y": 501.7,
+     "adGuvenli": true
     },
     {
      "secmen": 10624,
@@ -1096,7 +1111,8 @@
      "adKaynakta": "Akseki",
      "ad": "Akseki",
      "sayfa": 20,
-     "y": 512.3
+     "y": 512.3,
+     "adGuvenli": true
     },
     {
      "secmen": 28964,
@@ -1118,7 +1134,8 @@
      "adKaynakta": "Alanya",
      "ad": "Alanya",
      "sayfa": 20,
-     "y": 523.3
+     "y": 523.3,
+     "adGuvenli": true
     },
     {
      "secmen": 19970,
@@ -1140,7 +1157,8 @@
      "adKaynakta": "Elmalı",
      "ad": "Elmalı",
      "sayfa": 20,
-     "y": 533.7
+     "y": 533.7,
+     "adGuvenli": true
     },
     {
      "secmen": 11735,
@@ -1162,7 +1180,8 @@
      "adKaynakta": "Finike",
      "ad": "Finike",
      "sayfa": 20,
-     "y": 544.3
+     "y": 544.3,
+     "adGuvenli": true
     },
     {
      "secmen": 12179,
@@ -1184,7 +1203,8 @@
      "adKaynakta": "Gazipaşa",
      "ad": "Gazipaşa",
      "sayfa": 20,
-     "y": 555.1
+     "y": 555.1,
+     "adGuvenli": true
     },
     {
      "secmen": 8253,
@@ -1207,7 +1227,8 @@
      "ad": "Gündoğmuş",
      "sayfa": 20,
      "y": 565.8,
-     "tutarsiz": "partiler+bagimsiz=6433 != muteber=6423"
+     "tutarsiz": "partiler+bagimsiz=6433 != muteber=6423",
+     "adGuvenli": true
     },
     {
      "secmen": 21545,
@@ -1229,7 +1250,8 @@
      "adKaynakta": "Kaş",
      "ad": "Kaş",
      "sayfa": 20,
-     "y": 576.6
+     "y": 576.6,
+     "adGuvenli": true
     },
     {
      "secmen": 22389,
@@ -1252,7 +1274,8 @@
      "ad": "Korkuteli",
      "sayfa": 20,
      "y": 587.4,
-     "tutarsiz": "partiler+bagimsiz=16439 != muteber=16440"
+     "tutarsiz": "partiler+bagimsiz=16439 != muteber=16440",
+     "adGuvenli": true
     },
     {
      "secmen": 13263,
@@ -1274,7 +1297,8 @@
      "adKaynakta": "Kumluca",
      "ad": "Kumluca",
      "sayfa": 20,
-     "y": 598.0
+     "y": 598.0,
+     "adGuvenli": true
     },
     {
      "secmen": 28438,
@@ -1296,7 +1320,8 @@
      "adKaynakta": "Manavgat",
      "ad": "Manavgat",
      "sayfa": 20,
-     "y": 608.6
+     "y": 608.6,
+     "adGuvenli": true
     },
     {
      "secmen": 26635,
@@ -1318,7 +1343,8 @@
      "adKaynakta": "Serik",
      "ad": "Serik",
      "sayfa": 20,
-     "y": 619.4
+     "y": 619.4,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -1370,7 +1396,8 @@
      "ad": "Merkez",
      "sayfa": 20,
      "y": 683.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 9850,
@@ -1392,7 +1419,8 @@
      "adKaynakta": "Ardanuç",
      "ad": "Ardanuç",
      "sayfa": 20,
-     "y": 694.3
+     "y": 694.3,
+     "adGuvenli": true
     },
     {
      "secmen": 8461,
@@ -1414,7 +1442,8 @@
      "adKaynakta": "Arhavi",
      "ad": "Arhavi",
      "sayfa": 20,
-     "y": 704.9
+     "y": 704.9,
+     "adGuvenli": true
     },
     {
      "secmen": 17562,
@@ -1436,7 +1465,8 @@
      "adKaynakta": "Borçka",
      "ad": "Borçka",
      "sayfa": 20,
-     "y": 715.7
+     "y": 715.7,
+     "adGuvenli": true
     },
     {
      "secmen": 10913,
@@ -1458,7 +1488,8 @@
      "adKaynakta": "Hopa",
      "ad": "Hopa",
      "sayfa": 20,
-     "y": 726.3
+     "y": 726.3,
+     "adGuvenli": true
     },
     {
      "secmen": 17897,
@@ -1480,7 +1511,8 @@
      "adKaynakta": "Şavşat",
      "ad": "Şavşat",
      "sayfa": 20,
-     "y": 736.9
+     "y": 736.9,
+     "adGuvenli": true
     },
     {
      "secmen": 18006,
@@ -1503,7 +1535,8 @@
      "ad": "Yusufeli",
      "sayfa": 20,
      "y": 747.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -1552,7 +1585,8 @@
      "adKaynakta": "Merkez",
      "ad": "Merkez",
      "sayfa": 22,
-     "y": 203.1
+     "y": 203.1,
+     "adGuvenli": true
     },
     {
      "secmen": 18782,
@@ -1574,7 +1608,8 @@
      "adKaynakta": "Ayvalık",
      "ad": "Ayvalık",
      "sayfa": 22,
-     "y": 213.7
+     "y": 213.7,
+     "adGuvenli": true
     },
     {
      "secmen": 13894,
@@ -1597,7 +1632,8 @@
      "ad": "Balya",
      "sayfa": 22,
      "y": 224.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 42949,
@@ -1619,7 +1655,8 @@
      "adKaynakta": "Bandırma",
      "ad": "Bandırma",
      "sayfa": 22,
-     "y": 235.1
+     "y": 235.1,
+     "adGuvenli": true
     },
     {
      "secmen": 23591,
@@ -1641,7 +1678,8 @@
      "adKaynakta": "Bigadiç",
      "ad": "Bigadiç",
      "sayfa": 22,
-     "y": 245.9
+     "y": 245.9,
+     "adGuvenli": true
     },
     {
      "secmen": 19357,
@@ -1663,7 +1701,8 @@
      "adKaynakta": "Burhaniye •",
      "ad": "Burhaniye",
      "sayfa": 22,
-     "y": 256.7
+     "y": 256.7,
+     "adGuvenli": true
     },
     {
      "secmen": 23165,
@@ -1685,7 +1724,8 @@
      "adKaynakta": "Dursunbey",
      "ad": "Dursunbey",
      "sayfa": 22,
-     "y": 267.1
+     "y": 267.1,
+     "adGuvenli": true
     },
     {
      "secmen": 23452,
@@ -1707,7 +1747,8 @@
      "adKaynakta": "Edremit",
      "ad": "Edremit",
      "sayfa": 22,
-     "y": 277.9
+     "y": 277.9,
+     "adGuvenli": true
     },
     {
      "secmen": 14121,
@@ -1729,7 +1770,8 @@
      "adKaynakta": "Erdek",
      "ad": "Erdek",
      "sayfa": 22,
-     "y": 288.6
+     "y": 288.6,
+     "adGuvenli": true
     },
     {
      "secmen": 33213,
@@ -1751,7 +1793,8 @@
      "adKaynakta": "Gönen",
      "ad": "Gönen",
      "sayfa": 22,
-     "y": 299.4
+     "y": 299.4,
+     "adGuvenli": true
     },
     {
      "secmen": 13622,
@@ -1773,7 +1816,8 @@
      "adKaynakta": "Havran",
      "ad": "Havran",
      "sayfa": 22,
-     "y": 310.2
+     "y": 310.2,
+     "adGuvenli": true
     },
     {
      "secmen": 19776,
@@ -1795,7 +1839,8 @@
      "adKaynakta": "İvrindi",
      "ad": "İvrindi",
      "sayfa": 22,
-     "y": 320.8
+     "y": 320.8,
+     "adGuvenli": true
     },
     {
      "secmen": 16396,
@@ -1817,7 +1862,8 @@
      "adKaynakta": "Kepsut",
      "ad": "Kepsut",
      "sayfa": 22,
-     "y": 331.6
+     "y": 331.6,
+     "adGuvenli": true
     },
     {
      "secmen": 16506,
@@ -1839,7 +1885,8 @@
      "adKaynakta": "Manyas",
      "ad": "Manyas",
      "sayfa": 22,
-     "y": 342.2
+     "y": 342.2,
+     "adGuvenli": true
     },
     {
      "secmen": 10845,
@@ -1861,7 +1908,8 @@
      "adKaynakta": "Savaştepe",
      "ad": "Savaştepe",
      "sayfa": 22,
-     "y": 352.8
+     "y": 352.8,
+     "adGuvenli": true
     },
     {
      "secmen": 22248,
@@ -1883,7 +1931,8 @@
      "adKaynakta": "Sındırgı",
      "ad": "Sındırgı",
      "sayfa": 22,
-     "y": 363.6
+     "y": 363.6,
+     "adGuvenli": true
     },
     {
      "secmen": 22631,
@@ -1906,7 +1955,8 @@
      "ad": "Susurluk",
      "sayfa": 22,
      "y": 374.2,
-     "tutarsiz": "partiler+bagimsiz=17211 != muteber=17393"
+     "tutarsiz": "partiler+bagimsiz=17211 != muteber=17393",
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -1956,7 +2006,8 @@
      "ad": "Merkez",
      "sayfa": 22,
      "y": 427.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 5302,
@@ -1979,7 +2030,8 @@
      "ad": "Adilcevaz",
      "sayfa": 22,
      "y": 438.5,
-     "tutarsiz": "partiler+bagimsiz=3890 != muteber=4026"
+     "tutarsiz": "partiler+bagimsiz=3890 != muteber=4026",
+     "adGuvenli": true
     },
     {
      "secmen": 6085,
@@ -2001,7 +2053,8 @@
      "adKaynakta": "Ahlat",
      "ad": "Ahlat",
      "sayfa": 22,
-     "y": 449.3
+     "y": 449.3,
+     "adGuvenli": true
     },
     {
      "secmen": 9017,
@@ -2023,7 +2076,8 @@
      "adKaynakta": "Hizan",
      "ad": "Hizan",
      "sayfa": 22,
-     "y": 459.9
+     "y": 459.9,
+     "adGuvenli": true
     },
     {
      "secmen": 8789,
@@ -2050,7 +2104,8 @@
       "alan": "TSİP",
       "okunan": 2,
       "duzeltilen": 23
-     }
+     },
+     "adGuvenli": true
     },
     {
      "secmen": 15050,
@@ -2072,7 +2127,8 @@
      "adKaynakta": "Tatvan",
      "ad": "Tatvan",
      "sayfa": 22,
-     "y": 481.3
+     "y": 481.3,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -2121,7 +2177,8 @@
      "adKaynakta": "Ağlasun",
      "ad": "Ağlasun",
      "sayfa": 22,
-     "y": 545.2
+     "y": 545.2,
+     "adGuvenli": true
     },
     {
      "secmen": 19973,
@@ -2143,7 +2200,8 @@
      "adKaynakta": "Bucak",
      "ad": "Bucak",
      "sayfa": 22,
-     "y": 555.9
+     "y": 555.9,
+     "adGuvenli": true
     },
     {
      "secmen": 17682,
@@ -2165,7 +2223,8 @@
      "adKaynakta": "Gölhisar",
      "ad": "Gölhisar",
      "sayfa": 22,
-     "y": 566.7
+     "y": 566.7,
+     "adGuvenli": true
     },
     {
      "secmen": 10806,
@@ -2187,7 +2246,8 @@
      "adKaynakta": "Tefenni",
      "ad": "Tefenni",
      "sayfa": 22,
-     "y": 577.5
+     "y": 577.5,
+     "adGuvenli": true
     },
     {
      "secmen": 13425,
@@ -2209,7 +2269,8 @@
      "adKaynakta": "Yeşilova",
      "ad": "Yeşilova",
      "sayfa": 22,
-     "y": 588.3
+     "y": 588.3,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -2270,7 +2331,8 @@
      "ad": "Merkez",
      "sayfa": 22,
      "y": 641.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 15813,
@@ -2292,7 +2354,8 @@
      "adKaynakta": "Ayvacık",
      "ad": "Ayvacık",
      "sayfa": 22,
-     "y": 652.2
+     "y": 652.2,
+     "adGuvenli": true
     },
     {
      "secmen": 17960,
@@ -2314,7 +2377,8 @@
      "adKaynakta": "Bayramiç",
      "ad": "Bayramiç",
      "sayfa": 22,
-     "y": 662.8
+     "y": 662.8,
+     "adGuvenli": true
     },
     {
      "secmen": 40518,
@@ -2336,7 +2400,8 @@
      "adKaynakta": "Biga",
      "ad": "Biga",
      "sayfa": 22,
-     "y": 673.8
+     "y": 673.8,
+     "adGuvenli": true
     },
     {
      "secmen": 935,
@@ -2358,7 +2423,8 @@
      "adKaynakta": "Bozcaada",
      "ad": "Bozcaada",
      "sayfa": 22,
-     "y": 684.4
+     "y": 684.4,
+     "adGuvenli": true
     },
     {
      "secmen": 22890,
@@ -2380,7 +2446,8 @@
      "adKaynakta": "Çan",
      "ad": "Çan",
      "sayfa": 22,
-     "y": 695.0
+     "y": 695.0,
+     "adGuvenli": true
     },
     {
      "secmen": 5261,
@@ -2402,7 +2469,8 @@
      "adKaynakta": "Eceabat",
      "ad": "Eceabat",
      "sayfa": 22,
-     "y": 705.8
+     "y": 705.8,
+     "adGuvenli": true
     },
     {
      "secmen": 16597,
@@ -2424,7 +2492,8 @@
      "adKaynakta": "Ezine",
      "ad": "Ezine",
      "sayfa": 22,
-     "y": 716.4
+     "y": 716.4,
+     "adGuvenli": true
     },
     {
      "secmen": 17549,
@@ -2446,7 +2515,8 @@
      "adKaynakta": "Gelibolu",
      "ad": "Gelibolu",
      "sayfa": 22,
-     "y": 727.0
+     "y": 727.0,
+     "adGuvenli": true
     },
     {
      "secmen": 2264,
@@ -2468,7 +2538,8 @@
      "adKaynakta": "İmroz (Gökçeada)",
      "ad": "İmroz",
      "sayfa": 22,
-     "y": 737.8
+     "y": 737.8,
+     "adGuvenli": true
     },
     {
      "secmen": 13125,
@@ -2490,7 +2561,8 @@
      "adKaynakta": "Lapseki",
      "ad": "Lapseki",
      "sayfa": 22,
-     "y": 748.5
+     "y": 748.5,
+     "adGuvenli": true
     },
     {
      "secmen": 22100,
@@ -2512,7 +2584,8 @@
      "adKaynakta": "Yenice",
      "ad": "Yenice",
      "sayfa": 22,
-     "y": 759.3
+     "y": 759.3,
+     "adGuvenli": true
     }
    ]
   },
@@ -2560,7 +2633,8 @@
      "ad": "Merkez",
      "sayfa": 24,
      "y": 217.1,
-     "tutarsiz": "partiler+bagimsiz=39951 != muteber=40986"
+     "tutarsiz": "partiler+bagimsiz=39951 != muteber=40986",
+     "adGuvenli": true
     },
     {
      "secmen": 9920,
@@ -2583,7 +2657,8 @@
      "ad": "Çayırlı",
      "sayfa": 24,
      "y": 227.7,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 5458,
@@ -2606,7 +2681,8 @@
      "ad": "İliç",
      "sayfa": 24,
      "y": 238.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 7866,
@@ -2629,7 +2705,8 @@
      "ad": "Kemah",
      "sayfa": 24,
      "y": 249.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 5462,
@@ -2652,7 +2729,8 @@
      "ad": "Kemaliye",
      "sayfa": 24,
      "y": 259.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 10583,
@@ -2675,7 +2753,8 @@
      "ad": "Refahiye",
      "sayfa": 24,
      "y": 270.6,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 11829,
@@ -2698,7 +2777,8 @@
      "ad": "Tercan",
      "sayfa": 24,
      "y": 281.4,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -2750,7 +2830,8 @@
      "ad": "Merkez",
      "sayfa": 24,
      "y": 345.4,
-     "tutarsiz": "partiler+bagimsiz=73989 != muteber=73994"
+     "tutarsiz": "partiler+bagimsiz=73989 != muteber=73994",
+     "adGuvenli": true
     },
     {
      "secmen": 16373,
@@ -2773,7 +2854,8 @@
      "ad": "Aşkale",
      "sayfa": 24,
      "y": 356.1,
-     "tutarsiz": "partiler+bagimsiz=13792 != muteber=13"
+     "tutarsiz": "partiler+bagimsiz=13792 != muteber=13",
+     "adGuvenli": true
     },
     {
      "secmen": 8974,
@@ -2796,7 +2878,8 @@
      "ad": "Çat",
      "sayfa": 24,
      "y": 366.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 15969,
@@ -2819,7 +2902,8 @@
      "ad": "Hınıs",
      "sayfa": 24,
      "y": 377.7,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 14675,
@@ -2842,7 +2926,8 @@
      "ad": "Horasan",
      "sayfa": 24,
      "y": 388.3,
-     "tutarsiz": "partiler+bagimsiz=11917 != muteber=11946"
+     "tutarsiz": "partiler+bagimsiz=11917 != muteber=11946",
+     "adGuvenli": true
     },
     {
      "secmen": 23619,
@@ -2865,7 +2950,8 @@
      "ad": "İspir",
      "sayfa": 24,
      "y": 399.1,
-     "tutarsiz": "partiler+bagimsiz=13399 != muteber=17747"
+     "tutarsiz": "partiler+bagimsiz=13399 != muteber=17747",
+     "adGuvenli": true
     },
     {
      "secmen": 10496,
@@ -2888,7 +2974,8 @@
      "ad": "Karayazı",
      "sayfa": 24,
      "y": 409.7,
-     "tutarsiz": "partiler+bagimsiz=8574 != muteber=8774"
+     "tutarsiz": "partiler+bagimsiz=8574 != muteber=8774",
+     "adGuvenli": true
     },
     {
      "secmen": 7505,
@@ -2911,7 +2998,8 @@
      "ad": "Narman",
      "sayfa": 24,
      "y": 420.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 14549,
@@ -2934,7 +3022,8 @@
      "ad": "Oltu",
      "sayfa": 24,
      "y": 431.1,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 7670,
@@ -2957,7 +3046,8 @@
      "ad": "Olur",
      "sayfa": 24,
      "y": 441.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 17984,
@@ -2980,7 +3070,8 @@
      "ad": "Pasinler",
      "sayfa": 24,
      "y": 452.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 14362,
@@ -3003,7 +3094,8 @@
      "ad": "Şenkaya",
      "sayfa": 24,
      "y": 463.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 9249,
@@ -3026,7 +3118,8 @@
      "ad": "Tekman",
      "sayfa": 24,
      "y": 474.1,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 17969,
@@ -3049,7 +3142,8 @@
      "ad": "Tortum",
      "sayfa": 24,
      "y": 484.8,
-     "tutarsiz": "partiler+bagimsiz=14227 != muteber=14309"
+     "tutarsiz": "partiler+bagimsiz=14227 != muteber=14309",
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -3106,7 +3200,8 @@
      "ad": "Merkez",
      "sayfa": 24,
      "y": 548.7,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 4383,
@@ -3129,7 +3224,8 @@
      "ad": "Beytüşşebap",
      "sayfa": 24,
      "y": 559.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 3615,
@@ -3152,7 +3248,8 @@
      "ad": "Çukurca",
      "sayfa": 24,
      "y": 570.1,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 4042,
@@ -3175,7 +3272,8 @@
      "ad": "Şemdinli",
      "sayfa": 24,
      "y": 580.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 7076,
@@ -3198,7 +3296,8 @@
      "ad": "Uludere",
      "sayfa": 24,
      "y": 591.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 11066,
@@ -3221,7 +3320,8 @@
      "ad": "Yüksekova",
      "sayfa": 24,
      "y": 602.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ]
   },
@@ -3267,7 +3367,8 @@
      "adKaynakta": "Merkez",
      "ad": "Merkez",
      "sayfa": 24,
-     "y": 666.4
+     "y": 666.4,
+     "adGuvenli": true
     },
     {
      "secmen": 16380,
@@ -3289,7 +3390,8 @@
      "adKaynakta": "Altınözü",
      "ad": "Altınözü",
      "sayfa": 24,
-     "y": 677.0
+     "y": 677.0,
+     "adGuvenli": true
     },
     {
      "secmen": 37498,
@@ -3311,7 +3413,8 @@
      "adKaynakta": "Dörtyol",
      "ad": "Dörtyol",
      "sayfa": 24,
-     "y": 687.8
+     "y": 687.8,
+     "adGuvenli": true
     },
     {
      "secmen": 12358,
@@ -3333,7 +3436,8 @@
      "adKaynakta": "Hassa",
      "ad": "Hassa",
      "sayfa": 24,
-     "y": 698.6
+     "y": 698.6,
+     "adGuvenli": true
     },
     {
      "secmen": 77888,
@@ -3355,7 +3459,8 @@
      "adKaynakta": "İskenderun",
      "ad": "İskenderun",
      "sayfa": 24,
-     "y": 709.0
+     "y": 709.0,
+     "adGuvenli": true
     },
     {
      "secmen": 24813,
@@ -3378,7 +3483,8 @@
      "ad": "Kırıkhan",
      "sayfa": 24,
      "y": 719.8,
-     "tutarsiz": "partiler+bagimsiz=9218 != muteber=18152"
+     "tutarsiz": "partiler+bagimsiz=9218 != muteber=18152",
+     "adGuvenli": true
     },
     {
      "secmen": 18243,
@@ -3400,7 +3506,8 @@
      "adKaynakta": "Reyhanlı",
      "ad": "Reyhanlı",
      "sayfa": 24,
-     "y": 730.6
+     "y": 730.6,
+     "adGuvenli": true
     },
     {
      "secmen": 26940,
@@ -3423,7 +3530,8 @@
      "ad": "Saman dağı",
      "sayfa": 24,
      "y": 741.3,
-     "tutarsiz": "partiler+bagimsiz=17848 != muteber=17847"
+     "tutarsiz": "partiler+bagimsiz=17848 != muteber=17847",
+     "adGuvenli": true
     },
     {
      "secmen": 9299,
@@ -3445,7 +3553,8 @@
      "adKaynakta": "Yayladağı",
      "ad": "Yayladağı",
      "sayfa": 24,
-     "y": 752.1
+     "y": 752.1,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -3497,7 +3606,8 @@
      "ad": "Merkez",
      "sayfa": 26,
      "y": 219.8,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 3351,
@@ -3520,7 +3630,8 @@
      "ad": "Atabey",
      "sayfa": 26,
      "y": 230.4,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 18042,
@@ -3543,7 +3654,8 @@
      "ad": "Eğridir",
      "sayfa": 26,
      "y": 241.2,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 8487,
@@ -3566,7 +3678,8 @@
      "ad": "Gelendost",
      "sayfa": 26,
      "y": 251.8,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 10912,
@@ -3589,7 +3702,8 @@
      "ad": "Keçiborlu",
      "sayfa": 26,
      "y": 262.6,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 8653,
@@ -3612,7 +3726,8 @@
      "ad": "Senirkent",
      "sayfa": 26,
      "y": 273.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 8883,
@@ -3635,7 +3750,8 @@
      "ad": "Sütçüler",
      "sayfa": 26,
      "y": 283.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 13454,
@@ -3658,7 +3774,8 @@
      "ad": "Şarkikaraağaç",
      "sayfa": 26,
      "y": 294.7,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 3248,
@@ -3681,7 +3798,8 @@
      "ad": "Uluborlu",
      "sayfa": 26,
      "y": 305.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 21456,
@@ -3704,7 +3822,8 @@
      "ad": "Yalvaç",
      "sayfa": 26,
      "y": 316.1,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ]
   },
@@ -3750,7 +3869,8 @@
      "adKaynakta": "Adalar »",
      "ad": "Adalar",
      "sayfa": 26,
-     "y": 369.6
+     "y": 369.6,
+     "adGuvenli": true
     },
     {
      "secmen": 359837,
@@ -3773,7 +3893,8 @@
      "ad": "Bakırköy",
      "sayfa": 26,
      "y": 380.4,
-     "tutarsiz": "partiler+bagimsiz=197082 != muteber=197141"
+     "tutarsiz": "partiler+bagimsiz=197082 != muteber=197141",
+     "adGuvenli": true
     },
     {
      "secmen": 101186,
@@ -3795,7 +3916,8 @@
      "adKaynakta": "Beşiktaş",
      "ad": "Beşiktaş",
      "sayfa": 26,
-     "y": 391.0
+     "y": 391.0,
+     "adGuvenli": true
     },
     {
      "secmen": 49953,
@@ -3817,7 +3939,8 @@
      "adKaynakta": "Beykoz",
      "ad": "Beykoz",
      "sayfa": 26,
-     "y": 401.6
+     "y": 401.6,
+     "adGuvenli": true
     },
     {
      "secmen": 109622,
@@ -3839,7 +3962,8 @@
      "adKaynakta": "Beyoğlu",
      "ad": "Beyoğlu",
      "sayfa": 26,
-     "y": 412.4
+     "y": 412.4,
+     "adGuvenli": true
     },
     {
      "secmen": 43916,
@@ -3861,7 +3985,8 @@
      "adKaynakta": "Eminönü",
      "ad": "Eminönü",
      "sayfa": 26,
-     "y": 423.0
+     "y": 423.0,
+     "adGuvenli": true
     },
     {
      "secmen": 146511,
@@ -3884,7 +4009,8 @@
      "ad": "Eyüp",
      "sayfa": 26,
      "y": 433.6,
-     "tutarsiz": "partiler+bagimsiz=87241 != muteber=87240"
+     "tutarsiz": "partiler+bagimsiz=87241 != muteber=87240",
+     "adGuvenli": true
     },
     {
      "secmen": 234911,
@@ -3906,7 +4032,8 @@
      "adKaynakta": "Fatih",
      "ad": "Fatih",
      "sayfa": 26,
-     "y": 444.4
+     "y": 444.4,
+     "adGuvenli": true
     },
     {
      "secmen": 91311,
@@ -3928,7 +4055,8 @@
      "adKaynakta": "Gaziosmanpaşa",
      "ad": "Gaziosmanpaşa",
      "sayfa": 26,
-     "y": 455.1
+     "y": 455.1,
+     "adGuvenli": true
     },
     {
      "secmen": 250393,
@@ -3950,7 +4078,8 @@
      "adKaynakta": "Kadıköy",
      "ad": "Kadıköy",
      "sayfa": 26,
-     "y": 465.9
+     "y": 465.9,
+     "adGuvenli": true
     },
     {
      "secmen": 53781,
@@ -3972,7 +4101,8 @@
      "adKaynakta": "Sarıyer",
      "ad": "Sarıyer",
      "sayfa": 26,
-     "y": 476.5
+     "y": 476.5,
+     "adGuvenli": true
     },
     {
      "secmen": 227855,
@@ -3994,7 +4124,8 @@
      "adKaynakta": "Şişli",
      "ad": "Şişli",
      "sayfa": 26,
-     "y": 487.5
+     "y": 487.5,
+     "adGuvenli": true
     },
     {
      "secmen": 162426,
@@ -4016,7 +4147,8 @@
      "adKaynakta": "Üsküdar",
      "ad": "Üsküdar",
      "sayfa": 26,
-     "y": 497.9
+     "y": 497.9,
+     "adGuvenli": true
     },
     {
      "secmen": 58896,
@@ -4038,7 +4170,8 @@
      "adKaynakta": "Zeytinburnu",
      "ad": "Zeytinburnu",
      "sayfa": 26,
-     "y": 508.5
+     "y": 508.5,
+     "adGuvenli": true
     },
     {
      "secmen": 38008,
@@ -4060,7 +4193,8 @@
      "adKaynakta": "Çatalca",
      "ad": "Çatalca",
      "sayfa": 26,
-     "y": 519.3
+     "y": 519.3,
+     "adGuvenli": true
     },
     {
      "secmen": 142558,
@@ -4083,7 +4217,8 @@
      "ad": "Kartal",
      "sayfa": 26,
      "y": 530.1,
-     "tutarsiz": "partiler+bagimsiz=89877 != muteber=100119"
+     "tutarsiz": "partiler+bagimsiz=89877 != muteber=100119",
+     "adGuvenli": true
     },
     {
      "secmen": 23760,
@@ -4105,7 +4240,8 @@
      "adKaynakta": "Silivri",
      "ad": "Silivri",
      "sayfa": 26,
-     "y": 540.7
+     "y": 540.7,
+     "adGuvenli": true
     },
     {
      "secmen": 9828,
@@ -4127,7 +4263,8 @@
      "adKaynakta": "Şile",
      "ad": "Şile",
      "sayfa": 26,
-     "y": 551.4
+     "y": 551.4,
+     "adGuvenli": true
     },
     {
      "secmen": 33106,
@@ -4150,7 +4287,8 @@
      "ad": "Yalova",
      "sayfa": 26,
      "y": 562.0,
-     "tutarsiz": "partiler+bagimsiz=22159 != muteber=22160"
+     "tutarsiz": "partiler+bagimsiz=22159 != muteber=22160",
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -4211,7 +4349,8 @@
      "ad": "Merkez",
      "sayfa": 26,
      "y": 615.4,
-     "tutarsiz": "partiler+bagimsiz=13089 != muteber=13091"
+     "tutarsiz": "partiler+bagimsiz=13089 != muteber=13091",
+     "adGuvenli": true
     },
     {
      "secmen": 5415,
@@ -4234,7 +4373,8 @@
      "ad": "Aralık",
      "sayfa": 26,
      "y": 626.1,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 21273,
@@ -4257,7 +4397,8 @@
      "ad": "Ardahan",
      "sayfa": 26,
      "y": 636.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 19038,
@@ -4280,7 +4421,8 @@
      "ad": "Arpaçay",
      "sayfa": 26,
      "y": 647.7,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 8666,
@@ -4303,7 +4445,8 @@
      "ad": "Çıldır",
      "sayfa": 26,
      "y": 658.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 9073,
@@ -4326,7 +4469,8 @@
      "ad": "Digor",
      "sayfa": 26,
      "y": 668.9,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 19951,
@@ -4349,7 +4493,8 @@
      "ad": "78 Göle",
      "sayfa": 26,
      "y": 679.7,
-     "tutarsiz": "partiler+bagimsiz=8855 != muteber=10117"
+     "tutarsiz": "partiler+bagimsiz=8855 != muteber=10117",
+     "adGuvenli": true
     },
     {
      "secmen": 12448,
@@ -4372,7 +4517,8 @@
      "ad": "Hanak",
      "sayfa": 26,
      "y": 690.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 26702,
@@ -4395,7 +4541,8 @@
      "ad": "İğdır",
      "sayfa": 26,
      "y": 701.1,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 14059,
@@ -4418,7 +4565,8 @@
      "ad": "Kağızman",
      "sayfa": 26,
      "y": 711.7,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 9510,
@@ -4441,7 +4589,8 @@
      "ad": "Posof",
      "sayfa": 26,
      "y": 722.4,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 18711,
@@ -4464,7 +4613,8 @@
      "ad": "Sarıkamış",
      "sayfa": 26,
      "y": 733.0,
-     "tutarsiz": "partiler+bagimsiz=13134 != muteber=14156"
+     "tutarsiz": "partiler+bagimsiz=13134 != muteber=14156",
+     "adGuvenli": true
     },
     {
      "secmen": 12183,
@@ -4487,7 +4637,8 @@
      "ad": "Selim",
      "sayfa": 26,
      "y": 743.8,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 5937,
@@ -4510,7 +4661,8 @@
      "ad": "Susuz",
      "sayfa": 26,
      "y": 754.6,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 9755,
@@ -4533,7 +4685,8 @@
      "ad": "Tuzluca",
      "sayfa": 26,
      "y": 765.4,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -4589,7 +4742,8 @@
      "ad": "Merkez",
      "sayfa": 28,
      "y": 216.4,
-     "tutarsiz": "partiler+bagimsiz=53517.4 != muteber=54047"
+     "tutarsiz": "partiler+bagimsiz=53517.4 != muteber=54047",
+     "adGuvenli": true
     },
     {
      "secmen": 12117,
@@ -4612,7 +4766,8 @@
      "ad": "Altıntaş",
      "sayfa": 28,
      "y": 227.2,
-     "tutarsiz": "partiler+bagimsiz=8930.5 != muteber=9090"
+     "tutarsiz": "partiler+bagimsiz=8930.5 != muteber=9090",
+     "adGuvenli": true
     },
     {
      "secmen": 9170,
@@ -4635,7 +4790,8 @@
      "ad": "Domaniç",
      "sayfa": 28,
      "y": 238.0,
-     "tutarsiz": "partiler+bagimsiz=7519.7 != muteber=7614"
+     "tutarsiz": "partiler+bagimsiz=7519.7 != muteber=7614",
+     "adGuvenli": true
     },
     {
      "secmen": 25303,
@@ -4658,7 +4814,8 @@
      "ad": "Enet",
      "sayfa": 28,
      "y": 248.6,
-     "tutarsiz": "partiler+bagimsiz=17851.9 != muteber=18122"
+     "tutarsiz": "partiler+bagimsiz=17851.9 != muteber=18122",
+     "adGuvenli": true
     },
     {
      "secmen": 28174,
@@ -4681,7 +4838,8 @@
      "ad": "Gediz",
      "sayfa": 28,
      "y": 259.4,
-     "tutarsiz": "partiler+bagimsiz=22104.9 != muteber=22472"
+     "tutarsiz": "partiler+bagimsiz=22104.9 != muteber=22472",
+     "adGuvenli": true
     },
     {
      "secmen": 37116,
@@ -4704,7 +4862,8 @@
      "ad": "Simav",
      "sayfa": 28,
      "y": 269.8,
-     "tutarsiz": "partiler+bagimsiz=27849.0 != muteber=28301"
+     "tutarsiz": "partiler+bagimsiz=27849.0 != muteber=28301",
+     "adGuvenli": true
     },
     {
      "secmen": 37565,
@@ -4727,7 +4886,8 @@
      "ad": "Tavşanlı",
      "sayfa": 28,
      "y": 280.8,
-     "tutarsiz": "partiler+bagimsiz=28812.5 != muteber=29577"
+     "tutarsiz": "partiler+bagimsiz=28812.5 != muteber=29577",
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -4782,7 +4942,8 @@
      "ad": "Merkez",
      "sayfa": 28,
      "y": 344.7,
-     "tutarsiz": "partiler+bagimsiz=50797.3 != muteber=51382"
+     "tutarsiz": "partiler+bagimsiz=50797.3 != muteber=51382",
+     "adGuvenli": true
     },
     {
      "secmen": 66894,
@@ -4805,7 +4966,8 @@
      "ad": "Akhisar",
      "sayfa": 28,
      "y": 355.5,
-     "tutarsiz": "partiler+bagimsiz=45159.4 != muteber=45687"
+     "tutarsiz": "partiler+bagimsiz=45159.4 != muteber=45687",
+     "adGuvenli": true
     },
     {
      "secmen": 34719,
@@ -4828,7 +4990,8 @@
      "ad": "Alaşehir",
      "sayfa": 28,
      "y": 366.1,
-     "tutarsiz": "partiler+bagimsiz=26562.6 != muteber=26876"
+     "tutarsiz": "partiler+bagimsiz=26562.6 != muteber=26876",
+     "adGuvenli": true
     },
     {
      "secmen": 24489,
@@ -4851,7 +5014,8 @@
      "ad": "Demirci",
      "sayfa": 28,
      "y": 376.9,
-     "tutarsiz": "partiler+bagimsiz=19513.6 != muteber=19691"
+     "tutarsiz": "partiler+bagimsiz=19513.6 != muteber=19691",
+     "adGuvenli": true
     },
     {
      "secmen": 22,
@@ -4874,7 +5038,8 @@
      "ad": "Gördes",
      "sayfa": 28,
      "y": 387.6,
-     "tutarsiz": "partiler+bagimsiz=16721.6 != muteber=16929"
+     "tutarsiz": "partiler+bagimsiz=16721.6 != muteber=16929",
+     "adGuvenli": true
     },
     {
      "secmen": 19340,
@@ -4897,7 +5062,8 @@
      "ad": "Kırkağaç",
      "sayfa": 28,
      "y": 398.4,
-     "tutarsiz": "partiler+bagimsiz=14266 != muteber=14321"
+     "tutarsiz": "partiler+bagimsiz=14266 != muteber=14321",
+     "adGuvenli": true
     },
     {
      "secmen": 18419,
@@ -4920,7 +5086,8 @@
      "ad": "Kula",
      "sayfa": 28,
      "y": 409.2,
-     "tutarsiz": "partiler+bagimsiz=13718 != muteber=13806"
+     "tutarsiz": "partiler+bagimsiz=13718 != muteber=13806",
+     "adGuvenli": true
     },
     {
      "secmen": 50383,
@@ -4943,7 +5110,8 @@
      "ad": "Salihli",
      "sayfa": 28,
      "y": 419.8,
-     "tutarsiz": "partiler+bagimsiz=35584 != muteber=35750"
+     "tutarsiz": "partiler+bagimsiz=35584 != muteber=35750",
+     "adGuvenli": true
     },
     {
      "secmen": 15043,
@@ -4966,7 +5134,8 @@
      "ad": "Sarıgöl",
      "sayfa": 28,
      "y": 430.6,
-     "tutarsiz": "partiler+bagimsiz=10947 != muteber=11019"
+     "tutarsiz": "partiler+bagimsiz=10947 != muteber=11019",
+     "adGuvenli": true
     },
     {
      "secmen": 29001,
@@ -4989,7 +5158,8 @@
      "ad": "Saruhanlı",
      "sayfa": 28,
      "y": 441.0,
-     "tutarsiz": "partiler+bagimsiz=22330 != muteber=22437"
+     "tutarsiz": "partiler+bagimsiz=22330 != muteber=22437",
+     "adGuvenli": true
     },
     {
      "secmen": 10203,
@@ -5012,7 +5182,8 @@
      "ad": "Selendi",
      "sayfa": 28,
      "y": 451.8,
-     "tutarsiz": "partiler+bagimsiz=7571 != muteber=7612"
+     "tutarsiz": "partiler+bagimsiz=7571 != muteber=7612",
+     "adGuvenli": true
     },
     {
      "secmen": 27014,
@@ -5035,7 +5206,8 @@
      "ad": "Soma",
      "sayfa": 28,
      "y": 462.4,
-     "tutarsiz": "partiler+bagimsiz=19179 != muteber=19291"
+     "tutarsiz": "partiler+bagimsiz=19179 != muteber=19291",
+     "adGuvenli": true
     },
     {
      "secmen": 45592,
@@ -5058,7 +5230,8 @@
      "ad": "Turgutlu",
      "sayfa": 28,
      "y": 473.4,
-     "tutarsiz": "partiler+bagimsiz=30110 != muteber=30227"
+     "tutarsiz": "partiler+bagimsiz=30110 != muteber=30227",
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -5111,7 +5284,8 @@
      "ad": "Merkez",
      "sayfa": 28,
      "y": 537.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 8354,
@@ -5133,7 +5307,8 @@
      "adKaynakta": "Cizre",
      "ad": "Cizre",
      "sayfa": 28,
-     "y": 547.6
+     "y": 547.6,
+     "adGuvenli": true
     },
     {
      "secmen": 18675,
@@ -5155,7 +5330,8 @@
      "adKaynakta": "Derik",
      "ad": "Derik",
      "sayfa": 28,
-     "y": 558.7
+     "y": 558.7,
+     "adGuvenli": true
     },
     {
      "secmen": 13547,
@@ -5177,7 +5353,8 @@
      "adKaynakta": "Gercüş",
      "ad": "Gercüş",
      "sayfa": 28,
-     "y": 569.5
+     "y": 569.5,
+     "adGuvenli": true
     },
     {
      "secmen": 6362,
@@ -5199,7 +5376,8 @@
      "adKaynakta": "İdil",
      "ad": "İdil",
      "sayfa": 28,
-     "y": 580.2
+     "y": 580.2,
+     "adGuvenli": true
     },
     {
      "secmen": 26514,
@@ -5221,7 +5399,8 @@
      "adKaynakta": "Kızıltepe",
      "ad": "Kızıltepe",
      "sayfa": 28,
-     "y": 591.0
+     "y": 591.0,
+     "adGuvenli": true
     },
     {
      "secmen": 8489,
@@ -5243,7 +5422,8 @@
      "adKaynakta": "Mazıdağı",
      "ad": "Mazıdağı",
      "sayfa": 28,
-     "y": 601.6
+     "y": 601.6,
+     "adGuvenli": true
     },
     {
      "secmen": 32685,
@@ -5265,7 +5445,8 @@
      "adKaynakta": "Midyat",
      "ad": "Midyat",
      "sayfa": 28,
-     "y": 612.2
+     "y": 612.2,
+     "adGuvenli": true
     },
     {
      "secmen": 22519,
@@ -5288,7 +5469,8 @@
      "ad": "Nusaybin",
      "sayfa": 28,
      "y": 623.0,
-     "tutarsiz": "partiler+bagimsiz=11544 != muteber=11547"
+     "tutarsiz": "partiler+bagimsiz=11544 != muteber=11547",
+     "adGuvenli": true
     },
     {
      "secmen": 6051,
@@ -5310,7 +5492,8 @@
      "adKaynakta": "Ömerli",
      "ad": "Ömerli",
      "sayfa": 28,
-     "y": 633.6
+     "y": 633.6,
+     "adGuvenli": true
     },
     {
      "secmen": 11366,
@@ -5332,7 +5515,8 @@
      "adKaynakta": "Savur",
      "ad": "Savur",
      "sayfa": 28,
-     "y": 644.2
+     "y": 644.2,
+     "adGuvenli": true
     },
     {
      "secmen": 4754,
@@ -5355,7 +5539,8 @@
      "ad": "Silopi",
      "sayfa": 28,
      "y": 655.2,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -5406,7 +5591,8 @@
      "ad": "Merkez",
      "sayfa": 28,
      "y": 719.3,
-     "tutarsiz": "partiler+bagimsiz=32053 != muteber=32175"
+     "tutarsiz": "partiler+bagimsiz=32053 != muteber=32175",
+     "adGuvenli": true
     },
     {
      "secmen": 14127,
@@ -5429,7 +5615,8 @@
      "ad": "Bulanık",
      "sayfa": 28,
      "y": 729.9,
-     "tutarsiz": "partiler+bagimsiz=10145 != muteber=10208"
+     "tutarsiz": "partiler+bagimsiz=10145 != muteber=10208",
+     "adGuvenli": true
     },
     {
      "secmen": 8951,
@@ -5452,7 +5639,8 @@
      "ad": "Malazgirt",
      "sayfa": 28,
      "y": 740.7,
-     "tutarsiz": "partiler+bagimsiz=5634 != muteber=5657"
+     "tutarsiz": "partiler+bagimsiz=5634 != muteber=5657",
+     "adGuvenli": true
     },
     {
      "secmen": 11569,
@@ -5475,7 +5663,8 @@
      "ad": "Varto",
      "sayfa": 28,
      "y": 751.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -5526,7 +5715,8 @@
      "ad": "Merkez",
      "sayfa": 30,
      "y": 219.6,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 12897,
@@ -5549,7 +5739,8 @@
      "ad": "Ardeşen",
      "sayfa": 30,
      "y": 230.2,
-     "tutarsiz": "partiler+bagimsiz=8479 != muteber=8429"
+     "tutarsiz": "partiler+bagimsiz=8479 != muteber=8429",
+     "adGuvenli": true
     },
     {
      "secmen": 5031,
@@ -5571,7 +5762,8 @@
      "adKaynakta": "Çamlıhemşin",
      "ad": "Çamlıhemşin",
      "sayfa": 30,
-     "y": 240.9
+     "y": 240.9,
+     "adGuvenli": true
     },
     {
      "secmen": 24590,
@@ -5593,7 +5785,8 @@
      "adKaynakta": "Çayeli",
      "ad": "Çayeli",
      "sayfa": 30,
-     "y": 251.8
+     "y": 251.8,
+     "adGuvenli": true
     },
     {
      "secmen": 7,
@@ -5615,7 +5808,8 @@
      "adKaynakta": "Fındıklı",
      "ad": "Fındıklı",
      "sayfa": 30,
-     "y": 262.5
+     "y": 262.5,
+     "adGuvenli": true
     },
     {
      "secmen": 6832,
@@ -5637,7 +5831,8 @@
      "adKaynakta": "İkizdere",
      "ad": "İkizdere",
      "sayfa": 30,
-     "y": 273.1
+     "y": 273.1,
+     "adGuvenli": true
     },
     {
      "secmen": 8856,
@@ -5659,7 +5854,8 @@
      "adKaynakta": "Kalkandere",
      "ad": "Kalkandere",
      "sayfa": 30,
-     "y": 283.7
+     "y": 283.7,
+     "adGuvenli": true
     },
     {
      "secmen": 21511,
@@ -5682,7 +5878,8 @@
      "ad": "Pazar",
      "sayfa": 30,
      "y": 294.7,
-     "tutarsiz": "partiler+bagimsiz=13859 != muteber=13991"
+     "tutarsiz": "partiler+bagimsiz=13859 != muteber=13991",
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -5734,7 +5931,8 @@
      "ad": "Merkez",
      "sayfa": 30,
      "y": 358.4,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 21304,
@@ -5756,7 +5954,8 @@
      "adKaynakta": "Alaçam",
      "ad": "Alaçam",
      "sayfa": 30,
-     "y": 369.4
+     "y": 369.4,
+     "adGuvenli": true
     },
     {
      "secmen": 60538,
@@ -5778,7 +5977,8 @@
      "adKaynakta": "Bafra",
      "ad": "Bafra",
      "sayfa": 30,
-     "y": 380.0
+     "y": 380.0,
+     "adGuvenli": true
     },
     {
      "secmen": 59458,
@@ -5800,7 +6000,8 @@
      "adKaynakta": "Çarşamba",
      "ad": "Çarşamba",
      "sayfa": 30,
-     "y": 390.6
+     "y": 390.6,
+     "adGuvenli": true
     },
     {
      "secmen": 21309,
@@ -5823,7 +6024,8 @@
      "ad": "Havza",
      "sayfa": 30,
      "y": 401.2,
-     "tutarsiz": "partiler+bagimsiz=16379 != muteber=16388"
+     "tutarsiz": "partiler+bagimsiz=16379 != muteber=16388",
+     "adGuvenli": true
     },
     {
      "secmen": 18554,
@@ -5845,7 +6047,8 @@
      "adKaynakta": "Kavak",
      "ad": "Kavak",
      "sayfa": 30,
-     "y": 412.2
+     "y": 412.2,
+     "adGuvenli": true
     },
     {
      "secmen": 12148,
@@ -5867,7 +6070,8 @@
      "adKaynakta": "Ladik",
      "ad": "Ladik",
      "sayfa": 30,
-     "y": 422.8
+     "y": 422.8,
+     "adGuvenli": true
     },
     {
      "secmen": 37638,
@@ -5890,7 +6094,8 @@
      "ad": "Terme",
      "sayfa": 30,
      "y": 433.5,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 30345,
@@ -5913,7 +6118,8 @@
      "ad": "Vezirköprü",
      "sayfa": 30,
      "y": 444.1,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -5969,7 +6175,8 @@
      "ad": "Merkez",
      "sayfa": 30,
      "y": 508.0,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 29441,
@@ -5991,7 +6198,8 @@
      "adKaynakta": "1Z5 Batman",
      "ad": "1Z5 Batman",
      "sayfa": 30,
-     "y": 519.0
+     "y": 519.0,
+     "adGuvenli": true
     },
     {
      "secmen": 6842,
@@ -6013,7 +6221,8 @@
      "adKaynakta": "Baykan",
      "ad": "Baykan",
      "sayfa": 30,
-     "y": 529.8
+     "y": 529.8,
+     "adGuvenli": true
     },
     {
      "secmen": 5686,
@@ -6035,7 +6244,8 @@
      "adKaynakta": "Beşiri",
      "ad": "Beşiri",
      "sayfa": 30,
-     "y": 540.4
+     "y": 540.4,
+     "adGuvenli": true
     },
     {
      "secmen": 10021,
@@ -6057,7 +6267,8 @@
      "adKaynakta": "Eruh",
      "ad": "Eruh",
      "sayfa": 30,
-     "y": 551.0
+     "y": 551.0,
+     "adGuvenli": true
     },
     {
      "secmen": 12599,
@@ -6079,7 +6290,8 @@
      "adKaynakta": "Kozluk",
      "ad": "Kozluk",
      "sayfa": 30,
-     "y": 561.6
+     "y": 561.6,
+     "adGuvenli": true
     },
     {
      "secmen": 14656,
@@ -6101,7 +6313,8 @@
      "adKaynakta": "Kurtalan",
      "ad": "Kurtalan",
      "sayfa": 30,
-     "y": 572.6
+     "y": 572.6,
+     "adGuvenli": true
     },
     {
      "secmen": 3904,
@@ -6123,7 +6336,8 @@
      "adKaynakta": "Pervari",
      "ad": "Pervari",
      "sayfa": 30,
-     "y": 583.2
+     "y": 583.2,
+     "adGuvenli": true
     },
     {
      "secmen": 9115,
@@ -6145,7 +6359,8 @@
      "adKaynakta": "Sason",
      "ad": "Sason",
      "sayfa": 30,
-     "y": 593.8
+     "y": 593.8,
+     "adGuvenli": true
     },
     {
      "secmen": 7413,
@@ -6167,7 +6382,8 @@
      "adKaynakta": "Şırnak",
      "ad": "Şırnak",
      "sayfa": 30,
-     "y": 604.5
+     "y": 604.5,
+     "adGuvenli": true
     },
     {
      "secmen": 6455,
@@ -6190,7 +6406,8 @@
      "ad": "Şirvan",
      "sayfa": 30,
      "y": 615.3,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ]
   },
@@ -6236,7 +6453,8 @@
      "adKaynakta": "Merkez",
      "ad": "Merkez",
      "sayfa": 30,
-     "y": 679.2
+     "y": 679.2,
+     "adGuvenli": true
     },
     {
      "secmen": 11687,
@@ -6258,7 +6476,8 @@
      "adKaynakta": "Almus",
      "ad": "Almus",
      "sayfa": 30,
-     "y": 689.8
+     "y": 689.8,
+     "adGuvenli": true
     },
     {
      "secmen": 14236,
@@ -6280,7 +6499,8 @@
      "adKaynakta": "Artova",
      "ad": "Artova",
      "sayfa": 30,
-     "y": 700.8
+     "y": 700.8,
+     "adGuvenli": true
     },
     {
      "secmen": 37221,
@@ -6302,7 +6522,8 @@
      "adKaynakta": "Erbaa",
      "ad": "Erbaa",
      "sayfa": 30,
-     "y": 711.4
+     "y": 711.4,
+     "adGuvenli": true
     },
     {
      "secmen": 32984,
@@ -6324,7 +6545,8 @@
      "adKaynakta": "Niksar",
      "ad": "Niksar",
      "sayfa": 30,
-     "y": 722.2
+     "y": 722.2,
+     "adGuvenli": true
     },
     {
      "secmen": 22930,
@@ -6346,7 +6568,8 @@
      "adKaynakta": "Reşadiye",
      "ad": "Reşadiye",
      "sayfa": 30,
-     "y": 733.0
+     "y": 733.0,
+     "adGuvenli": true
     },
     {
      "secmen": 41501,
@@ -6368,7 +6591,8 @@
      "adKaynakta": "Turhal",
      "ad": "Turhal",
      "sayfa": 30,
-     "y": 743.6
+     "y": 743.6,
+     "adGuvenli": true
     },
     {
      "secmen": 40185,
@@ -6391,7 +6615,8 @@
      "ad": "Zile",
      "sayfa": 30,
      "y": 754.4,
-     "tutarsiz": "partiler+bagimsiz=32457 != muteber=33190"
+     "tutarsiz": "partiler+bagimsiz=32457 != muteber=33190",
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -6442,7 +6667,8 @@
      "ad": "J83 Merkez",
      "sayfa": 32,
      "y": 214.0,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 7855,
@@ -6464,7 +6690,8 @@
      "adKaynakta": "Başkale",
      "ad": "Başkale",
      "sayfa": 32,
-     "y": 224.7
+     "y": 224.7,
+     "adGuvenli": true
     },
     {
      "secmen": 6113,
@@ -6486,7 +6713,8 @@
      "adKaynakta": "Çatak",
      "ad": "Çatak",
      "sayfa": 32,
-     "y": 235.5
+     "y": 235.5,
+     "adGuvenli": true
     },
     {
      "secmen": 15445,
@@ -6509,7 +6737,8 @@
      "ad": "Erciş",
      "sayfa": 32,
      "y": 246.3,
-     "tutarsiz": "partiler+bagimsiz=7923 != muteber=10923"
+     "tutarsiz": "partiler+bagimsiz=7923 != muteber=10923",
+     "adGuvenli": true
     },
     {
      "secmen": 12451,
@@ -6532,7 +6761,8 @@
      "ad": "Gevaş",
      "sayfa": 32,
      "y": 257.1,
-     "tutarsiz": "partiler+bagimsiz=14397 != muteber=9397"
+     "tutarsiz": "partiler+bagimsiz=14397 != muteber=9397",
+     "adGuvenli": true
     },
     {
      "secmen": 12047,
@@ -6555,7 +6785,8 @@
      "ad": "Gürpınar",
      "sayfa": 32,
      "y": 267.7,
-     "tutarsiz": "partiler+bagimsiz=10237 != muteber=10239"
+     "tutarsiz": "partiler+bagimsiz=10237 != muteber=10239",
+     "adGuvenli": true
     },
     {
      "secmen": 17464,
@@ -6577,7 +6808,8 @@
      "adKaynakta": "Muradiye",
      "ad": "Muradiye",
      "sayfa": 32,
-     "y": 278.3
+     "y": 278.3,
+     "adGuvenli": true
     },
     {
      "secmen": 14528,
@@ -6600,7 +6832,8 @@
      "ad": "Özalp",
      "sayfa": 32,
      "y": 289.1,
-     "tutarsiz": "partiler+bagimsiz=10821 != muteber=10968"
+     "tutarsiz": "partiler+bagimsiz=10821 != muteber=10968",
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [
@@ -6656,7 +6889,8 @@
      "ad": "Merkez",
      "sayfa": 32,
      "y": 353.2,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     },
     {
      "secmen": 20957,
@@ -6678,7 +6912,8 @@
      "adKaynakta": "Akdağmadeni",
      "ad": "Akdağmadeni",
      "sayfa": 32,
-     "y": 363.8
+     "y": 363.8,
+     "adGuvenli": true
     },
     {
      "secmen": 22354,
@@ -6700,7 +6935,8 @@
      "adKaynakta": "Boğazlıyan",
      "ad": "Boğazlıyan",
      "sayfa": 32,
-     "y": 374.8
+     "y": 374.8,
+     "adGuvenli": true
     },
     {
      "secmen": 13045,
@@ -6722,7 +6958,8 @@
      "adKaynakta": "Çayıralan",
      "ad": "Çayıralan",
      "sayfa": 32,
-     "y": 385.4
+     "y": 385.4,
+     "adGuvenli": true
     },
     {
      "secmen": 22201,
@@ -6744,7 +6981,8 @@
      "adKaynakta": "Çekerek",
      "ad": "Çekerek",
      "sayfa": 32,
-     "y": 396.0
+     "y": 396.0,
+     "adGuvenli": true
     },
     {
      "secmen": 28461,
@@ -6771,7 +7009,8 @@
       "alan": "muteber",
       "okunan": 73664,
       "duzeltilen": 23664
-     }
+     },
+     "adGuvenli": true
     },
     {
      "secmen": 11507,
@@ -6793,7 +7032,8 @@
      "adKaynakta": "Şefaatli",
      "ad": "Şefaatli",
      "sayfa": 32,
-     "y": 428.2
+     "y": 428.2,
+     "adGuvenli": true
     },
     {
      "secmen": 16012,
@@ -6816,7 +7056,8 @@
      "ad": "Yerköy",
      "sayfa": 32,
      "y": 439.0,
-     "bosHucre0": true
+     "bosHucre0": true,
+     "adGuvenli": true
     }
    ],
    "dogrulanamayanAlanlar": [

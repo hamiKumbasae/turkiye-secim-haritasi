@@ -1,0 +1,156 @@
+{
+ "secim": "1975mv_ara",
+ "tur": "yenileme_ara",
+ "aciklama": "12 Ekim 1975 milletvekili ara seçimi (Amasya, Bursa, Eskişehir, Niğde, Urfa, Zonguldak) — il düzeyi",
+ "duzey": "il / seçim çevresi (ilçe kırılımı bildiride yok)",
+ "kaynak": {
+  "ana": "resmi_gazete",
+  "yayin": "Resmî Gazete sayı 15394 — Yüksek Seçim Kurulu bildirisi",
+  "url": "https://www.resmigazete.gov.tr/arsiv/15394.pdf",
+  "hamDosya": "data/raw/resmi_gazete/15394.pdf",
+  "kaynakKatmani": "data/kaynaklar/resmi_gazete/genel/1975ara.json"
+ },
+ "dogrulama": {
+  "tesavUlusalToplam": {
+   "tutan": 6,
+   "farkli": {
+    "DEMP73": [
+     30653,
+     30654
+    ]
+   }
+  },
+  "not": "TESAV 'Milletvekili Ara Seçim Sonuçları' (DİE kaynaklı) ulusal toplamlarıyla karşılaştırma"
+ },
+ "eslenemeyenPartiler": {},
+ "iller": [
+  {
+   "il": "Amasya",
+   "plaka": 5,
+   "secimCevresi": null,
+   "secmen": 149702,
+   "oyKullanan": 105253,
+   "gecerliOy": 101615,
+   "oy": {
+    "CHP": 47890,
+    "AP": 41218,
+    "MSP": 5936,
+    "MHP": 2574,
+    "DEMP73": 2299,
+    "TBP73": 1698
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 15394 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/15394.pdf"
+   }
+  },
+  {
+   "il": "Bursa",
+   "plaka": 16,
+   "secimCevresi": null,
+   "secmen": 502658,
+   "oyKullanan": 330068,
+   "gecerliOy": 320757,
+   "oy": {
+    "AP": 182305,
+    "CHP": 109485,
+    "MSP": 17878,
+    "DEMP73": 7724,
+    "MHP": 3367
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 15394 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/15394.pdf",
+    "kaynakIciTutarsizlik": "partiler toplami 320759 != gecerli 320757"
+   }
+  },
+  {
+   "il": "Eskişehir",
+   "plaka": 26,
+   "secimCevresi": null,
+   "secmen": 251250,
+   "oyKullanan": 152317,
+   "gecerliOy": 147440,
+   "oy": {
+    "AP": 72458,
+    "CHP": 61235,
+    "MSP": 6679,
+    "DEMP73": 3538,
+    "MHP": 2937,
+    "TBP73": 566,
+    "Bağımsız": 26
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 15394 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/15394.pdf",
+    "kaynakIciTutarsizlik": "partiler toplami 147439 != gecerli 147440"
+   }
+  },
+  {
+   "il": "Niğde",
+   "plaka": 51,
+   "secimCevresi": null,
+   "secmen": 199685,
+   "oyKullanan": 115623,
+   "gecerliOy": 109855,
+   "oy": {
+    "AP": 45138,
+    "CHP": 38904,
+    "MHP": 12006,
+    "MSP": 6937,
+    "DEMP73": 6120,
+    "TBP73": 750
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 15394 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/15394.pdf"
+   }
+  },
+  {
+   "il": "Urfa",
+   "plaka": 63,
+   "secimCevresi": null,
+   "secmen": 236923,
+   "oyKullanan": 136394,
+   "gecerliOy": 133299,
+   "oy": {
+    "AP": 44293,
+    "CHP": 43506,
+    "MSP": 39847,
+    "DEMP73": 4445,
+    "MHP": 1207
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 15394 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/15394.pdf",
+    "kaynakIciTutarsizlik": "partiler toplami 133298 != gecerli 133299"
+   }
+  },
+  {
+   "il": "Zonguldak",
+   "plaka": 67,
+   "secimCevresi": null,
+   "secmen": 402934,
+   "oyKullanan": 280760,
+   "gecerliOy": 264854,
+   "oy": {
+    "AP": 138589,
+    "CHP": 108367,
+    "MSP": 7429,
+    "DEMP73": 6527,
+    "MHP": 2757,
+    "Bağımsız": 1185
+   },
+   "kaynak": {
+    "ana": "resmi_gazete",
+    "yayin": "Resmî Gazete sayı 15394 — Yüksek Seçim Kurulu bildirisi",
+    "hamDosya": "data/raw/resmi_gazete/15394.pdf"
+   }
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+{
+ "secim": "1975ara",
+ "tur": "milletvekili_ara_secimi",
+ "tarih": "12 Ekim 1975",
+ "kaynak": "resmi_gazete",
+ "yayin": "Resmî Gazete sayı 15394 — Yüksek Seçim Kurulu bildirisi",
+ "hamDosya": "data/raw/resmi_gazete/15394.pdf",
+ "url": "https://www.resmigazete.gov.tr/arsiv/15394.pdf",
+ "duzey": "il / seçim çevresi (ilçe kırılımı bildiride yok)",
+ "tesavUlusalKarsilastirma": {
+  "tutan": 6,
+  "farkli": {
+   "DEMP73": [
+    30653,
+    30654
+   ]
+  }
+ },
+ "eslenemeyenPartiler": {},
+ "iller": [
+  {
+   "il": "Amasya",
+   "secimCevresi": null,
+   "secmen": 149702,
+   "oyKullanan": 105253,
+   "gecerliOy": 101615,
+   "oy": {
+    "CHP": 47890,
+    "AP": 41218,
+    "MSP": 5936,
+    "MHP": 2574,
+    "DEMP73": 2299,
+    "TBP73": 1698
+   }
+  },
+  {
+   "il": "Bursa",
+   "secimCevresi": null,
+   "secmen": 502658,
+   "oyKullanan": 330068,
+   "gecerliOy": 320757,
+   "oy": {
+    "AP": 182305,
+    "CHP": 109485,
+    "MSP": 17878,
+    "DEMP73": 7724,
+    "MHP": 3367
+   },
+   "tutarsiz": "partiler toplami 320759 != gecerli 320757"
+  },
+  {
+   "il": "Eskişehir",
+   "secimCevresi": null,
+   "secmen": 251250,
+   "oyKullanan": 152317,
+   "gecerliOy": 147440,
+   "oy": {
+    "AP": 72458,
+    "CHP": 61235,
+    "MSP": 6679,
+    "DEMP73": 3538,
+    "MHP": 2937,
+    "TBP73": 566,
+    "Bağımsız": 26
+   },
+   "tutarsiz": "partiler toplami 147439 != gecerli 147440"
+  },
+  {
+   "il": "Niğde",
+   "secimCevresi": null,
+   "secmen": 199685,
+   "oyKullanan": 115623,
+   "gecerliOy": 109855,
+   "oy": {
+    "AP": 45138,
+    "CHP": 38904,
+    "MHP": 12006,
+    "MSP": 6937,
+    "DEMP73": 6120,
+    "TBP73": 750
+   }
+  },
+  {
+   "il": "Urfa",
+   "secimCevresi": null,
+   "secmen": 236923,
+   "oyKullanan": 136394,
+   "gecerliOy": 133299,
+   "oy": {
+    "AP": 44293,
+    "CHP": 43506,
+    "MSP": 39847,
+    "DEMP73": 4445,
+    "MHP": 1207
+   },
+   "tutarsiz": "partiler toplami 133298 != gecerli 133299"
+  },
+  {
+   "il": "Zonguldak",
+   "secimCevresi": null,
+   "secmen": 402934,
+   "oyKullanan": 280760,
+   "gecerliOy": 264854,
+   "oy": {
+    "AP": 138589,
+    "CHP": 108367,
+    "MSP": 7429,
+    "DEMP73": 6527,
+    "MHP": 2757,
+    "Bağımsız": 1185
+   }
+  }
+ ]
+}

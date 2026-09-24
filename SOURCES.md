@@ -257,3 +257,11 @@ birebir). Aynı 1966 kitabındaki Hatay milletvekili ara seçiminin ilçe sonuç
 üyeliği parti oyları, YSK açık veri API'sinden il/ilçe/belde bazında →
 `data/normalized/ek/belediye_meclisi/`, `data/normalized/ek/il_genel_meclisi/`.
 Haritaya bağlı değil. 2009 öncesi için bu kaynakta veri yok.
+
+## Milletvekili ara seçimleri (2026-09-25)
+
+`data/normalized/ek/yenileme_ara/<yıl>mv_ara.json`: 1966 (Hatay) ve 1979 (5 il)
+ilçe düzeyinde DİE Senato kitaplarından; 1968 (5 il), 1975 (6 il) ve 1986
+(11 seçim çevresi) il/çevre düzeyinde Resmî Gazete YSK bildirilerinden. Ulusal
+toplamlar TESAV ile karşılaştırıldı (en fazla 1 oy fark). 1951 ve 2003 Siirt
+yenilemesi henüz yok. Ayrıntı: `data/raw/resmi_gazete/PROVENANCE.md`.

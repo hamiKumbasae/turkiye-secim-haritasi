@@ -2,7 +2,7 @@
  "folders": {
   "data/normalized": {
    "checksum_file": "data/normalized/checksums.sha256",
-   "file_count": 120,
+   "file_count": 124,
    "files": {
     "ek/beldeler/1950yerel.json": "85614941409541cd310dcebc7e18c6961a8988a7e273807fa40293698f582763",
     "ek/beldeler/1955yerel.json": "ff1934be8b6c9367cda07017b6db197372fc554f346b683938c403b0a3bd70d4",
@@ -54,8 +54,12 @@
     "ek/senato/1973senato.json": "86af20f9dea790f52c4790f7b701b88f53bd444316bfd93070b50486cd14afde",
     "ek/senato/1975senato.json": "6e0f96bb22d73b78e60435c9b361d7c4caa8bf55f61b07553dc63530b17006f0",
     "ek/senato/1977senato.json": "0db7bb8af5623d56767b0d01c57b026fa65b5a18bcd0990c6d93aed8a57b6487",
-    "ek/senato/1979senato.json": "84a4374046eb0ce1ea9e0d1366b98e9426190c48936d5896b18585c3533a47fc",
+    "ek/senato/1979senato.json": "875da75e2aadaa36a5c53ba94b38d869be78d2b8f5e5e86172f1c082333d3dae",
     "ek/yenileme_ara/1966mv_ara_hatay.json": "f591bcf965ae32e0c551c2f3815e177387573f9420cefe80f7ffe9e5eb288567",
+    "ek/yenileme_ara/1968mv_ara.json": "052e681d71905aa3eed3db112d02d8a555e6e6fb44ac2d8e9a2ef665fc4f14a4",
+    "ek/yenileme_ara/1975mv_ara.json": "2848c52e98f6f61cd0d083c54eeed9a0e68a012b684e6317c89d1c1a03f269e6",
+    "ek/yenileme_ara/1979mv_ara.json": "ed49cc5c12ea31a578359ea1e73ce74585a14b2b870e470fac37c0956820bcbb",
+    "ek/yenileme_ara/1986mv_ara.json": "592264b7bda2d013a291b6530328ebe708cf770c91e6278dff75bd48c6b866ca",
     "ek/yenileme_ara/2019istanbul_bb_yenileme.json": "a04e5c48f6030b4fd525f7f419617187c7ce9be96aded17facc2d53de8f6186c",
     "ek/yenileme_ara/2024yenileme_belediye_baskanligi.json": "f6a0315cfc3ac14740ad88592594e0995075d2cc71381c556082e9330f799208",
     "ek/yenileme_ara/2024yenileme_belediye_meclisi.json": "cb39c9bc1f49766d2f66c648abd1da767bee0cecb81871f83cf5917202f4d13c",
@@ -5475,7 +5479,7 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 88,
+   "file_count": 92,
    "files": {
     "README.md": "824b3750f0fd31cee96ef29a85cd63cd7bf285159be777ce03c299b7be25e7b2",
     "mertnuhoglu/genel/1991.json": "39fbdc09dae77a625bd4afe8a81165c0bfb5e73b25541202ecc273d457debcb9",
@@ -5483,12 +5487,16 @@
     "mertnuhoglu/genel/1999.json": "da8f9ce8202a799f434a581c42ac5d7e0d80b5a8e0dda6c4d18f60aa69882110",
     "mertnuhoglu/genel/2002.json": "36d5ad604f414c014ecd90206e216c4064b6ab317d32b6255acd9f89ba56f010",
     "mertnuhoglu/genel/2007.json": "33020d58e3cf8772977af397a3ced3651c600ca523a1fa9a91b48d6a6972f8ec",
+    "resmi_gazete/genel/1968ara.json": "8016dae6ce223bbe597b96f16efc2710a907c5bcf8a8e9a1e0b172beaabb57b9",
+    "resmi_gazete/genel/1975ara.json": "6d9a725f988f8b4db2e2ff3c8db7d300a86db5195dc04647221660cddd7b5b49",
+    "resmi_gazete/genel/1986ara.json": "264daef756b66a1871e3b26579026a5e240d6bf2fbb4326f590ad6106416b7e3",
     "tuik/genel/1961.json": "d790a3245ceb21b15e5d64336d738895b2c48fe3e83ce7a467cf74444f0a175d",
     "tuik/genel/1965.json": "85fc0ad7121be95357b2760740e87dc3bcdac5db20b8ceab7b49424dbe198c2c",
     "tuik/genel/1966ara.json": "f5197596a72edba84dad6c74f1e1dacaf0582bf6a23dbd9b656d6d670c11ff8a",
     "tuik/genel/1969.json": "cf4ad2b04e7d60a674d45114f6cf55cc255131ac3638e7268d8e11f202761847",
     "tuik/genel/1973.json": "d2fca5ed7d1ad85e956d2a0cc352456543da15892d2d463502ba70cb75e67b31",
     "tuik/genel/1977.json": "f9f92120f4de80ba268b1aea3d322ef00f421ac88905bfd8497813d028a835ff",
+    "tuik/genel/1979ara.json": "a804962e8dff3448b023319794e03e0ec690e470af7e06478f893449070dc4a6",
     "tuik/genel/1983.json": "4d7eb4bfdab21a353e4fe8cdfdd3df14c87c9c7182f81ead50cd26b35ea804e0",
     "tuik/genel/1987.json": "589bbfac774ad954b4ec575aa31ca62612055ea1fc5798a195e0ef92addb4e43",
     "tuik/genel/1991.json": "009e5e92d0d4c84b6b5c4d06f291da3d57c58ea77db3961a51b290a650f06c08",
@@ -5508,7 +5516,7 @@
     "tuik/senato/1973senato.json": "7bef0d1cce98a9e64bf48df77623499402b038eb63aa93d5b90ebd630a977906",
     "tuik/senato/1975senato.json": "78f317e201d7445e60a368a53b1675e294ef7d293f3d60d5c0d78e98f50e9263",
     "tuik/senato/1977senato.json": "01b751baabbd8f688d8bf2990b2c622b1c90d30f4d43281a680285e857564800",
-    "tuik/senato/1979senato.json": "6a75c1af65e11e12b8747192493001459af6897afecb93806f72b496a1a4044e",
+    "tuik/senato/1979senato.json": "7c752af2568d96206b1297fff93e55f370a1ad1b5e4ea1d7b7c387d7c7d1f16a",
     "wikipedia/cumhurbaskanligi/2014cb.json": "0cf52ed9c22bbf5c738ecb2ff15cb971f9fe5a096b0681fb437fb80d60cd32e8",
     "wikipedia/genel/1923.json": "0eccb7504f023b02e4dfb174026981b4292102be1752f434d0b5b0fafee7a903",
     "wikipedia/genel/1927.json": "f8781f1fb299f6d6cc2e3d2b5bfd8768d8e5cb47eee07e815afda05a1a0a5344",
@@ -5595,7 +5603,7 @@
   },
   "data/raw/tuik/senato-metin": {
    "checksum_file": "data/raw/tuik/senato-metin/checksums.sha256",
-   "file_count": 313,
+   "file_count": 317,
    "files": {
     "0015147/0009.txt": "bb4a2cce8cbe9f8ba04d76ba62f896bd7a68a0251d42a41fae18e3f156008a8f",
     "0015147/0010.txt": "31e5b72beed889367a1f004e7dad77d45202fe5228338fa39ea746ac8e5a4528",
@@ -5909,7 +5917,20 @@
     "0015789/0034.txt": "bf2eb6c389f54eb0125f9fe18245ab27136569c498f6d7926b23211971483e00",
     "0015789/0035.txt": "b3443e67305821751049e0c55a7baf57a9ab76caa83fd71e9152be048f2e908b",
     "0015789/0036.txt": "6477f84401235a259a6758931b4d56c8f2ab0c010d350331c4a831ffd9f69859",
-    "0015789/0037.txt": "30f2651ed23c7afdbe07c8b5070439b3ddcfb056631a9e5b6ed0a8c3afa7e09a"
+    "0015789/0037.txt": "30f2651ed23c7afdbe07c8b5070439b3ddcfb056631a9e5b6ed0a8c3afa7e09a",
+    "0015789/0614.txt": "809e99151c74e368e8794fda495d5ec75f22191e516c42b31cb333303e22149f",
+    "0015789/0615.txt": "6569b4196f96ef46cf067ab6a300f408ad28aeb046855523056cab062b477bc6",
+    "0015789/0616.txt": "53e2e6e7d9e10cd58b1d769fcdbc119abd9c709002e87d8b0800484a000567eb",
+    "0015789/0617.txt": "2e9bd20b782777ac734198d63db4722ec69e84251d097cfdfc4956f69cde8014"
+   }
+  },
+  "data/raw/resmi_gazete": {
+   "checksum_file": "data/raw/resmi_gazete/checksums.sha256",
+   "file_count": 3,
+   "files": {
+    "12922.pdf": "f2eb6ed67c7bf232f12708b391dc8e5162176d69ed07440a8f73f423d671cc6b",
+    "15394.pdf": "34815945af8d049ef7fb412468716d7b4a59d9e7a5ed711f93bd3f11984013bb",
+    "19247.pdf": "953644e44978c8807231ddb8f875a96af2955111a714629213bf847992fe78e4"
    }
   }
  },

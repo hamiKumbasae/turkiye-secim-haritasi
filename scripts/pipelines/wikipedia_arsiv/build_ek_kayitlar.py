@@ -42,7 +42,7 @@ TUIK_GENEL = ROOT / "data" / "kaynaklar" / "tuik" / "genel"
 # senato/ara secim -> ilce geomId icin en yakin genel secim (merge_yerel_ilce kurali)
 YAKIN = {"1961senato": "1961", "1964senato": "1965", "1966senato": "1965", "1968senato": "1969",
          "1973senato": "1973", "1975senato": "1973", "1977senato": "1977", "1979senato": "1977",
-         "1966ara": "1965"}
+         "1966ara": "1965", "1979ara": "1977"}
 
 
 DOGRU_AD = {}  # (plaka, fold(ad)) -> projedeki yazim
@@ -195,12 +195,13 @@ def main():
                               "iller": iller, "ilceBirincileri": ilce, "secilenler": s})
         ozet["senato"][secim] = f"{len(iller)} il, {len(ilce)} ilce, {len(s)}/{beklenen} senator" + (
             f", TUIK ilce oyu {sum(len(i['ilceler']) for i in tuik['iller'])}" if tuik else "")
-    ara = tuik_ilce_oylari("1966ara", TUIK_GENEL / "1966ara.json")
-    if ara:
-        yaz("yenileme_ara", "1966mv_ara_hatay", {"secim": "1966mv_ara_hatay", "tur": "yenileme_ara",
-            "aciklama": "5 Haziran 1966 milletvekili ara seçimi (Hatay), senato seçimiyle aynı gün",
-            **ara})
-        ozet["yenileme_ara"]["1966mv_ara_hatay"] = f"{sum(len(i['ilceler']) for i in ara['iller'])} ilce"
+    for kod, ad, aciklama in [
+            ("1966ara", "1966mv_ara_hatay", "5 Haziran 1966 milletvekili ara seçimi (Hatay), senato seçimiyle aynı gün"),
+            ("1979ara", "1979mv_ara", "14 Ekim 1979 milletvekili ara seçimi (Aydın, Edirne, Konya, Manisa, Muğla), senato seçimiyle aynı gün")]:
+        ara = tuik_ilce_oylari(kod, TUIK_GENEL / f"{kod}.json")
+        if ara:
+            yaz("yenileme_ara", ad, {"secim": ad, "tur": "yenileme_ara", "aciklama": aciklama, **ara})
+            ozet["yenileme_ara"][ad] = f"{len(ara['iller'])} il, {sum(len(i['ilceler']) for i in ara['iller'])} ilce"
     for f in sorted((SRC / "yerel").glob("*.json")):
         secim = f.stem
         if int(secim[:4]) < 1950:

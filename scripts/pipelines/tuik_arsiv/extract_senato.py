@@ -77,6 +77,10 @@ KITAPLAR = {
         "baslik": "DİE, Cumhuriyet Senatosu Üyeleri Üçtebir Yenileme ve Milletvekili Ara Seçimi Sonuçları, 14 Ekim 1979 (1980)",
         "cift": [(20, 32, "1979senato",
                   ["secmen", "oyKullanan", "%", "muteber", "AP", "%", "CHP", "%", "CGP", "%"],
+                  ["MHP", "%", "MSP", "%", "SDP", "%", "TBP73", "%", "TİP", "%", "TSİP", "%", "Bağımsız", "%"]),
+                 # ayni kitap, Bolum II: 14 Ekim 1979 milletvekili ara secimi (5 il), ayni duzen
+                 (614, 616, "1979ara",
+                  ["secmen", "oyKullanan", "%", "muteber", "AP", "%", "CHP", "%", "CGP", "%"],
                   ["MHP", "%", "MSP", "%", "SDP", "%", "TBP73", "%", "TİP", "%", "TSİP", "%", "Bağımsız", "%"])],
     },
     "1961senato": {

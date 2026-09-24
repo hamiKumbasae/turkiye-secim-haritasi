@@ -483,7 +483,7 @@ ek_kayitlar:
     content: [il / ilçe / belde bazında il genel meclisi üyeliği parti oyları]
     note: "2014'ten itibaren 30 büyükşehirde il genel meclisi yok (51 il)"
   yenileme_ara:
-    files: "data/normalized/ek/yenileme_ara/<ad>.json (2019 İstanbul BB yenilemesi, 2024 yenileme, 2026 mahalli ara seçimi; 1966 Hatay milletvekili ara seçimi — DİE 1966 senato kitabından)"
+    files: "data/normalized/ek/yenileme_ara/<ad>.json (2019 İstanbul BB yenilemesi, 2024 yenileme, 2026 mahalli ara seçimi — YSK; 1966 ve 1979 milletvekili ara seçimi ilçe düzeyi — DİE; 1968, 1975, 1986 milletvekili ara seçimi il/çevre düzeyi — Resmî Gazete YSK bildirileri, data/raw/resmi_gazete/)"
     source: {authority: YSK, url: "acikveri.ysk.gov.tr getSecimSandikSonucList (secimId 16643, 20273, 21272)", status: official, raw: "data/raw/ysk/acikveri-belde-agrege/"}
     content: [il / ilçe / belde bazında seçmen, oy kullanan, geçerli, geçersiz, parti oyları]
   beldeler:
