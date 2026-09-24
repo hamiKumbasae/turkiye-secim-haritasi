@@ -10,7 +10,12 @@ Her seçim yılı kendi dönemin gerçek ilçe sınırlarıyla gösterilmeli —
 
 ## Özet: 19 il tam, 62 ilde gerçek eksik var (başlangıç taraması: toplam 316 ilçe-yıl kaydı)
 
-**2026-09-24 güncellemesi:** İstanbul'da Sancaktepe tamamen çözüldü (19/19 mahalle, aşağıda detay), genel 1991/1995/1999/2002/2007'de Ataşehir/Beylikdüzü/Çekmeköy'e ait geometri de artık aktif. Aşağıdaki sayı (316) ilk tarama anına ait; İstanbul'un güncel kalan-eksik sayısı 12'dir (aşağıdaki İstanbul bölümüne bakın), diğer 61 il için sayılar henüz bu oturumda yeniden hesaplanmadı.
+**2026-09-24 güncellemesi:** İstanbul'da Sancaktepe tamamen çözüldü, 1992 dalgasının 7 ilçesi (Avcılar/Bağcılar/Bahçelievler/Güngören/Maltepe/Sultanbeyli/Tuzla) eklendi. **İzmir de tamamen çözüldü** (10/10 ilçe) — aynı yöntem, aynı 3806 sayılı Kanun. Aşağıdaki sayı (316) ilk tarama anına ait; İstanbul'un güncel kalan-eksik sayısı 5'tir, İzmir 0'dır (aşağıdaki bölümlere bakın), diğer 60 il için sayılar henüz bu oturumda yeniden hesaplanmadı.
+
+**Bu turda altyapıda bulunup düzeltilen 2 kritik bug (İzmir'i eklerken ortaya çıktı, ikisi de yeni testlerle kalıcı olarak korunuyor):**
+1. Aynı eski ilçenin (örn. Kartal, hem 2008 hem 1992 dalgasının kaynağı) FARKLI dönemler için FARKLI genişlikte iki sentetik poligonu paylaşılan tek bir geometri altında birleşiyordu — bu, 1995-2007'de Maltepe/Sultanbeyli'nin KENDİ gerçek verisiyle **%100 çakışan** bir poligon üretiyordu. Çözüm: `apply_verified_district_merges.py` artık `(eski_ilçe, sentetik_id)` çiftine göre gruplandırıyor, aynı eski ilçe için döneme göre birden fazla ayrı sentetik üretilebiliyor (bkz. Kartal'ın üç varyantı: `HIST-Istanbul-Kartal` / `-Kartal1991` / `-Kartal8489`).
+2. `patch_data_rows()` fonksiyonunda **`plaka == 34` sabit kodlanmıştı** (İstanbul'a özel bir kalıntı) — İzmir'in veri satırları bu yüzden hiç yeniden adlandırılmıyordu (script sessizce "değişiklik yok" diyordu). Düzeltildi: geomId'ler zaten plaka'yı kendi içinde taşıdığı için plaka filtresine hiç gerek yok.
+3. `tests/validate_elections.py`'deki çakışma/alan-korunumu testi artık **yıl-duyarlı** — `district_splits.json`'daki tüm kayıtları aynı anda aktifmiş gibi değil, HER seçimin KENDİ verisinde gerçekten kullanılan sentetiklere göre kontrol ediyor (120 seçim×il senaryosu). Bu, yukarıdaki #1 bug'ını gerçekten yakalayan kontroldü.
 
 ## ✅ Tam (19 il) — düzeltme gerekmiyor
 
@@ -30,6 +35,8 @@ Ardahan, Ağrı, Bartın, Batman, Bayburt, Düzce, Iğdır, Karabük, Karaman, K
 Kaynak: `apply_verified_district_merges.py`'deki `VERIFIED_MERGES` (tüm 1992 ve 2008-basit girişler) + `geo/historical/district_mahalle_merges.yaml` (`atasehir`, `sancaktepe` girişleri). Doğrulama: 11/11 analitik test (geometri çakışma kontrolü dahil) + 78/78 Playwright testi (yeni testler: `scenario_istanbulGenelGecmisi`, `scenario_sancaktepeCozumu`, `scenario_1992DalgasiCozumu`).
 
 İstanbul'da artık sadece **5 ilçe** eksik, hepsi araştırıldı ama birincil kaynakla bloke (aşağıya bakın): Arnavutköy, Başakşehir, Esenler, Esenyurt, Sultangazi. (Esenler 3806 sayılı kanunda YOK — farklı/henüz bulunmamış bir kaynaktan, muhtemelen 2008 dalgasının bir parçası ama şu ana kadarki 5747 araştırmasında da adı geçmiyor, ayrıca araştırılmalı.)
+
+**İzmir (plaka 35) — TAMAMEN çözüldü (10/10 ilçe).** Aynı iki kanun: 5747 (2008: Bayraklı←Karşıyaka, Karabağlar←Konak — "55 mahalle ve 2 köy") ve 3806 (1992: Çiğli←Karşıyaka, Gaziemir/Narlıdere/Balçova/Güzelbahçe←Konak — Güzelbahçe kısa süreli "Narlıbahçe" birleşimi üzerinden). Ayrıca ayrı, daha eski bir 1987-88 dalgası keşfedildi: Beydağ←Ödemiş (1987), Buca←Konak (1987, 3392 sayılı Kanun), Menderes←Konak (1988, eski adı Cumaovası) — hepsi resmî kaymakamlık tarihçe sayfalarıyla (buca.gov.tr, menderes.gov.tr, karabaglar.gov.tr vb.) doğrulandı. Konak tam 3 farklı döneme (1987-88/1992/2008) kaynaklık ettiği için Kartal'daki gibi üç ayrı sentetik gerekti (`HIST-Izmir-Konak` / `-Konak1991` / `-Konak84`).
 
 ## 📋 Araştırıldı, birincil kaynakla KISMEN/TAMAMEN BLOKE (İstanbul, önceki oturum)
 
@@ -64,15 +71,12 @@ Bu illerin her birinde ZATEN bir `HIST-<İl>-Merkez` sentetik poligonu var (`dis
 
 ## ❓ Hiç araştırılmadı — birincil kaynak taraması yapılmadı
 
-**Hazır ipucu — İzmir'in 4'ü:** Çiğli, Gaziemir, Balçova, Narlıdere de İstanbul'un 1992 dalgasıyla **AYNI kanundan** (3806 sayılı Kanun) geliyor — Çiğli Karşıyaka'dan, Gaziemir/Narlıdere Konak'tan ayrıldı (kanunun Ek 7-10 sayılı listeleri). Henüz resmî kaymakamlık sayfalarıyla tek tek doğrulanmadı ama İstanbul'da işe yarayan yöntem doğrudan uygulanabilir — düşük çaba, yüksek olasılıkla hızlı çözülür.
-
 Aşağıdaki iller için henüz hiçbir kanun/tarihçe araştırması yapılmadı. Sayı, ilçe adı ve (mümkünse) kanun, ileride birincil kaynakla doğrulanıp `district_mahalle_merges.yaml`'a aynı formatta eklenmeli. Büyükten küçüğe, etki sırasına göre:
 
 | İl | Eksik ilçe sayısı | Eksik ilçeler |
 |---|---|---|
 | Konya | 16 | Ahırlı, Akören, Altınekin, Derbent, Derebucak, Emirgazi, Güneysınır, Halkapınar, Hüyük, Karatay, Meram, Selçuklu, Taşkent, Tuzlukçu, Yalıhüyük, Çeltik |
 | Sakarya | 10 | Adapazarı, Arifiye, Erenler, Ferizli, Karapürçek, Kocaali, Pamukova, Serdivan, Söğütlü, Taraklı |
-| İzmir | 10 | Balçova, Bayraklı, Beydağ, Buca, Gaziemir, Güzelbahçe, Karabağlar, Menderes, Narlıdere, Çiğli |
 | Ordu | 9 | Altınordu, Gülyalı, Gürgentepe, Kabadüz, Kabataş, Çamaş, Çatalpınar, Çaybaşı, İkizce |
 | Denizli | 9 | Babadağ, Baklan, Bekilli, Beyağaç, Bozkurt, Honaz, Merkezefendi, Pamukkale, Serinhisar |
 | Trabzon | 8 | Beşikdüzü, Dernekpazarı, Düzköy, Hayrat, Köprübaşı, Ortahisar, Çarşıbaşı, Şalpazarı |

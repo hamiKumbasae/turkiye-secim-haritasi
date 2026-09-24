@@ -138,6 +138,13 @@ istanbul_2008:
           - "MUSTAFA KEMAL MAH."
       - old_district_geomid: TR-D-34-025
         old_district_name: Kartal
+        # DIKKAT: Kartal AYRICA 1992 dalgasinin (Maltepe/Sultanbeyli) kaynagi -
+        # 1991/1984yerel/1989yerel icin bu mahalle apply_verified_district_merges.py'deki
+        # AYRI "HIST-Istanbul-Kartal1991" sentetigine (Maltepe/Sultanbeyli ile
+        # birlikte) TEKRAR ekleniyor, o yuzden BURADA o yillar HARIC tutuluyor -
+        # yoksa 1995-2007/1994-2004'te Maltepe/Sultanbeyli'nin KENDI gercek veri
+        # satiriyla bu genis poligon CAKISIR (bkz. o dosyadaki Kartal yorumu).
+        affected_years_override: ["1994yerel", "1999yerel", "2004yerel", "1995", "1999", "2002", "2007"]
         mahalle_names:
           - "FERHATPAŞA MAH."
 
@@ -328,6 +335,11 @@ istanbul_2008:
       - old_district_geomid: TR-D-34-025
         old_district_name: Kartal
         via: "Samandıra İlk Kademe Belediyesi"
+        # DIKKAT: bkz. atasehir girisindeki ayni notu - Kartal 1992 dalgasinin
+        # (Maltepe/Sultanbeyli) da kaynagi, 1991/1984yerel/1989yerel HARIC
+        # tutuluyor (o yillar apply_verified_district_merges.py'deki AYRI
+        # "HIST-Istanbul-Kartal1991" sentetigiyle kapsaniyor).
+        affected_years_override: ["1994yerel", "1999yerel", "2004yerel", "1995", "1999", "2002", "2007"]
         mahalle_names:
           - "ABDURRAHMANGAZİ MAH."
           - "AKPINAR MAH."

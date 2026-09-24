@@ -274,6 +274,17 @@ def check_historical_district_geometry():
     poligonlari + gizlenmemis GUNCEL modern ilceler) KORUMALI - ne bir ACIKLANAMAYAN
     DELIK (bir parca hicbir poligonda yok) ne de CIFT SAYIM (bir parca hem HIST-*
     poligonun icinde hem AYRICA kendi guncel/modern seklinde gorunuyor) olusmamali.
+
+    ONEMLI: bu kontrol district_splits.json'daki TUM kayitlari degil, HER
+    SECIMIN KENDI ilceler listesinde GERCEKTEN kullanilan syntheticId'lere gore
+    HER (secim, plaka) icin AYRI AYRI calisir - cunku ayni eski ilcenin (orn.
+    Kartal) FARKLI donemler icin FARKLI genislikte iki sentetik poligonu
+    (HIST-Istanbul-Kartal / HIST-Istanbul-Kartal1991) olabilir, bunlar
+    KASITLI olarak birbiriyle COGRAFI OLARAK ORTUSUYOR ama HICBIR secimin
+    verisinde AYNI ANDA aktif olmuyorlar - tum kayitlari tek seferde,
+    secimden bagimsiz kontrol etmek bu durumda YANLIS pozitif verir (bir
+    onceki oturumda tam da bu sekilde tespit edildi, duzeltildi).
+
     shapely yoksa (CI/dev ortaminda kurulu degilse) bu kontrol atlanir (UYARI ile)."""
     try:
         from shapely.geometry import shape
@@ -299,51 +310,68 @@ def check_historical_district_geometry():
         p = f["properties"]
         modern_by_plaka.setdefault(p["plaka"], {})[p["id"]] = clean(shape(f["geometry"]))
 
+    # Sadece district_splits.json'da GERCEKTEN kaydi olan plakalar icin ilgili -
+    # digerlerinde hicbir HIST-* soz konusu degil, hizli atlanir.
+    plakalar_with_splits = {int(p) for p in splits.keys()}
+
+    secimler = load_all_elections()
     problems = []
-    for plaka_str, entries in splits.items():
-        plaka = int(plaka_str)
-        active = [e for e in entries if e["syntheticId"] in hist_by_id]
-        if not active:
+    checked = 0
+    for key, secim in secimler.items():
+        ilceler = secim.get("ilceler")
+        if not ilceler:
             continue
-        hidden = set()
-        for e in active:
-            hidden.update(e["hideIds"])
-        modern_ids = modern_by_plaka.get(plaka, {})
-        visible_modern = {gid: poly for gid, poly in modern_ids.items() if gid not in hidden}
-        ids = [e["syntheticId"] for e in active] + list(visible_modern.keys())
-        polys = [hist_by_id[e["syntheticId"]] for e in active] + list(visible_modern.values())
-        hist_idx = set(range(len(active)))  # sadece HIST-* iceren ciftler kontrol edilir
+        by_plaka_geomids = {}
+        for d in ilceler:
+            p, gid = d.get("plaka"), d.get("geomId")
+            if p in plakalar_with_splits and gid:
+                by_plaka_geomids.setdefault(p, set()).add(gid)
 
-        # (1) ikili ust-uste binme, SADECE en az biri HIST-* olan ciftler icin:
-        # komsu GUNCEL modern ilceler arasinda (bu kontrolun/oturumun konusu
-        # OLMAYAN, onceden var olan) kucuk sinir-cizgisi/hassasiyet farkliliklari
-        # zaten var (dogrulandi: orn. TR-D-34-009 x TR-D-34-019 gibi HIC bir
-        # HIST-* icermeyen ciftlerde de ~%1-2 sliver var) - bunlar bu kontrolun
-        # kapsami DISINDA. Hicbir cift, kucuk olanin alaninin %1'inden fazlasini
-        # paylasmamali.
-        for i in range(len(polys)):
-            for j in range(i + 1, len(polys)):
-                if i not in hist_idx and j not in hist_idx:
-                    continue
-                inter_area = polys[i].intersection(polys[j]).area
-                smaller = min(polys[i].area, polys[j].area)
-                if smaller > 0 and inter_area / smaller > 0.01:
-                    problems.append(f"plaka {plaka}: {ids[i]}/{ids[j]} arasında üst üste binme (oran={inter_area/smaller:.3f})")
+        for plaka, present_geomids in by_plaka_geomids.items():
+            entries = splits.get(str(plaka), [])
+            active = [e for e in entries if e["syntheticId"] in present_geomids]
+            if not active:
+                continue
+            checked += 1
+            hidden = set()
+            for e in active:
+                hidden.update(e["hideIds"])
+            modern_ids = modern_by_plaka.get(plaka, {})
+            visible_modern = {gid: poly for gid, poly in modern_ids.items() if gid not in hidden}
+            ids = [e["syntheticId"] for e in active] + list(visible_modern.keys())
+            polys = [hist_by_id[e["syntheticId"]] for e in active] + list(visible_modern.values())
+            hist_idx = set(range(len(active)))  # sadece HIST-* iceren ciftler kontrol edilir
 
-        # (2) alan korunumu: HIST-* + gizlenmemis modern ilcelerin TOPLAM alani,
-        # ilin TUM guncel modern ilcelerinin toplam alanina (delik/cift-sayim
-        # olmadan) esit olmali (+-%1 tolerans, projeksiyon/yuvarlama icin).
-        union_area = unary_union(polys).area
-        sum_area = sum(p.area for p in polys)
-        total_modern_area = sum(p.area for p in modern_ids.values())
-        if total_modern_area > 0:
-            if abs(union_area - sum_area) / total_modern_area > 0.01:
-                problems.append(f"plaka {plaka}: parçalar arası çift-sayım/örtüşme (union={union_area:.6f} sum={sum_area:.6f})")
-            if abs(union_area - total_modern_area) / total_modern_area > 0.01:
-                problems.append(f"plaka {plaka}: toplam alan korunmuyor - delik veya fazla alan (union={union_area:.6f} modern_toplam={total_modern_area:.6f})")
+            # (1) ikili ust-uste binme, SADECE en az biri HIST-* olan ciftler icin:
+            # komsu GUNCEL modern ilceler arasinda (bu kontrolun/oturumun konusu
+            # OLMAYAN, onceden var olan) kucuk sinir-cizgisi/hassasiyet farkliliklari
+            # zaten var (dogrulandi: orn. TR-D-34-009 x TR-D-34-019 gibi HIC bir
+            # HIST-* icermeyen ciftlerde de ~%1-2 sliver var) - bunlar bu kontrolun
+            # kapsami DISINDA. Hicbir cift, kucuk olanin alaninin %1'inden fazlasini
+            # paylasmamali.
+            for i in range(len(polys)):
+                for j in range(i + 1, len(polys)):
+                    if i not in hist_idx and j not in hist_idx:
+                        continue
+                    inter_area = polys[i].intersection(polys[j]).area
+                    smaller = min(polys[i].area, polys[j].area)
+                    if smaller > 0 and inter_area / smaller > 0.01:
+                        problems.append(f"{key}/plaka {plaka}: {ids[i]}/{ids[j]} arasında üst üste binme (oran={inter_area/smaller:.3f})")
+
+            # (2) alan korunumu: HIST-* + gizlenmemis modern ilcelerin TOPLAM alani,
+            # ilin TUM guncel modern ilcelerinin toplam alanina (delik/cift-sayim
+            # olmadan) esit olmali (+-%1 tolerans, projeksiyon/yuvarlama icin).
+            union_area = unary_union(polys).area
+            sum_area = sum(p.area for p in polys)
+            total_modern_area = sum(p.area for p in modern_ids.values())
+            if total_modern_area > 0:
+                if abs(union_area - sum_area) / total_modern_area > 0.01:
+                    problems.append(f"{key}/plaka {plaka}: parçalar arası çift-sayım/örtüşme (union={union_area:.6f} sum={sum_area:.6f})")
+                if abs(union_area - total_modern_area) / total_modern_area > 0.01:
+                    problems.append(f"{key}/plaka {plaka}: toplam alan korunmuyor - delik veya fazla alan (union={union_area:.6f} modern_toplam={total_modern_area:.6f})")
 
     check(
-        "tarihsel (HIST-*) ilçe geometrisi: üst üste binme/delik/çift-sayım yok",
+        f"tarihsel (HIST-*) ilçe geometrisi: üst üste binme/delik/çift-sayım yok ({checked} seçim×il senaryosu kontrol edildi)",
         not problems,
         "; ".join(problems[:5]),
     )

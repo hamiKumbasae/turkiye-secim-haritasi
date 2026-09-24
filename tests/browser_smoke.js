@@ -171,6 +171,51 @@ async function scenario_istanbul19992004Gecmisi(browser) {
 // yorumu). Bu test 1991 genel'de bu 7 ilcenin artik "veri yok" OLMADIGINI,
 // sadece hala gercekten arastirilmamis/bloke olanlarin (Arnavutkoy/Basaksehir/
 // Esenler/Esenyurt/Sultangazi) kaldigini dogruluyor.
+// Izmir: ayni 3806 sayili Kanun (Istanbul ile) Cigli/Gaziemir/Balcova/
+// Narlidere/Guzelbahce'yi (1992, Konak+Karsiyaka'dan), 5747 sayili Kanun
+// Bayrakli/Karabaglar'i (2008), ayrica Beydag/Buca/Menderes'i (1987-88,
+// ayri kucuk kanunlar) kurdu - resmi kaymakamlik tarihce sayfalariyla
+// dogrulandi (bkz. apply_verified_district_merges.py). Konak UC farkli
+// donem sentetigine sahip (Kartal'daki AYNI desen): bu test hem 1991
+// genel'de (Konak1991/Karsiyaka1991 kullanilmali) hem 1995'te (kucuk
+// Konak/Karsiyaka, Buca/Menderes/Beydag/Cigli/Gaziemir/Balcova/Guzelbahce
+// artik kendi gercek satirlariyla var oldugu icin) dogru sentetiklerin
+// secildigini kontrol ediyor.
+async function scenario_izmirDalgalariCozumu(browser) {
+  const errors = await withPage(browser, async (page) => {
+    for (const [year, expectedHist] of [
+      ['1991', ['HIST-Izmir-Konak1991', 'HIST-Izmir-Karsiyaka1991']],
+      ['1995', ['HIST-Izmir-Konak', 'HIST-Izmir-Karsiyaka']],
+    ]) {
+      const found = await clickYear(page, year);
+      check(year + ' genel: yıl seçilebildi (İzmir testi)', found);
+      await page.waitForTimeout(400);
+      // ulke goruniminde Izmir/Manisa pikselde cok yakin/ust uste - normal
+      // koordinat-tabanli tiklama Manisa'yi "intercept" edebiliyor (bu test/
+      // gecerli veriyle ilgisiz, kucuk haritanin genel bir ozelligi) - DOM
+      // click() ile dogrudan tetikleyip piksel-hit-testini atliyoruz.
+      await page.$eval('path[data-plaka="35"]', (el) => el.dispatchEvent(new MouseEvent('click', { bubbles: true })));
+      await page.waitForTimeout(400);
+      const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+        els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+      check(year + ' genel İzmir: doğru sentetik poligonlar çiziliyor',
+        expectedHist.every((id) => histIds.includes(id)) && !histIds.some((id) => id.startsWith('HIST-Izmir') && !expectedHist.includes(id)),
+        JSON.stringify(histIds));
+
+      await page.$eval(`path.il-path[data-geom-id="${expectedHist[0]}"]`,
+        (el) => el.dispatchEvent(new MouseEvent('click', { bubbles: true })));
+      await page.waitForTimeout(300);
+      const dName = await page.$eval('#dName', (el) => el.textContent);
+      const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+      check(year + ' genel: ' + expectedHist[0] + ' tıklanınca gerçek veri gösteriyor',
+        dName === 'Konak' && dSecmen !== '—' && dSecmen !== '', 'dName=' + dName + ' dSecmen=' + dSecmen);
+
+      await page.click('#btnBackCountry').catch(() => {});
+    }
+  });
+  check('İzmir dalgaları çözümü: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function scenario_1992DalgasiCozumu(browser) {
   const errors = await withPage(browser, async (page) => {
     const found = await clickYear(page, '1991');
@@ -223,9 +268,17 @@ async function scenario_sancaktepeCozumu(browser) {
 
 async function scenario_istanbulGenelGecmisi(browser) {
   const errors = await withPage(browser, async (page) => {
-    const expectedHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
-      'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar', 'HIST-Istanbul-Kartal'];
+    const baseHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
+      'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar'];
+    // Kartal'ın sentetiği yıla göre değişir: 1991'de Kadıköy/Üsküdar/Ümraniye
+    // de kendi satırlarıyla var olduğu için Ataşehir+Sancaktepe parçasını da
+    // güvenle içeren "Kartal1991" kullanılıyor; 1995-2007'de Maltepe/
+    // Sultanbeyli'nin KENDİ gerçek satırı olduğu için sadece 2008 dalgasını
+    // içeren (Maltepe/Sultanbeyli'siz) düz "Kartal" kullanılıyor - bkz.
+    // apply_verified_district_merges.py'deki Kartal yorumu (çakışma testinin
+    // yakaladığı bir regresyonun düzeltmesi).
     for (const year of ['1991', '1995', '1999', '2002', '2007']) {
+      const expectedHist = [...baseHist, year === '1991' ? 'HIST-Istanbul-Kartal1991' : 'HIST-Istanbul-Kartal'];
       const found = await clickYear(page, year);
       check(year + ' genel: yıl seçilebildi', found);
       await page.waitForTimeout(400);
@@ -440,6 +493,7 @@ async function main() {
     await scenario_istanbulGenelGecmisi(browser);
     await scenario_sancaktepeCozumu(browser);
     await scenario_1992DalgasiCozumu(browser);
+    await scenario_izmirDalgalariCozumu(browser);
     await scenario_ilOnlyYearsTekParca(browser);
     await scenario_1950yerel(browser);
     await scenario_1955yerel(browser);

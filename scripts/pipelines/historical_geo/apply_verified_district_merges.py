@@ -126,13 +126,68 @@ VERIFIED_MERGES = [
         "split_year": 1992,
         "affected_years": ["1991", "1984yerel", "1989yerel"],
     },
+    # DIKKAT - Kartal ozel durumu: Kartal HEM 2008 dalgasinin (Atasehir'in 1
+    # mahallesi + Sancaktepe'nin 6 mahallesi, YAML'daki "HIST-Istanbul-Kartal"
+    # sentetigine gider, affected_years=1994yerel/1999yerel/2004yerel/1995/1999/
+    # 2002/2007 - bkz. YAML'daki per-source "affected_years_override") HEM DE
+    # 1992 dalgasinin (Maltepe/Sultanbeyli) kaynagi. Bu ikisini AYNI sentetige
+    # (HIST-Istanbul-Kartal) koymak YANLIS olurdu: 1995-2007/1994-2004'te
+    # Maltepe/Sultanbeyli'nin KENDI gercek veri satiri VAR (1992'de zaten
+    # ayrildilar) - eger HIST-Istanbul-Kartal o yillarda da Maltepe/Sultanbeyli'yi
+    # icerse, o alan HEM kendi gercek satiriyla HEM bu genis poligonla iki kez
+    # cizilir (dogrulandi: shapely ile %100 cakisma olcu ldu, deneme surumunde
+    # yakalandi). Cozum: UC AYRI sentetik, uc farkli veri-durumuna gore:
+    #  - "HIST-Istanbul-Kartal" (asagida, YAML uzerinden): 1994yerel/1999yerel/
+    #    2004yerel/1995/1999/2002/2007 icin - sadece 2008 dalgasi (Atasehir+
+    #    Sancaktepe parcalari), Maltepe/Sultanbeyli HARIC (kendi gercek
+    #    satirlari var, cakismasin diye).
+    #  - "HIST-Istanbul-Kartal1991" (hemen asagida): SADECE "1991" genel icin -
+    #    o yil Kadikoy/Uskudar/Umraniye'nin KENDI satirlari da var (ayrica
+    #    kendi HIST-*'lerine donuyor), o yuzden Atasehir'in Ferhatpasa'si +
+    #    Sancaktepe'nin 6 mahallesini de GUVENLE icerebilir (cakisma yok).
+    #  - "HIST-Istanbul-Kartal8489" (daha asagida): 1984yerel/1989yerel icin -
+    #    bu cok seyrek yillarda Atasehir/Sancaktepe'nin genisletme mekanizmasi
+    #    HIC calismiyor (affected_years'larinda yok), yani Atasehir(003)/
+    #    Sancaktepe(029) HICBIR sekilde gizlenmiyor - bu yuzden SADECE Kartal+
+    #    Maltepe+Sultanbeyli (Atasehir/Sancaktepe parcasi OLMADAN), o iki
+    #    ilcenin geri kalani bu yillarda durustce "veri yok" kalir.
     {
         "plaka": 34,
         "old_district_geomid": "TR-D-34-025",  # Kartal
         "whole_child_geomids": ["TR-D-34-027", "TR-D-34-032"],  # Maltepe, Sultanbeyli (TAMAMI)
-        "synthetic_id": "HIST-Istanbul-Kartal",
+        "mahalle_pieces": [
+            ("TR-D-34-003", ["FERHATPAŞA MAH."]),  # Atasehir'in Kartal-kaynakli mahallesi (bkz. YAML atasehir girisi)
+            ("TR-D-34-029", [  # Sancaktepe'nin Kartal-kaynakli 6 mahallesi (bkz. YAML sancaktepe girisi)
+                "ABDURRAHMANGAZİ MAH.", "AKPINAR MAH.", "OSMANGAZİ MAH.",
+                "VEYSEL KARANİ MAH.", "EYÜP SULTAN MAH.", "FATİH MAH.",
+            ]),
+        ],
+        "synthetic_id": "HIST-Istanbul-Kartal1991",
         "split_year": 1992,
-        "affected_years": ["1991", "1984yerel", "1989yerel"],
+        # SADECE "1991" - 1984yerel/1989yerel'de DEGIL (asagidaki notu oku).
+        "affected_years": ["1991"],
+    },
+    # 1984yerel/1989yerel icin UCUNCU bir varyant gerekiyor: bu yillarda
+    # Kadikoy/Uskudar KENDI satirlariyla VAR ama Atasehir/Sancaktepe'nin
+    # genisletme mekanizmasi bu yillara HIC UYGULANMIYOR (Atasehir/Sancaktepe
+    # YAML girislerinin affected_years'i 1984yerel/1989yerel icermiyor) - yani
+    # Atasehir(003)/Sancaktepe(029)'nin TAM modern sekli HICBIR sekilde
+    # gizlenmiyor o yillarda. Yukaridaki "HIST-Istanbul-Kartal1991" (Ferhatpasa +
+    # Sancaktepe'nin 6 mahallesini de iceren) bu yillara uygulansaydi, o kucuk
+    # parca HEM kendi (gizlenmemis) Atasehir/Sancaktepe ana hatlarinin icinde
+    # HEM bu genis poligonda cizilir - dogrulama testi (artik yil-duyarli)
+    # tam da bunu yakaladi. Cozum: 1984yerel/1989yerel icin SADECE Kartal +
+    # Maltepe + Sultanbeyli (Atasehir/Sancaktepe parcasi OLMADAN) - o iki
+    # ilcenin GERCEK (Kartal-kaynakli olmayan) alani bu yillarda zaten "veri
+    # yok" olarak durur, bu DURUST bir bosluk (Kadikoy/Uskudar/Umraniye'nin
+    # KENDI 1984/1989 verisi Atasehir/Sancaktepe'ye hic genisletilmedigi icin).
+    {
+        "plaka": 34,
+        "old_district_geomid": "TR-D-34-025",  # Kartal
+        "whole_child_geomids": ["TR-D-34-027", "TR-D-34-032"],  # Maltepe, Sultanbeyli (TAMAMI)
+        "synthetic_id": "HIST-Istanbul-Kartal8489",
+        "split_year": 1992,
+        "affected_years": ["1984yerel", "1989yerel"],
     },
     {
         "plaka": 34,
@@ -149,6 +204,80 @@ VERIFIED_MERGES = [
         "synthetic_id": "HIST-Istanbul-Pendik",
         "split_year": 1992,
         "affected_years": ["1991", "1989yerel"],  # Pendik 1984yerel'de henuz yok
+    },
+
+    # ================= IZMIR (plaka 35) =================
+    # Ayni desen: Karabaglar/Bayrakli 2008 (5747 sayili Kanun), Gaziemir/
+    # Narlidere/Balcova/Guzelbahce/Cigli 1992 (3806 sayili Kanun - AYNI
+    # kanun Istanbul'daki 1992 dalgasiyla, İzmir'de 5 ilce kuruyor - Guzelbahce
+    # kisa sureli "Narlibahce" birlesimi uzerinden, 1993'te 3949 sayili
+    # kanunla ayri ilce oldu ama bu 1991/1989 icin ONEMSIZ - o tarihte zaten
+    # hepsi Konak'in bir parcasiydi), Beydag/Buca/Menderes 1987-88 (ayri
+    # kucuk kanunlar). Kaynaklar: resmi kaymakamlik tarihce sayfalari
+    # (karabaglar.gov.tr, buca.gov.tr, menderes.gov.tr, guzelbahce.gov.tr,
+    # izgazete.net'in Konak/Karabaglar/Balcova tarihce yazilari - kaymakamlik
+    # sayfalariyla capraz dogrulanan gazete kaynaklari) + izgazete.net'in
+    # Buca/Menderes/Beydag yazilari (kanun numaralariyla).
+    #
+    # Konak, UC farkli donem icin UC ayri sentetik gerektiriyor (Kartal'daki
+    # AYNI sorun - bkz. o yorumlar): "Konak" (sadece 2008: Karabaglar,
+    # 1994yerel+/1995+ icin), "Konak1991" (1992+2008: Karabaglar+Gaziemir+
+    # Narlidere+Balcova+Guzelbahce, "1991" + "1989yerel" icin - o yillarda
+    # Buca/Menderes'in KENDI satiri zaten var), "Konak84" (TUMU: +Buca+
+    # Menderes, SADECE "1984yerel" icin - o yil Buca/Menderes de henuz yok).
+    {
+        "plaka": 35,
+        "old_district_geomid": "TR-D-35-021",  # Konak
+        "whole_child_geomids": ["TR-D-35-015"],  # Karabaglar (TAMAMI)
+        "synthetic_id": "HIST-Izmir-Konak",
+        "split_year": 2008,
+        "affected_years": ["1994yerel", "1999yerel", "2004yerel", "1995", "1999", "2002", "2007"],
+    },
+    {
+        "plaka": 35,
+        "old_district_geomid": "TR-D-35-021",  # Konak
+        "whole_child_geomids": ["TR-D-35-015", "TR-D-35-013", "TR-D-35-024", "TR-D-35-002", "TR-D-35-014"],
+        # Karabaglar, Gaziemir, Narlidere, Balcova, Guzelbahce (TAMAMI)
+        "synthetic_id": "HIST-Izmir-Konak1991",
+        "split_year": 1992,
+        "affected_years": ["1991", "1989yerel"],
+    },
+    {
+        "plaka": 35,
+        "old_district_geomid": "TR-D-35-021",  # Konak
+        "whole_child_geomids": ["TR-D-35-015", "TR-D-35-013", "TR-D-35-024", "TR-D-35-002", "TR-D-35-014",
+                                 "TR-D-35-008", "TR-D-35-022"],  # + Buca, Menderes (TAMAMI)
+        "synthetic_id": "HIST-Izmir-Konak84",
+        "split_year": 1987,
+        "affected_years": ["1984yerel"],
+    },
+    # Karsiyaka: IKI donem - "Karsiyaka" (sadece 2008: Bayrakli, 1994yerel+/
+    # 1995+ icin), "Karsiyaka1991" (1992+2008: Bayrakli+Cigli, "1991" +
+    # "1989yerel" + "1984yerel" icin - Cigli'nin durumu 1984'te de aynı,
+    # Konak'in aksine burada UCUNCU bir varyanta gerek yok).
+    {
+        "plaka": 35,
+        "old_district_geomid": "TR-D-35-017",  # Karsiyaka
+        "whole_child_geomids": ["TR-D-35-004"],  # Bayrakli (TAMAMI)
+        "synthetic_id": "HIST-Izmir-Karsiyaka",
+        "split_year": 2008,
+        "affected_years": ["1994yerel", "1999yerel", "2004yerel", "1995", "1999", "2002", "2007"],
+    },
+    {
+        "plaka": 35,
+        "old_district_geomid": "TR-D-35-017",  # Karsiyaka
+        "whole_child_geomids": ["TR-D-35-004", "TR-D-35-010"],  # Bayrakli, Cigli (TAMAMI)
+        "synthetic_id": "HIST-Izmir-Karsiyaka1991",
+        "split_year": 1992,
+        "affected_years": ["1991", "1989yerel", "1984yerel"],
+    },
+    {
+        "plaka": 35,
+        "old_district_geomid": "TR-D-35-025",  # Odemis
+        "whole_child_geomids": ["TR-D-35-006"],  # Beydag (TAMAMI)
+        "synthetic_id": "HIST-Izmir-Odemis",
+        "split_year": 1987,
+        "affected_years": ["1984yerel"],
     },
 ]
 
@@ -186,29 +315,46 @@ def load_yaml_verified_sources():
             new_geomid = entry["new_district_geomid"]
             for src in entry["sources"]:
                 name_ascii = _ascii_il_adi(src["old_district_name"])
+                # bir SOURCE (orn. Kartal), AYNI eski ilcenin BASKA bir donemde
+                # (orn. 1992 dalgasi) FARKLI bir tarihsel genislige sahip
+                # olmasi durumunda, o TEK source icin affected_years/synthetic_id
+                # override edilebilir (entry/group varsayilanindan farkli) -
+                # bkz. Kartal: Atasehir/Sancaktepe (2008) katkisi normal
+                # "HIST-Istanbul-Kartal"a gider, ama 1991/1984/1989 icin
+                # AYRI (daha genis, Maltepe/Sultanbeyli'yi de iceren)
+                # "HIST-Istanbul-Kartal1991" gerekir - cunku o yillarda
+                # Maltepe/Sultanbeyli'nin KENDI gercek veri satiri YOK, ama
+                # 1994yerel+ icin VAR (cakisma/cift-cizim onlenir).
                 out.append({
                     "old_district_geomid": src["old_district_geomid"],
                     "mahalle_source_geomid": new_geomid,  # hangi (yeni) ilcenin mahalle_geo'sundan cekilecek
                     "mahalle_names": src["mahalle_names"],
                     "fully_covered_new_geomid": new_geomid,  # bu id, TUM mahalleleri baska ebeveynlere dagitildigi icin ayrica "veri yok" gosterilmemeli
-                    "synthetic_id": f"HIST-{il_prefix}-{name_ascii}",
-                    "split_year": split_year,
-                    "affected_years": entry.get("affected_years", affected_years),
+                    "synthetic_id": src.get("synthetic_id_override") or f"HIST-{il_prefix}-{name_ascii}",
+                    "split_year": src.get("split_year_override", split_year),
+                    "affected_years": src.get("affected_years_override", entry.get("affected_years", affected_years)),
                     "plaka": plaka,
                 })
     return out
 
 
 def gather_contributions():
-    """old_district_geomid -> {synthetic_id, split_year, affected_years, plaka,
-    whole_child_geomids: set, mahalle_pieces: [(source_geomid, [names])], hide: set}"""
+    """(old_district_geomid, synthetic_id) -> {synthetic_id, split_year, affected_years,
+    plaka, whole_child_geomids: set, mahalle_pieces: [(source_geomid, [names])], hide: set}
+
+    Anahtar SADECE old_district_geomid DEGIL, (old, synthetic_id) cifti: ayni eski
+    ilcenin (orn. Kartal) FARKLI donemler icin FARKLI genislikte iki ayri sentetik
+    poligonu olabilir (orn. HIST-Istanbul-Kartal = sadece 2008 dalgasi, HIST-
+    Istanbul-Kartal1991 = 2008+1992 dalgalarinin ikisi de - bkz. Kartal'daki yorum)."""
     by_old = {}
 
     def ensure(m):
         old = m["old_district_geomid"]
-        if old not in by_old:
-            by_old[old] = {
-                "synthetic_id": m.get("synthetic_id") or f"HIST-{il_adi_ascii(m['plaka'])}-{old.split('-')[-1]}",
+        synthetic_id = m.get("synthetic_id") or f"HIST-{il_adi_ascii(m['plaka'])}-{old.split('-')[-1]}"
+        key = (old, synthetic_id)
+        if key not in by_old:
+            by_old[key] = {
+                "synthetic_id": synthetic_id,
                 "split_year": m["split_year"],
                 "affected_years": list(m["affected_years"]),
                 "plaka": m["plaka"],
@@ -216,12 +362,25 @@ def gather_contributions():
                 "mahalle_pieces": [],
                 "hide": {old},  # ebeveynin KENDI eski modern sekli her zaman gizlenir (artik sentetige esleniyor)
             }
-        return by_old[old]
+        else:
+            # ayni (old, synthetic_id) icin ikinci bir katki (orn. birden fazla
+            # VERIFIED_MERGES/YAML girisi ayni sentetige besleniyor) - affected_years
+            # birlestir (tekrar etmeyen), digerleri zaten ayni olmali.
+            for y in m["affected_years"]:
+                if y not in by_old[key]["affected_years"]:
+                    by_old[key]["affected_years"].append(y)
+        return by_old[key]
 
     for m in VERIFIED_MERGES:
         c = ensure(m)
         c["whole_child_geomids"].update(m["whole_child_geomids"])
         c["hide"].update(m["whole_child_geomids"])
+        for source_geomid, mahalle_names in m.get("mahalle_pieces", []):
+            c["mahalle_pieces"].append((source_geomid, mahalle_names))
+            # NOT: source_geomid (orn. Atasehir/Sancaktepe'nin kendi geomId'si)
+            # BURADA "hide"e eklenmiyor - o ilcenin TUM guncel sekli baska bir
+            # (kendi) HIST girisi tarafindan zaten yonetiliyor, burada sadece
+            # BIR KAC mahallesi odunc alinip bu poligona ekleniyor.
 
     for m in load_yaml_verified_sources():
         c = ensure(m)
@@ -235,7 +394,7 @@ def ensure_district_splits_json(contributions):
     """hideIds/splitYear/syntheticId kayitlarini gunceller - shapely GEREKTIRMEZ."""
     splits = json.loads(DISTRICT_SPLITS.read_text(encoding="utf-8"))
     changed = False
-    for old_geomid, c in contributions.items():
+    for (old_geomid, _synthetic_id), c in contributions.items():
         plaka_key = str(c["plaka"])
         splits.setdefault(plaka_key, [])
         want_hide_ids = sorted(c["hide"])
@@ -285,7 +444,7 @@ def ensure_geometry(contributions):
         return geom if geom.is_valid else geom.buffer(0)
 
     changed = False
-    for old_geomid, c in contributions.items():
+    for (old_geomid, _synthetic_id), c in contributions.items():
         geoms = [clean(shape(by_id[old_geomid]["geometry"]))]
         for child_id in sorted(c["whole_child_geomids"]):
             geoms.append(clean(shape(by_id[child_id]["geometry"])))
@@ -326,16 +485,34 @@ def ensure_geometry(contributions):
 
 def patch_data_rows(contributions):
     by_year = {}
-    for old_geomid, c in contributions.items():
+    for (old_geomid, _synthetic_id), c in contributions.items():
         for year in c["affected_years"]:
             by_year.setdefault(year, []).append((old_geomid, c["synthetic_id"]))
 
     for year, patches in by_year.items():
         secim = load_election(year)
         changed = []
+        # ayni yil icin ayni eski ilcenin IKI FARKLI sentetige atanmasi
+        # (orn. hem HIST-Istanbul-Kartal hem HIST-Istanbul-Kartal1991) sessizce
+        # BIRINI kaybeder (dict overwrite) - bu, affected_years'larin YANLISLIKLA
+        # cakistigi bir konfigurasyon hatasi, hemen durdurulmali.
+        seen = {}
+        for old_geomid, synthetic_id in patches:
+            if old_geomid in seen and seen[old_geomid] != synthetic_id:
+                raise SystemExit(
+                    f"HATA: {year} icin {old_geomid}, iki farkli sentetige "
+                    f"atanmaya calisiliyor ({seen[old_geomid]} ve {synthetic_id}) - "
+                    f"affected_years'lar yanlislikla cakisiyor olmali."
+                )
+            seen[old_geomid] = synthetic_id
         patch_map = dict(patches)
+        # NOT: plaka'ya gore AYRICA filtrelemeye gerek yok - geomId'ler zaten
+        # "TR-D-<plaka>-<sira>" seklinde plaka'yi kendi icinde tasiyor, iki
+        # farkli ilin geomId'si asla cakismaz (eskiden burada "plaka==34"
+        # sabit kontrolu vardi - Istanbul-disi katkilarin SESSIZCE atlanmasina
+        # neden oluyordu, Izmir eklenirken yakalanip duzeltildi).
         for d in secim["ilceler"]:
-            if d.get("plaka") == 34 and d.get("geomId") in patch_map:
+            if d.get("geomId") in patch_map:
                 old = d["geomId"]
                 d["geomId"] = patch_map[old]
                 changed.append((d["ad"], old, d["geomId"]))
