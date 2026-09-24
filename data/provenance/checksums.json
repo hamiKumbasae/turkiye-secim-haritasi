@@ -2,7 +2,7 @@
  "folders": {
   "data/normalized": {
    "checksum_file": "data/normalized/checksums.sha256",
-   "file_count": 111,
+   "file_count": 112,
    "files": {
     "ek/beldeler/1950yerel.json": "85614941409541cd310dcebc7e18c6961a8988a7e273807fa40293698f582763",
     "ek/beldeler/1955yerel.json": "ff1934be8b6c9367cda07017b6db197372fc554f346b683938c403b0a3bd70d4",
@@ -41,12 +41,13 @@
     "ek/milletvekilleri/2023.json": "464a559f32a78fcee514e058c08d142f3fcbead4fff85e63d747b9793bef1dcb",
     "ek/senato/1961senato.json": "ae445aba004ab7fdcdc7f6b96a3ed75b56853b36ae4db9495f2f8882bbbbf3d0",
     "ek/senato/1964senato.json": "69f216543ba3fdbf8a78b208be2195b27f0a7dac4152053a0b6acf3794540821",
-    "ek/senato/1966senato.json": "b2e7fb4f3925224ca9a534690bbf1b4c7dc3b41b1152fb699d1756aa3d9ad1c1",
-    "ek/senato/1968senato.json": "ae0eddd79138a06f494eda41e28e2f2c04773048828ea2ed215649338877d290",
+    "ek/senato/1966senato.json": "dfb13a0a5757322fb23231430e6018ad3ff51d53dbe4e0e47ace93fdb5078c8c",
+    "ek/senato/1968senato.json": "4d4b1541e2ea679c9d502384440e889d6e0a2edf9a17badb3c3d485044e5561e",
     "ek/senato/1973senato.json": "ba969c4542c91765cefd44fffb13ba4bb66dceb40582bffa991635aa8d750cea",
     "ek/senato/1975senato.json": "a2dc3f8ef914495cf420bd958aa9ec1527dea68202d666605fae068814d92b1c",
     "ek/senato/1977senato.json": "b0a0ade230e47d8cee3295d4f7a238807a0966680dd5f97c79698f9665b03d11",
     "ek/senato/1979senato.json": "71d26b0b206344ae742f2ac681d5efc446f2c6e60140e38ea883847dd1c3e89d",
+    "ek/yenileme_ara/1966mv_ara_hatay.json": "a9a26273b405c5654402736340a2a1204c0664b0eddcba41bebdb5933b3bd1e3",
     "ek/yenileme_ara/2019istanbul_bb_yenileme.json": "2512a57e0fd19dbff53e2c303867c4440df4c9d9b80cbbc4556e704dc718c69e",
     "ek/yenileme_ara/2024yenileme_belediye_baskanligi.json": "51ce3614a50a2093b830fd24dceaffe9f5a47e3e730db5bc0a247a7bf780c5f1",
     "ek/yenileme_ara/2024yenileme_belediye_meclisi.json": "766428df3e17fa39011259afecd44cd7087aec83c67ff928c1c1083080fc082d",
@@ -5466,7 +5467,7 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 79,
+   "file_count": 82,
    "files": {
     "README.md": "824b3750f0fd31cee96ef29a85cd63cd7bf285159be777ce03c299b7be25e7b2",
     "mertnuhoglu/genel/1991.json": "39fbdc09dae77a625bd4afe8a81165c0bfb5e73b25541202ecc273d457debcb9",
@@ -5476,6 +5477,7 @@
     "mertnuhoglu/genel/2007.json": "33020d58e3cf8772977af397a3ced3651c600ca523a1fa9a91b48d6a6972f8ec",
     "tuik/genel/1961.json": "d790a3245ceb21b15e5d64336d738895b2c48fe3e83ce7a467cf74444f0a175d",
     "tuik/genel/1965.json": "85fc0ad7121be95357b2760740e87dc3bcdac5db20b8ceab7b49424dbe198c2c",
+    "tuik/genel/1966ara.json": "f5197596a72edba84dad6c74f1e1dacaf0582bf6a23dbd9b656d6d670c11ff8a",
     "tuik/genel/1969.json": "cf4ad2b04e7d60a674d45114f6cf55cc255131ac3638e7268d8e11f202761847",
     "tuik/genel/1973.json": "d2fca5ed7d1ad85e956d2a0cc352456543da15892d2d463502ba70cb75e67b31",
     "tuik/genel/1977.json": "f9f92120f4de80ba268b1aea3d322ef00f421ac88905bfd8497813d028a835ff",
@@ -5491,6 +5493,8 @@
     "tuik/referandum/1987referandum.json": "76aad28c7ee60795fee5a12367fc7b27d451e05431fba1c9c3b2076b54d519b5",
     "tuik/referandum/1988referandum.json": "8aa8678f7af7c0e809028483feffca1359ea4facc91b73de4d08aecce691be5e",
     "tuik/referandum/2007referandum.json": "dcb447dab9559ccbf4f15aece39f63e109e9466d25e35aef4f84f8ac2b6d2fcf",
+    "tuik/senato/1966senato.json": "87ba49553da7ce3df1665e04e3595eb53d8f1bca00b3dbbb3db9c18acc400be4",
+    "tuik/senato/1968senato.json": "b807b2387eae3dd8944a1d98ec3c55408f9ebaeda4a5247833690054ef165f2e",
     "wikipedia/cumhurbaskanligi/2014cb.json": "0cf52ed9c22bbf5c738ecb2ff15cb971f9fe5a096b0681fb437fb80d60cd32e8",
     "wikipedia/genel/1923.json": "0eccb7504f023b02e4dfb174026981b4292102be1752f434d0b5b0fafee7a903",
     "wikipedia/genel/1927.json": "f8781f1fb299f6d6cc2e3d2b5bfd8768d8e5cb47eee07e815afda05a1a0a5344",
@@ -5565,6 +5569,26 @@
     "2024yenileme_meclis.json": "6f23eeb80deb09baa60e1d9840d2b279a3ced92c165d2743d9f00e1082186070",
     "2026ara_baskan.json": "3af04cb02979bc9ef0db019cbfd3392a961b9c4c3abeefeb8961492632e781b7",
     "2026ara_meclis.json": "3e544820e1f3e59b21bf811375b830864fe4a6ca524ae2b31c033f2ff31c0865"
+   }
+  },
+  "data/raw/tuik/senato-metin": {
+   "checksum_file": "data/raw/tuik/senato-metin/checksums.sha256",
+   "file_count": 14,
+   "files": {
+    "0015213/0031.txt": "63b184c16070c908bdd506b7ba9ef76c9e34bd3ab4519c13c02ede7e175e2aed",
+    "0015213/0032.txt": "1f2e173da4fef697d516a5ca8f5b327d76f59dba00a9df8687f2738437adcf8a",
+    "0015213/0033.txt": "3e8c22c1833cd97e92c0b127e82f85e3620e6b9e549957936ee822b20ed83ece",
+    "0015213/0034.txt": "3b9bc64f699b1b6360636645af8984860a14673899635af86eed66f55dd68898",
+    "0015213/0035.txt": "70d20a6316f1ccbca6a044190af28edc1be776ab98308af217c51534b37c1b5d",
+    "0015213/0036.txt": "db2c10ed07b2331e574ee963a9de0d99a23847fe3ec9dd3e842a5bb52a2e2b47",
+    "0015213/0037.txt": "1091e73d11494cc5fde65b5427762b382ea4c167fbfb2016fe850e6480af1f38",
+    "0015213/0038.txt": "522a58c3477a7f1c754e5ebc3c46d8a5b88f4fafcea89a5ff2f8f58211f92017",
+    "0015265/0020.txt": "002b34f634e26e477d015fde9cb2bbad6aed8c6d3d4af50c5eab712e912d42d7",
+    "0015265/0021.txt": "a3cdc7cb9f24cc3bc17fb80f7aa245ef88e0c0594d97397457b000281b503cda",
+    "0015265/0022.txt": "28c225fdcb67c3227e90cc05ff79d1ec55309c41091c000eb0bf383547c4ea92",
+    "0015265/0023.txt": "5525d740e4caa319276ee162f9f478f449cf778a938a4dae0f25cf9b4623d50d",
+    "0015265/0024.txt": "5613f14dd5e046bbfed0ef01c17965f60f9697c4bcf7d3ef6d0983743b2f647b",
+    "0015265/0025.txt": "423718b080b1b274c4f00b3e41f33cc9268aa246c9d9ce16bf0fe3b2f69d291f"
    }
   }
  },

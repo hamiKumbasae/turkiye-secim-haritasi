@@ -242,3 +242,11 @@ YSK açık veri API'sinden, il/ilçe/belde bazında: 23 Haziran 2019 İstanbul B
 yenilemesi, 2 Haziran 2024 yenileme seçimi, 7 Haziran 2026 mahalli idareler ara
 seçimi → `data/normalized/ek/yenileme_ara/`. Haritaya bağlı değil. Ayrıntı:
 `data/raw/ysk/acikveri-belde-agrege/PROVENANCE.md`.
+
+## Senato ilçe oyları (2026-09-24)
+
+1966 ve 1968 Cumhuriyet Senatosu seçimlerinin ilçe bazında parti oyları, DİE'nin
+taranmış kitaplarından (TÜİK kütüphanesi) → `data/normalized/ek/senato/<seçim>.json`
+içinde `ilceOylariTuik`. İl sonuçları Wikipedia ile karşılaştırıldı (1968: 24/24
+birebir). Aynı 1966 kitabındaki Hatay milletvekili ara seçiminin ilçe sonuçları
+`ek/yenileme_ara/1966mv_ara_hatay.json`. Ayrıntı: `data/raw/tuik/senato-metin/PROVENANCE.md`.
