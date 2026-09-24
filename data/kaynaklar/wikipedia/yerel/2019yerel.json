@@ -8,20 +8,20 @@
  "lisans": "CC BY-SA 4.0 (Wikipedia katkicilari)",
  "ozet": {
   "belde/kazanan": 386,
-  "il_merkezi/oy": 45,
-  "il_merkezi_ek/oy": 17,
+  "il_merkezi/oy": 81,
+  "il_merkezi_ek/oy": 18,
   "ilce/oy": 904
  },
  "partiEslemesi": {
-  "link": 6249,
-  "null": 10,
-  "ad": 17
+  "link": 6578,
+  "null": 11,
+  "ad": 18
  },
  "eslenemeyenPartiler": [
   {
    "kisaltma": "Katılım oranı",
    "partiLink": null,
-   "adet": 10
+   "adet": 11
   }
  ],
  "sayfaNotlari": {
@@ -37,6 +37,9 @@
   ],
   "Balıkesir'de 2019 Türkiye yerel seçimleri": [
    "İlçelere göre Büyükşehir seçim sonuçları: tablo ayristirilamadi"
+  ],
+  "Konya'da 2019 Türkiye yerel seçimleri": [
+   "İlçeler: tablo ayristirilamadi"
   ],
   "Manisa'da 2019 Türkiye yerel seçimleri": [
    "İlçelere göre Büyükşehir Belediye Başkanlığı seçim sonuçları: tablo ayristirilamadi"
@@ -1646,6 +1649,144 @@
    "revid": 36816303
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Adıyaman",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 159663,
+   "sandik": 485,
+   "gecerliOy": 123641,
+   "gecersizOy": 4994,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Süleyman Kılınç",
+     "oy": 65805,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Ahmet Faruk Ünsal",
+     "oy": 34766,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Abdulkadir Kırmızı",
+     "oy": 14678,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Rıfat Erdem",
+     "oy": 6720,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Ahmet Alagöz",
+     "oy": 446,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Ergun Koç",
+     "oy": 331,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Abdurrahim Kahraman",
+     "oy": 268,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Mustafa Doğan",
+     "oy": 256,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Arif Doğan",
+     "oy": 172,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Gafari Koparal",
+     "oy": 136,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Abdulkadir Tünçmen",
+     "oy": 63,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": null,
+     "eslemeYontemi": null,
+     "kisaltma": "Katılım oranı",
+     "partiAdi": "Katılım oranı",
+     "partiLink": null,
+     "aday": "Katılım oranı",
+     "oy": 8067,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Adıyaman",
+   "plaka": 2,
+   "sayfa": "Adıyaman'da 2019 Türkiye yerel seçimleri",
+   "revid": 37768068
+  },
+  {
    "tur": "belde",
    "ad": "Kömür",
    "ust": "Merkez",
@@ -2500,6 +2641,104 @@
    "plaka": 2,
    "sayfa": "Adıyaman'da 2019 Türkiye yerel seçimleri",
    "revid": 37768068
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Afyonkarahisar",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 148907,
+   "sandik": 457,
+   "gecerliOy": 127368,
+   "gecersizOy": 3727,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Mehmet Zeybek",
+     "oy": 54712,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Mahmut Koçak",
+     "oy": 50562,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Fatih Çetinkaya",
+     "oy": 20725,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Hasan Hüseyin Uğurlu",
+     "oy": 741,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Şerafettin Erdinç Özdil",
+     "oy": 315,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Halil Şahin",
+     "oy": 135,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Ahmet Alp Köse",
+     "oy": 111,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Ahmet Demirer",
+     "oy": 67,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Afyonkarahisar",
+   "plaka": 3,
+   "sayfa": "Afyonkarahisar'da 2019 Türkiye yerel seçimleri",
+   "revid": 35604061
   },
   {
    "tur": "belde",
@@ -4476,6 +4715,134 @@
    "revid": 35604061
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Aksaray",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 141003,
+   "sandik": 433,
+   "gecerliOy": 111812,
+   "gecersizOy": 3625,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Evren Dinçer",
+     "oy": 45253,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Sefer Alkan",
+     "oy": 44015,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Özhan Türemiş",
+     "oy": 20373,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Levent Serdar Şahin",
+     "oy": 690,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Ahmet Karaman",
+     "oy": 477,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Mücahit Erman Emre",
+     "oy": 268,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "İbrahim Doğan",
+     "oy": 228,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Mustafa Tosun",
+     "oy": 194,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Aylin Tozduman",
+     "oy": 131,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Yaşar Ar",
+     "oy": 130,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Yusuf Tunçer",
+     "oy": 53,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Aksaray",
+   "plaka": 68,
+   "sayfa": "Aksaray'da 2019 Türkiye yerel seçimleri",
+   "revid": 37768065
+  },
+  {
    "tur": "belde",
    "ad": "Bağlıkaya",
    "ust": "Merkez",
@@ -5242,6 +5609,114 @@
    "plaka": 68,
    "sayfa": "Aksaray'da 2019 Türkiye yerel seçimleri",
    "revid": 37768065
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Amasya",
+   "ust": null,
+   "kazanan": "MHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 74272,
+   "sandik": 231,
+   "gecerliOy": 63123,
+   "gecersizOy": 1745,
+   "adaylar": [
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Mehmet Sarı",
+     "oy": 29847,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Cafer Özdemir",
+     "oy": 21597,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Arife Serpil Saraçoğlu",
+     "oy": 10887,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Noğman Yüksel",
+     "oy": 546,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "İsmail Aydın",
+     "oy": 62,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Zübeyir Kılıç",
+     "oy": 53,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Yusuf Turgut Güzelyazıcı",
+     "oy": 46,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Adem Şahin",
+     "oy": 43,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Sefer Kılıç",
+     "oy": 42,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Amasya",
+   "plaka": 5,
+   "sayfa": "Amasya'da 2019 Türkiye yerel seçimleri",
+   "revid": 33805598
   },
   {
    "tur": "belde",
@@ -15104,6 +15579,114 @@
    "revid": 37768061
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Bartın",
+   "ust": null,
+   "kazanan": "MHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 50817,
+   "sandik": 154,
+   "gecerliOy": 39297,
+   "gecersizOy": 1486,
+   "adaylar": [
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Cemal Akın",
+     "oy": 14044,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Yusuf Ziya Aldatmaz",
+     "oy": 13896,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Mehmet Arslan",
+     "oy": 9987,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Muhammed Emin Titiz",
+     "oy": 1055,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Nilüfer Akbal",
+     "oy": 97,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Gürhan Eryol",
+     "oy": 66,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Gözde Demiral",
+     "oy": 62,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Hasan Ergin",
+     "oy": 55,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Soner Çetin",
+     "oy": 35,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Bartın",
+   "plaka": 74,
+   "sayfa": "Bartın'da 2019 Türkiye yerel seçimleri",
+   "revid": 37768060
+  },
+  {
    "tur": "belde",
    "ad": "Hasankadı",
    "ust": "Merkez",
@@ -15408,6 +15991,134 @@
    "plaka": 74,
    "sayfa": "Bartın'da 2019 Türkiye yerel seçimleri",
    "revid": 37768060
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Batman",
+   "ust": null,
+   "kazanan": "HDP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 246596,
+   "sandik": 736,
+   "gecerliOy": 181767,
+   "gecersizOy": 10292,
+   "adaylar": [
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Mehmet Demir",
+     "oy": 120014,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Murat Güneştekin",
+     "oy": 51902,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "İlhami Işık",
+     "oy": 2712,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Enver Erdem",
+     "oy": 2575,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Abdullah Balcı",
+     "oy": 1524,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Hayrettin Bektaş",
+     "oy": 1180,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Mehmet Feyyaz Ekmen",
+     "oy": 730,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Muazzez Güvenbaş",
+     "oy": 412,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Sevinç Sariahmetoğlu",
+     "oy": 339,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Mehmet Şükrü Elbay",
+     "oy": 194,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Hüseyin Kanariz",
+     "oy": 185,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Batman",
+   "plaka": 72,
+   "sayfa": "Batman'da 2019 Türkiye yerel seçimleri",
+   "revid": 37768059
   },
   {
    "tur": "belde",
@@ -16000,6 +16711,114 @@
    "revid": 37768059
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Bayburt",
+   "ust": null,
+   "kazanan": "MHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 25034,
+   "sandik": 84,
+   "gecerliOy": 19315,
+   "gecersizOy": 565,
+   "adaylar": [
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Hükmü Pekmezci",
+     "oy": 10911,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AKP",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Fatih Yumak",
+     "oy": 6905,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Osman Nuri Temür",
+     "oy": 569,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Yunus Özyıldırım",
+     "oy": 519,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Kağan Eraslan",
+     "oy": 329,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "ad",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": null,
+     "aday": "Mehmet Emir",
+     "oy": 26,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Murat Çikot",
+     "oy": 25,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi",
+     "aday": "Özgün Can",
+     "oy": 17,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Nevriye Zor",
+     "oy": 14,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Bayburt",
+   "plaka": 69,
+   "sayfa": "Bayburt'ta 2019 Türkiye yerel seçimleri",
+   "revid": 34010583
+  },
+  {
    "tur": "belde",
    "ad": "Arpalı",
    "ust": "Bayburt",
@@ -16190,6 +17009,114 @@
    "plaka": 69,
    "sayfa": "Bayburt'ta 2019 Türkiye yerel seçimleri",
    "revid": 34010583
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Bilecik",
+   "ust": null,
+   "kazanan": "CHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 38977,
+   "sandik": 120,
+   "gecerliOy": 32512,
+   "gecersizOy": 980,
+   "adaylar": [
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Semih Şahin",
+     "oy": 16464,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Nihat Can",
+     "oy": 13662,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Engin Muslu",
+     "oy": 1633,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Hüseyin Hüsnü Avcı",
+     "oy": 299,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Sezai Balta",
+     "oy": 233,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Devrim Serin",
+     "oy": 111,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Metin Hastürk",
+     "oy": 49,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Aziz Murat Hatipağaoğlu",
+     "oy": 33,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Rıza Emir",
+     "oy": 28,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Bilecik",
+   "plaka": 11,
+   "sayfa": "Bilecik'te 2019 Türkiye yerel seçimleri",
+   "revid": 35688676
   },
   {
    "tur": "belde",
@@ -16760,6 +17687,114 @@
    "plaka": 11,
    "sayfa": "Bilecik'te 2019 Türkiye yerel seçimleri",
    "revid": 35688676
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Bingöl",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 73020,
+   "sandik": 224,
+   "gecerliOy": 49100,
+   "gecersizOy": 3521,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Erdal Arıkan",
+     "oy": 18954,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Hişyar Özsoy",
+     "oy": 14948,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Mehmet Ziya Buyankara",
+     "oy": 13233,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Musa Ahmet Kaya",
+     "oy": 1036,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Vahdettin Uzunyayla",
+     "oy": 573,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Şerafettin Varolgüneş",
+     "oy": 197,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Ahmet Özdil",
+     "oy": 65,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Mesut Bayram",
+     "oy": 57,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Bayram Kavak",
+     "oy": 37,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Bingöl",
+   "plaka": 12,
+   "sayfa": "Bingöl'de 2019 Türkiye yerel seçimleri",
+   "revid": 35688674
   },
   {
    "tur": "belde",
@@ -17400,6 +18435,114 @@
    "plaka": 12,
    "sayfa": "Bingöl'de 2019 Türkiye yerel seçimleri",
    "revid": 35688674
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Bitlis",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 31004,
+   "sandik": 105,
+   "gecerliOy": 23270,
+   "gecersizOy": 1594,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Nesrullah Tanğlay",
+     "oy": 10194,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Faruk İşlek",
+     "oy": 7691,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Yaşar Buhan",
+     "oy": 4359,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Mehmet Piran Aslın",
+     "oy": 368,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Burhan Küsem",
+     "oy": 315,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Ömer Uygun",
+     "oy": 155,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Tuğçe Tekçe",
+     "oy": 98,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Cafer Ömürden Cengiz",
+     "oy": 48,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Bülten Mutluay",
+     "oy": 42,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Bitlis",
+   "plaka": 13,
+   "sayfa": "Bitlis'te 2019 Türkiye yerel seçimleri",
+   "revid": 36706481
   },
   {
    "tur": "belde",
@@ -18066,6 +19209,104 @@
    "plaka": 13,
    "sayfa": "Bitlis'te 2019 Türkiye yerel seçimleri",
    "revid": 36706481
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Bolu",
+   "ust": null,
+   "kazanan": "CHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 113924,
+   "sandik": 354,
+   "gecerliOy": 94288,
+   "gecersizOy": 3290,
+   "adaylar": [
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Tanju Özcan",
+     "oy": 49697,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Fatih Metin",
+     "oy": 42179,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Turan Kılınç",
+     "oy": 1488,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Selahattin Özbölük",
+     "oy": 311,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Asli Yolci",
+     "oy": 212,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Suat Hayri Sapmaz",
+     "oy": 151,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Mustafa Temelli",
+     "oy": 132,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Cihan Sezer",
+     "oy": 118,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Bolu",
+   "plaka": 14,
+   "sayfa": "Bolu'da 2019 Türkiye yerel seçimleri",
+   "revid": 35739796
   },
   {
    "tur": "belde",
@@ -24604,6 +25845,134 @@
    "revid": 37768021
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Düzce",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 114146,
+   "sandik": 354,
+   "gecerliOy": 93973,
+   "gecersizOy": 3532,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Faruk Özlü",
+     "oy": 44299,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Ömer Küçük",
+     "oy": 26280,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Erdoğan Bıyık",
+     "oy": 20443,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Aptullah Yalman",
+     "oy": 862,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Ferdi Çiçek",
+     "oy": 503,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Yusuf Kadıoğlu",
+     "oy": 469,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Hasan Kalkan",
+     "oy": 437,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Bekir Yıldız",
+     "oy": 226,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Fethi Sönmez",
+     "oy": 182,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Hasan Yıldırım",
+     "oy": 162,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Atilla Yılmaz",
+     "oy": 110,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Düzce",
+   "plaka": 81,
+   "sayfa": "Düzce'de 2019 Türkiye yerel seçimleri",
+   "revid": 35604139
+  },
+  {
    "tur": "belde",
    "ad": "Beyköy",
    "ust": "Merkez",
@@ -25974,6 +27343,114 @@
    "revid": 35688680
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Elazığ",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 241886,
+   "sandik": 739,
+   "gecerliOy": 180563,
+   "gecersizOy": 8532,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Şahin Şerifoğulları",
+     "oy": 72908,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Bilal Çoban",
+     "oy": 62320,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Ali Şekerdağ",
+     "oy": 30797,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Haluk Arslan",
+     "oy": 8630,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Mehmet Kılıçtepe",
+     "oy": 5006,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Mehmet Bedri Gültekin",
+     "oy": 326,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Abdul Cemil Üner",
+     "oy": 207,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Yavuz Karamahmutoğlu",
+     "oy": 206,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Hikmet Aydemir",
+     "oy": 163,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Elazığ",
+   "plaka": 23,
+   "sayfa": "Elazığ'da 2019 Türkiye yerel seçimleri",
+   "revid": 35688670
+  },
+  {
    "tur": "belde",
    "ad": "Akçakiraz",
    "ust": "Merkez",
@@ -26864,6 +28341,114 @@
    "plaka": 23,
    "sayfa": "Elazığ'da 2019 Türkiye yerel seçimleri",
    "revid": 35688670
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Erzincan",
+   "ust": null,
+   "kazanan": "MHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 90566,
+   "sandik": 295,
+   "gecerliOy": 75626,
+   "gecersizOy": 2217,
+   "adaylar": [
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Bekir Aksun",
+     "oy": 32036,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Cemalettin Başsoy",
+     "oy": 24959,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "İsmail Taş",
+     "oy": 17457,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Muharrem Altay",
+     "oy": 739,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Aşkın Kirik",
+     "oy": 276,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Hüseyin Karabulut",
+     "oy": 52,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Hasan Uğurtürk",
+     "oy": 42,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Muhittin Olçun",
+     "oy": 38,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Kaya Çetecioğlu",
+     "oy": 27,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Erzincan",
+   "plaka": 24,
+   "sayfa": "Erzincan'da 2019 Türkiye yerel seçimleri",
+   "revid": 35713324
   },
   {
    "tur": "belde",
@@ -31446,6 +33031,84 @@
    "revid": 37768019
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Giresun",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 77173,
+   "sandik": 236,
+   "gecerliOy": 62185,
+   "gecersizOy": 1816,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Aytekin Şenlikoğlu",
+     "oy": 30383,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Kerim Aksu",
+     "oy": 30073,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Saim Öksüz",
+     "oy": 1238,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Osman Nuri Kale",
+     "oy": 221,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Abdulkadir Bayram",
+     "oy": 149,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Mustafa Güzel",
+     "oy": 121,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Giresun",
+   "plaka": 28,
+   "sayfa": "Giresun'da 2019 Türkiye yerel seçimleri",
+   "revid": 32343093
+  },
+  {
    "tur": "belde",
    "ad": "Duroğlu",
    "ust": "Merkez",
@@ -32768,6 +34431,104 @@
    "revid": 35736555
   },
   {
+   "tur": "il_merkezi_ek",
+   "ad": "Gümüşhane",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 23948,
+   "sandik": 85,
+   "gecerliOy": 18677,
+   "gecersizOy": 708,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Ercan Çimen",
+     "oy": 9182,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Sabri Varan",
+     "oy": 5606,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Mustafa Canlı",
+     "oy": 2142,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Bedri Ağaç",
+     "oy": 1410,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Şerif Erdal",
+     "oy": 250,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Sibel Küçükkapdan",
+     "oy": 33,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Coşkun Gündüz",
+     "oy": 29,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Fikret İşeri",
+     "oy": 25,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Gümüşhane",
+   "plaka": 29,
+   "sayfa": "Gümüşhane'de 2019 Türkiye yerel seçimleri",
+   "revid": 35736555
+  },
+  {
    "tur": "belde",
    "ad": "Arzularkabaköy",
    "ust": "Gümüşhane",
@@ -33230,6 +34991,114 @@
    "plaka": 29,
    "sayfa": "Gümüşhane'de 2019 Türkiye yerel seçimleri",
    "revid": 35736555
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Hakkâri",
+   "ust": null,
+   "kazanan": "HDP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 40237,
+   "sandik": 122,
+   "gecerliOy": 32015,
+   "gecersizOy": 1217,
+   "adaylar": [
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Cihan Karaman",
+     "oy": 19199,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Cüneyt Epcim",
+     "oy": 10644,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Metin Koparan",
+     "oy": 818,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Metin Tekin",
+     "oy": 504,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Yaşar Yorulmaz",
+     "oy": 486,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Rahmi Çiftçi",
+     "oy": 143,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Nursel Kızılırmak",
+     "oy": 119,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Mehmet Eşki",
+     "oy": 66,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Emel Karabulut",
+     "oy": 36,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Hakkâri",
+   "plaka": 30,
+   "sayfa": "Hakkâri'de 2019 Türkiye yerel seçimleri",
+   "revid": 35736534
   },
   {
    "tur": "belde",
@@ -34806,6 +36675,144 @@
    "revid": 35729448
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Isparta",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 164209,
+   "sandik": 498,
+   "gecerliOy": 132489,
+   "gecersizOy": 3684,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Şükrü Başdeğirmen",
+     "oy": 50394,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Yusuf Ziya Günaydın",
+     "oy": 40801,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Gökmen Hakkı Gökmenoğlu",
+     "oy": 38003,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Faruk Algınkılınç",
+     "oy": 1177,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Melih Kahveci",
+     "oy": 560,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Cafer Özdemir",
+     "oy": 473,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Levent Aybatılı",
+     "oy": 356,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Ahmet Demir",
+     "oy": 200,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Uğur Yazıcı",
+     "oy": 181,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Ahmet Çakmak",
+     "oy": 177,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "İbrahim Perçin",
+     "oy": 97,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Serkan Ağarlı",
+     "oy": 70,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Isparta",
+   "plaka": 32,
+   "sayfa": "Isparta'da 2019 Türkiye yerel seçimleri",
+   "revid": 35736545
+  },
+  {
    "tur": "belde",
    "ad": "Kuleönü",
    "ust": "Merkez",
@@ -35952,6 +37959,94 @@
    "plaka": 32,
    "sayfa": "Isparta'da 2019 Türkiye yerel seçimleri",
    "revid": 35736545
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Iğdır",
+   "ust": null,
+   "kazanan": "HDP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 56116,
+   "sandik": 170,
+   "gecerliOy": 44427,
+   "gecersizOy": 1661,
+   "adaylar": [
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Yaşar Akkuş",
+     "oy": 22268,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "İsa Yaşar Tezel",
+     "oy": 20733,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Sözer Sayan",
+     "oy": 1013,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Abdullah Mert",
+     "oy": 207,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Fırat Akdağ",
+     "oy": 81,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Berkay Kemal Önoğlu",
+     "oy": 71,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Alihaydar Demir",
+     "oy": 54,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Iğdır",
+   "plaka": 76,
+   "sayfa": "Iğdır'da 2019 Türkiye yerel seçimleri",
+   "revid": 34010245
   },
   {
    "tur": "belde",
@@ -37632,6 +39727,104 @@
    "plaka": 78,
    "sayfa": "Karabük'te 2019 Türkiye yerel seçimleri",
    "revid": 33805648
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Karaman",
+   "ust": null,
+   "kazanan": "MHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 108660,
+   "sandik": 341,
+   "gecerliOy": 90819,
+   "gecersizOy": 2520,
+   "adaylar": [
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Savaş Kalaycı",
+     "oy": 35921,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Mahmut Sami Şahin",
+     "oy": 34907,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Emin Ege",
+     "oy": 14698,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Zühtü Bahadır Bayraç",
+     "oy": 2933,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Şaban Şahin",
+     "oy": 2100,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Mehmet Atal",
+     "oy": 101,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Abdurrahman Kaplan",
+     "oy": 92,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Ayhan Karademir",
+     "oy": 67,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Karaman",
+   "plaka": 70,
+   "sayfa": "Karaman'da 2019 Türkiye yerel seçimleri",
+   "revid": 33992438
   },
   {
    "tur": "belde",
@@ -45376,6 +47569,114 @@
    "revid": 35800054
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Kütahya",
+   "ust": null,
+   "kazanan": "MHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 164087,
+   "sandik": 509,
+   "gecerliOy": 138025,
+   "gecersizOy": 4084,
+   "adaylar": [
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Alim Işık",
+     "oy": 53393,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Ahmet Sami Kutlu",
+     "oy": 44513,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Eyüp Kahveci",
+     "oy": 35357,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Aynur Sezer",
+     "oy": 2009,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Ömer Faruk Evren",
+     "oy": 1874,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Ayşe Ceylan",
+     "oy": 541,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Osman Çelik",
+     "oy": 136,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Yasin Baş",
+     "oy": 110,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Nadide Nurdan Yıldırım",
+     "oy": 92,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Kütahya",
+   "plaka": 43,
+   "sayfa": "Kütahya'da 2019 Türkiye yerel seçimleri",
+   "revid": 35151511
+  },
+  {
    "tur": "belde",
    "ad": "Seyitömer",
    "ust": "Merkez",
@@ -46592,6 +48893,104 @@
    "revid": 35151511
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Kırklareli",
+   "ust": null,
+   "kazanan": "Bağımsız",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 55870,
+   "sandik": 170,
+   "gecerliOy": 45645,
+   "gecersizOy": 1809,
+   "adaylar": [
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Mehmet Siyam Kesimoğlu",
+     "oy": 17032,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Derya Bulut",
+     "oy": 16920,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Mehmet Tuna Soykan",
+     "oy": 9645,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Ahmet Can Kayacı",
+     "oy": 1239,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Mithat Özdemir",
+     "oy": 404,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Suat Bahçekapılı",
+     "oy": 174,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Halil Göçen",
+     "oy": 140,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Buket Manap",
+     "oy": 91,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Kırklareli",
+   "plaka": 39,
+   "sayfa": "Kırklareli'de 2019 Türkiye yerel seçimleri",
+   "revid": 37768015
+  },
+  {
    "tur": "belde",
    "ad": "İnece",
    "ust": "Merkez",
@@ -47372,6 +49771,114 @@
    "revid": 37768015
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Kırıkkale",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 136134,
+   "sandik": 409,
+   "gecerliOy": 108449,
+   "gecersizOy": 3674,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Mehmet Saygılı",
+     "oy": 45569,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Mahir Yılmaz",
+     "oy": 34435,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Serdar Yarar",
+     "oy": 25445,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Mustafa Babacan",
+     "oy": 1432,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Faruk Vurgun",
+     "oy": 984,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Güray Topaç",
+     "oy": 303,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Ekin Şen",
+     "oy": 113,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Nezih Gülşen",
+     "oy": 97,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Aliosman Kılavuz",
+     "oy": 71,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Kırıkkale",
+   "plaka": 71,
+   "sayfa": "Kırıkkale'de 2019 Türkiye yerel seçimleri",
+   "revid": 35360188
+  },
+  {
    "tur": "belde",
    "ad": "Hacılar",
    "ust": "Merkez",
@@ -47950,6 +50457,104 @@
    "plaka": 71,
    "sayfa": "Kırıkkale'de 2019 Türkiye yerel seçimleri",
    "revid": 35360188
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Kırşehir",
+   "ust": null,
+   "kazanan": "CHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 88025,
+   "sandik": 269,
+   "gecerliOy": 71513,
+   "gecersizOy": 2052,
+   "adaylar": [
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Selahattin Ekicioğlu",
+     "oy": 32028,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Yaşar Bahçeci",
+     "oy": 27652,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Onur Köksal",
+     "oy": 11137,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Yusuf Turan",
+     "oy": 484,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "İlker Özkamalı",
+     "oy": 80,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Serap Emir",
+     "oy": 57,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Erdoğan Sincer",
+     "oy": 45,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Ahmet Haydar İlik",
+     "oy": 30,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Kırşehir",
+   "plaka": 40,
+   "sayfa": "Kırşehir'de 2019 Türkiye yerel seçimleri",
+   "revid": 35797952
   },
   {
    "tur": "belde",
@@ -54652,6 +57257,124 @@
    "revid": 37768010
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Muş",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 62279,
+   "sandik": 192,
+   "gecerliOy": 45796,
+   "gecersizOy": 2449,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Feyat Asya",
+     "oy": 15919,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Sırrı Sakık",
+     "oy": 15381,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Şerafettin Yatçı",
+     "oy": 12237,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Fatih Aslan",
+     "oy": 658,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Sadık Aydın",
+     "oy": 486,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Ali Ziver Çakı",
+     "oy": 464,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Tansu Saraç",
+     "oy": 386,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Müzeyyen Okur",
+     "oy": 166,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Cazım Yıldız",
+     "oy": 60,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Levent Gök",
+     "oy": 39,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Muş",
+   "plaka": 49,
+   "sayfa": "Muş'ta 2019 Türkiye yerel seçimleri",
+   "revid": 34010356
+  },
+  {
    "tur": "belde",
    "ad": "Karaağaçlı",
    "ust": "Merkez",
@@ -55386,6 +58109,104 @@
    "plaka": 49,
    "sayfa": "Muş'ta 2019 Türkiye yerel seçimleri",
    "revid": 34010356
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Nevşehir",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 70906,
+   "sandik": 217,
+   "gecerliOy": 58212,
+   "gecersizOy": 1791,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Rasim Arı",
+     "oy": 30024,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Filiz Kılıç",
+     "oy": 19983,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Mehmet Özkan",
+     "oy": 5980,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "İsmet Fatih Terzioğlu",
+     "oy": 1216,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Ahmet Bilgili",
+     "oy": 771,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Bekir Kendir",
+     "oy": 112,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Ersel Gürbüz",
+     "oy": 81,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Abdurrahman Çavuş",
+     "oy": 45,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Nevşehir",
+   "plaka": 50,
+   "sayfa": "Nevşehir'de 2019 Türkiye yerel seçimleri",
+   "revid": 33793211
   },
   {
    "tur": "belde",
@@ -56202,6 +59023,124 @@
    "plaka": 50,
    "sayfa": "Nevşehir'de 2019 Türkiye yerel seçimleri",
    "revid": 33793211
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Niğde",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 93626,
+   "sandik": 287,
+   "gecerliOy": 75490,
+   "gecersizOy": 1092,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Emrah Özdemir",
+     "oy": 28032,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Mümin İnan",
+     "oy": 21226,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Hakan Er",
+     "oy": 14019,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Rasim Yılmaz",
+     "oy": 11029,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Nihat Altıparmak",
+     "oy": 857,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Hasan Akşen",
+     "oy": 97,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Figen Üzer",
+     "oy": 67,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Vahit Belge",
+     "oy": 56,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Yusuf Kukul",
+     "oy": 56,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Ezgi Göçmen",
+     "oy": 51,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Niğde",
+   "plaka": 51,
+   "sayfa": "Niğde'de 2019 Türkiye yerel seçimleri",
+   "revid": 32344104
   },
   {
    "tur": "belde",
@@ -58488,6 +61427,124 @@
    "revid": 37768000
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Osmaniye",
+   "ust": null,
+   "kazanan": "MHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 150217,
+   "sandik": 452,
+   "gecerliOy": 113490,
+   "gecersizOy": 6432,
+   "adaylar": [
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Kadir Kara",
+     "oy": 61788,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Davut Çuhadar",
+     "oy": 22344,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Alpaslan Koca",
+     "oy": 17644,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Mehmet Ali Özkal",
+     "oy": 4125,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Erdinç Say",
+     "oy": 3112,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Ömer Yağmur",
+     "oy": 2010,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Kadir Karayel",
+     "oy": 1551,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Lütfi Öztürk",
+     "oy": 380,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Abdullah Güzel",
+     "oy": 326,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Mehmet Çanta",
+     "oy": 210,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Osmaniye",
+   "plaka": 80,
+   "sayfa": "Osmaniye'de 2019 Türkiye yerel seçimleri",
+   "revid": 35604112
+  },
+  {
    "tur": "belde",
    "ad": "Cevdetiye",
    "ust": "Merkez",
@@ -59030,6 +62087,104 @@
    "plaka": 80,
    "sayfa": "Osmaniye'de 2019 Türkiye yerel seçimleri",
    "revid": 35604112
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Rize",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 67952,
+   "sandik": 216,
+   "gecerliOy": 48997,
+   "gecersizOy": 3112,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Rahmi Metin",
+     "oy": 35761,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Ayhan Akyüz",
+     "oy": 6536,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Yakup Özkan",
+     "oy": 3314,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Muhammet Kaçar",
+     "oy": 2715,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Yunus Bayraktar",
+     "oy": 196,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Kemal Pehlivanlar",
+     "oy": 184,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Savaş Sarı",
+     "oy": 155,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Salih Öksüz",
+     "oy": 136,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Rize",
+   "plaka": 53,
+   "sayfa": "Rize'de 2019 Türkiye yerel seçimleri",
+   "revid": 35708872
   },
   {
    "tur": "belde",
@@ -62928,6 +66083,114 @@
    "revid": 36978134
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Siirt",
+   "ust": null,
+   "kazanan": "HDP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 87793,
+   "sandik": 268,
+   "gecerliOy": 68705,
+   "gecersizOy": 3975,
+   "adaylar": [
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Berivan Helen Işık",
+     "oy": 33227,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Ali İlbaş",
+     "oy": 31611,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Şakir Sula",
+     "oy": 1330,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Ahmet Özgür",
+     "oy": 1010,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Seyfettin Kol",
+     "oy": 1003,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Ali Bergin",
+     "oy": 242,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Nedim Pektaş",
+     "oy": 128,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Müge Gönüllü",
+     "oy": 95,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Enes Bozkurt",
+     "oy": 59,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Siirt",
+   "plaka": 56,
+   "sayfa": "Siirt'te 2019 Türkiye yerel seçimleri",
+   "revid": 34272840
+  },
+  {
    "tur": "belde",
    "ad": "Gökçebağ",
    "ust": "Merkez",
@@ -64246,6 +67509,114 @@
    "plaka": 57,
    "sayfa": "Sinop'ta 2019 Türkiye yerel seçimleri",
    "revid": 32344338
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Sivas",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 229430,
+   "sandik": 699,
+   "gecerliOy": 189036,
+   "gecersizOy": 5505,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Hilmi Bilgin",
+     "oy": 93284,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Doğan Ürgüp",
+     "oy": 68900,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Ali Akyıldız",
+     "oy": 14528,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Mehmet Er",
+     "oy": 8913,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Melih Seçilmiş",
+     "oy": 2806,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Yunus Çınar",
+     "oy": 285,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Cumhur Akbulut",
+     "oy": 150,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Cem Taylan Erden",
+     "oy": 117,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Recep Bozdağ",
+     "oy": 53,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Sivas",
+   "plaka": 58,
+   "sayfa": "Sivas'ta 2019 Türkiye yerel seçimleri",
+   "revid": 32344380
   },
   {
    "tur": "belde",
@@ -66656,6 +70027,104 @@
    "plaka": 59,
    "sayfa": "Tekirdağ'da 2019 Türkiye yerel seçimleri",
    "revid": 37767996
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Tokat",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 100477,
+   "sandik": 311,
+   "gecerliOy": 83152,
+   "gecersizOy": 2314,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Eyüp Eroğlu",
+     "oy": 40581,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Adnan Özmen",
+     "oy": 23297,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Hüseyin Yarıcı",
+     "oy": 17012,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Alparslan Akyüz",
+     "oy": 1740,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Ahmet Öztürk",
+     "oy": 168,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "İsmail Cem Kaymak",
+     "oy": 163,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Mustafa Ağar",
+     "oy": 111,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Fatma Mumcuoğlu",
+     "oy": 80,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Tokat",
+   "plaka": 60,
+   "sayfa": "Tokat'ta 2019 Türkiye yerel seçimleri",
+   "revid": 35331677
   },
   {
    "tur": "belde",
@@ -71760,6 +75229,114 @@
    "revid": 36229464
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Yalova",
+   "ust": null,
+   "kazanan": "CHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 82964,
+   "sandik": 245,
+   "gecerliOy": 62776,
+   "gecersizOy": 2263,
+   "adaylar": [
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Vefa Salman",
+     "oy": 28779,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Yusuf Ziya Öztabak",
+     "oy": 28441,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Rıdvan Acar",
+     "oy": 3620,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Resul Genç",
+     "oy": 930,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Yüksel Akın",
+     "oy": 539,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "İbrahim Halil Yumuşak",
+     "oy": 197,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Fatma Jülide Keskin",
+     "oy": 117,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Rahmi Baltacı",
+     "oy": 87,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Hülya Yıldız",
+     "oy": 66,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Yalova",
+   "plaka": 77,
+   "sayfa": "Yalova'da 2019 Türkiye yerel seçimleri",
+   "revid": 32344676
+  },
+  {
    "tur": "belde",
    "ad": "Kadıköy",
    "ust": "Merkez",
@@ -73752,6 +77329,104 @@
    "revid": 35841127
   },
   {
+   "tur": "il_merkezi",
+   "ad": "Zonguldak",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 75052,
+   "sandik": 242,
+   "gecerliOy": 59095,
+   "gecersizOy": 1668,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Ömer Selim Alan",
+     "oy": 25125,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Şenol Şanal",
+     "oy": 23152,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Hamdi Ayan",
+     "oy": 8912,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Mehmet Yaman",
+     "oy": 1147,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Nurhan Başoğlu",
+     "oy": 417,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DP",
+     "partiAdi": "Demokrat Parti",
+     "partiLink": "Demokrat Parti (2007)",
+     "aday": "Hamza Kara",
+     "oy": 144,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Ahmet Günaydın",
+     "oy": 141,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Serkan Yurttaş",
+     "oy": 57,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Zonguldak",
+   "plaka": 67,
+   "sayfa": "Zonguldak'ta 2019 Türkiye yerel seçimleri",
+   "revid": 32344743
+  },
+  {
    "tur": "belde",
    "ad": "Beycuma",
    "ust": "Merkez",
@@ -74732,6 +78407,104 @@
    "plaka": 67,
    "sayfa": "Zonguldak'ta 2019 Türkiye yerel seçimleri",
    "revid": 32344743
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Çanakkale",
+   "ust": null,
+   "kazanan": "CHP",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 93936,
+   "sandik": 286,
+   "gecerliOy": 76037,
+   "gecersizOy": 1844,
+   "adaylar": [
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Ülgür Gökhan",
+     "oy": 46178,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Ayhan Gider",
+     "oy": 27080,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "İlyas Terzi",
+     "oy": 990,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Cemil Pehlivan",
+     "oy": 582,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BBP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BBP",
+     "partiAdi": "Büyük Birlik Partisi",
+     "partiLink": "Büyük Birlik Partisi",
+     "aday": "Hakan Havuz",
+     "oy": 446,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Aydeniz Taşova",
+     "oy": 279,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Reyhan Yıldırım",
+     "oy": 262,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Şehabettin Kısa",
+     "oy": 220,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Çanakkale",
+   "plaka": 17,
+   "sayfa": "Çanakkale'de 2019 Türkiye yerel seçimleri",
+   "revid": 37768024
   },
   {
    "tur": "belde",
@@ -76688,6 +80461,124 @@
    "plaka": 18,
    "sayfa": "Çankırı'da 2019 Türkiye yerel seçimleri",
    "revid": 35688677
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Çorum",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 180368,
+   "sandik": 542,
+   "gecerliOy": 147564,
+   "gecersizOy": 4484,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Halil İbrahim Aşgın",
+     "oy": 63866,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Özgür Kılıç",
+     "oy": 54196,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "MHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "MHP",
+     "partiAdi": "Milliyetçi Hareket Partisi",
+     "partiLink": "Milliyetçi Hareket Partisi",
+     "aday": "Kenan Şahin",
+     "oy": 24141,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "İYİ Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "İYİ Parti",
+     "partiAdi": "İYİ Parti",
+     "partiLink": "İYİ Parti",
+     "aday": "Bilgi Terlemezoğlu",
+     "oy": 2797,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Kemal Kurt",
+     "oy": 1724,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "Bağımsız",
+     "eslemeYontemi": "link",
+     "kisaltma": "BĞMSZ",
+     "partiAdi": "Bağımsız",
+     "partiLink": "Bağımsız siyasetçi",
+     "aday": "Murat Kırçı",
+     "oy": 398,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Mehmet Ali Tanık",
+     "oy": 139,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "VATAN",
+     "eslemeYontemi": "link",
+     "kisaltma": "VATAN",
+     "partiAdi": "Vatan Partisi",
+     "partiLink": "Vatan Partisi (2015)",
+     "aday": "Ahmet Rasim Burhanoğlu",
+     "oy": 124,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Devrim Koçak",
+     "oy": 110,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Ahmet Hidayet Bektaş",
+     "oy": 69,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Çorum",
+   "plaka": 19,
+   "sayfa": "Çorum'da 2019 Türkiye yerel seçimleri",
+   "revid": 36476300
   },
   {
    "tur": "belde",
@@ -86508,6 +90399,94 @@
    "plaka": 63,
    "sayfa": "Şanlıurfa'da 2019 Türkiye yerel seçimleri",
    "revid": 37767998
+  },
+  {
+   "tur": "il_merkezi",
+   "ad": "Şırnak",
+   "ust": null,
+   "kazanan": "AK Parti",
+   "ekTablo": 0,
+   "sonucTipi": "oy",
+   "secmen": 38476,
+   "sandik": 119,
+   "gecerliOy": 31946,
+   "gecersizOy": 1251,
+   "adaylar": [
+    {
+     "parti": "AK Parti",
+     "eslemeYontemi": "link",
+     "kisaltma": "AK PARTİ",
+     "partiAdi": "Adalet ve Kalkınma Partisi",
+     "partiLink": "Adalet ve Kalkınma Partisi",
+     "aday": "Mehmet Yarka",
+     "oy": 19718,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "HDP",
+     "eslemeYontemi": "link",
+     "kisaltma": "HDP",
+     "partiAdi": "Halkların Demokratik Partisi",
+     "partiLink": "Halkların Demokratik Partisi",
+     "aday": "Hişar Osal",
+     "oy": 11194,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "CHP",
+     "eslemeYontemi": "link",
+     "kisaltma": "CHP",
+     "partiAdi": "Cumhuriyet Halk Partisi",
+     "partiLink": "Cumhuriyet Halk Partisi",
+     "aday": "Osman Can",
+     "oy": 599,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "SP",
+     "eslemeYontemi": "link",
+     "kisaltma": "SAADET",
+     "partiAdi": "Saadet Partisi",
+     "partiLink": "Saadet Partisi",
+     "aday": "Orhan Ürün",
+     "oy": 270,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "DSP",
+     "eslemeYontemi": "link",
+     "kisaltma": "DSP",
+     "partiAdi": "Demokratik Sol Parti",
+     "partiLink": "Demokratik Sol Parti",
+     "aday": "Altay Kırımlı",
+     "oy": 67,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "TKP",
+     "eslemeYontemi": "link",
+     "kisaltma": "TKP",
+     "partiAdi": "Türkiye Komünist Partisi",
+     "partiLink": "Türkiye Komünist Partisi (2001)",
+     "aday": "Seher Demiroğlu",
+     "oy": 54,
+     "rowspanPaylasimli": false
+    },
+    {
+     "parti": "BTP",
+     "eslemeYontemi": "link",
+     "kisaltma": "BTP",
+     "partiAdi": "Bağımsız Türkiye Partisi",
+     "partiLink": "Bağımsız Türkiye Partisi",
+     "aday": "Emel Vurmaz",
+     "oy": 44,
+     "rowspanPaylasimli": false
+    }
+   ],
+   "il": "Şırnak",
+   "plaka": 73,
+   "sayfa": "Şırnak'ta 2019 Türkiye yerel seçimleri",
+   "revid": 35604133
   },
   {
    "tur": "belde",

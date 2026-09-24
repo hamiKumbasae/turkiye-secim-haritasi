@@ -64,8 +64,22 @@ def _hdr_index(grid):
     return None
 
 
+_HARITARENK = re.compile(r"\{\{\s*Siyasi parti haritarenk\s*\|([^{}]*)\}\}")
+
+
+def _haritarenk_satiri(m):
+    """2024 sayfalari aday satirlarini sablonla yaziyor:
+    {{Siyasi parti haritarenk|<parti makalesi>|<aday>|<oy>|<oran>|<kazandi 1/0>[|<gorunen ad>]}}
+    -> duz tablo satiri (renk | kisaltma | parti | aday | oy | oran)."""
+    a = [x.strip() for x in m.group(1).split("|")]
+    parti, aday, oy, oran = (a + [""] * 4)[:4]
+    ad = a[5] if len(a) > 5 and a[5] else re.sub(r"\s*\(.*?\)$", "", parti)
+    return f"|-\n|\n|\n| [[{parti}|{ad}]]\n| {aday}\n| {oy}\n| {oran}"
+
+
 def aday_tablosu(body, yil):
     """{{Seçim tablosu}} govdesi -> birim sozlugu (ad/tur haric)."""
+    body = _HARITARENK.sub(_haritarenk_satiri, body)
     grid = parse_table(body)
     ix = _hdr_index(grid)
     out = {"sonucTipi": "oy", "secmen": None, "sandik": None, "gecerliOy": None, "gecersizOy": None,
@@ -159,6 +173,62 @@ def kazanan_tablosu(body, yil, birim_turu, ust=None):
     return out
 
 
+def katilim_ve_baskan_tablolari(text, yil):
+    """Parti sonucu olmayan eski (1930-1946) tablolar:
+    'İlçe | Seçmen | Kullanılan oy' (1934) ve 'İlçe/Belde | Seçilen Başkan' (1946)."""
+    out = []
+    for _, body in tables(text):
+        grid = parse_table(body)
+        if not grid:
+            continue
+        h = [fold(c["text"]) for c in grid[0]]
+        if not h or h[0] not in ("ILCE", "BELDE"):
+            continue
+        bt = "ilce" if h[0] == "ILCE" else "belde"
+        if "SECMEN" in h and any(x.startswith("KULLANILAN") for x in h):
+            i_s, i_k = h.index("SECMEN"), next(i for i, x in enumerate(h) if x.startswith("KULLANILAN"))
+            for r in grid[1:]:
+                if len(r) > max(i_s, i_k) and r[0]["text"] and not r[0]["header"]:
+                    ad = r[0]["text"]
+                    tur = "il_merkezi" if fold(ad) in ("MERKEZ", "IL MERKEZI") else bt
+                    out.append({"tur": tur, "ad": ad, "ust": None, "sonucTipi": "katilim",
+                                "secmen": tr_int(r[i_s]["text"]), "oyKullanan": tr_int(r[i_k]["text"])})
+        elif any("BASKAN" in x for x in h):
+            i_b = next(i for i, x in enumerate(h) if "BASKAN" in x)
+            for r in grid[1:]:
+                if len(r) > i_b and r[0]["text"] and not r[0]["header"]:
+                    out.append({"tur": bt, "ad": r[0]["text"], "ust": None, "sonucTipi": "baskan",
+                                "baskan": r[i_b]["text"] or None,
+                                "baskanLink": (links(r[i_b]["raw"]) or [None])[0]})
+    return out
+
+
+_SAYI = r"(\d{1,3}(?:\.\d{3})+|\d+)"
+
+
+def metin_ozeti(text, il):
+    """Tablosuz sayfalarin (1930-1946) giris metninden: il geneli secmen/katilim
+    (varsa erkek/kadin ayri), il merkezi belediye baskani ve metnin kendisi.
+    Sadece kalibi acik cumleler okunur; yorum yapilmaz."""
+    giris = re.split(r"^==", text, maxsplit=1, flags=re.M)[0]
+    duz = plain(re.sub(r"\{\{Seçim bilgi kutusu.*?\n\}\}", "", giris, flags=re.S))
+    kayit = {"tur": "il_ozeti", "ad": il, "ust": None, "sonucTipi": "metin", "metin": duz[:3000]}
+    m = re.search(_SAYI + r" seçmen(?:in|den)\s+" + _SAYI + r"['’]", duz)
+    if m:
+        kayit["secmen"], kayit["oyKullanan"] = tr_int(m.group(1)), tr_int(m.group(2))
+    for cins in ("erkek", "kadın"):
+        m = re.search(_SAYI + rf" {cins} seçmenden(?: ise)? " + _SAYI + r"['’]", duz)
+        if m:
+            kayit.setdefault("cinsiyet", {})[cins] = {"secmen": tr_int(m.group(1)), "oyKullanan": tr_int(m.group(2))}
+    m = re.search(r"Belediye Başkanlığına (?:yeniden |tekrar )?([A-ZÇĞİÖŞÜ][^'’,.;()]{2,60}?)['’]", duz)
+    if m:
+        kayit["ilMerkeziBaskani"] = m.group(1).strip()
+    m = re.search(r"katılım oranı %\s*([\d,]+)", duz)
+    if m:
+        kayit["katilimOraniMetinde"] = float(m.group(1).replace(",", "."))
+    return kayit
+
+
 def kazanan_of(adaylar):
     """En cok oy alan TEK aday (bagimsizlar birlestirilmeden) - kaynak sayfalarinin kendi kurali."""
     if not adaylar:
@@ -183,7 +253,9 @@ def _bolum_turu(h2):
 
 
 def sayfa_birimleri(text, yil, il):
-    birimler = []
+    birimler = katilim_ve_baskan_tablolari(text, yil)
+    if yil < 1950:
+        birimler.append(metin_ozeti(text, il))
     notlar = []
     # H2 oncesi tablolar (bazi eski sayfalar) il merkezi sayilir
     first_h2 = re.search(r"^==[^=]", text, re.M)
@@ -201,6 +273,12 @@ def sayfa_birimleri(text, yil, il):
         h3s = sections(govde, 3)
         if not h3s:
             h3s = [(il if tur == "il_merkezi" else h2, govde)]
+        else:
+            # ilk H3'ten ONCE duran tablo (orn. 2024: "== Bilecik Belediyesi ==" altinda
+            # dogrudan sonuc tablosu, ardindan "=== Merkez beldeleri ===")
+            m3 = re.search(r"^===[^=]", govde, re.M)
+            if m3 and tables(govde[:m3.start()]):
+                h3s = [(il if tur == "il_merkezi" else h2, govde[:m3.start()])] + h3s
         for h3, g3 in h3s:
             ad = plain(h3)
             if fold(ad).endswith("BELDELERI") or fold(ad) == "BELDELER":

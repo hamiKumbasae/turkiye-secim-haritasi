@@ -26,7 +26,12 @@ Bilinen farklar (2026-09-24):
   - 2007: proje DTP destekli bagimsizlari (kazandiklari ilcelerde) "DTP"
     etiketliyor - TUIK'te "BĞMZ". Bu bir etiket farki, deger farki sayilmaz.
 
-Il satirlarina dokunulmaz (YSK resmi il arsivi), sadece `ilceSayisi`.
+Il satirlarinin degerlerine dokunulmaz (YSK resmi il arsivi), sadece
+`ilceSayisi` guncellenir ve `sehirKoy` eklenir.
+
+Sehir/koy kirilimi (`sehirKoy`): TUIK'in her ilce icin verdigi "Şehir toplamı"
+ve "Bucak ve köyler toplamı"; il satirinda secim cevrelerinin toplami. Projede
+baska hicbir kaynakta yok; `sehirKoy.kaynak.ana = "tuik"`.
 
 Kullanim:
   python3 scripts/pipelines/tuik_arsiv/merge_tuik_ilce_1991_2007.py           # kuru calisma
@@ -126,6 +131,42 @@ def birlestir(eski, ilce, esleme, ham, plaka, ad, geom_id):
     return satir
 
 
+def sehir_koy(kirilim, esleme, ham):
+    """TUIK'in 'Şehir toplamı' / 'Bucak ve köyler toplamı' kirilimi -> satir alani.
+    Degerler TUIK'ten oldugu gibi; parti anahtarlari eslenmis. 2007'deki proje
+    etiketi (DTP) burada UYGULANMAZ - TUIK'in kendi 'Bağımsız'i korunur."""
+    if not kirilim:
+        return None
+    out = {}
+    for tip in ("sehir", "koy"):
+        k = kirilim.get(tip)
+        if not k:
+            continue
+        oy = collections.Counter()
+        for h, v in k["partiler"].items():
+            oy[esleme[h]] += v or 0
+        out[tip] = {"sandik": k.get("sandik"), "secmen": k.get("secmen"), "oyKullanan": k.get("oyKullanan"),
+                    "gecerliOy": k.get("gecerliOy"),
+                    "oy": {p: v for p, v in sorted(oy.items(), key=lambda kv: -kv[1]) if v}}
+    out["kaynak"] = {"ana": "tuik", "tuikHam": ham,
+                     "not": "Şehir = il/ilçe merkezi belediye sınırı; köy = bucak ve köyler (TÜİK tanımı)."}
+    return out
+
+
+def _topla(a, b):
+    if a is None:
+        return json.loads(json.dumps(b))
+    for tip in ("sehir", "koy"):
+        if tip not in b:
+            continue
+        x, y = a.setdefault(tip, {"oy": {}}), b[tip]
+        for f in ("sandik", "secmen", "oyKullanan", "gecerliOy"):
+            x[f] = (x.get(f) or 0) + (y.get(f) or 0)
+        for p, v in y["oy"].items():
+            x["oy"][p] = x["oy"].get(p, 0) + v
+    return a
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--write", action="store_true")
@@ -137,18 +178,35 @@ def main():
         rec = load_election(yil)
         eski_idx = {(r["plaka"], fold(r["ad"])): r for r in taban}
         kullanilan, rows, rapor, alanlar = set(), [], collections.Counter(), collections.Counter()
+        il_kirilim, il_ham = {}, collections.defaultdict(list)
         for c in src["cevreler"]:
             plaka = c["plaka"]
             ham = f"{src['hamKlasor']}/{c['dosya']}"
+            sk = sehir_koy(c.get("kirilim"), esleme, ham)
+            if sk:
+                il_kirilim[plaka] = _topla(il_kirilim.get(plaka), sk)
+                il_ham[plaka].append(ham)
             for ilce in c["ilceler"]:
                 key = (plaka, fold(ALIAS.get((plaka, fold(ilce["ad"])), ilce["ad"])))
+                skr = sehir_koy(ilce.get("kirilim"), esleme, ham)
+                if skr:
+                    # TUIK dipnotu: ilce toplami ve sehir/koy toplamlari ayri tutanaklardan;
+                    # farklar duzeltilmez, kaydedilir
+                    fark = {f: (skr.get("sehir", {}).get(f) or 0) + (skr.get("koy", {}).get(f) or 0) - (ilce.get(f) or 0)
+                            for f in ("secmen", "gecerliOy")}
+                    if any(fark.values()):
+                        skr["kaynak"]["ilceToplamindanFark"] = fark
                 if plaka == 34 and key[1] == "EMINONU":
                     rows.append(birlestir(None, ilce, esleme, ham, plaka, "Eminönü", EMINONU))
+                    if skr:
+                        rows[-1]["sehirKoy"] = skr
                     rapor["sadece_tuik"] += 1
                     continue
                 eski = eski_idx.get(key)
                 if eski is None:
                     rows.append(birlestir(None, ilce, esleme, ham, plaka, ilce["ad"], None))
+                    if skr:
+                        rows[-1]["sehirKoy"] = skr
                     rapor["sadece_tuik_geomIdsiz"] += 1
                     continue
                 kullanilan.add(key)
@@ -159,6 +217,9 @@ def main():
                 rapor["teyitli" if "teyit" in r["kaynak"] else "farkli"] += 1
                 for f in r["kaynak"].get("farklar", []):
                     alanlar[f["alan"]] += 1
+                if skr:
+                    r["sehirKoy"] = skr
+                    rapor["sehirKoy"] += 1
                 rows.append(r)
         kalan = [dict(r, kaynak={"ana": "mertnuhoglu", "not": "TÜİK'te karşılığı yok"})
                  for k, r in eski_idx.items() if k not in kullanilan]
@@ -166,6 +227,12 @@ def main():
         sayac = collections.Counter(r["plaka"] for r in rows)
         for il in rec["iller"]:
             il["ilceSayisi"] = sayac.get(il["plaka"], 0)
+            if il["plaka"] in il_kirilim:
+                k = il_kirilim[il["plaka"]]
+                k["kaynak"] = {"ana": "tuik", "tuikHam": il_ham[il["plaka"]],
+                               "not": "Seçim çevrelerinin şehir/köy kırılımlarının toplamı. İl satırının "
+                                      "kendi değerleri YSK'dendir; TÜİK il toplamı YSK ile birebir tutmayabilir."}
+                il["sehirKoy"] = k
         print(f"{yil}: {dict(rapor)}, TUIK'te karsiligi yok: {len(kalan)}; farkli alanlar: {dict(alanlar.most_common(5))}")
         if args.write:
             rec["ilceler"] = rows

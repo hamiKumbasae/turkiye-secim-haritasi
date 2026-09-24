@@ -11,7 +11,9 @@ from common.turkish_text import fold
 LINK = {
     "Cumhuriyet Halk Partisi": "CHP",
     "Adalet Partisi (1961-1981)": "AP",
-    "Adalet Partisi (1923)": "AP23",
+    "Adalet Partisi (2015)": "AP23",  # 2015'te kurulan Adalet Partisi (partiler.json: short "AP")
+    "Adalet Birlik Partisi": "ABP", "Anadolu Birliği Partisi": "AB", "Aydınlık Demokrasi Partisi": "ADP",
+    "Güç Birliği Partisi": "GBP", "Ocak Partisi": "OCAK", "Türkiye Komünist Hareketi": "TKH",
     "Bağımsız siyasetçi": "Bağımsız",
     "Bağımsız": "Bağımsız",
     "Millî Selamet Partisi": "MSP", "Milli Selamet Partisi": "MSP",

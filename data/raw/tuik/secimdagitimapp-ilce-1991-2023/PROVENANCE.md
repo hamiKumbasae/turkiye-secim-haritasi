@@ -43,6 +43,27 @@ sayılmadı.
 
 Sorgu: `.venv/bin/python scripts/kaynak.py 1995 İstanbul Fatih`
 
+## Şehir / köy kırılımı (`sehirKoy`)
+
+Birleşik veride 1991-2007 ilçe satırlarına ve il satırlarına eklendi
+(`sehirKoy.sehir`, `sehirKoy.koy`, `sehirKoy.kaynak.ana = "tuik"`). İl
+satırındaki kırılım, ilin seçim çevrelerinin toplamıdır (örn. Ankara (1) +
+Ankara (2)); bu toplam YSK'nin il seçmen sayısıyla birebir tutuyor (Ankara 2007:
+2.920.818).
+
+TÜİK dipnotu: "ilçe toplamları birleştirme tutanaklarından aynen alınmıştır,
+şehir, bucak ve köy toplamları birleştirme tutanaklarından elde edilmiştir".
+Bu yüzden şehir+köy bazı ilçelerde ilçe toplamını birebir tutmaz. Değerler
+düzeltilmedi, farklar `sehirKoy.kaynak.ilceToplamindanFark` alanına yazıldı:
+
+| Yıl | Tutan (seçmen + geçerli oy kontrolü) | Tutmayan |
+|---|---|---|
+| 1991 | 1.477 | 313 |
+| 1995 | 1.786 | 50 |
+| 1999 | 1.773 | 69 |
+| 2002 | 1.826 | 20 |
+| 2007 | 1.846 | 0 |
+
 ## Bütünlük
 
 `checksums.sha256`, 2026-09-24 itibarıyla.

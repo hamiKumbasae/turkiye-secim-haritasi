@@ -160,8 +160,12 @@ def main():
             continue
         il_plakalar = {r["plaka"] for r in rec["iller"]}
         rows, via = [], collections.Counter()
+        # oy/kazanan disindaki ilce bilgileri (orn. 1950 Aydin: "Seçilen Başkan"
+        # tablosu) ayri satir olmaz; ayni ilcenin satirina alan olarak eklenir
+        baskanlar = {(b["plaka"], fold(b["ad"])): b["baskan"] for b in src["kayitlar"]
+                     if b["tur"] == "ilce" and b["sonucTipi"] == "baskan" and b.get("baskan")}
         for b in src["kayitlar"]:
-            if b["tur"] != "ilce" or b["plaka"] is None:
+            if b["tur"] != "ilce" or b["plaka"] is None or b["sonucTipi"] not in ("oy", "kazanan"):
                 continue
             if b["plaka"] not in il_plakalar:
                 eslesmeyen[(secim, b["il"], "IL YOK")].append(b["ad"])
@@ -172,6 +176,8 @@ def main():
             if gid is None:
                 eslesmeyen[(secim, b["il"], b["plaka"])].append(b["ad"])
             rows.append(satir(b, gid))
+            if (b["plaka"], fold(b["ad"])) in baskanlar:
+                rows[-1]["baskan"] = baskanlar[(b["plaka"], fold(b["ad"]))]
         # ayni geomId'ye iki satir baglanmasin (cakisma): kaynak ayni ilceyi iki
         # ilin sayfasinda farkli sonucla veriyorsa hangisinin dogru oldugunu
         # bilmiyoruz - ikisi de tabloda kalir, haritadan cikarilir.

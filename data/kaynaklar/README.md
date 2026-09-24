@@ -33,6 +33,9 @@ Birden fazla kaynaktan beslenen satırlarda `kaynak` alanı vardır:
 `kaynak` alanı olmayan satırlar, seçimin `sources.yml`'deki kaynağından gelir
 (il: `primary`, ilçe: `ilce_source` / `ilce_base` / `primary`).
 
+TÜİK'e özgü şehir/köy kırılımı 1991-2007 ilçe ve il satırlarında `sehirKoy`
+alanında durur (kaynağı her zaman `tuik`).
+
 ## Sorgu
 
 ```bash

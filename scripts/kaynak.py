@@ -138,6 +138,8 @@ def goster_secim(key, il=None, ilce=None):
     ir = iller[0]
     print(f"\n  IL {ir['ad']} (plaka {ir['plaka']}): kazanan {ir.get('kazanan')}, gecerli {ir.get('gecerliOy')}"
           f" — kaynak: {ir.get('kaynak_url') or _kaynak_str(sk.get('il'))}")
+    if ir.get("sehirKoy"):
+        print(f"  IL sehir/koy kirilimi: kaynak {ir['sehirKoy']['kaynak']['ana']} ({len(ir['sehirKoy']['kaynak']['tuikHam'])} secim cevresi)")
     ilceler = [r for r in rec["ilceler"] if r["plaka"] == ir["plaka"]]
     if ilce:
         ilceler = [r for r in ilceler if fold(r["ad"]) == fold(ilce)]
@@ -155,6 +157,13 @@ def goster_secim(key, il=None, ilce=None):
                     print(f"      {a}: {k[a]}")
             if k.get("revid"):
                 print(f"      wikipedia: https://tr.wikipedia.org/w/index.php?oldid={k['revid']}")
+        if ilce and r.get("baskan"):
+            print(f"      baskan: {r['baskan']} (ayni kaynak)")
+        if ilce and r.get("sehirKoy"):
+            sk = r["sehirKoy"]
+            print(f"      sehir/koy kirilimi: kaynak {sk['kaynak']['ana']} ({sk['kaynak'].get('tuikHam')})"
+                  f"; sehir secmen {sk.get('sehir', {}).get('secmen')}, koy secmen {sk.get('koy', {}).get('secmen')}"
+                  + (f"; ilce toplamindan fark {sk['kaynak']['ilceToplamindanFark']}" if sk['kaynak'].get('ilceToplamindanFark') else ""))
 
 
 def liste():
