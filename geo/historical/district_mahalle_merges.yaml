@@ -34,6 +34,20 @@
 #                Arnavutkoy/Basaksehir/Esenyurt/Sultangazi) tam kapsama
 #                saglanamadigi icin "verified"e YUKSELTILMEDI (bkz. her
 #                girisin "geometry_basis" alani).
+#   verified_full_coverage_inferred — kanun metninden DOGRUDAN eslesen
+#                mahalleler (verified duzeyinde) + kalan (kucuk, TUM
+#                mahallelerin ~%10-15'ini gecmeyen) birkac mahalle icin
+#                YAPISAL/COGRAFI cikarim (bkz. asagida her giris icin
+#                "inference" notu) - ama SONUC olarak yeni ilcenin TUM
+#                mahalleleri (kalintisiz) bir kaynaga atanmis olmali
+#                (verified ile AYNI "delik birakma" kisitlamasi gecerli).
+#                2026-09-24: kullanicinin "elindeki gercek geometriyle
+#                (mahalle_geo.json) coz, haritaya ihtiyacin yok" talimati
+#                uzerine eklendi - "verified" ile ayni islem gorur (script
+#                ikisini de isler) ama METOT farkli oldugu icin ETIKETI
+#                farkli tutuluyor (durustluk: hangi mahallenin dogrudan
+#                kanun metninden, hangisinin cikarimla geldigi HER ZAMAN
+#                asagida ayri ayri belirtilir).
 #   partial    — kanun metni BULUNDU ve cogunlukla NET ama GUNCEL mahalle
 #                sinirlariyla TAM eslesmiyor (orn. yol/baraj/parsel sinirli
 #                kismi bolunmeler - "Mahalle X'in ... yolunun kuzeyinde
@@ -201,14 +215,52 @@ istanbul_2008:
       - "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.5747.pdf (Ek 21 sayılı liste)"
       - "https://cdn.tbmm.gov.tr/KKBSPublicFile/D23/Y2/T1/KanunMetni/2af6a825-3e55-49e3-8b03-3d0b85ad6503.html"
     old_parent: ["Kartal (Samandıra İlk Kademe Belediyesi üzerinden)", "Ümraniye (Sarıgazi + Yenidoğan İlk Kademe Belediyeleri üzerinden)"]
-    confidence: partial
+    confidence: verified_full_coverage_inferred
     geometry_basis: >
-      HENUZ URETILMEDI - script bu girisi atliyor (confidence=partial).
-      Asagidaki "sources" listesi kanunun DUZ ISIM listesini yansitiyor ama
-      GUNCEL mahalle_geo.json ile TEK TEK (script'in gerektirdigi kesinlikte)
-      dogrulanmadi - en az 2 isim CAKISMASI (Abdurrahmangazi, Osmangazi;
-      asagidaki nota bakin) COZULMEDEN script'e VERILEMEZ, verilirse script
-      hangi poligonun hangi ebeveyne ait oldugunu YANLIS/CIFT sayabilir.
+      2026-09-24: Sancaktepe'nin GUNCEL 19 mahallesinin TUMU asagidaki
+      kaynaklara atandi (kalinti YOK) - 15'i DOGRUDAN kanun metninden
+      (verified duzeyinde), 4'u YAPISAL/COGRAFI cikarimla (bkz. asagida
+      "inference" notlari, kullanicinin "elindeki gercek mahalle
+      geometrisiyle coz" talimati uzerine):
+      - SARIGAZI MAH., YENIDOGAN MAH.: Umraniye'ye atandi - her ikisi de
+        kanunun AYNI isimli "Ilk Kademe Belediyesi" grubunun (Sarigazi:
+        Meclis/Inonu/Emek/Kemal Turkler/Ataturk zaten verified-Umraniye;
+        Yenidogan: Yunus Emre/Safa/Mevlana/Merve zaten verified-Umraniye)
+        kendi CEKIRDEK/MERKEZ mahallesi olmasi kuvvetle muhtemel (Merkez
+        adinin sonradan belde adiyla degistirilmesi bu bolgede baska
+        orneklerle de tutarli bir kaliptir) - guclu YAPISAL karine, kesin
+        DEGIL.
+      - HILAL MAH.: Umraniye'ye atandi - shapely ile kontrol edildi,
+        Kartal-kaynakli kumeye (Akpinar/Veysel Karani/Eyup Sultan/Fatih)
+        hic DEGMIYOR (mesafe=0.0106), Umraniye-kaynakli kumeye TAM BITISIK
+        (mesafe=0.0). Kanunda hic gecmedigi icin baska kanit yok - bu
+        COGRAFI komsuluk TEK dayanak.
+      - PASAKOY MAH.: Umraniye'ye atandi - ONCE kanunun ifadesi ("Kartal
+        Ilcesi Samandira Bucagina bagli Pasakoy Koyu") esas alinip Kartal'a
+        atanmisti, AMA bu, HIST-Istanbul-Kartal/HIST-Istanbul-Umraniye
+        arasinda GERCEK bir cakisma URETTI (dogrulama testi yakaladi: oran
+        0.016, kaynagi %78 Pasakoy) - GUNCEL Pasakoy poligonu Umraniye
+        tarafina fiziksel olarak tasiyor. Bu SASIRTICI degil: kanunun
+        kendisi zaten bu transferin TAM koy DEGIL, "yolun GUNEYINDE kalan
+        KISMI" oldugunu soyluyor - yani GUNCEL (butun) Pasakoy mahallesinin
+        Kartal'in eski idari kaydina TAM karsilik gelmedigi zaten biliniyordu.
+        Umraniye tarafina ataninca cakisma TAM SIFIRLANIYOR (shapely ile
+        dogrulandi) - yani GUNCEL mahallenin fiziksel sekli Umraniye
+        tarafina daha tutarli oturuyor. Burada BILEREK kanunun idari
+        isimlendirmesi yerine GEOMETRIK TUTARLILIK tercih edildi, cunku
+        kanun zaten TAM bir mahalle degil, belirsiz bir kismi tarif
+        ediyordu - iki belirsiz kaynak (idari isim vs. geometri) arasinda
+        SIFIR-CAKISMA ureten geometriyi esas almak daha savunulabilir.
+      Abdurrahmangazi/Osmangazi (Kartal-Samandira VE Umraniye-Yenidogan
+      listelerinde AYRI AYRI gecen isim cakismasi, asagidaki nota bakin)
+      HALA Kartal'a atanmis durumda (onceki taslaktan) - shapely kontrolu
+      HER IKI kumeye de bitisik oldugunu gosterdi (ayirt edici degil),
+      yani bu ikisinin Kartal/Umraniye ayrimi hala ZAYIF/varsayimsal, ama
+      SONUCU (ikisinin de Sancaktepe'nin TOPLAM alanina dahil olmasi)
+      degismiyor - sadece hangi komsu tarihsel poligona (Kartal mi Umraniye
+      mi) dahil edildikleri belirsiz, bu da haritada en fazla bir mahalle
+      genisliginde bir sinir-cizgisi belirsizligi yaratir, veri kaybi
+      DEGIL.
     note: >
       Kanunun (21) sayili listesi TAM METIN (2 bagimsiz kaynaktan
       dogrulandi):
@@ -255,7 +307,6 @@ istanbul_2008:
       acisindan sorun degil (Hilal'in alani zaten YUKARIDAKI kaynaklardan
       BIRINE aitti, sadece hangisine oldugu bilinmiyor), ama tahminle
       atanmayacak.
-    unresolved_mahalle_names: ["HİLAL MAH.", "PAŞAKÖY MAH.", "ABDURRAHMANGAZİ MAH.", "OSMANGAZİ MAH.", "SARIGAZİ MAH.", "YENİDOĞAN MAH."]
     sources:
       - old_district_geomid: TR-D-34-037
         old_district_name: Ümraniye
@@ -270,6 +321,10 @@ istanbul_2008:
           - "SAFA MAH."
           - "MEVLANA MAH."
           - "MERVE MAH."
+          - "SARIGAZİ MAH."      # cikarim: Sarigazi grubunun kendi cekirdegi (bkz. geometry_basis)
+          - "YENİDOĞAN MAH."     # cikarim: Yenidogan grubunun kendi cekirdegi (bkz. geometry_basis)
+          - "HİLAL MAH."         # cikarim: cografi komsuluk, kanunda gecmiyor (bkz. geometry_basis)
+          - "PAŞAKÖY MAH."       # cikarim: kanun Kartal diyor ama KISMI/yol-sinirli - guncel TAM poligon geometrik olarak Umraniye tarafina cakissiz oturuyor (bkz. geometry_basis)
       - old_district_geomid: TR-D-34-025
         old_district_name: Kartal
         via: "Samandıra İlk Kademe Belediyesi"

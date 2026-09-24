@@ -90,6 +90,66 @@ VERIFIED_MERGES = [
         "affected_years": ["1994yerel", "1999yerel", "2004yerel",
                             "1991", "1995", "1999", "2002", "2007"],
     },
+    # --- 1992 dalgasi (3806 sayili Kanun, 27 Mayis 1992 kabul, 3 Haziran 1992
+    # Mukerrer Resmi Gazete Sayi 21247 - "Onuc Ilce ve Iki Il Kurulmasi Hakkinda
+    # Kanun") - 2008'den TAMAMEN AYRI, cok daha eski bir dalga. Istanbul'da 7
+    # ilce kurdu: Avcilar, Bagcilar, Bahcelievler, Gungoren, Maltepe,
+    # Sultanbeyli, Tuzla (Esenler bu kanunda YOK, farkli/arastirilmamis bir
+    # kaynaktan). Kanunun mahalle-duzeyi ekli listelerine mevzuat.gov.tr/TBMM
+    # eski-kanun arsivi uzerinden erisilemedi (SSL/erisim sorunu, TBMM'nin
+    # guncel sistemi sadece 2006 sonrasini kapsiyor) - bunun yerine HER
+    # ilcenin KENDI RESMI kaymakamlik tarihce sayfasi (Icisleri Bakanligi
+    # tashra teskilati, birincil/resmi kurum kaynagi) kullanildi, "whole
+    # child" modeliyle (Beylikduzu/Cekmekoy ile ayni desen - TUM modern ilce
+    # tek bir eski ebeveynden geldi, mahalle-duzeyi bolunme YOK):
+    #   - Bagcilar/Bahcelievler/Gungoren <- Bakirkoy (bagcilar.gov.tr/tarihce,
+    #     maltepe.gov.tr/tarihce ile capraz dogrulanan ayni-kanun referansi)
+    #   - Maltepe/Sultanbeyli <- Kartal (maltepe.gov.tr/tarihce: "3 Haziran
+    #     1992 tarih ve 21247 sayili Resmi Gazete"; sultanbeyli.gov.tr/ilce-tarihi)
+    #   - Avcilar <- Kucukcekmece (avcilar.gov.tr/tarihi - 9/10 mahalle GUNCEL
+    #     mahalle_geo.json ile tam eslesti, "Mustafa Kemal Pasa" adli 10.
+    #     mahalle artik yok/yeniden adlandirilmis ama bu bir GUNCEL poligonu
+    #     etkilemiyor - 9/9 guncel Avcilar mahallesi kaynakta var)
+    #   - Tuzla <- Pendik (tuzla.gov.tr/tuzlamizin-tarihcesi: "1987'de Pendik
+    #     ilcesine baglanmis, 1992'de... Pendik ilcesinden ayrilarak mustakil
+    #     ilce yapildi" - Tuzla'nin 1987 ONCESI Kartal'a bagliyken 1987'de
+    #     PENDIK'e gectigini de belirtiyor, yani 1992 ANINDAKI dogrudan
+    #     ebeveyni Pendik'tir, Kartal degil)
+    # Kartal icin bu, Atasehir/Sancaktepe'nin (2008, YAML) YANINDA UCUNCU bir
+    # katki - script farkli kaynaklardan gelen katkilari otomatik birlestirir
+    # (gather_contributions), tek bir HIST-Istanbul-Kartal poligonu uretir.
+    {
+        "plaka": 34,
+        "old_district_geomid": "TR-D-34-007",  # Bakirkoy
+        "whole_child_geomids": ["TR-D-34-005", "TR-D-34-006", "TR-D-34-022"],  # Bagcilar, Bahcelievler, Gungoren (TAMAMI)
+        "synthetic_id": "HIST-Istanbul-Bakirkoy",
+        "split_year": 1992,
+        "affected_years": ["1991", "1984yerel", "1989yerel"],
+    },
+    {
+        "plaka": 34,
+        "old_district_geomid": "TR-D-34-025",  # Kartal
+        "whole_child_geomids": ["TR-D-34-027", "TR-D-34-032"],  # Maltepe, Sultanbeyli (TAMAMI)
+        "synthetic_id": "HIST-Istanbul-Kartal",
+        "split_year": 1992,
+        "affected_years": ["1991", "1984yerel", "1989yerel"],
+    },
+    {
+        "plaka": 34,
+        "old_district_geomid": "TR-D-34-026",  # Kucukcekmece
+        "whole_child_geomids": ["TR-D-34-004"],  # Avcilar (TAMAMI)
+        "synthetic_id": "HIST-Istanbul-Kucukcekmece",
+        "split_year": 1992,
+        "affected_years": ["1991", "1989yerel"],  # Kucukcekmece 1984yerel'de henuz yok
+    },
+    {
+        "plaka": 34,
+        "old_district_geomid": "TR-D-34-028",  # Pendik
+        "whole_child_geomids": ["TR-D-34-036"],  # Tuzla (TAMAMI)
+        "synthetic_id": "HIST-Istanbul-Pendik",
+        "split_year": 1992,
+        "affected_years": ["1991", "1989yerel"],  # Pendik 1984yerel'de henuz yok
+    },
 ]
 
 
@@ -116,7 +176,12 @@ def load_yaml_verified_sources():
             continue  # plaka alani olmayan grup - eski/gecis formati, atla
         il_prefix = il_adi_ascii(plaka)
         for district_key, entry in group.items():
-            if not isinstance(entry, dict) or entry.get("confidence") != "verified":
+            # "verified": kanun metninden birebir isim eslemesi. "verified_full_coverage_inferred":
+            # yeni ilcenin TUM mahalleleri kalintisiz atanmis (delik yok) ama bir kismi yapisal/
+            # cografi cikarimla (bkz. YAML'daki tanim + her girisin geometry_basis alani) - ikisi
+            # de "delik birakma" kisitlamasina uyuyor, sadece metot farkli (durustluk icin etiket
+            # ayri tutuluyor).
+            if not isinstance(entry, dict) or entry.get("confidence") not in ("verified", "verified_full_coverage_inferred"):
                 continue
             new_geomid = entry["new_district_geomid"]
             for src in entry["sources"]:
@@ -209,11 +274,21 @@ def ensure_geometry(contributions):
     hist_geo = json.loads(HIST_GEO.read_text(encoding="utf-8"))
     features_by_id = {f["properties"]["id"]: f for f in hist_geo["features"]}
 
+    def clean(geom):
+        # geo/normalized/turkiye_ilce_sinirlari.geojson'daki bazi poligonlarda
+        # (orn. Tuzla, TR-D-34-036) daha once hic unary_union'a girmedikleri
+        # icin hic tetiklenmemis kucuk self-intersection'lar var (GEOS
+        # TopologyException). buffer(0) bu tur gecersizlikleri, GORUNUR sekli
+        # DEGISTIRMEDEN (sadece topolojiyi) duzelten standart/guvenli bir
+        # shapely idiyomu - kaynak dosya BURADA degistirilmiyor, sadece bu
+        # script'in kendi union hesabina giren KOPYA temizleniyor.
+        return geom if geom.is_valid else geom.buffer(0)
+
     changed = False
     for old_geomid, c in contributions.items():
-        geoms = [shape(by_id[old_geomid]["geometry"])]
+        geoms = [clean(shape(by_id[old_geomid]["geometry"]))]
         for child_id in sorted(c["whole_child_geomids"]):
-            geoms.append(shape(by_id[child_id]["geometry"]))
+            geoms.append(clean(shape(by_id[child_id]["geometry"])))
         for source_geomid, mahalle_names in c["mahalle_pieces"]:
             rows = mahalle_geo.get(source_geomid, {})
             by_name = {info["ad"]: info for info in rows.values()}
@@ -225,7 +300,7 @@ def ensure_geometry(contributions):
                         f"(district_mahalle_merges.yaml'daki isim mahalle_geo.json ile "
                         f"eslesmiyor - Turkce karakter/bosluk farki olabilir)."
                     )
-                geoms.append(shape(info["geometry"]))
+                geoms.append(clean(shape(info["geometry"])))
 
         merged = unary_union(geoms)
         new_feature = {

@@ -154,6 +154,73 @@ async function scenario_istanbul19992004Gecmisi(browser) {
 // görünüyordu - bkz. audit_district_coverage tarzi denetim. Duzeltme sadece
 // affected_years listesini genisletti (apply_verified_district_merges.py +
 // district_mahalle_merges.yaml), yeni geometri URETMEDI.
+// Sancaktepe (2008'de Umraniye+Kartal'dan kuruldu) daha once TAMAMEN "veri
+// yok" gorunuyordu - kanunun (21) sayili listesindeki isim cakismalari/
+// eksik isimler yuzunden script hicbir zaman islemiyordu. 19 mahallenin
+// 18'i (Hilal/Sarigazi/Yenidogan icin yapisal+cografi cikarim, Pasakoy icin
+// GEOMETRIK cakisma testinin ortaya cikardigi duzeltme) artik cozuldu -
+// bkz. district_mahalle_merges.yaml'daki "verified_full_coverage_inferred"
+// girisi. Bu test hem Sancaktepe'nin artik "veri yok" OLMADIGINI hem de
+// komsu HIST-Umraniye/HIST-Kartal poligonlarinin UST USTE BINMEDIGINI
+// (validate_elections.py'nin yakaladigi bir regresyonun bir daha
+// olmayacagini) tarayicida da dogruluyor.
+// 3806 sayili Kanun (1992) ile Bakirkoy'den Bagcilar/Bahcelievler/Gungoren,
+// Kartal'dan Maltepe/Sultanbeyli, Kucukcekmece'den Avcilar, Pendik'ten
+// Tuzla ayrildi - 2008 dalgasindan TAMAMEN FARKLI/DAHA ESKI bir donem, resmi
+// kaymakamlik tarihce sayfalariyla dogrulandi (bkz. apply_verified_district_merges.py
+// yorumu). Bu test 1991 genel'de bu 7 ilcenin artik "veri yok" OLMADIGINI,
+// sadece hala gercekten arastirilmamis/bloke olanlarin (Arnavutkoy/Basaksehir/
+// Esenler/Esenyurt/Sultangazi) kaldigini dogruluyor.
+async function scenario_1992DalgasiCozumu(browser) {
+  const errors = await withPage(browser, async (page) => {
+    const found = await clickYear(page, '1991');
+    check('1991 genel: yıl seçilebildi (1992 dalgası testi)', found);
+    await page.waitForTimeout(400);
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(400);
+
+    const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+    const stillBlocked = ['TR-D-34-002', 'TR-D-34-008', 'TR-D-34-017', 'TR-D-34-018', 'TR-D-34-033'];
+    check('1991 genel İstanbul: sadece 5 gerçekten bloke ilçe "veri yok" (1992 dalgasının 7\'si artık değil)',
+      nodataIds.length === 5 && stillBlocked.every((id) => nodataIds.includes(id)), JSON.stringify(nodataIds));
+
+    for (const [histId, adi] of [['HIST-Istanbul-Bakirkoy', 'Bakırköy'], ['HIST-Istanbul-Kucukcekmece', 'Küçükçekmece'], ['HIST-Istanbul-Pendik', 'Pendik']]) {
+      await page.click(`path.il-path[data-geom-id="${histId}"]`);
+      await page.waitForTimeout(300);
+      const dName = await page.$eval('#dName', (el) => el.textContent);
+      const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+      check(`1991 genel: ${histId} tıklanınca gerçek veri gösteriyor`,
+        dName === adi && dSecmen !== '—' && dSecmen !== '', 'dName=' + dName + ' dSecmen=' + dSecmen);
+    }
+  });
+  check('1992 dalgası çözümü: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+async function scenario_sancaktepeCozumu(browser) {
+  const errors = await withPage(browser, async (page) => {
+    const found = await clickYear(page, '1995');
+    check('1995 genel: yıl seçilebildi (Sancaktepe testi)', found);
+    await page.waitForTimeout(400);
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(400);
+
+    const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+    check('1995 genel İstanbul: Sancaktepe (TR-D-34-029) artık "veri yok" değil',
+      !nodataIds.includes('TR-D-34-029'), JSON.stringify(nodataIds));
+    check('1995 genel İstanbul: sadece hâlâ gerçekten bloke olan 4 ilçe "veri yok" (Arnavutköy/Başakşehir/Esenyurt/Sultangazi)',
+      nodataIds.length === 4 && ['TR-D-34-002', 'TR-D-34-008', 'TR-D-34-018', 'TR-D-34-033'].every((id) => nodataIds.includes(id)),
+      JSON.stringify(nodataIds));
+
+    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Umraniye"]');
+    await page.waitForTimeout(400);
+    const dName = await page.$eval('#dName', (el) => el.textContent);
+    const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+    check('1995 genel: HIST-Istanbul-Umraniye (Sancaktepe\'nin bir kısmını içerir) tıklanınca gerçek veri gösteriyor',
+      dName === 'Ümraniye' && dSecmen !== '—' && dSecmen !== '', 'dName=' + dName + ' dSecmen=' + dSecmen);
+  });
+  check('Sancaktepe çözümü: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function scenario_istanbulGenelGecmisi(browser) {
   const errors = await withPage(browser, async (page) => {
     const expectedHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
@@ -371,6 +438,8 @@ async function main() {
     await scenario_istanbul1994geometri(browser);
     await scenario_istanbul19992004Gecmisi(browser);
     await scenario_istanbulGenelGecmisi(browser);
+    await scenario_sancaktepeCozumu(browser);
+    await scenario_1992DalgasiCozumu(browser);
     await scenario_ilOnlyYearsTekParca(browser);
     await scenario_1950yerel(browser);
     await scenario_1955yerel(browser);
