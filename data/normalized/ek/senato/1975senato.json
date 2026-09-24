@@ -21,6 +21,7 @@
     "farkli": []
    },
    "adiBelirsizDisaridaKalanIlce": 0,
+   "okunamadigiIcinDisaridaKalanIlce": 1,
    "ilceToplamiIlToplamiTutmayan": [
     {
      "il": "ADANA",
@@ -5911,29 +5912,6 @@
      "adKaynakta": "SAMSUN İL TOPLAMI"
     },
     "ilceler": [
-     {
-      "ilce": "Merkez",
-      "geomId": "HIST-Samsun-Merkez",
-      "sandik": null,
-      "secmen": 120983,
-      "oyKullanan": 75273,
-      "muteber": null,
-      "oy": {
-       "AP": 35604,
-       "CHP": 31403,
-       "DEMP73": 1337,
-       "MHP": 907,
-       "MSP": 3101,
-       "TBP73": 236
-      },
-      "Bağımsız": null,
-      "kaynak": {
-       "ana": "tuik",
-       "sayfa": 36,
-       "adKaynakta": "Merkez",
-       "kaynakIciTutarsizlik": "partiler+bagimsiz=72588 != muteber=None"
-      }
-     },
      {
       "ilce": "Alaçam",
       "geomId": "TR-D-55-002",

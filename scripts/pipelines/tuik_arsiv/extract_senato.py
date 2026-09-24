@@ -79,6 +79,14 @@ KITAPLAR = {
                   ["secmen", "oyKullanan", "%", "muteber", "AP", "%", "CHP", "%", "CGP", "%"],
                   ["MHP", "%", "MSP", "%", "SDP", "%", "TBP73", "%", "TİP", "%", "TSİP", "%", "Bağımsız", "%"])],
     },
+    "1961senato": {
+        "demirbas": "0015147", "sha256": None,
+        "baslik": "DİE, Milletvekili ve Senato Üyesi Seçimi Sonuçları, 15.10.1961 — İl, ilçe ve sandık bölgeleri itibariyle (1964)",
+        # MV ve Senato ayni satirda: MV sutunlari ("%" = okunup atilir; projede TUIK'ten zaten var)
+        # + Senato: kullanan, muteber, AP, CHP, CKMP, YTP, bagimsiz. Il toplami ("Toplam - Total")
+        # ilcelerden SONRA; il adi ilk ilce satirinda "ANTALYA (Mer.)".
+        "mvCapali": [(9, 18, "1961senato", ["secmen", "oyKullanan", "muteber", "AP", "CHP", "CKMP", "YTP61", "Bağımsız"])],
+    },
     "1964senato": {
         "demirbas": "0015169", "sha256": None,
         "baslik": "DİE, Kısmi Senato Üyeleri Seçimi Sonuçları, 7 Haziran 1964 (1963)",
@@ -333,6 +341,148 @@ def sira_ile_adlandir(iller, ref_secim="1965"):
             il["ilceSayisiFarkli"] = f"kitapta {len(il['ilceler'])}, referansta {len(sira)}"
 
 
+def _sayilara_bol(parca, n):
+    """Token dizisini (rakam gruplari ve '—') n sayiya bolmenin TUM yollari."""
+    if n == 0:
+        if not parca:
+            yield []
+        return
+    if not parca:
+        return
+    if parca[0] == "—":
+        for rest in _sayilara_bol(parca[1:], n - 1):
+            yield [0] + rest
+        return
+    if len(parca[0]) > 3:  # OCR bosluksuz birlestirmis ("181147"): tek basina bir sayi
+        for rest in _sayilara_bol(parca[1:], n - 1):
+            yield [int(parca[0])] + rest
+        return
+    for j in range(1, len(parca) + 1):
+        grp = parca[:j]
+        if "—" in grp or not (1 <= len(grp[0]) <= 3) or any(len(x) != 3 for x in grp[1:]):
+            break
+        for rest in _sayilara_bol(parca[j:], n - 1):
+            yield [int("".join(grp))] + rest
+
+
+def mv_capali_oku(pdf, ilk, son, partiler, mv_secim="1961"):
+    """1961: MV ve Senato ayni satirda. Satirin ilk sayisi (secmen) projedeki TUIK
+    MV il/ilce secmen sayisiyla eslenerek satirin KIMLIGI bulunur; MV degerleri
+    bilindigi icin o tokenlar tuketilir, kalan tokenlar Senato
+    (kullanan, muteber, partiler..., bagimsiz) olarak partiler+bag=muteber
+    kisitiyla TEK anlamli bolunur."""
+    # capa: TUIK kaynak katmani (DIE'nin kendi il ve ilce degerleri; YSK il satirlari DEGIL -
+    # DIE il toplamlari YSK ilanindan farkli olabilir)
+    src = json.loads((OUT / "genel" / f"{mv_secim}.json").read_text(encoding="utf-8"))
+    esl = src["partiEslemesi"]
+    mv_parti = ["AP", "CHP", "CKMP", "YTP61"]
+
+    def ref_kaydi(x, plaka, ad):
+        oy = collections.Counter()
+        for h, v in x["partiler"].items():
+            oy[esl[h]] += v or 0
+        return {"plaka": plaka, "ad": ad, "secmen": x["secmen"], "gecerliOy": x["gecerliOy"],
+                "oy": {k: {"oy": v} for k, v in oy.items()}}
+    il_by_secmen, ilce_by_secmen = {}, collections.defaultdict(list)
+    for c in src["cevreler"]:
+        il_by_secmen[c["secmen"]] = ref_kaydi(c, c["plaka"], c["cevre"])
+        for i in c["ilceler"]:
+            ilce_by_secmen[i["secmen"]].append(ref_kaydi(i, c["plaka"], i["ad"]))
+    kayitlar, sorunlu = [], []
+    for no in range(ilk, son + 1):
+        pg = pdf.pages[no - 1]
+        for s_ in die_tablo._satirlar(pg.extract_words()):
+            parca = ["—" if t[3] == "tire" else t[0] for t in die_tablo._tokenler(s_, 0) if t[3] != "yuzde"]
+            while parca and parca[0] == "—":  # "Toplam - Total" etiketindeki tire
+                parca = parca[1:]
+            if len(parca) < 8:
+                continue
+            etiket = " ".join(w["text"] for w in sorted(s_, key=lambda w: w["x0"])
+                              if re.search(r"[A-Za-zÇĞİÖŞÜçğıöşü]", w["text"]))
+            # kimlik: ilk 1-3 token secmen olabilir
+            kimlik = None
+            for j in (1, 2, 3):
+                if j > len(parca) or "—" in parca[:j] or (j > 1 and not (1 <= len(parca[0]) <= 3)) or any(len(x) != 3 for x in parca[1:j]):
+                    continue
+                v = int("".join(parca[:j]))
+                if v in il_by_secmen:
+                    kimlik = ("il", il_by_secmen[v], j)
+                elif len(ilce_by_secmen.get(v, [])) == 1:
+                    kimlik = ("ilce", ilce_by_secmen[v][0], j)
+                if kimlik:
+                    break
+            if not kimlik:
+                continue
+            tur, ref, j = kimlik
+            # MV kisminin kalan degerleri: kullanan (katilimdan), gecerli, partiler (+ bagimsiz/diger)
+            mvp = [ref["oy"].get(p, {}).get("oy") or 0 for p in mv_parti]
+            mv_bag = sum((v.get("oy") or 0) for k, v in ref["oy"].items() if k not in mv_parti)
+            kalan = parca[j:]
+            senato, senato_fark = None, 0
+            # MV: kullanan, gecerli, AP, CHP, CKMP, YTP, bagimsiz = 7 sayi; kullanan bilinmiyorsa serbest
+            for i in range(1, len(kalan)):
+                # MV: kullanan, gecerli, 4 parti [+ bagimsiz; bossa tiresiz hic basilmamis]
+                on = list(_sayilara_bol(kalan[:i], 7)) + list(_sayilara_bol(kalan[:i], 6))
+                if not any(o[1] == ref["gecerliOy"] and o[2:6] == mvp for o in on):
+                    continue
+                n_sen = 3 + len(partiler)
+                adaylar = [c for c in _sayilara_bol(kalan[i:], n_sen) if c[0] >= c[1] > 0]
+                adaylar += [c + [0] for c in _sayilara_bol(kalan[i:], n_sen - 1) if c[0] >= c[1] > 0]
+                tam = [c for c in adaylar if sum(c[2:]) == c[1]]
+                if len(tam) == 1:
+                    senato = tam[0]
+                    break
+                if not tam and adaylar:
+                    # kaynakta kucuk toplam farki olabilir: farki en kucuk TEK bolunme, fark kucukse
+                    en = min(abs(sum(c[2:]) - c[1]) for c in adaylar)
+                    yakin = [c for c in adaylar if abs(sum(c[2:]) - c[1]) == en]
+                    if len(yakin) == 1 and en <= max(10, yakin[0][1] * 0.005):
+                        senato = yakin[0]
+                        senato_fark = en
+                        break
+            rec = {"tur": tur, "plaka": ref["plaka"], "ad": ref["ad"], "adKaynakta": etiket, "sayfa": no,
+                   "y": round(s_[0]["top"], 1), "secmen": ref["secmen"], "mvKimlik": True}
+            if senato:
+                rec.update(oyKullanan=senato[0], muteber=senato[1],
+                           oy=dict(zip(partiler, senato[2:2 + len(partiler)])), **{"Bağımsız": senato[-1]})
+                if senato_fark:
+                    rec["tutarsiz"] = f"partiler+bagimsiz muteberden {senato_fark} oy farkli (kaynakta)"
+            else:
+                rec.update(oyKullanan=None, muteber=None, oy={p: None for p in partiler}, **{"Bağımsız": None},
+                           tutarsiz="senato kismi tek anlamli bolunemedi")
+            kayitlar.append(rec)
+    # il gruplari: plaka ile (sira bagimsiz)
+    iller = []
+    by = collections.defaultdict(list)
+    for r in kayitlar:
+        by[r["plaka"]].append(r)
+    for pl, rs in sorted(by.items()):
+        il = next((r for r in rs if r["tur"] == "il"), None)
+        if il is None:
+            sorunlu.append(f"plaka {pl}: il toplami satiri bulunamadi")
+            continue
+        iller.append(dict(il, ilceler=[r for r in rs if r["tur"] == "ilce"]))
+    return iller, sorunlu
+
+
+def toplam_sonda_grupla(satirlar):
+    """Il toplami ilcelerden SONRA gelen tablo (1961): blok = ilceler + 'Toplam';
+    il adi bloktaki '<IL> (Mer.)' satirindan, o satir 'Merkez' ilcesi."""
+    iller, blok = [], []
+    for r in satirlar:
+        if r["tur"] != "il":
+            blok.append(r)
+            continue
+        merkez = next((b for b in blok if re.search(r"\((Mer|Merkez|M)\.?\)", b["adKaynakta"])), None)
+        ad = re.split(r"\s*\(", merkez["adKaynakta"])[0].strip() if merkez else "?"
+        if merkez:
+            merkez["ad"] = "Merkez"
+        il = dict(r, ad=_tr_baslik(ad) if ad.isupper() else ad, ilceler=blok)
+        iller.append(il)
+        blok = []
+    return iller
+
+
 def _hizala(L, R):
     """Sirayi koruyan hizalama: sol ve sag satirlar y farkina gore eslenir,
     her iki taraftan satir atlanabilir. Ofset: ilk satirlarin farkinin medyani."""
@@ -552,9 +702,13 @@ def main():
         isler = [(ilk, son, secim, sutunlar, None) for ilk, son, secim, sutunlar in k.get("tablolar", [])]
         isler += [(ilk, son, secim, sol + sag, (sol, sag)) for ilk, son, secim, sol, sag in k.get("cift", [])]
         isler += [(ilk, son, secim, sutunlar, "sandik") for ilk, son, secim, sutunlar in k.get("sandikListesi", [])]
+        isler += [(ilk, son, secim, sutunlar, "mv") for ilk, son, secim, sutunlar in k.get("mvCapali", [])]
         for ilk, son, secim, sutunlar, cift in isler:
             sutun_once, partiler = sutun_ayir(sutunlar)
-            if cift == "sandik":
+            if cift == "mv":
+                iller_mv, sorunlu = mv_capali_oku(pdf, ilk, son, partiler)
+                satirlar = [r for il in iller_mv for r in [il] + il["ilceler"]]
+            elif cift == "sandik":
                 satirlar, sorunlu = sandik_listesi_oku(pdf, ilk, son, sutunlar)
             elif cift:
                 satirlar, sorunlu = cift_oku(pdf, ilk, son, *cift)
@@ -562,8 +716,9 @@ def main():
             else:
                 satirlar, sorunlu = tablo_oku(pdf, ilk, son, sutunlar)
             for r in satirlar:
-                dogrula_satir(r, partiler, sutun_once)
-            iller = grupla(satirlar)
+                if not r.get("mvKimlik"):
+                    dogrula_satir(r, partiler, sutun_once)
+            iller = iller_mv if cift == "mv" else grupla(satirlar)
             if cift == "sandik":
                 sira_ile_adlandir(iller)
             for il in iller:

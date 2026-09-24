@@ -92,6 +92,8 @@ def tuik_ilce_oylari(secim, dosya):
         for i in il["ilceler"]:
             if not i.get("adGuvenli", True):
                 continue  # adi belirsiz satir (1964 sandik listesi) - yalnizca kaynak katmaninda
+            if i.get("muteber") is None:
+                continue  # senato kismi okunamadi (1961) - yalnizca kaynak katmaninda
             ad, ad_not = i["ad"], None
             if fold(ad) in OCR_ALIAS:
                 ad_not = f"OCR/dönem adı '{ad}' → '{OCR_ALIAS[fold(ad)]}'"
@@ -125,6 +127,7 @@ def tuik_ilce_oylari(secim, dosya):
                        "kaynakKatmani": str(dosya.relative_to(ROOT))},
             "dogrulama": {"wikipediaIlSonuclariyla": d.get("wikipediaIlKarsilastirmasi"),
                           "adiBelirsizDisaridaKalanIlce": sum(1 for il in d["iller"] for i in il["ilceler"] if not i.get("adGuvenli", True)),
+                          "okunamadigiIcinDisaridaKalanIlce": sum(1 for il in d["iller"] for i in il["ilceler"] if i.get("muteber") is None),
                           "ilceToplamiIlToplamiTutmayan": d["ilceToplamiTutmayan"], "ozet": d["ozet"],
                           "not": "dogrulanamayanAlanlar: ilçe toplamı il toplamını tutmayan alanlar (OCR ya da kaynak hatası)."},
             "iller": iller}

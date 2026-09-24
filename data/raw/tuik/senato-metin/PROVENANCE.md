@@ -10,6 +10,7 @@ okundu (`scripts/pipelines/tuik_arsiv/die_tablo.py`), metin iz ve kontrol içind
 
 | Demirbaş | Yayın | Kullanılan sayfalar |
 |---|---|---|
+| 0015147 | DİE, Milletvekili ve Senato Üyesi Seçimi Sonuçları, 15.10.1961 — İl, ilçe ve sandık bölgeleri itibariyle (1964) | 9-18 |
 | 0015169 | DİE, Kısmi Senato Üyeleri Seçimi Sonuçları, 7 Haziran 1964 | 9-708 (özet tablo yok; sandık listelerinin "Toplam" / "İl Genel Toplamı" satırları; yalnız bu satırların sayfaları kaydedildi) |
 | 0015213 | DİE, Cumhuriyet Senatosu Üyeleri Kısmi Seçim Sonuçları, 5 Haziran 1966 (1967) | 31-37 (senato), 38 (Hatay milletvekili ara seçimi) |
 | 0015265 | DİE, Cumhuriyet Senatosu Üyeleri Kısmi Seçim Sonuçları, 2 Haziran 1968 (1969) | 20-25 |
@@ -22,6 +23,7 @@ okundu (`scripts/pipelines/tuik_arsiv/die_tablo.py`), metin iz ve kontrol içind
 
 | Seçim | İl | İlçe | Wikipedia il sonucuyla birebir | İlçe toplamı ≠ il toplamı (alan) |
 |---|---|---|---|---|
+| 1961senato | 52 tanındı (19'unun il değeri çözüldü) | 476 tanındı, 237'si çözüldü | 16 / 51 | — |
 | 1964senato | 26 | 233 (145'i ek dosyada, bkz. aşağı) | 19 / 25 | 85 |
 | 1966senato | 23 | 220 | 20 / 22 karşılaştırılabilir il | 19 |
 | 1968senato | 24 | 235 | 24 / 24 | 9 |
@@ -59,3 +61,15 @@ alfabetik) ile, okunabilen başlıkların en az %80'i aynı sırayla uyuşuyorsa
 145 ilçe `ek/senato/1964senato.json`'a girdi. Kalan 88 satır yalnızca kaynak
 katmanında (`adGuvenli: false`). İl başlığı okunamayan il (Muş) ilçe adlarından
 bulundu (`ilIlcelerdenBulundu`).
+
+### 1961 özel durumu
+
+1961 tablosunda milletvekili ve Senato sonuçları aynı satırda ve OCR bu kitapta
+belirgin şekilde kötü (örn. "1 123" → "I 123"). Satırın kimliği etiketten değil,
+ilk sayısının (seçmen) TÜİK 1961 kaynak katmanındaki DİE il/ilçe seçmen
+sayısıyla eşleşmesinden bulundu. Milletvekili kısmı bilinen değerlerle tüketildi,
+kalan Senato kısmı "partiler + bağımsız = muteber" kısıtıyla tek anlamlı bölündü
+(fark en fazla 10 oy ya da %0,5 ise en yakın tek çözüm kabul edildi, fark
+`kaynakIciTutarsizlik`'te). Bu yolla 237 ilçe güvenle çözüldü ve ek dosyaya girdi;
+çözülemeyen 239 ilçe yalnızca kaynak katmanında. İl toplamlarının çoğu
+çözülemediği için 1961 il sonuçlarında Wikipedia kaydı esas alınmalı.
