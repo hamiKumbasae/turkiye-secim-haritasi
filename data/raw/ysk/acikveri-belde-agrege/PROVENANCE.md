@@ -17,7 +17,13 @@ olmayan alanlarıyla sandık satırları da `hamSandik` altında saklanır.
 | 2024yenileme_meclis | 20273 | 3 (belediye meclisi) | 4 birim |
 | 2026ara_baskan | 21272 | 2 | 7 Haziran 2026 mahalli ara seçimi; 5 birim |
 | 2026ara_meclis | 21272 | 3 | 5 birim |
-| <yıl>yerel_belediye_meclisi / _il_genel_meclisi | 4290, 11979, 16400, 20260 | 3 / 4 | 2009-2024 genel mahalli seçimler (ayrı commit) |
+| <yıl>yerel_belediye_meclisi | 4290, 11979, 16400, 20260 | 3 | 2009: 2.924 birim (1.968 belde), 2014: 1.364, 2019: 1.359, 2024: 1.363 |
+| <yıl>yerel_il_genel_meclisi | aynı | 4 | 2009: 81 il / 2.929 birim; 2014 sonrası 51 il (büyükşehirlerde İGM yok) |
+
+Meclis dosyalarında ham sandık satırı saklanmadı (seçim başına yüz binlerce
+satır); API parametreleri (secimId, secimTuru) ile yeniden üretilebilir.
+2009'da 108 birim haritaya bağlanamadı (sonradan bölünen eski "Merkez"
+ilçelerinin YSK kimlikleri; ana veride de bilinen durum).
 
 ## Bilinen sınırlar
 

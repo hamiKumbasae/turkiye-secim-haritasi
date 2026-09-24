@@ -473,6 +473,15 @@ ek_kayitlar:
     files: "data/normalized/ek/milletvekilleri/<secim>.json (1950-2023, 20 seçim)"
     source: {authority: "Türkçe Wikipedia (il sayfalarının Seçilenler bölümü)", status: reported, raw: "data/raw/wikipedia/il-sayfalari/genel/"}
     coverage: "tam: 1969, 1995, 2002; diğerlerinde eksik ya da fazla — dosyadaki kapsam.durum alanına bakın"
+  belediye_meclisi:
+    files: "data/normalized/ek/belediye_meclisi/<secim>.json (2009yerel, 2014yerel, 2019yerel, 2024yerel)"
+    source: {authority: YSK, url: "acikveri.ysk.gov.tr getSecimSandikSonucList (secimTuru=3; secimId 4290, 11979, 16400, 20260)", status: official, raw: "data/raw/ysk/acikveri-belde-agrege/"}
+    content: [il / ilçe / belde bazında belediye meclisi üyeliği parti oyları]
+  il_genel_meclisi:
+    files: "data/normalized/ek/il_genel_meclisi/<secim>.json (2009yerel, 2014yerel, 2019yerel, 2024yerel)"
+    source: {authority: YSK, url: "acikveri.ysk.gov.tr getSecimSandikSonucList (secimTuru=4)", status: official, raw: "data/raw/ysk/acikveri-belde-agrege/"}
+    content: [il / ilçe / belde bazında il genel meclisi üyeliği parti oyları]
+    note: "2014'ten itibaren 30 büyükşehirde il genel meclisi yok (51 il)"
   yenileme_ara:
     files: "data/normalized/ek/yenileme_ara/<ad>.json (2019 İstanbul BB yenilemesi, 2024 yenileme, 2026 mahalli ara seçimi; 1966 Hatay milletvekili ara seçimi — DİE 1966 senato kitabından)"
     source: {authority: YSK, url: "acikveri.ysk.gov.tr getSecimSandikSonucList (secimId 16643, 20273, 21272)", status: official, raw: "data/raw/ysk/acikveri-belde-agrege/"}

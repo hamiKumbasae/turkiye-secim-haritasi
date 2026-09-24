@@ -250,3 +250,10 @@ taranmış kitaplarından (TÜİK kütüphanesi) → `data/normalized/ek/senato/
 içinde `ilceOylariTuik`. İl sonuçları Wikipedia ile karşılaştırıldı (1968: 24/24
 birebir). Aynı 1966 kitabındaki Hatay milletvekili ara seçiminin ilçe sonuçları
 `ek/yenileme_ara/1966mv_ara_hatay.json`. Ayrıntı: `data/raw/tuik/senato-metin/PROVENANCE.md`.
+
+## Belediye meclisi ve il genel meclisi oyları (2026-09-25)
+
+2009, 2014, 2019 ve 2024 mahalli seçimlerinin belediye meclisi ve il genel meclisi
+üyeliği parti oyları, YSK açık veri API'sinden il/ilçe/belde bazında →
+`data/normalized/ek/belediye_meclisi/`, `data/normalized/ek/il_genel_meclisi/`.
+Haritaya bağlı değil. 2009 öncesi için bu kaynakta veri yok.
