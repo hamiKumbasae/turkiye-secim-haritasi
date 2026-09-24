@@ -47,7 +47,9 @@ YAKIN = {"1961senato": "1961", "1964senato": "1965", "1966senato": "1965", "1968
 
 DOGRU_AD = {}  # (plaka, fold(ad)) -> projedeki yazim
 # OCR bozulmasi ya da donem adi -> referans ilce adi (yalnizca emin olunanlar)
-OCR_ALIAS = {"MAGARA": "Tufanbeyli", "S KOCHISAR": "Şereflikoçhisar", "CINI": "Çine", "ENES": "Enez"}
+OCR_ALIAS = {"MAGARA": "Tufanbeyli", "S KOCHISAR": "Şereflikoçhisar", "CINI": "Çine", "ENES": "Enez",
+             "OITA": "Oltu", "AKKIIS": "Akkuş"}
+OCR_IL = {"SURT": 56}  # OCR'in bozdugu il adlari
 
 
 def _plaka(ad):
@@ -55,7 +57,7 @@ def _plaka(ad):
     sys.path.insert(0, str(HERE))
     from iller import plaka, _MODERN, _TARIHSEL_F  # noqa: E402
     from common.turkish_text import fold
-    p = plaka(ad) or {"A KARAHISAR": 3, "AKARAHISAR": 3, "K MARAS": 46}.get(fold(ad))
+    p = plaka(ad) or {"A KARAHISAR": 3, "AKARAHISAR": 3, "K MARAS": 46}.get(fold(ad)) or OCR_IL.get(fold(ad))
     if p:
         return p, None
     adaylar = list(_MODERN) + list(_TARIHSEL_F)

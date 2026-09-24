@@ -245,7 +245,7 @@ seçimi → `data/normalized/ek/yenileme_ara/`. Haritaya bağlı değil. Ayrınt
 
 ## Senato ilçe oyları (2026-09-24)
 
-1966 ve 1968 Cumhuriyet Senatosu seçimlerinin ilçe bazında parti oyları, DİE'nin
+1966, 1968, 1973 ve 1977 Cumhuriyet Senatosu seçimlerinin ilçe bazında parti oyları, DİE'nin
 taranmış kitaplarından (TÜİK kütüphanesi) → `data/normalized/ek/senato/<seçim>.json`
 içinde `ilceOylariTuik`. İl sonuçları Wikipedia ile karşılaştırıldı (1968: 24/24
 birebir). Aynı 1966 kitabındaki Hatay milletvekili ara seçiminin ilçe sonuçları

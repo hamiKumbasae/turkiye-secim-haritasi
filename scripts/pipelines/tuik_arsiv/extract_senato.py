@@ -57,6 +57,21 @@ KITAPLAR = {
         "tablolar": [(20, 25, "1968senato", ["sandik", "secmen", "oyKullanan", "muteber", "%",
                                              "AP", "%", "CHP", "%", "CKMP", "%", "CGP", "%", "MP62", "%", "TİP", "%", "Bağımsız", "%"])],
     },
+    "1973senato": {
+        "demirbas": "0015450", "sha256": None,
+        "baslik": "DİE, Milletvekili ve Cumhuriyet Senatosu Üyeleri Seçimi Sonuçları, 14 Ekim 1973 (1973)",
+        # karsilikli sayfalar: sol (ad + ilk sutunlar) / sag (adsiz, kalan partiler)
+        "cift": [(74, 86, "1973senato",
+                  ["secmen", "oyKullanan", "%", "muteber", "AP", "%", "CHP", "%"],
+                  ["CGP", "%", "DEMP73", "%", "MP62", "%", "MHP", "%", "MSP", "%", "TBP73", "%", "Bağımsız", "%"])],
+    },
+    "1977senato": {
+        "demirbas": "0015631", "sha256": None,
+        "baslik": "DİE, 5 Haziran 1977 Milletvekili Genel ve Cumhuriyet Senatosu Üyeleri Üçtebir Yenileme Seçimi Sonuçları (1977)",
+        "cift": [(82, 92, "1977senato",
+                  ["secmen", "oyKullanan", "%", "muteber", "AP", "%", "CHP", "%"],
+                  ["CGP", "%", "DEMP73", "%", "MSP", "%", "MHP", "%", "TBP73", "%", "TİP", "%", "Bağımsız", "%"])],
+    },
 }
 SUTUN_ONCE = ["secmen", "oyKullanan", "muteber"]
 
@@ -79,7 +94,8 @@ def sha256(p):
 
 
 BASLIK_KELIME = ("SECMEN", "SAYISI", "LISTESINDE", "KULLANAN", "MUTEBER", "SIYASI", "PARTILER", "SANDIK",
-                 "BAGIM", "TABLO", "HAZIRAN", "EKIM", "SONUCLAR", "ILLER", "YAZILI", "SEHIR", "KOY")
+                 "BAGIM", "TABLO", "HAZIRAN", "EKIM", "SONUCLAR", "ILLER", "YAZILI", "SEHIR", "KOY",
+                 "SENATORLUK", "BULUNAN", "YAPILMISTIR")
 
 
 def satir_turu(etiket):
@@ -101,10 +117,12 @@ def satir_turu(etiket):
 
 
 def ad_temizle(etiket, tur):
-    s = re.sub(r"[»•*'|!(),]", " ", etiket)
+    # "Merkez (Karaköse)", "Gökçeada (İmroz)": parantez oncesi asil ad
+    s = re.split(r"\(", etiket)[0] if re.search(r"\w\s*\(", etiket) else etiket
+    s = re.sub(r"[»•*'|!(),]", " ", s)
     # "<Il> İl Toplamı" ve OCR bozulmalari ("II", "fl", "tl", "Ü", "Il" ya da hic yok)
-    s = re.sub(r"\s+\S{0,2}\s*(Toplam[ıi]?|TOPLAMI)\b.*$", "", s)
-    s = re.sub(r"\s+(Toplam[ıi]?|TOPLAMI)\b.*$", "", s)
+    s = re.sub(r"\s+\S{0,2}\s*(Toplam[ıi]?|TOPLAM[IİıÎ])\b.*$", "", s)
+    s = re.sub(r"\s+(Toplam[ıi]?|TOPLAM[IİıÎ])\b.*$", "", s)
     s = re.sub(r"\b(İlçesi|ilçesi|İLÇESİ|ilçe)\b", "", s)
     return " ".join(s.split()).strip(" .-—")
 
@@ -174,6 +192,40 @@ def tablo_oku(pdf, ilk, son, sutunlar):
     return satirlar, sorunlu_sayfa
 
 
+def cift_oku(pdf, ilk, son, sol, sag):
+    """Karsilikli sayfa tablosu: sol sayfalar ilk, ilk+2, ... ; sag = sol+1.
+    Satirlar sirayla eslenir (sag sayfa birkac puan kayik basildigi icin y ile
+    degil); satir sayilari tutmazsa en yakin y (medyan ofsetle) kullanilir."""
+    sutunlar = sol + sag
+    once, partiler = sutun_ayir(sutunlar)
+    filt = lambda e: satir_turu(e) in ("il", "ilce", "genel")  # noqa: E731
+    satirlar, sorunlu = [], []
+    kenar_sol = kenar_sag = None
+    for no in range(ilk, son + 1, 2):
+        L, kl = die_tablo.sayfa_tablosu(pdf.pages[no - 1], 180, len(sol), filt)
+        R, kr = die_tablo.sayfa_tablosu(pdf.pages[no], 180, len(sag), None, etiketsiz=True)
+        if L is not None:
+            kenar_sol = kenar_sol or kl
+        if R is not None:
+            kenar_sag = kenar_sag or kr
+        if L is None and kenar_sol:
+            L, _ = die_tablo.sayfa_tablosu(pdf.pages[no - 1], 180, len(sol), filt, hazir_kenarlar=kenar_sol)
+        if R is None and kenar_sag:
+            R, _ = die_tablo.sayfa_tablosu(pdf.pages[no], 180, len(sag), None, hazir_kenarlar=kenar_sag, etiketsiz=True)
+        if L is None or R is None:
+            sorunlu.append(no)
+            continue
+        if len(L) == len(R):
+            eslesme = list(zip(L, R))
+        else:
+            ofs = sorted(r[2] for r in R)[len(R) // 2] - sorted(l[2] for l in L)[len(L) // 2]
+            eslesme = [(l, min(R, key=lambda r: abs(r[2] - ofs - l[2]))) for l in L]
+            sorunlu.append(f"{no}: satir sayisi sol {len(L)} / sag {len(R)} (y ile eslendi)")
+        rows = [(l[0], l[1] + r[1], l[2], None) for l, r in eslesme]
+        satirlar += _kayitlar(rows, no, sutunlar, once, partiler)
+    return satirlar, sorunlu
+
+
 def _kayitlar(rows, no, sutunlar, once, partiler):
     out = []
     yuzdeli = "%" in sutunlar
@@ -181,17 +233,59 @@ def _kayitlar(rows, no, sutunlar, once, partiler):
         tur = satir_turu(etiket)
         if tur == "genel":
             continue
-        v = dict((c, x) for c, x in zip(sutunlar, vals) if c != "%")
+        v, yuzde, onceki = {}, {}, None
+        for c, x in zip(sutunlar, vals):
+            if c == "%":
+                # yalnizca OCR'in ondalikli okudugu yuzdeler guvenilir ("0 7" gibi bozuklar atilir)
+                if onceki and isinstance(x, float):
+                    yuzde[onceki] = x
+            else:
+                v[c], onceki = x, c
         rec = {c: v.get(c) for c in once}
         rec["oy"] = {p_: v.get(p_) for p_ in partiler}
         rec["Bağımsız"] = v.get("Bağımsız")
         rec.update(tur=tur, adKaynakta=etiket, ad=ad_temizle(etiket, tur), sayfa=no, y=round(y, 1),
-                   _parca=None if yuzdeli else parca)
+                   _parca=None if yuzdeli else parca, _yuzde=yuzde)
         out.append(rec)
     return out
 
 
+def _yuzde_duzelt(r, partiler, yuzde):
+    """Satir ici toplam tutmuyorsa basili yuzdelerle tek-deger OCR duzeltmesi.
+    Kabul kosulu: IKI bagimsiz kisit (toplam = muteber VE yuzde tutarliligi)
+    ayni anda saglanmali; aksi halde dokunulmaz."""
+    m = r.get("muteber")
+    adlar = partiler + ["Bağımsız"]
+    deger = {p: (r["oy"].get(p) if p != "Bağımsız" else r["Bağımsız"]) for p in adlar}
+    if not m or any(v is None for v in deger.values()):
+        return None
+    def uyar(v, pct, tab):
+        return abs(v * 100 / tab - pct) <= 0.11
+    # (a) muteber hatali: tum yuzdeler parti toplamina gore tutarli
+    top = sum(deger.values())
+    kontrollu = [p for p in adlar if p in yuzde and deger[p]]
+    if len(kontrollu) >= 2 and all(uyar(deger[p], yuzde[p], top) for p in kontrollu) and \
+            not all(uyar(deger[p], yuzde[p], m) for p in kontrollu):
+        r["ocrDuzeltme"] = {"alan": "muteber", "okunan": m, "duzeltilen": top}
+        r["muteber"] = top
+        return True
+    # (b) tek parti degeri hatali
+    uymayan = [p for p in kontrollu if not uyar(deger[p], yuzde[p], m)]
+    if len(uymayan) == 1:
+        p = uymayan[0]
+        yeni = m - (top - deger[p])
+        if yeni >= 0 and uyar(yeni, yuzde[p], m):
+            r["ocrDuzeltme"] = {"alan": p, "okunan": deger[p], "duzeltilen": yeni}
+            if p == "Bağımsız":
+                r["Bağımsız"] = yeni
+            else:
+                r["oy"][p] = yeni
+            return True
+    return None
+
+
 def dogrula_satir(r, partiler, sutun_once):
+    yuzde = r.pop("_yuzde", {}) or {}
     parca = r.pop("_parca")  # None: yuzde sutunlu tablo, kisitla cozum uygulanmaz
     part = [r["oy"][p] for p in partiler] + [r["Bağımsız"]]
     m = r.get("muteber")
@@ -205,6 +299,8 @@ def dogrula_satir(r, partiler, sutun_once):
         if r["Bağımsız"] is None:
             r["Bağımsız"] = 0
         r["bosHucre0"] = True
+        return
+    if yuzde and _yuzde_duzelt(r, partiler, yuzde):
         return
     coz = _kisitla_coz(parca, len(sutun_once), len(partiler)) if parca else None
     if coz:
@@ -242,6 +338,9 @@ def dikey_kontrol(iller, partiler, sutun_once):
     return out
 
 
+ESDEGER = {"BP69": "TBP73", "GP": "CGP"}  # Wikipedia anahtari -> bu dosyadaki anahtar (ayni parti)
+
+
 def wiki_kontrol(iller, secim):
     p = ROOT / "data" / "kaynaklar" / "wikipedia" / "senato" / f"{secim}.json"
     if not p.exists():
@@ -252,7 +351,7 @@ def wiki_kontrol(iller, secim):
         if k["tur"] == "il_sonuc":
             c = collections.Counter()
             for a in k.get("adaylar") or k.get("partiler") or []:
-                c[a["parti"] or "?"] += a["oy"]
+                c[ESDEGER.get(a["parti"], a["parti"]) or "?"] += a["oy"]
             wiki[fold(k["il"])] = c
     tutan, farkli = 0, []
     for il in iller:
@@ -279,9 +378,15 @@ def main():
             continue
         pdf_p = pdf_yolu(k["demirbas"], a.pdf_dir)
         pdf = die_tablo.ac(pdf_p)
-        for ilk, son, secim, sutunlar in k["tablolar"]:
+        isler = [(ilk, son, secim, sutunlar, None) for ilk, son, secim, sutunlar in k.get("tablolar", [])]
+        isler += [(ilk, son, secim, sol + sag, (sol, sag)) for ilk, son, secim, sol, sag in k.get("cift", [])]
+        for ilk, son, secim, sutunlar, cift in isler:
             sutun_once, partiler = sutun_ayir(sutunlar)
-            satirlar, sorunlu = tablo_oku(pdf, ilk, son, sutunlar)
+            if cift:
+                satirlar, sorunlu = cift_oku(pdf, ilk, son, *cift)
+                son = son + 1
+            else:
+                satirlar, sorunlu = tablo_oku(pdf, ilk, son, sutunlar)
             for r in satirlar:
                 dogrula_satir(r, partiler, sutun_once)
             iller = grupla(satirlar)
@@ -304,6 +409,7 @@ def main():
                 "sutunlar": sutunlar, "partiSutunlari": partiler,
                 "ozet": {"il": len(iller), "ilce": sum(len(i["ilceler"]) for i in iller),
                          "kisitlaCozulen": sum(1 for r in satirlar if r.get("kisitlaCozuldu")),
+                         "ocrDuzeltilen": sum(1 for r in satirlar if r.get("ocrDuzeltme")),
                          "satirIciTutarsiz": sum(1 for r in satirlar if r.get("tutarsiz")),
                          "ilceToplamiIlToplamiTutmayan": len(dik), "okunamayanSayfa": sorunlu},
                 "wikipediaIlKarsilastirmasi": wk,

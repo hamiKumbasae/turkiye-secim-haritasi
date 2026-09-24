@@ -34,6 +34,10 @@ def _satirlar(words, tol=5.5):
     return out
 
 
+def etiketsiz_satir_mi(s):
+    return all(w["text"].strip(".,'`;:").isdigit() or TIRE.match(w["text"]) for w in s)
+
+
 def _tokenler(ws, x_min):
     """Satirdaki sayi parcalari ve tireler, x sirali: [(metin, x0, x1, tur)]."""
     out = []
@@ -71,7 +75,8 @@ def _deger(parcalar):
     return int(s) if s else None
 
 
-def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bosluk=12.0, hazir_kenarlar=None):
+def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bosluk=12.0, hazir_kenarlar=None,
+                  etiketsiz=False):
     """Sayfadaki veri satirlari: [(etiket, degerler)] ; len(degerler) == sutun_sayisi.
     Sutun sag kenarlari once 'temiz' satirlardan (buyuk bosluklarla tam
     sutun_sayisi gruba bolunenler) medyanla bulunur; sonra her parca, sag kenari
@@ -84,8 +89,7 @@ def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bos
     # satiri = tek satir (OCR satiri ikiye bolmus; orn. 1966 Trabzon/Maçka)
     birlesik = []
     for s in ham:
-        etiketsiz = all(w["text"].strip(".,'`;:").isdigit() or TIRE.match(w["text"]) for w in s)
-        if birlesik and etiketsiz and len(_tokenler(birlesik[-1], x_etiket_son - 30)) <= 2:
+        if birlesik and etiketsiz_satir_mi(s) and not etiketsiz and len(_tokenler(birlesik[-1], x_etiket_son - 30)) <= 2:
             birlesik[-1] = birlesik[-1] + s
         else:
             birlesik.append(s)
@@ -99,6 +103,14 @@ def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bos
         # sayi bolgesi: etiketin (harf iceren) son kelimesinin sagi - kitaptan
         # kitaba etiket sutunu genisligi degisiyor, sabit x esigi ilk grubu kesiyordu
         harfli = [w for w in etk if re.search(r"[A-Za-zÇĞİÖŞÜçğıöşü]", w["text"])]
+        if etiketsiz:
+            # karsi sayfa: satirlarda ad yok; harf iceren satirlar baslik
+            if any(re.search(r"[A-Za-zÇĞİÖŞÜçğıöşü]{2,}", w["text"]) for w in s):
+                continue
+            tok = _tokenler(s, 0)
+            if len(tok) >= 2:
+                satirlar.append(("", tok, s[0]["top"]))
+            continue
         x_bas = (max(w["x1"] for w in harfli) + 1) if harfli else x_etiket_son - 30
         tok = _tokenler(s, x_bas)
         if etiket and tok and (satir_filtre is None or satir_filtre(etiket)):
