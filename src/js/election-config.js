@@ -14,9 +14,14 @@
   // kaynak yok - sadece il seviyesinde veri var. 2026-09-22: 1950-1977 yerel
   // secimleri de ayni sekilde sadece il merkezi (bkz. SECIM_TAKVIMI.md,
   // data/raw/wikipedia/yerel-1950-1977/PROVENANCE.md) - ilceler yok.
-  const YEARS_IL_ONLY = new Set(['1950','1954','1957','1961','1965','1969','1973','1977','1983','1987',
-    '1961referandum','1982referandum','1987referandum','1988referandum',
-    '1950yerel','1955yerel','1963yerel','1968yerel','1973yerel','1977yerel']);
+  // 2026-09-24: 1961-1987 arasi 7 genel secim bu setten cikarildi - ilce
+  // duzeyi TUIK'in resmi arsivinden eklendi (bkz. YEARS_IL_YSK_ILCE_TUIK).
+  // 2026-09-24 (ikinci oturum): 1950-1977 yerel secimleri de bu setten
+  // cikarildi - ilce belediye baskanliklari ayni Wikipedia il sayfalarinin
+  // "İlçeler" bolumlerinden eklendi (1950/1955: sadece kazanan parti; bkz.
+  // scripts/pipelines/wikipedia_arsiv/, data/kaynaklar/wikipedia/yerel/).
+  const YEARS_IL_ONLY = new Set(['1950','1954','1957',
+    '1961referandum','1982referandum','1987referandum','1988referandum']);
   // 2026-09-22: 1950-1977 yerel secimleri, digerlerinden farkli bir kaynak
   // notu metni gerektiriyor (YSK'nin bu donem icin il-bazli degil, sadece
   // ULUSAL toplam PDF'i var - bkz. data/raw/ysk/mahalli-1963-1977/PROVENANCE.md).
@@ -34,7 +39,16 @@
   // mertnuhoglu/secim_verileri deposundan (bkz. data/raw/ysk/1983-2007/
   // PROVENANCE.md) - yani tek bir "kaynak" etiketi yeterli degil, il ve ilce
   // ayri belirtiliyor.
-  const YEARS_IL_YSK_ILCE_GITHUB = new Set(['1991','1995','1999','2002','2007']);
+  // 2026-09-24 (ikinci oturum): 1991-2007 ilce duzeyi de TUIK'in ayni resmi
+  // tablosuna yukseltildi (bkz. scripts/pipelines/tuik_arsiv/) - bu set bos
+  // kaldi; mertnuhoglu artik sadece kaynak katmaninda/yedek.
+  const YEARS_IL_YSK_ILCE_GITHUB = new Set([]);
+  // 2026-09-24: il duzeyi YSK resmi arsivi (degismedi), ILCE duzeyi TUIK'in
+  // secimdagitimapp'i ("Secim cevresi ve ilcelere gore") - DIE'nin basili il+ilce
+  // yayinlariyla ayni rakamlar (bkz. data/raw/tuik/secimdagitimapp-ilce-1961-1987/
+  // PROVENANCE.md). 1950/1954/1957 icin resmi ilce kaynagi bulunamadi.
+  const YEARS_IL_YSK_ILCE_TUIK = new Set(['1961','1965','1969','1973','1977','1983','1987',
+    '1991','1995','1999','2002','2007']);
   // 2026-09-22 (ikinci oturum): bu 3 yerel secim yilinda IL MERKEZI YSK'nin
   // resmi arsivine yukseltildi, ILCE duzeyi hala Wikipedia kaynakli (Github
   // degil, bu yuzden ayri bir set - farkli kaynak metni gerekiyor).

@@ -49,8 +49,8 @@ Demirtaş 2014, Erdoğan/İnce/Demirtaş/Akşener 2018, Erdoğan/Kılıçdaroğl
 | Dönem | İl kaynağı | İlçe kaynağı | Bilinen sorun / kapsam sınırı |
 |---|---|---|---|
 | **2011, 2015 Haziran, 2015 Kasım, 2018, 2023** | **YSK (acikveri API, sandık-düzeyi agrege)** | **YSK (aynı)** | Habertürk tamamen kaldırıldı (2026-09-22, üçüncü oturum) — bkz. aşağı |
-| **1983, 1987, 1991, 1995, 1999, 2002, 2007** | **YSK (il-bazlı resmi arşiv)** | mertnuhoglu (sadece 1991-2007) | İlçe düzeyi hâlâ GitHub kaynaklı — YSK'nin bu arşivi il-bazlı, ilçe kırılımı yok. **2002 Siirt**: mertnuhoglu kaynağındaki ilçe kırılımı bozuk, düzeltilmedi (bkz. aşağı) |
-| **1950, 1954, 1957, 1961, 1965, 1969, 1973, 1977** | **YSK (TÜİK kaynaklı)** | — | "Seçim çevresi" = il'in kendisiydi, ilçe düzeyi hiç var olmadı — bu bir kaynak eksikliği değil |
+| **1983, 1987, 1991, 1995, 1999, 2002, 2007** | **YSK (il-bazlı resmi arşiv)** | TÜİK (1983/1987 ilçe); 1991-2007 ilçe: mertnuhoglu tabanı + TÜİK (fark/eksik ve teyit) | 1991-2007: taban değerler mertnuhoglu'dan korundu, TÜİK ile birebir aynı olanlar `kaynak.teyit`, farklı/eksik olanlar (1995 Yeni Parti oyları, Fatih/Eminönü ayrımı) TÜİK'ten, satırın `kaynak.farklar` alanında eski/yeni değerleriyle (2026-09-24). **2002 Siirt**: hata değil, 9 Mart 2003 yenileme seçiminin resmî sonucu (bkz. aşağı) |
+| **1950, 1954, 1957, 1961, 1965, 1969, 1973, 1977** | **YSK (TÜİK kaynaklı)** | TÜİK (1961-1977 ilçe) | 1961-1977 ilçe düzeyi TÜİK'in "Seçim çevresi ve ilçelere göre" tablosundan (2026-09-24, bkz. `data/raw/tuik/secimdagitimapp-ilce-1961-1987/PROVENANCE.md`). 1950/1954/1957 için resmî ilçe kaynağı bulunamadı. (Önceki "seçim çevresi il olduğu için ilçe düzeyi hiç var olmadı" notu yanlıştı.) |
 
 **Habertürk → YSK geçişi (2026-09-22, üçüncü oturum):** Kullanıcının "Habertürk
 verisini silsek o verileri YSK'de bulamıyor muyuz?" sorusu üzerine —
@@ -100,11 +100,12 @@ ulusal rakamdan Sakarya'nın sandalyesi kadar düşük çıkar (ulusal toplam
 alanı yine de doğru). Ayrıntı: `data/raw/ysk/1950-1977/PROVENANCE.md` ve
 `scripts/pipelines/genel_1950_1977/`.
 
-**2002 Siirt sorunu:** mertnuhoglu kaynağındaki Siirt ilçe kırılımı, DEHAP'ın
-o ildeki gerçek birinciliğini (il geneli %32,2) yansıtmıyor — Merkez ilçede
-"AK Parti %86,71" gibi gerçek dışı bir değer var. Güvenilir alternatif ilçe
-kaynağı bulunamadığı için bu hatalı sayılar tahminle değiştirilmedi, olduğu
-gibi bırakıldı.
+**2002 Siirt (açıklandı, 2026-09-24):** Önceki not, mertnuhoglu'nun Siirt ilçe
+kırılımını "bozuk" sayıyordu (Merkez'de AK Parti %86,71, DEHAP birinci değil).
+Hata değil: 3 Kasım 2002 Siirt seçim çevresi sonucu YSK tarafından iptal edildi
+ve seçim 9 Mart 2003'te yenilendi. YSK'nin il PDF'i ve TÜİK'in resmî ilçe tablosu
+yenileme seçiminin sonucunu veriyor; mertnuhoglu değerleri TÜİK ile 7/7 ilçede
+birebir aynı.
 
 ## Yerel Seçim / Belediye Başkanlığı (15 seçim)
 
@@ -113,7 +114,7 @@ gibi bırakıldı.
 | **2024, 2019, 2014, 2009** | **YSK (acikveri API, sandık-düzeyi agrege — il+ilçe)** | Habertürk tamamen kaldırıldı (2026-09-23, dördüncü oturum) — bkz. aşağı |
 | **2004, 1999, 1994** | **YSK resmi arşiv (il + ilçe/belde, ~%75-76)** | 2026-09-22'de il düzeyi, 2026-09-23'te ilçe/belde düzeyi yükseltildi (bkz. aşağı); kalan ~%24-25 (sadece Denizli'nin merkez ilçesi + Gümüşhane 1994 istisnası) eski Wikipedia kaynağında kaldı |
 | 1989, 1984 | Wikipedia (il başına alt makaleler) | Katılım/seçmen verisi kaynakta yok — il VE ilçe düzeyi var; YSK'de sadece ulusal toplam PDF'i var, il-bazlı yok |
-| 1977, 1973, 1968, 1963, 1955, 1950 | Wikipedia (il başına alt makaleler) | 2026-09-22'de eklendi (bkz. [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md)) — **sadece il merkezi**, ilçeler boş; 1950/1955'te dolaylı seçim sistemi (kazanan = meclisi/başkanlığı sağlayan parti); ayrıntı için `sources.yml`'deki ilgili girişlere bakın |
+| 1977, 1973, 1968, 1963, 1955, 1950 | Wikipedia (il başına alt makaleler) | il merkezi 2026-09-22'de (bkz. [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md)), **ilçe belediye başkanlıkları 2026-09-24'te** aynı sayfaların İlçeler bölümünden eklendi (1950/1955: yalnızca kazanan parti; satır kökeni: `kaynak.revid`); 1950/1955'te dolaylı seçim sistemi (kazanan = meclisi/başkanlığı sağlayan parti); ayrıntı için `sources.yml`'deki ilgili girişlere bakın |
 
 **Habertürk → YSK geçişi, yerel seçimler (2026-09-23, dördüncü oturum):**
 Genel/CB/referandum ile aynı `getSecimSandikSonucList` API'si kullanıldı, ama
@@ -215,3 +216,15 @@ sayılar güvenilmez çıktı (ayrıntı `sources.yml`'deki known_issue).
   gibi, 1984+ verisinde olduğu gibi) hâlâ yok — `ilceler` bu 6 yıl için boş.
   Ara seçim ve Cumhuriyet Senatosu seçimleri gibi kapsam-dışı kategoriler için
   bkz. [`data/secim_takvimi.json`](data/secim_takvimi.json).
+
+
+## Ek kayıtlar (haritaya bağlı değil, 2026-09-24)
+
+Projede başka karşılığı olmayan, 1950 sonrası kayıtlar; tek kaynak Türkçe Wikipedia
+il alt makaleleri, her kayıtta sayfa + revid, her dosyada `kapsam` (bulunan/beklenen):
+
+| Dosyalar | İçerik |
+|---|---|
+| `data/normalized/ek/senato/` | Cumhuriyet Senatosu 1961-1979 (8 seçim): il sonuçları, ilçe birincileri, seçilen senatörler |
+| `data/normalized/ek/milletvekilleri/` | Seçilen milletvekilleri 1950-2023 — yalnızca 1969/1995/2002 tam, diğerlerinde kapsam.durum eksik/fazla |
+| `data/normalized/ek/beldeler/` | Belde belediye başkanlıkları, yerel 1950-2024 |

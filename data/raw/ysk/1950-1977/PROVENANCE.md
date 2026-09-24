@@ -27,12 +27,16 @@ gerçek); il bazlı vekil toplamı bu yüzden 1957/1961'de resmi rakamdan
 Sakarya'nın sandalye sayısı kadar düşük çıkar — bu **tahmin değil, bilinen
 bir kapsam sınırı** (bkz. `sources.yml`'deki known_issues).
 
-## Yapısal not: "il düzeyi" bu dönem için nihai düzeydir
+## Yapısal not (2026-09-24'te düzeltildi)
 
-1950-1977 Türkiye'sinde "seçim çevresi" doğrudan **il'in kendisiydi**
-(ilçe bazlı tekil-üyeli seçim çevresi sistemi yoktu, il-genelinde liste
-usulü). Yani "ilçe düzeyi veri yok" demek bu dönem için bir kaynak
-eksikliği değil — böyle bir ayrım hiç var olmadı.
+1950-1977 Türkiye'sinde "seçim çevresi" il'in kendisiydi (il-genelinde
+liste usulü). Önceden buradan "ilçe düzeyi veri hiç var olmadı" sonucu
+çıkarılmıştı — **bu yanlış**: oylar ilçe seçim kurullarında sayılıp
+birleştirildiği için DİE sonuçları il ve ilçe bazında yayımladı. 1961-1977
+(ve 1983/1987) ilçe verisi TÜİK'ten eklendi, bkz.
+`data/raw/tuik/secimdagitimapp-ilce-1961-1987/PROVENANCE.md`. Bu arşivde
+eksik olan Sakarya da TÜİK'in kaynağında mevcut (il satırı henüz
+güncellenmedi). 1950/1954/1957 için resmî ilçe kaynağı bulunamadı.
 
 ## Dosyalar
 

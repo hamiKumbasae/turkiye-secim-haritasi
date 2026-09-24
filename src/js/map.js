@@ -227,7 +227,7 @@
     // notr/TIKLANAMAZ bir alt katman olarak gosterir (orn. 2008 oncesi
     // Istanbul'da Ataşehir/Sancaktepe vb.) - BILEREK gercek tarihsel
     // sinirlari "uydurmuyor". Eger bu il/yil icin HIC ilce verisi yoksa
-    // (dataFeats bos - orn. 1950-1977/1983-1987 genel, sadece il-duzeyi
+    // (dataFeats bos - orn. 1950/1954/1957 genel, sadece il-duzeyi
     // kaynak), bu katman HIC HESAPLANMAZ/GOSTERILMEZ - asagidaki "tek
     // parca il" fallback'i kullanilir (bkz. son inceleme: bilmedigimiz
     // bir seyi 39 parcaya bolup "veri yok" diye gostermek de yaniltici -

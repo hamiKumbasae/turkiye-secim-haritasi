@@ -1,0 +1,10234 @@
+{
+ "secim": "1961",
+ "kaynak": "tuik",
+ "tur": "genel",
+ "tablo": "Seçim çevresi ve ilçelere göre milletvekili genel seçimi sonuçları",
+ "uygulama": "https://biruni.tuik.gov.tr/secimdagitimapp/secim.zul",
+ "hamKlasor": "data/raw/tuik/secimdagitimapp-ilce-1961-1987/1961",
+ "partiEslemesi": {
+  "AP": "AP",
+  "CHP": "CHP",
+  "CKMP": "CKMP",
+  "YTP": "YTP61",
+  "BĞMZ": "Bağımsız"
+ },
+ "eslenemeyenSutunlar": {},
+ "ozet": {
+  "cevre": 67,
+  "ilce": 636,
+  "sehirKoyKirilimli": 0
+ },
+ "cevreler": [
+  {
+   "dosya": "01-adana.html",
+   "cevre": "Adana",
+   "plaka": 1,
+   "secmen": 298069,
+   "oyKullanan": 253053,
+   "gecerliOy": 246341,
+   "partiler": {
+    "AP": 126365,
+    "CHP": 108161,
+    "CKMP": 10347,
+    "YTP": 0,
+    "BĞMZ": 1687
+   },
+   "ilceler": [
+    {
+     "ad": "Bahçe",
+     "secmen": 13697,
+     "oyKullanan": 12562,
+     "gecerliOy": 12219,
+     "partiler": {
+      "AP": 6969,
+      "CHP": 4913,
+      "CKMP": 242,
+      "YTP": 0,
+      "BĞMZ": 96
+     }
+    },
+    {
+     "ad": "Ceyhan",
+     "secmen": 38029,
+     "oyKullanan": 33393,
+     "gecerliOy": 32463,
+     "partiler": {
+      "AP": 14921,
+      "CHP": 15654,
+      "CKMP": 1530,
+      "YTP": 0,
+      "BĞMZ": 207
+     }
+    },
+    {
+     "ad": "Feke",
+     "secmen": 7114,
+     "oyKullanan": 5988,
+     "gecerliOy": 5811,
+     "partiler": {
+      "AP": 2985,
+      "CHP": 2978,
+      "CKMP": 209,
+      "YTP": 0,
+      "BĞMZ": 33
+     }
+    },
+    {
+     "ad": "Kadirli",
+     "secmen": 21597,
+     "oyKullanan": 19775,
+     "gecerliOy": 19279,
+     "partiler": {
+      "AP": 10301,
+      "CHP": 8311,
+      "CKMP": 584,
+      "YTP": 0,
+      "BĞMZ": 91
+     }
+    },
+    {
+     "ad": "Karaisalı",
+     "secmen": 19029,
+     "oyKullanan": 17139,
+     "gecerliOy": 16709,
+     "partiler": {
+      "AP": 10208,
+      "CHP": 6192,
+      "CKMP": 226,
+      "YTP": 0,
+      "BĞMZ": 154
+     }
+    },
+    {
+     "ad": "Karataş",
+     "secmen": 12789,
+     "oyKullanan": 11141,
+     "gecerliOy": 10866,
+     "partiler": {
+      "AP": 4816,
+      "CHP": 5475,
+      "CKMP": 505,
+      "YTP": 0,
+      "BĞMZ": 70
+     }
+    },
+    {
+     "ad": "Kozan",
+     "secmen": 29527,
+     "oyKullanan": 25924,
+     "gecerliOy": 25162,
+     "partiler": {
+      "AP": 13590,
+      "CHP": 9684,
+      "CKMP": 1710,
+      "YTP": 0,
+      "BĞMZ": 178
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 109301,
+     "oyKullanan": 85646,
+     "gecerliOy": 83407,
+     "partiler": {
+      "AP": 41720,
+      "CHP": 37233,
+      "CKMP": 3839,
+      "YTP": 0,
+      "BĞMZ": 615
+     }
+    },
+    {
+     "ad": "Osmaniye",
+     "secmen": 22057,
+     "oyKullanan": 19976,
+     "gecerliOy": 19438,
+     "partiler": {
+      "AP": 10298,
+      "CHP": 8551,
+      "CKMP": 516,
+      "YTP": 0,
+      "BĞMZ": 73
+     }
+    },
+    {
+     "ad": "Pozantı",
+     "secmen": 5408,
+     "oyKullanan": 4704,
+     "gecerliOy": 4610,
+     "partiler": {
+      "AP": 2494,
+      "CHP": 1990,
+      "CKMP": 104,
+      "YTP": 0,
+      "BĞMZ": 21
+     }
+    },
+    {
+     "ad": "Saimbeyli",
+     "secmen": 5344,
+     "oyKullanan": 3976,
+     "gecerliOy": 3852,
+     "partiler": {
+      "AP": 2181,
+      "CHP": 1363,
+      "CKMP": 223,
+      "YTP": 0,
+      "BĞMZ": 85
+     }
+    },
+    {
+     "ad": "Tufanbeyli (Mağara)",
+     "secmen": 7668,
+     "oyKullanan": 6920,
+     "gecerliOy": 6763,
+     "partiler": {
+      "AP": 3081,
+      "CHP": 3241,
+      "CKMP": 398,
+      "YTP": 0,
+      "BĞMZ": 43
+     }
+    },
+    {
+     "ad": "Yumurtalık",
+     "secmen": 6509,
+     "oyKullanan": 5909,
+     "gecerliOy": 5753,
+     "partiler": {
+      "AP": 2895,
+      "CHP": 2576,
+      "CKMP": 261,
+      "YTP": 0,
+      "BĞMZ": 21
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "02-adiyaman.html",
+   "cevre": "Adıyaman",
+   "plaka": 2,
+   "secmen": 103610,
+   "oyKullanan": 85114,
+   "gecerliOy": 82710,
+   "partiler": {
+    "AP": 2372,
+    "CHP": 31034,
+    "CKMP": 8881,
+    "YTP": 40423,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Besni",
+     "secmen": 24901,
+     "oyKullanan": 21102,
+     "gecerliOy": 20220,
+     "partiler": {
+      "AP": 13,
+      "CHP": 8900,
+      "CKMP": 2375,
+      "YTP": 8932,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çelikhan",
+     "secmen": 6066,
+     "oyKullanan": 4576,
+     "gecerliOy": 4404,
+     "partiler": {
+      "AP": 111,
+      "CHP": 2077,
+      "CKMP": 456,
+      "YTP": 1760,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gerger",
+     "secmen": 9660,
+     "oyKullanan": 7480,
+     "gecerliOy": 7347,
+     "partiler": {
+      "AP": 482,
+      "CHP": 3334,
+      "CKMP": 1249,
+      "YTP": 2282,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gölbaşı",
+     "secmen": 8169,
+     "oyKullanan": 7313,
+     "gecerliOy": 7152,
+     "partiler": {
+      "AP": 60,
+      "CHP": 3695,
+      "CKMP": 119,
+      "YTP": 3278,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kâhta",
+     "secmen": 24266,
+     "oyKullanan": 19188,
+     "gecerliOy": 18944,
+     "partiler": {
+      "AP": 266,
+      "CHP": 6874,
+      "CKMP": 720,
+      "YTP": 11084,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 27605,
+     "oyKullanan": 22960,
+     "gecerliOy": 22187,
+     "partiler": {
+      "AP": 1112,
+      "CHP": 5344,
+      "CKMP": 3873,
+      "YTP": 11858,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Samsat",
+     "secmen": 2943,
+     "oyKullanan": 2495,
+     "gecerliOy": 2456,
+     "partiler": {
+      "AP": 328,
+      "CHP": 810,
+      "CKMP": 89,
+      "YTP": 1229,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "03-afyonkarahisar.html",
+   "cevre": "Afyonkarahisar",
+   "plaka": 3,
+   "secmen": 218629,
+   "oyKullanan": 178421,
+   "gecerliOy": 168199,
+   "partiler": {
+    "AP": 47715,
+    "CHP": 42032,
+    "CKMP": 76349,
+    "YTP": 1972,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Bolvadin",
+     "secmen": 13539,
+     "oyKullanan": 10197,
+     "gecerliOy": 9578,
+     "partiler": {
+      "AP": 787,
+      "CHP": 1919,
+      "CKMP": 6882,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çay",
+     "secmen": 10236,
+     "oyKullanan": 7676,
+     "gecerliOy": 7108,
+     "partiler": {
+      "AP": 1249,
+      "CHP": 1624,
+      "CKMP": 4101,
+      "YTP": 134,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Dazkırı",
+     "secmen": 12924,
+     "oyKullanan": 11372,
+     "gecerliOy": 10972,
+     "partiler": {
+      "AP": 6155,
+      "CHP": 4401,
+      "CKMP": 416,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Dinar",
+     "secmen": 20465,
+     "oyKullanan": 17417,
+     "gecerliOy": 16580,
+     "partiler": {
+      "AP": 9662,
+      "CHP": 5710,
+      "CKMP": 1089,
+      "YTP": 114,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Emirdağ",
+     "secmen": 33465,
+     "oyKullanan": 27735,
+     "gecerliOy": 26332,
+     "partiler": {
+      "AP": 1814,
+      "CHP": 7477,
+      "CKMP": 16745,
+      "YTP": 287,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İhsaniye",
+     "secmen": 11741,
+     "oyKullanan": 10121,
+     "gecerliOy": 9466,
+     "partiler": {
+      "AP": 1262,
+      "CHP": 1927,
+      "CKMP": 6116,
+      "YTP": 46,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 42996,
+     "oyKullanan": 33699,
+     "gecerliOy": 31734,
+     "partiler": {
+      "AP": 3529,
+      "CHP": 5652,
+      "CKMP": 22054,
+      "YTP": 499,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sandıklı",
+     "secmen": 31483,
+     "oyKullanan": 26457,
+     "gecerliOy": 24926,
+     "partiler": {
+      "AP": 16230,
+      "CHP": 5147,
+      "CKMP": 3248,
+      "YTP": 301,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sinanpaşa (Sincanlı)",
+     "secmen": 18147,
+     "oyKullanan": 14977,
+     "gecerliOy": 13935,
+     "partiler": {
+      "AP": 4140,
+      "CHP": 3491,
+      "CKMP": 5898,
+      "YTP": 390,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sultandağı",
+     "secmen": 7924,
+     "oyKullanan": 6175,
+     "gecerliOy": 5802,
+     "partiler": {
+      "AP": 779,
+      "CHP": 1699,
+      "CKMP": 3146,
+      "YTP": 182,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Şuhut",
+     "secmen": 15709,
+     "oyKullanan": 12595,
+     "gecerliOy": 11766,
+     "partiler": {
+      "AP": 2108,
+      "CHP": 2985,
+      "CKMP": 6654,
+      "YTP": 19,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "04-agri.html",
+   "cevre": "Ağrı",
+   "plaka": 4,
+   "secmen": 81844,
+   "oyKullanan": 69768,
+   "gecerliOy": 67238,
+   "partiler": {
+    "AP": 7411,
+    "CHP": 21759,
+    "CKMP": 23094,
+    "YTP": 14974,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Diyadin",
+     "secmen": 7435,
+     "oyKullanan": 6390,
+     "gecerliOy": 6226,
+     "partiler": {
+      "AP": 280,
+      "CHP": 2485,
+      "CKMP": 2444,
+      "YTP": 1017,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Doğubeyazıt",
+     "secmen": 14425,
+     "oyKullanan": 11789,
+     "gecerliOy": 11306,
+     "partiler": {
+      "AP": 281,
+      "CHP": 2811,
+      "CKMP": 5406,
+      "YTP": 2808,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Eleşkirt",
+     "secmen": 11966,
+     "oyKullanan": 10377,
+     "gecerliOy": 9955,
+     "partiler": {
+      "AP": 2065,
+      "CHP": 2618,
+      "CKMP": 3916,
+      "YTP": 1356,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hamur",
+     "secmen": 4939,
+     "oyKullanan": 4395,
+     "gecerliOy": 4293,
+     "partiler": {
+      "AP": 738,
+      "CHP": 1623,
+      "CKMP": 1485,
+      "YTP": 447,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 18838,
+     "oyKullanan": 15482,
+     "gecerliOy": 14916,
+     "partiler": {
+      "AP": 1602,
+      "CHP": 4640,
+      "CKMP": 5369,
+      "YTP": 3305,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Patnos",
+     "secmen": 10179,
+     "oyKullanan": 9074,
+     "gecerliOy": 8741,
+     "partiler": {
+      "AP": 512,
+      "CHP": 3548,
+      "CKMP": 1134,
+      "YTP": 3547,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Taşlıçay",
+     "secmen": 5685,
+     "oyKullanan": 4961,
+     "gecerliOy": 4777,
+     "partiler": {
+      "AP": 734,
+      "CHP": 1672,
+      "CKMP": 605,
+      "YTP": 1766,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Tutak",
+     "secmen": 8447,
+     "oyKullanan": 7310,
+     "gecerliOy": 7024,
+     "partiler": {
+      "AP": 1199,
+      "CHP": 2362,
+      "CKMP": 2735,
+      "YTP": 728,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "05-amasya.html",
+   "cevre": "Amasya",
+   "plaka": 5,
+   "secmen": 124211,
+   "oyKullanan": 108786,
+   "gecerliOy": 103111,
+   "partiler": {
+    "AP": 55548,
+    "CHP": 39940,
+    "CKMP": 7469,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Göynücek",
+     "secmen": 8287,
+     "oyKullanan": 7545,
+     "gecerliOy": 7079,
+     "partiler": {
+      "AP": 3982,
+      "CHP": 2401,
+      "CKMP": 696,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gümüşhacıköy",
+     "secmen": 20130,
+     "oyKullanan": 17997,
+     "gecerliOy": 17047,
+     "partiler": {
+      "AP": 8599,
+      "CHP": 5917,
+      "CKMP": 2531,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 38801,
+     "oyKullanan": 33692,
+     "gecerliOy": 32158,
+     "partiler": {
+      "AP": 15780,
+      "CHP": 14153,
+      "CKMP": 2081,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merzifon",
+     "secmen": 26188,
+     "oyKullanan": 22448,
+     "gecerliOy": 21137,
+     "partiler": {
+      "AP": 12223,
+      "CHP": 7969,
+      "CKMP": 946,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Suluova",
+     "secmen": 8944,
+     "oyKullanan": 7922,
+     "gecerliOy": 7616,
+     "partiler": {
+      "AP": 4292,
+      "CHP": 2852,
+      "CKMP": 462,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Taşova",
+     "secmen": 21861,
+     "oyKullanan": 19182,
+     "gecerliOy": 18074,
+     "partiler": {
+      "AP": 10672,
+      "CHP": 6649,
+      "CKMP": 753,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "06-ankara.html",
+   "cevre": "Ankara",
+   "plaka": 6,
+   "secmen": 591937,
+   "oyKullanan": 479682,
+   "gecerliOy": 468805,
+   "partiler": {
+    "AP": 92734,
+    "CHP": 181147,
+    "CKMP": 166535,
+    "YTP": 23646,
+    "BĞMZ": 3522
+   },
+   "ilceler": [
+    {
+     "ad": "Altındağ",
+     "secmen": 70181,
+     "oyKullanan": 53905,
+     "gecerliOy": 53043,
+     "partiler": {
+      "AP": 10862,
+      "CHP": 20360,
+      "CKMP": 19536,
+      "YTP": 1437,
+      "BĞMZ": 118
+     }
+    },
+    {
+     "ad": "Ayaş",
+     "secmen": 7516,
+     "oyKullanan": 6467,
+     "gecerliOy": 6282,
+     "partiler": {
+      "AP": 2750,
+      "CHP": 1847,
+      "CKMP": 1275,
+      "YTP": 400,
+      "BĞMZ": 14
+     }
+    },
+    {
+     "ad": "Balâ",
+     "secmen": 16380,
+     "oyKullanan": 14384,
+     "gecerliOy": 13943,
+     "partiler": {
+      "AP": 4503,
+      "CHP": 4800,
+      "CKMP": 3950,
+      "YTP": 678,
+      "BĞMZ": 12
+     }
+    },
+    {
+     "ad": "Beypazarı",
+     "secmen": 16694,
+     "oyKullanan": 13157,
+     "gecerliOy": 12684,
+     "partiler": {
+      "AP": 689,
+      "CHP": 2567,
+      "CKMP": 7787,
+      "YTP": 1574,
+      "BĞMZ": 67
+     }
+    },
+    {
+     "ad": "Çamlıdere",
+     "secmen": 10080,
+     "oyKullanan": 7876,
+     "gecerliOy": 7674,
+     "partiler": {
+      "AP": 2336,
+      "CHP": 2146,
+      "CKMP": 3025,
+      "YTP": 158,
+      "BĞMZ": 9
+     }
+    },
+    {
+     "ad": "Çankaya",
+     "secmen": 148939,
+     "oyKullanan": 112254,
+     "gecerliOy": 110758,
+     "partiler": {
+      "AP": 21335,
+      "CHP": 54315,
+      "CKMP": 30056,
+      "YTP": 4109,
+      "BĞMZ": 943
+     }
+    },
+    {
+     "ad": "Çubuk",
+     "secmen": 19899,
+     "oyKullanan": 17574,
+     "gecerliOy": 16877,
+     "partiler": {
+      "AP": 5432,
+      "CHP": 4304,
+      "CKMP": 6081,
+      "YTP": 873,
+      "BĞMZ": 199
+     }
+    },
+    {
+     "ad": "Delice",
+     "secmen": 9731,
+     "oyKullanan": 8683,
+     "gecerliOy": 8474,
+     "partiler": {
+      "AP": 2159,
+      "CHP": 3115,
+      "CKMP": 2904,
+      "YTP": 126,
+      "BĞMZ": 15
+     }
+    },
+    {
+     "ad": "Elmadağı",
+     "secmen": 8772,
+     "oyKullanan": 7802,
+     "gecerliOy": 7608,
+     "partiler": {
+      "AP": 3058,
+      "CHP": 3330,
+      "CKMP": 1044,
+      "YTP": 98,
+      "BĞMZ": 78
+     }
+    },
+    {
+     "ad": "Güdül",
+     "secmen": 8477,
+     "oyKullanan": 7060,
+     "gecerliOy": 6795,
+     "partiler": {
+      "AP": 1073,
+      "CHP": 2322,
+      "CKMP": 3172,
+      "YTP": 205,
+      "BĞMZ": 23
+     }
+    },
+    {
+     "ad": "Haymana",
+     "secmen": 19684,
+     "oyKullanan": 17313,
+     "gecerliOy": 16823,
+     "partiler": {
+      "AP": 1782,
+      "CHP": 7618,
+      "CKMP": 6918,
+      "YTP": 474,
+      "BĞMZ": 31
+     }
+    },
+    {
+     "ad": "Kalecik",
+     "secmen": 12316,
+     "oyKullanan": 10461,
+     "gecerliOy": 10074,
+     "partiler": {
+      "AP": 1015,
+      "CHP": 3084,
+      "CKMP": 5401,
+      "YTP": 438,
+      "BĞMZ": 136
+     }
+    },
+    {
+     "ad": "Keskin",
+     "secmen": 16993,
+     "oyKullanan": 14795,
+     "gecerliOy": 14233,
+     "partiler": {
+      "AP": 1015,
+      "CHP": 4970,
+      "CKMP": 8038,
+      "YTP": 166,
+      "BĞMZ": 44
+     }
+    },
+    {
+     "ad": "Kırıkkale",
+     "secmen": 32453,
+     "oyKullanan": 28455,
+     "gecerliOy": 27658,
+     "partiler": {
+      "AP": 7180,
+      "CHP": 8954,
+      "CKMP": 10921,
+      "YTP": 374,
+      "BĞMZ": 229
+     }
+    },
+    {
+     "ad": "Kızılcahamam",
+     "secmen": 21231,
+     "oyKullanan": 18019,
+     "gecerliOy": 17233,
+     "partiler": {
+      "AP": 6210,
+      "CHP": 3739,
+      "CKMP": 5850,
+      "YTP": 1305,
+      "BĞMZ": 129
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 56723,
+     "oyKullanan": 43027,
+     "gecerliOy": 42617,
+     "partiler": {
+      "AP": 8863,
+      "CHP": 16747,
+      "CKMP": 14892,
+      "YTP": 1256,
+      "BĞMZ": 643
+     }
+    },
+    {
+     "ad": "Nallıhan",
+     "secmen": 15948,
+     "oyKullanan": 14323,
+     "gecerliOy": 14130,
+     "partiler": {
+      "AP": 760,
+      "CHP": 4741,
+      "CKMP": 1825,
+      "YTP": 6774,
+      "BĞMZ": 29
+     }
+    },
+    {
+     "ad": "Polatlı",
+     "secmen": 22708,
+     "oyKullanan": 19811,
+     "gecerliOy": 19340,
+     "partiler": {
+      "AP": 834,
+      "CHP": 7920,
+      "CKMP": 10107,
+      "YTP": 372,
+      "BĞMZ": 107
+     }
+    },
+    {
+     "ad": "Sulakyurt",
+     "secmen": 7483,
+     "oyKullanan": 6424,
+     "gecerliOy": 6147,
+     "partiler": {
+      "AP": 739,
+      "CHP": 2843,
+      "CKMP": 2050,
+      "YTP": 492,
+      "BĞMZ": 23
+     }
+    },
+    {
+     "ad": "Şereflikoçhisar",
+     "secmen": 26524,
+     "oyKullanan": 23637,
+     "gecerliOy": 22782,
+     "partiler": {
+      "AP": 2222,
+      "CHP": 7096,
+      "CKMP": 12538,
+      "YTP": 742,
+      "BĞMZ": 57
+     }
+    },
+    {
+     "ad": "Yenimahalle",
+     "secmen": 43205,
+     "oyKullanan": 34255,
+     "gecerliOy": 33630,
+     "partiler": {
+      "AP": 7917,
+      "CHP": 14329,
+      "CKMP": 9165,
+      "YTP": 1595,
+      "BĞMZ": 616
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "07-antalya.html",
+   "cevre": "Antalya",
+   "plaka": 7,
+   "secmen": 193416,
+   "oyKullanan": 154735,
+   "gecerliOy": 148237,
+   "partiler": {
+    "AP": 90614,
+    "CHP": 51952,
+    "CKMP": 5560,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Akseki",
+     "secmen": 13704,
+     "oyKullanan": 10385,
+     "gecerliOy": 9959,
+     "partiler": {
+      "AP": 4498,
+      "CHP": 5114,
+      "CKMP": 347,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Alanya",
+     "secmen": 18693,
+     "oyKullanan": 12691,
+     "gecerliOy": 12159,
+     "partiler": {
+      "AP": 7534,
+      "CHP": 3914,
+      "CKMP": 711,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Elmalı",
+     "secmen": 15309,
+     "oyKullanan": 13088,
+     "gecerliOy": 12542,
+     "partiler": {
+      "AP": 7818,
+      "CHP": 4362,
+      "CKMP": 362,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Finike",
+     "secmen": 7616,
+     "oyKullanan": 6440,
+     "gecerliOy": 6190,
+     "partiler": {
+      "AP": 3713,
+      "CHP": 2335,
+      "CKMP": 142,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gazipaşa",
+     "secmen": 8573,
+     "oyKullanan": 6628,
+     "gecerliOy": 6293,
+     "partiler": {
+      "AP": 2057,
+      "CHP": 4053,
+      "CKMP": 162,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gündoğmuş",
+     "secmen": 6972,
+     "oyKullanan": 5870,
+     "gecerliOy": 5601,
+     "partiler": {
+      "AP": 3139,
+      "CHP": 2046,
+      "CKMP": 409,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kaş",
+     "secmen": 16124,
+     "oyKullanan": 12972,
+     "gecerliOy": 12416,
+     "partiler": {
+      "AP": 10441,
+      "CHP": 1916,
+      "CKMP": 59,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Korkuteli",
+     "secmen": 18669,
+     "oyKullanan": 15019,
+     "gecerliOy": 14120,
+     "partiler": {
+      "AP": 8430,
+      "CHP": 5134,
+      "CKMP": 555,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kumluca",
+     "secmen": 8555,
+     "oyKullanan": 7267,
+     "gecerliOy": 7033,
+     "partiler": {
+      "AP": 4403,
+      "CHP": 2458,
+      "CKMP": 172,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Manavgat",
+     "secmen": 17667,
+     "oyKullanan": 14385,
+     "gecerliOy": 13669,
+     "partiler": {
+      "AP": 6227,
+      "CHP": 6775,
+      "CKMP": 666,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 45131,
+     "oyKullanan": 35695,
+     "gecerliOy": 34513,
+     "partiler": {
+      "AP": 22106,
+      "CHP": 10853,
+      "CKMP": 1473,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Serik",
+     "secmen": 16403,
+     "oyKullanan": 14295,
+     "gecerliOy": 13742,
+     "partiler": {
+      "AP": 10248,
+      "CHP": 2992,
+      "CKMP": 502,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "08-artvin.html",
+   "cevre": "Artvin",
+   "plaka": 8,
+   "secmen": 91935,
+   "oyKullanan": 69549,
+   "gecerliOy": 65918,
+   "partiler": {
+    "AP": 30197,
+    "CHP": 29158,
+    "CKMP": 6563,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Ardanuç",
+     "secmen": 10201,
+     "oyKullanan": 8091,
+     "gecerliOy": 7677,
+     "partiler": {
+      "AP": 1668,
+      "CHP": 5050,
+      "CKMP": 959,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Arhavi",
+     "secmen": 7844,
+     "oyKullanan": 5976,
+     "gecerliOy": 5749,
+     "partiler": {
+      "AP": 3662,
+      "CHP": 1872,
+      "CKMP": 215,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Borçka",
+     "secmen": 14737,
+     "oyKullanan": 11261,
+     "gecerliOy": 10717,
+     "partiler": {
+      "AP": 5821,
+      "CHP": 3971,
+      "CKMP": 925,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hopa",
+     "secmen": 7382,
+     "oyKullanan": 6101,
+     "gecerliOy": 5857,
+     "partiler": {
+      "AP": 1939,
+      "CHP": 3735,
+      "CKMP": 183,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 10206,
+     "oyKullanan": 7950,
+     "gecerliOy": 7603,
+     "partiler": {
+      "AP": 2585,
+      "CHP": 3950,
+      "CKMP": 1068,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Şavşat",
+     "secmen": 21746,
+     "oyKullanan": 16995,
+     "gecerliOy": 15883,
+     "partiler": {
+      "AP": 7592,
+      "CHP": 6339,
+      "CKMP": 1952,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yusufeli",
+     "secmen": 19819,
+     "oyKullanan": 13175,
+     "gecerliOy": 12432,
+     "partiler": {
+      "AP": 6930,
+      "CHP": 4241,
+      "CKMP": 1261,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "09-aydin.html",
+   "cevre": "Aydın",
+   "plaka": 9,
+   "secmen": 234019,
+   "oyKullanan": 199397,
+   "gecerliOy": 192975,
+   "partiler": {
+    "AP": 124272,
+    "CHP": 59587,
+    "CKMP": 7326,
+    "YTP": 1790,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Bozdoğan",
+     "secmen": 15561,
+     "oyKullanan": 13079,
+     "gecerliOy": 12585,
+     "partiler": {
+      "AP": 9262,
+      "CHP": 2977,
+      "CKMP": 187,
+      "YTP": 159,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çine",
+     "secmen": 26140,
+     "oyKullanan": 22781,
+     "gecerliOy": 22043,
+     "partiler": {
+      "AP": 16285,
+      "CHP": 4863,
+      "CKMP": 622,
+      "YTP": 273,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Germencik",
+     "secmen": 14874,
+     "oyKullanan": 13409,
+     "gecerliOy": 13082,
+     "partiler": {
+      "AP": 7572,
+      "CHP": 5238,
+      "CKMP": 242,
+      "YTP": 30,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karacasu",
+     "secmen": 10006,
+     "oyKullanan": 8371,
+     "gecerliOy": 8047,
+     "partiler": {
+      "AP": 5207,
+      "CHP": 2525,
+      "CKMP": 315,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Koçarlı",
+     "secmen": 13086,
+     "oyKullanan": 11436,
+     "gecerliOy": 11074,
+     "partiler": {
+      "AP": 7329,
+      "CHP": 3095,
+      "CKMP": 572,
+      "YTP": 78,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kuşadası",
+     "secmen": 6388,
+     "oyKullanan": 5538,
+     "gecerliOy": 5412,
+     "partiler": {
+      "AP": 2928,
+      "CHP": 2189,
+      "CKMP": 257,
+      "YTP": 38,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kuyucak",
+     "secmen": 14715,
+     "oyKullanan": 12687,
+     "gecerliOy": 12213,
+     "partiler": {
+      "AP": 7764,
+      "CHP": 3981,
+      "CKMP": 311,
+      "YTP": 157,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 54395,
+     "oyKullanan": 46723,
+     "gecerliOy": 45232,
+     "partiler": {
+      "AP": 29321,
+      "CHP": 12916,
+      "CKMP": 2609,
+      "YTP": 386,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Nazilli",
+     "secmen": 34142,
+     "oyKullanan": 28193,
+     "gecerliOy": 27290,
+     "partiler": {
+      "AP": 16805,
+      "CHP": 9108,
+      "CKMP": 939,
+      "YTP": 438,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Söke",
+     "secmen": 28577,
+     "oyKullanan": 22815,
+     "gecerliOy": 22018,
+     "partiler": {
+      "AP": 13708,
+      "CHP": 7194,
+      "CKMP": 999,
+      "YTP": 117,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sultanhisar",
+     "secmen": 8969,
+     "oyKullanan": 7866,
+     "gecerliOy": 7655,
+     "partiler": {
+      "AP": 3725,
+      "CHP": 3669,
+      "CKMP": 149,
+      "YTP": 112,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yenipazar",
+     "secmen": 7166,
+     "oyKullanan": 6499,
+     "gecerliOy": 6324,
+     "partiler": {
+      "AP": 4366,
+      "CHP": 1832,
+      "CKMP": 124,
+      "YTP": 2,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "10-balikesir.html",
+   "cevre": "Balıkesir",
+   "plaka": 10,
+   "secmen": 347876,
+   "oyKullanan": 294906,
+   "gecerliOy": 285475,
+   "partiler": {
+    "AP": 167088,
+    "CHP": 101784,
+    "CKMP": 11933,
+    "YTP": 4670,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Ayvalık",
+     "secmen": 15768,
+     "oyKullanan": 13783,
+     "gecerliOy": 13497,
+     "partiler": {
+      "AP": 7359,
+      "CHP": 5795,
+      "CKMP": 176,
+      "YTP": 167,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Balya",
+     "secmen": 14454,
+     "oyKullanan": 12641,
+     "gecerliOy": 12206,
+     "partiler": {
+      "AP": 6067,
+      "CHP": 4969,
+      "CKMP": 840,
+      "YTP": 330,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bandırma",
+     "secmen": 25895,
+     "oyKullanan": 21426,
+     "gecerliOy": 20857,
+     "partiler": {
+      "AP": 12831,
+      "CHP": 6532,
+      "CKMP": 1165,
+      "YTP": 329,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bigadiç",
+     "secmen": 19751,
+     "oyKullanan": 17038,
+     "gecerliOy": 16527,
+     "partiler": {
+      "AP": 8888,
+      "CHP": 6877,
+      "CKMP": 497,
+      "YTP": 265,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Burhaniye",
+     "secmen": 16247,
+     "oyKullanan": 14167,
+     "gecerliOy": 13871,
+     "partiler": {
+      "AP": 5677,
+      "CHP": 7833,
+      "CKMP": 255,
+      "YTP": 106,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Dursunbey",
+     "secmen": 20967,
+     "oyKullanan": 18384,
+     "gecerliOy": 17791,
+     "partiler": {
+      "AP": 12195,
+      "CHP": 4624,
+      "CKMP": 920,
+      "YTP": 52,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Edremit",
+     "secmen": 17193,
+     "oyKullanan": 14369,
+     "gecerliOy": 14001,
+     "partiler": {
+      "AP": 7298,
+      "CHP": 6050,
+      "CKMP": 522,
+      "YTP": 131,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Erdek",
+     "secmen": 11136,
+     "oyKullanan": 9632,
+     "gecerliOy": 9365,
+     "partiler": {
+      "AP": 5132,
+      "CHP": 3900,
+      "CKMP": 191,
+      "YTP": 142,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gönen",
+     "secmen": 30292,
+     "oyKullanan": 25650,
+     "gecerliOy": 24585,
+     "partiler": {
+      "AP": 14814,
+      "CHP": 8154,
+      "CKMP": 1107,
+      "YTP": 510,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Havran",
+     "secmen": 10771,
+     "oyKullanan": 9433,
+     "gecerliOy": 9250,
+     "partiler": {
+      "AP": 5375,
+      "CHP": 3466,
+      "CKMP": 261,
+      "YTP": 148,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İvrindi",
+     "secmen": 16337,
+     "oyKullanan": 13820,
+     "gecerliOy": 13400,
+     "partiler": {
+      "AP": 8327,
+      "CHP": 4563,
+      "CKMP": 305,
+      "YTP": 205,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kepsut",
+     "secmen": 14389,
+     "oyKullanan": 13013,
+     "gecerliOy": 12599,
+     "partiler": {
+      "AP": 7794,
+      "CHP": 3807,
+      "CKMP": 797,
+      "YTP": 201,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Manyas",
+     "secmen": 16720,
+     "oyKullanan": 14459,
+     "gecerliOy": 13754,
+     "partiler": {
+      "AP": 8330,
+      "CHP": 4081,
+      "CKMP": 1160,
+      "YTP": 183,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 64679,
+     "oyKullanan": 51699,
+     "gecerliOy": 49890,
+     "partiler": {
+      "AP": 32247,
+      "CHP": 14393,
+      "CKMP": 2304,
+      "YTP": 946,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Savaştepe",
+     "secmen": 10054,
+     "oyKullanan": 8307,
+     "gecerliOy": 8041,
+     "partiler": {
+      "AP": 5316,
+      "CHP": 2301,
+      "CKMP": 205,
+      "YTP": 219,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sındırgı",
+     "secmen": 22548,
+     "oyKullanan": 19980,
+     "gecerliOy": 19324,
+     "partiler": {
+      "AP": 8563,
+      "CHP": 9866,
+      "CKMP": 598,
+      "YTP": 297,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Susurluk",
+     "secmen": 20675,
+     "oyKullanan": 17105,
+     "gecerliOy": 16517,
+     "partiler": {
+      "AP": 10875,
+      "CHP": 4573,
+      "CKMP": 630,
+      "YTP": 439,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "11-bilecik.html",
+   "cevre": "Bilecik",
+   "plaka": 11,
+   "secmen": 79753,
+   "oyKullanan": 69463,
+   "gecerliOy": 66724,
+   "partiler": {
+    "AP": 33900,
+    "CHP": 27684,
+    "CKMP": 5140,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Bozöyük",
+     "secmen": 21031,
+     "oyKullanan": 18507,
+     "gecerliOy": 17797,
+     "partiler": {
+      "AP": 9588,
+      "CHP": 7035,
+      "CKMP": 1174,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gölpazarı",
+     "secmen": 12877,
+     "oyKullanan": 11481,
+     "gecerliOy": 11175,
+     "partiler": {
+      "AP": 6068,
+      "CHP": 4727,
+      "CKMP": 380,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 16098,
+     "oyKullanan": 13582,
+     "gecerliOy": 12996,
+     "partiler": {
+      "AP": 6542,
+      "CHP": 5781,
+      "CKMP": 673,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Osmaneli",
+     "secmen": 6903,
+     "oyKullanan": 6173,
+     "gecerliOy": 5924,
+     "partiler": {
+      "AP": 3699,
+      "CHP": 2015,
+      "CKMP": 210,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Pazaryeri",
+     "secmen": 9398,
+     "oyKullanan": 8071,
+     "gecerliOy": 7640,
+     "partiler": {
+      "AP": 3709,
+      "CHP": 2167,
+      "CKMP": 1764,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Söğüt",
+     "secmen": 13446,
+     "oyKullanan": 11649,
+     "gecerliOy": 11192,
+     "partiler": {
+      "AP": 4294,
+      "CHP": 5959,
+      "CKMP": 939,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "12-bingol.html",
+   "cevre": "Bingöl",
+   "plaka": 12,
+   "secmen": 51909,
+   "oyKullanan": 42042,
+   "gecerliOy": 41095,
+   "partiler": {
+    "AP": 0,
+    "CHP": 12768,
+    "CKMP": 4814,
+    "YTP": 22442,
+    "BĞMZ": 1071
+   },
+   "ilceler": [
+    {
+     "ad": "Genç",
+     "secmen": 9992,
+     "oyKullanan": 7733,
+     "gecerliOy": 7518,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2472,
+      "CKMP": 239,
+      "YTP": 4807,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karlıova",
+     "secmen": 6737,
+     "oyKullanan": 5740,
+     "gecerliOy": 5667,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1481,
+      "CKMP": 819,
+      "YTP": 3321,
+      "BĞMZ": 46
+     }
+    },
+    {
+     "ad": "Kığı",
+     "secmen": 16720,
+     "oyKullanan": 14130,
+     "gecerliOy": 13864,
+     "partiler": {
+      "AP": 0,
+      "CHP": 5838,
+      "CKMP": 1971,
+      "YTP": 5033,
+      "BĞMZ": 1022
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 14148,
+     "oyKullanan": 11548,
+     "gecerliOy": 11215,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2253,
+      "CKMP": 204,
+      "YTP": 8757,
+      "BĞMZ": 1
+     }
+    },
+    {
+     "ad": "Solhan",
+     "secmen": 4312,
+     "oyKullanan": 2891,
+     "gecerliOy": 2831,
+     "partiler": {
+      "AP": 0,
+      "CHP": 724,
+      "CKMP": 1581,
+      "YTP": 524,
+      "BĞMZ": 2
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "13-bitlis.html",
+   "cevre": "Bitlis",
+   "plaka": 13,
+   "secmen": 45830,
+   "oyKullanan": 37960,
+   "gecerliOy": 37261,
+   "partiler": {
+    "AP": 0,
+    "CHP": 11496,
+    "CKMP": 8310,
+    "YTP": 17465,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Adilcevaz",
+     "secmen": 4963,
+     "oyKullanan": 4149,
+     "gecerliOy": 4075,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1463,
+      "CKMP": 403,
+      "YTP": 2209,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ahlat",
+     "secmen": 5264,
+     "oyKullanan": 4458,
+     "gecerliOy": 4381,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1687,
+      "CKMP": 121,
+      "YTP": 2573,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hizan",
+     "secmen": 6428,
+     "oyKullanan": 5077,
+     "gecerliOy": 4984,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1209,
+      "CKMP": 2469,
+      "YTP": 1328,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 14645,
+     "oyKullanan": 11960,
+     "gecerliOy": 11709,
+     "partiler": {
+      "AP": 0,
+      "CHP": 3860,
+      "CKMP": 2410,
+      "YTP": 5439,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mutki",
+     "secmen": 6704,
+     "oyKullanan": 5911,
+     "gecerliOy": 5842,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1630,
+      "CKMP": 185,
+      "YTP": 4027,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Tatvan",
+     "secmen": 7826,
+     "oyKullanan": 6405,
+     "gecerliOy": 6270,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1647,
+      "CKMP": 2722,
+      "YTP": 1889,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "14-bolu.html",
+   "cevre": "Bolu",
+   "plaka": 14,
+   "secmen": 174741,
+   "oyKullanan": 144589,
+   "gecerliOy": 139234,
+   "partiler": {
+    "AP": 32353,
+    "CHP": 40150,
+    "CKMP": 26497,
+    "YTP": 40321,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Akçakoca",
+     "secmen": 10037,
+     "oyKullanan": 8374,
+     "gecerliOy": 7981,
+     "partiler": {
+      "AP": 3938,
+      "CHP": 2224,
+      "CKMP": 1057,
+      "YTP": 852,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Düzce",
+     "secmen": 54157,
+     "oyKullanan": 45097,
+     "gecerliOy": 42885,
+     "partiler": {
+      "AP": 15256,
+      "CHP": 13150,
+      "CKMP": 5890,
+      "YTP": 8589,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gerede",
+     "secmen": 28511,
+     "oyKullanan": 21998,
+     "gecerliOy": 21425,
+     "partiler": {
+      "AP": 2448,
+      "CHP": 3048,
+      "CKMP": 10519,
+      "YTP": 5410,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Göynük",
+     "secmen": 11574,
+     "oyKullanan": 9931,
+     "gecerliOy": 9486,
+     "partiler": {
+      "AP": 4589,
+      "CHP": 3495,
+      "CKMP": 342,
+      "YTP": 1057,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kıbrıscık",
+     "secmen": 4275,
+     "oyKullanan": 3456,
+     "gecerliOy": 3392,
+     "partiler": {
+      "AP": 373,
+      "CHP": 1722,
+      "CKMP": 377,
+      "YTP": 920,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mengen",
+     "secmen": 9952,
+     "oyKullanan": 8124,
+     "gecerliOy": 7711,
+     "partiler": {
+      "AP": 2092,
+      "CHP": 1592,
+      "CKMP": 3431,
+      "YTP": 596,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 28499,
+     "oyKullanan": 24055,
+     "gecerliOy": 23468,
+     "partiler": {
+      "AP": 1647,
+      "CHP": 7047,
+      "CKMP": 3672,
+      "YTP": 11102,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mudurnu",
+     "secmen": 14661,
+     "oyKullanan": 12459,
+     "gecerliOy": 12181,
+     "partiler": {
+      "AP": 269,
+      "CHP": 4068,
+      "CKMP": 581,
+      "YTP": 7263,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Seben",
+     "secmen": 6782,
+     "oyKullanan": 5440,
+     "gecerliOy": 5304,
+     "partiler": {
+      "AP": 163,
+      "CHP": 1947,
+      "CKMP": 99,
+      "YTP": 3095,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yığılca",
+     "secmen": 6293,
+     "oyKullanan": 5655,
+     "gecerliOy": 5401,
+     "partiler": {
+      "AP": 1578,
+      "CHP": 1857,
+      "CKMP": 529,
+      "YTP": 1437,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "15-burdur.html",
+   "cevre": "Burdur",
+   "plaka": 15,
+   "secmen": 88217,
+   "oyKullanan": 70696,
+   "gecerliOy": 66810,
+   "partiler": {
+    "AP": 24600,
+    "CHP": 29595,
+    "CKMP": 0,
+    "YTP": 13593,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Ağlasun",
+     "secmen": 4471,
+     "oyKullanan": 3602,
+     "gecerliOy": 3276,
+     "partiler": {
+      "AP": 1221,
+      "CHP": 1056,
+      "CKMP": 0,
+      "YTP": 549,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bucak",
+     "secmen": 15229,
+     "oyKullanan": 12613,
+     "gecerliOy": 11949,
+     "partiler": {
+      "AP": 7638,
+      "CHP": 3782,
+      "CKMP": 0,
+      "YTP": 529,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gölhisar",
+     "secmen": 14526,
+     "oyKullanan": 10728,
+     "gecerliOy": 10187,
+     "partiler": {
+      "AP": 2428,
+      "CHP": 3518,
+      "CKMP": 0,
+      "YTP": 4241,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 31434,
+     "oyKullanan": 26021,
+     "gecerliOy": 24767,
+     "partiler": {
+      "AP": 6209,
+      "CHP": 12322,
+      "CKMP": 0,
+      "YTP": 6236,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Tefenni",
+     "secmen": 9522,
+     "oyKullanan": 7701,
+     "gecerliOy": 7259,
+     "partiler": {
+      "AP": 2596,
+      "CHP": 3402,
+      "CKMP": 0,
+      "YTP": 1261,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yeşilova",
+     "secmen": 13035,
+     "oyKullanan": 10031,
+     "gecerliOy": 9372,
+     "partiler": {
+      "AP": 4508,
+      "CHP": 5065,
+      "CKMP": 0,
+      "YTP": 777,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "16-bursa.html",
+   "cevre": "Bursa",
+   "plaka": 16,
+   "secmen": 365573,
+   "oyKullanan": 310750,
+   "gecerliOy": 298678,
+   "partiler": {
+    "AP": 188362,
+    "CHP": 87410,
+    "CKMP": 16792,
+    "YTP": 6114,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Gemlik",
+     "secmen": 16332,
+     "oyKullanan": 13687,
+     "gecerliOy": 13363,
+     "partiler": {
+      "AP": 9732,
+      "CHP": 3101,
+      "CKMP": 294,
+      "YTP": 236,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İnegöl",
+     "secmen": 39824,
+     "oyKullanan": 33983,
+     "gecerliOy": 32186,
+     "partiler": {
+      "AP": 20852,
+      "CHP": 8302,
+      "CKMP": 2220,
+      "YTP": 812,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İznik",
+     "secmen": 13928,
+     "oyKullanan": 12288,
+     "gecerliOy": 11917,
+     "partiler": {
+      "AP": 6681,
+      "CHP": 4380,
+      "CKMP": 732,
+      "YTP": 124,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karacabey",
+     "secmen": 28507,
+     "oyKullanan": 24917,
+     "gecerliOy": 24042,
+     "partiler": {
+      "AP": 14404,
+      "CHP": 8658,
+      "CKMP": 627,
+      "YTP": 353,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Keles",
+     "secmen": 10492,
+     "oyKullanan": 9088,
+     "gecerliOy": 8721,
+     "partiler": {
+      "AP": 5561,
+      "CHP": 2554,
+      "CKMP": 400,
+      "YTP": 206,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 141424,
+     "oyKullanan": 116827,
+     "gecerliOy": 112236,
+     "partiler": {
+      "AP": 71278,
+      "CHP": 32189,
+      "CKMP": 6151,
+      "YTP": 2618,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "M.Kemalpaşa",
+     "secmen": 40960,
+     "oyKullanan": 34695,
+     "gecerliOy": 33238,
+     "partiler": {
+      "AP": 21419,
+      "CHP": 8014,
+      "CKMP": 3036,
+      "YTP": 769,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mudanya",
+     "secmen": 13296,
+     "oyKullanan": 11556,
+     "gecerliOy": 11260,
+     "partiler": {
+      "AP": 6020,
+      "CHP": 4304,
+      "CKMP": 831,
+      "YTP": 105,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Orhaneli",
+     "secmen": 22903,
+     "oyKullanan": 19857,
+     "gecerliOy": 18831,
+     "partiler": {
+      "AP": 12208,
+      "CHP": 4847,
+      "CKMP": 1221,
+      "YTP": 555,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Orhangazi",
+     "secmen": 14886,
+     "oyKullanan": 13208,
+     "gecerliOy": 12826,
+     "partiler": {
+      "AP": 8368,
+      "CHP": 3833,
+      "CKMP": 502,
+      "YTP": 123,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yenişehir",
+     "secmen": 23021,
+     "oyKullanan": 20644,
+     "gecerliOy": 20058,
+     "partiler": {
+      "AP": 11839,
+      "CHP": 7228,
+      "CKMP": 778,
+      "YTP": 213,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "17-canakkale.html",
+   "cevre": "Çanakkale",
+   "plaka": 17,
+   "secmen": 174089,
+   "oyKullanan": 145796,
+   "gecerliOy": 141097,
+   "partiler": {
+    "AP": 43730,
+    "CHP": 49304,
+    "CKMP": 13942,
+    "YTP": 33720,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Ayvacık",
+     "secmen": 13935,
+     "oyKullanan": 11783,
+     "gecerliOy": 11581,
+     "partiler": {
+      "AP": 1545,
+      "CHP": 5168,
+      "CKMP": 408,
+      "YTP": 4460,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bayramiç",
+     "secmen": 16921,
+     "oyKullanan": 14617,
+     "gecerliOy": 14155,
+     "partiler": {
+      "AP": 722,
+      "CHP": 6776,
+      "CKMP": 620,
+      "YTP": 6037,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Biga",
+     "secmen": 38569,
+     "oyKullanan": 31097,
+     "gecerliOy": 29698,
+     "partiler": {
+      "AP": 14469,
+      "CHP": 7752,
+      "CKMP": 3027,
+      "YTP": 4450,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bozcaada",
+     "secmen": 1046,
+     "oyKullanan": 647,
+     "gecerliOy": 644,
+     "partiler": {
+      "AP": 21,
+      "CHP": 138,
+      "CKMP": 90,
+      "YTP": 395,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çan",
+     "secmen": 17483,
+     "oyKullanan": 15042,
+     "gecerliOy": 14388,
+     "partiler": {
+      "AP": 8895,
+      "CHP": 4602,
+      "CKMP": 641,
+      "YTP": 282,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Eceabat",
+     "secmen": 4670,
+     "oyKullanan": 3982,
+     "gecerliOy": 3844,
+     "partiler": {
+      "AP": 1127,
+      "CHP": 1695,
+      "CKMP": 693,
+      "YTP": 329,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ezine",
+     "secmen": 12904,
+     "oyKullanan": 11402,
+     "gecerliOy": 11107,
+     "partiler": {
+      "AP": 890,
+      "CHP": 4416,
+      "CKMP": 793,
+      "YTP": 5004,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gelibolu",
+     "secmen": 15200,
+     "oyKullanan": 12617,
+     "gecerliOy": 12224,
+     "partiler": {
+      "AP": 1060,
+      "CHP": 5945,
+      "CKMP": 1269,
+      "YTP": 3953,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İmroz",
+     "secmen": 3942,
+     "oyKullanan": 2813,
+     "gecerliOy": 2653,
+     "partiler": {
+      "AP": 1520,
+      "CHP": 383,
+      "CKMP": 52,
+      "YTP": 696,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Lapseki",
+     "secmen": 12422,
+     "oyKullanan": 10502,
+     "gecerliOy": 10114,
+     "partiler": {
+      "AP": 1255,
+      "CHP": 2704,
+      "CKMP": 2400,
+      "YTP": 3753,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 18995,
+     "oyKullanan": 15676,
+     "gecerliOy": 15071,
+     "partiler": {
+      "AP": 2776,
+      "CHP": 5858,
+      "CKMP": 3011,
+      "YTP": 3426,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yenice",
+     "secmen": 18002,
+     "oyKullanan": 15618,
+     "gecerliOy": 15110,
+     "partiler": {
+      "AP": 9450,
+      "CHP": 3787,
+      "CKMP": 938,
+      "YTP": 935,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "18-cankiri.html",
+   "cevre": "Çankırı",
+   "plaka": 18,
+   "secmen": 117552,
+   "oyKullanan": 94922,
+   "gecerliOy": 90017,
+   "partiler": {
+    "AP": 12741,
+    "CHP": 20910,
+    "CKMP": 56166,
+    "YTP": 0,
+    "BĞMZ": 200
+   },
+   "ilceler": [
+    {
+     "ad": "Çerkeş",
+     "secmen": 12426,
+     "oyKullanan": 9455,
+     "gecerliOy": 8976,
+     "partiler": {
+      "AP": 1242,
+      "CHP": 3743,
+      "CKMP": 3973,
+      "YTP": 0,
+      "BĞMZ": 18
+     }
+    },
+    {
+     "ad": "Eldivan",
+     "secmen": 4822,
+     "oyKullanan": 4042,
+     "gecerliOy": 3889,
+     "partiler": {
+      "AP": 281,
+      "CHP": 422,
+      "CKMP": 3174,
+      "YTP": 0,
+      "BĞMZ": 12
+     }
+    },
+    {
+     "ad": "Eskipazar",
+     "secmen": 10342,
+     "oyKullanan": 8198,
+     "gecerliOy": 7692,
+     "partiler": {
+      "AP": 679,
+      "CHP": 2014,
+      "CKMP": 4982,
+      "YTP": 0,
+      "BĞMZ": 17
+     }
+    },
+    {
+     "ad": "Ilgaz",
+     "secmen": 13742,
+     "oyKullanan": 11407,
+     "gecerliOy": 10808,
+     "partiler": {
+      "AP": 954,
+      "CHP": 1643,
+      "CKMP": 8204,
+      "YTP": 0,
+      "BĞMZ": 7
+     }
+    },
+    {
+     "ad": "Kurşunlu",
+     "secmen": 14879,
+     "oyKullanan": 12143,
+     "gecerliOy": 11427,
+     "partiler": {
+      "AP": 3949,
+      "CHP": 2757,
+      "CKMP": 4717,
+      "YTP": 0,
+      "BĞMZ": 4
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 26574,
+     "oyKullanan": 21363,
+     "gecerliOy": 20336,
+     "partiler": {
+      "AP": 1601,
+      "CHP": 5193,
+      "CKMP": 13484,
+      "YTP": 0,
+      "BĞMZ": 58
+     }
+    },
+    {
+     "ad": "Orta",
+     "secmen": 9914,
+     "oyKullanan": 8025,
+     "gecerliOy": 7591,
+     "partiler": {
+      "AP": 1968,
+      "CHP": 1150,
+      "CKMP": 4463,
+      "YTP": 0,
+      "BĞMZ": 10
+     }
+    },
+    {
+     "ad": "Ovacık",
+     "secmen": 6700,
+     "oyKullanan": 4762,
+     "gecerliOy": 4529,
+     "partiler": {
+      "AP": 773,
+      "CHP": 1098,
+      "CKMP": 2634,
+      "YTP": 0,
+      "BĞMZ": 24
+     }
+    },
+    {
+     "ad": "Şabanözü",
+     "secmen": 8380,
+     "oyKullanan": 7122,
+     "gecerliOy": 6692,
+     "partiler": {
+      "AP": 598,
+      "CHP": 2029,
+      "CKMP": 4031,
+      "YTP": 0,
+      "BĞMZ": 34
+     }
+    },
+    {
+     "ad": "Yapraklı",
+     "secmen": 9755,
+     "oyKullanan": 8405,
+     "gecerliOy": 8077,
+     "partiler": {
+      "AP": 696,
+      "CHP": 861,
+      "CKMP": 6504,
+      "YTP": 0,
+      "BĞMZ": 16
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "19-corum.html",
+   "cevre": "Çorum",
+   "plaka": 19,
+   "secmen": 214038,
+   "oyKullanan": 180657,
+   "gecerliOy": 170821,
+   "partiler": {
+    "AP": 89903,
+    "CHP": 50563,
+    "CKMP": 27502,
+    "YTP": 0,
+    "BĞMZ": 2741
+   },
+   "ilceler": [
+    {
+     "ad": "Alaca",
+     "secmen": 26130,
+     "oyKullanan": 20900,
+     "gecerliOy": 19916,
+     "partiler": {
+      "AP": 5189,
+      "CHP": 7617,
+      "CKMP": 6780,
+      "YTP": 0,
+      "BĞMZ": 218
+     }
+    },
+    {
+     "ad": "Bayat",
+     "secmen": 11438,
+     "oyKullanan": 9867,
+     "gecerliOy": 9249,
+     "partiler": {
+      "AP": 5315,
+      "CHP": 2412,
+      "CKMP": 1412,
+      "YTP": 0,
+      "BĞMZ": 110
+     }
+    },
+    {
+     "ad": "İskilip",
+     "secmen": 28526,
+     "oyKullanan": 23689,
+     "gecerliOy": 22160,
+     "partiler": {
+      "AP": 13994,
+      "CHP": 4594,
+      "CKMP": 3423,
+      "YTP": 0,
+      "BĞMZ": 149
+     }
+    },
+    {
+     "ad": "Kargı",
+     "secmen": 14896,
+     "oyKullanan": 11529,
+     "gecerliOy": 10931,
+     "partiler": {
+      "AP": 5987,
+      "CHP": 2575,
+      "CKMP": 2339,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mecitözü",
+     "secmen": 16234,
+     "oyKullanan": 14220,
+     "gecerliOy": 13276,
+     "partiler": {
+      "AP": 6015,
+      "CHP": 4364,
+      "CKMP": 2867,
+      "YTP": 0,
+      "BĞMZ": 30
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 55737,
+     "oyKullanan": 46899,
+     "gecerliOy": 44169,
+     "partiler": {
+      "AP": 25877,
+      "CHP": 11989,
+      "CKMP": 4767,
+      "YTP": 0,
+      "BĞMZ": 1536
+     }
+    },
+    {
+     "ad": "Ortaköy",
+     "secmen": 4487,
+     "oyKullanan": 3767,
+     "gecerliOy": 3586,
+     "partiler": {
+      "AP": 1465,
+      "CHP": 1772,
+      "CKMP": 309,
+      "YTP": 0,
+      "BĞMZ": 40
+     }
+    },
+    {
+     "ad": "Osmancık",
+     "secmen": 20936,
+     "oyKullanan": 18284,
+     "gecerliOy": 17486,
+     "partiler": {
+      "AP": 11906,
+      "CHP": 4469,
+      "CKMP": 885,
+      "YTP": 0,
+      "BĞMZ": 226
+     }
+    },
+    {
+     "ad": "Sungurlu",
+     "secmen": 35654,
+     "oyKullanan": 31505,
+     "gecerliOy": 30078,
+     "partiler": {
+      "AP": 14155,
+      "CHP": 10771,
+      "CKMP": 4720,
+      "YTP": 0,
+      "BĞMZ": 432
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "20-denizli.html",
+   "cevre": "Denizli",
+   "plaka": 20,
+   "secmen": 213119,
+   "oyKullanan": 170662,
+   "gecerliOy": 163750,
+   "partiler": {
+    "AP": 92355,
+    "CHP": 65426,
+    "CKMP": 2904,
+    "YTP": 2119,
+    "BĞMZ": 811
+   },
+   "ilceler": [
+    {
+     "ad": "Acıpayam",
+     "secmen": 30158,
+     "oyKullanan": 23356,
+     "gecerliOy": 22277,
+     "partiler": {
+      "AP": 15907,
+      "CHP": 5714,
+      "CKMP": 320,
+      "YTP": 164,
+      "BĞMZ": 102
+     }
+    },
+    {
+     "ad": "Buldan",
+     "secmen": 11746,
+     "oyKullanan": 10361,
+     "gecerliOy": 9994,
+     "partiler": {
+      "AP": 4921,
+      "CHP": 4780,
+      "CKMP": 175,
+      "YTP": 74,
+      "BĞMZ": 44
+     }
+    },
+    {
+     "ad": "Çal",
+     "secmen": 31080,
+     "oyKullanan": 24339,
+     "gecerliOy": 23268,
+     "partiler": {
+      "AP": 11988,
+      "CHP": 10589,
+      "CKMP": 373,
+      "YTP": 277,
+      "BĞMZ": 41
+     }
+    },
+    {
+     "ad": "Çameli",
+     "secmen": 8155,
+     "oyKullanan": 6744,
+     "gecerliOy": 6386,
+     "partiler": {
+      "AP": 4294,
+      "CHP": 1884,
+      "CKMP": 118,
+      "YTP": 57,
+      "BĞMZ": 41
+     }
+    },
+    {
+     "ad": "Çardak",
+     "secmen": 7463,
+     "oyKullanan": 5899,
+     "gecerliOy": 5709,
+     "partiler": {
+      "AP": 3317,
+      "CHP": 1992,
+      "CKMP": 238,
+      "YTP": 99,
+      "BĞMZ": 51
+     }
+    },
+    {
+     "ad": "Çivril",
+     "secmen": 23145,
+     "oyKullanan": 19169,
+     "gecerliOy": 18518,
+     "partiler": {
+      "AP": 8773,
+      "CHP": 9395,
+      "CKMP": 270,
+      "YTP": 64,
+      "BĞMZ": 16
+     }
+    },
+    {
+     "ad": "Güney",
+     "secmen": 7639,
+     "oyKullanan": 5737,
+     "gecerliOy": 5548,
+     "partiler": {
+      "AP": 2144,
+      "CHP": 3042,
+      "CKMP": 75,
+      "YTP": 151,
+      "BĞMZ": 33
+     }
+    },
+    {
+     "ad": "Kale",
+     "secmen": 9142,
+     "oyKullanan": 7150,
+     "gecerliOy": 6794,
+     "partiler": {
+      "AP": 4320,
+      "CHP": 2134,
+      "CKMP": 131,
+      "YTP": 131,
+      "BĞMZ": 78
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 42626,
+     "oyKullanan": 35531,
+     "gecerliOy": 34129,
+     "partiler": {
+      "AP": 18918,
+      "CHP": 13473,
+      "CKMP": 807,
+      "YTP": 684,
+      "BĞMZ": 247
+     }
+    },
+    {
+     "ad": "Sarayköy",
+     "secmen": 15775,
+     "oyKullanan": 13551,
+     "gecerliOy": 13080,
+     "partiler": {
+      "AP": 6157,
+      "CHP": 6419,
+      "CKMP": 180,
+      "YTP": 276,
+      "BĞMZ": 48
+     }
+    },
+    {
+     "ad": "Tavas",
+     "secmen": 26190,
+     "oyKullanan": 18825,
+     "gecerliOy": 18047,
+     "partiler": {
+      "AP": 11616,
+      "CHP": 6004,
+      "CKMP": 217,
+      "YTP": 142,
+      "BĞMZ": 110
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "21-diyarbakir.html",
+   "cevre": "Diyarbakır",
+   "plaka": 21,
+   "secmen": 166637,
+   "oyKullanan": 126841,
+   "gecerliOy": 121653,
+   "partiler": {
+    "AP": 23401,
+    "CHP": 39857,
+    "CKMP": 6331,
+    "YTP": 52012,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Bismil",
+     "secmen": 13809,
+     "oyKullanan": 11989,
+     "gecerliOy": 11608,
+     "partiler": {
+      "AP": 1037,
+      "CHP": 5773,
+      "CKMP": 275,
+      "YTP": 4524,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çermik",
+     "secmen": 12227,
+     "oyKullanan": 9573,
+     "gecerliOy": 9181,
+     "partiler": {
+      "AP": 864,
+      "CHP": 3610,
+      "CKMP": 242,
+      "YTP": 4465,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çınar",
+     "secmen": 8893,
+     "oyKullanan": 7308,
+     "gecerliOy": 7075,
+     "partiler": {
+      "AP": 771,
+      "CHP": 3492,
+      "CKMP": 139,
+      "YTP": 2673,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çüngüş",
+     "secmen": 5561,
+     "oyKullanan": 4505,
+     "gecerliOy": 4123,
+     "partiler": {
+      "AP": 1372,
+      "CHP": 1750,
+      "CKMP": 267,
+      "YTP": 745,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Dicle",
+     "secmen": 9671,
+     "oyKullanan": 7458,
+     "gecerliOy": 7041,
+     "partiler": {
+      "AP": 1602,
+      "CHP": 2150,
+      "CKMP": 507,
+      "YTP": 2787,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ergani",
+     "secmen": 15553,
+     "oyKullanan": 12452,
+     "gecerliOy": 11989,
+     "partiler": {
+      "AP": 1286,
+      "CHP": 4821,
+      "CKMP": 221,
+      "YTP": 5661,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hani",
+     "secmen": 5327,
+     "oyKullanan": 3959,
+     "gecerliOy": 3812,
+     "partiler": {
+      "AP": 255,
+      "CHP": 1589,
+      "CKMP": 130,
+      "YTP": 1830,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hazro",
+     "secmen": 5415,
+     "oyKullanan": 4687,
+     "gecerliOy": 4520,
+     "partiler": {
+      "AP": 608,
+      "CHP": 810,
+      "CKMP": 129,
+      "YTP": 2973,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kulp",
+     "secmen": 10106,
+     "oyKullanan": 7972,
+     "gecerliOy": 7759,
+     "partiler": {
+      "AP": 1828,
+      "CHP": 1891,
+      "CKMP": 355,
+      "YTP": 3687,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Lice",
+     "secmen": 12648,
+     "oyKullanan": 8982,
+     "gecerliOy": 8701,
+     "partiler": {
+      "AP": 1020,
+      "CHP": 1594,
+      "CKMP": 1738,
+      "YTP": 4327,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 54165,
+     "oyKullanan": 37065,
+     "gecerliOy": 35313,
+     "partiler": {
+      "AP": 8335,
+      "CHP": 11717,
+      "CKMP": 1904,
+      "YTP": 13316,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Silvan",
+     "secmen": 13262,
+     "oyKullanan": 10891,
+     "gecerliOy": 10531,
+     "partiler": {
+      "AP": 4423,
+      "CHP": 660,
+      "CKMP": 424,
+      "YTP": 5024,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "22-edirne.html",
+   "cevre": "Edirne",
+   "plaka": 22,
+   "secmen": 134103,
+   "oyKullanan": 115017,
+   "gecerliOy": 110665,
+   "partiler": {
+    "AP": 29075,
+    "CHP": 42551,
+    "CKMP": 11182,
+    "YTP": 27046,
+    "BĞMZ": 811
+   },
+   "ilceler": [
+    {
+     "ad": "Enez",
+     "secmen": 5000,
+     "oyKullanan": 4448,
+     "gecerliOy": 4222,
+     "partiler": {
+      "AP": 2168,
+      "CHP": 1061,
+      "CKMP": 429,
+      "YTP": 455,
+      "BĞMZ": 109
+     }
+    },
+    {
+     "ad": "Havsa",
+     "secmen": 11769,
+     "oyKullanan": 10286,
+     "gecerliOy": 9833,
+     "partiler": {
+      "AP": 4917,
+      "CHP": 2792,
+      "CKMP": 1051,
+      "YTP": 1007,
+      "BĞMZ": 66
+     }
+    },
+    {
+     "ad": "İpsala",
+     "secmen": 11449,
+     "oyKullanan": 9636,
+     "gecerliOy": 9304,
+     "partiler": {
+      "AP": 1290,
+      "CHP": 3020,
+      "CKMP": 1608,
+      "YTP": 3275,
+      "BĞMZ": 111
+     }
+    },
+    {
+     "ad": "Keşan",
+     "secmen": 22891,
+     "oyKullanan": 19626,
+     "gecerliOy": 18936,
+     "partiler": {
+      "AP": 2304,
+      "CHP": 9102,
+      "CKMP": 1655,
+      "YTP": 5761,
+      "BĞMZ": 114
+     }
+    },
+    {
+     "ad": "Lalapaşa",
+     "secmen": 6377,
+     "oyKullanan": 5710,
+     "gecerliOy": 5473,
+     "partiler": {
+      "AP": 3066,
+      "CHP": 1920,
+      "CKMP": 280,
+      "YTP": 173,
+      "BĞMZ": 34
+     }
+    },
+    {
+     "ad": "Meriç",
+     "secmen": 9975,
+     "oyKullanan": 8254,
+     "gecerliOy": 7896,
+     "partiler": {
+      "AP": 912,
+      "CHP": 3382,
+      "CKMP": 1141,
+      "YTP": 2414,
+      "BĞMZ": 47
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 32606,
+     "oyKullanan": 27507,
+     "gecerliOy": 26440,
+     "partiler": {
+      "AP": 12789,
+      "CHP": 8765,
+      "CKMP": 2406,
+      "YTP": 2270,
+      "BĞMZ": 210
+     }
+    },
+    {
+     "ad": "Uzunköprü",
+     "secmen": 34016,
+     "oyKullanan": 29560,
+     "gecerliOy": 28561,
+     "partiler": {
+      "AP": 1629,
+      "CHP": 12509,
+      "CKMP": 2612,
+      "YTP": 11691,
+      "BĞMZ": 120
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "23-elazig.html",
+   "cevre": "Elazığ",
+   "plaka": 23,
+   "secmen": 121303,
+   "oyKullanan": 89408,
+   "gecerliOy": 84868,
+   "partiler": {
+    "AP": 35909,
+    "CHP": 30017,
+    "CKMP": 18610,
+    "YTP": 573,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Ağın",
+     "secmen": 3701,
+     "oyKullanan": 2956,
+     "gecerliOy": 2820,
+     "partiler": {
+      "AP": 1393,
+      "CHP": 1125,
+      "CKMP": 290,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Baskil",
+     "secmen": 8654,
+     "oyKullanan": 6550,
+     "gecerliOy": 6231,
+     "partiler": {
+      "AP": 3201,
+      "CHP": 1905,
+      "CKMP": 1123,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karakoçan",
+     "secmen": 11698,
+     "oyKullanan": 8839,
+     "gecerliOy": 8441,
+     "partiler": {
+      "AP": 2876,
+      "CHP": 3534,
+      "CKMP": 1831,
+      "YTP": 209,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Keban",
+     "secmen": 3474,
+     "oyKullanan": 3123,
+     "gecerliOy": 3028,
+     "partiler": {
+      "AP": 1527,
+      "CHP": 1270,
+      "CKMP": 231,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Maden",
+     "secmen": 12452,
+     "oyKullanan": 9961,
+     "gecerliOy": 9478,
+     "partiler": {
+      "AP": 3995,
+      "CHP": 4351,
+      "CKMP": 1119,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 51848,
+     "oyKullanan": 36566,
+     "gecerliOy": 34622,
+     "partiler": {
+      "AP": 15343,
+      "CHP": 11475,
+      "CKMP": 7847,
+      "YTP": 216,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Palu",
+     "secmen": 21162,
+     "oyKullanan": 15500,
+     "gecerliOy": 14721,
+     "partiler": {
+      "AP": 5503,
+      "CHP": 4419,
+      "CKMP": 4651,
+      "YTP": 148,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sivrice",
+     "secmen": 7814,
+     "oyKullanan": 5913,
+     "gecerliOy": 5527,
+     "partiler": {
+      "AP": 2071,
+      "CHP": 1938,
+      "CKMP": 1518,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "24-erzincan.html",
+   "cevre": "Erzincan",
+   "plaka": 24,
+   "secmen": 101733,
+   "oyKullanan": 83466,
+   "gecerliOy": 81386,
+   "partiler": {
+    "AP": 3893,
+    "CHP": 39438,
+    "CKMP": 1648,
+    "YTP": 36033,
+    "BĞMZ": 374
+   },
+   "ilceler": [
+    {
+     "ad": "Çayırlı",
+     "secmen": 11158,
+     "oyKullanan": 9444,
+     "gecerliOy": 9241,
+     "partiler": {
+      "AP": 206,
+      "CHP": 3870,
+      "CKMP": 156,
+      "YTP": 5005,
+      "BĞMZ": 4
+     }
+    },
+    {
+     "ad": "İliç",
+     "secmen": 7082,
+     "oyKullanan": 6190,
+     "gecerliOy": 6037,
+     "partiler": {
+      "AP": 418,
+      "CHP": 2651,
+      "CKMP": 137,
+      "YTP": 2831,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kemah",
+     "secmen": 10002,
+     "oyKullanan": 8463,
+     "gecerliOy": 8248,
+     "partiler": {
+      "AP": 649,
+      "CHP": 4732,
+      "CKMP": 311,
+      "YTP": 2554,
+      "BĞMZ": 2
+     }
+    },
+    {
+     "ad": "Kemaliye",
+     "secmen": 8770,
+     "oyKullanan": 7318,
+     "gecerliOy": 7165,
+     "partiler": {
+      "AP": 105,
+      "CHP": 3618,
+      "CKMP": 155,
+      "YTP": 3187,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 35400,
+     "oyKullanan": 28434,
+     "gecerliOy": 27520,
+     "partiler": {
+      "AP": 1688,
+      "CHP": 12616,
+      "CKMP": 490,
+      "YTP": 12476,
+      "BĞMZ": 250
+     }
+    },
+    {
+     "ad": "Refahiye",
+     "secmen": 15529,
+     "oyKullanan": 12311,
+     "gecerliOy": 12132,
+     "partiler": {
+      "AP": 368,
+      "CHP": 6193,
+      "CKMP": 272,
+      "YTP": 5185,
+      "BĞMZ": 114
+     }
+    },
+    {
+     "ad": "Tercan",
+     "secmen": 13792,
+     "oyKullanan": 11306,
+     "gecerliOy": 11043,
+     "partiler": {
+      "AP": 359,
+      "CHP": 5758,
+      "CKMP": 127,
+      "YTP": 4795,
+      "BĞMZ": 4
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "25-erzurum.html",
+   "cevre": "Erzurum",
+   "plaka": 25,
+   "secmen": 242181,
+   "oyKullanan": 193405,
+   "gecerliOy": 188800,
+   "partiler": {
+    "AP": 13748,
+    "CHP": 53008,
+    "CKMP": 35262,
+    "YTP": 85468,
+    "BĞMZ": 1314
+   },
+   "ilceler": [
+    {
+     "ad": "Aşkale",
+     "secmen": 15852,
+     "oyKullanan": 13108,
+     "gecerliOy": 12654,
+     "partiler": {
+      "AP": 674,
+      "CHP": 4727,
+      "CKMP": 2690,
+      "YTP": 4521,
+      "BĞMZ": 42
+     }
+    },
+    {
+     "ad": "Çat",
+     "secmen": 6913,
+     "oyKullanan": 5895,
+     "gecerliOy": 5781,
+     "partiler": {
+      "AP": 245,
+      "CHP": 1933,
+      "CKMP": 2760,
+      "YTP": 812,
+      "BĞMZ": 31
+     }
+    },
+    {
+     "ad": "Hınıs",
+     "secmen": 18082,
+     "oyKullanan": 14176,
+     "gecerliOy": 13974,
+     "partiler": {
+      "AP": 833,
+      "CHP": 5274,
+      "CKMP": 4074,
+      "YTP": 3613,
+      "BĞMZ": 180
+     }
+    },
+    {
+     "ad": "Horasan",
+     "secmen": 14925,
+     "oyKullanan": 12634,
+     "gecerliOy": 12300,
+     "partiler": {
+      "AP": 1579,
+      "CHP": 2050,
+      "CKMP": 1819,
+      "YTP": 6809,
+      "BĞMZ": 43
+     }
+    },
+    {
+     "ad": "İspir",
+     "secmen": 25645,
+     "oyKullanan": 18721,
+     "gecerliOy": 18097,
+     "partiler": {
+      "AP": 1754,
+      "CHP": 5071,
+      "CKMP": 2560,
+      "YTP": 8547,
+      "BĞMZ": 165
+     }
+    },
+    {
+     "ad": "Karayazı",
+     "secmen": 9828,
+     "oyKullanan": 8304,
+     "gecerliOy": 8223,
+     "partiler": {
+      "AP": 362,
+      "CHP": 939,
+      "CKMP": 965,
+      "YTP": 5907,
+      "BĞMZ": 50
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 59560,
+     "oyKullanan": 46304,
+     "gecerliOy": 45173,
+     "partiler": {
+      "AP": 4768,
+      "CHP": 13495,
+      "CKMP": 10129,
+      "YTP": 16410,
+      "BĞMZ": 371
+     }
+    },
+    {
+     "ad": "Narman",
+     "secmen": 9805,
+     "oyKullanan": 8025,
+     "gecerliOy": 7764,
+     "partiler": {
+      "AP": 257,
+      "CHP": 859,
+      "CKMP": 2366,
+      "YTP": 4245,
+      "BĞMZ": 37
+     }
+    },
+    {
+     "ad": "Oltu",
+     "secmen": 13261,
+     "oyKullanan": 10721,
+     "gecerliOy": 10517,
+     "partiler": {
+      "AP": 214,
+      "CHP": 3414,
+      "CKMP": 952,
+      "YTP": 5901,
+      "BĞMZ": 36
+     }
+    },
+    {
+     "ad": "Olur",
+     "secmen": 8142,
+     "oyKullanan": 6872,
+     "gecerliOy": 6719,
+     "partiler": {
+      "AP": 258,
+      "CHP": 2349,
+      "CKMP": 387,
+      "YTP": 3671,
+      "BĞMZ": 54
+     }
+    },
+    {
+     "ad": "Pasinler",
+     "secmen": 16950,
+     "oyKullanan": 14315,
+     "gecerliOy": 13967,
+     "partiler": {
+      "AP": 596,
+      "CHP": 2926,
+      "CKMP": 888,
+      "YTP": 9518,
+      "BĞMZ": 39
+     }
+    },
+    {
+     "ad": "Şenkaya",
+     "secmen": 15685,
+     "oyKullanan": 12692,
+     "gecerliOy": 12450,
+     "partiler": {
+      "AP": 480,
+      "CHP": 5804,
+      "CKMP": 665,
+      "YTP": 5383,
+      "BĞMZ": 118
+     }
+    },
+    {
+     "ad": "Tekman",
+     "secmen": 8357,
+     "oyKullanan": 7277,
+     "gecerliOy": 7177,
+     "partiler": {
+      "AP": 337,
+      "CHP": 1399,
+      "CKMP": 3643,
+      "YTP": 1719,
+      "BĞMZ": 79
+     }
+    },
+    {
+     "ad": "Tortum",
+     "secmen": 19176,
+     "oyKullanan": 14361,
+     "gecerliOy": 14004,
+     "partiler": {
+      "AP": 1391,
+      "CHP": 2768,
+      "CKMP": 1364,
+      "YTP": 8412,
+      "BĞMZ": 69
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "26-eskisehir.html",
+   "cevre": "Eskişehir",
+   "plaka": 26,
+   "secmen": 177649,
+   "oyKullanan": 152249,
+   "gecerliOy": 146251,
+   "partiler": {
+    "AP": 54841,
+    "CHP": 51627,
+    "CKMP": 36171,
+    "YTP": 2640,
+    "BĞMZ": 1227
+   },
+   "ilceler": [
+    {
+     "ad": "Çifteler",
+     "secmen": 8824,
+     "oyKullanan": 7847,
+     "gecerliOy": 7528,
+     "partiler": {
+      "AP": 3677,
+      "CHP": 2518,
+      "CKMP": 1121,
+      "YTP": 182,
+      "BĞMZ": 30
+     }
+    },
+    {
+     "ad": "Mahmudiye",
+     "secmen": 5333,
+     "oyKullanan": 4712,
+     "gecerliOy": 4488,
+     "partiler": {
+      "AP": 1649,
+      "CHP": 1661,
+      "CKMP": 1011,
+      "YTP": 129,
+      "BĞMZ": 38
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 99876,
+     "oyKullanan": 84553,
+     "gecerliOy": 81454,
+     "partiler": {
+      "AP": 24746,
+      "CHP": 28911,
+      "CKMP": 25711,
+      "YTP": 1320,
+      "BĞMZ": 766
+     }
+    },
+    {
+     "ad": "Mihalıçcık",
+     "secmen": 19496,
+     "oyKullanan": 16781,
+     "gecerliOy": 16114,
+     "partiler": {
+      "AP": 9005,
+      "CHP": 5476,
+      "CKMP": 1212,
+      "YTP": 314,
+      "BĞMZ": 107
+     }
+    },
+    {
+     "ad": "Sarıcakaya",
+     "secmen": 6616,
+     "oyKullanan": 5947,
+     "gecerliOy": 5711,
+     "partiler": {
+      "AP": 1494,
+      "CHP": 2024,
+      "CKMP": 1964,
+      "YTP": 177,
+      "BĞMZ": 52
+     }
+    },
+    {
+     "ad": "Seyitgazi",
+     "secmen": 13251,
+     "oyKullanan": 11466,
+     "gecerliOy": 10878,
+     "partiler": {
+      "AP": 4693,
+      "CHP": 3686,
+      "CKMP": 2178,
+      "YTP": 218,
+      "BĞMZ": 103
+     }
+    },
+    {
+     "ad": "Sivrihisar",
+     "secmen": 24253,
+     "oyKullanan": 20943,
+     "gecerliOy": 20078,
+     "partiler": {
+      "AP": 9577,
+      "CHP": 7351,
+      "CKMP": 2974,
+      "YTP": 300,
+      "BĞMZ": 131
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "27-gaziantep.html",
+   "cevre": "Gaziantep",
+   "plaka": 27,
+   "secmen": 191785,
+   "oyKullanan": 163950,
+   "gecerliOy": 156907,
+   "partiler": {
+    "AP": 46066,
+    "CHP": 73766,
+    "CKMP": 4313,
+    "YTP": 32776,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Araban",
+     "secmen": 5599,
+     "oyKullanan": 5004,
+     "gecerliOy": 4840,
+     "partiler": {
+      "AP": 1193,
+      "CHP": 2219,
+      "CKMP": 158,
+      "YTP": 1270,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İslahiye",
+     "secmen": 19288,
+     "oyKullanan": 17106,
+     "gecerliOy": 16456,
+     "partiler": {
+      "AP": 8099,
+      "CHP": 7212,
+      "CKMP": 632,
+      "YTP": 515,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kilis",
+     "secmen": 30875,
+     "oyKullanan": 25959,
+     "gecerliOy": 24552,
+     "partiler": {
+      "AP": 9728,
+      "CHP": 9005,
+      "CKMP": 799,
+      "YTP": 5032,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 87369,
+     "oyKullanan": 72860,
+     "gecerliOy": 69546,
+     "partiler": {
+      "AP": 23909,
+      "CHP": 35159,
+      "CKMP": 2061,
+      "YTP": 8241,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Nizip",
+     "secmen": 30063,
+     "oyKullanan": 26164,
+     "gecerliOy": 25195,
+     "partiler": {
+      "AP": 715,
+      "CHP": 10747,
+      "CKMP": 400,
+      "YTP": 13509,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Oğuzeli",
+     "secmen": 13126,
+     "oyKullanan": 11679,
+     "gecerliOy": 11229,
+     "partiler": {
+      "AP": 2110,
+      "CHP": 6442,
+      "CKMP": 157,
+      "YTP": 2520,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yavuzeli",
+     "secmen": 5465,
+     "oyKullanan": 5178,
+     "gecerliOy": 5089,
+     "partiler": {
+      "AP": 312,
+      "CHP": 2982,
+      "CKMP": 106,
+      "YTP": 1689,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "28-giresun.html",
+   "cevre": "Giresun",
+   "plaka": 28,
+   "secmen": 186354,
+   "oyKullanan": 144622,
+   "gecerliOy": 138227,
+   "partiler": {
+    "AP": 3860,
+    "CHP": 48162,
+    "CKMP": 32439,
+    "YTP": 53996,
+    "BĞMZ": 13
+   },
+   "ilceler": [
+    {
+     "ad": "Alucra",
+     "secmen": 21302,
+     "oyKullanan": 13105,
+     "gecerliOy": 12527,
+     "partiler": {
+      "AP": 438,
+      "CHP": 3834,
+      "CKMP": 1450,
+      "YTP": 6805,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bulancak",
+     "secmen": 26691,
+     "oyKullanan": 21930,
+     "gecerliOy": 21006,
+     "partiler": {
+      "AP": 261,
+      "CHP": 8912,
+      "CKMP": 1899,
+      "YTP": 9934,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Dereli",
+     "secmen": 13136,
+     "oyKullanan": 10307,
+     "gecerliOy": 9623,
+     "partiler": {
+      "AP": 227,
+      "CHP": 2224,
+      "CKMP": 3826,
+      "YTP": 3346,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Espiye",
+     "secmen": 16469,
+     "oyKullanan": 14086,
+     "gecerliOy": 13401,
+     "partiler": {
+      "AP": 411,
+      "CHP": 4279,
+      "CKMP": 3745,
+      "YTP": 4966,
+      "BĞMZ": 6
+     }
+    },
+    {
+     "ad": "Eynesil",
+     "secmen": 6643,
+     "oyKullanan": 5247,
+     "gecerliOy": 5051,
+     "partiler": {
+      "AP": 53,
+      "CHP": 2009,
+      "CKMP": 739,
+      "YTP": 2221,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Görele",
+     "secmen": 24464,
+     "oyKullanan": 17001,
+     "gecerliOy": 16348,
+     "partiler": {
+      "AP": 232,
+      "CHP": 6935,
+      "CKMP": 3246,
+      "YTP": 5923,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Keşap",
+     "secmen": 13913,
+     "oyKullanan": 11925,
+     "gecerliOy": 11306,
+     "partiler": {
+      "AP": 219,
+      "CHP": 3956,
+      "CKMP": 4944,
+      "YTP": 2274,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 30700,
+     "oyKullanan": 24058,
+     "gecerliOy": 22896,
+     "partiler": {
+      "AP": 1527,
+      "CHP": 7075,
+      "CKMP": 9724,
+      "YTP": 4705,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ş.Karahisar",
+     "secmen": 12706,
+     "oyKullanan": 9882,
+     "gecerliOy": 9490,
+     "partiler": {
+      "AP": 331,
+      "CHP": 3142,
+      "CKMP": 664,
+      "YTP": 5351,
+      "BĞMZ": 6
+     }
+    },
+    {
+     "ad": "Tirebolu",
+     "secmen": 20330,
+     "oyKullanan": 17081,
+     "gecerliOy": 16519,
+     "partiler": {
+      "AP": 161,
+      "CHP": 5800,
+      "CKMP": 2202,
+      "YTP": 8471,
+      "BĞMZ": 1
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "29-gumushane.html",
+   "cevre": "Gümüşhane",
+   "plaka": 29,
+   "secmen": 116432,
+   "oyKullanan": 89631,
+   "gecerliOy": 86768,
+   "partiler": {
+    "AP": 23225,
+    "CHP": 32784,
+    "CKMP": 0,
+    "YTP": 30714,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Bayburt",
+     "secmen": 45579,
+     "oyKullanan": 35518,
+     "gecerliOy": 34138,
+     "partiler": {
+      "AP": 16248,
+      "CHP": 12232,
+      "CKMP": 0,
+      "YTP": 5617,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kelkit",
+     "secmen": 23130,
+     "oyKullanan": 19319,
+     "gecerliOy": 18826,
+     "partiler": {
+      "AP": 1362,
+      "CHP": 7888,
+      "CKMP": 0,
+      "YTP": 9576,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 19430,
+     "oyKullanan": 14369,
+     "gecerliOy": 13858,
+     "partiler": {
+      "AP": 3917,
+      "CHP": 5010,
+      "CKMP": 0,
+      "YTP": 4931,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Şiran",
+     "secmen": 14080,
+     "oyKullanan": 10959,
+     "gecerliOy": 10645,
+     "partiler": {
+      "AP": 564,
+      "CHP": 5071,
+      "CKMP": 0,
+      "YTP": 5010,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Torul",
+     "secmen": 14213,
+     "oyKullanan": 9466,
+     "gecerliOy": 9301,
+     "partiler": {
+      "AP": 1134,
+      "CHP": 2583,
+      "CKMP": 0,
+      "YTP": 5580,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "30-hakkari.html",
+   "cevre": "Hakkari",
+   "plaka": 30,
+   "secmen": 26376,
+   "oyKullanan": 21617,
+   "gecerliOy": 21430,
+   "partiler": {
+    "AP": 667,
+    "CHP": 8846,
+    "CKMP": 0,
+    "YTP": 5426,
+    "BĞMZ": 6491
+   },
+   "ilceler": [
+    {
+     "ad": "Beytüşşebab",
+     "secmen": 4626,
+     "oyKullanan": 3941,
+     "gecerliOy": 3932,
+     "partiler": {
+      "AP": 118,
+      "CHP": 208,
+      "CKMP": 0,
+      "YTP": 588,
+      "BĞMZ": 3018
+     }
+    },
+    {
+     "ad": "Çukurca",
+     "secmen": 3110,
+     "oyKullanan": 2713,
+     "gecerliOy": 2686,
+     "partiler": {
+      "AP": 100,
+      "CHP": 2050,
+      "CKMP": 0,
+      "YTP": 436,
+      "BĞMZ": 100
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 5690,
+     "oyKullanan": 4049,
+     "gecerliOy": 4005,
+     "partiler": {
+      "AP": 308,
+      "CHP": 1946,
+      "CKMP": 0,
+      "YTP": 758,
+      "BĞMZ": 993
+     }
+    },
+    {
+     "ad": "Şemdinli",
+     "secmen": 2751,
+     "oyKullanan": 2483,
+     "gecerliOy": 2481,
+     "partiler": {
+      "AP": 24,
+      "CHP": 1037,
+      "CKMP": 0,
+      "YTP": 1396,
+      "BĞMZ": 24
+     }
+    },
+    {
+     "ad": "Uludere",
+     "secmen": 4153,
+     "oyKullanan": 3300,
+     "gecerliOy": 3251,
+     "partiler": {
+      "AP": 59,
+      "CHP": 755,
+      "CKMP": 0,
+      "YTP": 114,
+      "BĞMZ": 2323
+     }
+    },
+    {
+     "ad": "Yüksekova",
+     "secmen": 6046,
+     "oyKullanan": 5131,
+     "gecerliOy": 5075,
+     "partiler": {
+      "AP": 58,
+      "CHP": 2850,
+      "CKMP": 0,
+      "YTP": 2134,
+      "BĞMZ": 33
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "31-hatay.html",
+   "cevre": "Hatay",
+   "plaka": 31,
+   "secmen": 186896,
+   "oyKullanan": 151513,
+   "gecerliOy": 145825,
+   "partiler": {
+    "AP": 31588,
+    "CHP": 54279,
+    "CKMP": 5145,
+    "YTP": 49697,
+    "BĞMZ": 4920
+   },
+   "ilceler": [
+    {
+     "ad": "Altınözü",
+     "secmen": 16123,
+     "oyKullanan": 12725,
+     "gecerliOy": 12309,
+     "partiler": {
+      "AP": 413,
+      "CHP": 5665,
+      "CKMP": 543,
+      "YTP": 5566,
+      "BĞMZ": 123
+     }
+    },
+    {
+     "ad": "Dörtyol",
+     "secmen": 16799,
+     "oyKullanan": 14912,
+     "gecerliOy": 14499,
+     "partiler": {
+      "AP": 7370,
+      "CHP": 5848,
+      "CKMP": 1126,
+      "YTP": 112,
+      "BĞMZ": 43
+     }
+    },
+    {
+     "ad": "Hassa",
+     "secmen": 8798,
+     "oyKullanan": 7422,
+     "gecerliOy": 7182,
+     "partiler": {
+      "AP": 3330,
+      "CHP": 1647,
+      "CKMP": 751,
+      "YTP": 1433,
+      "BĞMZ": 15
+     }
+    },
+    {
+     "ad": "İskenderun",
+     "secmen": 41157,
+     "oyKullanan": 32786,
+     "gecerliOy": 31132,
+     "partiler": {
+      "AP": 13599,
+      "CHP": 11580,
+      "CKMP": 1035,
+      "YTP": 2164,
+      "BĞMZ": 2689
+     }
+    },
+    {
+     "ad": "Kırıkhan",
+     "secmen": 15732,
+     "oyKullanan": 12685,
+     "gecerliOy": 12216,
+     "partiler": {
+      "AP": 3074,
+      "CHP": 7082,
+      "CKMP": 349,
+      "YTP": 1657,
+      "BĞMZ": 54
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 47926,
+     "oyKullanan": 37917,
+     "gecerliOy": 36475,
+     "partiler": {
+      "AP": 1283,
+      "CHP": 11697,
+      "CKMP": 588,
+      "YTP": 21025,
+      "BĞMZ": 1882
+     }
+    },
+    {
+     "ad": "Reyhanlı",
+     "secmen": 12385,
+     "oyKullanan": 9941,
+     "gecerliOy": 9590,
+     "partiler": {
+      "AP": 937,
+      "CHP": 5567,
+      "CKMP": 366,
+      "YTP": 2500,
+      "BĞMZ": 57
+     }
+    },
+    {
+     "ad": "Samandağı",
+     "secmen": 19118,
+     "oyKullanan": 15457,
+     "gecerliOy": 15040,
+     "partiler": {
+      "AP": 932,
+      "CHP": 2327,
+      "CKMP": 87,
+      "YTP": 11654,
+      "BĞMZ": 42
+     }
+    },
+    {
+     "ad": "Yayladağı",
+     "secmen": 8858,
+     "oyKullanan": 7668,
+     "gecerliOy": 7382,
+     "partiler": {
+      "AP": 650,
+      "CHP": 2866,
+      "CKMP": 300,
+      "YTP": 3586,
+      "BĞMZ": 15
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "32-isparta.html",
+   "cevre": "Isparta",
+   "plaka": 32,
+   "secmen": 113842,
+   "oyKullanan": 94234,
+   "gecerliOy": 90400,
+   "partiler": {
+    "AP": 46155,
+    "CHP": 30357,
+    "CKMP": 0,
+    "YTP": 13886,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Atabey",
+     "secmen": 3558,
+     "oyKullanan": 3066,
+     "gecerliOy": 2960,
+     "partiler": {
+      "AP": 1840,
+      "CHP": 949,
+      "CKMP": 0,
+      "YTP": 171,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Eğridir",
+     "secmen": 14947,
+     "oyKullanan": 12761,
+     "gecerliOy": 12202,
+     "partiler": {
+      "AP": 6816,
+      "CHP": 5039,
+      "CKMP": 0,
+      "YTP": 347,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gelendost",
+     "secmen": 7201,
+     "oyKullanan": 6161,
+     "gecerliOy": 5899,
+     "partiler": {
+      "AP": 3277,
+      "CHP": 2188,
+      "CKMP": 0,
+      "YTP": 432,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Keçiborlu",
+     "secmen": 9088,
+     "oyKullanan": 8107,
+     "gecerliOy": 7788,
+     "partiler": {
+      "AP": 4648,
+      "CHP": 2856,
+      "CKMP": 0,
+      "YTP": 284,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 24517,
+     "oyKullanan": 20167,
+     "gecerliOy": 19495,
+     "partiler": {
+      "AP": 14047,
+      "CHP": 4971,
+      "CKMP": 0,
+      "YTP": 477,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Senirkent",
+     "secmen": 8432,
+     "oyKullanan": 6879,
+     "gecerliOy": 6564,
+     "partiler": {
+      "AP": 4487,
+      "CHP": 1371,
+      "CKMP": 0,
+      "YTP": 706,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sütçüler",
+     "secmen": 7905,
+     "oyKullanan": 6195,
+     "gecerliOy": 5926,
+     "partiler": {
+      "AP": 4069,
+      "CHP": 1554,
+      "CKMP": 0,
+      "YTP": 303,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ş.Karaağaç",
+     "secmen": 12039,
+     "oyKullanan": 10137,
+     "gecerliOy": 9600,
+     "partiler": {
+      "AP": 4903,
+      "CHP": 3825,
+      "CKMP": 0,
+      "YTP": 872,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Uluborlu",
+     "secmen": 3696,
+     "oyKullanan": 2605,
+     "gecerliOy": 2496,
+     "partiler": {
+      "AP": 983,
+      "CHP": 1430,
+      "CKMP": 0,
+      "YTP": 83,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yalvaç",
+     "secmen": 22459,
+     "oyKullanan": 18156,
+     "gecerliOy": 17470,
+     "partiler": {
+      "AP": 1085,
+      "CHP": 6174,
+      "CKMP": 0,
+      "YTP": 10211,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "33-icel.html",
+   "cevre": "İçel",
+   "plaka": 33,
+   "secmen": 199824,
+   "oyKullanan": 169285,
+   "gecerliOy": 163196,
+   "partiler": {
+    "AP": 90903,
+    "CHP": 67483,
+    "CKMP": 5457,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Anamur",
+     "secmen": 16382,
+     "oyKullanan": 13096,
+     "gecerliOy": 12435,
+     "partiler": {
+      "AP": 7266,
+      "CHP": 4879,
+      "CKMP": 287,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Erdemli",
+     "secmen": 16013,
+     "oyKullanan": 14018,
+     "gecerliOy": 13546,
+     "partiler": {
+      "AP": 9993,
+      "CHP": 3340,
+      "CKMP": 312,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gülnar",
+     "secmen": 15757,
+     "oyKullanan": 13132,
+     "gecerliOy": 12599,
+     "partiler": {
+      "AP": 6640,
+      "CHP": 5741,
+      "CKMP": 220,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 54676,
+     "oyKullanan": 44782,
+     "gecerliOy": 43648,
+     "partiler": {
+      "AP": 23004,
+      "CHP": 19087,
+      "CKMP": 1532,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mut",
+     "secmen": 15414,
+     "oyKullanan": 13535,
+     "gecerliOy": 13136,
+     "partiler": {
+      "AP": 6341,
+      "CHP": 6515,
+      "CKMP": 280,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Silifke",
+     "secmen": 23692,
+     "oyKullanan": 19965,
+     "gecerliOy": 19354,
+     "partiler": {
+      "AP": 11635,
+      "CHP": 7222,
+      "CKMP": 497,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Tarsus",
+     "secmen": 57890,
+     "oyKullanan": 50757,
+     "gecerliOy": 49078,
+     "partiler": {
+      "AP": 26024,
+      "CHP": 20708,
+      "CKMP": 2329,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "34-istanbul.html",
+   "cevre": "İstanbul",
+   "plaka": 34,
+   "secmen": 975422,
+   "oyKullanan": 725702,
+   "gecerliOy": 709873,
+   "partiler": {
+    "AP": 296568,
+    "CHP": 270920,
+    "CKMP": 87696,
+    "YTP": 23473,
+    "BĞMZ": 31216
+   },
+   "ilceler": [
+    {
+     "ad": "Adalar",
+     "secmen": 7733,
+     "oyKullanan": 5258,
+     "gecerliOy": 5149,
+     "partiler": {
+      "AP": 2171,
+      "CHP": 2286,
+      "CKMP": 292,
+      "YTP": 152,
+      "BĞMZ": 248
+     }
+    },
+    {
+     "ad": "Bakırköy",
+     "secmen": 49451,
+     "oyKullanan": 36804,
+     "gecerliOy": 36151,
+     "partiler": {
+      "AP": 15901,
+      "CHP": 14239,
+      "CKMP": 3153,
+      "YTP": 1119,
+      "BĞMZ": 1739
+     }
+    },
+    {
+     "ad": "Beşiktaş",
+     "secmen": 50656,
+     "oyKullanan": 37697,
+     "gecerliOy": 37066,
+     "partiler": {
+      "AP": 13354,
+      "CHP": 17180,
+      "CKMP": 3506,
+      "YTP": 1387,
+      "BĞMZ": 1639
+     }
+    },
+    {
+     "ad": "Beykoz",
+     "secmen": 29141,
+     "oyKullanan": 23717,
+     "gecerliOy": 23092,
+     "partiler": {
+      "AP": 9090,
+      "CHP": 7235,
+      "CKMP": 5569,
+      "YTP": 306,
+      "BĞMZ": 892
+     }
+    },
+    {
+     "ad": "Beyoğlu",
+     "secmen": 114854,
+     "oyKullanan": 80006,
+     "gecerliOy": 78272,
+     "partiler": {
+      "AP": 36011,
+      "CHP": 26733,
+      "CKMP": 8386,
+      "YTP": 2945,
+      "BĞMZ": 4197
+     }
+    },
+    {
+     "ad": "Çatalca",
+     "secmen": 25874,
+     "oyKullanan": 22183,
+     "gecerliOy": 21595,
+     "partiler": {
+      "AP": 12236,
+      "CHP": 7147,
+      "CKMP": 1445,
+      "YTP": 350,
+      "BĞMZ": 417
+     }
+    },
+    {
+     "ad": "Eminönü",
+     "secmen": 71110,
+     "oyKullanan": 52087,
+     "gecerliOy": 51260,
+     "partiler": {
+      "AP": 18962,
+      "CHP": 23060,
+      "CKMP": 4962,
+      "YTP": 1686,
+      "BĞMZ": 2590
+     }
+    },
+    {
+     "ad": "Eyüp",
+     "secmen": 85486,
+     "oyKullanan": 63924,
+     "gecerliOy": 62115,
+     "partiler": {
+      "AP": 26513,
+      "CHP": 16096,
+      "CKMP": 13950,
+      "YTP": 1996,
+      "BĞMZ": 3560
+     }
+    },
+    {
+     "ad": "Fatih",
+     "secmen": 165851,
+     "oyKullanan": 126229,
+     "gecerliOy": 122914,
+     "partiler": {
+      "AP": 49849,
+      "CHP": 48659,
+      "CKMP": 15851,
+      "YTP": 4569,
+      "BĞMZ": 3986
+     }
+    },
+    {
+     "ad": "Kadıköy",
+     "secmen": 73539,
+     "oyKullanan": 51550,
+     "gecerliOy": 50865,
+     "partiler": {
+      "AP": 16462,
+      "CHP": 25892,
+      "CKMP": 3902,
+      "YTP": 2340,
+      "BĞMZ": 2269
+     }
+    },
+    {
+     "ad": "Kartal",
+     "secmen": 34809,
+     "oyKullanan": 26142,
+     "gecerliOy": 25718,
+     "partiler": {
+      "AP": 11254,
+      "CHP": 10244,
+      "CKMP": 2605,
+      "YTP": 572,
+      "BĞMZ": 1043
+     }
+    },
+    {
+     "ad": "Sarıyer",
+     "secmen": 25649,
+     "oyKullanan": 19413,
+     "gecerliOy": 19039,
+     "partiler": {
+      "AP": 7495,
+      "CHP": 8627,
+      "CKMP": 1953,
+      "YTP": 389,
+      "BĞMZ": 575
+     }
+    },
+    {
+     "ad": "Silivri",
+     "secmen": 17443,
+     "oyKullanan": 14811,
+     "gecerliOy": 14520,
+     "partiler": {
+      "AP": 7021,
+      "CHP": 6312,
+      "CKMP": 703,
+      "YTP": 268,
+      "BĞMZ": 216
+     }
+    },
+    {
+     "ad": "Şile",
+     "secmen": 9840,
+     "oyKullanan": 7901,
+     "gecerliOy": 7681,
+     "partiler": {
+      "AP": 4372,
+      "CHP": 1352,
+      "CKMP": 1619,
+      "YTP": 169,
+      "BĞMZ": 169
+     }
+    },
+    {
+     "ad": "Şişli",
+     "secmen": 94478,
+     "oyKullanan": 65166,
+     "gecerliOy": 63910,
+     "partiler": {
+      "AP": 28920,
+      "CHP": 22940,
+      "CKMP": 6579,
+      "YTP": 2958,
+      "BĞMZ": 2513
+     }
+    },
+    {
+     "ad": "Üsküdar",
+     "secmen": 61802,
+     "oyKullanan": 45455,
+     "gecerliOy": 44522,
+     "partiler": {
+      "AP": 16975,
+      "CHP": 19082,
+      "CKMP": 4711,
+      "YTP": 1328,
+      "BĞMZ": 2426
+     }
+    },
+    {
+     "ad": "Yalova",
+     "secmen": 16327,
+     "oyKullanan": 14006,
+     "gecerliOy": 13617,
+     "partiler": {
+      "AP": 4767,
+      "CHP": 4848,
+      "CKMP": 3430,
+      "YTP": 284,
+      "BĞMZ": 288
+     }
+    },
+    {
+     "ad": "Zeytinburnu",
+     "secmen": 41379,
+     "oyKullanan": 33353,
+     "gecerliOy": 32387,
+     "partiler": {
+      "AP": 15215,
+      "CHP": 8988,
+      "CKMP": 5080,
+      "YTP": 655,
+      "BĞMZ": 2449
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "35-izmir.html",
+   "cevre": "İzmir",
+   "plaka": 35,
+   "secmen": 547336,
+   "oyKullanan": 450748,
+   "gecerliOy": 439266,
+   "partiler": {
+    "AP": 241753,
+    "CHP": 174014,
+    "CKMP": 13456,
+    "YTP": 6388,
+    "BĞMZ": 3409
+   },
+   "ilceler": [
+    {
+     "ad": "Bayındır",
+     "secmen": 20391,
+     "oyKullanan": 17314,
+     "gecerliOy": 16892,
+     "partiler": {
+      "AP": 9744,
+      "CHP": 6578,
+      "CKMP": 347,
+      "YTP": 163,
+      "BĞMZ": 60
+     }
+    },
+    {
+     "ad": "Bergama",
+     "secmen": 38688,
+     "oyKullanan": 33829,
+     "gecerliOy": 32888,
+     "partiler": {
+      "AP": 20344,
+      "CHP": 11066,
+      "CKMP": 678,
+      "YTP": 561,
+      "BĞMZ": 240
+     }
+    },
+    {
+     "ad": "Bornova",
+     "secmen": 22977,
+     "oyKullanan": 18929,
+     "gecerliOy": 18321,
+     "partiler": {
+      "AP": 10594,
+      "CHP": 6513,
+      "CKMP": 696,
+      "YTP": 284,
+      "BĞMZ": 235
+     }
+    },
+    {
+     "ad": "Çeşme",
+     "secmen": 5297,
+     "oyKullanan": 4539,
+     "gecerliOy": 4474,
+     "partiler": {
+      "AP": 2015,
+      "CHP": 2368,
+      "CKMP": 45,
+      "YTP": 35,
+      "BĞMZ": 1
+     }
+    },
+    {
+     "ad": "Dikili",
+     "secmen": 8415,
+     "oyKullanan": 7397,
+     "gecerliOy": 7238,
+     "partiler": {
+      "AP": 4308,
+      "CHP": 2695,
+      "CKMP": 144,
+      "YTP": 63,
+      "BĞMZ": 24
+     }
+    },
+    {
+     "ad": "Foça",
+     "secmen": 5487,
+     "oyKullanan": 4789,
+     "gecerliOy": 4683,
+     "partiler": {
+      "AP": 2600,
+      "CHP": 1975,
+      "CKMP": 38,
+      "YTP": 56,
+      "BĞMZ": 14
+     }
+    },
+    {
+     "ad": "Karaburun",
+     "secmen": 4195,
+     "oyKullanan": 3642,
+     "gecerliOy": 3595,
+     "partiler": {
+      "AP": 1852,
+      "CHP": 1614,
+      "CKMP": 77,
+      "YTP": 38,
+      "BĞMZ": 14
+     }
+    },
+    {
+     "ad": "Karşıyaka",
+     "secmen": 42515,
+     "oyKullanan": 33708,
+     "gecerliOy": 33022,
+     "partiler": {
+      "AP": 17484,
+      "CHP": 13431,
+      "CKMP": 1170,
+      "YTP": 580,
+      "BĞMZ": 357
+     }
+    },
+    {
+     "ad": "Kemalpaşa",
+     "secmen": 17901,
+     "oyKullanan": 15980,
+     "gecerliOy": 15679,
+     "partiler": {
+      "AP": 7999,
+      "CHP": 7274,
+      "CKMP": 252,
+      "YTP": 101,
+      "BĞMZ": 51
+     }
+    },
+    {
+     "ad": "Kınık",
+     "secmen": 10408,
+     "oyKullanan": 8987,
+     "gecerliOy": 8662,
+     "partiler": {
+      "AP": 5023,
+      "CHP": 2666,
+      "CKMP": 638,
+      "YTP": 245,
+      "BĞMZ": 93
+     }
+    },
+    {
+     "ad": "Kiraz",
+     "secmen": 14317,
+     "oyKullanan": 12472,
+     "gecerliOy": 12171,
+     "partiler": {
+      "AP": 6416,
+      "CHP": 4984,
+      "CKMP": 449,
+      "YTP": 258,
+      "BĞMZ": 64
+     }
+    },
+    {
+     "ad": "Menemen",
+     "secmen": 26897,
+     "oyKullanan": 22178,
+     "gecerliOy": 21681,
+     "partiler": {
+      "AP": 12660,
+      "CHP": 8014,
+      "CKMP": 563,
+      "YTP": 290,
+      "BĞMZ": 154
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 206270,
+     "oyKullanan": 160626,
+     "gecerliOy": 156244,
+     "partiler": {
+      "AP": 89528,
+      "CHP": 55499,
+      "CKMP": 6472,
+      "YTP": 2749,
+      "BĞMZ": 1996
+     }
+    },
+    {
+     "ad": "Ödemiş",
+     "secmen": 54422,
+     "oyKullanan": 46273,
+     "gecerliOy": 45237,
+     "partiler": {
+      "AP": 19523,
+      "CHP": 24210,
+      "CKMP": 917,
+      "YTP": 443,
+      "BĞMZ": 139
+     }
+    },
+    {
+     "ad": "Seferihisar",
+     "secmen": 5343,
+     "oyKullanan": 4438,
+     "gecerliOy": 4378,
+     "partiler": {
+      "AP": 1626,
+      "CHP": 2648,
+      "CKMP": 84,
+      "YTP": 16,
+      "BĞMZ": 4
+     }
+    },
+    {
+     "ad": "Selçuk",
+     "secmen": 6509,
+     "oyKullanan": 5800,
+     "gecerliOy": 5695,
+     "partiler": {
+      "AP": 2741,
+      "CHP": 2815,
+      "CKMP": 56,
+      "YTP": 63,
+      "BĞMZ": 20
+     }
+    },
+    {
+     "ad": "Tire",
+     "secmen": 29566,
+     "oyKullanan": 25411,
+     "gecerliOy": 24858,
+     "partiler": {
+      "AP": 14815,
+      "CHP": 9209,
+      "CKMP": 551,
+      "YTP": 218,
+      "BĞMZ": 65
+     }
+    },
+    {
+     "ad": "Torbalı",
+     "secmen": 17938,
+     "oyKullanan": 16165,
+     "gecerliOy": 15767,
+     "partiler": {
+      "AP": 8134,
+      "CHP": 7275,
+      "CKMP": 148,
+      "YTP": 138,
+      "BĞMZ": 72
+     }
+    },
+    {
+     "ad": "Urla",
+     "secmen": 9800,
+     "oyKullanan": 8271,
+     "gecerliOy": 7781,
+     "partiler": {
+      "AP": 4347,
+      "CHP": 3180,
+      "CKMP": 131,
+      "YTP": 87,
+      "BĞMZ": 34
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "36-kars.html",
+   "cevre": "Kars",
+   "plaka": 36,
+   "secmen": 222559,
+   "oyKullanan": 180064,
+   "gecerliOy": 174030,
+   "partiler": {
+    "AP": 38115,
+    "CHP": 83806,
+    "CKMP": 0,
+    "YTP": 53365,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Aralık",
+     "secmen": 4075,
+     "oyKullanan": 3042,
+     "gecerliOy": 2925,
+     "partiler": {
+      "AP": 401,
+      "CHP": 1492,
+      "CKMP": 0,
+      "YTP": 1024,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ardahan",
+     "secmen": 20272,
+     "oyKullanan": 16863,
+     "gecerliOy": 16445,
+     "partiler": {
+      "AP": 2651,
+      "CHP": 9810,
+      "CKMP": 0,
+      "YTP": 3984,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Arpaçay",
+     "secmen": 25672,
+     "oyKullanan": 19359,
+     "gecerliOy": 18517,
+     "partiler": {
+      "AP": 6587,
+      "CHP": 8843,
+      "CKMP": 0,
+      "YTP": 3094,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çıldır",
+     "secmen": 12589,
+     "oyKullanan": 10822,
+     "gecerliOy": 10410,
+     "partiler": {
+      "AP": 1924,
+      "CHP": 5604,
+      "CKMP": 0,
+      "YTP": 3065,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Digor",
+     "secmen": 7174,
+     "oyKullanan": 6113,
+     "gecerliOy": 5959,
+     "partiler": {
+      "AP": 348,
+      "CHP": 1796,
+      "CKMP": 0,
+      "YTP": 3815,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Göle",
+     "secmen": 17293,
+     "oyKullanan": 14573,
+     "gecerliOy": 14209,
+     "partiler": {
+      "AP": 1181,
+      "CHP": 7157,
+      "CKMP": 0,
+      "YTP": 5869,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hanak",
+     "secmen": 12923,
+     "oyKullanan": 11306,
+     "gecerliOy": 11118,
+     "partiler": {
+      "AP": 1316,
+      "CHP": 6004,
+      "CKMP": 0,
+      "YTP": 3798,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Iğdır",
+     "secmen": 19677,
+     "oyKullanan": 16133,
+     "gecerliOy": 15351,
+     "partiler": {
+      "AP": 4905,
+      "CHP": 6560,
+      "CKMP": 0,
+      "YTP": 3929,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kağızman",
+     "secmen": 13577,
+     "oyKullanan": 10815,
+     "gecerliOy": 10518,
+     "partiler": {
+      "AP": 590,
+      "CHP": 4825,
+      "CKMP": 0,
+      "YTP": 5121,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 24554,
+     "oyKullanan": 18435,
+     "gecerliOy": 17624,
+     "partiler": {
+      "AP": 3242,
+      "CHP": 9135,
+      "CKMP": 0,
+      "YTP": 5248,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Posof",
+     "secmen": 12086,
+     "oyKullanan": 10123,
+     "gecerliOy": 9801,
+     "partiler": {
+      "AP": 4030,
+      "CHP": 4380,
+      "CKMP": 0,
+      "YTP": 1393,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sarıkamış",
+     "secmen": 19373,
+     "oyKullanan": 15786,
+     "gecerliOy": 15296,
+     "partiler": {
+      "AP": 4413,
+      "CHP": 5574,
+      "CKMP": 0,
+      "YTP": 5309,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Selim",
+     "secmen": 12621,
+     "oyKullanan": 10211,
+     "gecerliOy": 9927,
+     "partiler": {
+      "AP": 669,
+      "CHP": 4536,
+      "CKMP": 0,
+      "YTP": 4726,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Susuz",
+     "secmen": 10477,
+     "oyKullanan": 8079,
+     "gecerliOy": 7783,
+     "partiler": {
+      "AP": 1248,
+      "CHP": 5702,
+      "CKMP": 0,
+      "YTP": 1841,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Tuzluca",
+     "secmen": 10196,
+     "oyKullanan": 8404,
+     "gecerliOy": 8147,
+     "partiler": {
+      "AP": 4610,
+      "CHP": 2388,
+      "CKMP": 0,
+      "YTP": 1149,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "37-kastamonu.html",
+   "cevre": "Kastamonu",
+   "plaka": 37,
+   "secmen": 220208,
+   "oyKullanan": 178505,
+   "gecerliOy": 173344,
+   "partiler": {
+    "AP": 16125,
+    "CHP": 53131,
+    "CKMP": 44185,
+    "YTP": 59903,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Araç",
+     "secmen": 24123,
+     "oyKullanan": 20072,
+     "gecerliOy": 19644,
+     "partiler": {
+      "AP": 1641,
+      "CHP": 6537,
+      "CKMP": 4063,
+      "YTP": 7403,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Azdavay",
+     "secmen": 15517,
+     "oyKullanan": 12480,
+     "gecerliOy": 12236,
+     "partiler": {
+      "AP": 1306,
+      "CHP": 3930,
+      "CKMP": 3058,
+      "YTP": 3942,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bozkurt",
+     "secmen": 9277,
+     "oyKullanan": 7109,
+     "gecerliOy": 6805,
+     "partiler": {
+      "AP": 1861,
+      "CHP": 1385,
+      "CKMP": 1502,
+      "YTP": 2057,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Cide",
+     "secmen": 20553,
+     "oyKullanan": 16132,
+     "gecerliOy": 15572,
+     "partiler": {
+      "AP": 2744,
+      "CHP": 4453,
+      "CKMP": 2625,
+      "YTP": 5750,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çatalzeytin",
+     "secmen": 7551,
+     "oyKullanan": 5743,
+     "gecerliOy": 5463,
+     "partiler": {
+      "AP": 1013,
+      "CHP": 1599,
+      "CKMP": 2067,
+      "YTP": 784,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Daday",
+     "secmen": 10478,
+     "oyKullanan": 8562,
+     "gecerliOy": 8255,
+     "partiler": {
+      "AP": 436,
+      "CHP": 3613,
+      "CKMP": 1338,
+      "YTP": 2868,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Devrekâni",
+     "secmen": 12774,
+     "oyKullanan": 10252,
+     "gecerliOy": 9925,
+     "partiler": {
+      "AP": 563,
+      "CHP": 3845,
+      "CKMP": 1596,
+      "YTP": 3921,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İnebolu",
+     "secmen": 19544,
+     "oyKullanan": 15772,
+     "gecerliOy": 15174,
+     "partiler": {
+      "AP": 1687,
+      "CHP": 2962,
+      "CKMP": 3596,
+      "YTP": 6929,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Küre",
+     "secmen": 10664,
+     "oyKullanan": 8046,
+     "gecerliOy": 7816,
+     "partiler": {
+      "AP": 644,
+      "CHP": 2502,
+      "CKMP": 1395,
+      "YTP": 3275,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 35884,
+     "oyKullanan": 28903,
+     "gecerliOy": 28107,
+     "partiler": {
+      "AP": 1676,
+      "CHP": 9096,
+      "CKMP": 9086,
+      "YTP": 8249,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Taşköprü",
+     "secmen": 30074,
+     "oyKullanan": 25837,
+     "gecerliOy": 25266,
+     "partiler": {
+      "AP": 1214,
+      "CHP": 9477,
+      "CKMP": 1533,
+      "YTP": 13042,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Tosya",
+     "secmen": 23769,
+     "oyKullanan": 19597,
+     "gecerliOy": 19081,
+     "partiler": {
+      "AP": 1340,
+      "CHP": 3732,
+      "CKMP": 12326,
+      "YTP": 1683,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "38-kayseri.html",
+   "cevre": "Kayseri",
+   "plaka": 38,
+   "secmen": 221514,
+   "oyKullanan": 182613,
+   "gecerliOy": 174316,
+   "partiler": {
+    "AP": 77751,
+    "CHP": 72405,
+    "CKMP": 13971,
+    "YTP": 8242,
+    "BĞMZ": 1633
+   },
+   "ilceler": [
+    {
+     "ad": "Bünyan",
+     "secmen": 21135,
+     "oyKullanan": 17182,
+     "gecerliOy": 16241,
+     "partiler": {
+      "AP": 3761,
+      "CHP": 6920,
+      "CKMP": 3028,
+      "YTP": 2454,
+      "BĞMZ": 155
+     }
+    },
+    {
+     "ad": "Develi",
+     "secmen": 22217,
+     "oyKullanan": 18001,
+     "gecerliOy": 17155,
+     "partiler": {
+      "AP": 9316,
+      "CHP": 6602,
+      "CKMP": 992,
+      "YTP": 115,
+      "BĞMZ": 134
+     }
+    },
+    {
+     "ad": "Felâhiye",
+     "secmen": 7792,
+     "oyKullanan": 6189,
+     "gecerliOy": 5934,
+     "partiler": {
+      "AP": 2811,
+      "CHP": 2333,
+      "CKMP": 471,
+      "YTP": 127,
+      "BĞMZ": 87
+     }
+    },
+    {
+     "ad": "İncesu",
+     "secmen": 8872,
+     "oyKullanan": 6918,
+     "gecerliOy": 6535,
+     "partiler": {
+      "AP": 2654,
+      "CHP": 2636,
+      "CKMP": 621,
+      "YTP": 565,
+      "BĞMZ": 59
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 89611,
+     "oyKullanan": 72417,
+     "gecerliOy": 69141,
+     "partiler": {
+      "AP": 36332,
+      "CHP": 26396,
+      "CKMP": 4102,
+      "YTP": 1244,
+      "BĞMZ": 846
+     }
+    },
+    {
+     "ad": "Pınarbaşı",
+     "secmen": 22108,
+     "oyKullanan": 19076,
+     "gecerliOy": 18455,
+     "partiler": {
+      "AP": 3385,
+      "CHP": 8847,
+      "CKMP": 3247,
+      "YTP": 2808,
+      "BĞMZ": 62
+     }
+    },
+    {
+     "ad": "Sarıoğlan",
+     "secmen": 7624,
+     "oyKullanan": 6657,
+     "gecerliOy": 6269,
+     "partiler": {
+      "AP": 2673,
+      "CHP": 2791,
+      "CKMP": 460,
+      "YTP": 347,
+      "BĞMZ": 51
+     }
+    },
+    {
+     "ad": "Sarız",
+     "secmen": 10061,
+     "oyKullanan": 7885,
+     "gecerliOy": 7519,
+     "partiler": {
+      "AP": 3147,
+      "CHP": 3411,
+      "CKMP": 577,
+      "YTP": 299,
+      "BĞMZ": 85
+     }
+    },
+    {
+     "ad": "Tomarza",
+     "secmen": 14449,
+     "oyKullanan": 12062,
+     "gecerliOy": 11478,
+     "partiler": {
+      "AP": 5797,
+      "CHP": 5283,
+      "CKMP": 186,
+      "YTP": 110,
+      "BĞMZ": 81
+     }
+    },
+    {
+     "ad": "Yahyalı",
+     "secmen": 10101,
+     "oyKullanan": 9294,
+     "gecerliOy": 8873,
+     "partiler": {
+      "AP": 5163,
+      "CHP": 3397,
+      "CKMP": 165,
+      "YTP": 108,
+      "BĞMZ": 40
+     }
+    },
+    {
+     "ad": "Yeşilhisar",
+     "secmen": 7494,
+     "oyKullanan": 6932,
+     "gecerliOy": 6721,
+     "partiler": {
+      "AP": 2712,
+      "CHP": 3789,
+      "CKMP": 122,
+      "YTP": 65,
+      "BĞMZ": 33
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "39-kirklareli.html",
+   "cevre": "Kırklareli",
+   "plaka": 39,
+   "secmen": 116290,
+   "oyKullanan": 99616,
+   "gecerliOy": 95902,
+   "partiler": {
+    "AP": 13774,
+    "CHP": 38653,
+    "CKMP": 8225,
+    "YTP": 35240,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Babaeski",
+     "secmen": 21756,
+     "oyKullanan": 18680,
+     "gecerliOy": 17683,
+     "partiler": {
+      "AP": 5651,
+      "CHP": 7057,
+      "CKMP": 1408,
+      "YTP": 3567,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Demirköy",
+     "secmen": 3618,
+     "oyKullanan": 3163,
+     "gecerliOy": 3063,
+     "partiler": {
+      "AP": 89,
+      "CHP": 1137,
+      "CKMP": 311,
+      "YTP": 1526,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kofçaz",
+     "secmen": 3147,
+     "oyKullanan": 2853,
+     "gecerliOy": 2754,
+     "partiler": {
+      "AP": 122,
+      "CHP": 1082,
+      "CKMP": 321,
+      "YTP": 1229,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Lüleburgaz",
+     "secmen": 28695,
+     "oyKullanan": 24499,
+     "gecerliOy": 23402,
+     "partiler": {
+      "AP": 5147,
+      "CHP": 9713,
+      "CKMP": 2590,
+      "YTP": 5952,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 29105,
+     "oyKullanan": 24894,
+     "gecerliOy": 24230,
+     "partiler": {
+      "AP": 1090,
+      "CHP": 9690,
+      "CKMP": 2154,
+      "YTP": 11278,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Pehlivanköy",
+     "secmen": 3733,
+     "oyKullanan": 3424,
+     "gecerliOy": 3295,
+     "partiler": {
+      "AP": 349,
+      "CHP": 1316,
+      "CKMP": 269,
+      "YTP": 1361,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Pınarhisar",
+     "secmen": 11302,
+     "oyKullanan": 9491,
+     "gecerliOy": 9207,
+     "partiler": {
+      "AP": 1054,
+      "CHP": 3988,
+      "CKMP": 634,
+      "YTP": 3531,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Vize",
+     "secmen": 14933,
+     "oyKullanan": 12652,
+     "gecerliOy": 12268,
+     "partiler": {
+      "AP": 272,
+      "CHP": 4670,
+      "CKMP": 538,
+      "YTP": 6796,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "40-kirsehir.html",
+   "cevre": "Kırşehir",
+   "plaka": 40,
+   "secmen": 78598,
+   "oyKullanan": 64962,
+   "gecerliOy": 62199,
+   "partiler": {
+    "AP": 6591,
+    "CHP": 16048,
+    "CKMP": 39560,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Çiçekdağı",
+     "secmen": 14330,
+     "oyKullanan": 12587,
+     "gecerliOy": 12156,
+     "partiler": {
+      "AP": 803,
+      "CHP": 4318,
+      "CKMP": 7035,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kaman",
+     "secmen": 27219,
+     "oyKullanan": 22149,
+     "gecerliOy": 21111,
+     "partiler": {
+      "AP": 3162,
+      "CHP": 4877,
+      "CKMP": 13072,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 29054,
+     "oyKullanan": 23169,
+     "gecerliOy": 22204,
+     "partiler": {
+      "AP": 1973,
+      "CHP": 5088,
+      "CKMP": 15143,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mucur",
+     "secmen": 7995,
+     "oyKullanan": 7057,
+     "gecerliOy": 6728,
+     "partiler": {
+      "AP": 653,
+      "CHP": 1755,
+      "CKMP": 4310,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "41-kocaeli.html",
+   "cevre": "Kocaeli",
+   "plaka": 41,
+   "secmen": 140326,
+   "oyKullanan": 114691,
+   "gecerliOy": 110272,
+   "partiler": {
+    "AP": 49404,
+    "CHP": 42752,
+    "CKMP": 15507,
+    "YTP": 2609,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Gebze",
+     "secmen": 14917,
+     "oyKullanan": 12292,
+     "gecerliOy": 11926,
+     "partiler": {
+      "AP": 6226,
+      "CHP": 4041,
+      "CKMP": 1471,
+      "YTP": 188,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gölcük",
+     "secmen": 14251,
+     "oyKullanan": 11762,
+     "gecerliOy": 11448,
+     "partiler": {
+      "AP": 4786,
+      "CHP": 4870,
+      "CKMP": 1561,
+      "YTP": 231,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kandıra",
+     "secmen": 22503,
+     "oyKullanan": 19147,
+     "gecerliOy": 18193,
+     "partiler": {
+      "AP": 7988,
+      "CHP": 9061,
+      "CKMP": 824,
+      "YTP": 320,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karamürsel",
+     "secmen": 14055,
+     "oyKullanan": 11360,
+     "gecerliOy": 10990,
+     "partiler": {
+      "AP": 5949,
+      "CHP": 3572,
+      "CKMP": 1257,
+      "YTP": 212,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kaynarca",
+     "secmen": 7472,
+     "oyKullanan": 6295,
+     "gecerliOy": 5979,
+     "partiler": {
+      "AP": 2280,
+      "CHP": 3342,
+      "CKMP": 202,
+      "YTP": 155,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 67128,
+     "oyKullanan": 53835,
+     "gecerliOy": 51736,
+     "partiler": {
+      "AP": 22175,
+      "CHP": 17866,
+      "CKMP": 10192,
+      "YTP": 1503,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "42-konya.html",
+   "cevre": "Konya",
+   "plaka": 42,
+   "secmen": 448299,
+   "oyKullanan": 363336,
+   "gecerliOy": 348252,
+   "partiler": {
+    "AP": 81098,
+    "CHP": 120768,
+    "CKMP": 88761,
+    "YTP": 58614,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Akşehir",
+     "secmen": 30784,
+     "oyKullanan": 24089,
+     "gecerliOy": 23324,
+     "partiler": {
+      "AP": 9412,
+      "CHP": 11376,
+      "CKMP": 1892,
+      "YTP": 644,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Beyşehir",
+     "secmen": 33059,
+     "oyKullanan": 26257,
+     "gecerliOy": 25078,
+     "partiler": {
+      "AP": 3195,
+      "CHP": 6739,
+      "CKMP": 4515,
+      "YTP": 10622,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bozkır",
+     "secmen": 26884,
+     "oyKullanan": 19799,
+     "gecerliOy": 19003,
+     "partiler": {
+      "AP": 4750,
+      "CHP": 5732,
+      "CKMP": 6176,
+      "YTP": 2247,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Cihanbeyli",
+     "secmen": 19489,
+     "oyKullanan": 16256,
+     "gecerliOy": 15678,
+     "partiler": {
+      "AP": 1934,
+      "CHP": 6589,
+      "CKMP": 5559,
+      "YTP": 1594,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çumra",
+     "secmen": 25499,
+     "oyKullanan": 21343,
+     "gecerliOy": 20534,
+     "partiler": {
+      "AP": 7582,
+      "CHP": 6328,
+      "CKMP": 4325,
+      "YTP": 2299,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Doğanhisar",
+     "secmen": 11587,
+     "oyKullanan": 9058,
+     "gecerliOy": 8665,
+     "partiler": {
+      "AP": 1028,
+      "CHP": 4201,
+      "CKMP": 1310,
+      "YTP": 2126,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ereğli",
+     "secmen": 33158,
+     "oyKullanan": 28756,
+     "gecerliOy": 27739,
+     "partiler": {
+      "AP": 14147,
+      "CHP": 9410,
+      "CKMP": 3364,
+      "YTP": 818,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ermenek",
+     "secmen": 21483,
+     "oyKullanan": 18219,
+     "gecerliOy": 17520,
+     "partiler": {
+      "AP": 181,
+      "CHP": 5683,
+      "CKMP": 877,
+      "YTP": 10779,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hadım",
+     "secmen": 16007,
+     "oyKullanan": 13197,
+     "gecerliOy": 12796,
+     "partiler": {
+      "AP": 4438,
+      "CHP": 4881,
+      "CKMP": 3395,
+      "YTP": 149,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ilgın",
+     "secmen": 20949,
+     "oyKullanan": 17953,
+     "gecerliOy": 17113,
+     "partiler": {
+      "AP": 881,
+      "CHP": 8426,
+      "CKMP": 2565,
+      "YTP": 5241,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kadınhanı",
+     "secmen": 12123,
+     "oyKullanan": 9853,
+     "gecerliOy": 9425,
+     "partiler": {
+      "AP": 1154,
+      "CHP": 3258,
+      "CKMP": 2301,
+      "YTP": 2712,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karaman",
+     "secmen": 36279,
+     "oyKullanan": 31397,
+     "gecerliOy": 30340,
+     "partiler": {
+      "AP": 13772,
+      "CHP": 8616,
+      "CKMP": 6899,
+      "YTP": 1051,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karapınar",
+     "secmen": 12456,
+     "oyKullanan": 9705,
+     "gecerliOy": 9424,
+     "partiler": {
+      "AP": 1867,
+      "CHP": 4484,
+      "CKMP": 2124,
+      "YTP": 949,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kulu",
+     "secmen": 12461,
+     "oyKullanan": 11001,
+     "gecerliOy": 10638,
+     "partiler": {
+      "AP": 443,
+      "CHP": 4285,
+      "CKMP": 5147,
+      "YTP": 759,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 91962,
+     "oyKullanan": 72182,
+     "gecerliOy": 68249,
+     "partiler": {
+      "AP": 12947,
+      "CHP": 20897,
+      "CKMP": 25164,
+      "YTP": 10224,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sarayönü",
+     "secmen": 6683,
+     "oyKullanan": 5743,
+     "gecerliOy": 5579,
+     "partiler": {
+      "AP": 940,
+      "CHP": 1913,
+      "CKMP": 1443,
+      "YTP": 1283,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Seydişehir",
+     "secmen": 23351,
+     "oyKullanan": 17523,
+     "gecerliOy": 16648,
+     "partiler": {
+      "AP": 1509,
+      "CHP": 4958,
+      "CKMP": 5445,
+      "YTP": 4351,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yunak",
+     "secmen": 14082,
+     "oyKullanan": 11005,
+     "gecerliOy": 10529,
+     "partiler": {
+      "AP": 918,
+      "CHP": 2988,
+      "CKMP": 5860,
+      "YTP": 762,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "43-kutahya.html",
+   "cevre": "Kütahya",
+   "plaka": 43,
+   "secmen": 188747,
+   "oyKullanan": 154107,
+   "gecerliOy": 146709,
+   "partiler": {
+    "AP": 50156,
+    "CHP": 40177,
+    "CKMP": 53155,
+    "YTP": 3237,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Altıntaş",
+     "secmen": 14778,
+     "oyKullanan": 12633,
+     "gecerliOy": 12012,
+     "partiler": {
+      "AP": 1952,
+      "CHP": 3400,
+      "CKMP": 6295,
+      "YTP": 365,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Domaniç",
+     "secmen": 7700,
+     "oyKullanan": 6708,
+     "gecerliOy": 6374,
+     "partiler": {
+      "AP": 3988,
+      "CHP": 1799,
+      "CKMP": 468,
+      "YTP": 121,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Emet",
+     "secmen": 26251,
+     "oyKullanan": 20539,
+     "gecerliOy": 19580,
+     "partiler": {
+      "AP": 4878,
+      "CHP": 5497,
+      "CKMP": 8907,
+      "YTP": 418,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gediz",
+     "secmen": 28571,
+     "oyKullanan": 24154,
+     "gecerliOy": 22863,
+     "partiler": {
+      "AP": 4174,
+      "CHP": 7037,
+      "CKMP": 11314,
+      "YTP": 338,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 49693,
+     "oyKullanan": 40560,
+     "gecerliOy": 38791,
+     "partiler": {
+      "AP": 9350,
+      "CHP": 10102,
+      "CKMP": 18345,
+      "YTP": 888,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Simav",
+     "secmen": 32303,
+     "oyKullanan": 25136,
+     "gecerliOy": 23771,
+     "partiler": {
+      "AP": 13399,
+      "CHP": 6506,
+      "CKMP": 3494,
+      "YTP": 372,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Tavşanlı",
+     "secmen": 29451,
+     "oyKullanan": 24377,
+     "gecerliOy": 23318,
+     "partiler": {
+      "AP": 12415,
+      "CHP": 5836,
+      "CKMP": 4332,
+      "YTP": 735,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "44-malatya.html",
+   "cevre": "Malatya",
+   "plaka": 44,
+   "secmen": 174623,
+   "oyKullanan": 136037,
+   "gecerliOy": 132800,
+   "partiler": {
+    "AP": 5556,
+    "CHP": 89252,
+    "CKMP": 7145,
+    "YTP": 30671,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Akçadağ",
+     "secmen": 18324,
+     "oyKullanan": 14624,
+     "gecerliOy": 14339,
+     "partiler": {
+      "AP": 527,
+      "CHP": 7896,
+      "CKMP": 2116,
+      "YTP": 3804,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Arapgir",
+     "secmen": 11118,
+     "oyKullanan": 8544,
+     "gecerliOy": 8284,
+     "partiler": {
+      "AP": 920,
+      "CHP": 4859,
+      "CKMP": 279,
+      "YTP": 2226,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Arguvan",
+     "secmen": 9109,
+     "oyKullanan": 7366,
+     "gecerliOy": 7128,
+     "partiler": {
+      "AP": 334,
+      "CHP": 3821,
+      "CKMP": 207,
+      "YTP": 2769,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Darende",
+     "secmen": 15827,
+     "oyKullanan": 11461,
+     "gecerliOy": 11096,
+     "partiler": {
+      "AP": 900,
+      "CHP": 6647,
+      "CKMP": 463,
+      "YTP": 3086,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Doğanşehir",
+     "secmen": 12759,
+     "oyKullanan": 10528,
+     "gecerliOy": 10305,
+     "partiler": {
+      "AP": 192,
+      "CHP": 7414,
+      "CKMP": 108,
+      "YTP": 2591,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hekimhan",
+     "secmen": 18935,
+     "oyKullanan": 14133,
+     "gecerliOy": 13832,
+     "partiler": {
+      "AP": 222,
+      "CHP": 8328,
+      "CKMP": 147,
+      "YTP": 5135,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 61258,
+     "oyKullanan": 49057,
+     "gecerliOy": 47777,
+     "partiler": {
+      "AP": 2040,
+      "CHP": 34981,
+      "CKMP": 3393,
+      "YTP": 7363,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Pötürge",
+     "secmen": 18351,
+     "oyKullanan": 12539,
+     "gecerliOy": 12427,
+     "partiler": {
+      "AP": 219,
+      "CHP": 9310,
+      "CKMP": 362,
+      "YTP": 2536,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yeşilyurt",
+     "secmen": 8942,
+     "oyKullanan": 7785,
+     "gecerliOy": 7612,
+     "partiler": {
+      "AP": 202,
+      "CHP": 5996,
+      "CKMP": 70,
+      "YTP": 1161,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "45-manisa.html",
+   "cevre": "Manisa",
+   "plaka": 45,
+   "secmen": 325073,
+   "oyKullanan": 274339,
+   "gecerliOy": 265441,
+   "partiler": {
+    "AP": 159369,
+    "CHP": 86721,
+    "CKMP": 18667,
+    "YTP": 0,
+    "BĞMZ": 1307
+   },
+   "ilceler": [
+    {
+     "ad": "Akhisar",
+     "secmen": 53233,
+     "oyKullanan": 45448,
+     "gecerliOy": 43806,
+     "partiler": {
+      "AP": 23652,
+      "CHP": 14674,
+      "CKMP": 4581,
+      "YTP": 0,
+      "BĞMZ": 899
+     }
+    },
+    {
+     "ad": "Alaşehir",
+     "secmen": 24378,
+     "oyKullanan": 21064,
+     "gecerliOy": 20573,
+     "partiler": {
+      "AP": 10509,
+      "CHP": 9368,
+      "CKMP": 696,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Demirci",
+     "secmen": 19772,
+     "oyKullanan": 17687,
+     "gecerliOy": 17139,
+     "partiler": {
+      "AP": 14127,
+      "CHP": 2857,
+      "CKMP": 346,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gördes",
+     "secmen": 17189,
+     "oyKullanan": 15081,
+     "gecerliOy": 14724,
+     "partiler": {
+      "AP": 9908,
+      "CHP": 3661,
+      "CKMP": 1122,
+      "YTP": 0,
+      "BĞMZ": 33
+     }
+    },
+    {
+     "ad": "Kırkağaç",
+     "secmen": 15586,
+     "oyKullanan": 13021,
+     "gecerliOy": 12596,
+     "partiler": {
+      "AP": 7116,
+      "CHP": 4488,
+      "CKMP": 992,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kula",
+     "secmen": 15129,
+     "oyKullanan": 12273,
+     "gecerliOy": 11950,
+     "partiler": {
+      "AP": 7134,
+      "CHP": 4203,
+      "CKMP": 611,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 48491,
+     "oyKullanan": 40155,
+     "gecerliOy": 38868,
+     "partiler": {
+      "AP": 24745,
+      "CHP": 11268,
+      "CKMP": 2484,
+      "YTP": 0,
+      "BĞMZ": 371
+     }
+    },
+    {
+     "ad": "Salihli",
+     "secmen": 35716,
+     "oyKullanan": 30541,
+     "gecerliOy": 29889,
+     "partiler": {
+      "AP": 17005,
+      "CHP": 11893,
+      "CKMP": 991,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sarıgöl",
+     "secmen": 10879,
+     "oyKullanan": 9379,
+     "gecerliOy": 9085,
+     "partiler": {
+      "AP": 4457,
+      "CHP": 4259,
+      "CKMP": 369,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Saruhanlı",
+     "secmen": 23276,
+     "oyKullanan": 19623,
+     "gecerliOy": 18947,
+     "partiler": {
+      "AP": 10942,
+      "CHP": 6113,
+      "CKMP": 1888,
+      "YTP": 0,
+      "BĞMZ": 4
+     }
+    },
+    {
+     "ad": "Selendi",
+     "secmen": 9057,
+     "oyKullanan": 7305,
+     "gecerliOy": 7107,
+     "partiler": {
+      "AP": 4970,
+      "CHP": 1753,
+      "CKMP": 384,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Soma",
+     "secmen": 18920,
+     "oyKullanan": 15481,
+     "gecerliOy": 14565,
+     "partiler": {
+      "AP": 8653,
+      "CHP": 4675,
+      "CKMP": 1541,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Turgutlu",
+     "secmen": 33477,
+     "oyKullanan": 27281,
+     "gecerliOy": 26192,
+     "partiler": {
+      "AP": 16151,
+      "CHP": 7509,
+      "CKMP": 2662,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "46-kahramanmaras.html",
+   "cevre": "Kahramanmaraş",
+   "plaka": 46,
+   "secmen": 169620,
+   "oyKullanan": 130717,
+   "gecerliOy": 124655,
+   "partiler": {
+    "AP": 65069,
+    "CHP": 48694,
+    "CKMP": 7514,
+    "YTP": 2456,
+    "BĞMZ": 1453
+   },
+   "ilceler": [
+    {
+     "ad": "Afşin",
+     "secmen": 19714,
+     "oyKullanan": 15218,
+     "gecerliOy": 14240,
+     "partiler": {
+      "AP": 7764,
+      "CHP": 4872,
+      "CKMP": 1142,
+      "YTP": 253,
+      "BĞMZ": 274
+     }
+    },
+    {
+     "ad": "Andırın",
+     "secmen": 11838,
+     "oyKullanan": 10516,
+     "gecerliOy": 10062,
+     "partiler": {
+      "AP": 4289,
+      "CHP": 5134,
+      "CKMP": 585,
+      "YTP": 59,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Elbistan",
+     "secmen": 33561,
+     "oyKullanan": 24256,
+     "gecerliOy": 23055,
+     "partiler": {
+      "AP": 10163,
+      "CHP": 10879,
+      "CKMP": 716,
+      "YTP": 931,
+      "BĞMZ": 910
+     }
+    },
+    {
+     "ad": "Göksun",
+     "secmen": 14421,
+     "oyKullanan": 11559,
+     "gecerliOy": 11005,
+     "partiler": {
+      "AP": 5681,
+      "CHP": 3658,
+      "CKMP": 1339,
+      "YTP": 228,
+      "BĞMZ": 116
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 54136,
+     "oyKullanan": 39185,
+     "gecerliOy": 37422,
+     "partiler": {
+      "AP": 22659,
+      "CHP": 11761,
+      "CKMP": 2487,
+      "YTP": 397,
+      "BĞMZ": 122
+     }
+    },
+    {
+     "ad": "Pazarcık",
+     "secmen": 26005,
+     "oyKullanan": 21259,
+     "gecerliOy": 20563,
+     "partiler": {
+      "AP": 10741,
+      "CHP": 8481,
+      "CKMP": 818,
+      "YTP": 523,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Türkoğlu",
+     "secmen": 9945,
+     "oyKullanan": 8724,
+     "gecerliOy": 8308,
+     "partiler": {
+      "AP": 3772,
+      "CHP": 3909,
+      "CKMP": 527,
+      "YTP": 69,
+      "BĞMZ": 31
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "47-mardin.html",
+   "cevre": "Mardin",
+   "plaka": 47,
+   "secmen": 150006,
+   "oyKullanan": 119459,
+   "gecerliOy": 117283,
+   "partiler": {
+    "AP": 0,
+    "CHP": 50734,
+    "CKMP": 25622,
+    "YTP": 40927,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Cizre",
+     "secmen": 5294,
+     "oyKullanan": 3886,
+     "gecerliOy": 3764,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1406,
+      "CKMP": 1282,
+      "YTP": 1076,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Derik",
+     "secmen": 10274,
+     "oyKullanan": 7845,
+     "gecerliOy": 7705,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2471,
+      "CKMP": 1490,
+      "YTP": 3744,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gercüş",
+     "secmen": 16059,
+     "oyKullanan": 13800,
+     "gecerliOy": 13749,
+     "partiler": {
+      "AP": 0,
+      "CHP": 7634,
+      "CKMP": 1438,
+      "YTP": 4677,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İdil",
+     "secmen": 7990,
+     "oyKullanan": 7157,
+     "gecerliOy": 7027,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2242,
+      "CKMP": 3470,
+      "YTP": 1315,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kızıltepe",
+     "secmen": 14264,
+     "oyKullanan": 11145,
+     "gecerliOy": 10936,
+     "partiler": {
+      "AP": 0,
+      "CHP": 4240,
+      "CKMP": 4097,
+      "YTP": 2599,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mazıdağı",
+     "secmen": 7462,
+     "oyKullanan": 6861,
+     "gecerliOy": 6728,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2424,
+      "CKMP": 986,
+      "YTP": 3318,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 23519,
+     "oyKullanan": 16667,
+     "gecerliOy": 16197,
+     "partiler": {
+      "AP": 0,
+      "CHP": 7138,
+      "CKMP": 3456,
+      "YTP": 5603,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Midyat",
+     "secmen": 27263,
+     "oyKullanan": 21024,
+     "gecerliOy": 20738,
+     "partiler": {
+      "AP": 0,
+      "CHP": 7524,
+      "CKMP": 5683,
+      "YTP": 7531,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Nusaybin",
+     "secmen": 12150,
+     "oyKullanan": 10471,
+     "gecerliOy": 10247,
+     "partiler": {
+      "AP": 0,
+      "CHP": 4658,
+      "CKMP": 2130,
+      "YTP": 3459,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ömerli",
+     "secmen": 7846,
+     "oyKullanan": 6411,
+     "gecerliOy": 6305,
+     "partiler": {
+      "AP": 0,
+      "CHP": 3220,
+      "CKMP": 237,
+      "YTP": 2848,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Savur",
+     "secmen": 12736,
+     "oyKullanan": 9559,
+     "gecerliOy": 9320,
+     "partiler": {
+      "AP": 0,
+      "CHP": 5519,
+      "CKMP": 1196,
+      "YTP": 2605,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Silopi",
+     "secmen": 5149,
+     "oyKullanan": 4633,
+     "gecerliOy": 4567,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2258,
+      "CKMP": 157,
+      "YTP": 2152,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "48-mugla.html",
+   "cevre": "Muğla",
+   "plaka": 48,
+   "secmen": 153088,
+   "oyKullanan": 125688,
+   "gecerliOy": 120619,
+   "partiler": {
+    "AP": 71698,
+    "CHP": 46398,
+    "CKMP": 2532,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Bodrum",
+     "secmen": 13365,
+     "oyKullanan": 11228,
+     "gecerliOy": 10903,
+     "partiler": {
+      "AP": 7463,
+      "CHP": 3116,
+      "CKMP": 324,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Datça",
+     "secmen": 3413,
+     "oyKullanan": 3029,
+     "gecerliOy": 2963,
+     "partiler": {
+      "AP": 1952,
+      "CHP": 1002,
+      "CKMP": 9,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Fethiye",
+     "secmen": 32565,
+     "oyKullanan": 25171,
+     "gecerliOy": 23993,
+     "partiler": {
+      "AP": 16557,
+      "CHP": 6741,
+      "CKMP": 704,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Köyceğiz",
+     "secmen": 14898,
+     "oyKullanan": 11650,
+     "gecerliOy": 11172,
+     "partiler": {
+      "AP": 6247,
+      "CHP": 4750,
+      "CKMP": 175,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Marmaris",
+     "secmen": 6351,
+     "oyKullanan": 5272,
+     "gecerliOy": 5071,
+     "partiler": {
+      "AP": 2692,
+      "CHP": 2256,
+      "CKMP": 123,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 24868,
+     "oyKullanan": 20016,
+     "gecerliOy": 19271,
+     "partiler": {
+      "AP": 10219,
+      "CHP": 8479,
+      "CKMP": 573,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Milas",
+     "secmen": 32212,
+     "oyKullanan": 28354,
+     "gecerliOy": 27128,
+     "partiler": {
+      "AP": 15862,
+      "CHP": 11078,
+      "CKMP": 188,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ula",
+     "secmen": 7631,
+     "oyKullanan": 6047,
+     "gecerliOy": 5826,
+     "partiler": {
+      "AP": 2455,
+      "CHP": 3247,
+      "CKMP": 124,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yatağan",
+     "secmen": 17783,
+     "oyKullanan": 14921,
+     "gecerliOy": 14292,
+     "partiler": {
+      "AP": 8251,
+      "CHP": 5729,
+      "CKMP": 312,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "49-mus.html",
+   "cevre": "Muş",
+   "plaka": 49,
+   "secmen": 66061,
+   "oyKullanan": 54768,
+   "gecerliOy": 52745,
+   "partiler": {
+    "AP": 10779,
+    "CHP": 16530,
+    "CKMP": 2274,
+    "YTP": 23162,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Bulanık",
+     "secmen": 15591,
+     "oyKullanan": 12672,
+     "gecerliOy": 12244,
+     "partiler": {
+      "AP": 5076,
+      "CHP": 2875,
+      "CKMP": 537,
+      "YTP": 3756,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Malazgirt",
+     "secmen": 10729,
+     "oyKullanan": 8950,
+     "gecerliOy": 8535,
+     "partiler": {
+      "AP": 1252,
+      "CHP": 1271,
+      "CKMP": 189,
+      "YTP": 5823,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 27592,
+     "oyKullanan": 22296,
+     "gecerliOy": 21417,
+     "partiler": {
+      "AP": 3262,
+      "CHP": 6789,
+      "CKMP": 658,
+      "YTP": 10708,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Varto",
+     "secmen": 12149,
+     "oyKullanan": 10850,
+     "gecerliOy": 10549,
+     "partiler": {
+      "AP": 1189,
+      "CHP": 5595,
+      "CKMP": 890,
+      "YTP": 2875,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "50-nevsehir.html",
+   "cevre": "Nevşehir",
+   "plaka": 50,
+   "secmen": 88653,
+   "oyKullanan": 75623,
+   "gecerliOy": 72115,
+   "partiler": {
+    "AP": 23473,
+    "CHP": 23034,
+    "CKMP": 25608,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Avanos",
+     "secmen": 12476,
+     "oyKullanan": 10594,
+     "gecerliOy": 10109,
+     "partiler": {
+      "AP": 2460,
+      "CHP": 2940,
+      "CKMP": 4709,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Derinkuyu",
+     "secmen": 4887,
+     "oyKullanan": 3612,
+     "gecerliOy": 3406,
+     "partiler": {
+      "AP": 1758,
+      "CHP": 1369,
+      "CKMP": 279,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gülşehir",
+     "secmen": 11182,
+     "oyKullanan": 9649,
+     "gecerliOy": 9109,
+     "partiler": {
+      "AP": 663,
+      "CHP": 2801,
+      "CKMP": 5640,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hacıbektaş",
+     "secmen": 8602,
+     "oyKullanan": 7449,
+     "gecerliOy": 7127,
+     "partiler": {
+      "AP": 782,
+      "CHP": 1326,
+      "CKMP": 5019,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kozaklı",
+     "secmen": 9638,
+     "oyKullanan": 8849,
+     "gecerliOy": 8445,
+     "partiler": {
+      "AP": 1678,
+      "CHP": 2577,
+      "CKMP": 4190,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 27451,
+     "oyKullanan": 22944,
+     "gecerliOy": 21997,
+     "partiler": {
+      "AP": 11174,
+      "CHP": 7609,
+      "CKMP": 3214,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ürgüp",
+     "secmen": 14417,
+     "oyKullanan": 12476,
+     "gecerliOy": 11927,
+     "partiler": {
+      "AP": 4958,
+      "CHP": 4412,
+      "CKMP": 2557,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "51-nigde.html",
+   "cevre": "Niğde",
+   "plaka": 51,
+   "secmen": 146781,
+   "oyKullanan": 119289,
+   "gecerliOy": 111497,
+   "partiler": {
+    "AP": 32912,
+    "CHP": 34305,
+    "CKMP": 39611,
+    "YTP": 4619,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Aksaray",
+     "secmen": 54171,
+     "oyKullanan": 43357,
+     "gecerliOy": 40690,
+     "partiler": {
+      "AP": 3108,
+      "CHP": 9762,
+      "CKMP": 25346,
+      "YTP": 2474,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bor",
+     "secmen": 23769,
+     "oyKullanan": 19044,
+     "gecerliOy": 17700,
+     "partiler": {
+      "AP": 9378,
+      "CHP": 6003,
+      "CKMP": 1972,
+      "YTP": 347,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çamardı",
+     "secmen": 6573,
+     "oyKullanan": 5891,
+     "gecerliOy": 5482,
+     "partiler": {
+      "AP": 3336,
+      "CHP": 1815,
+      "CKMP": 268,
+      "YTP": 63,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 39882,
+     "oyKullanan": 31597,
+     "gecerliOy": 29202,
+     "partiler": {
+      "AP": 12311,
+      "CHP": 10925,
+      "CKMP": 4907,
+      "YTP": 1110,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ortaköy",
+     "secmen": 10504,
+     "oyKullanan": 9056,
+     "gecerliOy": 8527,
+     "partiler": {
+      "AP": 556,
+      "CHP": 1361,
+      "CKMP": 6161,
+      "YTP": 449,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ulukışla",
+     "secmen": 11882,
+     "oyKullanan": 10344,
+     "gecerliOy": 9896,
+     "partiler": {
+      "AP": 4223,
+      "CHP": 4439,
+      "CKMP": 957,
+      "YTP": 176,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "52-ordu.html",
+   "cevre": "Ordu",
+   "plaka": 52,
+   "secmen": 207331,
+   "oyKullanan": 162985,
+   "gecerliOy": 155253,
+   "partiler": {
+    "AP": 38212,
+    "CHP": 62890,
+    "CKMP": 10734,
+    "YTP": 43417,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Akkuş",
+     "secmen": 14062,
+     "oyKullanan": 11700,
+     "gecerliOy": 10753,
+     "partiler": {
+      "AP": 5305,
+      "CHP": 4445,
+      "CKMP": 540,
+      "YTP": 463,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Aybastı",
+     "secmen": 11667,
+     "oyKullanan": 8695,
+     "gecerliOy": 8363,
+     "partiler": {
+      "AP": 1931,
+      "CHP": 4288,
+      "CKMP": 594,
+      "YTP": 1550,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Fatsa",
+     "secmen": 32057,
+     "oyKullanan": 24956,
+     "gecerliOy": 23638,
+     "partiler": {
+      "AP": 5426,
+      "CHP": 12142,
+      "CKMP": 873,
+      "YTP": 5200,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gölköy",
+     "secmen": 13102,
+     "oyKullanan": 10425,
+     "gecerliOy": 9973,
+     "partiler": {
+      "AP": 1671,
+      "CHP": 5553,
+      "CKMP": 494,
+      "YTP": 2255,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Korgan",
+     "secmen": 8697,
+     "oyKullanan": 6361,
+     "gecerliOy": 5894,
+     "partiler": {
+      "AP": 2183,
+      "CHP": 1952,
+      "CKMP": 804,
+      "YTP": 955,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kumru",
+     "secmen": 10210,
+     "oyKullanan": 7612,
+     "gecerliOy": 6988,
+     "partiler": {
+      "AP": 3380,
+      "CHP": 2287,
+      "CKMP": 530,
+      "YTP": 784,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 38143,
+     "oyKullanan": 29393,
+     "gecerliOy": 28474,
+     "partiler": {
+      "AP": 1168,
+      "CHP": 11273,
+      "CKMP": 3617,
+      "YTP": 12324,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Mesudiye",
+     "secmen": 17845,
+     "oyKullanan": 14087,
+     "gecerliOy": 13719,
+     "partiler": {
+      "AP": 740,
+      "CHP": 5937,
+      "CKMP": 826,
+      "YTP": 6216,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Perşembe",
+     "secmen": 16411,
+     "oyKullanan": 13125,
+     "gecerliOy": 12684,
+     "partiler": {
+      "AP": 1173,
+      "CHP": 2705,
+      "CKMP": 1269,
+      "YTP": 7537,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ulubey",
+     "secmen": 11416,
+     "oyKullanan": 9311,
+     "gecerliOy": 8981,
+     "partiler": {
+      "AP": 265,
+      "CHP": 2938,
+      "CKMP": 596,
+      "YTP": 5182,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ünye",
+     "secmen": 33721,
+     "oyKullanan": 27320,
+     "gecerliOy": 25786,
+     "partiler": {
+      "AP": 14970,
+      "CHP": 9370,
+      "CKMP": 591,
+      "YTP": 951,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "53-rize.html",
+   "cevre": "Rize",
+   "plaka": 53,
+   "secmen": 114354,
+   "oyKullanan": 91764,
+   "gecerliOy": 88515,
+   "partiler": {
+    "AP": 47315,
+    "CHP": 27994,
+    "CKMP": 11984,
+    "YTP": 1348,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Ardeşen",
+     "secmen": 10235,
+     "oyKullanan": 8265,
+     "gecerliOy": 7941,
+     "partiler": {
+      "AP": 3132,
+      "CHP": 3747,
+      "CKMP": 1040,
+      "YTP": 30,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çamlıhemşin",
+     "secmen": 4703,
+     "oyKullanan": 3336,
+     "gecerliOy": 3192,
+     "partiler": {
+      "AP": 1604,
+      "CHP": 1003,
+      "CKMP": 533,
+      "YTP": 60,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çayeli",
+     "secmen": 17785,
+     "oyKullanan": 14899,
+     "gecerliOy": 14492,
+     "partiler": {
+      "AP": 8073,
+      "CHP": 2977,
+      "CKMP": 3400,
+      "YTP": 50,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Fındıklı",
+     "secmen": 7061,
+     "oyKullanan": 5911,
+     "gecerliOy": 5745,
+     "partiler": {
+      "AP": 2636,
+      "CHP": 2347,
+      "CKMP": 699,
+      "YTP": 63,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "İkizdere",
+     "secmen": 10290,
+     "oyKullanan": 6475,
+     "gecerliOy": 6217,
+     "partiler": {
+      "AP": 2540,
+      "CHP": 2128,
+      "CKMP": 1267,
+      "YTP": 282,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kalkandere",
+     "secmen": 5657,
+     "oyKullanan": 4753,
+     "gecerliOy": 4577,
+     "partiler": {
+      "AP": 2629,
+      "CHP": 1666,
+      "CKMP": 236,
+      "YTP": 46,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 41668,
+     "oyKullanan": 34490,
+     "gecerliOy": 33378,
+     "partiler": {
+      "AP": 19701,
+      "CHP": 10260,
+      "CKMP": 3096,
+      "YTP": 321,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Pazar",
+     "secmen": 16963,
+     "oyKullanan": 13635,
+     "gecerliOy": 12976,
+     "partiler": {
+      "AP": 7000,
+      "CHP": 3866,
+      "CKMP": 1713,
+      "YTP": 496,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "54-sakarya.html",
+   "cevre": "Sakarya",
+   "plaka": 54,
+   "secmen": 166675,
+   "oyKullanan": 139486,
+   "gecerliOy": 133341,
+   "partiler": {
+    "AP": 51242,
+    "CHP": 37333,
+    "CKMP": 16578,
+    "YTP": 28039,
+    "BĞMZ": 197
+   },
+   "ilceler": [
+    {
+     "ad": "Akyazı",
+     "secmen": 22235,
+     "oyKullanan": 18161,
+     "gecerliOy": 17439,
+     "partiler": {
+      "AP": 5228,
+      "CHP": 4472,
+      "CKMP": 1631,
+      "YTP": 6087,
+      "BĞMZ": 21
+     }
+    },
+    {
+     "ad": "Geyve",
+     "secmen": 26371,
+     "oyKullanan": 22649,
+     "gecerliOy": 21803,
+     "partiler": {
+      "AP": 9516,
+      "CHP": 6706,
+      "CKMP": 1235,
+      "YTP": 4285,
+      "BĞMZ": 61
+     }
+    },
+    {
+     "ad": "Hendek",
+     "secmen": 18434,
+     "oyKullanan": 15572,
+     "gecerliOy": 15061,
+     "partiler": {
+      "AP": 2938,
+      "CHP": 4800,
+      "CKMP": 853,
+      "YTP": 6448,
+      "BĞMZ": 32
+     }
+    },
+    {
+     "ad": "Karasu",
+     "secmen": 18579,
+     "oyKullanan": 15560,
+     "gecerliOy": 14780,
+     "partiler": {
+      "AP": 5327,
+      "CHP": 3347,
+      "CKMP": 2741,
+      "YTP": 3368,
+      "BĞMZ": 15
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 75253,
+     "oyKullanan": 62671,
+     "gecerliOy": 59585,
+     "partiler": {
+      "AP": 26087,
+      "CHP": 16880,
+      "CKMP": 9129,
+      "YTP": 7445,
+      "BĞMZ": 64
+     }
+    },
+    {
+     "ad": "Sapanca",
+     "secmen": 5803,
+     "oyKullanan": 4873,
+     "gecerliOy": 4673,
+     "partiler": {
+      "AP": 2146,
+      "CHP": 1128,
+      "CKMP": 989,
+      "YTP": 406,
+      "BĞMZ": 4
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "55-samsun.html",
+   "cevre": "Samsun",
+   "plaka": 55,
+   "secmen": 290569,
+   "oyKullanan": 252350,
+   "gecerliOy": 242694,
+   "partiler": {
+    "AP": 141387,
+    "CHP": 89220,
+    "CKMP": 12068,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Alaçam",
+     "secmen": 18779,
+     "oyKullanan": 16743,
+     "gecerliOy": 16019,
+     "partiler": {
+      "AP": 8071,
+      "CHP": 7187,
+      "CKMP": 761,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bafra",
+     "secmen": 43599,
+     "oyKullanan": 38648,
+     "gecerliOy": 37384,
+     "partiler": {
+      "AP": 22958,
+      "CHP": 12885,
+      "CKMP": 1541,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çarşamba",
+     "secmen": 47265,
+     "oyKullanan": 39623,
+     "gecerliOy": 37889,
+     "partiler": {
+      "AP": 21339,
+      "CHP": 15066,
+      "CKMP": 1484,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Havza",
+     "secmen": 21630,
+     "oyKullanan": 19797,
+     "gecerliOy": 19101,
+     "partiler": {
+      "AP": 10250,
+      "CHP": 8276,
+      "CKMP": 556,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kavak",
+     "secmen": 18857,
+     "oyKullanan": 16510,
+     "gecerliOy": 15864,
+     "partiler": {
+      "AP": 10325,
+      "CHP": 4722,
+      "CKMP": 817,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ladik",
+     "secmen": 12383,
+     "oyKullanan": 10926,
+     "gecerliOy": 10395,
+     "partiler": {
+      "AP": 5730,
+      "CHP": 4247,
+      "CKMP": 418,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 70359,
+     "oyKullanan": 59752,
+     "gecerliOy": 57770,
+     "partiler": {
+      "AP": 34183,
+      "CHP": 20785,
+      "CKMP": 2802,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Terme",
+     "secmen": 26652,
+     "oyKullanan": 22721,
+     "gecerliOy": 21876,
+     "partiler": {
+      "AP": 10562,
+      "CHP": 8693,
+      "CKMP": 2621,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Vezirköprü",
+     "secmen": 31045,
+     "oyKullanan": 27630,
+     "gecerliOy": 26396,
+     "partiler": {
+      "AP": 17969,
+      "CHP": 7359,
+      "CKMP": 1068,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "56-siirt.html",
+   "cevre": "Siirt",
+   "plaka": 56,
+   "secmen": 94389,
+   "oyKullanan": 71623,
+   "gecerliOy": 70393,
+   "partiler": {
+    "AP": 0,
+    "CHP": 33576,
+    "CKMP": 0,
+    "YTP": 35879,
+    "BĞMZ": 938
+   },
+   "ilceler": [
+    {
+     "ad": "Batman",
+     "secmen": 9515,
+     "oyKullanan": 7206,
+     "gecerliOy": 6996,
+     "partiler": {
+      "AP": 0,
+      "CHP": 3500,
+      "CKMP": 0,
+      "YTP": 3380,
+      "BĞMZ": 116
+     }
+    },
+    {
+     "ad": "Baykan",
+     "secmen": 5014,
+     "oyKullanan": 4165,
+     "gecerliOy": 4115,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1580,
+      "CKMP": 0,
+      "YTP": 2514,
+      "BĞMZ": 21
+     }
+    },
+    {
+     "ad": "Beşiri",
+     "secmen": 5073,
+     "oyKullanan": 4218,
+     "gecerliOy": 4121,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2468,
+      "CKMP": 0,
+      "YTP": 1632,
+      "BĞMZ": 21
+     }
+    },
+    {
+     "ad": "Eruh",
+     "secmen": 14024,
+     "oyKullanan": 11711,
+     "gecerliOy": 11554,
+     "partiler": {
+      "AP": 0,
+      "CHP": 6165,
+      "CKMP": 0,
+      "YTP": 5325,
+      "BĞMZ": 64
+     }
+    },
+    {
+     "ad": "Kozluk",
+     "secmen": 9441,
+     "oyKullanan": 6920,
+     "gecerliOy": 6801,
+     "partiler": {
+      "AP": 0,
+      "CHP": 3461,
+      "CKMP": 0,
+      "YTP": 3307,
+      "BĞMZ": 33
+     }
+    },
+    {
+     "ad": "Kurtalan",
+     "secmen": 10594,
+     "oyKullanan": 7777,
+     "gecerliOy": 7614,
+     "partiler": {
+      "AP": 0,
+      "CHP": 3428,
+      "CKMP": 0,
+      "YTP": 4139,
+      "BĞMZ": 47
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 13130,
+     "oyKullanan": 7922,
+     "gecerliOy": 7730,
+     "partiler": {
+      "AP": 0,
+      "CHP": 3499,
+      "CKMP": 0,
+      "YTP": 3976,
+      "BĞMZ": 255
+     }
+    },
+    {
+     "ad": "Pervari",
+     "secmen": 9578,
+     "oyKullanan": 7234,
+     "gecerliOy": 7165,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2937,
+      "CKMP": 0,
+      "YTP": 4065,
+      "BĞMZ": 163
+     }
+    },
+    {
+     "ad": "Sason",
+     "secmen": 5354,
+     "oyKullanan": 4455,
+     "gecerliOy": 4430,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1683,
+      "CKMP": 0,
+      "YTP": 2559,
+      "BĞMZ": 188
+     }
+    },
+    {
+     "ad": "Şırnak",
+     "secmen": 7054,
+     "oyKullanan": 5433,
+     "gecerliOy": 5344,
+     "partiler": {
+      "AP": 0,
+      "CHP": 3101,
+      "CKMP": 0,
+      "YTP": 2238,
+      "BĞMZ": 5
+     }
+    },
+    {
+     "ad": "Şirvan",
+     "secmen": 5612,
+     "oyKullanan": 4582,
+     "gecerliOy": 4523,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1754,
+      "CKMP": 0,
+      "YTP": 2744,
+      "BĞMZ": 25
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "57-sinop.html",
+   "cevre": "Sinop",
+   "plaka": 57,
+   "secmen": 120468,
+   "oyKullanan": 98892,
+   "gecerliOy": 92988,
+   "partiler": {
+    "AP": 24388,
+    "CHP": 34612,
+    "CKMP": 33988,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Ayancık",
+     "secmen": 20786,
+     "oyKullanan": 14445,
+     "gecerliOy": 15548,
+     "partiler": {
+      "AP": 4364,
+      "CHP": 6194,
+      "CKMP": 4990,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Boyabat",
+     "secmen": 29139,
+     "oyKullanan": 24307,
+     "gecerliOy": 22892,
+     "partiler": {
+      "AP": 3153,
+      "CHP": 6436,
+      "CKMP": 13303,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Durağan",
+     "secmen": 11053,
+     "oyKullanan": 9809,
+     "gecerliOy": 9309,
+     "partiler": {
+      "AP": 1564,
+      "CHP": 2480,
+      "CKMP": 5265,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Erfelek",
+     "secmen": 10932,
+     "oyKullanan": 8437,
+     "gecerliOy": 7838,
+     "partiler": {
+      "AP": 2565,
+      "CHP": 3450,
+      "CKMP": 1823,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gerze",
+     "secmen": 23818,
+     "oyKullanan": 19991,
+     "gecerliOy": 18810,
+     "partiler": {
+      "AP": 7893,
+      "CHP": 8034,
+      "CKMP": 2883,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 16194,
+     "oyKullanan": 13173,
+     "gecerliOy": 12266,
+     "partiler": {
+      "AP": 3062,
+      "CHP": 6606,
+      "CKMP": 2598,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Türkeli",
+     "secmen": 9489,
+     "oyKullanan": 6726,
+     "gecerliOy": 6325,
+     "partiler": {
+      "AP": 1787,
+      "CHP": 1412,
+      "CKMP": 3126,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "58-sivas.html",
+   "cevre": "Sivas",
+   "plaka": 58,
+   "secmen": 290345,
+   "oyKullanan": 237890,
+   "gecerliOy": 230149,
+   "partiler": {
+    "AP": 11055,
+    "CHP": 90290,
+    "CKMP": 22546,
+    "YTP": 101245,
+    "BĞMZ": 5293
+   },
+   "ilceler": [
+    {
+     "ad": "Divriği",
+     "secmen": 21931,
+     "oyKullanan": 17673,
+     "gecerliOy": 17169,
+     "partiler": {
+      "AP": 872,
+      "CHP": 5495,
+      "CKMP": 1107,
+      "YTP": 9535,
+      "BĞMZ": 149
+     }
+    },
+    {
+     "ad": "Gemerek",
+     "secmen": 15263,
+     "oyKullanan": 12720,
+     "gecerliOy": 12109,
+     "partiler": {
+      "AP": 650,
+      "CHP": 4279,
+      "CKMP": 1532,
+      "YTP": 5465,
+      "BĞMZ": 183
+     }
+    },
+    {
+     "ad": "Gürün",
+     "secmen": 14400,
+     "oyKullanan": 11008,
+     "gecerliOy": 10785,
+     "partiler": {
+      "AP": 263,
+      "CHP": 5745,
+      "CKMP": 448,
+      "YTP": 4217,
+      "BĞMZ": 66
+     }
+    },
+    {
+     "ad": "Hafik",
+     "secmen": 24750,
+     "oyKullanan": 20968,
+     "gecerliOy": 20493,
+     "partiler": {
+      "AP": 685,
+      "CHP": 6110,
+      "CKMP": 1949,
+      "YTP": 11400,
+      "BĞMZ": 352
+     }
+    },
+    {
+     "ad": "İmranlı",
+     "secmen": 12699,
+     "oyKullanan": 10474,
+     "gecerliOy": 10207,
+     "partiler": {
+      "AP": 372,
+      "CHP": 3088,
+      "CKMP": 1036,
+      "YTP": 5704,
+      "BĞMZ": 96
+     }
+    },
+    {
+     "ad": "Kangal",
+     "secmen": 24549,
+     "oyKullanan": 20403,
+     "gecerliOy": 19945,
+     "partiler": {
+      "AP": 490,
+      "CHP": 9829,
+      "CKMP": 1311,
+      "YTP": 8276,
+      "BĞMZ": 66
+     }
+    },
+    {
+     "ad": "Koyulhisar",
+     "secmen": 11651,
+     "oyKullanan": 9152,
+     "gecerliOy": 8944,
+     "partiler": {
+      "AP": 270,
+      "CHP": 2388,
+      "CKMP": 823,
+      "YTP": 5400,
+      "BĞMZ": 63
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 61441,
+     "oyKullanan": 50890,
+     "gecerliOy": 49077,
+     "partiler": {
+      "AP": 1337,
+      "CHP": 24954,
+      "CKMP": 4881,
+      "YTP": 15480,
+      "BĞMZ": 2769
+     }
+    },
+    {
+     "ad": "Suşehri",
+     "secmen": 23456,
+     "oyKullanan": 19303,
+     "gecerliOy": 18391,
+     "partiler": {
+      "AP": 1419,
+      "CHP": 5342,
+      "CKMP": 3356,
+      "YTP": 7962,
+      "BĞMZ": 180
+     }
+    },
+    {
+     "ad": "Şarkışla",
+     "secmen": 27234,
+     "oyKullanan": 22647,
+     "gecerliOy": 21766,
+     "partiler": {
+      "AP": 2478,
+      "CHP": 11881,
+      "CKMP": 1418,
+      "YTP": 5348,
+      "BĞMZ": 641
+     }
+    },
+    {
+     "ad": "Yıldızeli",
+     "secmen": 28086,
+     "oyKullanan": 23772,
+     "gecerliOy": 22714,
+     "partiler": {
+      "AP": 2164,
+      "CHP": 6043,
+      "CKMP": 3352,
+      "YTP": 10587,
+      "BĞMZ": 574
+     }
+    },
+    {
+     "ad": "Zara",
+     "secmen": 24885,
+     "oyKullanan": 18880,
+     "gecerliOy": 18549,
+     "partiler": {
+      "AP": 55,
+      "CHP": 5136,
+      "CKMP": 1333,
+      "YTP": 11871,
+      "BĞMZ": 154
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "59-tekirdag.html",
+   "cevre": "Tekirdağ",
+   "plaka": 59,
+   "secmen": 133093,
+   "oyKullanan": 112022,
+   "gecerliOy": 108825,
+   "partiler": {
+    "AP": 7505,
+    "CHP": 39577,
+    "CKMP": 7979,
+    "YTP": 53675,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Çerkezköy",
+     "secmen": 6660,
+     "oyKullanan": 5462,
+     "gecerliOy": 5288,
+     "partiler": {
+      "AP": 773,
+      "CHP": 1757,
+      "CKMP": 231,
+      "YTP": 2522,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çorlu",
+     "secmen": 23739,
+     "oyKullanan": 20317,
+     "gecerliOy": 19878,
+     "partiler": {
+      "AP": 1031,
+      "CHP": 9378,
+      "CKMP": 1393,
+      "YTP": 7976,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hayrabolu",
+     "secmen": 18818,
+     "oyKullanan": 15893,
+     "gecerliOy": 15283,
+     "partiler": {
+      "AP": 2840,
+      "CHP": 4680,
+      "CKMP": 1527,
+      "YTP": 6354,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Malkara",
+     "secmen": 25892,
+     "oyKullanan": 22262,
+     "gecerliOy": 21561,
+     "partiler": {
+      "AP": 732,
+      "CHP": 8095,
+      "CKMP": 928,
+      "YTP": 11806,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 28101,
+     "oyKullanan": 22637,
+     "gecerliOy": 22046,
+     "partiler": {
+      "AP": 782,
+      "CHP": 7017,
+      "CKMP": 1971,
+      "YTP": 12183,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Muratlı",
+     "secmen": 8677,
+     "oyKullanan": 7713,
+     "gecerliOy": 7493,
+     "partiler": {
+      "AP": 160,
+      "CHP": 2451,
+      "CKMP": 768,
+      "YTP": 4114,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Saray",
+     "secmen": 10996,
+     "oyKullanan": 9161,
+     "gecerliOy": 8880,
+     "partiler": {
+      "AP": 1079,
+      "CHP": 2780,
+      "CKMP": 996,
+      "YTP": 4015,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Şarköy",
+     "secmen": 10210,
+     "oyKullanan": 8577,
+     "gecerliOy": 8396,
+     "partiler": {
+      "AP": 108,
+      "CHP": 3419,
+      "CKMP": 165,
+      "YTP": 4705,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "60-tokat.html",
+   "cevre": "Tokat",
+   "plaka": 60,
+   "secmen": 199946,
+   "oyKullanan": 173305,
+   "gecerliOy": 166383,
+   "partiler": {
+    "AP": 26567,
+    "CHP": 63617,
+    "CKMP": 9513,
+    "YTP": 66901,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Almus",
+     "secmen": 10178,
+     "oyKullanan": 8831,
+     "gecerliOy": 8396,
+     "partiler": {
+      "AP": 429,
+      "CHP": 2986,
+      "CKMP": 647,
+      "YTP": 4335,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Artova",
+     "secmen": 13151,
+     "oyKullanan": 11537,
+     "gecerliOy": 11149,
+     "partiler": {
+      "AP": 608,
+      "CHP": 3748,
+      "CKMP": 694,
+      "YTP": 6099,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Erbaa",
+     "secmen": 28691,
+     "oyKullanan": 25016,
+     "gecerliOy": 23683,
+     "partiler": {
+      "AP": 11879,
+      "CHP": 9789,
+      "CKMP": 598,
+      "YTP": 1417,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 38503,
+     "oyKullanan": 33175,
+     "gecerliOy": 32099,
+     "partiler": {
+      "AP": 2667,
+      "CHP": 9970,
+      "CKMP": 1884,
+      "YTP": 17578,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Niksar",
+     "secmen": 25809,
+     "oyKullanan": 22373,
+     "gecerliOy": 21238,
+     "partiler": {
+      "AP": 7548,
+      "CHP": 9219,
+      "CKMP": 983,
+      "YTP": 3702,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Reşadiye",
+     "secmen": 21785,
+     "oyKullanan": 17868,
+     "gecerliOy": 17221,
+     "partiler": {
+      "AP": 1535,
+      "CHP": 7427,
+      "CKMP": 2353,
+      "YTP": 5906,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Turhal",
+     "secmen": 27797,
+     "oyKullanan": 24405,
+     "gecerliOy": 23565,
+     "partiler": {
+      "AP": 733,
+      "CHP": 8110,
+      "CKMP": 1347,
+      "YTP": 13375,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Zile",
+     "secmen": 34032,
+     "oyKullanan": 30100,
+     "gecerliOy": 29032,
+     "partiler": {
+      "AP": 1168,
+      "CHP": 12368,
+      "CKMP": 1007,
+      "YTP": 14489,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "61-trabzon.html",
+   "cevre": "Trabzon",
+   "plaka": 61,
+   "secmen": 246601,
+   "oyKullanan": 180833,
+   "gecerliOy": 174837,
+   "partiler": {
+    "AP": 90012,
+    "CHP": 69014,
+    "CKMP": 11818,
+    "YTP": 3993,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Akçaabat",
+     "secmen": 31650,
+     "oyKullanan": 24736,
+     "gecerliOy": 23812,
+     "partiler": {
+      "AP": 12470,
+      "CHP": 10101,
+      "CKMP": 1021,
+      "YTP": 220,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Araklı",
+     "secmen": 19692,
+     "oyKullanan": 15870,
+     "gecerliOy": 15333,
+     "partiler": {
+      "AP": 8234,
+      "CHP": 3524,
+      "CKMP": 1511,
+      "YTP": 2064,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Arsin",
+     "secmen": 11711,
+     "oyKullanan": 8018,
+     "gecerliOy": 7755,
+     "partiler": {
+      "AP": 4787,
+      "CHP": 2137,
+      "CKMP": 756,
+      "YTP": 75,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çaykara",
+     "secmen": 20797,
+     "oyKullanan": 12921,
+     "gecerliOy": 12384,
+     "partiler": {
+      "AP": 6787,
+      "CHP": 4872,
+      "CKMP": 620,
+      "YTP": 105,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Maçka",
+     "secmen": 19595,
+     "oyKullanan": 13242,
+     "gecerliOy": 12874,
+     "partiler": {
+      "AP": 4203,
+      "CHP": 7939,
+      "CKMP": 621,
+      "YTP": 111,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 41785,
+     "oyKullanan": 33878,
+     "gecerliOy": 32968,
+     "partiler": {
+      "AP": 15492,
+      "CHP": 15042,
+      "CKMP": 1999,
+      "YTP": 435,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Of",
+     "secmen": 27998,
+     "oyKullanan": 19003,
+     "gecerliOy": 18394,
+     "partiler": {
+      "AP": 10076,
+      "CHP": 6620,
+      "CKMP": 1513,
+      "YTP": 185,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sürmene",
+     "secmen": 21071,
+     "oyKullanan": 15339,
+     "gecerliOy": 14742,
+     "partiler": {
+      "AP": 7163,
+      "CHP": 6455,
+      "CKMP": 1030,
+      "YTP": 94,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Tonya",
+     "secmen": 10163,
+     "oyKullanan": 6726,
+     "gecerliOy": 6461,
+     "partiler": {
+      "AP": 2549,
+      "CHP": 2892,
+      "CKMP": 702,
+      "YTP": 318,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Vakfıkebir",
+     "secmen": 31452,
+     "oyKullanan": 24748,
+     "gecerliOy": 23923,
+     "partiler": {
+      "AP": 14963,
+      "CHP": 7536,
+      "CKMP": 1137,
+      "YTP": 287,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Yomra",
+     "secmen": 9591,
+     "oyKullanan": 6352,
+     "gecerliOy": 6191,
+     "partiler": {
+      "AP": 3288,
+      "CHP": 1896,
+      "CKMP": 908,
+      "YTP": 99,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "62-tunceli.html",
+   "cevre": "Tunceli",
+   "plaka": 62,
+   "secmen": 60256,
+   "oyKullanan": 46061,
+   "gecerliOy": 44011,
+   "partiler": {
+    "AP": 0,
+    "CHP": 15466,
+    "CKMP": 3137,
+    "YTP": 15587,
+    "BĞMZ": 9821
+   },
+   "ilceler": [
+    {
+     "ad": "Çemişkezek",
+     "secmen": 7070,
+     "oyKullanan": 5722,
+     "gecerliOy": 5475,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2014,
+      "CKMP": 197,
+      "YTP": 2978,
+      "BĞMZ": 286
+     }
+    },
+    {
+     "ad": "Hozat",
+     "secmen": 5988,
+     "oyKullanan": 4723,
+     "gecerliOy": 4469,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1775,
+      "CKMP": 77,
+      "YTP": 2116,
+      "BĞMZ": 501
+     }
+    },
+    {
+     "ad": "Mazgirt",
+     "secmen": 10871,
+     "oyKullanan": 8077,
+     "gecerliOy": 7768,
+     "partiler": {
+      "AP": 0,
+      "CHP": 3072,
+      "CKMP": 1249,
+      "YTP": 2419,
+      "BĞMZ": 1028
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 7144,
+     "oyKullanan": 5215,
+     "gecerliOy": 4930,
+     "partiler": {
+      "AP": 0,
+      "CHP": 1781,
+      "CKMP": 1206,
+      "YTP": 605,
+      "BĞMZ": 1338
+     }
+    },
+    {
+     "ad": "Nazımiye",
+     "secmen": 5038,
+     "oyKullanan": 3520,
+     "gecerliOy": 3399,
+     "partiler": {
+      "AP": 0,
+      "CHP": 402,
+      "CKMP": 63,
+      "YTP": 333,
+      "BĞMZ": 2601
+     }
+    },
+    {
+     "ad": "Ovacık",
+     "secmen": 6360,
+     "oyKullanan": 5087,
+     "gecerliOy": 4873,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2042,
+      "CKMP": 79,
+      "YTP": 2664,
+      "BĞMZ": 88
+     }
+    },
+    {
+     "ad": "Pertek",
+     "secmen": 9086,
+     "oyKullanan": 7221,
+     "gecerliOy": 6867,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2347,
+      "CKMP": 204,
+      "YTP": 3520,
+      "BĞMZ": 796
+     }
+    },
+    {
+     "ad": "Pülümür",
+     "secmen": 8699,
+     "oyKullanan": 6496,
+     "gecerliOy": 6230,
+     "partiler": {
+      "AP": 0,
+      "CHP": 2033,
+      "CKMP": 62,
+      "YTP": 952,
+      "BĞMZ": 3183
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "63-sanliurfa.html",
+   "cevre": "Şanlıurfa",
+   "plaka": 63,
+   "secmen": 166814,
+   "oyKullanan": 124534,
+   "gecerliOy": 120042,
+   "partiler": {
+    "AP": 24741,
+    "CHP": 51544,
+    "CKMP": 7299,
+    "YTP": 36456,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Akçakale",
+     "secmen": 10693,
+     "oyKullanan": 7845,
+     "gecerliOy": 7588,
+     "partiler": {
+      "AP": 2033,
+      "CHP": 3914,
+      "CKMP": 273,
+      "YTP": 1368,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Birecik",
+     "secmen": 14266,
+     "oyKullanan": 11645,
+     "gecerliOy": 11337,
+     "partiler": {
+      "AP": 1567,
+      "CHP": 5867,
+      "CKMP": 44,
+      "YTP": 3739,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Bozova",
+     "secmen": 14711,
+     "oyKullanan": 12417,
+     "gecerliOy": 12144,
+     "partiler": {
+      "AP": 2343,
+      "CHP": 6723,
+      "CKMP": 252,
+      "YTP": 2849,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Halfeti",
+     "secmen": 9980,
+     "oyKullanan": 8346,
+     "gecerliOy": 8145,
+     "partiler": {
+      "AP": 60,
+      "CHP": 3941,
+      "CKMP": 156,
+      "YTP": 3994,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Hilvan",
+     "secmen": 9571,
+     "oyKullanan": 7195,
+     "gecerliOy": 7006,
+     "partiler": {
+      "AP": 1223,
+      "CHP": 3565,
+      "CKMP": 591,
+      "YTP": 1620,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 45145,
+     "oyKullanan": 32401,
+     "gecerliOy": 30931,
+     "partiler": {
+      "AP": 12494,
+      "CHP": 11691,
+      "CKMP": 953,
+      "YTP": 5752,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Siverek",
+     "secmen": 30547,
+     "oyKullanan": 20582,
+     "gecerliOy": 19694,
+     "partiler": {
+      "AP": 914,
+      "CHP": 5951,
+      "CKMP": 3523,
+      "YTP": 9448,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Suruç",
+     "secmen": 16456,
+     "oyKullanan": 13308,
+     "gecerliOy": 12732,
+     "partiler": {
+      "AP": 2454,
+      "CHP": 5554,
+      "CKMP": 1257,
+      "YTP": 3467,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Viranşehir",
+     "secmen": 15445,
+     "oyKullanan": 10795,
+     "gecerliOy": 10465,
+     "partiler": {
+      "AP": 1653,
+      "CHP": 4338,
+      "CKMP": 250,
+      "YTP": 4219,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "64-usak.html",
+   "cevre": "Uşak",
+   "plaka": 64,
+   "secmen": 91036,
+   "oyKullanan": 73526,
+   "gecerliOy": 70530,
+   "partiler": {
+    "AP": 14592,
+    "CHP": 29398,
+    "CKMP": 26540,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Banaz",
+     "secmen": 16696,
+     "oyKullanan": 14033,
+     "gecerliOy": 13304,
+     "partiler": {
+      "AP": 2292,
+      "CHP": 6062,
+      "CKMP": 4950,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Eşme",
+     "secmen": 15548,
+     "oyKullanan": 13321,
+     "gecerliOy": 12838,
+     "partiler": {
+      "AP": 2480,
+      "CHP": 7474,
+      "CKMP": 2884,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karahallı",
+     "secmen": 8948,
+     "oyKullanan": 6698,
+     "gecerliOy": 6477,
+     "partiler": {
+      "AP": 2898,
+      "CHP": 3199,
+      "CKMP": 380,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 31063,
+     "oyKullanan": 25284,
+     "gecerliOy": 24319,
+     "partiler": {
+      "AP": 2144,
+      "CHP": 6958,
+      "CKMP": 15217,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Sivaslı",
+     "secmen": 9142,
+     "oyKullanan": 6753,
+     "gecerliOy": 6493,
+     "partiler": {
+      "AP": 2189,
+      "CHP": 2914,
+      "CKMP": 1390,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ulubey",
+     "secmen": 9639,
+     "oyKullanan": 7437,
+     "gecerliOy": 7099,
+     "partiler": {
+      "AP": 2589,
+      "CHP": 2791,
+      "CKMP": 1719,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "65-van.html",
+   "cevre": "Van",
+   "plaka": 65,
+   "secmen": 80998,
+   "oyKullanan": 66577,
+   "gecerliOy": 64233,
+   "partiler": {
+    "AP": 5085,
+    "CHP": 20963,
+    "CKMP": 13757,
+    "YTP": 24428,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Başkale",
+     "secmen": 6775,
+     "oyKullanan": 6173,
+     "gecerliOy": 6123,
+     "partiler": {
+      "AP": 197,
+      "CHP": 2615,
+      "CKMP": 2941,
+      "YTP": 370,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çatak",
+     "secmen": 4471,
+     "oyKullanan": 2760,
+     "gecerliOy": 2719,
+     "partiler": {
+      "AP": 262,
+      "CHP": 548,
+      "CKMP": 533,
+      "YTP": 1376,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Erciş",
+     "secmen": 14789,
+     "oyKullanan": 12033,
+     "gecerliOy": 11463,
+     "partiler": {
+      "AP": 187,
+      "CHP": 4554,
+      "CKMP": 1120,
+      "YTP": 5602,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gevaş",
+     "secmen": 5164,
+     "oyKullanan": 4233,
+     "gecerliOy": 4121,
+     "partiler": {
+      "AP": 82,
+      "CHP": 852,
+      "CKMP": 752,
+      "YTP": 2435,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Gürpınar",
+     "secmen": 7678,
+     "oyKullanan": 6428,
+     "gecerliOy": 6299,
+     "partiler": {
+      "AP": 488,
+      "CHP": 1269,
+      "CKMP": 2661,
+      "YTP": 1881,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 19930,
+     "oyKullanan": 15562,
+     "gecerliOy": 14829,
+     "partiler": {
+      "AP": 2812,
+      "CHP": 6352,
+      "CKMP": 2963,
+      "YTP": 2702,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Muradiye",
+     "secmen": 11660,
+     "oyKullanan": 10130,
+     "gecerliOy": 9824,
+     "partiler": {
+      "AP": 191,
+      "CHP": 2194,
+      "CKMP": 1552,
+      "YTP": 5887,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Özalp",
+     "secmen": 10531,
+     "oyKullanan": 9258,
+     "gecerliOy": 8855,
+     "partiler": {
+      "AP": 866,
+      "CHP": 2579,
+      "CKMP": 1235,
+      "YTP": 4175,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "66-yozgat.html",
+   "cevre": "Yozgat",
+   "plaka": 66,
+   "secmen": 178245,
+   "oyKullanan": 151672,
+   "gecerliOy": 144204,
+   "partiler": {
+    "AP": 17614,
+    "CHP": 47186,
+    "CKMP": 63825,
+    "YTP": 14544,
+    "BĞMZ": 1283
+   },
+   "ilceler": [
+    {
+     "ad": "Akdağmadeni",
+     "secmen": 21991,
+     "oyKullanan": 17975,
+     "gecerliOy": 16714,
+     "partiler": {
+      "AP": 1763,
+      "CHP": 2269,
+      "CKMP": 10469,
+      "YTP": 1820,
+      "BĞMZ": 393
+     }
+    },
+    {
+     "ad": "Boğazlıyan",
+     "secmen": 20501,
+     "oyKullanan": 18371,
+     "gecerliOy": 17609,
+     "partiler": {
+      "AP": 4751,
+      "CHP": 8629,
+      "CKMP": 3847,
+      "YTP": 352,
+      "BĞMZ": 37
+     }
+    },
+    {
+     "ad": "Çayıralan",
+     "secmen": 15995,
+     "oyKullanan": 13461,
+     "gecerliOy": 12863,
+     "partiler": {
+      "AP": 5187,
+      "CHP": 5082,
+      "CKMP": 2203,
+      "YTP": 315,
+      "BĞMZ": 76
+     }
+    },
+    {
+     "ad": "Çekerek",
+     "secmen": 21714,
+     "oyKullanan": 19435,
+     "gecerliOy": 18602,
+     "partiler": {
+      "AP": 1686,
+      "CHP": 5239,
+      "CKMP": 7218,
+      "YTP": 4324,
+      "BĞMZ": 135
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 33646,
+     "oyKullanan": 27196,
+     "gecerliOy": 25766,
+     "partiler": {
+      "AP": 1927,
+      "CHP": 8998,
+      "CKMP": 12371,
+      "YTP": 2209,
+      "BĞMZ": 261
+     }
+    },
+    {
+     "ad": "Sarıkaya",
+     "secmen": 14443,
+     "oyKullanan": 12025,
+     "gecerliOy": 11406,
+     "partiler": {
+      "AP": 544,
+      "CHP": 3326,
+      "CKMP": 6558,
+      "YTP": 891,
+      "BĞMZ": 87
+     }
+    },
+    {
+     "ad": "Sorgun",
+     "secmen": 27740,
+     "oyKullanan": 23659,
+     "gecerliOy": 22498,
+     "partiler": {
+      "AP": 1056,
+      "CHP": 6561,
+      "CKMP": 10823,
+      "YTP": 4148,
+      "BĞMZ": 151
+     }
+    },
+    {
+     "ad": "Şefaatli",
+     "secmen": 10306,
+     "oyKullanan": 9233,
+     "gecerliOy": 8850,
+     "partiler": {
+      "AP": 333,
+      "CHP": 3626,
+      "CKMP": 4726,
+      "YTP": 88,
+      "BĞMZ": 77
+     }
+    },
+    {
+     "ad": "Yerköy",
+     "secmen": 11909,
+     "oyKullanan": 10317,
+     "gecerliOy": 9896,
+     "partiler": {
+      "AP": 367,
+      "CHP": 3456,
+      "CKMP": 5610,
+      "YTP": 397,
+      "BĞMZ": 66
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  },
+  {
+   "dosya": "67-zonguldak.html",
+   "cevre": "Zonguldak",
+   "plaka": 67,
+   "secmen": 274589,
+   "oyKullanan": 232746,
+   "gecerliOy": 218847,
+   "partiler": {
+    "AP": 121938,
+    "CHP": 69695,
+    "CKMP": 27453,
+    "YTP": 0,
+    "BĞMZ": 0
+   },
+   "ilceler": [
+    {
+     "ad": "Bartın",
+     "secmen": 43521,
+     "oyKullanan": 38841,
+     "gecerliOy": 35647,
+     "partiler": {
+      "AP": 24825,
+      "CHP": 8314,
+      "CKMP": 2508,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Çaycuma",
+     "secmen": 28496,
+     "oyKullanan": 25658,
+     "gecerliOy": 23382,
+     "partiler": {
+      "AP": 14567,
+      "CHP": 7364,
+      "CKMP": 1451,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Devrek",
+     "secmen": 29049,
+     "oyKullanan": 25561,
+     "gecerliOy": 23862,
+     "partiler": {
+      "AP": 13831,
+      "CHP": 7869,
+      "CKMP": 2118,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Eflani",
+     "secmen": 12805,
+     "oyKullanan": 8922,
+     "gecerliOy": 8605,
+     "partiler": {
+      "AP": 3216,
+      "CHP": 1385,
+      "CKMP": 4004,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ereğli",
+     "secmen": 37231,
+     "oyKullanan": 32758,
+     "gecerliOy": 30437,
+     "partiler": {
+      "AP": 18456,
+      "CHP": 9503,
+      "CKMP": 2498,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Karabük",
+     "secmen": 31447,
+     "oyKullanan": 25585,
+     "gecerliOy": 24299,
+     "partiler": {
+      "AP": 11311,
+      "CHP": 6801,
+      "CKMP": 6183,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Kurucaşile",
+     "secmen": 4432,
+     "oyKullanan": 3820,
+     "gecerliOy": 3619,
+     "partiler": {
+      "AP": 2329,
+      "CHP": 699,
+      "CKMP": 691,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Merkez",
+     "secmen": 57381,
+     "oyKullanan": 46720,
+     "gecerliOy": 45101,
+     "partiler": {
+      "AP": 21411,
+      "CHP": 19451,
+      "CKMP": 4402,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Safranbolu",
+     "secmen": 15264,
+     "oyKullanan": 11857,
+     "gecerliOy": 11439,
+     "partiler": {
+      "AP": 5010,
+      "CHP": 3797,
+      "CKMP": 2632,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    },
+    {
+     "ad": "Ulus",
+     "secmen": 14963,
+     "oyKullanan": 13024,
+     "gecerliOy": 12456,
+     "partiler": {
+      "AP": 6978,
+      "CHP": 4512,
+      "CKMP": 966,
+      "YTP": 0,
+      "BĞMZ": 0
+     }
+    }
+   ],
+   "turkiyeToplami": {
+    "secmen": 12925395,
+    "oyKullanan": 10522716,
+    "gecerliOy": 10138035,
+    "partiler": {
+     "AP": 3527435,
+     "CHP": 3724752,
+     "CKMP": 1415390,
+     "YTP": 1391934,
+     "BĞMZ": 81732
+    }
+   }
+  }
+ ]
+}

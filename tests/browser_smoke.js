@@ -303,8 +303,8 @@ async function scenario_istanbulGenelGecmisi(browser) {
   check('1991/1995-2007 genel İstanbul geometrisi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
-// Bir secimde HIC ilce-duzeyi veri yoksa (orn. 1965 genel - sadece il
-// duzeyinde kaynak var), "ilce gorunumu"ne HIC GECILMEMELI - ne 39 parcaya
+// Bir secimde HIC ilce-duzeyi veri yoksa (orn. 1957 genel - sadece il
+// duzeyinde kaynak var; 1961-1987 artik TUIK ilce verisiyle geliyor), "ilce gorunumu"ne HIC GECILMEMELI - ne 39 parcaya
 // bolup "veri yok" katmani cizmek, ne de zoom yapip tek-parca-il gosterip
 // sahte bir "İlçe Sonuçları" alt seviyesi sunmak. Harita ULKE goruminde
 // KALMALI, sag panel sadece ilin kendi sonucunu gostermeli ve "İlçeler"
@@ -315,8 +315,8 @@ async function scenario_ilOnlyYearsTekParca(browser) {
   const errors = await withPage(browser, async (page) => {
     await page.click('#btnTurGenel');
     await page.waitForTimeout(400);
-    const found1965 = await clickYear(page, '1965');
-    check('1965 genel: yıl seçilebildi', found1965);
+    const found1957 = await clickYear(page, '1957');
+    check('1957 genel: yıl seçilebildi', found1957);
     await page.waitForTimeout(400);
     await page.fill('#searchBox', 'İstanbul');
     await page.waitForTimeout(300);
@@ -325,15 +325,15 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     let breadcrumbHidden = await page.$eval('#mapBreadcrumb', (el) => getComputedStyle(el).display === 'none');
     let dName = await page.$eval('#dName', (el) => el.textContent);
     let selectedPlaka = await page.$eval('path.il-path.selected', (el) => el.dataset.plaka).catch(() => null);
-    check('1965 genel (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok', nodata === 0, 'nodata=' + nodata);
-    check('1965 genel (hiç ilçe verisi yok): harita ülke görünümünde kaldı (tek ile zoom yapmadı)', countryPaths > 1, 'countryPaths=' + countryPaths);
-    check('1965 genel (hiç ilçe verisi yok): "İlçe Sonuçları" breadcrumb\'ı hiç açılmadı', breadcrumbHidden);
-    check('1965 genel (hiç ilçe verisi yok): sağ panelde il doğru seçili', dName === 'İstanbul' && selectedPlaka === '34', 'dName=' + dName + ' selectedPlaka=' + selectedPlaka);
+    check('1957 genel (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok', nodata === 0, 'nodata=' + nodata);
+    check('1957 genel (hiç ilçe verisi yok): harita ülke görünümünde kaldı (tek ile zoom yapmadı)', countryPaths > 1, 'countryPaths=' + countryPaths);
+    check('1957 genel (hiç ilçe verisi yok): "İlçe Sonuçları" breadcrumb\'ı hiç açılmadı', breadcrumbHidden);
+    check('1957 genel (hiç ilçe verisi yok): sağ panelde il doğru seçili', dName === 'İstanbul' && selectedPlaka === '34', 'dName=' + dName + ' selectedPlaka=' + selectedPlaka);
 
     const districtsHidden = await page.$eval('#dDistrictsLabel', (el) => getComputedStyle(el).display === 'none')
       && await page.$eval('#districtSearch', (el) => getComputedStyle(el).display === 'none')
       && await page.$eval('#dDistrictList', (el) => getComputedStyle(el).display === 'none');
-    check('1965 genel (hiç ilçe verisi yok): "İlçeler" başlığı/arama/listesi hiç gösterilmiyor', districtsHidden);
+    check('1957 genel (hiç ilçe verisi yok): "İlçeler" başlığı/arama/listesi hiç gösterilmiyor', districtsHidden);
 
     // Katilim/Parti moduna gecince de (bkz. onceki bug: bos entity listesi
     // yuzunden "Infinity%" gibi bozuk bir legend olusuyordu) hata olmamali -
@@ -341,13 +341,15 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     await page.click('#modeGroup button[data-mode="katilim"]').catch(() => {});
     await page.waitForTimeout(200);
     const seqMinText = await page.$eval('#seqMin', (el) => el.textContent);
-    check('1965 genel (hiç ilçe verisi yok): Katılım moduna geçince legend bozulmuyor (Infinity/NaN yok)', !/Infinity|NaN/.test(seqMinText), seqMinText);
+    check('1957 genel (hiç ilçe verisi yok): Katılım moduna geçince legend bozulmuyor (Infinity/NaN yok)', !/Infinity|NaN/.test(seqMinText), seqMinText);
     await page.click('#modeGroup button[data-mode="winner"]').catch(() => {});
 
-    await page.click('#btnTurYerel');
+    // 1977 yerel artik ilce duzeyinde (2026-09-24, Wikipedia "İlçeler" bolumleri) -
+    // hala il-only olan bir secim: 1988 referandumu.
+    await page.click('#btnTurReferandum');
     await page.waitForTimeout(400);
-    const found1977 = await clickYear(page, '1977');
-    check('1977 yerel: yıl seçilebildi', found1977);
+    const found1988 = await clickYear(page, '1988');
+    check('1988 referandum: yıl seçilebildi', found1988);
     await page.waitForTimeout(400);
     await page.fill('#searchBox', 'İstanbul');
     await page.waitForTimeout(300);
@@ -355,11 +357,115 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     countryPaths = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
     breadcrumbHidden = await page.$eval('#mapBreadcrumb', (el) => getComputedStyle(el).display === 'none');
     dName = await page.$eval('#dName', (el) => el.textContent);
-    check('1977 yerel (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok, ülke görünümünde kaldı, breadcrumb açılmadı',
+    check('1988 referandum (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok, ülke görünümünde kaldı, breadcrumb açılmadı',
       nodata === 0 && countryPaths > 1 && breadcrumbHidden && dName === 'İstanbul',
       'nodata=' + nodata + ' countryPaths=' + countryPaths + ' breadcrumbHidden=' + breadcrumbHidden + ' dName=' + dName);
   });
   check('il-only yıllar: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+// 1950-1977 yerel secimleri (2026-09-24, ikinci oturum): ilce belediye
+// baskanliklari Wikipedia il sayfalarinin "İlçeler" bolumlerinden. 1963-1977
+// aday/oy bazli; 1950/1955 yalnizca kazanan parti (oy yok) - bu satirlar
+// haritada kazanan rengiyle boyanmali ve oy alani "—" gostermeli.
+async function scenario_yerelIlce1950_1977(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurYerel');
+    await page.waitForTimeout(400);
+    check('1968 yerel: yıl seçilebildi', await clickYear(page, '1968'));
+    await page.waitForTimeout(400);
+    await page.click('path[data-plaka="1"]');
+    await page.waitForTimeout(500);
+    const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1968 yerel Adana: ilçe haritası çiziliyor', ids.length > 5, 'n=' + ids.length);
+    const ceyhan = await page.$$eval('path.il-path[data-geom-id]', (els) => {
+      const e = els.find((x) => x.dataset.geomId === 'TR-D-01-002'); return e ? e.getAttribute('fill') : null; });
+    check('1968 yerel Adana: Ceyhan boyalı (veri var)', !!ceyhan && !/map-empty/.test(ceyhan), String(ceyhan));
+    if (ceyhan) {
+      await page.click('path.il-path[data-geom-id="TR-D-01-002"]');
+      await page.waitForTimeout(400);
+      const dName = await page.$eval('#dName', (el) => el.textContent);
+      const body = await page.$eval('#detailPanel', (el) => el.textContent).catch(() => '');
+      check('1968 yerel Ceyhan: tıklanınca kendi oyları (CHP 6.173)', dName === 'Ceyhan' && /6\.173/.test(body), 'dName=' + dName);
+    }
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+
+    check('1950 yerel: yıl seçilebildi', await clickYear(page, '1950'));
+    await page.waitForTimeout(400);
+    await page.click('path[data-plaka="1"]');
+    await page.waitForTimeout(500);
+    const ids50 = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1950 yerel Adana: sadece-kazanan ilçeler haritada çiziliyor', ids50.length > 3, 'n=' + ids50.length);
+    const labels = await page.$$eval('#legend, #seqMin, #seqMax', (els) => els.map((e) => e.textContent).join(' ')).catch(() => '');
+    check('1950 yerel: legend bozulmuyor (Infinity/NaN yok)', !/Infinity|NaN/.test(labels), labels.slice(0, 120));
+  });
+  check('1950-1977 yerel ilçe: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+// 1961-1987 genel secimleri (2026-09-24): TUIK'ten gelen ilce duzeyi.
+// Buyuksehir "Merkez"leri sentetik HIST-<Il>-Merkez poligonlariyla (bolunme
+// kanununun halefleri) ciziliyor ve o haleflerin modern poligonlari ayrica
+// "veri yok" olarak cizilmiyor; Ankara Merkez (guvenilir siniri yok) listede
+// var ama haritada yok; Istanbul'da Eminonu/Fatih ayri tarihsel poligonlar.
+async function scenario_1961_1987Ilce(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(400);
+    for (const [year, plaka, hist, hidden] of [
+      ['1965', '42', 'HIST-Konya-Merkez', ['TR-D-42-022', 'TR-D-42-024', 'TR-D-42-026']],
+      ['1977', '1', 'HIST-Adana-Merkez', ['TR-D-01-012', 'TR-D-01-015']],
+      ['1987', '16', 'HIST-Bursa-Merkez', ['TR-D-16-012', 'TR-D-16-015', 'TR-D-16-017']],
+    ]) {
+      const found = await clickYear(page, year);
+      check(year + ' genel: yıl seçilebildi', found);
+      await page.waitForTimeout(400);
+      await page.click('path[data-plaka="' + plaka + '"]');
+      await page.waitForTimeout(500);
+      const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+      check(year + ' genel: ilçe haritası çiziliyor (' + plaka + ')', ids.length > 3, 'n=' + ids.length);
+      check(year + ' genel: ' + hist + ' çiziliyor', ids.includes(hist), JSON.stringify(ids));
+      const nodata = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+      check(year + ' genel: Merkez halefleri ayrıca "veri yok" olarak çizilmiyor',
+        hidden.every((h) => !nodata.includes(h) && !ids.includes(h)), JSON.stringify(nodata));
+      await page.click('path.il-path[data-geom-id="' + hist + '"]');
+      await page.waitForTimeout(400);
+      const dName = await page.$eval('#dName', (el) => el.textContent);
+      const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+      check(year + ' genel: ' + hist + ' tıklanınca Merkez\'in gerçek verisi', dName === 'Merkez' && dSecmen !== '—' && dSecmen !== '',
+        'dName=' + dName + ' dSecmen=' + dSecmen);
+      await page.click('#btnBackCountry').catch(() => {});
+      await page.waitForTimeout(300);
+    }
+
+    await clickYear(page, '1973');
+    await page.waitForTimeout(400);
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(500);
+    const ist = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1973 genel İstanbul: Eminönü ve Fatih ayrı tarihsel poligonlarla, modern Fatih çizilmeden',
+      ist.includes('HIST-Istanbul-Eminonu') && ist.includes('HIST-Istanbul-Fatih') && !ist.includes('TR-D-34-020'), JSON.stringify(ist));
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+    await page.click('path[data-plaka="6"]');
+    await page.waitForTimeout(500);
+    const districtNames = await page.$$eval('#dDistrictList *', (els) => els.map((e) => e.textContent));
+    check('1973 genel Ankara: Merkez (haritasız) ilçe listesinde yine de var',
+      districtNames.some((t) => /Merkez/.test(t)), JSON.stringify(districtNames.slice(0, 5)));
+    // 1991-2007 ilce duzeyi TUIK'e yukseltildi (2026-09-24): Eminonu artik ayri satir
+    for (const y of ['1995', '2007']) {
+      await page.click('#btnBackCountry').catch(() => {});
+      await page.waitForTimeout(300);
+      await clickYear(page, y);
+      await page.waitForTimeout(400);
+      await page.click('path[data-plaka="34"]');
+      await page.waitForTimeout(500);
+      const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+      check(y + ' genel İstanbul (TÜİK): Eminönü ve Fatih ayrı, modern Fatih çizilmeden',
+        ids.includes('HIST-Istanbul-Eminonu') && ids.includes('HIST-Istanbul-Fatih') && !ids.includes('TR-D-34-020'), JSON.stringify(ids.slice(0, 8)));
+    }
+  });
+  check('1961-1987 genel ilçe: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
 async function scenario_1950yerel(browser) {
@@ -495,6 +601,8 @@ async function main() {
     await scenario_1992DalgasiCozumu(browser);
     await scenario_izmirDalgalariCozumu(browser);
     await scenario_ilOnlyYearsTekParca(browser);
+    await scenario_1961_1987Ilce(browser);
+    await scenario_yerelIlce1950_1977(browser);
     await scenario_1950yerel(browser);
     await scenario_1955yerel(browser);
     await scenario_2024meclis(browser);

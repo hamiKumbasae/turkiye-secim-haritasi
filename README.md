@@ -103,14 +103,27 @@ ait) artık kullanılmıyor, sadece tarihsel referans.
 modu (kök dizin) ek bir adım gerektirmeden çalışır — Settings → Pages'ten
 etkinleştirmeniz yeterli.
 
+## Veri kökeni
+
+Her seçimin il/ilçe kaynağı `sources.yml`'de; birden fazla kaynaktan beslenen
+satırlarda satırın kendi `kaynak` alanı var (hangi değer hangi kaynaktan, eski/yeni).
+Kaynak başına ayrıştırılmış veri `data/kaynaklar/`, ham dosyalar `data/raw/`.
+
+```bash
+.venv/bin/python scripts/kaynak.py --liste
+.venv/bin/python scripts/kaynak.py 1995 İstanbul Fatih
+```
+
 ## Bilinen kapsam sınırları
 
-- 1950-1977 genel seçimlerinde (ve 1961/1982/1987/1988/2007 referandumlarında)
-  ilçe düzeyi veri yok, sadece il düzeyi — bu dönemde "seçim çevresi" il'in
-  kendisiydi, ilçe bazlı sistem hiç var olmadı (kaynak eksikliği değil).
+- 1950/1954/1957 genel seçimlerinde (ve 1961/1982/1987/1988 referandumlarında)
+  ilçe düzeyi veri yok, sadece il düzeyi — resmî bir ilçe kaynağı
+  bulunamadı. 1961-1987 arası 7 genel seçimin ilçe düzeyi 2026-09-24'te
+  TÜİK'ten eklendi (bkz. `scripts/pipelines/genel_ilce_1961_1987/`);
+  "seçim çevresi il olduğu için ilçe kırılımı yok" varsayımı yanlıştı.
 - 1957/1961 genel seçimlerinde Sakarya'nın vekil dağılımı yok (YSK'nin
   1950-1977 arşivinde bu il hiç yok, bkz. `data/raw/ysk/1950-1977/PROVENANCE.md`).
-- 2002 Siirt ilçe kırılımı bozuk (kaynak hatası, düzeltilemedi — bkz. `sources.yml`).
+- 2002 Siirt: il ve ilçe sonuçları, iptal edilip 9 Mart 2003'te yenilenen seçimin resmî sonucudur (YSK ve TÜİK aynı rakamı veriyor; hata değil — bkz. `sources.yml`).
 - 2014 yerel seçiminde BDP il/ilçe verisi hatalı (gerçek oylar mahalle
   düzeyinde "HDP" altında bulundu, il/ilçe düzeyi düzeltilmedi).
 - 2010 referandumunun ilçe düzeyi oy SAYILARI tahmini (`~300 oy/sandık`
