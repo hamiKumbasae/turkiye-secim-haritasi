@@ -22,6 +22,8 @@
       return {cat:'full', badge:'YSK Resmî Veri', detail:'YSK Açık Veri Portalı (acikveri.ysk.gov.tr, resmi API) — il+ilçe düzeyi.'};
     if(currentYear==='2007referandum')
       return {cat:'full', badge:'YSK Resmî Veri', detail:'YSK (resmi il+ilçe bazlı birleştirme tutanakları).'};
+    if(YEARS_REF_IL_YSK_ILCE_TUIK.has(currentYear))
+      return {cat:'full', badge:'YSK (İl) + TÜİK (İlçe)', detail:'İl düzeyi — YSK resmi halkoylaması arşivi. İlçe düzeyi — TÜİK, "Halk Oylaması Sonuçları 2007, 1988, 1987, 1982, 1961" (2008); il toplamları YSK ile birebir aynı. İlçe toplamları il toplamını birkaç ilde birebir tutmayabilir (kaynağın kendisi).'};
     if(YEARS_IL_YSK_ILCE_TUIK.has(currentYear))
       return {cat:'full', badge:'YSK (İl) + TÜİK (İlçe)', detail:'İl düzeyi — YSK resmi il-bazlı arşivi. İlçe düzeyi — TÜİK "Seçim çevresi ve ilçelere göre milletvekili genel seçimi sonuçları" (DİE\'nin basılı il ve ilçe sonuçları yayınlarıyla aynı rakamlar). İlçe toplamları il toplamıyla birebir tutmayabilir: il rakamları Resmî Gazete ilanından, ilçe rakamları ilçe seçim kurullarının birleştirme tutanaklarından gelir.'};
     if(YEARS_YSK_OFFICIAL_IL.has(currentYear))

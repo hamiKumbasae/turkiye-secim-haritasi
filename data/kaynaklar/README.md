@@ -15,6 +15,7 @@ data/normalized/ek/<tür>/<seçim>.json        projede başka karşılığı olm
 | Kaynak | Klasör | Seçimler | Ham veri |
 |---|---|---|---|
 | TÜİK (resmî) | `tuik/genel/` | 1961-2007 genel, il + ilçe (+ 1991'den itibaren şehir/köy kırılımı) | `data/raw/tuik/` |
+| TÜİK (resmî) | `tuik/referandum/` | 1961, 1982, 1987, 1988, 2007 halkoylaması, il + ilçe + şehir/köy | `data/raw/tuik/halkoylamasi-0018260/` |
 | Wikipedia (ikincil) | `wikipedia/{genel,yerel,senato,cumhurbaskanligi}/` | 1923-2024, il sayfaları | `data/raw/wikipedia/il-sayfalari/` |
 | mertnuhoglu (ikincil) | `mertnuhoglu/genel/` | 1991-2007 ilçe, TÜİK'ten önceki hâli (dondurulmuş) | `data/raw/third-party/mertnuhoglu/` |
 

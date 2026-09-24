@@ -20,8 +20,11 @@
   // cikarildi - ilce belediye baskanliklari ayni Wikipedia il sayfalarinin
   // "İlçeler" bolumlerinden eklendi (1950/1955: sadece kazanan parti; bkz.
   // scripts/pipelines/wikipedia_arsiv/, data/kaynaklar/wikipedia/yerel/).
-  const YEARS_IL_ONLY = new Set(['1950','1954','1957',
-    '1961referandum','1982referandum','1987referandum','1988referandum']);
+  // 2026-09-24 (ucuncu oturum): 1961/1982/1987/1988 referandumlari da cikarildi -
+  // ilce duzeyi TUIK'in "Halk Oylaması Sonuçları" (2008) yayinindan
+  // (bkz. scripts/pipelines/tuik_arsiv/extract_halkoylamasi.py).
+  const YEARS_IL_ONLY = new Set(['1950','1954','1957']);
+  const YEARS_REF_IL_YSK_ILCE_TUIK = new Set(['1961referandum','1982referandum','1987referandum','1988referandum']);
   // 2026-09-22: 1950-1977 yerel secimleri, digerlerinden farkli bir kaynak
   // notu metni gerektiriyor (YSK'nin bu donem icin il-bazli degil, sadece
   // ULUSAL toplam PDF'i var - bkz. data/raw/ysk/mahalli-1963-1977/PROVENANCE.md).

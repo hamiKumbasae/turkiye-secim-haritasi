@@ -71,10 +71,10 @@
     "elections/genel/2015Kasim.json": "daac71ed50225bf7e1b6a005f59a04ee6b5b3cc37606e5a769a36e2c163fc3c9",
     "elections/genel/2018.json": "5251812bccd246c7efb1f92fe1d8c720f4a21a94a3a75e87788d6fa97ed2e4f2",
     "elections/genel/2023.json": "11d6f896ab812d0a3407bdf8309b2cf228756d97983ac71b99370363594ae198",
-    "elections/referandum/1961referandum.json": "fe1e8835153723e8ed79dec2a79b378e863cf443ac6a2f1fb255871b4b5a8731",
-    "elections/referandum/1982referandum.json": "703c634b54aa7cc4b7948f6f211f719088730b4965155f16fdbe148d18917723",
-    "elections/referandum/1987referandum.json": "1def41757149efdf7647a4be30ebfb026566b6649de88cc7616a55b66dff9b2e",
-    "elections/referandum/1988referandum.json": "49b2d59459646722fafa5872687b4900a5bb83e99f465444e522cd9b9a933fad",
+    "elections/referandum/1961referandum.json": "978398cb614747c3c83d5389c057796a0c9cf729f28b2a168142657a725977b6",
+    "elections/referandum/1982referandum.json": "f540532071c95eaeefd193b1c1b1272eaa48ed364b044b9a0572209e4547c245",
+    "elections/referandum/1987referandum.json": "f1046dde6a619d5fd65ea4b65541c79add7a4eda0f466e632f2e6da5b2c140d0",
+    "elections/referandum/1988referandum.json": "4d78dd548700c253b6012cd5aeadbd9d449b90cd7d8b25a0377b5fcf46c7a826",
     "elections/referandum/2007referandum.json": "587e967a912f89b1c445baabdd66c2fd6e551c4e4064e71c9d20d63b0ffafdf1",
     "elections/referandum/2010referandum.json": "0e0a2e660ac755fb6cbb0739207e88364f558a6dbab2d398daccae76b89cec22",
     "elections/referandum/2017referandum.json": "54fee5bdfa609f002e5fbf2eca459ddc6d10b4d885f45207365e337de2aacede",
@@ -5461,9 +5461,9 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 74,
+   "file_count": 79,
    "files": {
-    "README.md": "8727feab2210ce27a8491438092e28a1e0db8374ed46d1b8bf4440971fe50ea3",
+    "README.md": "824b3750f0fd31cee96ef29a85cd63cd7bf285159be777ce03c299b7be25e7b2",
     "mertnuhoglu/genel/1991.json": "39fbdc09dae77a625bd4afe8a81165c0bfb5e73b25541202ecc273d457debcb9",
     "mertnuhoglu/genel/1995.json": "663f29122d69e76dc8aef205f7bf3246c78e8256a2359ee16e9e6da28f4ee3c1",
     "mertnuhoglu/genel/1999.json": "da8f9ce8202a799f434a581c42ac5d7e0d80b5a8e0dda6c4d18f60aa69882110",
@@ -5481,6 +5481,11 @@
     "tuik/genel/1999.json": "dae824759e5aae09d1f2b853eda5f1b9c488cf54ee078b1b7d61636d7b9abca9",
     "tuik/genel/2002.json": "b221c43391ade85e048b3d71b10294d56f4b37d1861548e81318647109222c59",
     "tuik/genel/2007.json": "edaeacb1f0a18f7cfd87341b412698695f892b8b5f238e5efe70c0ea0f1b84c3",
+    "tuik/referandum/1961referandum.json": "e2fef2ac0b0d46efe9c054433809b0e4a76ff66c1126d7ab54625b7cb7e1fcdc",
+    "tuik/referandum/1982referandum.json": "d2f7bc899931c73ae962f0654146d5f5dbac2e67cd02b2aec2f202f6fe56d48d",
+    "tuik/referandum/1987referandum.json": "76aad28c7ee60795fee5a12367fc7b27d451e05431fba1c9c3b2076b54d519b5",
+    "tuik/referandum/1988referandum.json": "8aa8678f7af7c0e809028483feffca1359ea4facc91b73de4d08aecce691be5e",
+    "tuik/referandum/2007referandum.json": "dcb447dab9559ccbf4f15aece39f63e109e9466d25e35aef4f84f8ac2b6d2fcf",
     "wikipedia/cumhurbaskanligi/2014cb.json": "0cf52ed9c22bbf5c738ecb2ff15cb971f9fe5a096b0681fb437fb80d60cd32e8",
     "wikipedia/genel/1923.json": "0eccb7504f023b02e4dfb174026981b4292102be1752f434d0b5b0fafee7a903",
     "wikipedia/genel/1927.json": "f8781f1fb299f6d6cc2e3d2b5bfd8768d8e5cb47eee07e815afda05a1a0a5344",
@@ -5537,6 +5542,13 @@
     "wikipedia/yerel/2014yerel.json": "75e8186d5e635dbd2467105af1f01f52d74d732080b7ec3a3eed4fbd7a384bc6",
     "wikipedia/yerel/2019yerel.json": "40db0b5ada5557de92eec996e407a9985a13121608de01bf2f9cc274481c2b4c",
     "wikipedia/yerel/2024yerel.json": "db5fcc056cbdededa25537b70a2a2607c2369eebf8f038c334a4e064341783c9"
+   }
+  },
+  "data/raw/tuik/halkoylamasi-0018260": {
+   "checksum_file": "data/raw/tuik/halkoylamasi-0018260/checksums.sha256",
+   "file_count": 1,
+   "files": {
+    "0018260.pdf": "3f9ae41a8817fa700ed4ec6a92dccecd979f1e3a6523b29bb55a8d95c474a4c2"
    }
   }
  },

@@ -344,12 +344,12 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     check('1957 genel (hiç ilçe verisi yok): Katılım moduna geçince legend bozulmuyor (Infinity/NaN yok)', !/Infinity|NaN/.test(seqMinText), seqMinText);
     await page.click('#modeGroup button[data-mode="winner"]').catch(() => {});
 
-    // 1977 yerel artik ilce duzeyinde (2026-09-24, Wikipedia "İlçeler" bolumleri) -
-    // hala il-only olan bir secim: 1988 referandumu.
-    await page.click('#btnTurReferandum');
+    // 1977 yerel ve 1961-1988 referandumlari artik ilce duzeyinde (2026-09-24) -
+    // hala il-only olan bir secim: 1954 genel.
+    await page.click('#btnTurGenel');
     await page.waitForTimeout(400);
-    const found1988 = await clickYear(page, '1988');
-    check('1988 referandum: yıl seçilebildi', found1988);
+    const found1954 = await clickYear(page, '1954');
+    check('1954 genel: yıl seçilebildi', found1954);
     await page.waitForTimeout(400);
     await page.fill('#searchBox', 'İstanbul');
     await page.waitForTimeout(300);
@@ -357,7 +357,7 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     countryPaths = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
     breadcrumbHidden = await page.$eval('#mapBreadcrumb', (el) => getComputedStyle(el).display === 'none');
     dName = await page.$eval('#dName', (el) => el.textContent);
-    check('1988 referandum (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok, ülke görünümünde kaldı, breadcrumb açılmadı',
+    check('1954 genel (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok, ülke görünümünde kaldı, breadcrumb açılmadı',
       nodata === 0 && countryPaths > 1 && breadcrumbHidden && dName === 'İstanbul',
       'nodata=' + nodata + ' countryPaths=' + countryPaths + ' breadcrumbHidden=' + breadcrumbHidden + ' dName=' + dName);
   });
@@ -401,6 +401,28 @@ async function scenario_yerelIlce1950_1977(browser) {
     check('1950 yerel: legend bozulmuyor (Infinity/NaN yok)', !/Infinity|NaN/.test(labels), labels.slice(0, 120));
   });
   check('1950-1977 yerel ilçe: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+// 1961-1988 referandumlari (2026-09-24): ilce duzeyi TUIK "Halk Oylaması
+// Sonuçları" (2008). Evet/Hayır ilce haritasi cizilmeli, Konya 1982'de Merkez
+// tarihsel poligonla.
+async function scenario_referandumIlce(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurReferandum');
+    await page.waitForTimeout(400);
+    for (const [y, plaka, hist] of [['1961', '1', 'HIST-Adana-Merkez'], ['1982', '42', 'HIST-Konya-Merkez'], ['1988', '34', null]]) {
+      check(y + ' referandum: yıl seçilebildi', await clickYear(page, y));
+      await page.waitForTimeout(400);
+      await page.click('path[data-plaka="' + plaka + '"]');
+      await page.waitForTimeout(500);
+      const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+      check(y + ' referandum: ilçe haritası çiziliyor (' + plaka + ')', ids.length > 3, 'n=' + ids.length);
+      if (hist) check(y + ' referandum: ' + hist + ' çiziliyor', ids.includes(hist), JSON.stringify(ids.slice(0, 8)));
+      await page.click('#btnBackCountry').catch(() => {});
+      await page.waitForTimeout(300);
+    }
+  });
+  check('1961-1988 referandum ilçe: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
 // 1961-1987 genel secimleri (2026-09-24): TUIK'ten gelen ilce duzeyi.
@@ -603,6 +625,7 @@ async function main() {
     await scenario_ilOnlyYearsTekParca(browser);
     await scenario_1961_1987Ilce(browser);
     await scenario_yerelIlce1950_1977(browser);
+    await scenario_referandumIlce(browser);
     await scenario_1950yerel(browser);
     await scenario_1955yerel(browser);
     await scenario_2024meclis(browser);

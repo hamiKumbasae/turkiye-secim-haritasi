@@ -228,3 +228,10 @@ il alt makaleleri, her kayıtta sayfa + revid, her dosyada `kapsam` (bulunan/bek
 | `data/normalized/ek/senato/` | Cumhuriyet Senatosu 1961-1979 (8 seçim): il sonuçları, ilçe birincileri, seçilen senatörler |
 | `data/normalized/ek/milletvekilleri/` | Seçilen milletvekilleri 1950-2023 — yalnızca 1969/1995/2002 tam, diğerlerinde kapsam.durum eksik/fazla |
 | `data/normalized/ek/beldeler/` | Belde belediye başkanlıkları, yerel 1950-2024 |
+
+## Referandum ilçe düzeyi (2026-09-24)
+
+1961, 1982, 1987 ve 1988 halkoylamalarının ilçe sonuçları TÜİK'in *Halk Oylaması
+Sonuçları 2007, 1988, 1987, 1982, 1961* (2008) yayınından eklendi (il ve ilçe,
+şehir/köy kırılımıyla). İl düzeyi YSK'de kaldı; TÜİK il toplamları YSK ile birebir
+aynı. Ayrıntı: `data/raw/tuik/halkoylamasi-0018260/PROVENANCE.md`.

@@ -139,7 +139,9 @@ def goster_secim(key, il=None, ilce=None):
     print(f"\n  IL {ir['ad']} (plaka {ir['plaka']}): kazanan {ir.get('kazanan')}, gecerli {ir.get('gecerliOy')}"
           f" — kaynak: {ir.get('kaynak_url') or _kaynak_str(sk.get('il'))}")
     if ir.get("sehirKoy"):
-        print(f"  IL sehir/koy kirilimi: kaynak {ir['sehirKoy']['kaynak']['ana']} ({len(ir['sehirKoy']['kaynak']['tuikHam'])} secim cevresi)")
+        k = ir["sehirKoy"]["kaynak"]
+        ek = f"{len(k['tuikHam'])} secim cevresi" if isinstance(k.get("tuikHam"), list) else (k.get("yayin") or "")
+        print(f"  IL sehir/koy kirilimi: kaynak {k['ana']} ({ek})")
     ilceler = [r for r in rec["ilceler"] if r["plaka"] == ir["plaka"]]
     if ilce:
         ilceler = [r for r in ilceler if fold(r["ad"]) == fold(ilce)]
@@ -152,7 +154,8 @@ def goster_secim(key, il=None, ilce=None):
         if ilce and k:
             for f in k.get("farklar", []):
                 print(f"      {f['alan']}: {f['eski']} -> {f['yeni']}  (kaynak: {f['kaynak']})")
-            for a in ("tuikHam", "sayfa", "revid", "kaynakKatmani", "not"):
+            for a in ("tuikHam", "hamDosya", "yayin", "sayfa", "adKaynakta", "revid", "kaynakKatmani",
+                      "kaynakIciTutarsizlik", "not"):
                 if k.get(a):
                     print(f"      {a}: {k[a]}")
             if k.get("revid"):
