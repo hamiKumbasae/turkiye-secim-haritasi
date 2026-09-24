@@ -90,6 +90,8 @@ def tuik_ilce_oylari(secim, dosya):
         from common.turkish_text import fold
         bilinen = {f: ad for (p_, f), ad in DOGRU_AD.items() if p_ == pl}
         for i in il["ilceler"]:
+            if not i.get("adGuvenli", True):
+                continue  # adi belirsiz satir (1964 sandik listesi) - yalnizca kaynak katmaninda
             ad, ad_not = i["ad"], None
             if fold(ad) in OCR_ALIAS:
                 ad_not = f"OCR/dönem adı '{ad}' → '{OCR_ALIAS[fold(ad)]}'"
@@ -115,12 +117,14 @@ def tuik_ilce_oylari(secim, dosya):
                       "dogrulanamayanAlanlar": sorted(set(il.get("dogrulanamayanAlanlar", []))),
                       "kaynak": {"ana": "tuik", "sayfa": il["sayfa"], "adKaynakta": il["adKaynakta"],
                                  **({"plakaNotu": not_} if not_ else {}),
+                                 **({"ilIlcelerdenBulundu": il["adOcr"]} if il.get("ilIlcelerdenBulundu") else {}),
                                  **({"kaynakIciTutarsizlik": il["tutarsiz"]} if il.get("tutarsiz") else {})},
                       "ilceler": ilceler})
     return {"kaynak": {"ana": "tuik", "yayin": d["yayin"], "yayinUrl": d["yayinUrl"], "pdfSha256": d["pdfSha256"],
                        "sayfalar": d["sayfalar"], "metinKlasoru": d["metinKlasoru"],
                        "kaynakKatmani": str(dosya.relative_to(ROOT))},
             "dogrulama": {"wikipediaIlSonuclariyla": d.get("wikipediaIlKarsilastirmasi"),
+                          "adiBelirsizDisaridaKalanIlce": sum(1 for il in d["iller"] for i in il["ilceler"] if not i.get("adGuvenli", True)),
                           "ilceToplamiIlToplamiTutmayan": d["ilceToplamiTutmayan"], "ozet": d["ozet"],
                           "not": "dogrulanamayanAlanlar: ilçe toplamı il toplamını tutmayan alanlar (OCR ya da kaynak hatası)."},
             "iller": iller}

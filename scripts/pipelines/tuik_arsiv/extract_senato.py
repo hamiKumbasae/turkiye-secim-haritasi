@@ -79,6 +79,13 @@ KITAPLAR = {
                   ["secmen", "oyKullanan", "%", "muteber", "AP", "%", "CHP", "%", "CGP", "%"],
                   ["MHP", "%", "MSP", "%", "SDP", "%", "TBP73", "%", "TİP", "%", "TSİP", "%", "Bağımsız", "%"])],
     },
+    "1964senato": {
+        "demirbas": "0015169", "sha256": None,
+        "baslik": "DİE, Kısmi Senato Üyeleri Seçimi Sonuçları, 7 Haziran 1964 (1963)",
+        # ozet tablo yok: il il sandik listeleri; ilce basligi "DİYADİN (Merkez)",
+        # ilce toplami "Toplam", il toplami "İl Genel Toplamı"
+        "sandikListesi": [(9, 708, "1964senato", ["secmen", "oyKullanan", "muteber", "AP", "CHP", "CKMP", "YTP61", "Bağımsız"])],
+    },
     "1977senato": {
         "demirbas": "0015631", "sha256": None,
         "baslik": "DİE, 5 Haziran 1977 Milletvekili Genel ve Cumhuriyet Senatosu Üyeleri Üçtebir Yenileme Seçimi Sonuçları (1977)",
@@ -207,6 +214,123 @@ def tablo_oku(pdf, ilk, son, sutunlar):
             satirlar.append(r)
     satirlar.sort(key=lambda r: (r["sayfa"], r["y"]))
     return satirlar, sorunlu_sayfa
+
+
+def _tr_baslik(s):
+    """'AĞRI' -> 'Ağrı', 'İSTANBUL' -> 'İstanbul' (Turkce buyuk/kucuk harf)."""
+    kucuk = str.maketrans("IİŞĞÜÇÖÂÎÛ", "ıişğüçöâîû")
+    return " ".join(w[:1] + w[1:].translate(kucuk).lower() for w in s.split())
+
+
+ILCE_BASLIK = re.compile(r"^([A-ZÇĞİÖŞÜÂÎÛ][A-ZÇĞİÖŞÜÂÎÛ .]+?)\s*\((Merkez|MERKEZ)\)\s*$")
+
+
+def sandik_listesi_oku(pdf, ilk, son, sutunlar):
+    """Ozet tablosu olmayan kitap (1964): sayfalari sirayla gez, il (sayfa
+    basligi, harf aralikli) ve ilce ("AD (Merkez)" basligi) takip et; yalnizca
+    "Toplam" (ilce) ve "İl Genel Toplamı" (il) satirlarini al."""
+    once, partiler = sutun_ayir(sutunlar)
+    n = len(sutunlar)
+    satirlar, sorunlu, il, ilce, kenar = [], [], None, None, None
+    for no in range(ilk, min(son, len(pdf.pages)) + 1):
+        pg = pdf.pages[no - 1]
+        words = pg.extract_words()
+        satir = die_tablo._satirlar(words)
+        if satir:
+            bas = " ".join(w["text"] for w in sorted(satir[0], key=lambda w: w["x0"]))
+            harfler = re.sub(r"[^A-ZÇĞİÖŞÜÂÎÛ ]", " ", bas)
+            # harf aralikli il basligi: "A Ğ RI", "A M A S YA" (son iki harf bitisik olabilir)
+            m = re.search(r"((?:\b[A-ZÇĞİÖŞÜÂÎÛ]{1,2}\s+){2,}[A-ZÇĞİÖŞÜÂÎÛ]{1,2}\b)", harfler)
+            if m:
+                yeni_il = re.sub(r"\s+", "", m.group(1))
+                if yeni_il != il:
+                    il, ilce = yeni_il, None
+        basliklar = []
+        for s_ in satir:
+            t = " ".join(w["text"] for w in sorted(s_, key=lambda w: w["x0"])).strip()
+            m = ILCE_BASLIK.match(t)
+            if m:
+                basliklar.append((s_[0]["top"], m.group(1).strip()))
+        rows, k = die_tablo.sayfa_tablosu(pg, 180, n, None, hazir_kenarlar=kenar)
+        if rows is None:
+            sorunlu.append(no)
+            continue
+        kenar = k
+        for etiket, vals, y, parca in rows:
+            f = fold(etiket)
+            onceki = [b for b in basliklar if b[0] < y]
+            if onceki:
+                ilce = onceki[-1][1]
+            if f.endswith("GENEL TOPLAMI") or f == "IL GENEL TOPLAMI":
+                tur, ad = "il", (il or "?")
+            elif f == "TOPLAM" or f.endswith(" TOPLAM"):
+                tur, ad = "ilce", (ilce or "?")
+                if il and fold(ad) == fold(il):
+                    ad = "Merkez"  # "ANTALYA (Merkez)": ilin merkez ilcesi
+            else:
+                continue
+            v = dict(zip(sutunlar, vals))
+            rec = {c: v.get(c) for c in once}
+            rec["oy"] = {p_: v.get(p_) for p_ in partiler}
+            rec["Bağımsız"] = v.get("Bağımsız")
+            rec.update(tur=tur, adKaynakta=f"{ad} / {etiket}", ad=_tr_baslik(ad) if ad.isupper() else ad,
+                       sayfa=no, y=round(y, 1), _parca=parca, _yuzde={})
+            satirlar.append(rec)
+    # sayfa sirasinda "İl Genel Toplamı" ilin SONUNDA; grupla() il satirini basta bekliyor
+    out, bekleyen = [], []
+    for r in satirlar:
+        if r["tur"] == "ilce":
+            bekleyen.append(r)
+        else:
+            out.append(r)
+            out += bekleyen
+            bekleyen = []
+    return out, sorunlu
+
+
+def sira_ile_adlandir(iller, ref_secim="1965"):
+    """Sandik listesi kitabinda (1964) ilce basliklari guvenilir degil. DIE
+    ilceleri 'Merkez once, sonra alfabetik' basar; ilin 'Toplam' satiri sayisi
+    ayni ilin referans (TUIK 1965) ilce sayisina esitse adlar sirayla atanir.
+    Kabul: basligi okunabilmis satirlarin >= %80'i ayni sirayla uyusmali.
+    Il: okunabilen ilce adlarinin cogunlukla isaret ettigi plaka."""
+    ref = json.loads((OUT / "genel" / f"{ref_secim}.json").read_text(encoding="utf-8"))
+    by_plaka = collections.defaultdict(list)
+    for c in ref["cevreler"]:
+        by_plaka[c["plaka"]] += [i["ad"] for i in c["ilceler"]]
+    ad_plaka = collections.defaultdict(set)
+    for pl, adlar in by_plaka.items():
+        for a in adlar:
+            if fold(a) != "MERKEZ":
+                ad_plaka[fold(a)].add(pl)
+    il_ad = {c["plaka"]: c["cevre"] for c in ref["cevreler"]}
+    for il in iller:
+        # il kimligi ilce adlarindan
+        oy = collections.Counter(next(iter(ad_plaka[fold(r["ad"])])) for r in il["ilceler"]
+                                 if len(ad_plaka.get(fold(r["ad"]), ())) == 1)
+        if oy:
+            pl = oy.most_common(1)[0][0]
+            if fold(il_ad[pl]) != fold(il["ad"]):
+                il["adOcr"] = il["ad"]
+                il["ad"] = _tr_baslik(il_ad[pl]) if il_ad[pl].isupper() else il_ad[pl]
+                il["ilIlcelerdenBulundu"] = True
+        else:
+            pl = None
+        adlar = by_plaka.get(pl) or []
+        sira = ["Merkez"] + [a for a in adlar if fold(a) != "MERKEZ"]
+        if pl and len(sira) == len(il["ilceler"]):
+            okunan = [(r["ad"], a) for r, a in zip(il["ilceler"], sira) if r["ad"] != "?"]
+            uyan = sum(1 for x, a in okunan if fold(x) == fold(a))
+            if not okunan or uyan / len(okunan) >= 0.8:
+                for r, a in zip(il["ilceler"], sira):
+                    if fold(r["ad"]) != fold(a):
+                        r["adBaslikta"] = r["ad"]
+                    r["ad"] = a
+                    r["adSiradan"] = True
+            else:
+                il["siraUyusmadi"] = f"{uyan}/{len(okunan)}"
+        elif pl:
+            il["ilceSayisiFarkli"] = f"kitapta {len(il['ilceler'])}, referansta {len(sira)}"
 
 
 def _hizala(L, R):
@@ -427,9 +551,12 @@ def main():
         pdf = die_tablo.ac(pdf_p)
         isler = [(ilk, son, secim, sutunlar, None) for ilk, son, secim, sutunlar in k.get("tablolar", [])]
         isler += [(ilk, son, secim, sol + sag, (sol, sag)) for ilk, son, secim, sol, sag in k.get("cift", [])]
+        isler += [(ilk, son, secim, sutunlar, "sandik") for ilk, son, secim, sutunlar in k.get("sandikListesi", [])]
         for ilk, son, secim, sutunlar, cift in isler:
             sutun_once, partiler = sutun_ayir(sutunlar)
-            if cift:
+            if cift == "sandik":
+                satirlar, sorunlu = sandik_listesi_oku(pdf, ilk, son, sutunlar)
+            elif cift:
                 satirlar, sorunlu = cift_oku(pdf, ilk, son, *cift)
                 son = son + 1
             else:
@@ -437,6 +564,14 @@ def main():
             for r in satirlar:
                 dogrula_satir(r, partiler, sutun_once)
             iller = grupla(satirlar)
+            if cift == "sandik":
+                sira_ile_adlandir(iller)
+            for il in iller:
+                sayac = collections.Counter(r["ad"] for r in il["ilceler"])
+                for r in il["ilceler"]:
+                    # sandik listesinde ad basliktan gelir ve kayabilir: yalnizca sirayla
+                    # dogrulanan ya da ilde tekil olarak okunan adlar guvenli
+                    r["adGuvenli"] = (cift != "sandik") or bool(r.get("adSiradan")) or (r["ad"] != "?" and sayac[r["ad"]] == 1)
             dik = dikey_kontrol(iller, partiler, sutun_once)
             # dikey kontrolu tutmayan il/alanlar: degerler "dogrulanamadi"
             for x in dik:
@@ -446,7 +581,8 @@ def main():
             wk = wiki_kontrol(iller, secim) if secim.endswith("senato") else None
             # sayfa metinleri (depoya giren ham iz)
             (METIN / k["demirbas"]).mkdir(parents=True, exist_ok=True)
-            for no in range(ilk, son + 1):
+            sayfa_listesi = sorted({r["sayfa"] for r in satirlar}) if cift == "sandik" else range(ilk, son + 1)
+            for no in sayfa_listesi:
                 (METIN / k["demirbas"] / f"{no:04d}.txt").write_text(pdf.pages[no - 1].extract_text() or "", encoding="utf-8")
             veri = {
                 "secim": secim, "kaynak": "tuik", "yayin": k["baslik"],

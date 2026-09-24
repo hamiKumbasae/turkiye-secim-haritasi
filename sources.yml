@@ -468,7 +468,7 @@ ek_kayitlar:
     files: "data/normalized/ek/senato/<secim>.json (1961senato … 1979senato, 8 seçim)"
     source: {authority: "Türkçe Wikipedia (İllere göre <yıl> Türkiye senato seçimleri)", status: reported, raw: "data/raw/wikipedia/il-sayfalari/senato/"}
     content: [il sonucu (aday oyları), ilçe birincisi, seçilen senatörler]
-    ilce_oylari: {authority: "DİE (TÜİK kütüphanesi taranmış kitaplar)", status: official, years: [1966, 1968, 1973, 1975, 1977, 1979], raw_text: "data/raw/tuik/senato-metin/", kaynak_katmani: "data/kaynaklar/tuik/senato/", field: "ilceOylariTuik", note: "OCR + koordinat ile okundu; doğrulama ve işaretler dosyada"}
+    ilce_oylari: {authority: "DİE (TÜİK kütüphanesi taranmış kitaplar)", status: official, years: [1964, 1966, 1968, 1973, 1975, 1977, 1979], raw_text: "data/raw/tuik/senato-metin/", kaynak_katmani: "data/kaynaklar/tuik/senato/", field: "ilceOylariTuik", note: "OCR + koordinat ile okundu; doğrulama ve işaretler dosyada"}
   milletvekilleri:
     files: "data/normalized/ek/milletvekilleri/<secim>.json (1950-2023, 20 seçim)"
     source: {authority: "Türkçe Wikipedia (il sayfalarının Seçilenler bölümü)", status: reported, raw: "data/raw/wikipedia/il-sayfalari/genel/"}

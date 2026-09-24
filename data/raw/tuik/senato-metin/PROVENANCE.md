@@ -10,6 +10,7 @@ okundu (`scripts/pipelines/tuik_arsiv/die_tablo.py`), metin iz ve kontrol içind
 
 | Demirbaş | Yayın | Kullanılan sayfalar |
 |---|---|---|
+| 0015169 | DİE, Kısmi Senato Üyeleri Seçimi Sonuçları, 7 Haziran 1964 | 9-708 (özet tablo yok; sandık listelerinin "Toplam" / "İl Genel Toplamı" satırları; yalnız bu satırların sayfaları kaydedildi) |
 | 0015213 | DİE, Cumhuriyet Senatosu Üyeleri Kısmi Seçim Sonuçları, 5 Haziran 1966 (1967) | 31-37 (senato), 38 (Hatay milletvekili ara seçimi) |
 | 0015265 | DİE, Cumhuriyet Senatosu Üyeleri Kısmi Seçim Sonuçları, 2 Haziran 1968 (1969) | 20-25 |
 | 0015450 | DİE, Milletvekili ve Cumhuriyet Senatosu Üyeleri Seçimi Sonuçları, 14 Ekim 1973 (1973) | 74-87 (karşılıklı sayfalar) |
@@ -21,6 +22,7 @@ okundu (`scripts/pipelines/tuik_arsiv/die_tablo.py`), metin iz ve kontrol içind
 
 | Seçim | İl | İlçe | Wikipedia il sonucuyla birebir | İlçe toplamı ≠ il toplamı (alan) |
 |---|---|---|---|---|
+| 1964senato | 26 | 233 (145'i ek dosyada, bkz. aşağı) | 19 / 25 | 85 |
 | 1966senato | 23 | 220 | 20 / 22 karşılaştırılabilir il | 19 |
 | 1968senato | 24 | 235 | 24 / 24 | 9 |
 | 1973senato | 27 | 257 | 23 / 26 | 157 |
@@ -45,3 +47,15 @@ Birkaç satırda basılı yüzdelerin toplamı %100'ü aşıyor (örn. 1973 Mana
   listesinde (OCR ya da kaynak hatası; ayırt edilemedi).
 - OCR'ın bozduğu ilçe adları aynı ilin bilinen ilçe adlarına en yakın eşleşmeyle
   ya da açık eşlemeyle düzeltildi; kaynaktaki yazım `adKaynakta`, düzeltme `adDuzeltme`.
+
+### 1964 özel durumu
+
+1964 kitabında özet tablo yok. İlçe toplamı satırının adı yalnızca "Toplam",
+hangi ilçeye ait olduğu sayfadaki başlıktan ("DİYADİN (Merkez)") anlaşılıyor ve
+OCR bu başlıkların bir kısmını okuyamıyor. Ad iki yolla belirlendi: (1) ildeki
+"Toplam" sayısı TÜİK 1965 ilçe sayısına eşitse DİE sırası (Merkez önce, sonra
+alfabetik) ile, okunabilen başlıkların en az %80'i aynı sırayla uyuşuyorsa;
+(2) başlığı okunup ilde tekil kalan satırlar. Bu yolla adı güvenle belli olan
+145 ilçe `ek/senato/1964senato.json`'a girdi. Kalan 88 satır yalnızca kaynak
+katmanında (`adGuvenli: false`). İl başlığı okunamayan il (Muş) ilçe adlarından
+bulundu (`ilIlcelerdenBulundu`).
