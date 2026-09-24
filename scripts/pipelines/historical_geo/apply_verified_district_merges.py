@@ -45,6 +45,28 @@ HIST_GEO = ROOT / "geo" / "historical" / "turkiye_ilce_sinirlari_hist_splits.geo
 DISTRICT_SPLITS = ROOT / "geo" / "historical" / "district_splits.json"
 MAHALLE_MERGES_YAML = ROOT / "geo" / "historical" / "district_mahalle_merges.yaml"
 
+# Sentetik id onekleri (ornek: "HIST-Antalya-Merkez") il ADINA gore uretiliyor,
+# plakaya gore degil - bu yuzden plaka->il-adi (ascii, bosluksuz) eslemesi
+# gerekiyor. 2023 genel secimi (her zaman TUM 81 ili iceren, guncel/stabil bir
+# kaynak) kullanilir - secim SONUCU degil, sadece "iller" listesindeki il adi
+# icin.
+def _ascii_il_adi(ad):
+    return (ad.replace("İ", "I").replace("ı", "i").replace("Ğ", "G").replace("ğ", "g")
+            .replace("Ü", "U").replace("ü", "u").replace("Ş", "S").replace("ş", "s")
+            .replace("Ö", "O").replace("ö", "o").replace("Ç", "C").replace("ç", "c")
+            .replace(" ", ""))
+
+
+_IL_ADI_BY_PLAKA = None
+
+
+def il_adi_ascii(plaka):
+    global _IL_ADI_BY_PLAKA
+    if _IL_ADI_BY_PLAKA is None:
+        ref = json.loads((ROOT / "data" / "normalized" / "elections" / "genel" / "2023.json").read_text(encoding="utf-8"))
+        _IL_ADI_BY_PLAKA = {i["plaka"]: i["ad"] for i in ref["iller"]}
+    return _ascii_il_adi(_IL_ADI_BY_PLAKA[plaka])
+
 # ---------------- tek-ebeveynli, basit vakalar (kanun + coklu kaynak dogrulamasi) ----------------
 VERIFIED_MERGES = [
     {
@@ -53,7 +75,11 @@ VERIFIED_MERGES = [
         "whole_child_geomids": ["TR-D-34-012"],  # Beylikduzu (TAMAMI)
         "synthetic_id": "HIST-Istanbul-Buyukcekmece",
         "split_year": 2008,
-        "affected_years": ["1994yerel", "1999yerel", "2004yerel"],
+        # 1991/1995-2007: 2008-oncesi TEK Istanbul genel secimleri ilce-duzeyinde
+        # veri iceriyor (bkz. audit_district_coverage.py) - Beylikduzu'nun alani
+        # bu yillarda da Buyukcekmece'nin satirina dahildi, ayni duzeltme gecerli.
+        "affected_years": ["1994yerel", "1999yerel", "2004yerel",
+                            "1991", "1995", "1999", "2002", "2007"],
     },
     {
         "plaka": 34,
@@ -61,7 +87,8 @@ VERIFIED_MERGES = [
         "whole_child_geomids": ["TR-D-34-016"],  # Cekmekoy (TAMAMI)
         "synthetic_id": "HIST-Istanbul-Umraniye",
         "split_year": 2008,
-        "affected_years": ["1994yerel", "1999yerel", "2004yerel"],
+        "affected_years": ["1994yerel", "1999yerel", "2004yerel",
+                            "1991", "1995", "1999", "2002", "2007"],
     },
 ]
 
@@ -84,24 +111,25 @@ def load_yaml_verified_sources():
     for group_key, group in doc.items():
         split_year = group.get("split_year")
         affected_years = group.get("affected_years", [])
+        plaka = group.get("plaka")
+        if plaka is None:
+            continue  # plaka alani olmayan grup - eski/gecis formati, atla
+        il_prefix = il_adi_ascii(plaka)
         for district_key, entry in group.items():
             if not isinstance(entry, dict) or entry.get("confidence") != "verified":
                 continue
             new_geomid = entry["new_district_geomid"]
             for src in entry["sources"]:
-                name_ascii = (src["old_district_name"]
-                              .replace("İ", "I").replace("ı", "i").replace("Ğ", "G").replace("ğ", "g")
-                              .replace("Ü", "U").replace("ü", "u").replace("Ş", "S").replace("ş", "s")
-                              .replace("Ö", "O").replace("ö", "o").replace("Ç", "C").replace("ç", "c"))
+                name_ascii = _ascii_il_adi(src["old_district_name"])
                 out.append({
                     "old_district_geomid": src["old_district_geomid"],
                     "mahalle_source_geomid": new_geomid,  # hangi (yeni) ilcenin mahalle_geo'sundan cekilecek
                     "mahalle_names": src["mahalle_names"],
                     "fully_covered_new_geomid": new_geomid,  # bu id, TUM mahalleleri baska ebeveynlere dagitildigi icin ayrica "veri yok" gosterilmemeli
-                    "synthetic_id": f"HIST-Istanbul-{name_ascii}",
+                    "synthetic_id": f"HIST-{il_prefix}-{name_ascii}",
                     "split_year": split_year,
-                    "affected_years": affected_years,
-                    "plaka": 34,
+                    "affected_years": entry.get("affected_years", affected_years),
+                    "plaka": plaka,
                 })
     return out
 
@@ -115,7 +143,7 @@ def gather_contributions():
         old = m["old_district_geomid"]
         if old not in by_old:
             by_old[old] = {
-                "synthetic_id": m.get("synthetic_id") or f"HIST-Istanbul-{old.split('-')[-1]}",
+                "synthetic_id": m.get("synthetic_id") or f"HIST-{il_adi_ascii(m['plaka'])}-{old.split('-')[-1]}",
                 "split_year": m["split_year"],
                 "affected_years": list(m["affected_years"]),
                 "plaka": m["plaka"],

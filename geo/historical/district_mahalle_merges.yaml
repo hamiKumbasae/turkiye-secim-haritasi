@@ -63,12 +63,14 @@
 # bilmemiz gerekiyor.
 
 istanbul_2008:
+  plaka: 34
   law: "5747 sayılı Kanun (6 Mart 2008 kabul, 22 Mart 2008 Resmî Gazete, Sayı 26824 Mükerrer)"
   split_year: 2008
   # Bu buyuksehirde etkilenen secimler (yeni ilcelerin HENUZ kurulmadigi,
   # dolayisiyla eski ilcelerin GENISLETILMIS halinin gosterilmesi gereken
-  # yerel secimler).
-  affected_years: [1994yerel, 1999yerel, 2004yerel]
+  # secimler). 1991/1995-2007: 2008-oncesi Istanbul'da ilce-duzeyinde veri
+  # iceren TEK genel secimler (audit_district_coverage.py ile dogrulandi).
+  affected_years: [1994yerel, 1999yerel, 2004yerel, "1991", "1995", "1999", "2002", "2007"]
 
   # --- Beylikduzu/Cekmekoy: TEK ebeveynli, apply_verified_district_merges.py
   # icindeki VERIFIED_MERGES ile ZATEN uygulandi (bu YAML'a henuz tasinmadi -

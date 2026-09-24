@@ -146,6 +146,43 @@ async function scenario_istanbul19992004Gecmisi(browser) {
   check('1999/2004 yerel İstanbul geometrisi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// Ataşehir/Beylikdüzü/Çekmeköy icin dogrulanmis tarihsel geometri onceki
+// oturumda SADECE 1994/1999/2004 yerel'e baglanmisti - genel secimlerde
+// (1991, 1995-2007, Istanbul'un ilce-duzeyinde veri icerdigi TEK genel
+// secim yillari) ayni 5 eski-ilce satiri hala kendi modern (yanlis, kucuk)
+// geomId'sine düşüyordu, boylece bu 5 ilce o secimlerde de "veri yok" gibi
+// görünüyordu - bkz. audit_district_coverage tarzi denetim. Duzeltme sadece
+// affected_years listesini genisletti (apply_verified_district_merges.py +
+// district_mahalle_merges.yaml), yeni geometri URETMEDI.
+async function scenario_istanbulGenelGecmisi(browser) {
+  const errors = await withPage(browser, async (page) => {
+    const expectedHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
+      'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar', 'HIST-Istanbul-Kartal'];
+    for (const year of ['1991', '1995', '1999', '2002', '2007']) {
+      const found = await clickYear(page, year);
+      check(year + ' genel: yıl seçilebildi', found);
+      await page.waitForTimeout(400);
+      await page.click('path[data-plaka="34"]');
+      await page.waitForTimeout(400);
+      const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+        els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+      check(year + ' genel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor',
+        expectedHist.every((id) => histIds.includes(id)), JSON.stringify(histIds));
+
+      await page.click('path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece"]');
+      await page.waitForTimeout(400);
+      const dName = await page.$eval('#dName', (el) => el.textContent);
+      const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
+      check(year + ' genel: tarihsel Büyükçekmece poligonuna tıklama doğru ilçeyi ve gerçek veriyi gösteriyor',
+        dName === 'Büyükçekmece' && dSecmen !== '—' && dSecmen !== '',
+        'dName=' + dName + ' dSecmen=' + dSecmen);
+
+      await page.click('#btnBackCountry').catch(() => {});
+    }
+  });
+  check('1991/1995-2007 genel İstanbul geometrisi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 // Bir secimde HIC ilce-duzeyi veri yoksa (orn. 1965 genel - sadece il
 // duzeyinde kaynak var), "ilce gorunumu"ne HIC GECILMEMELI - ne 39 parcaya
 // bolup "veri yok" katmani cizmek, ne de zoom yapip tek-parca-il gosterip
@@ -333,6 +370,7 @@ async function main() {
     await scenario_2023genel(browser);
     await scenario_istanbul1994geometri(browser);
     await scenario_istanbul19992004Gecmisi(browser);
+    await scenario_istanbulGenelGecmisi(browser);
     await scenario_ilOnlyYearsTekParca(browser);
     await scenario_1950yerel(browser);
     await scenario_1955yerel(browser);
