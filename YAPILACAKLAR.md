@@ -691,3 +691,46 @@ Eksik referandumlar
 Eksik yerel seçimler
 
 Daha önce taranmış kaynaklar
+
+---
+
+## Görüşme notları (2026-09-25) — henüz karar verilmedi
+
+Bu görev okunup değerlendirildi; **işe başlanmadı.** Süre/saat bütçesi ayrıca konuşulacak.
+
+### Mevcut repo durumu (görevdeki bazı notlarla çelişiyor — önce doğrulanmalı)
+
+| Tür | Yıl | Repodaki durum |
+|---|---|---|
+| Genel | 1961-1987 (1977 dahil) | İlçe verisi var (TÜİK secimdagitimapp, resmî) — 5. maddedeki "1977 ilçe yok" notu repoyla çelişiyor |
+| Genel | 1991-2002 | İlçe verisi var (mertnuhoglu tabanı + TÜİK farkları) |
+| Genel | 1950, 1954, 1957 | Yalnız il düzeyi — asıl boşluk |
+| Referandum | 1961, 1982, 1987, 1988 | İlçe verisi var (TÜİK 0018260); 2007 öncesi liste tam |
+| Yerel | 1984-2004 | DİE kitaplarıyla belediye düzeyinde işlendi (1984 OCR zayıf, tutarsızlar işaretli) |
+| Yerel | 1963-1977 | İlçe başkanlığı yalnız Wikipedia |
+| Yerel | 1950, 1955 | Yalnız kazanan parti |
+| Yerel | 1984 öncesi | Belediye meclisi / il genel meclisi yok |
+
+### Değerlendirmede öne çıkan noktalar
+
+- "Tarihsel ilçe sayısı" için yıl başına ayrı bir kaynak gerekir (1961+ DİE/TÜİK listeleri; 1950'ler için ayrıca aranmalı, bulunamazsa UNKNOWN).
+- Yerel seçimlerde ölçü birimi belediye olmalı (beldeler ayrı yarış).
+- Gazete/kitap arşivlerinin çoğu üyelik ister ya da otomatik erişime kapalıdır; bu aşamada "iz bul ve kaydet", veri çekme değil.
+- Ara seçimler ve Cumhuriyet Senatosu görevde yok: ayrı satır mı, kapsam dışı mı — karar verilecek.
+- Master tablo ve kaynak günlüğü repoda dosya olarak tutulmalı (örn. `data/kaynaklar/ARASTIRMA_KAYDI.md` + CSV).
+
+### Önerilen sıra
+
+1. Repo taraması → master tablo (web'e çıkmadan)
+2. Kaynak günlüğü (PROVENANCE, SOURCES.md, oturum notlarından)
+3. Harici araştırma yalnız gerçekten eksik kalan seçimler için
+4. Öncelik tablosu → hangi seçimden başlanacağına kullanıcı karar verir
+
+### Araştırmanın sınırı için önerilen kurallar (saat değerleri sonra konuşulacak)
+
+- Yalnız repo taramasından sonra NONE / VERY_PARTIAL çıkan seçimlere harici arama.
+- Her seçime sabit bir zaman bütçesi.
+- Doygunluk: bir kaynak türünde birkaç hedefli arama iz vermezse o tür kapanır; tüm türler kapanırsa NONE, bütçe dolup açık tür kalırsa UNKNOWN.
+- Bu aşamada iz bulunur (künye, sayfa, kapsam), rakam aktarılmaz.
+- Ulusal tek kaynak bulunursa derinleşilir; yalnız dağınık il kaynakları varsa örnekleri kaydedilip "parçalı kaynak mevcut" denir.
+- Üyelik/erişim duvarında durulur; yalnız kayıt tutulur, elle bakma kararı kullanıcının.
