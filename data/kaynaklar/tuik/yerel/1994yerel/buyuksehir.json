@@ -1,0 +1,11010 @@
+{
+ "secim": "1994yerel",
+ "tablo": "buyuksehir",
+ "aciklama": "Büyükşehir belediye başkanlığı seçimi sonuçları, ilçe merkez ve alt kademe belediyelerine göre",
+ "kaynak": {
+  "ana": "tuik",
+  "yayin": "DİE, Mahalli İdareler Seçimi Sonuçları 27.3.1994",
+  "demirbas": "0013623",
+  "url": "https://kutuphane.tuik.gov.tr/pdf/0013623.pdf",
+  "ham": "data/raw/tuik/mahalli-kitap/0013623.pdf",
+  "sayfalar": [
+   252,
+   261
+  ],
+  "okuma": "scripts/pipelines/tuik_arsiv/ocr_tablo.py (değer tahmini yok; alan bazında doğrulama)"
+ },
+ "partiler": [
+  "ANAP",
+  "BBP",
+  "CHP",
+  "DP",
+  "DSP",
+  "DYP",
+  "İP",
+  "MP92",
+  "MHP",
+  "RP",
+  "SBP",
+  "SHP",
+  "YDP",
+  "Bağımsız"
+ ],
+ "ozet": {
+  "satir": 95,
+  "durum": {
+   "tutarli": 94,
+   "gecerliOyOkunamadi": 1
+  },
+  "tip": {
+   "turkiye": 1,
+   "il": 15,
+   "ilce": 78,
+   "None": 1
+  },
+  "kimlikCozulen": 93,
+  "dikey": {
+   "tutuyor": 15,
+   "hepsiTutarli_tutuyor": 14
+  },
+  "eslesmeyenSayfa": []
+ },
+ "satirlar": [
+  {
+   "tip": "turkiye",
+   "plaka": null,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "TÜRKİYE-TURKEY",
+   "kimlik": {
+    "yontem": "cozulemedi"
+   },
+   "sandik": 37869,
+   "secmen": 10904360,
+   "oyKullanan": 9739574,
+   "katilim": 89.3,
+   "gecerliOy": 9143354,
+   "oy": {
+    "ANAP": 1992281,
+    "BBP": 35057,
+    "CHP": 267604,
+    "DP": 7100,
+    "DSP": 1026674,
+    "DYP": 1451809,
+    "İP": 16592,
+    "MP92": 31888,
+    "MHP": 413811,
+    "RP": 2048519,
+    "SBP": 17297,
+    "SHP": 1799059,
+    "YDP": 21979,
+    "Bağımsız": 13684
+   },
+   "yuzde": {
+    "ANAP": 21.8,
+    "BBP": 0.4,
+    "CHP": 2.9,
+    "DP": 0.1,
+    "DSP": 11.2,
+    "DYP": 15.9,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 4.5,
+    "RP": 22.4,
+    "SBP": 0.2,
+    "SHP": 19.7,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "il",
+   "plaka": 1,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "ADANA",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 1778,
+   "secmen": 527161,
+   "oyKullanan": 435783,
+   "katilim": 82.7,
+   "gecerliOy": 402367,
+   "oy": {
+    "ANAP": 126829,
+    "BBP": 1016,
+    "CHP": 20480,
+    "DSP": 53636,
+    "DYP": 45434,
+    "İP": 1036,
+    "MP92": 967,
+    "MHP": 34034,
+    "RP": 44709,
+    "SBP": 1167,
+    "SHP": 70121,
+    "YDP": 713,
+    "Bağımsız": 2225
+   },
+   "yuzde": {
+    "ANAP": 31.5,
+    "BBP": 0.3,
+    "CHP": 5.1,
+    "DSP": 13.3,
+    "DYP": 11.3,
+    "İP": 0.3,
+    "MP92": 0.2,
+    "MHP": 8.5,
+    "RP": 11.1,
+    "SBP": 0.3,
+    "SHP": 17.4,
+    "YDP": 0.2,
+    "Bağımsız": 0.5
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 2,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 1,
+   "ad": "Seyhan",
+   "ilce": "Seyhan",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Adana.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 1294,
+   "secmen": 383802,
+   "oyKullanan": 315332,
+   "katilim": 82.2,
+   "gecerliOy": 291785,
+   "oy": {
+    "ANAP": 97897,
+    "BBP": 635,
+    "CHP": 12653,
+    "DSP": 41518,
+    "DYP": 34747,
+    "İP": 760,
+    "MP92": 683,
+    "MHP": 22994,
+    "RP": 28149,
+    "SBP": 817,
+    "SHP": 48733,
+    "YDP": 510,
+    "Bağımsız": 1689
+   },
+   "yuzde": {
+    "ANAP": 33.6,
+    "BBP": 0.2,
+    "CHP": 4.3,
+    "DSP": 14.2,
+    "DYP": 11.9,
+    "İP": 0.3,
+    "MP92": 0.2,
+    "MHP": 7.9,
+    "RP": 9.6,
+    "SBP": 0.3,
+    "SHP": 16.7,
+    "YDP": 0.2,
+    "Bağımsız": 0.6
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 1,
+   "ad": "Yüreğir",
+   "ilce": "Yüreğir",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Adana.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 484,
+   "secmen": 143359,
+   "oyKullanan": 120451,
+   "katilim": 84.0,
+   "gecerliOy": 110582,
+   "oy": {
+    "ANAP": 28932,
+    "BBP": 381,
+    "CHP": 7827,
+    "DSP": 12118,
+    "DYP": 10687,
+    "İP": 276,
+    "MP92": 284,
+    "MHP": 11040,
+    "RP": 16560,
+    "SBP": 350,
+    "SHP": 21388,
+    "YDP": 203,
+    "Bağımsız": 536
+   },
+   "yuzde": {
+    "ANAP": 26.2,
+    "BBP": 0.3,
+    "CHP": 7.1,
+    "DSP": 11.0,
+    "DYP": 9.7,
+    "İP": 0.2,
+    "MP92": 0.2,
+    "MHP": 10.0,
+    "RP": 15.0,
+    "SBP": 0.3,
+    "SHP": 19.3,
+    "YDP": 0.2,
+    "Bağımsız": 0.5
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "il",
+   "plaka": 6,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "ANKARA",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 6189,
+   "secmen": 1670867,
+   "oyKullanan": 1525392,
+   "katilim": 91.3,
+   "gecerliOy": 1439838,
+   "oy": {
+    "ANAP": 268519,
+    "BBP": 8649,
+    "CHP": 30082,
+    "DSP": 111740,
+    "DYP": 119824,
+    "İP": 3023,
+    "MP92": 5727,
+    "MHP": 104304,
+    "RP": 393623,
+    "SBP": 3413,
+    "SHP": 387152,
+    "YDP": 2756,
+    "Bağımsız": 1026
+   },
+   "yuzde": {
+    "ANAP": 18.7,
+    "BBP": 0.6,
+    "CHP": 2.1,
+    "DSP": 7.8,
+    "DYP": 8.3,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 7.2,
+    "RP": 27.3,
+    "SBP": 0.2,
+    "SHP": 26.9,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 9,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Altındağ",
+   "ilce": "Altındağ",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 891,
+   "secmen": 228935,
+   "oyKullanan": 201383,
+   "katilim": 88.0,
+   "gecerliOy": 187059,
+   "oy": {
+    "ANAP": 37897,
+    "BBP": 2235,
+    "CHP": 3895,
+    "DSP": 14473,
+    "DYP": 11982,
+    "İP": 432,
+    "MP92": 1047,
+    "MHP": 9251,
+    "RP": 66397,
+    "SBP": 406,
+    "SHP": 38624,
+    "YDP": 369,
+    "Bağımsız": 51
+   },
+   "yuzde": {
+    "ANAP": 20.3,
+    "BBP": 1.2,
+    "CHP": 2.1,
+    "DSP": 7.7,
+    "DYP": 6.4,
+    "İP": 0.2,
+    "MP92": 0.6,
+    "MHP": 5.0,
+    "RP": 35.5,
+    "SBP": 0.2,
+    "SHP": 20.6,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Çankaya",
+   "ilce": "Çankaya",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 1787,
+   "secmen": 481147,
+   "oyKullanan": 438242,
+   "katilim": 91.1,
+   "gecerliOy": 418874,
+   "oy": {
+    "ANAP": 94503,
+    "BBP": 840,
+    "CHP": 7863,
+    "DSP": 32666,
+    "DYP": 46697,
+    "İP": 965,
+    "MP92": 978,
+    "MHP": 11737,
+    "RP": 68136,
+    "SBP": 1247,
+    "SHP": 152302,
+    "YDP": 734,
+    "Bağımsız": 206
+   },
+   "yuzde": {
+    "ANAP": 22.6,
+    "BBP": 0.2,
+    "CHP": 1.9,
+    "DSP": 7.8,
+    "DYP": 11.1,
+    "İP": 0.2,
+    "MP92": 0.2,
+    "MHP": 2.8,
+    "RP": 16.3,
+    "SBP": 0.3,
+    "SHP": 36.4,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Etimesgut",
+   "ilce": "Etimesgut",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 141,
+   "secmen": 39814,
+   "oyKullanan": 36624,
+   "katilim": 92.0,
+   "gecerliOy": 34605,
+   "oy": {
+    "ANAP": 5660,
+    "BBP": 1049,
+    "CHP": 514,
+    "DSP": 3622,
+    "DYP": 3327,
+    "İP": 43,
+    "MP92": 277,
+    "MHP": 3480,
+    "RP": 11104,
+    "SBP": 55,
+    "SHP": 5383,
+    "YDP": 76,
+    "Bağımsız": 15
+   },
+   "yuzde": {
+    "ANAP": 16.4,
+    "BBP": 3.0,
+    "CHP": 1.5,
+    "DSP": 10.5,
+    "DYP": 9.6,
+    "İP": 0.1,
+    "MP92": 0.8,
+    "MHP": 10.1,
+    "RP": 32.1,
+    "SBP": 0.2,
+    "SHP": 15.5,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Gölbaşı",
+   "ilce": "Gölbaşı",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 55,
+   "secmen": 14838,
+   "oyKullanan": 13907,
+   "katilim": 93.7,
+   "gecerliOy": 13214,
+   "oy": {
+    "ANAP": 1846,
+    "BBP": 215,
+    "CHP": 157,
+    "DSP": 574,
+    "DYP": 2241,
+    "İP": 11,
+    "MP92": 25,
+    "MHP": 632,
+    "RP": 3770,
+    "SBP": 13,
+    "SHP": 3625,
+    "YDP": 10,
+    "Bağımsız": 95
+   },
+   "yuzde": {
+    "ANAP": 14.0,
+    "BBP": 1.6,
+    "CHP": 1.2,
+    "DSP": 4.3,
+    "DYP": 17.0,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 4.8,
+    "RP": 28.5,
+    "SBP": 0.1,
+    "SHP": 27.4,
+    "YDP": 0.1,
+    "Bağımsız": 0.7
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Keçiören",
+   "ilce": "Keçiören",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 1218,
+   "secmen": 333793,
+   "oyKullanan": 308714,
+   "katilim": 92.5,
+   "gecerliOy": 288995,
+   "oy": {
+    "ANAP": 45871,
+    "BBP": 1296,
+    "CHP": 8953,
+    "DSP": 20404,
+    "DYP": 19381,
+    "İP": 460,
+    "MP92": 1285,
+    "MHP": 35787,
+    "RP": 92020,
+    "SBP": 560,
+    "SHP": 62192,
+    "YDP": 629,
+    "Bağımsız": 157
+   },
+   "yuzde": {
+    "ANAP": 15.9,
+    "BBP": 0.4,
+    "CHP": 3.1,
+    "DSP": 7.1,
+    "DYP": 6.7,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 12.4,
+    "RP": 31.8,
+    "SBP": 0.2,
+    "SHP": 21.5,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Pursaklar(2)",
+   "ilce": "Pursaklar(2)",
+   "adKaynakta": "PursaklarO)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 16,
+   "secmen": 4314,
+   "oyKullanan": 4113,
+   "katilim": 95.3,
+   "gecerliOy": 3838,
+   "oy": {
+    "ANAP": 1107,
+    "BBP": 32,
+    "CHP": 55,
+    "DSP": 338,
+    "DYP": 469,
+    "İP": 7,
+    "MP92": 9,
+    "MHP": 328,
+    "RP": 1077,
+    "SBP": 6,
+    "SHP": 374,
+    "YDP": 8,
+    "Bağımsız": 28
+   },
+   "yuzde": {
+    "ANAP": 28.9,
+    "BBP": 0.8,
+    "CHP": 1.4,
+    "DSP": 8.8,
+    "DYP": 12.2,
+    "İP": 0.2,
+    "MP92": 0.2,
+    "MHP": 8.6,
+    "RP": 28.1,
+    "SBP": 0.2,
+    "SHP": 9.7,
+    "YDP": 0.2,
+    "Bağımsız": 0.7
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Mamak",
+   "ilce": "Mamak",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 871,
+   "secmen": 233083,
+   "oyKullanan": 215355,
+   "katilim": 92.4,
+   "gecerliOy": 201243,
+   "oy": {
+    "ANAP": 30255,
+    "BBP": 1162,
+    "CHP": 3613,
+    "DSP": 15133,
+    "DYP": 9507,
+    "İP": 535,
+    "MP92": 1057,
+    "MHP": 21935,
+    "RP": 62664,
+    "SBP": 465,
+    "SHP": 54303,
+    "YDP": 381,
+    "Bağımsız": 233
+   },
+   "yuzde": {
+    "ANAP": 15.1,
+    "BBP": 0.6,
+    "CHP": 1.8,
+    "DSP": 7.5,
+    "DYP": 4.7,
+    "İP": 0.3,
+    "MP92": 0.5,
+    "MHP": 10.9,
+    "RP": 31.1,
+    "SBP": 0.2,
+    "SHP": 27.0,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Sincan",
+   "ilce": "Sincan",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 262,
+   "secmen": 73050,
+   "oyKullanan": 67922,
+   "katilim": 93.0,
+   "gecerliOy": 65081,
+   "oy": {
+    "ANAP": 7674,
+    "BBP": 893,
+    "CHP": 676,
+    "DSP": 4898,
+    "DYP": 5168,
+    "İP": 68,
+    "MP92": 242,
+    "MHP": 8347,
+    "RP": 26058,
+    "SBP": 94,
+    "SHP": 10751,
+    "YDP": 115,
+    "Bağımsız": 97
+   },
+   "yuzde": {
+    "ANAP": 11.8,
+    "BBP": 1.4,
+    "CHP": 1.0,
+    "DSP": 7.5,
+    "DYP": 8.0,
+    "İP": 0.1,
+    "MP92": 0.4,
+    "MHP": 12.8,
+    "RP": 40.0,
+    "SBP": 0.2,
+    "SHP": 16.5,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 6,
+   "ad": "Yenimahalle",
+   "ilce": "Yenimahalle",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Ankara.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 948,
+   "secmen": 261893,
+   "oyKullanan": 239132,
+   "katilim": 91.3,
+   "gecerliOy": 226929,
+   "oy": {
+    "ANAP": 43706,
+    "BBP": 927,
+    "CHP": 4356,
+    "DSP": 19632,
+    "DYP": 21052,
+    "İP": 502,
+    "MP92": 807,
+    "MHP": 12807,
+    "RP": 62397,
+    "SBP": 567,
+    "SHP": 59598,
+    "YDP": 434,
+    "Bağımsız": 144
+   },
+   "yuzde": {
+    "ANAP": 19.3,
+    "BBP": 0.4,
+    "CHP": 1.9,
+    "DSP": 8.7,
+    "DYP": 9.3,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "MHP": 5.6,
+    "RP": 27.5,
+    "SBP": 0.2,
+    "SHP": 26.3,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "il",
+   "plaka": 7,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "ANTALYA",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 876,
+   "secmen": 260054,
+   "oyKullanan": 230050,
+   "katilim": 88.5,
+   "gecerliOy": 214775,
+   "oy": {
+    "ANAP": 40895,
+    "BBP": 641,
+    "CHP": 22164,
+    "DSP": 18351,
+    "DYP": 71325,
+    "İP": 601,
+    "MP92": 796,
+    "MHP": 20717,
+    "RP": 19442,
+    "SBP": 840,
+    "SHP": 18382,
+    "YDP": 621
+   },
+   "yuzde": {
+    "ANAP": 19.0,
+    "BBP": 0.3,
+    "CHP": 10.3,
+    "DSP": 8.5,
+    "DYP": 33.2,
+    "İP": 0.3,
+    "MP92": 0.4,
+    "MHP": 9.6,
+    "RP": 9.1,
+    "SBP": 0.4,
+    "SHP": 8.6,
+    "YDP": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 3,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 7,
+   "ad": "Kepez(1)",
+   "ilce": "Kepez(1)",
+   "adKaynakta": "Kepez (2)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Antalya.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 367,
+   "secmen": 108073,
+   "oyKullanan": 96461,
+   "katilim": 89.3,
+   "gecerliOy": 89452,
+   "oy": {
+    "ANAP": 14958,
+    "BBP": 308,
+    "CHP": 11020,
+    "DSP": 7912,
+    "DYP": 25912,
+    "İP": 309,
+    "MP92": 411,
+    "MHP": 10417,
+    "RP": 10925,
+    "SBP": 376,
+    "SHP": 6601,
+    "YDP": 303
+   },
+   "yuzde": {
+    "ANAP": 16.7,
+    "BBP": 0.4,
+    "CHP": 12.3,
+    "DSP": 8.9,
+    "DYP": 29.0,
+    "İP": 0.3,
+    "MP92": 0.5,
+    "MHP": 11.6,
+    "RP": 12.2,
+    "SBP": 0.4,
+    "SHP": 7.4,
+    "YDP": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 7,
+   "ad": "Konyaaltı(1)",
+   "ilce": "Konyaaltı(1)",
+   "adKaynakta": "Konyaaltı(2) ,",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Antalya.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 25,
+   "secmen": 7531,
+   "oyKullanan": 6952,
+   "katilim": 92.3,
+   "gecerliOy": 6519,
+   "oy": {
+    "ANAP": 1925,
+    "BBP": 14,
+    "CHP": 421,
+    "DSP": 327,
+    "DYP": 1746,
+    "İP": 6,
+    "MP92": 44,
+    "MHP": 1134,
+    "RP": 405,
+    "SBP": 18,
+    "SHP": 462,
+    "YDP": 17
+   },
+   "yuzde": {
+    "ANAP": 29.5,
+    "BBP": 0.2,
+    "CHP": 6.4,
+    "DSP": 5.0,
+    "DYP": 26.8,
+    "İP": 0.1,
+    "MP92": 0.7,
+    "MHP": 17.4,
+    "RP": 6.2,
+    "SBP": 0.3,
+    "SHP": 7.1,
+    "YDP": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 7,
+   "ad": "Muratpaşa(1)",
+   "ilce": "Muratpaşa(1)",
+   "adKaynakta": "Muratpaşa(2)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Antalya.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 484,
+   "secmen": 144450,
+   "oyKullanan": 126637,
+   "katilim": 87.7,
+   "gecerliOy": 118804,
+   "oy": {
+    "ANAP": 24012,
+    "BBP": 319,
+    "CHP": 10723,
+    "DSP": 10112,
+    "DYP": 43667,
+    "İP": 286,
+    "MP92": 341,
+    "MHP": 9166,
+    "RP": 8112,
+    "SBP": 446,
+    "SHP": 11319,
+    "YDP": 301
+   },
+   "yuzde": {
+    "ANAP": 20.2,
+    "BBP": 0.3,
+    "CHP": 9.0,
+    "DSP": 8.5,
+    "DYP": 36.8,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "MHP": 7.7,
+    "RP": 6.8,
+    "SBP": 0.4,
+    "SHP": 9.5,
+    "YDP": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    252,
+    253
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "il",
+   "plaka": 16,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "BURSA",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 2131,
+   "secmen": 590162,
+   "oyKullanan": 554609,
+   "katilim": 94.0,
+   "gecerliOy": 518917,
+   "oy": {
+    "ANAP": 144309,
+    "BBP": 1409,
+    "CHP": 5130,
+    "DP": 1534,
+    "DSP": 94228,
+    "DYP": 122200,
+    "İP": 955,
+    "MP92": 2184,
+    "MHP": 16160,
+    "RP": 96113,
+    "SBP": 776,
+    "SHP": 32313,
+    "YDP": 1305,
+    "Bağımsız": 301
+   },
+   "yuzde": {
+    "ANAP": 27.8,
+    "BBP": 0.3,
+    "CHP": 1.0,
+    "DP": 0.3,
+    "DSP": 18.2,
+    "DYP": 23.5,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 3.1,
+    "RP": 18.5,
+    "SBP": 0.1,
+    "SHP": 6.2,
+    "YDP": 0.3,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 3,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 16,
+   "ad": "Nilüfer",
+   "ilce": "Nilüfer",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Bursa.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 118,
+   "secmen": 35127,
+   "oyKullanan": 32930,
+   "katilim": 93.7,
+   "gecerliOy": 31041,
+   "oy": {
+    "ANAP": 8738,
+    "BBP": 70,
+    "CHP": 297,
+    "DP": 77,
+    "DSP": 6668,
+    "DYP": 6886,
+    "İP": 35,
+    "MP92": 98,
+    "MHP": 974,
+    "RP": 4362,
+    "SBP": 49,
+    "SHP": 2713,
+    "YDP": 59,
+    "Bağımsız": 15
+   },
+   "yuzde": {
+    "ANAP": 28.2,
+    "BBP": 0.2,
+    "CHP": 1.0,
+    "DP": 0.2,
+    "DSP": 21.5,
+    "DYP": 22.2,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 3.1,
+    "RP": 14.1,
+    "SBP": 0.2,
+    "SHP": 8.7,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 16,
+   "ad": "Osmangazi",
+   "ilce": "Osmangazi",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Bursa.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 1120,
+   "secmen": 322072,
+   "oyKullanan": 303852,
+   "katilim": 94.3,
+   "gecerliOy": 285684,
+   "oy": {
+    "ANAP": 79607,
+    "BBP": 726,
+    "CHP": 2742,
+    "DP": 823,
+    "DSP": 55418,
+    "DYP": 74781,
+    "İP": 572,
+    "MP92": 1226,
+    "MHP": 8333,
+    "RP": 44848,
+    "SBP": 382,
+    "SHP": 15300,
+    "YDP": 781,
+    "Bağımsız": 145
+   },
+   "yuzde": {
+    "ANAP": 27.9,
+    "BBP": 0.3,
+    "CHP": 1.0,
+    "DP": 0.3,
+    "DSP": 19.4,
+    "DYP": 26.2,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 2.9,
+    "RP": 15.7,
+    "SBP": 0.1,
+    "SHP": 5.3,
+    "YDP": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 16,
+   "ad": "Yıldırım",
+   "ilce": "Yıldırım",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Bursa.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 893,
+   "secmen": 232963,
+   "oyKullanan": 217827,
+   "katilim": 93.5,
+   "gecerliOy": 202192,
+   "oy": {
+    "ANAP": 55964,
+    "BBP": 613,
+    "CHP": 2091,
+    "DP": 634,
+    "DSP": 32142,
+    "DYP": 40533,
+    "İP": 348,
+    "MP92": 860,
+    "MHP": 6853,
+    "RP": 46903,
+    "SBP": 345,
+    "SHP": 14300,
+    "YDP": 465,
+    "Bağımsız": 141
+   },
+   "yuzde": {
+    "ANAP": 27.7,
+    "BBP": 0.3,
+    "CHP": 1.0,
+    "DP": 0.3,
+    "DSP": 15.9,
+    "DYP": 20.0,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 3.4,
+    "RP": 23.2,
+    "SBP": 0.2,
+    "SHP": 7.1,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "il",
+   "plaka": 21,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "DİYARBAKIR",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 573,
+   "secmen": 169466,
+   "oyKullanan": 119754,
+   "katilim": 70.7,
+   "gecerliOy": 86302,
+   "oy": {
+    "ANAP": 18826,
+    "BBP": 672,
+    "CHP": 1846,
+    "DYP": 13691,
+    "İP": 548,
+    "MHP": 3755,
+    "RP": 31865,
+    "SHP": 12588,
+    "YDP": 674,
+    "Bağımsız": 1837
+   },
+   "yuzde": {
+    "ANAP": 21.8,
+    "BBP": 0.8,
+    "CHP": 2.1,
+    "DYP": 15.9,
+    "İP": 0.6,
+    "MHP": 4.4,
+    "RP": 36.9,
+    "SHP": 14.6,
+    "YDP": 0.8,
+    "Bağımsız": 2.1
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 3,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 21,
+   "ad": "Bağlar(1)",
+   "ilce": "Bağlar(1)",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Diyarbakir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 273,
+   "secmen": 81334,
+   "oyKullanan": 55060,
+   "katilim": 67.7,
+   "gecerliOy": 38239,
+   "oy": {
+    "ANAP": 8647,
+    "BBP": 327,
+    "CHP": 832,
+    "DYP": 5192,
+    "İP": 265,
+    "MHP": 1746,
+    "RP": 15037,
+    "SHP": 4498,
+    "YDP": 282,
+    "Bağımsız": 1413
+   },
+   "yuzde": {
+    "ANAP": 22.6,
+    "BBP": 0.8,
+    "CHP": 2.2,
+    "DYP": 13.6,
+    "İP": 0.7,
+    "MHP": 4.6,
+    "RP": 39.3,
+    "SHP": 11.8,
+    "YDP": 0.7,
+    "Bağımsız": 3.7
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 21,
+   "ad": "Sur(1)",
+   "ilce": "Sur(1)",
+   "adKaynakta": "SurCD",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Diyarbakir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 125,
+   "secmen": 35877,
+   "oyKullanan": 26625,
+   "katilim": 74.2,
+   "gecerliOy": 18634,
+   "oy": {
+    "ANAP": 3322,
+    "BBP": 179,
+    "CHP": 408,
+    "DYP": 3171,
+    "İP": 156,
+    "MHP": 206,
+    "RP": 8265,
+    "SHP": 2521,
+    "YDP": 177,
+    "Bağımsız": 229
+   },
+   "yuzde": {
+    "ANAP": 17.8,
+    "BBP": 1.0,
+    "CHP": 2.2,
+    "DYP": 17.0,
+    "İP": 0.8,
+    "MHP": 1.1,
+    "RP": 44.4,
+    "SHP": 13.5,
+    "YDP": 1.0,
+    "Bağımsız": 1.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 21,
+   "ad": "Yenişehir(1)",
+   "ilce": "Yenişehir(1)",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Diyarbakir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 175,
+   "secmen": 52255,
+   "oyKullanan": 38069,
+   "katilim": 72.9,
+   "gecerliOy": 29429,
+   "oy": {
+    "ANAP": 6857,
+    "BBP": 166,
+    "CHP": 606,
+    "DYP": 5328,
+    "İP": 127,
+    "MHP": 1803,
+    "RP": 8563,
+    "SHP": 5569,
+    "YDP": 215,
+    "Bağımsız": 195
+   },
+   "yuzde": {
+    "ANAP": 23.3,
+    "BBP": 0.6,
+    "CHP": 2.1,
+    "DYP": 18.1,
+    "İP": 0.4,
+    "MHP": 6.1,
+    "RP": 29.1,
+    "SHP": 18.9,
+    "YDP": 0.7,
+    "Bağımsız": 0.7
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "il",
+   "plaka": 25,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "ERZURUM",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 439,
+   "secmen": 133846,
+   "oyKullanan": 119082,
+   "katilim": 89.0,
+   "gecerliOy": 111942,
+   "oy": {
+    "ANAP": 23775,
+    "BBP": 1978,
+    "CHP": 575,
+    "DP": 486,
+    "DSP": 1516,
+    "DYP": 9643,
+    "İP": 212,
+    "MP92": 593,
+    "MHP": 28370,
+    "RP": 41965,
+    "SHP": 1838,
+    "YDP": 991
+   },
+   "yuzde": {
+    "ANAP": 21.2,
+    "BBP": 1.8,
+    "CHP": 0.5,
+    "DP": 0.4,
+    "DSP": 1.4,
+    "DYP": 8.6,
+    "İP": 0.2,
+    "MP92": 0.5,
+    "MHP": 25.4,
+    "RP": 37.5,
+    "SHP": 1.6,
+    "YDP": 0.9
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 4,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 25,
+   "ad": "Dadaşkent(1)",
+   "ilce": "Dadaşkent(1)",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Erzurum.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 25,
+   "secmen": 7697,
+   "oyKullanan": 6862,
+   "katilim": 89.2,
+   "gecerliOy": 6495,
+   "oy": {
+    "ANAP": 1355,
+    "BBP": 212,
+    "CHP": 29,
+    "DP": 21,
+    "DSP": 111,
+    "DYP": 723,
+    "İP": 8,
+    "MP92": 12,
+    "MHP": 1534,
+    "RP": 2362,
+    "SHP": 97,
+    "YDP": 31
+   },
+   "yuzde": {
+    "ANAP": 20.9,
+    "BBP": 3.3,
+    "CHP": 0.4,
+    "DP": 0.3,
+    "DSP": 1.7,
+    "DYP": 11.1,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 23.6,
+    "RP": 36.4,
+    "SHP": 1.5,
+    "YDP": 0.5
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 25,
+   "ad": "Kazımkarabekir(1)",
+   "ilce": "Kazımkarabekir(1)",
+   "adKaynakta": "Kâzımkarabek i r(1)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Erzurum.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 92,
+   "secmen": 28210,
+   "oyKullanan": 25132,
+   "katilim": 89.1,
+   "gecerliOy": 23360,
+   "oy": {
+    "ANAP": 4348,
+    "BBP": 281,
+    "CHP": 92,
+    "DP": 147,
+    "DSP": 217,
+    "DYP": 2097,
+    "İP": 45,
+    "MP92": 294,
+    "MHP": 5305,
+    "RP": 10162,
+    "SHP": 235,
+    "YDP": 137
+   },
+   "yuzde": {
+    "ANAP": 18.6,
+    "BBP": 1.2,
+    "CHP": 0.4,
+    "DP": 0.6,
+    "DSP": 0.9,
+    "DYP": 9.0,
+    "İP": 0.2,
+    "MP92": 1.3,
+    "MHP": 22.7,
+    "RP": 43.5,
+    "SHP": 1.0,
+    "YDP": 0.6
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 25,
+   "ad": "Yakutiye(1)",
+   "ilce": "Yakutiye(1)",
+   "adKaynakta": "Yakutiye (1)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Erzurum.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 178,
+   "secmen": 53834,
+   "oyKullanan": 47809,
+   "katilim": 88.8,
+   "gecerliOy": 44946,
+   "oy": {
+    "ANAP": 9991,
+    "BBP": 794,
+    "CHP": 270,
+    "DP": 157,
+    "DSP": 743,
+    "DYP": 4129,
+    "İP": 117,
+    "MP92": 157,
+    "MHP": 12087,
+    "RP": 15326,
+    "SHP": 887,
+    "YDP": 288
+   },
+   "yuzde": {
+    "ANAP": 22.2,
+    "BBP": 1.8,
+    "CHP": 0.6,
+    "DP": 0.3,
+    "DSP": 1.7,
+    "DYP": 9.2,
+    "İP": 0.3,
+    "MP92": 0.3,
+    "MHP": 26.9,
+    "RP": 34.1,
+    "SHP": 2.0,
+    "YDP": 0.6
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "karakter": [
+    "YYaakkuuttiiyyee→Yakutiye",
+    "((11))→(1)"
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 25,
+   "ad": "Yenişehir(1)",
+   "ilce": "Yenişehir(1)",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Erzurum.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 144,
+   "secmen": 44105,
+   "oyKullanan": 39279,
+   "katilim": 89.1,
+   "gecerliOy": 37141,
+   "oy": {
+    "ANAP": 8081,
+    "BBP": 691,
+    "CHP": 184,
+    "DP": 161,
+    "DSP": 445,
+    "DYP": 2694,
+    "İP": 42,
+    "MP92": 130,
+    "MHP": 9444,
+    "RP": 14115,
+    "SHP": 619,
+    "YDP": 535
+   },
+   "yuzde": {
+    "ANAP": 21.8,
+    "BBP": 1.9,
+    "CHP": 0.5,
+    "DP": 0.4,
+    "DSP": 1.2,
+    "DYP": 7.3,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 25.4,
+    "RP": 38.0,
+    "SHP": 1.7,
+    "YDP": 1.4
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "il",
+   "plaka": 26,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "ESKİŞEHİR",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 919,
+   "secmen": 282758,
+   "oyKullanan": 268413,
+   "katilim": 94.9,
+   "gecerliOy": 256919,
+   "oy": {
+    "ANAP": 49045,
+    "BBP": 546,
+    "CHP": 21371,
+    "DSP": 52128,
+    "DYP": 52665,
+    "İP": 429,
+    "MP92": 930,
+    "MHP": 13131,
+    "RP": 35615,
+    "SBP": 438,
+    "SHP": 26984,
+    "YDP": 704,
+    "Bağımsız": 2933
+   },
+   "yuzde": {
+    "ANAP": 19.1,
+    "BBP": 0.2,
+    "CHP": 8.3,
+    "DSP": 20.3,
+    "DYP": 20.5,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 5.1,
+    "RP": 13.8,
+    "SBP": 0.2,
+    "SHP": 10.5,
+    "YDP": 0.3,
+    "Bağımsız": 1.1
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 2,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "karakter": [
+    "EESSKKİİŞŞEEHHİİRR→ESKİŞEHİR"
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 26,
+   "ad": "Odunpazarı(1)",
+   "ilce": "Odunpazarı(1)",
+   "adKaynakta": "Odunpazarı(1)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Eskisehir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 495,
+   "secmen": 151825,
+   "oyKullanan": 143324,
+   "katilim": 94.4,
+   "gecerliOy": 136940,
+   "oy": {
+    "ANAP": 25291,
+    "BBP": 282,
+    "CHP": 15462,
+    "DSP": 24264,
+    "DYP": 26428,
+    "İP": 232,
+    "MP92": 457,
+    "MHP": 6882,
+    "RP": 19253,
+    "SBP": 297,
+    "SHP": 16321,
+    "YDP": 367,
+    "Bağımsız": 1404
+   },
+   "yuzde": {
+    "ANAP": 18.5,
+    "BBP": 0.2,
+    "CHP": 11.3,
+    "DSP": 17.7,
+    "DYP": 19.3,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "MHP": 5.0,
+    "RP": 14.1,
+    "SBP": 0.2,
+    "SHP": 11.9,
+    "YDP": 0.3,
+    "Bağımsız": 1.0
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "karakter": [
+    "OOdduunnppaazzaarrıı((11))→Odunpazarı(1)"
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 26,
+   "ad": "Tepebaşı(1)",
+   "ilce": "Tepebaşı(1)",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Eskisehir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 424,
+   "secmen": 130933,
+   "oyKullanan": 125089,
+   "katilim": 95.5,
+   "gecerliOy": 119979,
+   "oy": {
+    "ANAP": 23754,
+    "BBP": 264,
+    "CHP": 5909,
+    "DSP": 27864,
+    "DYP": 26237,
+    "İP": 197,
+    "MP92": 473,
+    "MHP": 6249,
+    "RP": 16362,
+    "SBP": 141,
+    "SHP": 10663,
+    "YDP": 337,
+    "Bağımsız": 1529
+   },
+   "yuzde": {
+    "ANAP": 19.8,
+    "BBP": 0.2,
+    "CHP": 4.9,
+    "DSP": 23.2,
+    "DYP": 21.9,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 5.2,
+    "RP": 13.6,
+    "SBP": 0.1,
+    "SHP": 8.9,
+    "YDP": 0.3,
+    "Bağımsız": 1.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "DSP"
+  },
+  {
+   "tip": "il",
+   "plaka": 27,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "GAZİANTEP",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 1154,
+   "secmen": 325128,
+   "oyKullanan": 279437,
+   "katilim": 85.9,
+   "gecerliOy": 255113,
+   "oy": {
+    "ANAP": 37042,
+    "BBP": 1731,
+    "CHP": 9866,
+    "DP": 1073,
+    "DSP": 16534,
+    "DYP": 26350,
+    "İP": 798,
+    "MP92": 1003,
+    "MHP": 19067,
+    "RP": 69817,
+    "SHP": 70466,
+    "YDP": 1366
+   },
+   "yuzde": {
+    "ANAP": 14.5,
+    "BBP": 0.7,
+    "CHP": 3.9,
+    "DP": 0.4,
+    "DSP": 6.5,
+    "DYP": 10.3,
+    "İP": 0.3,
+    "MP92": 0.4,
+    "MHP": 7.5,
+    "RP": 27.4,
+    "SHP": 27.6,
+    "YDP": 0.5
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 2,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 27,
+   "ad": "Şahinbey",
+   "ilce": "Şahinbey",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Gaziantep.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 734,
+   "secmen": 208043,
+   "oyKullanan": 178706,
+   "katilim": 85.9,
+   "gecerliOy": 164796,
+   "oy": {
+    "ANAP": 22400,
+    "BBP": 988,
+    "CHP": 7061,
+    "DP": 652,
+    "DSP": 11843,
+    "DYP": 16922,
+    "İP": 540,
+    "MP92": 616,
+    "MHP": 12961,
+    "RP": 43403,
+    "SHP": 46482,
+    "YDP": 928
+   },
+   "yuzde": {
+    "ANAP": 13.6,
+    "BBP": 0.6,
+    "CHP": 4.3,
+    "DP": 0.4,
+    "DSP": 7.2,
+    "DYP": 10.3,
+    "İP": 0.3,
+    "MP92": 0.4,
+    "MHP": 7.9,
+    "RP": 26.3,
+    "SHP": 28.2,
+    "YDP": 0.5
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    254,
+    255
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 27,
+   "ad": "Şehitkamil",
+   "ilce": "Şehitkamil",
+   "adKaynakta": "ŞehitkâmiI",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Gaziantep.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 420,
+   "secmen": 117085,
+   "oyKullanan": 100731,
+   "katilim": 86.0,
+   "gecerliOy": 90317,
+   "oy": {
+    "ANAP": 14642,
+    "BBP": 743,
+    "CHP": 2805,
+    "DP": 421,
+    "DSP": 4691,
+    "DYP": 9428,
+    "İP": 258,
+    "MP92": 387,
+    "MHP": 6106,
+    "RP": 26414,
+    "SHP": 23984,
+    "YDP": 438
+   },
+   "yuzde": {
+    "ANAP": 16.2,
+    "BBP": 0.8,
+    "CHP": 3.1,
+    "DP": 0.5,
+    "DSP": 5.2,
+    "DYP": 10.4,
+    "İP": 0.3,
+    "MP92": 0.4,
+    "MHP": 6.8,
+    "RP": 29.2,
+    "SHP": 26.6,
+    "YDP": 0.5
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "il",
+   "plaka": 33,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "İÇEL",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 825,
+   "secmen": 239391,
+   "oyKullanan": 193867,
+   "katilim": 81.0,
+   "gecerliOy": 176698,
+   "oy": {
+    "ANAP": 65879,
+    "BBP": 481,
+    "CHP": 13972,
+    "DP": 842,
+    "DSP": 9817,
+    "DYP": 19628,
+    "İP": 591,
+    "MP92": 371,
+    "MHP": 9037,
+    "RP": 14184,
+    "SHP": 41531,
+    "YDP": 365
+   },
+   "yuzde": {
+    "ANAP": 37.3,
+    "BBP": 0.3,
+    "CHP": 7.9,
+    "DP": 0.5,
+    "DSP": 5.6,
+    "DYP": 11.1,
+    "İP": 0.3,
+    "MP92": 0.2,
+    "MHP": 5.1,
+    "RP": 8.0,
+    "SHP": 23.5,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 3,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 33,
+   "ad": "Akdeniz(1)",
+   "ilce": "Akdeniz(1)",
+   "adKaynakta": "Akdeniz(1)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/icel.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 339,
+   "secmen": 98534,
+   "oyKullanan": 77449,
+   "katilim": 78.6,
+   "gecerliOy": 69202,
+   "oy": {
+    "ANAP": 24778,
+    "BBP": 236,
+    "CHP": 6487,
+    "DP": 326,
+    "DSP": 4014,
+    "DYP": 8350,
+    "İP": 256,
+    "MP92": 147,
+    "MHP": 2377,
+    "RP": 7308,
+    "SHP": 14762,
+    "YDP": 161
+   },
+   "yuzde": {
+    "ANAP": 35.8,
+    "BBP": 0.3,
+    "CHP": 9.4,
+    "DP": 0.5,
+    "DSP": 5.8,
+    "DYP": 12.1,
+    "İP": 0.4,
+    "MP92": 0.2,
+    "MHP": 3.4,
+    "RP": 10.6,
+    "SHP": 21.3,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 33,
+   "ad": "Toroslar(1)",
+   "ilce": "Toroslar(1)",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/icel.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 280,
+   "secmen": 80348,
+   "oyKullanan": 65288,
+   "katilim": 81.3,
+   "gecerliOy": 59504,
+   "oy": {
+    "ANAP": 23022,
+    "BBP": 171,
+    "CHP": 3413,
+    "DP": 181,
+    "DSP": 2705,
+    "DYP": 5761,
+    "İP": 185,
+    "MP92": 153,
+    "MHP": 4928,
+    "RP": 4409,
+    "SHP": 14450,
+    "YDP": 126
+   },
+   "yuzde": {
+    "ANAP": 38.7,
+    "BBP": 0.3,
+    "CHP": 5.7,
+    "DP": 0.3,
+    "DSP": 4.5,
+    "DYP": 9.7,
+    "İP": 0.3,
+    "MP92": 0.3,
+    "MHP": 8.3,
+    "RP": 7.4,
+    "SHP": 24.3,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 33,
+   "ad": "Yenişehir(1)",
+   "ilce": "Yenişehir(1)",
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/icel.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 206,
+   "secmen": 60509,
+   "oyKullanan": 51130,
+   "katilim": 84.5,
+   "gecerliOy": 47992,
+   "oy": {
+    "ANAP": 18079,
+    "BBP": 74,
+    "CHP": 4072,
+    "DP": 335,
+    "DSP": 3098,
+    "DYP": 5517,
+    "İP": 150,
+    "MP92": 71,
+    "MHP": 1732,
+    "RP": 2467,
+    "SHP": 12319,
+    "YDP": 78
+   },
+   "yuzde": {
+    "ANAP": 37.7,
+    "BBP": 0.2,
+    "CHP": 8.5,
+    "DP": 0.7,
+    "DSP": 6.4,
+    "DYP": 11.5,
+    "İP": 0.3,
+    "MP92": 0.1,
+    "MHP": 3.6,
+    "RP": 5.1,
+    "SHP": 25.7,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "il",
+   "plaka": 34,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "İSTANBUL",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 596,
+   "secmen": 4585817,
+   "oyKullanan": 4078906,
+   "katilim": 88.9,
+   "gecerliOy": 3865126,
+   "oy": {
+    "ANAP": 855897,
+    "BBP": 13662,
+    "CHP": 54028,
+    "DSP": 478612,
+    "DYP": 597461,
+    "İP": 5215,
+    "MP92": 12294,
+    "MHP": 72121,
+    "RP": 973704,
+    "SBP": 7075,
+    "SHP": 784693,
+    "YDP": 7979,
+    "Bağımsız": 2385
+   },
+   "yuzde": {
+    "ANAP": 22.1,
+    "BBP": 0.4,
+    "CHP": 1.4,
+    "DSP": 12.4,
+    "DYP": 15.4,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 1.9,
+    "RP": 25.2,
+    "SBP": 0.2,
+    "SHP": 20.3,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 28,
+     "hepsiTutarli": false
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Adalar",
+   "ilce": "Adalar",
+   "adKaynakta": "Adalar",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 42,
+   "secmen": 12799,
+   "oyKullanan": 11350,
+   "katilim": 88.7,
+   "gecerliOy": 10958,
+   "oy": {
+    "ANAP": 4484,
+    "BBP": 12,
+    "CHP": 160,
+    "DSP": 269,
+    "DYP": 2589,
+    "İP": 12,
+    "MP92": 19,
+    "MHP": 78,
+    "RP": 735,
+    "SBP": 19,
+    "SHP": 2541,
+    "YDP": 34,
+    "Bağımsız": 6
+   },
+   "yuzde": {
+    "ANAP": 40.9,
+    "BBP": 0.1,
+    "CHP": 1.5,
+    "DSP": 2.5,
+    "DYP": 23.6,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 0.7,
+    "RP": 6.7,
+    "SBP": 0.2,
+    "SHP": 23.2,
+    "YDP": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Avcılar",
+   "ilce": "Avcılar",
+   "adKaynakta": "Avc11ar",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 340,
+   "secmen": 101784,
+   "oyKullanan": 88339,
+   "katilim": 86.8,
+   "gecerliOy": 84362,
+   "oy": {
+    "ANAP": 24885,
+    "BBP": 165,
+    "CHP": 1007,
+    "DSP": 8016,
+    "DYP": 12626,
+    "İP": 215,
+    "MP92": 118,
+    "MHP": 1759,
+    "RP": 13501,
+    "SBP": 102,
+    "SHP": 21763,
+    "YDP": 158,
+    "Bağımsız": 47
+   },
+   "yuzde": {
+    "ANAP": 29.5,
+    "BBP": 0.2,
+    "CHP": 1.2,
+    "DSP": 9.5,
+    "DYP": 15.0,
+    "İP": 0.3,
+    "MP92": 0.1,
+    "MHP": 2.1,
+    "RP": 16.0,
+    "SBP": 0.1,
+    "SHP": 25.8,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Bağcılar",
+   "ilce": "Bağcılar",
+   "adKaynakta": "Bağcılar",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 724,
+   "secmen": 212802,
+   "oyKullanan": 189839,
+   "katilim": 89.2,
+   "gecerliOy": 177171,
+   "oy": {
+    "ANAP": 27865,
+    "BBP": 610,
+    "CHP": 2166,
+    "DSP": 33794,
+    "DYP": 13211,
+    "İP": 207,
+    "MP92": 1170,
+    "MHP": 4820,
+    "RP": 62911,
+    "SBP": 331,
+    "SHP": 29619,
+    "YDP": 322,
+    "Bağımsız": 145
+   },
+   "yuzde": {
+    "ANAP": 15.7,
+    "BBP": 0.3,
+    "CHP": 1.2,
+    "DSP": 19.1,
+    "DYP": 7.5,
+    "İP": 0.1,
+    "MP92": 0.7,
+    "MHP": 2.7,
+    "RP": 35.5,
+    "SBP": 0.2,
+    "SHP": 16.7,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Bahçelievler",
+   "ilce": "Bahçelievler",
+   "adKaynakta": "Bahçelievler",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 879,
+   "secmen": 247777,
+   "oyKullanan": 214140,
+   "katilim": 86.4,
+   "gecerliOy": 204159,
+   "oy": {
+    "ANAP": 47657,
+    "BBP": 441,
+    "CHP": 2177,
+    "DSP": 18833,
+    "DYP": 29604,
+    "İP": 218,
+    "MP92": 521,
+    "MHP": 4482,
+    "RP": 51783,
+    "SBP": 317,
+    "SHP": 47654,
+    "YDP": 395,
+    "Bağımsız": 77
+   },
+   "yuzde": {
+    "ANAP": 23.3,
+    "BBP": 0.2,
+    "CHP": 1.1,
+    "DSP": 9.2,
+    "DYP": 14.5,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 2.2,
+    "RP": 25.4,
+    "SBP": 0.2,
+    "SHP": 23.3,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Bakırköy",
+   "ilce": "Bakırköy",
+   "adKaynakta": "Bakırköy",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 499,
+   "secmen": 145923,
+   "oyKullanan": 131453,
+   "katilim": 90.1,
+   "gecerliOy": 127280,
+   "oy": {
+    "ANAP": 41587,
+    "BBP": 107,
+    "CHP": 1592,
+    "DSP": 9203,
+    "DYP": 31531,
+    "İP": 157,
+    "MP92": 170,
+    "MHP": 1417,
+    "RP": 9738,
+    "SBP": 134,
+    "SHP": 31386,
+    "YDP": 215,
+    "Bağımsız": 43
+   },
+   "yuzde": {
+    "ANAP": 32.7,
+    "BBP": 0.1,
+    "CHP": 1.3,
+    "DSP": 7.2,
+    "DYP": 24.8,
+    "İP": 0.1,
+    "MP92": 0.1,
+    "MHP": 1.1,
+    "RP": 7.7,
+    "SBP": 0.1,
+    "SHP": 24.6,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Bayrampaşa",
+   "ilce": "Bayrampaşa",
+   "adKaynakta": "Bayrampaşa",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 459,
+   "secmen": 139335,
+   "oyKullanan": 128759,
+   "katilim": 92.4,
+   "gecerliOy": 122750,
+   "oy": {
+    "ANAP": 24689,
+    "BBP": 332,
+    "CHP": 1376,
+    "DSP": 18685,
+    "DYP": 24393,
+    "İP": 132,
+    "MP92": 421,
+    "MHP": 3041,
+    "RP": 35457,
+    "SBP": 195,
+    "SHP": 13734,
+    "YDP": 250,
+    "Bağımsız": 45
+   },
+   "yuzde": {
+    "ANAP": 20.1,
+    "BBP": 0.3,
+    "CHP": 1.1,
+    "DSP": 15.2,
+    "DYP": 19.9,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 2.5,
+    "RP": 28.9,
+    "SBP": 0.2,
+    "SHP": 11.2,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Beşiktaş",
+   "ilce": "Beşiktaş",
+   "adKaynakta": "Beşiktaş",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 489,
+   "secmen": 144592,
+   "oyKullanan": 128715,
+   "katilim": 89.0,
+   "gecerliOy": 124152,
+   "oy": {
+    "ANAP": 35829,
+    "BBP": 178,
+    "CHP": 1469,
+    "DSP": 10404,
+    "DYP": 28949,
+    "İP": 222,
+    "MP92": 133,
+    "MHP": 1321,
+    "RP": 11533,
+    "SBP": 223,
+    "SHP": 33608,
+    "YDP": 250,
+    "Bağımsız": 33
+   },
+   "yuzde": {
+    "ANAP": 28.8,
+    "BBP": 0.1,
+    "CHP": 1.2,
+    "DSP": 8.4,
+    "DYP": 23.3,
+    "İP": 0.2,
+    "MP92": 0.1,
+    "MHP": 1.1,
+    "RP": 9.3,
+    "SBP": 0.2,
+    "SHP": 27.1,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Beykoz",
+   "ilce": "Beykoz",
+   "adKaynakta": "Beykoz",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 308,
+   "secmen": 94594,
+   "oyKullanan": 86201,
+   "katilim": 91.1,
+   "gecerliOy": 81157,
+   "oy": {
+    "ANAP": 20732,
+    "BBP": 567,
+    "CHP": 1217,
+    "DSP": 11559,
+    "DYP": 10299,
+    "İP": 83,
+    "MP92": 256,
+    "MHP": 1124,
+    "RP": 23898,
+    "SBP": 150,
+    "SHP": 11001,
+    "YDP": 210,
+    "Bağımsız": 61
+   },
+   "yuzde": {
+    "ANAP": 25.5,
+    "BBP": 0.7,
+    "CHP": 1.5,
+    "DSP": 14.2,
+    "DYP": 12.7,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 1.4,
+    "RP": 29.4,
+    "SBP": 0.2,
+    "SHP": 13.6,
+    "YDP": 0.3,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Beyoğlu",
+   "ilce": "Beyoğlu",
+   "adKaynakta": "Beyoğlu",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 584,
+   "secmen": 147328,
+   "oyKullanan": 129960,
+   "katilim": 88.2,
+   "gecerliOy": 121721,
+   "oy": {
+    "ANAP": 22321,
+    "BBP": 382,
+    "CHP": 1970,
+    "DSP": 13977,
+    "DYP": 18712,
+    "İP": 207,
+    "MP92": 505,
+    "MHP": 1875,
+    "RP": 37735,
+    "SBP": 269,
+    "SHP": 23312,
+    "YDP": 355,
+    "Bağımsız": 101
+   },
+   "yuzde": {
+    "ANAP": 18.3,
+    "BBP": 0.3,
+    "CHP": 1.6,
+    "DSP": 11.5,
+    "DYP": 15.4,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 1.5,
+    "RP": 31.0,
+    "SBP": 0.2,
+    "SHP": 19.2,
+    "YDP": 0.3,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Eminönü",
+   "ilce": "Eminönü",
+   "adKaynakta": "Eminönü",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 141,
+   "secmen": 37734,
+   "oyKullanan": 31472,
+   "katilim": 83.4,
+   "gecerliOy": 29323,
+   "oy": {
+    "ANAP": 6817,
+    "BBP": 66,
+    "CHP": 319,
+    "DSP": 2525,
+    "DYP": 3386,
+    "İP": 44,
+    "MP92": 105,
+    "MHP": 2096,
+    "RP": 8001,
+    "SBP": 57,
+    "SHP": 5779,
+    "YDP": 99,
+    "Bağımsız": 29
+   },
+   "yuzde": {
+    "ANAP": 23.3,
+    "BBP": 0.2,
+    "CHP": 1.1,
+    "DSP": 8.6,
+    "DYP": 11.5,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 7.1,
+    "RP": 27.3,
+    "SBP": 0.2,
+    "SHP": 19.7,
+    "YDP": 0.3,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Esenler",
+   "ilce": "Esenler",
+   "adKaynakta": "Esenler",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 488,
+   "secmen": 143274,
+   "oyKullanan": 127872,
+   "katilim": 89.2,
+   "gecerliOy": 120104,
+   "oy": {
+    "ANAP": 21749,
+    "BBP": 543,
+    "CHP": 1330,
+    "DSP": 20344,
+    "DYP": 12314,
+    "İP": 159,
+    "MP92": 1007,
+    "MHP": 2355,
+    "RP": 43271,
+    "SBP": 227,
+    "SHP": 16450,
+    "YDP": 233,
+    "Bağımsız": 122
+   },
+   "yuzde": {
+    "ANAP": 18.1,
+    "BBP": 0.5,
+    "CHP": 1.1,
+    "DSP": 16.9,
+    "DYP": 10.3,
+    "İP": 0.1,
+    "MP92": 0.8,
+    "MHP": 2.0,
+    "RP": 36.0,
+    "SBP": 0.2,
+    "SHP": 13.7,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Eyüp",
+   "ilce": "Eyüp",
+   "adKaynakta": "Eyüp",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 459,
+   "secmen": 134040,
+   "oyKullanan": 123792,
+   "katilim": 92.4,
+   "gecerliOy": 116870,
+   "oy": {
+    "ANAP": 23777,
+    "BBP": 305,
+    "CHP": 1374,
+    "DSP": 17987,
+    "DYP": 18489,
+    "İP": 225,
+    "MP92": 346,
+    "MHP": 2062,
+    "RP": 30285,
+    "SBP": 181,
+    "SHP": 21526,
+    "YDP": 249,
+    "Bağımsız": 64
+   },
+   "yuzde": {
+    "ANAP": 20.3,
+    "BBP": 0.3,
+    "CHP": 1.2,
+    "DSP": 15.4,
+    "DYP": 15.8,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "MHP": 1.8,
+    "RP": 25.9,
+    "SBP": 0.2,
+    "SHP": 18.4,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Fatih",
+   "ilce": "Fatih",
+   "adKaynakta": "Fatih",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 991,
+   "secmen": 299299,
+   "oyKullanan": 260878,
+   "katilim": 87.2,
+   "gecerliOy": 248335,
+   "oy": {
+    "ANAP": 57109,
+    "BBP": 627,
+    "CHP": 2944,
+    "DSP": 27556,
+    "DYP": 47688,
+    "İP": 325,
+    "MP92": 687,
+    "MHP": 4371,
+    "RP": 69448,
+    "SBP": 537,
+    "SHP": 36342,
+    "YDP": 581,
+    "Bağımsız": 120
+   },
+   "yuzde": {
+    "ANAP": 23.0,
+    "BBP": 0.3,
+    "CHP": 1.2,
+    "DSP": 11.1,
+    "DYP": 19.2,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 1.8,
+    "RP": 28.0,
+    "SBP": 0.2,
+    "SHP": 14.6,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    256,
+    257
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": null,
+   "plaka": 34,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": null,
+   "kimlik": {
+    "yontem": "cozulemedi"
+   },
+   "sandik": null,
+   "secmen": 111,
+   "oyKullanan": null,
+   "katilim": null,
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
+   "kontrol": {
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaYok": true
+   },
+   "dogrulama": {},
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": null
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Gaziosmanpaşa",
+   "ilce": "Gaziosmanpaşa",
+   "adKaynakta": "Gaziosmanpaşa",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 878,
+   "secmen": 263939,
+   "oyKullanan": 238452,
+   "katilim": 90.3,
+   "gecerliOy": 222943,
+   "oy": {
+    "ANAP": 41455,
+    "BBP": 710,
+    "CHP": 3231,
+    "DSP": 34310,
+    "DYP": 32087,
+    "İP": 349,
+    "MP92": 990,
+    "MHP": 3568,
+    "RP": 74870,
+    "SBP": 462,
+    "SHP": 30093,
+    "YDP": 594,
+    "Bağımsız": 224
+   },
+   "yuzde": {
+    "ANAP": 18.6,
+    "BBP": 0.3,
+    "CHP": 1.4,
+    "DSP": 15.4,
+    "DYP": 14.4,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 1.6,
+    "RP": 33.6,
+    "SBP": 0.2,
+    "SHP": 13.5,
+    "YDP": 0.3,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Güngören",
+   "ilce": "Güngören",
+   "adKaynakta": "Güngören",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 513,
+   "secmen": 151404,
+   "oyKullanan": 132379,
+   "katilim": 87.4,
+   "gecerliOy": 126109,
+   "oy": {
+    "ANAP": 31050,
+    "BBP": 313,
+    "CHP": 1598,
+    "DSP": 14056,
+    "DYP": 17721,
+    "İP": 140,
+    "MP92": 557,
+    "MHP": 3438,
+    "RP": 32692,
+    "SBP": 220,
+    "SHP": 24007,
+    "YDP": 250,
+    "Bağımsız": 67
+   },
+   "yuzde": {
+    "ANAP": 24.6,
+    "BBP": 0.3,
+    "CHP": 1.3,
+    "DSP": 11.1,
+    "DYP": 14.1,
+    "İP": 0.1,
+    "MP92": 0.4,
+    "MHP": 2.7,
+    "RP": 25.9,
+    "SBP": 0.2,
+    "SHP": 19.0,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Kadıköy",
+   "ilce": "Kadıköy",
+   "adKaynakta": "Kadıköy",
+   "kimlik": {
+    "yontem": "etiket_birebir",
+    "ysk": "data/kaynaklar/taban/yerel/1994yerel.json",
+    "not": "kaynaktaki ad, bilinen bir ilçe/belde adıyla birebir aynı (YSK'de bu birim yok)"
+   },
+   "sandik": 602,
+   "secmen": 477134,
+   "oyKullanan": 423334,
+   "katilim": 88.7,
+   "gecerliOy": 409913,
+   "oy": {
+    "ANAP": 103824,
+    "BBP": 679,
+    "CHP": 4767,
+    "DSP": 28489,
+    "DYP": 89885,
+    "İP": 451,
+    "MP92": 596,
+    "MHP": 5377,
+    "RP": 61699,
+    "SBP": 747,
+    "SHP": 112572,
+    "YDP": 684,
+    "Bağımsız": 143
+   },
+   "yuzde": {
+    "ANAP": 25.3,
+    "BBP": 0.2,
+    "CHP": 1.2,
+    "DSP": 7.0,
+    "DYP": 21.9,
+    "İP": 0.1,
+    "MP92": 0.1,
+    "MHP": 1.3,
+    "RP": 15.0,
+    "SBP": 0.2,
+    "SHP": 27.5,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Kağıthane",
+   "ilce": "Kağıthane",
+   "adKaynakta": "Kağıthane",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 618,
+   "secmen": 180733,
+   "oyKullanan": 158928,
+   "katilim": 87.9,
+   "gecerliOy": 149257,
+   "oy": {
+    "ANAP": 31705,
+    "BBP": 573,
+    "CHP": 1777,
+    "DSP": 18475,
+    "DYP": 14534,
+    "İP": 206,
+    "MP92": 548,
+    "MHP": 2311,
+    "RP": 50460,
+    "SBP": 211,
+    "SHP": 28082,
+    "YDP": 279,
+    "Bağımsız": 96
+   },
+   "yuzde": {
+    "ANAP": 21.3,
+    "BBP": 0.4,
+    "CHP": 1.2,
+    "DSP": 12.4,
+    "DYP": 9.7,
+    "İP": 0.1,
+    "MP92": 0.4,
+    "MHP": 1.5,
+    "RP": 33.8,
+    "SBP": 0.1,
+    "SHP": 18.8,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Kartal",
+   "ilce": "Kartal",
+   "adKaynakta": "Kartal",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 571,
+   "secmen": 167928,
+   "oyKullanan": 150591,
+   "katilim": 89.7,
+   "gecerliOy": 142073,
+   "oy": {
+    "ANAP": 30524,
+    "BBP": 512,
+    "CHP": 1956,
+    "DSP": 13461,
+    "DYP": 15111,
+    "İP": 217,
+    "MP92": 340,
+    "MHP": 2411,
+    "RP": 40023,
+    "SBP": 244,
+    "SHP": 36914,
+    "YDP": 212,
+    "Bağımsız": 148
+   },
+   "yuzde": {
+    "ANAP": 21.5,
+    "BBP": 0.4,
+    "CHP": 1.4,
+    "DSP": 9.5,
+    "DYP": 10.6,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 1.7,
+    "RP": 28.2,
+    "SBP": 0.2,
+    "SHP": 26.0,
+    "YDP": 0.1,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Küçükçekmece",
+   "ilce": "Küçükçekmece",
+   "adKaynakta": "Küçükçekmece",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 802,
+   "secmen": 239396,
+   "oyKullanan": 213070,
+   "katilim": 89.0,
+   "gecerliOy": 199897,
+   "oy": {
+    "ANAP": 35775,
+    "BBP": 565,
+    "CHP": 3665,
+    "DSP": 52035,
+    "DYP": 30911,
+    "İP": 282,
+    "MP92": 634,
+    "MHP": 4058,
+    "RP": 38871,
+    "SBP": 255,
+    "SHP": 32288,
+    "YDP": 393,
+    "Bağımsız": 165
+   },
+   "yuzde": {
+    "ANAP": 17.9,
+    "BBP": 0.3,
+    "CHP": 1.8,
+    "DSP": 26.0,
+    "DYP": 15.5,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "MHP": 2.0,
+    "RP": 19.4,
+    "SBP": 0.1,
+    "SHP": 16.2,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "DSP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Maltepe",
+   "ilce": "Maltepe",
+   "adKaynakta": "Maltepe",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 635,
+   "secmen": 188170,
+   "oyKullanan": 165511,
+   "katilim": 88.0,
+   "gecerliOy": 157759,
+   "oy": {
+    "ANAP": 39332,
+    "BBP": 389,
+    "CHP": 2545,
+    "DSP": 12042,
+    "DYP": 23986,
+    "İP": 174,
+    "MP92": 314,
+    "MHP": 2841,
+    "RP": 32345,
+    "SBP": 332,
+    "SHP": 43135,
+    "YDP": 253,
+    "Bağımsız": 71
+   },
+   "yuzde": {
+    "ANAP": 24.9,
+    "BBP": 0.3,
+    "CHP": 1.6,
+    "DSP": 7.6,
+    "DYP": 15.2,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 1.8,
+    "RP": 20.5,
+    "SBP": 0.2,
+    "SHP": 27.4,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Pendik",
+   "ilce": "Pendik",
+   "adKaynakta": "Pendik",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 537,
+   "secmen": 160540,
+   "oyKullanan": 142708,
+   "katilim": 88.9,
+   "gecerliOy": 133776,
+   "oy": {
+    "ANAP": 23857,
+    "BBP": 3050,
+    "CHP": 2176,
+    "DSP": 17963,
+    "DYP": 14938,
+    "İP": 246,
+    "MP92": 483,
+    "MHP": 3278,
+    "RP": 42246,
+    "SBP": 262,
+    "SHP": 24921,
+    "YDP": 277,
+    "Bağımsız": 79
+   },
+   "yuzde": {
+    "ANAP": 17.8,
+    "BBP": 2.3,
+    "CHP": 1.6,
+    "DSP": 13.4,
+    "DYP": 11.2,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 2.5,
+    "RP": 31.6,
+    "SBP": 0.2,
+    "SHP": 18.6,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Sarıyer",
+   "ilce": "Sarıyer",
+   "adKaynakta": "Sarıyer",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 385,
+   "secmen": 116968,
+   "oyKullanan": 104119,
+   "katilim": 89.0,
+   "gecerliOy": 98498,
+   "oy": {
+    "ANAP": 22131,
+    "BBP": 401,
+    "CHP": 1408,
+    "DSP": 14158,
+    "DYP": 11005,
+    "İP": 145,
+    "MP92": 495,
+    "MHP": 1256,
+    "RP": 23660,
+    "SBP": 173,
+    "SHP": 23418,
+    "YDP": 184,
+    "Bağımsız": 64
+   },
+   "yuzde": {
+    "ANAP": 22.5,
+    "BBP": 0.4,
+    "CHP": 1.4,
+    "DSP": 14.4,
+    "DYP": 11.2,
+    "İP": 0.1,
+    "MP92": 0.5,
+    "MHP": 1.3,
+    "RP": 24.0,
+    "SBP": 0.2,
+    "SHP": 23.8,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Şişli",
+   "ilce": "Şişli",
+   "adKaynakta": "Şişli",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 598,
+   "secmen": 170315,
+   "oyKullanan": 152088,
+   "katilim": 89.3,
+   "gecerliOy": 143488,
+   "oy": {
+    "ANAP": 34851,
+    "BBP": 381,
+    "CHP": 1970,
+    "DSP": 21411,
+    "DYP": 26967,
+    "İP": 163,
+    "MP92": 284,
+    "MHP": 1559,
+    "RP": 20955,
+    "SBP": 290,
+    "SHP": 34069,
+    "YDP": 497,
+    "Bağımsız": 91
+   },
+   "yuzde": {
+    "ANAP": 24.3,
+    "BBP": 0.3,
+    "CHP": 1.4,
+    "DSP": 14.9,
+    "DYP": 18.8,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 1.1,
+    "RP": 14.6,
+    "SBP": 0.2,
+    "SHP": 23.7,
+    "YDP": 0.3,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "ANAP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Tuzla",
+   "ilce": "Tuzla",
+   "adKaynakta": "Tuzla",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 134,
+   "secmen": 39410,
+   "oyKullanan": 35752,
+   "katilim": 90.7,
+   "gecerliOy": 33731,
+   "oy": {
+    "ANAP": 6844,
+    "BBP": 113,
+    "CHP": 799,
+    "DSP": 3660,
+    "DYP": 4470,
+    "İP": 61,
+    "MP92": 86,
+    "MHP": 611,
+    "RP": 9503,
+    "SBP": 49,
+    "SHP": 7467,
+    "YDP": 59,
+    "Bağımsız": 9
+   },
+   "yuzde": {
+    "ANAP": 20.3,
+    "BBP": 0.3,
+    "CHP": 2.4,
+    "DSP": 10.9,
+    "DYP": 13.3,
+    "İP": 0.2,
+    "MP92": 0.2,
+    "MHP": 1.8,
+    "RP": 28.2,
+    "SBP": 0.1,
+    "SHP": 22.1,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Ümraniye",
+   "ilce": "Ümraniye",
+   "adKaynakta": "Ümraniye",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 577,
+   "secmen": 173039,
+   "oyKullanan": 154236,
+   "katilim": 89.1,
+   "gecerliOy": 144558,
+   "oy": {
+    "ANAP": 20358,
+    "BBP": 562,
+    "CHP": 4752,
+    "DSP": 12200,
+    "DYP": 13216,
+    "İP": 179,
+    "MP92": 598,
+    "MHP": 2727,
+    "RP": 55890,
+    "SBP": 374,
+    "SHP": 33243,
+    "YDP": 313,
+    "Bağımsız": 146
+   },
+   "yuzde": {
+    "ANAP": 14.1,
+    "BBP": 0.4,
+    "CHP": 3.3,
+    "DSP": 8.4,
+    "DYP": 9.1,
+    "İP": 0.1,
+    "MP92": 0.4,
+    "MHP": 1.9,
+    "RP": 38.7,
+    "SBP": 0.3,
+    "SHP": 23.0,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Üsküdar",
+   "ilce": "Üsküdar",
+   "adKaynakta": "Üsküdar",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 945,
+   "secmen": 278443,
+   "oyKullanan": 250971,
+   "katilim": 90.1,
+   "gecerliOy": 237144,
+   "oy": {
+    "ANAP": 53614,
+    "BBP": 850,
+    "CHP": 3110,
+    "DSP": 22363,
+    "DYP": 35539,
+    "İP": 300,
+    "MP92": 636,
+    "MHP": 6082,
+    "RP": 68466,
+    "SBP": 560,
+    "SHP": 45064,
+    "YDP": 431,
+    "Bağımsız": 129
+   },
+   "yuzde": {
+    "ANAP": 22.6,
+    "BBP": 0.4,
+    "CHP": 1.3,
+    "DSP": 9.4,
+    "DYP": 15.0,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 2.6,
+    "RP": 28.9,
+    "SBP": 0.2,
+    "SHP": 19.0,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 34,
+   "ad": "Zeytinburnu",
+   "ilce": "Zeytinburnu",
+   "adKaynakta": "Zeytinburnu",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/istanbul.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 398,
+   "secmen": 117117,
+   "oyKullanan": 103997,
+   "katilim": 88.8,
+   "gecerliOy": 97638,
+   "oy": {
+    "ANAP": 21076,
+    "BBP": 229,
+    "CHP": 1173,
+    "DSP": 20837,
+    "DYP": 13300,
+    "İP": 96,
+    "MP92": 275,
+    "MHP": 1803,
+    "RP": 23728,
+    "SBP": 154,
+    "SHP": 14705,
+    "YDP": 202,
+    "Bağımsız": 60
+   },
+   "yuzde": {
+    "ANAP": 21.6,
+    "BBP": 0.2,
+    "CHP": 1.2,
+    "DSP": 21.3,
+    "DYP": 13.6,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 1.8,
+    "RP": 24.3,
+    "SBP": 0.2,
+    "SHP": 15.1,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "il",
+   "plaka": 35,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "İZMİR",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 339,
+   "secmen": 1245691,
+   "oyKullanan": 1132708,
+   "katilim": 90.9,
+   "gecerliOy": 1061184,
+   "oy": {
+    "ANAP": 208607,
+    "CHP": 26909,
+    "DP": 2825,
+    "DSP": 159394,
+    "DYP": 294647,
+    "İP": 2165,
+    "MP92": 2776,
+    "RP": 74120,
+    "SBP": 3121,
+    "SHP": 281721,
+    "YDP": 2221,
+    "Bağımsız": 2678
+   },
+   "yuzde": {
+    "ANAP": 19.7,
+    "CHP": 2.5,
+    "DP": 0.3,
+    "DSP": 15.0,
+    "DYP": 27.8,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "RP": 7.0,
+    "SBP": 0.3,
+    "SHP": 26.5,
+    "YDP": 0.2,
+    "Bağımsız": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 9,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Balçova",
+   "ilce": "Balçova",
+   "adKaynakta": "Balçova",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 151,
+   "secmen": 45123,
+   "oyKullanan": 40228,
+   "katilim": 89.2,
+   "gecerliOy": 38148,
+   "oy": {
+    "ANAP": 8211,
+    "CHP": 590,
+    "DP": 34,
+    "DSP": 4932,
+    "DYP": 9619,
+    "İP": 64,
+    "MP92": 56,
+    "RP": 1960,
+    "SBP": 105,
+    "SHP": 12445,
+    "YDP": 52,
+    "Bağımsız": 80
+   },
+   "yuzde": {
+    "ANAP": 21.5,
+    "CHP": 1.6,
+    "DP": 0.1,
+    "DSP": 12.9,
+    "DYP": 25.2,
+    "İP": 0.2,
+    "MP92": 0.2,
+    "RP": 5.1,
+    "SBP": 0.3,
+    "SHP": 32.6,
+    "YDP": 0.1,
+    "Bağımsız": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Bornova",
+   "ilce": "Bornova",
+   "adKaynakta": "Bornova",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 715,
+   "secmen": 197303,
+   "oyKullanan": 182950,
+   "katilim": 92.7,
+   "gecerliOy": 171613,
+   "oy": {
+    "ANAP": 34525,
+    "CHP": 5287,
+    "DP": 486,
+    "DSP": 32355,
+    "DYP": 45495,
+    "İP": 381,
+    "MP92": 543,
+    "RP": 13683,
+    "SBP": 515,
+    "SHP": 37502,
+    "YDP": 423,
+    "Bağımsız": 418
+   },
+   "yuzde": {
+    "ANAP": 20.1,
+    "CHP": 3.1,
+    "DP": 0.3,
+    "DSP": 18.9,
+    "DYP": 26.5,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "RP": 8.0,
+    "SBP": 0.3,
+    "SHP": 21.9,
+    "YDP": 0.2,
+    "Bağımsız": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Buca",
+   "ilce": "Buca",
+   "adKaynakta": "Buca",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 505,
+   "secmen": 148328,
+   "oyKullanan": 137071,
+   "katilim": 92.4,
+   "gecerliOy": 126701,
+   "oy": {
+    "ANAP": 23564,
+    "CHP": 3795,
+    "DP": 417,
+    "DSP": 21892,
+    "DYP": 34530,
+    "İP": 270,
+    "MP92": 333,
+    "RP": 11276,
+    "SBP": 392,
+    "SHP": 29683,
+    "YDP": 257,
+    "Bağımsız": 292
+   },
+   "yuzde": {
+    "ANAP": 18.6,
+    "CHP": 3.0,
+    "DP": 0.3,
+    "DSP": 17.3,
+    "DYP": 27.3,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "RP": 8.9,
+    "SBP": 0.3,
+    "SHP": 23.4,
+    "YDP": 0.2,
+    "Bağımsız": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Çiğli",
+   "ilce": "Çiğli",
+   "adKaynakta": "Çiğli",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 186,
+   "secmen": 54119,
+   "oyKullanan": 49902,
+   "katilim": 92.2,
+   "gecerliOy": 47151,
+   "oy": {
+    "ANAP": 10585,
+    "CHP": 1331,
+    "DP": 98,
+    "DSP": 5290,
+    "DYP": 11836,
+    "İP": 101,
+    "MP92": 73,
+    "RP": 1690,
+    "SBP": 165,
+    "SHP": 15782,
+    "YDP": 62,
+    "Bağımsız": 138
+   },
+   "yuzde": {
+    "ANAP": 22.5,
+    "CHP": 2.8,
+    "DP": 0.2,
+    "DSP": 11.2,
+    "DYP": 25.1,
+    "İP": 0.2,
+    "MP92": 0.2,
+    "RP": 3.6,
+    "SBP": 0.3,
+    "SHP": 33.5,
+    "YDP": 0.1,
+    "Bağımsız": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Gaziemir",
+   "ilce": "Gaziemir",
+   "adKaynakta": "Gaziemir",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 82,
+   "secmen": 24069,
+   "oyKullanan": 22072,
+   "katilim": 91.7,
+   "gecerliOy": 20477,
+   "oy": {
+    "ANAP": 3919,
+    "CHP": 348,
+    "DP": 28,
+    "DSP": 2329,
+    "DYP": 6532,
+    "İP": 29,
+    "MP92": 100,
+    "RP": 1476,
+    "SBP": 60,
+    "SHP": 5083,
+    "YDP": 33,
+    "Bağımsız": 540
+   },
+   "yuzde": {
+    "ANAP": 19.1,
+    "CHP": 1.7,
+    "DP": 0.1,
+    "DSP": 11.4,
+    "DYP": 31.9,
+    "İP": 0.2,
+    "MP92": 0.5,
+    "RP": 7.2,
+    "SBP": 0.3,
+    "SHP": 24.8,
+    "YDP": 0.2,
+    "Bağımsız": 2.6
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    258,
+    259
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Güzelbahçe",
+   "ilce": "Güzelbahçe",
+   "adKaynakta": "Güzelbahçe",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 24,
+   "secmen": 6623,
+   "oyKullanan": 5974,
+   "katilim": 90.2,
+   "gecerliOy": 5693,
+   "oy": {
+    "ANAP": 1543,
+    "CHP": 133,
+    "DP": 5,
+    "DSP": 346,
+    "DYP": 1672,
+    "İP": 7,
+    "MP92": 6,
+    "RP": 142,
+    "SBP": 13,
+    "SHP": 1810,
+    "YDP": 8,
+    "Bağımsız": 8
+   },
+   "yuzde": {
+    "ANAP": 27.1,
+    "CHP": 2.3,
+    "DP": 0.1,
+    "DSP": 6.1,
+    "DYP": 29.4,
+    "İP": 0.1,
+    "MP92": 0.1,
+    "RP": 2.5,
+    "SBP": 0.2,
+    "SHP": 31.8,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Karşıyaka",
+   "ilce": "Karşıyaka",
+   "adKaynakta": "Karşıyaka",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 876,
+   "secmen": 254197,
+   "oyKullanan": 234048,
+   "katilim": 92.1,
+   "gecerliOy": 219498,
+   "oy": {
+    "ANAP": 39129,
+    "CHP": 6328,
+    "DP": 628,
+    "DSP": 33395,
+    "DYP": 54682,
+    "İP": 412,
+    "MP92": 578,
+    "RP": 13640,
+    "SBP": 727,
+    "SHP": 69243,
+    "YDP": 377,
+    "Bağımsız": 359
+   },
+   "yuzde": {
+    "ANAP": 17.8,
+    "CHP": 2.9,
+    "DP": 0.3,
+    "DSP": 15.2,
+    "DYP": 24.9,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "RP": 6.2,
+    "SBP": 0.3,
+    "SHP": 31.5,
+    "YDP": 0.2,
+    "Bağımsız": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Konak",
+   "ilce": "Konak",
+   "adKaynakta": "Konak",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 1717,
+   "secmen": 492673,
+   "oyKullanan": 439621,
+   "katilim": 89.2,
+   "gecerliOy": 412504,
+   "oy": {
+    "ANAP": 84550,
+    "CHP": 8493,
+    "DP": 1089,
+    "DSP": 57459,
+    "DYP": 125144,
+    "İP": 867,
+    "MP92": 1040,
+    "RP": 29301,
+    "SBP": 1094,
+    "SHP": 101695,
+    "YDP": 991,
+    "Bağımsız": 781
+   },
+   "yuzde": {
+    "ANAP": 20.5,
+    "CHP": 2.1,
+    "DP": 0.3,
+    "DSP": 13.9,
+    "DYP": 30.3,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "RP": 7.1,
+    "SBP": 0.3,
+    "SHP": 24.6,
+    "YDP": 0.2,
+    "Bağımsız": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "DYP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 35,
+   "ad": "Narlıdere",
+   "ilce": "Narlıdere",
+   "adKaynakta": "Narlıdere",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/izmir.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 83,
+   "secmen": 23255,
+   "oyKullanan": 20842,
+   "katilim": 89.6,
+   "gecerliOy": 19399,
+   "oy": {
+    "ANAP": 2581,
+    "CHP": 604,
+    "DP": 40,
+    "DSP": 1396,
+    "DYP": 5137,
+    "İP": 34,
+    "MP92": 47,
+    "RP": 952,
+    "SBP": 50,
+    "SHP": 8478,
+    "YDP": 18,
+    "Bağımsız": 62
+   },
+   "yuzde": {
+    "ANAP": 13.3,
+    "CHP": 3.1,
+    "DP": 0.2,
+    "DSP": 7.2,
+    "DYP": 26.5,
+    "İP": 0.2,
+    "MP92": 0.2,
+    "RP": 4.9,
+    "SBP": 0.3,
+    "SHP": 43.7,
+    "YDP": 0.1,
+    "Bağımsız": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "il",
+   "plaka": 38,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "KAYSERİ",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 883,
+   "secmen": 256656,
+   "oyKullanan": 236524,
+   "katilim": 92.2,
+   "gecerliOy": 221202,
+   "oy": {
+    "ANAP": 33800,
+    "BBP": 1413,
+    "CHP": 5368,
+    "DSP": 8773,
+    "DYP": 16882,
+    "İP": 338,
+    "MP92": 733,
+    "MHP": 56546,
+    "RP": 68665,
+    "SHP": 27747,
+    "YDP": 937
+   },
+   "yuzde": {
+    "ANAP": 15.3,
+    "BBP": 0.6,
+    "CHP": 2.4,
+    "DSP": 4.0,
+    "DYP": 7.6,
+    "İP": 0.2,
+    "MP92": 0.3,
+    "MHP": 25.6,
+    "RP": 31.1,
+    "SHP": 12.5,
+    "YDP": 0.4
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 2,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 38,
+   "ad": "Kocasinan",
+   "ilce": "Kocasinan",
+   "adKaynakta": "Kocasinan",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Kayseri.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 485,
+   "secmen": 144368,
+   "oyKullanan": 133020,
+   "katilim": 92.1,
+   "gecerliOy": 124258,
+   "oy": {
+    "ANAP": 17948,
+    "BBP": 847,
+    "CHP": 3075,
+    "DSP": 5052,
+    "DYP": 10966,
+    "İP": 179,
+    "MP92": 388,
+    "MHP": 31018,
+    "RP": 37230,
+    "SHP": 17059,
+    "YDP": 496
+   },
+   "yuzde": {
+    "ANAP": 14.4,
+    "BBP": 0.7,
+    "CHP": 2.5,
+    "DSP": 4.1,
+    "DYP": 8.8,
+    "İP": 0.1,
+    "MP92": 0.3,
+    "MHP": 25.0,
+    "RP": 30.0,
+    "SHP": 13.7,
+    "YDP": 0.4
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 38,
+   "ad": "Melikgazi",
+   "ilce": "Melikgazi",
+   "adKaynakta": "Mel ikgaz i",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Kayseri.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 398,
+   "secmen": 112288,
+   "oyKullanan": 103504,
+   "katilim": 92.2,
+   "gecerliOy": 96944,
+   "oy": {
+    "ANAP": 15852,
+    "BBP": 566,
+    "CHP": 2293,
+    "DSP": 3721,
+    "DYP": 5916,
+    "İP": 159,
+    "MP92": 345,
+    "MHP": 25528,
+    "RP": 31435,
+    "SHP": 10688,
+    "YDP": 441
+   },
+   "yuzde": {
+    "ANAP": 16.4,
+    "BBP": 0.6,
+    "CHP": 2.4,
+    "DSP": 3.8,
+    "DYP": 6.1,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 26.3,
+    "RP": 32.4,
+    "SHP": 11.0,
+    "YDP": 0.4
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "il",
+   "plaka": 41,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "KOCAELİ",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 408,
+   "secmen": 119255,
+   "oyKullanan": 109908,
+   "katilim": 92.2,
+   "gecerliOy": 103310,
+   "oy": {
+    "ANAP": 10087,
+    "BBP": 286,
+    "CHP": 2477,
+    "DP": 340,
+    "DSP": 8966,
+    "DYP": 20440,
+    "İP": 110,
+    "MP92": 180,
+    "MHP": 2043,
+    "RP": 26688,
+    "SHP": 31487,
+    "YDP": 206
+   },
+   "yuzde": {
+    "ANAP": 9.7,
+    "BBP": 0.3,
+    "CHP": 2.4,
+    "DP": 0.3,
+    "DSP": 8.7,
+    "DYP": 19.8,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 2.0,
+    "RP": 25.8,
+    "SHP": 30.5,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 2,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 41,
+   "ad": "Bekirpaşa(1)",
+   "ilce": "Bekirpaşa(1)",
+   "adKaynakta": "Bekirpaşa(1)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Kocaeli.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 156,
+   "secmen": 46321,
+   "oyKullanan": 42922,
+   "katilim": 92.7,
+   "gecerliOy": 40233,
+   "oy": {
+    "ANAP": 2849,
+    "BBP": 123,
+    "CHP": 1091,
+    "DP": 136,
+    "DSP": 3491,
+    "DYP": 8512,
+    "İP": 34,
+    "MP92": 76,
+    "MHP": 754,
+    "RP": 12894,
+    "SHP": 10200,
+    "YDP": 73
+   },
+   "yuzde": {
+    "ANAP": 7.1,
+    "BBP": 0.3,
+    "CHP": 2.7,
+    "DP": 0.3,
+    "DSP": 8.7,
+    "DYP": 21.2,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 1.9,
+    "RP": 32.0,
+    "SHP": 25.3,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 41,
+   "ad": "Saraybahçe(1)",
+   "ilce": "Saraybahçe(1)",
+   "adKaynakta": "Saraybahçe(1)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Kocaeli.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 252,
+   "secmen": 72934,
+   "oyKullanan": 66986,
+   "katilim": 91.8,
+   "gecerliOy": 63077,
+   "oy": {
+    "ANAP": 7238,
+    "BBP": 163,
+    "CHP": 1386,
+    "DP": 204,
+    "DSP": 5475,
+    "DYP": 11928,
+    "İP": 76,
+    "MP92": 104,
+    "MHP": 1289,
+    "RP": 13794,
+    "SHP": 21287,
+    "YDP": 133
+   },
+   "yuzde": {
+    "ANAP": 11.5,
+    "BBP": 0.3,
+    "CHP": 2.2,
+    "DP": 0.3,
+    "DSP": 8.7,
+    "DYP": 18.9,
+    "İP": 0.1,
+    "MP92": 0.2,
+    "MHP": 2.0,
+    "RP": 21.9,
+    "SHP": 33.7,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "SHP"
+  },
+  {
+   "tip": "il",
+   "plaka": 42,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "KONYA",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 1159,
+   "secmen": 302033,
+   "oyKullanan": 281868,
+   "katilim": 93.3,
+   "gecerliOy": 266484,
+   "oy": {
+    "ANAP": 86956,
+    "BBP": 1605,
+    "CHP": 1190,
+    "DSP": 5173,
+    "DYP": 11202,
+    "İP": 316,
+    "MP92": 2580,
+    "MHP": 21058,
+    "RP": 130353,
+    "SHP": 4971,
+    "YDP": 781,
+    "Bağımsız": 299
+   },
+   "yuzde": {
+    "ANAP": 32.6,
+    "BBP": 0.6,
+    "CHP": 0.5,
+    "DSP": 1.9,
+    "DYP": 4.2,
+    "İP": 0.1,
+    "MP92": 1.0,
+    "MHP": 7.9,
+    "RP": 48.9,
+    "SHP": 1.9,
+    "YDP": 0.3,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 3,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 42,
+   "ad": "Karatay",
+   "ilce": "Karatay",
+   "adKaynakta": "Karatay",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Konya.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 303,
+   "secmen": 73543,
+   "oyKullanan": 68692,
+   "katilim": 93.4,
+   "gecerliOy": 64491,
+   "oy": {
+    "ANAP": 15416,
+    "BBP": 409,
+    "CHP": 246,
+    "DSP": 1523,
+    "DYP": 3193,
+    "İP": 88,
+    "MP92": 733,
+    "MHP": 3244,
+    "RP": 38690,
+    "SHP": 618,
+    "YDP": 265,
+    "Bağımsız": 66
+   },
+   "yuzde": {
+    "ANAP": 23.9,
+    "BBP": 0.6,
+    "CHP": 0.4,
+    "DSP": 2.4,
+    "DYP": 5.0,
+    "İP": 0.1,
+    "MP92": 1.1,
+    "MHP": 5.0,
+    "RP": 60.0,
+    "SHP": 1.0,
+    "YDP": 0.4,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 42,
+   "ad": "Meram",
+   "ilce": "Meram",
+   "adKaynakta": "Meram",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Konya.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 436,
+   "secmen": 109495,
+   "oyKullanan": 102814,
+   "katilim": 93.9,
+   "gecerliOy": 97866,
+   "oy": {
+    "ANAP": 34422,
+    "BBP": 605,
+    "CHP": 325,
+    "DSP": 1399,
+    "DYP": 3756,
+    "İP": 101,
+    "MP92": 962,
+    "MHP": 6145,
+    "RP": 48401,
+    "SHP": 1350,
+    "YDP": 275,
+    "Bağımsız": 125
+   },
+   "yuzde": {
+    "ANAP": 35.2,
+    "BBP": 0.6,
+    "CHP": 0.3,
+    "DSP": 1.4,
+    "DYP": 3.8,
+    "İP": 0.1,
+    "MP92": 1.0,
+    "MHP": 6.3,
+    "RP": 49.5,
+    "SHP": 1.4,
+    "YDP": 0.3,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 42,
+   "ad": "Selçuklu",
+   "ilce": "Selçuklu",
+   "adKaynakta": "Selçuklu",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Konya.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 420,
+   "secmen": 118995,
+   "oyKullanan": 110362,
+   "katilim": 92.7,
+   "gecerliOy": 104127,
+   "oy": {
+    "ANAP": 37118,
+    "BBP": 591,
+    "CHP": 619,
+    "DSP": 2251,
+    "DYP": 4253,
+    "İP": 127,
+    "MP92": 885,
+    "MHP": 11669,
+    "RP": 43262,
+    "SHP": 3003,
+    "YDP": 241,
+    "Bağımsız": 108
+   },
+   "yuzde": {
+    "ANAP": 35.7,
+    "BBP": 0.6,
+    "CHP": 0.6,
+    "DSP": 2.2,
+    "DYP": 4.1,
+    "İP": 0.1,
+    "MP92": 0.8,
+    "MHP": 11.2,
+    "RP": 41.5,
+    "SHP": 2.9,
+    "YDP": 0.2,
+    "Bağımsız": 0.1
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.Bağımsız": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "RP"
+  },
+  {
+   "tip": "il",
+   "plaka": 55,
+   "ad": null,
+   "ilce": null,
+   "adKaynakta": "SAMSUN",
+   "kimlik": {
+    "yontem": "il_etiketi"
+   },
+   "sandik": 600,
+   "secmen": 190549,
+   "oyKullanan": 173280,
+   "katilim": 90.9,
+   "gecerliOy": 163168,
+   "oy": {
+    "ANAP": 21815,
+    "BBP": 970,
+    "CHP": 52147,
+    "DSP": 7806,
+    "DYP": 30422,
+    "İP": 255,
+    "MP92": 754,
+    "MHP": 13470,
+    "RP": 27631,
+    "SBP": 467,
+    "SHP": 7070,
+    "YDP": 361
+   },
+   "yuzde": {
+    "ANAP": 13.4,
+    "BBP": 0.6,
+    "CHP": 32.0,
+    "DSP": 4.8,
+    "DYP": 18.6,
+    "İP": 0.2,
+    "MP92": 0.5,
+    "MHP": 8.2,
+    "RP": 16.9,
+    "SBP": 0.3,
+    "SHP": 4.3,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli",
+    "dikey": {
+     "tutuyor": true,
+     "farkliPartiler": [],
+     "altSatir": 4,
+     "hepsiTutarli": true
+    }
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 55,
+   "ad": "Atakum(1)",
+   "ilce": "Atakum(1)",
+   "adKaynakta": "Atakum (1)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Samsun.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 57,
+   "secmen": 17346,
+   "oyKullanan": 15666,
+   "katilim": 90.3,
+   "gecerliOy": 14648,
+   "oy": {
+    "ANAP": 1890,
+    "BBP": 73,
+    "CHP": 4698,
+    "DSP": 1258,
+    "DYP": 1924,
+    "İP": 14,
+    "MP92": 70,
+    "MHP": 1379,
+    "RP": 2195,
+    "SBP": 45,
+    "SHP": 1077,
+    "YDP": 25
+   },
+   "yuzde": {
+    "ANAP": 12.9,
+    "BBP": 0.5,
+    "CHP": 32.1,
+    "DSP": 8.6,
+    "DYP": 13.1,
+    "İP": 0.1,
+    "MP92": 0.5,
+    "MHP": 9.4,
+    "RP": 15.0,
+    "SBP": 0.3,
+    "SHP": 7.3,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 55,
+   "ad": "Canik(1)",
+   "ilce": "Canik(1)",
+   "adKaynakta": "Canikd)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Samsun.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 72,
+   "secmen": 23288,
+   "oyKullanan": 21085,
+   "katilim": 90.5,
+   "gecerliOy": 18911,
+   "oy": {
+    "ANAP": 2598,
+    "BBP": 218,
+    "CHP": 4027,
+    "DSP": 1148,
+    "DYP": 3675,
+    "İP": 45,
+    "MP92": 118,
+    "MHP": 2922,
+    "RP": 3454,
+    "SBP": 41,
+    "SHP": 627,
+    "YDP": 38
+   },
+   "yuzde": {
+    "ANAP": 13.7,
+    "BBP": 1.2,
+    "CHP": 21.3,
+    "DSP": 6.1,
+    "DYP": 19.4,
+    "İP": 0.2,
+    "MP92": 0.6,
+    "MHP": 15.5,
+    "RP": 18.3,
+    "SBP": 0.2,
+    "SHP": 3.3,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 55,
+   "ad": "Gazi(1)",
+   "ilce": "Gazi(1)",
+   "adKaynakta": "Gazi (1)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Samsun.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 272,
+   "secmen": 86965,
+   "oyKullanan": 78985,
+   "katilim": 90.8,
+   "gecerliOy": 73559,
+   "oy": {
+    "ANAP": 9688,
+    "BBP": 299,
+    "CHP": 27099,
+    "DSP": 3262,
+    "DYP": 13417,
+    "İP": 99,
+    "MP92": 339,
+    "MHP": 4902,
+    "RP": 10436,
+    "SBP": 276,
+    "SHP": 3558,
+    "YDP": 184
+   },
+   "yuzde": {
+    "ANAP": 13.2,
+    "BBP": 0.4,
+    "CHP": 36.8,
+    "DSP": 4.4,
+    "DYP": 18.2,
+    "İP": 0.1,
+    "MP92": 0.5,
+    "MHP": 6.7,
+    "RP": 14.2,
+    "SBP": 0.4,
+    "SHP": 4.8,
+    "YDP": 0.3
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 55,
+   "ad": "İlkadım(1)",
+   "ilce": "İlkadım(1)",
+   "adKaynakta": "İlkadımO)",
+   "kimlik": {
+    "yontem": "ysk_sandik_secmen+kullanan|gecerli",
+    "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/Buyuksehir/Samsun.pdf",
+    "not": "YSK satırı büyükşehir yarışının ilçe kırılımı; kimlik için kullanıldı, oylar karşılaştırılmadı"
+   },
+   "sandik": 199,
+   "secmen": 62950,
+   "oyKullanan": 57544,
+   "katilim": 91.4,
+   "gecerliOy": 56050,
+   "oy": {
+    "ANAP": 7639,
+    "BBP": 380,
+    "CHP": 16323,
+    "DSP": 2138,
+    "DYP": 11406,
+    "İP": 97,
+    "MP92": 227,
+    "MHP": 4267,
+    "RP": 11546,
+    "SBP": 105,
+    "SHP": 1808,
+    "YDP": 114
+   },
+   "yuzde": {
+    "ANAP": 13.6,
+    "BBP": 0.7,
+    "CHP": 29.1,
+    "DSP": 3.8,
+    "DYP": 20.4,
+    "İP": 0.2,
+    "MP92": 0.4,
+    "MHP": 7.6,
+    "RP": 20.6,
+    "SBP": 0.2,
+    "SHP": 3.2,
+    "YDP": 0.2
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "dogrulama": {
+    "secmen": [
+     "katilim"
+    ],
+    "oyKullanan": [
+     "katilim"
+    ],
+    "oy.ANAP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.BBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.CHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DSP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.İP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MP92": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.MHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.RP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SBP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.SHP": [
+     "yuzde",
+     "toplam"
+    ],
+    "oy.YDP": [
+     "yuzde",
+     "toplam"
+    ],
+    "gecerliOy": [
+     "toplam",
+     "yuzde"
+    ]
+   },
+   "sayfa": [
+    260,
+    261
+   ],
+   "kazanan": "CHP"
+  }
+ ]
+}

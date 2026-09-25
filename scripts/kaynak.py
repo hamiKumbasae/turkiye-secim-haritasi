@@ -101,6 +101,8 @@ def satir_koken(r):
         s += " | tuik oylari kullanilmadi (DİE satiri tutarsiz)"
     if k.get("tuikFarki"):
         s += f" | DİE ile {len(k['tuikFarki'])} alan farkli (bilgi)"
+    if k.get("tuikBirimFarki"):
+        s += " | DİE ile birim eslesmedi (bilgi)"
     return s
 
 
@@ -122,8 +124,12 @@ def koken_detay(k, girinti="      "):
             print(f"{girinti}ocr duzeltme: {d['alan']} okunan {d['okunan']} -> {d['duzeltilen']} ({d['yontem']})")
         if t.get("yapisalOkuma"):
             print(f"{girinti}not: satir sutun kenarlarindan degil, sayi parcalarinin kisitlarla yeniden ayristirilmasiyla okundu")
+    if k.get("tuikBirimFarki"):
+        print(f"{girinti}DİE birim farki: {k['tuikBirimFarki']['not']}")
     for f in k.get("tuikFarki", []):
         print(f"{girinti}DİE farki (deger degistirilmedi): {f['alan']}: ysk {f['ysk']} / tuik {f['tuik']}")
+    for f in (k.get("tuikBirimFarki") or {}).get("karsilastirma", []):
+        print(f"{girinti}karsilastirma (birimler farkli, deger farki sayilmaz): {f['alan']}: ysk {f['ysk']} / tuik ilce merkezi {f['tuik']}")
     if k.get("tuikKullanilmadi"):
         u = k["tuikKullanilmadi"]
         print(f"{girinti}tuik kullanilmadi: {u['neden']} — {json.dumps(u.get('kontrol'), ensure_ascii=False)}")

@@ -1,0 +1,140 @@
+{
+ "ysk_referans_belediye": 1957,
+ "belediye_baskanligi": {
+  "ozet": {
+   "satir": 2804,
+   "durum": {
+    "gecerliOyOkunamadi": 32,
+    "tutarsiz": 176,
+    "tutarli": 2430,
+    "yuzdelerTutarli": 139,
+    "toplamTutarli": 27
+   },
+   "tip": {
+    "None": 777,
+    "turkiye": 1,
+    "il": 74,
+    "ilce": 707,
+    "belde": 1245
+   },
+   "kimlikCozulen": 2024,
+   "dikey": {
+    "fark": 64,
+    "tutuyor": 10,
+    "hepsiTutarli_tutuyor": 4
+   },
+   "eslesmeyenSayfa": []
+  },
+  "yskGroundTruth": {
+   "tutarli": {
+    "satir": 1587,
+    "birebir": 1587,
+    "alan_esit": 19822,
+    "alan_farkli": 0
+   },
+   "yuzdelerTutarli": {
+    "satir": 105,
+    "birebir": 103,
+    "alan_esit": 863,
+    "alan_farkli": 3,
+    "farkli": 2
+   },
+   "tutarsiz": {
+    "satir": 96,
+    "farkli": 94,
+    "alan_esit": 1074,
+    "alan_farkli": 192,
+    "birebir": 2
+   },
+   "toplamTutarli": {
+    "satir": 12,
+    "farkli": 2,
+    "alan_esit": 137,
+    "alan_farkli": 5,
+    "birebir": 10
+   }
+  }
+ },
+ "il_genel_meclisi": {
+  "ozet": {
+   "satir": 2989,
+   "durum": {
+    "tutarsiz": 85,
+    "tutarli": 2816,
+    "toplamTutarli": 3,
+    "gecerliOyOkunamadi": 55,
+    "yuzdelerTutarli": 30
+   },
+   "tip": {
+    "turkiye": 2,
+    "ilce": 946,
+    "koy": 984,
+    "il": 74,
+    "sehir": 983
+   },
+   "kimlikCozulen": 1329,
+   "dikey": {
+    "fark": 34,
+    "hepsiTutarli_fark": 3,
+    "tutuyor": 40,
+    "hepsiTutarli_tutuyor": 28
+   },
+   "eslesmeyenSayfa": []
+  }
+ },
+ "buyuksehir": {
+  "ozet": {
+   "satir": 95,
+   "durum": {
+    "tutarli": 94,
+    "gecerliOyOkunamadi": 1
+   },
+   "tip": {
+    "turkiye": 1,
+    "il": 15,
+    "ilce": 78,
+    "None": 1
+   },
+   "kimlikCozulen": 93,
+   "dikey": {
+    "tutuyor": 15,
+    "hepsiTutarli_tutuyor": 14
+   },
+   "eslesmeyenSayfa": []
+  }
+ },
+ "belediye_meclisi": {
+  "ozet": {
+   "satir": 2802,
+   "durum": {
+    "gecerliOyOkunamadi": 41,
+    "tutarli": 2517,
+    "yuzdelerTutarli": 168,
+    "tutarsiz": 65,
+    "toplamTutarli": 11
+   },
+   "tip": {
+    "None": 550,
+    "turkiye": 1,
+    "il": 75,
+    "ilce": 768,
+    "belde": 1408
+   },
+   "kimlikCozulen": 2731,
+   "dikey": {
+    "tutuyor": 26,
+    "hepsiTutarli_tutuyor": 19,
+    "fark": 49
+   },
+   "eslesmeyenSayfa": [
+    {
+     "sayfa": [
+      680,
+      681
+     ],
+     "neden": "iki yüz hizalanamadı; sol yüz sağ yüzsüz alındı"
+    }
+   ]
+  }
+ }
+}

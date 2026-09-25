@@ -76,12 +76,18 @@ def _deger(parcalar):
 
 
 def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bosluk=12.0, hazir_kenarlar=None,
-                  etiketsiz=False, kelime_duzelt=None):
+                  etiketsiz=False, kelime_duzelt=None, etiket_zorunlu=True, kenar_zorla=False):
     """Sayfadaki veri satirlari: [(etiket, degerler)] ; len(degerler) == sutun_sayisi.
     Sutun sag kenarlari once 'temiz' satirlardan (buyuk bosluklarla tam
     sutun_sayisi gruba bolunenler) medyanla bulunur; sonra her parca, sag kenari
     parcanin sagindan buyuk olan ILK sutuna atanir (kalin punto satirlarinda
     sutunlar arasi bosluk daralsa da sinir asilmaz).
+
+    kenar_zorla=True: sayfadan kenar cikarma; hazir_kenarlar (kitap sablonu)
+    yalnizca yatay ofsetle sayfaya oturtulur.
+
+    etiket_zorunlu=False: sol sayfada adi OCR'da kaybolmus satirlar (ve alt
+    satirdaki yuzde satirlari) etiketsiz olarak da dondurulur.
 
     kelime_duzelt(kelime) -> yeni metin | None: OCR harf/rakam karisikliklari
     icin (orn. '9*.3' -> '94.3'); degisen kelimenin eski hali w['orijinal']'de."""
@@ -121,7 +127,7 @@ def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bos
             continue
         x_bas = (max(w["x1"] for w in harfli) + 1) if harfli else x_etiket_son - 30
         tok = _tokenler(s, x_bas)
-        if etiket and tok and (satir_filtre is None or satir_filtre(etiket)):
+        if (etiket or not etiket_zorunlu) and tok and (satir_filtre is None or satir_filtre(etiket)):
             satirlar.append((etiket, tok, s[0]["top"]))
     # sayfa basina bosluk esigi: taranmis sayfalarin olcegi farkli; tam
     # sutun_sayisi gruba bolunen satir sayisini en cok yapan esik secilir
@@ -137,7 +143,7 @@ def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bos
                     k_[k].append(grp[-1][2])
         if n > en_iyi:
             en_iyi, kenar = n, k_
-    if any(not k for k in kenar):
+    if (kenar_zorla and hazir_kenarlar) or any(not k for k in kenar):
         if not hazir_kenarlar:
             return None, [len(k) for k in kenar]
         # ayni tablonun ayni yondeki sayfasindan; tarama kaymasi icin kenarlari

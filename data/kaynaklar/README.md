@@ -16,7 +16,7 @@ data/normalized/ek/<tür>/<seçim>.json        projede başka karşılığı olm
 |---|---|---|---|
 | TÜİK (resmî) | `tuik/genel/` | 1961-2007 genel, il + ilçe (+ 1991'den itibaren şehir/köy kırılımı) | `data/raw/tuik/` |
 | TÜİK (resmî) | `tuik/referandum/` | 1961, 1982, 1987, 1988, 2007 halkoylaması, il + ilçe + şehir/köy | `data/raw/tuik/halkoylamasi-0018260/` |
-| DİE / TÜİK (resmî) | `tuik/yerel/<seçim>/` | 1984, 1989, 2004 mahalli idareler: belediye başkanlığı, büyükşehir, belediye meclisi, il genel meclisi (belediye / ilçe; 1989 İGM'de şehir/köy) | `data/raw/tuik/mahalli-kitap/` |
+| DİE / TÜİK (resmî) | `tuik/yerel/<seçim>/` | 1984, 1989, 1994, 2004 mahalli idareler: belediye başkanlığı, büyükşehir, belediye meclisi, il genel meclisi (belediye / ilçe; 1989 İGM'de şehir/köy) | `data/raw/tuik/mahalli-kitap/` |
 | Taban (dondurulmuş) | `taban/` | DİE birleştirmesinden önceki 1984/1989/2004 yerel harita verisi ve belde kayıtları (git 1e1e8e8) | — |
 | Wikipedia (ikincil) | `wikipedia/{genel,yerel,senato,cumhurbaskanligi}/` | 1923-2024, il sayfaları | `data/raw/wikipedia/il-sayfalari/` |
 | mertnuhoglu (ikincil) | `mertnuhoglu/genel/` | 1991-2007 ilçe, TÜİK'ten önceki hâli (dondurulmuş) | `data/raw/third-party/mertnuhoglu/` |
@@ -57,5 +57,6 @@ python3 scripts/pipelines/wikipedia_arsiv/extract_yerel.py
 python3 scripts/pipelines/wikipedia_arsiv/extract_genel_senato.py
 python3 scripts/pipelines/tuik_arsiv/extract_tuik_ilce.py
 python3 scripts/pipelines/tuik_arsiv/extract_mahalli.py            # 1984/1989 DİE mahalli kitapları
+python3 scripts/pipelines/tuik_arsiv/extract_mahalli_ocr.py 1994yerel   # taranmış iki satırlı kitaplar
 python3 scripts/pipelines/tuik_arsiv/merge_mahalli.py --write
 ```

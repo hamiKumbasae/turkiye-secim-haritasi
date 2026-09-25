@@ -36,12 +36,26 @@ HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent.parent))
 from common.election_io import save_election  # noqa: E402
-from extract_mahalli import KITAPLAR, _anahtar, _benzer  # noqa: E402
+from extract_mahalli import KITAPLAR as _K1, _anahtar, _benzer  # noqa: E402
+from extract_mahalli_ocr import KITAPLAR as _K2  # noqa: E402
+
+KITAPLAR = {**_K1, **_K2}
+
+
+def dad(d):
+    """DIE satirinin eslemede kullanilacak adi: kimligi YSK'den cozulmusse
+    YSK adi (1994/1999), degilse kaynaktaki (OCR) ad."""
+    return d.get("ad") or d["adKaynakta"] or ""
+
+
+def kullanilir(d):
+    """1994/1999 OCR katmaninda kimligi cozulemeyen satir haritaya islenmez."""
+    return (d.get("kimlik") or {}).get("yontem") != "cozulemedi"
 
 ROOT = HERE.parent.parent.parent
 SRC = ROOT / "data" / "kaynaklar" / "tuik" / "yerel"
 EK = ROOT / "data" / "normalized" / "ek"
-SECIMLER = ["1984yerel", "1989yerel", "2004yerel"]
+SECIMLER = ["1984yerel", "1989yerel", "1994yerel", "2004yerel"]
 TABAN = ROOT / "data" / "kaynaklar" / "taban"  # DIE birlestirmesi oncesi (git 1e1e8e8)
 ETIKET = {"1989yerel": {"MHP": "MÇP"}}  # Wikipedia etiketi -> DIE partisi
 # ayni yerin sonraki il kodu: modern ilce poligonu ararken eski il -> yeni il
@@ -113,7 +127,7 @@ def eslestir(proje, die, esik=0.8, sira_esik=0.45):
     from extract_mahalli import _sirali_hizala
     ciftler, kp, kd = [], set(), set()
     pv = {id(p): _varyantlar(p["ad"]) for p in proje}
-    dk = {id(d): _anahtar(d["adKaynakta"]) for d in die}
+    dk = {id(d): _anahtar(dad(d)) for d in die}
     for p in proje:
         for d in die:
             if id(d) not in kd and dk[id(d)] in pv[id(p)]:
@@ -182,7 +196,11 @@ def resmi_karsilastir(row, d, secim, tablo, sayac):
     if d["kontrol"]["durum"] != "tutarli":
         kaynak["tuikKullanilmadi"] = {"neden": "DİE satırı iç kontrolden geçmedi", "kontrol": d["kontrol"]}
     elif fark:
-        kaynak["tuikFarki"] = fark
+        # hicbir DIE birimi (merkez / merkez + beldeler / BB) YSK satiriyla birebir
+        # tutmadi: YSK arsivindeki ilce satiri, sonradan ilce olmayan beldelerin bir
+        # KISMINI toplayabiliyor; bu bir deger farki degil birim farki olabilir
+        kaynak["tuikBirimFarki"] = {"not": "YSK satırı DİE'deki hiçbir birimle (ilçe merkezi, merkez + tüm bağlı beldeler, büyükşehir) birebir eşleşmedi; YSK satırının hangi belediyeleri topladığı kayıtlı değil. Değerler değiştirilmedi.",
+                                    "karsilastirma": fark}
         sayac["ysk_fark"] += 1
     else:
         kaynak["teyit"] = ["tuik"]
@@ -251,11 +269,11 @@ def satiri_isle(row, d, secim, tablo, sayac, resmi=False):
 def yeni_satir(d, secim, tablo, geom):
     g = d["gecerliOy"]
     oy = {p: {"oy": o, "oran": round(100 * o / g, 2)} for p, o in sorted(d["oy"].items())}
-    return {"ad": tr_baslik(d["adKaynakta"].strip(" .'•*")), "geomId": geom, "plaka": d["plaka"],
+    return {"ad": d.get("ad") or tr_baslik(d["adKaynakta"].strip(" .'•*")), "geomId": geom, "plaka": d["plaka"],
             "sandik": d["sandik"], "secmen": d["secmen"], "katilim": d["katilim"], "gecerliOy": g,
             "oy": oy, "kazanan": max(oy, key=lambda p: oy[p]["oy"]) if oy else None,
             "toplamVekil": 0, "vekil": {},
-            "kaynak": {"ana": "tuik", "adOcr": True,
+            "kaynak": {"ana": "tuik", **({"adKaynak": "ysk (sandık+seçmen kimliği)"} if d.get("ad") else {"adOcr": True}),
                        "tuik": {"kitap": KITAPLAR[secim]["demirbas"], "tablo": tablo, "sayfa": d["sayfa"],
                                 "adKaynakta": d["adKaynakta"], "katman": f"data/kaynaklar/tuik/yerel/{secim}/{tablo}.json"}}}
 
@@ -267,7 +285,9 @@ def alternatifler(d, bel, bb):
     i = next(k for k, x in enumerate(bel) if x is d or (x["sayfa"] == d["sayfa"] and x["adKaynakta"] == d["adKaynakta"]))
     grup = [d]
     for x in bel[i + 1:]:
-        if x["tip"] != "belde":
+        # 1994/1999: kimligi cozulemeyen satirlarin tipi bos; konumca ilce
+        # grubunun icindeler. Yalnizca karsilastirma toplami icin (deger yazilmaz)
+        if x["tip"] not in ("belde", None):
             break
         grup.append(x)
     if len(grup) > 1:
@@ -279,14 +299,14 @@ def alternatifler(d, bel, bb):
                      "secmen": sum(x["secmen"] or 0 for x in grup), "sandik": sum(x["sandik"] or 0 for x in grup),
                      "adKaynakta": f"{d['adKaynakta']} + {len(grup) - 1} belde"}))
     for x in bb:
-        if x["plaka"] == d["plaka"] and _anahtar(x["adKaynakta"]) == _anahtar(d["adKaynakta"]):
+        if x["plaka"] == d["plaka"] and _anahtar(dad(x)) == _anahtar(dad(d)):
             out.append(("büyükşehir belediye başkanlığı (ilçedeki oylar)", dict(x, _tablo="buyuksehir")))
     return out
 
 
 def ysk_satiri(secim, r, il=False):
     """2004: il satirlari ve katilimi olan ilce satirlari YSK resmi arsivinden."""
-    return secim == "2004yerel" and (il or bool(r.get("katilim")))
+    return secim in ("1994yerel", "1999yerel", "2004yerel") and (il or bool(r.get("katilim")))
 
 
 def yerel_isle(secim, rapor):
@@ -300,7 +320,7 @@ def yerel_isle(secim, rapor):
     for d in bel:
         # il merkezi belediyesi il satirina gider; buyuksehirde il satiri BB
         # yarisi oldugundan merkez belediyesi ilce satiridir (1984 Izmir 'Merkez')
-        if d["tip"] == "ilce" and d["plaka"] and (_anahtar(d["adKaynakta"]) != "MERKEZ" or d["plaka"] in bb_iller):
+        if d["tip"] == "ilce" and d["plaka"] and kullanilir(d) and (_anahtar(dad(d)) != "MERKEZ" or d["plaka"] in bb_iller):
             die_ilce[d["plaka"]].append(d)
     proje_ilce = collections.defaultdict(list)
     for r in rec["ilceler"]:
@@ -321,17 +341,34 @@ def yerel_isle(secim, rapor):
         for p in proje_ilce.get(pl, []):
             if id(p) in esp:
                 continue
-            d = next((d for d in beldeler if _anahtar(d["adKaynakta"]) in _varyantlar(p["ad"])), None)
+            d = next((d for d in beldeler if kullanilir(d) and _anahtar(dad(d)) in _varyantlar(p["ad"])), None)
             if d:
                 satiri_isle(p, dict(d, _alternatifler=[]), secim, "belediye_baskanligi", sayac, ysk_satiri(secim, p))
                 p["kaynak"]["tuik"]["birim"] = "dönemin beldesi (sonradan ilçe)"
                 esp.add(id(p))
                 sayac["belde_ilce"] += 1
         eslesmeyen_proje += [f"{pl}:{p['ad']}" for p in proje_ilce.get(pl, []) if id(p) not in esp]
+        # adi okunamayan (kimligi cozulemeyen) DIE satiri, projedeki eslesmemis
+        # satirla en az 3 partinin oyunda (>= 10) BIREBIR aynıysa ayni birimdir
+        adsiz = [d for d in bel if d["plaka"] == pl and not kullanilir(d) and d["kontrol"]["durum"] == "tutarli"
+                 and id(d) not in esd]
+        for p in proje_ilce.get(pl, []):
+            if id(p) in esp or not adsiz:
+                continue
+            po = {k: (v.get("oy") if isinstance(v, dict) else v) for k, v in (p.get("oy") or {}).items()}
+            uyan = [d for d in adsiz if sum(1 for k, o in d["oy"].items() if o >= 10 and po.get(k) == o) >= 3]
+            if len(uyan) == 1:
+                d = uyan[0]
+                satiri_isle(p, dict(d, _alternatifler=[]), secim, "belediye_baskanligi", sayac, ysk_satiri(secim, p))
+                p["kaynak"]["tuik"]["kimlik"] = "adı okunamadı; ≥3 partinin oyu mevcut satırla birebir aynı"
+                esp.add(id(p))
+                esd.add(id(d))
+                adsiz.remove(d)
+                sayac["oy_esitligi_kimlik"] += 1
         for d in die_ilce.get(pl, []):
             if id(d) in esd:
                 continue
-            geom = modern_geom(_anahtar(d["adKaynakta"]), pl)
+            geom = modern_geom(_anahtar(dad(d)), pl)
             if d["kontrol"]["durum"] == "tutarli" and geom and geom not in kullanilan_geom:
                 rec["ilceler"].append(yeni_satir(d, secim, "belediye_baskanligi", geom))
                 kullanilan_geom.add(geom)
@@ -342,7 +379,7 @@ def yerel_isle(secim, rapor):
     bb_il = {d["plaka"]: d for d in bb if d["tip"] == "il"}
     merkez = {}
     for d in bel:
-        if d["tip"] == "ilce" and d["plaka"] and _anahtar(d["adKaynakta"]) == "MERKEZ" and d["plaka"] not in merkez:
+        if d["tip"] == "ilce" and d["plaka"] and kullanilir(d) and _anahtar(dad(d)) == "MERKEZ" and d["plaka"] not in merkez:
             merkez[d["plaka"]] = d
     il_sayac = collections.Counter()
     for r in rec["iller"]:
@@ -353,7 +390,7 @@ def yerel_isle(secim, rapor):
         satiri_isle(r, d, secim, tablo, il_sayac, ysk_satiri(secim, r, il=True))
     rec.setdefault("kaynakNotu", {})
     rapor[secim] = {"ilceTuikOy": sayac["tuik_oy"], "ilceTuikTutarsiz": sayac["tuik_tutarsiz"],
-                    "ilceYskTeyit": sayac["ysk_teyit"], "doneminBeldesi": sayac["belde_ilce"], "ilceYskFark": sayac["ysk_fark"],
+                    "ilceYskTeyit": sayac["ysk_teyit"], "doneminBeldesi": sayac["belde_ilce"], "oyEsitligiKimlik": sayac["oy_esitligi_kimlik"], "ilceYskFark": sayac["ysk_fark"],
                     "ilYskTeyit": il_sayac["ysk_teyit"], "ilYskFark": il_sayac["ysk_fark"],
                     "ilTuikOy": il_sayac["tuik_oy"], "ilTuikTutarsiz": il_sayac["tuik_tutarsiz"], "ilDieYok": il_sayac["dieYok"],
                     "eklenenIlce": eklenen, "eklenemeyenDieIlce": eklenemeyen, "dieIleEslesmeyenProjeIlce": eslesmeyen_proje}
@@ -366,7 +403,8 @@ def _birim(d, il_adlari):
     return {"il": il_adlari.get(d["plaka"]), "plaka": d["plaka"], "tip": d["tip"], "adKaynakta": d["adKaynakta"],
             "ustIlce": d.get("ustIlce"), "sandik": d["sandik"], "secmen": d["secmen"], "oyKullanan": d["oyKullanan"],
             "katilim": d["katilim"], "gecerliOy": d["gecerliOy"], "oy": d["oy"], "kazanan": d["kazanan"],
-            "kontrol": d["kontrol"], "sayfa": d["sayfa"]}
+            "kontrol": d["kontrol"], "sayfa": d["sayfa"],
+            **{a: d[a] for a in ("ad", "ilce", "kimlik", "dogrulama", "yuzde", "yapi", "karakter") if d.get(a)}}
 
 
 def ek_meclis(secim, tablo, alt, il_adlari):
@@ -376,7 +414,7 @@ def ek_meclis(secim, tablo, alt, il_adlari):
     turkiye = next((_birim(d, il_adlari) for d in k["satirlar"] if d["tip"] == "turkiye"), None)
     veri = {"secim": secim, "tur": alt, "aciklama": k["aciklama"],
             "kaynak": {**k["kaynak"], "katman": f"data/kaynaklar/tuik/yerel/{secim}/{tablo}.json",
-                       "not": k["kaynak"]["not"] + " Satır başına `kontrol.durum`: 'tutarli' = parti oyları toplamı geçerli oya eşit; 'tutarsiz' satırlar OCR ya da kaynak hatası içerir, olduğu gibi bırakıldı."},
+                       "not": k["kaynak"].get("not", "") + " Satır başına `kontrol.durum`: 'tutarli' = parti oyları toplamı geçerli oya eşit (1994/1999'da ayrıca her parti yüzdesi ve katılım tutuyor); diğer durumlar OCR ya da kaynak hatası içerebilir, değerler olduğu gibi bırakıldı (tahmin yok). 1994/1999: `dogrulama` alan bazında hangi kısıtla doğrulandığını, `kimlik` birimin nasıl tanındığını verir."},
             "partiler": k["partiler"], "ozet": k["ozet"], "turkiye": turkiye, "iller": iller, "birimler": birimler}
     (EK / alt).mkdir(parents=True, exist_ok=True)
     (EK / alt / f"{secim}.json").write_text(json.dumps(veri, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -386,7 +424,7 @@ def ek_meclis(secim, tablo, alt, il_adlari):
 def ek_beldeler(secim):
     p = EK / "beldeler" / f"{secim}.json"
     veri = json.loads((TABAN / "ek" / "beldeler" / f"{secim}.json").read_text(encoding="utf-8"))
-    die = [d for d in kaynak_katmani(secim, "belediye_baskanligi")["satirlar"] if d["tip"] == "belde" and d["plaka"]]
+    die = [d for d in kaynak_katmani(secim, "belediye_baskanligi")["satirlar"] if d["tip"] == "belde" and d["plaka"] and kullanilir(d)]
     etiket = ETIKET.get(secim, {})
     wiki = collections.defaultdict(list)
     for r in veri["kayitlar"]:
@@ -425,12 +463,12 @@ def ek_beldeler(secim):
             r["kaynak"] = k
         for d in die:
             if d["plaka"] == pl and id(d) not in esd and d["kontrol"]["durum"] == "tutarli":
-                yeni_kayit.append({"belde": tr_baslik(d["adKaynakta"].strip(" .'•*")), "ilce": d.get("ustIlce"), "plaka": pl,
+                yeni_kayit.append({"belde": d.get("ad") or tr_baslik(d["adKaynakta"].strip(" .'•*")), "ilce": d.get("ustIlce") or d.get("ilce"), "plaka": pl,
                                    "kazanan": d["kazanan"], "oy": d["oy"].get(d["kazanan"]),
                                    "tuik": {"sandik": d["sandik"], "secmen": d["secmen"], "oyKullanan": d["oyKullanan"],
                                             "katilim": d["katilim"], "gecerliOy": d["gecerliOy"], "oy": d["oy"],
                                             "kazanan": d["kazanan"], "kontrol": "tutarli", "adKaynakta": d["adKaynakta"], "sayfa": d["sayfa"]},
-                                   "kaynak": {"ana": "tuik", "adOcr": True, "tuikKatman": f"data/kaynaklar/tuik/yerel/{secim}/belediye_baskanligi.json"}})
+                                   "kaynak": {"ana": "tuik", **({"adKaynak": "ysk (sandık+seçmen kimliği)"} if d.get("ad") else {"adOcr": True}), "tuikKatman": f"data/kaynaklar/tuik/yerel/{secim}/belediye_baskanligi.json"}})
                 sayac["yeni"] += 1
     veri["kayitlar"] += yeni_kayit
     veri["kaynak"] = {"ana": "wikipedia", "tuik": {"kitap": KITAPLAR[secim]["demirbas"], "yayin": KITAPLAR[secim]["yayin"],
