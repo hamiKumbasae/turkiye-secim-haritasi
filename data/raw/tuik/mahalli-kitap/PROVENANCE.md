@@ -40,13 +40,19 @@ ayarları, kimlik). Her kayıt sayı satırı + altındaki yüzde satırı. Kura
 - **Tahmin yok.** Okunamayan ya da doğrulanamayan hücre boş/işaretli kalır; toplamdan geri hesap yazılmaz.
 - Alan bazında `dogrulama`: `katilim` (oy kullanan / seçmen = kitaptaki katılım %), `yuzde` (parti oyu /
   geçerli = kitaptaki %), `toplam` (parti oyları toplamı = geçerli). Satır durumu `tutarli` ancak hepsi tutarsa.
-- Sütun kenarları sayfa başına değil **kitap şablonundan** (düzenli sayfaların medyanı) + yatay ofset:
-  yüzde/toplam kısıtları bir sütun kaymasını yakalayamıyor (değer ve yüzdesi birlikte kayar).
+- Sütun kenarları sayfa başına değil **kitap şablonundan** + yatay ofset. İki şablon (sayı-sonu
+  histogramı; düzenli sayfaların medyanı) her sayfa çiftinde denenir, kendi kısıtlarını sağlayan satırı
+  çok olan okuma seçilir (seçim iç ölçüte dayanır; satırda `sablon`). Reddedilen: sayfa başlıklarının x'i
+  (1999'da birkaç px sapıp değeri komşu sütuna itiyordu — YSK ölçümüyle görüldü).
+- Yüzde/toplam kısıtları bir sütun kaymasını yakalayamıyor (değer ve yüzdesi birlikte kayar). Sağ kenarı
+  sütun kenarından sütun aralığının %40'ından fazla uzak hücre `konumSupheli`; böyle satır `tutarli`
+  sayılmaz (1999'da YSK'ye göre yanlış olan 4 tutarlı satırın 4'ünü de yakaladı).
 - **Kimlik** (hangi belediye): YSK il arşivinde (sandık, seçmen) + oy kullanan ya da geçerli birebir;
   il bağlamı dışında dört alan birden; meclis tablosu başkanlık tablosuyla aynı sırada/seçmende;
   İGM'de şehir satırı ilçe merkezi belediyesidir; yazılı ad bilinen bir adla birebir. Hiçbiri yoksa
   `kimlik.yontem = cozulemedi` ve satır haritaya işlenmez.
-- **Ölçüm (1994):** başkanlık tablosu YSK'de de var; `tutarli` işaretli satırların tamamı YSK ile
-  birebir (bkz. `data/kaynaklar/tuik/yerel/1994yerel/dogrulama_raporu.json`).
+- **Ölçüm:** başkanlık tablosu YSK'de de var; `tutarli` işaretli satırların tamamı YSK ile birebir —
+  1994: 1668/1668 (20.854 alan), 1999: 1815/1815 (25.444 alan), 0 fark
+  (bkz. `data/kaynaklar/tuik/yerel/<seçim>/dogrulama_raporu.json`).
 - Sayfa kenarındaki bilinen tarama kusurları: kalın satırlarda karakterler iki kez ('KKüüççüükk'),
   tireler nokta/madde işareti olarak okunmuş, belde adlarının bir kısmı metin katmanında hiç yok.

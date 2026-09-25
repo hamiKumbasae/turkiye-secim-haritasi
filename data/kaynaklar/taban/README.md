@@ -5,6 +5,7 @@ DİE "Mahalli İdareler Seçimi Sonuçları" kitaplarıyla birleştirilmeden ön
 hâli (git `1e1e8e8`). İçerik:
 
 - 1984yerel, 1989yerel: Türkçe Wikipedia il alt makaleleri (il + ilçe)
+- 1994yerel, 1999yerel: il satırları ve ilçelerin ~%75'i YSK resmî arşivi, kalanı Wikipedia
 - 2004yerel: il satırları ve ilçelerin ~%76'sı YSK resmî arşivi (PDF), kalan
   ilçeler Wikipedia (aday adı olan satırlar)
 

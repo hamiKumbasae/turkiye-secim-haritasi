@@ -52,6 +52,20 @@ KITAPLAR = {
                      "belediye_baskanligi": (262, 473), "belediye_meclisi": (474, 685)},
     },
 }
+P99_SOL = ["ANAP", "BP", "BBP", "CHP", "DP", "DBP99"]
+P99_SAG = ["DSP", "DEMTP", "DYP", "DEHAP", "DEPAR", "EMEP", "FP", "HADEP", "İP", "LDP", "MP92", "MHP", "ÖDP", "SİP", "YDP",
+           "Bağımsız"]
+KITAPLAR["1999yerel"] = {
+    "demirbas": "0014361", "yil": "1999", "yayin": "DİE, Mahalli İdareler Seçimi Sonuçları 18.4.1999",
+    "sol": ONCU + P99_SOL, "sag": P99_SAG, "partiler": P99_SOL + P99_SAG,
+    # sutun sablonu: duzenli sayfalarin medyani + sayfa ofseti. (Denendi ve
+    # YSK olcumuyle reddedildi: sayfa basliklarinin x'i - birkac px sapip
+    # degeri komsu sutuna itiyor; sayi-sonu histogrami - seyrek sutunlarda gurultu.)
+    # buyuksehir tablosunda DSP sol yuzde (7 + 15 sutun)
+    "tabloSutun": {"buyuksehir": {"sol": ONCU + P99_SOL + ["DSP"], "sag": P99_SAG[1:]}},
+    "tablolar": {"il_genel_meclisi": (38, 239), "buyuksehir": (242, 251),
+                 "belediye_baskanligi": (254, 473), "belediye_meclisi": (476, 695)},
+}
 ACIKLAMA = {
     "il_genel_meclisi": "İl genel meclisi üyeleri seçimi sonuçları, il ve ilçelere göre (şehir/köy kırılımıyla)",
     "buyuksehir": "Büyükşehir belediye başkanlığı seçimi sonuçları, ilçe merkez ve alt kademe belediyelerine göre",
@@ -61,7 +75,7 @@ ACIKLAMA = {
 IL_AD = {fold(v["il_ADI"]).replace(" ", ""): int(k) for k, v in json.loads(
     (ROOT / "data/raw/ysk/acikveri-il-ilce-listesi.json").read_text(encoding="utf-8")).items()}
 IL_AD.update({"ICEL": 33, "AFYON": 3, "SURFA": 63, "KMARAS": 46, "URFA": 63, "MARAS": 46})
-YSK_PARTI = {"MİLLET PARTİSİ": "MP92", "BAĞIMSIZLAR": "Bağımsız", "BAĞIMSIZ": "Bağımsız"}
+from party_map import STATIC_MAP as YSK_PARTI  # noqa: E402  (YSK PDF basliklari -> parti anahtari)
 
 
 def _sayi(s):
@@ -82,7 +96,7 @@ def ysk_referans(yil):
         header, rows = pib.extract_rows(f)
         h = [(c or "").replace("\n", " ").strip() for c in header]
         i_s = next(i for i, c in enumerate(h) if c.startswith("Sandık"))
-        partiler = [YSK_PARTI.get(c.upper(), c) for c in h[i_s + 4:]]
+        partiler = [YSK_PARTI.get(c.upper(), YSK_PARTI.get(c, c)) for c in h[i_s + 4:]]
         ilce = None
         adsiz = 0
         for r in rows:
@@ -306,11 +320,17 @@ def isle(secim, tablolar=None):
     for tablo, (ilk, son) in cfg["tablolar"].items():
         if tablolar and tablo not in tablolar:
             continue
-        satirlar, eslesmeyen = ocr_tablo.tablo(pdf, cfg, ilk, son)
+        cfg_t = dict(cfg, **cfg.get("tabloSutun", {}).get(tablo, {}))
+        satirlar, eslesmeyen = ocr_tablo.tablo(pdf, cfg_t, ilk, son)
         kayit, gt = [], collections.defaultdict(collections.Counter)
         plaka = None
         for r in satirlar:
             durum, dog, ayr = ocr_tablo.dogrula(r["v"], r["yuzde"], cfg["partiler"])
+            if durum == "tutarli" and r.get("konumSupheli"):
+                # degerler kendi icinde tutarli ama bir hucre sutun kenarindan uzak:
+                # deger + yuzdesi birlikte komsu sutuna kaymis olabilir (YSK olcumu:
+                # 1999'daki 4 yanlis tutarli satirin 4'u de bu isaretle yakalaniyor)
+                durum = "konumSupheli"
             f = fold(r["etiket"])
             il_etiket = IL_AD.get(f.replace(" ", ""))
             if il_etiket and r["etiket"].upper() == r["etiket"]:
@@ -330,7 +350,7 @@ def isle(secim, tablolar=None):
             elif ref_r:
                 plaka = ref_r["plaka"]
             tip = (ref_r["tip"] if ref_r else ("il" if yontem == "il_etiketi" else None))
-            if re.match(r"^(SEHIR|KOY)", f):
+            if tablo == "il_genel_meclisi" and re.match(r"^(SEHIR|KOY)", f):
                 tip = "sehir" if f.startswith("SEHIR") else "koy"
                 if sehir_satiri and ref_r and kayit and kayit[-1]["tip"] in (None, "ilce"):
                     # sehir satiri ilce merkezi belediyesi: ust satir o ilcenin tamamidir
@@ -349,7 +369,8 @@ def isle(secim, tablolar=None):
                  "katilim": r["yuzde"].get("oyKullanan"), "gecerliOy": v.get("gecerliOy"),
                  "oy": {p: v[p] for p in cfg["partiler"] if isinstance(v.get(p), int) and v[p]},
                  "yuzde": {p: r["yuzde"][p] for p in cfg["partiler"] if isinstance(r["yuzde"].get(p), float) and r["yuzde"][p]},
-                 "kontrol": {"durum": durum, **ayr, **({"sagSayfaYok": True} if r["sagYok"] else {})},
+                 "kontrol": {"durum": durum, **ayr, **({"sagSayfaYok": True} if r["sagYok"] else {}),
+                             **({"konumSupheli": r["konumSupheli"]} if r.get("konumSupheli") else {})},
                  "dogrulama": dog, "sayfa": r["sayfa"]}
             if r["karakter"]:
                 k["karakter"] = r["karakter"]

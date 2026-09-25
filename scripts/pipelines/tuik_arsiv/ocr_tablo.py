@@ -17,6 +17,8 @@ Ilkeler (kullanici karari, 2026-09-25):
       yuzdelerTutarli     her dolu parti hucresi yuzdesiyle uyumlu ama toplam
                           tutmuyor (kaynagin kendi tutarsizligi ya da bos okunan hucre)
       tutarsiz            digerleri
+      konumSupheli        (surucude) tutarli ama bir hucre sutun kenarindan uzak:
+                          deger + yuzdesi birlikte komsu sutuna kaymis olabilir
 
 Tablo bicimi (1989-1999 DIE mahalli kitaplari): her kayit iki satir - sayi
 satiri (sandik, secmen, oy kullanan, gecerli, parti oylari) ve altinda yuzde
@@ -60,22 +62,23 @@ def kelime_normal(w):
     return t if t != w["text"] else None
 
 
-def sayfa(page, sutunlar, sol, kenar=None, zorla=False):
+def sayfa(page, sutunlar, sol, kenar=None, zorla=False, ofset=True):
     """Sayfanin satirlari: [{etiket, v{sutun: deger}, y, ham, karakter[]}], kenarlar."""
     words_cache = page.extract_words(keep_blank_chars=False, use_text_flow=False)
     degisen = [(w["top"], w["text"], kelime_normal(w)) for w in words_cache]
     degisen = [(y, a, b) for y, a, b in degisen if b is not None and b != a]
     rows, kenarlar = die_tablo.sayfa_tablosu(page, 160, len(sutunlar), None, etiketsiz=not sol,
                                              kelime_duzelt=kelime_normal, hazir_kenarlar=kenar,
-                                             etiket_zorunlu=False, kenar_zorla=zorla)
+                                             etiket_zorunlu=False, kenar_zorla=zorla, konum_don=True, ofset_ara=ofset)
     if rows is None:
         return None, kenarlar
     out = []
-    for e, vals, y, ham in rows:
+    for e, vals, y, ham, uzak in rows:
         etiket = " ".join(_cift(p) or p for p in e.split()).strip(" .'`•*")
         if re.match(r"^\W*(TABL[OE]|\d+\.\s*(Belediyelere|Results|İl ve|Büyükşehir))", etiket):
             continue
         out.append({"etiket": etiket, "v": dict(zip(sutunlar, vals)), "y": y, "ham": ham,
+                    "uzak": dict(zip(sutunlar, uzak)), "aralik": min((b - a for a, b in zip(kenarlar, kenarlar[1:])), default=50),
                     "karakter": [f"{a}→{b}" for yy, a, b in degisen if abs(yy - y) < 5 and a not in TIRE_BENZERI]})
     return out, kenarlar
 
@@ -84,6 +87,13 @@ def _yuzde_satiri_mi(r):
     dolu = [x for x in r["v"].values() if x is not None]
     return bool(dolu) and any(isinstance(x, float) for x in dolu) and all(
         (isinstance(x, float) and x <= 100) or x == 0 for x in dolu)
+
+
+def _konum_supheli(r, oran=0.4):
+    """Sag kenari, atandigi sutunun kenarindan sutun araliginin %40'indan fazla
+    solda kalan hucreler: sutun kaymasi supheli (deger ve yuzdesi birlikte
+    kayarsa toplam/yuzde kisitlari bunu yakalayamaz)."""
+    return [c for c, d in (r.get("uzak") or {}).items() if d is not None and d < -oran * r["aralik"]]
 
 
 def kayitlar(satirlar, yuzdeli):
@@ -96,11 +106,13 @@ def kayitlar(satirlar, yuzdeli):
             i += 1  # basi kopuk yuzde satiri (onceki sayfadan) - atla
             continue
         k = {"etiket": r["etiket"], "v": {s: x for s, x in r["v"].items() if not isinstance(x, float)},
-             "y": r["y"], "ham": r["ham"], "karakter": list(r["karakter"]), "yuzde": {}}
+             "y": r["y"], "ham": r["ham"], "karakter": list(r["karakter"]), "yuzde": {},
+             "konumSupheli": _konum_supheli(r)}
         if i + 1 < len(satirlar) and _yuzde_satiri_mi(satirlar[i + 1]) and satirlar[i + 1]["y"] - r["y"] < 16:
             y = satirlar[i + 1]
             k["yuzde"] = {s: x for s, x in y["v"].items() if s in yuzdeli and x is not None}
             k["karakter"] += y["karakter"]
+            k["konumSupheli"] += [c for c in _konum_supheli(y) if c not in k["konumSupheli"]]
             k["yuzdeHam"] = y["ham"]
             i += 2
         else:
@@ -212,11 +224,25 @@ def _duzenli(k, tol=0.25):
     return all(x > 15 for x in d) and max(d) < 3.5 * min(d)
 
 
-def sutun_sablonu(pdf, ciftler, sol_s, sag_s, ornek=40):
-    """Kitap sablonu: (sol?, sayfa paritesi) -> kenarlar. Kenarlari DUZENLI
-    cikan sayfalarin sutun bazinda medyani. Tek sayfanin 'temiz satir'
-    medyani az satirli sayfada kayabiliyor (1994 s.309, s.415: iki sutun
-    ust uste); sablon + ofset bunu onler."""
+def _sayi_sonlari(page, sol):
+    """Sayfadaki sayi gruplarinin (ve yuzdelerin) sag kenarlari."""
+    words = page.extract_words(keep_blank_chars=False, use_text_flow=False)
+    for w in words:
+        y = kelime_normal(w)
+        if y is not None:
+            w["text"] = y
+    out = []
+    for sat in die_tablo._satirlar(words):
+        x_bas = 150 if sol else 0
+        for g in die_tablo._gruplar(die_tablo._tokenler(sat, x_bas), 9.0):
+            if g[-1][3] != "tire":
+                out.append(g[-1][2])
+    return out
+
+
+def sutun_sablonu_medyan(pdf, ciftler, sol_s, sag_s, ornek=40):
+    """Kenarlari duzenli cikan sayfalarin sutun bazinda medyani (1999 icin
+    YSK'ye karsi en iyi olcum)."""
     toplu = collections.defaultdict(list)
     adim = max(1, len(ciftler) // ornek)
     for a, b in ciftler[::adim]:
@@ -227,30 +253,141 @@ def sutun_sablonu(pdf, ciftler, sol_s, sag_s, ornek=40):
     return {key: [sorted(x[i] for x in ks)[len(ks) // 2] for i in range(len(ks[0]))] for key, ks in toplu.items() if ks}
 
 
-def tablo(pdf, cfg, ilk, son, ozel_ciftler=()):
-    """Sayfa ciftlerini oku, kayitlara bol, iki yuzu hizala. Dondurur:
-    [{etiket, v, yuzde, sayfa, karakter, sagYok}], eslesmeyen sayfalar."""
-    sol_s, sag_s = cfg["sol"], cfg["sag"]
-    partiler = cfg["partiler"]
+def sutun_sablonu(pdf, ciftler, sol_s, sag_s, ornek=60):
+    """Kitap sablonu: (sol?, sayfa paritesi) -> sutun sag kenarlari.
+
+    Sayilar saga yasli oldugundan bir sutundaki tum degerlerin sag kenari ayni
+    x'tedir; bircok sayfanin sayi-sonu histogramindaki N en guclu tepe = N
+    sutun. Tek sayfanin 'temiz satir' medyani seyrek sayfalarda (1999 sag yuz:
+    16 partinin cogu bos) bir sutun kayiyordu; histogram buna dayanikli."""
+    toplu = collections.defaultdict(list)
+    adim = max(1, len(ciftler) // ornek)
+    for a, b in ciftler[::adim]:
+        for no, sol in ((a, True), (b, False)):
+            toplu[(sol, no % 2)] += _sayi_sonlari(pdf.pages[no - 1], sol)
+    out = {}
+    for (sol, par), xs in toplu.items():
+        n = len(sol_s if sol else sag_s)
+        if not xs:
+            continue
+        hist = collections.Counter(round(x) for x in xs)
+        lo, hi = min(hist), max(hist)
+        duz = {x: sum(hist.get(x + d, 0) * w for d, w in ((-2, 1), (-1, 2), (0, 3), (1, 2), (2, 1))) for x in range(lo, hi + 1)}
+        tepe = [x for x in duz if duz[x] > 0 and duz[x] >= duz.get(x - 1, 0) and duz[x] > duz.get(x + 1, 0)]
+        tepe.sort(key=lambda x: -duz[x])
+        secilen = []
+        for x in tepe:
+            if all(abs(x - y) >= 12 for y in secilen):
+                secilen.append(x)
+            if len(secilen) == n:
+                break
+        if len(secilen) == n and _esit_aralikli(sorted(secilen)[4 if sol else 0:]):
+            out[(sol, par)] = sorted(float(x) for x in secilen)
+    # hala eksik yuz: parti sutunlari esit genislikte -> sayi sonlarina en cok
+    # oturan duzenli izgara (aralik, baslangic). Seyrek sutunlara dayanikli.
+    for (sol, par), xs in toplu.items():
+        if (sol, par) in out or sol:
+            continue
+        n = len(sag_s)
+        en_iyi = None
+        for adim in [x / 4 for x in range(18 * 4, 60 * 4)]:
+            if adim * (n - 1) > max(xs) - min(xs) + 10:
+                break
+            for bas in range(int(min(xs)) - 2, int(min(xs)) + int(adim) + 2):
+                izg = [bas + i * adim for i in range(n)]
+                puan = sum(1 for x in xs if min(abs(x - g) for g in izg) <= 2)
+                if en_iyi is None or puan > en_iyi[0]:
+                    en_iyi = (puan, izg)
+        if en_iyi and en_iyi[0] > 0.6 * len(xs):
+            out[(sol, par)] = en_iyi[1]
+    # histogram duzensiz cikan yuz (seyrek parti sutunlari): tablonun ilk
+    # sayfalarindaki yogun satirlarin (Turkiye, il toplamlari) kenarlari
+    for sol, sut in ((True, sol_s), (False, sag_s)):
+        for par in (0, 1):
+            if (sol, par) in out:
+                continue
+            for a, b in ciftler[:12]:
+                no = a if sol else b
+                _, k = sayfa(pdf.pages[no - 1], sut, sol)
+                if k and all(k) and _esit_aralikli(k[4 if sol else 0:]):
+                    out[(sol, par)] = k  # parite farki: die_tablo ofsetle oturtur
+                    break
+    return out
+
+
+def _esit_aralikli(k, oran=1.35):
+    """Parti sutunlari esit aralikli mi (kitaplarda parti sutunlari ayni genislikte)."""
+    d = [b - a for a, b in zip(k, k[1:])]
+    return bool(d) and min(d) > 10 and max(d) / min(d) <= oran
+
+
+def baslik_kenarlari(page, desenler, ust=170):
+    """Sutun basligindaki kelimelerin sag kenarlari (basliklar sutunla saga
+    yasli; 1999 kitabinda dogrulandi). desenler: sutun basina regex, soldan
+    saga sirayla aranir. Bulunamayan sutun varsa None."""
+    ws = sorted((w for w in page.extract_words() if w["top"] < ust), key=lambda w: w["x0"])
+    out, x_min = [], -1
+    for d in desenler:
+        w = next((w for w in ws if w["x0"] > x_min and re.fullmatch(d, w["text"])), None)
+        if w is None:
+            return None
+        out.append(w["x1"])
+        x_min = w["x1"]
+    return out if all(b > a for a, b in zip(out, out[1:])) else None
+
+
+def _cift_oku(pdf, a, b, cfg, sablon):
+    sol_s, sag_s, partiler = cfg["sol"], cfg["sag"], cfg["partiler"]
     yuzdeli = {"oyKullanan"} | set(partiler)
+    L, _ = sayfa(pdf.pages[a - 1], sol_s, True, sablon.get((True, a % 2)), zorla=True)
+    R, _ = sayfa(pdf.pages[b - 1], sag_s, False, sablon.get((False, b % 2)), zorla=True)
+    if L is None or R is None:
+        return None, "sütun kenarları bulunamadı"
+    KL, KR = kayitlar(L, yuzdeli), kayitlar(R, yuzdeli)
+    KL = [k for k in KL if isinstance(k["v"].get("secmen"), int)]
+    esl = hizala(KL, KR, partiler)
+    neden = None
+    if KL and sum(1 for _, r in esl if r) < 0.5 * len(KL):
+        neden = "iki yüz hizalanamadı; sol yüz sağ yüzsüz alındı"
+        esl = [(x, None) for x in KL]
+    out = [{"etiket": l["etiket"], "v": {**l["v"], **(r["v"] if r else {})},
+            "yuzde": {**l["yuzde"], **(r["yuzde"] if r else {})},
+            "karakter": l["karakter"] + (r["karakter"] if r else []),
+            "sayfa": [a, b], "sagYok": r is None,
+            "konumSupheli": l["konumSupheli"] + (r["konumSupheli"] if r else [])} for l, r in esl]
+    return out, neden
+
+
+def _ic_puan(satirlar, partiler):
+    """Ic tutarlilik: kendi kisitlarini saglayan ve konum suphesi olmayan satir sayisi."""
+    return sum(1 for r in satirlar if not r["konumSupheli"]
+               and dogrula(r["v"], r["yuzde"], partiler)[0] == "tutarli")
+
+
+def tablo(pdf, cfg, ilk, son, ozel_ciftler=()):
+    """Sayfa ciftlerini oku, kayitlara bol, iki yuzu hizala. Her sayfa cifti
+    iki sutun sablonuyla (sayi-sonu histogrami / duzenli sayfalarin medyani)
+    okunur; kendi kisitlarini saglayan satiri daha cok olan okuma secilir
+    (secim ic olcute dayanir, dis kaynak kullanmaz; satirda `sablon`).
+    Dondurur: [{etiket, v, yuzde, sayfa, karakter, sagYok, konumSupheli, sablon}], eslesmeyen."""
+    sol_s, sag_s = cfg["sol"], cfg["sag"]
     ciftler = list(ozel_ciftler) or [(a, a + 1) for a in range(ilk, son, 2)]
+    sablonlar = {"histogram": sutun_sablonu(pdf, ciftler, sol_s, sag_s),
+                 "medyan": sutun_sablonu_medyan(pdf, ciftler, sol_s, sag_s)}
     out, eslesmeyen = [], []
-    sablon = sutun_sablonu(pdf, ciftler, sol_s, sag_s)
     for a, b in ciftler:
-        L, kl = sayfa(pdf.pages[a - 1], sol_s, True, sablon.get((True, a % 2)), zorla=True)
-        R, kr = sayfa(pdf.pages[b - 1], sag_s, False, sablon.get((False, b % 2)), zorla=True)
-        if L is None or R is None:
+        okumalar = []
+        for ad, sb in sablonlar.items():
+            satirlar, neden = _cift_oku(pdf, a, b, cfg, sb)
+            if satirlar is not None:
+                okumalar.append((_ic_puan(satirlar, cfg["partiler"]), -bool(neden), ad, satirlar, neden))
+        if not okumalar:
             eslesmeyen.append({"sayfa": [a, b], "neden": "sütun kenarları bulunamadı"})
             continue
-        KL, KR = kayitlar(L, yuzdeli), kayitlar(R, yuzdeli)
-        KL = [k for k in KL if isinstance(k["v"].get("secmen"), int)]
-        esl = hizala(KL, KR, partiler)
-        if KL and sum(1 for _, r in esl if r) < 0.5 * len(KL):
-            eslesmeyen.append({"sayfa": [a, b], "neden": "iki yüz hizalanamadı; sol yüz sağ yüzsüz alındı"})
-            esl = [(x, None) for x in KL]
-        for l, r in esl:
-            out.append({"etiket": l["etiket"], "v": {**l["v"], **(r["v"] if r else {})},
-                        "yuzde": {**l["yuzde"], **(r["yuzde"] if r else {})},
-                        "karakter": l["karakter"] + (r["karakter"] if r else []),
-                        "sayfa": [a, b], "sagYok": r is None})
+        _, _, ad, satirlar, neden = max(okumalar, key=lambda o: (o[0], o[1]))
+        if neden:
+            eslesmeyen.append({"sayfa": [a, b], "neden": neden})
+        for r in satirlar:
+            r["sablon"] = ad
+        out += satirlar
     return out, eslesmeyen

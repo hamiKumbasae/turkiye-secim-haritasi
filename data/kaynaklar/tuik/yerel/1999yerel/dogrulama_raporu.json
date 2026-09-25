@@ -1,0 +1,144 @@
+{
+ "ysk_referans_belediye": 2348,
+ "belediye_baskanligi": {
+  "ozet": {
+   "satir": 3281,
+   "durum": {
+    "yuzdelerTutarli": 68,
+    "tutarli": 2770,
+    "toplamTutarli": 147,
+    "tutarsiz": 93,
+    "konumSupheli": 189,
+    "gecerliOyOkunamadi": 14
+   },
+   "tip": {
+    "turkiye": 1,
+    "il": 81,
+    "ilce": 922,
+    "belde": 2220,
+    "None": 57
+   },
+   "kimlikCozulen": 3223,
+   "dikey": {
+    "fark": 62,
+    "tutuyor": 19,
+    "hepsiTutarli_tutuyor": 10,
+    "hepsiTutarli_fark": 1
+   },
+   "eslesmeyenSayfa": []
+  },
+  "yskGroundTruth": {
+   "tutarli": {
+    "satir": 1815,
+    "birebir": 1815,
+    "alan_esit": 25444,
+    "alan_farkli": 0
+   },
+   "toplamTutarli": {
+    "satir": 85,
+    "farkli": 43,
+    "alan_esit": 1183,
+    "alan_farkli": 55,
+    "birebir": 42
+   },
+   "tutarsiz": {
+    "satir": 62,
+    "farkli": 58,
+    "alan_esit": 665,
+    "alan_farkli": 62,
+    "birebir": 4
+   },
+   "konumSupheli": {
+    "satir": 142,
+    "birebir": 138,
+    "alan_esit": 2244,
+    "alan_farkli": 7,
+    "farkli": 4
+   },
+   "yuzdelerTutarli": {
+    "satir": 56,
+    "birebir": 54,
+    "alan_esit": 509,
+    "alan_farkli": 2,
+    "farkli": 2
+   }
+  }
+ },
+ "il_genel_meclisi": {
+  "ozet": {
+   "satir": 3000,
+   "durum": {
+    "tutarsiz": 130,
+    "tutarli": 2779,
+    "toplamTutarli": 39,
+    "konumSupheli": 15,
+    "yuzdelerTutarli": 16,
+    "gecerliOyOkunamadi": 21
+   },
+   "tip": {
+    "turkiye": 1,
+    "sehir": 1000,
+    "koy": 1000,
+    "il": 80,
+    "ilce": 919
+   },
+   "kimlikCozulen": 1657,
+   "dikey": {
+    "fark": 40,
+    "tutuyor": 40,
+    "hepsiTutarli_tutuyor": 39
+   },
+   "eslesmeyenSayfa": []
+  }
+ },
+ "buyuksehir": {
+  "ozet": {
+   "satir": 93,
+   "durum": {
+    "tutarli": 88,
+    "yuzdelerTutarli": 2,
+    "tutarsiz": 3
+   },
+   "tip": {
+    "turkiye": 1,
+    "il": 15,
+    "ilce": 77
+   },
+   "kimlikCozulen": 92,
+   "dikey": {
+    "fark": 5,
+    "tutuyor": 10,
+    "hepsiTutarli_tutuyor": 10
+   },
+   "eslesmeyenSayfa": []
+  }
+ },
+ "belediye_meclisi": {
+  "ozet": {
+   "satir": 3280,
+   "durum": {
+    "tutarli": 2639,
+    "tutarsiz": 77,
+    "toplamTutarli": 131,
+    "konumSupheli": 328,
+    "yuzdelerTutarli": 103,
+    "gecerliOyOkunamadi": 2
+   },
+   "tip": {
+    "turkiye": 1,
+    "il": 81,
+    "ilce": 926,
+    "belde": 2238,
+    "None": 34
+   },
+   "kimlikCozulen": 3274,
+   "dikey": {
+    "fark": 63,
+    "tutuyor": 18,
+    "hepsiTutarli_fark": 1,
+    "hepsiTutarli_tutuyor": 8
+   },
+   "eslesmeyenSayfa": []
+  }
+ }
+}

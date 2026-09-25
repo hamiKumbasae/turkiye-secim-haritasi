@@ -36,9 +36,10 @@
   "satir": 2802,
   "durum": {
    "gecerliOyOkunamadi": 41,
-   "tutarli": 2517,
-   "yuzdelerTutarli": 168,
-   "tutarsiz": 65,
+   "tutarli": 2501,
+   "yuzdelerTutarli": 166,
+   "konumSupheli": 17,
+   "tutarsiz": 66,
    "toplamTutarli": 11
   },
   "tip": {
@@ -2536,7 +2537,9 @@
      "tutuyor": false,
      "farkliPartiler": [
       "DYP",
-      "RP"
+      "RP",
+      "SHP",
+      "YDP"
      ],
      "altSatir": 27,
      "hepsiTutarli": false
@@ -3098,7 +3101,9 @@
     "dikey": {
      "tutuyor": false,
      "farkliPartiler": [
-      "ANAP"
+      "ANAP",
+      "SHP",
+      "YDP"
      ],
      "altSatir": 22,
      "hepsiTutarli": false
@@ -3933,6 +3938,9 @@
      "RP"
     ],
     "partiToplami": 151962,
+    "konumSupheli": [
+     "SBP"
+    ],
     "dikey": {
      "tutuyor": false,
      "farkliPartiler": [
@@ -6325,7 +6333,6 @@
      "farkliPartiler": [
       "DSP",
       "DYP",
-      "İP",
       "RP",
       "SHP",
       "YDP"
@@ -16543,7 +16550,13 @@
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "MHP",
+     "RP",
+     "SHP",
+     "SBP"
+    ]
    },
    "sayfa": [
     484,
@@ -16658,7 +16671,12 @@
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "MHP",
+     "RP",
+     "SHP"
+    ]
    },
    "sayfa": [
     484,
@@ -17452,7 +17470,11 @@
    },
    "kazanan": "SHP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "sayfa": [
     484,
@@ -17509,7 +17531,12 @@
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SBP",
+     "SHP"
+    ]
    },
    "sayfa": [
     484,
@@ -17645,7 +17672,12 @@
    },
    "kazanan": "SHP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "MHP",
+     "SHP",
+     "RP"
+    ]
    },
    "sayfa": [
     484,
@@ -17705,7 +17737,11 @@
    },
    "kazanan": "SHP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "sayfa": [
     484,
@@ -17765,7 +17801,12 @@
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SBP",
+     "SHP"
+    ]
    },
    "sayfa": [
     484,
@@ -17824,7 +17865,12 @@
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP",
+     "SBP"
+    ]
    },
    "sayfa": [
     484,
@@ -17870,7 +17916,7 @@
    "sandik": 6,
    "secmen": 1480,
    "oyKullanan": 1437,
-   "katilim": 97.1,
+   "katilim": null,
    "gecerliOy": 1306,
    "oy": {
     "ANAP": 320,
@@ -17879,7 +17925,11 @@
    },
    "kazanan": "SHP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "sayfa": [
     484,
@@ -17892,16 +17942,6 @@
     "ysk": "data/raw/ysk/mahalli-1994-1999-2004/1994/BelediyeBaskanligi/Afyon.pdf"
    },
    "dogrulama": {
-    "secmen": [
-     "katilim"
-    ],
-    "oyKullanan": [
-     "katilim"
-    ],
-    "oy.ANAP": [
-     "yuzde",
-     "toplam"
-    ],
     "oy.DYP": [
      "yuzde",
      "toplam"
@@ -17913,10 +17953,12 @@
     "gecerliOy": [
      "toplam",
      "yuzde"
+    ],
+    "oy.ANAP": [
+     "toplam"
     ]
    },
    "yuzde": {
-    "ANAP": 24.5,
     "DYP": 31.9,
     "SHP": 43.6
    }
@@ -53417,7 +53459,11 @@
    "kontrol": {
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
-     "RP"
+     "RP",
+     "YDP"
+    ],
+    "konumSupheli": [
+     "YDP"
     ]
    },
    "sayfa": [
@@ -53439,10 +53485,6 @@
      "yuzde",
      "toplam"
     ],
-    "oy.SHP": [
-     "yuzde",
-     "toplam"
-    ],
     "gecerliOy": [
      "toplam",
      "yuzde"
@@ -53455,13 +53497,16 @@
     ],
     "oy.SBP": [
      "toplam"
+    ],
+    "oy.SHP": [
+     "toplam"
     ]
    },
    "yuzde": {
     "DSP": 6.9,
     "DYP": 2.2,
     "RP": 0.2,
-    "SHP": 26.8
+    "YDP": 26.8
    }
   },
   {
@@ -53634,7 +53679,11 @@
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "sayfa": [
     538,
@@ -54976,12 +55025,19 @@
     "DYP": 1197,
     "MHP": 993,
     "RP": 602,
-    "SHP": 1569
+    "SHP": 1,
+    "YDP": 569
    },
-   "kazanan": "SHP",
+   "kazanan": "DYP",
    "kontrol": {
-    "durum": "yuzdelerTutarli",
-    "partiToplami": 5530
+    "durum": "tutarsiz",
+    "yuzdeUyumsuz": [
+     "SHP"
+    ],
+    "partiToplami": 4531,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     538,
@@ -55001,9 +55057,6 @@
      "yuzde"
     ],
     "oy.RP": [
-     "yuzde"
-    ],
-    "oy.SHP": [
      "yuzde"
     ],
     "gecerliOy": [
@@ -61955,12 +62008,19 @@
     "DYP": 1633,
     "MHP": 161,
     "RP": 249,
-    "SHP": 1126
+    "SHP": 1,
+    "YDP": 126
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "yuzdelerTutarli",
-    "partiToplami": 3261
+    "durum": "tutarsiz",
+    "yuzdeUyumsuz": [
+     "SHP"
+    ],
+    "partiToplami": 2262,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     550,
@@ -61983,9 +62043,6 @@
      "yuzde"
     ],
     "oy.RP": [
-     "yuzde"
-    ],
-    "oy.SHP": [
      "yuzde"
     ],
     "gecerliOy": [
@@ -88033,7 +88090,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 4219
+    "partiToplami": 4219,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     590,
@@ -90149,7 +90209,10 @@
    },
    "kazanan": "RP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP"
+    ]
    },
    "sayfa": [
     594,
@@ -94336,7 +94399,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 15546
+    "partiToplami": 15546,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     600,
@@ -99547,7 +99613,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 3342
+    "partiToplami": 3342,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     608,
@@ -102284,7 +102353,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 1977
+    "partiToplami": 1977,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     610,
@@ -102897,7 +102969,10 @@
     "yuzdeUyumsuz": [
      "CHP"
     ],
-    "partiToplami": 5239
+    "partiToplami": 5239,
+    "konumSupheli": [
+     "DP"
+    ]
    },
    "sayfa": [
     612,
@@ -103101,7 +103176,10 @@
     "yuzdeUyumsuz": [
      "BBP"
     ],
-    "partiToplami": 9419
+    "partiToplami": 9419,
+    "konumSupheli": [
+     "CHP"
+    ]
    },
    "sayfa": [
     612,
@@ -103248,6 +103326,9 @@
    "kontrol": {
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
+     "CHP"
+    ],
+    "konumSupheli": [
      "CHP"
     ]
    },
@@ -103485,7 +103566,10 @@
     "yuzdeUyumsuz": [
      "ANAP"
     ],
-    "partiToplami": 2078
+    "partiToplami": 2078,
+    "konumSupheli": [
+     "BBP"
+    ]
    },
    "sayfa": [
     612,
@@ -103558,7 +103642,11 @@
      "ANAP",
      "CHP"
     ],
-    "partiToplami": 7297
+    "partiToplami": 7297,
+    "konumSupheli": [
+     "BBP",
+     "DP"
+    ]
    },
    "sayfa": [
     612,
@@ -103783,7 +103871,11 @@
      "ANAP",
      "CHP"
     ],
-    "partiToplami": 36058
+    "partiToplami": 36058,
+    "konumSupheli": [
+     "BBP",
+     "DP"
+    ]
    },
    "sayfa": [
     612,
@@ -106473,7 +106565,10 @@
    },
    "kazanan": "RP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "İP"
+    ]
    },
    "sayfa": [
     616,
@@ -109818,6 +109913,9 @@
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
      "YDP"
+    ],
+    "konumSupheli": [
+     "YDP"
     ]
    },
    "sayfa": [
@@ -110414,7 +110512,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 11237
+    "partiToplami": 11237,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     620,
@@ -111707,7 +111808,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 15511
+    "partiToplami": 15511,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     620,
@@ -120114,7 +120218,10 @@
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "DP"
+    ]
    },
    "sayfa": [
     630,
@@ -120955,7 +121062,10 @@
    "kazanan": "ANAP",
    "kontrol": {
     "durum": "yuzdelerTutarli",
-    "partiToplami": 756
+    "partiToplami": 756,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     630,
@@ -121006,7 +121116,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 2613
+    "partiToplami": 2613,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     630,
@@ -133467,7 +133580,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 4510
+    "partiToplami": 4510,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     648,
@@ -134551,6 +134667,9 @@
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
      "YDP"
+    ],
+    "konumSupheli": [
+     "YDP"
     ]
    },
    "sayfa": [
@@ -134621,17 +134740,12 @@
    "oy": {
     "ANAP": 1122,
     "BBP": 649,
-    "DYP": 2,
-    "İP": 602,
+    "DYP": 2602,
     "RP": 1401
    },
-   "kazanan": "RP",
+   "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarsiz",
-    "yuzdeUyumsuz": [
-     "DYP"
-    ],
-    "partiToplami": 3776
+    "durum": "tutarli"
    },
    "sayfa": [
     648,
@@ -134651,15 +134765,23 @@
      "katilim"
     ],
     "oy.ANAP": [
-     "yuzde"
+     "yuzde",
+     "toplam"
     ],
     "oy.BBP": [
-     "yuzde"
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
     ],
     "oy.RP": [
-     "yuzde"
+     "yuzde",
+     "toplam"
     ],
     "gecerliOy": [
+     "toplam",
      "yuzde"
     ]
    },
@@ -146761,7 +146883,10 @@
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "DP"
+    ]
    },
    "sayfa": [
     664,
@@ -146825,7 +146950,11 @@
    },
    "kazanan": "SHP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "CHP",
+     "DP"
+    ]
    },
    "sayfa": [
     664,
@@ -149962,7 +150091,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 3373
+    "partiToplami": 3373,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     668,
@@ -150502,7 +150634,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 1780
+    "partiToplami": 1780,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     668,
@@ -154459,7 +154594,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 2476
+    "partiToplami": 2476,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "sayfa": [
     674,
@@ -155576,6 +155714,9 @@
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
      "YDP"
+    ],
+    "konumSupheli": [
+     "YDP"
     ]
    },
    "sayfa": [
@@ -155944,6 +156085,9 @@
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
      "RP"
+    ],
+    "konumSupheli": [
+     "SBP"
     ]
    },
    "sayfa": [
@@ -160101,7 +160245,12 @@
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP",
+     "SBP"
+    ]
    },
    "sayfa": [
     682,
@@ -160157,7 +160306,11 @@
    },
    "kazanan": "SHP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "sayfa": [
     682,

@@ -34,9 +34,10 @@
   "satir": 2802,
   "durum": {
    "gecerliOyOkunamadi": 41,
-   "tutarli": 2517,
-   "yuzdelerTutarli": 168,
-   "tutarsiz": 65,
+   "tutarli": 2501,
+   "yuzdelerTutarli": 166,
+   "konumSupheli": 17,
+   "tutarsiz": 66,
    "toplamTutarli": 11
   },
   "tip": {
@@ -10182,7 +10183,13 @@
     "DYP": 58.4
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "MHP",
+     "RP",
+     "SHP",
+     "SBP"
+    ]
    },
    "dogrulama": {
     "oy.DYP": [
@@ -10294,7 +10301,12 @@
     "SHP": 33.4
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "MHP",
+     "RP",
+     "SHP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -11063,7 +11075,11 @@
     "SHP": 53.9
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -11121,7 +11137,12 @@
     "RP": 4.4
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SBP",
+     "SHP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -11251,7 +11272,12 @@
     "SHP": 44.3
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "MHP",
+     "SHP",
+     "RP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -11309,7 +11335,11 @@
     "SHP": 47.9
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -11367,7 +11397,12 @@
     "RP": 4.1
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SBP",
+     "SHP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -11423,7 +11458,12 @@
     "DYP": 62.4
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP",
+     "SBP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -11464,7 +11504,7 @@
    "sandik": 6,
    "secmen": 1480,
    "oyKullanan": 1437,
-   "katilim": 97.1,
+   "katilim": null,
    "gecerliOy": 1306,
    "oy": {
     "ANAP": 320,
@@ -11472,24 +11512,17 @@
     "SHP": 569
    },
    "yuzde": {
-    "ANAP": 24.5,
     "DYP": 31.9,
     "SHP": 43.6
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "dogrulama": {
-    "secmen": [
-     "katilim"
-    ],
-    "oyKullanan": [
-     "katilim"
-    ],
-    "oy.ANAP": [
-     "yuzde",
-     "toplam"
-    ],
     "oy.DYP": [
      "yuzde",
      "toplam"
@@ -11501,6 +11534,9 @@
     "gecerliOy": [
      "toplam",
      "yuzde"
+    ],
+    "oy.ANAP": [
+     "toplam"
     ]
    },
    "sayfa": [
@@ -59499,12 +59535,16 @@
     "DSP": 6.9,
     "DYP": 2.2,
     "RP": 0.2,
-    "SHP": 26.8
+    "YDP": 26.8
    },
    "kontrol": {
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
-     "RP"
+     "RP",
+     "YDP"
+    ],
+    "konumSupheli": [
+     "YDP"
     ]
    },
    "dogrulama": {
@@ -59513,10 +59553,6 @@
      "toplam"
     ],
     "oy.DYP": [
-     "yuzde",
-     "toplam"
-    ],
-    "oy.SHP": [
      "yuzde",
      "toplam"
     ],
@@ -59531,6 +59567,9 @@
      "toplam"
     ],
     "oy.SBP": [
+     "toplam"
+    ],
+    "oy.SHP": [
      "toplam"
     ]
    },
@@ -59716,7 +59755,11 @@
     "SHP": 10.9
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -59799,7 +59842,9 @@
      "tutuyor": false,
      "farkliPartiler": [
       "DYP",
-      "RP"
+      "RP",
+      "SHP",
+      "YDP"
      ],
      "altSatir": 27,
      "hepsiTutarli": false
@@ -61104,7 +61149,8 @@
     "DYP": 1197,
     "MHP": 993,
     "RP": 602,
-    "SHP": 1569
+    "SHP": 1,
+    "YDP": 569
    },
    "yuzde": {
     "DYP": 21.0,
@@ -61113,8 +61159,14 @@
     "SHP": 27.5
    },
    "kontrol": {
-    "durum": "yuzdelerTutarli",
-    "partiToplami": 5530
+    "durum": "tutarsiz",
+    "yuzdeUyumsuz": [
+     "SHP"
+    ],
+    "partiToplami": 4531,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "oy.DYP": [
@@ -61126,9 +61178,6 @@
     "oy.RP": [
      "yuzde"
     ],
-    "oy.SHP": [
-     "yuzde"
-    ],
     "gecerliOy": [
      "yuzde"
     ]
@@ -61137,7 +61186,7 @@
     538,
     539
    ],
-   "kazanan": "SHP"
+   "kazanan": "DYP"
   },
   {
    "tip": null,
@@ -64327,7 +64376,10 @@
     "yuzdeUyumsuz": [
      "DYP"
     ],
-    "partiToplami": 1924
+    "partiToplami": 1924,
+    "konumSupheli": [
+     "İP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -64512,7 +64564,10 @@
     "yuzdeUyumsuz": [
      "DYP"
     ],
-    "partiToplami": 1158
+    "partiToplami": 1158,
+    "konumSupheli": [
+     "İP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -70157,7 +70212,9 @@
     "dikey": {
      "tutuyor": false,
      "farkliPartiler": [
-      "ANAP"
+      "ANAP",
+      "SHP",
+      "YDP"
      ],
      "altSatir": 22,
      "hepsiTutarli": false
@@ -71362,7 +71419,8 @@
     "DYP": 1633,
     "MHP": 161,
     "RP": 249,
-    "SHP": 1126
+    "SHP": 1,
+    "YDP": 126
    },
    "yuzde": {
     "DSP": 1.8,
@@ -71372,8 +71430,14 @@
     "SHP": 22.4
    },
    "kontrol": {
-    "durum": "yuzdelerTutarli",
-    "partiToplami": 3261
+    "durum": "tutarsiz",
+    "yuzdeUyumsuz": [
+     "SHP"
+    ],
+    "partiToplami": 2262,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "oy.DSP": [
@@ -71386,9 +71450,6 @@
      "yuzde"
     ],
     "oy.RP": [
-     "yuzde"
-    ],
-    "oy.SHP": [
      "yuzde"
     ],
     "gecerliOy": [
@@ -96500,7 +96561,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 14882
+    "partiToplami": 14882,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -99215,6 +99279,9 @@
      "RP"
     ],
     "partiToplami": 151962,
+    "konumSupheli": [
+     "SBP"
+    ],
     "dikey": {
      "tutuyor": false,
      "farkliPartiler": [
@@ -105407,7 +105474,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 4151
+    "partiToplami": 4151,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -105741,7 +105811,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 4472
+    "partiToplami": 4472,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -111921,7 +111994,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 4822
+    "partiToplami": 4822,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -112074,7 +112150,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 4219
+    "partiToplami": 4219,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -112684,7 +112763,10 @@
      "CHP",
      "DSP"
     ],
-    "partiToplami": 33411
+    "partiToplami": 33411,
+    "konumSupheli": [
+     "DP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -115585,7 +115667,10 @@
     "RP": 51.7
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -121488,7 +121573,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 1714
+    "partiToplami": 1714,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -121978,7 +122066,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 15546
+    "partiToplami": 15546,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -128508,7 +128599,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 3342
+    "partiToplami": 3342,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -131322,7 +131416,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 1977
+    "partiToplami": 1977,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -131919,7 +132016,10 @@
     "yuzdeUyumsuz": [
      "CHP"
     ],
-    "partiToplami": 5239
+    "partiToplami": 5239,
+    "konumSupheli": [
+     "DP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -132117,7 +132217,10 @@
     "yuzdeUyumsuz": [
      "BBP"
     ],
-    "partiToplami": 9419
+    "partiToplami": 9419,
+    "konumSupheli": [
+     "CHP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -132260,6 +132363,9 @@
    "kontrol": {
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
+     "CHP"
+    ],
+    "konumSupheli": [
      "CHP"
     ]
    },
@@ -132489,7 +132595,10 @@
     "yuzdeUyumsuz": [
      "ANAP"
     ],
-    "partiToplami": 2078
+    "partiToplami": 2078,
+    "konumSupheli": [
+     "BBP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -132563,7 +132672,11 @@
      "ANAP",
      "CHP"
     ],
-    "partiToplami": 7297
+    "partiToplami": 7297,
+    "konumSupheli": [
+     "BBP",
+     "DP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -132781,7 +132894,11 @@
      "ANAP",
      "CHP"
     ],
-    "partiToplami": 36058
+    "partiToplami": 36058,
+    "konumSupheli": [
+     "BBP",
+     "DP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -135486,7 +135603,10 @@
     "RP": 54.2
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "İP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -138731,6 +138851,9 @@
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
      "YDP"
+    ],
+    "konumSupheli": [
+     "YDP"
     ]
    },
    "dogrulama": {
@@ -139411,7 +139534,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 11237
+    "partiToplami": 11237,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -140773,7 +140899,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 15511
+    "partiToplami": 15511,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -149435,7 +149564,10 @@
     "SHP": 17.9
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "DP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -150248,7 +150380,10 @@
    },
    "kontrol": {
     "durum": "yuzdelerTutarli",
-    "partiToplami": 756
+    "partiToplami": 756,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -150300,7 +150435,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 2613
+    "partiToplami": 2613,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -164840,7 +164978,6 @@
      "farkliPartiler": [
       "DSP",
       "DYP",
-      "İP",
       "RP",
       "SHP",
       "YDP"
@@ -165316,7 +165453,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 4510
+    "partiToplami": 4510,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -166367,6 +166507,9 @@
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
      "YDP"
+    ],
+    "konumSupheli": [
+     "YDP"
     ]
    },
    "dogrulama": {
@@ -166428,8 +166571,7 @@
    "oy": {
     "ANAP": 1122,
     "BBP": 649,
-    "DYP": 2,
-    "İP": 602,
+    "DYP": 2602,
     "RP": 1401
    },
    "yuzde": {
@@ -166439,11 +166581,7 @@
     "RP": 24.3
    },
    "kontrol": {
-    "durum": "tutarsiz",
-    "yuzdeUyumsuz": [
-     "DYP"
-    ],
-    "partiToplami": 3776
+    "durum": "tutarli"
    },
    "dogrulama": {
     "secmen": [
@@ -166453,15 +166591,23 @@
      "katilim"
     ],
     "oy.ANAP": [
-     "yuzde"
+     "yuzde",
+     "toplam"
     ],
     "oy.BBP": [
-     "yuzde"
+     "yuzde",
+     "toplam"
+    ],
+    "oy.DYP": [
+     "yuzde",
+     "toplam"
     ],
     "oy.RP": [
-     "yuzde"
+     "yuzde",
+     "toplam"
     ],
     "gecerliOy": [
+     "toplam",
      "yuzde"
     ]
    },
@@ -166469,7 +166615,7 @@
     648,
     649
    ],
-   "kazanan": "RP"
+   "kazanan": "DYP"
   },
   {
    "tip": "belde",
@@ -178757,7 +178903,10 @@
     "SHP": 33.8
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "DP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -178817,7 +178966,11 @@
     "SHP": 91.4
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "CHP",
+     "DP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -182250,7 +182403,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 3373
+    "partiToplami": 3373,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -182771,7 +182927,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 1780
+    "partiToplami": 1780,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -187569,7 +187728,10 @@
     "yuzdeUyumsuz": [
      "SHP"
     ],
-    "partiToplami": 2476
+    "partiToplami": 2476,
+    "konumSupheli": [
+     "YDP"
+    ]
    },
    "dogrulama": {
     "oy.DYP": [
@@ -188655,6 +188817,9 @@
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
      "YDP"
+    ],
+    "konumSupheli": [
+     "YDP"
     ]
    },
    "dogrulama": {
@@ -189010,6 +189175,9 @@
     "durum": "toplamTutarli",
     "yuzdeUyumsuz": [
      "RP"
+    ],
+    "konumSupheli": [
+     "SBP"
     ]
    },
    "dogrulama": {
@@ -193450,7 +193618,12 @@
     "DYP": 63.6
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP",
+     "SBP"
+    ]
    },
    "dogrulama": {
     "secmen": [
@@ -193506,7 +193679,11 @@
     "SHP": 32.5
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "konumSupheli",
+    "konumSupheli": [
+     "RP",
+     "SHP"
+    ]
    },
    "dogrulama": {
     "secmen": [

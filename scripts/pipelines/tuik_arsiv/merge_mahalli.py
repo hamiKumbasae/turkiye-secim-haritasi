@@ -55,7 +55,7 @@ def kullanilir(d):
 ROOT = HERE.parent.parent.parent
 SRC = ROOT / "data" / "kaynaklar" / "tuik" / "yerel"
 EK = ROOT / "data" / "normalized" / "ek"
-SECIMLER = ["1984yerel", "1989yerel", "1994yerel", "2004yerel"]
+SECIMLER = ["1984yerel", "1989yerel", "1994yerel", "1999yerel", "2004yerel"]
 TABAN = ROOT / "data" / "kaynaklar" / "taban"  # DIE birlestirmesi oncesi (git 1e1e8e8)
 ETIKET = {"1989yerel": {"MHP": "MÇP"}}  # Wikipedia etiketi -> DIE partisi
 # ayni yerin sonraki il kodu: modern ilce poligonu ararken eski il -> yeni il

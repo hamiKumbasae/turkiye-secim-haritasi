@@ -5,10 +5,11 @@
    "satir": 2804,
    "durum": {
     "gecerliOyOkunamadi": 32,
-    "tutarsiz": 176,
-    "tutarli": 2430,
-    "yuzdelerTutarli": 139,
-    "toplamTutarli": 27
+    "tutarsiz": 32,
+    "tutarli": 2588,
+    "yuzdelerTutarli": 144,
+    "konumSupheli": 6,
+    "toplamTutarli": 2
    },
    "tip": {
     "None": 777,
@@ -19,39 +20,44 @@
    },
    "kimlikCozulen": 2024,
    "dikey": {
-    "fark": 64,
-    "tutuyor": 10,
-    "hepsiTutarli_tutuyor": 4
+    "tutuyor": 29,
+    "hepsiTutarli_tutuyor": 16,
+    "fark": 45
    },
    "eslesmeyenSayfa": []
   },
   "yskGroundTruth": {
    "tutarli": {
-    "satir": 1587,
-    "birebir": 1587,
-    "alan_esit": 19822,
+    "satir": 1668,
+    "birebir": 1668,
+    "alan_esit": 20854,
     "alan_farkli": 0
    },
    "yuzdelerTutarli": {
-    "satir": 105,
-    "birebir": 103,
-    "alan_esit": 863,
-    "alan_farkli": 3,
-    "farkli": 2
+    "satir": 111,
+    "birebir": 110,
+    "alan_esit": 917,
+    "alan_farkli": 1,
+    "farkli": 1
+   },
+   "konumSupheli": {
+    "satir": 4,
+    "birebir": 4,
+    "alan_esit": 48,
+    "alan_farkli": 0
    },
    "tutarsiz": {
-    "satir": 96,
-    "farkli": 94,
-    "alan_esit": 1074,
-    "alan_farkli": 192,
-    "birebir": 2
+    "satir": 16,
+    "farkli": 15,
+    "alan_esit": 202,
+    "alan_farkli": 18,
+    "birebir": 1
    },
    "toplamTutarli": {
-    "satir": 12,
-    "farkli": 2,
-    "alan_esit": 137,
-    "alan_farkli": 5,
-    "birebir": 10
+    "satir": 1,
+    "birebir": 1,
+    "alan_esit": 9,
+    "alan_farkli": 0
    }
   }
  },
@@ -59,10 +65,11 @@
   "ozet": {
    "satir": 2989,
    "durum": {
-    "tutarsiz": 85,
-    "tutarli": 2816,
+    "tutarsiz": 26,
+    "tutarli": 2872,
     "toplamTutarli": 3,
     "gecerliOyOkunamadi": 55,
+    "konumSupheli": 3,
     "yuzdelerTutarli": 30
    },
    "tip": {
@@ -74,10 +81,10 @@
    },
    "kimlikCozulen": 1329,
    "dikey": {
-    "fark": 34,
+    "fark": 21,
     "hepsiTutarli_fark": 3,
-    "tutuyor": 40,
-    "hepsiTutarli_tutuyor": 28
+    "tutuyor": 53,
+    "hepsiTutarli_tutuyor": 34
    },
    "eslesmeyenSayfa": []
   }
@@ -108,9 +115,10 @@
    "satir": 2802,
    "durum": {
     "gecerliOyOkunamadi": 41,
-    "tutarli": 2517,
-    "yuzdelerTutarli": 168,
-    "tutarsiz": 65,
+    "tutarli": 2501,
+    "yuzdelerTutarli": 166,
+    "konumSupheli": 17,
+    "tutarsiz": 66,
     "toplamTutarli": 11
    },
    "tip": {

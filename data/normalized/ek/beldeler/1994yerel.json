@@ -5141,7 +5141,10 @@
     "sayfa": "Aksaray'da 1994 Türkiye yerel seçimleri",
     "revid": 34131386,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 8,
@@ -5151,13 +5154,12 @@
     "gecerliOy": 1796,
     "oy": {
      "ANAP": 24,
-     "DYP": 1,
-     "İP": 109,
+     "DYP": 1109,
      "RP": 23,
      "SHP": 640
     },
-    "kazanan": "SHP",
-    "kontrol": "tutarsiz",
+    "kazanan": "DYP",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      462,
@@ -7317,7 +7319,10 @@
     "sayfa": "Antalya'da 1994 Türkiye yerel seçimleri",
     "revid": 37768756,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 11,
@@ -7328,13 +7333,12 @@
     "oy": {
      "ANAP": 1152,
      "CHP": 411,
-     "DYP": 1,
-     "İP": 189,
+     "DYP": 1189,
      "MHP": 140,
      "RP": 68
     },
-    "kazanan": "ANAP",
-    "kontrol": "tutarsiz",
+    "kazanan": "DYP",
+    "kontrol": "tutarli",
     "adKaynakta": "Oba",
     "sayfa": [
      282,
@@ -7817,7 +7821,10 @@
     "sayfa": "Antalya'da 1994 Türkiye yerel seçimleri",
     "revid": 37768756,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 8,
@@ -7828,11 +7835,10 @@
     "oy": {
      "DYP": 728,
      "İP": 8,
-     "SHP": 1,
-     "YDP": 80
+     "SHP": 1080
     },
-    "kazanan": "DYP",
-    "kontrol": "tutarsiz",
+    "kazanan": "SHP",
+    "kontrol": "tutarli",
     "adKaynakta": "Yelten",
     "sayfa": [
      284,
@@ -10466,7 +10472,10 @@
     "sayfa": "Balıkesir'de 1994 Türkiye yerel seçimleri",
     "revid": 37768754,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 14,
@@ -10481,11 +10490,11 @@
      "İP": 5,
      "MHP": 86,
      "RP": 111,
-     "SHP": 1,
-     "YDP": 4019
+     "SHP": 1040,
+     "YDP": 19
     },
-    "kazanan": "YDP",
-    "kontrol": "tutarsiz",
+    "kazanan": "DP",
+    "kontrol": "tutarli",
     "adKaynakta": "Sarıköy",
     "sayfa": [
      294,
@@ -12042,7 +12051,10 @@
     "sayfa": "Bitlis'te 1994 Türkiye yerel seçimleri",
     "revid": 37768751,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 6,
@@ -12059,7 +12071,7 @@
      "SHP": 13
     },
     "kazanan": "RP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      298,
@@ -15171,7 +15183,10 @@
     "sayfa": "Denizli'de 1994 Türkiye yerel seçimleri",
     "revid": 37768744,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 6,
@@ -15190,7 +15205,7 @@
      "Bağımsız": 356
     },
     "kazanan": "DYP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      318,
@@ -19582,7 +19597,10 @@
     "sayfa": "Giresun'da 1994 Türkiye yerel seçimleri",
     "revid": 37768739,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 2,
@@ -19598,7 +19616,7 @@
      "SHP": 10
     },
     "kazanan": "ANAP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      340,
@@ -20777,7 +20795,10 @@
     "sayfa": "Hatay'da 1994 Türkiye yerel seçimleri",
     "revid": 37768738,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 16,
@@ -20789,13 +20810,12 @@
      "ANAP": 217,
      "DP": 190,
      "DSP": 75,
-     "DYP": 1,
-     "İP": 197,
+     "DYP": 1197,
      "RP": 684,
      "SHP": 1873
     },
     "kazanan": "SHP",
-    "kontrol": "tutarsiz",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      344,
@@ -21509,10 +21529,7 @@
     "sayfa": "Hatay'da 1994 Türkiye yerel seçimleri",
     "revid": 37768738,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
-    "teyit": [
-     "tuik"
-    ]
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
    },
    "tuik": {
     "sandik": 7,
@@ -21526,7 +21543,7 @@
      "SHP": 899
     },
     "kazanan": "SHP",
-    "kontrol": "tutarli",
+    "kontrol": "konumSupheli",
     "adKaynakta": "Kuşalanı",
     "sayfa": [
      344,
@@ -25172,7 +25189,10 @@
     "sayfa": "Kahramanmaraş'ta 1994 Türkiye yerel seçimleri",
     "revid": 35334300,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 11,
@@ -25181,14 +25201,13 @@
     "katilim": 93.4,
     "gecerliOy": 2869,
     "oy": {
-     "DYP": 1,
-     "İP": 262,
+     "DYP": 1262,
      "MHP": 15,
      "RP": 21,
      "SHP": 1571
     },
     "kazanan": "SHP",
-    "kontrol": "tutarsiz",
+    "kontrol": "tutarli",
     "adKaynakta": "Narlı",
     "sayfa": [
      406,
@@ -25560,7 +25579,10 @@
     "sayfa": "Karaman'da 1994 Türkiye yerel seçimleri",
     "revid": 37768730,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 6,
@@ -25575,7 +25597,7 @@
      "SHP": 744
     },
     "kazanan": "SHP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": "YeşiIdere",
     "sayfa": [
      464,
@@ -26367,7 +26389,7 @@
      "DYP": 97,
      "MHP": 10,
      "RP": 200,
-     "YDP": 7
+     "SHP": 7
     },
     "kazanan": "RP",
     "kontrol": "tutarli",
@@ -31805,7 +31827,10 @@
     "sayfa": "Kırıkkale'de 1994 Türkiye yerel seçimleri",
     "revid": 32343611,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 11,
@@ -31815,14 +31840,13 @@
     "gecerliOy": 2625,
     "oy": {
      "ANAP": 150,
-     "DYP": 1,
-     "İP": 34,
+     "DYP": 1034,
      "MHP": 216,
      "SHP": 418,
      "Bağımsız": 807
     },
-    "kazanan": "Bağımsız",
-    "kontrol": "tutarsiz",
+    "kazanan": "DYP",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      466,
@@ -36496,7 +36520,10 @@
     "sayfa": "Manisa'da 1994 Türkiye yerel seçimleri",
     "revid": 37768721,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 14,
@@ -36505,10 +36532,15 @@
     "katilim": 96.1,
     "gecerliOy": 3639,
     "oy": {
-     "ANAP": 818
+     "ANAP": 818,
+     "DYP": 1206,
+     "İP": 4,
+     "MHP": 27,
+     "RP": 181,
+     "SHP": 1403
     },
-    "kazanan": "ANAP",
-    "kontrol": "yuzdelerTutarli",
+    "kazanan": "SHP",
+    "kontrol": "tutarli",
     "adKaynakta": "Urgan11",
     "sayfa": [
      402,
@@ -36685,10 +36717,7 @@
     "sayfa": "Mardin'de 1994 Türkiye yerel seçimleri",
     "revid": 37768720,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
-    "teyit": [
-     "tuik"
-    ]
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
    },
    "tuik": {
     "sandik": 5,
@@ -36702,7 +36731,7 @@
      "RP": 7
     },
     "kazanan": "ANAP",
-    "kontrol": "tutarli",
+    "kontrol": "konumSupheli",
     "adKaynakta": "Dikmend)",
     "sayfa": [
      408,
@@ -38727,7 +38756,10 @@
     "sayfa": "Muş'ta 1994 Türkiye yerel seçimleri",
     "revid": 37768718,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 3,
@@ -38742,7 +38774,7 @@
      "SHP": 10
     },
     "kazanan": "DYP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      412,
@@ -40807,10 +40839,10 @@
     "oy": {
      "DYP": 709,
      "RP": 567,
-     "YDP": 14
+     "SHP": 14
     },
     "kazanan": "DYP",
-    "kontrol": "tutarsiz",
+    "kontrol": "yuzdelerTutarli",
     "adKaynakta": null,
     "sayfa": [
      418,
@@ -41455,11 +41487,10 @@
     "gecerliOy": 1764,
     "oy": {
      "RP": 22,
-     "SHP": 1,
-     "YDP": 169
+     "SHP": 1169
     },
-    "kazanan": "YDP",
-    "kontrol": "tutarsiz",
+    "kazanan": "SHP",
+    "kontrol": "yuzdelerTutarli",
     "adKaynakta": null,
     "sayfa": [
      418,
@@ -41481,7 +41512,10 @@
     "sayfa": "Niğde'de 1994 Türkiye yerel seçimleri",
     "revid": 32344113,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 19,
@@ -41492,12 +41526,11 @@
     "oy": {
      "MHP": 665,
      "RP": 61,
-     "SHP": 1,
-     "YDP": 816,
+     "SHP": 1816,
      "Bağımsız": 1151
     },
-    "kazanan": "Bağımsız",
-    "kontrol": "tutarsiz",
+    "kazanan": "SHP",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      418,
@@ -41640,7 +41673,10 @@
     "sayfa": "Niğde'de 1994 Türkiye yerel seçimleri",
     "revid": 32344113,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 4,
@@ -41656,7 +41692,7 @@
      "SHP": 8
     },
     "kazanan": "RP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": "Bekarlar",
     "sayfa": [
      420,
@@ -42163,7 +42199,10 @@
     "sayfa": "Ordu'da 1994 Türkiye yerel seçimleri",
     "revid": 37768716,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 4,
@@ -42178,7 +42217,7 @@
      "SHP": 38
     },
     "kazanan": "DYP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      420,
@@ -44200,7 +44239,10 @@
     "sayfa": "Sakarya'da 1994 Türkiye yerel seçimleri",
     "revid": 33096642,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 64,
@@ -44214,15 +44256,14 @@
      "CHP": 169,
      "DP": 64,
      "DSP": 439,
-     "DYP": 3,
-     "İP": 26615,
+     "DYP": 3266,
+     "İP": 15,
      "MHP": 241,
      "RP": 6064,
-     "SHP": 1,
-     "YDP": 300
+     "SHP": 1300
     },
-    "kazanan": "İP",
-    "kontrol": "tutarsiz",
+    "kazanan": "RP",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      428,
@@ -45952,7 +45993,10 @@
     "sayfa": "Sivas'ta 1994 Türkiye yerel seçimleri",
     "revid": 37768714,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 10,
@@ -45963,11 +46007,10 @@
     "oy": {
      "ANAP": 1412,
      "RP": 120,
-     "SHP": 1,
-     "YDP": 63
+     "SHP": 1063
     },
     "kazanan": "ANAP",
-    "kontrol": "tutarsiz",
+    "kontrol": "tutarli",
     "adKaynakta": "Sızır",
     "sayfa": [
      436,
@@ -46112,7 +46155,10 @@
     "sayfa": "Sivas'ta 1994 Türkiye yerel seçimleri",
     "revid": 37768714,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 6,
@@ -46122,12 +46168,12 @@
     "gecerliOy": 1056,
     "oy": {
      "ANAP": 447,
-     "İP": 177,
+     "DYP": 177,
      "RP": 41,
      "SHP": 391
     },
     "kazanan": "ANAP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": null,
     "sayfa": [
      438,
@@ -48195,7 +48241,10 @@
     "sayfa": "Tokat'ta 1994 Türkiye yerel seçimleri",
     "revid": 37285353,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 10,
@@ -48205,13 +48254,12 @@
     "gecerliOy": 2570,
     "oy": {
      "ANAP": 1026,
-     "DYP": 1,
-     "İP": 124,
+     "DYP": 1124,
      "MHP": 54,
      "RP": 366
     },
-    "kazanan": "ANAP",
-    "kontrol": "tutarsiz",
+    "kazanan": "DYP",
+    "kontrol": "tutarli",
     "adKaynakta": "Üzümören..,",
     "sayfa": [
      442,
@@ -51901,7 +51949,10 @@
     "sayfa": "Yozgat'ta 1994 Türkiye yerel seçimleri",
     "revid": 37768706,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1994yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
    },
    "tuik": {
     "sandik": 4,
@@ -51917,7 +51968,7 @@
      "SHP": 10
     },
     "kazanan": "DYP",
-    "kontrol": "toplamTutarli",
+    "kontrol": "tutarli",
     "adKaynakta": "Çokradan",
     "sayfa": [
      456,
@@ -59035,6 +59086,39 @@
     "sayfa": [
      422,
      423
+    ]
+   },
+   "kaynak": {
+    "ana": "tuik",
+    "adKaynak": "ysk (sandık+seçmen kimliği)",
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1994yerel/belediye_baskanligi.json"
+   }
+  },
+  {
+   "belde": "Hamidiye",
+   "ilce": "Merkez",
+   "plaka": 53,
+   "kazanan": "SHP",
+   "oy": 1479,
+   "tuik": {
+    "sandik": 11,
+    "secmen": 3104,
+    "oyKullanan": 2742,
+    "katilim": 88.3,
+    "gecerliOy": 2650,
+    "oy": {
+     "ANAP": 927,
+     "İP": 8,
+     "MHP": 11,
+     "RP": 225,
+     "SHP": 1479
+    },
+    "kazanan": "SHP",
+    "kontrol": "tutarli",
+    "adKaynakta": "Hamidiye",
+    "sayfa": [
+     424,
+     425
     ]
    },
    "kaynak": {

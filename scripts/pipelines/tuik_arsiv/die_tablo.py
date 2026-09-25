@@ -76,12 +76,15 @@ def _deger(parcalar):
 
 
 def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bosluk=12.0, hazir_kenarlar=None,
-                  etiketsiz=False, kelime_duzelt=None, etiket_zorunlu=True, kenar_zorla=False):
+                  etiketsiz=False, kelime_duzelt=None, etiket_zorunlu=True, kenar_zorla=False, konum_don=False, ofset_ara=True):
     """Sayfadaki veri satirlari: [(etiket, degerler)] ; len(degerler) == sutun_sayisi.
     Sutun sag kenarlari once 'temiz' satirlardan (buyuk bosluklarla tam
     sutun_sayisi gruba bolunenler) medyanla bulunur; sonra her parca, sag kenari
     parcanin sagindan buyuk olan ILK sutuna atanir (kalin punto satirlarinda
     sutunlar arasi bosluk daralsa da sinir asilmaz).
+
+    konum_don=True: her satira 5. oge olarak sutun basina (atanan parcanin sag
+    kenari - sutun kenari) uzakliklari eklenir (sutun kaymasi supheleri icin).
 
     kenar_zorla=True: sayfadan kenar cikarma; hazir_kenarlar (kitap sablonu)
     yalnizca yatay ofsetle sayfaya oturtulur.
@@ -151,7 +154,7 @@ def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bos
         x1ler = [g[-1][2] for _, tok, _y in satirlar for g in _gruplar(tok, 9.0)]
         def maliyet(d):
             return sum(min(abs(x - (e + d)) for e in hazir_kenarlar) for x in x1ler)
-        d = min((x / 2 for x in range(-50, 51)), key=maliyet)
+        d = min((x / 2 for x in range(-50, 51)), key=maliyet) if ofset_ara else 0
         kenarlar = [e + d for e in hazir_kenarlar]
     else:
         kenarlar = [sorted(k)[len(k) // 2] for k in kenar]
@@ -161,7 +164,10 @@ def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bos
         for t in tok:
             i = next((k for k, e in enumerate(kenarlar) if t[2] <= e + 4), sutun_sayisi - 1)
             parca[i].append(t)
-        out.append((etiket, [_deger(p) if p else None for p in parca], y, ["—" if t[3] == "tire" else t[0] for t in tok]))
+        satir = (etiket, [_deger(p) if p else None for p in parca], y, ["—" if t[3] == "tire" else t[0] for t in tok])
+        if konum_don:
+            satir += ([round(p[-1][2] - kenarlar[i], 1) if p else None for i, p in enumerate(parca)],)
+        out.append(satir)
     return out, kenarlar
 
 
