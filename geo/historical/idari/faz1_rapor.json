@@ -1,0 +1,824 @@
+{
+ "ozet": {
+  "guncelIlce": 973,
+  "icisleriEslesen": 973,
+  "icisleriEslesmeyen": [],
+  "lineageStatus": {
+   "unresolved": 435,
+   "1950_oncesi_mevcut": 436,
+   "repo_dogrulanmis": 78,
+   "merkez_ilce": 24
+  },
+  "kurulduAmaSecimeAyriGirmedi": 108,
+  "merkezIlceDonusumu": 11,
+  "olay": {
+   "existing_before_1923": 367,
+   "created": 652,
+   "renamed": 15,
+   "center_district_restructured": 11,
+   "province_changed": 51,
+   "abolished": 1,
+   "reestablished": 1
+  },
+  "adDegisikligi": 15,
+  "kaynakSonrakiIlcelereGoreToplamis": 22,
+  "kurulustanOnceSecimdeGorunuyor": 1,
+  "ilDegisikligi": 51,
+  "secimVerisindenKayboldu": 1,
+  "ilSayisiUyumsuz": 1,
+  "ilSinirDosyasiYok": 2
+ },
+ "adDegisikligi": [
+  {
+   "geomId": "TR-D-06-015",
+   "adlar": [
+    "Kazan",
+    "Kahramankazan"
+   ]
+  },
+  {
+   "geomId": "TR-D-09-005",
+   "adlar": [
+    "Merkez",
+    "Efeler"
+   ]
+  },
+  {
+   "geomId": "TR-D-20-015",
+   "adlar": [
+    "Merkez",
+    "Merkezefendi"
+   ]
+  },
+  {
+   "geomId": "TR-D-20-016",
+   "adlar": [
+    "Akköy",
+    "Pamukkale"
+   ]
+  },
+  {
+   "geomId": "TR-D-25-002",
+   "adlar": [
+    "Ilıca",
+    "Aziziye"
+   ]
+  },
+  {
+   "geomId": "TR-D-31-002",
+   "adlar": [
+    "Merkez",
+    "Antakya"
+   ]
+  },
+  {
+   "geomId": "TR-D-34-019",
+   "adlar": [
+    "Eyüp",
+    "Eyüpsultan"
+   ]
+  },
+  {
+   "geomId": "TR-D-41-008",
+   "adlar": [
+    "Merkez",
+    "İzmit"
+   ]
+  },
+  {
+   "geomId": "TR-D-44-004",
+   "adlar": [
+    "Merkez",
+    "Battalgazi"
+   ]
+  },
+  {
+   "geomId": "TR-D-47-001",
+   "adlar": [
+    "Merkez",
+    "Artüklü"
+   ]
+  },
+  {
+   "geomId": "TR-D-48-008",
+   "adlar": [
+    "Merkez",
+    "Menteşe"
+   ]
+  },
+  {
+   "geomId": "TR-D-52-002",
+   "adlar": [
+    "Merkez",
+    "Altınordu"
+   ]
+  },
+  {
+   "geomId": "TR-D-54-001",
+   "adlar": [
+    "Merkez",
+    "Adapazarı"
+   ]
+  },
+  {
+   "geomId": "TR-D-59-010",
+   "adlar": [
+    "Merkez",
+    "Süleymanpaşa"
+   ]
+  },
+  {
+   "geomId": "TR-D-61-013",
+   "adlar": [
+    "Merkez",
+    "Ortahisar"
+   ]
+  }
+ ],
+ "kaynakSonrakiIlcelereGoreToplamis": [
+  {
+   "geomId": "TR-D-08-006",
+   "ad": "KEMALPAŞA",
+   "kurulus": "2017-08-25",
+   "secimler": [
+    "2010referandum",
+    "2011",
+    "2014cb",
+    "2015Haziran",
+    "2015Kasim",
+    "2017referandum"
+   ]
+  },
+  {
+   "geomId": "TR-D-10-001",
+   "ad": "ALTIEYLÜL",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-10-014",
+   "ad": "KARESİ",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-30-005",
+   "ad": "DERECİK",
+   "kurulus": "2018-10-25",
+   "secimler": [
+    "2010referandum",
+    "2011",
+    "2014cb",
+    "2015Haziran",
+    "2015Kasim",
+    "2017referandum",
+    "2018",
+    "2018cb"
+   ]
+  },
+  {
+   "geomId": "TR-D-31-003",
+   "ad": "ARSUZ",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-31-005",
+   "ad": "DEFNE",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-31-012",
+   "ad": "PAYAS",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-45-015",
+   "ad": "ŞEHZADELER",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-45-017",
+   "ad": "YUNUSEMRE",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-46-004",
+   "ad": "DULKADİROĞLU",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-46-009",
+   "ad": "ONİKİŞUBAT",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-48-011",
+   "ad": "SEYDİKEMER",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-59-003",
+   "ad": "ERGENE",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-59-005",
+   "ad": "KAPAKLI",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-63-005",
+   "ad": "EYYÜBİYE",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-63-007",
+   "ad": "HALİLİYE",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-63-010",
+   "ad": "KARAKÖPRÜ",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-65-009",
+   "ad": "İPEKYOLU",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-65-013",
+   "ad": "TUŞBA",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-67-006",
+   "ad": "KİLİMLİ",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-67-007",
+   "ad": "KOZLU",
+   "kurulus": "2012-12-06",
+   "secimler": [
+    "2010referandum",
+    "2011"
+   ]
+  },
+  {
+   "geomId": "TR-D-68-008",
+   "ad": "SULTANHANI",
+   "kurulus": "2017-08-25",
+   "secimler": [
+    "2010referandum",
+    "2011",
+    "2014cb",
+    "2015Haziran",
+    "2015Kasim",
+    "2017referandum"
+   ]
+  }
+ ],
+ "kurulustanOnceSecimdeGorunuyor": [
+  {
+   "geomId": "TR-D-37-005",
+   "ad": "BOZKURT",
+   "kurulus": "1968-07-17",
+   "secimler": [
+    "1961referandum",
+    "1961",
+    "1965"
+   ],
+   "secimdekiAdlar": [
+    "Bozkurt"
+   ]
+  }
+ ],
+ "ilDegisikligi": [
+  {
+   "geomId": "TR-D-54-010",
+   "ad": "KAYNARCA",
+   "iller": [
+    41,
+    54
+   ]
+  },
+  {
+   "geomId": "TR-D-68-002",
+   "ad": "AKSARAY MERKEZ",
+   "iller": [
+    51,
+    68
+   ]
+  },
+  {
+   "geomId": "TR-D-68-006",
+   "ad": "ORTAKÖY",
+   "iller": [
+    51,
+    68
+   ]
+  },
+  {
+   "geomId": "TR-D-69-002",
+   "ad": "BAYBURT MERKEZ",
+   "iller": [
+    29,
+    69
+   ]
+  },
+  {
+   "geomId": "TR-D-70-003",
+   "ad": "ERMENEK",
+   "iller": [
+    42,
+    70
+   ]
+  },
+  {
+   "geomId": "TR-D-70-004",
+   "ad": "KARAMAN MERKEZ",
+   "iller": [
+    42,
+    70
+   ]
+  },
+  {
+   "geomId": "TR-D-71-004",
+   "ad": "DELİCE",
+   "iller": [
+    6,
+    71
+   ]
+  },
+  {
+   "geomId": "TR-D-71-006",
+   "ad": "KESKİN",
+   "iller": [
+    6,
+    71
+   ]
+  },
+  {
+   "geomId": "TR-D-71-007",
+   "ad": "KIRIKKALE MERKEZ",
+   "iller": [
+    6,
+    71
+   ]
+  },
+  {
+   "geomId": "TR-D-71-008",
+   "ad": "SULAKYURT",
+   "iller": [
+    6,
+    71
+   ]
+  },
+  {
+   "geomId": "TR-D-72-001",
+   "ad": "BATMAN MERKEZ",
+   "iller": [
+    56,
+    72
+   ]
+  },
+  {
+   "geomId": "TR-D-72-002",
+   "ad": "BEŞİRİ",
+   "iller": [
+    56,
+    72
+   ]
+  },
+  {
+   "geomId": "TR-D-72-003",
+   "ad": "GERCÜŞ",
+   "iller": [
+    47,
+    72
+   ]
+  },
+  {
+   "geomId": "TR-D-72-005",
+   "ad": "KOZLUK",
+   "iller": [
+    56,
+    72
+   ]
+  },
+  {
+   "geomId": "TR-D-72-006",
+   "ad": "SASON",
+   "iller": [
+    56,
+    72
+   ]
+  },
+  {
+   "geomId": "TR-D-73-001",
+   "ad": "BEYTÜŞŞEBAP",
+   "iller": [
+    30,
+    73
+   ]
+  },
+  {
+   "geomId": "TR-D-73-002",
+   "ad": "CİZRE",
+   "iller": [
+    47,
+    73
+   ]
+  },
+  {
+   "geomId": "TR-D-73-004",
+   "ad": "İDİL",
+   "iller": [
+    47,
+    73
+   ]
+  },
+  {
+   "geomId": "TR-D-73-005",
+   "ad": "SİLOPİ",
+   "iller": [
+    47,
+    73
+   ]
+  },
+  {
+   "geomId": "TR-D-73-006",
+   "ad": "ŞIRNAK MERKEZ",
+   "iller": [
+    56,
+    73
+   ]
+  },
+  {
+   "geomId": "TR-D-73-007",
+   "ad": "ULUDERE",
+   "iller": [
+    30,
+    73
+   ]
+  },
+  {
+   "geomId": "TR-D-74-002",
+   "ad": "BARTIN MERKEZ",
+   "iller": [
+    67,
+    74
+   ]
+  },
+  {
+   "geomId": "TR-D-74-003",
+   "ad": "KURUCAŞİLE",
+   "iller": [
+    67,
+    74
+   ]
+  },
+  {
+   "geomId": "TR-D-74-004",
+   "ad": "ULUS",
+   "iller": [
+    67,
+    74
+   ]
+  },
+  {
+   "geomId": "TR-D-75-001",
+   "ad": "ARDAHAN MERKEZ",
+   "iller": [
+    36,
+    75
+   ]
+  },
+  {
+   "geomId": "TR-D-75-002",
+   "ad": "ÇILDIR",
+   "iller": [
+    36,
+    75
+   ]
+  },
+  {
+   "geomId": "TR-D-75-004",
+   "ad": "GÖLE",
+   "iller": [
+    36,
+    75
+   ]
+  },
+  {
+   "geomId": "TR-D-75-005",
+   "ad": "HANAK",
+   "iller": [
+    36,
+    75
+   ]
+  },
+  {
+   "geomId": "TR-D-75-006",
+   "ad": "POSOF",
+   "iller": [
+    36,
+    75
+   ]
+  },
+  {
+   "geomId": "TR-D-76-001",
+   "ad": "ARALIK",
+   "iller": [
+    36,
+    76
+   ]
+  },
+  {
+   "geomId": "TR-D-76-002",
+   "ad": "IĞDIR MERKEZ",
+   "iller": [
+    36,
+    76
+   ]
+  },
+  {
+   "geomId": "TR-D-76-004",
+   "ad": "TUZLUCA",
+   "iller": [
+    36,
+    76
+   ]
+  },
+  {
+   "geomId": "TR-D-77-006",
+   "ad": "YALOVA MERKEZ",
+   "iller": [
+    34,
+    77
+   ]
+  },
+  {
+   "geomId": "TR-D-78-001",
+   "ad": "EFLANİ",
+   "iller": [
+    67,
+    78
+   ]
+  },
+  {
+   "geomId": "TR-D-78-002",
+   "ad": "ESKİPAZAR",
+   "iller": [
+    18,
+    78
+   ]
+  },
+  {
+   "geomId": "TR-D-78-003",
+   "ad": "KARABÜK MERKEZ",
+   "iller": [
+    67,
+    78
+   ]
+  },
+  {
+   "geomId": "TR-D-78-004",
+   "ad": "OVACIK",
+   "iller": [
+    18,
+    78
+   ]
+  },
+  {
+   "geomId": "TR-D-78-005",
+   "ad": "SAFRANBOLU",
+   "iller": [
+    67,
+    78
+   ]
+  },
+  {
+   "geomId": "TR-D-78-006",
+   "ad": "YENİCE",
+   "iller": [
+    67,
+    78
+   ]
+  },
+  {
+   "geomId": "TR-D-79-002",
+   "ad": "KİLİS MERKEZ",
+   "iller": [
+    27,
+    79
+   ]
+  },
+  {
+   "geomId": "TR-D-80-001",
+   "ad": "BAHÇE",
+   "iller": [
+    1,
+    80
+   ]
+  },
+  {
+   "geomId": "TR-D-80-002",
+   "ad": "DÜZİÇİ",
+   "iller": [
+    1,
+    80
+   ]
+  },
+  {
+   "geomId": "TR-D-80-004",
+   "ad": "KADİRLİ",
+   "iller": [
+    1,
+    80
+   ]
+  },
+  {
+   "geomId": "TR-D-80-005",
+   "ad": "OSMANİYE MERKEZ",
+   "iller": [
+    1,
+    80
+   ]
+  },
+  {
+   "geomId": "TR-D-81-001",
+   "ad": "AKÇAKOCA",
+   "iller": [
+    14,
+    81
+   ]
+  },
+  {
+   "geomId": "TR-D-81-002",
+   "ad": "CUMAYERİ",
+   "iller": [
+    14,
+    81
+   ]
+  },
+  {
+   "geomId": "TR-D-81-003",
+   "ad": "ÇİLİMLİ",
+   "iller": [
+    14,
+    81
+   ]
+  },
+  {
+   "geomId": "TR-D-81-004",
+   "ad": "DÜZCE MERKEZ",
+   "iller": [
+    14,
+    81
+   ]
+  },
+  {
+   "geomId": "TR-D-81-005",
+   "ad": "GÖLYAKA",
+   "iller": [
+    14,
+    81
+   ]
+  },
+  {
+   "geomId": "TR-D-81-006",
+   "ad": "GÜMÜŞOVA",
+   "iller": [
+    14,
+    81
+   ]
+  },
+  {
+   "geomId": "TR-D-81-008",
+   "ad": "YIĞILCA",
+   "iller": [
+    14,
+    81
+   ]
+  }
+ ],
+ "secimVerisindenKayboldu": [
+  {
+   "geomId": "TR-D-56-007",
+   "ad": "TİLLO",
+   "sonGorulen": "2007",
+   "gorulmedigiSecimler": [
+    "2007referandum",
+    "2010referandum",
+    "2011",
+    "2014cb",
+    "2015Haziran",
+    "2015Kasim",
+    "2017referandum",
+    "2018",
+    "2018cb",
+    "2023",
+    "2023cb1tur",
+    "2023cb2tur"
+   ],
+   "not": "İlçe bugün de mevcut (İçişleri 2018); sonraki seçim verisinde satırı yok — veri boşluğu."
+  }
+ ],
+ "ilSayisiUyumsuz": [
+  {
+   "secim": "1955yerel",
+   "hesaplanan": 66,
+   "veride": 64,
+   "plakalar": [
+    2,
+    40,
+    50,
+    54
+   ]
+  }
+ ],
+ "ilSinirDosyasiYok": [
+  {
+   "secim": "1955yerel",
+   "tarih": "1955-11-13",
+   "ilSayisi": 66
+  },
+  {
+   "secim": "1994yerel",
+   "tarih": "1994-03-27",
+   "ilSayisi": 76
+  }
+ ]
+}

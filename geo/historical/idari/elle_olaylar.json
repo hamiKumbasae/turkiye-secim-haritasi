@@ -1,0 +1,26 @@
+{
+ "not": "İçişleri kuruluş listesinde (yalnızca güncel birimler) bulunmayan, kaynakla doğrulanmış idari olaylar. build_idari_katman.py bu dosyayı olduğu gibi olaylara ekler ve il/ilçe varlık hesabında kullanır.",
+ "kaynaklar": [
+  {"id": "kirsehir_valiligi_tarihce", "type": "official", "title": "T.C. Kırşehir Valiliği — Tarihçe", "url": "https://www.kirsehir.gov.tr/tarihce"},
+  {"id": "yeniankara_kirsehir_2025", "type": "secondary", "title": "İlden ilçeye dönen Kırşehir, 68 yıl önce bugün yeniden il oldu", "url": "https://www.yeniankara.com.tr/bolge-haberlerikirsehir/ilden-ilceye-donen-kirsehir-68-yil-once-bugun-yeniden-il-oldu-iste-tum-surec-113434"}
+ ],
+ "olaylar": [
+  {"id": "il-40-onceki-varlik", "unit": "KIRŞEHİR", "unitType": "province", "plaka": 40,
+   "eventType": "existing_before_1923", "effectiveDate": null,
+   "source": "icisleri_il_ilce_kurulus_2018 (listedeki 1957 kaydı yeniden kuruluştur) + kirsehir_valiligi_tarihce",
+   "confidence": "high",
+   "not": "İçişleri listesi Kırşehir'in kuruluşunu 12.06.1957 (7001) olarak verir; bu 1954'te kaldırılan ilin yeniden kuruluşudur."},
+  {"id": "il-40-kaldirilma-1954", "unit": "KIRŞEHİR", "unitType": "province", "plaka": 40,
+   "eventType": "abolished", "effectiveDate": "1954-06-30", "lawNumber": "6429",
+   "officialGazette": {"tarih": "1954-07-07", "sayi": 8748},
+   "successorProvince": 50, "becameDistrictOf": 50,
+   "source": "icisleri_il_ilce_kurulus_2018 (Nevşehir'i kuran 6429 sayılı Kanun ile aynı) + kirsehir_valiligi_tarihce + yeniankara_kirsehir_2025",
+   "confidence": "high",
+   "not": "Kırşehir ilçe olarak Nevşehir'e bağlandı; Çiçekdağı Yozgat'a, Kaman Ankara'ya, Hacıbektaş, Mucur ve Avanos Nevşehir'e bağlandı (yeniankara_kirsehir_2025). İlçe düzeyindeki bu il değişiklikleri Faz 3'te ayrıca kaynaklanacak."},
+  {"id": "il-40-yeniden-kurulus-1957", "unit": "KIRŞEHİR", "unitType": "province", "plaka": 40,
+   "eventType": "reestablished", "effectiveDate": "1957-06-12", "lawNumber": "7001",
+   "officialGazette": {"tarih": "1957-06-19", "sayi": 9637},
+   "source": "icisleri_il_ilce_kurulus_2018", "confidence": "high",
+   "not": "Kozaklı ve Hacıbektaş Nevşehir'de kaldı; Kaman, Mucur ve Çiçekdağı yeniden Kırşehir'e bağlandı (yeniankara_kirsehir_2025)."}
+ ]
+}

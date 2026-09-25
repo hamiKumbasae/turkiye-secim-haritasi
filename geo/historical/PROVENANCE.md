@@ -65,3 +65,10 @@ HIST-* poligon o yıl gerçekten kullanılıyorsa, `hideIds` alanındaki modern
 ilçe id'leri (birleşimin PARÇASI oldukları için) AYRICA "veri yok" katmanında
 çizilmiyor; yoksa aynı alan iki kez (bir doğru renkli, bir de yanlışlıkla
 gri) görünürdü.
+
+## `idari/` — tarihsel idari coğrafya katmanı (2026-09-25, Faz 1)
+
+Her seçim tarihindeki il/ilçe yapısı: İçişleri Bakanlığı kuruluş tarihleri
+(resmî) + seçim verisindeki ilçe kanıtı + bu klasördeki doğrulanmış `HIST-*`
+birleşimleri. Olay kaydı, ilçe soy kaydı ve seçim snapshot'ları; ayrıntı ve
+kurallar `idari/README.md`'de. Henüz ön yüz tarafından kullanılmıyor.

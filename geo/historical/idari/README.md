@@ -1,0 +1,103 @@
+# Tarihsel idari coğrafya katmanı
+
+Amaç: her seçim tarihinde hangi il ve ilçelerin var olduğunu, ilçelerin o tarihte
+hangi ile bağlı olduğunu ve bugünkü ilçe geometrilerinin geçmişte hangi eski
+ilçelere ait olduğunu bilmek. Böylece eski seçimler bugünkü sınırlarla değil,
+kendi dönemlerinin idari yapısıyla çizilebilir.
+
+Örnek: Köprübaşı (Trabzon) 20.05.1990'da 3644 sayılı Kanunla kuruldu. 1990 öncesi
+seçimlerde onun alanının oyu o dönem bağlı olduğu ilçenin (büyük olasılıkla
+Sürmene) sonucunda. Bu durumda doğru harita, Sürmene'nin oyunu Sürmene + Köprübaşı
+alanına boyamaktır. Bu katman, bunun için gereken kaydı tutar.
+
+## Dosyalar
+
+| Dosya | Nasıl oluşur | İçerik |
+|---|---|---|
+| `administrative_events.json` | Üretilir (`build_idari_katman.py`) + `elle_olaylar.json` | Her idari olay bir kayıt: kuruluş, merkez ilçe dönüşümü, ad değişikliği, il değişikliği, kaldırılma, yeniden kuruluş |
+| `district_lineage.json` | Üretilir | Her güncel ilçe (`geomId`) için kuruluş, ilk seçim, adlar, il geçmişi, önceki birimler, soy durumu |
+| `election_admin_snapshots.json` | Üretilir, **elle düzenlenmez** | Her seçim tarihinde iller, il sınır dosyası, ilçeler, henüz ayrı olmayan ilçeler ve geometri kuralları |
+| `elle_olaylar.json` | Elle, kaynaklı | Kuruluş listesinde olmayan olaylar (şimdilik Kırşehir 1954–1957) |
+| `faz1_rapor.json` | Üretilir | Tutarlılık denetimi |
+
+Üretim:
+
+```bash
+.venv/bin/python scripts/pipelines/historical_geo/extract_icisleri_kurulus.py   # PDF -> kaynak katmanı
+python3 scripts/pipelines/historical_geo/build_idari_katman.py                  # bu klasör
+```
+
+## Kurallar
+
+- **Tahmin yok.** Bir ilçenin hangi eski ilçe/bucak/köylerden ayrıldığı kaynakta
+  yoksa `lineageStatus: "unresolved"`; modern sınır geçmişe taşınmaz,
+  snapshot'ta `geometryRule: "unresolved"`.
+- **Kanun tarihi seçim etkisi değildir.** 3392 sayılı Kanunla 04.07.1987'de kurulan
+  97 ilçe (ve 3391/3398/3399 ile Bursa, Konya, Gaziantep'in yeni merkez ilçeleri)
+  29.11.1987 genel seçimine ayrı girmedi. Bu yüzden her ilçede hem kuruluş
+  (`kurulus`) hem ilçe düzeyli seçimde ayrı olarak ilk görüldüğü seçim
+  (`ilkSecim`) tutulur; aradaki seçimler `kurulduAmaSecimeAyriGirmedi`'de.
+- **Yerel seçim satırları ilçe değil belediyedir.** Büyükşehir alt kademe
+  belediyeleri (ör. 1994'te Kepez, Konyaaltı) ilçe olmadan önce de satır olarak
+  var. İlçe varlığına kanıt yalnızca genel seçim, referandum ve cumhurbaşkanlığı
+  seçimlerinden alınır.
+- **Eşleşme `geomId` ile.** Ad değişikliği ayrı olaydır; yazım farkları
+  (`Samandağ`/`Samandağı`, `Merkez`/`Aydın merkez`, `Sincanlı (Sinanpaşa)`) ad
+  değişikliği sayılmaz.
+
+## Kimlikler
+
+- Güncel ilçe: `TR-D-PP-NNN` (`geo/normalized/turkiye_ilce_sinirlari.geojson`).
+- Tarihsel birleşim: `HIST-İl-İlçe[dönem]` (`../turkiye_ilce_sinirlari_hist_splits.geojson`,
+  `../district_splits.json`).
+- İl: plaka (o tarihteki).
+
+## `lineageStatus`
+
+| Değer | Anlamı |
+|---|---|
+| `1950_oncesi_mevcut` | İlçe 14.05.1950'den önce kurulmuş. Sınırı sonradan ayrılan ilçelerle küçülmüş olabilir; bu, ayrılan ilçelerin soy kaydıyla çözülür (Faz 2). |
+| `repo_dogrulanmis` | Repoda kaynakla doğrulanmış bir `HIST-*` birleşiminin parçası (`district_splits.json`). |
+| `merkez_ilce` | Sonradan il olan bir yerin merkez ilçesi; ilçe olarak kuruluş tarihi kaynakta yok (il olmadan önce başka ile bağlı ilçeydi). |
+| `unresolved` | 1950 sonrası kurulmuş, soy bilgisi henüz kaynaklanmadı. |
+
+## Durum (Faz 1, 2026-09-25)
+
+- 81 il ve 973 güncel ilçenin tamamı İçişleri Bakanlığı listesine bağlandı (resmî,
+  `data/raw/icisleri/il-ilce-kurulus-2018/`).
+- Soy: 436 ilçe 1950 öncesi, 78 ilçe repoda doğrulanmış birleşim, 24 merkez ilçe,
+  **435 ilçe `unresolved`**.
+- 108 ilçe kanunla kurulduktan sonra en az bir seçime ayrı girmedi.
+- 11 merkez ilçe dönüşümü (2008/2012 büyükşehir: Aydın Merkez → Efeler vb.).
+- 15 ad değişikliği, 51 il değişikliği seçim verisinden (tarih aralığıyla);
+  il değişikliklerinin çoğunun tarihi yeni ilin kuruluşundan kesin.
+- Kırşehir: 1923 öncesi il, 30.06.1954'te kaldırıldı (6429), 12.06.1957'de
+  yeniden il (7001). Bu yüzden 1955 yerel seçim tarihinde 66 il var; veride 64.
+
+## Bilinen boşluklar (`faz1_rapor.json`)
+
+- **1955 yerel ve 1994 yerel için il sınır dosyası yok** (66 ve 76 il). Snapshot'ta
+  `provinceGeometryStatus: "missing_snapshot_do_not_guess"`.
+- **1955 yerel verisi 64 il**: Adıyaman, Nevşehir, Sakarya yok, Kırşehir il olarak var.
+- **Bozkurt (Kastamonu)**: kuruluşu 17.07.1968 ama 1961 ve 1965 seçim verisinde
+  ayrı satırı var. Kaynaklardan biri yanlış; Faz 2'de doğrulanacak.
+- **2010 referandumu ve 2011 genel seçimi**: kaynak, sonuçları 2012 ve sonrasında
+  kurulan 22 ilçeye göre yeniden toplamış (`kaynakSonrakiIlcelereGoreToplamis`);
+  idari çelişki değil.
+- **Tillo (Siirt)**: 2007'den sonraki 12 seçimde satırı yok (veri boşluğu).
+- İçişleri listesi yalnızca 2018'de var olan birimleri içerir; kaldırılmış
+  ilçeler (ör. Eminönü) ve kaldırılmış adlar bu kaynakta yok.
+
+## Sonraki fazlar
+
+1. **Faz 2 — soy, kanun kanun.** 3644 (1990, 130 ilçe), 3392 (1987, 103),
+   7033 (1957, 77), 5747 (2008, 43), 6360 (2012, 26), 6324/6325 (1954, 31),
+   6068 (1953, 21), 3806 (1992, 13) sayılı kanunların ekleri: hangi bucak/köy hangi
+   ilçeden. Tek ebeveynli ayrılmalar `merge_into`, çok ebeveynliler köy/mahalle
+   düzeyinde doğrulanamazsa `unresolved`.
+2. **Faz 3 — il değişiklikleri.** 1953–1999 arasında kurulan illerin ilçelerinin
+   önceki illeri (kısmen seçim verisinden zaten var), Kırşehir 1954–1957 ilçe
+   bağlılıkları.
+3. **Faz 4 — geometri ve ön yüz.** Birleşim poligonları, `era1955` ve `era1994`
+   il sınırları; haritada il sınır dosyasının seçim kimliğine göre snapshot'tan
+   seçilmesi (özel harita ve atlas).

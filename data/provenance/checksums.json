@@ -528,11 +528,17 @@
   },
   "geo/historical": {
    "checksum_file": "geo/historical/checksums.sha256",
-   "file_count": 11,
+   "file_count": 17,
    "files": {
     "NATIONWIDE_DISTRICT_AUDIT.md": "db738506e517f5e9a788d2f341e28338ab57aba75e14c26d3793cf31eed2b7eb",
     "district_mahalle_merges.yaml": "c9b821f67efce5bb625d7a5dcfa784c2c4ee20c04405eebd04d69d7acf1113ad",
     "district_splits.json": "551e1aae8430a356918ca143c2941fd9e496c498de43cb7b49f195e895f8226d",
+    "idari/README.md": "3c1afb5e1fc579af259ce6a5a679a93771c8f7cd6d5f18531c019b0025e35d6d",
+    "idari/administrative_events.json": "a4c5bcccbdd25aefd852458b7837802347ce0aa4e93208a016bdb28f112a5938",
+    "idari/district_lineage.json": "6ce9fb8927df336d259672979c9c9eaae8288036a50fa62b8542a73faada3c16",
+    "idari/election_admin_snapshots.json": "15cf7cd2526d7bbe9d97c49c305cfa7cd48285b5274f74dd6a38400aca1f1893",
+    "idari/elle_olaylar.json": "2f9ecd043aa520a87c86406fb392320282a3279d3336cd4286edc07738a10512",
+    "idari/faz1_rapor.json": "e6ce592c2a429c2e5a085cc4478913ea4fc5b8d96e8f155cb43a65688727341e",
     "metro_merkez_1961_1987.json": "f37ce774f6f696fdd57c4dea48ff166022eabd9521c30946a76f46291dc28e31",
     "turkiye_il_sinirlari_era1950.geojson": "6dc8eb1a5623b69979bfe34d8c1cecb3e62d1c2ae363bfe5c1e9f25f322942a1",
     "turkiye_il_sinirlari_era1954.geojson": "1eac11477e80df3dee50bab3d6ac32d16735c55a5b765e5b117ff608d9fa8750",
@@ -5489,10 +5495,11 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 259,
+   "file_count": 260,
    "files": {
     "ARASTIRMA_KAYDI.md": "fe463c9f25a3ef72390973e8f6ca960d922fe1e8d8714cc5f44f864030dd6531",
-    "README.md": "86b02e535283b7937c9c79c44015340a58b0a709cf73318e97b549e023309c44",
+    "README.md": "6de623827705ee098b3fd3c98a104ce27ee4869eb3fe6182942d66f16c53e17a",
+    "icisleri/il_ilce_kurulus_2018.json": "f4f2d24c58a63691399eb86e04190793318c7f4e43bff6ecd163ee692aabc9cb",
     "mertnuhoglu/genel/1991.json": "39fbdc09dae77a625bd4afe8a81165c0bfb5e73b25541202ecc273d457debcb9",
     "mertnuhoglu/genel/1995.json": "663f29122d69e76dc8aef205f7bf3246c78e8256a2359ee16e9e6da28f4ee3c1",
     "mertnuhoglu/genel/1999.json": "da8f9ce8202a799f434a581c42ac5d7e0d80b5a8e0dda6c4d18f60aa69882110",
@@ -6133,6 +6140,13 @@
     "1999/Belediye-Meclis-Uyeligi-Secimleri-Sonucu.pdf": "aa83d43e5f575b83ef6395ae9e5871c6b8ce635ec741d03918dc0ebcfcd2f937",
     "1999/Buyuksehir-Belediye-Baskanligi-Secimleri-Sonucu.pdf": "6f96984385c88375190eb4774ec5e646f4d84236176442018d50df5e19cf249f",
     "1999/Il-Genel-Meclisi-Uyeligi-Secimleri-Sonucu.pdf": "23fa0afa13a61cf414cd6379c19b927cce9a9d5ef13f980c94aa6d651bc72c71"
+   }
+  },
+  "data/raw/icisleri/il-ilce-kurulus-2018": {
+   "checksum_file": "data/raw/icisleri/il-ilce-kurulus-2018/checksums.sha256",
+   "file_count": 1,
+   "files": {
+    "il_ve_ilce_kurulus_tarihleri_2018.pdf": "444121af93c5f77a87d92776cf533c6045ee571e02ff1c819f7ae18e41eccc80"
    }
   }
  },
