@@ -99,43 +99,29 @@
    "ilce": "Ceyhan",
    "il": "Adana",
    "plaka": 1,
-   "kazanan": "HP",
+   "kazanan": "SODEP",
    "aday": "Mehmet Merdanoğlu",
-   "oy": 366,
+   "oy": 470,
    "partiAdiKaynakta": "Sosyal Demokrasi Partisi",
    "kaynak": {
     "ana": "wikipedia",
     "sayfa": "Adana'da 1984 Türkiye yerel seçimleri",
     "revid": 37768857,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1984yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json",
-    "farklar": [
-     {
-      "alan": "kazanan",
-      "kaynak": "tuik",
-      "eski": "SODEP",
-      "yeni": "HP"
-     },
-     {
-      "alan": "oy",
-      "kaynak": "tuik",
-      "eski": 470,
-      "yeni": 366
-     }
-    ]
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json"
    },
    "tuik": {
     "sandik": 4,
     "secmen": 976,
     "oyKullanan": 897,
     "katilim": 91.9,
-    "gecerliOy": 367,
+    "gecerliOy": 856,
     "oy": {
      "HP": 366,
      "MDP": 1
     },
     "kazanan": "HP",
-    "kontrol": "tutarli",
+    "kontrol": "tutarsiz",
     "adKaynakta": "KURT KULA5I",
     "sayfa": [
      42,
@@ -433,9 +419,10 @@
     "secmen": 603,
     "oyKullanan": 580,
     "katilim": 96.2,
-    "gecerliOy": 347,
+    "gecerliOy": 567,
     "oy": {
-     "ANAP": 347
+     "ANAP": 347,
+     "SODEP": 220
     },
     "kazanan": "ANAP",
     "kontrol": "tutarli",
@@ -654,7 +641,29 @@
     "ana": "wikipedia",
     "sayfa": "Adıyaman'da 1984 Türkiye yerel seçimleri",
     "revid": 37768856,
-    "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1984yerel.json"
+    "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1984yerel.json",
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json",
+    "teyit": [
+     "tuik"
+    ]
+   },
+   "tuik": {
+    "sandik": 4,
+    "secmen": 925,
+    "oyKullanan": 881,
+    "katilim": 95.2,
+    "gecerliOy": 849,
+    "oy": {
+     "MDP": 516,
+     "SODEP": 333
+    },
+    "kazanan": "MDP",
+    "kontrol": "tutarli",
+    "adKaynakta": "EAKIRHOYOK",
+    "sayfa": [
+     42,
+     43
+    ]
    }
   },
   {
@@ -817,9 +826,9 @@
    "ilce": "Gölbaşı",
    "il": "Adıyaman",
    "plaka": 2,
-   "kazanan": "RP",
+   "kazanan": "SODEP",
    "aday": "Ahmet Özdemir",
-   "oy": 9,
+   "oy": 416,
    "partiAdiKaynakta": "Sosyal Demokrasi Partisi",
    "kaynak": {
     "ana": "wikipedia",
@@ -829,16 +838,10 @@
     "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json",
     "farklar": [
      {
-      "alan": "kazanan",
-      "kaynak": "tuik",
-      "eski": "SODEP",
-      "yeni": "RP"
-     },
-     {
       "alan": "oy",
       "kaynak": "tuik",
       "eski": 383,
-      "yeni": 9
+      "yeni": 416
      }
     ]
    },
@@ -846,12 +849,13 @@
     "sandik": 3,
     "secmen": 884,
     "oyKullanan": 845,
-    "katilim": 956,
-    "gecerliOy": 9,
+    "katilim": 95.6,
+    "gecerliOy": 799,
     "oy": {
-     "RP": 9
+     "SODEP": 416,
+     "MDP": 383
     },
-    "kazanan": "RP",
+    "kazanan": "SODEP",
     "kontrol": "tutarli",
     "adKaynakta": "BELOREN",
     "sayfa": [
@@ -1208,43 +1212,29 @@
    "ilce": "Bolvadin",
    "il": "Afyon",
    "plaka": 3,
-   "kazanan": "MDP",
+   "kazanan": "SODEP",
    "aday": "Ekrem Uğur",
-   "oy": 8,
+   "oy": 638,
    "partiAdiKaynakta": "Sosyal Demokrasi Partisi",
    "kaynak": {
     "ana": "wikipedia",
     "sayfa": "Afyon'da 1984 Türkiye yerel seçimleri",
     "revid": 37768855,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1984yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json",
-    "farklar": [
-     {
-      "alan": "kazanan",
-      "kaynak": "tuik",
-      "eski": "SODEP",
-      "yeni": "MDP"
-     },
-     {
-      "alan": "oy",
-      "kaynak": "tuik",
-      "eski": 638,
-      "yeni": 8
-     }
-    ]
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json"
    },
    "tuik": {
     "sandik": 7,
     "secmen": 1370,
     "oyKullanan": 1344,
     "katilim": 93.1,
-    "gecerliOy": 9,
+    "gecerliOy": 1234,
     "oy": {
      "MDP": 8,
      "RP": 1
     },
     "kazanan": "MDP",
-    "kontrol": "tutarli",
+    "kontrol": "tutarsiz",
     "adKaynakta": "KEMERKAVA",
     "sayfa": [
      42,
@@ -3086,9 +3076,9 @@
    "ilce": "Taşova",
    "il": "Amasya",
    "plaka": 5,
-   "kazanan": "HP",
+   "kazanan": "Bağımsız",
    "aday": "Bekir Makasoğlu",
-   "oy": 198,
+   "oy": 406,
    "partiAdiKaynakta": "Bağımsız",
    "kaynak": {
     "ana": "wikipedia",
@@ -3096,19 +3086,8 @@
     "revid": 37768853,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1984yerel.json",
     "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json",
-    "farklar": [
-     {
-      "alan": "kazanan",
-      "kaynak": "tuik",
-      "eski": "Bağımsız",
-      "yeni": "HP"
-     },
-     {
-      "alan": "oy",
-      "kaynak": "tuik",
-      "eski": 406,
-      "yeni": 198
-     }
+    "teyit": [
+     "tuik"
     ]
    },
    "tuik": {
@@ -3116,11 +3095,13 @@
     "secmen": 1065,
     "oyKullanan": 1022,
     "katilim": 96.0,
-    "gecerliOy": 198,
+    "gecerliOy": 975,
     "oy": {
+     "Bağımsız": 406,
+     "SODEP": 371,
      "HP": 198
     },
-    "kazanan": "HP",
+    "kazanan": "Bağımsız",
     "kontrol": "tutarli",
     "adKaynakta": "ESENÇAV",
     "sayfa": [
@@ -14426,22 +14407,19 @@
     "sayfa": "Isparta'da 1984 Türkiye yerel seçimleri",
     "revid": 37767944,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1984yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json",
-    "teyit": [
-     "tuik"
-    ]
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json"
    },
    "tuik": {
     "sandik": null,
     "secmen": 761,
     "oyKullanan": 743,
     "katilim": 97.6,
-    "gecerliOy": 428,
+    "gecerliOy": 704,
     "oy": {
      "DYP": 428
     },
     "kazanan": "DYP",
-    "kontrol": "tutarli",
+    "kontrol": "tutarsiz",
     "adKaynakta": "1SLAMKBY A",
     "sayfa": [
      64,
@@ -23712,9 +23690,9 @@
    "ilce": "Hekimhan",
    "il": "Malatya",
    "plaka": 44,
-   "kazanan": "HP",
+   "kazanan": "SODEP",
    "aday": "Haydar Saygılı",
-   "oy": 348,
+   "oy": 352,
    "partiAdiKaynakta": "Sosyal Demokrasi Partisi",
    "kaynak": {
     "ana": "wikipedia",
@@ -23722,19 +23700,8 @@
     "revid": 37823159,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1984yerel.json",
     "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json",
-    "farklar": [
-     {
-      "alan": "kazanan",
-      "kaynak": "tuik",
-      "eski": "SODEP",
-      "yeni": "HP"
-     },
-     {
-      "alan": "oy",
-      "kaynak": "tuik",
-      "eski": 352,
-      "yeni": 348
-     }
+    "teyit": [
+     "tuik"
     ]
    },
    "tuik": {
@@ -23742,11 +23709,12 @@
     "secmen": 778,
     "oyKullanan": 719,
     "katilim": 92.4,
-    "gecerliOy": 348,
+    "gecerliOy": 700,
     "oy": {
+     "SODEP": 352,
      "HP": 348
     },
-    "kazanan": "HP",
+    "kazanan": "SODEP",
     "kontrol": "tutarli",
     "adKaynakta": "HASANSELE Bı",
     "sayfa": [
@@ -30211,22 +30179,19 @@
     "sayfa": "Sakarya'da 1984 Türkiye yerel seçimleri",
     "revid": 37767973,
     "kaynakKatmani": "data/kaynaklar/wikipedia/yerel/1984yerel.json",
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json",
-    "teyit": [
-     "tuik"
-    ]
+    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json"
    },
    "tuik": {
     "sandik": 14,
     "secmen": 3468,
     "oyKullanan": 3270,
     "katilim": 94.3,
-    "gecerliOy": 1275,
+    "gecerliOy": 3150,
     "oy": {
      "ANAP": 1275
     },
     "kazanan": "ANAP",
-    "kontrol": "tutarli",
+    "kontrol": "tutarsiz",
     "adKaynakta": "KOCAALİ *»—",
     "sayfa": [
      84,
@@ -33147,11 +33112,10 @@
     "secmen": 935,
     "oyKullanan": 880,
     "katilim": 94.1,
-    "gecerliOy": 840,
+    "gecerliOy": 839,
     "oy": {
      "SODEP": 471,
-     "DYP": 368,
-     "Bağımsız": 1
+     "DYP": 368
     },
     "kazanan": "SODEP",
     "kontrol": "tutarli",
@@ -38111,35 +38075,6 @@
    }
   },
   {
-   "belde": "Eakırhoyok",
-   "ilce": "BESNİ",
-   "plaka": 2,
-   "kazanan": "MDP",
-   "oy": 5,
-   "tuik": {
-    "sandik": 4,
-    "secmen": 925,
-    "oyKullanan": 881,
-    "katilim": 95.2,
-    "gecerliOy": 5,
-    "oy": {
-     "MDP": 5
-    },
-    "kazanan": "MDP",
-    "kontrol": "tutarli",
-    "adKaynakta": "EAKIRHOYOK",
-    "sayfa": [
-     42,
-     43
-    ]
-   },
-   "kaynak": {
-    "ana": "tuik",
-    "adOcr": true,
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json"
-   }
-  },
-  {
    "belde": "Iı Lu Kov",
    "ilce": "Ot NAR",
    "plaka": 3,
@@ -39098,35 +39033,6 @@
     "sayfa": [
      74,
      75
-    ]
-   },
-   "kaynak": {
-    "ana": "tuik",
-    "adOcr": true,
-    "tuikKatman": "data/kaynaklar/tuik/yerel/1984yerel/belediye_baskanligi.json"
-   }
-  },
-  {
-   "belde": "Karatas",
-   "ilce": "SALIHLI",
-   "plaka": 45,
-   "kazanan": "HP",
-   "oy": 524,
-   "tuik": {
-    "sandik": 6,
-    "secmen": 1283,
-    "oyKullanan": 1213,
-    "katilim": 96.5,
-    "gecerliOy": 524,
-    "oy": {
-     "HP": 524
-    },
-    "kazanan": "HP",
-    "kontrol": "tutarli",
-    "adKaynakta": "KARATAS",
-    "sayfa": [
-     76,
-     77
     ]
    },
    "kaynak": {

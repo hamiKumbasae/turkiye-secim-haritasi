@@ -31,10 +31,10 @@
   "belde": 1055,
   "sehir": 0,
   "koy": 0,
-  "tutarli": 1142,
-  "tutarsiz": 617,
-  "ocrDuzeltilen": 219,
-  "yapisalOkunan": 260,
+  "tutarli": 1136,
+  "tutarsiz": 623,
+  "ocrDuzeltilen": 207,
+  "yapisalOkunan": 266,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [
    63
@@ -359,26 +359,19 @@
    "secmen": 976,
    "oyKullanan": 897,
    "katilim": 91.9,
-   "gecerliOy": 367,
+   "gecerliOy": 856,
    "oy": {
     "HP": 366,
     "MDP": 1
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 367
    },
    "sayfa": [
     42,
     43
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 856,
-     "duzeltilen": 367,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "karakterDuzeltme": [
     "1*03→1403",
@@ -901,11 +894,15 @@
    "secmen": 603,
    "oyKullanan": 580,
    "katilim": 96.2,
-   "gecerliOy": 347,
+   "gecerliOy": 567,
    "oy": {
-    "ANAP": 347
+    "ANAP": 347,
+    "SODEP": 220
    },
-   "yuzde": {},
+   "yuzde": {
+    "ANAP": 61.2,
+    "SODEP": 38.8
+   },
    "kontrol": {
     "durum": "tutarli"
    },
@@ -913,14 +910,23 @@
     42,
     43
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 567,
-     "duzeltilen": 347,
-     "yontem": "parti toplamı + yüzdeler"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 4,
+     "secmen": 603,
+     "oyKullanan": 580,
+     "katilim%": 96.2,
+     "gecerliOy": 567,
+     "ANAP": 347,
+     "DYP": 0,
+     "HP": null,
+     "MDP": null,
+     "RP": 0,
+     "SODEP": null,
+     "Bağımsız": 38.8
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "3*7→347"
    ],
@@ -1474,11 +1480,15 @@
    "secmen": 925,
    "oyKullanan": 881,
    "katilim": 95.2,
-   "gecerliOy": 5,
+   "gecerliOy": 849,
    "oy": {
-    "MDP": 5
+    "MDP": 516,
+    "SODEP": 333
    },
-   "yuzde": {},
+   "yuzde": {
+    "MDP": 60.8,
+    "SODEP": 39.2
+   },
    "kontrol": {
     "durum": "tutarli"
    },
@@ -1486,14 +1496,23 @@
     42,
     43
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 849,
-     "duzeltilen": 5,
-     "yontem": "parti toplamı + yüzdeler"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 4,
+     "secmen": 925,
+     "oyKullanan": 881,
+     "katilim%": 95.2,
+     "gecerliOy": 849,
+     "ANAP": 0,
+     "DYP": 0,
+     "HP": 0,
+     "MDP": 5,
+     "RP": 60.8,
+     "SODEP": 0,
+     "Bağımsız": 39.2
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "8*9→849",
     "96.*→96.4"
@@ -1784,12 +1803,16 @@
    "sandik": 3,
    "secmen": 884,
    "oyKullanan": 845,
-   "katilim": 956,
-   "gecerliOy": 9,
+   "katilim": 95.6,
+   "gecerliOy": 799,
    "oy": {
-    "RP": 9
+    "SODEP": 416,
+    "MDP": 383
    },
-   "yuzde": {},
+   "yuzde": {
+    "MDP": 47.9,
+    "SODEP": 52.1
+   },
    "kontrol": {
     "durum": "tutarli"
    },
@@ -1797,19 +1820,28 @@
     42,
     43
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 799,
-     "duzeltilen": 9,
-     "yontem": "parti toplamı + yüzdeler"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 3,
+     "secmen": 884,
+     "oyKullanan": 845,
+     "katilim%": 956,
+     "gecerliOy": 799,
+     "ANAP": null,
+     "DYP": null,
+     "HP": null,
+     "MDP": null,
+     "RP": 9,
+     "SODEP": 0,
+     "Bağımsız": 52.1
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "88*→884",
     "9*.6→94.6"
    ],
-   "kazanan": "RP"
+   "kazanan": "SODEP"
   },
   {
    "tip": "belde",
@@ -2398,27 +2430,20 @@
    "secmen": 1370,
    "oyKullanan": 1344,
    "katilim": 93.1,
-   "gecerliOy": 9,
+   "gecerliOy": 1234,
    "oy": {
     "MDP": 8,
     "RP": 1
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 9,
     "katilimUyumsuz": true
    },
    "sayfa": [
     42,
     43
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 1234,
-     "duzeltilen": 9,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "karakterDuzeltme": [
     "134*→1344",
@@ -5040,11 +5065,17 @@
    "secmen": 1065,
    "oyKullanan": 1022,
    "katilim": 96.0,
-   "gecerliOy": 198,
+   "gecerliOy": 975,
    "oy": {
+    "Bağımsız": 406,
+    "SODEP": 371,
     "HP": 198
    },
-   "yuzde": {},
+   "yuzde": {
+    "HP": 20.3,
+    "SODEP": 38.1,
+    "Bağımsız": 41.6
+   },
    "kontrol": {
     "durum": "tutarli"
    },
@@ -5052,15 +5083,24 @@
     44,
     45
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 975,
-     "duzeltilen": 198,
-     "yontem": "parti toplamı + yüzdeler"
-    }
-   ],
-   "kazanan": "HP"
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 3,
+     "secmen": 1065,
+     "oyKullanan": 1022,
+     "katilim%": 96.0,
+     "gecerliOy": 975,
+     "ANAP": null,
+     "DYP": null,
+     "HP": 198,
+     "MDP": 20.3,
+     "RP": 0,
+     "SODEP": 0,
+     "Bağımsız": 38.1
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
+   "kazanan": "Bağımsız"
   },
   {
    "tip": "belde",
@@ -26433,26 +26473,19 @@
    "secmen": 761,
    "oyKullanan": 743,
    "katilim": 97.6,
-   "gecerliOy": 428,
+   "gecerliOy": 704,
    "oy": {
     "DYP": 428
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 428,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     64,
     65
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 704,
-     "duzeltilen": 428,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "kazanan": "DYP"
   },
@@ -42228,11 +42261,15 @@
    "secmen": 778,
    "oyKullanan": 719,
    "katilim": 92.4,
-   "gecerliOy": 348,
+   "gecerliOy": 700,
    "oy": {
+    "SODEP": 352,
     "HP": 348
    },
-   "yuzde": {},
+   "yuzde": {
+    "HP": 49.7,
+    "SODEP": 50.3
+   },
    "kontrol": {
     "durum": "tutarli"
    },
@@ -42240,15 +42277,24 @@
     76,
     77
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 700,
-     "duzeltilen": 348,
-     "yontem": "parti toplamı + yüzdeler"
-    }
-   ],
-   "kazanan": "HP"
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 3,
+     "secmen": 778,
+     "oyKullanan": 719,
+     "katilim%": 92.4,
+     "gecerliOy": 700,
+     "ANAP": 0,
+     "DYP": null,
+     "HP": 348,
+     "MDP": 49.7,
+     "RP": null,
+     "SODEP": 0,
+     "Bağımsız": 50.3
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
+   "kazanan": "SODEP"
   },
   {
    "tip": "belde",
@@ -43496,26 +43542,19 @@
    "secmen": 1283,
    "oyKullanan": 1213,
    "katilim": 96.5,
-   "gecerliOy": 524,
+   "gecerliOy": 1162,
    "oy": {
     "HP": 524
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 524,
     "katilimUyumsuz": true
    },
    "sayfa": [
     76,
     77
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 1162,
-     "duzeltilen": 524,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "kazanan": "HP"
   },
@@ -52150,26 +52189,19 @@
    "secmen": 3468,
    "oyKullanan": 3270,
    "katilim": 94.3,
-   "gecerliOy": 1275,
+   "gecerliOy": 3150,
    "oy": {
     "ANAP": 1275
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 1275,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     84,
     85
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 3150,
-     "duzeltilen": 1275,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "karakterDuzeltme": [
     "^14→14",
@@ -53318,7 +53350,7 @@
    "secmen": 3834,
    "oyKullanan": 2836,
    "katilim": 93.5,
-   "gecerliOy": 2656,
+   "gecerliOy": 2653,
    "oy": {
     "ANAP": 1431,
     "DYP": 1220,
@@ -53328,20 +53360,13 @@
     "ANAP": 53.9
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 2656,
     "katilimUyumsuz": true
    },
    "sayfa": [
     84,
     85
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 2653,
-     "duzeltilen": 2656,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "kazanan": "ANAP"
   },
@@ -57438,14 +57463,14 @@
    "secmen": 935,
    "oyKullanan": 880,
    "katilim": 94.1,
-   "gecerliOy": 840,
+   "gecerliOy": 839,
    "oy": {
     "SODEP": 471,
-    "DYP": 368,
-    "Bağımsız": 1
+    "DYP": 368
    },
    "yuzde": {
-    "DYP": 43.9
+    "DYP": 43.9,
+    "SODEP": 56.1
    },
    "kontrol": {
     "durum": "tutarli"
@@ -57454,14 +57479,23 @@
     88,
     89
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 839,
-     "duzeltilen": 840,
-     "yontem": "parti toplamı + yüzdeler"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 5,
+     "secmen": 935,
+     "oyKullanan": 880,
+     "katilim%": 94.1,
+     "gecerliOy": 839,
+     "ANAP": null,
+     "DYP": 368,
+     "HP": null,
+     "MDP": null,
+     "RP": null,
+     "SODEP": 471,
+     "Bağımsız": 1
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "SODEP"
   },
   {

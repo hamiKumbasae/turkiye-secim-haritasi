@@ -99,6 +99,8 @@ def satir_koken(r):
             s += f" | {eksik} alan yalnizca {kay}'te vardi (eklendi)"
     if k.get("tuikKullanilmadi"):
         s += " | tuik oylari kullanilmadi (DİE satiri tutarsiz)"
+    if k.get("tuikFarki"):
+        s += f" | DİE ile {len(k['tuikFarki'])} alan farkli (bilgi)"
     return s
 
 
@@ -110,12 +112,18 @@ def koken_detay(k, girinti="      "):
     if isinstance(t, dict):
         print(f"{girinti}tuik: DİE kitabı {t.get('kitap')} (kutuphane.tuik.gov.tr/pdf/{t.get('kitap')}.pdf), "
               f"tablo {t.get('tablo')}, s.{t.get('sayfa')}, kaynakta '{t.get('adKaynakta')}'")
+        if t.get("birim"):
+            print(f"{girinti}karsilastirilan DİE birimi: {t['birim']}")
+        if t.get("digerDagilimi"):
+            print(f"{girinti}'Diğer' icindeki partiler (DİE): {t['digerDagilimi']}")
         if t.get("katman"):
             print(f"{girinti}tuik katmani: {t['katman']}")
         for d in t.get("ocrDuzeltme") or []:
             print(f"{girinti}ocr duzeltme: {d['alan']} okunan {d['okunan']} -> {d['duzeltilen']} ({d['yontem']})")
         if t.get("yapisalOkuma"):
             print(f"{girinti}not: satir sutun kenarlarindan degil, sayi parcalarinin kisitlarla yeniden ayristirilmasiyla okundu")
+    for f in k.get("tuikFarki", []):
+        print(f"{girinti}DİE farki (deger degistirilmedi): {f['alan']}: ysk {f['ysk']} / tuik {f['tuik']}")
     if k.get("tuikKullanilmadi"):
         u = k["tuikKullanilmadi"]
         print(f"{girinti}tuik kullanilmadi: {u['neden']} — {json.dumps(u.get('kontrol'), ensure_ascii=False)}")

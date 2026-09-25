@@ -32,10 +32,10 @@
   "belde": 1059,
   "sehir": 0,
   "koy": 0,
-  "tutarli": 1265,
-  "tutarsiz": 495,
-  "ocrDuzeltilen": 218,
-  "yapisalOkunan": 239,
+  "tutarli": 1248,
+  "tutarsiz": 512,
+  "ocrDuzeltilen": 198,
+  "yapisalOkunan": 242,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
   "eslesmeyenSayfa": []
@@ -3176,13 +3176,14 @@
    "secmen": 864,
    "oyKullanan": 645,
    "katilim": 95.6,
-   "gecerliOy": 5,
+   "gecerliOy": 804,
    "oy": {
     "RP": 5
    },
    "kazanan": "RP",
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 5,
     "katilimUyumsuz": true
    },
    "sayfa": [
@@ -17674,7 +17675,7 @@
    "secmen": 1019,
    "oyKullanan": 823,
    "katilim": 80.8,
-   "gecerliOy": 782,
+   "gecerliOy": 781,
    "oy": {
     "ANAP": 413,
     "HP": 368,
@@ -17682,7 +17683,8 @@
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 782
    },
    "sayfa": [
     112,
@@ -20313,14 +20315,15 @@
    "secmen": 593,
    "oyKullanan": 510,
    "katilim": 66.0,
-   "gecerliOy": 300,
+   "gecerliOy": 434,
    "oy": {
     "HP": 293,
     "Bağımsız": 7
    },
    "kazanan": "HP",
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 300,
     "katilimUyumsuz": true
    },
    "sayfa": [
@@ -24295,13 +24298,14 @@
    "secmen": 2887,
    "oyKullanan": 2794,
    "katilim": 96.8,
-   "gecerliOy": 880,
+   "gecerliOy": 2664,
    "oy": {
     "ANAP": 880
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 880,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
@@ -24554,11 +24558,12 @@
    "secmen": 1585,
    "oyKullanan": 1527,
    "katilim": 96.3,
-   "gecerliOy": 576,
+   "gecerliOy": 1404,
    "oy": {
+    "SODEP": 828,
     "HP": 576
    },
-   "kazanan": "HP",
+   "kazanan": "SODEP",
    "kontrol": {
     "durum": "tutarli"
    },
@@ -24728,14 +24733,15 @@
    "secmen": 2637,
    "oyKullanan": 2563,
    "katilim": 97.2,
-   "gecerliOy": 1701,
+   "gecerliOy": 2402,
    "oy": {
     "HP": 902,
     "ANAP": 799
    },
    "kazanan": "HP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 1701
    },
    "sayfa": [
     120,
@@ -24752,14 +24758,15 @@
    "secmen": 1170,
    "oyKullanan": 1147,
    "katilim": 98.0,
-   "gecerliOy": 1067,
+   "gecerliOy": 1068,
    "oy": {
     "Bağımsız": 723,
     "SODEP": 344
    },
    "kazanan": "Bağımsız",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 1067
    },
    "sayfa": [
     120,
@@ -30084,14 +30091,15 @@
    "secmen": 1304,
    "oyKullanan": 1282,
    "katilim": 98.3,
-   "gecerliOy": 1230,
+   "gecerliOy": 1232,
    "oy": {
     "ANAP": 634,
     "SODEP": 596
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 1230
    },
    "sayfa": [
     126,
@@ -30259,13 +30267,14 @@
    "secmen": 1352,
    "oyKullanan": 1281,
    "katilim": 94.7,
-   "gecerliOy": 432,
+   "gecerliOy": 1229,
    "oy": {
     "ANAP": 432
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 432,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
@@ -30415,13 +30424,14 @@
    "secmen": 756,
    "oyKullanan": 677,
    "katilim": 69.6,
-   "gecerliOy": 653,
+   "gecerliOy": 654,
    "oy": {
     "ANAP": 653
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 653,
     "katilimUyumsuz": true
    },
    "sayfa": [
@@ -32966,13 +32976,14 @@
    "secmen": 778,
    "oyKullanan": 719,
    "katilim": 92.4,
-   "gecerliOy": 351,
+   "gecerliOy": 696,
    "oy": {
     "HP": 351
    },
    "kazanan": "HP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 351
    },
    "sayfa": [
     130,
@@ -33913,11 +33924,12 @@
    "secmen": 1283,
    "oyKullanan": 1213,
    "katilim": 94.5,
-   "gecerliOy": 513,
+   "gecerliOy": 1151,
    "oy": {
+    "SODEP": 638,
     "HP": 513
    },
-   "kazanan": "HP",
+   "kazanan": "SODEP",
    "kontrol": {
     "durum": "tutarli"
    },
@@ -40226,7 +40238,7 @@
    "secmen": 923,
    "oyKullanan": 883,
    "katilim": 95.7,
-   "gecerliOy": 679,
+   "gecerliOy": 646,
    "oy": {
     "ANAP": 482,
     "DYP": 189,
@@ -40234,7 +40246,8 @@
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 679
    },
    "sayfa": [
     138,
@@ -41446,13 +41459,14 @@
    "secmen": 1102,
    "oyKullanan": 969,
    "katilim": 87.9,
-   "gecerliOy": 266,
+   "gecerliOy": 659,
    "oy": {
     "HP": 266
    },
    "kazanan": "HP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 266
    },
    "sayfa": [
     140,
@@ -41576,13 +41590,14 @@
    "secmen": 1870,
    "oyKullanan": 1775,
    "katilim": 94.9,
-   "gecerliOy": 742,
+   "gecerliOy": 1663,
    "oy": {
     "ANAP": 742
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 742,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
@@ -44151,14 +44166,15 @@
    "secmen": 935,
    "oyKullanan": 880,
    "katilim": 94.1,
-   "gecerliOy": 382,
+   "gecerliOy": 632,
    "oy": {
     "DYP": 361,
     "Bağımsız": 21
    },
    "kazanan": "DYP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 382
    },
    "sayfa": [
     142,
@@ -45701,13 +45717,14 @@
    "secmen": 613,
    "oyKullanan": 563,
    "katilim": 91.8,
-   "gecerliOy": 196,
+   "gecerliOy": 533,
    "oy": {
     "ANAP": 196
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 196
    },
    "sayfa": [
     144,
@@ -45979,11 +45996,12 @@
    "secmen": 603,
    "oyKullanan": 574,
    "katilim": 95.2,
-   "gecerliOy": 236,
+   "gecerliOy": 548,
    "oy": {
+    "SODEP": 312,
     "HP": 236
    },
-   "kazanan": "HP",
+   "kazanan": "SODEP",
    "kontrol": {
     "durum": "tutarli"
    },
@@ -46203,14 +46221,15 @@
    "secmen": 50926,
    "oyKullanan": 46653,
    "katilim": 91.6,
-   "gecerliOy": 20307,
+   "gecerliOy": 45081,
    "oy": {
     "ANAP": 16620,
     "DYP": 3687
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 20307,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
@@ -46352,14 +46371,15 @@
    "secmen": 2615,
    "oyKullanan": 2510,
    "katilim": 96.0,
-   "gecerliOy": 1235,
+   "gecerliOy": 2575,
    "oy": {
     "ANAP": 968,
     "DYP": 267
    },
    "kazanan": "ANAP",
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 1235,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [

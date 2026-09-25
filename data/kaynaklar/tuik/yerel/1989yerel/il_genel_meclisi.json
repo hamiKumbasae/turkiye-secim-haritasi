@@ -41,9 +41,9 @@
   "belde": 0,
   "sehir": 817,
   "koy": 808,
-  "tutarli": 2434,
-  "tutarsiz": 15,
-  "ocrDuzeltilen": 197,
+  "tutarli": 2433,
+  "tutarsiz": 16,
+  "ocrDuzeltilen": 196,
   "yapisalOkunan": 0,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
@@ -89593,27 +89593,20 @@
    "secmen": 126419982,
    "oyKullanan": 10976,
    "katilim": 900,
-   "gecerliOy": 2857,
+   "gecerliOy": 588,
    "oy": {
     "ANAP": 1854,
     "DSP": 1003
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 2857,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     114,
     115
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 588,
-     "duzeltilen": 2857,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "kazanan": "ANAP"
   }

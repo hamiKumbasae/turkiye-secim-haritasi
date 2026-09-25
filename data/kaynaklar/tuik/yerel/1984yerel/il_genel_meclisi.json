@@ -31,9 +31,9 @@
   "belde": 0,
   "sehir": 0,
   "koy": 0,
-  "tutarli": 624,
-  "tutarsiz": 87,
-  "ocrDuzeltilen": 169,
+  "tutarli": 619,
+  "tutarsiz": 92,
+  "ocrDuzeltilen": 164,
   "yapisalOkunan": 18,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
@@ -1911,7 +1911,7 @@
    "secmen": 167316,
    "oyKullanan": 143268,
    "katilim": 856,
-   "gecerliOy": 15439,
+   "gecerliOy": 136971,
    "oy": {
     "HP": 6488,
     "DYP": 4860,
@@ -1919,19 +1919,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 15439
    },
    "sayfa": [
     10,
     11
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 136971,
-     "duzeltilen": 15439,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "kazanan": "HP"
   },
@@ -1982,26 +1975,19 @@
    "secmen": 172583,
    "oyKullanan": 145434,
    "katilim": 84.3,
-   "gecerliOy": 9558,
+   "gecerliOy": 140549,
    "oy": {
     "DYP": 9558
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 9558,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     10,
     11
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 140549,
-     "duzeltilen": 9558,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "karakterDuzeltme": [
     ">558→558"
@@ -2660,27 +2646,20 @@
    "secmen": 39721,
    "oyKullanan": 36990,
    "katilim": 93.1,
-   "gecerliOy": 23119,
+   "gecerliOy": 36319,
    "oy": {
     "ANAP": 18095,
     "DYP": 5024
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 23119,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     12,
     13
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 36319,
-     "duzeltilen": 23119,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "karakterDuzeltme": [
     "49.e→49."
@@ -7683,27 +7662,20 @@
    "secmen": 97478,
    "oyKullanan": 91745,
    "katilim": 94.1,
-   "gecerliOy": 57317,
+   "gecerliOy": 68966,
    "oy": {
     "ANAP": 32647,
     "DYP": 24670
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 57317,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     16,
     17
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 68966,
-     "duzeltilen": 57317,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "kazanan": "ANAP"
   },
@@ -10113,27 +10085,20 @@
    "secmen": 284795,
    "oyKullanan": 269688,
    "katilim": 94.7,
-   "gecerliOy": 152346,
+   "gecerliOy": 26236,
    "oy": {
     "ANAP": 122684,
     "DYP": 29662
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 152346,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     18,
     19
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 26236,
-     "duzeltilen": 152346,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "karakterDuzeltme": [
     "2623J6→26236"

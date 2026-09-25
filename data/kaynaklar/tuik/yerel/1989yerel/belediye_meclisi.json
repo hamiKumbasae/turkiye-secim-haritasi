@@ -32,9 +32,9 @@
   "belde": 1223,
   "sehir": 0,
   "koy": 0,
-  "tutarli": 2010,
-  "tutarsiz": 33,
-  "ocrDuzeltilen": 29,
+  "tutarli": 2008,
+  "tutarsiz": 35,
+  "ocrDuzeltilen": 27,
   "yapisalOkunan": 0,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
@@ -20902,26 +20902,19 @@
    "secmen": 4,
    "oyKullanan": 74.9,
    "katilim": 899,
-   "gecerliOy": 11,
+   "gecerliOy": 9,
    "oy": {
     "ANAP": 11
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 11,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     240,
     241
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 9,
-     "duzeltilen": 11,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "karakterDuzeltme": [
     "**1→441",
@@ -59011,26 +59004,19 @@
    "secmen": 715,
    "oyKullanan": 629,
    "katilim": 88.0,
-   "gecerliOy": 1,
+   "gecerliOy": 430,
    "oy": {
     "DSP": 1
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 1,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     290,
     291
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 430,
-     "duzeltilen": 1,
-     "yontem": "parti toplamı + yüzdeler"
-    }
    ],
    "kazanan": "DSP"
   },

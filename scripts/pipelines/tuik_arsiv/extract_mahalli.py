@@ -80,6 +80,18 @@ KITAPLAR = {
                      "belediye_baskanligi": (122, 209), "belediye_meclisi": (212, 299)},
     },
 }
+P04_SOL = ["EMEP", "DSP", "ANAP", "BTP", "AK Parti", "BBP", "İP"]
+P04_SAG = ["ÖDP", "LDP", "TKP", "DYP", "ATP", "MP92", "CHP", "GP", "YTP02", "SHP", "SP", "DP", "MHP", "Bağımsız"]
+KITAPLAR["2004yerel"] = {
+    "demirbas": "0018169", "tarih": "28 Mart 2004", "yayin": "DİE, Mahalli İdareler Seçimi 28.03.2004 (yayın no. 2935)",
+    # dijital dizgi (OCR degil): sol sayfa ad + sandik, secmen, oy kullanan, gecerli
+    # + 7 parti (uyelik sayisi alt satirda); sag sayfa 14 parti. Satir tipi
+    # etiketin girintisinden: il ~87 (kalin), ilce ~95, belde ~108.
+    "dijital": True, "partiler": P04_SOL + P04_SAG,
+    "sol": ["sandik", "secmen", "oyKullanan", "gecerliOy"] + P04_SOL, "sag": P04_SAG,
+    "tablolar": {"il_genel_meclisi": (110, 253), "buyuksehir": (255, 260),
+                 "belediye_baskanligi": (262, 389), "belediye_meclisi": (391, 594)},
+}
 TABLO_ACIKLAMA = {
     "il_genel_meclisi": "İl genel meclisi üyeleri seçimi sonuçlarının ilçelere göre dağılımı",
     "buyuksehir": "Büyükşehir belediye başkanlığı seçimi sonuçlarının bağlı ilçe belediyelerine göre dağılımı",
@@ -455,6 +467,101 @@ def tablo_oku(pdf, cfg, ilk, son, ozel=()):
     return satirlar, eslesmeyen
 
 
+# --- dijital (dizgi) kitap: 2004 ------------------------------------------------
+CID = {"(cid:247)": "ğ", "(cid:248)": "İ", "(cid:249)": "Ş", "(cid:250)": "ş", "(cid:246)": "Ğ"}
+SAYI_TIRE = re.compile(r"^(\d+|-)$")
+
+
+def _dijital_satirlar(page):
+    """[(top, [kelime])] - kenar boslugundaki dondurulmus yazi (Futura) atilir."""
+    ws = [w for w in page.extract_words(extra_attrs=["fontname", "size"]) if "Futura" not in w["fontname"]]
+    satir = []
+    for w in sorted(ws, key=lambda w: (w["top"], w["x0"])):
+        if satir and abs(w["top"] - satir[-1][0]) <= 2.5:
+            satir[-1][1].append(w)
+        else:
+            satir.append([w["top"], [w]])
+    return [(t, sorted(k, key=lambda w: w["x0"])) for t, k in satir]
+
+
+def _ayir(kelimeler, n):
+    """Sondaki n sayi/tire + onceki etiket; olmazsa None."""
+    metin = [w["text"] for w in kelimeler]
+    if len(metin) < n or not all(SAYI_TIRE.match(t) for t in metin[-n:]):
+        return None
+    if len(metin) > n and SAYI_TIRE.match(metin[-n - 1]):
+        return None
+    etiket = " ".join(metin[:-n])
+    for k, v in CID.items():
+        etiket = etiket.replace(" " + k + " ", v).replace(k + " ", v).replace(" " + k, v).replace(k, v)
+    deger = [0 if t == "-" else int(t) for t in metin[-n:]]
+    return etiket.strip(), deger, (kelimeler[0]["x0"] if len(metin) > n else None), \
+        ("Bold" in kelimeler[0]["fontname"] if len(metin) > n else False)
+
+
+def dijital_tablo_oku(pdf, cfg, ilk, son):
+    sol_s, sag_s = cfg["sol"], cfg["sag"]
+    satirlar, eslesmeyen = [], []
+    for a in range(ilk, son, 2):
+        b = a + 1
+        ds = _dijital_satirlar(pdf.pages[a - 1])
+        # girinti referansi: sayfanin 'Belediye/Municipality' ya da 'İl ve ilçe'
+        # sutun basligi (tek/cift sayfada kagit kaymasi farkli)
+        ref = min((w["x0"] for _, k in ds for w in k if w["text"] in ("Municipality", "Province")), default=86.7)
+        L = [(t, _ayir(k, len(sol_s))) for t, k in ds]
+        L = [(t, x) for t, x in L if x and x[0]]
+        R = [(t, [0 if w["text"] == "-" else int(w["text"]) for w in k]) for t, k in _dijital_satirlar(pdf.pages[b - 1])
+             if len(k) == len(sag_s) and all(SAYI_TIRE.match(w["text"]) for w in k)]
+        if not L:
+            continue
+        # iki yuzun dikey kaymasi: en cok satiri +-1.5 icinde eslestiren ofset
+        # alt satirdaki uyelik sayilari da 14 sutunlu oldugundan bir satir kaymis
+        # hizalama da cok satir eslestirir: parti toplami = gecerli tutan satir
+        # sayisini en cok yapan ofset secilir
+        def tutan(d):
+            n = 0
+            for t, (_, deger, _, _) in L:
+                r = min(R, key=lambda u: abs(u[0] - t - d), default=None)
+                if r and abs(r[0] - t - d) <= 1.5 and sum(deger[4:]) + sum(r[1]) == deger[3]:
+                    n += 1
+            return n
+        ofset = max((tutan(d / 2), -abs(d), d / 2) for d in range(-24, 25))[2]
+        for t, (etiket, deger, x0, kalin) in L:
+            r = min(R, key=lambda u: abs(u[0] - t - ofset), default=None)
+            sag = r[1] if r and abs(r[0] - t - ofset) <= 1.5 else None
+            v = dict(zip(sol_s, deger))
+            if sag:
+                v.update(zip(sag_s, sag))
+            satirlar.append({"etiket": etiket, "v": v, "sagYok": sag is None, "sayfa": [a, b], "x0": x0, "kalin": kalin, "ref": ref,
+                             "ham": [], "karakterDuzeltme": [], "tokSol": None, "tokSag": None})
+    return satirlar, eslesmeyen
+
+
+def dijital_tiplendir(satirlar):
+    il_ad = {fold(v["il_ADI"]).replace(" ", ""): int(k) for k, v in json.loads(
+        (ROOT / "data/raw/ysk/acikveri-il-ilce-listesi.json").read_text(encoding="utf-8")).items()}
+    il_ad.update({"ICEL": 33, "AFYON": 3, "SURFA": 63, "KMARAS": 46})
+    plaka, ilce, gorulen = None, None, set()
+    for s in satirlar:
+        f = fold(s["etiket"])
+        if re.search(r"TURK.?YE|TURKEY", f):
+            s.update(tip="turkiye", plaka=None, ustIlce=None)
+            plaka = None
+        elif re.match(r"^(KENT|KIR)\b", f):
+            s.update(tip="sehir" if f.startswith("KENT") else "koy", plaka=plaka, ustIlce=ilce)
+        elif s["kalin"] and f.replace(" ", "") in il_ad:
+            plaka = il_ad[f.replace(" ", "")]
+            gorulen.add(plaka)
+            ilce = None
+            s.update(tip="il", plaka=plaka, ustIlce=None)
+        elif s["x0"] is not None and s["x0"] - s["ref"] < 14:
+            ilce = s["etiket"]
+            s.update(tip="ilce", plaka=plaka, ustIlce=None)
+        else:
+            s.update(tip="belde", plaka=plaka, ustIlce=ilce)
+    return satirlar, sorted(set(range(1, 82)) - gorulen), []
+
+
 # --- satir dogrulama / duzeltme -------------------------------------------------
 def _uyar(o, y, g):
     return abs(100 * o / g - y) <= 0.1 if g else True
@@ -484,7 +591,7 @@ def dogrula(v, partiler):
             if aday >= 0 and (not isinstance(y, float) or _uyar(aday, y, g)):
                 duz.append({"alan": p, "okunan": oy[p], "duzeltilen": aday, "yontem": "toplam + yüzde"})
                 oy[p] = aday
-        elif not supheli and toplam > 0:
+        elif not supheli and toplam > 0 and sum(1 for p in partiler if isinstance(v.get(p + "%"), float) and oy[p]) >= 2:
             # parti hucreleri kendi yuzdeleriyle tutarli: yanlis okunan gecerli oy
             if all(_uyar(o, v[p + "%"], toplam) for p, o in oy.items()
                    if isinstance(o, int) and isinstance(v.get(p + "%"), float)) \
@@ -664,14 +771,18 @@ def isle(secim, tablolar=None):
     BINLIK_BOSLUK = cfg.get("binlikBosluk", False)
     pdf = die_tablo.ac(RAW / f"{cfg['demirbas']}.pdf")
     il_ad = il_adlari()
-    ilce_kume = genel_ilceler(cfg["genelIlce"])
+    ilce_kume = genel_ilceler(cfg["genelIlce"]) if cfg.get("genelIlce") else {}
     ilce_sira = {}
     sonuc = {}
     for tablo, (ilk, son) in cfg["tablolar"].items():
         if tablolar and tablo not in tablolar:
             continue
-        satirlar, eslesmeyen = tablo_oku(pdf, cfg, ilk, son, cfg.get("ozelCiftler", {}).get(tablo, ()))
-        satirlar, eksik_il, ilsiz = tiplendir(satirlar, il_ad, ilce_kume, tablo, ilce_sira, cfg.get("bbToplamSirasi"))
+        if cfg.get("dijital"):
+            satirlar, eslesmeyen = dijital_tablo_oku(pdf, cfg, ilk, son)
+            satirlar, eksik_il, ilsiz = dijital_tiplendir(satirlar)
+        else:
+            satirlar, eslesmeyen = tablo_oku(pdf, cfg, ilk, son, cfg.get("ozelCiftler", {}).get(tablo, ()))
+            satirlar, eksik_il, ilsiz = tiplendir(satirlar, il_ad, ilce_kume, tablo, ilce_sira, cfg.get("bbToplamSirasi"))
         if tablo == "il_genel_meclisi":
             # ayni kitabin ilce listesi (ve sirasi) sonraki tablolarda ilce/belde ayrimina eklenir
             for s in satirlar:
@@ -694,10 +805,13 @@ def isle(secim, tablolar=None):
             v = s["v"]
             r = {"tip": s["tip"], "plaka": s["plaka"], "adKaynakta": s["etiket"], "ustIlce": s["ustIlce"],
                  "sandik": v.get("sandik"), "secmen": v.get("secmen"), "oyKullanan": v.get("oyKullanan"),
-                 "katilim": v.get("katilim%"), "gecerliOy": kontrol.pop("gecerliOy", v.get("gecerliOy")),
+                 "katilim": v.get("katilim%") if "katilim%" in v else (round(100 * v["oyKullanan"] / v["secmen"], 1) if v.get("secmen") else None),
+                 "gecerliOy": kontrol.pop("gecerliOy", v.get("gecerliOy")),
                  "oy": dict(sorted(oy.items(), key=lambda kv: -kv[1])),
                  "yuzde": {p: v[p + "%"] for p in cfg["partiler"] if isinstance(v.get(p + "%"), float) and v[p + "%"]},
                  "kontrol": kontrol, "sayfa": s["sayfa"]}
+            if "uyelik" in v:
+                r["uyelik"] = v["uyelik"]
             if duz:
                 r["ocrDuzeltme"] = duz
             if yapisal:
