@@ -205,7 +205,7 @@ elections:
       level: [il]
       status: reported
       note: "Wikipedia'daki 'Mv' sütunu güvenilmez bulunup kullanılmamıştı (bkz. eski not) — YSK arşivi güvenilir, doğrulanmış vekil dağılımı sağladı."
-    coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"]
+    coverage: ["ilçe verisi yok — resmî/ulusal ilçe kaynağı bulunamadı (2026-09-25 kaynak taraması, bkz. data/kaynaklar/ARASTIRMA_KAYDI.md). Önceki gerekçe ('seçim çevresi il'in kendisiydi, ilçe kırılımı yok') yanlıştı: seçim çevresi il olsa da DİE 1961'den itibaren sonuçları ilçe ilçe yayımladı; 1950-1957 için böyle bir yayın bulunamadı (DİE Yayın No. 513 bu yıllar için yalnız il düzeyi).", "araştırma kapandı (2026-09-25, kullanıcı kararı): yalnız tek-il akademik çalışmalar var (parçalı kaynak), il düzeyinde kalıyor"]
     verification: ["Toplam 610 vekil resmi ulusal rakamla doğrulandı; il toplamı Sakarya hariç 602 (bkz. known_issues)."]
     known_issues: [{scope: "il: Sakarya", status: reported, description: "YSK'nin bu arşivinde Sakarya yok (66/67 il) — il toplamı resmi ulusal rakamdan (610) Sakarya'nın sandalye sayısı kadar düşük (602). toplamSandalye alanı doğru resmi rakamı (610) taşıyor."}]
   "1954":
@@ -216,13 +216,13 @@ elections:
       - scope: "il: Bilecik"
         status: reported
         description: "Eski (Wikipedia) kaynak tabloda satırı atlanmıştı; ayrı bir Wikipedia tablosundan bulunup eklenmişti (2026-09-20). YSK arşivinde Bilecik doğrudan var, bu düzeltme artık gereksiz ama tarihsel kayıt olarak tutuluyor."
-    coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"]
+    coverage: ["ilçe verisi yok — resmî/ulusal ilçe kaynağı bulunamadı (2026-09-25 kaynak taraması, bkz. data/kaynaklar/ARASTIRMA_KAYDI.md). Önceki gerekçe ('seçim çevresi il'in kendisiydi, ilçe kırılımı yok') yanlıştı: seçim çevresi il olsa da DİE 1961'den itibaren sonuçları ilçe ilçe yayımladı; 1950-1957 için böyle bir yayın bulunamadı (DİE Yayın No. 513 bu yıllar için yalnız il düzeyi).", "araştırma kapandı (2026-09-25, kullanıcı kararı): yalnız tek-il akademik çalışmalar var (parçalı kaynak), il düzeyinde kalıyor"]
     verification: ["Toplam 541 vekil resmi ulusal rakamla VE il toplamıyla birebir doğrulandı (64/64 il, Sakarya bu tarihte zaten yoktu)."]
   "1950":
     type: milletvekili
     primary: {authority: YSK, url: "ysk.gov.tr/tr/1950-1977-yillari-arasi-milletvekili-genel-secimleri/3007 (TÜİK kaynaklı, il-bazlı PDF'ler)", retrieved_at: "2026-09-22", level: [il], status: official}
     legacy_source: {source: "Türkçe Wikipedia (YSK kaynaklı)", level: [il], status: reported, note: "Wikipedia'da vekil sütunu hiç yoktu — YSK arşivi bunu ilk kez sağladı."}
-    coverage: ["ilçe verisi yok — 'seçim çevresi' il'in kendisiydi"]
+    coverage: ["ilçe verisi yok — resmî/ulusal ilçe kaynağı bulunamadı (2026-09-25 kaynak taraması, bkz. data/kaynaklar/ARASTIRMA_KAYDI.md). Önceki gerekçe ('seçim çevresi il'in kendisiydi, ilçe kırılımı yok') yanlıştı: seçim çevresi il olsa da DİE 1961'den itibaren sonuçları ilçe ilçe yayımladı; 1950-1957 için böyle bir yayın bulunamadı (DİE Yayın No. 513 bu yıllar için yalnız il düzeyi).", "araştırma kapandı (2026-09-25, kullanıcı kararı): yalnız tek-il akademik çalışmalar var (parçalı kaynak), il düzeyinde kalıyor"]
     verification: ["Toplam 487 vekil resmi ulusal rakamla VE il toplamıyla birebir doğrulandı (63/63 il, Sakarya bu tarihte zaten yoktu)."]
     # 2026-09-22'de baslatilan cok-katmanli dogrulama calismasinin ilk
     # (kanit niteligindeki) girisi — bkz. scripts/pipelines/genel_1950_1977/

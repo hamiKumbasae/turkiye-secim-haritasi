@@ -734,3 +734,19 @@ Bu görev okunup değerlendirildi; **işe başlanmadı.** Süre/saat bütçesi a
 - Bu aşamada iz bulunur (künye, sayfa, kapsam), rakam aktarılmaz.
 - Ulusal tek kaynak bulunursa derinleşilir; yalnız dağınık il kaynakları varsa örnekleri kaydedilip "parçalı kaynak mevcut" denir.
 - Üyelik/erişim duvarında durulur; yalnız kayıt tutulur, elle bakma kararı kullanıcının.
+
+---
+
+## Genel seçimler kapandı (2026-09-25)
+
+Kullanıcı kararıyla genel seçimler için veri arama sona erdi. Ayrıntı ve
+kaynak günlüğü: `data/kaynaklar/ARASTIRMA_KAYDI.md`.
+
+- **1961–2002:** İlçe verisi tam ve haritada işli. Parti toplamı ile geçerli
+  oyun tutmadığı satırlar basılı DİE kitaplarında da aynı (kaynak hatası),
+  düzeltilmedi. Açık kalan tek konu: Ankara "Merkez" (1961–1983) tarihsel
+  sınırı olmadığı için çizilmiyor.
+- **1950, 1954, 1957:** Ulusal ilçe kaynağı bulunamadı; il düzeyinde kalıyor.
+  `sources.yml` içindeki eskimiş gerekçe ("seçim çevresi il'di") düzeltildi.
+
+**Sıradaki:** yerel seçimler (kapsam ve öncelik kullanıcıyla konuşulacak).
