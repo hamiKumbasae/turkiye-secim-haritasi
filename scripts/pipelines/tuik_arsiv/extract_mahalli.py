@@ -4,7 +4,7 @@ ilce / belediye tablolarini kaynak katmanina cikarir:
 
   data/kaynaklar/tuik/yerel/<secim>/<tablo>.json
 
-  1984yerel  kutuphane.tuik.gov.tr/pdf/0012953.pdf  (DIE yayin no 1109, 1985)
+  1984yerel  kutuphane.tuik.gov.tr/pdf/0012953.pdf  (DIE yayin no 1109, 1985) - artik extract_mahalli_1984.py
   1989yerel  kutuphane.tuik.gov.tr/pdf/0013280.pdf  (DIE, 1990)
 
 Tablolar (kitaptaki sirasiyla):
@@ -33,7 +33,8 @@ ayrimi o donemin ilce listesiyle yapilir: ayni kitabin IGM tablosu (ilcelere
 gore) + TUIK genel secim ilce listesi (1984 icin 1983, 1989 icin 1987).
 
 Kullanim:
-  python3 scripts/pipelines/tuik_arsiv/extract_mahalli.py [1984yerel 1989yerel]
+  python3 scripts/pipelines/tuik_arsiv/extract_mahalli.py [1989yerel 2004yerel]
+  (1984yerel: extract_mahalli_1984.py)
 """
 import difflib
 import json
@@ -847,8 +848,15 @@ def isle(secim, tablolar=None):
     return sonuc
 
 
+# 1984 bu okuyucuyla degil extract_mahalli_1984.py ile okunur (uc OCR okumasi,
+# geri hesap yok); KITAPLAR["1984yerel"] ayarlari orada kullaniliyor.
+AYRI_OKUYUCU = {"1984yerel": "extract_mahalli_1984.py"}
+
+
 def main():
-    secimler = [a for a in sys.argv[1:] if a in KITAPLAR] or list(KITAPLAR)
+    secimler = [a for a in sys.argv[1:] if a in KITAPLAR] or [k for k in KITAPLAR if k not in AYRI_OKUYUCU]
+    for s in [s for s in secimler if s in AYRI_OKUYUCU]:
+        sys.exit(f"{s}: bu okuyucu kullanılmıyor, bkz. scripts/pipelines/tuik_arsiv/{AYRI_OKUYUCU[s]}")
     tablolar = [a for a in sys.argv[1:] if a in TABLO_ACIKLAMA] or None
     for s in secimler:
         isle(s, tablolar)

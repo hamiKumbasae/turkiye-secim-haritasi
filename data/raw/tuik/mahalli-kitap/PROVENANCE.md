@@ -25,8 +25,9 @@ partiler), sağ sayfa (kalan partiler, etiketsiz). Okuyucu:
 Bilinen tarama kusurları:
 - 1989 Tablo 2'nin ilk yaprakları karışık sırada taranmış: s.20+s.17, s.18+s.21 (script'te sabit).
 - 1989'da kalın puntolu satırlarda OCR her karakteri iki kez yazmış ('776655' = 765) — geri çevrildi.
-- 1984 OCR'i zayıf: yüzdelerde ondalık noktası düşmüş ('4 1 3' = 41,3), '*' = 4, bazı tireler kayıp.
-  Her satır parti toplamı = geçerli oy ve yüzde kısıtlarıyla doğrulanır; tutmayanlar `kontrol.durum = tutarsiz`.
+- 1984 OCR'i zayıf: yüzdelerde ondalık noktası düşmüş ('4 1 3' = 41,3), '*' = 4, bazı tireler kayıp,
+  rakamlar yanlış ('386' → '366'); bazı sağ yüzler eğik/bükük taranmış (sağ altta sütun kayması 14 pt'ye çıkıyor).
+  1984 artık ayrı okuyucuyla okunur — aşağıdaki "1984 — üç okumalı doğrulama" bölümü.
 - 1984 belediye başkanlığı tablosunda Şanlıurfa'nın il satırı taramada yok (il sınırı ikinci MERKEZ satırından çıkarıldı).
 - 2004 kitabı dijital: satır tipi etiket girintisinden (il kalın ~87, ilçe ~95, belde ~108; sayfanın
   'Municipality' başlığına göre), iki yüz satırları dikey ofsetle eşlenir. Türkçe harflerin bir kısmı
@@ -56,3 +57,31 @@ ayarları, kimlik). Her kayıt sayı satırı + altındaki yüzde satırı. Kura
   (bkz. `data/kaynaklar/tuik/yerel/<seçim>/dogrulama_raporu.json`).
 - Sayfa kenarındaki bilinen tarama kusurları: kalın satırlarda karakterler iki kez ('KKüüççüükk'),
   tireler nokta/madde işareti olarak okunmuş, belde adlarının bir kısmı metin katmanında hiç yok.
+
+## 1984 — üç okumalı doğrulama (2026-09-25)
+
+Okuyucu: `scripts/pipelines/tuik_arsiv/extract_mahalli_1984.py`. Önceki okuma (`extract_mahalli.py`)
+tek bir parti hücresi tutmayınca değeri toplamdan geri hesaplıyordu (`ocrDuzeltme`, 1984'te 328 satır
+"tutarlı" işaretliydi); yeni okumayla karşılaştırıldığında bunların 75'i yanlıştı (ör. Savaştepe ANAP
+1476 → 1478, Bakırköy SODEP 104648 → 104848). Yeni okuma:
+
+- **Üç bağımsız okuma**, her hücre için aday: metin katmanı (ızgara, hücre dizgisi ve eski okuyucunun
+  yapısal ayrıştırması), macOS Vision (`vision_ocr.swift`) ve tesseract (rakam beyaz listesi). Görüntü
+  3 sütun genişliğinde, üst üste binen kısa karolara bölünerek okunur. Okumalar
+  `data/kaynaklar/tuik/yerel/1984yerel/ocr/` altında saklı; okuyucu macOS/tesseract olmadan bunlardan
+  aynı çıktıyı üretir.
+- **Sütun sınırları sayfa başına çarpıklık modeliyle** (x, y'ye göre çift doğrusal) yerel; satır konumu
+  satır grubunun medyan yüksekliği.
+- **Tahmin yok:** hiçbir değer hesaplanmaz; çözüm yalnızca okunmuş adaylardan kurulur.
+- **`tutarli`**: parti toplamı = geçerli oy, oyu olan her partinin kitaptaki yüzdesi (±0,1), katılım ve
+  geçerli % (±0,05) tutuyor; öncü alanlardan biri satırın kendi metin katmanı ızgarasından; ve sıfır
+  olmayan oy alanlarından (geçerli + partiler) **en fazla biri** tek okumaya dayanıyor (diğerleri iki
+  motorla okunmuş ya da okunan yüzdeleriyle tek değere sabitlenmiş). Bu son kural, iki yanlış okumanın
+  birbirini dengelediği çözümleri dışlar (ör. 1984 Van meclis: geçerli ve ANAP ikisi de 2000 eksik
+  okunmuş, toplam tutuyordu). `teyitsiz` = kısıtlar sağlanıyor ama bu kural sağlanmıyor; `belirsiz` =
+  birden çok çözüm; `tutarsiz` = çözüm yok. Yalnızca `tutarli` satırlar haritaya işlenir.
+- **Karşılaştırma:** önceki okumanın (geri hesapsız) toplamla doğruladığı satırlardan yeniyle de
+  tutarlı olan 1.867 satırın 1.866'sı birebir aynı; tek fark (Van) yeni okumada doğru. Örneklem sayfa
+  görüntüsüyle gözle doğrulandı (12 satır, hepsi birebir).
+- Sonuç (satır / tutarlı): İGM 711 / 552, büyükşehir 27 / 21, belediye başkanlığı 1759 / 1027,
+  belediye meclisi 1760 / 1044.

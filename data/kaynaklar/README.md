@@ -56,7 +56,8 @@ alanında durur (kaynağı her zaman `tuik`).
 python3 scripts/pipelines/wikipedia_arsiv/extract_yerel.py
 python3 scripts/pipelines/wikipedia_arsiv/extract_genel_senato.py
 python3 scripts/pipelines/tuik_arsiv/extract_tuik_ilce.py
-python3 scripts/pipelines/tuik_arsiv/extract_mahalli.py            # 1984/1989 DİE mahalli kitapları
+python3 scripts/pipelines/tuik_arsiv/extract_mahalli.py            # 1989/2004 DİE mahalli kitapları
+.venv/bin/python scripts/pipelines/tuik_arsiv/extract_mahalli_1984.py  # 1984 (üç OCR okuması; önbellek 1984yerel/ocr/)
 python3 scripts/pipelines/tuik_arsiv/extract_mahalli_ocr.py 1994yerel   # taranmış iki satırlı kitaplar (1999yerel aynı)
 python3 scripts/pipelines/tuik_arsiv/merge_mahalli.py --write
 ```

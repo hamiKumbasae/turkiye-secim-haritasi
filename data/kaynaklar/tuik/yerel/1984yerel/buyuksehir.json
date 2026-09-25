@@ -12,8 +12,9 @@
    38,
    39
   ],
-  "ozelSayfaCiftleri": null,
-  "not": "DİE kitabındaki belediye/ilçe düzeyi değerler ilçe seçim kurullarının birleştirme tutanaklarından (kitabın açıklaması)."
+  "okuyucu": "scripts/pipelines/tuik_arsiv/extract_mahalli_1984.py",
+  "ocr": "data/kaynaklar/tuik/yerel/1984yerel/ocr/",
+  "not": "DİE kitabındaki belediye/ilçe düzeyi değerler ilçe seçim kurullarının birleştirme tutanaklarından (kitabın açıklaması). Üç okuma (metin katmanı, macOS Vision, tesseract) aday verir; hiçbir değer hesaplanmaz. Durumlar: tutarli: toplam, parti yüzdeleri, katılım ve geçerli % tutuyor; sıfır olmayan oy alanlarından en fazla biri tek okumaya dayanıyor; teyitsiz: kısıtları sağlayan çözüm var ama oy alanlarından ikisi ya da fazlası yalnızca tek bir okumaya dayanıyor (dengeleyen OCR hatası dışlanamıyor); belirsiz: kısıtları sağlayan birden çok farklı oy çözümü var; tutarsiz: okunan adaylardan kısıtları sağlayan çözüm yok. Tutarlı olmayan satırda oy yazılmaz; seçmen/oy kullanan/katılım yalnızca katılım kısıtıyla tek çözümse, sandık iki motor aynı okuduysa yazılır."
  },
  "partiler": [
   "ANAP",
@@ -29,12 +30,11 @@
   "il": 3,
   "ilce": 23,
   "belde": 0,
-  "sehir": 0,
-  "koy": 0,
-  "tutarli": 22,
-  "tutarsiz": 5,
-  "ocrDuzeltilen": 8,
-  "yapisalOkunan": 0,
+  "tutarli": 21,
+  "teyitsiz": 2,
+  "belirsiz": 0,
+  "tutarsiz": 4,
+  "tekOkumaAlanli": 9,
   "eksikIl": [
    1,
    2,
@@ -111,7 +111,7 @@
    "adKaynakta": "GENERAL TOTAL",
    "ustIlce": null,
    "sandik": 12644,
-   "secmen": 2995970,
+   "secmen": 3995970,
    "oyKullanan": 3410903,
    "katilim": 85.4,
    "gecerliOy": 3209989,
@@ -134,13 +134,18 @@
     "Bağımsız": 0.4
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarli"
    },
    "sayfa": [
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "ANAP"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -152,42 +157,17 @@
    "secmen": 921111,
    "oyKullanan": 779368,
    "katilim": 84.6,
-   "gecerliOy": 737210,
-   "oy": {
-    "SODEP": 243354,
-    "HP": 32278,
-    "RP": 20167,
-    "MDP": 18240,
-    "DYP": 3003,
-    "Bağımsız": 1162
-   },
-   "yuzde": {
-    "ANAP": 53.2,
-    "DYP": 4.1,
-    "HP": 4.4,
-    "MDP": 2.5,
-    "RP": 2.7,
-    "SODEP": 33.0,
-    "Bağımsız": 0.1
-   },
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 318204,
-    "yuzdeUyumsuz": [
-     "ANAP",
-     "DYP"
-    ]
+    "durum": "tutarsiz"
    },
    "sayfa": [
     38,
     39
    ],
-   "karakterDuzeltme": [
-    "¡391975)→391975",
-    "Î3003V→3003",
-    "/32278→32278"
-   ],
-   "kazanan": "SODEP"
+   "kazanan": null
   },
   {
    "tip": "ilce",
@@ -198,37 +178,17 @@
    "secmen": 165782,
    "oyKullanan": 141966,
    "katilim": 85.6,
-   "gecerliOy": 133080,
-   "oy": {
-    "ANAP": 77476,
-    "SODEP": 37767,
-    "RP": 4050,
-    "MDP": 3244,
-    "Bağımsız": 249
-   },
-   "yuzde": {
-    "ANAP": 56.2,
-    "DYP": 3.2,
-    "HP": 4.5,
-    "MDP": 2.4,
-    "RP": 3.1,
-    "SODEP": 28.4,
-    "Bağımsız": 0.2
-   },
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 122786,
-    "yuzdeUyumsuz": [
-     "ANAP",
-     "DYP",
-     "HP"
-    ]
+    "durum": "tutarsiz"
    },
    "sayfa": [
     38,
     39
    ],
-   "kazanan": "ANAP"
+   "kazanan": null
   },
   {
    "tip": "ilce",
@@ -250,7 +210,7 @@
     "Bağımsız": 280
    },
    "yuzde": {
-    "ANAP": 47.6,
+    "ANAP": 47.8,
     "DYP": 3.8,
     "HP": 4.0,
     "MDP": 2.3,
@@ -259,15 +219,15 @@
     "Bağımsız": 0.1
    },
    "kontrol": {
-    "durum": "tutarli",
-    "yuzdeUyumsuz": [
-     "ANAP"
-    ]
+    "durum": "tutarli"
    },
    "sayfa": [
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -305,6 +265,9 @@
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -315,7 +278,7 @@
    "sandik": 449,
    "secmen": 145990,
    "oyKullanan": 128521,
-   "katilim": 880,
+   "katilim": 88.0,
    "gecerliOy": 119932,
    "oy": {
     "ANAP": 61306,
@@ -327,6 +290,7 @@
     "Bağımsız": 246
    },
    "yuzde": {
+    "ANAP": 51.1,
     "DYP": 4.2,
     "HP": 4.8,
     "MDP": 2.9,
@@ -341,10 +305,9 @@
     38,
     39
    ],
-   "karakterDuzeltme": [
-    "İ19932→119932",
-    "51-1→511"
-   ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -382,6 +345,9 @@
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -391,7 +357,7 @@
    "ustIlce": null,
    "sandik": 7681,
    "secmen": 2391942,
-   "oyKullanan": 2015895,
+   "oyKullanan": null,
    "katilim": 84.3,
    "gecerliOy": 1890000,
    "oy": {
@@ -419,6 +385,12 @@
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "belirsizAlan": [
+     "oyKullanan"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -456,6 +428,12 @@
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "RP"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -467,10 +445,10 @@
    "secmen": 480913,
    "oyKullanan": 392684,
    "katilim": 81.7,
-   "gecerliOy": 369795,
+   "gecerliOy": 369995,
    "oy": {
     "ANAP": 182696,
-    "SODEP": 104648,
+    "SODEP": 104848,
     "HP": 36281,
     "RP": 15423,
     "DYP": 14633,
@@ -493,14 +471,12 @@
     38,
     39
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "gecerliOy",
-     "okunan": 369995,
-     "duzeltilen": 369795,
-     "yontem": "parti toplamı + yüzdeler"
-    }
-   ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "SODEP"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -538,14 +514,9 @@
     38,
     39
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "ANAP",
-     "okunan": 54628,
-     "duzeltilen": 54828,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -556,7 +527,7 @@
    "sandik": 475,
    "secmen": 114462,
    "oyKullanan": 97067,
-   "katilim": 848,
+   "katilim": 84.8,
    "gecerliOy": 89346,
    "oy": {
     "ANAP": 42650,
@@ -570,22 +541,22 @@
    "yuzde": {
     "ANAP": 47.7,
     "DYP": 4.7,
-    "HP": 1.0,
+    "HP": 11.0,
     "MDP": 5.2,
     "RP": 5.9,
     "SODEP": 25.0,
     "Bağımsız": 0.5
    },
    "kontrol": {
-    "durum": "tutarli",
-    "yuzdeUyumsuz": [
-     "HP"
-    ]
+    "durum": "tutarli"
    },
    "sayfa": [
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -623,14 +594,12 @@
     38,
     39
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DYP",
-     "okunan": 1619,
-     "duzeltilen": 1819,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "DYP"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -655,22 +624,22 @@
    "yuzde": {
     "ANAP": 49.7,
     "DYP": 4.6,
-    "HP": 6.7,
+    "HP": 8.7,
     "MDP": 4.3,
     "RP": 4.5,
     "SODEP": 27.7,
     "Bağımsız": 0.5
    },
    "kontrol": {
-    "durum": "tutarli",
-    "yuzdeUyumsuz": [
-     "HP"
-    ]
+    "durum": "tutarli"
    },
    "sayfa": [
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -708,6 +677,9 @@
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -745,14 +717,12 @@
     38,
     39
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DYP",
-     "okunan": 6167,
-     "duzeltilen": 8187,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "DYP"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -764,27 +734,18 @@
    "secmen": 108052,
    "oyKullanan": 95579,
    "katilim": 88.5,
-   "gecerliOy": 68795,
-   "oy": {
-    "ANAP": 36640,
-    "DYP": 3341
-   },
-   "yuzde": {
-    "ANAP": 41.3
-   },
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 39981,
-    "yuzdeUyumsuz": [
-     "ANAP"
-    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     38,
     39
    ],
-   "kazanan": "ANAP"
+   "kazanan": null
   },
   {
    "tip": "ilce",
@@ -821,6 +782,9 @@
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -858,14 +822,12 @@
     38,
     39
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "ANAP",
-     "okunan": 66483,
-     "duzeltilen": 68483,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "ANAP"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -888,7 +850,7 @@
     "Bağımsız": 226
    },
    "yuzde": {
-    "ANAP": 46.2,
+    "ANAP": 48.2,
     "DYP": 4.5,
     "HP": 8.6,
     "MDP": 3.6,
@@ -897,15 +859,18 @@
     "Bağımsız": 0.5
    },
    "kontrol": {
-    "durum": "tutarli",
-    "yuzdeUyumsuz": [
-     "ANAP"
-    ]
+    "durum": "tutarli"
    },
    "sayfa": [
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "HP"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -943,14 +908,12 @@
     38,
     39
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DYP",
-     "okunan": 6720,
-     "duzeltilen": 8720,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "DYP"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -962,48 +925,24 @@
    "secmen": 196812,
    "oyKullanan": 167434,
    "katilim": 85.1,
-   "gecerliOy": 155678,
-   "oy": {
-    "ANAP": 76636,
-    "SODEP": 38390,
-    "HP": 15760,
-    "RP": 8392,
-    "MDP": 8041,
-    "DYP": 6964,
-    "Bağımsız": 1495
-   },
-   "yuzde": {
-    "ANAP": 49.3,
-    "DYP": 4.5,
-    "HP": 10.1,
-    "MDP": 5.1,
-    "RP": 5.4,
-    "SODEP": 24.6,
-    "Bağımsız": 1.0
-   },
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz"
    },
    "sayfa": [
     38,
     39
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "SODEP",
-     "okunan": 36390,
-     "duzeltilen": 38390,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "kazanan": "ANAP"
+   "kazanan": null
   },
   {
    "tip": "ilce",
    "plaka": 34,
    "adKaynakta": "ZEYT t NBURNU",
    "ustIlce": null,
-   "sandik": 188,
+   "sandik": null,
    "secmen": 63769,
    "oyKullanan": 57223,
    "katilim": 89.7,
@@ -1033,6 +972,9 @@
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -1055,7 +997,7 @@
     "Bağımsız": 2275
    },
    "yuzde": {
-    "ANAP": 46.0,
+    "ANAP": 48.0,
     "DYP": 4.5,
     "HP": 7.0,
     "MDP": 5.5,
@@ -1064,15 +1006,15 @@
     "Bağımsız": 0.4
    },
    "kontrol": {
-    "durum": "tutarli",
-    "yuzdeUyumsuz": [
-     "ANAP"
-    ]
+    "durum": "tutarli"
    },
    "sayfa": [
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama"
+   },
    "kazanan": "ANAP"
   },
   {
@@ -1084,41 +1026,17 @@
    "secmen": 438416,
    "oyKullanan": 390720,
    "katilim": 89.1,
-   "gecerliOy": 370294,
-   "oy": {
-    "ANAP": 189925,
-    "SODEP": 118160,
-    "HP": 25426,
-    "MDP": 16386,
-    "DYP": 11962,
-    "RP": 7088,
-    "Bağımsız": 1347
-   },
-   "yuzde": {
-    "ANAP": 51.3,
-    "DYP": 3.2,
-    "HP": 6.9,
-    "MDP": 4.4,
-    "RP": 1.9,
-    "SODEP": 31.9,
-    "Bağımsız": 0.4
-   },
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "teyitsiz"
    },
    "sayfa": [
     38,
     39
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "SODEP",
-     "okunan": 116140,
-     "duzeltilen": 118160,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "kazanan": "ANAP"
+   "kazanan": null
   },
   {
    "tip": "ilce",
@@ -1129,7 +1047,7 @@
    "secmen": 85961,
    "oyKullanan": 79878,
    "katilim": 92.9,
-   "gecerliOy": 74671,
+   "gecerliOy": 74871,
    "oy": {
     "ANAP": 27645,
     "SODEP": 24004,
@@ -1144,20 +1062,23 @@
     "DYP": 7.3,
     "HP": 8.3,
     "MDP": 13.2,
+    "RP": 1.9,
     "SODEP": 32.1,
     "Bağımsız": 0.3
    },
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 74871,
-    "yuzdeUyumsuz": [
-     "ANAP"
-    ]
+    "durum": "tutarli"
    },
    "sayfa": [
     38,
     39
    ],
+   "okuma": {
+    "hizalama": "hizalama",
+    "tekOkuma": [
+     "gecerliOy"
+    ]
+   },
    "kazanan": "ANAP"
   },
   {
@@ -1165,43 +1086,21 @@
    "plaka": 35,
    "adKaynakta": "KARŞIYAKA",
    "ustIlce": null,
-   "sandik": 486,
+   "sandik": null,
    "secmen": 158540,
    "oyKullanan": 145042,
-   "katilim": 915,
-   "gecerliOy": 137614,
-   "oy": {
-    "ANAP": 61686,
-    "SODEP": 48425,
-    "HP": 9385,
-    "DYP": 8623,
-    "MDP": 5782,
-    "RP": 2598,
-    "Bağımsız": 715
-   },
-   "yuzde": {
-    "ANAP": 45.0,
-    "DYP": 6.4,
-    "HP": 6.1,
-    "MDP": 4.2,
-    "RP": 1.9,
-    "SODEP": 35.2,
-    "Bağımsız": 0.5
-   },
+   "katilim": 91.5,
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 137214,
-    "yuzdeUyumsuz": [
-     "ANAP",
-     "DYP",
-     "HP"
-    ]
+    "durum": "teyitsiz"
    },
    "sayfa": [
     38,
     39
    ],
-   "kazanan": "ANAP"
+   "kazanan": null
   }
  ]
 }
