@@ -88,10 +88,47 @@ def satir_koken(r):
         return None
     s = f"ana kaynak: {k.get('ana')}"
     if k.get("teyit"):
-        s += f" | teyit: {', '.join(k['teyit'])} (tum degerler birebir ayni)"
+        s += f" | teyit: {', '.join(k['teyit'])} (ana kaynaktaki degerler birebir ayni)"
     if k.get("farklar"):
-        s += f" | {len(k['farklar'])} alan {k['farklar'][0]['kaynak']}'ten farkli/eksikti"
+        eksik = sum(1 for f in k["farklar"] if f["eski"] is None)
+        farkli = len(k["farklar"]) - eksik
+        kay = k["farklar"][0]["kaynak"]
+        if farkli:
+            s += f" | {farkli} alan {kay}'ten farkli (degistirildi)"
+        if eksik:
+            s += f" | {eksik} alan yalnizca {kay}'te vardi (eklendi)"
+    if k.get("tuikKullanilmadi"):
+        s += " | tuik oylari kullanilmadi (DİE satiri tutarsiz)"
     return s
+
+
+def koken_detay(k, girinti="      "):
+    """Satir kaynak alaninin tum ayrintisi: farklar, kitap/tablo/sayfa, neden."""
+    for f in k.get("farklar", []):
+        print(f"{girinti}{f['alan']}: {f['eski']} -> {f['yeni']}  (kaynak: {f['kaynak']})")
+    t = k.get("tuik")
+    if isinstance(t, dict):
+        print(f"{girinti}tuik: DİE kitabı {t.get('kitap')} (kutuphane.tuik.gov.tr/pdf/{t.get('kitap')}.pdf), "
+              f"tablo {t.get('tablo')}, s.{t.get('sayfa')}, kaynakta '{t.get('adKaynakta')}'")
+        if t.get("katman"):
+            print(f"{girinti}tuik katmani: {t['katman']}")
+        for d in t.get("ocrDuzeltme") or []:
+            print(f"{girinti}ocr duzeltme: {d['alan']} okunan {d['okunan']} -> {d['duzeltilen']} ({d['yontem']})")
+        if t.get("yapisalOkuma"):
+            print(f"{girinti}not: satir sutun kenarlarindan degil, sayi parcalarinin kisitlarla yeniden ayristirilmasiyla okundu")
+    if k.get("tuikKullanilmadi"):
+        u = k["tuikKullanilmadi"]
+        print(f"{girinti}tuik kullanilmadi: {u['neden']} — {json.dumps(u.get('kontrol'), ensure_ascii=False)}")
+    if k.get("etiket"):
+        print(f"{girinti}etiket farki (deger farki degil): {k['etiket']}")
+    if k.get("adayKaynak"):
+        print(f"{girinti}aday adlari: {k['adayKaynak']}")
+    for a in ("tuikHam", "hamDosya", "yayin", "sayfa", "adKaynakta", "revid", "kaynakKatmani",
+              "kaynakIciTutarsizlik", "not"):
+        if k.get(a):
+            print(f"{girinti}{a}: {k[a]}")
+    if k.get("revid"):
+        print(f"{girinti}wikipedia: https://tr.wikipedia.org/w/index.php?oldid={k['revid']}")
 
 
 def goster_secim(key, il=None, ilce=None):
@@ -130,6 +167,11 @@ def goster_secim(key, il=None, ilce=None):
         print(f"  bilinen durum [{ki.get('status')}] {ki.get('scope')}: {' '.join(str(ki.get('description', '')).split())[:220]}")
     for k in katmanlar(key):
         print(f"  kaynak katmani: {k}")
+    for f in sorted(EK.glob(f"*/{key}.json")):
+        d = json.loads(f.read_text(encoding="utf-8"))
+        kk = d.get("kaynak")
+        kk = kk.get("ana") if isinstance(kk, dict) else kk
+        print(f"  ek kayit ({f.parent.name}): {f.relative_to(ROOT)} — kaynak {kk}")
     if not il:
         return
     iller = il_bul(rec, il)
@@ -137,7 +179,9 @@ def goster_secim(key, il=None, ilce=None):
         sys.exit(f"  il bulunamadi: {il}")
     ir = iller[0]
     print(f"\n  IL {ir['ad']} (plaka {ir['plaka']}): kazanan {ir.get('kazanan')}, gecerli {ir.get('gecerliOy')}"
-          f" — kaynak: {ir.get('kaynak_url') or _kaynak_str(sk.get('il'))}")
+          f" — {satir_koken(ir) or 'kaynak: ' + (ir.get('kaynak_url') or _kaynak_str(sk.get('il')))}")
+    if ir.get("kaynak") and not ilce:
+        koken_detay(ir["kaynak"], "      ")
     if ir.get("sehirKoy"):
         k = ir["sehirKoy"]["kaynak"]
         ek = f"{len(k['tuikHam'])} secim cevresi" if isinstance(k.get("tuikHam"), list) else (k.get("yayin") or "")
@@ -152,14 +196,7 @@ def goster_secim(key, il=None, ilce=None):
         print(f"  - {r['ad']} ({r.get('geomId')}): kazanan {r.get('kazanan')}, gecerli {r.get('gecerliOy')}"
               f" — {satir_koken(r) or r.get('kaynak_url') or _kaynak_str(sk.get('ilce'))}")
         if ilce and k:
-            for f in k.get("farklar", []):
-                print(f"      {f['alan']}: {f['eski']} -> {f['yeni']}  (kaynak: {f['kaynak']})")
-            for a in ("tuikHam", "hamDosya", "yayin", "sayfa", "adKaynakta", "revid", "kaynakKatmani",
-                      "kaynakIciTutarsizlik", "not"):
-                if k.get(a):
-                    print(f"      {a}: {k[a]}")
-            if k.get("revid"):
-                print(f"      wikipedia: https://tr.wikipedia.org/w/index.php?oldid={k['revid']}")
+            koken_detay(k)
         if ilce and r.get("baskan"):
             print(f"      baskan: {r['baskan']} (ayni kaynak)")
         if ilce and r.get("sehirKoy"):

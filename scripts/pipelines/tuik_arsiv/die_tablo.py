@@ -76,13 +76,21 @@ def _deger(parcalar):
 
 
 def sayfa_tablosu(page, x_etiket_son, sutun_sayisi, satir_filtre=None, buyuk_bosluk=12.0, hazir_kenarlar=None,
-                  etiketsiz=False):
+                  etiketsiz=False, kelime_duzelt=None):
     """Sayfadaki veri satirlari: [(etiket, degerler)] ; len(degerler) == sutun_sayisi.
     Sutun sag kenarlari once 'temiz' satirlardan (buyuk bosluklarla tam
     sutun_sayisi gruba bolunenler) medyanla bulunur; sonra her parca, sag kenari
     parcanin sagindan buyuk olan ILK sutuna atanir (kalin punto satirlarinda
-    sutunlar arasi bosluk daralsa da sinir asilmaz)."""
+    sutunlar arasi bosluk daralsa da sinir asilmaz).
+
+    kelime_duzelt(kelime) -> yeni metin | None: OCR harf/rakam karisikliklari
+    icin (orn. '9*.3' -> '94.3'); degisen kelimenin eski hali w['orijinal']'de."""
     words = page.extract_words(keep_blank_chars=False, use_text_flow=False)
+    if kelime_duzelt:
+        for w in words:
+            yeni = kelime_duzelt(w)
+            if yeni is not None and yeni != w["text"]:
+                w["orijinal"], w["text"] = w["text"], yeni
     satirlar = []
     ham = _satirlar(words)
     # etiketi olup sayisi eksik kalan satir + hemen altindaki ETIKETSIZ sayi

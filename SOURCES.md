@@ -113,7 +113,7 @@ birebir aynı.
 |---|---|---|
 | **2024, 2019, 2014, 2009** | **YSK (acikveri API, sandık-düzeyi agrege — il+ilçe)** | Habertürk tamamen kaldırıldı (2026-09-23, dördüncü oturum) — bkz. aşağı |
 | **2004, 1999, 1994** | **YSK resmi arşiv (il + ilçe/belde, ~%75-76)** | 2026-09-22'de il düzeyi, 2026-09-23'te ilçe/belde düzeyi yükseltildi (bkz. aşağı); kalan ~%24-25 (sadece Denizli'nin merkez ilçesi + Gümüşhane 1994 istisnası) eski Wikipedia kaynağında kaldı |
-| 1989, 1984 | Wikipedia (il başına alt makaleler) | Katılım/seçmen verisi kaynakta yok — il VE ilçe düzeyi var; YSK'de sadece ulusal toplam PDF'i var, il-bazlı yok |
+| **1989, 1984** | Wikipedia (il başına alt makaleler) **+ DİE "Mahalli İdareler Seçimi Sonuçları" kitapları (2026-09-25)** | DİE kitabı (TÜİK kütüphanesi 0012953 / 0013280, taranmış) belediye bazında sandık/seçmen/oy kullanan/geçerli/parti oyu veriyor. İç kontrolden (parti toplamı = geçerli) geçen satırlarda oylar DİE'den, Wikipedia değerleri `kaynak.farklar`'da (1989: 690 ilçe + 66 il; 1984: 354 ilçe + 50 il). Geçmeyen satırlarda oylar Wikipedia'da kaldı, seçmen/katılım DİE'den (`kaynak.tuikKullanilmadi`). Aday adları Wikipedia. |
 | 1977, 1973, 1968, 1963, 1955, 1950 | Wikipedia (il başına alt makaleler) | il merkezi 2026-09-22'de (bkz. [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md)), **ilçe belediye başkanlıkları 2026-09-24'te** aynı sayfaların İlçeler bölümünden eklendi (1950/1955: yalnızca kazanan parti; satır kökeni: `kaynak.revid`); 1950/1955'te dolaylı seçim sistemi (kazanan = meclisi/başkanlığı sağlayan parti); ayrıntı için `sources.yml`'deki ilgili girişlere bakın |
 
 **Habertürk → YSK geçişi, yerel seçimler (2026-09-23, dördüncü oturum):**
@@ -195,8 +195,11 @@ sayılar güvenilmez çıktı (ayrıntı `sources.yml`'deki known_issue).
   poligonu gerektiriyor (ayrı bir GIS işi, henüz yapılmadı) — eski
   Wikipedia kaynağında kaldı. Ayrıntı: `scripts/pipelines/yerel_1994_1999_2004/
   PROVENANCE.md`.
-- Yerel 1984/1989'da sadece ULUSAL toplam PDF'i var (il bazlı yok, 1963-1977
-  gibi) — bu ikisi Wikipedia'da kalacak.
+- Yerel 1984/1989'da YSK'de sadece ULUSAL toplam PDF'i var; il/ilçe/belde
+  düzeyi resmî veri DİE'nin "Mahalli İdareler Seçimi Sonuçları" kitaplarında
+  bulundu ve 2026-09-25'te eklendi (bkz. tablo). 1963-1977 için YSK'deki
+  "KesinSecimSonuclari" PDF'leri de yalnızca ulusal toplam; DİE'nin bu yıllara
+  ait mahalli seçim kitapları TÜİK kütüphane kataloğunda henüz bulunamadı.
 - Referandum 2010/2017 için YSK'nin `halkoylamasi-arsivi/2648` sayfasındaki
   ayrı yıl sayfaları (`16-nisan-2017-.../5002`, `12-eylul-2010-.../5003`)
   henüz taranmadı — il-bazlı resmi PDF olup olmadığı bilinmiyor (not:
