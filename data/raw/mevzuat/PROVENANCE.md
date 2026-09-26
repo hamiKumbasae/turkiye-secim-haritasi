@@ -15,3 +15,4 @@ arasındaki fark ayrıca kontrol edilmelidir.
 
 | `3392.pdf` | 3392 sayılı 103 İlçe Kurulması Hakkında Kanun (kabul 19.6.1987, RG 4.7.1987/19507) | 2026-09-26 | Madde 1 bentleri; (57) sayılı liste 1989'da (RG 20152) değiştirilmiş, 2013'te (6495) bir ad düzeltilmiş — dipnotlarda. Ek listeler `../resmi_gazete/19507.pdf`. |
 | `3578.pdf` | 3578 sayılı 4 İl ve 5 İlçe Kurulması Hakkında Kanun (kabul 15.6.1989, RG 21.6.1989/20202) | 2026-09-26 | Madde 1 bentleri (5 ilçe), Madde 2 (4 il). Ek listeler `../resmi_gazete/20202.pdf`. |
+| `3647.pdf` | 3647 sayılı İki İl İle Beş İlçe Kurulması ... Hakkında Kanun (kabul 16.5.1990, RG 18.5.1990/20522 mükerrer) | 2026-09-26 | Madde 1 bentleri (numarasız), Madde 2 (Batman, Şırnak). Ek listeler `../resmi_gazete/20522_1.pdf`. |

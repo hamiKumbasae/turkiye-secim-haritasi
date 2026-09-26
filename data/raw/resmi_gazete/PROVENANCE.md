@@ -108,3 +108,11 @@ Ek (1)–(5) sayılı listeler: 99 satır, eksik sıra yok; beş ilçenin beşi 
 (Ağaçören, Sarıyahşi ← Şereflikoçhisar; Pazaryolu ← İspir; Kâzımkarabekir ← Karaman;
 Güzelyurt ← Aksaray). Madde 2: Kırıkkale, Aksaray, Bayburt, Karaman illeri; (6)–(9)
 sayılı listeler (yeni illerin dökümü) okunmadı.
+
+## 20522_1 (18 Mayıs 1990, mükerrer) — 3647 sayılı Kanun (2 il, 5 ilçe)
+
+`20522_1.pdf` (33 sayfa), indirilme 2026-09-26; maddeler `data/raw/mevzuat/3647.pdf`.
+Ek (1)–(5) sayılı listeler: 72 satır, eksik sıra yok; beş ilçenin beşi tek kaynaklı
+(Köprüköy ← Pasinler; Hacılar ← Melikgazi; Hasankeyf ← Gercüş; Karapürçek ← Akyazı;
+Aydınlar/Tillo ← Siirt Merkez). Madde 2: Batman ve Şırnak illeri; Şırnak bendinde
+Andaç ve Ortaköy köyleri Çukurca'dan Uludere'ye bağlandı.

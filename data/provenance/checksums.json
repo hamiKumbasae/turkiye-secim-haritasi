@@ -533,12 +533,12 @@
     "NATIONWIDE_DISTRICT_AUDIT.md": "db738506e517f5e9a788d2f341e28338ab57aba75e14c26d3793cf31eed2b7eb",
     "district_mahalle_merges.yaml": "c9b821f67efce5bb625d7a5dcfa784c2c4ee20c04405eebd04d69d7acf1113ad",
     "district_splits.json": "551e1aae8430a356918ca143c2941fd9e496c498de43cb7b49f195e895f8226d",
-    "idari/README.md": "50adbacb669808164585b26b9b1830c9b3976bcc7772dc7a9721cadcf362ad77",
-    "idari/administrative_events.json": "d9c69129a7e58cbb8c06aea1571fff57a0d75441f6eb4a7c7bc18e360112284d",
-    "idari/district_lineage.json": "464d3c734d974ce7ab7eb219ce926646cf208a4c25cdad42c075be1c57452383",
-    "idari/election_admin_snapshots.json": "9203a3d50a0c0d8c91206e135ed66164078ef2464e5eb8a09896831786b97fd9",
+    "idari/README.md": "4e1f33fa3d1c0ad97158f9875b262c34ba3399f0e66c7cfeedce1882051ea89c",
+    "idari/administrative_events.json": "61163de3557450cdd9ee3eab2fb56dd366765d8e9f171d55465d046a419f347c",
+    "idari/district_lineage.json": "574f9690ea4d6b732a0efedefb03e98829740edbe117d6142dd236f75bfef4bc",
+    "idari/election_admin_snapshots.json": "089fde3febb9c40a509a182f8410664597c26873158170f85e3856e7bd09849a",
     "idari/elle_olaylar.json": "2f9ecd043aa520a87c86406fb392320282a3279d3336cd4286edc07738a10512",
-    "idari/faz1_rapor.json": "91a5c6d31bb723da0947248fc721b2d5ceb521b47addadd0692c2fb1384fa80f",
+    "idari/faz1_rapor.json": "70e0bd9c76f6df367018692ee95073be46d23261beaa848c2ee198a4a03d6efe",
     "metro_merkez_1961_1987.json": "f37ce774f6f696fdd57c4dea48ff166022eabd9521c30946a76f46291dc28e31",
     "turkiye_il_sinirlari_era1950.geojson": "6dc8eb1a5623b69979bfe34d8c1cecb3e62d1c2ae363bfe5c1e9f25f322942a1",
     "turkiye_il_sinirlari_era1954.geojson": "1eac11477e80df3dee50bab3d6ac32d16735c55a5b765e5b117ff608d9fa8750",
@@ -5495,10 +5495,10 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 266,
+   "file_count": 267,
    "files": {
     "ARASTIRMA_KAYDI.md": "fe463c9f25a3ef72390973e8f6ca960d922fe1e8d8714cc5f44f864030dd6531",
-    "README.md": "c8f160cf0bd599f884a2e2e5d0602a9c24da91ffc913b3787410cc2af81ed0b2",
+    "README.md": "6f378fbb64db5852a57ec91cdf360767baf431aeea866d9bb19c64e731f5555f",
     "icisleri/il_ilce_kurulus_2018.json": "f4f2d24c58a63691399eb86e04190793318c7f4e43bff6ecd163ee692aabc9cb",
     "mertnuhoglu/genel/1991.json": "39fbdc09dae77a625bd4afe8a81165c0bfb5e73b25541202ecc273d457debcb9",
     "mertnuhoglu/genel/1995.json": "663f29122d69e76dc8aef205f7bf3246c78e8256a2359ee16e9e6da28f4ee3c1",
@@ -5512,6 +5512,7 @@
     "resmi_gazete/ilce_kurulus/3392.json": "d3eae55216beddbb6f72a566800e2d02a004bf4a2c77cacbabfb4bdb1b721369",
     "resmi_gazete/ilce_kurulus/3578.json": "70fb8ee7851d59e24123fe64b0cddcea2f85d44462009331b8f79549e3a9a287",
     "resmi_gazete/ilce_kurulus/3644.json": "c5fd83810fdf070078a5944a28a22327409332f4e4764ef3200a7b78ed3f4bfa",
+    "resmi_gazete/ilce_kurulus/3647.json": "6880f7f5a86e57de6456de34db461e7e1886b79d284384fbe889c4421e0eb053",
     "resmi_gazete/ilce_kurulus/7033.json": "26e34ba5c1953a8d19ec2566683a10682dd6ee9057a57de3621053c5fe8430b0",
     "resmi_gazete/ilce_kurulus/KHK_550.json": "ba67cc06a02dd8069af694f90368048ea83b6b5c3561340f16a11dd18add752a",
     "taban/README.md": "822265ca4b4fcd26ccca160a0addbf132b25b589aea7a13a1026ac99618f022a",
@@ -6116,7 +6117,7 @@
   },
   "data/raw/resmi_gazete": {
    "checksum_file": "data/raw/resmi_gazete/checksums.sha256",
-   "file_count": 9,
+   "file_count": 10,
    "files": {
     "12922.pdf": "f2eb6ed67c7bf232f12708b391dc8e5162176d69ed07440a8f73f423d671cc6b",
     "15394.pdf": "34815945af8d049ef7fb412468716d7b4a59d9e7a5ed711f93bd3f11984013bb",
@@ -6124,6 +6125,7 @@
     "19247.pdf": "953644e44978c8807231ddb8f875a96af2955111a714629213bf847992fe78e4",
     "19507.pdf": "b78cebbe435cc639732b98e8225a562bab8426091f25fb18e1bb2960720b2c35",
     "20202.pdf": "c939c289c9e18a644c493ed45de5b55d2c3e062b18e3a44aa011cf13c31eaad8",
+    "20522_1.pdf": "bceae25cd03fcdc62ea2f5e3d5fedaa887e28866b580bd7f9c35619d5b8dc652",
     "20523.pdf": "db83a0821e8e2a3988639d94ff2a9b7d23e50937cff5acbddeeb87ba21a46750",
     "22305.pdf": "8133dfef943955d0da80f0bf89076e262401755ed53a126dea0e971e77ab7ace",
     "9644.pdf": "fb10f3263175c38cac4e9b82b7710dc24555cb91e468218527a6ee9887184d0d"
@@ -6163,11 +6165,12 @@
   },
   "data/raw/mevzuat": {
    "checksum_file": "data/raw/mevzuat/checksums.sha256",
-   "file_count": 3,
+   "file_count": 4,
    "files": {
     "3392.pdf": "f53f6628eb1f7dfb364a7be661f5b362809c89f5e97e5302acbe8453d4018523",
     "3578.pdf": "6060a5940a9c82f44f3d9e0e9a8f3a41b82a6c044e73ca33fa5369f26747eb9e",
-    "3644.pdf": "b60568328bf80e91500d7cf2fbfe06918b59a358921748cf1a92294df427d427"
+    "3644.pdf": "b60568328bf80e91500d7cf2fbfe06918b59a358921748cf1a92294df427d427",
+    "3647.pdf": "10771b2eb018aba059ea5f15d672b62c7b124336cee53cb037b224ec77685d9e"
    }
   }
  },

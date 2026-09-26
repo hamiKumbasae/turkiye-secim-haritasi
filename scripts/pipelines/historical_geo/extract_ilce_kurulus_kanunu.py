@@ -78,6 +78,18 @@ KANUNLAR = {
                                        "kurulmuştur (ekli (6)-(9) sayılı listeler).",
                   "eventType": "provinces_created", "effectiveDate": "1989-06-21",
                   "unit": "Kırıkkale, Aksaray, Bayburt, Karaman"}]},
+    "3647": {"ad": "İki İl İle Beş İlçe Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
+                   "Değişiklik Yapılması Hakkında Kanun", "kabul": "1990-05-16",
+             "resmiGazete": {"tarih": "1990-05-18", "sayi": 20522, "mukerrer": 1},
+             "rgPdf": "data/raw/resmi_gazete/20522_1.pdf", "rgUrl": "https://www.resmigazete.gov.tr/arsiv/20522_1.pdf",
+             "mevzuatPdf": "data/raw/mevzuat/3647.pdf", "sonrakiGenel": "1991", "oncekiGenel": "1987", "adsizIl": {},
+             "digerHukumler": [
+                 {"madde": 2, "metin": "Siirt İline bağlı Batman ve Şırnak ilçe merkezleri merkez olmak üzere Batman ve "
+                                       "Şırnak illeri kurulmuştur (ekli (6)-(7) sayılı listeler).",
+                  "eventType": "provinces_created", "effectiveDate": "1990-05-18", "unit": "Batman, Şırnak"},
+                 {"madde": 2, "metin": "Hakkâri İli Çukurca İlçesi Çığlı Bucağına bağlı Andaç ve Ortaköy köyleri "
+                                       "Uludere İlçesi Ortabağ Bucağına bağlanmak (Şırnak ilinin kuruluş bendi).",
+                  "eventType": "boundary_adjustment", "effectiveDate": "1990-05-18", "unit": "Çukurca → Uludere"}]},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},
@@ -127,7 +139,9 @@ def maddeler(metin):
     basilmis). ekHukum: bentte ilce kurmanin yaninda yapilan birim nakli (orn.
     3644/76: Belkaya Kasabasi Karapinar'dan Eregli'ye; 3644/69: Karakecili
     Kirikkale iline) - mevcut ilcelerin tarihsel sinirini da etkiler."""
-    t = re.sub(r"\s+", " ", metin)
+    # satir sonu heceleme: 'Köprü-\nköy' -> 'Köprüköy'
+    t = re.sub(r"(\w)[-\u00ad]\s*\n\s*(\w)", r"\1\2", metin)
+    t = re.sub(r"\s+", " ", t)
     bas = t.find("Madde 1")
     son = t.find("Madde 2", bas)
     t = t[bas:son]

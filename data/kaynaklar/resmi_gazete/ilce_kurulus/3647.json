@@ -1,0 +1,870 @@
+{
+ "kanun": "3647",
+ "ad": "İki İl İle Beş İlçe Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+ "kabul": "1990-05-16",
+ "resmiGazete": {
+  "tarih": "1990-05-18",
+  "sayi": 20522,
+  "mukerrer": 1
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/20522_1.pdf",
+  "maddeler": "data/raw/mevzuat/3647.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/20522_1.pdf",
+  "mevzuatUrl": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.3647.pdf"
+ },
+ "digerHukumler": [
+  {
+   "madde": 2,
+   "metin": "Siirt İline bağlı Batman ve Şırnak ilçe merkezleri merkez olmak üzere Batman ve Şırnak illeri kurulmuştur (ekli (6)-(7) sayılı listeler).",
+   "eventType": "provinces_created",
+   "effectiveDate": "1990-05-18",
+   "unit": "Batman, Şırnak"
+  },
+  {
+   "madde": 2,
+   "metin": "Hakkâri İli Çukurca İlçesi Çığlı Bucağına bağlı Andaç ve Ortaköy köyleri Uludere İlçesi Ortabağ Bucağına bağlanmak (Şırnak ilinin kuruluş bendi).",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-18",
+   "unit": "Çukurca → Uludere"
+  }
+ ],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 5,
+  "tekKaynak": 5,
+  "cokKaynak": 0,
+  "satir": 72,
+  "cozulemeyenSatir": 0,
+  "kaynakYazilmamisSatir": 0,
+  "satirsizListe": [],
+  "eksikSatirliListe": [],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": 1,
+   "il": "Erzurum",
+   "plaka": 25,
+   "ad": "Köprü köy",
+   "yeniIlce": {
+    "ad": "Köprüköy",
+    "geomId": "TR-D-25-009",
+    "plaka": 25,
+    "secim": "1991"
+   },
+   "madde": "Ekli (1) sayılı listede adları yazılı kasaba ve köyleri kapsamak ve merkezi Çobandede Bucağının merkezi olan Köprüköy Kasabası olmak üzere, Erzurum İlinde Köprü köy adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4
+   ],
+   "altBasliklar": [
+    "Erzurum İli Köprü köy İlçesine Bağlanan Kasaba ve Köyler"
+   ],
+   "satirSayisi": 25,
+   "eskiIlceler": [
+    {
+     "ad": "Pasinler",
+     "geomId": "TR-D-25-014",
+     "birimSayisi": 25,
+     "plaka": 25
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Yağan",
+     "tur": "belde",
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Yağan (B) Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 2,
+     "birim": "Ağcaşar",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Ağcaşar Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 3,
+     "birim": "Akçam",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Akçam Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 4,
+     "birim": "Alaca",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Alaca Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 5,
+     "birim": "Aşağıçakmak",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Aşağıçakmak Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 6,
+     "birim": "Buğdaylı",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Buğdaylı Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 7,
+     "birim": "Derebaşı",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Derebaşı Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 8,
+     "birim": "Dumankaya",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Dumankaya Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 9,
+     "birim": "Eğirmez",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Eğirmez Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 10,
+     "birim": "Emre",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Emre Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 11,
+     "birim": "Gölçaysr",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Gölçaysr Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 12,
+     "birim": "Güzelhisar",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Güzelhisar Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 13,
+     "birim": "Ilıca su",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Ilıca su Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 14,
+     "birim": "Karataşlar",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Karataşlar Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 15,
+     "birim": "Kayabaşı",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Kayabaşı Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 16,
+     "birim": "Kıyıkonak",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Kıyıkonak Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 17,
+     "birim": "Ortaklar",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Ortaklar Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 18,
+     "birim": "örentaş",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "örentaş Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 19,
+     "birim": "Pekecik",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Pekecik Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 20,
+     "birim": "Savatlı",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Savatlı Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 21,
+     "birim": "Soğuksu",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Soğuksu Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 22,
+     "birim": "Yapağılı",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Yapağılı Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 23,
+     "birim": "Yeşilöz",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Yeşilöz Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 24,
+     "birim": "Yukarıkızılca",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Yukarıkızılca Pasinler Çobandede",
+     "sayfa": 4
+    },
+    {
+     "sira": 25,
+     "birim": "Yukarısögütlü",
+     "tur": null,
+     "eskiIlce": "Pasinler",
+     "eskiBucak": "Çobandede",
+     "okunan": "Yukarısögütlü Pasinler Çobandede",
+     "sayfa": 4
+    }
+   ]
+  },
+  {
+   "listeNo": 2,
+   "il": "Kayseri",
+   "plaka": 38,
+   "ad": "Hacılar",
+   "yeniIlce": {
+    "ad": "Hacılar",
+    "geomId": "TR-D-38-005",
+    "plaka": 38,
+    "secim": "1991"
+   },
+   "madde": "Ekli (2) sayılı listede adları yazılı köyleri kapsamak ve merkezi Hacılar Bucak merkezi olmak üzere, Kayseri İlinde Hacılar adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4
+   ],
+   "altBasliklar": [
+    "Kayseri İli Hacıl ar İlçesine Bağlanan Köyler"
+   ],
+   "satirSayisi": 3,
+   "eskiIlceler": [
+    {
+     "ad": "Melikgazi",
+     "geomId": "TR-D-38-008",
+     "birimSayisi": 3,
+     "plaka": 38
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Hürmetçiçiflliğiköyü",
+     "tur": null,
+     "eskiIlce": "Melikgazi",
+     "eskiBucak": "Hacılar",
+     "okunan": "Hürmetçiçiflliğiköyü Melikgazi Hacılar",
+     "sayfa": 4
+    },
+    {
+     "sira": 2,
+     "birim": "Karpuzsekisi",
+     "tur": null,
+     "eskiIlce": "Melikgazi",
+     "eskiBucak": "Hacılar",
+     "okunan": "Karpuzsekisi Melikgazi Hacılar",
+     "sayfa": 4
+    },
+    {
+     "sira": 3,
+     "birim": "Sakarçifıliğiköyü",
+     "tur": null,
+     "eskiIlce": "Melikgazi",
+     "eskiBucak": "Hacılar",
+     "okunan": "Sakarçifıliğiköyü Melikgazi Hacılar",
+     "sayfa": 4
+    }
+   ]
+  },
+  {
+   "listeNo": 3,
+   "il": "Mardin",
+   "plaka": 47,
+   "ad": "Hasankeyf",
+   "yeniIlce": {
+    "ad": "Hasankeyf",
+    "geomId": "TR-D-72-004",
+    "plaka": 72,
+    "secim": "1991"
+   },
+   "madde": "Ekli (3) sayılı listede adları yazılı köyler aynen bağlanmak ve merkezi Hasankeyf Bucak merkezi olmak suretiyle, Mardin İlinde Hasankeyf adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    5
+   ],
+   "altBasliklar": [
+    "Mardin İli Hasankeyf İlçesine Bağlanan Köyler"
+   ],
+   "satirSayisi": 21,
+   "eskiIlceler": [
+    {
+     "ad": "Gercüş",
+     "geomId": "TR-D-72-003",
+     "birimSayisi": 21,
+     "plaka": 47
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Akalın",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Akalın Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 2,
+     "birim": "Aksu",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Aksu Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 3,
+     "birim": "Aydınca",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Aydınca Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 4,
+     "birim": "Bayırlı",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Bayırlı Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 5,
+     "birim": "Büyükdere",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Büyükdere Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 6,
+     "birim": "Çardaklı",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Çardaklı Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 7,
+     "birim": "Dereli",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Dereli Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 8,
+     "birim": "Irmakköy",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Irmakköy Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 9,
+     "birim": "İncirli",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "İncirli Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 10,
+     "birim": "Karaköy",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Karaköy Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 11,
+     "birim": "Kumluca",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Kumluca Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 12,
+     "birim": "öğütlü",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "öğütlü Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 13,
+     "birim": "Palamut",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Palamut Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 14,
+     "birim": "Saklı",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Saklı Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 15,
+     "birim": "Soğucak",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Soğucak Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 16,
+     "birim": "Tepebaşı",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Tepebaşı Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 17,
+     "birim": "Uzundere",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Uzundere Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 18,
+     "birim": "Uçyol",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Uçyol Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 19,
+     "birim": "Yakaköy",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Yakaköy Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 20,
+     "birim": "Yemişli",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Yemişli Gercüş Hasankeyf",
+     "sayfa": 5
+    },
+    {
+     "sira": 21,
+     "birim": "Yolüstü",
+     "tur": null,
+     "eskiIlce": "Gercüş",
+     "eskiBucak": "Hasankeyf",
+     "okunan": "Yolüstü Gercüş Hasankeyf",
+     "sayfa": 5
+    }
+   ]
+  },
+  {
+   "listeNo": 4,
+   "il": "Sakarya",
+   "plaka": 54,
+   "ad": "Karapürçek",
+   "yeniIlce": {
+    "ad": "Karapürçek",
+    "geomId": "TR-D-54-008",
+    "plaka": 54,
+    "secim": "1991"
+   },
+   "madde": "Ekli (4) sayılı listede adları yazılı köyler aynen bağlanmak ve merkezi Karapürçek Bucağının merkezi olan Akpürçek Kasabası olmak suretiyle, Sakarya İlinde Karapürçek adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    5,
+    6
+   ],
+   "altBasliklar": [
+    "Sakarya İli Karapürçck İlçesine Bağlanan Köyler"
+   ],
+   "satirSayisi": 18,
+   "eskiIlceler": [
+    {
+     "ad": "Akyazı",
+     "geomId": "TR-D-54-002",
+     "birimSayisi": 18,
+     "plaka": 54
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Ahmediye",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçck",
+     "okunan": "Ahmediye Akyazı Karapürçck",
+     "sayfa": 5
+    },
+    {
+     "sira": 2,
+     "birim": "Akbağlık",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçck",
+     "okunan": "Akbağlık Akyazı Karapürçck",
+     "sayfa": 5
+    },
+    {
+     "sira": 3,
+     "birim": "Bıçkıdere",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Bıçkıdere Akyazı Karapürçek",
+     "sayfa": 5
+    },
+    {
+     "sira": 4,
+     "birim": "Buğdaylı",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçck",
+     "okunan": "Buğdaylı Akyazı Karapürçck",
+     "sayfa": 5
+    },
+    {
+     "sira": 5,
+     "birim": "Çıldırlar",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Çıldırlar Akyazı Karapürçek",
+     "sayfa": 5
+    },
+    {
+     "sira": 6,
+     "birim": "Gücücek",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Gücücek Akyazı Karapürçek",
+     "sayfa": 5
+    },
+    {
+     "sira": 7,
+     "birim": "Harmanlı",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Harmanlı Akyazı Karapürçek",
+     "sayfa": 5
+    },
+    {
+     "sira": 8,
+     "birim": "Hocaköy",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Hocaköy Akyazı Karapürçek",
+     "sayfa": 5
+    },
+    {
+     "sira": 9,
+     "birim": "Kanlıçay",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Kanlıçay Akyazı Karapürçek",
+     "sayfa": 5
+    },
+    {
+     "sira": 10,
+     "birim": "Kepekli",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Kepekli Akyazı Karapürçek",
+     "sayfa": 5
+    },
+    {
+     "sira": 11,
+     "birim": "Küçükkarapürçek",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Küçükkarapürçek Akyazı Karapürçek",
+     "sayfa": 6
+    },
+    {
+     "sira": 12,
+     "birim": "Mecidiye",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Mecidiye Akyazı Karapürçek",
+     "sayfa": 6
+    },
+    {
+     "sira": 13,
+     "birim": "Mesudiye",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Mesudiye Akyazı Karapürçek",
+     "sayfa": 6
+    },
+    {
+     "sira": 14,
+     "birim": "Potuklar",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Potuklar Akyazı Karapürçek",
+     "sayfa": 6
+    },
+    {
+     "sira": 15,
+     "birim": "Tektabanlı",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Tektabanlı Akyazı Karapürçek",
+     "sayfa": 6
+    },
+    {
+     "sira": 16,
+     "birim": "Yazılıgürgen",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Yazılıgürgen Akyazı Karapürçek",
+     "sayfa": 6
+    },
+    {
+     "sira": 17,
+     "birim": "Yükselköy",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Karapürçek",
+     "okunan": "Yükselköy Akyazı Karapürçek",
+     "sayfa": 6
+    },
+    {
+     "sira": 18,
+     "birim": "Salihiye",
+     "tur": null,
+     "eskiIlce": "Akyazı",
+     "eskiBucak": "Merkez",
+     "okunan": "Salihiye Akyazı Merkez",
+     "sayfa": 6
+    }
+   ]
+  },
+  {
+   "listeNo": 5,
+   "il": "Siirt",
+   "plaka": 56,
+   "ad": "Aydınlar",
+   "yeniIlce": {
+    "ad": "Aydınlar",
+    "geomId": "TR-D-56-007",
+    "plaka": 56,
+    "secim": "1991"
+   },
+   "madde": "Ekli (5) sayılı listede adları yazılı köyler aynen bağlanmak ve merkezi Aydınlar Bucak merkezi olmak suretiyle, Siirt İlinde Aydınlar adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    6
+   ],
+   "altBasliklar": [
+    "Sürt İli Aydınlar İlçesine Bağlanan Köyler"
+   ],
+   "satirSayisi": 5,
+   "eskiIlceler": [
+    {
+     "ad": "Merkez",
+     "geomId": "TR-D-56-005",
+     "birimSayisi": 5,
+     "plaka": 56
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Çatılı",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Aydınlar",
+     "okunan": "Çatılı Merkez Aydınlar",
+     "sayfa": 6
+    },
+    {
+     "sira": 2,
+     "birim": "Çınartısu",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Aydınlar",
+     "okunan": "Çınartısu Merkez Aydınlar",
+     "sayfa": 6
+    },
+    {
+     "sira": 3,
+     "birim": "Dereyamaç.",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Aydınlar",
+     "okunan": "Dereyamaç. Merkez Aydınlar",
+     "sayfa": 6
+    },
+    {
+     "sira": 4,
+     "birim": "tkizbağlar",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Aydınlar",
+     "okunan": "tkizbağlar Merkez Aydınlar",
+     "sayfa": 6
+    },
+    {
+     "sira": 5,
+     "birim": "Taşbalta",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Aydınlar",
+     "okunan": "Taşbalta Merkez Aydınlar",
+     "sayfa": 6
+    }
+   ]
+  }
+ ]
+}

@@ -61,6 +61,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
   },
   {
+   "id": "kanun_3647",
+   "type": "official",
+   "title": "3647 sayılı İki İl İle Beş İlçe Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun (RG 1990-05-18, sayı 20522)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/20522_1.pdf",
+   "raw": "data/raw/resmi_gazete/20522_1.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
+  },
+  {
    "id": "kanun_7033",
    "type": "official",
    "title": "7033 sayılı Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun (RG 1957-06-27, sayı 9644)",
@@ -10166,14 +10174,29 @@
     "sayi": 20522
    },
    "provinceAfter": 25,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Pasinler",
+     "geomId": "TR-D-25-014",
+     "provincePlaka": 25,
+     "unitsTransferred": 25
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3647",
+    "listeNo": 1,
+    "rgSayfalari": [
+     4
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Köprüköy"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15958,14 +15981,29 @@
     "sayi": 20522
    },
    "provinceAfter": 38,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Melikgazi",
+     "geomId": "TR-D-38-008",
+     "provincePlaka": 38,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3647",
+    "listeNo": 2,
+    "rgSayfalari": [
+     4
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Hacılar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21972,14 +22010,30 @@
     "sayi": 20522
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Akyazı",
+     "geomId": "TR-D-54-002",
+     "provincePlaka": 54,
+     "unitsTransferred": 18
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3647",
+    "listeNo": 4,
+    "rgSayfalari": [
+     5,
+     6
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Karapürçek"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22963,14 +23017,29 @@
     "sayi": 20522
    },
    "provinceAfter": 56,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-56-005",
+     "provincePlaka": 56,
+     "unitsTransferred": 5
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3647",
+    "listeNo": 5,
+    "rgSayfalari": [
+     6
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Aydınlar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -27597,14 +27666,29 @@
     "sayi": 20522
    },
    "provinceAfter": 72,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gercüş",
+     "geomId": "TR-D-72-003",
+     "provincePlaka": 47,
+     "unitsTransferred": 21
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3647",
+    "listeNo": 3,
+    "rgSayfalari": [
+     5
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Hasankeyf"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -29821,6 +29905,42 @@
    "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
    "confidence": "high",
    "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3647-madde-2",
+   "unit": "Batman, Şırnak",
+   "unitType": "district",
+   "eventType": "provinces_created",
+   "effectiveDate": "1990-05-18",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "3647",
+   "officialGazette": {
+    "tarih": "1990-05-18",
+    "sayi": 20522,
+    "mukerrer": 1
+   },
+   "text": "Siirt İline bağlı Batman ve Şırnak ilçe merkezleri merkez olmak üzere Batman ve Şırnak illeri kurulmuştur (ekli (6)-(7) sayılı listeler).",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json",
+   "confidence": "high"
+  },
+  {
+   "id": "kanun-3647-madde-2",
+   "unit": "Çukurca → Uludere",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-18",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "3647",
+   "officialGazette": {
+    "tarih": "1990-05-18",
+    "sayi": 20522,
+    "mukerrer": 1
+   },
+   "text": "Hakkâri İli Çukurca İlçesi Çığlı Bucağına bağlı Andaç ve Ortaköy köyleri Uludere İlçesi Ortabağ Bucağına bağlanmak (Şırnak ilinin kuruluş bendi).",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json",
+   "confidence": "high"
   },
   {
    "id": "kanun-7033-madde-2",
