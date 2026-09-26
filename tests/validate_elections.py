@@ -306,9 +306,12 @@ def check_historical_district_geometry():
 
     hist_by_id = {f["properties"]["id"]: clean(shape(f["geometry"])) for f in hist_geo["features"]}
     modern_by_plaka = {}
+    modern_by_id = {}
     for f in modern_geo["features"]:
         p = f["properties"]
-        modern_by_plaka.setdefault(p["plaka"], {})[p["id"]] = clean(shape(f["geometry"]))
+        poly = clean(shape(f["geometry"]))
+        modern_by_plaka.setdefault(p["plaka"], {})[p["id"]] = poly
+        modern_by_id[p["id"]] = poly
 
     # Sadece district_splits.json'da GERCEKTEN kaydi olan plakalar icin ilgili -
     # digerlerinde hicbir HIST-* soz konusu degil, hizli atlanir.
@@ -336,7 +339,14 @@ def check_historical_district_geometry():
             hidden = set()
             for e in active:
                 hidden.update(e["hideIds"])
-            modern_ids = modern_by_plaka.get(plaka, {})
+            # Il sinirlari sonradan degisen yerlerde (orn. 1961'de Elbeyli->Oguzeli/
+            # Gaziantep, bugun Kilis) bir sentetik baska bir GUNCEL ilin modern
+            # ilcesini kapsayabilir (apply_idari_merges.py); beklenen toplam alan
+            # bu ilin guncel ilceleri + sentetiklerin gizledigi diger-il ilceleri.
+            modern_ids = dict(modern_by_plaka.get(plaka, {}))
+            for gid in hidden:
+                if gid in modern_by_id:
+                    modern_ids.setdefault(gid, modern_by_id[gid])
             visible_modern = {gid: poly for gid, poly in modern_ids.items() if gid not in hidden}
             ids = [e["syntheticId"] for e in active] + list(visible_modern.keys())
             polys = [hist_by_id[e["syntheticId"]] for e in active] + list(visible_modern.values())

@@ -446,11 +446,14 @@ async function scenario_1961_1987Ilce(browser) {
       await page.waitForTimeout(500);
       const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
       check(year + ' genel: ilçe haritası çiziliyor (' + plaka + ')', ids.length > 3, 'n=' + ids.length);
-      check(year + ' genel: ' + hist + ' çiziliyor', ids.includes(hist), JSON.stringify(ids));
+      // apply_idari_merges.py: sonradan kurulan ilceler (orn. 1990'da Gursu/Kestel)
+      // o donemde Merkez'e bagliysa poligon HISTK-<hist>-* birlesimi olur.
+      const histId = ids.find((i) => i === hist || i.startsWith('HISTK-' + hist + '-'));
+      check(year + ' genel: ' + hist + ' çiziliyor', !!histId, JSON.stringify(ids));
       const nodata = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
       check(year + ' genel: Merkez halefleri ayrıca "veri yok" olarak çizilmiyor',
         hidden.every((h) => !nodata.includes(h) && !ids.includes(h)), JSON.stringify(nodata));
-      await page.click('path.il-path[data-geom-id="' + hist + '"]');
+      await page.click('path.il-path[data-geom-id="' + histId + '"]');
       await page.waitForTimeout(400);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -467,6 +470,15 @@ async function scenario_1961_1987Ilce(browser) {
     const ist = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
     check('1973 genel İstanbul: Eminönü ve Fatih ayrı tarihsel poligonlarla, modern Fatih çizilmeden',
       ist.includes('HIST-Istanbul-Eminonu') && ist.includes('HIST-Istanbul-Fatih') && !ist.includes('TR-D-34-020'), JSON.stringify(ist));
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+    // Koprubasi 20.05.1990'da (3644) Surmene'den ayrildi: 1973'te Surmene satiri
+    // Surmene+Koprubasi birlesimine (HISTK-61-014-*) boyanir, Koprubasi ayrica cizilmez.
+    await page.click('path[data-plaka="61"]');
+    await page.waitForTimeout(500);
+    const trb = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1973 genel Trabzon: Sürmene, Köprübaşı ile birleşik (HISTK) çiziliyor',
+      trb.some((i) => i.startsWith('HISTK-61-014-')) && !trb.includes('TR-D-61-010') && !trb.includes('TR-D-61-014'), JSON.stringify(trb));
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
     await page.click('path[data-plaka="6"]');

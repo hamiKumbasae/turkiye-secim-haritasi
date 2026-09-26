@@ -124,6 +124,25 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 - Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): 6447 (2013: Altınordu), 7148 (2018: Derecik), KHK 694 (2017: Sultanhanı, Kemalpaşa);
   ardından 5747 (2008) ve 6360 (2012) büyükşehir bölünmeleri (mahalle düzeyi).
 
+## Haritaya yansıtma (Faz 4a — `apply_idari_merges.py`, 2026-09-26)
+
+`lineageStatus == kanun_tek_kaynak` olan 218 ilçe, kurulmadan önceki (ya da kurulup
+seçime henüz ayrı girmediği) seçimlerde eski ilçesinin satırına katılır: satırın
+`geomId`'si `HISTK-<taban>-<sha6>` sentetiğine çevrilir (taban modern ya da repodaki
+`HIST-*` poligonu + katılan modern ilçeler). Oy/katılım değerleri değişmez. Örnek:
+Köprübaşı (3644, 20.05.1990) 1950yerel–1989yerel arası Sürmene satırında
+(`HISTK-61-014-*`). Başka bir güncel ile geçmiş ilçeler de katılır (Elbeyli→Oğuzeli,
+Armutlu→Gemlik, Ağaçören/Sarıyahşi→Şereflikoçhisar vb.); ön yüz poligonu geomId'den
+çizdiği için doğru ilde görünür.
+
+- Sonuç: 185 sentetik, 2911 satır, 23 seçim (`merge_plan.json` → `ozet`).
+- Katılmayanlar: `kanun_cok_kaynak`, `kanun_dogrulanmadi` (7033), `unresolved`.
+- `hedefBulunamadi` (294): hepsi yerel seçimler; eski ilçe o seçimde ayrı belediye
+  satırı değil (çoğu il merkezi, il satırında). Açık karar.
+- Betik idempotent: önceki `HISTK-*` satırları önce tabanına döndürülür.
+  Yeni kanun eklendikten sonra `build_idari_katman.py` → `apply_idari_merges.py` →
+  `scripts/build.py` → checksum yenile.
+
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
 - **1955 yerel ve 1994 yerel için il sınır dosyası yok** (66 ve 76 il). Snapshot'ta
