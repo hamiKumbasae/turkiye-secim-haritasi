@@ -533,12 +533,12 @@
     "NATIONWIDE_DISTRICT_AUDIT.md": "db738506e517f5e9a788d2f341e28338ab57aba75e14c26d3793cf31eed2b7eb",
     "district_mahalle_merges.yaml": "c9b821f67efce5bb625d7a5dcfa784c2c4ee20c04405eebd04d69d7acf1113ad",
     "district_splits.json": "551e1aae8430a356918ca143c2941fd9e496c498de43cb7b49f195e895f8226d",
-    "idari/README.md": "5e717b140e15a91b21410bf64fa35f8603ee6f47b8592b9c9612a2b5e3c07540",
-    "idari/administrative_events.json": "c282b729099535b7e0526a283cbb6e22fb5045e639e8311965dec9ffc44536ad",
-    "idari/district_lineage.json": "044734886f7744054424569581a537d394e66dd06d9207b10d91bad70f0195b3",
-    "idari/election_admin_snapshots.json": "0055f965765b880efb498e4f5f3d85dbd7552855a03484f7857099fe73488105",
+    "idari/README.md": "ef1f009ea28b5156c1af0d62a66e116d442423adec7b0e23910ec7374e0fde99",
+    "idari/administrative_events.json": "2cb3699c18ccc8fe4077a69c4136db0ca438c274ae92e86da58fab6ff9a353ab",
+    "idari/district_lineage.json": "cb9f5d8a1b6c2379e7fd5877945b0daf08825b2a09c5012bf5f0cf841b1b52f2",
+    "idari/election_admin_snapshots.json": "d60fccb0b6cdf526b5dd372f0579a1ec47556a0dc5cd8013cd00966c64bbeafa",
     "idari/elle_olaylar.json": "2f9ecd043aa520a87c86406fb392320282a3279d3336cd4286edc07738a10512",
-    "idari/faz1_rapor.json": "a426726ef78ba44c281e2b3d9c17924b5c7f0179e9d6963848078a6407225ae8",
+    "idari/faz1_rapor.json": "20f27a69809b982876b0835285f03b2dc08996a5d621923b509cc6a88b5d701c",
     "metro_merkez_1961_1987.json": "f37ce774f6f696fdd57c4dea48ff166022eabd9521c30946a76f46291dc28e31",
     "turkiye_il_sinirlari_era1950.geojson": "6dc8eb1a5623b69979bfe34d8c1cecb3e62d1c2ae363bfe5c1e9f25f322942a1",
     "turkiye_il_sinirlari_era1954.geojson": "1eac11477e80df3dee50bab3d6ac32d16735c55a5b765e5b117ff608d9fa8750",
@@ -5495,10 +5495,10 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 264,
+   "file_count": 265,
    "files": {
     "ARASTIRMA_KAYDI.md": "fe463c9f25a3ef72390973e8f6ca960d922fe1e8d8714cc5f44f864030dd6531",
-    "README.md": "05b6f6cfa738236dbf365789d5f94774542cc237d85b9c32cdf2a328fa94c528",
+    "README.md": "d4fb4114c545c2e3dbab725b492c1fb484e8abc243d20c093eb68a69bdf31a8f",
     "icisleri/il_ilce_kurulus_2018.json": "f4f2d24c58a63691399eb86e04190793318c7f4e43bff6ecd163ee692aabc9cb",
     "mertnuhoglu/genel/1991.json": "39fbdc09dae77a625bd4afe8a81165c0bfb5e73b25541202ecc273d457debcb9",
     "mertnuhoglu/genel/1995.json": "663f29122d69e76dc8aef205f7bf3246c78e8256a2359ee16e9e6da28f4ee3c1",
@@ -5512,6 +5512,7 @@
     "resmi_gazete/ilce_kurulus/3392.json": "d3eae55216beddbb6f72a566800e2d02a004bf4a2c77cacbabfb4bdb1b721369",
     "resmi_gazete/ilce_kurulus/3644.json": "c5fd83810fdf070078a5944a28a22327409332f4e4764ef3200a7b78ed3f4bfa",
     "resmi_gazete/ilce_kurulus/7033.json": "26e34ba5c1953a8d19ec2566683a10682dd6ee9057a57de3621053c5fe8430b0",
+    "resmi_gazete/ilce_kurulus/KHK_550.json": "ba67cc06a02dd8069af694f90368048ea83b6b5c3561340f16a11dd18add752a",
     "taban/README.md": "822265ca4b4fcd26ccca160a0addbf132b25b589aea7a13a1026ac99618f022a",
     "taban/ek/beldeler/1984yerel.json": "60f963c6ec998814c98e8eaae4d1935d7356d614162f974183ca887a610be615",
     "taban/ek/beldeler/1989yerel.json": "4584975a2db110ef58b1339c517079fc4ad03cecc25485a29693c47b8f95cdeb",
@@ -6114,7 +6115,7 @@
   },
   "data/raw/resmi_gazete": {
    "checksum_file": "data/raw/resmi_gazete/checksums.sha256",
-   "file_count": 7,
+   "file_count": 8,
    "files": {
     "12922.pdf": "f2eb6ed67c7bf232f12708b391dc8e5162176d69ed07440a8f73f423d671cc6b",
     "15394.pdf": "34815945af8d049ef7fb412468716d7b4a59d9e7a5ed711f93bd3f11984013bb",
@@ -6122,6 +6123,7 @@
     "19247.pdf": "953644e44978c8807231ddb8f875a96af2955111a714629213bf847992fe78e4",
     "19507.pdf": "b78cebbe435cc639732b98e8225a562bab8426091f25fb18e1bb2960720b2c35",
     "20523.pdf": "db83a0821e8e2a3988639d94ff2a9b7d23e50937cff5acbddeeb87ba21a46750",
+    "22305.pdf": "8133dfef943955d0da80f0bf89076e262401755ed53a126dea0e971e77ab7ace",
     "9644.pdf": "fb10f3263175c38cac4e9b82b7710dc24555cb91e468218527a6ee9887184d0d"
    }
   },

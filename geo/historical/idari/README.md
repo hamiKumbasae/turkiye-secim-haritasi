@@ -84,6 +84,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | 3644 | 20.05.1990 | 130 | 107 | 23 | RG 20523 ek (1)–(130) sayılı listeler, 2.056 satır |
 | 3392 | 04.07.1987 | 103 | 84 | 15 (+4 kaynağı yazılmamış) | RG 19507 ek (1)–(103) sayılı listeler, 2.141 satır |
 | 2963 | 30.11.1983 | 6 | 6 | 0 | RG 18237 (2. mükerrer) ek (1)–(6) sayılı listeler, 104 satır; Madde 2: Ankara Merkez İlçesi kaldırıldı → Altındağ |
+| KHK 550 | 06.06.1995 | 8 | 8 | 0 | RG 22305 ek (1)–(8) sayılı listeler, 130 satır; Karabük, Kilis, Yalova illeri kuruldu |
 | 7033 | 01.09.1957–01.04.1960 | 78 | — (orta güven, geometriye çevrilmedi) | — | RG 9644 cetvelleri; 50/77 blok okunabildi |
 
 - 3644'ün 130 ilçesinin tamamı İçişleri listesinde de 3644 ile kayıtlı; ek listelerde
@@ -110,7 +111,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
   Altındağ'a katılan ayrı bir ilçedir (madde 2); sınırı kaynakta yok, haritada hâlâ
   çizilemez ama kaydı artık kaynaklı. Keçiören ← Altındağ, Mamak ve Gölbaşı ← Çankaya,
   Sincan ← Yenimahalle.
-- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): KHK 550 (1995, 8), 3578 (1989, 5), 3647 (1990, 5), 4200 (1996, 3),
+- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): 3578 (1989, 5), 3647 (1990, 5), 4200 (1996, 3),
   2585 (1982, 2), 3949 (1993, 2), 1055 (1968, 2) ve diğer küçükler; ardından
   5747 (2008, 20) ve 6360 (2012, 15) büyükşehir bölünmeleri (mahalle düzeyi).
 

@@ -90,3 +90,13 @@ listeler: 104 satır, eksik sıra yok, altı ilçenin altısı tek kaynaklı (Ma
 Gölbaşı ← Çankaya, Keçiören ← Altındağ, Sincan ← Yenimahalle, Düziçi ← Bahçe,
 Dalaman ← Köyceğiz). **Madde 2:** Ankara İli Merkez İlçesi kaldırılmış, alanı Altındağ'a
 bağlanmıştır — 1961–1983 seçim verisindeki geomId'siz Ankara "Merkez" satırı bu ilçedir.
+
+## 22305 (6 Haziran 1995) — KHK 550: sekiz ilçe ve üç il (Karabük, Kilis, Yalova)
+
+`22305.pdf` (96 sayfa), indirilme 2026-09-26. Madde 1 bentleri 'adıyla' ile bitmediği
+için okuyucu yapılandırmasına aynen aktarıldı. Ek (1)–(8) sayılı listeler: 130 satır,
+eksik sıra yok; sekiz ilçenin sekizi tek kaynaklı (Musabeyli, Polateli ← Kilis;
+Elbeyli ← Oğuzeli; Çınarcık, Çiftlikköy, Termal ← Yalova; Altınova ← Karamürsel;
+Armutlu ← Gemlik). (9)–(11) sayılı listeler yeni illerin dökümü (okunmadı; il
+değişiklikleri seçim verisinden tarihleriyle çıkıyor). Başlıklar çift harfli basılmış
+(bir yerde farklı aksanla: 'LLÎİSSTTEE').

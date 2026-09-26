@@ -67,6 +67,29 @@ KANUNLAR = {
                   "provinceBefore": 6, "provinceAfter": 6, "mergedInto": "Altındağ",
                   "not": "1961-1983 seçim verisindeki Ankara 'Merkez' satırı bu ilçedir (geomId yok). Sınırı kaynakta "
                          "yok; alanı Altındağ'a katıldı, aynı kanunla Altındağ'dan Keçiören ayrıldı."}]},
+    "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
+                        "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+                "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},
+                "rgPdf": "data/raw/resmi_gazete/22305.pdf", "mevzuatPdf": None,
+                "sonrakiGenel": "1995", "oncekiGenel": "1991", "adsizIl": {},
+                # Madde 1 bentleri 'adıyla' ile bitmiyor; RG 22305 s. 1'den aynen aktarildi.
+                # (9)-(11) sayili listeler yeni illerin (Karabuk, Kilis, Yalova) dokumu: il
+                # degisiklikleri secim verisinden tarihleriyle zaten cikiyor, okunmaz.
+                "bentlerElle": {
+                 1: {"il": "Gaziantep", "ad": "Musabeyli", "madde": "1. Ekli (1) sayılı listede adları yazılı köyler bağlanmak ve merkezi Musabeyli Bucak Merkezi olan Murathüyüğü Köyü olmak ve Musabeyli adıyla bir belediye kurulmak üzere Gaziantep İlinde Musabeyli", "ekHukum": None},
+                 2: {"il": "Gaziantep", "ad": "Polateli", "madde": "2. Ekli (2) sayılı listede adları yazılı köyler bağlanmak ve merkezi Polateli Bucak Merkezi olan Güldüzü Köyü olmak ve Polateli adıyla bir belediye kurulmak üzere Gaziantep İlinde Polateli", "ekHukum": None},
+                 3: {"il": "Gaziantep", "ad": "Elbeyli", "madde": "3. Ekli (3) sayılı listede adları yazılı köyler bağlanmak ve merkezi Elbeyli Bucak Merkezi olmak ve aynı adla bir belediye kurulmak üzere Gaziantep İlinde Elbeyli adıyla", "ekHukum": None},
+                 4: {"il": "İstanbul", "ad": "Çınarcık", "madde": "4. Ekli (4) sayılı listede adları yazılı kasaba ve köyler bağlanmak ve merkezi Çınarcık Bucak Merkezi olmak üzere, İstanbul İlinde Çınarcık", "ekHukum": None},
+                 5: {"il": "İstanbul", "ad": "Çiftlikköy", "madde": "5. Ekli (5) sayılı listede adları yazılı bucak, kasaba ve köyler bağlanmak ve merkezi Çiftlikköy Kasabası olmak üzere İstanbul İlinde Çiftlikköy", "ekHukum": None},
+                 6: {"il": "Kocaeli", "ad": "Altınova", "madde": "6. Ekli (6) sayılı listede adları yazılı kasaba ve köyler bağlanmak ve merkezi Altınova Kasabası olmak üzere Kocaeli İlinde Altınova", "ekHukum": None},
+                 7: {"il": "Bursa", "ad": "Armutlu", "madde": "7. Ekli (7) sayılı listede adları yazılı köyler bağlanmak ve merkezi Armutlu Bucak Merkezi olmak üzere Bursa ilinde Armutlu", "ekHukum": None},
+                 8: {"il": "İstanbul", "ad": "Termal", "madde": "8. Ekli (8) sayılı listede adları yazılı köyler bağlanmak ve merkezi Termal Kasabası olmak üzere İstanbul İlinde Termal", "ekHukum": None},
+                },
+                "digerHukumler": [
+                    {"madde": 2, "metin": "Zonguldak iline bağlı Karabük, Gaziantep iline bağlı Kilis ve İstanbul "
+                                          "iline bağlı Yalova ilçe merkezleri merkez olmak üzere Karabük, Kilis ve "
+                                          "Yalova illeri kurulmuştur (ekli (9)-(11) sayılı listeler).",
+                     "eventType": "provinces_created", "effectiveDate": "1995-06-06", "unit": "Karabük, Kilis, Yalova"}]},
 }
 OUT = ROOT / "data/kaynaklar/resmi_gazete/ilce_kurulus"
 
@@ -78,7 +101,9 @@ def pdf_metin(p):
 
 def tekle(s):
     """Kalin puntoda cift yazilmis kelimeler: 'ööpprrüübbaaşşıı' -> 'öprübaşı'."""
-    return " ".join(w[0::2] if len(w) >= 4 and len(w) % 2 == 0 and w[0::2] == w[1::2] else w for w in s.split())
+    # 'LLÎİSSTTEE': cift harfler OCR'da farkli aksanla okunabiliyor, fold ile karsilastirilir
+    return " ".join(w[0::2] if len(w) >= 4 and len(w) % 2 == 0 and fold(w[0::2]) == fold(w[1::2]) else w
+                    for w in s.split())
 
 
 def benzer(a, b):
@@ -144,7 +169,10 @@ def ayristir(kanun):
     liste = None
     varsayilan_ilce = None
     onceki = None
+    bitti = False
     for no, sayfa in enumerate(sayfalar, start=1):
+        if bitti:
+            break
         for satir in sayfa.split("\n"):
             s = tekle(satir.strip())
             m = re.search(r"\((\d+J?)\)?\s*SAY[IİŞ]L[IİŞ]\s*L\S{0,2}STE", s) or \
@@ -153,6 +181,10 @@ def ayristir(kanun):
                 liste, varsayilan_ilce = int(m.group(1).replace("J", "3")), None
                 if liste not in bentler and int(str(liste)[0]) in bentler:
                     liste = int(str(liste)[0])   # '(21 Sayılı Liste' = (2)
+                if liste > max(bentler):
+                    liste = None   # ilce listeleri bitti (KHK 550: (9)-(11) yeni il dokumu)
+                    bitti = True
+                    break
                 listeler[liste]["sayfalar"].add(no)
                 continue
             if liste is None:
@@ -300,8 +332,10 @@ def ayristir(kanun):
         if not yeni or yeni[0] < 0.8:
             # kanundan hemen sonra baska ile gecen ilce (3644/106 Guclukonak: Siirt -> Sirnak)
             tum = [(ad_benzer(ad), ad, g, p) for p, adlar in sonraki.items() for ad, g in adlar.items()]
-            iyi = [x for x in tum if x[0] >= 0.9]
-            yeni = iyi[0] if len(iyi) == 1 else yeni
+            iyi = sorted((x for x in tum if x[0] >= 0.9), reverse=True)
+            # tek aday ya da en iyisi ikinciden acikca onde ('Polateli' vs Ankara 'Polatlı')
+            if iyi and (len(iyi) == 1 or iyi[0][0] - iyi[1][0] >= 0.05):
+                yeni = iyi[0]
         yeni_geom = {"ad": yeni[1], "geomId": yeni[2], "plaka": yeni[3], "secim": cfg["sonrakiGenel"]} \
             if yeni and yeni[0] >= 0.8 else None
         sonuc.append({
@@ -375,7 +409,7 @@ def main():
                  "geomIdsizYeniIlce": [s["ad"] for s in sonuc if not s["yeniIlce"]]},
         "ilceler": sonuc,
     }
-    (OUT / f"{kanun}.json").write_text(json.dumps(veri, ensure_ascii=False, indent=1), encoding="utf-8")
+    (OUT / f"{kanun.replace(' ', '_')}.json").write_text(json.dumps(veri, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(veri["ozet"], ensure_ascii=False))
 
 

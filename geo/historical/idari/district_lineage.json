@@ -59,6 +59,14 @@
    "url": "https://www.resmigazete.gov.tr/arsiv/9644.pdf",
    "raw": "data/raw/resmi_gazete/9644.pdf",
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+  },
+  {
+   "id": "kanun_KHK 550",
+   "type": "official",
+   "title": "KHK 550 sayılı Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname (RG 1995-06-06, sayı 22305)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/22305.pdf",
+   "raw": "data/raw/resmi_gazete/22305.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
   }
  ],
  "districts": [
@@ -52403,9 +52411,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 550",
+    "kanunAdi": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1995-06-06",
+     "sayi": 22305
+    },
+    "listeNo": 6,
+    "rgSayfalari": [
+     6
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": "Karamürsel",
+      "geomId": "TR-D-41-010",
+      "plaka": 41,
+      "birimSayisi": 15
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-77-002",
@@ -52451,9 +52480,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 550",
+    "kanunAdi": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1995-06-06",
+     "sayi": 22305
+    },
+    "listeNo": 7,
+    "rgSayfalari": [
+     7
+    ],
+    "birimSayisi": 5,
+    "eskiIlceler": [
+     {
+      "ad": "Gemlik",
+      "geomId": "TR-D-16-002",
+      "plaka": 16,
+      "birimSayisi": 5
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-77-003",
@@ -52499,9 +52549,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 550",
+    "kanunAdi": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1995-06-06",
+     "sayi": 22305
+    },
+    "listeNo": 5,
+    "rgSayfalari": [
+     6
+    ],
+    "birimSayisi": 11,
+    "eskiIlceler": [
+     {
+      "ad": "Yalova",
+      "geomId": "TR-D-77-006",
+      "plaka": 34,
+      "birimSayisi": 11
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-77-004",
@@ -52547,9 +52618,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 550",
+    "kanunAdi": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1995-06-06",
+     "sayi": 22305
+    },
+    "listeNo": 4,
+    "rgSayfalari": [
+     6
+    ],
+    "birimSayisi": 7,
+    "eskiIlceler": [
+     {
+      "ad": "Yalova",
+      "geomId": "TR-D-77-006",
+      "plaka": 34,
+      "birimSayisi": 7
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-77-005",
@@ -52595,9 +52687,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 550",
+    "kanunAdi": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1995-06-06",
+     "sayi": 22305
+    },
+    "listeNo": 8,
+    "rgSayfalari": [
+     7
+    ],
+    "birimSayisi": 2,
+    "eskiIlceler": [
+     {
+      "ad": "Yalova",
+      "geomId": "TR-D-77-006",
+      "plaka": 34,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-77-006",
@@ -53065,9 +53178,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 550",
+    "kanunAdi": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1995-06-06",
+     "sayi": 22305
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     5
+    ],
+    "birimSayisi": 24,
+    "eskiIlceler": [
+     {
+      "ad": "Oğuzeli",
+      "geomId": "TR-D-27-006",
+      "plaka": 27,
+      "birimSayisi": 24
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-79-002",
@@ -53167,9 +53301,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 550",
+    "kanunAdi": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1995-06-06",
+     "sayi": 22305
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 47,
+    "eskiIlceler": [
+     {
+      "ad": "Kilis",
+      "geomId": "TR-D-79-002",
+      "plaka": 27,
+      "birimSayisi": 47
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-79-004",
@@ -53215,9 +53370,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 550",
+    "kanunAdi": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1995-06-06",
+     "sayi": 22305
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     5
+    ],
+    "birimSayisi": 19,
+    "eskiIlceler": [
+     {
+      "ad": "Kilis",
+      "geomId": "TR-D-79-002",
+      "plaka": 27,
+      "birimSayisi": 19
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-80-001",
