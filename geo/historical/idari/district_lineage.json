@@ -115,6 +115,14 @@
    "url": "https://www.resmigazete.gov.tr/arsiv/22305.pdf",
    "raw": "data/raw/resmi_gazete/22305.pdf",
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+  },
+  {
+   "id": "kanun_KHK 584",
+   "type": "official",
+   "title": "KHK 584 sayılı Bir İl ve İki İlçe Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname (RG 1999-12-09, sayı 23901)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/23901.pdf",
+   "raw": "data/raw/resmi_gazete/23901.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_584.json"
   }
  ],
  "districts": [
@@ -30867,9 +30875,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 584",
+    "kanunAdi": "Bir İl ve İki İlçe Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1999-12-09",
+     "sayi": 23901
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     2
+    ],
+    "birimSayisi": 6,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-41-008",
+      "plaka": 41,
+      "birimSayisi": 6
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_584.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-41-005",
@@ -54697,9 +54726,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "KHK 584",
+    "kanunAdi": "Bir İl ve İki İlçe Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+    "resmiGazete": {
+     "tarih": "1999-12-09",
+     "sayi": 23901
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     2
+    ],
+    "birimSayisi": 19,
+    "eskiIlceler": [
+     {
+      "ad": "Düzce",
+      "geomId": "TR-D-81-004",
+      "plaka": 14,
+      "birimSayisi": 19
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_584.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-81-008",

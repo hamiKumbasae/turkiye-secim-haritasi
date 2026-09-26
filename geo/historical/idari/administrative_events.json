@@ -115,6 +115,14 @@
    "url": "https://www.resmigazete.gov.tr/arsiv/22305.pdf",
    "raw": "data/raw/resmi_gazete/22305.pdf",
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json"
+  },
+  {
+   "id": "kanun_KHK 584",
+   "type": "official",
+   "title": "KHK 584 sayılı Bir İl ve İki İlçe Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname (RG 1999-12-09, sayı 23901)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/23901.pdf",
+   "raw": "data/raw/resmi_gazete/23901.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_584.json"
   }
  ],
  "events": [
@@ -16897,14 +16905,29 @@
     "sayi": 23901
    },
    "provinceAfter": 41,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-41-008",
+     "provincePlaka": 41,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "KHK 584",
+    "listeNo": 2,
+    "rgSayfalari": [
+     2
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_584.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2002",
     "tarih": "2002-11-03",
     "adi": "Derince"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -29757,14 +29780,29 @@
     "sayi": 23901
    },
    "provinceAfter": 81,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Düzce",
+     "geomId": "TR-D-81-004",
+     "provincePlaka": 14,
+     "unitsTransferred": 19
+    }
+   ],
+   "lineageSource": {
+    "kanun": "KHK 584",
+    "listeNo": 1,
+    "rgSayfalari": [
+     2
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_584.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2002",
     "tarih": "2002-11-03",
     "adi": "Kaynaşlı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -30219,6 +30257,23 @@
    },
    "text": "Zonguldak iline bağlı Karabük, Gaziantep iline bağlı Kilis ve İstanbul iline bağlı Yalova ilçe merkezleri merkez olmak üzere Karabük, Kilis ve Yalova illeri kurulmuştur (ekli (9)-(11) sayılı listeler).",
    "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_550.json",
+   "confidence": "high"
+  },
+  {
+   "id": "kanun-KHK 584-madde-2",
+   "unit": "Düzce",
+   "unitType": "district",
+   "eventType": "provinces_created",
+   "effectiveDate": "1999-12-09",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "KHK 584",
+   "officialGazette": {
+    "tarih": "1999-12-09",
+    "sayi": 23901
+   },
+   "text": "Düzce ili kurulmuştur (merkez ilçe ile bu ile bağlanan ilçeler; ekli (3) sayılı liste).",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/KHK_584.json",
    "confidence": "high"
   },
   {

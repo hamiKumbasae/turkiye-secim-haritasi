@@ -1,0 +1,334 @@
+{
+ "kanun": "KHK 584",
+ "ad": "Bir İl ve İki İlçe Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+ "kabul": "1999-12-03",
+ "resmiGazete": {
+  "tarih": "1999-12-09",
+  "sayi": 23901
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/23901.pdf",
+  "maddeler": "data/raw/resmi_gazete/23901.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/23901.pdf",
+  "mevzuatUrl": null
+ },
+ "digerHukumler": [
+  {
+   "madde": 2,
+   "metin": "Düzce ili kurulmuştur (merkez ilçe ile bu ile bağlanan ilçeler; ekli (3) sayılı liste).",
+   "eventType": "provinces_created",
+   "effectiveDate": "1999-12-09",
+   "unit": "Düzce"
+  }
+ ],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 2,
+  "tekKaynak": 2,
+  "cokKaynak": 0,
+  "satir": 25,
+  "cozulemeyenSatir": 0,
+  "kaynakYazilmamisSatir": 0,
+  "satirsizListe": [],
+  "eksikSatirliListe": [],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": 1,
+   "il": "Bolu",
+   "plaka": 14,
+   "ad": "Kaynaşlı",
+   "yeniIlce": {
+    "ad": "Kaynaşlı",
+    "geomId": "TR-D-81-007",
+    "plaka": 81,
+    "secim": "2002"
+   },
+   "madde": "(1) sayılı liste: Bolu İli Kaynaşlı İlçesine bağlanan köyler",
+   "ekHukum": null,
+   "rgSayfalari": [
+    2
+   ],
+   "altBasliklar": [
+    "BOLU İLİ KAYNAŞLI İLÇESİNE BAĞLANAN KÖYLER"
+   ],
+   "satirSayisi": 19,
+   "eskiIlceler": [
+    {
+     "ad": "Düzce",
+     "geomId": "TR-D-81-004",
+     "birimSayisi": 19,
+     "plaka": 14
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Altunköy",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Altunköy Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 2,
+     "birim": "Bıçkıyanı",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Bıçkıyanı Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 3,
+     "birim": "Çakırsayvan",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Çakırsayvan Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 4,
+     "birim": "Çamlıca",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Çamlıca Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 5,
+     "birim": "Çamoluk",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Çamoluk Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 6,
+     "birim": "Çatalçam",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Çatalçam Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 7,
+     "birim": "Darıyeribakacak",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Darıyeribakacak Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 8,
+     "birim": "8 . Darıyerihasarıbey",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "8 . Darıyerihasarıbey Düzce Kaynaşlı",
+     "sayfa": 2,
+     "numarasiOkunamadi": true
+    },
+    {
+     "sira": 9,
+     "birim": "Danyerimengencik",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Danyerimengencik Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 10,
+     "birim": "Darıyeriyürükler",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Darıyeriyürükler Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 11,
+     "birim": "Dipsizgöl",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Dipsizgöl Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 12,
+     "birim": "Fındıklı",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Fındıklı Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 13,
+     "birim": "Hacıazizler",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Hacıazizler Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 14,
+     "birim": "Muratbey",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Muratbey Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 15,
+     "birim": "Sarıçökek",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "KaynaşJı",
+     "okunan": "Sarıçökek Düzce KaynaşJı",
+     "sayfa": 2
+    },
+    {
+     "sira": 16,
+     "birim": "Sazköy",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Sazköy Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 17,
+     "birim": "Tavak",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Tavak Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 18,
+     "birim": "Üçköprü",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Üçköprü Düzce Kaynaşlı",
+     "sayfa": 2
+    },
+    {
+     "sira": 19,
+     "birim": "Yeniyurt",
+     "tur": null,
+     "eskiIlce": "Düzce",
+     "eskiBucak": "Kaynaşlı",
+     "okunan": "Yeniyurt Düzce Kaynaşlı",
+     "sayfa": 2
+    }
+   ]
+  },
+  {
+   "listeNo": 2,
+   "il": "Kocaeli",
+   "plaka": 41,
+   "ad": "Derince",
+   "yeniIlce": {
+    "ad": "Derince",
+    "geomId": "TR-D-41-004",
+    "plaka": 41,
+    "secim": "2002"
+   },
+   "madde": "(2) sayılı liste: Kocaeli İli Derince İlçesine bağlanan köyler",
+   "ekHukum": null,
+   "rgSayfalari": [
+    2
+   ],
+   "altBasliklar": [
+    "KOCAELİ İLİ DERİNCE İLÇESİNE BAĞLANAN KÖYLER"
+   ],
+   "satirSayisi": 6,
+   "eskiIlceler": [
+    {
+     "ad": "Merkez",
+     "geomId": "TR-D-41-008",
+     "birimSayisi": 6,
+     "plaka": 41
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Çavuşlu",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Merkez",
+     "okunan": "Çavuşlu Merkez Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 2,
+     "birim": "Geredeli",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Merkez",
+     "okunan": "Geredeli Merkez Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 3,
+     "birim": "Karagöllü",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Merkez",
+     "okunan": "Karagöllü Merkez Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 4,
+     "birim": "Kaşıkçı",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Merkez",
+     "okunan": "Kaşıkçı Merkez Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 5,
+     "birim": "Tahtalı",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Merkez",
+     "okunan": "Tahtalı Merkez Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 6,
+     "birim": "Terziler",
+     "tur": null,
+     "eskiIlce": "Merkez",
+     "eskiBucak": "Merkez",
+     "okunan": "Terziler Merkez Merkez",
+     "sayfa": 2
+    }
+   ]
+  }
+ ]
+}

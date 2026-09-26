@@ -92,6 +92,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | 2585 | 21.01.1982 | 2 | 1 | 1 | RG 17581 s. 4 cetvelleri, 21 satır (Ceylanpınar ← Viranşehir; Aliağa ← Menemen, Bergama, Foça) |
 | 3949 | 29.12.1993 | 3 | 1 | — (2 kaynağı yazılmamış) | RG 21803 ek (1)–(4) listeler; Gümüşova ← Cumaova; Güzelbahçe ve Esenler mahalle kaynağı yazılmamış; Narlıbahçe → Narlıdere, Cumaova → Cumayeri |
 | 1055 | 17.07.1968 | 2 | — | — (kaynak sütunu yok) | RG 12952 s. 5; Abana ve Bozkurt (merkez Pazaryeri); köylerin eski ilçesi yazılmamış |
+| KHK 584 | 09.12.1999 | 2 | 2 | 0 | RG 23901 ek (1)–(2) listeler, 25 satır; Kaynaşlı ← Düzce, Derince ← Kocaeli Merkez; Düzce ili |
 | 7033 | 01.09.1957–01.04.1960 | 78 | — (orta güven, geometriye çevrilmedi) | — | RG 9644 cetvelleri; 50/77 blok okunabildi |
 
 - 3644'ün 130 ilçesinin tamamı İçişleri listesinde de 3644 ile kayıtlı; ek listelerde
@@ -118,8 +119,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
   Altındağ'a katılan ayrı bir ilçedir (madde 2); sınırı kaynakta yok, haritada hâlâ
   çizilemez ama kaydı artık kaynaklı. Keçiören ← Altındağ, Mamak ve Gölbaşı ← Çankaya,
   Sincan ← Yenimahalle.
-- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): KHK 584 (1999: Kaynaşlı,
-  Derince), 3806 kalanları (1992: Damal, Karakoyunlu), 309 (1963: Gaziosmanpaşa),
+- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): 3806 kalanları (1992: Damal, Karakoyunlu), 309 (1963: Gaziosmanpaşa),
   6447 (2013: Altınordu), 7148 (2018: Derecik), KHK 694 (2017: Sultanhanı, Kemalpaşa);
   ardından 5747 (2008) ve 6360 (2012) büyükşehir bölünmeleri (mahalle düzeyi).
 

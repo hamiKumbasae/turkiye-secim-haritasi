@@ -139,6 +139,19 @@ KANUNLAR = {
                                        "1965 seçim verisindeki Kastamonu 'Bozkurt' satırları bu ilçe olamaz (veri adı ya "
                                        "da eşlemesi doğrulanmalı).",
                   "eventType": "data_conflict_note", "effectiveDate": "1968-07-17", "unit": "Bozkurt (Kastamonu)"}]},
+    "KHK 584": {"ad": "Bir İl ve İki İlçe Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
+                        "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
+                "kabul": "1999-12-03", "resmiGazete": {"tarih": "1999-12-09", "sayi": 23901},
+                "rgPdf": "data/raw/resmi_gazete/23901.pdf", "mevzuatPdf": None,
+                "sonrakiGenel": "2002", "oncekiGenel": "1999", "adsizIl": {},
+                # KHK'nin ilk sayfasi bu PDF'te yok; bentler ek listelerin basliklarindan
+                # (il, ilce) ve Icisleri kaydindan (KHK 584: Kaynasli, Derince, Duzce ili)
+                "bentlerElle": {
+                    1: {"il": "Bolu", "ad": "Kaynaşlı", "madde": "(1) sayılı liste: Bolu İli Kaynaşlı İlçesine bağlanan köyler", "ekHukum": None},
+                    2: {"il": "Kocaeli", "ad": "Derince", "madde": "(2) sayılı liste: Kocaeli İli Derince İlçesine bağlanan köyler", "ekHukum": None}},
+                "digerHukumler": [
+                    {"madde": 2, "metin": "Düzce ili kurulmuştur (merkez ilçe ile bu ile bağlanan ilçeler; ekli (3) sayılı liste).",
+                     "eventType": "provinces_created", "effectiveDate": "1999-12-09", "unit": "Düzce"}]},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},
@@ -253,7 +266,7 @@ def ayristir(kanun):
             break
         for satir in sayfa.split("\n"):
             s = tekle(satir.strip())
-            m = re.search(r"\((\d+J?)\)?\s*SAY[IİŞ]L[IİŞ]\s*L\S{0,2}STE", s) or \
+            m = re.search(r"\(\s*(\d+J?)\s*\)?\s*SAY[IİŞ]L[IİŞ]\s*L\S{0,2}STE", s) or \
                 re.match(r"^[(\[]?\s*(\d+)\s*[)\]]?\s*Say[ıi]l[ıi]\s+Liste\s*$", s)
             if m:
                 baslik_bekle = True

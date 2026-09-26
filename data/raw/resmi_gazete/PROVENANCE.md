@@ -150,3 +150,10 @@ Bozkurt ilçeleri. Cetvel (1) yalnız köy adlarını veriyor, **köylerin eski 
 yazılmamış** → soy bu kaynaktan çıkmaz (`kanun_kaynak_yazilmamis`). Bozkurt 1968'de
 kurulduğu için 1961/1965 seçim verisindeki Kastamonu "Bozkurt" satırları bu ilçe olamaz
 (veri çelişkisi notu).
+
+## 23901 (9 Aralık 1999) — KHK 584: Düzce ili, Kaynaşlı ve Derince ilçeleri
+
+`23901.pdf` (98 sayfa), indirilme 2026-09-26. KHK'nin ilk sayfası (maddeler) bu PDF'te
+yok; bentler ek listelerin başlıklarından ve İçişleri kaydından. Ek (1)–(2) sayılı listeler:
+25 satır, eksik sıra yok; Kaynaşlı ← Düzce (19 köy), Derince ← Kocaeli Merkez (6 köy);
+ikisi de tek kaynaklı. (3) sayılı liste (Düzce ilinin dökümü) okunmadı.
