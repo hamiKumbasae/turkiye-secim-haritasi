@@ -59,20 +59,49 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | `1950_oncesi_mevcut` | İlçe 14.05.1950'den önce kurulmuş. Sınırı sonradan ayrılan ilçelerle küçülmüş olabilir; bu, ayrılan ilçelerin soy kaydıyla çözülür (Faz 2). |
 | `repo_dogrulanmis` | Repoda kaynakla doğrulanmış bir `HIST-*` birleşiminin parçası (`district_splits.json`). |
 | `merkez_ilce` | Sonradan il olan bir yerin merkez ilçesi; ilçe olarak kuruluş tarihi kaynakta yok (il olmadan önce başka ile bağlı ilçeydi). |
+| `kanun_tek_kaynak` | Kuruluş kanununun ek listesine göre bütün birimleri (köy/bucak/mahalle) tek bir eski ilçeden geldi. Kuruluş öncesi seçimlerde alanı o ilçeye katılır (`geometryRule: merge_into:<geomId>`). |
+| `kanun_cok_kaynak` | Ek listeye göre birden çok eski ilçeden birim aldı. Eski ilçeler ve birim sayıları kayıtlı; köy düzeyinde sınır çözülmediği için `geometryRule: unresolved_multi_parent`. |
 | `unresolved` | 1950 sonrası kurulmuş, soy bilgisi henüz kaynaklanmadı. |
 
 ## Durum (Faz 1, 2026-09-25)
 
 - 81 il ve 973 güncel ilçenin tamamı İçişleri Bakanlığı listesine bağlandı (resmî,
   `data/raw/icisleri/il-ilce-kurulus-2018/`).
-- Soy: 436 ilçe 1950 öncesi, 78 ilçe repoda doğrulanmış birleşim, 24 merkez ilçe,
-  **435 ilçe `unresolved`**.
+- Soy (Faz 1 sonunda): 436 ilçe 1950 öncesi, 78 ilçe repoda doğrulanmış birleşim,
+  24 merkez ilçe, 435 ilçe `unresolved` (Faz 2 ilerlemesi aşağıda).
 - 108 ilçe kanunla kurulduktan sonra en az bir seçime ayrı girmedi.
 - 11 merkez ilçe dönüşümü (2008/2012 büyükşehir: Aydın Merkez → Efeler vb.).
 - 15 ad değişikliği, 51 il değişikliği seçim verisinden (tarih aralığıyla);
   il değişikliklerinin çoğunun tarihi yeni ilin kuruluşundan kesin.
 - Kırşehir: 1923 öncesi il, 30.06.1954'te kaldırıldı (6429), 12.06.1957'de
   yeniden il (7001). Bu yüzden 1955 yerel seçim tarihinde 66 il var; veride 64.
+
+## Durum (Faz 2 — kanun ek listeleri)
+
+| Kanun | Tarih | İlçe | Tek kaynak | Çok kaynak | Kaynak |
+|---|---|---|---|---|---|
+| 3644 | 20.05.1990 | 130 | 107 | 23 | RG 20523 ek (1)–(130) sayılı listeler, 2.056 satır |
+| 3392 | 04.07.1987 | 103 | 84 | 15 (+4 kaynağı yazılmamış) | RG 19507 ek (1)–(103) sayılı listeler, 2.141 satır |
+
+- 3644'ün 130 ilçesinin tamamı İçişleri listesinde de 3644 ile kayıtlı; ek listelerde
+  sıra numaraları kesintisiz (düşen satır yok).
+- Örnek: Köprübaşı (Trabzon) — (120) sayılı listenin 11 köyünün 11'i Sürmene'nin
+  Köprübaşı bucağından → 1990 öncesi seçimlerde `merge_into:TR-D-61-014` (Sürmene).
+- İl dışından birim alanlar: Yedisu (Bingöl) ← Pülümür (Tunceli), İkizce (Ordu) ←
+  Terme (Samsun), Kürtün (Gümüşhane) ← Tirebolu (Giresun), Yenihisar/Didim (Aydın) ←
+  Milas (Muğla), Karakeçili (Kırıkkale) ← Bala (Ankara).
+- Kanun bentlerindeki 14 ek hüküm (mevcut ilçeler arası köy/belde nakli, il
+  değişikliği) `boundary_adjustment` olayı olarak kayıtlı; köy düzeyinde geometrisi
+  çözülmedi.
+- 3392: 1987 genel seçiminde ayrı birim olmayan ilçelerin çoğu bu kanunla kuruldu
+  (ör. Aladağ ← Karaisalı, Kahramankazan ← Yenimahalle, Demre ← Kaş). İstanbul'un
+  1987 ilçelerinin mahalle listelerinde eski ilçe yazılmamış; tahmin edilmedi.
+  Pendik, Küçükçekmece, Büyükçekmece, Ümraniye ve Konak'ın kuruluş kaydı
+  `district_lineage.json` → `historicalUnits` altında (sonradan bölündükleri için
+  kuruluş sınırları repodaki `HIST-*` poligonlarında).
+- Eksik satırlı (OCR) listeler tek kaynaklı sayılmaz (`eksikSira`).
+- Sonrası: `unresolved` 212 ilçe. Sıradaki kanunlar: 7033 (1957, 77), 5747 (2008,
+  43), 6360 (2012, 26), 6324/6325 (1954, 31), 6068 (1953, 21), 3806 (1992, 13).
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
 

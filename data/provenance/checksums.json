@@ -533,12 +533,12 @@
     "NATIONWIDE_DISTRICT_AUDIT.md": "db738506e517f5e9a788d2f341e28338ab57aba75e14c26d3793cf31eed2b7eb",
     "district_mahalle_merges.yaml": "c9b821f67efce5bb625d7a5dcfa784c2c4ee20c04405eebd04d69d7acf1113ad",
     "district_splits.json": "551e1aae8430a356918ca143c2941fd9e496c498de43cb7b49f195e895f8226d",
-    "idari/README.md": "3c1afb5e1fc579af259ce6a5a679a93771c8f7cd6d5f18531c019b0025e35d6d",
-    "idari/administrative_events.json": "a4c5bcccbdd25aefd852458b7837802347ce0aa4e93208a016bdb28f112a5938",
-    "idari/district_lineage.json": "6ce9fb8927df336d259672979c9c9eaae8288036a50fa62b8542a73faada3c16",
-    "idari/election_admin_snapshots.json": "15cf7cd2526d7bbe9d97c49c305cfa7cd48285b5274f74dd6a38400aca1f1893",
+    "idari/README.md": "4d7175e7201951723f28e2ec9a92a4a6d8cee3781c81e301b3a28c661cac3ad0",
+    "idari/administrative_events.json": "78af91ff1d914734cea73e0a4b1f6f12a2d06cd28dcbc1e93ab69a41bd34751c",
+    "idari/district_lineage.json": "254b7469ecebafa8f6d223c2af8677ec64f5b891dce65dad583175b36b90e0ab",
+    "idari/election_admin_snapshots.json": "f25aea97be3985b2a4115525a3d93583ca65b8bd4e12557f500b21c1ebf2481d",
     "idari/elle_olaylar.json": "2f9ecd043aa520a87c86406fb392320282a3279d3336cd4286edc07738a10512",
-    "idari/faz1_rapor.json": "e6ce592c2a429c2e5a085cc4478913ea4fc5b8d96e8f155cb43a65688727341e",
+    "idari/faz1_rapor.json": "1e4226e57542977f1a8b69a7d64ba64f155b852c0328643584851f6a426bbc32",
     "metro_merkez_1961_1987.json": "f37ce774f6f696fdd57c4dea48ff166022eabd9521c30946a76f46291dc28e31",
     "turkiye_il_sinirlari_era1950.geojson": "6dc8eb1a5623b69979bfe34d8c1cecb3e62d1c2ae363bfe5c1e9f25f322942a1",
     "turkiye_il_sinirlari_era1954.geojson": "1eac11477e80df3dee50bab3d6ac32d16735c55a5b765e5b117ff608d9fa8750",
@@ -5495,10 +5495,10 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 260,
+   "file_count": 262,
    "files": {
     "ARASTIRMA_KAYDI.md": "fe463c9f25a3ef72390973e8f6ca960d922fe1e8d8714cc5f44f864030dd6531",
-    "README.md": "6de623827705ee098b3fd3c98a104ce27ee4869eb3fe6182942d66f16c53e17a",
+    "README.md": "bbe9305a3bfe888d5015249d1a29841f03222c82b14037c846d2f1386da41428",
     "icisleri/il_ilce_kurulus_2018.json": "f4f2d24c58a63691399eb86e04190793318c7f4e43bff6ecd163ee692aabc9cb",
     "mertnuhoglu/genel/1991.json": "39fbdc09dae77a625bd4afe8a81165c0bfb5e73b25541202ecc273d457debcb9",
     "mertnuhoglu/genel/1995.json": "663f29122d69e76dc8aef205f7bf3246c78e8256a2359ee16e9e6da28f4ee3c1",
@@ -5508,6 +5508,8 @@
     "resmi_gazete/genel/1968ara.json": "8016dae6ce223bbe597b96f16efc2710a907c5bcf8a8e9a1e0b172beaabb57b9",
     "resmi_gazete/genel/1975ara.json": "6d9a725f988f8b4db2e2ff3c8db7d300a86db5195dc04647221660cddd7b5b49",
     "resmi_gazete/genel/1986ara.json": "264daef756b66a1871e3b26579026a5e240d6bf2fbb4326f590ad6106416b7e3",
+    "resmi_gazete/ilce_kurulus/3392.json": "f00cedf11b899d9f3a1ad0ad61092c6c672c46a676b96cc90fffada403aa4bbd",
+    "resmi_gazete/ilce_kurulus/3644.json": "ff84cc86b2e28c6379e96655855ca55fe73ad41ed1a28e1b3d4222235d497b74",
     "taban/README.md": "822265ca4b4fcd26ccca160a0addbf132b25b589aea7a13a1026ac99618f022a",
     "taban/ek/beldeler/1984yerel.json": "60f963c6ec998814c98e8eaae4d1935d7356d614162f974183ca887a610be615",
     "taban/ek/beldeler/1989yerel.json": "4584975a2db110ef58b1339c517079fc4ad03cecc25485a29693c47b8f95cdeb",
@@ -6110,11 +6112,13 @@
   },
   "data/raw/resmi_gazete": {
    "checksum_file": "data/raw/resmi_gazete/checksums.sha256",
-   "file_count": 3,
+   "file_count": 5,
    "files": {
     "12922.pdf": "f2eb6ed67c7bf232f12708b391dc8e5162176d69ed07440a8f73f423d671cc6b",
     "15394.pdf": "34815945af8d049ef7fb412468716d7b4a59d9e7a5ed711f93bd3f11984013bb",
-    "19247.pdf": "953644e44978c8807231ddb8f875a96af2955111a714629213bf847992fe78e4"
+    "19247.pdf": "953644e44978c8807231ddb8f875a96af2955111a714629213bf847992fe78e4",
+    "19507.pdf": "b78cebbe435cc639732b98e8225a562bab8426091f25fb18e1bb2960720b2c35",
+    "20523.pdf": "db83a0821e8e2a3988639d94ff2a9b7d23e50937cff5acbddeeb87ba21a46750"
    }
   },
   "data/raw/tuik/mahalli-kitap": {
@@ -6147,6 +6151,14 @@
    "file_count": 1,
    "files": {
     "il_ve_ilce_kurulus_tarihleri_2018.pdf": "444121af93c5f77a87d92776cf533c6045ee571e02ff1c819f7ae18e41eccc80"
+   }
+  },
+  "data/raw/mevzuat": {
+   "checksum_file": "data/raw/mevzuat/checksums.sha256",
+   "file_count": 2,
+   "files": {
+    "3392.pdf": "f53f6628eb1f7dfb364a7be661f5b362809c89f5e97e5302acbe8453d4018523",
+    "3644.pdf": "b60568328bf80e91500d7cf2fbfe06918b59a358921748cf1a92294df427d427"
    }
   }
  },

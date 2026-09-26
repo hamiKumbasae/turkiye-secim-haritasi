@@ -187,6 +187,21 @@ def il_parcalari(gor):
     return out
 
 
+def geometri_kurali(l):
+    """Henuz ayri olmayan ilcenin alani nereye katilir:
+    merge_into:<id> (repoda dogrulanmis HIST birlesimi ya da kanunla tek kaynakli ayrilma),
+    unresolved_multi_parent (birden cok ilceden birim aldi; koy duzeyi cozulmedi),
+    unresolved (soy bilinmiyor)."""
+    if l["oncekiBirimler"]:
+        return "merge_into:" + l["oncekiBirimler"][0]["tarihselBirim"]
+    k = l.get("kanunSoyu")
+    if k and k["tekKaynak"] and k["eskiIlceler"][0]["geomId"]:
+        return "merge_into:" + k["eskiIlceler"][0]["geomId"]
+    if k:
+        return "unresolved_multi_parent"
+    return "unresolved"
+
+
 # --- ana ------------------------------------------------------------------------------------
 def main():
     secim_listesi = secimler()
@@ -256,6 +271,34 @@ def main():
                                    "kaynak": "geo/historical/district_splits.json",
                                    **({"kanun": m["law"], "kaynaklar": m["sources"]} if m else {})})
 
+    # --- kanun ek listelerinden soy (Faz 2): yeni ilce geomId -> eski ilce(ler)
+    kanunla, tarihsel_kanun, sinir_duzeltmeleri = {}, {}, []
+    for f in sorted((ROOT / "data/kaynaklar/resmi_gazete/ilce_kurulus").glob("*.json")):
+        kd = json.loads(f.read_text(encoding="utf-8"))
+        for i in kd["ilceler"]:
+            kayit = {"kanun": kd["kanun"], "kanunAdi": kd["ad"], "resmiGazete": kd["resmiGazete"],
+                     "listeNo": i["listeNo"], "rgSayfalari": i["rgSayfalari"], "birimSayisi": i["satirSayisi"],
+                     "eskiIlceler": [{k: e.get(k) for k in ("ad", "geomId", "plaka", "birimSayisi")} for e in i["eskiIlceler"]],
+                     # OCR'da dusen satir varsa tek kaynak kesin degil
+                     "tekKaynak": i["tekKaynak"] and not i.get("eksikSira"),
+                     **({"eksikSira": i["eksikSira"]} if i.get("eksikSira") else {}),
+                     **({"kaynakYazilmamisBirim": i["kaynakYazilmamisSatir"]} if i.get("kaynakYazilmamisSatir") else {}),
+                     "kaynak": str(f.relative_to(ROOT))}
+            if i["yeniIlce"] and i["yeniIlce"]["geomId"].startswith("HIST-"):
+                # kanunla kurulan birim sonradan bolunmus: kurulus sinirlari repodaki tarihsel
+                # poligonda (3392: Pendik, Kucukcekmece, Buyukcekmece, Umraniye, Konak)
+                tarihsel_kanun[i["yeniIlce"]["geomId"]] = dict(kayit, ad=i["ad"])
+            elif i["yeniIlce"]:
+                kanunla[i["yeniIlce"]["geomId"]] = kayit
+            if i["ekHukum"]:
+                sinir_duzeltmeleri.append({"id": f"kanun-{kd['kanun']}-{i['listeNo']}-ek", "unitType": "district",
+                                           "eventType": "boundary_adjustment", "effectiveDate": kd["resmiGazete"]["tarih"],
+                                           "lawNumber": kd["kanun"], "officialGazette": kd["resmiGazete"],
+                                           "text": i["ekHukum"], "relatedNewDistrict": i["ad"],
+                                           "source": str(f.relative_to(ROOT)), "confidence": "high",
+                                           "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. "
+                                                  "İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."})
+
     # --- district_lineage
     lineage, rapor = [], collections.defaultdict(list)
     for g in sorted(guncel):
@@ -298,8 +341,11 @@ def main():
         if len(iller) > 1:
             rapor["ilDegisikligi"].append({"geomId": g, "ad": v["ad"], "iller": [i["plaka"] for i in iller]})
         onceki = bilinen.get(g, [])
+        kanun_soyu = kanunla.get(g)
         if onceki:
             durum = "repo_dogrulanmis"
+        elif kanun_soyu:
+            durum = "kanun_tek_kaynak" if kanun_soyu["tekKaynak"] else "kanun_cok_kaynak"
         elif k and (k.get("cumhuriyetOncesi") or (kurulus and kurulus < "1950-05-14")):
             durum = "1950_oncesi_mevcut"
         elif k and k.get("merkezIlce"):
@@ -322,6 +368,7 @@ def main():
             "merkezIlceDonusumu": merkez_donusumu,
             "adlar": adlar, "ilGecmisi": iller,
             "oncekiBirimler": onceki,
+            "kanunSoyu": kanun_soyu,
             "lineageStatus": durum,
             **({"not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). "
                        "Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."}
@@ -347,7 +394,12 @@ def main():
                               "center_district_restructured" if l["merkezIlceDonusumu"] else "created"),
                 "effectiveDate": k["tarih"], "lawNumber": k["kanun"], "officialGazette": k["resmiGazete"],
                 "provinceAfter": l["plaka"],
-                "predecessors": [o["tarihselBirim"] for o in l["oncekiBirimler"]] or None,
+                "predecessors": ([o["tarihselBirim"] for o in l["oncekiBirimler"]] or
+                                 [{"district": e["ad"], "geomId": e["geomId"], "provincePlaka": e["plaka"],
+                                   "unitsTransferred": e["birimSayisi"]} for e in (l["kanunSoyu"] or {}).get("eskiIlceler", [])]
+                                 or None),
+                **({"lineageSource": {k: l["kanunSoyu"][k] for k in ("kanun", "listeNo", "rgSayfalari", "kaynak")}}
+                   if l["kanunSoyu"] else {}),
                 "firstElectionAsSeparateUnit": l["ilkSecim"], "notYetInElections": l["kurulduAmaSecimeAyriGirmedi"],
                 "lineageStatus": l["lineageStatus"], "source": "icisleri_il_ilce_kurulus_2018", "confidence": "high"})
         for a, b in zip(l["adlar"], l["adlar"][1:]):
@@ -365,6 +417,7 @@ def main():
                             "dateBounds": {"after": a["sonTarih"], "before": b["ilkTarih"]},
                             "source": ("icisleri_il_ilce_kurulus_2018 (yeni ilin kuruluşu) + seçim verisi" if t else "seçim verisi"),
                             "confidence": "high" if t else "medium"})
+    olaylar += sinir_duzeltmeleri
     olaylar += elle["olaylar"]
 
     # --- election_admin_snapshots
@@ -407,8 +460,7 @@ def main():
             henuz.append({"geomId": g, "ad": l["ad"], "bugunkuPlaka": l["plaka"],
                           "neden": ("kanunla kurulmuş, seçime henüz ayrı girmemiş" if kanunla else
                                     "henüz kurulmamış" if k.get("tarih") else "kuruluş tarihi bilinmiyor"),
-                          "geometryRule": ("merge_into:" + l["oncekiBirimler"][0]["tarihselBirim"])
-                          if l["oncekiBirimler"] else "unresolved"})
+                          "geometryRule": geometri_kurali(l)})
         uyumsuz = sorted(set(veri.get("iller", [])) ^ set(iller)) if veri.get("iller") else []
         snaps[s["anahtar"]] = {
             "tarih": t, "tarihAraligi": s["tarihAraligi"], "tur": s["tur"],
@@ -431,13 +483,20 @@ def main():
 
     kaynaklar = [{"id": "icisleri_il_ilce_kurulus_2018", "type": "official", "title": ic["kaynak"]["yayin"],
                   "url": ic["kaynak"]["url"], "raw": ic["kaynak"]["ham"]}] + elle["kaynaklar"]
-    meta = {"schemaVersion": "1.0.0", "faz": 1,
+    for f in sorted((ROOT / "data/kaynaklar/resmi_gazete/ilce_kurulus").glob("*.json")):
+        kd = json.loads(f.read_text(encoding="utf-8"))
+        kaynaklar.append({"id": f"kanun_{kd['kanun']}", "type": "official",
+                          "title": f"{kd['kanun']} sayılı {kd['ad']} (RG {kd['resmiGazete']['tarih']}, sayı {kd['resmiGazete']['sayi']})",
+                          "url": kd["kaynaklar"]["rgUrl"], "raw": kd["kaynaklar"]["ekListeler"],
+                          "extracted": str(f.relative_to(ROOT))})
+    meta = {"schemaVersion": "1.0.0", "faz": 2,
             "policy": {"neverBackcastModernDistrictBeforeExistence": True, "unknownLineage": "unresolved",
                        "matchBy": "geomId", "lawDateIsNotElectionEffect": True,
                        "localElectionRowsAreMunicipalities": True},
             "sources": kaynaklar}
     yaz("administrative_events.json", {**meta, "events": olaylar}, 1)
-    yaz("district_lineage.json", {**meta, "districts": lineage}, 1)
+    yaz("district_lineage.json", {**meta, "districts": lineage,
+                                  "historicalUnits": [{"id": k, **v} for k, v in sorted(tarihsel_kanun.items())]}, 1)
     yaz("election_admin_snapshots.json", {**meta, "note": "build_idari_katman.py ile üretilir; elle düzenlenmez.",
                                          "elections": snaps})
     ozet = {"guncelIlce": len(guncel), "icisleriEslesen": len(ilce_kurulus), "icisleriEslesmeyen": eslesmeyen,

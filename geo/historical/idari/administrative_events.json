@@ -1,6 +1,6 @@
 {
  "schemaVersion": "1.0.0",
- "faz": 1,
+ "faz": 2,
  "policy": {
   "neverBackcastModernDistrictBeforeExistence": true,
   "unknownLineage": "unresolved",
@@ -27,6 +27,22 @@
    "type": "secondary",
    "title": "İlden ilçeye dönen Kırşehir, 68 yıl önce bugün yeniden il oldu",
    "url": "https://www.yeniankara.com.tr/bolge-haberlerikirsehir/ilden-ilceye-donen-kirsehir-68-yil-once-bugun-yeniden-il-oldu-iste-tum-surec-113434"
+  },
+  {
+   "id": "kanun_3392",
+   "type": "official",
+   "title": "3392 sayılı 103 İlçe Kurulması Hakkında Kanun (RG 1987-07-04, sayı 19507)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/19507.pdf",
+   "raw": "data/raw/resmi_gazete/19507.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+  },
+  {
+   "id": "kanun_3644",
+   "type": "official",
+   "title": "3644 sayılı 130 İlçe Kurulması Hakkında Kanun (RG 1990-05-20, sayı 20523)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/20523.pdf",
+   "raw": "data/raw/resmi_gazete/20523.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
   }
  ],
  "events": [
@@ -1078,7 +1094,22 @@
     "sayi": 19507
    },
    "provinceAfter": 1,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Karaisalı",
+     "geomId": "TR-D-01-006",
+     "provincePlaka": 1,
+     "unitsTransferred": 25
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 1,
+    "rgSayfalari": [
+     6
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -1088,7 +1119,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1171,7 +1202,23 @@
     "sayi": 19507
    },
    "provinceAfter": 1,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kozan",
+     "geomId": "TR-D-01-008",
+     "provincePlaka": 1,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 2,
+    "rgSayfalari": [
+     6,
+     7
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -1182,7 +1229,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1579,14 +1626,29 @@
     "sayi": 20523
    },
    "provinceAfter": 2,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kahta",
+     "geomId": "TR-D-02-006",
+     "provincePlaka": 2,
+     "unitsTransferred": 18
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 1,
+    "rgSayfalari": [
+     9
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Sincik"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1603,14 +1665,29 @@
     "sayi": 20523
    },
    "provinceAfter": 2,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Besni",
+     "geomId": "TR-D-02-002",
+     "provincePlaka": 2,
+     "unitsTransferred": 11
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 2,
+    "rgSayfalari": [
+     9
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Tut"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1648,7 +1725,22 @@
     "sayi": 19507
    },
    "provinceAfter": 3,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Dazkırı",
+     "geomId": "TR-D-03-007",
+     "provincePlaka": 3,
+     "unitsTransferred": 13
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 3,
+    "rgSayfalari": [
+     7
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -1659,7 +1751,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1676,7 +1768,23 @@
     "sayi": 19507
    },
    "provinceAfter": 3,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Emirdağ",
+     "geomId": "TR-D-03-009",
+     "provincePlaka": 3,
+     "unitsTransferred": 13
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 4,
+    "rgSayfalari": [
+     7,
+     8
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -1687,7 +1795,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1749,14 +1857,29 @@
     "sayi": 20523
    },
    "provinceAfter": 3,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-03-001",
+     "provincePlaka": 3,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 3,
+    "rgSayfalari": [
+     10
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çobanlar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1839,14 +1962,29 @@
     "sayi": 20523
    },
    "provinceAfter": 3,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Dazkırı",
+     "geomId": "TR-D-03-007",
+     "provincePlaka": 3,
+     "unitsTransferred": 7
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 4,
+    "rgSayfalari": [
+     10
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Evciler"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1863,14 +2001,30 @@
     "sayi": 20523
    },
    "provinceAfter": 3,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Sandıklı",
+     "geomId": "TR-D-03-015",
+     "provincePlaka": 3,
+     "unitsTransferred": 20
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 5,
+    "rgSayfalari": [
+     10,
+     11
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Hocalar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1911,7 +2065,22 @@
     "sayi": 19507
    },
    "provinceAfter": 3,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-03-001",
+     "provincePlaka": 3,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 5,
+    "rgSayfalari": [
+     8
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -1922,7 +2091,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1939,14 +2108,29 @@
     "sayi": 20523
    },
    "provinceAfter": 3,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Sandıklı",
+     "geomId": "TR-D-03-015",
+     "provincePlaka": 3,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 6,
+    "rgSayfalari": [
+     11
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kızılören"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -2299,14 +2483,29 @@
     "sayi": 20523
    },
    "provinceAfter": 5,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gümüşhacıköy",
+     "geomId": "TR-D-05-003",
+     "provincePlaka": 5,
+     "unitsTransferred": 18
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 9,
+    "rgSayfalari": [
+     12
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Hamamözü"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -2392,14 +2591,35 @@
     "sayi": 20523
    },
    "provinceAfter": 6,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çubuk",
+     "geomId": "TR-D-06-008",
+     "provincePlaka": 6,
+     "unitsTransferred": 16
+    },
+    {
+     "district": "Kalecik",
+     "geomId": "TR-D-06-016",
+     "provincePlaka": 6,
+     "unitsTransferred": 4
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 10,
+    "rgSayfalari": [
+     13
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Akyurt"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -2596,14 +2816,29 @@
     "sayi": 20523
    },
    "provinceAfter": 6,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Yenimahalle",
+     "geomId": "TR-D-06-025",
+     "provincePlaka": 6,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 11,
+    "rgSayfalari": [
+     13
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Etimesgut"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -2620,14 +2855,29 @@
     "sayi": 20523
    },
    "provinceAfter": 6,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Şereflikoçhisar",
+     "geomId": "TR-D-06-024",
+     "provincePlaka": 6,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 12,
+    "rgSayfalari": [
+     14
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Evren"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -2713,7 +2963,22 @@
     "sayi": 19507
    },
    "provinceAfter": 6,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Yenimahalle",
+     "geomId": "TR-D-06-025",
+     "provincePlaka": 6,
+     "unitsTransferred": 31
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 6,
+    "rgSayfalari": [
+     8
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -2724,7 +2989,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3052,7 +3317,23 @@
     "sayi": 19507
    },
    "provinceAfter": 7,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kaş",
+     "geomId": "TR-D-07-011",
+     "provincePlaka": 7,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 7,
+    "rgSayfalari": [
+     9,
+     10
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -3063,7 +3344,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3194,14 +3475,35 @@
     "sayi": 20523
    },
    "provinceAfter": 7,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Akseki",
+     "geomId": "TR-D-07-001",
+     "provincePlaka": 7,
+     "unitsTransferred": 13
+    },
+    {
+     "district": "Manavgat",
+     "geomId": "TR-D-07-017",
+     "provincePlaka": 7,
+     "unitsTransferred": 5
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 13,
+    "rgSayfalari": [
+     14
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "İbradı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3239,14 +3541,29 @@
     "sayi": 20523
    },
    "provinceAfter": 7,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Antalya-Merkez",
+     "provincePlaka": 7,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 14,
+    "rgSayfalari": [
+     15
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kemer"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3550,7 +3867,22 @@
     "sayi": 19507
    },
    "provinceAfter": 8,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Borçka",
+     "geomId": "TR-D-08-004",
+     "provincePlaka": 8,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 8,
+    "rgSayfalari": [
+     10
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -3561,7 +3893,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3641,7 +3973,22 @@
     "sayi": 19507
    },
    "provinceAfter": 9,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kuyucak",
+     "geomId": "TR-D-09-013",
+     "provincePlaka": 9,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 9,
+    "rgSayfalari": [
+     10
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -3652,7 +3999,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3690,14 +4037,35 @@
     "sayi": 20523
    },
    "provinceAfter": 9,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Söke",
+     "geomId": "TR-D-09-015",
+     "provincePlaka": 9,
+     "unitsTransferred": 5
+    },
+    {
+     "district": "Milas",
+     "geomId": "TR-D-48-009",
+     "provincePlaka": 48,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 17,
+    "rgSayfalari": [
+     16
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Didim (Yenihisar)"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3779,7 +4147,23 @@
     "sayi": 19507
    },
    "provinceAfter": 9,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-09-005",
+     "provincePlaka": 9,
+     "unitsTransferred": 19
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 10,
+    "rgSayfalari": [
+     10,
+     11
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -3790,7 +4174,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3828,14 +4212,29 @@
     "sayi": 20523
    },
    "provinceAfter": 9,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çine",
+     "geomId": "TR-D-09-003",
+     "provincePlaka": 9,
+     "unitsTransferred": 18
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 15,
+    "rgSayfalari": [
+     15
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Karpuzlu"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3876,14 +4275,29 @@
     "sayi": 20523
    },
    "provinceAfter": 9,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-09-005",
+     "provincePlaka": 9,
+     "unitsTransferred": 23
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 16,
+    "rgSayfalari": [
+     16
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Köşk"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4235,14 +4649,29 @@
     "sayi": 20523
    },
    "provinceAfter": 10,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Burhaniye",
+     "geomId": "TR-D-10-006",
+     "provincePlaka": 10,
+     "unitsTransferred": 13
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 18,
+    "rgSayfalari": [
+     17
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Gömeç"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4402,7 +4831,22 @@
     "sayi": 19507
    },
    "provinceAfter": 10,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Erdek",
+     "geomId": "TR-D-10-009",
+     "provincePlaka": 10,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 11,
+    "rgSayfalari": [
+     11
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -4413,7 +4857,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4568,14 +5012,29 @@
     "sayi": 20523
    },
    "provinceAfter": 11,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Söğüt",
+     "geomId": "TR-D-11-007",
+     "provincePlaka": 11,
+     "unitsTransferred": 12
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 19,
+    "rgSayfalari": [
+     17
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "İnhisar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4661,7 +5120,23 @@
     "sayi": 19507
    },
    "provinceAfter": 11,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gölpazarı",
+     "geomId": "TR-D-11-003",
+     "provincePlaka": 11,
+     "unitsTransferred": 24
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 12,
+    "rgSayfalari": [
+     11,
+     12
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -4672,7 +5147,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4689,7 +5164,23 @@
     "sayi": 19507
    },
    "provinceAfter": 12,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kiğı",
+     "geomId": "TR-D-12-005",
+     "provincePlaka": 12,
+     "unitsTransferred": 32
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 13,
+    "rgSayfalari": [
+     12,
+     13
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -4700,7 +5191,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4810,7 +5301,23 @@
     "sayi": 19507
    },
    "provinceAfter": 12,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kiğı",
+     "geomId": "TR-D-12-005",
+     "provincePlaka": 12,
+     "unitsTransferred": 20
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 14,
+    "rgSayfalari": [
+     13,
+     14
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -4821,7 +5328,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4838,14 +5345,42 @@
     "sayi": 20523
    },
    "provinceAfter": 12,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kiğı",
+     "geomId": "TR-D-12-005",
+     "provincePlaka": 12,
+     "unitsTransferred": 12
+    },
+    {
+     "district": "Pülümür",
+     "geomId": "TR-D-62-007",
+     "provincePlaka": 62,
+     "unitsTransferred": 5
+    },
+    {
+     "district": "Karlıova",
+     "geomId": "TR-D-12-004",
+     "provincePlaka": 12,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 20,
+    "rgSayfalari": [
+     17,
+     18
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yedisu"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4907,7 +5442,22 @@
     "sayi": 19507
    },
    "provinceAfter": 13,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-13-003",
+     "provincePlaka": 13,
+     "unitsTransferred": 26
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 15,
+    "rgSayfalari": [
+     14
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -4918,7 +5468,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5025,14 +5575,29 @@
     "sayi": 20523
    },
    "provinceAfter": 14,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gerede",
+     "geomId": "TR-D-14-003",
+     "provincePlaka": 14,
+     "unitsTransferred": 30
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 22,
+    "rgSayfalari": [
+     19
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Dörtdivan"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5184,14 +5749,30 @@
     "sayi": 20523
    },
    "provinceAfter": 14,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gerede",
+     "geomId": "TR-D-14-003",
+     "provincePlaka": 14,
+     "unitsTransferred": 16
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 23,
+    "rgSayfalari": [
+     19,
+     20
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yeniçağa"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5232,14 +5813,29 @@
     "sayi": 20523
    },
    "provinceAfter": 15,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gölhisar",
+     "geomId": "TR-D-15-007",
+     "provincePlaka": 15,
+     "unitsTransferred": 11
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 24,
+    "rgSayfalari": [
+     20
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Altınyayla"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5301,14 +5897,30 @@
     "sayi": 20523
    },
    "provinceAfter": 15,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gölhisar",
+     "geomId": "TR-D-15-007",
+     "provincePlaka": 15,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 25,
+    "rgSayfalari": [
+     20,
+     21
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çavdır"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5325,14 +5937,35 @@
     "sayi": 20523
    },
    "provinceAfter": 15,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-15-004",
+     "provincePlaka": 15,
+     "unitsTransferred": 9
+    },
+    {
+     "district": "Bucak",
+     "geomId": "TR-D-15-003",
+     "provincePlaka": 15,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 26,
+    "rgSayfalari": [
+     21
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çeltikçi"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5373,7 +6006,34 @@
     "sayi": 19507
    },
    "provinceAfter": 15,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Tefenni",
+     "geomId": "TR-D-15-010",
+     "provincePlaka": 15,
+     "unitsTransferred": 5
+    },
+    {
+     "district": "Yeşilova",
+     "geomId": "TR-D-15-011",
+     "provincePlaka": 15,
+     "unitsTransferred": 3
+    },
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-15-004",
+     "provincePlaka": 15,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 18,
+    "rgSayfalari": [
+     16
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -5384,7 +6044,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5401,7 +6061,23 @@
     "sayi": 19507
    },
    "provinceAfter": 15,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-15-004",
+     "provincePlaka": 15,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 19,
+    "rgSayfalari": [
+     16,
+     17
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -5412,7 +6088,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5474,7 +6150,23 @@
     "sayi": 19507
    },
    "provinceAfter": 16,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Orhaneli",
+     "geomId": "TR-D-16-013",
+     "provincePlaka": 16,
+     "unitsTransferred": 44
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 20,
+    "rgSayfalari": [
+     17,
+     18
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -5485,7 +6177,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5523,14 +6215,29 @@
     "sayi": 20523
    },
    "provinceAfter": 16,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Yıldırım",
+     "geomId": "TR-D-16-017",
+     "provincePlaka": 16,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 27,
+    "rgSayfalari": [
+     21
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Gürsu"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5547,7 +6254,22 @@
     "sayi": 19507
    },
    "provinceAfter": 16,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Orhaneli",
+     "geomId": "TR-D-16-013",
+     "provincePlaka": 16,
+     "unitsTransferred": 26
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 21,
+    "rgSayfalari": [
+     18
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -5558,7 +6280,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -5665,14 +6387,29 @@
     "sayi": 20523
    },
    "provinceAfter": 16,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Yıldırım",
+     "geomId": "TR-D-16-017",
+     "provincePlaka": 16,
+     "unitsTransferred": 30
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 28,
+    "rgSayfalari": [
+     22
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kestel"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6145,7 +6882,22 @@
     "sayi": 19507
    },
    "provinceAfter": 18,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kurşunlu",
+     "geomId": "TR-D-18-009",
+     "provincePlaka": 18,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 22,
+    "rgSayfalari": [
+     19
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -6156,7 +6908,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6173,14 +6925,36 @@
     "sayi": 20523
    },
    "provinceAfter": 18,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kurşunlu",
+     "geomId": "TR-D-18-009",
+     "provincePlaka": 18,
+     "unitsTransferred": 24
+    },
+    {
+     "district": "Atkaracalar",
+     "geomId": "TR-D-18-001",
+     "provincePlaka": 18,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 29,
+    "rgSayfalari": [
+     22,
+     23
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Bayramören"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6284,7 +7058,23 @@
     "sayi": 19507
    },
    "provinceAfter": 18,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-18-003",
+     "provincePlaka": 18,
+     "unitsTransferred": 25
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 23,
+    "rgSayfalari": [
+     19,
+     20
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -6295,7 +7085,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6312,14 +7102,29 @@
     "sayi": 20523
    },
    "provinceAfter": 18,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-18-003",
+     "provincePlaka": 18,
+     "unitsTransferred": 12
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 30,
+    "rgSayfalari": [
+     23
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Korgun"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6477,7 +7282,22 @@
     "sayi": 19507
    },
    "provinceAfter": 19,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Sungurlu",
+     "geomId": "TR-D-19-013",
+     "provincePlaka": 19,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 24,
+    "rgSayfalari": [
+     20
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -6487,7 +7307,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6525,14 +7345,29 @@
     "sayi": 20523
    },
    "provinceAfter": 19,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Osmancık",
+     "geomId": "TR-D-19-012",
+     "provincePlaka": 19,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 31,
+    "rgSayfalari": [
+     24
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Dodurga"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6594,14 +7429,30 @@
     "sayi": 20523
    },
    "provinceAfter": 19,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-19-004",
+     "provincePlaka": 19,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 33,
+    "rgSayfalari": [
+     24,
+     25
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Laçin"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6639,14 +7490,29 @@
     "sayi": 20523
    },
    "provinceAfter": 19,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "İskilip",
+     "geomId": "TR-D-19-006",
+     "provincePlaka": 19,
+     "unitsTransferred": 7
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 32,
+    "rgSayfalari": [
+     24
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Oğuzlar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6729,7 +7595,35 @@
     "sayi": 19507
    },
    "provinceAfter": 19,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "İskilip",
+     "geomId": "TR-D-19-006",
+     "provincePlaka": 19,
+     "unitsTransferred": 17
+    },
+    {
+     "district": "Sungurlu",
+     "geomId": "TR-D-19-013",
+     "provincePlaka": 19,
+     "unitsTransferred": 12
+    },
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-19-004",
+     "provincePlaka": 19,
+     "unitsTransferred": 4
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 25,
+    "rgSayfalari": [
+     20,
+     21
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -6740,7 +7634,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6778,7 +7672,22 @@
     "sayi": 19507
    },
    "provinceAfter": 20,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Sarayköy",
+     "geomId": "TR-D-20-017",
+     "provincePlaka": 20,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 26,
+    "rgSayfalari": [
+     21
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -6788,7 +7697,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6805,14 +7714,29 @@
     "sayi": 20523
    },
    "provinceAfter": 20,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çal",
+     "geomId": "TR-D-20-008",
+     "provincePlaka": 20,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 35,
+    "rgSayfalari": [
+     25
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Baklan"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6829,7 +7753,22 @@
     "sayi": 19507
    },
    "provinceAfter": 20,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çal",
+     "geomId": "TR-D-20-008",
+     "provincePlaka": 20,
+     "unitsTransferred": 12
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 27,
+    "rgSayfalari": [
+     22
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -6839,7 +7778,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6856,14 +7795,29 @@
     "sayi": 20523
    },
    "provinceAfter": 20,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kale",
+     "geomId": "TR-D-20-014",
+     "provincePlaka": 20,
+     "unitsTransferred": 7
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 36,
+    "rgSayfalari": [
+     26
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Beyağaç"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -6880,14 +7834,29 @@
     "sayi": 20523
    },
    "provinceAfter": 20,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çardak",
+     "geomId": "TR-D-20-010",
+     "provincePlaka": 20,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 37,
+    "rgSayfalari": [
+     26
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Bozkurt"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -7039,7 +8008,22 @@
     "sayi": 19507
    },
    "provinceAfter": 20,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-20-015",
+     "provincePlaka": 20,
+     "unitsTransferred": 18
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 28,
+    "rgSayfalari": [
+     22
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -7049,7 +8033,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -7131,14 +8115,29 @@
     "sayi": 20523
    },
    "provinceAfter": 20,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-20-015",
+     "provincePlaka": 20,
+     "unitsTransferred": 12
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 34,
+    "rgSayfalari": [
+     25
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Akköy"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -7193,7 +8192,22 @@
     "sayi": 19507
    },
    "provinceAfter": 20,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Acıpayam",
+     "geomId": "TR-D-20-001",
+     "provincePlaka": 20,
+     "unitsTransferred": 4
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 29,
+    "rgSayfalari": [
+     23
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -7204,7 +8218,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -7385,7 +8399,29 @@
     "sayi": 19507
    },
    "provinceAfter": 21,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Diyarbakır-Merkez",
+     "provincePlaka": 21,
+     "unitsTransferred": 21
+    },
+    {
+     "district": "Dicle",
+     "geomId": "TR-D-21-006",
+     "provincePlaka": 21,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 30,
+    "rgSayfalari": [
+     23,
+     24
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -7396,7 +8432,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -7511,14 +8547,35 @@
     "sayi": 20523
    },
    "provinceAfter": 21,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Diyarbakır-Merkez",
+     "provincePlaka": 21,
+     "unitsTransferred": 8
+    },
+    {
+     "district": "Lice",
+     "geomId": "TR-D-21-014",
+     "provincePlaka": 21,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 38,
+    "rgSayfalari": [
+     26
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kocaköy"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -7809,14 +8866,29 @@
     "sayi": 20523
    },
    "provinceAfter": 22,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-22-001",
+     "provincePlaka": 22,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 39,
+    "rgSayfalari": [
+     27
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Süloğlu"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -7878,14 +8950,35 @@
     "sayi": 20523
    },
    "provinceAfter": 23,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Maden",
+     "geomId": "TR-D-23-009",
+     "provincePlaka": 23,
+     "unitsTransferred": 7
+    },
+    {
+     "district": "Arıcak",
+     "geomId": "TR-D-23-003",
+     "provincePlaka": 23,
+     "unitsTransferred": 5
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 40,
+    "rgSayfalari": [
+     27
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Alacakaya"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -7902,7 +8995,23 @@
     "sayi": 19507
    },
    "provinceAfter": 23,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Palu",
+     "geomId": "TR-D-23-010",
+     "provincePlaka": 23,
+     "unitsTransferred": 22
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 32,
+    "rgSayfalari": [
+     26,
+     27
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -7913,7 +9022,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8020,7 +9129,36 @@
     "sayi": 19507
    },
    "provinceAfter": 23,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Palu",
+     "geomId": "TR-D-23-010",
+     "provincePlaka": 23,
+     "unitsTransferred": 78
+    },
+    {
+     "district": null,
+     "geomId": null,
+     "provincePlaka": null,
+     "unitsTransferred": 1
+    },
+    {
+     "district": "Ağın",
+     "geomId": "TR-D-23-001",
+     "provincePlaka": 23,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 31,
+    "rgSayfalari": [
+     24,
+     25,
+     26
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -8031,7 +9169,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8222,14 +9360,30 @@
     "sayi": 20523
    },
    "provinceAfter": 24,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çayırlı",
+     "geomId": "TR-D-24-001",
+     "provincePlaka": 24,
+     "unitsTransferred": 13
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 41,
+    "rgSayfalari": [
+     27,
+     28
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Otlukbeli"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8288,7 +9442,23 @@
     "sayi": 19507
    },
    "provinceAfter": 24,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-24-002",
+     "provincePlaka": 24,
+     "unitsTransferred": 28
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 33,
+    "rgSayfalari": [
+     27,
+     28
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -8299,7 +9469,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8340,14 +9510,31 @@
     "sayi": 20523
    },
    "provinceAfter": 25,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Erzurum-Merkez",
+     "provincePlaka": 25,
+     "unitsTransferred": 74
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 42,
+    "rgSayfalari": [
+     28,
+     29,
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Ilıca"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8471,7 +9658,23 @@
     "sayi": 19507
    },
    "provinceAfter": 25,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Hınıs",
+     "geomId": "TR-D-25-004",
+     "provincePlaka": 25,
+     "unitsTransferred": 25
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 34,
+    "rgSayfalari": [
+     28,
+     29
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -8481,7 +9684,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8755,7 +9958,22 @@
     "sayi": 19507
    },
    "provinceAfter": 25,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Tortum",
+     "geomId": "TR-D-25-018",
+     "provincePlaka": 25,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 35,
+    "rgSayfalari": [
+     29
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -8765,7 +9983,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8808,7 +10026,23 @@
     "sayi": 19507
    },
    "provinceAfter": 26,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Eskişehir-Merkez",
+     "provincePlaka": 26,
+     "unitsTransferred": 28
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 36,
+    "rgSayfalari": [
+     29,
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -8819,7 +10053,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8836,7 +10070,22 @@
     "sayi": 19507
    },
    "provinceAfter": 26,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Mihalıçcık",
+     "geomId": "TR-D-26-009",
+     "provincePlaka": 26,
+     "unitsTransferred": 17
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 37,
+    "rgSayfalari": [
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -8846,7 +10095,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8887,14 +10136,29 @@
     "sayi": 20523
    },
    "provinceAfter": 26,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Sivrihisar",
+     "geomId": "TR-D-26-013",
+     "provincePlaka": 26,
+     "unitsTransferred": 17
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 43,
+    "rgSayfalari": [
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Günyüzü"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8911,14 +10175,29 @@
     "sayi": 20523
    },
    "provinceAfter": 26,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çifteler",
+     "geomId": "TR-D-26-003",
+     "provincePlaka": 26,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 44,
+    "rgSayfalari": [
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Han"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8935,7 +10214,23 @@
     "sayi": 19507
    },
    "provinceAfter": 26,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Eskişehir-Merkez",
+     "provincePlaka": 26,
+     "unitsTransferred": 12
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 38,
+    "rgSayfalari": [
+     30,
+     31
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -8946,7 +10241,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -8987,14 +10282,29 @@
     "sayi": 20523
    },
    "provinceAfter": 26,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Sarıcakaya",
+     "geomId": "TR-D-26-011",
+     "provincePlaka": 26,
+     "unitsTransferred": 5
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 45,
+    "rgSayfalari": [
+     31
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Mihalgazi"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9195,14 +10505,30 @@
     "sayi": 20523
    },
    "provinceAfter": 27,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Nizip",
+     "geomId": "TR-D-27-004",
+     "provincePlaka": 27,
+     "unitsTransferred": 37
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 46,
+    "rgSayfalari": [
+     31,
+     32
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Karkamış"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9243,14 +10569,29 @@
     "sayi": 20523
    },
    "provinceAfter": 27,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "İslahiye",
+     "geomId": "TR-D-27-002",
+     "provincePlaka": 27,
+     "unitsTransferred": 28
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 47,
+    "rgSayfalari": [
+     32
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Nurdağı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9420,14 +10761,29 @@
     "sayi": 20523
    },
    "provinceAfter": 28,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Alucra",
+     "geomId": "TR-D-28-001",
+     "provincePlaka": null,
+     "unitsTransferred": 29
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 129,
+    "rgSayfalari": [
+     75
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çamoluk"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9444,14 +10800,29 @@
     "sayi": 20523
    },
    "provinceAfter": 28,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Görele",
+     "geomId": "TR-D-28-010",
+     "provincePlaka": 28,
+     "unitsTransferred": 17
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 48,
+    "rgSayfalari": [
+     33
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çanakçı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9492,14 +10863,29 @@
     "sayi": 20523
    },
    "provinceAfter": 28,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Tirebolu",
+     "geomId": "TR-D-28-015",
+     "provincePlaka": null,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 130,
+    "rgSayfalari": [
+     75
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Doğankent"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9606,14 +10992,29 @@
     "sayi": 20523
    },
    "provinceAfter": 28,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Tirebolu",
+     "geomId": "TR-D-28-015",
+     "provincePlaka": 28,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 49,
+    "rgSayfalari": [
+     33
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Güce"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9654,7 +11055,22 @@
     "sayi": 19507
    },
    "provinceAfter": 28,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bulancak",
+     "geomId": "TR-D-28-002",
+     "provincePlaka": 28,
+     "unitsTransferred": 17
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 39,
+    "rgSayfalari": [
+     31
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -9665,7 +11081,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9727,7 +11143,22 @@
     "sayi": 19507
    },
    "provinceAfter": 28,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Espiye",
+     "geomId": "TR-D-28-007",
+     "provincePlaka": 28,
+     "unitsTransferred": 30
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 40,
+    "rgSayfalari": [
+     32
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -9738,7 +11169,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9797,7 +11228,22 @@
     "sayi": 19507
    },
    "provinceAfter": 29,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kelkit",
+     "geomId": "TR-D-29-002",
+     "provincePlaka": 29,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 43,
+    "rgSayfalari": [
+     35
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -9808,7 +11254,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -9825,14 +11271,35 @@
     "sayi": 20523
    },
    "provinceAfter": 29,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Torul",
+     "geomId": "TR-D-29-006",
+     "provincePlaka": 29,
+     "unitsTransferred": 32
+    },
+    {
+     "district": "Tirebolu",
+     "geomId": "TR-D-28-015",
+     "provincePlaka": 28,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 50,
+    "rgSayfalari": [
+     34
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kürtün"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10073,14 +11540,30 @@
     "sayi": 20523
    },
    "provinceAfter": 31,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "İskenderun",
+     "geomId": "TR-D-31-009",
+     "provincePlaka": 31,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 51,
+    "rgSayfalari": [
+     34,
+     35
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Belen"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10142,7 +11625,22 @@
     "sayi": 19507
    },
    "provinceAfter": 31,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Dörtyol",
+     "geomId": "TR-D-31-006",
+     "provincePlaka": 31,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 44,
+    "rgSayfalari": [
+     35
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -10153,7 +11651,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10242,14 +11740,29 @@
     "sayi": 20523
    },
    "provinceAfter": 31,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Reyhanlı",
+     "geomId": "TR-D-31-013",
+     "provincePlaka": 31,
+     "unitsTransferred": 12
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 52,
+    "rgSayfalari": [
+     35
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kumlu"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10362,7 +11875,22 @@
     "sayi": 19507
    },
    "provinceAfter": 32,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Eğirdir",
+     "geomId": "TR-D-32-003",
+     "provincePlaka": 32,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 45,
+    "rgSayfalari": [
+     36
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -10372,7 +11900,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10458,14 +11986,35 @@
     "sayi": 20523
    },
    "provinceAfter": 32,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-32-006",
+     "provincePlaka": 32,
+     "unitsTransferred": 5
+    },
+    {
+     "district": "Keçiborlu",
+     "geomId": "TR-D-32-007",
+     "provincePlaka": 32,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 53,
+    "rgSayfalari": [
+     35
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Gönen"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10638,14 +12187,29 @@
     "sayi": 20523
    },
    "provinceAfter": 32,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Şarkikaraağaç",
+     "geomId": "TR-D-32-010",
+     "provincePlaka": 32,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 54,
+    "rgSayfalari": [
+     35
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yenişarbademli"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10709,7 +12273,22 @@
     "sayi": 19507
    },
    "provinceAfter": 33,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gülnar",
+     "geomId": "TR-D-33-007",
+     "provincePlaka": 33,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 46,
+    "rgSayfalari": [
+     36
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -10720,7 +12299,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10737,7 +12316,23 @@
     "sayi": 19507
    },
    "provinceAfter": 33,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Anamur",
+     "geomId": "TR-D-33-002",
+     "provincePlaka": 33,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 47,
+    "rgSayfalari": [
+     36,
+     37
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -10748,7 +12343,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -10765,14 +12360,29 @@
     "sayi": 20523
    },
    "provinceAfter": 33,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Tarsus",
+     "geomId": "TR-D-33-011",
+     "provincePlaka": 33,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 55,
+    "rgSayfalari": [
+     36
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çamlıyayla"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -11177,14 +12787,29 @@
     "sayi": 20523
    },
    "provinceAfter": 34,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Eyüp",
+     "geomId": "TR-D-34-019",
+     "provincePlaka": 34,
+     "unitsTransferred": 11
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 56,
+    "rgSayfalari": [
+     36
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Bayrampaşa"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -11588,7 +13213,22 @@
     "sayi": 19507
    },
    "provinceAfter": 34,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": null,
+     "geomId": null,
+     "provincePlaka": null,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 52,
+    "rgSayfalari": [
+     39
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -11598,7 +13238,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -12148,6 +13788,14 @@
    "predecessors": [
     "HIST-Izmir-Odemis"
    ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 56,
+    "rgSayfalari": [
+     42
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -12202,6 +13850,14 @@
    "predecessors": [
     "HIST-Izmir-Konak84"
    ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 53,
+    "rgSayfalari": [
+     40
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -12577,6 +14233,15 @@
    "predecessors": [
     "HIST-Izmir-Konak84"
    ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 54,
+    "rgSayfalari": [
+     40,
+     41
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -12786,7 +14451,22 @@
     "sayi": 19507
    },
    "provinceAfter": 36,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Arpaçay",
+     "geomId": "TR-D-36-002",
+     "provincePlaka": 36,
+     "unitsTransferred": 22
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 58,
+    "rgSayfalari": [
+     43
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -12797,7 +14477,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -12994,14 +14674,41 @@
     "sayi": 20523
    },
    "provinceAfter": 37,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Azdavay",
+     "geomId": "TR-D-37-004",
+     "provincePlaka": 37,
+     "unitsTransferred": 7
+    },
+    {
+     "district": "Küre",
+     "geomId": "TR-D-37-015",
+     "provincePlaka": 37,
+     "unitsTransferred": 5
+    },
+    {
+     "district": "Daday",
+     "geomId": "TR-D-37-008",
+     "provincePlaka": 37,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 61,
+    "rgSayfalari": [
+     38
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Ağlı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13177,14 +14884,30 @@
     "sayi": 20523
    },
    "provinceAfter": 37,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "İnebolu",
+     "geomId": "TR-D-37-013",
+     "provincePlaka": 37,
+     "unitsTransferred": 29
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 62,
+    "rgSayfalari": [
+     38,
+     39
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Doğanyurt"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13201,14 +14924,30 @@
     "sayi": 20523
    },
    "provinceAfter": 37,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Taşköprü",
+     "geomId": "TR-D-37-019",
+     "provincePlaka": 37,
+     "unitsTransferred": 21
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 63,
+    "rgSayfalari": [
+     39,
+     40
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Hanönü"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13225,7 +14964,29 @@
     "sayi": 19507
    },
    "provinceAfter": 37,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-37-014",
+     "provincePlaka": 37,
+     "unitsTransferred": 23
+    },
+    {
+     "district": "Araç",
+     "geomId": "TR-D-37-003",
+     "provincePlaka": 37,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 59,
+    "rgSayfalari": [
+     43,
+     44
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -13236,7 +14997,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13319,7 +15080,22 @@
     "sayi": 19507
    },
    "provinceAfter": 37,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Azdavay",
+     "geomId": "TR-D-37-004",
+     "provincePlaka": 37,
+     "unitsTransferred": 24
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 60,
+    "rgSayfalari": [
+     45
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -13330,7 +15106,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13347,14 +15123,35 @@
     "sayi": 20523
    },
    "provinceAfter": 37,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Devrakani",
+     "geomId": "TR-D-37-009",
+     "provincePlaka": 37,
+     "unitsTransferred": 11
+    },
+    {
+     "district": "Küre",
+     "geomId": "TR-D-37-015",
+     "provincePlaka": 37,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 64,
+    "rgSayfalari": [
+     40
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Seydiler"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13371,7 +15168,23 @@
     "sayi": 19507
    },
    "provinceAfter": 37,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Cide",
+     "geomId": "TR-D-37-006",
+     "provincePlaka": 37,
+     "unitsTransferred": 22
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 61,
+    "rgSayfalari": [
+     45,
+     46
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -13382,7 +15195,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13441,7 +15254,22 @@
     "sayi": 19507
    },
    "provinceAfter": 38,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bünyan",
+     "geomId": "TR-D-38-002",
+     "provincePlaka": 38,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 62,
+    "rgSayfalari": [
+     46
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -13452,7 +15280,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13632,14 +15460,42 @@
     "sayi": 20523
    },
    "provinceAfter": 38,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Felahiye",
+     "geomId": "TR-D-38-004",
+     "provincePlaka": 38,
+     "unitsTransferred": 5
+    },
+    {
+     "district": "Sarıoğlan",
+     "geomId": "TR-D-38-011",
+     "provincePlaka": 38,
+     "unitsTransferred": 3
+    },
+    {
+     "district": "Kocasinan",
+     "geomId": "TR-D-38-007",
+     "provincePlaka": 38,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 65,
+    "rgSayfalari": [
+     40,
+     41
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Özvatan"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13725,7 +15581,23 @@
     "sayi": 19507
    },
    "provinceAfter": 38,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Kayseri-Merkez",
+     "provincePlaka": 38,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 63,
+    "rgSayfalari": [
+     46,
+     47
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -13736,7 +15608,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14002,14 +15874,35 @@
     "sayi": 20523
    },
    "provinceAfter": 40,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çiçekdağı",
+     "geomId": "TR-D-40-004",
+     "provincePlaka": 40,
+     "unitsTransferred": 22
+    },
+    {
+     "district": "Akpınar",
+     "geomId": "TR-D-40-002",
+     "provincePlaka": 40,
+     "unitsTransferred": 5
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 71,
+    "rgSayfalari": [
+     43
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Akçakent"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14026,7 +15919,22 @@
     "sayi": 19507
    },
    "provinceAfter": 40,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kaman",
+     "geomId": "TR-D-40-005",
+     "provincePlaka": 40,
+     "unitsTransferred": 23
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 64,
+    "rgSayfalari": [
+     47
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -14036,7 +15944,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14053,14 +15961,30 @@
     "sayi": 20523
    },
    "provinceAfter": 40,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-40-006",
+     "provincePlaka": 40,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 72,
+    "rgSayfalari": [
+     43,
+     44
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Boztepe"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14415,7 +16339,29 @@
     "sayi": 19507
    },
    "provinceAfter": 41,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gebze",
+     "geomId": "TR-D-41-006",
+     "provincePlaka": 41,
+     "unitsTransferred": 9
+    },
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-41-008",
+     "provincePlaka": 41,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 65,
+    "rgSayfalari": [
+     47,
+     48
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -14426,7 +16372,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14443,14 +16389,29 @@
     "sayi": 20523
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bozkır",
+     "geomId": "TR-D-42-006",
+     "provincePlaka": 42,
+     "unitsTransferred": 11
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 73,
+    "rgSayfalari": [
+     44
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Ahırlı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14467,7 +16428,22 @@
     "sayi": 19507
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çumra",
+     "geomId": "TR-D-42-009",
+     "provincePlaka": 42,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 66,
+    "rgSayfalari": [
+     48
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -14478,7 +16454,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14516,7 +16492,23 @@
     "sayi": 19507
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Cihanbeyli",
+     "geomId": "TR-D-42-007",
+     "provincePlaka": 42,
+     "unitsTransferred": 20
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 67,
+    "rgSayfalari": [
+     48,
+     49
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -14526,7 +16518,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14609,14 +16601,29 @@
     "sayi": 20523
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Yunak",
+     "geomId": "TR-D-42-031",
+     "provincePlaka": 42,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 74,
+    "rgSayfalari": [
+     44
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çeltik"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14657,14 +16664,35 @@
     "sayi": 20523
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Selçuklu",
+     "geomId": "TR-D-42-026",
+     "provincePlaka": 42,
+     "unitsTransferred": 9
+    },
+    {
+     "district": "Meram",
+     "geomId": "TR-D-42-024",
+     "provincePlaka": 42,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 75,
+    "rgSayfalari": [
+     45
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Derbent"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14681,7 +16709,22 @@
     "sayi": 19507
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Beyşehir",
+     "geomId": "TR-D-42-005",
+     "provincePlaka": 42,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 69,
+    "rgSayfalari": [
+     50
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -14691,7 +16734,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14732,14 +16775,29 @@
     "sayi": 20523
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Karapınar",
+     "geomId": "TR-D-42-021",
+     "provincePlaka": 42,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 76,
+    "rgSayfalari": [
+     45
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Emirgazi"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14777,14 +16835,30 @@
     "sayi": 20523
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çumra",
+     "geomId": "TR-D-42-009",
+     "provincePlaka": 42,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 77,
+    "rgSayfalari": [
+     45,
+     46
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Güneysınır"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14825,14 +16899,29 @@
     "sayi": 20523
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Ereğli",
+     "geomId": "TR-D-42-014",
+     "provincePlaka": 42,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 78,
+    "rgSayfalari": [
+     46
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Halkapınar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14849,7 +16938,23 @@
     "sayi": 19507
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Beyşehir",
+     "geomId": "TR-D-42-005",
+     "provincePlaka": 42,
+     "unitsTransferred": 20
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 70,
+    "rgSayfalari": [
+     50,
+     51
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -14859,7 +16964,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15095,7 +17200,22 @@
     "sayi": 19507
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Hadim",
+     "geomId": "TR-D-42-016",
+     "provincePlaka": 42,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 71,
+    "rgSayfalari": [
+     51
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -15106,7 +17226,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15123,14 +17243,29 @@
     "sayi": 20523
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Akşehir",
+     "geomId": "TR-D-42-003",
+     "provincePlaka": 42,
+     "unitsTransferred": 11
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 79,
+    "rgSayfalari": [
+     46
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Tuzlukçu"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15147,14 +17282,29 @@
     "sayi": 20523
    },
    "provinceAfter": 42,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bozkır",
+     "geomId": "TR-D-42-006",
+     "provincePlaka": 42,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 80,
+    "rgSayfalari": [
+     47
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yalıhüyük"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15219,7 +17369,23 @@
     "sayi": 19507
    },
    "provinceAfter": 43,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-43-009",
+     "provincePlaka": 43,
+     "unitsTransferred": 33
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 72,
+    "rgSayfalari": [
+     51,
+     52
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -15230,7 +17396,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15247,14 +17413,41 @@
     "sayi": 20523
    },
    "provinceAfter": 43,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Emet",
+     "geomId": "TR-D-43-006",
+     "provincePlaka": 43,
+     "unitsTransferred": 11
+    },
+    {
+     "district": "Gediz",
+     "geomId": "TR-D-43-007",
+     "provincePlaka": 43,
+     "unitsTransferred": 6
+    },
+    {
+     "district": "Aslanapa",
+     "geomId": "TR-D-43-002",
+     "provincePlaka": 43,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 81,
+    "rgSayfalari": [
+     47
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çavdarhisar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15295,7 +17488,23 @@
     "sayi": 19507
    },
    "provinceAfter": 43,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Altıntaş",
+     "geomId": "TR-D-43-001",
+     "provincePlaka": 43,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 74,
+    "rgSayfalari": [
+     52,
+     53
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -15306,7 +17515,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15365,7 +17574,22 @@
     "sayi": 19507
    },
    "provinceAfter": 43,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Emet",
+     "geomId": "TR-D-43-006",
+     "provincePlaka": 43,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 75,
+    "rgSayfalari": [
+     53
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -15375,7 +17599,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15413,14 +17637,29 @@
     "sayi": 20523
    },
    "provinceAfter": 43,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Simav",
+     "geomId": "TR-D-43-011",
+     "provincePlaka": 43,
+     "unitsTransferred": 13
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 82,
+    "rgSayfalari": [
+     47
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Pazarlar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15458,7 +17697,22 @@
     "sayi": 19507
    },
    "provinceAfter": 43,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gediz",
+     "geomId": "TR-D-43-007",
+     "provincePlaka": 43,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 73,
+    "rgSayfalari": [
+     52
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -15469,7 +17723,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15576,6 +17830,14 @@
    "predecessors": [
     "HIST-Malatya-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 76,
+    "rgSayfalari": [
+     54
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1961referandum",
     "tarih": "1961-07-09",
@@ -15661,14 +17923,29 @@
     "sayi": 20523
    },
    "provinceAfter": 44,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Pütürge",
+     "geomId": "TR-D-44-011",
+     "provincePlaka": 44,
+     "unitsTransferred": 17
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 83,
+    "rgSayfalari": [
+     48
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Doğanyol"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15706,14 +17983,30 @@
     "sayi": 20523
    },
    "provinceAfter": 44,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-44-004",
+     "provincePlaka": 44,
+     "unitsTransferred": 20
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 84,
+    "rgSayfalari": [
+     48,
+     49
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kale"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15730,14 +18023,29 @@
     "sayi": 20523
    },
    "provinceAfter": 44,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Darende",
+     "geomId": "TR-D-44-005",
+     "provincePlaka": 44,
+     "unitsTransferred": 21
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 85,
+    "rgSayfalari": [
+     49
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kuluncak"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15775,14 +18083,29 @@
     "sayi": 20523
    },
    "provinceAfter": 44,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-44-004",
+     "provincePlaka": 44,
+     "unitsTransferred": 27
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 86,
+    "rgSayfalari": [
+     50
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yazıhan"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15825,7 +18148,22 @@
     "sayi": 19507
    },
    "provinceAfter": 45,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Turgutlu",
+     "geomId": "TR-D-45-016",
+     "provincePlaka": 45,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 77,
+    "rgSayfalari": [
+     54
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -15836,7 +18174,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15916,7 +18254,22 @@
     "sayi": 19507
    },
    "provinceAfter": 45,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Akhisar",
+     "geomId": "TR-D-45-002",
+     "provincePlaka": 45,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 78,
+    "rgSayfalari": [
+     55
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -15926,7 +18279,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15985,14 +18338,36 @@
     "sayi": 20523
    },
    "provinceAfter": 45,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gördes",
+     "geomId": "TR-D-45-006",
+     "provincePlaka": 45,
+     "unitsTransferred": 30
+    },
+    {
+     "district": "Salihli",
+     "geomId": "TR-D-45-010",
+     "provincePlaka": 45,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 87,
+    "rgSayfalari": [
+     50,
+     51
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Köprübaşı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16262,7 +18637,23 @@
     "sayi": 19507
    },
    "provinceAfter": 46,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Kahramanmaraş-Merkez",
+     "provincePlaka": 46,
+     "unitsTransferred": 18
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 57,
+    "rgSayfalari": [
+     42,
+     43
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -16273,7 +18664,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16316,14 +18707,30 @@
     "sayi": 20523
    },
    "provinceAfter": 46,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Elbistan",
+     "geomId": "TR-D-46-006",
+     "provincePlaka": 46,
+     "unitsTransferred": 18
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 57,
+    "rgSayfalari": [
+     36,
+     37
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Ekinözü"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16382,14 +18789,29 @@
     "sayi": 20523
    },
    "provinceAfter": 46,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Elbistan",
+     "geomId": "TR-D-46-006",
+     "provincePlaka": 46,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 58,
+    "rgSayfalari": [
+     37
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Nurhak"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16518,7 +18940,41 @@
     "sayi": 19507
    },
    "provinceAfter": 47,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Midyat",
+     "geomId": "TR-D-47-006",
+     "provincePlaka": 47,
+     "unitsTransferred": 32
+    },
+    {
+     "district": "İdil",
+     "geomId": "TR-D-73-004",
+     "provincePlaka": 47,
+     "unitsTransferred": 5
+    },
+    {
+     "district": "Gercüş",
+     "geomId": "TR-D-72-003",
+     "provincePlaka": 47,
+     "unitsTransferred": 3
+    },
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-47-001",
+     "provincePlaka": 47,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 79,
+    "rgSayfalari": [
+     55,
+     56
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -16529,7 +18985,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16702,14 +19158,36 @@
     "sayi": 20523
    },
    "provinceAfter": 47,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-47-001",
+     "provincePlaka": 47,
+     "unitsTransferred": 10
+    },
+    {
+     "district": "Ömerli",
+     "geomId": "TR-D-47-008",
+     "provincePlaka": 47,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 88,
+    "rgSayfalari": [
+     51,
+     52
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yeşilli"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16816,14 +19294,29 @@
     "sayi": 20523
    },
    "provinceAfter": 48,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Yatağan",
+     "geomId": "TR-D-48-013",
+     "provincePlaka": 48,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 89,
+    "rgSayfalari": [
+     52
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kavaklıdere"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16944,7 +19437,23 @@
     "sayi": 19507
    },
    "provinceAfter": 48,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Köyceğiz",
+     "geomId": "TR-D-48-006",
+     "provincePlaka": 48,
+     "unitsTransferred": 16
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 80,
+    "rgSayfalari": [
+     56,
+     57
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -16955,7 +19464,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17065,7 +19574,23 @@
     "sayi": 19507
    },
    "provinceAfter": 49,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-49-005",
+     "provincePlaka": 49,
+     "unitsTransferred": 47
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 81,
+    "rgSayfalari": [
+     57,
+     58
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -17076,7 +19601,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17093,14 +19618,30 @@
     "sayi": 20523
    },
    "provinceAfter": 49,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Hasköy",
+     "geomId": "TR-D-49-002",
+     "provincePlaka": 49,
+     "unitsTransferred": 31
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 90,
+    "rgSayfalari": [
+     52,
+     53
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Korkut"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17180,7 +19721,22 @@
     "sayi": 19507
    },
    "provinceAfter": 50,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-50-007",
+     "provincePlaka": 50,
+     "unitsTransferred": 12
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 82,
+    "rgSayfalari": [
+     58
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -17190,7 +19746,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17342,14 +19898,29 @@
     "sayi": 20523
    },
    "provinceAfter": 51,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bor",
+     "geomId": "TR-D-51-002",
+     "provincePlaka": 51,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 91,
+    "rgSayfalari": [
+     53
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Altunhisar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17411,14 +19982,29 @@
     "sayi": 20523
    },
    "provinceAfter": 51,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-51-005",
+     "provincePlaka": 51,
+     "unitsTransferred": 18
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 92,
+    "rgSayfalari": [
+     54
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çiftlik"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17566,14 +20152,29 @@
     "sayi": 20523
    },
    "provinceAfter": 52,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Fatsa",
+     "geomId": "TR-D-52-007",
+     "provincePlaka": 52,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 93,
+    "rgSayfalari": [
+     54
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çamaş"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17590,14 +20191,29 @@
     "sayi": 20523
    },
    "provinceAfter": 52,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Fatsa",
+     "geomId": "TR-D-52-007",
+     "provincePlaka": 52,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 94,
+    "rgSayfalari": [
+     55
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çatalpınar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17614,14 +20230,29 @@
     "sayi": 20523
    },
    "provinceAfter": 52,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Ünye",
+     "geomId": "TR-D-52-019",
+     "provincePlaka": 52,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 95,
+    "rgSayfalari": [
+     55
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çaybaşı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17683,7 +20314,22 @@
     "sayi": 19507
    },
    "provinceAfter": 52,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-52-002",
+     "provincePlaka": 52,
+     "unitsTransferred": 7
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 83,
+    "rgSayfalari": [
+     59
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -17694,7 +20340,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17711,7 +20357,46 @@
     "sayi": 19507
    },
    "provinceAfter": 52,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gölköy",
+     "geomId": "TR-D-52-008",
+     "provincePlaka": 52,
+     "unitsTransferred": 5
+    },
+    {
+     "district": "Fatsa",
+     "geomId": "TR-D-52-007",
+     "provincePlaka": 52,
+     "unitsTransferred": 3
+    },
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-52-002",
+     "provincePlaka": 52,
+     "unitsTransferred": 1
+    },
+    {
+     "district": "Ulubey",
+     "geomId": "TR-D-52-018",
+     "provincePlaka": 52,
+     "unitsTransferred": 1
+    },
+    {
+     "district": "Çamaş",
+     "geomId": "TR-D-52-004",
+     "provincePlaka": 52,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 84,
+    "rgSayfalari": [
+     59
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -17722,7 +20407,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17739,14 +20424,36 @@
     "sayi": 20523
    },
    "provinceAfter": 52,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Ünye",
+     "geomId": "TR-D-52-019",
+     "provincePlaka": 52,
+     "unitsTransferred": 14
+    },
+    {
+     "district": "Terme",
+     "geomId": "TR-D-55-015",
+     "provincePlaka": 55,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 96,
+    "rgSayfalari": [
+     55,
+     56
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "İkizce"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17763,14 +20470,29 @@
     "sayi": 20523
    },
    "provinceAfter": 52,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-52-002",
+     "provincePlaka": 52,
+     "unitsTransferred": 19
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 97,
+    "rgSayfalari": [
+     56
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kabadüz"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17787,14 +20509,29 @@
     "sayi": 20523
    },
    "provinceAfter": 52,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Aybastı",
+     "geomId": "TR-D-52-003",
+     "provincePlaka": 52,
+     "unitsTransferred": 4
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 98,
+    "rgSayfalari": [
+     57
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kabataş"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18021,14 +20758,29 @@
     "sayi": 20523
    },
    "provinceAfter": 53,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-53-012",
+     "provincePlaka": 53,
+     "unitsTransferred": 11
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 99,
+    "rgSayfalari": [
+     57
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Derepazarı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18069,7 +20821,22 @@
     "sayi": 19507
    },
    "provinceAfter": 53,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-53-012",
+     "provincePlaka": 53,
+     "unitsTransferred": 17
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 85,
+    "rgSayfalari": [
+     60
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -18080,7 +20847,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18097,14 +20864,30 @@
     "sayi": 20523
    },
    "provinceAfter": 53,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Pazar",
+     "geomId": "TR-D-53-011",
+     "provincePlaka": 53,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 100,
+    "rgSayfalari": [
+     57,
+     58
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Hemşin"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18145,14 +20928,29 @@
     "sayi": 20523
    },
    "provinceAfter": 53,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-53-012",
+     "provincePlaka": 53,
+     "unitsTransferred": 7
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 101,
+    "rgSayfalari": [
+     58
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "İyidere"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18327,14 +21125,29 @@
     "sayi": 20523
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-54-001",
+     "provincePlaka": 54,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 102,
+    "rgSayfalari": [
+     58
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Ferizli"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18481,7 +21294,23 @@
     "sayi": 19507
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Karasu",
+     "geomId": "TR-D-54-009",
+     "provincePlaka": 54,
+     "unitsTransferred": 24
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 87,
+    "rgSayfalari": [
+     61,
+     62
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -18492,7 +21321,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18509,7 +21338,23 @@
     "sayi": 19507
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Geyve",
+     "geomId": "TR-D-54-006",
+     "provincePlaka": 54,
+     "unitsTransferred": 30
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 86,
+    "rgSayfalari": [
+     60,
+     61
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -18520,7 +21365,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18585,14 +21430,29 @@
     "sayi": 20523
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-54-001",
+     "provincePlaka": 54,
+     "unitsTransferred": 19
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 103,
+    "rgSayfalari": [
+     59
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Söğütlü"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18609,7 +21469,22 @@
     "sayi": 19507
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Geyve",
+     "geomId": "TR-D-54-006",
+     "provincePlaka": 54,
+     "unitsTransferred": 23
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 88,
+    "rgSayfalari": [
+     62
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -18620,7 +21495,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18637,7 +21512,28 @@
     "sayi": 19507
    },
    "provinceAfter": 55,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bafra",
+     "geomId": "TR-D-55-006",
+     "provincePlaka": 55,
+     "unitsTransferred": 22
+    },
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Samsun-Merkez",
+     "provincePlaka": 55,
+     "unitsTransferred": 13
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 91,
+    "rgSayfalari": [
+     64
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -18648,7 +21544,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18689,7 +21585,23 @@
     "sayi": 19507
    },
    "provinceAfter": 55,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Kavak",
+     "geomId": "TR-D-55-011",
+     "provincePlaka": 55,
+     "unitsTransferred": 12
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 90,
+    "rgSayfalari": [
+     63,
+     64
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -18700,7 +21612,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18743,14 +21655,30 @@
     "sayi": 20523
    },
    "provinceAfter": 55,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çarşamba",
+     "geomId": "TR-D-55-008",
+     "provincePlaka": 55,
+     "unitsTransferred": 19
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 104,
+    "rgSayfalari": [
+     59,
+     60
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Ayvacık"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18930,7 +21858,29 @@
     "sayi": 19507
    },
    "provinceAfter": 55,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Terme",
+     "geomId": "TR-D-55-015",
+     "provincePlaka": 55,
+     "unitsTransferred": 17
+    },
+    {
+     "district": "Çarşamba",
+     "geomId": "TR-D-55-008",
+     "provincePlaka": 55,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 89,
+    "rgSayfalari": [
+     62,
+     63
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -18940,7 +21890,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -18960,6 +21910,15 @@
    "predecessors": [
     "HIST-Samsun-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 92,
+    "rgSayfalari": [
+     65,
+     66
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -19028,14 +21987,29 @@
     "sayi": 20523
    },
    "provinceAfter": 55,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Alaçam",
+     "geomId": "TR-D-55-002",
+     "provincePlaka": 55,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 105,
+    "rgSayfalari": [
+     60
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yakakent"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -19247,14 +22221,30 @@
     "sayi": 20523
    },
    "provinceAfter": 57,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gerze",
+     "geomId": "TR-D-57-006",
+     "provincePlaka": 57,
+     "unitsTransferred": 26
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 112,
+    "rgSayfalari": [
+     65,
+     66
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Dikmen"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -19340,14 +22330,30 @@
     "sayi": 20523
    },
    "provinceAfter": 57,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Boyabat",
+     "geomId": "TR-D-57-002",
+     "provincePlaka": 57,
+     "unitsTransferred": 30
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 113,
+    "rgSayfalari": [
+     66,
+     67
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Saraydüzü"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -19409,14 +22415,30 @@
     "sayi": 20523
    },
    "provinceAfter": 58,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Suşehri",
+     "geomId": "TR-D-58-013",
+     "provincePlaka": 58,
+     "unitsTransferred": 33
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 107,
+    "rgSayfalari": [
+     61,
+     62
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Akıncılar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -19433,14 +22455,36 @@
     "sayi": 20523
    },
    "provinceAfter": 58,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Şarkışla",
+     "geomId": "TR-D-58-014",
+     "provincePlaka": 58,
+     "unitsTransferred": 18
+    },
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-58-012",
+     "provincePlaka": 58,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 108,
+    "rgSayfalari": [
+     62,
+     63
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Altınyayla"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -19478,14 +22522,29 @@
     "sayi": 20523
    },
    "provinceAfter": 58,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Hafik",
+     "geomId": "TR-D-58-008",
+     "provincePlaka": 58,
+     "unitsTransferred": 23
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 109,
+    "rgSayfalari": [
+     63
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Doğanşar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -19526,14 +22585,30 @@
     "sayi": 20523
    },
    "provinceAfter": 58,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Suşehri",
+     "geomId": "TR-D-58-013",
+     "provincePlaka": 58,
+     "unitsTransferred": 29
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 110,
+    "rgSayfalari": [
+     63,
+     64
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Gölova"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -19721,14 +22796,30 @@
     "sayi": 20523
    },
    "provinceAfter": 58,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-58-012",
+     "provincePlaka": 58,
+     "unitsTransferred": 32
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 111,
+    "rgSayfalari": [
+     64,
+     65
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Ulaş"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -19922,7 +23013,28 @@
     "sayi": 19507
    },
    "provinceAfter": 59,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çorlu",
+     "geomId": "TR-D-59-002",
+     "provincePlaka": 59,
+     "unitsTransferred": 4
+    },
+    {
+     "district": null,
+     "geomId": null,
+     "provincePlaka": null,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 93,
+    "rgSayfalari": [
+     66
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -19933,7 +23045,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20105,14 +23217,29 @@
     "sayi": 20523
    },
    "provinceAfter": 60,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Niksar",
+     "geomId": "TR-D-60-005",
+     "provincePlaka": 60,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 114,
+    "rgSayfalari": [
+     67
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Başçiftlik"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20171,7 +23298,22 @@
     "sayi": 19507
    },
    "provinceAfter": 60,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Turhal",
+     "geomId": "TR-D-60-010",
+     "provincePlaka": 60,
+     "unitsTransferred": 17
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 94,
+    "rgSayfalari": [
+     66
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -20182,7 +23324,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20220,14 +23362,36 @@
     "sayi": 20523
    },
    "provinceAfter": 60,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Yeşilyurt",
+     "geomId": "TR-D-60-011",
+     "provincePlaka": 60,
+     "unitsTransferred": 18
+    },
+    {
+     "district": "Artova",
+     "geomId": "TR-D-60-002",
+     "provincePlaka": 60,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 115,
+    "rgSayfalari": [
+     67,
+     68
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Sulusaray"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20289,7 +23453,29 @@
     "sayi": 19507
    },
    "provinceAfter": 60,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Artova",
+     "geomId": "TR-D-60-002",
+     "provincePlaka": 60,
+     "unitsTransferred": 32
+    },
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-60-009",
+     "provincePlaka": 60,
+     "unitsTransferred": 5
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 95,
+    "rgSayfalari": [
+     67,
+     68
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -20300,7 +23486,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20407,7 +23593,22 @@
     "sayi": 19507
    },
    "provinceAfter": 61,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Vakfıkebir",
+     "geomId": "TR-D-61-017",
+     "provincePlaka": 61,
+     "unitsTransferred": 27
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 96,
+    "rgSayfalari": [
+     68
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -20417,7 +23618,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20434,14 +23635,30 @@
     "sayi": 20523
    },
    "provinceAfter": 61,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Vakfıkebir",
+     "geomId": "TR-D-61-017",
+     "provincePlaka": 61,
+     "unitsTransferred": 21
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 116,
+    "rgSayfalari": [
+     68,
+     69
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çarşıbaşı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20482,14 +23699,29 @@
     "sayi": 20523
    },
    "provinceAfter": 61,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çaykara",
+     "geomId": "TR-D-61-006",
+     "provincePlaka": 61,
+     "unitsTransferred": 11
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 117,
+    "rgSayfalari": [
+     69
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Dernekpazarı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20506,14 +23738,29 @@
     "sayi": 20523
    },
    "provinceAfter": 61,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Akçaabat",
+     "geomId": "TR-D-61-001",
+     "provincePlaka": 61,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 118,
+    "rgSayfalari": [
+     69
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Düzköy"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20530,14 +23777,29 @@
     "sayi": 20523
    },
    "provinceAfter": 61,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Of",
+     "geomId": "TR-D-61-012",
+     "provincePlaka": 61,
+     "unitsTransferred": 26
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 119,
+    "rgSayfalari": [
+     70
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Hayrat"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20554,14 +23816,29 @@
     "sayi": 20523
    },
    "provinceAfter": 61,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Sürmene",
+     "geomId": "TR-D-61-014",
+     "provincePlaka": 61,
+     "unitsTransferred": 11
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 120,
+    "rgSayfalari": [
+     70
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Köprübaşı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -20682,7 +23959,22 @@
     "sayi": 19507
    },
    "provinceAfter": 61,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Vakfıkebir",
+     "geomId": "TR-D-61-017",
+     "provincePlaka": 61,
+     "unitsTransferred": 25
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 97,
+    "rgSayfalari": [
+     69
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -20692,7 +23984,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21091,7 +24383,24 @@
     "sayi": 19507
    },
    "provinceAfter": 63,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Akçakale",
+     "geomId": "TR-D-63-001",
+     "provincePlaka": 63,
+     "unitsTransferred": 58
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 98,
+    "rgSayfalari": [
+     69,
+     70,
+     71
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -21102,7 +24411,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21352,7 +24661,22 @@
     "sayi": 19507
    },
    "provinceAfter": 65,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gevaş",
+     "geomId": "TR-D-65-007",
+     "provincePlaka": 65,
+     "unitsTransferred": 16
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 100,
+    "rgSayfalari": [
+     73
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1988referandum",
     "tarih": "1988-09-25",
@@ -21362,7 +24686,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21400,7 +24724,29 @@
     "sayi": 19507
    },
    "provinceAfter": 65,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Muradiye",
+     "geomId": "TR-D-65-010",
+     "provincePlaka": 65,
+     "unitsTransferred": 62
+    },
+    {
+     "district": null,
+     "geomId": null,
+     "provincePlaka": null,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 99,
+    "rgSayfalari": [
+     71,
+     72
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -21411,7 +24757,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21449,14 +24795,35 @@
     "sayi": 20523
    },
    "provinceAfter": 65,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Van-Merkez",
+     "provincePlaka": 65,
+     "unitsTransferred": 12
+    },
+    {
+     "district": "Gevaş",
+     "geomId": "TR-D-65-007",
+     "provincePlaka": 65,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 121,
+    "rgSayfalari": [
+     71
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Edremit"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21607,14 +24974,30 @@
     "sayi": 20523
    },
    "provinceAfter": 65,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Özalp",
+     "geomId": "TR-D-65-011",
+     "provincePlaka": 65,
+     "unitsTransferred": 23
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 122,
+    "rgSayfalari": [
+     71,
+     72
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Saray"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21678,14 +25061,29 @@
     "sayi": 20523
    },
    "provinceAfter": 66,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çekerek",
+     "geomId": "TR-D-66-006",
+     "provincePlaka": 66,
+     "unitsTransferred": 28
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 123,
+    "rgSayfalari": [
+     72
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Aydıncık"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21723,14 +25121,29 @@
     "sayi": 20523
    },
    "provinceAfter": 66,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çayıralan",
+     "geomId": "TR-D-66-005",
+     "provincePlaka": 66,
+     "unitsTransferred": 4
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 124,
+    "rgSayfalari": [
+     73
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çandır"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21795,14 +25208,29 @@
     "sayi": 20523
    },
    "provinceAfter": 66,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Çekerek",
+     "geomId": "TR-D-66-006",
+     "provincePlaka": 66,
+     "unitsTransferred": 29
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 125,
+    "rgSayfalari": [
+     73
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Kadışehri"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21819,14 +25247,29 @@
     "sayi": 20523
    },
    "provinceAfter": 66,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Akdağmadeni",
+     "geomId": "TR-D-66-001",
+     "provincePlaka": 66,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 126,
+    "rgSayfalari": [
+     74
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Saraykent"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21915,14 +25358,29 @@
     "sayi": 20523
    },
    "provinceAfter": 66,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Boğazlıyan",
+     "geomId": "TR-D-66-003",
+     "provincePlaka": 66,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 127,
+    "rgSayfalari": [
+     74
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yenifakılı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -21984,7 +25442,23 @@
     "sayi": 19507
    },
    "provinceAfter": 67,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Ereğli",
+     "geomId": "TR-D-67-004",
+     "provincePlaka": 67,
+     "unitsTransferred": 37
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 101,
+    "rgSayfalari": [
+     73,
+     74
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
@@ -21995,7 +25469,7 @@
     "1987",
     "1988referandum"
    ],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22078,14 +25552,30 @@
     "sayi": 20523
    },
    "provinceAfter": 67,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Devrek",
+     "geomId": "TR-D-67-003",
+     "provincePlaka": 67,
+     "unitsTransferred": 20
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 128,
+    "rgSayfalari": [
+     74,
+     75
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Gökçebey"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22211,14 +25701,29 @@
     "sayi": 20523
    },
    "provinceAfter": 68,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-68-002",
+     "provincePlaka": 68,
+     "unitsTransferred": 4
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 7,
+    "rgSayfalari": [
+     11
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Eskil"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22235,14 +25740,35 @@
     "sayi": 20523
    },
    "provinceAfter": 68,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-68-002",
+     "provincePlaka": 68,
+     "unitsTransferred": 11
+    },
+    {
+     "district": "Güzelyurt",
+     "geomId": "TR-D-68-005",
+     "provincePlaka": 68,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 8,
+    "rgSayfalari": [
+     12
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Gülağaç"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22371,14 +25897,29 @@
     "sayi": 19507
    },
    "provinceAfter": 69,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bayburt",
+     "geomId": "TR-D-69-002",
+     "provincePlaka": 29,
+     "unitsTransferred": 23
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 41,
+    "rgSayfalari": [
+     32
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Aydıntepe"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22411,14 +25952,30 @@
     "sayi": 19507
    },
    "provinceAfter": 69,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bayburt",
+     "geomId": "TR-D-69-002",
+     "provincePlaka": 29,
+     "unitsTransferred": 28
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 42,
+    "rgSayfalari": [
+     33,
+     34
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Demirözü"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22435,14 +25992,30 @@
     "sayi": 19507
    },
    "provinceAfter": 70,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Ereğli",
+     "geomId": "TR-D-42-014",
+     "provincePlaka": 42,
+     "unitsTransferred": 22
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 68,
+    "rgSayfalari": [
+     49,
+     50
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Ayrancı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22459,14 +26032,29 @@
     "sayi": 20523
    },
    "provinceAfter": 70,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Ermenek",
+     "geomId": "TR-D-70-003",
+     "provincePlaka": 70,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 59,
+    "rgSayfalari": [
+     37
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Başyayla"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22560,14 +26148,29 @@
     "sayi": 20523
    },
    "provinceAfter": 70,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Ermenek",
+     "geomId": "TR-D-70-003",
+     "provincePlaka": 70,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 60,
+    "rgSayfalari": [
+     38
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Sarıveliler"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22584,14 +26187,29 @@
     "sayi": 20523
    },
    "provinceAfter": 71,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-71-007",
+     "provincePlaka": 71,
+     "unitsTransferred": 5
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 66,
+    "rgSayfalari": [
+     41
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Bahşılı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22608,14 +26226,30 @@
     "sayi": 20523
    },
    "provinceAfter": 71,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-71-007",
+     "provincePlaka": 71,
+     "unitsTransferred": 27
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 67,
+    "rgSayfalari": [
+     41,
+     42
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Balışeyh"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22632,14 +26266,29 @@
     "sayi": 20523
    },
    "provinceAfter": 71,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Keskin",
+     "geomId": "TR-D-71-006",
+     "provincePlaka": 71,
+     "unitsTransferred": 16
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 68,
+    "rgSayfalari": [
+     42
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çelebi"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22696,14 +26345,29 @@
     "sayi": 20523
    },
    "provinceAfter": 71,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bala",
+     "geomId": "TR-D-06-004",
+     "provincePlaka": 6,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 69,
+    "rgSayfalari": [
+     42
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Karakeçili"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22813,14 +26477,29 @@
     "sayi": 20523
    },
    "provinceAfter": 71,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-71-007",
+     "provincePlaka": 71,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 70,
+    "rgSayfalari": [
+     43
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yahşihan"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -23105,14 +26784,30 @@
     "sayi": 20523
    },
    "provinceAfter": 73,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Eruh",
+     "geomId": "TR-D-56-002",
+     "provincePlaka": 56,
+     "unitsTransferred": 27
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 106,
+    "rgSayfalari": [
+     60,
+     61
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Güçlükonak"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -23265,14 +26960,30 @@
     "sayi": 19507
    },
    "provinceAfter": 74,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Bartın",
+     "geomId": "TR-D-74-002",
+     "provincePlaka": 67,
+     "unitsTransferred": 28
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 102,
+    "rgSayfalari": [
+     74,
+     75
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Amasra"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -24002,14 +27713,35 @@
     "sayi": 19507
    },
    "provinceAfter": 78,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Karabük",
+     "geomId": "TR-D-78-003",
+     "provincePlaka": 67,
+     "unitsTransferred": 18
+    },
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-67-008",
+     "provincePlaka": 67,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 103,
+    "rgSayfalari": [
+     75
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Yenice"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -24372,14 +28104,29 @@
     "sayi": 19507
    },
    "provinceAfter": 81,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Düzce",
+     "geomId": "TR-D-81-004",
+     "provincePlaka": 14,
+     "unitsTransferred": 32
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 16,
+    "rgSayfalari": [
+     15
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Cumayeri"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -24412,14 +28159,29 @@
     "sayi": 20523
    },
    "provinceAfter": 81,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Düzce",
+     "geomId": "TR-D-81-004",
+     "provincePlaka": 14,
+     "unitsTransferred": 23
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3644",
+    "listeNo": 21,
+    "rgSayfalari": [
+     18
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Çilimli"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -24468,14 +28230,30 @@
     "sayi": 19507
    },
    "provinceAfter": 81,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Düzce",
+     "geomId": "TR-D-81-004",
+     "provincePlaka": 14,
+     "unitsTransferred": 19
+    }
+   ],
+   "lineageSource": {
+    "kanun": "3392",
+    "listeNo": 17,
+    "rgSayfalari": [
+     15,
+     16
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1991",
     "tarih": "1991-10-20",
     "adi": "Gölyaka"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -24598,6 +28376,246 @@
    },
    "source": "icisleri_il_ilce_kurulus_2018 (yeni ilin kuruluşu) + seçim verisi",
    "confidence": "high"
+  },
+  {
+   "id": "kanun-3392-16-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1987-07-04",
+   "lawNumber": "3392",
+   "officialGazette": {
+    "tarih": "1987-07-04",
+    "sayi": 19507
+   },
+   "text": "Cumayeri ve Gümüşova Belediyelerinin tüzelkişilikleri kaldırılarak, bu iki belde Cumaova adıyla tek bir belediye haline dönüştürülmüş ve",
+   "relatedNewDistrict": "Cumaova",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-27-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Bursa İli Yıldırım İlçesi Gürsu Bucağına bağlı Hamamlıkızık Köyü Yıldırım İlçesi Merkez Bucağına bağlanmak ve",
+   "relatedNewDistrict": "Gürsu",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-37-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Denizli İli Çardak İlçesi Bozkurt Bucağına bağlı Avdan, Dutluca, İncelertekkesi ve Söğüt köyleri Çardak İlçesi Merkez Bucağına bağlanmak",
+   "relatedNewDistrict": "Bozkurt",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-39-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Edirne İli Merkez İlçesi Süloğlu Bucağına bağlı Hacıumur Köyü Merkez İlçesi Merkez Bucağına bağlanmak",
+   "relatedNewDistrict": "Süloğlu",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-68-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Kırıkkale ili Keskin İlçesi Çelebi Bucağına bağlı Köprüköy Belediyesi, Keskin İlçesi Merkez Bucağına bağlanmak ve",
+   "relatedNewDistrict": "Çelebi",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-69-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Ankara ili Bala İlçesi Karakeçili Bucağına bağlı Kesikköprü Belediyesi ile Aşağıhacıbekir, Bektaşlı, Büyükbıyık, Büyükcamili, Erdemli, Küçükbıyık, Küçükcamili, Sarıhüyük, Tepeköy, Yukarıhacıbekir, Küçükbayat, Bağyaka ve Çatalçeşme köyleri Bala İlçesi Merkez Bucağına bağlanmak ve",
+   "relatedNewDistrict": "Karakeçili",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-76-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Konya İli Karapınar İlçesi Gölören Bucağına bağlı Belkaya Kasabası Ereğli İlçesi Merkez Bucağına, Kayalı Kasabası Karapınar İlçesi Merkez Bucağına bağlanmak ve",
+   "relatedNewDistrict": "Emirgazi",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-90-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Muş İli Hasköy İlçesi Korkut Bucağına bağlı Aşağıüçdam, Böğürdelen, Büvetli, Gökyazı, Koçköy, Koğuktaş, Ortanca, Otaç, Sarıbahçe, Umurca, Yukarıüçdam Köyleri Hasköy İlçesi Merkez Bucağına bağlanmak",
+   "relatedNewDistrict": "Korkut",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-91-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Niğde İli Bor İlçesi Altunhisar Bucağına bağlı Karanlıkdere ve Tepeköy köyleri Bor İlçesi Merkez Bucağına bağlanmak ve",
+   "relatedNewDistrict": "Altunhisar",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-95-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Ordu İli Ünye İlçesi Çaybaşı Bucağına bağlı Söylemez ve Yağmurtepe köyleri, Ünye İlçesi Merkez Bucağına bağlanmak",
+   "relatedNewDistrict": "Çaybaşı",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-104-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Samsun İli Çarşamba İlçesi Ayvacık Bucağına bağlı Eğridere Köyü Çarşamba İlçesi Merkez Bucağına bağlanmak",
+   "relatedNewDistrict": "Ayvacık",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-118-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Işıklar (B) ve Doğanköy (B) köyleri Akçaabat İlçesi Merkez Bucağına bağlanmak ve",
+   "relatedNewDistrict": "Düzköy",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-119-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Of İlçesi Hayrat Bucağına bağlı Ağaçseven, Başköy, Karabudak, Keler, Sıraağaç ve Sarıkaya köyleri of İlçesi Merkez Bucağına bağlanmak ve",
+   "relatedNewDistrict": "Hayrat",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-126-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Yozgat İli Akdağmadeni İlçesi Karamağara Bucağına bağlı Abdurrahmanlı, Akçakoyunlu, Altınsu, Balkaya, Başpınar, Benli, Başkavak, Çaypınar, Çiçekli, Dedefakılı, Demirşeyh, Karaalikaçağı, Karaçokrak, Karahisartatlısı, Karapınar,Kartal, Kösealili, Olucak, Ozan, Örenkale, Parmaksız, Sazlıdere, Umutlu, Yünalanı Köyleri Akdağmadeni İlçesi Merkez Bucağına bağlanmak ve",
+   "relatedNewDistrict": "Saraykent",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
+  },
+  {
+   "id": "kanun-3644-127-ek",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "1990-05-20",
+   "lawNumber": "3644",
+   "officialGazette": {
+    "tarih": "1990-05-20",
+    "sayi": 20523
+   },
+   "text": "Yozgat İli Boğazlıyan İlçesi Fakılı Bucağına bağlı Yamaçlı Kasabası Boğazlıyan İlçesi Merkez bucağına bağlanmak",
+   "relatedNewDistrict": "Yenifakılı",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json",
+   "confidence": "high",
+   "not": "Kanunun aynı bendinde, yeni ilçe kurmanın yanında yapılan köy/belde nakli. İlçeler arası naklin tarihsel sınıra etkisi köy düzeyinde; geometrisi çözülmedi."
   },
   {
    "id": "il-40-onceki-varlik",

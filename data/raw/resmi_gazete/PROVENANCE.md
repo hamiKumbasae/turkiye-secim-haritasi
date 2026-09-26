@@ -32,3 +32,34 @@ uyan adaylar denendi (S→3/5/8, O→0), toplam kısıtına en yakını alındı
 1951 ara seçimi ve 2003 Siirt yenilemesinin Resmî Gazete sayıları bu oturumda
 bulunamadı (2003: 25045 mükerrer sayısının arşiv adresi açılmadı). 1966 ve 1979
 ara seçimleri ilçe düzeyinde DİE Senato kitaplarından (`data/raw/tuik/senato-metin/`).
+
+## 20523 (20 Mayıs 1990) — 3644 sayılı 130 İlçe Kurulması Hakkında Kanun ve ek listeleri
+
+`20523.pdf` (96 sayfa, taranmış, OCR metinli), indirilme 2026-09-25. Kanunun ek
+(1)–(130) sayılı listeleri s. 9–75: her yeni ilçeye bağlanan bucak/kasaba/köy/mahalle
+ve eski ilçesi, eski bucağı. Kanun maddeleri ayrıca `data/raw/mevzuat/3644.pdf`
+(mevzuat.gov.tr, temiz metin). Çıkarım:
+`scripts/pipelines/historical_geo/extract_ilce_kurulus_kanunu.py 3644` →
+`data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json` (tarihsel idari katman, Faz 2).
+
+OCR özellikleri: sıra numarasında 'I' / 'l' / ')' = 1, 'S' = 5 ya da 8 (bağlamdan),
+kalın başlıklarda harfler çift. Eski ilçe adı, o ilin 1991 genel seçimindeki ilçe
+adlarıyla bulanık eşlendi; her listede sıra numaraları 1..n kesintisiz doğrulandı
+(2.056 satırın tamamı eşlendi, eksik sıra yok). 130 yeni ilçenin tamamı İçişleri
+kuruluş listesinde de 3644 ile kayıtlı.
+
+## 19507 (4 Temmuz 1987) — 3392 sayılı 103 İlçe Kurulması Hakkında Kanun ve ek listeleri
+
+`19507.pdf` (103 sayfa, taranmış, OCR metinli), indirilme 2026-09-26. Kanun maddeleri
+`data/raw/mevzuat/3392.pdf`. Çıkarım aynı betikle (`extract_ilce_kurulus_kanunu.py 3392`)
+→ `data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json`.
+
+Bu sayıya özgü OCR/dizgi: 94. bent Resmî Gazete'de "4." basılmış (bentler 'adıyla'
+bitişine göre bölünür); sıra numaraları "I." "J." "3," "S"; bazı listelerde satır iki
+satıra kaymış; Hisarcık listesinde "—" = üst satırla aynı; mahalle listeleri iki sütunlu.
+İstanbul'un 1987 ilçelerinin (Pendik, Küçükçekmece, Ümraniye, Kağıthane) mahalle
+listelerinde mahallelerin eski ilçesi **yazılmamış** (54 satır, `kaynakYazilmamis`);
+bu ilçeler tek kaynaklı sayılmaz. 3 satır OCR nedeniyle eşlenemedi; Demirözü, Pendik,
+Ümraniye listelerinde sıra boşluğu var. 103 yeni ilçenin 98'i İçişleri listesinde 3392
+ile kayıtlı; kalan 5'i (Pendik, Küçükçekmece, Büyükçekmece, Ümraniye, Konak) sonradan
+bölündüğü için repodaki tarihsel poligonlarla (`HIST-*`) eşleşti.
