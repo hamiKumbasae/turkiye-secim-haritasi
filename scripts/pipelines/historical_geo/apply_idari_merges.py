@@ -62,6 +62,7 @@ NOTLAR = IDARI / "harita_notlari.json"
 BOLUSUM = IDARI / "mahalle_bolusumu.json"
 BOLUSUM_GEO = IDARI / "mahalle_bolusumu.geojson"
 BELIRSIZ = "BELIRSIZ-"
+SAYIM = IDARI / "sayim_kaniti.json"
 ONEK = "HISTK-"
 ILCE_DUZEYLI = {"genel", "referandum", "cumhurbaskanligi"}
 
@@ -124,7 +125,15 @@ def main():
                 if parca not in ilk_gorunum or s["tarih"] < ilk_gorunum[parca]:
                     ilk_gorunum[parca] = s["tarih"]
     tarihsel_cocuk, rapor_on = {}, collections.defaultdict(list)
-    for h in oku(IDARI / "district_lineage.json").get("historicalUnits", []):
+    birimler = list(oku(IDARI / "district_lineage.json").get("historicalUnits", []))
+    # kanunda kaynagi yazilmamis tarihsel birimler: nufus sayimi kitaplarindan eski ilce
+    # (sayim_kaniti.json, elle; kanit koy/belde duzeyinde)
+    for k in (oku(SAYIM)["birimler"] if SAYIM.exists() else []):
+        birimler = [h for h in birimler if h["id"] != k["id"]]
+        birimler.append({"id": k["id"], "ad": k["ad"], "kanun": k["kanun"], "tekKaynak": True,
+                         "resmiGazete": {"tarih": k["kurulus"]}, "sayimKaniti": True,
+                         "eskiIlceler": [{"ad": k["eskiIlce"], "geomId": k["eskiIlceGeomId"], "plaka": k["plaka"]}]})
+    for h in birimler:
         if not (h["tekKaynak"] and h["eskiIlceler"][0]["geomId"] and h["id"] in hist_parca):
             continue
         parcalar = hist_parca[h["id"]]
@@ -226,13 +235,22 @@ def main():
                     if e in cocuk:
                         e = cocuk[e]["ebeveyn"]
                         continue
+                    # tarihsel birim (HIST-*): butun parcalari ayni ebeveynli sozde cocuksa ona cik
+                    ust = {cocuk[x]["ebeveyn"] for x in hist_parca.get(e, ()) if x in cocuk}
+                    if e in hist_parca and len(ust) == 1 and all(x in cocuk for x in hist_parca[e]):
+                        e = next(iter(ust))
+                        continue
                     break
                 hedefler.append((hedef, pid))
-            if any(h is None for h, _ in hedefler):
-                rapor["bolusumUygulanmadi"].append({"secim": s["anahtar"], "ilce": c,
-                                                    "bulunamayan": [pid for h, pid in hedefler if h is None]})
+            if all(h is None for h, _ in hedefler):
+                rapor["bolusumUygulanmadi"].append({"secim": s["anahtar"], "ilce": c, "neden": "hiçbir eski ilçe bulunamadı"})
                 continue
             for h, pid in hedefler:
+                if h is None:
+                    # eski ilcesi bu secimde satir degil: parca tarali not olarak cizilir
+                    belirsiz_bu.append(pid)
+                    rapor["parcaHedefsiz"].append({"secim": s["anahtar"], "parca": pid})
+                    continue
                 katilan_parca[h].add(pid)
                 katilan.setdefault(h, set())
             bolunen.add(c)
@@ -293,7 +311,7 @@ def main():
         yeni.append({"type": "Feature", "properties": {"id": sid, "plaka": p["plaka"]},
                      "geometry": mapping(unary_union(geoms))})
     # paylastirilamayan parcalar: yalniz ilgili secimlerde tarali not olarak cizilir
-    for pid in sorted({x for v in not_secim.values() for x in v if x.startswith(BELIRSIZ)}):
+    for pid in sorted({x for v in not_secim.values() for x in v if x.startswith((BELIRSIZ, "PARCA-"))}):
         f = parca_geo[pid]
         yeni.append({"type": "Feature", "properties": {"id": pid, "plaka": f["properties"]["plaka"]}, "geometry": f["geometry"]})
     hist["features"] = sorted(list(hist_by.values()) + yeni, key=lambda f: f["properties"]["id"])
@@ -317,6 +335,13 @@ def main():
     notlar = {}
     guncel_ad = {r["geomId"]: r["ad"] for r in load_election("2023")["ilceler"] if r.get("geomId")}
     for g in sorted({g for v in not_secim.values() for g in v}):
+        if g.startswith("PARCA-"):
+            pr = parca_geo[g]["properties"]
+            l = lineage[pr["ilce"]]
+            notlar[g] = {"ad": guncel_ad.get(pr["ilce"]) or tr_baslik(l["ad"]), "tarih": l["kurulus"]["tarih"],
+                         "kanun": l["kurulus"].get("kanun"), "durum": "hedefsiz_parca", "eskiIlce": pr["eskiIlce"],
+                         "kaynaklar": []}
+            continue
         if g.startswith(BELIRSIZ):
             c, b = belirsiz_bilgi[g]
             l = lineage[c]

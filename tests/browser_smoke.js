@@ -91,7 +91,9 @@ async function scenario_istanbul1994geometri(browser) {
     // hem sentetik HIST- poligon render edilmeli HEM DE ust uste binen eski
     // modern (kucuk) sekilleri AYRICA "veri yok" olarak cizilmemeli.
     const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
-      els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+      els.map((e) => e.dataset.geomId)
+        // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
+        .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
     const expectedHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
       'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar', 'HIST-Istanbul-Kartal'];
     check('1994 yerel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor (Büyükçekmece/Ümraniye/Kadıköy/Üsküdar/Kartal)',
@@ -137,7 +139,9 @@ async function scenario_istanbul19992004Gecmisi(browser) {
       await page.click('path[data-plaka="34"]');
       await page.waitForTimeout(400);
       const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
-        els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+        els.map((e) => e.dataset.geomId)
+        // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
+        .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
       check(year + ' yerel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor',
         expectedHist.every((id) => histIds.includes(id)), JSON.stringify(histIds));
       await page.click('#btnBackCountry').catch(() => {});
@@ -197,7 +201,9 @@ async function scenario_izmirDalgalariCozumu(browser) {
       await page.$eval('path[data-plaka="35"]', (el) => el.dispatchEvent(new MouseEvent('click', { bubbles: true })));
       await page.waitForTimeout(400);
       const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
-        els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+        els.map((e) => e.dataset.geomId)
+        // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
+        .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
       check(year + ' genel İzmir: doğru sentetik poligonlar çiziliyor',
         expectedHist.every((id) => histIds.includes(id)) && !histIds.some((id) => id.startsWith('HIST-Izmir') && !expectedHist.includes(id)),
         JSON.stringify(histIds));
@@ -225,13 +231,14 @@ async function scenario_1992DalgasiCozumu(browser) {
     await page.waitForTimeout(400);
 
     const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
-    // Arnavutkoy/Sultangazi mahalle duzeyinde paylastirildi: yalniz paylastirilamayan kisimlari (BELIRSIZ-*)
-    const stillBlocked = ['BELIRSIZ-34-002-D3', 'TR-D-34-008', 'TR-D-34-017', 'TR-D-34-018', 'BELIRSIZ-34-033-D1'];
-    check('1991 genel İstanbul: sadece 3 bloke ilçe + 2 paylaştırılamayan kısım "veri yok" (1992 dalgasının 7\'si artık değil)',
+    // Arnavutkoy/Sultangazi/Basaksehir/Esenyurt mahalle duzeyinde paylastirildi: yalniz paylastirilamayan
+    // kisimlari (BELIRSIZ-*); Esenler 1993'te kuruldu, 1991'de kaynagi yazilmamis
+    const stillBlocked = ['BELIRSIZ-34-002-D3', 'BELIRSIZ-34-008-D3', 'TR-D-34-017', 'BELIRSIZ-34-018-D3', 'BELIRSIZ-34-033-D1'];
+    check('1991 genel İstanbul: yalnız Esenler + 4 ilçenin paylaştırılamayan kısmı "veri yok" (1992 dalgasının 7\'si artık değil)',
       nodataIds.length === 5 && stillBlocked.every((id) => nodataIds.includes(id)), JSON.stringify(nodataIds));
 
     for (const [histId, adi] of [['HIST-Istanbul-Bakirkoy', 'Bakırköy'], ['HIST-Istanbul-Kucukcekmece', 'Küçükçekmece'], ['HIST-Istanbul-Pendik', 'Pendik']]) {
-      await page.click(`path.il-path[data-geom-id="${histId}"]`);
+      await page.click(`path.il-path[data-geom-id="${histId}"], path.il-path[data-geom-id^="HISTK-${histId}-"]`);
       await page.waitForTimeout(300);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -253,8 +260,8 @@ async function scenario_sancaktepeCozumu(browser) {
     const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
     check('1995 genel İstanbul: Sancaktepe (TR-D-34-029) artık "veri yok" değil',
       !nodataIds.includes('TR-D-34-029'), JSON.stringify(nodataIds));
-    check('1995 genel İstanbul: Başakşehir/Esenyurt + Arnavutköy/Sultangazi\'nin paylaştırılamayan kısmı "veri yok"',
-      nodataIds.length === 4 && ['BELIRSIZ-34-002-D3', 'TR-D-34-008', 'TR-D-34-018', 'BELIRSIZ-34-033-D1'].every((id) => nodataIds.includes(id)),
+    check('1995 genel İstanbul: yalnız Arnavutköy/Sultangazi/Başakşehir/Esenyurt\'un paylaştırılamayan kısımları "veri yok"',
+      nodataIds.length === 4 && ['BELIRSIZ-34-002-D3', 'BELIRSIZ-34-008-D3', 'BELIRSIZ-34-018-D3', 'BELIRSIZ-34-033-D1'].every((id) => nodataIds.includes(id)),
       JSON.stringify(nodataIds));
 
     await page.click('path.il-path[data-geom-id="HIST-Istanbul-Umraniye"]');
@@ -286,11 +293,13 @@ async function scenario_istanbulGenelGecmisi(browser) {
       await page.click('path[data-plaka="34"]');
       await page.waitForTimeout(400);
       const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
-        els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+        els.map((e) => e.dataset.geomId)
+        // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
+        .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
       check(year + ' genel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor',
         expectedHist.every((id) => histIds.includes(id)), JSON.stringify(histIds));
 
-      await page.click('path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece"]');
+      await page.click('path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece"], path.il-path[data-geom-id^="HISTK-HIST-Istanbul-Buyukcekmece-"]');
       await page.waitForTimeout(400);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -650,7 +659,9 @@ async function scenario_2007referandumEminonuFatih(browser) {
     await page.waitForTimeout(400);
 
     const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
-      els.map((e) => e.dataset.geomId).filter((id) => id.startsWith('HIST-')));
+      els.map((e) => e.dataset.geomId)
+        // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
+        .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
     check('2007 referandum İstanbul: Eminönü/Fatih ayrı tarihsel poligonlarla çiziliyor',
       histIds.includes('HIST-Istanbul-Eminonu') && histIds.includes('HIST-Istanbul-Fatih'), JSON.stringify(histIds));
 

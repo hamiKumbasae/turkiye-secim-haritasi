@@ -53,11 +53,77 @@ MIN_ALAN = 1e-7  # bundan kucuk kirpma kirintilari atilir
 ILCELER = {
     "TR-D-34-002": {"kanun": "5747", "ad": "Arnavutköy"},
     "TR-D-34-033": {"kanun": "5747", "ad": "Sultangazi"},
+    "TR-D-34-018": {"kanun": "5747", "ad": "Esenyurt"},
+    "TR-D-34-008": {"kanun": "5747", "ad": "Başakşehir"},
+    # 1987 oncesi (Umraniye 3392 ile Uskudar ve Beykoz'dan kurulmadan once); 1991-2007'de
+    # bu alan repodaki HIST-Istanbul-Umraniye/Kadikoy/Uskudar/Kartal birlesimlerinde
+    "TR-D-34-016": {"kanun": "5747", "ad": "Çekmeköy"},
+    "TR-D-34-029": {"kanun": "5747", "ad": "Sancaktepe"},
+    "TR-D-34-003": {"kanun": "5747", "ad": "Ataşehir"},
 }
 # Donemsel baglilik: ilce -> {"anlar": [sayim tarihleri], "birimler": {birim: [ilce@anlar]}}.
 # Son an kanunun tarihidir (deger kanun ek listesinden). 1960'ta Eyup'e bagli olup 309 sayili
 # Kanunla (1963) Gaziosmanpasa'ya gecen koyler 'Gaziosmanpaşa' yazilir (zincir Eyup'e cikar).
+BAHCESEHIR_NOT = ("Bahçeşehir beldesi: DİE 1994 yerel seçim kitabında yok; 1999 (0014361.pdf s. 348) ve 2004 "
+                  "(0018169.pdf s. 316) kitaplarında Büyükçekmece'nin beldesi. Belde tek ilçe içinde kurulur; "
+                  "1990–1999 arasında Büyükçekmece–Küçükçekmece sınır değişikliği kaydı yok. Çıkarım.")
+_SAYIM_KAYNAK = {
+    "1960-10-23": "DİE 1960 GNS İl, İlçe, Bucak ve Köyler (0015128.pdf) s. 347 (Bakırköy), 349 (Çatalca Büyükçekmece bucağı)",
+    "1985-10-20": "DİE 1985 GNS İdari Bölünüş (0013062.pdf) s. 385 (Bakırköy), 386 (Çatalca Büyükçekmece bucağı)",
+    "1990-10-21": "DİE 1990 GNS İdari Bölünüş (0013349.pdf) s. 331 (K.Çekmece, B.Çekmece)",
+}
+_UMRANIYE_KAYNAK = {
+    "1960-10-23": "DİE 1960 GNS İl, İlçe, Bucak ve Köyler (0015128.pdf) s. 347 (Beykoz), 349 (Üsküdar), 350 (Kartal Şamandıra bucağı)",
+    "1985-10-20": "DİE 1985 GNS İdari Bölünüş (0013062.pdf) s. 385 (Beykoz), 386 (Üsküdar, Kartal Şamandıra bucağı)",
+    "1990-10-21": "DİE 1990 GNS İdari Bölünüş (0013349.pdf) s. 330 (Beykoz), 331 (Ümraniye, Kartal); "
+                  "Ümraniye'nin 1990 köyleri 3392 (1987) ile Üsküdar ve Beykoz'dan geçti — ilçe ayrı satır "
+                  "olmadan önceki seçimler için kaynak ilçe yazılır",
+}
+# ilce kurulmadan onceki secimlerde eski ilcenin satiri (5747 listesindeki 2007 geomId'si yerine)
+_ESKI_GEOM_1987 = {"Üsküdar": "TR-D-34-038", "Beykoz": "TR-D-34-011", "Kartal": "HIST-Istanbul-Kartal8489",
+                   "Kadıköy": "TR-D-34-023"}
+_USK, _BEY, _KAR = ["Üsküdar"] * 3, ["Beykoz"] * 3, ["Kartal"] * 3
 DONEMSEL = {
+    "TR-D-34-016": {
+        "anlar": ["1960-10-23", "1985-10-20", "1990-10-21"], "kaynaklar": _UMRANIYE_KAYNAK, "eskiGeom": _ESKI_GEOM_1987,
+        # Alemdağ = Alemdar köyü; Çekmeköy = Çekme köyü; Taşdelen sayım kitaplarında yok
+        "birimler": {"Çekmeköy": _USK, "Çekme": _USK, "Alemdağ": _USK, "Alemdar": _USK, "Reşadiye": _USK,
+                     "Sultançiftliği": _USK, "Ömerli": _BEY, "Hüseyinli": _BEY, "Koçullu": _BEY, "Sırapınar": _BEY},
+    },
+    "TR-D-34-029": {
+        "anlar": ["1960-10-23", "1985-10-20", "1990-10-21"], "kaynaklar": _UMRANIYE_KAYNAK, "eskiGeom": _ESKI_GEOM_1987,
+        # Sarıgazi 1960 Kartal Şamandıra bucağı, 1985 Üsküdar; Yenidoğan 1960 listesinde yok
+        "birimler": {"Samandıra": _KAR, "Paşaköy": _KAR, "Sarıgazi": ["Kartal", "Üsküdar", "Üsküdar"],
+                     "Yenidoğan": [None, "Üsküdar", "Üsküdar"], "Çekmeköy": _USK},
+    },
+    "TR-D-34-003": {
+        "anlar": ["1960-10-23", "1985-10-20", "1990-10-21"], "kaynaklar": _UMRANIYE_KAYNAK, "eskiGeom": _ESKI_GEOM_1987,
+        # 2008'de hâlâ Kadıköy/Üsküdar'a bağlı mahalleler (bu ilçeler 1960'tan beri var); Samandıra
+        # beldesi Kartal; 2008'de Ümraniye'nin olan mahallelerin 1987 öncesi ilçesi kaynakta yok
+        "birimler": {"Kadıköy": ["Kadıköy"] * 3, "Üsküdar": _USK, "Samandıra": _KAR, "Ümraniye": [None] * 3},
+    },
+
+    # Buyukcekmece 1987'de Catalca'dan (3392; tarihsel birim, zincir Catalca'ya cikar);
+    # 1960 Eksinoz = Esenyurt. Kucukcekmece 1987'de Bakirkoy'den (sayim_kaniti.json).
+    "TR-D-34-018": {
+        "anlar": ["1960-10-23", "1985-10-20", "1990-10-21", "2008-03-22"],
+        "kaynaklar": {**_SAYIM_KAYNAK, "2008-03-22": "5747 (20) sayılı liste; belde ilçesi DİE 2004 Tablo 9"},
+        # Bahçeşehir: 1994'te yok, 1999 ve 2004 DİE yerel seçim kitaplarında Büyükçekmece beldesi;
+        # belde tek ilçe içinde kurulur, 1990-1999 arası B.Çekmece-K.Çekmece sınır değişikliği kaydı yok
+        # (cikarim, BAHCESEHIR_NOT)
+        "birimler": {b: ["Büyükçekmece"] * 4 for b in ("Esenyurt", "Kıraç", "Yakuplu", "Bahçeşehir")},
+    },
+    "TR-D-34-008": {
+        "anlar": ["1960-10-23", "1985-10-20", "1990-10-21", "2008-03-22"],
+        "kaynaklar": {**_SAYIM_KAYNAK, "2008-03-22": "5747 (17) sayılı liste; belde ilçesi DİE 2004 Tablo 9"},
+        "birimler": {
+            # 1960 ve 1985 Bakırköy (köy), 1990 K.Çekmece; Küçükçekmece beldesi 1960 Bakırköy
+            **{b: ["Küçükçekmece"] * 4 for b in ("Kayabaşı", "Şamlar", "Küçükçekmece")},
+            "Bahçeşehir": ["Büyükçekmece"] * 4,
+            # Esenler 1960'ta Bakırköy köyü; 1990'da hangi ilçenin şehir alanında olduğu kitapta yok
+            "Esenler": [None, None, None, "Esenler"],
+        },
+    },
     "TR-D-34-002": {
         "anlar": ["1960-10-23", "1985-10-20", "1990-10-21", "2008-03-22"],
         "kaynaklar": {
@@ -86,6 +152,10 @@ BELIRSIZ_BIRIM = {
     # guncel veride iki mahalle (ESKİ HABİPLER, HABİBLER) - hangisinin hangisi oldugu yazmiyor
     ("TR-D-34-033", "ESKİ HABİPLER MAH."): ["Gaziosmanpaşa", "Esenler"],
     ("TR-D-34-033", "HABİBLER MAH."): ["Gaziosmanpaşa", "Esenler"],
+    # 5747 (20): Esenyurt'un Yeşilkent'i + Avcılar'ın Yeşilkent parçası
+    ("TR-D-34-018", "YEŞİLKENT MAH."): ["Büyükçekmece", "Avcılar"],
+    # 5747 (17): Küçükçekmece'nin Başakşehir mahallesi + Esenler'in 'Başakşehir' parçası
+    ("TR-D-34-008", "BAŞAKŞEHİR MAH."): ["Küçükçekmece", "Esenler"],
 }
 
 
@@ -106,16 +176,19 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
     kanun = json.loads((ROOT / f"data/kaynaklar/resmi_gazete/ilce_kurulus/{cfg['kanun']}.json").read_text(encoding="utf-8"))
     kayit = next(i for i in kanun["ilceler"] if (i["yeniIlce"] or {}).get("geomId") == geom_id)
     birim, belde, ilce_geom = collections.defaultdict(set), collections.defaultdict(set), {}
-    birim_belde = {}
+    birim_belde = collections.defaultdict(set)
     for r in kayit["satirlar"]:
         if not r["eskiIlce"]:
             continue
         ilce_geom[r["eskiIlce"]] = r["eskiIlceGeomId"]
         if r["tur"] in ("mahalle", "koy"):
             ad = belediye_adi(r) if r["birim"] == "Merkez" and r.get("eskiBelediye") else r["birim"]
+            if r["tur"] == "koy":
+                ad = re.sub(r"\s*\(.*$", "", ad)   # 'Şamlar (Sazlıdere Baraj Gölünün ... kısımları)'
+            ad = re.sub(r"\s+Mahallesinin\b.*$", "", ad)   # 'Ferhatpaşa Mahallesinin E-80 ... kısmı'
             birim[norm(ELLE_AD.get(ad, ad))].add(r["eskiIlce"])
             if belediye_adi(r):
-                birim_belde[norm(ELLE_AD.get(ad, ad))] = norm(belediye_adi(r))
+                birim_belde[norm(ELLE_AD.get(ad, ad))].add(norm(belediye_adi(r)))
         if r["tur"] != "koy_kismi" and belediye_adi(r):
             belde[norm(belediye_adi(r))].add(r["eskiIlce"])
     # komsu guncel ilcelerle kaynaktaki ince ortusmeler (sliver) cikarilir: parcalar
@@ -132,8 +205,10 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
         if adaylar:
             atama.append({"mahalle": m["ad"], "id": mid, "ilce": None, "adaylar": adaylar, "neden": "kanunda paylaşılmış birim"})
         elif len(birim.get(n, ())) == 1:
+            # ayni ad iki beldede (Çamlık: Taşdelen ve Çekmeköy) -> belde belirsiz
+            bb = birim_belde.get(n, set())
             atama.append({"mahalle": m["ad"], "id": mid, "ilce": next(iter(birim[n])), "neden": "ad",
-                          "birim": n, "belde": birim_belde.get(n)})
+                          "birim": n, "belde": next(iter(bb)) if len(bb) == 1 else None})
         else:
             hit = [b for b in belde if n.startswith(b) and len(belde[b]) == 1]
             if hit:
@@ -177,7 +252,9 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
                 a["ilce"], a["donemNotu"] = None, "sayım kaydı yok"
                 continue
             i0 = ds["anlar"].index(bas)
-            if t[i0] != t[i0 + 1]:
+            if t[i0] is None or t[i0 + 1] is None:
+                a["ilce"], a["donemNotu"] = None, f"{bas[:4]}–{bit[:4]} bağlılığı kaynakta yok"
+            elif t[i0] != t[i0 + 1]:
                 a["ilce"], a["donemNotu"] = None, f"{bas[:4]}: {t[i0]}, {bit[:4]}: {t[i0 + 1]}"
             else:
                 a["ilce"] = t[i0]
@@ -195,6 +272,32 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
                 for a in atanmamis:
                     if a["_geom"].intersection(comp).area > 0.5 * a["_geom"].area:
                         a["ilce"], a["cikarim"] = next(iter(komsu)), "cevrelenmis"
+        # liste tumleyeni: bu donemde kanun listesindeki birimlerin (kanunda paylasilmis birimler
+        # haric) hepsi tek ilcedense, atanmamis alan (paylasilmis birime degmeyen) o ilceye
+        if ds:
+            birim_ilce = set()
+            for r in kayit["satirlar"]:
+                if r["tur"] == "koy_kismi" or not r["eskiIlce"]:
+                    continue
+                ad = belediye_adi(r) if r["birim"] == "Merkez" and r.get("eskiBelediye") else r["birim"]
+                ad = re.sub(r"\s+Mahallesinin\b.*$", "", ad)
+                key = norm(ELLE_AD.get(ad, ad))
+                # kanunda paylasilmis birim ("Yeşilkent Mahallesinin ... kısmı" dahil) tumleyene katilmaz
+                if any(key.startswith(norm(m)) for (g_, m) in BELIRSIZ_BIRIM if g_ == geom_id):
+                    continue
+                if r["eskiIlce"] != next(iter(birim.get(key, {r["eskiIlce"]}))) and len(birim.get(key, ())) > 1:
+                    continue
+                t = zaman.get(key) or zaman.get(norm(belediye_adi(r)) if belediye_adi(r) else "")
+                i0 = ds["anlar"].index(bas)
+                birim_ilce.add(None if t is None or t[i0] != t[i0 + 1] else t[i0])
+            if len(birim_ilce) == 1 and None not in birim_ilce:
+                X = next(iter(birim_ilce))
+                for a in atama:
+                    if a["ilce"] or a.get("adaylar") or a.get("donemNotu"):
+                        continue
+                    if kilitli is not None and a["_geom"].distance(kilitli) < EPS:
+                        continue
+                    a["ilce"], a["cikarim"] = X, "liste-tumleyeni"
         gruplar = collections.defaultdict(list)
         for a in atama:
             gruplar[a["ilce"]].append(a)
@@ -203,7 +306,7 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
             geom = unary_union([x["_geom"] for x in xs])
             if ilce:
                 pid = f"PARCA-{kod}-{fold(ilce).replace(' ', '')}-D{k}"
-                ozet[ilce] = {"parcaId": pid, "eskiIlceGeomId": ilce_geom[ilce], "alanPayi": round(geom.area / toplam, 4),
+                ozet[ilce] = {"parcaId": pid, "eskiIlceGeomId": (ds or {}).get("eskiGeom", {}).get(ilce) or ilce_geom[ilce], "alanPayi": round(geom.area / toplam, 4),
                               "mahalleler": sorted(x["mahalle"] for x in xs if x["mahalle"] and not x.get("cikarim")),
                               "cikarimla": sorted((x["mahalle"] or "mahalle dışı alan") for x in xs if x.get("cikarim"))}
             else:
@@ -220,6 +323,7 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
         atama_donem.append({"donem": f"D{k}", "atama": [{kk: vv for kk, vv in a.items() if kk != "_geom"} for a in atama]})
     return {"ad": cfg["ad"], "kanun": cfg["kanun"], "listeNo": kayit["listeNo"],
             **({"donemselKaynaklar": ds["kaynaklar"]} if ds else {}),
+            **({"cikarimNotu": BAHCESEHIR_NOT} if ds and "Bahçeşehir" in ds["birimler"] else {}),
             "donemler": donem_ozet, "atama": atama_donem}, features
 
 

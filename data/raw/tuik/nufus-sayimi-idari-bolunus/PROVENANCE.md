@@ -26,3 +26,16 @@ Kullanım: `scripts/pipelines/historical_geo/build_mahalle_bolusumu.py` → `DON
 
 Tarama OCR metin katmanlı; kitap numaraları kütüphane PDF'lerinin ilk sayfa metni
 okunarak (ilk ~300 KB, doğrusallaştırılmış PDF) bulundu.
+
+Ek bulgular (Başakşehir, Esenyurt, Çekmeköy, Sancaktepe, Ataşehir, Küçükçekmece, Pendik):
+- 1960 Bakırköy: Mahmutbey bucağı (Atışalan, Bağcılar, Esenler, Güneşli, Güngören, Habiler,
+  İkitelli, Kayabaşı, Kirazlı, Kocasinan, Şamlar, Yenibosna), Yeşilköy bucağı (Avcılar,
+  Halkalı, Firuz, Küçükçekmece, Safra). 1985 Bakırköy köyleri yalnız Kayabaşı, Şamlar;
+  1990'da bunlar K.Çekmece'nin köyleri.
+- Çatalca Büyükçekmece bucağı 1960: Ekşinoz (= Esenyurt), Kıraç, Yakuplu, Hoşdere ...;
+  1985 aynı bucakta Esenyurt, Gürpınar, Kıraç, Yakuplu; 1990 B.Çekmece ilçesinde.
+- Üsküdar Merkez bucağı 1960: Alemdar, Aşağıdudullu, Çekme, Reşadiye, Sultançiftliği,
+  Ümraniye, Yukarıdudullu; 1985: Alemdar, Çekme, Reşadiye, Sarıgazi, Sultançiftliği,
+  Yenidoğan. Beykoz M.Şevketpaşa bucağı: Ömerli (BM), Hüseyinli, Koçullu, Sırapınar (1960,
+  1985, 1990). Kartal Şamandıra bucağı: Şamandıra, Paşaköy, Sarıgazi (yalnız 1960).
+

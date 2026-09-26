@@ -236,6 +236,10 @@
         + ((n.donemdeIlceDegistiren || []).length ? '<div class="row"><span>Nüfus sayımlarına göre bu dönemde ilçe değiştiren birim: '
           + n.donemdeIlceDegistiren.map(x=>x.replace(' MAH.', '')).join(', ') + '; iki sayım arasındaki seçimlerde hangi ilçede olduğu bilinmiyor.</span></div>' : '');
     }
+    if(n.durum === 'hedefsiz_parca'){
+      return '<b>' + n.ad + ' — ' + n.eskiIlce + ' parçası</b><div class="row"><span>Bugünkü ' + n.ad + '\'in bu kısmı '
+        + kanun + ' (' + t + ') ile ' + n.eskiIlce + '\'den geldi; ' + n.eskiIlce + ' bu seçimde ayrı ilçe değildi ve o tarihte hangi ilçeye bağlı olduğu kaynaklarda yok.</span></div>';
+    }
     if(n.durum === 'kanun_cok_kaynak') neden = 'Alanı bu dönemde ' + listeMetni + ' ilçeleri arasında bölünmüştü; tek bir ilçenin rengine boyanamıyor.';
     else if(n.durum === 'kanun_tek_kaynak' && kaynak.length) neden = 'Bu dönemde ' + kaynak[0][0] + ' ilçesinin parçasıydı; bu seçimin verisinde ' + kaynak[0][0] + ' için ayrı ilçe satırı yok.';
     else if(n.durum === 'merkez_ilce') neden = 'Eski Merkez ilçenin devamı; bu seçimin verisinde Merkez ilçe satırı yok.';
@@ -271,7 +275,7 @@
     if(dataFeats.length){
       const secimNot = ((HARITA_NOTLARI && HARITA_NOTLARI.secimler) || {})[currentYear] || {};
       for(const id of Object.keys(secimNot)){
-        const f = id.startsWith('BELIRSIZ-') && geoFeatureById[id];
+        const f = (id.startsWith('BELIRSIZ-') || id.startsWith('PARCA-')) && geoFeatureById[id];
         if(f && f.properties.plaka === plaka) noDataFeats.push(f);
       }
     }

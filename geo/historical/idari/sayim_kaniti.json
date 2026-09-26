@@ -1,0 +1,40 @@
+{
+ "not": "Elle tutulur. Kurulus kanununun ek listesinde kaynagi yazilmamis tarihsel birimlerin eski ilcesi, DIE nufus sayimi kitaplarindaki koy/belde bagliligiyla. apply_idari_merges.py bunlari tek kaynakli tarihsel birim gibi isler. Kanit koy/belde duzeyindedir; sehir ici mahalleler kitaplarda listelenmez.",
+ "kaynaklar": {
+  "1960": "data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf (asıl 0015128.pdf s. 347–350)",
+  "1985": "data/raw/tuik/nufus-sayimi-idari-bolunus/1985_0013062_istanbul.pdf (asıl 0013062.pdf s. 385–386)",
+  "1990": "data/raw/tuik/nufus-sayimi-idari-bolunus/1990_0013349_istanbul.pdf (asıl 0013349.pdf s. 331)"
+ },
+ "birimler": [
+  {
+   "id": "HIST-Istanbul-Kucukcekmece",
+   "ad": "Küçükçekmece",
+   "kanun": "3392",
+   "kurulus": "1987-07-04",
+   "eskiIlce": "Bakırköy",
+   "eskiIlceGeomId": "HIST-Istanbul-Bakirkoy",
+   "kanit": [
+    "1960: Küçükçekmece, Avcılar, Halkalı, Firuz, Safra (Yeşilköy bucağı) ve İkitelli, Kayabaşı, Şamlar (Mahmutbey bucağı) Bakırköy ilçesinde",
+    "1985: Bakırköy'ün köyleri yalnız Kayabaşı ve Şamlar; diğerleri Bakırköy şehir nüfusunda; bölgede başka ilçenin köyü yok",
+    "1990: K.Çekmece ilçesinin köyleri Kayabaşı ve Şamlar (1985'te Bakırköy'ün köyleri)",
+    "3392 (49) sayılı liste: 'Küçükçekmece semtiyle bu mahalleler merkez' — mahallelerin eski ilçesi yazılmamış"
+   ],
+   "plaka": 34
+  },
+  {
+   "id": "HIST-Istanbul-Pendik",
+   "ad": "Pendik",
+   "kanun": "3392",
+   "kurulus": "1987-07-04",
+   "eskiIlce": "Kartal",
+   "eskiIlceGeomId": "HIST-Istanbul-Kartal8489",
+   "kanit": [
+    "3392 (48) sayılı liste: köyler (Orhanlı, Tepeören, Ballıca, Kurtdoğmuş) Kartal'dan",
+    "1960: Pendik (B.), Tuzla (B.), Kurtköy, Yakacık, Orhanlı Kartal Merkez bucağında; Kurtdoğmuş, Ballıca Kartal Şamandıra bucağında",
+    "1985: Orhanlı, Tepeören (Merkez), Ballıca, Kurtdoğmuş (Şamandıra bucağı) Kartal'da; Pendik ve Tuzla Kartal şehir nüfusunda",
+    "1990: Pendik ilçesinin köyleri Akfırat, Ballıca, Göçbeyli, Kurtdoğmuş, Orhanlı, Tepeören"
+   ],
+   "plaka": 34
+  }
+ ]
+}

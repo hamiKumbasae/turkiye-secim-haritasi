@@ -214,6 +214,33 @@ seçimlerde birim yalnız iki sayımda da aynı ilçedeyse atanır:
 | 1990–2008 | 1991–2007 | %48.8 | %40.3 | %10.9 |
 
 1960 sayımından önceki seçimlerde (1950/1955 yerel) Arnavutköy bölüştürülmez.
+
+İstanbul (2026-09-27) — bölüştürülen ilçeler ve eski ilçe payları (1990–2008 / 1960–1985):
+
+| İlçe | 1991–2007 | 1961–1984 | Paylaştırılamayan başlıca kısım |
+|---|---|---|---|
+| Arnavutköy | Gaziosmanpaşa %49, Çatalca %40 | Gaziosmanpaşa (Eyüp) %34, Çatalca %47 | Terkos, Sazlıdere Gölü; 1961–84 Tayakadın |
+| Sultangazi | Gaziosmanpaşa %63, Eyüp %12 | aynı | iki Habipler mahallesi |
+| Esenyurt | Büyükçekmece %90 | Çatalca (Büyükçekmece üzerinden) %90 | Yeşilkent (Avcılar parçası) |
+| Başakşehir | Küçükçekmece %33, Büyükçekmece %16 | Bakırköy %33, Çatalca %16 | Başakşehir ve Başak mahalleleri (Esenler parçası) |
+| Çekmeköy | — (1987–2008 Ümraniye'de) | Beykoz %52, Üsküdar %30 | Taşdelen (sayımda yok) |
+| Sancaktepe | — | 1985–87: Üsküdar %31 | Samandıra'nın 2008 sonrası adları; 1961–84 Sarıgazi (Kartal → Üsküdar) |
+| Ataşehir | — | Kadıköy %59, Kartal %14, Üsküdar %9 | 2008'de Ümraniye'ye bağlı mahalleler |
+
+Ek kurallar: `liste-tümleyeni` (kanun listesinin, kanunda paylaşılmış birim dışındaki bütün
+birimleri o dönemde tek ilçedense geri kalan alan o ilçeye; paylaşılmış birime değen alan
+hariç) ve "Mahallesinin ... kısmı" satırlarından mahalle adı. Bahçeşehir beldesi sayımlarda
+yok; 1999 ve 2004 DİE yerel kitaplarında Büyükçekmece'de (işaretli çıkarım). Eski ilçesi o
+seçimde satır olmayan parça (ör. 1991'de Esenler) `PARCA-*` olarak taralı çizilir.
+
+Kaynağı yazılmamış 1987 birimleri için `sayim_kaniti.json` (elle, köy/belde düzeyi kanıt):
+Küçükçekmece ← Bakırköy, Pendik ← Kartal.
+
+İstanbul'da ilçe verisi olan genel seçimlerde boş kalan alan (ilin %'si): 1961–1983 %6.0,
+1987 %5.5, 1991 %2.5, 1995–2007 %2.1 (başta 1961–1987 %25, 1995 %11.7). Kalanlar: bölüştürülen
+ilçelerin paylaştırılamayan kısımları; 1987 öncesi Kağıthane, Esenler, Ümraniye (şehir içi
+mahalleler — sayım kitaplarında listelenmiyor, 1987/1993 kanunlarında kaynak yazılmamış) ve
+1961–84 Sancaktepe.
 Uygulandığı seçimler: eski ilçelerin tümü o seçimde satır olarak bulunuyorsa (zincirle:
 1963 öncesi Gaziosmanpaşa → Eyüp). 1963–1977 yerel verisinde Gaziosmanpaşa/Eyüp belediye
 satırı olmadığından uygulanmaz (`merge_plan.json` → `bolusumUygulanmadi`).

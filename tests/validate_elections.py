@@ -307,7 +307,7 @@ def check_historical_district_geometry():
     hist_by_id = {f["properties"]["id"]: clean(shape(f["geometry"])) for f in hist_geo["features"]}
     # mahalle duzeyinde paylastirilamayan parcalar (BELIRSIZ-*): o secimde notluysa cizilir
     notlar_p = ROOT / "geo" / "historical" / "idari" / "harita_notlari.json"
-    belirsiz_secim = {k: [x for x in v if x.startswith("BELIRSIZ-")]
+    belirsiz_secim = {k: [x for x in v if x.startswith(("BELIRSIZ-", "PARCA-"))]
                       for k, v in (load_json(notlar_p)["secimler"].items() if notlar_p.exists() else [])}
     modern_by_plaka = {}
     modern_by_id = {}
