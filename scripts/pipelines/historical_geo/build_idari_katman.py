@@ -374,6 +374,9 @@ def main():
             durum = "kanun_dogrulanmadi"
         elif kanun_soyu and not any(e["ad"] for e in kanun_soyu["eskiIlceler"]):
             durum = "kanun_kaynak_yazilmamis"   # 3949 Esenler: mahalle listesinde eski ilce yok
+        elif kanun_soyu and any(e["geomId"] == g for e in kanun_soyu["eskiIlceler"]):
+            # eski Merkez ilcenin halefi, onceki secimlerde ayni geomId ile (6360: Efeler, Menteşe)
+            durum = "merkez_ilce"
         elif kanun_soyu:
             durum = "kanun_tek_kaynak" if kanun_soyu["tekKaynak"] else "kanun_cok_kaynak"
         elif k and (k.get("cumhuriyetOncesi") or (kurulus and kurulus < "1950-05-14")):

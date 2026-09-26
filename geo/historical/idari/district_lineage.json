@@ -125,6 +125,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
   },
   {
+   "id": "kanun_6360",
+   "type": "official",
+   "title": "6360 sayılı On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun (RG 2012-12-06, sayı 28489)",
+   "url": "https://www.resmigazete.gov.tr/eskiler/2012/12/20121206-1.htm",
+   "raw": "data/raw/resmi_gazete/28489.htm",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+  },
+  {
    "id": "kanun_7033",
    "type": "official",
    "title": "7033 sayılı Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun (RG 1957-06-27, sayı 9644)",
@@ -6718,9 +6726,28 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 1,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-09-005",
+      "plaka": 9,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-09-006",
@@ -7455,7 +7482,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     18,
+     19,
+     20
+    ],
+    "birimSayisi": 13,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Balıkesir-Merkez",
+      "plaka": 10,
+      "birimSayisi": 13
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -8102,7 +8153,32 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     15,
+     16,
+     17,
+     18
+    ],
+    "birimSayisi": 27,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Balıkesir-Merkez",
+      "plaka": 10,
+      "birimSayisi": 27
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -14630,9 +14706,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     21,
+     22
+    ],
+    "birimSayisi": 42,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-20-015",
+      "plaka": 20,
+      "birimSayisi": 42
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-20-016",
@@ -21544,9 +21642,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 5,
+    "rgSayfalari": [
+     24,
+     25,
+     26
+    ],
+    "birimSayisi": 95,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-31-002",
+      "plaka": 31,
+      "birimSayisi": 95
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-31-003",
@@ -21592,9 +21713,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 8,
+    "rgSayfalari": [
+     28,
+     29
+    ],
+    "birimSayisi": 33,
+    "eskiIlceler": [
+     {
+      "ad": "İskenderun",
+      "geomId": "TR-D-31-009",
+      "plaka": 31,
+      "birimSayisi": 33
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-31-004",
@@ -21710,9 +21853,37 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 6,
+    "rgSayfalari": [
+     27,
+     28
+    ],
+    "birimSayisi": 37,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-31-002",
+      "plaka": 31,
+      "birimSayisi": 27
+     },
+     {
+      "ad": "Samandağı",
+      "geomId": "TR-D-31-014",
+      "plaka": 31,
+      "birimSayisi": 10
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-31-006",
@@ -22085,9 +22256,28 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 4,
+    "eskiIlceler": [
+     {
+      "ad": "Dörtyol",
+      "geomId": "TR-D-31-006",
+      "plaka": 31,
+      "birimSayisi": 4
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-31-013",
@@ -32340,7 +32530,7 @@
     "tekKaynak": true,
     "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
    },
-   "lineageStatus": "kanun_tek_kaynak"
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-41-009",
@@ -36755,7 +36945,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 11,
+    "rgSayfalari": [
+     33,
+     34,
+     35
+    ],
+    "birimSayisi": 65,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Manisa-Merkez",
+      "plaka": 45,
+      "birimSayisi": 65
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -36857,7 +37071,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 12,
+    "rgSayfalari": [
+     35,
+     36,
+     37
+    ],
+    "birimSayisi": 89,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Manisa-Merkez",
+      "plaka": 45,
+      "birimSayisi": 89
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -37080,7 +37318,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 14,
+    "rgSayfalari": [
+     38,
+     39,
+     40
+    ],
+    "birimSayisi": 43,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Kahramanmaraş-Merkez",
+      "plaka": 46,
+      "birimSayisi": 43
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -37365,7 +37627,32 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 15,
+    "rgSayfalari": [
+     41,
+     42,
+     43,
+     44
+    ],
+    "birimSayisi": 47,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Kahramanmaraş-Merkez",
+      "plaka": 46,
+      "birimSayisi": 47
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -37537,9 +37824,28 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 1,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-47-001",
+      "plaka": 47,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-47-002",
@@ -38444,9 +38750,28 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 1,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-48-008",
+      "plaka": 48,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-48-009",
@@ -38610,9 +38935,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 16,
+    "rgSayfalari": [
+     44,
+     45
+    ],
+    "birimSayisi": 58,
+    "eskiIlceler": [
+     {
+      "ad": "Fethiye",
+      "geomId": "TR-D-48-004",
+      "plaka": 48,
+      "birimSayisi": 58
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-48-012",
@@ -41666,7 +42013,7 @@
     "tekKaynak": true,
     "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
    },
-   "lineageStatus": "kanun_tek_kaynak"
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-54-002",
@@ -45605,9 +45952,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 18,
+    "rgSayfalari": [
+     46
+    ],
+    "birimSayisi": 16,
+    "eskiIlceler": [
+     {
+      "ad": "Çorlu",
+      "geomId": "TR-D-59-002",
+      "plaka": 59,
+      "birimSayisi": 16
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-59-004",
@@ -45697,9 +46065,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 17,
+    "rgSayfalari": [
+     46
+    ],
+    "birimSayisi": 7,
+    "eskiIlceler": [
+     {
+      "ad": "Çerkezköy",
+      "geomId": "TR-D-59-001",
+      "plaka": 59,
+      "birimSayisi": 7
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-59-006",
@@ -45970,9 +46359,28 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 1,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-59-010",
+      "plaka": 59,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-59-011",
@@ -47426,9 +47834,28 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 1,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-61-013",
+      "plaka": 61,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "merkez_ilce"
   },
   {
    "geomId": "TR-D-61-014",
@@ -48323,7 +48750,32 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 19,
+    "rgSayfalari": [
+     47,
+     48,
+     49,
+     50
+    ],
+    "birimSayisi": 151,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Şanlıurfa-Merkez",
+      "plaka": 63,
+      "birimSayisi": 151
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -48430,7 +48882,33 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 20,
+    "rgSayfalari": [
+     51,
+     52,
+     53,
+     54,
+     55
+    ],
+    "birimSayisi": 168,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Şanlıurfa-Merkez",
+      "plaka": 63,
+      "birimSayisi": 168
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -48611,7 +49089,32 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 21,
+    "rgSayfalari": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "birimSayisi": 88,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Şanlıurfa-Merkez",
+      "plaka": 63,
+      "birimSayisi": 88
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -49537,7 +50040,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 23,
+    "rgSayfalari": [
+     60,
+     61
+    ],
+    "birimSayisi": 50,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Van-Merkez",
+      "plaka": 65,
+      "birimSayisi": 50
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -49753,7 +50279,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": 22,
+    "rgSayfalari": [
+     58,
+     59,
+     60
+    ],
+    "birimSayisi": 67,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Van-Merkez",
+      "plaka": 65,
+      "birimSayisi": 67
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -50882,9 +51432,28 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 2,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-67-008",
+      "plaka": 67,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-67-007",
@@ -50930,9 +51499,28 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "6360",
+    "kanunAdi": "On Dört İlde Büyükşehir Belediyesi ve Yirmi Yedi İlçe Kurulması ile Bazı Kanun ve Kanun Hükmünde Kararnamelerde Değişiklik Yapılmasına Dair Kanun",
+    "resmiGazete": {
+     "tarih": "2012-12-06",
+     "sayi": 28489
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 2,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-67-008",
+      "plaka": 67,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/6360.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-67-008",

@@ -182,3 +182,10 @@ indirilme 2026-09-26. Kanun metni ve ek (1)–(45) sayılı listeler. Satırlar
 `data/raw/mevzuat/5747.pdf`'ten okunur (doğal metin); bu asıl metin her listenin belediye
 başlıkları ve köy satırlarıyla karşılaştırma için kullanılır (`extract_5747.py`, `rgFarki`).
 
+## 28489 (6 Aralık 2012) — 6360 sayılı Kanun (on dört ilde büyükşehir, 26 ilçe)
+
+`28489.htm` (Word'den HTML, windows-1254), https://www.resmigazete.gov.tr/eskiler/2012/12/20121206-1.htm,
+indirilme 2026-09-26. Kanun metni ve ek sayılı listeler (tablo hücreleri ayrı satırlarda).
+Satırlar `data/raw/mevzuat/6360.pdf`'ten okunur; her köy/belediye satırı bu asıl metinde
+sıra/ad/ilçe/bucak dizisiyle aranır (`extract_6360.py`; 720/720 bulundu).
+

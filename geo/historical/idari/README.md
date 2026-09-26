@@ -96,6 +96,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | 3806 | 03.06.1992 | 12 (+Sultanbeyli listesiz) | 2 | — | RG 21247 (mükerrer); Damal ← Hanak, Karakoyunlu ← Iğdır; İstanbul/İzmir mahalle listelerinde eski ilçe yazılmamış (repoda doğrulanmış); Ardahan ve Iğdır illeri |
 | 309 | 04.09.1963 | 1 | 1 | 0 | RG 11496 (1) sayılı cetvel, 10 satır elle aktarıldı; Gaziosmanpaşa ← Eyüp |
 | 5747 | 22.03.2008 | 43 | 29 (10'u yeni; 19'u repoda doğrulanmış ya da merkez) | 13 | RG 26824 (mükerrer) asıl metni + mevzuat metni, (1)–(41) sayılı listeler ve Madde 1 bentleri, 936 satır; belde → ilçe DİE 2004 |
+| 6360 | 06.12.2012 | 26 (+Altınordu 6447 ile) | 25 (7'si yeni ve haritaya yansıdı; 7'si Merkez halefi, 11'i repoda doğrulanmış) | 1 | RG 28489 asıl metni + mevzuat metni, Madde 2 fıkraları ve (1)–(21) listeler, 1.109 satır; 720 köy/belediye satırı RG aslında birebir bulundu |
 | 7033 | 01.09.1957–01.04.1960 | 78 | — (orta güven, geometriye çevrilmedi) | — | RG 9644 cetvelleri; 50/77 blok okunabildi |
 
 - 3644'ün 130 ilçesinin tamamı İçişleri listesinde de 3644 ile kayıtlı; ek listelerde
@@ -135,8 +136,17 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
   (Eminönü → Fatih, Ilıca → Aziziye, mahalle kısmı nakilleri) `digerHukumler`'de.
   Mevzuat metni 6552 (2014) değişikliklerini içerir; RG aslıyla fark `rgFarki`
   (yalnız dizgi: "Yüreği" = RG'de Yüreğir, boş bucak hücresi).
-- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): 6360 (2012) büyükşehir
-  bölünmeleri; 6447 (2013: Altınordu), 7148 (2018: Derecik), KHK 694 (2017: Sultanhanı, Kemalpaşa).
+- 6360 (2012): cetvellerde köy ve belediyelerin ilçesi yazılı; mahalle grubu "X
+  Belediyesine bağlı" (X il merkezi belediyesi = Merkez ilçe, ilçe belediyesi = o ilçe);
+  merkez olan belde belediyesinin ilçesi DİE 2004 (`extract_6360.py`). Yeni tek kaynaklı:
+  Arsuz ← İskenderun, Payas ← Dörtyol, Seydikemer ← Fethiye, Kapaklı ← Çerkezköy,
+  Ergene ← Çorlu, Kilimli ve Kozlu ← Zonguldak Merkez. Çok kaynaklı: Defne (Merkez,
+  Samandağ). Efeler, Menteşe, Artuklu, Süleymanpaşa, Ortahisar, Antakya, Merkezefendi: eski Merkez ilçenin
+  halefi, önceki seçimlerde aynı geomId → `merkez_ilce` (5747'de İzmit, Adapazarı da).
+  2011 genel seçim verisi 2012 sonrası ilçelere göre toplanmış; eski ilçe adları 2007
+  satırlarıyla eşlendi. Madde 2'nin nakil/ad değişikliği fıkraları `digerHukumler`'de.
+- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): 6447 (2013: Altınordu),
+  7148 (2018: Derecik), KHK 694 (2017: Sultanhanı, Kemalpaşa).
 
 ## Haritaya yansıtma (Faz 4a — `apply_idari_merges.py`, 2026-09-26)
 
