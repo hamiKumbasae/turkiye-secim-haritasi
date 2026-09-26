@@ -197,7 +197,7 @@ def geometri_kurali(l):
     k = l.get("kanunSoyu")
     if k and k["tekKaynak"] and k["eskiIlceler"][0]["geomId"]:
         return "merge_into:" + k["eskiIlceler"][0]["geomId"]
-    if k and k.get("guven") == "orta":
+    if k and (k.get("guven") == "orta" or not any(e["ad"] for e in k["eskiIlceler"])):
         return "unresolved"
     if k:
         return "unresolved_multi_parent"
@@ -358,6 +358,8 @@ def main():
             durum = "repo_dogrulanmis"
         elif kanun_soyu and kanun_soyu.get("guven") == "orta":
             durum = "kanun_dogrulanmadi"
+        elif kanun_soyu and not any(e["ad"] for e in kanun_soyu["eskiIlceler"]):
+            durum = "kanun_kaynak_yazilmamis"   # 3949 Esenler: mahalle listesinde eski ilce yok
         elif kanun_soyu:
             durum = "kanun_tek_kaynak" if kanun_soyu["tekKaynak"] else "kanun_cok_kaynak"
         elif k and (k.get("cumhuriyetOncesi") or (kurulus and kurulus < "1950-05-14")):

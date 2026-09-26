@@ -62,6 +62,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | `kanun_tek_kaynak` | Kuruluş kanununun ek listesine göre bütün birimleri (köy/bucak/mahalle) tek bir eski ilçeden geldi. Kuruluş öncesi seçimlerde alanı o ilçeye katılır (`geometryRule: merge_into:<geomId>`). |
 | `kanun_cok_kaynak` | Ek listeye göre birden çok eski ilçeden birim aldı. Eski ilçeler ve birim sayıları kayıtlı; köy düzeyinde sınır çözülmediği için `geometryRule: unresolved_multi_parent`. |
 | `kanun_dogrulanmadi` | Kanun listesi okundu ama güven orta (7033: zayıf tarama, blok düzeyi); soy kayıtlı, geometri kuralı `unresolved`. |
+| `kanun_kaynak_yazilmamis` | Kanun okundu ama ek listede birimlerin eski ilçesi yazılmamış (1055 Abana/Bozkurt, 3949 Esenler); geometri `unresolved`. |
 | `unresolved` | 1950 sonrası kurulmuş, soy bilgisi henüz kaynaklanmadı. |
 
 ## Durum (Faz 1, 2026-09-25)
@@ -90,6 +91,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | 4200 | 28.10.1996 | 3 | 2 | 1 | RG 22801 ek (1)–(3) sayılı listeler, 35 satır; Osmaniye ili kuruldu |
 | 2585 | 21.01.1982 | 2 | 1 | 1 | RG 17581 s. 4 cetvelleri, 21 satır (Ceylanpınar ← Viranşehir; Aliağa ← Menemen, Bergama, Foça) |
 | 3949 | 29.12.1993 | 3 | 1 | — (2 kaynağı yazılmamış) | RG 21803 ek (1)–(4) listeler; Gümüşova ← Cumaova; Güzelbahçe ve Esenler mahalle kaynağı yazılmamış; Narlıbahçe → Narlıdere, Cumaova → Cumayeri |
+| 1055 | 17.07.1968 | 2 | — | — (kaynak sütunu yok) | RG 12952 s. 5; Abana ve Bozkurt (merkez Pazaryeri); köylerin eski ilçesi yazılmamış |
 | 7033 | 01.09.1957–01.04.1960 | 78 | — (orta güven, geometriye çevrilmedi) | — | RG 9644 cetvelleri; 50/77 blok okunabildi |
 
 - 3644'ün 130 ilçesinin tamamı İçişleri listesinde de 3644 ile kayıtlı; ek listelerde
@@ -125,8 +127,9 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 - **1955 yerel ve 1994 yerel için il sınır dosyası yok** (66 ve 76 il). Snapshot'ta
   `provinceGeometryStatus: "missing_snapshot_do_not_guess"`.
 - **1955 yerel verisi 64 il**: Adıyaman, Nevşehir, Sakarya yok, Kırşehir il olarak var.
-- **Bozkurt (Kastamonu)**: kuruluşu 17.07.1968 ama 1961 ve 1965 seçim verisinde
-  ayrı satırı var. Kaynaklardan biri yanlış; Faz 2'de doğrulanacak.
+- **Bozkurt (Kastamonu)**: 1055 sayılı Kanunla 17.07.1968'de (merkezi Pazaryeri)
+  kuruldu; 1961 ve 1965 seçim verisindeki "Bozkurt" satırları bu ilçe olamaz — seçim
+  verisinin adı ya da eşlemesi doğrulanmalı.
 - **2010 referandumu ve 2011 genel seçimi**: kaynak, sonuçları 2012 ve sonrasında
   kurulan 22 ilçeye göre yeniden toplamış (`kaynakSonrakiIlcelereGoreToplamis`);
   idari çelişki değil.

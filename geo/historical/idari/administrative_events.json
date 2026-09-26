@@ -29,6 +29,14 @@
    "url": "https://www.yeniankara.com.tr/bolge-haberlerikirsehir/ilden-ilceye-donen-kirsehir-68-yil-once-bugun-yeniden-il-oldu-iste-tum-surec-113434"
   },
   {
+   "id": "kanun_1055",
+   "type": "official",
+   "title": "1055 sayılı Abana ve Bozkurt adları ile iki ilçe kurulması hakkında Kanun (RG 1968-07-17, sayı 12952)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/12952.pdf",
+   "raw": "data/raw/resmi_gazete/12952.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/1055.json"
+  },
+  {
    "id": "kanun_2585",
    "type": "official",
    "title": "2585 sayılı Urfa İli Viranşehir İlçesinin Ceylanpınar Bucağında Ceylanpınar Adıyla, İzmir İli Menemen İlçesi Aliağa Bucağında Aliağa Adıyla Yeniden İki İlçe Kurulması Hakkında Kanun (RG 1982-01-21, sayı 17581)",
@@ -13617,7 +13625,7 @@
     "adi": "Esenler"
    },
    "notYetInElections": [],
-   "lineageStatus": "kanun_cok_kaynak",
+   "lineageStatus": "kanun_kaynak_yazilmamis",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13845,7 +13853,7 @@
     "1987referandum",
     "1987"
    ],
-   "lineageStatus": "kanun_cok_kaynak",
+   "lineageStatus": "kanun_kaynak_yazilmamis",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15344,13 +15352,19 @@
    },
    "provinceAfter": 37,
    "predecessors": null,
+   "lineageSource": {
+    "kanun": "1055",
+    "listeNo": 1,
+    "rgSayfalari": [],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/1055.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1969",
     "tarih": "1969-10-12",
     "adi": "Abana"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_kaynak_yazilmamis",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -15464,13 +15478,19 @@
    },
    "provinceAfter": 37,
    "predecessors": null,
+   "lineageSource": {
+    "kanun": "1055",
+    "listeNo": 2,
+    "rgSayfalari": [],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/1055.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1961referandum",
     "tarih": "1961-07-09",
     "adi": "Bozkurt"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_kaynak_yazilmamis",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -29786,6 +29806,23 @@
     "before": "2002-11-03"
    },
    "source": "icisleri_il_ilce_kurulus_2018 (yeni ilin kuruluşu) + seçim verisi",
+   "confidence": "high"
+  },
+  {
+   "id": "kanun-1055-madde-1",
+   "unit": "Bozkurt (Kastamonu)",
+   "unitType": "district",
+   "eventType": "data_conflict_note",
+   "effectiveDate": "1968-07-17",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "1055",
+   "officialGazette": {
+    "tarih": "1968-07-17",
+    "sayi": 12952
+   },
+   "text": "Bozkurt ilçesi Pazaryeri kasabası merkez olmak üzere 17.07.1968'de kuruldu. 1961 ve 1965 seçim verisindeki Kastamonu 'Bozkurt' satırları bu ilçe olamaz (veri adı ya da eşlemesi doğrulanmalı).",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/1055.json",
    "confidence": "high"
   },
   {

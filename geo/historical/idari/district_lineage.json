@@ -29,6 +29,14 @@
    "url": "https://www.yeniankara.com.tr/bolge-haberlerikirsehir/ilden-ilceye-donen-kirsehir-68-yil-once-bugun-yeniden-il-oldu-iste-tum-surec-113434"
   },
   {
+   "id": "kanun_1055",
+   "type": "official",
+   "title": "1055 sayılı Abana ve Bozkurt adları ile iki ilçe kurulması hakkında Kanun (RG 1968-07-17, sayı 12952)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/12952.pdf",
+   "raw": "data/raw/resmi_gazete/12952.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/1055.json"
+  },
+  {
    "id": "kanun_2585",
    "type": "official",
    "title": "2585 sayılı Urfa İli Viranşehir İlçesinin Ceylanpınar Bucağında Ceylanpınar Adıyla, İzmir İli Menemen İlçesi Aliağa Bucağında Aliağa Adıyla Yeniden İki İlçe Kurulması Hakkında Kanun (RG 1982-01-21, sayı 17581)",
@@ -24169,7 +24177,7 @@
     "kaynakYazilmamisBirim": 15,
     "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3949.json"
    },
-   "lineageStatus": "kanun_cok_kaynak"
+   "lineageStatus": "kanun_kaynak_yazilmamis"
   },
   {
    "geomId": "TR-D-34-018",
@@ -24599,7 +24607,7 @@
     "kaynakYazilmamisBirim": 8,
     "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
    },
-   "lineageStatus": "kanun_cok_kaynak"
+   "lineageStatus": "kanun_kaynak_yazilmamis"
   },
   {
    "geomId": "TR-D-34-025",
@@ -27875,9 +27883,21 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "1055",
+    "kanunAdi": "Abana ve Bozkurt adları ile iki ilçe kurulması hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1968-07-17",
+     "sayi": 12952
+    },
+    "listeNo": 1,
+    "rgSayfalari": [],
+    "birimSayisi": 0,
+    "eskiIlceler": [],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/1055.json"
+   },
+   "lineageStatus": "kanun_kaynak_yazilmamis"
   },
   {
    "geomId": "TR-D-37-002",
@@ -28095,9 +28115,21 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "1055",
+    "kanunAdi": "Abana ve Bozkurt adları ile iki ilçe kurulması hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1968-07-17",
+     "sayi": 12952
+    },
+    "listeNo": 2,
+    "rgSayfalari": [],
+    "birimSayisi": 0,
+    "eskiIlceler": [],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/1055.json"
+   },
+   "lineageStatus": "kanun_kaynak_yazilmamis"
   },
   {
    "geomId": "TR-D-37-006",

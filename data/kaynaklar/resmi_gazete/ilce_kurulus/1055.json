@@ -1,0 +1,87 @@
+{
+ "kanun": "1055",
+ "ad": "Abana ve Bozkurt adları ile iki ilçe kurulması hakkında Kanun",
+ "kabul": "1968-07-03",
+ "resmiGazete": {
+  "tarih": "1968-07-17",
+  "sayi": 12952
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/12952.pdf",
+  "maddeler": "data/raw/resmi_gazete/12952.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/12952.pdf",
+  "mevzuatUrl": null
+ },
+ "digerHukumler": [
+  {
+   "madde": 1,
+   "metin": "Bozkurt ilçesi Pazaryeri kasabası merkez olmak üzere 17.07.1968'de kuruldu. 1961 ve 1965 seçim verisindeki Kastamonu 'Bozkurt' satırları bu ilçe olamaz (veri adı ya da eşlemesi doğrulanmalı).",
+   "eventType": "data_conflict_note",
+   "effectiveDate": "1968-07-17",
+   "unit": "Bozkurt (Kastamonu)"
+  }
+ ],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 2,
+  "tekKaynak": 0,
+  "cokKaynak": 0,
+  "satir": 0,
+  "cozulemeyenSatir": 0,
+  "kaynakYazilmamisSatir": 0,
+  "satirsizListe": [
+   1,
+   2
+  ],
+  "eksikSatirliListe": [],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": 1,
+   "il": "Kastamonu",
+   "plaka": 37,
+   "ad": "Abana",
+   "yeniIlce": {
+    "ad": "Abana",
+    "geomId": "TR-D-37-001",
+    "plaka": 37,
+    "secim": "1969"
+   },
+   "madde": "Kastamonu ilinin Abana ve Pazaryeri kasabaları merkez olmak ve ilişik 1 sayılı cetvelde gösterilen köyleri kapsamak üzere, Abana ve Bozkurt adları altında iki ilçe kurulmuştur.",
+   "ekHukum": null,
+   "rgSayfalari": [],
+   "altBasliklar": [],
+   "satirSayisi": 0,
+   "eskiIlceler": [],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": []
+  },
+  {
+   "listeNo": 2,
+   "il": "Kastamonu",
+   "plaka": 37,
+   "ad": "Bozkurt",
+   "yeniIlce": {
+    "ad": "Bozkurt",
+    "geomId": "TR-D-37-005",
+    "plaka": 37,
+    "secim": "1969"
+   },
+   "madde": "(bkz. Abana; merkezi Pazaryeri kasabası)",
+   "ekHukum": null,
+   "rgSayfalari": [],
+   "altBasliklar": [],
+   "satirSayisi": 0,
+   "eskiIlceler": [],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": []
+  }
+ ]
+}

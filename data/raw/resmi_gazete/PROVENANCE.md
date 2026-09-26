@@ -141,3 +141,12 @@ eski ilçe **yazılmamış** (Güzelbahçe ve Esenler tek kaynaklı sayılmaz; E
 kaynağı repodaki denetimde de bulunamamıştı). Gümüşova ← Cumaova (tek kaynak).
 Tekrar işareti '"'. Madde 2: Narlıbahçe → Narlıdere, Cumaova → Cumayeri (ad değişikliği;
 listelerde kaynak ilçe kanun anındaki adla yazılı).
+
+## 12952 (17 Temmuz 1968) — 1055 sayılı Kanun (Abana, Bozkurt)
+
+`12952.pdf` (33 sayfa), indirilme 2026-09-26; kanun s. 5 (çok sütunlu, kadro cetvelleriyle
+iç içe). Madde 1: Kastamonu'nun Abana ve Pazaryeri kasabaları merkez olmak üzere Abana ve
+Bozkurt ilçeleri. Cetvel (1) yalnız köy adlarını veriyor, **köylerin eski ilçesi
+yazılmamış** → soy bu kaynaktan çıkmaz (`kanun_kaynak_yazilmamis`). Bozkurt 1968'de
+kurulduğu için 1961/1965 seçim verisindeki Kastamonu "Bozkurt" satırları bu ilçe olamaz
+(veri çelişkisi notu).

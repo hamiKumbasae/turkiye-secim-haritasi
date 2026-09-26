@@ -126,6 +126,19 @@ KANUNLAR = {
                   "eventType": "renamed", "effectiveDate": "1993-12-29", "unit": "Narlıbahçe → Narlıdere"},
                  {"madde": 2, "metin": "Bolu İli Cumaova ilçesinin ve belediyesinin adı Cumayeri olarak değiştirilmiştir.",
                   "eventType": "renamed", "effectiveDate": "1993-12-29", "unit": "Cumaova → Cumayeri"}]},
+    "1055": {"ad": "Abana ve Bozkurt adları ile iki ilçe kurulması hakkında Kanun", "kabul": "1968-07-03",
+             "resmiGazete": {"tarih": "1968-07-17", "sayi": 12952}, "rgPdf": "data/raw/resmi_gazete/12952.pdf",
+             "mevzuatPdf": None, "sonrakiGenel": "1969", "oncekiGenel": "1965", "adsizIl": {},
+             # Cetvel (1) yalniz koy adlarini veriyor; koylerin eski ilcesi yazilmamis
+             "kaynakSutunuYok": True,
+             "bentlerElle": {
+                 1: {"il": "Kastamonu", "ad": "Abana", "madde": "Kastamonu ilinin Abana ve Pazaryeri kasabaları merkez olmak ve ilişik 1 sayılı cetvelde gösterilen köyleri kapsamak üzere, Abana ve Bozkurt adları altında iki ilçe kurulmuştur.", "ekHukum": None},
+                 2: {"il": "Kastamonu", "ad": "Bozkurt", "madde": "(bkz. Abana; merkezi Pazaryeri kasabası)", "ekHukum": None}},
+             "digerHukumler": [
+                 {"madde": 1, "metin": "Bozkurt ilçesi Pazaryeri kasabası merkez olmak üzere 17.07.1968'de kuruldu. 1961 ve "
+                                       "1965 seçim verisindeki Kastamonu 'Bozkurt' satırları bu ilçe olamaz (veri adı ya "
+                                       "da eşlemesi doğrulanmalı).",
+                  "eventType": "data_conflict_note", "effectiveDate": "1968-07-17", "unit": "Bozkurt (Kastamonu)"}]},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},
@@ -331,6 +344,8 @@ def ayristir(kanun):
                     genel[ad].append((p, g))
         satirlar = []
         ham_satirlar = []
+        if cfg.get("kaynakSutunuYok"):
+            listeler.clear()   # ek listede eski ilce sutunu yok: soy bu kaynaktan cikmaz
         for r in listeler.get(n, {}).get("satirlar", []):
             onceki_sira = ham_satirlar[-1]["sira"] if ham_satirlar else 0
             if "S" in (r.get("hamNo") or "") and r["sira"] != onceki_sira + 1:
