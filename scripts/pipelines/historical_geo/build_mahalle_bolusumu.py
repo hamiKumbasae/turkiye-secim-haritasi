@@ -17,6 +17,10 @@ Yontem (tahmin yok; cikarim ayrica isaretli):
      dis sinirina degmiyorsa o ilceye verilir (`cikarim: cevrelenmis`). Kanunda iki ilce
      arasinda paylasildigi yazan birimler (BELIRSIZ_BIRIM) cikarimla atanmaz.
   4. Kalan alan 'belirsiz' parcadir; haritada tarali, adaylariyla.
+  5. Donemsel baglilik (DONEMSEL): birimin ilcesi nufus sayimi idari bolunus kitaplarindan
+     (DIE 1960, 1985, 1990) okunmussa, iki sayim arasindaki secimler icin birim ancak iki
+     sayimda da ayni ilcedeyse atanir; arada ilce degistirmisse o donemde belirsizdir.
+     Ilk sayimdan onceki secimlere bolusum uygulanmaz.
 Parcalar ayriktir ve guncel ilce poligonunu tam boler (kirpma + sirali fark).
 
 Cikti: geo/historical/idari/mahalle_bolusumu.json (atama raporu),
@@ -50,6 +54,30 @@ ILCELER = {
     "TR-D-34-002": {"kanun": "5747", "ad": "Arnavutköy"},
     "TR-D-34-033": {"kanun": "5747", "ad": "Sultangazi"},
 }
+# Donemsel baglilik: ilce -> {"anlar": [sayim tarihleri], "birimler": {birim: [ilce@anlar]}}.
+# Son an kanunun tarihidir (deger kanun ek listesinden). 1960'ta Eyup'e bagli olup 309 sayili
+# Kanunla (1963) Gaziosmanpasa'ya gecen koyler 'Gaziosmanpaşa' yazilir (zincir Eyup'e cikar).
+DONEMSEL = {
+    "TR-D-34-002": {
+        "anlar": ["1960-10-23", "1985-10-20", "1990-10-21", "2008-03-22"],
+        "kaynaklar": {
+            "1960-10-23": "DİE 1960 Genel Nüfus Sayımı İl, İlçe, Bucak ve Köyler (kutuphane.tuik.gov.tr/pdf/0015128.pdf) s. 348 (Eyüp: Rami bucağı), 349–350 (Çatalca: Hadımköy ve Büyükçekmece bucakları)",
+            "1985-10-20": "DİE 1985 Genel Nüfus Sayımı İdari Bölünüş (kutuphane.tuik.gov.tr/pdf/0013062.pdf) s. 385 (Gaziosmanpaşa Merkez bucağı), 386 (Çatalca Hadımköy bucağı)",
+            "1990-10-21": "DİE 1990 Genel Nüfus Sayımı İdari Bölünüş (kutuphane.tuik.gov.tr/pdf/0013349.pdf) s. 330 (Gaziosmanpaşa Merkez bucağı), 332 (Çatalca Hadımköy bucağı)",
+            "2008-03-22": "5747 (15) sayılı liste; belde ilçesi DİE 2004 Tablo 9",
+        },
+        "birimler": {
+            # 1960 Eyüp (Rami bucağı) -> 1963 Gaziosmanpaşa (309; Taşoluk = Ayazma)
+            **{b: ["Gaziosmanpaşa"] * 4 for b in ("Arnavutköy", "Boğazköy", "Bolluca", "Çilingir", "Hacımaşlı",
+                                                    "Haraççı", "İmrahor", "Taşoluk")},
+            "Tayakadın": ["Çatalca", "Gaziosmanpaşa", "Gaziosmanpaşa", "Gaziosmanpaşa"],
+            "Yeniköy": ["Çatalca", "Çatalca", "Gaziosmanpaşa", "Gaziosmanpaşa"],
+            # Durusu 1960'ta Terkos adıyla; Deliklikaya, Ömerli, Yeşilbayır 1960'ta Büyükçekmece bucağı
+            **{b: ["Çatalca"] * 4 for b in ("Hadımköy", "Durusu", "Baklalı", "Balaban", "Boyalık", "Karaburun",
+                                            "Sazlıbosna", "Dursunköy", "Yassıören", "Deliklikaya", "Ömerli", "Yeşilbayır")},
+        },
+    },
+}
 # kanundaki ad -> guncel mahalle adi (ayni birim, farkli yazim)
 ELLE_AD = {"M. Fevzi Çakmak": "Mareşal Fevzi Çakmak"}
 # kanunda iki eski ilce arasinda paylasildigi yazan birimler: guncel mahalle -> adaylar
@@ -78,6 +106,7 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
     kanun = json.loads((ROOT / f"data/kaynaklar/resmi_gazete/ilce_kurulus/{cfg['kanun']}.json").read_text(encoding="utf-8"))
     kayit = next(i for i in kanun["ilceler"] if (i["yeniIlce"] or {}).get("geomId") == geom_id)
     birim, belde, ilce_geom = collections.defaultdict(set), collections.defaultdict(set), {}
+    birim_belde = {}
     for r in kayit["satirlar"]:
         if not r["eskiIlce"]:
             continue
@@ -85,6 +114,8 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
         if r["tur"] in ("mahalle", "koy"):
             ad = belediye_adi(r) if r["birim"] == "Merkez" and r.get("eskiBelediye") else r["birim"]
             birim[norm(ELLE_AD.get(ad, ad))].add(r["eskiIlce"])
+            if belediye_adi(r):
+                birim_belde[norm(ELLE_AD.get(ad, ad))] = norm(belediye_adi(r))
         if r["tur"] != "koy_kismi" and belediye_adi(r):
             belde[norm(belediye_adi(r))].add(r["eskiIlce"])
     # komsu guncel ilcelerle kaynaktaki ince ortusmeler (sliver) cikarilir: parcalar
@@ -101,11 +132,13 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
         if adaylar:
             atama.append({"mahalle": m["ad"], "id": mid, "ilce": None, "adaylar": adaylar, "neden": "kanunda paylaşılmış birim"})
         elif len(birim.get(n, ())) == 1:
-            atama.append({"mahalle": m["ad"], "id": mid, "ilce": next(iter(birim[n])), "neden": "ad"})
+            atama.append({"mahalle": m["ad"], "id": mid, "ilce": next(iter(birim[n])), "neden": "ad",
+                          "birim": n, "belde": birim_belde.get(n)})
         else:
             hit = [b for b in belde if n.startswith(b) and len(belde[b]) == 1]
             if hit:
-                atama.append({"mahalle": m["ad"], "id": mid, "ilce": next(iter(belde[hit[0]])), "neden": f"belde adı ({hit[0]})"})
+                atama.append({"mahalle": m["ad"], "id": mid, "ilce": next(iter(belde[hit[0]])), "neden": f"belde adı ({hit[0]})",
+                              "birim": hit[0], "belde": hit[0]})
             else:
                 atama.append({"mahalle": m["ad"], "id": mid, "ilce": None, "neden": "eşleşmedi"})
         parca_geom.append(g)
@@ -120,46 +153,74 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
     for i, p in enumerate(getattr(bosluk, "geoms", [bosluk])):
         if p.area >= MIN_ALAN:
             atama.append({"mahalle": None, "id": f"bosluk-{i}", "ilce": None, "neden": "mahalle poligonu yok", "_geom": p})
-    # cevrelenmis cikarimi: atanmamis alanin (eslesmeyen mahalle + mahalle disi) bagli
-    # bilesenleri; dis sinira degmeyen ve yalniz TEK eski ilcenin parcalarina degen bilesen
-    dis = C.exterior if C.geom_type == "Polygon" else unary_union([p.exterior for p in C.geoms])
-    atanmamis = [a for a in atama if not a["ilce"] and not a.get("adaylar")]
-    kilitli = unary_union([a["_geom"] for a in atama if a.get("adaylar")]) if any(a.get("adaylar") for a in atama) else None
-    if atanmamis:
-        U = unary_union([a["_geom"] for a in atanmamis]).buffer(EPS / 4).buffer(-EPS / 4)
-        for comp in getattr(U, "geoms", [U]):
-            if comp.distance(dis) < EPS or (kilitli is not None and comp.distance(kilitli) < EPS):
-                continue
-            komsu = {b["ilce"] for b in atama if b["ilce"] and b["_geom"].distance(comp) < EPS}
-            if len(komsu) != 1:
-                continue
-            for a in atanmamis:
-                if a["_geom"].intersection(comp).area > 0.5 * a["_geom"].area:
-                    a["ilce"], a["cikarim"] = next(iter(komsu)), "cevrelenmis"
+    son_ilce = {id(a): a["ilce"] for a in atama}
+    ds = DONEMSEL.get(geom_id)
+    if ds:
+        zaman = {norm(k): v for k, v in ds["birimler"].items()}
+        donemler = [(ds["anlar"][i], ds["anlar"][i + 1]) for i in range(len(ds["anlar"]) - 1)]
+    else:
+        zaman, donemler = {}, [(None, None)]
     toplam = C.area
-    gruplar = collections.defaultdict(list)
-    for a in atama:
-        gruplar[a["ilce"]].append(a)
-    features, ozet = [], {}
+    dis = C.exterior if C.geom_type == "Polygon" else unary_union([p.exterior for p in C.geoms])
+    kilitli = unary_union([a["_geom"] for a in atama if a.get("adaylar")]) if any(a.get("adaylar") for a in atama) else None
     kod = geom_id.replace("TR-D-", "")
-    for ilce, xs in gruplar.items():
-        geom = unary_union([x["_geom"] for x in xs])
-        if ilce:
-            pid = f"PARCA-{kod}-{fold(ilce).replace(' ', '')}"
-            ozet[ilce] = {"parcaId": pid, "eskiIlceGeomId": ilce_geom[ilce], "alanPayi": round(geom.area / toplam, 4),
-                          "mahalleler": sorted(x["mahalle"] for x in xs if x["mahalle"] and not x.get("cikarim")),
-                          "cikarimla": sorted((x["mahalle"] or "mahalle dışı alan") for x in xs if x.get("cikarim"))}
-        else:
-            pid = f"BELIRSIZ-{kod}"
-            ozet["_belirsiz"] = {"parcaId": pid, "alanPayi": round(geom.area / toplam, 4),
-                                 "adaylar": sorted({e["ad"] for e in kayit["eskiIlceler"] if e["ad"]}),
-                                 "mahalleler": sorted(x["mahalle"] for x in xs if x["mahalle"]),
-                                 "mahalleDisiAlan": sum(1 for x in xs if not x["mahalle"])}
-        features.append({"type": "Feature", "properties": {"id": pid, "plaka": int(kod.split("-")[0]), "ilce": geom_id,
-                                                          "eskiIlce": ilce}, "geometry": mapping(geom)})
-    for a in atama:
-        a.pop("_geom")
-    return {"ad": cfg["ad"], "kanun": cfg["kanun"], "listeNo": kayit["listeNo"], "parcalar": ozet, "atama": atama}, features
+    features, donem_ozet, atama_donem = [], [], []
+    for k, (bas, bit) in enumerate(donemler, 1):
+        # bu donemde birimin ilcesi: iki sayimda ayni ise o, degilse belirsiz
+        for a in atama:
+            a["ilce"], a.pop("cikarim", None), a.pop("donemNotu", None)
+            a["ilce"] = son_ilce[id(a)]
+            if not ds or not a.get("birim"):
+                continue
+            t = zaman.get(a["birim"]) or zaman.get(a.get("belde") or "")
+            if t is None:
+                a["ilce"], a["donemNotu"] = None, "sayım kaydı yok"
+                continue
+            i0 = ds["anlar"].index(bas)
+            if t[i0] != t[i0 + 1]:
+                a["ilce"], a["donemNotu"] = None, f"{bas[:4]}: {t[i0]}, {bit[:4]}: {t[i0 + 1]}"
+            else:
+                a["ilce"] = t[i0]
+        # cevrelenmis cikarimi: atanmamis alanin (eslesmeyen mahalle + mahalle disi) bagli
+        # bilesenleri; dis sinira degmeyen ve yalniz TEK eski ilcenin parcalarina degen bilesen
+        atanmamis = [a for a in atama if not a["ilce"] and not a.get("adaylar") and not a.get("donemNotu")]
+        if atanmamis:
+            U = unary_union([a["_geom"] for a in atanmamis]).buffer(EPS / 4).buffer(-EPS / 4)
+            for comp in getattr(U, "geoms", [U]):
+                if comp.distance(dis) < EPS or (kilitli is not None and comp.distance(kilitli) < EPS):
+                    continue
+                komsu = {b["ilce"] for b in atama if b["ilce"] and b["_geom"].distance(comp) < EPS}
+                if len(komsu) != 1:
+                    continue
+                for a in atanmamis:
+                    if a["_geom"].intersection(comp).area > 0.5 * a["_geom"].area:
+                        a["ilce"], a["cikarim"] = next(iter(komsu)), "cevrelenmis"
+        gruplar = collections.defaultdict(list)
+        for a in atama:
+            gruplar[a["ilce"]].append(a)
+        ozet = {}
+        for ilce, xs in gruplar.items():
+            geom = unary_union([x["_geom"] for x in xs])
+            if ilce:
+                pid = f"PARCA-{kod}-{fold(ilce).replace(' ', '')}-D{k}"
+                ozet[ilce] = {"parcaId": pid, "eskiIlceGeomId": ilce_geom[ilce], "alanPayi": round(geom.area / toplam, 4),
+                              "mahalleler": sorted(x["mahalle"] for x in xs if x["mahalle"] and not x.get("cikarim")),
+                              "cikarimla": sorted((x["mahalle"] or "mahalle dışı alan") for x in xs if x.get("cikarim"))}
+            else:
+                pid = f"BELIRSIZ-{kod}-D{k}"
+                ozet["_belirsiz"] = {"parcaId": pid, "alanPayi": round(geom.area / toplam, 4),
+                                     "adaylar": sorted({e["ad"] for e in kayit["eskiIlceler"] if e["ad"]}),
+                                     "mahalleler": sorted(x["mahalle"] for x in xs if x["mahalle"]),
+                                     "donemdeIlceDegistiren": sorted(f"{x['mahalle']} ({x['donemNotu']})" for x in xs
+                                                                    if x.get("donemNotu") and x["mahalle"]),
+                                     "mahalleDisiAlan": sum(1 for x in xs if not x["mahalle"])}
+            features.append({"type": "Feature", "properties": {"id": pid, "plaka": int(kod.split("-")[0]), "ilce": geom_id,
+                                                              "eskiIlce": ilce}, "geometry": mapping(geom)})
+        donem_ozet.append({"donem": f"D{k}", "baslangic": bas, "bitis": bit, "parcalar": ozet})
+        atama_donem.append({"donem": f"D{k}", "atama": [{kk: vv for kk, vv in a.items() if kk != "_geom"} for a in atama]})
+    return {"ad": cfg["ad"], "kanun": cfg["kanun"], "listeNo": kayit["listeNo"],
+            **({"donemselKaynaklar": ds["kaynaklar"]} if ds else {}),
+            "donemler": donem_ozet, "atama": atama_donem}, features
 
 
 def main():
@@ -178,7 +239,9 @@ def main():
     OUT_GEO.write_text(json.dumps({"type": "FeatureCollection", "features": features}, ensure_ascii=False,
                                   separators=(",", ":")), encoding="utf-8")
     for g, r in rapor.items():
-        print(r["ad"], {k: (v["alanPayi"], len(v["mahalleler"]), v.get("cikarimla") or v.get("adaylar")) for k, v in r["parcalar"].items()})
+        for d in r["donemler"]:
+            print(r["ad"], d["donem"], d["baslangic"], d["bitis"],
+                  {k: (v["alanPayi"], v.get("cikarimla") or v.get("donemdeIlceDegistiren") or v.get("adaylar")) for k, v in d["parcalar"].items()})
 
 
 if __name__ == "__main__":

@@ -1,636 +1,2119 @@
 {
  "not": "build_mahalle_bolusumu.py ile üretilir; elle düzenlenmez.",
- "yontem": "(tahmin yok; cikarim ayrica isaretli):\n  1. Kanun ek listesindeki her birimin eski ilcesi (data/kaynaklar/resmi_gazete/ilce_kurulus/\n     <kanun>.json; ilk kademe belediyesinin ilcesi DIE 2004).\n  2. Guncel mahalle poligonu (geo/normalized/mahalle_geo.json) adiyla bir birime eslesir:\n     ayni ad; belde \"Merkez\" mahallesi = belde adi; belde adini tasiyan guncel mahalle\n     (Hadımköy, Durusu) = o beldenin (tek) ilcesi; ELLE_AD'daki yazim esleri.\n  3. Adi eslesmeyen guncel mahalle ya da mahalle poligonlarinin kaplamadigi alan (gol,\n     orman) parcasi: butun siniri TEK bir eski ilcenin mahalleleriyle cevriliyse ve ilcenin\n     dis sinirina degmiyorsa o ilceye verilir (`cikarim: cevrelenmis`). Kanunda iki ilce\n     arasinda paylasildigi yazan birimler (BELIRSIZ_BIRIM) cikarimla atanmaz.\n  4. Kalan alan 'belirsiz' parcadir; haritada tarali, adaylariyla.\nParcalar ayriktir ve guncel ilce poligonunu tam boler (kirpma + sirali fark).",
+ "yontem": "(tahmin yok; cikarim ayrica isaretli):\n  1. Kanun ek listesindeki her birimin eski ilcesi (data/kaynaklar/resmi_gazete/ilce_kurulus/\n     <kanun>.json; ilk kademe belediyesinin ilcesi DIE 2004).\n  2. Guncel mahalle poligonu (geo/normalized/mahalle_geo.json) adiyla bir birime eslesir:\n     ayni ad; belde \"Merkez\" mahallesi = belde adi; belde adini tasiyan guncel mahalle\n     (Hadımköy, Durusu) = o beldenin (tek) ilcesi; ELLE_AD'daki yazim esleri.\n  3. Adi eslesmeyen guncel mahalle ya da mahalle poligonlarinin kaplamadigi alan (gol,\n     orman) parcasi: butun siniri TEK bir eski ilcenin mahalleleriyle cevriliyse ve ilcenin\n     dis sinirina degmiyorsa o ilceye verilir (`cikarim: cevrelenmis`). Kanunda iki ilce\n     arasinda paylasildigi yazan birimler (BELIRSIZ_BIRIM) cikarimla atanmaz.\n  4. Kalan alan 'belirsiz' parcadir; haritada tarali, adaylariyla.\n  5. Donemsel baglilik (DONEMSEL): birimin ilcesi nufus sayimi idari bolunus kitaplarindan\n     (DIE 1960, 1985, 1990) okunmussa, iki sayim arasindaki secimler icin birim ancak iki\n     sayimda da ayni ilcedeyse atanir; arada ilce degistirmisse o donemde belirsizdir.\n     Ilk sayimdan onceki secimlere bolusum uygulanmaz.\nParcalar ayriktir ve guncel ilce poligonunu tam boler (kirpma + sirali fark).",
  "ilceler": {
   "TR-D-34-002": {
    "ad": "Arnavutköy",
    "kanun": "5747",
    "listeNo": 15,
-   "parcalar": {
-    "Gaziosmanpaşa": {
-     "parcaId": "PARCA-34-002-GAZIOSMANPASA",
-     "eskiIlceGeomId": "TR-D-34-021",
-     "alanPayi": 0.4882,
-     "mahalleler": [
-      "ADNAN MENDERES MAH.",
-      "ARNAVUTKÖY MERKEZ MAH.",
-      "BOLLUCA MAH.",
-      "BOĞAZKÖY İSTİKLAL MAH.",
-      "FATİH MAH.",
-      "HACIMAŞLI MAH.",
-      "HARAÇÇI MAH.",
-      "HİCRET MAH.",
-      "KARLIBAYIR MAH.",
-      "MAREŞAL FEVZİ ÇAKMAK MAH.",
-      "MAVİGÖL MAH.",
-      "MEHMET AKİF ERSOY MAH.",
-      "TAYAKADIN MAH.",
-      "TAŞOLUK MAH.",
-      "YAVUZ SELİM MAH.",
-      "YENİKÖY MAH.",
-      "ÇİLİNGİR MAH.",
-      "İMRAHOR MAH.",
-      "İSLAMBEY MAH."
-     ],
-     "cikarimla": [
-      "ANADOLU MAH.",
-      "MUSTAFA KEMAL PAŞA MAH.",
-      "YUNUS EMRE MAH.",
-      "mahalle dışı alan",
-      "mahalle dışı alan"
-     ]
-    },
-    "Çatalca": {
-     "parcaId": "PARCA-34-002-CATALCA",
-     "eskiIlceGeomId": "TR-D-34-015",
-     "alanPayi": 0.4033,
-     "mahalleler": [
-      "BAKLALI MAH.",
-      "BOYALIK MAH.",
-      "DELİKLİKAYA MAH.",
-      "DURSUNKÖY MAH.",
-      "DURUSU MAH.",
-      "HADIMKÖY MAH.",
-      "HASTANE MAH.",
-      "KARABURUN MAH.",
-      "SAZLIBOSNA MAH.",
-      "YASSIÖREN MAH.",
-      "YEŞİLBAYIR MAH.",
-      "ÖMERLİ MAH."
-     ],
-     "cikarimla": []
-    },
-    "_belirsiz": {
-     "parcaId": "BELIRSIZ-34-002",
-     "alanPayi": 0.1085,
-     "adaylar": [
-      "Gaziosmanpaşa",
-      "Küçükçekmece",
-      "Çatalca"
-     ],
-     "mahalleler": [
-      "TERKOS MAH."
-     ],
-     "mahalleDisiAlan": 55
-    }
+   "donemselKaynaklar": {
+    "1960-10-23": "DİE 1960 Genel Nüfus Sayımı İl, İlçe, Bucak ve Köyler (kutuphane.tuik.gov.tr/pdf/0015128.pdf) s. 348 (Eyüp: Rami bucağı), 349–350 (Çatalca: Hadımköy ve Büyükçekmece bucakları)",
+    "1985-10-20": "DİE 1985 Genel Nüfus Sayımı İdari Bölünüş (kutuphane.tuik.gov.tr/pdf/0013062.pdf) s. 385 (Gaziosmanpaşa Merkez bucağı), 386 (Çatalca Hadımköy bucağı)",
+    "1990-10-21": "DİE 1990 Genel Nüfus Sayımı İdari Bölünüş (kutuphane.tuik.gov.tr/pdf/0013349.pdf) s. 330 (Gaziosmanpaşa Merkez bucağı), 332 (Çatalca Hadımköy bucağı)",
+    "2008-03-22": "5747 (15) sayılı liste; belde ilçesi DİE 2004 Tablo 9"
    },
+   "donemler": [
+    {
+     "donem": "D1",
+     "baslangic": "1960-10-23",
+     "bitis": "1985-10-20",
+     "parcalar": {
+      "Gaziosmanpaşa": {
+       "parcaId": "PARCA-34-002-GAZIOSMANPASA-D1",
+       "eskiIlceGeomId": "TR-D-34-021",
+       "alanPayi": 0.341,
+       "mahalleler": [
+        "ADNAN MENDERES MAH.",
+        "ARNAVUTKÖY MERKEZ MAH.",
+        "BOLLUCA MAH.",
+        "BOĞAZKÖY İSTİKLAL MAH.",
+        "FATİH MAH.",
+        "HACIMAŞLI MAH.",
+        "HARAÇÇI MAH.",
+        "HİCRET MAH.",
+        "KARLIBAYIR MAH.",
+        "MAREŞAL FEVZİ ÇAKMAK MAH.",
+        "MAVİGÖL MAH.",
+        "MEHMET AKİF ERSOY MAH.",
+        "TAŞOLUK MAH.",
+        "YAVUZ SELİM MAH.",
+        "ÇİLİNGİR MAH.",
+        "İMRAHOR MAH.",
+        "İSLAMBEY MAH."
+       ],
+       "cikarimla": [
+        "ANADOLU MAH.",
+        "MUSTAFA KEMAL PAŞA MAH.",
+        "YUNUS EMRE MAH.",
+        "mahalle dışı alan",
+        "mahalle dışı alan"
+       ]
+      },
+      "Çatalca": {
+       "parcaId": "PARCA-34-002-CATALCA-D1",
+       "eskiIlceGeomId": "TR-D-34-015",
+       "alanPayi": 0.4725,
+       "mahalleler": [
+        "BAKLALI MAH.",
+        "BOYALIK MAH.",
+        "DELİKLİKAYA MAH.",
+        "DURSUNKÖY MAH.",
+        "DURUSU MAH.",
+        "HADIMKÖY MAH.",
+        "HASTANE MAH.",
+        "KARABURUN MAH.",
+        "SAZLIBOSNA MAH.",
+        "YASSIÖREN MAH.",
+        "YENİKÖY MAH.",
+        "YEŞİLBAYIR MAH.",
+        "ÖMERLİ MAH."
+       ],
+       "cikarimla": []
+      },
+      "_belirsiz": {
+       "parcaId": "BELIRSIZ-34-002-D1",
+       "alanPayi": 0.1865,
+       "adaylar": [
+        "Gaziosmanpaşa",
+        "Küçükçekmece",
+        "Çatalca"
+       ],
+       "mahalleler": [
+        "TAYAKADIN MAH.",
+        "TERKOS MAH."
+       ],
+       "donemdeIlceDegistiren": [
+        "TAYAKADIN MAH. (1960: Çatalca, 1985: Gaziosmanpaşa)"
+       ],
+       "mahalleDisiAlan": 55
+      }
+     }
+    },
+    {
+     "donem": "D2",
+     "baslangic": "1985-10-20",
+     "bitis": "1990-10-21",
+     "parcalar": {
+      "Gaziosmanpaşa": {
+       "parcaId": "PARCA-34-002-GAZIOSMANPASA-D2",
+       "eskiIlceGeomId": "TR-D-34-021",
+       "alanPayi": 0.419,
+       "mahalleler": [
+        "ADNAN MENDERES MAH.",
+        "ARNAVUTKÖY MERKEZ MAH.",
+        "BOLLUCA MAH.",
+        "BOĞAZKÖY İSTİKLAL MAH.",
+        "FATİH MAH.",
+        "HACIMAŞLI MAH.",
+        "HARAÇÇI MAH.",
+        "HİCRET MAH.",
+        "KARLIBAYIR MAH.",
+        "MAREŞAL FEVZİ ÇAKMAK MAH.",
+        "MAVİGÖL MAH.",
+        "MEHMET AKİF ERSOY MAH.",
+        "TAYAKADIN MAH.",
+        "TAŞOLUK MAH.",
+        "YAVUZ SELİM MAH.",
+        "ÇİLİNGİR MAH.",
+        "İMRAHOR MAH.",
+        "İSLAMBEY MAH."
+       ],
+       "cikarimla": [
+        "ANADOLU MAH.",
+        "MUSTAFA KEMAL PAŞA MAH.",
+        "YUNUS EMRE MAH.",
+        "mahalle dışı alan",
+        "mahalle dışı alan"
+       ]
+      },
+      "Çatalca": {
+       "parcaId": "PARCA-34-002-CATALCA-D2",
+       "eskiIlceGeomId": "TR-D-34-015",
+       "alanPayi": 0.4033,
+       "mahalleler": [
+        "BAKLALI MAH.",
+        "BOYALIK MAH.",
+        "DELİKLİKAYA MAH.",
+        "DURSUNKÖY MAH.",
+        "DURUSU MAH.",
+        "HADIMKÖY MAH.",
+        "HASTANE MAH.",
+        "KARABURUN MAH.",
+        "SAZLIBOSNA MAH.",
+        "YASSIÖREN MAH.",
+        "YEŞİLBAYIR MAH.",
+        "ÖMERLİ MAH."
+       ],
+       "cikarimla": []
+      },
+      "_belirsiz": {
+       "parcaId": "BELIRSIZ-34-002-D2",
+       "alanPayi": 0.1777,
+       "adaylar": [
+        "Gaziosmanpaşa",
+        "Küçükçekmece",
+        "Çatalca"
+       ],
+       "mahalleler": [
+        "TERKOS MAH.",
+        "YENİKÖY MAH."
+       ],
+       "donemdeIlceDegistiren": [
+        "YENİKÖY MAH. (1985: Çatalca, 1990: Gaziosmanpaşa)"
+       ],
+       "mahalleDisiAlan": 55
+      }
+     }
+    },
+    {
+     "donem": "D3",
+     "baslangic": "1990-10-21",
+     "bitis": "2008-03-22",
+     "parcalar": {
+      "Gaziosmanpaşa": {
+       "parcaId": "PARCA-34-002-GAZIOSMANPASA-D3",
+       "eskiIlceGeomId": "TR-D-34-021",
+       "alanPayi": 0.4882,
+       "mahalleler": [
+        "ADNAN MENDERES MAH.",
+        "ARNAVUTKÖY MERKEZ MAH.",
+        "BOLLUCA MAH.",
+        "BOĞAZKÖY İSTİKLAL MAH.",
+        "FATİH MAH.",
+        "HACIMAŞLI MAH.",
+        "HARAÇÇI MAH.",
+        "HİCRET MAH.",
+        "KARLIBAYIR MAH.",
+        "MAREŞAL FEVZİ ÇAKMAK MAH.",
+        "MAVİGÖL MAH.",
+        "MEHMET AKİF ERSOY MAH.",
+        "TAYAKADIN MAH.",
+        "TAŞOLUK MAH.",
+        "YAVUZ SELİM MAH.",
+        "YENİKÖY MAH.",
+        "ÇİLİNGİR MAH.",
+        "İMRAHOR MAH.",
+        "İSLAMBEY MAH."
+       ],
+       "cikarimla": [
+        "ANADOLU MAH.",
+        "MUSTAFA KEMAL PAŞA MAH.",
+        "YUNUS EMRE MAH.",
+        "mahalle dışı alan",
+        "mahalle dışı alan"
+       ]
+      },
+      "Çatalca": {
+       "parcaId": "PARCA-34-002-CATALCA-D3",
+       "eskiIlceGeomId": "TR-D-34-015",
+       "alanPayi": 0.4033,
+       "mahalleler": [
+        "BAKLALI MAH.",
+        "BOYALIK MAH.",
+        "DELİKLİKAYA MAH.",
+        "DURSUNKÖY MAH.",
+        "DURUSU MAH.",
+        "HADIMKÖY MAH.",
+        "HASTANE MAH.",
+        "KARABURUN MAH.",
+        "SAZLIBOSNA MAH.",
+        "YASSIÖREN MAH.",
+        "YEŞİLBAYIR MAH.",
+        "ÖMERLİ MAH."
+       ],
+       "cikarimla": []
+      },
+      "_belirsiz": {
+       "parcaId": "BELIRSIZ-34-002-D3",
+       "alanPayi": 0.1085,
+       "adaylar": [
+        "Gaziosmanpaşa",
+        "Küçükçekmece",
+        "Çatalca"
+       ],
+       "mahalleler": [
+        "TERKOS MAH."
+       ],
+       "donemdeIlceDegistiren": [],
+       "mahalleDisiAlan": 55
+      }
+     }
+    }
+   ],
    "atama": [
     {
-     "mahalle": "ADNAN MENDERES MAH.",
-     "id": "tTR-Y-34-002-M-0001",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "ANADOLU MAH.",
-     "id": "tTR-Y-34-002-M-0002",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "eşleşmedi",
-     "cikarim": "cevrelenmis"
-    },
-    {
-     "mahalle": "ARNAVUTKÖY MERKEZ MAH.",
-     "id": "tTR-Y-34-002-M-0003",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "belde adı (ARNAVUTKOY)"
-    },
-    {
-     "mahalle": "BAKLALI MAH.",
-     "id": "tTR-Y-34-002-M-0005",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "BOĞAZKÖY İSTİKLAL MAH.",
-     "id": "tTR-Y-34-002-M-0007",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "belde adı (BOGAZKOY)"
-    },
-    {
-     "mahalle": "BOLLUCA MAH.",
-     "id": "tTR-Y-34-002-M-0008",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "BOYALIK MAH.",
-     "id": "tTR-Y-34-002-M-0009",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "ÇİLİNGİR MAH.",
-     "id": "tTR-Y-34-002-M-0010",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "DELİKLİKAYA MAH.",
-     "id": "tTR-Y-34-002-M-0011",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "DURSUNKÖY MAH.",
-     "id": "tTR-Y-34-002-M-0012",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "DURUSU MAH.",
-     "id": "tTR-Y-34-002-M-0013",
-     "ilce": "Çatalca",
-     "neden": "belde adı (DURUSU)"
-    },
-    {
-     "mahalle": "FATİH MAH.",
-     "id": "tTR-Y-34-002-M-0014",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "HACIMAŞLI MAH.",
-     "id": "tTR-Y-34-002-M-0015",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "HADIMKÖY MAH.",
-     "id": "tTR-Y-34-002-M-0016",
-     "ilce": "Çatalca",
-     "neden": "belde adı (HADIMKOY)"
-    },
-    {
-     "mahalle": "HARAÇÇI MAH.",
-     "id": "tTR-Y-34-002-M-0017",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "HASTANE MAH.",
-     "id": "tTR-Y-34-002-M-0018",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "HİCRET MAH.",
-     "id": "tTR-Y-34-002-M-0019",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "İMRAHOR MAH.",
-     "id": "tTR-Y-34-002-M-0020",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "İSLAMBEY MAH.",
-     "id": "tTR-Y-34-002-M-0021",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "KARABURUN MAH.",
-     "id": "tTR-Y-34-002-M-0022",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "KARLIBAYIR MAH.",
-     "id": "tTR-Y-34-002-M-0023",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "MAREŞAL FEVZİ ÇAKMAK MAH.",
-     "id": "tTR-Y-34-002-M-0024",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "MAVİGÖL MAH.",
-     "id": "tTR-Y-34-002-M-0025",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "MEHMET AKİF ERSOY MAH.",
-     "id": "tTR-Y-34-002-M-0026",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "MUSTAFA KEMAL PAŞA MAH.",
-     "id": "tTR-Y-34-002-M-0027",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "eşleşmedi",
-     "cikarim": "cevrelenmis"
-    },
-    {
-     "mahalle": "ÖMERLİ MAH.",
-     "id": "tTR-Y-34-002-M-0029",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "SAZLIBOSNA MAH.",
-     "id": "tTR-Y-34-002-M-0030",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "TAŞOLUK MAH.",
-     "id": "tTR-Y-34-002-M-0031",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "TAYAKADIN MAH.",
-     "id": "tTR-Y-34-002-M-0032",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "TERKOS MAH.",
-     "id": "tTR-Y-34-002-M-0033",
-     "ilce": null,
-     "neden": "eşleşmedi"
-    },
-    {
-     "mahalle": "YASSIÖREN MAH.",
-     "id": "tTR-Y-34-002-M-0034",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "YAVUZ SELİM MAH.",
-     "id": "tTR-Y-34-002-M-0035",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "YENİKÖY MAH.",
-     "id": "tTR-Y-34-002-M-0036",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "YEŞİLBAYIR MAH.",
-     "id": "tTR-Y-34-002-M-0037",
-     "ilce": "Çatalca",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "YUNUS EMRE MAH.",
-     "id": "tTR-Y-34-002-M-0038",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "eşleşmedi",
-     "cikarim": "cevrelenmis"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-0",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-1",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-2",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-3",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-5",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-6",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-8",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-10",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-11",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-13",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-14",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-15",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-17",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-19",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-20",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-21",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-22",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-24",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-25",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-26",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-27",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-28",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-29",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-30",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-31",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-32",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-33",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-34",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-35",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-36",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-37",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-38",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-39",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-41",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-42",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-43",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-44",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-45",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-47",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-48",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-49",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-50",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-51",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-52",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-53",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-54",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-55",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-57",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-59",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-60",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-61",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-62",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-63",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-64",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-65",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-66",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "mahalle poligonu yok",
-     "cikarim": "cevrelenmis"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-67",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "mahalle poligonu yok",
-     "cikarim": "cevrelenmis"
+     "donem": "D1",
+     "atama": [
+      {
+       "mahalle": "ADNAN MENDERES MAH.",
+       "id": "tTR-Y-34-002-M-0001",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "ADNANMENDERES",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "ANADOLU MAH.",
+       "id": "tTR-Y-34-002-M-0002",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": "ARNAVUTKÖY MERKEZ MAH.",
+       "id": "tTR-Y-34-002-M-0003",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "belde adı (ARNAVUTKOY)",
+       "birim": "ARNAVUTKOY",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "BAKLALI MAH.",
+       "id": "tTR-Y-34-002-M-0005",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "BAKLALI",
+       "belde": null
+      },
+      {
+       "mahalle": "BOĞAZKÖY İSTİKLAL MAH.",
+       "id": "tTR-Y-34-002-M-0007",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "belde adı (BOGAZKOY)",
+       "birim": "BOGAZKOY",
+       "belde": "BOGAZKOY"
+      },
+      {
+       "mahalle": "BOLLUCA MAH.",
+       "id": "tTR-Y-34-002-M-0008",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "BOLLUCA",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "BOYALIK MAH.",
+       "id": "tTR-Y-34-002-M-0009",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "BOYALIK",
+       "belde": null
+      },
+      {
+       "mahalle": "ÇİLİNGİR MAH.",
+       "id": "tTR-Y-34-002-M-0010",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "CILINGIR",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "DELİKLİKAYA MAH.",
+       "id": "tTR-Y-34-002-M-0011",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "DELIKLIKAYA",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "DURSUNKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0012",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "DURSUNKOY",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "DURUSU MAH.",
+       "id": "tTR-Y-34-002-M-0013",
+       "ilce": "Çatalca",
+       "neden": "belde adı (DURUSU)",
+       "birim": "DURUSU",
+       "belde": "DURUSU"
+      },
+      {
+       "mahalle": "FATİH MAH.",
+       "id": "tTR-Y-34-002-M-0014",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "FATIH",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "HACIMAŞLI MAH.",
+       "id": "tTR-Y-34-002-M-0015",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HACIMASLI",
+       "belde": null
+      },
+      {
+       "mahalle": "HADIMKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0016",
+       "ilce": "Çatalca",
+       "neden": "belde adı (HADIMKOY)",
+       "birim": "HADIMKOY",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "HARAÇÇI MAH.",
+       "id": "tTR-Y-34-002-M-0017",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HARACCI",
+       "belde": "HARACCI"
+      },
+      {
+       "mahalle": "HASTANE MAH.",
+       "id": "tTR-Y-34-002-M-0018",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "HASTANE",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "HİCRET MAH.",
+       "id": "tTR-Y-34-002-M-0019",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HICRET",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "İMRAHOR MAH.",
+       "id": "tTR-Y-34-002-M-0020",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "IMRAHOR",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "İSLAMBEY MAH.",
+       "id": "tTR-Y-34-002-M-0021",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "ISLAMBEY",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "KARABURUN MAH.",
+       "id": "tTR-Y-34-002-M-0022",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "KARABURUN",
+       "belde": null
+      },
+      {
+       "mahalle": "KARLIBAYIR MAH.",
+       "id": "tTR-Y-34-002-M-0023",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "KARLIBAYIR",
+       "belde": "HARACCI"
+      },
+      {
+       "mahalle": "MAREŞAL FEVZİ ÇAKMAK MAH.",
+       "id": "tTR-Y-34-002-M-0024",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MARESALFEVZICAKMAK",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "MAVİGÖL MAH.",
+       "id": "tTR-Y-34-002-M-0025",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MAVIGOL",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "MEHMET AKİF ERSOY MAH.",
+       "id": "tTR-Y-34-002-M-0026",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MEHMETAKIFERSOY",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "MUSTAFA KEMAL PAŞA MAH.",
+       "id": "tTR-Y-34-002-M-0027",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": "ÖMERLİ MAH.",
+       "id": "tTR-Y-34-002-M-0029",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "OMERLI",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "SAZLIBOSNA MAH.",
+       "id": "tTR-Y-34-002-M-0030",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "SAZLIBOSNA",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "TAŞOLUK MAH.",
+       "id": "tTR-Y-34-002-M-0031",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "TASOLUK",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "TAYAKADIN MAH.",
+       "id": "tTR-Y-34-002-M-0032",
+       "ilce": null,
+       "neden": "ad",
+       "birim": "TAYAKADIN",
+       "belde": null,
+       "donemNotu": "1960: Çatalca, 1985: Gaziosmanpaşa"
+      },
+      {
+       "mahalle": "TERKOS MAH.",
+       "id": "tTR-Y-34-002-M-0033",
+       "ilce": null,
+       "neden": "eşleşmedi"
+      },
+      {
+       "mahalle": "YASSIÖREN MAH.",
+       "id": "tTR-Y-34-002-M-0034",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "YASSIOREN",
+       "belde": null
+      },
+      {
+       "mahalle": "YAVUZ SELİM MAH.",
+       "id": "tTR-Y-34-002-M-0035",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "YAVUZSELIM",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "YENİKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0036",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "YENIKOY",
+       "belde": null
+      },
+      {
+       "mahalle": "YEŞİLBAYIR MAH.",
+       "id": "tTR-Y-34-002-M-0037",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "YESILBAYIR",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "YUNUS EMRE MAH.",
+       "id": "tTR-Y-34-002-M-0038",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-0",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-1",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-2",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-3",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-5",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-6",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-8",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-10",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-11",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-13",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-14",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-15",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-17",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-19",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-20",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-21",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-22",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-24",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-25",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-26",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-27",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-28",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-29",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-30",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-31",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-32",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-33",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-34",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-35",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-36",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-37",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-38",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-39",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-41",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-42",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-43",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-44",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-45",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-47",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-48",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-49",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-50",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-51",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-52",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-53",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-54",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-55",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-57",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-59",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-60",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-61",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-62",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-63",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-64",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-65",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-66",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-67",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
+      }
+     ]
+    },
+    {
+     "donem": "D2",
+     "atama": [
+      {
+       "mahalle": "ADNAN MENDERES MAH.",
+       "id": "tTR-Y-34-002-M-0001",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "ADNANMENDERES",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "ANADOLU MAH.",
+       "id": "tTR-Y-34-002-M-0002",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": "ARNAVUTKÖY MERKEZ MAH.",
+       "id": "tTR-Y-34-002-M-0003",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "belde adı (ARNAVUTKOY)",
+       "birim": "ARNAVUTKOY",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "BAKLALI MAH.",
+       "id": "tTR-Y-34-002-M-0005",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "BAKLALI",
+       "belde": null
+      },
+      {
+       "mahalle": "BOĞAZKÖY İSTİKLAL MAH.",
+       "id": "tTR-Y-34-002-M-0007",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "belde adı (BOGAZKOY)",
+       "birim": "BOGAZKOY",
+       "belde": "BOGAZKOY"
+      },
+      {
+       "mahalle": "BOLLUCA MAH.",
+       "id": "tTR-Y-34-002-M-0008",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "BOLLUCA",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "BOYALIK MAH.",
+       "id": "tTR-Y-34-002-M-0009",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "BOYALIK",
+       "belde": null
+      },
+      {
+       "mahalle": "ÇİLİNGİR MAH.",
+       "id": "tTR-Y-34-002-M-0010",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "CILINGIR",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "DELİKLİKAYA MAH.",
+       "id": "tTR-Y-34-002-M-0011",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "DELIKLIKAYA",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "DURSUNKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0012",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "DURSUNKOY",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "DURUSU MAH.",
+       "id": "tTR-Y-34-002-M-0013",
+       "ilce": "Çatalca",
+       "neden": "belde adı (DURUSU)",
+       "birim": "DURUSU",
+       "belde": "DURUSU"
+      },
+      {
+       "mahalle": "FATİH MAH.",
+       "id": "tTR-Y-34-002-M-0014",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "FATIH",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "HACIMAŞLI MAH.",
+       "id": "tTR-Y-34-002-M-0015",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HACIMASLI",
+       "belde": null
+      },
+      {
+       "mahalle": "HADIMKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0016",
+       "ilce": "Çatalca",
+       "neden": "belde adı (HADIMKOY)",
+       "birim": "HADIMKOY",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "HARAÇÇI MAH.",
+       "id": "tTR-Y-34-002-M-0017",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HARACCI",
+       "belde": "HARACCI"
+      },
+      {
+       "mahalle": "HASTANE MAH.",
+       "id": "tTR-Y-34-002-M-0018",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "HASTANE",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "HİCRET MAH.",
+       "id": "tTR-Y-34-002-M-0019",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HICRET",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "İMRAHOR MAH.",
+       "id": "tTR-Y-34-002-M-0020",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "IMRAHOR",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "İSLAMBEY MAH.",
+       "id": "tTR-Y-34-002-M-0021",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "ISLAMBEY",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "KARABURUN MAH.",
+       "id": "tTR-Y-34-002-M-0022",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "KARABURUN",
+       "belde": null
+      },
+      {
+       "mahalle": "KARLIBAYIR MAH.",
+       "id": "tTR-Y-34-002-M-0023",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "KARLIBAYIR",
+       "belde": "HARACCI"
+      },
+      {
+       "mahalle": "MAREŞAL FEVZİ ÇAKMAK MAH.",
+       "id": "tTR-Y-34-002-M-0024",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MARESALFEVZICAKMAK",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "MAVİGÖL MAH.",
+       "id": "tTR-Y-34-002-M-0025",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MAVIGOL",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "MEHMET AKİF ERSOY MAH.",
+       "id": "tTR-Y-34-002-M-0026",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MEHMETAKIFERSOY",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "MUSTAFA KEMAL PAŞA MAH.",
+       "id": "tTR-Y-34-002-M-0027",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": "ÖMERLİ MAH.",
+       "id": "tTR-Y-34-002-M-0029",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "OMERLI",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "SAZLIBOSNA MAH.",
+       "id": "tTR-Y-34-002-M-0030",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "SAZLIBOSNA",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "TAŞOLUK MAH.",
+       "id": "tTR-Y-34-002-M-0031",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "TASOLUK",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "TAYAKADIN MAH.",
+       "id": "tTR-Y-34-002-M-0032",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "TAYAKADIN",
+       "belde": null
+      },
+      {
+       "mahalle": "TERKOS MAH.",
+       "id": "tTR-Y-34-002-M-0033",
+       "ilce": null,
+       "neden": "eşleşmedi"
+      },
+      {
+       "mahalle": "YASSIÖREN MAH.",
+       "id": "tTR-Y-34-002-M-0034",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "YASSIOREN",
+       "belde": null
+      },
+      {
+       "mahalle": "YAVUZ SELİM MAH.",
+       "id": "tTR-Y-34-002-M-0035",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "YAVUZSELIM",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "YENİKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0036",
+       "ilce": null,
+       "neden": "ad",
+       "birim": "YENIKOY",
+       "belde": null,
+       "donemNotu": "1985: Çatalca, 1990: Gaziosmanpaşa"
+      },
+      {
+       "mahalle": "YEŞİLBAYIR MAH.",
+       "id": "tTR-Y-34-002-M-0037",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "YESILBAYIR",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "YUNUS EMRE MAH.",
+       "id": "tTR-Y-34-002-M-0038",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-0",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-1",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-2",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-3",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-5",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-6",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-8",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-10",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-11",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-13",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-14",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-15",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-17",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-19",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-20",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-21",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-22",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-24",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-25",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-26",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-27",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-28",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-29",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-30",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-31",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-32",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-33",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-34",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-35",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-36",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-37",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-38",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-39",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-41",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-42",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-43",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-44",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-45",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-47",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-48",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-49",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-50",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-51",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-52",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-53",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-54",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-55",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-57",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-59",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-60",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-61",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-62",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-63",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-64",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-65",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-66",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-67",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
+      }
+     ]
+    },
+    {
+     "donem": "D3",
+     "atama": [
+      {
+       "mahalle": "ADNAN MENDERES MAH.",
+       "id": "tTR-Y-34-002-M-0001",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "ADNANMENDERES",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "ANADOLU MAH.",
+       "id": "tTR-Y-34-002-M-0002",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": "ARNAVUTKÖY MERKEZ MAH.",
+       "id": "tTR-Y-34-002-M-0003",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "belde adı (ARNAVUTKOY)",
+       "birim": "ARNAVUTKOY",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "BAKLALI MAH.",
+       "id": "tTR-Y-34-002-M-0005",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "BAKLALI",
+       "belde": null
+      },
+      {
+       "mahalle": "BOĞAZKÖY İSTİKLAL MAH.",
+       "id": "tTR-Y-34-002-M-0007",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "belde adı (BOGAZKOY)",
+       "birim": "BOGAZKOY",
+       "belde": "BOGAZKOY"
+      },
+      {
+       "mahalle": "BOLLUCA MAH.",
+       "id": "tTR-Y-34-002-M-0008",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "BOLLUCA",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "BOYALIK MAH.",
+       "id": "tTR-Y-34-002-M-0009",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "BOYALIK",
+       "belde": null
+      },
+      {
+       "mahalle": "ÇİLİNGİR MAH.",
+       "id": "tTR-Y-34-002-M-0010",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "CILINGIR",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "DELİKLİKAYA MAH.",
+       "id": "tTR-Y-34-002-M-0011",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "DELIKLIKAYA",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "DURSUNKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0012",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "DURSUNKOY",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "DURUSU MAH.",
+       "id": "tTR-Y-34-002-M-0013",
+       "ilce": "Çatalca",
+       "neden": "belde adı (DURUSU)",
+       "birim": "DURUSU",
+       "belde": "DURUSU"
+      },
+      {
+       "mahalle": "FATİH MAH.",
+       "id": "tTR-Y-34-002-M-0014",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "FATIH",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "HACIMAŞLI MAH.",
+       "id": "tTR-Y-34-002-M-0015",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HACIMASLI",
+       "belde": null
+      },
+      {
+       "mahalle": "HADIMKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0016",
+       "ilce": "Çatalca",
+       "neden": "belde adı (HADIMKOY)",
+       "birim": "HADIMKOY",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "HARAÇÇI MAH.",
+       "id": "tTR-Y-34-002-M-0017",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HARACCI",
+       "belde": "HARACCI"
+      },
+      {
+       "mahalle": "HASTANE MAH.",
+       "id": "tTR-Y-34-002-M-0018",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "HASTANE",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "HİCRET MAH.",
+       "id": "tTR-Y-34-002-M-0019",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "HICRET",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "İMRAHOR MAH.",
+       "id": "tTR-Y-34-002-M-0020",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "IMRAHOR",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "İSLAMBEY MAH.",
+       "id": "tTR-Y-34-002-M-0021",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "ISLAMBEY",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "KARABURUN MAH.",
+       "id": "tTR-Y-34-002-M-0022",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "KARABURUN",
+       "belde": null
+      },
+      {
+       "mahalle": "KARLIBAYIR MAH.",
+       "id": "tTR-Y-34-002-M-0023",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "KARLIBAYIR",
+       "belde": "HARACCI"
+      },
+      {
+       "mahalle": "MAREŞAL FEVZİ ÇAKMAK MAH.",
+       "id": "tTR-Y-34-002-M-0024",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MARESALFEVZICAKMAK",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "MAVİGÖL MAH.",
+       "id": "tTR-Y-34-002-M-0025",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MAVIGOL",
+       "belde": "BOLLUCA"
+      },
+      {
+       "mahalle": "MEHMET AKİF ERSOY MAH.",
+       "id": "tTR-Y-34-002-M-0026",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MEHMETAKIFERSOY",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "MUSTAFA KEMAL PAŞA MAH.",
+       "id": "tTR-Y-34-002-M-0027",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": "ÖMERLİ MAH.",
+       "id": "tTR-Y-34-002-M-0029",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "OMERLI",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "SAZLIBOSNA MAH.",
+       "id": "tTR-Y-34-002-M-0030",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "SAZLIBOSNA",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "TAŞOLUK MAH.",
+       "id": "tTR-Y-34-002-M-0031",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "TASOLUK",
+       "belde": "TASOLUK"
+      },
+      {
+       "mahalle": "TAYAKADIN MAH.",
+       "id": "tTR-Y-34-002-M-0032",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "TAYAKADIN",
+       "belde": null
+      },
+      {
+       "mahalle": "TERKOS MAH.",
+       "id": "tTR-Y-34-002-M-0033",
+       "ilce": null,
+       "neden": "eşleşmedi"
+      },
+      {
+       "mahalle": "YASSIÖREN MAH.",
+       "id": "tTR-Y-34-002-M-0034",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "YASSIOREN",
+       "belde": null
+      },
+      {
+       "mahalle": "YAVUZ SELİM MAH.",
+       "id": "tTR-Y-34-002-M-0035",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "YAVUZSELIM",
+       "belde": "ARNAVUTKOY"
+      },
+      {
+       "mahalle": "YENİKÖY MAH.",
+       "id": "tTR-Y-34-002-M-0036",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "YENIKOY",
+       "belde": null
+      },
+      {
+       "mahalle": "YEŞİLBAYIR MAH.",
+       "id": "tTR-Y-34-002-M-0037",
+       "ilce": "Çatalca",
+       "neden": "ad",
+       "birim": "YESILBAYIR",
+       "belde": "HADIMKOY"
+      },
+      {
+       "mahalle": "YUNUS EMRE MAH.",
+       "id": "tTR-Y-34-002-M-0038",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-0",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-1",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-2",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-3",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-5",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-6",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-8",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-10",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-11",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-13",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-14",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-15",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-17",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-19",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-20",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-21",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-22",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-24",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-25",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-26",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-27",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-28",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-29",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-30",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-31",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-32",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-33",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-34",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-35",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-36",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-37",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-38",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-39",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-41",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-42",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-43",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-44",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-45",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-47",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-48",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-49",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-50",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-51",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-52",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-53",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-54",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-55",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-57",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-59",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-60",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-61",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-62",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-63",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-64",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-65",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-66",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-67",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
+      }
+     ]
     }
    ]
   },
@@ -638,226 +2121,263 @@
    "ad": "Sultangazi",
    "kanun": "5747",
    "listeNo": 22,
-   "parcalar": {
-    "Gaziosmanpaşa": {
-     "parcaId": "PARCA-34-033-GAZIOSMANPASA",
-     "eskiIlceGeomId": "TR-D-34-021",
-     "alanPayi": 0.628,
-     "mahalleler": [
-      "50. YIL MAH.",
-      "75. YIL MAH.",
-      "CEBECİ MAH.",
-      "CUMHURİYET MAH.",
-      "ESENTEPE MAH.",
-      "GAZİ MAH.",
-      "MALKOÇOĞLU MAH.",
-      "SULTANÇİFTLİĞİ MAH.",
-      "UĞUR MUMCU MAH.",
-      "YUNUS EMRE MAH.",
-      "ZÜBEYDE HANIM MAH."
-     ],
-     "cikarimla": []
-    },
-    "_belirsiz": {
-     "parcaId": "BELIRSIZ-34-033",
-     "alanPayi": 0.2476,
-     "adaylar": [
-      "Esenler",
-      "Eyüp",
-      "Gaziosmanpaşa"
-     ],
-     "mahalleler": [
-      "ESKİ HABİPLER MAH.",
-      "HABİBLER MAH."
-     ],
-     "mahalleDisiAlan": 14
-    },
-    "Eyüp": {
-     "parcaId": "PARCA-34-033-EYUP",
-     "eskiIlceGeomId": "TR-D-34-019",
-     "alanPayi": 0.1244,
-     "mahalleler": [
-      "YAYLA MAH."
-     ],
-     "cikarimla": []
+   "donemler": [
+    {
+     "donem": "D1",
+     "baslangic": null,
+     "bitis": null,
+     "parcalar": {
+      "Gaziosmanpaşa": {
+       "parcaId": "PARCA-34-033-GAZIOSMANPASA-D1",
+       "eskiIlceGeomId": "TR-D-34-021",
+       "alanPayi": 0.628,
+       "mahalleler": [
+        "50. YIL MAH.",
+        "75. YIL MAH.",
+        "CEBECİ MAH.",
+        "CUMHURİYET MAH.",
+        "ESENTEPE MAH.",
+        "GAZİ MAH.",
+        "MALKOÇOĞLU MAH.",
+        "SULTANÇİFTLİĞİ MAH.",
+        "UĞUR MUMCU MAH.",
+        "YUNUS EMRE MAH.",
+        "ZÜBEYDE HANIM MAH."
+       ],
+       "cikarimla": []
+      },
+      "_belirsiz": {
+       "parcaId": "BELIRSIZ-34-033-D1",
+       "alanPayi": 0.2476,
+       "adaylar": [
+        "Esenler",
+        "Eyüp",
+        "Gaziosmanpaşa"
+       ],
+       "mahalleler": [
+        "ESKİ HABİPLER MAH.",
+        "HABİBLER MAH."
+       ],
+       "donemdeIlceDegistiren": [],
+       "mahalleDisiAlan": 14
+      },
+      "Eyüp": {
+       "parcaId": "PARCA-34-033-EYUP-D1",
+       "eskiIlceGeomId": "TR-D-34-019",
+       "alanPayi": 0.1244,
+       "mahalleler": [
+        "YAYLA MAH."
+       ],
+       "cikarimla": []
+      }
+     }
     }
-   },
+   ],
    "atama": [
     {
-     "mahalle": "50. YIL MAH.",
-     "id": "tTR-Y-34-033-M-0001",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "75. YIL MAH.",
-     "id": "tTR-Y-34-033-M-0002",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "CEBECİ MAH.",
-     "id": "tTR-Y-34-033-M-0003",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "CUMHURİYET MAH.",
-     "id": "tTR-Y-34-033-M-0004",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "ESENTEPE MAH.",
-     "id": "tTR-Y-34-033-M-0005",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "ESKİ HABİPLER MAH.",
-     "id": "tTR-Y-34-033-M-0006",
-     "ilce": null,
-     "adaylar": [
-      "Gaziosmanpaşa",
-      "Esenler"
-     ],
-     "neden": "kanunda paylaşılmış birim"
-    },
-    {
-     "mahalle": "GAZİ MAH.",
-     "id": "tTR-Y-34-033-M-0007",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "HABİBLER MAH.",
-     "id": "tTR-Y-34-033-M-0008",
-     "ilce": null,
-     "adaylar": [
-      "Gaziosmanpaşa",
-      "Esenler"
-     ],
-     "neden": "kanunda paylaşılmış birim"
-    },
-    {
-     "mahalle": "MALKOÇOĞLU MAH.",
-     "id": "tTR-Y-34-033-M-0010",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "SULTANÇİFTLİĞİ MAH.",
-     "id": "tTR-Y-34-033-M-0011",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "UĞUR MUMCU MAH.",
-     "id": "tTR-Y-34-033-M-0012",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "YAYLA MAH.",
-     "id": "tTR-Y-34-033-M-0013",
-     "ilce": "Eyüp",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "YUNUS EMRE MAH.",
-     "id": "tTR-Y-34-033-M-0014",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": "ZÜBEYDE HANIM MAH.",
-     "id": "tTR-Y-34-033-M-0015",
-     "ilce": "Gaziosmanpaşa",
-     "neden": "ad"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-1",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-2",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-4",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-5",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-6",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-7",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-8",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-9",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-10",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-11",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-12",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-13",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-14",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
-    },
-    {
-     "mahalle": null,
-     "id": "bosluk-15",
-     "ilce": null,
-     "neden": "mahalle poligonu yok"
+     "donem": "D1",
+     "atama": [
+      {
+       "mahalle": "50. YIL MAH.",
+       "id": "tTR-Y-34-033-M-0001",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "50YIL",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "75. YIL MAH.",
+       "id": "tTR-Y-34-033-M-0002",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "75YIL",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "CEBECİ MAH.",
+       "id": "tTR-Y-34-033-M-0003",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "CEBECI",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "CUMHURİYET MAH.",
+       "id": "tTR-Y-34-033-M-0004",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "CUMHURIYET",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "ESENTEPE MAH.",
+       "id": "tTR-Y-34-033-M-0005",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "ESENTEPE",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "ESKİ HABİPLER MAH.",
+       "id": "tTR-Y-34-033-M-0006",
+       "ilce": null,
+       "adaylar": [
+        "Gaziosmanpaşa",
+        "Esenler"
+       ],
+       "neden": "kanunda paylaşılmış birim"
+      },
+      {
+       "mahalle": "GAZİ MAH.",
+       "id": "tTR-Y-34-033-M-0007",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "GAZI",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "HABİBLER MAH.",
+       "id": "tTR-Y-34-033-M-0008",
+       "ilce": null,
+       "adaylar": [
+        "Gaziosmanpaşa",
+        "Esenler"
+       ],
+       "neden": "kanunda paylaşılmış birim"
+      },
+      {
+       "mahalle": "MALKOÇOĞLU MAH.",
+       "id": "tTR-Y-34-033-M-0010",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "MALKOCOGLU",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "SULTANÇİFTLİĞİ MAH.",
+       "id": "tTR-Y-34-033-M-0011",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "SULTANCIFTLIGI",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "UĞUR MUMCU MAH.",
+       "id": "tTR-Y-34-033-M-0012",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "UGURMUMCU",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "YAYLA MAH.",
+       "id": "tTR-Y-34-033-M-0013",
+       "ilce": "Eyüp",
+       "neden": "ad",
+       "birim": "YAYLA",
+       "belde": "EYUP"
+      },
+      {
+       "mahalle": "YUNUS EMRE MAH.",
+       "id": "tTR-Y-34-033-M-0014",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "YUNUSEMRE",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": "ZÜBEYDE HANIM MAH.",
+       "id": "tTR-Y-34-033-M-0015",
+       "ilce": "Gaziosmanpaşa",
+       "neden": "ad",
+       "birim": "ZUBEYDEHANIM",
+       "belde": "GAZIOSMANPASA"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-1",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-2",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-4",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-5",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-6",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-7",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-8",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-9",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-10",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-11",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-12",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-13",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-14",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      },
+      {
+       "mahalle": null,
+       "id": "bosluk-15",
+       "ilce": null,
+       "neden": "mahalle poligonu yok"
+      }
+     ]
     }
    ]
   }

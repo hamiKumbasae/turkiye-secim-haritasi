@@ -226,7 +226,7 @@ async function scenario_1992DalgasiCozumu(browser) {
 
     const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
     // Arnavutkoy/Sultangazi mahalle duzeyinde paylastirildi: yalniz paylastirilamayan kisimlari (BELIRSIZ-*)
-    const stillBlocked = ['BELIRSIZ-34-002', 'TR-D-34-008', 'TR-D-34-017', 'TR-D-34-018', 'BELIRSIZ-34-033'];
+    const stillBlocked = ['BELIRSIZ-34-002-D3', 'TR-D-34-008', 'TR-D-34-017', 'TR-D-34-018', 'BELIRSIZ-34-033-D1'];
     check('1991 genel İstanbul: sadece 3 bloke ilçe + 2 paylaştırılamayan kısım "veri yok" (1992 dalgasının 7\'si artık değil)',
       nodataIds.length === 5 && stillBlocked.every((id) => nodataIds.includes(id)), JSON.stringify(nodataIds));
 
@@ -254,7 +254,7 @@ async function scenario_sancaktepeCozumu(browser) {
     check('1995 genel İstanbul: Sancaktepe (TR-D-34-029) artık "veri yok" değil',
       !nodataIds.includes('TR-D-34-029'), JSON.stringify(nodataIds));
     check('1995 genel İstanbul: Başakşehir/Esenyurt + Arnavutköy/Sultangazi\'nin paylaştırılamayan kısmı "veri yok"',
-      nodataIds.length === 4 && ['BELIRSIZ-34-002', 'TR-D-34-008', 'TR-D-34-018', 'BELIRSIZ-34-033'].every((id) => nodataIds.includes(id)),
+      nodataIds.length === 4 && ['BELIRSIZ-34-002-D3', 'TR-D-34-008', 'TR-D-34-018', 'BELIRSIZ-34-033-D1'].every((id) => nodataIds.includes(id)),
       JSON.stringify(nodataIds));
 
     await page.click('path.il-path[data-geom-id="HIST-Istanbul-Umraniye"]');
@@ -495,15 +495,30 @@ async function scenario_1961_1987Ilce(browser) {
     check('1995 genel İstanbul: Arnavutköy/Sultangazi ayrı çizilmiyor; Gaziosmanpaşa, Çatalca, Eyüp birleşimleri var',
       !ist95.includes('TR-D-34-002') && !ist95.includes('TR-D-34-033') && ['HISTK-34-021-', 'HISTK-34-015-', 'HISTK-34-019-'].every((p) => ist95.some((i) => i.startsWith(p))),
       JSON.stringify(ist95));
-    const arn = await page.$eval('path[data-geom-id="BELIRSIZ-34-002"]', (el) => ({cls: el.getAttribute('class'), fill: el.getAttribute('fill')}));
+    const arn = await page.$eval('path[data-geom-id="BELIRSIZ-34-002-D3"]', (el) => ({cls: el.getAttribute('class'), fill: el.getAttribute('fill')}));
     check('1995 genel İstanbul: Arnavutköy\'ün paylaştırılamayan kısmı taranmış', /il-path-gecis/.test(arn.cls) && arn.fill === 'url(#hatchGecis)', JSON.stringify(arn));
-    const arnTip = await page.$eval('path[data-geom-id="BELIRSIZ-34-002"]', (el) => {
+    const arnTip = await page.$eval('path[data-geom-id="BELIRSIZ-34-002-D3"]', (el) => {
       const r = el.getBoundingClientRect();
       el.dispatchEvent(new MouseEvent('mousemove', {bubbles: true, clientX: r.x + 2, clientY: r.y + 2}));
       return document.querySelector('#tooltip').textContent;
     });
     check('1995 genel İstanbul: paylaştırılamayan kısım ipucu kaynak ilçeleri ve kanunu yazıyor',
       /Gaziosmanpaşa/.test(arnTip) && /Çatalca/.test(arnTip) && /5747/.test(arnTip) && /Terkos/.test(arnTip), arnTip);
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+    // Sayim donemleri: Tayakadin 1960'ta Catalca, 1985'te Gaziosmanpasa -> 1961-1984 secimlerinde
+    // paylastirilamayan kisimda; ipucu bunu yaziyor
+    await clickYear(page, '1977');
+    await page.waitForTimeout(400);
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(500);
+    const tip77 = await page.$eval('path[data-geom-id="BELIRSIZ-34-002-D1"]', (el) => {
+      const r = el.getBoundingClientRect();
+      el.dispatchEvent(new MouseEvent('mousemove', {bubbles: true, clientX: r.x + 2, clientY: r.y + 2}));
+      return document.querySelector('#tooltip').textContent;
+    }).catch((e) => 'yok: ' + e);
+    check('1977 genel İstanbul: Arnavutköy paylaştırılamayan kısmı Tayakadın\'ın ilçe değişikliğini yazıyor',
+      /Tayakadın/.test(tip77) && /1960: Çatalca/.test(tip77), tip77);
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
     // Buyukcekmece 1987'de Catalca'dan kuruldu (3392, tek kaynak): 1987 oncesi Catalca poligonu

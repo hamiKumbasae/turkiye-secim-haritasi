@@ -145,8 +145,12 @@ def main():
     bolusum = {}
     if BOLUSUM.exists():
         for c, b in oku(BOLUSUM)["ilceler"].items():
-            bolusum[c] = {"parcalar": [(v["eskiIlceGeomId"], v["parcaId"]) for k, v in b["parcalar"].items() if k != "_belirsiz"],
-                          "belirsiz": b["parcalar"].get("_belirsiz"), "ad": b["ad"]}
+            # sayim donemleri: secim tarihi (baslangic, bitis) araligindaysa o donemin bolusumu
+            bolusum[c] = {"ad": b["ad"], "donemler": [
+                {"bas": d["baslangic"], "bit": d["bitis"], "belirsiz": d["parcalar"].get("_belirsiz"),
+                 "parcalar": [(v["eskiIlceGeomId"], v["parcaId"]) for k, v in d["parcalar"].items() if k != "_belirsiz"]}
+                for d in b["donemler"]]}
+    belirsiz_bilgi = {d["belirsiz"]["parcaId"]: (c, d["belirsiz"]) for c, b in bolusum.items() for d in b["donemler"] if d["belirsiz"]}
     parca_geo = {f["properties"]["id"]: f for f in oku(BOLUSUM_GEO)["features"]} if BOLUSUM_GEO.exists() else {}
 
     plan, rapor = {}, rapor_on
@@ -207,8 +211,13 @@ def main():
                 continue
             if not (kur > s["tarih"] or (s["tur"] in ILCE_DUZEYLI and s["anahtar"] in set(l.get("kurulduAmaSecimeAyriGirmedi", [])))):
                 continue
+            donem = next((d for d in b["donemler"] if (d["bas"] is None or d["bas"] < s["tarih"]) and
+                          (d["bit"] is None or s["tarih"] < d["bit"])), None)
+            if donem is None:
+                rapor["bolusumUygulanmadi"].append({"secim": s["anahtar"], "ilce": c, "neden": "sayım dönemi yok"})
+                continue
             hedefler = []
-            for eski, pid in b["parcalar"]:
+            for eski, pid in donem["parcalar"]:
                 hedef, e = None, eski
                 for _ in range(6):
                     if e in kapsayan:
@@ -227,8 +236,8 @@ def main():
                 katilan_parca[h].add(pid)
                 katilan.setdefault(h, set())
             bolunen.add(c)
-            if b["belirsiz"]:
-                belirsiz_bu.append(b["belirsiz"]["parcaId"])
+            if donem["belirsiz"]:
+                belirsiz_bu.append(donem["belirsiz"]["parcaId"])
         for hedef, parcalar in katilan.items():
             # zincirdeki ara ebeveynler bu secimde ayri satir olabilir mi? olamaz: kapsayan'da yoklar
             parcalar = {p for p in parcalar if p not in kapsayan}
@@ -309,12 +318,13 @@ def main():
     guncel_ad = {r["geomId"]: r["ad"] for r in load_election("2023")["ilceler"] if r.get("geomId")}
     for g in sorted({g for v in not_secim.values() for g in v}):
         if g.startswith(BELIRSIZ):
-            c = parca_geo[g]["properties"]["ilce"]
-            l, b = lineage[c], bolusum[c]["belirsiz"]
+            c, b = belirsiz_bilgi[g]
+            l = lineage[c]
             k = l.get("kanunSoyu") or {}
             notlar[g] = {"ad": guncel_ad.get(c) or tr_baslik(l["ad"]), "tarih": l["kurulus"]["tarih"],
                          "kanun": l["kurulus"].get("kanun"), "durum": "belirsiz_parca", "alanPayi": b["alanPayi"],
                          "mahalleler": [tr_baslik(m.removesuffix(" MAH.")) for m in b["mahalleler"]],
+                         **({"donemdeIlceDegistiren": b["donemdeIlceDegistiren"]} if b.get("donemdeIlceDegistiren") else {}),
                          "kaynaklar": [[e["ad"], e["birimSayisi"]] for e in k.get("eskiIlceler", []) if e.get("ad")]}
             continue
         l = lineage[g]

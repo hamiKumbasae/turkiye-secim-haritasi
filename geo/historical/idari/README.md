@@ -203,10 +203,21 @@ ilçenin parçası (`PARCA-*`) onun sentetik birleşimine katılır, paylaştır
 | Arnavutköy (5747) | Gaziosmanpaşa %48.8, Çatalca %40.3 | %10.9 (Terkos; Sazlıdere Baraj Gölü — Küçükçekmece'nin Şamlar parçası dahil; kıyı ormanı) |
 | Sultangazi (5747) | Gaziosmanpaşa %62.8, Eyüp %12.4 (Yayla) | %24.8 (iki Habipler mahallesi ve çevresi) |
 
+Sayım dönemleri (Arnavutköy): birimlerin ilçesi DİE 1960, 1985, 1990 nüfus sayımı idari
+bölünüş kitaplarından (`data/raw/tuik/nufus-sayimi-idari-bolunus/`). İki sayım arasındaki
+seçimlerde birim yalnız iki sayımda da aynı ilçedeyse atanır:
+
+| Dönem | Seçimler | Gaziosmanpaşa | Çatalca | Paylaştırılamayan |
+|---|---|---|---|---|
+| 1960–1985 | 1961–1984 | %34.1 (1963 öncesi Eyüp) | %47.3 (Yeniköy dahil) | %18.7 (Tayakadın: 1960 Çatalca → 1985 Gaziosmanpaşa) |
+| 1985–1990 | 1987–1989 | %41.9 | %40.3 | %17.8 (Yeniköy: 1985 Çatalca → 1990 Gaziosmanpaşa) |
+| 1990–2008 | 1991–2007 | %48.8 | %40.3 | %10.9 |
+
+1960 sayımından önceki seçimlerde (1950/1955 yerel) Arnavutköy bölüştürülmez.
 Uygulandığı seçimler: eski ilçelerin tümü o seçimde satır olarak bulunuyorsa (zincirle:
 1963 öncesi Gaziosmanpaşa → Eyüp). 1963–1977 yerel verisinde Gaziosmanpaşa/Eyüp belediye
 satırı olmadığından uygulanmaz (`merge_plan.json` → `bolusumUygulanmadi`).
-Sınırlar: belde bağlılığı 2004 durumudur (1987–2004 arası belde nakli olsaydı görülmezdi);
+Sınırlar: sayım kitabı olmayan ilçelerde (Sultangazi) belde/mahalle bağlılığı kanun tarihindeki durumdur;
 2008 sonrası mahalle ad/sınır değişiklikleri adı eşleşen mahallelerde fark edilmez.
 Sıradaki adaylar: Başakşehir, Esenyurt, Esenler (İstanbul), sonra diğer illerin çok
 kaynaklı ilçeleri.

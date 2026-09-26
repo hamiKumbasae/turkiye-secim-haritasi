@@ -232,7 +232,9 @@
       const m = (n.mahalleler || []).length ? ' (' + n.mahalleler.join(', ') + ' mahallesi ve mahalle poligonu olmayan göl/orman alanı)' : ' (mahalle poligonu olmayan göl/orman alanı)';
       return '<b>' + n.ad + ' — paylaştırılamayan kısım</b><div class="row"><span>Bugünkü ' + n.ad + ' ' + t + '\'te ' + kanun + ' ile ' + listeMetni
         + ' ilçelerinden kuruldu. Alanın büyük kısmı mahalle düzeyinde eski ilçelerine dağıtıldı; bu kısım' + m
-        + ' kaynaklarla hangi ilçeye ait olduğu belirlenemediği için taralı.</span></div>';
+        + ' kaynaklarla hangi ilçeye ait olduğu belirlenemediği için taralı.</span></div>'
+        + ((n.donemdeIlceDegistiren || []).length ? '<div class="row"><span>Nüfus sayımlarına göre bu dönemde ilçe değiştiren birim: '
+          + n.donemdeIlceDegistiren.map(x=>x.replace(' MAH.', '')).join(', ') + '; iki sayım arasındaki seçimlerde hangi ilçede olduğu bilinmiyor.</span></div>' : '');
     }
     if(n.durum === 'kanun_cok_kaynak') neden = 'Alanı bu dönemde ' + listeMetni + ' ilçeleri arasında bölünmüştü; tek bir ilçenin rengine boyanamıyor.';
     else if(n.durum === 'kanun_tek_kaynak' && kaynak.length) neden = 'Bu dönemde ' + kaynak[0][0] + ' ilçesinin parçasıydı; bu seçimin verisinde ' + kaynak[0][0] + ' için ayrı ilçe satırı yok.';
