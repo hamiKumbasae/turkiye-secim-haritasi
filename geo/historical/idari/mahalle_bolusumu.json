@@ -1,6 +1,6 @@
 {
  "not": "build_mahalle_bolusumu.py ile üretilir; elle düzenlenmez.",
- "yontem": "(tahmin yok; cikarim ayrica isaretli):\n  1. Kanun ek listesindeki her birimin eski ilcesi (data/kaynaklar/resmi_gazete/ilce_kurulus/\n     <kanun>.json; ilk kademe belediyesinin ilcesi DIE 2004).\n  2. Guncel mahalle poligonu (geo/normalized/mahalle_geo.json) adiyla bir birime eslesir:\n     ayni ad; belde \"Merkez\" mahallesi = belde adi; belde adini tasiyan guncel mahalle\n     (Hadımköy, Durusu) = o beldenin (tek) ilcesi; ELLE_AD'daki yazim esleri.\n  3. Adi eslesmeyen guncel mahalle ya da mahalle poligonlarinin kaplamadigi alan (gol,\n     orman) parcasi: butun siniri TEK bir eski ilcenin mahalleleriyle cevriliyse ve ilcenin\n     dis sinirina degmiyorsa o ilceye verilir (`cikarim: cevrelenmis`). Kanunda iki ilce\n     arasinda paylasildigi yazan birimler (BELIRSIZ_BIRIM) cikarimla atanmaz.\n  4. Kalan alan 'belirsiz' parcadir; haritada tarali, adaylariyla.\n  6. Elle DONEMSEL tablosu olmayan cok kaynakli ilcelerde donemsel baglilik sayim dizininden\n     (data/kaynaklar/tuik/nufus_sayimi/<yil>_koyler.json, extract_sayim_koyleri.py) otomatik:\n     birimin (koy/belde) sayimdaki ilcesi kanundaki eski ilcesiyle (ya da onun kanunla ayrildigi\n     ata ilceyle) ayniysa o sayimda ayni sayilir; bulunamazsa ya da farkliysa o donem belirsiz.\n     Dizin OCR'dan okundugu icin hatalar yalniz belirsiz alani buyutur, yanlis ilceye atamaz.\n  5. Donemsel baglilik (DONEMSEL): birimin ilcesi nufus sayimi idari bolunus kitaplarindan\n     (DIE 1960, 1985, 1990) okunmussa, iki sayim arasindaki secimler icin birim ancak iki\n     sayimda da ayni ilcedeyse atanir; arada ilce degistirmisse o donemde belirsizdir.\n     Ilk sayimdan onceki secimlere bolusum uygulanmaz.\nParcalar ayriktir ve guncel ilce poligonunu tam boler (kirpma + sirali fark).",
+ "yontem": "(tahmin yok; cikarim ayrica isaretli):\n  1. Kanun ek listesindeki her birimin eski ilcesi (data/kaynaklar/resmi_gazete/ilce_kurulus/\n     <kanun>.json; ilk kademe belediyesinin ilcesi DIE 2004).\n  2. Guncel mahalle poligonu (geo/normalized/mahalle_geo.json) adiyla bir birime eslesir:\n     ayni ad; belde \"Merkez\" mahallesi = belde adi; belde adini tasiyan guncel mahalle\n     (Hadımköy, Durusu) = o beldenin (tek) ilcesi; ELLE_AD'daki yazim esleri.\n  3. Adi eslesmeyen guncel mahalle ya da mahalle poligonlarinin kaplamadigi alan (gol,\n     orman) parcasi: butun siniri TEK bir eski ilcenin mahalleleriyle cevriliyse ve ilcenin\n     dis sinirina degmiyorsa o ilceye verilir (`cikarim: cevrelenmis`). Kanunda iki ilce\n     arasinda paylasildigi yazan birimler (BELIRSIZ_BIRIM) cikarimla atanmaz.\n  4. Kalan alan 'belirsiz' parcadir; haritada tarali, adaylariyla.\n  6. Elle DONEMSEL tablosu olmayan cok kaynakli ilcelerde donemsel baglilik sayim dizininden\n     (data/kaynaklar/tuik/nufus_sayimi/<yil>_koyler.json, extract_sayim_koyleri.py) otomatik:\n     birimin (koy/belde) sayimdaki ilcesi kanundaki eski ilcesiyle (ya da onun kanunla ayrildigi\n     ata ilceyle) ayniysa o sayimda ayni sayilir; bulunamazsa ya da farkliysa o donem belirsiz.\n     Dizin OCR'dan okundugu icin hatalar yalniz belirsiz alani buyutur, yanlis ilceye atamaz.\n  7. Merkez kasaba (cikarim, `merkez-kasaba`): kanun \"listedeki koyleri kapsamak ve merkezi X\n     olmak uzere\" der; adi listede olmayan guncel mahalleler merkez kasabanin mahalleleridir.\n     Merkezin ilcesi sayim dizininden (bucak merkezi/belde/koy kaydi) iki sayimda da ayni ve\n     kanundaki eski ilcelerden biriyse bu mahalleler o ilceye verilir. Adi sayim dizininde baska\n     bir ilcenin koyu olarak gecen mahalle (sonradan adi degismis koy olabilir) atanmaz.\n  5. Donemsel baglilik (DONEMSEL): birimin ilcesi nufus sayimi idari bolunus kitaplarindan\n     (DIE 1960, 1985, 1990) okunmussa, iki sayim arasindaki secimler icin birim ancak iki\n     sayimda da ayni ilcedeyse atanir; arada ilce degistirmisse o donemde belirsizdir.\n     Ilk sayimdan onceki secimlere bolusum uygulanmaz.\nParcalar ayriktir ve guncel ilce poligonunu tam boler (kirpma + sirali fark).",
  "ilceler": {
   "TR-D-34-002": {
    "ad": "Arnavutköy",
@@ -7640,25 +7640,18 @@
      "parcalar": {
       "_belirsiz": {
        "parcaId": "BELIRSIZ-06-001-D2",
-       "alanPayi": 0.6584,
+       "alanPayi": 0.5304,
        "adaylar": [
         "Kalecik",
         "Çubuk"
        ],
        "mahalleler": [
         "AHMETADİL MAH.",
-        "ATATÜRK MAH.",
-        "BEYAZIT MAH.",
         "BÜĞDÜZ MAH.",
         "HAYDAR MAH.",
         "KARACAKAYA MAH.",
         "KOZAYAĞI MAH.",
-        "SAMUT MAH.",
-        "SARACALAR MAH.",
         "TEBERİK MAH.",
-        "TİMURHAN MAH.",
-        "YEŞİLTEPE MAH.",
-        "YILDIRIM MAH.",
         "ÇARDAKBAĞI MAH.",
         "ÇINAR MAH."
        ],
@@ -7668,12 +7661,12 @@
         "KOZAYAĞI MAH. (1985–1990 bağlılığı kaynakta yok)",
         "ÇARDAKBAĞI MAH. (1985–1990 bağlılığı kaynakta yok)"
        ],
-       "mahalleDisiAlan": 20
+       "mahalleDisiAlan": 18
       },
       "Çubuk": {
        "parcaId": "PARCA-06-001-CUBUK-D2",
        "eskiIlceGeomId": "TR-D-06-008",
-       "alanPayi": 0.2975,
+       "alanPayi": 0.4255,
        "mahalleler": [
         "BALIKHİSAR MAH.",
         "CÜCÜK MAH.",
@@ -7685,6 +7678,15 @@
         "ŞEYHLER MAH."
        ],
        "cikarimla": [
+        "ATATÜRK MAH.",
+        "BEYAZIT MAH.",
+        "SAMUT MAH.",
+        "SARACALAR MAH.",
+        "TİMURHAN MAH.",
+        "YEŞİLTEPE MAH.",
+        "YILDIRIM MAH.",
+        "mahalle dışı alan",
+        "mahalle dışı alan",
         "mahalle dışı alan"
        ]
       },
@@ -8023,8 +8025,9 @@
       {
        "mahalle": "ATATÜRK MAH.",
        "id": "tTR-Y-06-001-M-0002",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Çubuk",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "BALIKHİSAR MAH.",
@@ -8037,8 +8040,9 @@
       {
        "mahalle": "BEYAZIT MAH.",
        "id": "tTR-Y-06-001-M-0004",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Çubuk",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "BÜĞDÜZ MAH.",
@@ -8139,14 +8143,16 @@
       {
        "mahalle": "SAMUT MAH.",
        "id": "tTR-Y-06-001-M-0019",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Çubuk",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "SARACALAR MAH.",
        "id": "tTR-Y-06-001-M-0020",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Çubuk",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ŞEYHLER MAH.",
@@ -8165,8 +8171,9 @@
       {
        "mahalle": "TİMURHAN MAH.",
        "id": "tTR-Y-06-001-M-0023",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Çubuk",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "UZUNLAR MAH.",
@@ -8179,14 +8186,16 @@
       {
        "mahalle": "YEŞİLTEPE MAH.",
        "id": "tTR-Y-06-001-M-0025",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Çubuk",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YILDIRIM MAH.",
        "id": "tTR-Y-06-001-M-0026",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Çubuk",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": null,
@@ -8293,8 +8302,9 @@
       {
        "mahalle": null,
        "id": "bosluk-23",
-       "ilce": null,
-       "neden": "mahalle poligonu yok"
+       "ilce": "Çubuk",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
       },
       {
        "mahalle": null,
@@ -8312,8 +8322,9 @@
       {
        "mahalle": null,
        "id": "bosluk-26",
-       "ilce": null,
-       "neden": "mahalle poligonu yok"
+       "ilce": "Çubuk",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
       }
      ]
     }
@@ -9244,7 +9255,7 @@
       "Merkez": {
        "parcaId": "PARCA-07-002-MERKEZ-D2",
        "eskiIlceGeomId": "HIST-Antalya-Merkez",
-       "alanPayi": 0.4044,
+       "alanPayi": 0.5051,
        "mahalleler": [
         "ALAYLI MAH.",
         "GÜLOLUK MAH.",
@@ -9257,39 +9268,40 @@
         "ÇALKAYA MAH.",
         "İHSANİYE MAH."
        ],
-       "cikarimla": []
+       "cikarimla": [
+        "ALTINTAŞ MAH.",
+        "BARBAROS MAH.",
+        "CUMHURİYET MAH.",
+        "FATİH MAH.",
+        "GÜZELYURT MAH.",
+        "HACIALİLER MAH.",
+        "KONAK MAH.",
+        "MACUN MAH.",
+        "MANDIRLAR MAH.",
+        "SOĞUCAKSU MAH."
+       ]
       },
       "_belirsiz": {
        "parcaId": "BELIRSIZ-07-002-D2",
-       "alanPayi": 0.5956,
+       "alanPayi": 0.4949,
        "adaylar": [
         "Merkez",
         "Serik"
        ],
        "mahalleler": [
-        "ALTINTAŞ MAH.",
         "ATATÜRK MAH.",
-        "BARBAROS MAH.",
         "BOZTEPE MAH.",
-        "CUMHURİYET MAH.",
         "CİHADİYE MAH.",
         "DUMANLAR MAH.",
-        "FATİH MAH.",
         "FETTAHLI MAH.",
         "GÖKDERE MAH.",
-        "GÜZELYURT MAH.",
-        "HACIALİLER MAH.",
         "KARAÖZ MAH.",
         "KEMERAĞZI MAH.",
-        "KONAK MAH.",
         "KUMKÖY MAH.",
         "KUNDU MAH.",
-        "MACUN MAH.",
-        "MANDIRLAR MAH.",
         "MURTUNA MAH.",
         "PINARLI MAH.",
         "SOLAK MAH.",
-        "SOĞUCAKSU MAH.",
         "YENİDUMANLAR MAH.",
         "ÇAMKÖY MAH."
        ],
@@ -9311,7 +9323,7 @@
       "Merkez": {
        "parcaId": "PARCA-07-002-MERKEZ-D3",
        "eskiIlceGeomId": "HIST-Antalya-Merkez",
-       "alanPayi": 0.4044,
+       "alanPayi": 0.5051,
        "mahalleler": [
         "ALAYLI MAH.",
         "GÜLOLUK MAH.",
@@ -9324,39 +9336,40 @@
         "ÇALKAYA MAH.",
         "İHSANİYE MAH."
        ],
-       "cikarimla": []
+       "cikarimla": [
+        "ALTINTAŞ MAH.",
+        "BARBAROS MAH.",
+        "CUMHURİYET MAH.",
+        "FATİH MAH.",
+        "GÜZELYURT MAH.",
+        "HACIALİLER MAH.",
+        "KONAK MAH.",
+        "MACUN MAH.",
+        "MANDIRLAR MAH.",
+        "SOĞUCAKSU MAH."
+       ]
       },
       "_belirsiz": {
        "parcaId": "BELIRSIZ-07-002-D3",
-       "alanPayi": 0.5956,
+       "alanPayi": 0.4949,
        "adaylar": [
         "Merkez",
         "Serik"
        ],
        "mahalleler": [
-        "ALTINTAŞ MAH.",
         "ATATÜRK MAH.",
-        "BARBAROS MAH.",
         "BOZTEPE MAH.",
-        "CUMHURİYET MAH.",
         "CİHADİYE MAH.",
         "DUMANLAR MAH.",
-        "FATİH MAH.",
         "FETTAHLI MAH.",
         "GÖKDERE MAH.",
-        "GÜZELYURT MAH.",
-        "HACIALİLER MAH.",
         "KARAÖZ MAH.",
         "KEMERAĞZI MAH.",
-        "KONAK MAH.",
         "KUMKÖY MAH.",
         "KUNDU MAH.",
-        "MACUN MAH.",
-        "MANDIRLAR MAH.",
         "MURTUNA MAH.",
         "PINARLI MAH.",
         "SOLAK MAH.",
-        "SOĞUCAKSU MAH.",
         "YENİDUMANLAR MAH.",
         "ÇAMKÖY MAH."
        ],
@@ -9871,8 +9884,9 @@
       {
        "mahalle": "ALTINTAŞ MAH.",
        "id": "tTR-Y-07-002-M-0002",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ATATÜRK MAH.",
@@ -9883,8 +9897,9 @@
       {
        "mahalle": "BARBAROS MAH.",
        "id": "tTR-Y-07-002-M-0004",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "BOZTEPE MAH.",
@@ -9915,8 +9930,9 @@
       {
        "mahalle": "CUMHURİYET MAH.",
        "id": "tTR-Y-07-002-M-0009",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "DUMANLAR MAH.",
@@ -9927,8 +9943,9 @@
       {
        "mahalle": "FATİH MAH.",
        "id": "tTR-Y-07-002-M-0011",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "FETTAHLI MAH.",
@@ -9956,14 +9973,16 @@
       {
        "mahalle": "GÜZELYURT MAH.",
        "id": "tTR-Y-07-002-M-0015",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "HACIALİLER MAH.",
        "id": "tTR-Y-07-002-M-0016",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "İHSANİYE MAH.",
@@ -10007,8 +10026,9 @@
       {
        "mahalle": "KONAK MAH.",
        "id": "tTR-Y-07-002-M-0022",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "KUMKÖY MAH.",
@@ -10036,14 +10056,16 @@
       {
        "mahalle": "MACUN MAH.",
        "id": "tTR-Y-07-002-M-0026",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
       },
       {
        "mahalle": "MANDIRLAR MAH.",
        "id": "tTR-Y-07-002-M-0027",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "MURTUNA MAH.",
@@ -10063,8 +10085,9 @@
       {
        "mahalle": "SOĞUCAKSU MAH.",
        "id": "tTR-Y-07-002-M-0030",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "SOLAK MAH.",
@@ -10352,8 +10375,9 @@
       {
        "mahalle": "ALTINTAŞ MAH.",
        "id": "tTR-Y-07-002-M-0002",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ATATÜRK MAH.",
@@ -10364,8 +10388,9 @@
       {
        "mahalle": "BARBAROS MAH.",
        "id": "tTR-Y-07-002-M-0004",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "BOZTEPE MAH.",
@@ -10396,8 +10421,9 @@
       {
        "mahalle": "CUMHURİYET MAH.",
        "id": "tTR-Y-07-002-M-0009",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "DUMANLAR MAH.",
@@ -10408,8 +10434,9 @@
       {
        "mahalle": "FATİH MAH.",
        "id": "tTR-Y-07-002-M-0011",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "FETTAHLI MAH.",
@@ -10437,14 +10464,16 @@
       {
        "mahalle": "GÜZELYURT MAH.",
        "id": "tTR-Y-07-002-M-0015",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "HACIALİLER MAH.",
        "id": "tTR-Y-07-002-M-0016",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "İHSANİYE MAH.",
@@ -10488,8 +10517,9 @@
       {
        "mahalle": "KONAK MAH.",
        "id": "tTR-Y-07-002-M-0022",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "KUMKÖY MAH.",
@@ -10517,14 +10547,16 @@
       {
        "mahalle": "MACUN MAH.",
        "id": "tTR-Y-07-002-M-0026",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "cevrelenmis"
       },
       {
        "mahalle": "MANDIRLAR MAH.",
        "id": "tTR-Y-07-002-M-0027",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "MURTUNA MAH.",
@@ -10544,8 +10576,9 @@
       {
        "mahalle": "SOĞUCAKSU MAH.",
        "id": "tTR-Y-07-002-M-0030",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "SOLAK MAH.",
@@ -16130,7 +16163,7 @@
      "parcalar": {
       "_belirsiz": {
        "parcaId": "BELIRSIZ-41-012-D1",
-       "alanPayi": 0.634,
+       "alanPayi": 0.6107,
        "adaylar": [
         "Gebze",
         "Merkez"
@@ -16154,7 +16187,6 @@
         "KİRAZLIYALI MAH.",
         "MİMAR SİNAN MAH.",
         "YAVUZ SULTAN SELİM MAH.",
-        "YUKARI HEREKE MAH.",
         "ÇAMLITEPE MAH.",
         "ÇIRAKLI MAH.",
         "İLİMTEPE MAH.",
@@ -16162,7 +16194,7 @@
        ],
        "donemdeIlceDegistiren": [
         "ALİHOCALAR MAH. (1960–1985 bağlılığı kaynakta yok)",
-        "KİRAZLIYALI MAH. (sayım kaydı yok)"
+        "KİRAZLIYALI MAH. (1960–1985 bağlılığı kaynakta yok)"
        ],
        "mahalleDisiAlan": 43
       },
@@ -16182,11 +16214,12 @@
       "Gebze": {
        "parcaId": "PARCA-41-012-GEBZE-D1",
        "eskiIlceGeomId": "TR-D-41-006",
-       "alanPayi": 0.1815,
+       "alanPayi": 0.2048,
        "mahalleler": [
         "KALBURCU MAH.",
         "KUTLUCA MAH.",
         "SEVİNDİKLİ MAH.",
+        "YUKARI HEREKE MAH.",
         "ŞEMSETTİN MAH."
        ],
        "cikarimla": [
@@ -16202,7 +16235,7 @@
      "parcalar": {
       "_belirsiz": {
        "parcaId": "BELIRSIZ-41-012-D2",
-       "alanPayi": 0.5364,
+       "alanPayi": 0.488,
        "adaylar": [
         "Gebze",
         "Merkez"
@@ -16222,18 +16255,14 @@
         "HACI OSMAN MAH.",
         "KIŞLADÜZÜ MAH.",
         "KUZEY MAH.",
-        "KİRAZLIYALI MAH.",
         "MİMAR SİNAN MAH.",
         "YAVUZ SULTAN SELİM MAH.",
-        "YUKARI HEREKE MAH.",
         "ÇAMLITEPE MAH.",
         "ÇIRAKLI MAH.",
         "İLİMTEPE MAH.",
         "ŞİRİNYALI MAH."
        ],
-       "donemdeIlceDegistiren": [
-        "KİRAZLIYALI MAH. (sayım kaydı yok)"
-       ],
+       "donemdeIlceDegistiren": [],
        "mahalleDisiAlan": 43
       },
       "Merkez": {
@@ -16253,11 +16282,13 @@
       "Gebze": {
        "parcaId": "PARCA-41-012-GEBZE-D2",
        "eskiIlceGeomId": "TR-D-41-006",
-       "alanPayi": 0.1815,
+       "alanPayi": 0.2299,
        "mahalleler": [
         "KALBURCU MAH.",
         "KUTLUCA MAH.",
+        "KİRAZLIYALI MAH.",
         "SEVİNDİKLİ MAH.",
+        "YUKARI HEREKE MAH.",
         "ŞEMSETTİN MAH."
        ],
        "cikarimla": [
@@ -16409,7 +16440,7 @@
        "neden": "ad",
        "birim": "KIRAZLIYALI",
        "belde": null,
-       "donemNotu": "sayım kaydı yok"
+       "donemNotu": "1960–1985 bağlılığı kaynakta yok"
       },
       {
        "mahalle": "KIŞLADÜZÜ MAH.",
@@ -16484,8 +16515,10 @@
       {
        "mahalle": "YUKARI HEREKE MAH.",
        "id": "tTR-Y-41-012-M-0036",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Gebze",
+       "neden": "birim adını içeriyor (HEREKE)",
+       "birim": "HEREKE",
+       "belde": null
       },
       {
        "mahalle": null,
@@ -16890,11 +16923,10 @@
       {
        "mahalle": "KİRAZLIYALI MAH.",
        "id": "tTR-Y-41-012-M-0023",
-       "ilce": null,
+       "ilce": "Gebze",
        "neden": "ad",
        "birim": "KIRAZLIYALI",
-       "belde": null,
-       "donemNotu": "sayım kaydı yok"
+       "belde": null
       },
       {
        "mahalle": "KIŞLADÜZÜ MAH.",
@@ -16969,8 +17001,10 @@
       {
        "mahalle": "YUKARI HEREKE MAH.",
        "id": "tTR-Y-41-012-M-0036",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Gebze",
+       "neden": "birim adını içeriyor (HEREKE)",
+       "birim": "HEREKE",
+       "belde": null
       },
       {
        "mahalle": null,
@@ -17625,7 +17659,7 @@
       "Midyat": {
        "parcaId": "PARCA-47-002-MIDYAT-D1",
        "eskiIlceGeomId": "TR-D-47-006",
-       "alanPayi": 0.3764,
+       "alanPayi": 0.4724,
        "mahalleler": [
         "AKYOL MAH.",
         "BAYSUN MAH.",
@@ -17645,7 +17679,12 @@
         "ÇATALAN MAH.",
         "ÇATALÇAM MAH."
        ],
-       "cikarimla": []
+       "cikarimla": [
+        "SAFA MAH.",
+        "SARAY MAH.",
+        "SÜMER MAH.",
+        "mahalle dışı alan"
+       ]
       },
       "İdil": {
        "parcaId": "PARCA-47-002-IDIL-D1",
@@ -17662,7 +17701,7 @@
       },
       "_belirsiz": {
        "parcaId": "BELIRSIZ-47-002-D1",
-       "alanPayi": 0.5085,
+       "alanPayi": 0.38,
        "adaylar": [
         "Gercüş",
         "Merkez",
@@ -17670,23 +17709,18 @@
         "İdil"
        ],
        "mahalleler": [
-        "ALTINOLUK MAH.",
         "ALTIYOL MAH.",
         "BAHÇEBAŞI MAH.",
         "BAĞÖZÜ MAH.",
         "ILISU MAH.",
         "KARABAYIR MAH.",
-        "SAFA MAH.",
-        "SARAY MAH.",
         "SUÇATI MAH.",
-        "SÜMER MAH.",
         "TEPEBAŞI MAH.",
         "YONCALI MAH.",
         "ÇAVUŞLU MAH.",
         "ÇELİKKÖY MAH."
        ],
        "donemdeIlceDegistiren": [
-        "ALTINOLUK MAH. (sayım kaydı yok)",
         "ALTIYOL MAH. (1960–1985 bağlılığı kaynakta yok)",
         "BAĞÖZÜ MAH. (1960–1985 bağlılığı kaynakta yok)",
         "ILISU MAH. (1960–1985 bağlılığı kaynakta yok)",
@@ -17694,13 +17728,14 @@
         "SUÇATI MAH. (1960–1985 bağlılığı kaynakta yok)",
         "ÇELİKKÖY MAH. (1960–1985 bağlılığı kaynakta yok)"
        ],
-       "mahalleDisiAlan": 31
+       "mahalleDisiAlan": 30
       },
       "Gercüş": {
        "parcaId": "PARCA-47-002-GERCUS-D1",
        "eskiIlceGeomId": "TR-D-72-003",
-       "alanPayi": 0.0152,
+       "alanPayi": 0.0476,
        "mahalleler": [
+        "ALTINOLUK MAH.",
         "BATUR MAH.",
         "GÜRGEN MAH."
        ],
@@ -17716,7 +17751,7 @@
       "Midyat": {
        "parcaId": "PARCA-47-002-MIDYAT-D2",
        "eskiIlceGeomId": "TR-D-47-006",
-       "alanPayi": 0.5047,
+       "alanPayi": 0.6008,
        "mahalleler": [
         "AKYOL MAH.",
         "BAYSUN MAH.",
@@ -17740,6 +17775,10 @@
         "ÇELİKKÖY MAH."
        ],
        "cikarimla": [
+        "SAFA MAH.",
+        "SARAY MAH.",
+        "SÜMER MAH.",
+        "mahalle dışı alan",
         "ÇAVUŞLU MAH."
        ]
       },
@@ -17758,7 +17797,7 @@
       },
       "_belirsiz": {
        "parcaId": "BELIRSIZ-47-002-D2",
-       "alanPayi": 0.3802,
+       "alanPayi": 0.2517,
        "adaylar": [
         "Gercüş",
         "Merkez",
@@ -17766,30 +17805,26 @@
         "İdil"
        ],
        "mahalleler": [
-        "ALTINOLUK MAH.",
         "ALTIYOL MAH.",
         "BAHÇEBAŞI MAH.",
         "BAĞÖZÜ MAH.",
         "KARABAYIR MAH.",
-        "SAFA MAH.",
-        "SARAY MAH.",
-        "SÜMER MAH.",
         "TEPEBAŞI MAH.",
         "YONCALI MAH."
        ],
        "donemdeIlceDegistiren": [
-        "ALTINOLUK MAH. (sayım kaydı yok)",
         "ALTIYOL MAH. (1985–1987 bağlılığı kaynakta yok)",
         "BAĞÖZÜ MAH. (1985–1987 bağlılığı kaynakta yok)",
         "KARABAYIR MAH. (1985–1987 bağlılığı kaynakta yok)"
        ],
-       "mahalleDisiAlan": 31
+       "mahalleDisiAlan": 30
       },
       "Gercüş": {
        "parcaId": "PARCA-47-002-GERCUS-D2",
        "eskiIlceGeomId": "TR-D-72-003",
-       "alanPayi": 0.0152,
+       "alanPayi": 0.0476,
        "mahalleler": [
+        "ALTINOLUK MAH.",
         "BATUR MAH.",
         "GÜRGEN MAH."
        ],
@@ -17950,11 +17985,10 @@
       {
        "mahalle": "ALTINOLUK MAH.",
        "id": "r11338818",
-       "ilce": null,
+       "ilce": "Gercüş",
        "neden": "ad",
        "birim": "ALTINOLUK",
-       "belde": null,
-       "donemNotu": "sayım kaydı yok"
+       "belde": null
       },
       {
        "mahalle": "GÜRGEN MAH.",
@@ -18015,8 +18049,9 @@
       {
        "mahalle": "SÜMER MAH.",
        "id": "r11339233",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Midyat",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ALTIYOL MAH.",
@@ -18070,14 +18105,16 @@
       {
        "mahalle": "SARAY MAH.",
        "id": "r4681673",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Midyat",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "SAFA MAH.",
        "id": "r4718204",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Midyat",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "TEPEBAŞI MAH.",
@@ -18282,8 +18319,9 @@
       {
        "mahalle": null,
        "id": "bosluk-31",
-       "ilce": null,
-       "neden": "mahalle poligonu yok"
+       "ilce": "Midyat",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
       }
      ]
     },
@@ -18436,11 +18474,10 @@
       {
        "mahalle": "ALTINOLUK MAH.",
        "id": "r11338818",
-       "ilce": null,
+       "ilce": "Gercüş",
        "neden": "ad",
        "birim": "ALTINOLUK",
-       "belde": null,
-       "donemNotu": "sayım kaydı yok"
+       "belde": null
       },
       {
        "mahalle": "GÜRGEN MAH.",
@@ -18501,8 +18538,9 @@
       {
        "mahalle": "SÜMER MAH.",
        "id": "r11339233",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Midyat",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ALTIYOL MAH.",
@@ -18556,14 +18594,16 @@
       {
        "mahalle": "SARAY MAH.",
        "id": "r4681673",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Midyat",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "SAFA MAH.",
        "id": "r4718204",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Midyat",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "TEPEBAŞI MAH.",
@@ -18768,8 +18808,9 @@
       {
        "mahalle": null,
        "id": "bosluk-31",
-       "ilce": null,
-       "neden": "mahalle poligonu yok"
+       "ilce": "Midyat",
+       "neden": "mahalle poligonu yok",
+       "cikarim": "cevrelenmis"
       }
      ]
     }
@@ -19562,6 +19603,7 @@
        "donemdeIlceDegistiren": [
         "DEREBAŞI MAH. (1960: Mesudiye (sayım), 1985: Ünye)",
         "DUMANTEPE MAH. (1960–1985 bağlılığı kaynakta yok)",
+        "ESENTEPE MAH. (1960–1985 bağlılığı kaynakta yok)",
         "KERVANSARAY MAH. (1960–1985 bağlılığı kaynakta yok)",
         "KURTLUCA MAH. (1960–1985 bağlılığı kaynakta yok)",
         "ÖZPINAR MAH. (1960–1985 bağlılığı kaynakta yok)",
@@ -19590,7 +19632,7 @@
      "parcalar": {
       "_belirsiz": {
        "parcaId": "BELIRSIZ-52-011-D2",
-       "alanPayi": 0.7138,
+       "alanPayi": 0.6966,
        "adaylar": [
         "Terme",
         "Ünye"
@@ -19604,7 +19646,6 @@
         "DÜZPELİT MAH.",
         "DİYEK MAH.",
         "ENAĞIZLI MAH.",
-        "ESENTEPE MAH.",
         "FATİH MAH.",
         "GAZİLER MAH.",
         "KALE MAH.",
@@ -19630,12 +19671,13 @@
       "Ünye": {
        "parcaId": "PARCA-52-011-UNYE-D2",
        "eskiIlceGeomId": "TR-D-52-019",
-       "alanPayi": 0.2862,
+       "alanPayi": 0.3034,
        "mahalleler": [
         "BOLLUK MAH.",
         "DEREBAŞI MAH.",
         "DUMANTEPE MAH.",
         "DÜZMEŞE MAH.",
+        "ESENTEPE MAH.",
         "KOCAMAN MAH.",
         "KİRAZTEPE MAH.",
         "ŞENTEPE MAH."
@@ -19735,7 +19777,10 @@
        "mahalle": "ESENTEPE MAH.",
        "id": "tTR-Y-52-011-M-0014",
        "ilce": null,
-       "neden": "eşleşmedi"
+       "neden": "birim adını içeriyor (SENTEPE)",
+       "birim": "SENTEPE",
+       "belde": null,
+       "donemNotu": "1960–1985 bağlılığı kaynakta yok"
       },
       {
        "mahalle": "FATİH MAH.",
@@ -20003,8 +20048,10 @@
       {
        "mahalle": "ESENTEPE MAH.",
        "id": "tTR-Y-52-011-M-0014",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Ünye",
+       "neden": "birim adını içeriyor (SENTEPE)",
+       "birim": "SENTEPE",
+       "belde": null
       },
       {
        "mahalle": "FATİH MAH.",
@@ -20204,40 +20251,40 @@
       "Bafra": {
        "parcaId": "PARCA-55-001-BAFRA-D1",
        "eskiIlceGeomId": "TR-D-55-006",
-       "alanPayi": 0.0202,
+       "alanPayi": 0.0935,
        "mahalleler": [
         "KÖSEDİK MAH."
        ],
-       "cikarimla": []
+       "cikarimla": [
+        "BAHÇELİEVLER MAH.",
+        "CUMHURİYET MAH.",
+        "ESENYER MAH.",
+        "KARŞIYAKA MAH.",
+        "KUMCAĞIZ MAH.",
+        "MİMAR SİNAN MAH.",
+        "PAZAR MAH.",
+        "YENİ MAH.",
+        "YEŞİLOVA MAH.",
+        "YÜKSELİŞ MAH.",
+        "İSTİKLAL MAH."
+       ]
       },
       "_belirsiz": {
        "parcaId": "BELIRSIZ-55-001-D1",
-       "alanPayi": 0.9629,
+       "alanPayi": 0.875,
        "adaylar": [
         "Bafra",
         "Merkez"
        ],
        "mahalleler": [
         "AYDINPINAR MAH.",
-        "BAHÇELİEVLER MAH.",
         "BALLICA MAH.",
         "CEREKLİ MAH.",
-        "CUMHURİYET MAH.",
-        "ESENYER MAH.",
         "FINDIKLI MAH.",
-        "KARŞIYAKA MAH.",
-        "KUMCAĞIZ MAH.",
-        "MİMAR SİNAN MAH.",
-        "PAZAR MAH.",
         "TEPEKÖY MAH.",
-        "YENİ MAH.",
-        "YEŞİLOVA MAH.",
         "YEŞİLYURT MAH.",
-        "YUKARIENGİZ MAH.",
         "YÖRÜKLER MAH.",
-        "YÜKSELİŞ MAH.",
-        "ÇAMLICA MAH.",
-        "İSTİKLAL MAH."
+        "ÇAMLICA MAH."
        ],
        "donemdeIlceDegistiren": [
         "CEREKLİ MAH. (1960–1985 bağlılığı kaynakta yok)",
@@ -20248,9 +20295,10 @@
       "Merkez": {
        "parcaId": "PARCA-55-001-MERKEZ-D1",
        "eskiIlceGeomId": "HIST-Samsun-Merkez",
-       "alanPayi": 0.0169,
+       "alanPayi": 0.0315,
        "mahalleler": [
-        "ENGİZ MAH."
+        "ENGİZ MAH.",
+        "YUKARIENGİZ MAH."
        ],
        "cikarimla": []
       }
@@ -20264,39 +20312,39 @@
       "Bafra": {
        "parcaId": "PARCA-55-001-BAFRA-D2",
        "eskiIlceGeomId": "TR-D-55-006",
-       "alanPayi": 0.0484,
+       "alanPayi": 0.1217,
        "mahalleler": [
         "KÖSEDİK MAH.",
         "TEPEKÖY MAH."
        ],
-       "cikarimla": []
-      },
-      "_belirsiz": {
-       "parcaId": "BELIRSIZ-55-001-D2",
-       "alanPayi": 0.9144,
-       "adaylar": [
-        "Bafra",
-        "Merkez"
-       ],
-       "mahalleler": [
-        "AYDINPINAR MAH.",
+       "cikarimla": [
         "BAHÇELİEVLER MAH.",
-        "BALLICA MAH.",
         "CUMHURİYET MAH.",
         "ESENYER MAH.",
-        "FINDIKLI MAH.",
         "KARŞIYAKA MAH.",
         "KUMCAĞIZ MAH.",
         "MİMAR SİNAN MAH.",
         "PAZAR MAH.",
         "YENİ MAH.",
         "YEŞİLOVA MAH.",
-        "YEŞİLYURT MAH.",
-        "YUKARIENGİZ MAH.",
-        "YÖRÜKLER MAH.",
         "YÜKSELİŞ MAH.",
-        "ÇAMLICA MAH.",
         "İSTİKLAL MAH."
+       ]
+      },
+      "_belirsiz": {
+       "parcaId": "BELIRSIZ-55-001-D2",
+       "alanPayi": 0.8266,
+       "adaylar": [
+        "Bafra",
+        "Merkez"
+       ],
+       "mahalleler": [
+        "AYDINPINAR MAH.",
+        "BALLICA MAH.",
+        "FINDIKLI MAH.",
+        "YEŞİLYURT MAH.",
+        "YÖRÜKLER MAH.",
+        "ÇAMLICA MAH."
        ],
        "donemdeIlceDegistiren": [],
        "mahalleDisiAlan": 5
@@ -20304,10 +20352,11 @@
       "Merkez": {
        "parcaId": "PARCA-55-001-MERKEZ-D2",
        "eskiIlceGeomId": "HIST-Samsun-Merkez",
-       "alanPayi": 0.0371,
+       "alanPayi": 0.0517,
        "mahalleler": [
         "CEREKLİ MAH.",
-        "ENGİZ MAH."
+        "ENGİZ MAH.",
+        "YUKARIENGİZ MAH."
        ],
        "cikarimla": []
       }
@@ -20341,8 +20390,9 @@
       {
        "mahalle": "CUMHURİYET MAH.",
        "id": "r13159227",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YÖRÜKLER MAH.",
@@ -20377,8 +20427,9 @@
       {
        "mahalle": "BAHÇELİEVLER MAH.",
        "id": "r4083336",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "BALLICA MAH.",
@@ -20389,20 +20440,24 @@
       {
        "mahalle": "PAZAR MAH.",
        "id": "r4083338",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YUKARIENGİZ MAH.",
        "id": "r4083339",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "birim adını içeriyor (ENGIZ)",
+       "birim": "ENGIZ",
+       "belde": null
       },
       {
        "mahalle": "YÜKSELİŞ MAH.",
        "id": "r4083340",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ÇAMLICA MAH.",
@@ -20421,44 +20476,51 @@
       {
        "mahalle": "ESENYER MAH.",
        "id": "r4083648",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "KARŞIYAKA MAH.",
        "id": "r4083649",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "KUMCAĞIZ MAH.",
        "id": "r4083650",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "MİMAR SİNAN MAH.",
        "id": "r4083651",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YEŞİLOVA MAH.",
        "id": "r4083652",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "İSTİKLAL MAH.",
        "id": "r4083653",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YENİ MAH.",
        "id": "r4083656",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": null,
@@ -20518,8 +20580,9 @@
       {
        "mahalle": "CUMHURİYET MAH.",
        "id": "r13159227",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YÖRÜKLER MAH.",
@@ -20552,8 +20615,9 @@
       {
        "mahalle": "BAHÇELİEVLER MAH.",
        "id": "r4083336",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "BALLICA MAH.",
@@ -20564,20 +20628,24 @@
       {
        "mahalle": "PAZAR MAH.",
        "id": "r4083338",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YUKARIENGİZ MAH.",
        "id": "r4083339",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "birim adını içeriyor (ENGIZ)",
+       "birim": "ENGIZ",
+       "belde": null
       },
       {
        "mahalle": "YÜKSELİŞ MAH.",
        "id": "r4083340",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ÇAMLICA MAH.",
@@ -20596,44 +20664,51 @@
       {
        "mahalle": "ESENYER MAH.",
        "id": "r4083648",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "KARŞIYAKA MAH.",
        "id": "r4083649",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "KUMCAĞIZ MAH.",
        "id": "r4083650",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "MİMAR SİNAN MAH.",
        "id": "r4083651",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YEŞİLOVA MAH.",
        "id": "r4083652",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "İSTİKLAL MAH.",
        "id": "r4083653",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "YENİ MAH.",
        "id": "r4083656",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Bafra",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": null,
@@ -20715,22 +20790,22 @@
       "Çarşamba": {
        "parcaId": "PARCA-55-013-CARSAMBA-D2",
        "eskiIlceGeomId": "TR-D-55-008",
-       "alanPayi": 0.0131,
+       "alanPayi": 0.0309,
        "mahalleler": [
         "MUSLUBEY MAH."
        ],
-       "cikarimla": []
+       "cikarimla": [
+        "FATSALILAR MAH."
+       ]
       },
       "_belirsiz": {
        "parcaId": "BELIRSIZ-55-013-D2",
-       "alanPayi": 0.9869,
+       "alanPayi": 0.9691,
        "adaylar": [
         "Terme",
         "Çarşamba"
        ],
-       "mahalleler": [
-        "FATSALILAR MAH."
-       ],
+       "mahalleler": [],
        "donemdeIlceDegistiren": [],
        "mahalleDisiAlan": 1
       }
@@ -20777,8 +20852,9 @@
       {
        "mahalle": "FATSALILAR MAH.",
        "id": "r4766336",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Çarşamba",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": null,
@@ -20815,7 +20891,9 @@
         "SERİNYAYLA KÖYÜ",
         "YASSIPINAR KÖYÜ"
        ],
-       "donemdeIlceDegistiren": [],
+       "donemdeIlceDegistiren": [
+        "YASSIPINAR KÖYÜ (1960: Yıldızeli (sayım), 1985: Şarkışla)"
+       ],
        "mahalleDisiAlan": 1
       }
      }
@@ -20827,17 +20905,25 @@
      "parcalar": {
       "_belirsiz": {
        "parcaId": "BELIRSIZ-58-002-D2",
-       "alanPayi": 1.0,
+       "alanPayi": 0.9739,
        "adaylar": [
         "Merkez",
         "Şarkışla"
        ],
        "mahalleler": [
-        "SERİNYAYLA KÖYÜ",
-        "YASSIPINAR KÖYÜ"
+        "SERİNYAYLA KÖYÜ"
        ],
        "donemdeIlceDegistiren": [],
        "mahalleDisiAlan": 1
+      },
+      "Şarkışla": {
+       "parcaId": "PARCA-58-002-SARKISLA-D2",
+       "eskiIlceGeomId": "TR-D-58-014",
+       "alanPayi": 0.0261,
+       "mahalleler": [
+        "YASSIPINAR KÖYÜ"
+       ],
+       "cikarimla": []
       }
      }
     }
@@ -20856,7 +20942,10 @@
        "mahalle": "YASSIPINAR KÖYÜ",
        "id": "r19571737",
        "ilce": null,
-       "neden": "eşleşmedi"
+       "neden": "birim adını içeriyor (YASSIPINAR)",
+       "birim": "YASSIPINAR",
+       "belde": null,
+       "donemNotu": "1960: Yıldızeli (sayım), 1985: Şarkışla"
       },
       {
        "mahalle": null,
@@ -20878,8 +20967,10 @@
       {
        "mahalle": "YASSIPINAR KÖYÜ",
        "id": "r19571737",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Şarkışla",
+       "neden": "birim adını içeriyor (YASSIPINAR)",
+       "birim": "YASSIPINAR",
+       "belde": null
       },
       {
        "mahalle": null,
@@ -20905,30 +20996,30 @@
      "baslangic": "1960-10-23",
      "bitis": "1985-10-20",
      "parcalar": {
-      "_belirsiz": {
-       "parcaId": "BELIRSIZ-65-005-D1",
-       "alanPayi": 0.9928,
-       "adaylar": [
-        "Gevaş",
-        "Merkez"
-       ],
+      "Merkez": {
+       "parcaId": "PARCA-65-005-MERKEZ-D1",
+       "eskiIlceGeomId": "HIST-Van-Merkez",
+       "alanPayi": 0.0611,
        "mahalleler": [
+        "BAKACIK MAH."
+       ],
+       "cikarimla": [
         "EMİNPAŞA MAH.",
         "KAVURMA MAH.",
         "SÜPHAN MAH.",
         "ŞABANİYE MAH."
+       ]
+      },
+      "_belirsiz": {
+       "parcaId": "BELIRSIZ-65-005-D1",
+       "alanPayi": 0.9389,
+       "adaylar": [
+        "Gevaş",
+        "Merkez"
        ],
+       "mahalleler": [],
        "donemdeIlceDegistiren": [],
        "mahalleDisiAlan": 3
-      },
-      "Merkez": {
-       "parcaId": "PARCA-65-005-MERKEZ-D1",
-       "eskiIlceGeomId": "HIST-Van-Merkez",
-       "alanPayi": 0.0072,
-       "mahalleler": [
-        "BAKACIK MAH."
-       ],
-       "cikarimla": []
       }
      }
     },
@@ -20937,30 +21028,30 @@
      "baslangic": "1985-10-20",
      "bitis": "1990-05-20",
      "parcalar": {
-      "_belirsiz": {
-       "parcaId": "BELIRSIZ-65-005-D2",
-       "alanPayi": 0.9928,
-       "adaylar": [
-        "Gevaş",
-        "Merkez"
-       ],
+      "Merkez": {
+       "parcaId": "PARCA-65-005-MERKEZ-D2",
+       "eskiIlceGeomId": "HIST-Van-Merkez",
+       "alanPayi": 0.0611,
        "mahalleler": [
+        "BAKACIK MAH."
+       ],
+       "cikarimla": [
         "EMİNPAŞA MAH.",
         "KAVURMA MAH.",
         "SÜPHAN MAH.",
         "ŞABANİYE MAH."
+       ]
+      },
+      "_belirsiz": {
+       "parcaId": "BELIRSIZ-65-005-D2",
+       "alanPayi": 0.9389,
+       "adaylar": [
+        "Gevaş",
+        "Merkez"
        ],
+       "mahalleler": [],
        "donemdeIlceDegistiren": [],
        "mahalleDisiAlan": 3
-      },
-      "Merkez": {
-       "parcaId": "PARCA-65-005-MERKEZ-D2",
-       "eskiIlceGeomId": "HIST-Van-Merkez",
-       "alanPayi": 0.0072,
-       "mahalleler": [
-        "BAKACIK MAH."
-       ],
-       "cikarimla": []
       }
      }
     }
@@ -20972,26 +21063,30 @@
       {
        "mahalle": "EMİNPAŞA MAH.",
        "id": "r12525557",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ŞABANİYE MAH.",
        "id": "r12525580",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "KAVURMA MAH.",
        "id": "r12525690",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "SÜPHAN MAH.",
        "id": "r12525691",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "BAKACIK MAH.",
@@ -21027,26 +21122,30 @@
       {
        "mahalle": "EMİNPAŞA MAH.",
        "id": "r12525557",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "ŞABANİYE MAH.",
        "id": "r12525580",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "KAVURMA MAH.",
        "id": "r12525690",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "SÜPHAN MAH.",
        "id": "r12525691",
-       "ilce": null,
-       "neden": "eşleşmedi"
+       "ilce": "Merkez",
+       "neden": "eşleşmedi",
+       "cikarim": "merkez-kasaba"
       },
       {
        "mahalle": "BAKACIK MAH.",
@@ -21188,7 +21287,9 @@
        "mahalleler": [
         "YELPINAR KÖYÜ"
        ],
-       "donemdeIlceDegistiren": [],
+       "donemdeIlceDegistiren": [
+        "YELPINAR KÖYÜ (1960–1985 bağlılığı kaynakta yok)"
+       ],
        "mahalleDisiAlan": 1
       }
      }
@@ -21207,7 +21308,9 @@
        "mahalleler": [
         "YELPINAR KÖYÜ"
        ],
-       "donemdeIlceDegistiren": [],
+       "donemdeIlceDegistiren": [
+        "YELPINAR KÖYÜ (1985–1987 bağlılığı kaynakta yok)"
+       ],
        "mahalleDisiAlan": 1
       }
      }
@@ -21221,7 +21324,10 @@
        "mahalle": "YELPINAR KÖYÜ",
        "id": "r13264149",
        "ilce": null,
-       "neden": "eşleşmedi"
+       "neden": "birim adını içeriyor (YELPINAR)",
+       "birim": "YELPINAR",
+       "belde": null,
+       "donemNotu": "1960–1985 bağlılığı kaynakta yok"
       },
       {
        "mahalle": null,
@@ -21238,7 +21344,10 @@
        "mahalle": "YELPINAR KÖYÜ",
        "id": "r13264149",
        "ilce": null,
-       "neden": "eşleşmedi"
+       "neden": "birim adını içeriyor (YELPINAR)",
+       "birim": "YELPINAR",
+       "belde": null,
+       "donemNotu": "1985–1987 bağlılığı kaynakta yok"
       },
       {
        "mahalle": null,

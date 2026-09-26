@@ -22,6 +22,11 @@ Yontem (tahmin yok; cikarim ayrica isaretli):
      birimin (koy/belde) sayimdaki ilcesi kanundaki eski ilcesiyle (ya da onun kanunla ayrildigi
      ata ilceyle) ayniysa o sayimda ayni sayilir; bulunamazsa ya da farkliysa o donem belirsiz.
      Dizin OCR'dan okundugu icin hatalar yalniz belirsiz alani buyutur, yanlis ilceye atamaz.
+  7. Merkez kasaba (cikarim, `merkez-kasaba`): kanun "listedeki koyleri kapsamak ve merkezi X
+     olmak uzere" der; adi listede olmayan guncel mahalleler merkez kasabanin mahalleleridir.
+     Merkezin ilcesi sayim dizininden (bucak merkezi/belde/koy kaydi) iki sayimda da ayni ve
+     kanundaki eski ilcelerden biriyse bu mahalleler o ilceye verilir. Adi sayim dizininde baska
+     bir ilcenin koyu olarak gecen mahalle (sonradan adi degismis koy olabilir) atanmaz.
   5. Donemsel baglilik (DONEMSEL): birimin ilcesi nufus sayimi idari bolunus kitaplarindan
      (DIE 1960, 1985, 1990) okunmussa, iki sayim arasindaki secimler icin birim ancak iki
      sayimda da ayni ilcedeyse atanir; arada ilce degistirmisse o donemde belirsizdir.
@@ -167,6 +172,19 @@ BELIRSIZ_BIRIM = {
 
 SAYIM = {"1960-10-23": "1960", "1985-10-20": "1985", "1990-10-21": "1990"}
 _SAYIM_DIZIN = {}
+_SAYIM_TIP = {}
+
+
+def sayim_tipi(yil):
+    """{plaka: {fold(ad): {koy|belde|bucak_merkezi}}}"""
+    if yil not in _SAYIM_TIP:
+        p = ROOT / f"data/kaynaklar/tuik/nufus_sayimi/{yil}_koyler.json"
+        d = collections.defaultdict(lambda: collections.defaultdict(set))
+        if p.exists():
+            for r in json.loads(p.read_text(encoding="utf-8"))["satirlar"]:
+                d[r["plaka"]][norm(re.sub(r"\s*\(.*$", "", r["ad"]))].add(r["tip"])
+        _SAYIM_TIP[yil] = d
+    return _SAYIM_TIP[yil]
 
 
 def sayim_dizini(yil):
@@ -211,6 +229,35 @@ def ilce_esit(sayim_ilce, kanun_ilce, ata):
     return any(a == x or (len(a) > 3 and difflib.SequenceMatcher(None, a, x).ratio() >= 0.8) for x in adaylar)
 
 
+MERKEZ_KALIP = [
+    r"merkezi (?:\S+ Bucağının merkezi olan )?(\S+) (?:Bucak [Mm]erkezi|Kasabası|Köyü|Bucağı)",
+    r"(\S+) (?:Belde )?Belediyesi [Mm]erkez olmak",
+    r"(\S+) merkez olmak",
+    r"(\S+) İlk Kademe Belediyesi merkez olmak",
+]
+
+
+def merkez_adi(madde):
+    for k in MERKEZ_KALIP:
+        m = re.search(k, madde or "")
+        if m and fold(m.group(1)).upper() not in {"EKLI", "LISTEDE", "MAHALLELER", "BELEDIYESI"}:
+            return m.group(1)
+    return None
+
+
+def merkez_ilceleri(merkez, plaka, anlar, kanun_ilceleri, ata):
+    """merkez kasabanin her sayimdaki ilcesi (kanundaki eski ilce adiyla) ya da None"""
+    out = []
+    for t in anlar:
+        if t not in SAYIM:
+            out.append(None)
+            continue
+        hits = sayim_dizini(SAYIM[t]).get(plaka, {}).get(norm(merkez), [])
+        esit = {k for k in kanun_ilceleri for h in hits if ilce_esit(h, k, ata)}
+        out.append(next(iter(esit)) if len(esit) == 1 else None)
+    return out
+
+
 def otomatik_donemsel(kayit, plaka, kanun_tarihi):
     """kanun listesindeki her birim icin [ilce@1960, @1985, @1990 (kanundan once olanlar), @kanun]"""
     anlar = [t for t in SAYIM if t < kanun_tarihi] + [kanun_tarihi]
@@ -219,7 +266,7 @@ def otomatik_donemsel(kayit, plaka, kanun_tarihi):
     for r in kayit["satirlar"]:
         if not r["eskiIlce"] or r["tur"] == "koy_kismi":
             continue
-        adlar = [re.sub(r"\s*\(.*$", "", r["birim"]).strip(" '\".,")]
+        adlar = [birim_temizle(r["birim"])]
         if belediye_adi(r):
             adlar.append(belediye_adi(r))
         for ad in adlar:
@@ -236,8 +283,28 @@ def otomatik_donemsel(kayit, plaka, kanun_tarihi):
                     deger.append(f"{hits[0]} (sayım)")
             birimler[norm(ad)] = deger + [r["eskiIlce"]]
             kanit[norm(ad)] = {SAYIM[t]: v for t, v in zip(anlar[:-1], deger)}
+    merkez = merkez_adi(kayit.get("madde"))
+    kanun_ilceleri = sorted({r["eskiIlce"] for r in kayit["satirlar"] if r["eskiIlce"]})
+    mz = merkez_ilceleri(merkez, plaka, anlar, kanun_ilceleri, ata) if merkez else None
+    # listede merkezden baska kasaba/belde var mi (onlarin mahalleleri de listede adsiz)
+    diger_kasaba = sorted({k for k in birimler if merkez and k != norm(merkez) and any(
+        t in ("belde", "bucak_merkezi") for yil in SAYIM.values() for t in sayim_tipi(yil).get(plaka, {}).get(k, ()))} |
+        {norm(birim_temizle(r["birim"])) for r in kayit["satirlar"]
+         if kasaba_mi(r["birim"]) and merkez and norm(birim_temizle(r["birim"])) != norm(merkez)})
     return {"anlar": anlar, "birimler": birimler, "otomatik": True,
+            "merkez": {"ad": merkez, "ilceler": mz, "digerKasabalar": diger_kasaba} if merkez else None,
             "kaynaklar": {t: f"data/kaynaklar/tuik/nufus_sayimi/{SAYIM[t]}_koyler.json" for t in anlar[:-1]}}
+
+
+def birim_temizle(ad):
+    """OCR gurultusu: 'i. Hereke (Buc. Mer. B.)' -> 'Hereke', '^ Kirazlıyalı' -> 'Kirazlıyalı'"""
+    ad = re.sub(r"^(?:[^A-Za-zÇĞİÖŞÜçğıöşü]+|[a-zı]\.\s*)+", "", ad or "")
+    return re.sub(r"\s*\(.*$", "", ad).strip(" '\".,")
+
+
+def kasaba_mi(birim):
+    """kanun listesi satirinda kasaba/belde/bucak merkezi isareti"""
+    return bool(re.search(r"\(B\.\)|Buc\.?\s*Mer|B\.\s*M\.|[Kk]asaba", birim or ""))
 
 
 def norm(s):
@@ -262,7 +329,7 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
         if not r["eskiIlce"]:
             continue
         if r.get("tur") is None:
-            r = dict(r, tur="koy", birim=re.sub(r"^[^A-Za-zÇĞİÖŞÜçğıöşü]+", "", r["birim"] or ""))
+            r = dict(r, tur="koy", birim=birim_temizle(r["birim"]))
         ilce_geom[r["eskiIlce"]] = r.get("eskiIlceGeomId") or \
             next((e["geomId"] for e in kayit["eskiIlceler"] if e["ad"] == r["eskiIlce"]), None)
         if r["tur"] in ("mahalle", "koy"):
@@ -295,6 +362,15 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
                           "birim": n, "belde": next(iter(bb)) if len(bb) == 1 else None})
         else:
             hit = [b for b in belde if n.startswith(b) and len(belde[b]) == 1]
+            if not hit:
+                # 'YUKARI HEREKE' -> 'Hereke' birimi (adi birim adini iceren tek aday)
+                ic = [b for b in birim if len(b) >= 5 and b in n and len(birim[b]) == 1]
+                if len(ic) == 1:
+                    atama.append({"mahalle": m["ad"], "id": mid, "ilce": next(iter(birim[ic[0]])),
+                                  "neden": f"birim adını içeriyor ({ic[0]})", "birim": ic[0],
+                                  "belde": next(iter(birim_belde.get(ic[0], {None})))})
+                    parca_geom.append(g)
+                    continue
             if hit:
                 atama.append({"mahalle": m["ad"], "id": mid, "ilce": next(iter(belde[hit[0]])), "neden": f"belde adı ({hit[0]})",
                               "birim": hit[0], "belde": hit[0]})
@@ -345,6 +421,33 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
                 a["ilce"], a["donemNotu"] = None, f"{bas[:4]}: {t[i0]}, {bit[:4]}: {t[i0 + 1]}"
             else:
                 a["ilce"] = t[i0]
+        # merkez kasaba: adi listede olmayan guncel mahalleler merkezin ilcesine (iki sayimda ayni)
+        mz = (ds or {}).get("merkez")
+        if mz and mz["ilceler"]:
+            i0 = ds["anlar"].index(bas)
+            x0 = mz["ilceler"][i0]
+            x1 = mz["ilceler"][i0 + 1] if mz["ilceler"][i0 + 1] is not None or i0 + 1 == len(ds["anlar"]) - 1 else None
+            if i0 + 1 == len(ds["anlar"]) - 1:
+                x1 = x0   # kanun tarihindeki deger: kanundan onceki son sayim
+            if x0 and x0 == x1:
+                baska = {k for yil in SAYIM.values() for k in sayim_dizini(yil).get(int(kod.split("-")[0]), {})}
+                aday = [a for a in atama if not (a["ilce"] or a.get("adaylar") or a.get("donemNotu") or not a["mahalle"]
+                                                  or a["neden"] != "eşleşmedi" or norm(a["mahalle"]) in baska)]
+                if mz.get("digerKasabalar"):
+                    # listede baska kasaba da var: yalniz merkezin adini tasiyan mahalleden baslayip
+                    # eslesmeyen komsu mahallelerle baglanan kume merkezin
+                    tohum = [a for a in atama if a["mahalle"] and norm(a["mahalle"]).startswith(norm(mz["ad"]))]
+                    kume = list(tohum)
+                    degisti = True
+                    while degisti and tohum:
+                        degisti = False
+                        for a in aday:
+                            if a not in kume and any(a["_geom"].distance(b["_geom"]) < EPS for b in kume):
+                                kume.append(a)
+                                degisti = True
+                    aday = [a for a in aday if a in kume]
+                for a in aday:
+                    a["ilce"], a["cikarim"] = x0, "merkez-kasaba"
         # cevrelenmis cikarimi: atanmamis alanin (eslesmeyen mahalle + mahalle disi) bagli
         # bilesenleri; dis sinira degmeyen ve yalniz TEK eski ilcenin parcalarina degen bilesen
         atanmamis = [a for a in atama if not a["ilce"] and not a.get("adaylar") and not a.get("donemNotu")]

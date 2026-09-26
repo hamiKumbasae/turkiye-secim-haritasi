@@ -263,9 +263,18 @@ SHA-256 ile doğrular (`.cache/`).
 kanunla ayrıldığı ata ilçede) bulunursa o dönemde aynı sayılır; bulunamaz ya da farklı çıkarsa
 o dönem paylaştırılamayan kısma gider. OCR hataları yalnız taralı alanı büyütür.
 
-Kanundan hemen önceki dönemde eski ilçelere dağıtılan pay (İstanbul dışı): Çukurova (5747) %5, Akyurt (3644) %34, Pursaklar (5747) %3, Aksu (5747) %40, İbradı (3644) %8, Konyaaltı (5747) %26, Didim (3644) %14, Defne (6360) %21, Aliağa (2585) %30, Özvatan (3644) %7, Körfez (3392) %46, Derbent (3644) %0, Dargeçit (3392) %62, Gürgentepe (3392) %15, İkizce (3644) %29, Ondokuzmayıs (3392) %9, Salıpazarı (3392) %1, Altınyayla (3644) %0, Edremit (3644) %1, Gülağaç (3644) %0, Demirözü (3392) %0.
-Kalan kısım çoğunlukla ilçe merkezinin kendi (kanun listesinde olmayan) mahalleleri ve sayımda
-bulunamayan köy adlarıdır. Mahalle/köy poligonu olmayan ilçelerde (büyükşehir dışı ~26 ilçe)
+Merkez kasaba kuralı (işaretli çıkarım `merkez-kasaba`): kanun "listedeki köyleri kapsamak ve
+merkezi X olmak üzere" der; adı listede olmayan güncel mahalleler X'in mahalleleridir. X'in
+ilçesi sayım dizininden iki sayımda da aynı ve kanundaki eski ilçelerden biriyse bu mahalleler
+ona verilir. Güvenlik: adı sayımda köy olarak geçen mahalle atanmaz; listede merkezden başka
+kasaba/bucak merkezi varsa (ör. Körfez'de Hereke) yalnız merkezin adını taşıyan mahalleye
+bağlanan küme atanır, böyle mahalle yoksa kural uygulanmaz. Adında birim adını içeren mahalle
+(Yukarı Hereke → Hereke) o birime bağlanır.
+
+Kanundan hemen önceki dönemde eski ilçelere dağıtılan pay (İstanbul dışı): Çukurova %5, Akyurt %47, Pursaklar %3, Aksu %51, İbradı %8, Konyaaltı %26, Didim %14, Defne %21, Aliağa %30, Özvatan %7, Körfez %51, Derbent %0, Dargeçit %75, Gürgentepe %15, İkizce %30, Ondokuzmayıs %17, Salıpazarı %3, Altınyayla %3, Edremit %6, Gülağaç %0, Demirözü %0.
+Bu 22 ilçede boş alan 1977'de %15, 1987'de %11, 1995'te %26 azaldı. Kalan kısım çoğunlukla
+sayımda bulunamayan köy adları, başka kasabası olan ilçelerin merkez mahalleleri ve kanunda
+paylaşılmış birimlerdir. Mahalle/köy poligonu olmayan ilçelerde (büyükşehir dışı ~26 ilçe)
 bölüştürme yapılamaz.
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
