@@ -99,6 +99,15 @@ KANUNLAR = {
                                        "Adana iline bağlı Osmaniye İlçe Merkezi merkez olmak suretiyle Osmaniye adıyla "
                                        "bir il kurulmuştur.",
                   "eventType": "provinces_created", "effectiveDate": "1996-10-28", "unit": "Osmaniye"}]},
+    "2585": {"ad": "Urfa İli Viranşehir İlçesinin Ceylanpınar Bucağında Ceylanpınar Adıyla, İzmir İli Menemen İlçesi "
+                   "Aliağa Bucağında Aliağa Adıyla Yeniden İki İlçe Kurulması Hakkında Kanun", "kabul": "1982-01-14",
+             "resmiGazete": {"tarih": "1982-01-21", "sayi": 17581}, "rgPdf": "data/raw/resmi_gazete/17581.pdf",
+             "mevzuatPdf": None, "sonrakiGenel": "1983", "oncekiGenel": "1977", "adsizIl": {},
+             "bicim": "cetvel", "sayfaSayisi": 4,
+             # Madde 1, RG 17581 s. 4'ten aynen
+             "bentlerElle": {
+                 1: {"il": "Urfa", "ad": "Ceylanpınar", "madde": "Ekli (1) sayılı cetvelde adları yazılı köyleri kapsamak üzere Urfa İli Viranşehir İlçesi Ceylanpınar Bucağında Ceylanpınar adıyla", "ekHukum": None},
+                 2: {"il": "İzmir", "ad": "Aliağa", "madde": "ekli (2) sayılı cetvelde adları yazılı köyleri kapsamak Üzere İzmir İli Menemen İlçesi Aliağa Bucağında Aliağa adıyla", "ekHukum": None}}},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},
@@ -200,6 +209,9 @@ def ayristir(kanun):
     yeni_adlar = {(il_adlari.get(fold(b["il"] or "").replace(" ", "")), fold(b["ad"])) for b in bentler.values()}
 
     listeler = collections.defaultdict(lambda: {"satirlar": [], "altBasliklar": [], "sayfalar": set()})
+    if cfg.get("bicim") == "cetvel":
+        cetvel_oku(sayfalar, listeler)
+        sayfalar = []
     liste = None
     varsayilan_ilce = None
     onceki = None
@@ -385,6 +397,38 @@ def ayristir(kanun):
             "satirlar": satirlar,
         })
     return cfg, sonuc
+
+
+def cetvel_oku(sayfalar, listeler):
+    """1960-1980'lerin 'CETVEL No. : N' bicimi: satir 'N <köy> [X İli Y İlçesi Z Bucağından]';
+    kaynak yazili degilse ('»' ya da bos) ustteki satirin kaynagi gecerli. Satirlar
+    genel satir_coz'un anlayacagi '<köy> <ilçe> <bucak>' bicimine cevrilir."""
+    liste, kaynak, bucak = None, None, None
+    for no, sayfa in enumerate(sayfalar, start=1):
+        for satir in sayfa.split("\n"):
+            s = satir.strip()
+            m = re.search(r"CETVEL\s*No\.?\s*:?\s*(\d+)", s, re.I)
+            if m:
+                liste, kaynak, bucak = int(m.group(1)), None, None
+                continue
+            if liste is None:
+                continue
+            m = re.match(r"^(\d{1,3})\s+(.+)$", s)
+            if not m:
+                continue
+            govde = m.group(2)
+            k = re.search(r"(\S+)\s+(?:[İI1l][lıi1]{1,2})\s+(\S+)\s+İlçesi(?:\s+(\S+)\s+Bu)?", govde)  # 'İli' OCR: '111' 
+            if k:
+                kaynak, bucak = k.group(2), k.group(3) or "Merkez"
+                ad = govde[:k.start()].strip()
+            else:
+                ad = re.sub(r"[»>*]+\s*$", "", govde).strip()
+            if not kaynak:
+                continue
+            listeler[liste]["satirlar"].append({"sira": int(m.group(1)), "ham": f"{ad} {kaynak} {bucak}",
+                                                "hamNo": m.group(1), "tire": not k, "varsayilanIlce": None,
+                                                "sayfa": no, "cetvelKaynakYazili": bool(k)})
+            listeler[liste]["sayfalar"].add(no)
 
 
 def satir_coz(r, adaylar, esik=0.8, fark=0.0):

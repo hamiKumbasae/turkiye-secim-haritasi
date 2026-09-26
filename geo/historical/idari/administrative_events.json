@@ -29,6 +29,14 @@
    "url": "https://www.yeniankara.com.tr/bolge-haberlerikirsehir/ilden-ilceye-donen-kirsehir-68-yil-once-bugun-yeniden-il-oldu-iste-tum-surec-113434"
   },
   {
+   "id": "kanun_2585",
+   "type": "official",
+   "title": "2585 sayılı Urfa İli Viranşehir İlçesinin Ceylanpınar Bucağında Ceylanpınar Adıyla, İzmir İli Menemen İlçesi Aliağa Bucağında Aliağa Adıyla Yeniden İki İlçe Kurulması Hakkında Kanun (RG 1982-01-21, sayı 17581)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/17581.pdf",
+   "raw": "data/raw/resmi_gazete/17581.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/2585.json"
+  },
+  {
    "id": "kanun_2963",
    "type": "official",
    "title": "2963 sayılı Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun (RG 1983-11-30, sayı 18237)",
@@ -14255,14 +14263,41 @@
     "sayi": 17581
    },
    "provinceAfter": 35,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Menemen",
+     "geomId": "TR-D-35-023",
+     "provincePlaka": 35,
+     "unitsTransferred": 12
+    },
+    {
+     "district": "Bergama",
+     "geomId": "TR-D-35-005",
+     "provincePlaka": 35,
+     "unitsTransferred": 6
+    },
+    {
+     "district": "Foça",
+     "geomId": "TR-D-35-012",
+     "provincePlaka": 35,
+     "unitsTransferred": 2
+    }
+   ],
+   "lineageSource": {
+    "kanun": "2585",
+    "listeNo": 2,
+    "rgSayfalari": [
+     4
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2585.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1982referandum",
     "tarih": "1982-11-07",
     "adi": "Aliağa"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -25219,14 +25254,29 @@
     "sayi": 17581
    },
    "provinceAfter": 63,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Viranşehir",
+     "geomId": "TR-D-63-013",
+     "provincePlaka": 63,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "2585",
+    "listeNo": 1,
+    "rgSayfalari": [
+     4
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2585.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1982referandum",
     "tarih": "1982-11-07",
     "adi": "Ceylanpınar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },

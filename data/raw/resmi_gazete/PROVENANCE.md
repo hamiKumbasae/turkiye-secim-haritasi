@@ -123,3 +123,11 @@ Andaç ve Ortaköy köyleri Çukurca'dan Uludere'ye bağlandı.
 Ek (1)–(3) sayılı listeler: 35 satır, eksik sıra yok. Toprakkale ← Osmaniye, Sumbas ←
 Kadirli (tek kaynaklı); Hasanbeyli ← Osmaniye (5) + Bahçe (2) (çok kaynaklı). Madde 2:
 Osmaniye ili; (4) sayılı liste (ilin dökümü) okunmadı.
+
+## 17581 (21 Ocak 1982) — 2585 sayılı Kanun (Ceylanpınar, Aliağa)
+
+`17581.pdf` (64 sayfa), indirilme 2026-09-26; kanun ve cetveller s. 4 (mevzuat.gov.tr'de
+PDF metni yok, Madde 1 okuyucuya aynen aktarıldı). "CETVEL No." biçimi: köy + "X İli Y
+İlçesi Z Bucağından", tekrarlar "»" (okuyucuda `bicim: cetvel`). Ceylanpınar ←
+Viranşehir (tek kaynak, 1 köy + bucak merkezi); Aliağa ← Menemen (12), Bergama (6),
+Foça (2) — çok kaynaklı. 21 satır, eksik sıra yok.

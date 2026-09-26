@@ -29,6 +29,14 @@
    "url": "https://www.yeniankara.com.tr/bolge-haberlerikirsehir/ilden-ilceye-donen-kirsehir-68-yil-once-bugun-yeniden-il-oldu-iste-tum-surec-113434"
   },
   {
+   "id": "kanun_2585",
+   "type": "official",
+   "title": "2585 sayılı Urfa İli Viranşehir İlçesinin Ceylanpınar Bucağında Ceylanpınar Adıyla, İzmir İli Menemen İlçesi Aliağa Bucağında Aliağa Adıyla Yeniden İki İlçe Kurulması Hakkında Kanun (RG 1982-01-21, sayı 17581)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/17581.pdf",
+   "raw": "data/raw/resmi_gazete/17581.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/2585.json"
+  },
+  {
    "id": "kanun_2963",
    "type": "official",
    "title": "2963 sayılı Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun (RG 1983-11-30, sayı 18237)",
@@ -25522,9 +25530,42 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "2585",
+    "kanunAdi": "Urfa İli Viranşehir İlçesinin Ceylanpınar Bucağında Ceylanpınar Adıyla, İzmir İli Menemen İlçesi Aliağa Bucağında Aliağa Adıyla Yeniden İki İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1982-01-21",
+     "sayi": 17581
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 20,
+    "eskiIlceler": [
+     {
+      "ad": "Menemen",
+      "geomId": "TR-D-35-023",
+      "plaka": 35,
+      "birimSayisi": 12
+     },
+     {
+      "ad": "Bergama",
+      "geomId": "TR-D-35-005",
+      "plaka": 35,
+      "birimSayisi": 6
+     },
+     {
+      "ad": "Foça",
+      "geomId": "TR-D-35-012",
+      "plaka": 35,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2585.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-35-002",
@@ -46655,9 +46696,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "2585",
+    "kanunAdi": "Urfa İli Viranşehir İlçesinin Ceylanpınar Bucağında Ceylanpınar Adıyla, İzmir İli Menemen İlçesi Aliağa Bucağında Aliağa Adıyla Yeniden İki İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1982-01-21",
+     "sayi": 17581
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 1,
+    "eskiIlceler": [
+     {
+      "ad": "Viranşehir",
+      "geomId": "TR-D-63-013",
+      "plaka": 63,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2585.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-63-005",

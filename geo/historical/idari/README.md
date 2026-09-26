@@ -88,6 +88,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | 3578 | 21.06.1989 | 5 | 5 | 0 | RG 20202 ek (1)–(5) sayılı listeler, 99 satır; Kırıkkale, Aksaray, Bayburt, Karaman illeri kuruldu |
 | 3647 | 18.05.1990 | 5 | 5 | 0 | RG 20522 (mükerrer) ek (1)–(5) sayılı listeler, 72 satır; Batman ve Şırnak illeri kuruldu |
 | 4200 | 28.10.1996 | 3 | 2 | 1 | RG 22801 ek (1)–(3) sayılı listeler, 35 satır; Osmaniye ili kuruldu |
+| 2585 | 21.01.1982 | 2 | 1 | 1 | RG 17581 s. 4 cetvelleri, 21 satır (Ceylanpınar ← Viranşehir; Aliağa ← Menemen, Bergama, Foça) |
 | 7033 | 01.09.1957–01.04.1960 | 78 | — (orta güven, geometriye çevrilmedi) | — | RG 9644 cetvelleri; 50/77 blok okunabildi |
 
 - 3644'ün 130 ilçesinin tamamı İçişleri listesinde de 3644 ile kayıtlı; ek listelerde
