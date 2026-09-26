@@ -39,3 +39,7 @@ Ek bulgular (Başakşehir, Esenyurt, Çekmeköy, Sancaktepe, Ataşehir, Küçük
   Yenidoğan. Beykoz M.Şevketpaşa bucağı: Ömerli (BM), Hüseyinli, Koçullu, Sırapınar (1960,
   1985, 1990). Kartal Şamandıra bucağı: Şamandıra, Paşaköy, Sarıgazi (yalnız 1960).
 
+Ülke geneli dizin: `scripts/pipelines/historical_geo/extract_sayim_koyleri.py` üç kitabın
+tamamını (yukarıdaki SHA-256'larla doğrulayarak) `.cache/tuik-nufus-sayimi/` altına indirir
+ve `data/kaynaklar/tuik/nufus_sayimi/{1960,1985,1990}_koyler.json` dizinini üretir.
+

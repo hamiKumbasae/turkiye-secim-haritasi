@@ -17,6 +17,11 @@ Yontem (tahmin yok; cikarim ayrica isaretli):
      dis sinirina degmiyorsa o ilceye verilir (`cikarim: cevrelenmis`). Kanunda iki ilce
      arasinda paylasildigi yazan birimler (BELIRSIZ_BIRIM) cikarimla atanmaz.
   4. Kalan alan 'belirsiz' parcadir; haritada tarali, adaylariyla.
+  6. Elle DONEMSEL tablosu olmayan cok kaynakli ilcelerde donemsel baglilik sayim dizininden
+     (data/kaynaklar/tuik/nufus_sayimi/<yil>_koyler.json, extract_sayim_koyleri.py) otomatik:
+     birimin (koy/belde) sayimdaki ilcesi kanundaki eski ilcesiyle (ya da onun kanunla ayrildigi
+     ata ilceyle) ayniysa o sayimda ayni sayilir; bulunamazsa ya da farkliysa o donem belirsiz.
+     Dizin OCR'dan okundugu icin hatalar yalniz belirsiz alani buyutur, yanlis ilceye atamaz.
   5. Donemsel baglilik (DONEMSEL): birimin ilcesi nufus sayimi idari bolunus kitaplarindan
      (DIE 1960, 1985, 1990) okunmussa, iki sayim arasindaki secimler icin birim ancak iki
      sayimda da ayni ilcedeyse atanir; arada ilce degistirmisse o donemde belirsizdir.
@@ -31,6 +36,7 @@ Kullanim:
   .venv/bin/python scripts/pipelines/historical_geo/build_mahalle_bolusumu.py
 """
 import collections
+import difflib
 import json
 import pathlib
 import re
@@ -159,6 +165,81 @@ BELIRSIZ_BIRIM = {
 }
 
 
+SAYIM = {"1960-10-23": "1960", "1985-10-20": "1985", "1990-10-21": "1990"}
+_SAYIM_DIZIN = {}
+
+
+def sayim_dizini(yil):
+    """{plaka: {fold(ad): [ilce, ...]}}"""
+    if yil not in _SAYIM_DIZIN:
+        p = ROOT / f"data/kaynaklar/tuik/nufus_sayimi/{yil}_koyler.json"
+        d = collections.defaultdict(lambda: collections.defaultdict(list))
+        if p.exists():
+            for r in json.loads(p.read_text(encoding="utf-8"))["satirlar"]:
+                d[r["plaka"]][norm(re.sub(r"\s*\(.*$", "", r["ad"]))].append(r["ilce"])
+        _SAYIM_DIZIN[yil] = d
+    return _SAYIM_DIZIN[yil]
+
+
+def ata_adlari():
+    """guncel ilce adi -> kanunla ayrildigi ata ilce adlari (tek kaynakli soy)"""
+    lin = json.loads((IDARI / "district_lineage.json").read_text(encoding="utf-8"))
+    ad_by = {l["geomId"]: l["ad"] for l in lin["districts"]}
+    ata = collections.defaultdict(set)
+    for l in lin["districts"]:
+        k = l.get("kanunSoyu") or {}
+        if l["lineageStatus"] == "kanun_tek_kaynak" and k.get("eskiIlceler") and k["eskiIlceler"][0]["ad"]:
+            ata[norm(l["ad"])].add(norm(k["eskiIlceler"][0]["ad"]))
+    for h in lin.get("historicalUnits", []):
+        if h.get("tekKaynak") and h["eskiIlceler"][0]["ad"]:
+            ata[norm(h["ad"])].add(norm(h["eskiIlceler"][0]["ad"]))
+    sk = IDARI / "sayim_kaniti.json"
+    if sk.exists():
+        for b in json.loads(sk.read_text(encoding="utf-8"))["birimler"]:
+            ata[norm(b["ad"])].add(norm(b["eskiIlce"]))
+    # zincir
+    for _ in range(4):
+        for k in list(ata):
+            for a in list(ata[k]):
+                ata[k] |= ata.get(a, set())
+    return ata
+
+
+def ilce_esit(sayim_ilce, kanun_ilce, ata):
+    a, b = norm(sayim_ilce), norm(kanun_ilce)
+    adaylar = {b} | ata.get(b, set())
+    return any(a == x or (len(a) > 3 and difflib.SequenceMatcher(None, a, x).ratio() >= 0.8) for x in adaylar)
+
+
+def otomatik_donemsel(kayit, plaka, kanun_tarihi):
+    """kanun listesindeki her birim icin [ilce@1960, @1985, @1990 (kanundan once olanlar), @kanun]"""
+    anlar = [t for t in SAYIM if t < kanun_tarihi] + [kanun_tarihi]
+    ata = ata_adlari()
+    birimler, kanit = {}, {}
+    for r in kayit["satirlar"]:
+        if not r["eskiIlce"] or r["tur"] == "koy_kismi":
+            continue
+        adlar = [re.sub(r"\s*\(.*$", "", r["birim"]).strip(" '\".,")]
+        if belediye_adi(r):
+            adlar.append(belediye_adi(r))
+        for ad in adlar:
+            if not ad or norm(ad) in birimler:
+                continue
+            deger = []
+            for t in anlar[:-1]:
+                hits = sayim_dizini(SAYIM[t]).get(plaka, {}).get(norm(ad), [])
+                if not hits:
+                    deger.append(None)
+                elif any(ilce_esit(h, r["eskiIlce"], ata) for h in hits):
+                    deger.append(r["eskiIlce"])
+                else:
+                    deger.append(f"{hits[0]} (sayım)")
+            birimler[norm(ad)] = deger + [r["eskiIlce"]]
+            kanit[norm(ad)] = {SAYIM[t]: v for t, v in zip(anlar[:-1], deger)}
+    return {"anlar": anlar, "birimler": birimler, "otomatik": True,
+            "kaynaklar": {t: f"data/kaynaklar/tuik/nufus_sayimi/{SAYIM[t]}_koyler.json" for t in anlar[:-1]}}
+
+
 def norm(s):
     return fold(re.sub(r"\s*MAH\.?$", "", s.strip())).replace(".", "").replace(" ", "")
 
@@ -180,7 +261,10 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
     for r in kayit["satirlar"]:
         if not r["eskiIlce"]:
             continue
-        ilce_geom[r["eskiIlce"]] = r["eskiIlceGeomId"]
+        if r.get("tur") is None:
+            r = dict(r, tur="koy", birim=re.sub(r"^[^A-Za-zÇĞİÖŞÜçğıöşü]+", "", r["birim"] or ""))
+        ilce_geom[r["eskiIlce"]] = r.get("eskiIlceGeomId") or \
+            next((e["geomId"] for e in kayit["eskiIlceler"] if e["ad"] == r["eskiIlce"]), None)
         if r["tur"] in ("mahalle", "koy"):
             ad = belediye_adi(r) if r["birim"] == "Merkez" and r.get("eskiBelediye") else r["birim"]
             if r["tur"] == "koy":
@@ -229,9 +313,9 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
         if p.area >= MIN_ALAN:
             atama.append({"mahalle": None, "id": f"bosluk-{i}", "ilce": None, "neden": "mahalle poligonu yok", "_geom": p})
     son_ilce = {id(a): a["ilce"] for a in atama}
-    ds = DONEMSEL.get(geom_id)
+    ds = DONEMSEL.get(geom_id) or cfg.get("otomatikDonemsel")
     if ds:
-        zaman = {norm(k): v for k, v in ds["birimler"].items()}
+        zaman = {k if ds.get("otomatik") else norm(k): v for k, v in ds["birimler"].items()}
         donemler = [(ds["anlar"][i], ds["anlar"][i + 1]) for i in range(len(ds["anlar"]) - 1)]
     else:
         zaman, donemler = {}, [(None, None)]
@@ -254,6 +338,9 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
             i0 = ds["anlar"].index(bas)
             if t[i0] is None or t[i0 + 1] is None:
                 a["ilce"], a["donemNotu"] = None, f"{bas[:4]}–{bit[:4]} bağlılığı kaynakta yok"
+            elif str(t[i0]).endswith("(sayım)") or str(t[i0 + 1]).endswith("(sayım)"):
+                # sayim dizininde kanundakinden farkli ilce (gercek nakil ya da OCR): atanmaz
+                a["ilce"], a["donemNotu"] = None, f"{bas[:4]}: {t[i0]}, {bit[:4]}: {t[i0 + 1]}"
             elif t[i0] != t[i0 + 1]:
                 a["ilce"], a["donemNotu"] = None, f"{bas[:4]}: {t[i0]}, {bit[:4]}: {t[i0 + 1]}"
             else:
@@ -327,12 +414,31 @@ def bolustur(geom_id, cfg, mahalle_geo, ilce_poly, komsular):
             "donemler": donem_ozet, "atama": atama_donem}, features
 
 
+def tr_ad(s):
+    return " ".join(w[:1] + w[1:].replace("I", "ı").replace("İ", "i").lower() for w in s.split())
+
+
 def main():
     mahalle_geo = json.loads((ROOT / "geo/normalized/mahalle_geo.json").read_text(encoding="utf-8"))
     modern = {f["properties"]["id"]: shape(f["geometry"])
               for f in json.loads((ROOT / "geo/normalized/turkiye_ilce_sinirlari.geojson").read_text(encoding="utf-8"))["features"]}
     rapor, features = {}, []
-    for g, cfg in ILCELER.items():
+    lin = json.loads((IDARI / "district_lineage.json").read_text(encoding="utf-8"))["districts"]
+    ilceler = dict(ILCELER)
+    for l in lin:
+        k = l.get("kanunSoyu") or {}
+        if l["lineageStatus"] != "kanun_cok_kaynak" or l["geomId"] in ilceler or not mahalle_geo.get(l["geomId"]):
+            continue
+        dosya = ROOT / f"data/kaynaklar/resmi_gazete/ilce_kurulus/{k['kanun'].replace(' ', '_')}.json"
+        if not dosya.exists():
+            continue
+        kd = json.loads(dosya.read_text(encoding="utf-8"))
+        kayit = next((i for i in kd["ilceler"] if (i["yeniIlce"] or {}).get("geomId") == l["geomId"]), None)
+        if not kayit:
+            continue
+        ilceler[l["geomId"]] = {"kanun": k["kanun"].replace(" ", "_"), "ad": tr_ad(l["ad"]),
+                                "otomatikDonemsel": otomatik_donemsel(kayit, l["plaka"], kd["resmiGazete"]["tarih"])}
+    for g, cfg in ilceler.items():
         pl = g.split("-")[2]
         komsu = [v for k, v in modern.items() if k != g and k.split("-")[2] == pl]
         r, f = bolustur(g, cfg, mahalle_geo, modern[g], komsu)

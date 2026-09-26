@@ -249,6 +249,25 @@ Sınırlar: sayım kitabı olmayan ilçelerde (Sultangazi) belde/mahalle bağlı
 Sıradaki adaylar: Başakşehir, Esenyurt, Esenler (İstanbul), sonra diğer illerin çok
 kaynaklı ilçeleri.
 
+## Sayım dizini ile otomatik dönemsel bağlılık (Faz 4c)
+
+`scripts/pipelines/historical_geo/extract_sayim_koyleri.py`: DİE 1960, 1985, 1990 sayım
+kitaplarından köy/belde → ilçe dizini (`data/kaynaklar/tuik/nufus_sayimi/<yıl>_koyler.json`;
+1960: 33.967, 1985: 33.830, 1990: 33.232 satır). Köy satırları ilçe bölümünü kapatan
+"X İLÇESİ TOPLAMI" satırıyla geriye dönük atanır (başlık OCR'da düşse bile); kitabın kendi
+köy sayılarına göre kapsama ~%90. Kitaplar depoda değil: betik TÜİK kütüphanesinden indirip
+SHA-256 ile doğrular (`.cache/`).
+
+`build_mahalle_bolusumu.py` elle `DONEMSEL` tablosu olmayan bütün çok kaynaklı ilçelere
+(mahalle poligonu olanlar) bunu uygular: birim sayımda kanundaki eski ilçesinde (ya da onun
+kanunla ayrıldığı ata ilçede) bulunursa o dönemde aynı sayılır; bulunamaz ya da farklı çıkarsa
+o dönem paylaştırılamayan kısma gider. OCR hataları yalnız taralı alanı büyütür.
+
+Kanundan hemen önceki dönemde eski ilçelere dağıtılan pay (İstanbul dışı): Çukurova (5747) %5, Akyurt (3644) %34, Pursaklar (5747) %3, Aksu (5747) %40, İbradı (3644) %8, Konyaaltı (5747) %26, Didim (3644) %14, Defne (6360) %21, Aliağa (2585) %30, Özvatan (3644) %7, Körfez (3392) %46, Derbent (3644) %0, Dargeçit (3392) %62, Gürgentepe (3392) %15, İkizce (3644) %29, Ondokuzmayıs (3392) %9, Salıpazarı (3392) %1, Altınyayla (3644) %0, Edremit (3644) %1, Gülağaç (3644) %0, Demirözü (3392) %0.
+Kalan kısım çoğunlukla ilçe merkezinin kendi (kanun listesinde olmayan) mahalleleri ve sayımda
+bulunamayan köy adlarıdır. Mahalle/köy poligonu olmayan ilçelerde (büyükşehir dışı ~26 ilçe)
+bölüştürme yapılamaz.
+
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
 - **1955 yerel ve 1994 yerel için il sınır dosyası yok** (66 ve 76 il). Snapshot'ta

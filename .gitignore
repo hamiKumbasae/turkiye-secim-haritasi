@@ -10,3 +10,6 @@ tests/node_modules/
 
 # derlenmis Vision OCR araci (kaynak: vision_ocr.swift)
 scripts/pipelines/tuik_arsiv/vision_ocr
+
+# nufus sayimi kitaplarinin tam PDFleri (extract_sayim_koyleri.py indirir, SHA-256 ile dogrular)
+.cache/
