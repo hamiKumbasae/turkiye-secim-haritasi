@@ -1,37 +1,37 @@
 {
  "not": "apply_idari_merges.py ile üretilir; elle düzenlenmez.",
  "ozet": {
-  "sentetik": 199,
-  "satirDegisimi": 3103,
+  "sentetik": 203,
+  "satirDegisimi": 3143,
   "secimBasina": {
    "1950yerel": 158,
    "1955yerel": 149,
    "1961": 175,
    "1961referandum": 175,
    "1963yerel": 142,
-   "1965": 175,
+   "1965": 176,
    "1968yerel": 142,
-   "1969": 175,
-   "1973": 175,
+   "1969": 176,
+   "1973": 176,
    "1973yerel": 141,
-   "1977": 175,
+   "1977": 176,
    "1977yerel": 142,
-   "1982referandum": 174,
-   "1983": 174,
-   "1984yerel": 142,
-   "1987": 168,
-   "1987referandum": 168,
-   "1988referandum": 153,
-   "1989yerel": 99,
-   "1991": 22,
-   "1994yerel": 13,
-   "1995": 14,
-   "1999": 12,
-   "1999yerel": 5,
-   "2002": 11,
-   "2004yerel": 4,
-   "2007": 11,
-   "2007referandum": 9
+   "1982referandum": 175,
+   "1983": 175,
+   "1984yerel": 143,
+   "1987": 169,
+   "1987referandum": 169,
+   "1988referandum": 155,
+   "1989yerel": 101,
+   "1991": 25,
+   "1994yerel": 16,
+   "1995": 17,
+   "1999": 15,
+   "1999yerel": 8,
+   "2002": 14,
+   "2004yerel": 7,
+   "2007": 14,
+   "2007referandum": 12
   },
   "katilanIlce": 237,
   "hedefBulunamadi": 368,
@@ -1998,7 +1998,7 @@
     "ÇAMLIYAYLA"
    ]
   },
-  "HISTK-34-019-32c706": {
+  "HISTK-34-019-fffb70": {
    "taban": "TR-D-34-019",
    "katilanlar": [
     "TR-D-34-009",
@@ -2013,14 +2013,23 @@
    "plaka": 34,
    "kanunlar": [
     "309",
-    "3644"
+    "3644",
+    "5747"
    ],
    "adlar": [
+    "Arnavutköy (Gaziosmanpaşa parçası, mahalle düzeyi)",
     "BAYRAMPAŞA",
-    "GAZİOSMANPAŞA"
+    "GAZİOSMANPAŞA",
+    "Sultangazi (Eyüp parçası, mahalle düzeyi)",
+    "Sultangazi (Gaziosmanpaşa parçası, mahalle düzeyi)"
+   ],
+   "parcalar": [
+    "PARCA-34-002-GAZIOSMANPASA",
+    "PARCA-34-033-EYUP",
+    "PARCA-34-033-GAZIOSMANPASA"
    ]
   },
-  "HISTK-34-015-ea5819": {
+  "HISTK-34-015-2cbe7f": {
    "taban": "TR-D-34-015",
    "katilanlar": [
     "TR-D-34-012",
@@ -2031,14 +2040,10 @@
     "1955yerel",
     "1961referandum",
     "1961",
-    "1963yerel",
     "1965",
-    "1968yerel",
     "1969",
     "1973",
-    "1973yerel",
     "1977",
-    "1977yerel",
     "1982referandum",
     "1983",
     "1984yerel",
@@ -2047,11 +2052,16 @@
    ],
    "plaka": 34,
    "kanunlar": [
-    "3392"
+    "3392",
+    "5747"
    ],
    "adlar": [
+    "Arnavutköy (Çatalca parçası, mahalle düzeyi)",
     "Büyükçekmece (1987 sınırı: BEYLİKDÜZÜ)",
     "Büyükçekmece (1987 sınırı: BÜYÜKÇEKMECE)"
+   ],
+   "parcalar": [
+    "PARCA-34-002-CATALCA"
    ]
   },
   "HISTK-36-002-f4fea5": {
@@ -5847,7 +5857,28 @@
     "DAMAL"
    ]
   },
-  "HISTK-34-019-d9bf10": {
+  "HISTK-34-015-ea5819": {
+   "taban": "TR-D-34-015",
+   "katilanlar": [
+    "TR-D-34-012",
+    "TR-D-34-014"
+   ],
+   "secimler": [
+    "1963yerel",
+    "1968yerel",
+    "1973yerel",
+    "1977yerel"
+   ],
+   "plaka": 34,
+   "kanunlar": [
+    "3392"
+   ],
+   "adlar": [
+    "Büyükçekmece (1987 sınırı: BEYLİKDÜZÜ)",
+    "Büyükçekmece (1987 sınırı: BÜYÜKÇEKMECE)"
+   ]
+  },
+  "HISTK-34-019-c9c711": {
    "taban": "TR-D-34-019",
    "katilanlar": [
     "TR-D-34-009"
@@ -5867,10 +5898,53 @@
    ],
    "plaka": 34,
    "kanunlar": [
-    "3644"
+    "3644",
+    "5747"
    ],
    "adlar": [
-    "BAYRAMPAŞA"
+    "BAYRAMPAŞA",
+    "Sultangazi (Eyüp parçası, mahalle düzeyi)"
+   ],
+   "parcalar": [
+    "PARCA-34-033-EYUP"
+   ]
+  },
+  "HISTK-34-021-306414": {
+   "taban": "TR-D-34-021",
+   "katilanlar": [],
+   "secimler": [
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1984yerel",
+    "1987referandum",
+    "1987",
+    "1988referandum",
+    "1989yerel",
+    "1991",
+    "1994yerel",
+    "1995",
+    "1999",
+    "1999yerel",
+    "2002",
+    "2004yerel",
+    "2007",
+    "2007referandum"
+   ],
+   "plaka": 34,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "Arnavutköy (Gaziosmanpaşa parçası, mahalle düzeyi)",
+    "Sultangazi (Gaziosmanpaşa parçası, mahalle düzeyi)"
+   ],
+   "parcalar": [
+    "PARCA-34-002-GAZIOSMANPASA",
+    "PARCA-34-033-GAZIOSMANPASA"
    ]
   },
   "HISTK-06-025-c687e0": {
@@ -6054,6 +6128,33 @@
    ],
    "adlar": [
     "ÇARŞIBAŞI"
+   ]
+  },
+  "HISTK-34-015-29ec1f": {
+   "taban": "TR-D-34-015",
+   "katilanlar": [],
+   "secimler": [
+    "1988referandum",
+    "1989yerel",
+    "1991",
+    "1994yerel",
+    "1995",
+    "1999",
+    "1999yerel",
+    "2002",
+    "2004yerel",
+    "2007",
+    "2007referandum"
+   ],
+   "plaka": 34,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "Arnavutköy (Çatalca parçası, mahalle düzeyi)"
+   ],
+   "parcalar": [
+    "PARCA-34-002-CATALCA"
    ]
   },
   "HISTK-03-007-f0227d": {
@@ -6279,6 +6380,31 @@
    ],
    "adlar": [
     "KAYNAŞLI"
+   ]
+  },
+  "HISTK-34-019-110b7c": {
+   "taban": "TR-D-34-019",
+   "katilanlar": [],
+   "secimler": [
+    "1991",
+    "1994yerel",
+    "1995",
+    "1999",
+    "1999yerel",
+    "2002",
+    "2004yerel",
+    "2007",
+    "2007referandum"
+   ],
+   "plaka": 34,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "Sultangazi (Eyüp parçası, mahalle düzeyi)"
+   ],
+   "parcalar": [
+    "PARCA-34-033-EYUP"
    ]
   },
   "HISTK-41-008-9ff8a8": {
@@ -8509,6 +8635,68 @@
    "ilce": "TR-D-54-014",
    "ad": "SERDİVAN",
    "ebeveyn": "TR-D-54-001"
+  }
+ ],
+ "bolusumUygulanmadi": [
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-34-002",
+   "bulunamayan": [
+    "PARCA-34-002-GAZIOSMANPASA"
+   ]
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-34-033",
+   "bulunamayan": [
+    "PARCA-34-033-GAZIOSMANPASA",
+    "PARCA-34-033-EYUP"
+   ]
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-34-002",
+   "bulunamayan": [
+    "PARCA-34-002-GAZIOSMANPASA"
+   ]
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-34-033",
+   "bulunamayan": [
+    "PARCA-34-033-GAZIOSMANPASA",
+    "PARCA-34-033-EYUP"
+   ]
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-34-002",
+   "bulunamayan": [
+    "PARCA-34-002-GAZIOSMANPASA"
+   ]
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-34-033",
+   "bulunamayan": [
+    "PARCA-34-033-GAZIOSMANPASA",
+    "PARCA-34-033-EYUP"
+   ]
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-34-002",
+   "bulunamayan": [
+    "PARCA-34-002-GAZIOSMANPASA"
+   ]
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-34-033",
+   "bulunamayan": [
+    "PARCA-34-033-GAZIOSMANPASA",
+    "PARCA-34-033-EYUP"
+   ]
   }
  ]
 }

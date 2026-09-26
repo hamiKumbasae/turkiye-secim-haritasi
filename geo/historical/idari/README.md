@@ -178,6 +178,39 @@ Armutlu→Gemlik, Ağaçören/Sarıyahşi→Şereflikoçhisar vb.); ön yüz pol
   Yeni kanun eklendikten sonra `build_idari_katman.py` → `apply_idari_merges.py` →
   `scripts/build.py` → checksum yenile.
 
+## Mahalle düzeyinde paylaştırma (Faz 4b — `build_mahalle_bolusumu.py`, pilot İstanbul)
+
+Birden çok eski ilçeden kurulan ilçenin alanı, güncel mahalle poligonlarıyla
+(`geo/normalized/mahalle_geo.json`) eski ilçeleri arasında paylaştırılır; her eski
+ilçenin parçası (`PARCA-*`) onun sentetik birleşimine katılır, paylaştırılamayan kısım
+(`BELIRSIZ-*`) haritada taralı ve açıklamalı çizilir (`harita_notlari.json`).
+
+- Birimin eski ilçesi: kanun ek listesi; ilk kademe belediyesinin ilçesi DİE 2004 Tablo 9
+  (`district_mahalle_merges.yaml`'daki "belde ilçeleri yalnız blog kaynaklı" engeli bununla
+  kalktı: Arnavutköy, Boğazköy, Bolluca, Haraççı, Taşoluk → Gaziosmanpaşa; Hadımköy,
+  Durusu → Çatalca).
+- Eşleşme: aynı ad; belde "Merkez"i = belde adı; belde adını taşıyan güncel mahalle.
+- Çıkarım (işaretli, `cikarim: cevrelenmis`): adı eşleşmeyen mahalle ya da mahalle dışı
+  alan, dış sınıra değmeyen ve yalnız tek eski ilçenin parçalarına değen bağlı bileşense o
+  ilçeye verilir (Arnavutköy: Anadolu, Mustafa Kemal Paşa, Yunus Emre → Gaziosmanpaşa).
+- Kanunda iki ilçe arasında paylaşıldığı yazan birim çıkarımla atanmaz (Sultangazi'nin iki
+  Habipler mahallesi: Gaziosmanpaşa ya da Esenler parseli).
+- Parçalar ayrıktır, ilçeyi tam böler; komşu güncel ilçelerle kaynaktaki ince örtüşmeler
+  önce çıkarılır.
+
+| İlçe | Eski ilçe payları | Paylaştırılamayan |
+|---|---|---|
+| Arnavutköy (5747) | Gaziosmanpaşa %48.8, Çatalca %40.3 | %10.9 (Terkos; Sazlıdere Baraj Gölü — Küçükçekmece'nin Şamlar parçası dahil; kıyı ormanı) |
+| Sultangazi (5747) | Gaziosmanpaşa %62.8, Eyüp %12.4 (Yayla) | %24.8 (iki Habipler mahallesi ve çevresi) |
+
+Uygulandığı seçimler: eski ilçelerin tümü o seçimde satır olarak bulunuyorsa (zincirle:
+1963 öncesi Gaziosmanpaşa → Eyüp). 1963–1977 yerel verisinde Gaziosmanpaşa/Eyüp belediye
+satırı olmadığından uygulanmaz (`merge_plan.json` → `bolusumUygulanmadi`).
+Sınırlar: belde bağlılığı 2004 durumudur (1987–2004 arası belde nakli olsaydı görülmezdi);
+2008 sonrası mahalle ad/sınır değişiklikleri adı eşleşen mahallelerde fark edilmez.
+Sıradaki adaylar: Başakşehir, Esenyurt, Esenler (İstanbul), sonra diğer illerin çok
+kaynaklı ilçeleri.
+
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
 - **1955 yerel ve 1994 yerel için il sınır dosyası yok** (66 ve 76 il). Snapshot'ta

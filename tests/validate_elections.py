@@ -305,6 +305,10 @@ def check_historical_district_geometry():
         return geom if geom.is_valid else geom.buffer(0)
 
     hist_by_id = {f["properties"]["id"]: clean(shape(f["geometry"])) for f in hist_geo["features"]}
+    # mahalle duzeyinde paylastirilamayan parcalar (BELIRSIZ-*): o secimde notluysa cizilir
+    notlar_p = ROOT / "geo" / "historical" / "idari" / "harita_notlari.json"
+    belirsiz_secim = {k: [x for x in v if x.startswith("BELIRSIZ-")]
+                      for k, v in (load_json(notlar_p)["secimler"].items() if notlar_p.exists() else [])}
     modern_by_plaka = {}
     modern_by_id = {}
     for f in modern_geo["features"]:
@@ -348,9 +352,10 @@ def check_historical_district_geometry():
                 if gid in modern_by_id:
                     modern_ids.setdefault(gid, modern_by_id[gid])
             visible_modern = {gid: poly for gid, poly in modern_ids.items() if gid not in hidden}
-            ids = [e["syntheticId"] for e in active] + list(visible_modern.keys())
-            polys = [hist_by_id[e["syntheticId"]] for e in active] + list(visible_modern.values())
-            hist_idx = set(range(len(active)))  # sadece HIST-* iceren ciftler kontrol edilir
+            belirsiz = [x for x in belirsiz_secim.get(key, []) if x in hist_by_id and x.split("-")[1] == f"{plaka:02d}"]
+            ids = [e["syntheticId"] for e in active] + list(visible_modern.keys()) + belirsiz
+            polys = [hist_by_id[e["syntheticId"]] for e in active] + list(visible_modern.values()) + [hist_by_id[x] for x in belirsiz]
+            hist_idx = set(range(len(active))) | set(range(len(polys) - len(belirsiz), len(polys)))  # HIST-*/BELIRSIZ-* iceren ciftler
 
             # (1) ikili ust-uste binme, SADECE en az biri HIST-* olan ciftler icin:
             # komsu GUNCEL modern ilceler arasinda (bu kontrolun/oturumun konusu
@@ -359,11 +364,22 @@ def check_historical_district_geometry():
             # HIST-* icermeyen ciftlerde de ~%1-2 sliver var) - bunlar bu kontrolun
             # kapsami DISINDA. Hicbir cift, kucuk olanin alaninin %1'inden fazlasini
             # paylasmamali.
+            # her poligonun guncel (modern) bilesenleri: sentetikte hideIds, modernde kendisi
+            bilesen = [set(e["hideIds"]) for e in active] + [{g} for g in visible_modern] + [set() for _ in belirsiz]
             for i in range(len(polys)):
                 for j in range(i + 1, len(polys)):
                     if i not in hist_idx and j not in hist_idx:
                         continue
-                    inter_area = polys[i].intersection(polys[j]).area
+                    inter = polys[i].intersection(polys[j])
+                    if inter.area > 0:
+                        # kaynaktaki komsu modern ilceler arasi ince ortusmeler (sliver) bu
+                        # kontrolun konusu degil: sentetik, bunlari bilesenleriyle birlikte tasir
+                        taban = [modern_by_id[h].intersection(modern_by_id[k]) for h in bilesen[i] for k in bilesen[j]
+                                 if h != k and h in modern_by_id and k in modern_by_id
+                                 and modern_by_id[h].intersects(modern_by_id[k])]
+                        if taban:
+                            inter = inter.difference(unary_union(taban))
+                    inter_area = inter.area
                     smaller = min(polys[i].area, polys[j].area)
                     if smaller > 0 and inter_area / smaller > 0.01:
                         problems.append(f"{key}/plaka {plaka}: {ids[i]}/{ids[j]} arasında üst üste binme (oran={inter_area/smaller:.3f})")

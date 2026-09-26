@@ -225,8 +225,9 @@ async function scenario_1992DalgasiCozumu(browser) {
     await page.waitForTimeout(400);
 
     const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
-    const stillBlocked = ['TR-D-34-002', 'TR-D-34-008', 'TR-D-34-017', 'TR-D-34-018', 'TR-D-34-033'];
-    check('1991 genel İstanbul: sadece 5 gerçekten bloke ilçe "veri yok" (1992 dalgasının 7\'si artık değil)',
+    // Arnavutkoy/Sultangazi mahalle duzeyinde paylastirildi: yalniz paylastirilamayan kisimlari (BELIRSIZ-*)
+    const stillBlocked = ['BELIRSIZ-34-002', 'TR-D-34-008', 'TR-D-34-017', 'TR-D-34-018', 'BELIRSIZ-34-033'];
+    check('1991 genel İstanbul: sadece 3 bloke ilçe + 2 paylaştırılamayan kısım "veri yok" (1992 dalgasının 7\'si artık değil)',
       nodataIds.length === 5 && stillBlocked.every((id) => nodataIds.includes(id)), JSON.stringify(nodataIds));
 
     for (const [histId, adi] of [['HIST-Istanbul-Bakirkoy', 'Bakırköy'], ['HIST-Istanbul-Kucukcekmece', 'Küçükçekmece'], ['HIST-Istanbul-Pendik', 'Pendik']]) {
@@ -252,8 +253,8 @@ async function scenario_sancaktepeCozumu(browser) {
     const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
     check('1995 genel İstanbul: Sancaktepe (TR-D-34-029) artık "veri yok" değil',
       !nodataIds.includes('TR-D-34-029'), JSON.stringify(nodataIds));
-    check('1995 genel İstanbul: sadece hâlâ gerçekten bloke olan 4 ilçe "veri yok" (Arnavutköy/Başakşehir/Esenyurt/Sultangazi)',
-      nodataIds.length === 4 && ['TR-D-34-002', 'TR-D-34-008', 'TR-D-34-018', 'TR-D-34-033'].every((id) => nodataIds.includes(id)),
+    check('1995 genel İstanbul: Başakşehir/Esenyurt + Arnavutköy/Sultangazi\'nin paylaştırılamayan kısmı "veri yok"',
+      nodataIds.length === 4 && ['BELIRSIZ-34-002', 'TR-D-34-008', 'TR-D-34-018', 'BELIRSIZ-34-033'].every((id) => nodataIds.includes(id)),
       JSON.stringify(nodataIds));
 
     await page.click('path.il-path[data-geom-id="HIST-Istanbul-Umraniye"]');
@@ -488,13 +489,21 @@ async function scenario_1961_1987Ilce(browser) {
     await page.waitForTimeout(400);
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(500);
-    const arn = await page.$eval('path[data-geom-id="TR-D-34-002"]', (el) => ({cls: el.getAttribute('class'), fill: el.getAttribute('fill')}));
-    check('1995 genel İstanbul: Arnavutköy taranmış (henüz ayrı ilçe değil)', /il-path-gecis/.test(arn.cls) && arn.fill === 'url(#hatchGecis)', JSON.stringify(arn));
-    await page.hover('path[data-geom-id="TR-D-34-002"]');
-    await page.waitForTimeout(200);
-    const arnTip = await page.$eval('#tooltip, .tooltip', (el) => el.textContent).catch(() => '');
-    check('1995 genel İstanbul: Arnavutköy ipucu kaynak ilçeleri ve kanunu yazıyor',
-      /Gaziosmanpaşa/.test(arnTip) && /Çatalca/.test(arnTip) && /5747/.test(arnTip), arnTip);
+    // Arnavutkoy mahalle duzeyinde paylastirildi: dogusu Gaziosmanpasa, batisi Catalca satirinda;
+    // modern Arnavutkoy cizilmez, paylastirilamayan kisim (Terkos, Sazlidere golu) taranir
+    const ist95 = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1995 genel İstanbul: Arnavutköy/Sultangazi ayrı çizilmiyor; Gaziosmanpaşa, Çatalca, Eyüp birleşimleri var',
+      !ist95.includes('TR-D-34-002') && !ist95.includes('TR-D-34-033') && ['HISTK-34-021-', 'HISTK-34-015-', 'HISTK-34-019-'].every((p) => ist95.some((i) => i.startsWith(p))),
+      JSON.stringify(ist95));
+    const arn = await page.$eval('path[data-geom-id="BELIRSIZ-34-002"]', (el) => ({cls: el.getAttribute('class'), fill: el.getAttribute('fill')}));
+    check('1995 genel İstanbul: Arnavutköy\'ün paylaştırılamayan kısmı taranmış', /il-path-gecis/.test(arn.cls) && arn.fill === 'url(#hatchGecis)', JSON.stringify(arn));
+    const arnTip = await page.$eval('path[data-geom-id="BELIRSIZ-34-002"]', (el) => {
+      const r = el.getBoundingClientRect();
+      el.dispatchEvent(new MouseEvent('mousemove', {bubbles: true, clientX: r.x + 2, clientY: r.y + 2}));
+      return document.querySelector('#tooltip').textContent;
+    });
+    check('1995 genel İstanbul: paylaştırılamayan kısım ipucu kaynak ilçeleri ve kanunu yazıyor',
+      /Gaziosmanpaşa/.test(arnTip) && /Çatalca/.test(arnTip) && /5747/.test(arnTip) && /Terkos/.test(arnTip), arnTip);
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
     // Buyukcekmece 1987'de Catalca'dan kuruldu (3392, tek kaynak): 1987 oncesi Catalca poligonu
