@@ -118,9 +118,10 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
   Altındağ'a katılan ayrı bir ilçedir (madde 2); sınırı kaynakta yok, haritada hâlâ
   çizilemez ama kaydı artık kaynaklı. Keçiören ← Altındağ, Mamak ve Gölbaşı ← Çankaya,
   Sincan ← Yenimahalle.
-- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): 4200 (1996, 3),
-  2585 (1982, 2), 3949 (1993, 2), 1055 (1968, 2) ve diğer küçükler; ardından
-  5747 (2008, 20) ve 6360 (2012, 15) büyükşehir bölünmeleri (mahalle düzeyi).
+- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): KHK 584 (1999: Kaynaşlı,
+  Derince), 3806 kalanları (1992: Damal, Karakoyunlu), 309 (1963: Gaziosmanpaşa),
+  6447 (2013: Altınordu), 7148 (2018: Derecik), KHK 694 (2017: Sultanhanı, Kemalpaşa);
+  ardından 5747 (2008) ve 6360 (2012) büyükşehir bölünmeleri (mahalle düzeyi).
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
