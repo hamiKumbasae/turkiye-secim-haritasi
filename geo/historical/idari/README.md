@@ -95,6 +95,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | KHK 584 | 09.12.1999 | 2 | 2 | 0 | RG 23901 ek (1)–(2) listeler, 25 satır; Kaynaşlı ← Düzce, Derince ← Kocaeli Merkez; Düzce ili |
 | 3806 | 03.06.1992 | 12 (+Sultanbeyli listesiz) | 2 | — | RG 21247 (mükerrer); Damal ← Hanak, Karakoyunlu ← Iğdır; İstanbul/İzmir mahalle listelerinde eski ilçe yazılmamış (repoda doğrulanmış); Ardahan ve Iğdır illeri |
 | 309 | 04.09.1963 | 1 | 1 | 0 | RG 11496 (1) sayılı cetvel, 10 satır elle aktarıldı; Gaziosmanpaşa ← Eyüp |
+| 5747 | 22.03.2008 | 43 | 29 (10'u yeni; 19'u repoda doğrulanmış ya da merkez) | 13 | RG 26824 (mükerrer) asıl metni + mevzuat metni, (1)–(41) sayılı listeler ve Madde 1 bentleri, 936 satır; belde → ilçe DİE 2004 |
 | 7033 | 01.09.1957–01.04.1960 | 78 | — (orta güven, geometriye çevrilmedi) | — | RG 9644 cetvelleri; 50/77 blok okunabildi |
 
 - 3644'ün 130 ilçesinin tamamı İçişleri listesinde de 3644 ile kayıtlı; ek listelerde
@@ -121,8 +122,21 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
   Altındağ'a katılan ayrı bir ilçedir (madde 2); sınırı kaynakta yok, haritada hâlâ
   çizilemez ama kaydı artık kaynaklı. Keçiören ← Altındağ, Mamak ve Gölbaşı ← Çankaya,
   Sincan ← Yenimahalle.
-- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): 6447 (2013: Altınordu), 7148 (2018: Derecik), KHK 694 (2017: Sultanhanı, Kemalpaşa);
-  ardından 5747 (2008) ve 6360 (2012) büyükşehir bölünmeleri (mahalle düzeyi).
+- 5747 (2008): ek listeler birimleri eski ilçeye değil bağlı oldukları belediyeye göre
+  gruplar ("Taşoluk İlk Kademe Belediyesine bağlı"); yalnız köy cetvellerinde İLÇESİ
+  sütunu var. İlk kademe belediyesinin ilçesi DİE 2004 Tablo 9'dan (`extract_5747.py`;
+  il satırının altında ilk ilçeden önce gelen beldeler = Merkez ilçe). Yeni tek kaynaklı
+  (haritaya yansıyan): Sarıçam ← Yüreğir; Döşemealtı ← Antalya Merkez; Başiskele, Kartepe
+  ← Kocaeli Merkez; Çayırova, Darıca, Dilovası ← Gebze; Arifiye, Erenler, Serdivan ←
+  Sakarya Merkez. Çok kaynaklı (çizilmez): Çukurova (Seyhan, Karaisalı), Pursaklar
+  (Keçiören, Altındağ, Çubuk; listesiz, bent metninden), Aksu (Merkez, Serik), Konyaaltı
+  (Merkez, Kemer: Beldibi), Arnavutköy (Gaziosmanpaşa, Çatalca, Küçükçekmece), Başakşehir,
+  Esenyurt (Büyükçekmece, Avcılar), Sultangazi (Gaziosmanpaşa, Eyüp, Esenler). Madde 2
+  (Eminönü → Fatih, Ilıca → Aziziye, mahalle kısmı nakilleri) `digerHukumler`'de.
+  Mevzuat metni 6552 (2014) değişikliklerini içerir; RG aslıyla fark `rgFarki`
+  (yalnız dizgi: "Yüreği" = RG'de Yüreğir, boş bucak hücresi).
+- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş): 6360 (2012) büyükşehir
+  bölünmeleri; 6447 (2013: Altınordu), 7148 (2018: Derecik), KHK 694 (2017: Sultanhanı, Kemalpaşa).
 
 ## Haritaya yansıtma (Faz 4a — `apply_idari_merges.py`, 2026-09-26)
 
@@ -140,6 +154,8 @@ Armutlu→Gemlik, Ağaçören/Sarıyahşi→Şereflikoçhisar vb.); ön yüz pol
 - `hedefBulunamadi` (294): hepsi yerel seçimler; eski ilçe o seçimde ayrı belediye
   satırı değil (çoğu il merkezi, il satırında). Açık karar.
 - Betik idempotent: önceki `HISTK-*` satırları önce tabanına döndürülür.
+  `build_idari_katman.py` HISTK satırlarını tabanıyla okur ve `district_splits.json`'daki
+  HISTK kayıtlarını yok sayar (bu katmandan üretildikleri için geri beslenmez).
   Yeni kanun eklendikten sonra `build_idari_katman.py` → `apply_idari_merges.py` →
   `scripts/build.py` → checksum yenile.
 

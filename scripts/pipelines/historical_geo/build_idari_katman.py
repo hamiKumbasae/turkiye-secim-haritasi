@@ -135,9 +135,19 @@ GEOMID_EK = {"56-771": "TR-D-56-007"}
 
 
 # --- secim kaniti --------------------------------------------------------------------------
+def histk_tabanlari():
+    """apply_idari_merges.py'nin sentetikleri (HISTK-*) -> taban geomId. Bu katman kaynak
+    kanitini anlatir; haritaya yansitma (HISTK) bu katmandan uretildigi icin geri okunmaz."""
+    p = ROOT / "geo/historical/idari/merge_plan.json"
+    if not p.exists():
+        return {}
+    return {sid: e["taban"] for sid, e in json.loads(p.read_text(encoding="utf-8"))["sentetikler"].items()}
+
+
 def secim_kaniti(secim_listesi):
     """ilce duzeyli secimlerden {geomId: [(tarih, anahtar, ad, plaka)]};
-    tum secimlerden {anahtar: {iller, ilceler}}."""
+    tum secimlerden {anahtar: {iller, ilceler}}. HISTK satirlari tabanlariyla okunur."""
+    taban = histk_tabanlari()
     gorunum = collections.defaultdict(list)
     satirlar = {}
     for s in secim_listesi:
@@ -147,6 +157,8 @@ def secim_kaniti(secim_listesi):
             continue
         il_satir = collections.defaultdict(list)
         for r in kayit.get("ilceler") or []:
+            if (r.get("geomId") or "") in taban:
+                r = dict(r, geomId=taban[r["geomId"]])
             il_satir[r["plaka"]].append({"ad": r["ad"], "geomId": r.get("geomId")})
             if r.get("geomId") and s["tur"] in ILCE_DUZEYLI:
                 gorunum[r["geomId"]].append((s["tarih"], s["anahtar"], r["ad"], r["plaka"]))
@@ -266,6 +278,8 @@ def main():
     bilinen = collections.defaultdict(list)
     for girdiler in splits.values():
         for e in girdiler:
+            if e["syntheticId"].startswith("HISTK-"):
+                continue  # apply_idari_merges.py ciktisi, bu katmandan uretiliyor
             m = metro.get(e["syntheticId"], {})
             for h in e["hideIds"]:
                 bilinen[h].append({"tarihselBirim": e["syntheticId"], "birlesimParcalari": e["hideIds"],

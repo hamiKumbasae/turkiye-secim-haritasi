@@ -1,35 +1,40 @@
 {
  "not": "apply_idari_merges.py ile üretilir; elle düzenlenmez.",
  "ozet": {
-  "sentetik": 185,
-  "satirDegisimi": 2911,
+  "sentetik": 191,
+  "satirDegisimi": 2973,
   "secimBasina": {
-   "1950yerel": 153,
-   "1955yerel": 145,
-   "1961": 168,
-   "1961referandum": 168,
-   "1963yerel": 137,
-   "1965": 168,
-   "1968yerel": 137,
-   "1969": 168,
-   "1973": 168,
-   "1973yerel": 136,
-   "1977": 168,
-   "1977yerel": 137,
-   "1982referandum": 167,
-   "1983": 167,
-   "1984yerel": 137,
-   "1987": 161,
-   "1987referandum": 161,
-   "1988referandum": 147,
-   "1989yerel": 93,
-   "1991": 12,
-   "1994yerel": 7,
-   "1995": 4,
-   "1999": 2
+   "1950yerel": 154,
+   "1955yerel": 146,
+   "1961": 170,
+   "1961referandum": 170,
+   "1963yerel": 138,
+   "1965": 170,
+   "1968yerel": 138,
+   "1969": 170,
+   "1973": 170,
+   "1973yerel": 137,
+   "1977": 170,
+   "1977yerel": 138,
+   "1982referandum": 169,
+   "1983": 169,
+   "1984yerel": 138,
+   "1987": 163,
+   "1987referandum": 163,
+   "1988referandum": 149,
+   "1989yerel": 95,
+   "1991": 16,
+   "1994yerel": 9,
+   "1995": 8,
+   "1999": 6,
+   "1999yerel": 2,
+   "2002": 5,
+   "2004yerel": 2,
+   "2007": 5,
+   "2007referandum": 3
   },
-  "katilanIlce": 218,
-  "hedefBulunamadi": 294
+  "katilanIlce": 228,
+  "hedefBulunamadi": 373
  },
  "sentetikler": {
   "HISTK-01-006-bb0ee2": {
@@ -363,9 +368,10 @@
     "DEMRE"
    ]
   },
-  "HISTK-HIST-Antalya-Merkez-bb54a9": {
+  "HISTK-HIST-Antalya-Merkez-bbc5ed": {
    "taban": "HIST-Antalya-Merkez",
    "katilanlar": [
+    "TR-D-07-005",
     "TR-D-07-012"
    ],
    "secimler": [
@@ -385,9 +391,11 @@
    ],
    "plaka": 7,
    "kanunlar": [
-    "3644"
+    "3644",
+    "5747"
    ],
    "adlar": [
+    "DÖŞEMEALTI",
     "KEMER"
    ]
   },
@@ -2295,10 +2303,12 @@
     "BOZTEPE"
    ]
   },
-  "HISTK-41-008-dc611f": {
+  "HISTK-41-008-f386a9": {
    "taban": "TR-D-41-008",
    "katilanlar": [
-    "TR-D-41-004"
+    "TR-D-41-001",
+    "TR-D-41-004",
+    "TR-D-41-011"
    ],
    "secimler": [
     "1950yerel",
@@ -2320,10 +2330,60 @@
    ],
    "plaka": 41,
    "kanunlar": [
+    "5747",
     "KHK 584"
    ],
    "adlar": [
-    "DERİNCE"
+    "BAŞİSKELE",
+    "DERİNCE",
+    "KARTEPE"
+   ]
+  },
+  "HISTK-41-006-c17594": {
+   "taban": "TR-D-41-006",
+   "katilanlar": [
+    "TR-D-41-002",
+    "TR-D-41-003",
+    "TR-D-41-005"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
+    "1987referandum",
+    "1987",
+    "1988referandum",
+    "1989yerel",
+    "1991",
+    "1994yerel",
+    "1995",
+    "1999",
+    "1999yerel",
+    "2002",
+    "2004yerel",
+    "2007",
+    "2007referandum"
+   ],
+   "plaka": 41,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "DARICA",
+    "DİLOVASI",
+    "ÇAYIROVA"
    ]
   },
   "HISTK-42-006-e83ade": {
@@ -3337,10 +3397,13 @@
     "HEMŞİN"
    ]
   },
-  "HISTK-54-001-4e1ded": {
+  "HISTK-54-001-cf63c3": {
    "taban": "TR-D-54-001",
    "katilanlar": [
+    "TR-D-54-003",
+    "TR-D-54-004",
     "TR-D-54-005",
+    "TR-D-54-014",
     "TR-D-54-015"
    ],
    "secimler": [
@@ -3359,10 +3422,14 @@
    ],
    "plaka": 54,
    "kanunlar": [
-    "3644"
+    "3644",
+    "5747"
    ],
    "adlar": [
+    "ARİFİYE",
+    "ERENLER",
     "FERİZLİ",
+    "SERDİVAN",
     "SÖĞÜTLÜ"
    ]
   },
@@ -5255,6 +5322,30 @@
     "ÇELTİK"
    ]
   },
+  "HISTK-HIST-Adana-Merkez-a2f73c": {
+   "taban": "HIST-Adana-Merkez",
+   "katilanlar": [
+    "TR-D-01-011"
+   ],
+   "secimler": [
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1987referandum"
+   ],
+   "plaka": 1,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "SARIÇAM"
+   ]
+  },
   "HISTK-03-007-640c67": {
    "taban": "TR-D-03-007",
    "katilanlar": [
@@ -5654,6 +5745,33 @@
     "ÇİLİMLİ"
    ]
   },
+  "HISTK-01-015-e8292d": {
+   "taban": "TR-D-01-015",
+   "katilanlar": [
+    "TR-D-01-011"
+   ],
+   "secimler": [
+    "1987",
+    "1988referandum",
+    "1989yerel",
+    "1991",
+    "1994yerel",
+    "1995",
+    "1999",
+    "1999yerel",
+    "2002",
+    "2004yerel",
+    "2007",
+    "2007referandum"
+   ],
+   "plaka": 1,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "SARIÇAM"
+   ]
+  },
   "HISTK-16-017-a3c813": {
    "taban": "TR-D-16-017",
    "katilanlar": [
@@ -5839,6 +5957,51 @@
     "GÜMÜŞOVA"
    ]
   },
+  "HISTK-HIST-Antalya-Merkez-e9f7f7": {
+   "taban": "HIST-Antalya-Merkez",
+   "katilanlar": [
+    "TR-D-07-005"
+   ],
+   "secimler": [
+    "1991",
+    "1995",
+    "1999",
+    "2002",
+    "2007",
+    "2007referandum"
+   ],
+   "plaka": 7,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "DÖŞEMEALTI"
+   ]
+  },
+  "HISTK-54-001-4dac2e": {
+   "taban": "TR-D-54-001",
+   "katilanlar": [
+    "TR-D-54-003",
+    "TR-D-54-004",
+    "TR-D-54-014"
+   ],
+   "secimler": [
+    "1991",
+    "1995",
+    "1999",
+    "2002",
+    "2007"
+   ],
+   "plaka": 54,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "ARİFİYE",
+    "ERENLER",
+    "SERDİVAN"
+   ]
+  },
   "HISTK-81-004-b6b5b4": {
    "taban": "TR-D-81-004",
    "katilanlar": [
@@ -5856,9 +6019,34 @@
    "adlar": [
     "KAYNAŞLI"
    ]
+  },
+  "HISTK-41-008-9ff8a8": {
+   "taban": "TR-D-41-008",
+   "katilanlar": [
+    "TR-D-41-001",
+    "TR-D-41-011"
+   ],
+   "secimler": [
+    "2002",
+    "2007"
+   ],
+   "plaka": 41,
+   "kanunlar": [
+    "5747"
+   ],
+   "adlar": [
+    "BAŞİSKELE",
+    "KARTEPE"
+   ]
   }
  },
  "hedefBulunamadi": [
+  {
+   "secim": "1950yerel",
+   "ilce": "TR-D-01-011",
+   "ad": "SARIÇAM",
+   "ebeveyn": "TR-D-01-015"
+  },
   {
    "secim": "1950yerel",
    "ilce": "TR-D-03-002",
@@ -5966,6 +6154,12 @@
    "ilce": "TR-D-75-003",
    "ad": "DAMAL",
    "ebeveyn": "TR-D-75-005"
+  },
+  {
+   "secim": "1955yerel",
+   "ilce": "TR-D-01-011",
+   "ad": "SARIÇAM",
+   "ebeveyn": "TR-D-01-015"
   },
   {
    "secim": "1955yerel",
@@ -6083,6 +6277,24 @@
   },
   {
    "secim": "1955yerel",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1955yerel",
+   "ilce": "TR-D-54-003",
+   "ad": "ARİFİYE",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1955yerel",
+   "ilce": "TR-D-54-004",
+   "ad": "ERENLER",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1955yerel",
    "ilce": "TR-D-54-005",
    "ad": "FERİZLİ",
    "ebeveyn": "TR-D-54-001"
@@ -6104,6 +6316,12 @@
    "ilce": "TR-D-54-012",
    "ad": "PAMUKOVA",
    "ebeveyn": "TR-D-54-006"
+  },
+  {
+   "secim": "1955yerel",
+   "ilce": "TR-D-54-014",
+   "ad": "SERDİVAN",
+   "ebeveyn": "TR-D-54-001"
   },
   {
    "secim": "1955yerel",
@@ -6131,6 +6349,12 @@
   },
   {
    "secim": "1963yerel",
+   "ilce": "TR-D-01-011",
+   "ad": "SARIÇAM",
+   "ebeveyn": "TR-D-01-015"
+  },
+  {
+   "secim": "1963yerel",
    "ilce": "TR-D-03-006",
    "ad": "ÇOBANLAR",
    "ebeveyn": "TR-D-03-001"
@@ -6176,6 +6400,12 @@
    "ilce": "TR-D-06-023",
    "ad": "SİNCAN",
    "ebeveyn": "TR-D-06-025"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
    "secim": "1963yerel",
@@ -6305,8 +6535,26 @@
   },
   {
    "secim": "1963yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1963yerel",
    "ilce": "TR-D-41-004",
    "ad": "DERİNCE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
    "ebeveyn": "TR-D-41-008"
   },
   {
@@ -6389,8 +6637,32 @@
   },
   {
    "secim": "1963yerel",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-54-003",
+   "ad": "ARİFİYE",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-54-004",
+   "ad": "ERENLER",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1963yerel",
    "ilce": "TR-D-54-005",
    "ad": "FERİZLİ",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-54-014",
+   "ad": "SERDİVAN",
    "ebeveyn": "TR-D-54-001"
   },
   {
@@ -6410,6 +6682,12 @@
    "ilce": "TR-D-58-015",
    "ad": "ULAŞ",
    "ebeveyn": "TR-D-58-012"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-01-011",
+   "ad": "SARIÇAM",
+   "ebeveyn": "TR-D-01-015"
   },
   {
    "secim": "1968yerel",
@@ -6458,6 +6736,12 @@
    "ilce": "TR-D-06-023",
    "ad": "SİNCAN",
    "ebeveyn": "TR-D-06-025"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
    "secim": "1968yerel",
@@ -6587,8 +6871,26 @@
   },
   {
    "secim": "1968yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1968yerel",
    "ilce": "TR-D-41-004",
    "ad": "DERİNCE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
    "ebeveyn": "TR-D-41-008"
   },
   {
@@ -6671,8 +6973,32 @@
   },
   {
    "secim": "1968yerel",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-54-003",
+   "ad": "ARİFİYE",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-54-004",
+   "ad": "ERENLER",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1968yerel",
    "ilce": "TR-D-54-005",
    "ad": "FERİZLİ",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-54-014",
+   "ad": "SERDİVAN",
    "ebeveyn": "TR-D-54-001"
   },
   {
@@ -6692,6 +7018,12 @@
    "ilce": "TR-D-58-015",
    "ad": "ULAŞ",
    "ebeveyn": "TR-D-58-012"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-01-011",
+   "ad": "SARIÇAM",
+   "ebeveyn": "TR-D-01-015"
   },
   {
    "secim": "1973yerel",
@@ -6740,6 +7072,12 @@
    "ilce": "TR-D-06-023",
    "ad": "SİNCAN",
    "ebeveyn": "TR-D-06-025"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
    "secim": "1973yerel",
@@ -6875,8 +7213,26 @@
   },
   {
    "secim": "1973yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1973yerel",
    "ilce": "TR-D-41-004",
    "ad": "DERİNCE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
    "ebeveyn": "TR-D-41-008"
   },
   {
@@ -6959,8 +7315,32 @@
   },
   {
    "secim": "1973yerel",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-54-003",
+   "ad": "ARİFİYE",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-54-004",
+   "ad": "ERENLER",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1973yerel",
    "ilce": "TR-D-54-005",
    "ad": "FERİZLİ",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-54-014",
+   "ad": "SERDİVAN",
    "ebeveyn": "TR-D-54-001"
   },
   {
@@ -6980,6 +7360,12 @@
    "ilce": "TR-D-58-015",
    "ad": "ULAŞ",
    "ebeveyn": "TR-D-58-012"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-01-011",
+   "ad": "SARIÇAM",
+   "ebeveyn": "TR-D-01-015"
   },
   {
    "secim": "1977yerel",
@@ -7028,6 +7414,12 @@
    "ilce": "TR-D-06-023",
    "ad": "SİNCAN",
    "ebeveyn": "TR-D-06-025"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
    "secim": "1977yerel",
@@ -7157,8 +7549,26 @@
   },
   {
    "secim": "1977yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1977yerel",
    "ilce": "TR-D-41-004",
    "ad": "DERİNCE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
    "ebeveyn": "TR-D-41-008"
   },
   {
@@ -7241,8 +7651,32 @@
   },
   {
    "secim": "1977yerel",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-54-003",
+   "ad": "ARİFİYE",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-54-004",
+   "ad": "ERENLER",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1977yerel",
    "ilce": "TR-D-54-005",
    "ad": "FERİZLİ",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-54-014",
+   "ad": "SERDİVAN",
    "ebeveyn": "TR-D-54-001"
   },
   {
@@ -7265,6 +7699,12 @@
   },
   {
    "secim": "1984yerel",
+   "ilce": "TR-D-01-011",
+   "ad": "SARIÇAM",
+   "ebeveyn": "TR-D-01-015"
+  },
+  {
+   "secim": "1984yerel",
    "ilce": "TR-D-03-006",
    "ad": "ÇOBANLAR",
    "ebeveyn": "TR-D-03-001"
@@ -7274,6 +7714,12 @@
    "ilce": "TR-D-03-013",
    "ad": "İSCEHİSAR",
    "ebeveyn": "TR-D-03-001"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
    "secim": "1984yerel",
@@ -7397,8 +7843,26 @@
   },
   {
    "secim": "1984yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1984yerel",
    "ilce": "TR-D-41-004",
    "ad": "DERİNCE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
    "ebeveyn": "TR-D-41-008"
   },
   {
@@ -7481,8 +7945,32 @@
   },
   {
    "secim": "1984yerel",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-54-003",
+   "ad": "ARİFİYE",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-54-004",
+   "ad": "ERENLER",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1984yerel",
    "ilce": "TR-D-54-005",
    "ad": "FERİZLİ",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-54-014",
+   "ad": "SERDİVAN",
    "ebeveyn": "TR-D-54-001"
   },
   {
@@ -7508,6 +7996,12 @@
    "ilce": "TR-D-03-006",
    "ad": "ÇOBANLAR",
    "ebeveyn": "TR-D-03-001"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
    "secim": "1989yerel",
@@ -7559,8 +8053,26 @@
   },
   {
    "secim": "1989yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1989yerel",
    "ilce": "TR-D-41-004",
    "ad": "DERİNCE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
    "ebeveyn": "TR-D-41-008"
   },
   {
@@ -7589,8 +8101,32 @@
   },
   {
    "secim": "1989yerel",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-54-003",
+   "ad": "ARİFİYE",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-54-004",
+   "ad": "ERENLER",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1989yerel",
    "ilce": "TR-D-54-005",
    "ad": "FERİZLİ",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-54-014",
+   "ad": "SERDİVAN",
    "ebeveyn": "TR-D-54-001"
   },
   {
@@ -7613,8 +8149,44 @@
   },
   {
    "secim": "1994yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1994yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1994yerel",
    "ilce": "TR-D-41-004",
    "ad": "DERİNCE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1994yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1994yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1999yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1999yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
    "ebeveyn": "TR-D-41-008"
   },
   {
@@ -7622,6 +8194,90 @@
    "ilce": "TR-D-41-004",
    "ad": "DERİNCE",
    "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1999yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1999yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "2004yerel",
+   "ilce": "TR-D-07-005",
+   "ad": "DÖŞEMEALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "2004yerel",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "2004yerel",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "2004yerel",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "2004yerel",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "2007referandum",
+   "ilce": "TR-D-41-001",
+   "ad": "BAŞİSKELE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "2007referandum",
+   "ilce": "TR-D-41-008",
+   "ad": "İZMİT",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "2007referandum",
+   "ilce": "TR-D-41-011",
+   "ad": "KARTEPE",
+   "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "2007referandum",
+   "ilce": "TR-D-54-001",
+   "ad": "ADAPAZARI",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "2007referandum",
+   "ilce": "TR-D-54-003",
+   "ad": "ARİFİYE",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "2007referandum",
+   "ilce": "TR-D-54-004",
+   "ad": "ERENLER",
+   "ebeveyn": "TR-D-54-001"
+  },
+  {
+   "secim": "2007referandum",
+   "ilce": "TR-D-54-014",
+   "ad": "SERDİVAN",
+   "ebeveyn": "TR-D-54-001"
   }
  ]
 }

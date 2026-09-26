@@ -117,6 +117,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/4200.json"
   },
   {
+   "id": "kanun_5747",
+   "type": "official",
+   "title": "5747 sayılı Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun (RG 2008-03-22, sayı 26824)",
+   "url": "https://www.resmigazete.gov.tr/eskiler/2008/03/20080322M1-1.htm",
+   "raw": "data/raw/resmi_gazete/26824_1.htm",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+  },
+  {
    "id": "kanun_7033",
    "type": "official",
    "title": "7033 sayılı Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun (RG 1957-06-27, sayı 9644)",
@@ -1253,14 +1261,35 @@
     "sayi": 26824
    },
    "provinceAfter": 1,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Seyhan",
+     "geomId": "TR-D-01-012",
+     "provincePlaka": 1,
+     "unitsTransferred": 14
+    },
+    {
+     "district": "Karaisalı",
+     "geomId": "TR-D-01-006",
+     "provincePlaka": 1,
+     "unitsTransferred": 10
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 2,
+    "rgSayfalari": [
+     11
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Çukurova"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -1471,14 +1500,30 @@
     "sayi": 26824
    },
    "provinceAfter": 1,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Yüreğir",
+     "geomId": "TR-D-01-015",
+     "provincePlaka": 1,
+     "unitsTransferred": 72
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 1,
+    "rgSayfalari": [
+     9,
+     10
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Sarıçam"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3477,14 +3522,39 @@
     "sayi": 26824
    },
    "provinceAfter": 6,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Altındağ",
+     "geomId": "TR-D-06-002",
+     "provincePlaka": 6,
+     "unitsTransferred": 2
+    },
+    {
+     "district": "Keçiören",
+     "geomId": "TR-D-06-017",
+     "provincePlaka": 6,
+     "unitsTransferred": 2
+    },
+    {
+     "district": "Çubuk",
+     "geomId": "TR-D-06-008",
+     "provincePlaka": 6,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": null,
+    "rgSayfalari": [],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Pursaklar"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3622,14 +3692,35 @@
     "sayi": 26824
    },
    "provinceAfter": 7,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Antalya-Merkez",
+     "provincePlaka": 7,
+     "unitsTransferred": 16
+    },
+    {
+     "district": "Serik",
+     "geomId": "TR-D-07-019",
+     "provincePlaka": 7,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 3,
+    "rgSayfalari": [
+     12
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Aksu"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3711,14 +3802,29 @@
     "sayi": 26824
    },
    "provinceAfter": 7,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Antalya-Merkez",
+     "provincePlaka": 7,
+     "unitsTransferred": 22
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 4,
+    "rgSayfalari": [
+     12
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Döşemealtı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -3933,6 +4039,14 @@
    "predecessors": [
     "HIST-Antalya-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 5,
+    "rgSayfalari": [
+     13
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -3956,14 +4070,35 @@
     "sayi": 26824
    },
    "provinceAfter": 7,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "HIST-Antalya-Merkez",
+     "provincePlaka": 7,
+     "unitsTransferred": 12
+    },
+    {
+     "district": "Kemer",
+     "geomId": "TR-D-07-012",
+     "provincePlaka": 7,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 6,
+    "rgSayfalari": [
+     13
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Konyaaltı"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -4064,6 +4199,12 @@
    "predecessors": [
     "HIST-Antalya-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": null,
+    "rgSayfalari": [],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -8764,6 +8905,14 @@
    "predecessors": [
     "HIST-Diyarbakır-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 7,
+    "rgSayfalari": [
+     13
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -9029,6 +9178,14 @@
    "predecessors": [
     "HIST-Diyarbakır-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 8,
+    "rgSayfalari": [
+     14
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -9163,6 +9320,15 @@
    "predecessors": [
     "HIST-Diyarbakır-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 9,
+    "rgSayfalari": [
+     14,
+     15
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -9189,6 +9355,14 @@
    "predecessors": [
     "HIST-Diyarbakır-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 10,
+    "rgSayfalari": [
+     16
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -10341,6 +10515,14 @@
    "predecessors": [
     "HIST-Erzurum-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 11,
+    "rgSayfalari": [
+     16
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -10539,6 +10721,14 @@
    "predecessors": [
     "HIST-Erzurum-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 12,
+    "rgSayfalari": [
+     17
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -10881,6 +11071,15 @@
    "predecessors": [
     "HIST-Eskişehir-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 13,
+    "rgSayfalari": [
+     18,
+     19
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -10988,6 +11187,15 @@
    "predecessors": [
     "HIST-Eskişehir-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 14,
+    "rgSayfalari": [
+     19,
+     20
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -12852,6 +13060,14 @@
    "predecessors": [
     "HIST-Mersin-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 31,
+    "rgSayfalari": [
+     33
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -13070,6 +13286,15 @@
    "predecessors": [
     "HIST-Mersin-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 32,
+    "rgSayfalari": [
+     33,
+     34
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -13162,6 +13387,15 @@
    "predecessors": [
     "HIST-Mersin-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 33,
+    "rgSayfalari": [
+     34,
+     35
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -13188,6 +13422,14 @@
    "predecessors": [
     "HIST-Mersin-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 34,
+    "rgSayfalari": [
+     35
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -13232,14 +13474,42 @@
     "sayi": 26824
    },
    "provinceAfter": 34,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gaziosmanpaşa",
+     "geomId": "TR-D-34-021",
+     "provincePlaka": 34,
+     "unitsTransferred": 26
+    },
+    {
+     "district": "Çatalca",
+     "geomId": "TR-D-34-015",
+     "provincePlaka": 34,
+     "unitsTransferred": 18
+    },
+    {
+     "district": "Küçükçekmece",
+     "geomId": "TR-D-34-026",
+     "provincePlaka": 34,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 15,
+    "rgSayfalari": [
+     20,
+     21
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Arnavutköy"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13262,6 +13532,14 @@
     "HIST-Istanbul-Uskudar",
     "HIST-Istanbul-Kartal"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 16,
+    "rgSayfalari": [
+     22
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -13410,14 +13688,42 @@
     "sayi": 26824
    },
    "provinceAfter": 34,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Küçükçekmece",
+     "geomId": "TR-D-34-026",
+     "provincePlaka": 34,
+     "unitsTransferred": 8
+    },
+    {
+     "district": "Büyükçekmece",
+     "geomId": "HIST-Istanbul-Buyukcekmece",
+     "provincePlaka": 34,
+     "unitsTransferred": 3
+    },
+    {
+     "district": "Esenler",
+     "geomId": "TR-D-34-017",
+     "provincePlaka": 34,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 17,
+    "rgSayfalari": [
+     22,
+     23
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Başakşehir"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -13524,6 +13830,14 @@
    "predecessors": [
     "HIST-Istanbul-Buyukcekmece"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 18,
+    "rgSayfalari": [
+     23
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -13627,6 +13941,14 @@
    "predecessors": [
     "HIST-Istanbul-Umraniye"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 19,
+    "rgSayfalari": [
+     24
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -13690,14 +14012,35 @@
     "sayi": 26824
    },
    "provinceAfter": 34,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Büyükçekmece",
+     "geomId": "HIST-Istanbul-Buyukcekmece",
+     "provincePlaka": 34,
+     "unitsTransferred": 23
+    },
+    {
+     "district": "Avcılar",
+     "geomId": "TR-D-34-004",
+     "provincePlaka": 34,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 20,
+    "rgSayfalari": [
+     25
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Esenyurt"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14087,6 +14430,14 @@
     "HIST-Istanbul-Umraniye",
     "HIST-Istanbul-Kartal"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 21,
+    "rgSayfalari": [
+     26
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -14185,14 +14536,41 @@
     "sayi": 26824
    },
    "provinceAfter": 34,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gaziosmanpaşa",
+     "geomId": "TR-D-34-021",
+     "provincePlaka": 34,
+     "unitsTransferred": 14
+    },
+    {
+     "district": "Eyüp",
+     "geomId": "TR-D-34-019",
+     "provincePlaka": 34,
+     "unitsTransferred": 1
+    },
+    {
+     "district": "Esenler",
+     "geomId": "TR-D-34-017",
+     "provincePlaka": 34,
+     "unitsTransferred": 1
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 22,
+    "rgSayfalari": [
+     27
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Sultangazi"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_cok_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -14493,6 +14871,15 @@
     "HIST-Izmir-Karsiyaka",
     "HIST-Izmir-Karsiyaka1991"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 23,
+    "rgSayfalari": [
+     27,
+     28
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -14833,6 +15220,16 @@
     "HIST-Izmir-Konak1991",
     "HIST-Izmir-Konak84"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 24,
+    "rgSayfalari": [
+     28,
+     29,
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -16944,14 +17341,29 @@
     "sayi": 26824
    },
    "provinceAfter": 41,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-41-008",
+     "provincePlaka": 41,
+     "unitsTransferred": 14
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 25,
+    "rgSayfalari": [
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Başiskele"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16968,14 +17380,29 @@
     "sayi": 26824
    },
    "provinceAfter": 41,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gebze",
+     "geomId": "TR-D-41-006",
+     "provincePlaka": 41,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 26,
+    "rgSayfalari": [
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Çayırova"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -16992,14 +17419,29 @@
     "sayi": 26824
    },
    "provinceAfter": 41,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gebze",
+     "geomId": "TR-D-41-006",
+     "provincePlaka": 41,
+     "unitsTransferred": 3
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 27,
+    "rgSayfalari": [
+     30
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Darıca"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17055,14 +17497,29 @@
     "sayi": 26824
    },
    "provinceAfter": 41,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Gebze",
+     "geomId": "TR-D-41-006",
+     "provincePlaka": 41,
+     "unitsTransferred": 6
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 28,
+    "rgSayfalari": [
+     31
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Dilovası"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17124,14 +17581,30 @@
     "sayi": 26824
    },
    "provinceAfter": 41,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-41-008",
+     "provincePlaka": 41,
+     "unitsTransferred": 55
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 29,
+    "rgSayfalari": [
+     31,
+     32
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1961referandum",
     "tarih": "1961-07-09",
     "adi": "Merkez"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -17207,14 +17680,30 @@
     "sayi": 26824
    },
    "provinceAfter": 41,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-41-008",
+     "provincePlaka": 41,
+     "unitsTransferred": 20
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 30,
+    "rgSayfalari": [
+     32,
+     33
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Kartepe"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22039,14 +22528,30 @@
     "sayi": 26824
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-54-001",
+     "provincePlaka": 54,
+     "unitsTransferred": 28
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 35,
+    "rgSayfalari": [
+     35,
+     36
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "1961referandum",
     "tarih": "1961-07-09",
     "adi": "Merkez"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22104,14 +22609,29 @@
     "sayi": 26824
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-54-001",
+     "provincePlaka": 54,
+     "unitsTransferred": 8
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 36,
+    "rgSayfalari": [
+     36
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Arifiye"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22128,14 +22648,29 @@
     "sayi": 26824
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-54-001",
+     "provincePlaka": 54,
+     "unitsTransferred": 9
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 37,
+    "rgSayfalari": [
+     36
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Erenler"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22491,14 +23026,29 @@
     "sayi": 26824
    },
    "provinceAfter": 54,
-   "predecessors": null,
+   "predecessors": [
+    {
+     "district": "Merkez",
+     "geomId": "TR-D-54-001",
+     "provincePlaka": 54,
+     "unitsTransferred": 15
+    }
+   ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 38,
+    "rgSayfalari": [
+     37
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
     "adi": "Serdivan"
    },
    "notYetInElections": [],
-   "lineageStatus": "unresolved",
+   "lineageStatus": "kanun_tek_kaynak",
    "source": "icisleri_il_ilce_kurulus_2018",
    "confidence": "high"
   },
@@ -22717,6 +23267,15 @@
    "predecessors": [
     "HIST-Samsun-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 39,
+    "rgSayfalari": [
+     37,
+     38
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -22804,6 +23363,15 @@
    "predecessors": [
     "HIST-Samsun-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 40,
+    "rgSayfalari": [
+     38,
+     39
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -22872,6 +23440,14 @@
    "predecessors": [
     "HIST-Samsun-Merkez"
    ],
+   "lineageSource": {
+    "kanun": "5747",
+    "listeNo": 41,
+    "rgSayfalari": [
+     39
+    ],
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "firstElectionAsSeparateUnit": {
     "anahtar": "2010referandum",
     "tarih": "2010-09-12",
@@ -30394,6 +30970,96 @@
    },
    "text": "Ekli (4) sayılı listede adları yazılı ilçe, bucak, kasaba ve köyler bağlanmak ve Adana iline bağlı Osmaniye İlçe Merkezi merkez olmak suretiyle Osmaniye adıyla bir il kurulmuştur.",
    "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/4200.json",
+   "confidence": "high"
+  },
+  {
+   "id": "kanun-5747-madde-2/2",
+   "unit": "Eminönü",
+   "unitType": "district",
+   "eventType": "abolished",
+   "effectiveDate": "2008-03-22",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "5747",
+   "officialGazette": {
+    "tarih": "2008-03-22",
+    "sayi": 26824,
+    "mukerrer": 1
+   },
+   "text": "İstanbul İlinde Eminönü İlçesi kaldırılmıştır. Eminönü Belediyesinin tüzel kişiliği kaldırılarak mahalleleriyle birlikte Fatih Belediyesine katılmıştır.",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json",
+   "confidence": "high"
+  },
+  {
+   "id": "kanun-5747-madde-2/3",
+   "unit": "Kadıköy/Ümraniye/Esenler/Başakşehir/Bağcılar",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "2008-03-22",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "5747",
+   "officialGazette": {
+    "tarih": "2008-03-22",
+    "sayi": 26824,
+    "mukerrer": 1
+   },
+   "text": "Kadıköy'e bağlı Atatürk ve Barbaros mahallelerinin E-80 ile O4 karayolunun kuzeyinde kalan kısımları Ümraniye'ye; Esenler'e bağlı askerî alanın ... Proje Yolunun kuzeyinde kalan kısmı Başakşehir'e, güneyinde kalan kısmı Bağcılar'a katılmıştır (6552 ile 2014'te 've Barbaros Mahallesinin' eklendi).",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json",
+   "confidence": "high"
+  },
+  {
+   "id": "kanun-5747-madde-2/4",
+   "unit": "Büyükçekmece/Ümraniye/Pendik/Avcılar",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "2008-03-22",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "5747",
+   "officialGazette": {
+    "tarih": "2008-03-22",
+    "sayi": 26824,
+    "mukerrer": 1
+   },
+   "text": "Gürpınar'a bağlı Pınartepe ve Kıraç'a bağlı Çakmaklı mahallesinin TEM-D100 bağlantı yolunun batısı Büyükçekmece'ye; Çekmeköy'e bağlı Mehmet Akif Ersoy mahallesinin Ümraniye-Şile yolunun güneyi Ümraniye'ye; Ömerli'ye bağlı Merkez mahallesinin yarımadadaki tepeleri Pendik'e bağlı Kurtdoğmuş köyüne; Bahçeşehir 1. Kısım mahallesinin bir kısmı Avcılar'a katılmıştır.",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json",
+   "confidence": "high"
+  },
+  {
+   "id": "kanun-5747-madde-2/5",
+   "unit": "Ilıca",
+   "unitType": "district",
+   "eventType": "renamed",
+   "effectiveDate": "2008-03-22",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "5747",
+   "officialGazette": {
+    "tarih": "2008-03-22",
+    "sayi": 26824,
+    "mukerrer": 1
+   },
+   "text": "Erzurum İlinde Dadaşkent İlk Kademe Belediyesi Ilıca Belediyesine katılmış ve Ilıca İlçesinin adı Aziziye olarak değiştirilmiştir. Merkez İlçeye bağlı Dereboğazı ve Yukarıyenice köyleri Aziziye İlçesine bağlanmıştır.",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json",
+   "confidence": "high"
+  },
+  {
+   "id": "kanun-5747-madde-2/6",
+   "unit": "Bala/Gölbaşı/Çankaya",
+   "unitType": "district",
+   "eventType": "boundary_adjustment",
+   "effectiveDate": "2008-03-22",
+   "provinceBefore": null,
+   "provinceAfter": null,
+   "lawNumber": "5747",
+   "officialGazette": {
+    "tarih": "2008-03-22",
+    "sayi": 26824,
+    "mukerrer": 1
+   },
+   "text": "Ankara İlinde Bala İlçesine bağlı Karaali İlk Kademe Belediyesinin Merkez ve Yazlık mahalleleri Gölbaşı Belediyesine; Tohumlar, Karahasanlı, Kömürcü, Evciler, Çavuşlu, Yayla ve Akarlar mahalleleri Çankaya Belediyesine; Ahmetçayırı ve Yöreli mahalleleri Bala Belediyesine katılmıştır.",
+   "source": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json",
    "confidence": "high"
   },
   {

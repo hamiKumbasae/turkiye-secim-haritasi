@@ -117,6 +117,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/4200.json"
   },
   {
+   "id": "kanun_5747",
+   "type": "official",
+   "title": "5747 sayılı Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun (RG 2008-03-22, sayı 26824)",
+   "url": "https://www.resmigazete.gov.tr/eskiler/2008/03/20080322M1-1.htm",
+   "raw": "data/raw/resmi_gazete/26824_1.htm",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+  },
+  {
    "id": "kanun_7033",
    "type": "official",
    "title": "7033 sayılı Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun (RG 1957-06-27, sayı 9644)",
@@ -302,9 +310,37 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     11
+    ],
+    "birimSayisi": 24,
+    "eskiIlceler": [
+     {
+      "ad": "Seyhan",
+      "geomId": "TR-D-01-012",
+      "plaka": 1,
+      "birimSayisi": 14
+     },
+     {
+      "ad": "Karaisalı",
+      "geomId": "TR-D-01-006",
+      "plaka": 1,
+      "birimSayisi": 10
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-01-004",
@@ -722,9 +758,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     9,
+     10
+    ],
+    "birimSayisi": 72,
+    "eskiIlceler": [
+     {
+      "ad": "Yüreğir",
+      "geomId": "TR-D-01-015",
+      "plaka": 1,
+      "birimSayisi": 72
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-01-012",
@@ -4563,9 +4622,41 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 5,
+    "eskiIlceler": [
+     {
+      "ad": "Altındağ",
+      "geomId": "TR-D-06-002",
+      "plaka": 6,
+      "birimSayisi": 2
+     },
+     {
+      "ad": "Keçiören",
+      "geomId": "TR-D-06-017",
+      "plaka": 6,
+      "birimSayisi": 2
+     },
+     {
+      "ad": "Çubuk",
+      "geomId": "TR-D-06-008",
+      "plaka": 6,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-06-023",
@@ -4841,9 +4932,37 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     12
+    ],
+    "birimSayisi": 17,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Antalya-Merkez",
+      "plaka": 7,
+      "birimSayisi": 16
+     },
+     {
+      "ad": "Serik",
+      "geomId": "TR-D-07-019",
+      "plaka": 7,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-07-003",
@@ -5007,9 +5126,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 4,
+    "rgSayfalari": [
+     12
+    ],
+    "birimSayisi": 22,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Antalya-Merkez",
+      "plaka": 7,
+      "birimSayisi": 22
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-07-006",
@@ -5436,7 +5577,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 5,
+    "rgSayfalari": [
+     13
+    ],
+    "birimSayisi": 9,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Antalya-Merkez",
+      "plaka": 7,
+      "birimSayisi": 9
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -5483,9 +5647,37 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 6,
+    "rgSayfalari": [
+     13
+    ],
+    "birimSayisi": 13,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Antalya-Merkez",
+      "plaka": 7,
+      "birimSayisi": 12
+     },
+     {
+      "ad": "Kemer",
+      "geomId": "TR-D-07-012",
+      "plaka": 7,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-07-015",
@@ -5701,7 +5893,28 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": null,
+    "rgSayfalari": [],
+    "birimSayisi": 1,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Antalya-Merkez",
+      "plaka": 7,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -14718,7 +14931,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 7,
+    "rgSayfalari": [
+     13
+    ],
+    "birimSayisi": 11,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Diyarbakır-Merkez",
+      "plaka": 21,
+      "birimSayisi": 11
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -15234,7 +15470,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 8,
+    "rgSayfalari": [
+     14
+    ],
+    "birimSayisi": 17,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Diyarbakır-Merkez",
+      "plaka": 21,
+      "birimSayisi": 17
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -15501,7 +15760,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 9,
+    "rgSayfalari": [
+     14,
+     15
+    ],
+    "birimSayisi": 51,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Diyarbakır-Merkez",
+      "plaka": 21,
+      "birimSayisi": 51
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -15561,7 +15844,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 10,
+    "rgSayfalari": [
+     16
+    ],
+    "birimSayisi": 10,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Diyarbakır-Merkez",
+      "plaka": 21,
+      "birimSayisi": 10
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -17756,7 +18062,36 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 11,
+    "rgSayfalari": [
+     16
+    ],
+    "birimSayisi": 3,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Erzurum-Merkez",
+      "plaka": 25,
+      "birimSayisi": 2
+     },
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -18138,7 +18473,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 12,
+    "rgSayfalari": [
+     17
+    ],
+    "birimSayisi": 13,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Erzurum-Merkez",
+      "plaka": 25,
+      "birimSayisi": 13
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -18764,7 +19122,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 13,
+    "rgSayfalari": [
+     18,
+     19
+    ],
+    "birimSayisi": 42,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Eskişehir-Merkez",
+      "plaka": 26,
+      "birimSayisi": 42
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -18981,7 +19363,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 14,
+    "rgSayfalari": [
+     19,
+     20
+    ],
+    "birimSayisi": 44,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Eskişehir-Merkez",
+      "plaka": 26,
+      "birimSayisi": 44
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -22557,7 +22963,36 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 31,
+    "rgSayfalari": [
+     33
+    ],
+    "birimSayisi": 17,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Mersin-Merkez",
+      "plaka": 33,
+      "birimSayisi": 15
+     },
+     {
+      "ad": "Tarsus",
+      "geomId": "TR-D-33-011",
+      "plaka": 33,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -22969,7 +23404,37 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 32,
+    "rgSayfalari": [
+     33,
+     34
+    ],
+    "birimSayisi": 22,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Mersin-Merkez",
+      "plaka": 33,
+      "birimSayisi": 21
+     },
+     {
+      "ad": "Erdemli",
+      "geomId": "TR-D-33-006",
+      "plaka": 33,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -23164,7 +23629,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 33,
+    "rgSayfalari": [
+     34,
+     35
+    ],
+    "birimSayisi": 38,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Mersin-Merkez",
+      "plaka": 33,
+      "birimSayisi": 38
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -23224,7 +23713,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 34,
+    "rgSayfalari": [
+     35
+    ],
+    "birimSayisi": 10,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Mersin-Merkez",
+      "plaka": 33,
+      "birimSayisi": 10
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -23315,9 +23827,44 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 15,
+    "rgSayfalari": [
+     20,
+     21
+    ],
+    "birimSayisi": 45,
+    "eskiIlceler": [
+     {
+      "ad": "Gaziosmanpaşa",
+      "geomId": "TR-D-34-021",
+      "plaka": 34,
+      "birimSayisi": 26
+     },
+     {
+      "ad": "Çatalca",
+      "geomId": "TR-D-34-015",
+      "plaka": 34,
+      "birimSayisi": 18
+     },
+     {
+      "ad": "Küçükçekmece",
+      "geomId": "TR-D-34-026",
+      "plaka": 34,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-34-003",
@@ -23407,7 +23954,48 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 16,
+    "rgSayfalari": [
+     22
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": "Kadıköy",
+      "geomId": "HIST-Istanbul-Kadikoy",
+      "plaka": 34,
+      "birimSayisi": 7
+     },
+     {
+      "ad": "Üsküdar",
+      "geomId": "HIST-Istanbul-Uskudar",
+      "plaka": 34,
+      "birimSayisi": 3
+     },
+     {
+      "ad": "Ümraniye",
+      "geomId": "HIST-Istanbul-Umraniye",
+      "plaka": 34,
+      "birimSayisi": 3
+     },
+     {
+      "ad": "Kartal",
+      "geomId": "HIST-Istanbul-Kartal",
+      "plaka": 34,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -23766,9 +24354,44 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 17,
+    "rgSayfalari": [
+     22,
+     23
+    ],
+    "birimSayisi": 12,
+    "eskiIlceler": [
+     {
+      "ad": "Küçükçekmece",
+      "geomId": "TR-D-34-026",
+      "plaka": 34,
+      "birimSayisi": 8
+     },
+     {
+      "ad": "Büyükçekmece",
+      "geomId": "HIST-Istanbul-Buyukcekmece",
+      "plaka": 34,
+      "birimSayisi": 3
+     },
+     {
+      "ad": "Esenler",
+      "geomId": "TR-D-34-017",
+      "plaka": 34,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-34-009",
@@ -23988,7 +24611,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 18,
+    "rgSayfalari": [
+     23
+    ],
+    "birimSayisi": 13,
+    "eskiIlceler": [
+     {
+      "ad": "Büyükçekmece",
+      "geomId": "HIST-Istanbul-Buyukcekmece",
+      "plaka": 34,
+      "birimSayisi": 13
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -24203,7 +24849,36 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 19,
+    "rgSayfalari": [
+     24
+    ],
+    "birimSayisi": 26,
+    "eskiIlceler": [
+     {
+      "ad": "Ümraniye",
+      "geomId": "HIST-Istanbul-Umraniye",
+      "plaka": 34,
+      "birimSayisi": 25
+     },
+     {
+      "ad": "Kartal",
+      "geomId": "HIST-Istanbul-Kartal",
+      "plaka": 34,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -24324,9 +24999,37 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 20,
+    "rgSayfalari": [
+     25
+    ],
+    "birimSayisi": 24,
+    "eskiIlceler": [
+     {
+      "ad": "Büyükçekmece",
+      "geomId": "HIST-Istanbul-Buyukcekmece",
+      "plaka": 34,
+      "birimSayisi": 23
+     },
+     {
+      "ad": "Avcılar",
+      "geomId": "TR-D-34-004",
+      "plaka": 34,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-34-019",
@@ -25144,7 +25847,36 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 21,
+    "rgSayfalari": [
+     26
+    ],
+    "birimSayisi": 16,
+    "eskiIlceler": [
+     {
+      "ad": "Ümraniye",
+      "geomId": "HIST-Istanbul-Umraniye",
+      "plaka": 34,
+      "birimSayisi": 15
+     },
+     {
+      "ad": "Kartal",
+      "geomId": "HIST-Istanbul-Kartal",
+      "plaka": 34,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -25355,9 +26087,43 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 22,
+    "rgSayfalari": [
+     27
+    ],
+    "birimSayisi": 16,
+    "eskiIlceler": [
+     {
+      "ad": "Gaziosmanpaşa",
+      "geomId": "TR-D-34-021",
+      "plaka": 34,
+      "birimSayisi": 14
+     },
+     {
+      "ad": "Eyüp",
+      "geomId": "TR-D-34-019",
+      "plaka": 34,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Esenler",
+      "geomId": "TR-D-34-017",
+      "plaka": 34,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-34-034",
@@ -26024,7 +26790,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 23,
+    "rgSayfalari": [
+     27,
+     28
+    ],
+    "birimSayisi": 23,
+    "eskiIlceler": [
+     {
+      "ad": "Karşıyaka",
+      "geomId": "HIST-Izmir-Karsiyaka",
+      "plaka": 35,
+      "birimSayisi": 23
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -26852,7 +27642,32 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 24,
+    "rgSayfalari": [
+     28,
+     29,
+     30
+    ],
+    "birimSayisi": 57,
+    "eskiIlceler": [
+     {
+      "ad": "Konak",
+      "geomId": "HIST-Izmir-Konak",
+      "plaka": 35,
+      "birimSayisi": 57
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -31050,9 +31865,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 25,
+    "rgSayfalari": [
+     30
+    ],
+    "birimSayisi": 14,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-41-008",
+      "plaka": 41,
+      "birimSayisi": 14
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-41-002",
@@ -31098,9 +31935,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 26,
+    "rgSayfalari": [
+     30
+    ],
+    "birimSayisi": 3,
+    "eskiIlceler": [
+     {
+      "ad": "Gebze",
+      "geomId": "TR-D-41-006",
+      "plaka": 41,
+      "birimSayisi": 3
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-41-003",
@@ -31146,9 +32005,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 27,
+    "rgSayfalari": [
+     30
+    ],
+    "birimSayisi": 3,
+    "eskiIlceler": [
+     {
+      "ad": "Gebze",
+      "geomId": "TR-D-41-006",
+      "plaka": 41,
+      "birimSayisi": 3
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-41-004",
@@ -31263,9 +32144,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 28,
+    "rgSayfalari": [
+     31
+    ],
+    "birimSayisi": 6,
+    "eskiIlceler": [
+     {
+      "ad": "Gebze",
+      "geomId": "TR-D-41-006",
+      "plaka": 41,
+      "birimSayisi": 6
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-41-006",
@@ -31412,9 +32315,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 29,
+    "rgSayfalari": [
+     31,
+     32
+    ],
+    "birimSayisi": 55,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-41-008",
+      "plaka": 41,
+      "birimSayisi": 55
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-41-009",
@@ -31548,9 +32474,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 30,
+    "rgSayfalari": [
+     32,
+     33
+    ],
+    "birimSayisi": 20,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-41-008",
+      "plaka": 41,
+      "birimSayisi": 20
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-41-012",
@@ -40692,9 +41641,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 35,
+    "rgSayfalari": [
+     35,
+     36
+    ],
+    "birimSayisi": 28,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-54-001",
+      "plaka": 54,
+      "birimSayisi": 28
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-54-002",
@@ -40787,9 +41759,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 36,
+    "rgSayfalari": [
+     36
+    ],
+    "birimSayisi": 8,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-54-001",
+      "plaka": 54,
+      "birimSayisi": 8
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-54-004",
@@ -40835,9 +41829,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 37,
+    "rgSayfalari": [
+     36
+    ],
+    "birimSayisi": 9,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-54-001",
+      "plaka": 54,
+      "birimSayisi": 9
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-54-005",
@@ -41467,9 +42483,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 38,
+    "rgSayfalari": [
+     37
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-54-001",
+      "plaka": 54,
+      "birimSayisi": 15
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-54-015",
@@ -41871,7 +42909,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 39,
+    "rgSayfalari": [
+     37,
+     38
+    ],
+    "birimSayisi": 32,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Samsun-Merkez",
+      "plaka": 55,
+      "birimSayisi": 32
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -42045,7 +43107,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 40,
+    "rgSayfalari": [
+     38,
+     39
+    ],
+    "birimSayisi": 41,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Samsun-Merkez",
+      "plaka": 55,
+      "birimSayisi": 41
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -42193,7 +43279,30 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "5747",
+    "kanunAdi": "Büyükşehir Belediyesi Sınırları İçerisinde İlçe Kurulması ve Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "2008-03-22",
+     "sayi": 26824,
+     "mukerrer": 1
+    },
+    "listeNo": 41,
+    "rgSayfalari": [
+     39
+    ],
+    "birimSayisi": 14,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Samsun-Merkez",
+      "plaka": 55,
+      "birimSayisi": 14
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/5747.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {

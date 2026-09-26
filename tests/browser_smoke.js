@@ -417,7 +417,8 @@ async function scenario_referandumIlce(browser) {
       await page.waitForTimeout(500);
       const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
       check(y + ' referandum: ilçe haritası çiziliyor (' + plaka + ')', ids.length > 3, 'n=' + ids.length);
-      if (hist) check(y + ' referandum: ' + hist + ' çiziliyor', ids.includes(hist), JSON.stringify(ids.slice(0, 8)));
+      if (hist) check(y + ' referandum: ' + hist + ' çiziliyor',
+        ids.some((i) => i === hist || i.startsWith('HISTK-' + hist + '-')), JSON.stringify(ids.slice(0, 8)));
       await page.click('#btnBackCountry').catch(() => {});
       await page.waitForTimeout(300);
     }

@@ -174,3 +174,11 @@ ilçeler repoda kaymakamlık kaynaklarıyla zaten doğrulanmış (`repo_dogrulan
 sütunlu basıldığından (1) sayılı cetvelin 10 satırı okuyucu yapılandırmasına aynen
 aktarıldı (`satirlarElle`): ilk satır "İstanbul İli Eyüp İlçesi Rami Bucağından", diğerleri
 boş (= aynı). Gaziosmanpaşa ← Eyüp (tek kaynak; Madde 1: "Eyüp İlçesinin Göktepe Bucağında").
+
+## 26824_1 (22 Mart 2008, mükerrer) — 5747 sayılı Kanun (büyükşehirlerde 43 ilçe)
+
+`26824_1.htm` (Word'den HTML, windows-1254), https://www.resmigazete.gov.tr/eskiler/2008/03/20080322M1-1.htm,
+indirilme 2026-09-26. Kanun metni ve ek (1)–(45) sayılı listeler. Satırlar
+`data/raw/mevzuat/5747.pdf`'ten okunur (doğal metin); bu asıl metin her listenin belediye
+başlıkları ve köy satırlarıyla karşılaştırma için kullanılır (`extract_5747.py`, `rgFarki`).
+
