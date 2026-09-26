@@ -45,6 +45,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
   },
   {
+   "id": "kanun_3578",
+   "type": "official",
+   "title": "3578 sayılı 4 İl ve 5 İlçe Kurulması Hakkında Kanun (RG 1989-06-21, sayı 20202)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/20202.pdf",
+   "raw": "data/raw/resmi_gazete/20202.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3578.json"
+  },
+  {
    "id": "kanun_3644",
    "type": "official",
    "title": "3644 sayılı 130 İlçe Kurulması Hakkında Kanun (RG 1990-05-20, sayı 20523)",
@@ -17753,9 +17761,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3578",
+    "kanunAdi": "4 İl ve 5 İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1989-06-21",
+     "sayi": 20202
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     3,
+     4
+    ],
+    "birimSayisi": 35,
+    "eskiIlceler": [
+     {
+      "ad": "İspir",
+      "geomId": "TR-D-25-006",
+      "plaka": null,
+      "birimSayisi": 35
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3578.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-25-016",
@@ -49280,9 +49310,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3578",
+    "kanunAdi": "4 İl ve 5 İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1989-06-21",
+     "sayi": 20202
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 27,
+    "eskiIlceler": [
+     {
+      "ad": "Şereflikoçhisar",
+      "geomId": "TR-D-06-024",
+      "plaka": 6,
+      "birimSayisi": 27
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3578.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-68-002",
@@ -49526,9 +49577,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3578",
+    "kanunAdi": "4 İl ve 5 İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1989-06-21",
+     "sayi": 20202
+    },
+    "listeNo": 4,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 13,
+    "eskiIlceler": [
+     {
+      "ad": "Aksaray",
+      "geomId": "TR-D-68-002",
+      "plaka": 51,
+      "birimSayisi": 13
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3578.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-68-006",
@@ -49652,9 +49724,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3578",
+    "kanunAdi": "4 İl ve 5 İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1989-06-21",
+     "sayi": 20202
+    },
+    "listeNo": 5,
+    "rgSayfalari": [
+     5
+    ],
+    "birimSayisi": 7,
+    "eskiIlceler": [
+     {
+      "ad": "Şereflikoçhisar",
+      "geomId": "TR-D-06-024",
+      "plaka": 6,
+      "birimSayisi": 7
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3578.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-68-008",
@@ -50188,9 +50281,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3578",
+    "kanunAdi": "4 İl ve 5 İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1989-06-21",
+     "sayi": 20202
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 17,
+    "eskiIlceler": [
+     {
+      "ad": "Karaman",
+      "geomId": "TR-D-70-004",
+      "plaka": 42,
+      "birimSayisi": 17
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3578.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-70-006",

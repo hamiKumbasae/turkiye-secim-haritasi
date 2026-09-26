@@ -1,0 +1,1106 @@
+{
+ "kanun": "3578",
+ "ad": "4 İl ve 5 İlçe Kurulması Hakkında Kanun",
+ "kabul": "1989-06-15",
+ "resmiGazete": {
+  "tarih": "1989-06-21",
+  "sayi": 20202
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/20202.pdf",
+  "maddeler": "data/raw/mevzuat/3578.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/20202.pdf",
+  "mevzuatUrl": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.3578.pdf"
+ },
+ "digerHukumler": [
+  {
+   "madde": 2,
+   "metin": "Ankara İline bağlı Kırıkkale, Niğde İline bağlı Aksaray, Gümüşhane İline bağlı Bayburt ve Konya İline bağlı Karaman ilçe merkezleri merkez olmak üzere dört il kurulmuştur (ekli (6)-(9) sayılı listeler).",
+   "eventType": "provinces_created",
+   "effectiveDate": "1989-06-21",
+   "unit": "Kırıkkale, Aksaray, Bayburt, Karaman"
+  }
+ ],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 5,
+  "tekKaynak": 5,
+  "cokKaynak": 0,
+  "satir": 99,
+  "cozulemeyenSatir": 0,
+  "kaynakYazilmamisSatir": 0,
+  "satirsizListe": [],
+  "eksikSatirliListe": [],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": 1,
+   "il": "Ankara",
+   "plaka": 6,
+   "ad": "Ağaçören",
+   "yeniIlce": {
+    "ad": "Ağaçören",
+    "geomId": "TR-D-68-001",
+    "plaka": 68,
+    "secim": "1991"
+   },
+   "madde": "Ekli (1) sayılı listede adları yazılı köyler aynen bağlanmak ve merkezi Ağaçören Bucak Merkezi olmak suretiyle Ankara İlinde Ağaçören adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3
+   ],
+   "altBasliklar": [
+    "Ankara İli Ağaçören İlçesine Bağlanan Köyler"
+   ],
+   "satirSayisi": 27,
+   "eskiIlceler": [
+    {
+     "ad": "Şereflikoçhisar",
+     "geomId": "TR-D-06-024",
+     "birimSayisi": 27,
+     "plaka": 6
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Abalı",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Abalı Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 2,
+     "birim": "Abdiuşağı",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Abdiuşağı Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 3,
+     "birim": "Ahırlı",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Ahırlı Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 4,
+     "birim": "Afşar",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Afşar Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 5,
+     "birim": "Camili",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Camili Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 6,
+     "birim": "Çatalçeşrtıe",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Çatalçeşrtıe Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 7,
+     "birim": "Dadılar",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Dadılar Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 8,
+     "birim": "Dçmircili",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Dçmircili Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 9,
+     "birim": "Gollü",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Gollü Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 10,
+     "birim": "Göynük",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Göynük Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 11,
+     "birim": "Güzelöz (Çepnişabanlı)",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Güzelöz (Çepnişabanlı) Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 12,
+     "birim": "Hacıahmettidavuılu",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Hacıahmettidavuılu Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 13,
+     "birim": "Hacıahmellitepeköy",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Hacıahmellitepeköy Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 14,
+     "birim": "Hacıismailli",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Hacıismailli Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 15,
+     "birim": "Hüsrevköy",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Hüsrevköy Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 16,
+     "birim": "Kaşıçalık",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Kaşıçalık Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 17,
+     "birim": "Kederli",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Kederli Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 18,
+     "birim": "Kılıçlı",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Kılıçlı Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 19,
+     "birim": "Kırımini",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Kırımini Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 20,
+     "birim": "Kütüklü",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Kütüklü Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 21,
+     "birim": "Oymaağaç",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Oymaağaç Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 22,
+     "birim": "Sarıağıl",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Sarıağıl Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 23,
+     "birim": "Sofular",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Sofular Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 24,
+     "birim": "24-. Yağmurhüyüğü",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "24-. Yağmurhüyüğü Şereflikoçhisar Ağaçören",
+     "sayfa": 3,
+     "numarasiOkunamadi": true
+    },
+    {
+     "sira": 25,
+     "birim": "Yenice",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Yenice Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 26,
+     "birim": "Yenişabanlı",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Yenişabanlı Şereflikoçhisar Ağaçören",
+     "sayfa": 3
+    },
+    {
+     "sira": 27,
+     "birim": "27; Yeşittepe (Kurtini)",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "27; Yeşittepe (Kurtini) Şereflikoçhisar Ağaçören",
+     "sayfa": 3,
+     "numarasiOkunamadi": true
+    }
+   ]
+  },
+  {
+   "listeNo": 2,
+   "il": null,
+   "plaka": null,
+   "ad": "Pazaryolu",
+   "yeniIlce": {
+    "ad": "Pazaryolu",
+    "geomId": "TR-D-25-015",
+    "plaka": 25,
+    "secim": "1991"
+   },
+   "madde": "Ekli (2) sayılı listede adları yazılı köyler aynen bağlanmak ve merkezi Pazaryolu Bucak Merkezi olmak suretiyle Pazaryolu adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3,
+    4
+   ],
+   "altBasliklar": [
+    "Pazaryolu İlçesine Bağlanan Köyler"
+   ],
+   "satirSayisi": 35,
+   "eskiIlceler": [
+    {
+     "ad": "İspir",
+     "geomId": "TR-D-25-006",
+     "birimSayisi": 35,
+     "plaka": null
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Ambaralan",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Ambaralan İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 2,
+     "birim": "Ayçukuru",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Ayçukuru İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 3,
+     "birim": "Bayındır",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Bayındır İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 4,
+     "birim": "Büyüdere",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Büyüdere İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 5,
+     "birim": "Cennetpınarı",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Cennetpınarı İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 6,
+     "birim": "Cevizlidere",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Cevizlidere İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 7,
+     "birim": "Çatakbahçe",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Çatakbahçe İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 8,
+     "birim": "Çaydere",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Çaydere İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 9,
+     "birim": "Çiftepınar",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Çiftepınar İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 10,
+     "birim": "Demirgöze",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Demirgöze İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 11,
+     "birim": "Dikmetaş",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Dikmetaş İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 12,
+     "birim": "Esenyurt",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Esenyurt İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 13,
+     "birim": "Gölyanı",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Gölyanı İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 14,
+     "birim": "Göztepe",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Göztepe İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 15,
+     "birim": "Gülçimen",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Gülçimen İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 16,
+     "birim": "Güneysu",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Güneysu İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 17,
+     "birim": "Hacılar",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Hacılar İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 18,
+     "birim": "Karakoç",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Karakoç İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 19,
+     "birim": "Karataş",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Karataş İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 20,
+     "birim": "Kılıççı",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Kılıççı İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 21,
+     "birim": "Konakyeri",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Konakyeri İspir Pazaryolu",
+     "sayfa": 3
+    },
+    {
+     "sira": 22,
+     "birim": "Korkutköy",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Korkutköy İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 23,
+     "birim": "Kozlu",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Kozlu İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 24,
+     "birim": "Köşeyolu",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Köşeyolu İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 25,
+     "birim": "Kümaşkaya",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Kümaşkaya İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 26,
+     "birim": "Kuymaklı",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Kuymaklı İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 27,
+     "birim": "Lâleli",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Lâleli İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 28,
+     "birim": "Me$ebası",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Me$ebası İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 29,
+     "birim": "Pamukludağ",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Pamukludağ İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 30,
+     "birim": "Sadaka",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Sadaka İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 31,
+     "birim": "Sergenkaya",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Sergenkaya İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 32,
+     "birim": "Şehitlik",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Şehitlik İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 33,
+     "birim": "Yaylalı",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Yaylalı İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 34,
+     "birim": "Yaylaözü",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Yaylaözü İspir Pazaryolu",
+     "sayfa": 4
+    },
+    {
+     "sira": 35,
+     "birim": "Yiğitbaşı",
+     "tur": null,
+     "eskiIlce": "İspir",
+     "eskiBucak": "Pazaryolu",
+     "okunan": "Yiğitbaşı İspir Pazaryolu",
+     "sayfa": 4
+    }
+   ]
+  },
+  {
+   "listeNo": 3,
+   "il": "Konya",
+   "plaka": 42,
+   "ad": "Kazımkarabekir",
+   "yeniIlce": {
+    "ad": "Kazımkarabekir",
+    "geomId": "TR-D-70-005",
+    "plaka": 70,
+    "secim": "1991"
+   },
+   "madde": "Ekli (3) sayılı listede adları yazılı bucak ve köyler aynen bağlanmak ve merkezi Kazımkarabekir Bucak Merkezi olmak suretiyle Konya İlinde Kazımkarabekir adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4
+   ],
+   "altBasliklar": [
+    "Konya tlt Kâzımkarabekir İlçesine Bağlanan Bucak ve Köyler"
+   ],
+   "satirSayisi": 17,
+   "eskiIlceler": [
+    {
+     "ad": "Karaman",
+     "geomId": "TR-D-70-004",
+     "birimSayisi": 17,
+     "plaka": 42
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Akarköy",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kâzımkarabekir",
+     "okunan": "Akarköy Karaman Kâzımkarabekir",
+     "sayfa": 4
+    },
+    {
+     "sira": 2,
+     "birim": "Karalgazi",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kâzımkarabekir",
+     "okunan": "Karalgazi Karaman Kâzımkarabekir",
+     "sayfa": 4
+    },
+    {
+     "sira": 3,
+     "birim": "Kızılkuyu",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kâzımkarabekir",
+     "okunan": "Kızılkuyu Karaman Kâzımkarabekir",
+     "sayfa": 4
+    },
+    {
+     "sira": 4,
+     "birim": "Mecidiye",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kâzımkarabekir",
+     "okunan": "Mecidiye Karaman Kâzımkarabekir",
+     "sayfa": 4
+    },
+    {
+     "sira": 5,
+     "birim": "Özyurt",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kâzımkarabekir",
+     "okunan": "Özyurt Karaman Kâzımkarabekir",
+     "sayfa": 4
+    },
+    {
+     "sira": 6,
+     "birim": "Sinci",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kâzımkarabekir",
+     "okunan": "Sinci Karaman Kâzımkarabekir",
+     "sayfa": 4
+    },
+    {
+     "sira": 1,
+     "birim": "Kızılyaka Bue. Mer.",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Kızılyaka Bue. Mer. Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 2,
+     "birim": "Ağaçoba",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Ağaçoba Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 3,
+     "birim": "Alanözü",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Alanözü Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 4,
+     "birim": "Başkı$la",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Başkı$la Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 5,
+     "birim": "Bozkandak",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Bozkandak Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 6,
+     "birim": "Daınlapınar",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Daınlapınar Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 7,
+     "birim": "Göçer",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Göçer Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 8,
+     "birim": "Habiller",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Habiller Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 9,
+     "birim": "Muraldede",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Muraldede Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 10,
+     "birim": "Şeyhler",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Şeyhler Karaman Kızılyaka",
+     "sayfa": 4
+    },
+    {
+     "sira": 11,
+     "birim": "Yılangömü",
+     "tur": null,
+     "eskiIlce": "Karaman",
+     "eskiBucak": "Kızılyaka",
+     "okunan": "Yılangömü Karaman Kızılyaka",
+     "sayfa": 4
+    }
+   ]
+  },
+  {
+   "listeNo": 4,
+   "il": "Niğde",
+   "plaka": 51,
+   "ad": "Güzelyurt",
+   "yeniIlce": {
+    "ad": "Güzelyurt",
+    "geomId": "TR-D-68-005",
+    "plaka": 68,
+    "secim": "1991"
+   },
+   "madde": "Ekli (4) sayılı listede adları yazılı kasaba ve köyler aynen bağlanmak ve merkezi Güzelyurt Bucak Merkezi olmak suretiyle Niğde İlinde Güzelyurt adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 13,
+   "eskiIlceler": [
+    {
+     "ad": "Aksaray",
+     "geomId": "TR-D-68-002",
+     "birimSayisi": 13,
+     "plaka": 51
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Ağaçlı",
+     "tur": "belde",
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzel yurt",
+     "okunan": "Ağaçlı (B) Aksaray Güzel yurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 2,
+     "birim": "Gülpınar",
+     "tur": "belde",
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzel yurt",
+     "okunan": "Gülpınar (B) Aksaray Güzel yurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 3,
+     "birim": "Ihlara",
+     "tur": "belde",
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "GÜzelyurt",
+     "okunan": "Ihlara (B) Aksaray GÜzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 4,
+     "birim": "Iiısu",
+     "tur": "belde",
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzel yurt",
+     "okunan": "Iiısu (B) Aksaray Güzel yurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 5,
+     "birim": "Akyamaç",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Akyamaç Aksaray Güzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 6,
+     "birim": "Alanyurt",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Alanyurt Aksaray Güzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 7,
+     "birim": "Belisırma",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Belisırma Aksaray Güzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 8,
+     "birim": "Bozcayurt",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Bozcayurt Aksaray Güzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 9,
+     "birim": "Gazi em ir",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Gazi em ir Aksaray Güzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 10,
+     "birim": "Setime",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Setime Aksaray Güzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 11,
+     "birim": "Sivrihisar",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Sivrihisar Aksaray Güzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 12,
+     "birim": "Uzunkaya",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Uzunkaya Aksaray Güzelyurt",
+     "sayfa": 4
+    },
+    {
+     "sira": 13,
+     "birim": "Yaprakhisar",
+     "tur": null,
+     "eskiIlce": "Aksaray",
+     "eskiBucak": "Güzelyurt",
+     "okunan": "Yaprakhisar Aksaray Güzelyurt",
+     "sayfa": 4
+    }
+   ]
+  },
+  {
+   "listeNo": 5,
+   "il": "Ankara",
+   "plaka": 6,
+   "ad": "Sarıyahşi",
+   "yeniIlce": {
+    "ad": "Sarıyahşi",
+    "geomId": "TR-D-68-007",
+    "plaka": 68,
+    "secim": "1991"
+   },
+   "madde": "Ekli (5) sayılı listede adları yazılı kasaba ve köyler aynen bağlanmak ve merkezi Sarıyahşi Kasabası olmak üzere Ankara İlinde Sarıyahşi adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    5
+   ],
+   "altBasliklar": [
+    "Ankara İli Sanyahşi İlçesine Bağlanan Kasaba ve Köyler"
+   ],
+   "satirSayisi": 7,
+   "eskiIlceler": [
+    {
+     "ad": "Şereflikoçhisar",
+     "geomId": "TR-D-06-024",
+     "birimSayisi": 7,
+     "plaka": 6
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Boğazköy",
+     "tur": "belde",
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Boğazköy (B) Şereflikoçhisar Ağaçören",
+     "sayfa": 5
+    },
+    {
+     "sira": 2,
+     "birim": "2. ' Sarıhasanlı",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "2. ' Sarıhasanlı Şereflikoçhisar Ağaçören",
+     "sayfa": 5,
+     "numarasiOkunamadi": true
+    },
+    {
+     "sira": 3,
+     "birim": "Sipahiler",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Ağaçören",
+     "okunan": "Sipahiler Şereflikoçhisar Ağaçören",
+     "sayfa": 5
+    },
+    {
+     "sira": 4,
+     "birim": "Demirciobası",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Merkez",
+     "okunan": "Demirciobası Şereflikoçhisar Merkez",
+     "sayfa": 5
+    },
+    {
+     "sira": 5,
+     "birim": "Yaylak",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Merkez",
+     "okunan": "Yaylak Şereflikoçhisar Merkez",
+     "sayfa": 5
+    },
+    {
+     "sira": 6,
+     "birim": "Yenitorunobası",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Merkez",
+     "okunan": "Yenitorunobası Şereflikoçhisar Merkez",
+     "sayfa": 5
+    },
+    {
+     "sira": 7,
+     "birim": "Bekdik",
+     "tur": null,
+     "eskiIlce": "Şereflikoçhisar",
+     "eskiBucak": "Merkez",
+     "okunan": "Bekdik Şereflikoçhisar Merkez",
+     "sayfa": 5
+    }
+   ]
+  }
+ ]
+}

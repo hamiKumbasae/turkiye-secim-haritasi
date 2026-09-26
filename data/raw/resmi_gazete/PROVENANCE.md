@@ -100,3 +100,11 @@ Elbeyli ← Oğuzeli; Çınarcık, Çiftlikköy, Termal ← Yalova; Altınova �
 Armutlu ← Gemlik). (9)–(11) sayılı listeler yeni illerin dökümü (okunmadı; il
 değişiklikleri seçim verisinden tarihleriyle çıkıyor). Başlıklar çift harfli basılmış
 (bir yerde farklı aksanla: 'LLÎİSSTTEE').
+
+## 20202 (21 Haziran 1989) — 3578 sayılı 4 İl ve 5 İlçe Kurulması Hakkında Kanun
+
+`20202.pdf` (96 sayfa), indirilme 2026-09-26; maddeler `data/raw/mevzuat/3578.pdf`.
+Ek (1)–(5) sayılı listeler: 99 satır, eksik sıra yok; beş ilçenin beşi tek kaynaklı
+(Ağaçören, Sarıyahşi ← Şereflikoçhisar; Pazaryolu ← İspir; Kâzımkarabekir ← Karaman;
+Güzelyurt ← Aksaray). Madde 2: Kırıkkale, Aksaray, Bayburt, Karaman illeri; (6)–(9)
+sayılı listeler (yeni illerin dökümü) okunmadı.

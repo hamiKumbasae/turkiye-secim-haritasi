@@ -67,6 +67,17 @@ KANUNLAR = {
                   "provinceBefore": 6, "provinceAfter": 6, "mergedInto": "Altındağ",
                   "not": "1961-1983 seçim verisindeki Ankara 'Merkez' satırı bu ilçedir (geomId yok). Sınırı kaynakta "
                          "yok; alanı Altındağ'a katıldı, aynı kanunla Altındağ'dan Keçiören ayrıldı."}]},
+    "3578": {"ad": "4 İl ve 5 İlçe Kurulması Hakkında Kanun", "kabul": "1989-06-15",
+             "resmiGazete": {"tarih": "1989-06-21", "sayi": 20202}, "rgPdf": "data/raw/resmi_gazete/20202.pdf",
+             "mevzuatPdf": "data/raw/mevzuat/3578.pdf", "sonrakiGenel": "1991", "oncekiGenel": "1987",
+             # 2. bent il adi vermiyor ("Pazaryolu adıyla")
+             "adsizIl": {"Pazaryolu": [25, 29]},
+             "digerHukumler": [
+                 {"madde": 2, "metin": "Ankara İline bağlı Kırıkkale, Niğde İline bağlı Aksaray, Gümüşhane İline bağlı "
+                                       "Bayburt ve Konya İline bağlı Karaman ilçe merkezleri merkez olmak üzere dört il "
+                                       "kurulmuştur (ekli (6)-(9) sayılı listeler).",
+                  "eventType": "provinces_created", "effectiveDate": "1989-06-21",
+                  "unit": "Kırıkkale, Aksaray, Bayburt, Karaman"}]},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},

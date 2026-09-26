@@ -18,7 +18,7 @@ data/normalized/ek/<tür>/<seçim>.json        projede başka karşılığı olm
 | TÜİK (resmî) | `tuik/referandum/` | 1961, 1982, 1987, 1988, 2007 halkoylaması, il + ilçe + şehir/köy | `data/raw/tuik/halkoylamasi-0018260/` |
 | DİE / TÜİK (resmî) | `tuik/yerel/<seçim>/` | 1984, 1989, 1994, 1999, 2004 mahalli idareler: belediye başkanlığı, büyükşehir, belediye meclisi, il genel meclisi (belediye / ilçe; 1989 İGM'de şehir/köy) | `data/raw/tuik/mahalli-kitap/` |
 | İçişleri Bakanlığı (resmî) | `icisleri/` | İl ve ilçe kuruluş tarihleri (2018 listesi; tarihsel idari katmanın girdisi, bkz. `geo/historical/idari/`) | `data/raw/icisleri/il-ilce-kurulus-2018/` |
-| Resmî Gazete (resmî) | `resmi_gazete/ilce_kurulus/<kanun>.json` | İlçe kuruluş kanunlarının ek listeleri: yeni ilçeye bağlanan birimler ve eski ilçeleri (3644, 3392, 2963, KHK 550; 7033 orta güven) | `data/raw/resmi_gazete/`, `data/raw/mevzuat/` |
+| Resmî Gazete (resmî) | `resmi_gazete/ilce_kurulus/<kanun>.json` | İlçe kuruluş kanunlarının ek listeleri: yeni ilçeye bağlanan birimler ve eski ilçeleri (3644, 3392, 2963, KHK 550, 3578; 7033 orta güven) | `data/raw/resmi_gazete/`, `data/raw/mevzuat/` |
 | Taban (dondurulmuş) | `taban/` | DİE birleştirmesinden önceki 1984/1989/2004 yerel harita verisi ve belde kayıtları (git 1e1e8e8) | — |
 | Wikipedia (ikincil) | `wikipedia/{genel,yerel,senato,cumhurbaskanligi}/` | 1923-2024, il sayfaları | `data/raw/wikipedia/il-sayfalari/` |
 | mertnuhoglu (ikincil) | `mertnuhoglu/genel/` | 1991-2007 ilçe, TÜİK'ten önceki hâli (dondurulmuş) | `data/raw/third-party/mertnuhoglu/` |

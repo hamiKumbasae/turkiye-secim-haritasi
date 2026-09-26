@@ -14,3 +14,4 @@ durum için ek listeler ve bent numaraları esas alınır; bent metni ile Resmî
 arasındaki fark ayrıca kontrol edilmelidir.
 
 | `3392.pdf` | 3392 sayılı 103 İlçe Kurulması Hakkında Kanun (kabul 19.6.1987, RG 4.7.1987/19507) | 2026-09-26 | Madde 1 bentleri; (57) sayılı liste 1989'da (RG 20152) değiştirilmiş, 2013'te (6495) bir ad düzeltilmiş — dipnotlarda. Ek listeler `../resmi_gazete/19507.pdf`. |
+| `3578.pdf` | 3578 sayılı 4 İl ve 5 İlçe Kurulması Hakkında Kanun (kabul 15.6.1989, RG 21.6.1989/20202) | 2026-09-26 | Madde 1 bentleri (5 ilçe), Madde 2 (4 il). Ek listeler `../resmi_gazete/20202.pdf`. |
