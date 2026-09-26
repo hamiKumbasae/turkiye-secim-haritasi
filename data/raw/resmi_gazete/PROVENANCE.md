@@ -63,3 +63,19 @@ bu ilçeler tek kaynaklı sayılmaz. 3 satır OCR nedeniyle eşlenemedi; Demirö
 Ümraniye listelerinde sıra boşluğu var. 103 yeni ilçenin 98'i İçişleri listesinde 3392
 ile kayıtlı; kalan 5'i (Pendik, Küçükçekmece, Büyükçekmece, Ümraniye, Konak) sonradan
 bölündüğü için repodaki tarihsel poligonlarla (`HIST-*`) eşleşti.
+
+## 9644 (27 Haziran 1957) — 7033 sayılı Kanun (78 kaza) ve ek cetvelleri
+
+`9644.pdf` (75 sayfa = 25 sayfalık gazetenin üç kopyası; ilk kopya okunur), indirilme
+2026-09-26. Kanun maddeleri ve cetveller aynı sayıda (mevzuat.gov.tr'de PDF metni
+yok). Taranmış, iki sütunlu, zayıf OCR; dönem dili (Vilâyet/Kaza/Nahiye), tekrarlar
+"»". Çıkarım: `scripts/pipelines/historical_geo/extract_kaza_kurulus_1957.py` →
+`data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json`.
+
+Sonuç **orta güven**: 77 kazanın 50'sinin bloğu okunabildi (başlığı İçişleri 7033
+listesiyle eşleşen); soy blok düzeyinde (blokta anılan tüm "X Vilâyeti Y Kazasının"
+kaynakları), satır denetimi yok; 11 blokta başka ilden kaynak anılıyor (sütun/başlık
+kayması olabilir). Bu yüzden geometri kuralına çevrilmedi (`lineageStatus:
+kanun_dogrulanmadi`). Etki sınırlı: bu kazaların tamamı 1960'a kadar yürürlüğe girdi,
+1961 ve sonrası seçimlerde ayrı birim. Madde 2: Kuşadası 01.09.1957'de İzmir'den
+Aydın'a bağlandı.

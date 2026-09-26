@@ -197,6 +197,8 @@ def geometri_kurali(l):
     k = l.get("kanunSoyu")
     if k and k["tekKaynak"] and k["eskiIlceler"][0]["geomId"]:
         return "merge_into:" + k["eskiIlceler"][0]["geomId"]
+    if k and k.get("guven") == "orta":
+        return "unresolved"
     if k:
         return "unresolved_multi_parent"
     return "unresolved"
@@ -275,12 +277,22 @@ def main():
     kanunla, tarihsel_kanun, sinir_duzeltmeleri = {}, {}, []
     for f in sorted((ROOT / "data/kaynaklar/resmi_gazete/ilce_kurulus").glob("*.json")):
         kd = json.loads(f.read_text(encoding="utf-8"))
+        for h in kd.get("digerHukumler", []):
+            # kanunun ilce kurmak disindaki hukumleri (7033/2: Kusadasi Izmir -> Aydin)
+            sinir_duzeltmeleri.append({"id": f"kanun-{kd['kanun']}-madde-{h['madde']}", "unit": h.get("unit"),
+                                       "unitType": "district", "eventType": h["eventType"],
+                                       "effectiveDate": h["effectiveDate"], "provinceBefore": h.get("provinceBefore"),
+                                       "provinceAfter": h.get("provinceAfter"), "lawNumber": kd["kanun"],
+                                       "officialGazette": kd["resmiGazete"], "text": h["metin"],
+                                       "source": str(f.relative_to(ROOT)), "confidence": "high"})
         for i in kd["ilceler"]:
             kayit = {"kanun": kd["kanun"], "kanunAdi": kd["ad"], "resmiGazete": kd["resmiGazete"],
                      "listeNo": i["listeNo"], "rgSayfalari": i["rgSayfalari"], "birimSayisi": i["satirSayisi"],
                      "eskiIlceler": [{k: e.get(k) for k in ("ad", "geomId", "plaka", "birimSayisi")} for e in i["eskiIlceler"]],
-                     # OCR'da dusen satir varsa tek kaynak kesin degil
-                     "tekKaynak": i["tekKaynak"] and not i.get("eksikSira"),
+                     # OCR'da dusen satir varsa tek kaynak kesin degil; 'orta' guvenli okuma
+                     # (7033: blok duzeyi, satir denetimi yok) geometri kuralina cevrilmez
+                     "tekKaynak": i["tekKaynak"] and not i.get("eksikSira") and i.get("guven") != "orta",
+                     **({"guven": i["guven"], "okunanTekKaynak": i["tekKaynak"]} if i.get("guven") else {}),
                      **({"eksikSira": i["eksikSira"]} if i.get("eksikSira") else {}),
                      **({"kaynakYazilmamisBirim": i["kaynakYazilmamisSatir"]} if i.get("kaynakYazilmamisSatir") else {}),
                      "kaynak": str(f.relative_to(ROOT))}
@@ -344,6 +356,8 @@ def main():
         kanun_soyu = kanunla.get(g)
         if onceki:
             durum = "repo_dogrulanmis"
+        elif kanun_soyu and kanun_soyu.get("guven") == "orta":
+            durum = "kanun_dogrulanmadi"
         elif kanun_soyu:
             durum = "kanun_tek_kaynak" if kanun_soyu["tekKaynak"] else "kanun_cok_kaynak"
         elif k and (k.get("cumhuriyetOncesi") or (kurulus and kurulus < "1950-05-14")):

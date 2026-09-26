@@ -61,6 +61,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 | `merkez_ilce` | Sonradan il olan bir yerin merkez ilçesi; ilçe olarak kuruluş tarihi kaynakta yok (il olmadan önce başka ile bağlı ilçeydi). |
 | `kanun_tek_kaynak` | Kuruluş kanununun ek listesine göre bütün birimleri (köy/bucak/mahalle) tek bir eski ilçeden geldi. Kuruluş öncesi seçimlerde alanı o ilçeye katılır (`geometryRule: merge_into:<geomId>`). |
 | `kanun_cok_kaynak` | Ek listeye göre birden çok eski ilçeden birim aldı. Eski ilçeler ve birim sayıları kayıtlı; köy düzeyinde sınır çözülmediği için `geometryRule: unresolved_multi_parent`. |
+| `kanun_dogrulanmadi` | Kanun listesi okundu ama güven orta (7033: zayıf tarama, blok düzeyi); soy kayıtlı, geometri kuralı `unresolved`. |
 | `unresolved` | 1950 sonrası kurulmuş, soy bilgisi henüz kaynaklanmadı. |
 
 ## Durum (Faz 1, 2026-09-25)
@@ -82,6 +83,7 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
 |---|---|---|---|---|---|
 | 3644 | 20.05.1990 | 130 | 107 | 23 | RG 20523 ek (1)–(130) sayılı listeler, 2.056 satır |
 | 3392 | 04.07.1987 | 103 | 84 | 15 (+4 kaynağı yazılmamış) | RG 19507 ek (1)–(103) sayılı listeler, 2.141 satır |
+| 7033 | 01.09.1957–01.04.1960 | 78 | — (orta güven, geometriye çevrilmedi) | — | RG 9644 cetvelleri; 50/77 blok okunabildi |
 
 - 3644'ün 130 ilçesinin tamamı İçişleri listesinde de 3644 ile kayıtlı; ek listelerde
   sıra numaraları kesintisiz (düşen satır yok).
@@ -100,8 +102,14 @@ python3 scripts/pipelines/historical_geo/build_idari_katman.py                  
   `district_lineage.json` → `historicalUnits` altında (sonradan bölündükleri için
   kuruluş sınırları repodaki `HIST-*` poligonlarında).
 - Eksik satırlı (OCR) listeler tek kaynaklı sayılmaz (`eksikSira`).
-- Sonrası: `unresolved` 212 ilçe. Sıradaki kanunlar: 7033 (1957, 77), 5747 (2008,
-  43), 6360 (2012, 26), 6324/6325 (1954, 31), 6068 (1953, 21), 3806 (1992, 13).
+- 7033 (1957): etkisi yalnız 1950–1957 seçimleri (ilçe verisi yok ya da yalnız yerel
+  kazanan); orta güvenle kayıtlı, geometriye çevrilmedi. Aynı durum 6068/6324/6325
+  (1953–1954) için de geçerli; bunlar sona bırakıldı.
+- Öncelik (1961 sonrası seçimleri etkileyen, çözülmemiş ~87 ilçe): 2963 (1983, Ankara:
+  Keçiören, Mamak, Sincan, Gölbaşı — Ankara "Merkez" 1961–1983 satırının sınırını
+  çözebilir), KHK 550 (1995, 8), 3578 (1989, 5), 3647 (1990, 5), 4200 (1996, 3),
+  2585 (1982, 2), 3949 (1993, 2), 1055 (1968, 2) ve diğer küçükler; ardından
+  5747 (2008, 20) ve 6360 (2012, 15) büyükşehir bölünmeleri (mahalle düzeyi).
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
 

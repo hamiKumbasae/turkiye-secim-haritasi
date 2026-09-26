@@ -43,6 +43,14 @@
    "url": "https://www.resmigazete.gov.tr/arsiv/20523.pdf",
    "raw": "data/raw/resmi_gazete/20523.pdf",
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3644.json"
+  },
+  {
+   "id": "kanun_7033",
+   "type": "official",
+   "title": "7033 sayılı Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun (RG 1957-06-27, sayı 9644)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/9644.pdf",
+   "raw": "data/raw/resmi_gazete/9644.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
   }
  ],
  "districts": [
@@ -416,9 +424,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     24
+    ],
+    "birimSayisi": 69,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Adana-Merkez",
+      "plaka": 1,
+      "birimSayisi": 3
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-01-008",
@@ -764,9 +795,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 28,
+    "rgSayfalari": [
+     11
+    ],
+    "birimSayisi": 27,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Adana-Merkez",
+      "plaka": 1,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-01-015",
@@ -1063,9 +1117,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 15,
+    "rgSayfalari": [
+     6
+    ],
+    "birimSayisi": 9,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": 2,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-02-006",
@@ -1156,9 +1233,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 41,
+    "rgSayfalari": [
+     14
+    ],
+    "birimSayisi": 29,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-02-001",
+      "plaka": 2,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-02-008",
@@ -1578,9 +1678,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 16,
+    "rgSayfalari": [
+     6
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": "Bolvadin",
+      "geomId": "TR-D-03-004",
+      "plaka": 3,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-03-006",
@@ -1695,9 +1818,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 30,
+    "rgSayfalari": [
+     11
+    ],
+    "birimSayisi": 0,
+    "eskiIlceler": [
+     {
+      "ad": "Dinar",
+      "geomId": "TR-D-03-008",
+      "plaka": 3,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-03-008",
@@ -1970,9 +2116,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 29,
+    "rgSayfalari": [
+     11
+    ],
+    "birimSayisi": 25,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-03-001",
+      "plaka": 3,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-03-013",
@@ -2252,9 +2421,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 17,
+    "rgSayfalari": [
+     7
+    ],
+    "birimSayisi": 14,
+    "eskiIlceler": [
+     {
+      "ad": "Bolvadin",
+      "geomId": "TR-D-03-004",
+      "plaka": 3,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-03-018",
@@ -2524,9 +2716,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 18,
+    "rgSayfalari": [
+     7
+    ],
+    "birimSayisi": 46,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-04-001",
+      "plaka": 4,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-04-006",
@@ -2961,9 +3176,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     1
+    ],
+    "birimSayisi": 40,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-05-001",
+      "plaka": 5,
+      "birimSayisi": 3
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-05-007",
@@ -3685,9 +3923,44 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     1
+    ],
+    "birimSayisi": 37,
+    "eskiIlceler": [
+     {
+      "ad": "Ayaş",
+      "geomId": "TR-D-06-003",
+      "plaka": 6,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Beypazarı",
+      "geomId": "TR-D-06-005",
+      "plaka": 6,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Kızılcahamam",
+      "geomId": "TR-D-06-018",
+      "plaka": 6,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-06-014",
@@ -4275,9 +4548,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 4,
+    "rgSayfalari": [
+     1
+    ],
+    "birimSayisi": 67,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": null,
+      "plaka": 6,
+      "birimSayisi": 3
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-07-001",
@@ -5101,9 +5397,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 19,
+    "rgSayfalari": [
+     7
+    ],
+    "birimSayisi": 0,
+    "eskiIlceler": [
+     {
+      "ad": "Finike",
+      "geomId": "TR-D-07-007",
+      "plaka": 7,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-07-017",
@@ -6586,9 +6905,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 20,
+    "rgSayfalari": [
+     7
+    ],
+    "birimSayisi": 0,
+    "eskiIlceler": [
+     {
+      "ad": "Nazilli",
+      "geomId": "TR-D-09-014",
+      "plaka": 9,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-09-017",
@@ -6634,9 +6976,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 5,
+    "rgSayfalari": [
+     2
+    ],
+    "birimSayisi": 11,
+    "eskiIlceler": [
+     {
+      "ad": "Bozdoğan",
+      "geomId": "TR-D-09-001",
+      "plaka": 9,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-09-005",
+      "plaka": 9,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-10-001",
@@ -7211,9 +7582,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 31,
+    "rgSayfalari": [
+     11
+    ],
+    "birimSayisi": 4,
+    "eskiIlceler": [
+     {
+      "ad": "Edremit",
+      "geomId": "TR-D-10-008",
+      "plaka": 10,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-10-013",
@@ -9105,9 +9499,44 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 21,
+    "rgSayfalari": [
+     7
+    ],
+    "birimSayisi": 71,
+    "eskiIlceler": [
+     {
+      "ad": "İskilip",
+      "geomId": "TR-D-19-006",
+      "plaka": 19,
+      "birimSayisi": 3
+     },
+     {
+      "ad": "Seben",
+      "geomId": "TR-D-14-008",
+      "plaka": 14,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-18-003",
+      "plaka": 18,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-14-006",
@@ -11725,9 +12154,25 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 43,
+    "rgSayfalari": [
+     15
+    ],
+    "birimSayisi": 14,
+    "eskiIlceler": [],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-18-006",
@@ -12007,9 +12452,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 33,
+    "rgSayfalari": [
+     12
+    ],
+    "birimSayisi": 65,
+    "eskiIlceler": [
+     {
+      "ad": "Tavas",
+      "geomId": "TR-D-20-019",
+      "plaka": 20,
+      "birimSayisi": 2
+     },
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": 18,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-18-011",
@@ -13455,9 +13929,50 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 22,
+    "rgSayfalari": [
+     8
+    ],
+    "birimSayisi": 35,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-20-015",
+      "plaka": 20,
+      "birimSayisi": 3
+     },
+     {
+      "ad": "Çal",
+      "geomId": "TR-D-20-008",
+      "plaka": 20,
+      "birimSayisi": 1
+     },
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": 20,
+      "birimSayisi": 1
+     },
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": 20,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-20-011",
@@ -18074,9 +18589,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 23,
+    "rgSayfalari": [
+     9
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Eskişehir-Merkez",
+      "plaka": 26,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-26-012",
@@ -18268,9 +18806,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 6,
+    "rgSayfalari": [
+     2
+    ],
+    "birimSayisi": 21,
+    "eskiIlceler": [
+     {
+      "ad": "Tirebolu",
+      "geomId": "TR-D-28-015",
+      "plaka": 28,
+      "birimSayisi": 3
+     },
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Gaziantep-Merkez",
+      "plaka": 27,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-27-002",
@@ -18727,9 +19294,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 24,
+    "rgSayfalari": [
+     9
+    ],
+    "birimSayisi": 26,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Gaziantep-Merkez",
+      "plaka": 27,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-28-001",
@@ -19004,9 +19594,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 25,
+    "rgSayfalari": [
+     9
+    ],
+    "birimSayisi": 20,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-28-009",
+      "plaka": 28,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-28-006",
@@ -19169,9 +19782,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 44,
+    "rgSayfalari": [
+     15
+    ],
+    "birimSayisi": 22,
+    "eskiIlceler": [
+     {
+      "ad": "Görele",
+      "geomId": "TR-D-28-010",
+      "plaka": 28,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-32-006",
+      "plaka": 32,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-28-009",
@@ -24635,9 +25277,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 8,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 14,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": 35,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-35-001",
@@ -25050,9 +25715,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 26,
+    "rgSayfalari": [
+     9
+    ],
+    "birimSayisi": 55,
+    "eskiIlceler": [
+     {
+      "ad": "Ardahan",
+      "geomId": "TR-D-75-001",
+      "plaka": 36,
+      "birimSayisi": 3
+     },
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Izmir-Konak84",
+      "plaka": 35,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-35-008",
@@ -26832,9 +27526,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 34,
+    "rgSayfalari": [
+     12
+    ],
+    "birimSayisi": 31,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-36-005",
+      "plaka": 36,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-37-001",
@@ -28553,9 +29270,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 46,
+    "rgSayfalari": [
+     16
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": "Bünyan",
+      "geomId": "TR-D-38-002",
+      "plaka": 38,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-38-012",
@@ -28998,9 +29738,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 35,
+    "rgSayfalari": [
+     13
+    ],
+    "birimSayisi": 16,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-39-003",
+      "plaka": 39,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-39-005",
@@ -32245,9 +33008,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 47,
+    "rgSayfalari": [
+     16
+    ],
+    "birimSayisi": 32,
+    "eskiIlceler": [
+     {
+      "ad": "Tavşanlı",
+      "geomId": "TR-D-43-013",
+      "plaka": 43,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-43-005",
@@ -33495,7 +34281,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 9,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 20,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-44-004",
+      "plaka": 44,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -34071,9 +34881,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 10,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 26,
+    "eskiIlceler": [
+     {
+      "ad": "Alaşehir",
+      "geomId": "TR-D-45-003",
+      "plaka": 45,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-45-012",
@@ -34119,9 +34952,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 37,
+    "rgSayfalari": [
+     13
+    ],
+    "birimSayisi": 0,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Manisa-Merkez",
+      "plaka": 45,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-45-013",
@@ -34971,9 +35827,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 48,
+    "rgSayfalari": [
+     16
+    ],
+    "birimSayisi": 28,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "HIST-Kahramanmaraş-Merkez",
+      "plaka": 46,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-47-001",
@@ -37360,9 +38239,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 38,
+    "rgSayfalari": [
+     13
+    ],
+    "birimSayisi": 13,
+    "eskiIlceler": [
+     {
+      "ad": "Gölköy",
+      "geomId": "TR-D-52-008",
+      "plaka": 52,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-52-004",
@@ -38138,9 +39040,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 50,
+    "rgSayfalari": [
+     17
+    ],
+    "birimSayisi": 80,
+    "eskiIlceler": [
+     {
+      "ad": "Ardeşen",
+      "geomId": "TR-D-53-001",
+      "plaka": 53,
+      "birimSayisi": 2
+     },
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-57-008",
+      "plaka": 57,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-52-016",
@@ -38887,9 +39818,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 39,
+    "rgSayfalari": [
+     14
+    ],
+    "birimSayisi": 35,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-53-012",
+      "plaka": 53,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-61-013",
+      "plaka": 61,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-53-011",
@@ -39485,9 +40445,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 36,
+    "rgSayfalari": [
+     13
+    ],
+    "birimSayisi": 35,
+    "eskiIlceler": [
+     {
+      "ad": "Kandıra",
+      "geomId": "TR-D-41-009",
+      "plaka": 41,
+      "birimSayisi": 2
+     },
+     {
+      "ad": "Kadınhanı",
+      "geomId": "TR-D-42-020",
+      "plaka": 42,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-54-011",
@@ -39681,9 +40670,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 12,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 45,
+    "eskiIlceler": [
+     {
+      "ad": "Beşiri",
+      "geomId": "TR-D-72-002",
+      "plaka": 56,
+      "birimSayisi": 4
+     },
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-54-001",
+      "plaka": 54,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-54-014",
@@ -41653,9 +42671,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 13,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 46,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": 57,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-58-001",
@@ -42592,9 +43633,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 27,
+    "rgSayfalari": [
+     10
+    ],
+    "birimSayisi": 30,
+    "eskiIlceler": [
+     {
+      "ad": "Saray",
+      "geomId": "TR-D-59-009",
+      "plaka": 59,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Çorlu",
+      "geomId": "TR-D-59-002",
+      "plaka": 59,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-59-002",
@@ -44761,9 +45831,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 40,
+    "rgSayfalari": [
+     14
+    ],
+    "birimSayisi": 27,
+    "eskiIlceler": [
+     {
+      "ad": "Merkez",
+      "geomId": "TR-D-61-013",
+      "plaka": 61,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-62-001",
@@ -47293,9 +48386,50 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 14,
+    "rgSayfalari": [
+     5
+    ],
+    "birimSayisi": 153,
+    "eskiIlceler": [
+     {
+      "ad": "Boğazlıyan",
+      "geomId": "TR-D-66-003",
+      "plaka": 66,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Akdağmadeni",
+      "geomId": "TR-D-66-001",
+      "plaka": 66,
+      "birimSayisi": 2
+     },
+     {
+      "ad": "Bartın",
+      "geomId": "TR-D-74-002",
+      "plaka": 67,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Saimbeyli",
+      "geomId": "TR-D-01-010",
+      "plaka": 1,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-66-010",
@@ -48318,9 +49452,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 11,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 17,
+    "eskiIlceler": [
+     {
+      "ad": "Aksaray",
+      "geomId": "TR-D-68-002",
+      "plaka": 51,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-68-007",
@@ -49464,9 +50621,38 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 42,
+    "rgSayfalari": [
+     15
+    ],
+    "birimSayisi": 59,
+    "eskiIlceler": [
+     {
+      "ad": "Kalecik",
+      "geomId": "TR-D-06-016",
+      "plaka": 6,
+      "birimSayisi": 1
+     },
+     {
+      "ad": "Kırıkkale",
+      "geomId": "TR-D-71-007",
+      "plaka": 6,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-71-009",
@@ -50126,9 +51312,25 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 49,
+    "rgSayfalari": [
+     16
+    ],
+    "birimSayisi": 31,
+    "eskiIlceler": [],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-73-006",
@@ -50235,9 +51437,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 7,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 14,
+    "eskiIlceler": [
+     {
+      "ad": "Beytüşşebap",
+      "geomId": "TR-D-73-001",
+      "plaka": 30,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-74-001",
@@ -50833,9 +52058,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 45,
+    "rgSayfalari": [
+     16
+    ],
+    "birimSayisi": 6,
+    "eskiIlceler": [
+     {
+      "ad": "Iğdır",
+      "geomId": "TR-D-76-002",
+      "plaka": 36,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-76-002",
@@ -51498,9 +52746,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "7033",
+    "kanunAdi": "Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1957-06-27",
+     "sayi": 9644
+    },
+    "listeNo": 32,
+    "rgSayfalari": [
+     12
+    ],
+    "birimSayisi": 40,
+    "eskiIlceler": [
+     {
+      "ad": "Çerkeş",
+      "geomId": "TR-D-18-004",
+      "plaka": 18,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "guven": "orta",
+    "okunanTekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/7033.json"
+   },
+   "lineageStatus": "kanun_dogrulanmadi"
   },
   {
    "geomId": "TR-D-78-005",
