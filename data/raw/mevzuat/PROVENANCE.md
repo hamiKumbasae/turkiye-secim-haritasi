@@ -18,3 +18,4 @@ arasındaki fark ayrıca kontrol edilmelidir.
 | `3647.pdf` | 3647 sayılı İki İl İle Beş İlçe Kurulması ... Hakkında Kanun (kabul 16.5.1990, RG 18.5.1990/20522 mükerrer) | 2026-09-26 | Madde 1 bentleri (numarasız), Madde 2 (Batman, Şırnak). Ek listeler `../resmi_gazete/20522_1.pdf`. |
 | `4200.pdf` | 4200 sayılı Üç İlçe ve Bir İl Kurulması ... Hakkında Kanun (kabul 24.10.1996, RG 28.10.1996/22801) | 2026-09-26 | Madde 1 bentleri, Madde 2 (Osmaniye). Ek listeler `../resmi_gazete/22801.pdf`. |
 | `3949.pdf` | 3949 sayılı 3 İlçe Kurulması Hakkında Kanun (kabul 27.12.1993, RG 29.12.1993/21803) | 2026-09-26 | Madde 1 (3 ilçe, 4 liste), Madde 2 (Narlıdere, Cumayeri ad değişikliği). |
+| `3806.pdf` | 3806 sayılı Onüç İlçe ve İki İl Kurulması ... Hakkında Kanun (kabul 27.5.1992, RG 3.6.1992/21247 mükerrer) | 2026-09-26 | Madde 1 (13 ilçe; liste–ilçe eşlemesi), Madde 2 (Ardahan, Iğdır). |

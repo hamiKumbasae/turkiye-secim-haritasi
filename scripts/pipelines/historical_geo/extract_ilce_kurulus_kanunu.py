@@ -152,6 +152,35 @@ KANUNLAR = {
                 "digerHukumler": [
                     {"madde": 2, "metin": "Düzce ili kurulmuştur (merkez ilçe ile bu ile bağlanan ilçeler; ekli (3) sayılı liste).",
                      "eventType": "provinces_created", "effectiveDate": "1999-12-09", "unit": "Düzce"}]},
+    "3806": {"ad": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
+                   "Değişiklik Yapılması Hakkında Kanun", "kabul": "1992-05-27",
+             "resmiGazete": {"tarih": "1992-06-03", "sayi": 21247, "mukerrer": 1},
+             "rgPdf": "data/raw/resmi_gazete/21247_1.pdf", "rgUrl": "https://www.resmigazete.gov.tr/arsiv/21247_1.pdf",
+             "mevzuatPdf": "data/raw/mevzuat/3806.pdf", "sonrakiGenel": "1995", "oncekiGenel": "1991", "adsizIl": {},
+             "sonrakiAd": {"Narlıbahçe": "Narlıdere"},
+             # bent numarasi liste numarasina esit degil (6. bent Sultanbeyli'nin listesi yok);
+             # liste -> ilce eslemesi mevzuat metninden
+             "bentlerElle": {
+                 1: {"il": "İstanbul", "ad": "Avcılar", "madde": "3806 Madde 1: ekli (1) sayılı liste — İstanbul İlinde Avcılar", "ekHukum": None},
+                 2: {"il": "İstanbul", "ad": "Bağcılar", "madde": "3806 Madde 1: ekli (2) sayılı liste — İstanbul İlinde Bağcılar", "ekHukum": None},
+                 3: {"il": "İstanbul", "ad": "Güngören", "madde": "3806 Madde 1: ekli (3) sayılı liste — İstanbul İlinde Güngören", "ekHukum": None},
+                 4: {"il": "İstanbul", "ad": "Bahçelievler", "madde": "3806 Madde 1: ekli (4) sayılı liste — İstanbul İlinde Bahçelievler", "ekHukum": None},
+                 5: {"il": "İstanbul", "ad": "Maltepe", "madde": "3806 Madde 1: ekli (5) sayılı liste — İstanbul İlinde Maltepe", "ekHukum": None},
+                 6: {"il": "İstanbul", "ad": "Tuzla", "madde": "3806 Madde 1: ekli (6) sayılı liste — İstanbul İlinde Tuzla", "ekHukum": None},
+                 7: {"il": "İzmir", "ad": "Çiğli", "madde": "3806 Madde 1: ekli (7) sayılı liste — İzmir İlinde Çiğli", "ekHukum": None},
+                 8: {"il": "İzmir", "ad": "Gaziemir", "madde": "3806 Madde 1: ekli (8) sayılı liste — İzmir İlinde Gaziemir", "ekHukum": None},
+                 9: {"il": "İzmir", "ad": "Balçova", "madde": "3806 Madde 1: ekli (9) sayılı liste — İzmir İlinde Balçova", "ekHukum": None},
+                 10: {"il": "İzmir", "ad": "Narlıbahçe", "madde": "3806 Madde 1: ekli (10) sayılı liste — İzmir İlinde Narlıbahçe", "ekHukum": None},
+                 11: {"il": "Kars", "ad": "Damal", "madde": "3806 Madde 1: ekli (11) sayılı liste — Kars İlinde Damal", "ekHukum": None},
+                 12: {"il": "Kars", "ad": "Karakoyunlu", "madde": "3806 Madde 1: ekli (12) sayılı liste — Kars İlinde Karakoyunlu", "ekHukum": None},
+             },
+             "digerHukumler": [
+                 {"madde": 1, "metin": "6. Merkezi Sultanbeyli Kasabası olmak üzere İstanbul İlinde Sultanbeyli (ek listesi yok; "
+                                       "hangi birimlerin bağlandığı bu kanunda yazılmamış).",
+                  "eventType": "created_without_list", "effectiveDate": "1992-06-03", "unit": "Sultanbeyli"},
+                 {"madde": 2, "metin": "Kars İline bağlı Ardahan ve Iğdır ilçe merkezleri merkez olmak üzere Ardahan ve Iğdır "
+                                       "illeri kurulmuştur (ekli (13)-(14) sayılı listeler).",
+                  "eventType": "provinces_created", "effectiveDate": "1992-06-03", "unit": "Ardahan, Iğdır"}]},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},
@@ -249,6 +278,22 @@ def ayristir(kanun):
     # kanundan ONCEKI secimin adlari: kaynak ilce sonradan il olmus olabilir (3392: Bayburt,
     # Bartin); onceki adlar oncelikli
     onceki_secim = il_ilce_adlari(cfg["oncekiGenel"], set(range(1, 82)))
+    # kanundan SONRA kurulan ilce kaynak olamaz (3806: 1995 listesindeki Esenler 1993'te kuruldu;
+    # 'Esenler' bir bucak adi olarak geciyordu). Kurulus tarihi Icisleri kaydindan (idari katman).
+    kurulus_of, donusum = {}, set()
+    lin = ROOT / "geo/historical/idari/district_lineage.json"
+    if lin.exists():
+        for d_ in json.loads(lin.read_text(encoding="utf-8"))["districts"]:
+            kurulus_of[d_["geomId"]] = (d_.get("kurulus") or {}).get("tarih")
+            if d_.get("merkezIlceDonusumu") or (d_.get("kurulus") or {}).get("merkezIlce"):
+                donusum.add(d_["geomId"])
+    onceki_geom = {g for adlar in onceki_secim.values() for g in adlar.values()}
+
+    def sonra_kurulan(g):
+        # kanundan once secimde gorunmuyor, Icisleri kurulusu kanundan sonra ve merkez
+        # ilce donusumu (2008/2012 'Merkez' -> yeni ad) degil
+        t_ = kurulus_of.get(g)
+        return bool(t_ and t_ > cfg["resmiGazete"]["tarih"] and g not in onceki_geom and g not in donusum)
     # bu kanunla kurulan ilceler (il bazinda): kaynak ilce olamazlar
     yeni_adlar = {(il_adlari.get(fold(b["il"] or "").replace(" ", "")), fold(b["ad"])) for b in bentler.values()}
 
@@ -271,8 +316,8 @@ def ayristir(kanun):
             if m:
                 baslik_bekle = True
                 liste, varsayilan_ilce = int(m.group(1).replace("J", "3")), None
-                if liste not in bentler and int(str(liste)[0]) in bentler:
-                    liste = int(str(liste)[0])   # '(21 Sayılı Liste' = (2)
+                if liste not in bentler and not re.search(r"\(\s*\d+\s*\)", s) and int(str(liste)[0]) in bentler:
+                    liste = int(str(liste)[0])   # kapanis parantezi eksik '(21 Sayılı Liste' = (2)
                 if liste > max(bentler):
                     liste = None   # ilce listeleri bitti (KHK 550: (9)-(11) yeni il dokumu)
                     bitti = True
@@ -341,7 +386,7 @@ def ayristir(kanun):
         pl = il_adlari.get(fold(b["il"] or "").replace(" ", ""))
         plakalar = [pl] if pl else cfg["adsizIl"].get(b["ad"], [])
         adaylar = {ad: g for kaynak in (sonraki, onceki_secim) for p in plakalar for ad, g in kaynak.get(p, {}).items()
-                   if (p, fold(ad)) not in yeni_adlar}
+                   if (p, fold(ad)) not in yeni_adlar and not sonra_kurulan(g)}
         for eski_ad, yeni_ad in cfg.get("kaynakAdEsleme", {}).items():
             if yeni_ad in adaylar:
                 adaylar[eski_ad] = adaylar[yeni_ad]

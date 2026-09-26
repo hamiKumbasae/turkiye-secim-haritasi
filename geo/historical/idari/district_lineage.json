@@ -85,6 +85,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
   },
   {
+   "id": "kanun_3806",
+   "type": "official",
+   "title": "3806 sayılı Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun (RG 1992-06-03, sayı 21247)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/21247_1.pdf",
+   "raw": "data/raw/resmi_gazete/21247_1.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+  },
+  {
    "id": "kanun_3949",
    "type": "official",
    "title": "3949 sayılı 3 İlçe Kurulması Hakkında Kanun (RG 1993-12-29, sayı 21803)",
@@ -23449,7 +23457,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 8,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 8
+     }
+    ],
+    "tekKaynak": false,
+    "kaynakYazilmamisBirim": 8,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -23509,7 +23541,36 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 22,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 20
+     },
+     {
+      "ad": "Adalar",
+      "geomId": "TR-D-34-001",
+      "plaka": 34,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -23569,7 +23630,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 4,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 11,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 11
+     }
+    ],
+    "tekKaynak": false,
+    "kaynakYazilmamisBirim": 11,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -24482,7 +24567,34 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 26,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 26
+     }
+    ],
+    "tekKaynak": false,
+    "eksikSira": [
+     18
+    ],
+    "kaynakYazilmamisBirim": 26,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -24845,7 +24957,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 5,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 17,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 17
+     }
+    ],
+    "tekKaynak": false,
+    "kaynakYazilmamisBirim": 17,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -25341,7 +25477,37 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 6,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 13,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 10
+     },
+     {
+      "ad": "Pendik",
+      "geomId": "HIST-Istanbul-Pendik",
+      "plaka": 34,
+      "birimSayisi": 3
+     }
+    ],
+    "tekKaynak": false,
+    "kaynakYazilmamisBirim": 10,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -25692,7 +25858,31 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 9,
+    "rgSayfalari": [
+     5
+    ],
+    "birimSayisi": 4,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 4
+     }
+    ],
+    "tekKaynak": false,
+    "kaynakYazilmamisBirim": 4,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -26203,7 +26393,40 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 7,
+    "rgSayfalari": [
+     5
+    ],
+    "birimSayisi": 11,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 9
+     },
+     {
+      "ad": "Karşıyaka",
+      "geomId": "HIST-Izmir-Karsiyaka1991",
+      "plaka": 35,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "eksikSira": [
+     8
+    ],
+    "kaynakYazilmamisBirim": 8,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -26372,7 +26595,40 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 8,
+    "rgSayfalari": [
+     5
+    ],
+    "birimSayisi": 7,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 6
+     },
+     {
+      "ad": "Konak",
+      "geomId": "HIST-Izmir-Konak1991",
+      "plaka": 35,
+      "birimSayisi": 1
+     }
+    ],
+    "tekKaynak": false,
+    "eksikSira": [
+     5
+    ],
+    "kaynakYazilmamisBirim": 6,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -27145,7 +27401,41 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 10,
+    "rgSayfalari": [
+     6
+    ],
+    "birimSayisi": 14,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 8
+     },
+     {
+      "ad": "Konak",
+      "geomId": "HIST-Izmir-Konak1991",
+      "plaka": 35,
+      "birimSayisi": 6
+     }
+    ],
+    "tekKaynak": false,
+    "eksikSira": [
+     7,
+     8
+    ],
+    "kaynakYazilmamisBirim": 8,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -39080,7 +39370,7 @@
     "rgSayfalari": [
      59
     ],
-    "birimSayisi": 11,
+    "birimSayisi": 10,
     "eskiIlceler": [
      {
       "ad": "Gölköy",
@@ -39103,12 +39393,6 @@
      {
       "ad": "Ulubey",
       "geomId": "TR-D-52-018",
-      "plaka": 52,
-      "birimSayisi": 1
-     },
-     {
-      "ad": "Çamaş",
-      "geomId": "TR-D-52-004",
       "plaka": 52,
       "birimSayisi": 1
      }
@@ -52402,9 +52686,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 11,
+    "rgSayfalari": [
+     6
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": "Hanak",
+      "geomId": "TR-D-75-005",
+      "plaka": 36,
+      "birimSayisi": 15
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-75-004",
@@ -52739,9 +53045,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3806",
+    "kanunAdi": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1992-06-03",
+     "sayi": 21247,
+     "mukerrer": 1
+    },
+    "listeNo": 12,
+    "rgSayfalari": [
+     7
+    ],
+    "birimSayisi": 12,
+    "eskiIlceler": [
+     {
+      "ad": "Iğdır",
+      "geomId": "TR-D-76-002",
+      "plaka": 36,
+      "birimSayisi": 12
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3806.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-76-004",

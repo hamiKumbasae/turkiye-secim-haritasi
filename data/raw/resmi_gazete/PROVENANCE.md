@@ -157,3 +157,13 @@ kurulduğu için 1961/1965 seçim verisindeki Kastamonu "Bozkurt" satırları bu
 yok; bentler ek listelerin başlıklarından ve İçişleri kaydından. Ek (1)–(2) sayılı listeler:
 25 satır, eksik sıra yok; Kaynaşlı ← Düzce (19 köy), Derince ← Kocaeli Merkez (6 köy);
 ikisi de tek kaynaklı. (3) sayılı liste (Düzce ilinin dökümü) okunmadı.
+
+## 21247_1 (3 Haziran 1992, mükerrer) — 3806 sayılı Kanun (13 ilçe, Ardahan ve Iğdır)
+
+`21247_1.pdf` (33 sayfa), indirilme 2026-09-26; maddeler `data/raw/mevzuat/3806.pdf`.
+Bent numarası liste numarasına eşit değil (6. bent Sultanbeyli'nin ek listesi yok); liste
+→ ilçe eşlemesi mevzuat metninden. Damal ← Hanak (15), Karakoyunlu ← Iğdır (12): tek
+kaynaklı. İstanbul (Avcılar, Bağcılar, Güngören, Bahçelievler, Maltepe, Tuzla) ve İzmir
+(Çiğli, Gaziemir, Balçova, Narlıbahçe) mahalle listelerinde eski ilçe yazılmamış; bu
+ilçeler repoda kaymakamlık kaynaklarıyla zaten doğrulanmış (`repo_dogrulanmis`).
+(13)–(14) sayılı listeler (yeni illerin dökümü) okunmadı.

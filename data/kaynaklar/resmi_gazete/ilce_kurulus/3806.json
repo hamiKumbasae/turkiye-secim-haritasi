@@ -1,0 +1,2042 @@
+{
+ "kanun": "3806",
+ "ad": "Onüç İlçe ve İki İl Kurulması ile 190 sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+ "kabul": "1992-05-27",
+ "resmiGazete": {
+  "tarih": "1992-06-03",
+  "sayi": 21247,
+  "mukerrer": 1
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/21247_1.pdf",
+  "maddeler": "data/raw/mevzuat/3806.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/21247_1.pdf",
+  "mevzuatUrl": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.3806.pdf"
+ },
+ "digerHukumler": [
+  {
+   "madde": 1,
+   "metin": "6. Merkezi Sultanbeyli Kasabası olmak üzere İstanbul İlinde Sultanbeyli (ek listesi yok; hangi birimlerin bağlandığı bu kanunda yazılmamış).",
+   "eventType": "created_without_list",
+   "effectiveDate": "1992-06-03",
+   "unit": "Sultanbeyli"
+  },
+  {
+   "madde": 2,
+   "metin": "Kars İline bağlı Ardahan ve Iğdır ilçe merkezleri merkez olmak üzere Ardahan ve Iğdır illeri kurulmuştur (ekli (13)-(14) sayılı listeler).",
+   "eventType": "provinces_created",
+   "effectiveDate": "1992-06-03",
+   "unit": "Ardahan, Iğdır"
+  }
+ ],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 12,
+  "tekKaynak": 2,
+  "cokKaynak": 0,
+  "satir": 160,
+  "cozulemeyenSatir": 21,
+  "kaynakYazilmamisSatir": 98,
+  "satirsizListe": [],
+  "eksikSatirliListe": [
+   3,
+   7,
+   8,
+   10
+  ],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": 1,
+   "il": "İstanbul",
+   "plaka": 34,
+   "ad": "Avcılar",
+   "yeniIlce": {
+    "ad": "Avcılar",
+    "geomId": "TR-D-34-004",
+    "plaka": 34,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (1) sayılı liste — İstanbul İlinde Avcılar",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3
+   ],
+   "altBasliklar": [
+    "İSTANBUL İLİ AVCILAR BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ İHDAS"
+   ],
+   "satirSayisi": 8,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 8
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 8,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Ambarlı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Ambarlı",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "Firuzköy",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Firuzköy",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Avcılar (Merkez)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Avcılar (Merkez)",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 6,
+     "birim": "Gümüşpala",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Gümüşpala",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Cihangir",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Cihangir",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 7,
+     "birim": "Mustafakemalpaşa",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Mustafakemalpaşa",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Denizköşkler",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Denizköşkler",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 8,
+     "birim": "Üniversite",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Üniversite",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    }
+   ]
+  },
+  {
+   "listeNo": 2,
+   "il": "İstanbul",
+   "plaka": 34,
+   "ad": "Bağcılar",
+   "yeniIlce": {
+    "ad": "Bağcılar",
+    "geomId": "TR-D-34-005",
+    "plaka": 34,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (2) sayılı liste — İstanbul İlinde Bağcılar",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3
+   ],
+   "altBasliklar": [
+    "İSTANBUL İLİ BAĞCILAR İLÇESİNE BAĞLANAN BUCAK"
+   ],
+   "satirSayisi": 22,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 20
+    },
+    {
+     "ad": "Adalar",
+     "geomId": "TR-D-34-001",
+     "birimSayisi": 2,
+     "plaka": 34
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 20,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Mahmutbey Bucağı",
+     "sayfa": 3
+    },
+    {
+     "sira": 1,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Bağcılar (Merkez)",
+     "sayfa": 3
+    },
+    {
+     "sira": 12,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "İnönü",
+     "sayfa": 3
+    },
+    {
+     "sira": 2,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Bağlar",
+     "sayfa": 3
+    },
+    {
+     "sira": 13,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Kâzımkarabekir (Bağcılar Bölgesi)",
+     "sayfa": 3
+    },
+    {
+     "sira": 3,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Barbaros",
+     "sayfa": 3
+    },
+    {
+     "sira": 14,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Kemalpaşa",
+     "sayfa": 3
+    },
+    {
+     "sira": 4,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Çınar",
+     "sayfa": 3
+    },
+    {
+     "sira": 15,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Mahmutbey (Merkez)",
+     "sayfa": 3
+    },
+    {
+     "sira": 5,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Demirkapı",
+     "sayfa": 3
+    },
+    {
+     "sira": 16,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Sancaktepe",
+     "sayfa": 3
+    },
+    {
+     "sira": 6,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Evren",
+     "sayfa": 3
+    },
+    {
+     "sira": 17,
+     "birim": "Yavuzselim",
+     "tur": null,
+     "eskiIlce": "Adalar",
+     "eskiBucak": "Bölgesi)",
+     "okunan": "Yavuzselim (Bağalar Bölgesi)",
+     "sayfa": 3,
+     "dusukEsik": true
+    },
+    {
+     "sira": 7,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Fevziçakmak (Kirazlı Bölgesi)",
+     "sayfa": 3
+    },
+    {
+     "sira": 18,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yenigün",
+     "sayfa": 3
+    },
+    {
+     "sira": 8,
+     "birim": "Fevzicakmak",
+     "tur": null,
+     "eskiIlce": "Adalar",
+     "eskiBucak": "Bölgesi)",
+     "okunan": "Fevzicakmak (Bağalar Bölgesi)",
+     "sayfa": 3,
+     "dusukEsik": true
+    },
+    {
+     "sira": 19,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yenimahalle",
+     "sayfa": 3
+    },
+    {
+     "sira": 9,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Hürriyet (Güneşli Bölgesi)",
+     "sayfa": 3
+    },
+    {
+     "sira": 20,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yıldıztepe",
+     "sayfa": 3
+    },
+    {
+     "sira": 10,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Güneşli (Merkez)",
+     "sayfa": 3
+    },
+    {
+     "sira": 21,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "100. yd",
+     "sayfa": 3
+    },
+    {
+     "sira": 11,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Göztepe",
+     "sayfa": 3
+    }
+   ]
+  },
+  {
+   "listeNo": 3,
+   "il": "İstanbul",
+   "plaka": 34,
+   "ad": "Güngören",
+   "yeniIlce": {
+    "ad": "Güngören",
+    "geomId": "TR-D-34-022",
+    "plaka": 34,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (3) sayılı liste — İstanbul İlinde Güngören",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3
+   ],
+   "altBasliklar": [
+    "İSTANBUL İLİ GÜNGÖREN BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ İHDAS"
+   ],
+   "satirSayisi": 26,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 26
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [
+    18
+   ],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 26,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Akmalar",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Akmalar",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 15,
+     "birim": "Kâzımkarabekir (Esenler Bölgesi)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Kâzımkarabekir (Esenler Bölgesi)",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Birlik",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Birlik",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 16,
+     "birim": "Kemer",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Kemer",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Çiftehavuzlar",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Çiftehavuzlar",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 17,
+     "birim": "Maraşalçakmak",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Maraşalçakmak",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Davutpaşa 18 Menderes",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Davutpaşa 18 Menderes",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "Fatih",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Fatih",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 19,
+     "birim": "Mimarsinan",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Mimarsinan",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 6,
+     "birim": "Fevziçakmak (Esenler Bölgesi)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Fevziçakmak (Esenler Bölgesi)",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 20,
+     "birim": "Namıkkemal",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Namıkkemal",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 7,
+     "birim": "Habibler",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Habibler",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 21,
+     "birim": "Ninehatun",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Ninehatun",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 8,
+     "birim": "Gençosman",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Gençosman",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 22,
+     "birim": "Sanayi",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Sanayi",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 9,
+     "birim": "Güneştepe",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Güneştepe",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 23,
+     "birim": "Turgutreis",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Turgutreis",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 10,
+     "birim": "Güngören (Merkez)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Güngören (Merkez)",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 24,
+     "birim": "Yavuzselim (Esenler Bölgesi)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yavuzselim (Esenler Bölgesi)",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 11,
+     "birim": "Güven",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Güven",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 25,
+     "birim": "Abdurrahman Nafiz Gürman",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Abdurrahman Nafiz Gürman",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 12,
+     "birim": "Havaalanı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Havaalanı",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 26,
+     "birim": "Mehmet Nezihi Özmen",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Mehmet Nezihi Özmen",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 13,
+     "birim": "Haznedar",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Haznedar",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 27,
+     "birim": "Tozkoparan",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Tozkoparan",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 14,
+     "birim": "Karabayır",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Karabayır",
+     "sayfa": 3,
+     "kaynakYazilmamis": true
+    }
+   ]
+  },
+  {
+   "listeNo": 4,
+   "il": "İstanbul",
+   "plaka": 34,
+   "ad": "Bahçelievler",
+   "yeniIlce": {
+    "ad": "Bahçelievler",
+    "geomId": "TR-D-34-006",
+    "plaka": 34,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (4) sayılı liste — İstanbul İlinde Bahçelievler",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4
+   ],
+   "altBasliklar": [
+    "İSTANBUL İLİ BAHÇELİEVLER BELEDİYESİNE BAĞLANAN VE İLÇE"
+   ],
+   "satirSayisi": 11,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 11
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 11,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Cumhuriyet",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Cumhuriyet",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 7,
+     "birim": "Soğanlı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Soğanlı",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Çobançesme",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Çobançesme",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 8,
+     "birim": "Şirinevler",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Şirinevler",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Fevziçakmak (Yenibosna Bölgesi)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Fevziçakmak (Yenibosna Bölgesi)",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 9,
+     "birim": "Yenibosna",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yenibosna",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Hürriyet (Yenibosna Bölgesi)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Hürriyet (Yenibosna Bölgesi)",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 10,
+     "birim": "Zafer",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Zafer",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "Kocasinan",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Kocasinan",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 11,
+     "birim": "Bahçelievler",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Bahçelievler",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 6,
+     "birim": "Siyavuşpasa",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Siyavuşpasa",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    }
+   ]
+  },
+  {
+   "listeNo": 5,
+   "il": "İstanbul",
+   "plaka": 34,
+   "ad": "Maltepe",
+   "yeniIlce": {
+    "ad": "Maltepe",
+    "geomId": "TR-D-34-027",
+    "plaka": 34,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (5) sayılı liste — İstanbul İlinde Maltepe",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4
+   ],
+   "altBasliklar": [
+    "İSTANBUL İLİ MALTEPE BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ"
+   ],
+   "satirSayisi": 17,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 17
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 17,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Aydınevler",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Aydınevler",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 10,
+     "birim": "Fındıklı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Fındıklı",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Altayçesme",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Altayçesme",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 11,
+     "birim": "Gülensu",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Gülensu",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Altıntepe",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Altıntepe",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 12,
+     "birim": "Gülsuyu",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Gülsuyu",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Bağlarbası",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Bağlarbası",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 13,
+     "birim": "İdeal tepe",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "İdeal tepe",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "Başıbüyük",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Başıbüyük",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 14,
+     "birim": "Küçükyalı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Küçükyalı",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 6,
+     "birim": "Bayakbakkalköy",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Bayakbakkalköy",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 15,
+     "birim": "Cevizli",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Cevizli",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 7,
+     "birim": "Çınar",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Çınar",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 16,
+     "birim": "Yalı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yalı",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 8,
+     "birim": "Esenkent",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Esenkent",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 17,
+     "birim": "Zümrütevler",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Zümrütevler",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 9,
+     "birim": "Feyzullah",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Feyzullah",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    }
+   ]
+  },
+  {
+   "listeNo": 6,
+   "il": "İstanbul",
+   "plaka": 34,
+   "ad": "Tuzla",
+   "yeniIlce": {
+    "ad": "Tuzla",
+    "geomId": "TR-D-34-036",
+    "plaka": 34,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (6) sayılı liste — İstanbul İlinde Tuzla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4
+   ],
+   "altBasliklar": [
+    "İSTANBUL İLİ TUZLA BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ"
+   ],
+   "satirSayisi": 13,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 10
+    },
+    {
+     "ad": "Pendik",
+     "geomId": "HIST-Istanbul-Pendik",
+     "birimSayisi": 3,
+     "plaka": 34
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 10,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Aydınlı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Aydınlı",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 6,
+     "birim": "İçmeler",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "İçmeler",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Aydıntepe",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Aydıntepe",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 7,
+     "birim": "İstasyon",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "İstasyon",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Cami",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Cami",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 8,
+     "birim": "Postane",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Postane",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Esenyalı Esenyalı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Esenyalı Esenyalı",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 9,
+     "birim": "Şifa",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Şifa",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "Güzelyalı Güzelyalı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Güzelyalı Güzelyalı",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 10,
+     "birim": "Yayla",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yayla",
+     "sayfa": 4,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 1,
+     "birim": "Akfırat",
+     "tur": null,
+     "eskiIlce": "Pendik",
+     "eskiBucak": "Merkez",
+     "okunan": "Akfırat Pendik Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 2,
+     "birim": "Orhanlı",
+     "tur": null,
+     "eskiIlce": "Pendik",
+     "eskiBucak": "Merkez",
+     "okunan": "Orhanlı Pendik Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 3,
+     "birim": "Tepeören",
+     "tur": null,
+     "eskiIlce": "Pendik",
+     "eskiBucak": "Merkez",
+     "okunan": "Tepeören Pendik Merkez",
+     "sayfa": 4
+    }
+   ]
+  },
+  {
+   "listeNo": 7,
+   "il": "İzmir",
+   "plaka": 35,
+   "ad": "Çiğli",
+   "yeniIlce": {
+    "ad": "Çiğli",
+    "geomId": "TR-D-35-010",
+    "plaka": 35,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (7) sayılı liste — İzmir İlinde Çiğli",
+   "ekHukum": null,
+   "rgSayfalari": [
+    5
+   ],
+   "altBasliklar": [
+    "İZMİR İLİ ÇİĞLİ BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ İHDAS"
+   ],
+   "satirSayisi": 11,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 9
+    },
+    {
+     "ad": "Karşıyaka",
+     "geomId": "HIST-Izmir-Karsiyaka1991",
+     "birimSayisi": 2,
+     "plaka": 35
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [
+    8
+   ],
+   "cozulemeyenSatir": 1,
+   "kaynakYazilmamisSatir": 8,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": null,
+     "tur": null,
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Atatürk Organize Sanayi Bölgesi",
+     "sayfa": 5
+    },
+    {
+     "sira": 6,
+     "birim": "Köyiçi (Büyükçiğli)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Köyiçi (Büyükçiğli)",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Egekent",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Egekent",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 7,
+     "birim": "Küçükçiğli",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Küçükçiğli",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Ev-Ka-II 8 Maltepe",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Ev-Ka-II 8 Maltepe",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Güzeltepe",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Güzeltepe",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 9,
+     "birim": "Palatçık",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Palatçık",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "tstasyonaltı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "tstasyonaltı",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 10,
+     "birim": "Şirintepe",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Şirintepe",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 11,
+     "birim": "* 1 Sasallı E",
+     "tur": null,
+     "eskiIlce": "Karşıyaka",
+     "eskiBucak": "Merkez",
+     "okunan": "* 1 Sasallı E Karşıyaka Merkez",
+     "sayfa": 5,
+     "numarasiOkunamadi": true
+    },
+    {
+     "sira": 2,
+     "birim": "Kaklıç",
+     "tur": null,
+     "eskiIlce": "Karşıyaka",
+     "eskiBucak": "Merkez",
+     "okunan": "Kaklıç Karşayaka Merkez",
+     "sayfa": 5
+    }
+   ]
+  },
+  {
+   "listeNo": 8,
+   "il": "İzmir",
+   "plaka": 35,
+   "ad": "Gaziemir",
+   "yeniIlce": {
+    "ad": "Gaziemir",
+    "geomId": "TR-D-35-013",
+    "plaka": 35,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (8) sayılı liste — İzmir İlinde Gaziemir",
+   "ekHukum": null,
+   "rgSayfalari": [
+    5
+   ],
+   "altBasliklar": [
+    "İZMİR İLİ GAZİEMİR BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ İHDAS"
+   ],
+   "satirSayisi": 7,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 6
+    },
+    {
+     "ad": "Konak",
+     "geomId": "HIST-Izmir-Konak1991",
+     "birimSayisi": 1,
+     "plaka": 35
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [
+    5
+   ],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 6,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Aktepe S. Gazi",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Aktepe S. Gazi",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Atıfbey",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Atıfbey",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 6,
+     "birim": "Irmak",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Irmak",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Binbaşıreşatbey",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Binbaşıreşatbey",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 7,
+     "birim": "Yeşil",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yeşil",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Dokuzeylül",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Dokuzeylül",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 1,
+     "birim": "Sarnıç",
+     "tur": null,
+     "eskiIlce": "Konak",
+     "eskiBucak": "Merkez",
+     "okunan": "Sarnıç Konak Merkez",
+     "sayfa": 5
+    }
+   ]
+  },
+  {
+   "listeNo": 9,
+   "il": "İzmir",
+   "plaka": 35,
+   "ad": "Balçova",
+   "yeniIlce": {
+    "ad": "Balçova",
+    "geomId": "TR-D-35-002",
+    "plaka": 35,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (9) sayılı liste — İzmir İlinde Balçova",
+   "ekHukum": null,
+   "rgSayfalari": [
+    5
+   ],
+   "altBasliklar": [
+    "İZMİR İLİ BALÇOVA BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ İHDAS"
+   ],
+   "satirSayisi": 4,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 4
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 4,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Eğitim",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Eğitim",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Onur",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Onur",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Fevziçakmak",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Fevziçakmak",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Korutürk",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Korutürk",
+     "sayfa": 5,
+     "kaynakYazilmamis": true
+    }
+   ]
+  },
+  {
+   "listeNo": 10,
+   "il": "İzmir",
+   "plaka": 35,
+   "ad": "Narlıbahçe",
+   "yeniIlce": {
+    "ad": "Narlıdere",
+    "geomId": "TR-D-35-024",
+    "plaka": 35,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (10) sayılı liste — İzmir İlinde Narlıbahçe",
+   "ekHukum": null,
+   "rgSayfalari": [
+    6
+   ],
+   "altBasliklar": [
+    "İZMİR İLİ NARLIBAHÇE BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZÎ İHDAS"
+   ],
+   "satirSayisi": 14,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 8
+    },
+    {
+     "ad": "Konak",
+     "geomId": "HIST-Izmir-Konak1991",
+     "birimSayisi": 6,
+     "plaka": 35
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [
+    7,
+    8
+   ],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 8,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Çamtepe",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Çamtepe",
+     "sayfa": 6,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 6,
+     "birim": "Yenikale",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yenikale",
+     "sayfa": 6,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Ilıca",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Ilıca",
+     "sayfa": 6,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Atatürk (Şafak)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Atatürk (Şafak)",
+     "sayfa": 6,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Limanreis",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Limanreis",
+     "sayfa": 6,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 9,
+     "birim": "Çelebi",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Çelebi",
+     "sayfa": 6,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "Narh",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Narh",
+     "sayfa": 6,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 10,
+     "birim": "Derya 11.",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Derya 11.",
+     "sayfa": 6,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 1,
+     "birim": "Çamlı",
+     "tur": null,
+     "eskiIlce": "Konak",
+     "eskiBucak": "Merkez",
+     "okunan": "Çamlı Konak Merkez",
+     "sayfa": 6
+    },
+    {
+     "sira": 2,
+     "birim": "Çamtepe",
+     "tur": null,
+     "eskiIlce": "Konak",
+     "eskiBucak": "Merkez",
+     "okunan": "Çamtepe Konak Merkez",
+     "sayfa": 6
+    },
+    {
+     "sira": 3,
+     "birim": "Karacak",
+     "tur": null,
+     "eskiIlce": "Konak",
+     "eskiBucak": "Merkez",
+     "okunan": "Karacak Konak Merkez",
+     "sayfa": 6
+    },
+    {
+     "sira": 4,
+     "birim": "Küçükkaya",
+     "tur": null,
+     "eskiIlce": "Konak",
+     "eskiBucak": "Merkez",
+     "okunan": "Küçükkaya Konak Merkez",
+     "sayfa": 6
+    },
+    {
+     "sira": 5,
+     "birim": "Payamlı",
+     "tur": null,
+     "eskiIlce": "Konak",
+     "eskiBucak": "Merkez",
+     "okunan": "Payamlı Konak Merkez",
+     "sayfa": 6
+    },
+    {
+     "sira": 6,
+     "birim": "Yelki",
+     "tur": null,
+     "eskiIlce": "Konak",
+     "eskiBucak": "Merkez",
+     "okunan": "Yelki Konak Merkez",
+     "sayfa": 6
+    }
+   ]
+  },
+  {
+   "listeNo": 11,
+   "il": "Kars",
+   "plaka": 36,
+   "ad": "Damal",
+   "yeniIlce": {
+    "ad": "Damal",
+    "geomId": "TR-D-75-003",
+    "plaka": 75,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (11) sayılı liste — Kars İlinde Damal",
+   "ekHukum": null,
+   "rgSayfalari": [
+    6
+   ],
+   "altBasliklar": [
+    "KARS İLÎ DAMAL İLÇESİNE BAĞLANAN KÖYLER"
+   ],
+   "satirSayisi": 15,
+   "eskiIlceler": [
+    {
+     "ad": "Hanak",
+     "geomId": "TR-D-75-005",
+     "birimSayisi": 15,
+     "plaka": 36
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Aşağı Gündeş",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Aşağı Gündeş Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 2,
+     "birim": "Bunnadere",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Bunnadere Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 3,
+     "birim": "Dereköy",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Dereköy Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 4,
+     "birim": "Eski Kılıç",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Eski Kılıç Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 5,
+     "birim": "Ikizdere",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Ikizdere Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 6,
+     "birim": "Kalenderden",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Kalenderden Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 7,
+     "birim": "Obrucak",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Obrucak Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 8,
+     "birim": "Otaglı",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Otaglı Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 9,
+     "birim": "Seyitören",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Seyitören Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 10,
+     "birim": "Sulakçayır",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Sulakçayır Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 11,
+     "birim": "İl Tepeköy",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "İl Tepeköy Hanak Damai",
+     "sayfa": 6,
+     "numarasiOkunamadi": true
+    },
+    {
+     "sira": 12,
+     "birim": "Üçdere",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Üçdere Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 13,
+     "birim": "Yamçılı",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Yamçılı Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 14,
+     "birim": "Yukarı Gündeş",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Yukarı Gündeş Hanak Damai",
+     "sayfa": 6
+    },
+    {
+     "sira": 15,
+     "birim": "Yünbüken",
+     "tur": null,
+     "eskiIlce": "Hanak",
+     "eskiBucak": "Damai",
+     "okunan": "Yünbüken Hanak Damai",
+     "sayfa": 6
+    }
+   ]
+  },
+  {
+   "listeNo": 12,
+   "il": "Kars",
+   "plaka": 36,
+   "ad": "Karakoyunlu",
+   "yeniIlce": {
+    "ad": "Karakoyunlu",
+    "geomId": "TR-D-76-003",
+    "plaka": 76,
+    "secim": "1995"
+   },
+   "madde": "3806 Madde 1: ekli (12) sayılı liste — Kars İlinde Karakoyunlu",
+   "ekHukum": null,
+   "rgSayfalari": [
+    7
+   ],
+   "altBasliklar": [
+    "KARS İLİ KARAKOYUNLU İLÇESİNE BAĞLANAN BUCAK VE KÖYLER"
+   ],
+   "satirSayisi": 12,
+   "eskiIlceler": [
+    {
+     "ad": "Iğdır",
+     "geomId": "TR-D-76-002",
+     "birimSayisi": 12,
+     "plaka": 36
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Taşburun B. M.",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Tasburun",
+     "okunan": "Taşburun B. M. İğdır Tasburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 2,
+     "birim": "Aktaş",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Aktaş İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 3,
+     "birim": "Bayatdoğanşalı",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Tasburun",
+     "okunan": "Bayatdoğanşalı İğdır Tasburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 4,
+     "birim": "gulakbaşı",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "gulakbaşı İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 5,
+     "birim": "Cennetabat,",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Cennetabat, İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 6,
+     "birim": "Gökçeli",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Gökçeli İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 7,
+     "birim": "Koçardoğanşalı",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Koçardoğanşalı İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 8,
+     "birim": "Koçkıran",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Koçkıran İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 9,
+     "birim": "Mürşitali",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Mürşitali İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 10,
+     "birim": "Şıracı",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Şıracı İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 11,
+     "birim": "Yukanalican",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Yukanalican İğdır Taşburun",
+     "sayfa": 7
+    },
+    {
+     "sira": 12,
+     "birim": "Zülfikârköy",
+     "tur": null,
+     "eskiIlce": "Iğdır",
+     "eskiBucak": "Taşburun",
+     "okunan": "Zülfikârköy İğdır Taşburun",
+     "sayfa": 7
+    }
+   ]
+  }
+ ]
+}
