@@ -1,0 +1,608 @@
+{
+ "kanun": "3949",
+ "ad": "3 İlçe Kurulması Hakkında Kanun",
+ "kabul": "1993-12-27",
+ "resmiGazete": {
+  "tarih": "1993-12-29",
+  "sayi": 21803
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/21803.pdf",
+  "maddeler": "data/raw/mevzuat/3949.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/21803.pdf",
+  "mevzuatUrl": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.3949.pdf"
+ },
+ "digerHukumler": [
+  {
+   "madde": 2,
+   "metin": "İzmir İli Narlıbahçe ilçesinin ve belediyesinin adı Narlıdere olarak değiştirilmiştir.",
+   "eventType": "renamed",
+   "effectiveDate": "1993-12-29",
+   "unit": "Narlıbahçe → Narlıdere"
+  },
+  {
+   "madde": 2,
+   "metin": "Bolu İli Cumaova ilçesinin ve belediyesinin adı Cumayeri olarak değiştirilmiştir.",
+   "eventType": "renamed",
+   "effectiveDate": "1993-12-29",
+   "unit": "Cumaova → Cumayeri"
+  }
+ ],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 3,
+  "tekKaynak": 1,
+  "cokKaynak": 0,
+  "satir": 45,
+  "cozulemeyenSatir": 0,
+  "kaynakYazilmamisSatir": 20,
+  "satirsizListe": [],
+  "eksikSatirliListe": [
+   3
+  ],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": "1+2",
+   "il": "İzmir",
+   "plaka": 35,
+   "ad": "Güzelbahçe",
+   "yeniIlce": {
+    "ad": "Güzelbahçe",
+    "geomId": "TR-D-35-014",
+    "plaka": 35,
+    "secim": "1995"
+   },
+   "madde": "Ekli (1) sayılı listede adları yazılı mahalleler merkez olmak, ekli (2) sayılı listede adları yazılı köyler bağlanmak ve aynı adla bir belediye kurulmak üzere İzmir ilinde Güzelbahçe adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    1
+   ],
+   "altBasliklar": [
+    "İZMİR İLİ GÜZELBAHÇE BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ İHDAS",
+    "İZMİR İLİ GÜZELBAHÇE İLÇESİNE BAĞLANAN KÖYLER"
+   ],
+   "satirSayisi": 11,
+   "eskiIlceler": [
+    {
+     "ad": "Narlıbahçe",
+     "geomId": "TR-D-35-024",
+     "birimSayisi": 6,
+     "plaka": 35
+    },
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 5
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 5,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Atatürk (Şafak)",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Atatürk (Şafak)",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 2,
+     "birim": "Büyükkaya",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Büyükkaya",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Çelebi",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Çelebi",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Derya",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Derya",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "Yaka",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yaka",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 1,
+     "birim": "Çamlı",
+     "tur": null,
+     "eskiIlce": "Narlıbahçe",
+     "eskiBucak": "Merkez",
+     "okunan": "Çamlı Narlıbahçe Merkez",
+     "sayfa": 1
+    },
+    {
+     "sira": 2,
+     "birim": "Çamtepe",
+     "tur": null,
+     "eskiIlce": "Narlıbahçe",
+     "eskiBucak": "Merkez",
+     "okunan": "Çamtepe",
+     "sayfa": 1,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 3,
+     "birim": "Kavacık",
+     "tur": null,
+     "eskiIlce": "Narlıbahçe",
+     "eskiBucak": "Merkez",
+     "okunan": "Kavacık",
+     "sayfa": 1,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 4,
+     "birim": "Küçükkaya",
+     "tur": null,
+     "eskiIlce": "Narlıbahçe",
+     "eskiBucak": "Merkez",
+     "okunan": "Küçükkaya",
+     "sayfa": 1,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 5,
+     "birim": "Payamlı",
+     "tur": null,
+     "eskiIlce": "Narlıbahçe",
+     "eskiBucak": "Merkez",
+     "okunan": "Payamlı",
+     "sayfa": 1,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 6,
+     "birim": "Yelki",
+     "tur": null,
+     "eskiIlce": "Narlıbahçe",
+     "eskiBucak": "Merkez",
+     "okunan": "Yelki",
+     "sayfa": 1,
+     "ustSatirIleAyni": true
+    }
+   ]
+  },
+  {
+   "listeNo": 3,
+   "il": "İstanbul",
+   "plaka": 34,
+   "ad": "Esenler",
+   "yeniIlce": {
+    "ad": "Esenler",
+    "geomId": "TR-D-34-017",
+    "plaka": 34,
+    "secim": "1995"
+   },
+   "madde": "Ekli (3) sayılı listede adları yazılı mahalleler merkez olmak ve aynı adla bir belediye kurulmak üzere İstanbul İlinde Esenler adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    1,
+    2
+   ],
+   "altBasliklar": [
+    "İSTANBUL İLt ESENLER BELEDİYESİNE BAĞLANAN VE İLÇE MERKEZİ İHDAS"
+   ],
+   "satirSayisi": 15,
+   "eskiIlceler": [
+    {
+     "ad": null,
+     "geomId": null,
+     "birimSayisi": 15
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [
+    2
+   ],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 15,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Birlik 2-. Çiftehavuzlar",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Birlik 2-. Çiftehavuzlar",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 3,
+     "birim": "Davutpaşa",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Davutpaşa",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 4,
+     "birim": "Fatih",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Fatih",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 5,
+     "birim": "Fevzi çakmak",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Fevzi çakmak",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 6,
+     "birim": "Habipler",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Habipler",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 7,
+     "birim": "Havaalanı",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Havaalanı",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 8,
+     "birim": "Karabayır",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Karabayır",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 9,
+     "birim": "Kazımkarabekir",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Kazımkarabekir",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 10,
+     "birim": "Kemer",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Kemer",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 11,
+     "birim": "Menderes",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Menderes",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 12,
+     "birim": "Mimarsinan",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Mimarsinan",
+     "sayfa": 1,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 13,
+     "birim": "Namıkkemal",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Namıkkemal",
+     "sayfa": 2,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 14,
+     "birim": "Ninehatun",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Ninehatun",
+     "sayfa": 2,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 15,
+     "birim": "Turgutreis",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Turgutreis",
+     "sayfa": 2,
+     "kaynakYazilmamis": true
+    },
+    {
+     "sira": 16,
+     "birim": "Yavuzselim",
+     "tur": "mahalle",
+     "eskiIlce": null,
+     "eskiBucak": null,
+     "okunan": "Yavuzselim",
+     "sayfa": 2,
+     "kaynakYazilmamis": true
+    }
+   ]
+  },
+  {
+   "listeNo": 4,
+   "il": "Bolu",
+   "plaka": 14,
+   "ad": "Gümüşova",
+   "yeniIlce": {
+    "ad": "Gümüşova",
+    "geomId": "TR-D-81-006",
+    "plaka": 14,
+    "secim": "1995"
+   },
+   "madde": "Ekli (4) sayılı listede adları yazılı köyler bağlanmak ve aynı adla bir belediye kurulmak üzere Bolu ilinde Gümüşova adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    2
+   ],
+   "altBasliklar": [
+    "BOLU ÎLÎ GÜMÜŞOVA İLÇESİNE BAĞLANAN KÖYLER"
+   ],
+   "satirSayisi": 19,
+   "eskiIlceler": [
+    {
+     "ad": "Cumaova",
+     "geomId": "TR-D-81-002",
+     "birimSayisi": 19,
+     "plaka": 14
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Adaköy",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Adaköy Cumaova Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 2,
+     "birim": "Ardıçdimi",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Ardıçdimi",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 3,
+     "birim": "Çaybükü",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Çaybükü",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 4,
+     "birim": "Dededüzü \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Dededüzü \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 5,
+     "birim": "Dereköy \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Dereköy \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 6,
+     "birim": "Elmacık \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Elmacık \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 7,
+     "birim": "Hacıkadirler \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Hacıkadirler \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 8,
+     "birim": "Halilbey",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Halilbey",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 9,
+     "birim": "Kahveleryanı \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Kahveleryanı \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 10,
+     "birim": "Kıyıköy",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Kıyıköy",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 11,
+     "birim": "Ören",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Ören",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 12,
+     "birim": "Pazarcık \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Pazarcık \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 13,
+     "birim": "Selamlar \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Selamlar \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 14,
+     "birim": "Soğuksu \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Soğuksu \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 15,
+     "birim": "Sultaniye \"",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Sultaniye \"",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 16,
+     "birim": "Yakabaşı",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Yakabaşı",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 17,
+     "birim": "Yesilyayla",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Yesilyayla",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 18,
+     "birim": "Yıldıztepe",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Yıldıztepe",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    },
+    {
+     "sira": 19,
+     "birim": "Yongalık",
+     "tur": null,
+     "eskiIlce": "Cumaova",
+     "eskiBucak": "Merkez",
+     "okunan": "Yongalık",
+     "sayfa": 2,
+     "ustSatirIleAyni": true
+    }
+   ]
+  }
+ ]
+}

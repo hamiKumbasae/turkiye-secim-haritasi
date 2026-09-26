@@ -77,6 +77,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
   },
   {
+   "id": "kanun_3949",
+   "type": "official",
+   "title": "3949 sayılı 3 İlçe Kurulması Hakkında Kanun (RG 1993-12-29, sayı 21803)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/21803.pdf",
+   "raw": "data/raw/resmi_gazete/21803.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3949.json"
+  },
+  {
    "id": "kanun_4200",
    "type": "official",
    "title": "4200 sayılı Üç İlçe ve Bir İl Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun (RG 1996-10-28, sayı 22801)",
@@ -24133,9 +24141,35 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3949",
+    "kanunAdi": "3 İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1993-12-29",
+     "sayi": 21803
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     1,
+     2
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 15
+     }
+    ],
+    "tekKaynak": false,
+    "eksikSira": [
+     2
+    ],
+    "kaynakYazilmamisBirim": 15,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3949.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-34-018",
@@ -26400,7 +26434,36 @@
      "kaynak": "geo/historical/district_splits.json"
     }
    ],
-   "kanunSoyu": null,
+   "kanunSoyu": {
+    "kanun": "3949",
+    "kanunAdi": "3 İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1993-12-29",
+     "sayi": 21803
+    },
+    "listeNo": "1+2",
+    "rgSayfalari": [
+     1
+    ],
+    "birimSayisi": 11,
+    "eskiIlceler": [
+     {
+      "ad": "Narlıbahçe",
+      "geomId": "TR-D-35-024",
+      "plaka": 35,
+      "birimSayisi": 6
+     },
+     {
+      "ad": null,
+      "geomId": null,
+      "plaka": null,
+      "birimSayisi": 5
+     }
+    ],
+    "tekKaynak": false,
+    "kaynakYazilmamisBirim": 5,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3949.json"
+   },
    "lineageStatus": "repo_dogrulanmis"
   },
   {
@@ -54533,9 +54596,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "3949",
+    "kanunAdi": "3 İlçe Kurulması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1993-12-29",
+     "sayi": 21803
+    },
+    "listeNo": 4,
+    "rgSayfalari": [
+     2
+    ],
+    "birimSayisi": 19,
+    "eskiIlceler": [
+     {
+      "ad": "Cumaova",
+      "geomId": "TR-D-81-002",
+      "plaka": 14,
+      "birimSayisi": 19
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3949.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-81-007",

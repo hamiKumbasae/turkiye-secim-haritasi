@@ -108,6 +108,24 @@ KANUNLAR = {
              "bentlerElle": {
                  1: {"il": "Urfa", "ad": "Ceylanpınar", "madde": "Ekli (1) sayılı cetvelde adları yazılı köyleri kapsamak üzere Urfa İli Viranşehir İlçesi Ceylanpınar Bucağında Ceylanpınar adıyla", "ekHukum": None},
                  2: {"il": "İzmir", "ad": "Aliağa", "madde": "ekli (2) sayılı cetvelde adları yazılı köyleri kapsamak Üzere İzmir İli Menemen İlçesi Aliağa Bucağında Aliağa adıyla", "ekHukum": None}}},
+    "3949": {"ad": "3 İlçe Kurulması Hakkında Kanun", "kabul": "1993-12-27",
+             "resmiGazete": {"tarih": "1993-12-29", "sayi": 21803}, "rgPdf": "data/raw/resmi_gazete/21803.pdf",
+             "mevzuatPdf": "data/raw/mevzuat/3949.pdf", "sonrakiGenel": "1995", "oncekiGenel": "1991", "adsizIl": {},
+             # kaynak ilce adi listede kanun ANINDAKI ad; ayni kanunun 2. maddesi bunlari
+             # yeniden adlandiriyor (Narlibahce 1992'de kuruldu, 1991 secim listesinde yok)
+             "kaynakAdEsleme": {"Narlıbahçe": "Narlıdere", "Cumaova": "Cumayeri"},
+             # listeler ilce basina degil tur basina: Guzelbahce (1) mahalle + (2) koy,
+             # Esenler (3) mahalle, Gumusova (4) koy -> ayni ilcenin listeleri birlestirilir
+             "bentlerElle": {
+                 1: {"il": "İzmir", "ad": "Güzelbahçe", "madde": "Ekli (1) sayılı listede adları yazılı mahalleler merkez olmak, ekli (2) sayılı listede adları yazılı köyler bağlanmak ve aynı adla bir belediye kurulmak üzere İzmir ilinde Güzelbahçe adıyla", "ekHukum": None},
+                 2: {"il": "İzmir", "ad": "Güzelbahçe", "madde": "(bkz. liste 1)", "ekHukum": None},
+                 3: {"il": "İstanbul", "ad": "Esenler", "madde": "Ekli (3) sayılı listede adları yazılı mahalleler merkez olmak ve aynı adla bir belediye kurulmak üzere İstanbul İlinde Esenler adıyla", "ekHukum": None},
+                 4: {"il": "Bolu", "ad": "Gümüşova", "madde": "Ekli (4) sayılı listede adları yazılı köyler bağlanmak ve aynı adla bir belediye kurulmak üzere Bolu ilinde Gümüşova adıyla", "ekHukum": None}},
+             "digerHukumler": [
+                 {"madde": 2, "metin": "İzmir İli Narlıbahçe ilçesinin ve belediyesinin adı Narlıdere olarak değiştirilmiştir.",
+                  "eventType": "renamed", "effectiveDate": "1993-12-29", "unit": "Narlıbahçe → Narlıdere"},
+                 {"madde": 2, "metin": "Bolu İli Cumaova ilçesinin ve belediyesinin adı Cumayeri olarak değiştirilmiştir.",
+                  "eventType": "renamed", "effectiveDate": "1993-12-29", "unit": "Cumaova → Cumayeri"}]},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},
@@ -216,6 +234,7 @@ def ayristir(kanun):
     varsayilan_ilce = None
     onceki = None
     bitti = False
+    baslik_bekle = False
     for no, sayfa in enumerate(sayfalar, start=1):
         if bitti:
             break
@@ -224,6 +243,7 @@ def ayristir(kanun):
             m = re.search(r"\((\d+J?)\)?\s*SAY[IİŞ]L[IİŞ]\s*L\S{0,2}STE", s) or \
                 re.match(r"^[(\[]?\s*(\d+)\s*[)\]]?\s*Say[ıi]l[ıi]\s+Liste\s*$", s)
             if m:
+                baslik_bekle = True
                 liste, varsayilan_ilce = int(m.group(1).replace("J", "3")), None
                 if liste not in bentler and int(str(liste)[0]) in bentler:
                     liste = int(str(liste)[0])   # '(21 Sayılı Liste' = (2)
@@ -235,7 +255,10 @@ def ayristir(kanun):
                 continue
             if liste is None:
                 continue
-            if liste == max(bentler) and re.search(r"^İLAN|^YARGI|^YÜRÜTME|^Kanun No", s):
+            if baslik_bekle:
+                baslik_bekle = False
+                listeler[liste]["altBasliklar"].append(s)
+            if liste == max(bentler) and re.search(r"^İLAN|^YARGI|^YÜRÜTME|^Kanun No|^TBMM|Karar No\s*:", s):
                 liste = None
                 break
             if liste == max(bentler) and re.search(r"YÜRÜTME|YARGI|İLANLAR|Fihrist|FİHRİST|TARİHİ .*SAYISI|DOLARI|DÖVİZ|EFEKTİF", s):
@@ -261,8 +284,10 @@ def ayristir(kanun):
                     numara = int(ham_no)
             if numara is not None:
                 govde = m.group(2)
-                tire = bool(re.match(r"^[—–-]\s*", govde))
+                # tekrar isareti: '—' satir basinda ya da '"' / '»' satir sonunda (3949)
+                tire = bool(re.match(r"^[—–-]\s*", govde)) or bool(re.search(r'\s["»]\s*$', govde))
                 govde = re.sub(r"^[—–-]\s*", "", govde)
+                govde = re.sub(r'\s["»]\s*$', "", govde)
                 # iki sutunlu mahalle listesi: '1. Adatepe 11. Efeler'
                 parca = re.split(r"\s(\d{1,3})\.\s", govde, maxsplit=1)
                 satir_listesi = [(numara, parca[0], m.group(1))]
@@ -291,6 +316,9 @@ def ayristir(kanun):
         plakalar = [pl] if pl else cfg["adsizIl"].get(b["ad"], [])
         adaylar = {ad: g for kaynak in (sonraki, onceki_secim) for p in plakalar for ad, g in kaynak.get(p, {}).items()
                    if (p, fold(ad)) not in yeni_adlar}
+        for eski_ad, yeni_ad in cfg.get("kaynakAdEsleme", {}).items():
+            if yeni_ad in adaylar:
+                adaylar[eski_ad] = adaylar[yeni_ad]
         adaylar_ek = {}
         # il disindan birim alan ilceler (3644/20 Yedisu <- Tunceli/Pulumur): diger illerin
         # adlari yalnizca daha yuksek benzerlik ve tek aday ile kabul edilir
@@ -342,7 +370,7 @@ def ayristir(kanun):
                 if satirlar[-1].get("ilDisi"):
                     c["ilDisi"] = satirlar[-1]["ilDisi"]
             if c["eskiIlce"] is None and len(r["ham"].split()) <= 3 and not r.get("varsayilanIlce") and \
-                    re.search(r"Mahalle", " ".join(listeler.get(n, {}).get("altBasliklar", []))):
+                    re.search(r"Mahalle|Belediyesine\s+Ba[gğ]lanan", " ".join(listeler.get(n, {}).get("altBasliklar", [])), re.I):
                 # mahalle listesinde eski ilce yazilmamis (3392/49 Kucukcekmece): tahmin yok
                 c = dict(c, birim=r["ham"], tur="mahalle", kaynakYazilmamis=True)
                 satirlar.append(c)
@@ -396,7 +424,29 @@ def ayristir(kanun):
             "kaynakYazilmamisSatir": sum(1 for r in satirlar if r.get("kaynakYazilmamis")),
             "satirlar": satirlar,
         })
-    return cfg, sonuc
+    # ayni ilcenin birden cok listesi (3949: Guzelbahce mahalle + koy listeleri) birlestirilir
+    birlesik = collections.OrderedDict()
+    for x in sonuc:
+        k = (x["plaka"], x["ad"])
+        if k not in birlesik:
+            birlesik[k] = x
+            continue
+        y = birlesik[k]
+        y["satirlar"] += x["satirlar"]
+        y["rgSayfalari"] = sorted(set(y["rgSayfalari"]) | set(x["rgSayfalari"]))
+        y["altBasliklar"] += x["altBasliklar"]
+        y["listeNo"] = f"{y['listeNo']}+{x['listeNo']}"
+        say = collections.Counter(r["eskiIlce"] for r in y["satirlar"])
+        geo = {e["ad"]: (e["geomId"], e.get("plaka")) for e in y["eskiIlceler"] + x["eskiIlceler"]}
+        y["eskiIlceler"] = [{"ad": a, "geomId": geo.get(a, (None, None))[0], "birimSayisi": c,
+                             **({"plaka": geo.get(a, (None, None))[1]} if a else {})} for a, c in say.most_common()]
+        y["satirSayisi"] = len(y["satirlar"])
+        y["eksikSira"] += x["eksikSira"]
+        y["cozulemeyenSatir"] += x["cozulemeyenSatir"]
+        y["kaynakYazilmamisSatir"] += x["kaynakYazilmamisSatir"]
+        cozulen = [i for i in y["eskiIlceler"] if i["ad"]]
+        y["tekKaynak"] = len(cozulen) == 1 and not any(i["ad"] is None for i in y["eskiIlceler"])
+    return cfg, list(birlesik.values())
 
 
 def cetvel_oku(sayfalar, listeler):

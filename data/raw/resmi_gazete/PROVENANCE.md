@@ -131,3 +131,13 @@ PDF metni yok, Madde 1 okuyucuya aynen aktarıldı). "CETVEL No." biçimi: köy 
 İlçesi Z Bucağından", tekrarlar "»" (okuyucuda `bicim: cetvel`). Ceylanpınar ←
 Viranşehir (tek kaynak, 1 köy + bucak merkezi); Aliağa ← Menemen (12), Bergama (6),
 Foça (2) — çok kaynaklı. 21 satır, eksik sıra yok.
+
+## 21803 (29 Aralık 1993) — 3949 sayılı 3 İlçe Kurulması Hakkında Kanun
+
+`21803.pdf` (96 sayfa), indirilme 2026-09-26; maddeler `data/raw/mevzuat/3949.pdf`.
+Listeler ilçe başına değil tür başına (Güzelbahçe: (1) mahalle + (2) köy; Esenler (3)
+mahalle; Gümüşova (4) köy); aynı ilçenin listeleri birleştirildi. Mahalle listelerinde
+eski ilçe **yazılmamış** (Güzelbahçe ve Esenler tek kaynaklı sayılmaz; Esenler'in
+kaynağı repodaki denetimde de bulunamamıştı). Gümüşova ← Cumaova (tek kaynak).
+Tekrar işareti '"'. Madde 2: Narlıbahçe → Narlıdere, Cumaova → Cumayeri (ad değişikliği;
+listelerde kaynak ilçe kanun anındaki adla yazılı).
