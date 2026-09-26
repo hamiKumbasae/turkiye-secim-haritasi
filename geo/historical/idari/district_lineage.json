@@ -69,6 +69,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/3647.json"
   },
   {
+   "id": "kanun_4200",
+   "type": "official",
+   "title": "4200 sayılı Üç İlçe ve Bir İl Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun (RG 1996-10-28, sayı 22801)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/22801.pdf",
+   "raw": "data/raw/resmi_gazete/22801.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/4200.json"
+  },
+  {
    "id": "kanun_7033",
    "type": "official",
    "title": "7033 sayılı Yeniden (78) Kaza Kurulması ve İzmir Vilâyetine Bağlı Kuşadası Kazasının Aydın Vilâyetine Bağlanması Hakkında Kanun (RG 1957-06-27, sayı 9644)",
@@ -53800,9 +53808,36 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "4200",
+    "kanunAdi": "Üç İlçe ve Bir İl Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1996-10-28",
+     "sayi": 22801
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 7,
+    "eskiIlceler": [
+     {
+      "ad": "Osmaniye",
+      "geomId": "TR-D-80-005",
+      "plaka": 1,
+      "birimSayisi": 5
+     },
+     {
+      "ad": "Bahçe",
+      "geomId": "TR-D-80-001",
+      "plaka": 1,
+      "birimSayisi": 2
+     }
+    ],
+    "tekKaynak": false,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/4200.json"
+   },
+   "lineageStatus": "kanun_cok_kaynak"
   },
   {
    "geomId": "TR-D-80-004",
@@ -53953,9 +53988,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "4200",
+    "kanunAdi": "Üç İlçe ve Bir İl Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1996-10-28",
+     "sayi": 22801
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     3,
+     4
+    ],
+    "birimSayisi": 21,
+    "eskiIlceler": [
+     {
+      "ad": "Kadirli",
+      "geomId": "TR-D-80-004",
+      "plaka": 1,
+      "birimSayisi": 21
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/4200.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-80-007",
@@ -54001,9 +54058,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "4200",
+    "kanunAdi": "Üç İlçe ve Bir İl Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1996-10-28",
+     "sayi": 22801
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 7,
+    "eskiIlceler": [
+     {
+      "ad": "Osmaniye",
+      "geomId": "TR-D-80-005",
+      "plaka": 1,
+      "birimSayisi": 7
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/4200.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-81-001",

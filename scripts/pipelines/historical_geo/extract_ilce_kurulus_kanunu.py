@@ -90,6 +90,15 @@ KANUNLAR = {
                  {"madde": 2, "metin": "Hakkâri İli Çukurca İlçesi Çığlı Bucağına bağlı Andaç ve Ortaköy köyleri "
                                        "Uludere İlçesi Ortabağ Bucağına bağlanmak (Şırnak ilinin kuruluş bendi).",
                   "eventType": "boundary_adjustment", "effectiveDate": "1990-05-18", "unit": "Çukurca → Uludere"}]},
+    "4200": {"ad": "Üç İlçe ve Bir İl Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
+                   "Değişiklik Yapılması Hakkında Kanun", "kabul": "1996-10-24",
+             "resmiGazete": {"tarih": "1996-10-28", "sayi": 22801}, "rgPdf": "data/raw/resmi_gazete/22801.pdf",
+             "mevzuatPdf": "data/raw/mevzuat/4200.pdf", "sonrakiGenel": "1999", "oncekiGenel": "1995", "adsizIl": {},
+             "digerHukumler": [
+                 {"madde": 2, "metin": "Ekli (4) sayılı listede adları yazılı ilçe, bucak, kasaba ve köyler bağlanmak ve "
+                                       "Adana iline bağlı Osmaniye İlçe Merkezi merkez olmak suretiyle Osmaniye adıyla "
+                                       "bir il kurulmuştur.",
+                  "eventType": "provinces_created", "effectiveDate": "1996-10-28", "unit": "Osmaniye"}]},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},

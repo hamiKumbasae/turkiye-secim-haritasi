@@ -1,0 +1,462 @@
+{
+ "kanun": "4200",
+ "ad": "Üç İlçe ve Bir İl Kurulması ile 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde Değişiklik Yapılması Hakkında Kanun",
+ "kabul": "1996-10-24",
+ "resmiGazete": {
+  "tarih": "1996-10-28",
+  "sayi": 22801
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/22801.pdf",
+  "maddeler": "data/raw/mevzuat/4200.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/22801.pdf",
+  "mevzuatUrl": "https://www.mevzuat.gov.tr/mevzuatmetin/1.5.4200.pdf"
+ },
+ "digerHukumler": [
+  {
+   "madde": 2,
+   "metin": "Ekli (4) sayılı listede adları yazılı ilçe, bucak, kasaba ve köyler bağlanmak ve Adana iline bağlı Osmaniye İlçe Merkezi merkez olmak suretiyle Osmaniye adıyla bir il kurulmuştur.",
+   "eventType": "provinces_created",
+   "effectiveDate": "1996-10-28",
+   "unit": "Osmaniye"
+  }
+ ],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 3,
+  "tekKaynak": 2,
+  "cokKaynak": 1,
+  "satir": 35,
+  "cozulemeyenSatir": 0,
+  "kaynakYazilmamisSatir": 0,
+  "satirsizListe": [],
+  "eksikSatirliListe": [],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": 1,
+   "il": "Adana",
+   "plaka": 1,
+   "ad": "Toprakkale",
+   "yeniIlce": {
+    "ad": "Toprakkale",
+    "geomId": "TR-D-80-007",
+    "plaka": 80,
+    "secim": "1999"
+   },
+   "madde": "Ekli (1) sayılı listede adları yazılı köyler bağlanmak ve merkezi Toprakkale bucak merkezi olmak üzere Adana ilinde Toprakkale adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 7,
+   "eskiIlceler": [
+    {
+     "ad": "Osmaniye",
+     "geomId": "TR-D-80-005",
+     "birimSayisi": 7,
+     "plaka": 1
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Toprakkale İlçe M. B.",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Toprakkale",
+     "okunan": "Toprakkale İlçe M. B. Osmaniye Toprakkale",
+     "sayfa": 3
+    },
+    {
+     "sira": 2,
+     "birim": "Aslanpınarı",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Toprakkale",
+     "okunan": "Aslanpınarı Osmaniye Toprakkale",
+     "sayfa": 3
+    },
+    {
+     "sira": 3,
+     "birim": "Büyüktüysüz",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Toprakkale",
+     "okunan": "Büyüktüysüz Osmaniye Toprakkale",
+     "sayfa": 3
+    },
+    {
+     "sira": 4,
+     "birim": "Lalegölü",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Toprakkale",
+     "okunan": "Lalegölü Osmaniye Toprakkale",
+     "sayfa": 3
+    },
+    {
+     "sira": 5,
+     "birim": "Maymunsuyu",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Toprakkale",
+     "okunan": "Maymunsuyu Osmaniye Toprakkale",
+     "sayfa": 3
+    },
+    {
+     "sira": 6,
+     "birim": "Sayhüyüğü",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Toprakkale",
+     "okunan": "Sayhüyüğü Osmaniye Toprakkale",
+     "sayfa": 3
+    },
+    {
+     "sira": 7,
+     "birim": "Tüysüz",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Toprakkale",
+     "okunan": "Tüysüz Osmaniye Toprakkale",
+     "sayfa": 3
+    }
+   ]
+  },
+  {
+   "listeNo": 2,
+   "il": "Adana",
+   "plaka": 1,
+   "ad": "Hasanbeyli",
+   "yeniIlce": {
+    "ad": "Hasanbeyli",
+    "geomId": "TR-D-80-003",
+    "plaka": 80,
+    "secim": "1999"
+   },
+   "madde": "Ekli (2) sayılı listede adları yazılı kasaba ve köyler bağlanmak ve merkezi Hasanbeyli Belediyesi olmak üzere Adana ilinde Hasanbeyli adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 7,
+   "eskiIlceler": [
+    {
+     "ad": "Osmaniye",
+     "geomId": "TR-D-80-005",
+     "birimSayisi": 5,
+     "plaka": 1
+    },
+    {
+     "ad": "Bahçe",
+     "geomId": "TR-D-80-001",
+     "birimSayisi": 2,
+     "plaka": 1
+    }
+   ],
+   "tekKaynak": false,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Hasanbeyli B.",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Merkez",
+     "okunan": "Hasanbeyli B. Bahçe Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 2,
+     "birim": "Çulhalı",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Kaypak",
+     "okunan": "Çulhalı Osmaniye Kaypak",
+     "sayfa": 3
+    },
+    {
+     "sira": 3,
+     "birim": "Kalecik",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Kaypak",
+     "okunan": "Kalecik Osmaniye Kaypak",
+     "sayfa": 3
+    },
+    {
+     "sira": 4,
+     "birim": "Karayiğit",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Kaypak",
+     "okunan": "Karayiğit Osmaniye Kaypak",
+     "sayfa": 3
+    },
+    {
+     "sira": 5,
+     "birim": "Sarayoba",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Kaypak",
+     "okunan": "Sarayoba Osmaniye Kaypak",
+     "sayfa": 3
+    },
+    {
+     "sira": 6,
+     "birim": "Yanıkkışla",
+     "tur": null,
+     "eskiIlce": "Osmaniye",
+     "eskiBucak": "Kaypak",
+     "okunan": "Yanıkkışla Osmaniye Kaypak",
+     "sayfa": 3
+    },
+    {
+     "sira": 7,
+     "birim": "Çolaklı",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Merkez",
+     "okunan": "Çolaklı Bahçe Merkez",
+     "sayfa": 3
+    }
+   ]
+  },
+  {
+   "listeNo": 3,
+   "il": "Adana",
+   "plaka": 1,
+   "ad": "Sumbas",
+   "yeniIlce": {
+    "ad": "Sumbas",
+    "geomId": "TR-D-80-006",
+    "plaka": 80,
+    "secim": "1999"
+   },
+   "madde": "Ekli (3) sayılı listede adları yazılı kasaba ve köyler bağlanmak ve merkezi Sumbas Belediyesi olmak üzere Adana İlinde Sumbas adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3,
+    4
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 21,
+   "eskiIlceler": [
+    {
+     "ad": "Kadirli",
+     "geomId": "TR-D-80-004",
+     "birimSayisi": 21,
+     "plaka": 1
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Sumbas B.",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Sumbas B. Kadirli Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 2,
+     "birim": "Mehmetli",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Mehmetli Kadirli Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 3,
+     "birim": "Gafarlı",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Gafarlı Kadirli Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 4,
+     "birim": "Höyükköy",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Höyükköy Kadirli Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 5,
+     "birim": "Armağanlı",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Armağanlı Kadirli Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 6,
+     "birim": "Alibeyli",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Alibeyli Kadirli Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 7,
+     "birim": "Kabayar",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Kabayar Kadirli Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 8,
+     "birim": "Kızılömerli",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Kızılömerli Kadirli Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 9,
+     "birim": "Reşadiye",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Reşadiye Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 10,
+     "birim": "Kuçukçınar",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Kuçukçınar Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 11,
+     "birim": "Yazıboyu",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Yazıboyu Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 12,
+     "birim": "Koseh",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Koseh Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 13,
+     "birim": "Akçataş",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Akçataş Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 14,
+     "birim": "Hardalhk",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Hardalhk Kadırh Merkez",
+     "sayfa": 4,
+     "dusukEsik": true
+    },
+    {
+     "sira": 15,
+     "birim": "Çaygeçıt",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Çaygeçıt Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 16,
+     "birim": "Akdam",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Akdam Kadırh Merkez",
+     "sayfa": 4,
+     "dusukEsik": true
+    },
+    {
+     "sira": 17,
+     "birim": "Yeşılyayla",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Yeşılyayla Kadırh Merkez",
+     "sayfa": 4,
+     "dusukEsik": true
+    },
+    {
+     "sira": 18,
+     "birim": "Esenli",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Esenli Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 19,
+     "birim": "Çıçeklıdere",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Çıçeklıdere Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 20,
+     "birim": "Çukurköprii",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Çukurköprii Kadirli Merkez",
+     "sayfa": 4
+    },
+    {
+     "sira": 21,
+     "birim": "Akköpru",
+     "tur": null,
+     "eskiIlce": "Kadirli",
+     "eskiBucak": "Merkez",
+     "okunan": "Akköpru Kadirli Merkez",
+     "sayfa": 4
+    }
+   ]
+  }
+ ]
+}

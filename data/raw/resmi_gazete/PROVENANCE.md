@@ -116,3 +116,10 @@ Ek (1)–(5) sayılı listeler: 72 satır, eksik sıra yok; beş ilçenin beşi 
 (Köprüköy ← Pasinler; Hacılar ← Melikgazi; Hasankeyf ← Gercüş; Karapürçek ← Akyazı;
 Aydınlar/Tillo ← Siirt Merkez). Madde 2: Batman ve Şırnak illeri; Şırnak bendinde
 Andaç ve Ortaköy köyleri Çukurca'dan Uludere'ye bağlandı.
+
+## 22801 (28 Ekim 1996) — 4200 sayılı Kanun (3 ilçe, Osmaniye ili)
+
+`22801.pdf` (96 sayfa), indirilme 2026-09-26; maddeler `data/raw/mevzuat/4200.pdf`.
+Ek (1)–(3) sayılı listeler: 35 satır, eksik sıra yok. Toprakkale ← Osmaniye, Sumbas ←
+Kadirli (tek kaynaklı); Hasanbeyli ← Osmaniye (5) + Bahçe (2) (çok kaynaklı). Madde 2:
+Osmaniye ili; (4) sayılı liste (ilin dökümü) okunmadı.
