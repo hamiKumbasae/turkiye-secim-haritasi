@@ -8,7 +8,7 @@
     --ink-2:#5a564a;
     --ink-3:#8a8574;
     --accent:#3a3630;
-    --map-empty:#e2ded1;
+    --map-empty:#e2ded1; --map-hatch:#b3ac98;
     --map-stroke:#f6f4ef;
     --shadow: 0 1px 2px rgba(30,25,10,.04), 0 8px 24px -12px rgba(30,25,10,.18);
     --p-akp:#f29418; --p-chp:#D80011; --p-ysgp:#840f99; --p-mhp:#3a6ea8;
@@ -22,7 +22,7 @@
       --surface-0:#161512; --surface-1:#1d1c18; --surface-2:#242219;
       --line:#38352b; --line-soft:#2c2a22;
       --ink-1:#f1efe6; --ink-2:#c7c2b2; --ink-3:#8f8a78;
-      --accent:#e8e3d4; --map-empty:#2c2a22; --map-stroke:#161512;
+      --accent:#e8e3d4; --map-empty:#2c2a22; --map-hatch:#565142; --map-stroke:#161512;
       --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
       --p-akp:#dc8a3d; --p-chp:#e0485a; --p-ysgp:#c15fc4; --p-mhp:#4d8fe0;
       --p-iyi:#2fb8d6; --p-yrp:#4caf50; --p-tip:#d1526e; --p-diger:#b5a06a;
@@ -34,7 +34,7 @@
     --surface-0:#161512; --surface-1:#1d1c18; --surface-2:#242219;
     --line:#38352b; --line-soft:#2c2a22;
     --ink-1:#f1efe6; --ink-2:#c7c2b2; --ink-3:#8f8a78;
-    --accent:#e8e3d4; --map-empty:#2c2a22; --map-stroke:#161512;
+    --accent:#e8e3d4; --map-empty:#2c2a22; --map-hatch:#565142; --map-stroke:#161512;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
     --p-akp:#dc8a3d; --p-chp:#e0485a; --p-ysgp:#c15fc4; --p-mhp:#4d8fe0;
     --p-iyi:#2fb8d6; --p-yrp:#4caf50; --p-tip:#d1526e; --p-diger:#b5a06a;
@@ -153,6 +153,10 @@
      GORUNMEZ, yaniltici bir "veri var" izlenimi vermez. */
   .il-path-nodata{cursor:default; opacity:.55;}
   .il-path-nodata:hover{filter:none; stroke-width:1;}
+  /* o secimde henuz ayri ilce olmayan alan (geo/historical/idari/harita_notlari.json) */
+  .il-path-gecis{opacity:.85;}
+  #hatchGecis rect{fill:var(--map-empty);}
+  #hatchGecis line{stroke:var(--map-hatch); stroke-width:2;}
 
   .district-row-empty{cursor:default; opacity:.55;}
   .district-row-empty:hover{background:none;}

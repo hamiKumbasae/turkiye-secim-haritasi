@@ -15,6 +15,11 @@ Ne kullanilir:
         (kurulduAmaSecimeAyriGirmedi). Yerel secim satirlari belediye oldugu icin
         yalniz ilk kosul kullanilir.
   - Eski ilce E'de yoksa zincirle bir ust eski ilceye cikilir.
+  - Kanunla kurulup sonradan bolunmus tarihsel birimler (district_lineage.json ->
+    historicalUnits, tek kaynakli olanlar; ornek: Buyukcekmece 1987 <- Catalca) modern
+    parcalarina (district_splits.json hideIds) acilarak ayni kuralla katilir; "ayri
+    girmedi" kosulu birimin herhangi bir parcasinin ilce duzeyli secimde ilk gorundugu
+    tarihten hesaplanir.
   - Repodaki mevcut HIST-* birlesimleri (district_splits.json) korunur; C onlarin
     parcasiysa katilmaz, hedef satir HIST ise onun uzerine eklenir.
 
@@ -49,6 +54,7 @@ HIST_GEO = ROOT / "geo/historical/turkiye_ilce_sinirlari_hist_splits.geojson"
 SPLITS = ROOT / "geo/historical/district_splits.json"
 MODERN = ROOT / "geo/normalized/turkiye_ilce_sinirlari.geojson"
 PLAN = IDARI / "merge_plan.json"
+NOTLAR = IDARI / "harita_notlari.json"
 ONEK = "HISTK-"
 ILCE_DUZEYLI = {"genel", "referandum", "cumhurbaskanligi"}
 
@@ -59,6 +65,11 @@ def oku(p):
 
 def temiz(g):
     return g if g.is_valid else g.buffer(0)
+
+
+def tr_baslik(s):
+    """'TİLLO' -> 'Tillo' (Turkce buyuk/kucuk harf)"""
+    return " ".join(w[:1] + w[1:].replace("I", "ı").replace("İ", "i").lower() for w in s.split())
 
 
 def main():
@@ -81,8 +92,44 @@ def main():
             if not e["syntheticId"].startswith(ONEK):
                 hist_parca[e["syntheticId"]] = set(e["hideIds"])
 
-    plan, rapor = {}, collections.defaultdict(list)
+    # tek kaynakli tarihsel birimler -> modern parcalari sozde cocuk
+    ilk_gorunum = {}   # modern geomId -> ilce duzeyli secimde ilk kapsandigi tarih
+    for s in secimler():
+        if s["tur"] not in ILCE_DUZEYLI:
+            continue
+        try:
+            kayit = load_election(s["anahtar"])
+        except FileNotFoundError:
+            continue
+        for r in kayit.get("ilceler") or []:
+            g = r.get("geomId") or ""
+            g = eski_plan[g]["taban"] if g.startswith(ONEK) else g
+            for parca in hist_parca.get(g, {g}) | {g}:
+                if parca not in ilk_gorunum or s["tarih"] < ilk_gorunum[parca]:
+                    ilk_gorunum[parca] = s["tarih"]
+    tarihsel_cocuk, rapor_on = {}, collections.defaultdict(list)
+    for h in oku(IDARI / "district_lineage.json").get("historicalUnits", []):
+        if not (h["tekKaynak"] and h["eskiIlceler"][0]["geomId"] and h["id"] in hist_parca):
+            continue
+        parcalar = hist_parca[h["id"]]
+        if parcalar <= hist_parca.get(h["eskiIlceler"][0]["geomId"], set()):
+            continue  # ebeveynin tarihsel poligonu birimi zaten iceriyor (Konak1991 < Konak84)
+        ilk = min((ilk_gorunum[x] for x in parcalar if x in ilk_gorunum), default=None)
+        for x in sorted(parcalar):
+            if x in cocuk:
+                rapor_on["tarihselBirimCakisma"].append({"birim": h["id"], "parca": x})
+                continue
+            tarihsel_cocuk[x] = h["id"]
+            cocuk[x] = {"ebeveyn": h["eskiIlceler"][0]["geomId"], "kurulus": h["resmiGazete"]["tarih"],
+                        "ilkGorunum": ilk, "girmedi": set(), "kanun": h["kanun"],
+                        "ad": f"{h['ad']} ({h['resmiGazete']['tarih'][:4]} sınırı: {lineage[x]['ad'] if x in lineage else x})",
+                        "plaka": h["eskiIlceler"][0]["plaka"], "tarihselBirim": h["id"]}
+
+    plan, rapor = {}, rapor_on
     satir_degisim = collections.Counter()
+    modern_plaka = {f["properties"]["id"]: f["properties"]["plaka"] for f in oku(MODERN)["features"]}
+    ilk_ayri = {g: v for g, v in ilk_gorunum.items()}
+    not_secim = {}
     for s in secimler():
         try:
             kayit = load_election(s["anahtar"])
@@ -107,7 +154,9 @@ def main():
             if c in kapsayan:
                 continue
             uygun = (bilgi["kurulus"] and bilgi["kurulus"] > s["tarih"]) or \
-                    (s["tur"] in ILCE_DUZEYLI and s["anahtar"] in bilgi["girmedi"])
+                    (s["tur"] in ILCE_DUZEYLI and s["anahtar"] in bilgi["girmedi"]) or \
+                    (s["tur"] in ILCE_DUZEYLI and bilgi.get("tarihselBirim") and bilgi["ilkGorunum"]
+                     and bilgi["kurulus"] <= s["tarih"] < bilgi["ilkGorunum"])
             if not uygun:
                 continue
             # zincir: ebeveyn secimde yoksa ve kendisi de henuz ayri degilse bir ust
@@ -142,6 +191,23 @@ def main():
                 if r.get("geomId") == hedef:
                     r["geomId"] = sid
                     satir_degisim[s["anahtar"]] += 1
+        # haritada 'veri yok' kalacak modern ilceler: o tarihte henuz ayri ilce degilse notu
+        kapsanan = set(kapsayan)
+        for hedef, parcalar in katilan.items():
+            kapsanan |= parcalar
+        satirli_il = {r["plaka"] for r in kayit["ilceler"] if r.get("geomId")}
+        bos = []
+        for g, pl in modern_plaka.items():
+            l = lineage.get(g)
+            if g in kapsanan or pl not in satirli_il or not l or not (l.get("kurulus") or {}).get("tarih"):
+                continue
+            kur = l["kurulus"]["tarih"]
+            if kur > s["tarih"]:
+                bos.append((g, 0))
+            elif s["tur"] in ILCE_DUZEYLI and s["tarih"] < ilk_ayri.get(g, "9999"):
+                bos.append((g, 1))   # kanunla kurulmus ama bu secime ayri girmemis
+        if bos:
+            not_secim[s["anahtar"]] = dict(sorted(bos))
         eski_hali = json.loads(election_path(s["anahtar"]).read_text(encoding="utf-8"))
         if eski_hali != kayit:
             save_election(s["anahtar"], kayit)
@@ -166,13 +232,26 @@ def main():
     for sid, p in sorted(plan.items()):
         gizle = sorted(hist_parca.get(p["taban"], {p["taban"]}) | {p["taban"]} if p["taban"].startswith("TR-D-")
                        else hist_parca[p["taban"]]) + p["katilanlar"]
-        yil = min(int(lineage[x]["kurulus"]["tarih"][:4]) for x in p["katilanlar"] if lineage[x]["kurulus"]["tarih"])
+        yil = min(int(cocuk[x]["kurulus"][:4]) for x in p["katilanlar"] if cocuk[x]["kurulus"])
         splits.setdefault(str(p["plaka"]), []).append({"hideIds": sorted(set(gizle)), "splitYear": yil, "syntheticId": sid})
     SPLITS.write_text(json.dumps(splits, ensure_ascii=False, indent=1), encoding="utf-8")
 
+    # on yuz notlari: geomId -> kuruluş ve kaynak ilceler (yalniz bir secimde bos kalanlar)
+    notlar = {}
+    guncel_ad = {r["geomId"]: r["ad"] for r in load_election("2023")["ilceler"] if r.get("geomId")}
+    for g in sorted({g for v in not_secim.values() for g in v}):
+        l = lineage[g]
+        k = l.get("kanunSoyu") or {}
+        notlar[g] = {"ad": guncel_ad.get(g) or tr_baslik(l["ad"]), "tarih": l["kurulus"]["tarih"],
+                     "kanun": l["kurulus"].get("kanun"), "durum": l["lineageStatus"],
+                     "kaynaklar": [[e["ad"], e["birimSayisi"]] for e in k.get("eskiIlceler", []) if e.get("ad")]}
+    NOTLAR.write_text(json.dumps({"not": "apply_idari_merges.py ile üretilir; ön yüzde 'veri yok' poligonların açıklaması.",
+                                  "ilceler": notlar, "secimler": not_secim}, ensure_ascii=False, separators=(",", ":")),
+                      encoding="utf-8")
     ozet = {"sentetik": len(plan), "satirDegisimi": sum(satir_degisim.values()),
             "secimBasina": dict(sorted(satir_degisim.items())), "katilanIlce": len({x for p in plan.values() for x in p["katilanlar"]}),
-            "hedefBulunamadi": len(rapor["hedefBulunamadi"])}
+            "hedefBulunamadi": len(rapor["hedefBulunamadi"]),
+            "notluBosPoligon": sum(len(v) for v in not_secim.values())}
     PLAN.write_text(json.dumps({"not": "apply_idari_merges.py ile üretilir; elle düzenlenmez.", "ozet": ozet,
                                 "sentetikler": plan, **rapor}, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(ozet, ensure_ascii=False, indent=1))

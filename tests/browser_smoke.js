@@ -482,6 +482,31 @@ async function scenario_1961_1987Ilce(browser) {
       trb.some((i) => i.startsWith('HISTK-61-014-')) && !trb.includes('TR-D-61-010') && !trb.includes('TR-D-61-014'), JSON.stringify(trb));
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
+    // Harita notlari: 1995'te Arnavutkoy ayri ilce degildi ve alani Gaziosmanpasa/Catalca
+    // arasinda bolunmustu -> taranmis poligon + nedenini yazan ipucu (gri 'veri yok' degil)
+    await clickYear(page, '1995');
+    await page.waitForTimeout(400);
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(500);
+    const arn = await page.$eval('path[data-geom-id="TR-D-34-002"]', (el) => ({cls: el.getAttribute('class'), fill: el.getAttribute('fill')}));
+    check('1995 genel İstanbul: Arnavutköy taranmış (henüz ayrı ilçe değil)', /il-path-gecis/.test(arn.cls) && arn.fill === 'url(#hatchGecis)', JSON.stringify(arn));
+    await page.hover('path[data-geom-id="TR-D-34-002"]');
+    await page.waitForTimeout(200);
+    const arnTip = await page.$eval('#tooltip, .tooltip', (el) => el.textContent).catch(() => '');
+    check('1995 genel İstanbul: Arnavutköy ipucu kaynak ilçeleri ve kanunu yazıyor',
+      /Gaziosmanpaşa/.test(arnTip) && /Çatalca/.test(arnTip) && /5747/.test(arnTip), arnTip);
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+    // Buyukcekmece 1987'de Catalca'dan kuruldu (3392, tek kaynak): 1987 oncesi Catalca poligonu
+    await clickYear(page, '1983');
+    await page.waitForTimeout(400);
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(500);
+    const ist83 = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1983 genel İstanbul: Çatalca, Büyükçekmece ile birleşik (HISTK) çiziliyor',
+      ist83.some((i) => i.startsWith('HISTK-34-015-')) && !ist83.includes('TR-D-34-014') && !ist83.includes('TR-D-34-012'), JSON.stringify(ist83));
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
     await page.click('path[data-plaka="6"]');
     await page.waitForTimeout(500);
     const districtNames = await page.$$eval('#dDistrictList *', (els) => els.map((e) => e.textContent));

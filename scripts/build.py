@@ -104,6 +104,7 @@ def assemble_embedded() -> dict:
         "turkiye_il_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_il_sinirlari.geojson")),
         "turkiye_ilce_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_ilce_sinirlari.geojson")),
         "district_splits.json": gzip_b64(load_json(GEO_HIST / "district_splits.json")),
+        "harita_notlari.json": gzip_b64(load_json(GEO_HIST / "idari" / "harita_notlari.json")),
         "turkiye_ilce_sinirlari_hist_splits.geojson": gzip_b64(load_json(GEO_HIST / "turkiye_ilce_sinirlari_hist_splits.geojson")),
         "eras": gzip_b64(eras),
     }

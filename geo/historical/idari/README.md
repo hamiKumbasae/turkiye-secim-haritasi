@@ -163,6 +163,15 @@ Armutlu→Gemlik, Ağaçören/Sarıyahşi→Şereflikoçhisar vb.); ön yüz pol
 - Katılmayanlar: `kanun_cok_kaynak`, `kanun_dogrulanmadi` (7033), `unresolved`.
 - `hedefBulunamadi` (294): hepsi yerel seçimler; eski ilçe o seçimde ayrı belediye
   satırı değil (çoğu il merkezi, il satırında). Açık karar.
+- Kanunla kurulup sonradan bölünmüş tek kaynaklı tarihsel birimler (`historicalUnits`)
+  modern parçalarına açılarak aynı kuralla katılır: Büyükçekmece (3392, 1987; 14 köyün
+  14'ü Çatalca'dan) → 1961–1987 Çatalca = Çatalca + Büyükçekmece + Beylikdüzü. Ebeveyninin
+  tarihsel poligonu içinde kalan birim (İzmir Konak1991 ⊂ Konak84) atlanır.
+- `harita_notlari.json`: her seçimde "veri yok" kalan ve o tarihte henüz ayrı ilçe
+  olmayan modern poligonlar (seçim → geomId → 0 = kurulmamış, 1 = kurulmuş ama seçime ayrı
+  girmemiş) ve nedenleri (kanun, tarih, kaynak ilçeler). Ön yüz bunları taralı çizer ve
+  ipucunda nedenini yazar (ör. 1995 Arnavutköy: Gaziosmanpaşa, Çatalca ve Küçükçekmece
+  arasında bölünmüş). Renk vermez; tahmin yapılmaz.
 - Betik idempotent: önceki `HISTK-*` satırları önce tabanına döndürülür.
   `build_idari_katman.py` HISTK satırlarını tabanıyla okur ve `district_splits.json`'daki
   HISTK kayıtlarını yok sayar (bu katmandan üretildikleri için geri beslenmez).

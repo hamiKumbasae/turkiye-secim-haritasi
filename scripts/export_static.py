@@ -18,6 +18,7 @@ Cikti (varsayilan: dist_static/, --out ile degistirilebilir):
   geo/mahalle_geo.json
   geo/mahalle_coverage.json
   geo/district_splits.json
+  geo/harita_notlari.json            - 'veri yok' poligon aciklamalari (tarihsel idari katman)
   geo/meclis_2024.json
   geo/eras/<era>.geojson             - 6 tarihsel il-sinirlari donemi
 
@@ -80,6 +81,7 @@ def main():
     write_json(out / "geo" / "ilce_sinirlari_hist.geojson", load_json(GEO_HIST / "turkiye_ilce_sinirlari_hist_splits.geojson"))
     write_json(out / "geo" / "mahalle_geo.json", load_json(GEO_NORM / "mahalle_geo.json"))
     write_json(out / "geo" / "district_splits.json", load_json(GEO_HIST / "district_splits.json"))
+    write_json(out / "geo" / "harita_notlari.json", load_json(GEO_HIST / "idari" / "harita_notlari.json"))
     write_json(out / "geo" / "meclis_2024.json", load_json(DATA_NORM / "meclis_2024.json"))
     write_json(out / "geo" / "mahalle_coverage.json", mahalle_coverage)
 
