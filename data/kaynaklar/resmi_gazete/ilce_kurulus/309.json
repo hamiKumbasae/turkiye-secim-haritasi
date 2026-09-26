@@ -1,0 +1,153 @@
+{
+ "kanun": "309",
+ "ad": "İstanbul İli, Eyüp İlçesine bağlı Göktepe Bucağında Gaziosmanpaşa adiyle bir ilçe kurulması hakkında Kanun",
+ "kabul": "1963-08-27",
+ "resmiGazete": {
+  "tarih": "1963-09-04",
+  "sayi": 11496
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/11496.pdf",
+  "maddeler": "data/raw/resmi_gazete/11496.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/11496.pdf",
+  "mevzuatUrl": null
+ },
+ "digerHukumler": [],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 1,
+  "tekKaynak": 1,
+  "cokKaynak": 0,
+  "satir": 10,
+  "cozulemeyenSatir": 0,
+  "kaynakYazilmamisSatir": 0,
+  "satirsizListe": [],
+  "eksikSatirliListe": [],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": 1,
+   "il": "İstanbul",
+   "plaka": 34,
+   "ad": "Gaziosmanpaşa",
+   "yeniIlce": {
+    "ad": "Gaziosmanpaşa",
+    "geomId": "TR-D-34-021",
+    "plaka": 34,
+    "secim": "1965"
+   },
+   "madde": "Bağlı (1) sayılı cetvelde adları yazılı köyleri kapsamak üzere İstanbul İli, Eyüp İlçesinin, Göktepe Bucağında Gaziosmanpaşa adiyle yeniden bir ilçe kurulmuştur.",
+   "ekHukum": null,
+   "rgSayfalari": [
+    1
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 10,
+   "eskiIlceler": [
+    {
+     "ad": "Eyüp",
+     "geomId": "TR-D-34-019",
+     "birimSayisi": 10,
+     "plaka": 34
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Arnavutköy",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Arnavutköy Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 2,
+     "birim": "Boğazköy",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Boğazköy Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 3,
+     "birim": "Bolluca",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Bolluca Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 4,
+     "birim": "Cebeci",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Cebeci Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 5,
+     "birim": "Çilingir",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Çilingir Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 6,
+     "birim": "Hacımaşlı",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Hacımaşlı Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 7,
+     "birim": "Haraççı",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Haraççı Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 8,
+     "birim": "İmrahor",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "İmrahor Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 9,
+     "birim": "Küçükköy",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Küçükköy Eyüp Rami",
+     "sayfa": 1
+    },
+    {
+     "sira": 10,
+     "birim": "Taşoluk (Ayazma)",
+     "tur": null,
+     "eskiIlce": "Eyüp",
+     "eskiBucak": "Rami",
+     "okunan": "Taşoluk (Ayazma) Eyüp Rami",
+     "sayfa": 1
+    }
+   ]
+  }
+ ]
+}

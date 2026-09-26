@@ -53,6 +53,14 @@
    "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/2963.json"
   },
   {
+   "id": "kanun_309",
+   "type": "official",
+   "title": "309 sayılı İstanbul İli, Eyüp İlçesine bağlı Göktepe Bucağında Gaziosmanpaşa adiyle bir ilçe kurulması hakkında Kanun (RG 1963-09-04, sayı 11496)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/11496.pdf",
+   "raw": "data/raw/resmi_gazete/11496.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/309.json"
+  },
+  {
    "id": "kanun_3392",
    "type": "official",
    "title": "3392 sayılı 103 İlçe Kurulması Hakkında Kanun (RG 1987-07-04, sayı 19507)",
@@ -24506,9 +24514,30 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "309",
+    "kanunAdi": "İstanbul İli, Eyüp İlçesine bağlı Göktepe Bucağında Gaziosmanpaşa adiyle bir ilçe kurulması hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1963-09-04",
+     "sayi": 11496
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     1
+    ],
+    "birimSayisi": 10,
+    "eskiIlceler": [
+     {
+      "ad": "Eyüp",
+      "geomId": "TR-D-34-019",
+      "plaka": 34,
+      "birimSayisi": 10
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/309.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-34-022",

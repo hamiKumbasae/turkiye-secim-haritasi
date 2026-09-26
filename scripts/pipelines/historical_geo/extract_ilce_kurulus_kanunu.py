@@ -181,6 +181,27 @@ KANUNLAR = {
                  {"madde": 2, "metin": "Kars İline bağlı Ardahan ve Iğdır ilçe merkezleri merkez olmak üzere Ardahan ve Iğdır "
                                        "illeri kurulmuştur (ekli (13)-(14) sayılı listeler).",
                   "eventType": "provinces_created", "effectiveDate": "1992-06-03", "unit": "Ardahan, Iğdır"}]},
+    "309": {"ad": "İstanbul İli, Eyüp İlçesine bağlı Göktepe Bucağında Gaziosmanpaşa adiyle bir ilçe kurulması hakkında Kanun",
+            "kabul": "1963-08-27", "resmiGazete": {"tarih": "1963-09-04", "sayi": 11496},
+            "rgPdf": "data/raw/resmi_gazete/11496.pdf", "mevzuatPdf": None,
+            "sonrakiGenel": "1965", "oncekiGenel": "1961", "adsizIl": {},
+            "bentlerElle": {1: {"il": "İstanbul", "ad": "Gaziosmanpaşa",
+                                "madde": "Bağlı (1) sayılı cetvelde adları yazılı köyleri kapsamak üzere İstanbul İli, Eyüp İlçesinin, Göktepe Bucağında Gaziosmanpaşa adiyle yeniden bir ilçe kurulmuştur.",
+                                "ekHukum": None}},
+            # cetvel kadro tablosuyla ic ice iki sutunlu basilmis; satirlar RG 11496 s. 1'den
+            # aynen aktarildi (ilk satir "İstanbul İli Eyüp İlçesi Rami Bucağından", digerleri bos = ayni)
+            "satirlarElle": {1: [
+                     (1, "Arnavutköy", "Eyüp", "Rami"),
+                     (2, "Boğazköy", "Eyüp", "Rami"),
+                     (3, "Bolluca", "Eyüp", "Rami"),
+                     (4, "Cebeci", "Eyüp", "Rami"),
+                     (5, "Çilingir", "Eyüp", "Rami"),
+                     (6, "Hacımaşlı", "Eyüp", "Rami"),
+                     (7, "Haraççı", "Eyüp", "Rami"),
+                     (8, "İmrahor", "Eyüp", "Rami"),
+                     (9, "Küçükköy", "Eyüp", "Rami"),
+                     (10, "Taşoluk (Ayazma)", "Eyüp", "Rami")
+            ]}},
     "KHK 550": {"ad": "Sekiz İlçe ve Üç İl Kurulması ve 190 Sayılı Kanun Hükmünde Kararnamenin Eki Cetvellerde "
                         "Değişiklik Yapılması Hakkında Kanun Hükmünde Kararname",
                 "kabul": "1995-06-03", "resmiGazete": {"tarih": "1995-06-06", "sayi": 22305},
@@ -298,6 +319,13 @@ def ayristir(kanun):
     yeni_adlar = {(il_adlari.get(fold(b["il"] or "").replace(" ", "")), fold(b["ad"])) for b in bentler.values()}
 
     listeler = collections.defaultdict(lambda: {"satirlar": [], "altBasliklar": [], "sayfalar": set()})
+    if cfg.get("satirlarElle"):
+        for liste_no, rs in cfg["satirlarElle"].items():
+            for sira, koy, ilce, bucak in rs:
+                listeler[liste_no]["satirlar"].append({"sira": sira, "ham": f"{koy} {ilce} {bucak}", "hamNo": str(sira),
+                                                       "varsayilanIlce": None, "sayfa": 1, "elleAktarildi": True})
+                listeler[liste_no]["sayfalar"].add(1)
+        sayfalar = []
     if cfg.get("bicim") == "cetvel":
         cetvel_oku(sayfalar, listeler)
         sayfalar = []

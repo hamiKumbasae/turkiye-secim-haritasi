@@ -167,3 +167,10 @@ kaynaklı. İstanbul (Avcılar, Bağcılar, Güngören, Bahçelievler, Maltepe, 
 (Çiğli, Gaziemir, Balçova, Narlıbahçe) mahalle listelerinde eski ilçe yazılmamış; bu
 ilçeler repoda kaymakamlık kaynaklarıyla zaten doğrulanmış (`repo_dogrulanmis`).
 (13)–(14) sayılı listeler (yeni illerin dökümü) okunmadı.
+
+## 11496 (4 Eylül 1963) — 309 sayılı Kanun (Gaziosmanpaşa)
+
+`11496.pdf` (9 sayfa), indirilme 2026-09-26; kanun s. 1. Cetvel kadro tablosuyla iç içe iki
+sütunlu basıldığından (1) sayılı cetvelin 10 satırı okuyucu yapılandırmasına aynen
+aktarıldı (`satirlarElle`): ilk satır "İstanbul İli Eyüp İlçesi Rami Bucağından", diğerleri
+boş (= aynı). Gaziosmanpaşa ← Eyüp (tek kaynak; Madde 1: "Eyüp İlçesinin Göktepe Bucağında").
