@@ -45,6 +45,28 @@ KANUNLAR = {
              # kanundaki ad -> sonraki secimdeki ad; Icisleri 2018 listesi bu ilceleri 3392 ile
              # guncel adlariyla veriyor (DEMRE, CUMAYERİ)
              "sonrakiAd": {"Kale": "Demre", "Cumaova": "Cumayeri"}},
+    "2963": {"ad": "Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun",
+             "kabul": "1983-11-29", "resmiGazete": {"tarih": "1983-11-30", "sayi": 18237, "mukerrer": 2},
+             "rgPdf": "data/raw/resmi_gazete/18237_2.pdf", "rgUrl": "https://www.resmigazete.gov.tr/arsiv/18237_2.pdf",
+             "mevzuatPdf": None, "sonrakiGenel": "1987", "oncekiGenel": "1983", "adsizIl": {},
+             "sayfaSayisi": 9,   # PDF 9 sayfalik ekin uc kopyasi; ilk kopya
+             # mevzuat.gov.tr'de PDF metni yok; Madde 1 (a)-(f) bentleri RG 18237 (2. mukerrer)
+             # s. 2'den aynen aktarildi
+             "bentlerElle": {
+                 1: {"il": "Ankara", "ad": "Mamak", "madde": "a) Ekli 1 sayılı listede adları yazılı köyleri kapsamak ve merkezi Mamak olmak üzere Ankara İli Çankaya İlçesinden ayrılarak Mamak adıyla", "ekHukum": None},
+                 2: {"il": "Ankara", "ad": "Gölbaşı", "madde": "b) Ekli 2 sayılı listede adları yazılı köyleri kapsamak ve merkezi Gölbaşı olmak üzere Ankara İli Çankaya İlçesi Gölbaşı Bucağında Gölbaşı adıyla", "ekHukum": None},
+                 3: {"il": "Ankara", "ad": "Keçiören", "madde": "c) Ekli 3 sayılı listede adları yazılı köyleri kapsamak ve merkezi Keçiören olmak üzere Ankara İli Altındağ İlçesinden ayrılarak Keçiören adıyla", "ekHukum": None},
+                 4: {"il": "Ankara", "ad": "Sincan", "madde": "d) Ekli 4 sayılı listede yazılı köyleri kapsamak ve merkezi Sincan olmak üzere Ankara İli Yenimahalle İlçesi Sincan Bucağında Sincan adıyla", "ekHukum": None},
+                 5: {"il": "Adana", "ad": "Düziçi", "madde": "e) Ekli 5 sayılı listede adları yazılı köyleri kapsamak ve merkezi Haruniye olmak üzere Adana İli Bahçe İlçesi Haruniye Bucağında Düziçi adıyla", "ekHukum": None},
+                 6: {"il": "Muğla", "ad": "Dalaman", "madde": "f) Ekli 6 sayılı listede adları yazılı köyleri kapsamak ve merkezi Dalaman olmak üzere Muğla İli Köyceğiz İlçesinden ayrılarak Dalaman adıyla", "ekHukum": None},
+             },
+             "digerHukumler": [
+                 {"madde": 2, "metin": "Ankara ili Merkez İlçesi kaldırılmış ve bu ilçe sınırları içinde kalan alan "
+                                       "Ankara İli Altındağ İlçesine bağlanmıştır.",
+                  "eventType": "abolished", "effectiveDate": "1983-11-30", "unit": "Merkez (Ankara)",
+                  "provinceBefore": 6, "provinceAfter": 6, "mergedInto": "Altındağ",
+                  "not": "1961-1983 seçim verisindeki Ankara 'Merkez' satırı bu ilçedir (geomId yok). Sınırı kaynakta "
+                         "yok; alanı Altındağ'a katıldı, aynı kanunla Altındağ'dan Keçiören ayrıldı."}]},
 }
 OUT = ROOT / "data/kaynaklar/resmi_gazete/ilce_kurulus"
 
@@ -106,8 +128,8 @@ def il_ilce_adlari(secim, plakalar):
 
 def ayristir(kanun):
     cfg = KANUNLAR[kanun]
-    bentler = maddeler("\n".join(pdf_metin(cfg["mevzuatPdf"])))
-    sayfalar = pdf_metin(cfg["rgPdf"])
+    bentler = cfg.get("bentlerElle") or maddeler("\n".join(pdf_metin(cfg["mevzuatPdf"])))
+    sayfalar = pdf_metin(cfg["rgPdf"])[:cfg.get("sayfaSayisi")]
     il_adlari = {fold(v["il_ADI"]).replace(" ", ""): int(k)
                  for k, v in json.loads((ROOT / "data/raw/ysk/acikveri-il-ilce-listesi.json").read_text()).items()}
     il_adlari.update({"AFYON": 3, "ICEL": 33})
@@ -125,13 +147,19 @@ def ayristir(kanun):
     for no, sayfa in enumerate(sayfalar, start=1):
         for satir in sayfa.split("\n"):
             s = tekle(satir.strip())
-            m = re.search(r"\((\d+J?)\)?\s*SAY[IİŞ]L[IİŞ]\s*L\S{0,2}STE", s)
+            m = re.search(r"\((\d+J?)\)?\s*SAY[IİŞ]L[IİŞ]\s*L\S{0,2}STE", s) or \
+                re.match(r"^[(\[]?\s*(\d+)\s*[)\]]?\s*Say[ıi]l[ıi]\s+Liste\s*$", s)
             if m:
                 liste, varsayilan_ilce = int(m.group(1).replace("J", "3")), None
+                if liste not in bentler and int(str(liste)[0]) in bentler:
+                    liste = int(str(liste)[0])   # '(21 Sayılı Liste' = (2)
                 listeler[liste]["sayfalar"].add(no)
                 continue
             if liste is None:
                 continue
+            if liste == max(bentler) and re.search(r"^İLAN|^YARGI|^YÜRÜTME|^Kanun No", s):
+                liste = None
+                break
             if liste == max(bentler) and re.search(r"YÜRÜTME|YARGI|İLANLAR|Fihrist|FİHRİST|TARİHİ .*SAYISI|DOLARI|DÖVİZ|EFEKTİF", s):
                 liste = None   # ek listeler bitti
                 break
@@ -331,9 +359,10 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     veri = {
         "kanun": kanun, "ad": cfg["ad"], "kabul": cfg["kabul"], "resmiGazete": cfg["resmiGazete"],
-        "kaynaklar": {"ekListeler": cfg["rgPdf"], "maddeler": cfg["mevzuatPdf"],
-                      "rgUrl": f"https://www.resmigazete.gov.tr/arsiv/{cfg['resmiGazete']['sayi']}.pdf",
-                      "mevzuatUrl": f"https://www.mevzuat.gov.tr/mevzuatmetin/1.5.{kanun}.pdf"},
+        "kaynaklar": {"ekListeler": cfg["rgPdf"], "maddeler": cfg["mevzuatPdf"] or cfg["rgPdf"],
+                      "rgUrl": cfg.get("rgUrl") or f"https://www.resmigazete.gov.tr/arsiv/{cfg['resmiGazete']['sayi']}.pdf",
+                      "mevzuatUrl": f"https://www.mevzuat.gov.tr/mevzuatmetin/1.5.{kanun}.pdf" if cfg["mevzuatPdf"] else None},
+        "digerHukumler": cfg.get("digerHukumler", []),
         "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki "
                         "ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
         "ozet": {"ilce": len(sonuc), "tekKaynak": sum(1 for s in sonuc if s["tekKaynak"]),

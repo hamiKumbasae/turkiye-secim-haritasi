@@ -79,3 +79,14 @@ kayması olabilir). Bu yüzden geometri kuralına çevrilmedi (`lineageStatus:
 kanun_dogrulanmadi`). Etki sınırlı: bu kazaların tamamı 1960'a kadar yürürlüğe girdi,
 1961 ve sonrası seçimlerde ayrı birim. Madde 2: Kuşadası 01.09.1957'de İzmir'den
 Aydın'a bağlandı.
+
+## 18237_2 (30 Kasım 1983, 2. mükerrer) — 2963 sayılı Kanun (6 ilçe, Ankara Merkez İlçesinin kaldırılması)
+
+`18237_2.pdf` (27 sayfa = 9 sayfalık ekin üç kopyası; ilk kopya okunur), indirilme
+2026-09-26. Kanun asıl 18237 sayısında değil 2. mükerrer sayıda
+(`https://www.resmigazete.gov.tr/arsiv/18237_2.pdf`); mevzuat.gov.tr'de PDF metni yok,
+Madde 1 (a)–(f) bentleri okuyucu yapılandırmasına aynen aktarıldı. Ek (1)–(6) sayılı
+listeler: 104 satır, eksik sıra yok, altı ilçenin altısı tek kaynaklı (Mamak ← Çankaya,
+Gölbaşı ← Çankaya, Keçiören ← Altındağ, Sincan ← Yenimahalle, Düziçi ← Bahçe,
+Dalaman ← Köyceğiz). **Madde 2:** Ankara İli Merkez İlçesi kaldırılmış, alanı Altındağ'a
+bağlanmıştır — 1961–1983 seçim verisindeki geomId'siz Ankara "Merkez" satırı bu ilçedir.

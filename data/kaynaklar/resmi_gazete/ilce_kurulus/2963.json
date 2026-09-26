@@ -1,0 +1,1181 @@
+{
+ "kanun": "2963",
+ "ad": "Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun",
+ "kabul": "1983-11-29",
+ "resmiGazete": {
+  "tarih": "1983-11-30",
+  "sayi": 18237,
+  "mukerrer": 2
+ },
+ "kaynaklar": {
+  "ekListeler": "data/raw/resmi_gazete/18237_2.pdf",
+  "maddeler": "data/raw/resmi_gazete/18237_2.pdf",
+  "rgUrl": "https://www.resmigazete.gov.tr/arsiv/18237_2.pdf",
+  "mevzuatUrl": null
+ },
+ "digerHukumler": [
+  {
+   "madde": 2,
+   "metin": "Ankara ili Merkez İlçesi kaldırılmış ve bu ilçe sınırları içinde kalan alan Ankara İli Altındağ İlçesine bağlanmıştır.",
+   "eventType": "abolished",
+   "effectiveDate": "1983-11-30",
+   "unit": "Merkez (Ankara)",
+   "provinceBefore": 6,
+   "provinceAfter": 6,
+   "mergedInto": "Altındağ",
+   "not": "1961-1983 seçim verisindeki Ankara 'Merkez' satırı bu ilçedir (geomId yok). Sınırı kaynakta yok; alanı Altındağ'a katıldı, aynı kanunla Altındağ'dan Keçiören ayrıldı."
+  }
+ ],
+ "guvenilirlik": "A (birincil/resmî); ek listeler taranmış OCR — eski ilçe adı o ilin sonraki genel seçimdeki ilçe adlarıyla bulanık eşlendi, eşlenemeyen satır null bırakıldı",
+ "ozet": {
+  "ilce": 6,
+  "tekKaynak": 6,
+  "cokKaynak": 0,
+  "satir": 104,
+  "cozulemeyenSatir": 0,
+  "kaynakYazilmamisSatir": 0,
+  "satirsizListe": [],
+  "eksikSatirliListe": [],
+  "geomIdsizYeniIlce": []
+ },
+ "ilceler": [
+  {
+   "listeNo": 1,
+   "il": "Ankara",
+   "plaka": 6,
+   "ad": "Mamak",
+   "yeniIlce": {
+    "ad": "Mamak",
+    "geomId": "TR-D-06-019",
+    "plaka": 6,
+    "secim": "1987"
+   },
+   "madde": "a) Ekli 1 sayılı listede adları yazılı köyleri kapsamak ve merkezi Mamak olmak üzere Ankara İli Çankaya İlçesinden ayrılarak Mamak adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    2
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 7,
+   "eskiIlceler": [
+    {
+     "ad": "Çankaya",
+     "geomId": "TR-D-06-007",
+     "birimSayisi": 7,
+     "plaka": 6
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Bayındır",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Merkez",
+     "okunan": "Bayındır Çankaya Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 2,
+     "birim": "Gökçeyurt",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Merkez",
+     "okunan": "Gökçeyurt Çankaya Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 3,
+     "birim": "Kıbrısköy",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Merkez",
+     "okunan": "Kıbrısköy Çankaya Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 4,
+     "birim": "Kızılca",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Merkez",
+     "okunan": "Kızılca Çankaya Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 5,
+     "birim": "Kusunlar",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Merkez",
+     "okunan": "Kusunlar Çankaya Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 6,
+     "birim": "Ortaköy",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Merkez",
+     "okunan": "Ortaköy Çankaya Merkez",
+     "sayfa": 2
+    },
+    {
+     "sira": 7,
+     "birim": "Kutludüğün",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Merkez",
+     "okunan": "Kutludüğün Çankaya Merkez",
+     "sayfa": 2
+    }
+   ]
+  },
+  {
+   "listeNo": 2,
+   "il": "Ankara",
+   "plaka": 6,
+   "ad": "Gölbaşı",
+   "yeniIlce": {
+    "ad": "Gölbaşı",
+    "geomId": "TR-D-06-012",
+    "plaka": 6,
+    "secim": "1987"
+   },
+   "madde": "b) Ekli 2 sayılı listede adları yazılı köyleri kapsamak ve merkezi Gölbaşı olmak üzere Ankara İli Çankaya İlçesi Gölbaşı Bucağında Gölbaşı adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    2,
+    3
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 30,
+   "eskiIlceler": [
+    {
+     "ad": "Çankaya",
+     "geomId": "TR-D-06-007",
+     "birimSayisi": 30,
+     "plaka": 6
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Ahibdz",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Ahibdz Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 2,
+     "birim": "Ballıkpınar",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Ballıkpınar Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 3,
+     "birim": "Bezirhane",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Bezirhane Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 4,
+     "birim": "Çimşit",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Çimşit Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 5,
+     "birim": "Gökçehöyük",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Gökçehöyük Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 6,
+     "birim": "Günalan",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Günalan Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 7,
+     "birim": "Hacılar",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Hacılar Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 8,
+     "birim": "Hacımuratlı",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Hacımuratlı Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 9,
+     "birim": "Halaçlı",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Halaçlı Çankaya Gölbaşı",
+     "sayfa": 2
+    },
+    {
+     "sira": 10,
+     "birim": "încek",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "încek Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 11,
+     "birim": "Karagedik",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Karagedik Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 12,
+     "birim": "Karaoğlan",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Karaoğlan Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 13,
+     "birim": "Kınklı",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Kınklı Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 14,
+     "birim": "Kızılcaşar",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Kızılcaşar Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 15,
+     "birim": "Koparan",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Koparan Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 16,
+     "birim": "Mahmatlı",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Mahmatlı Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 17,
+     "birim": "Mahmatlıbahçe",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Mahmatlıbahçe Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 18,
+     "birim": "Oğulbey",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Oğulbey Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 19,
+     "birim": "örencik",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "örencik Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 20,
+     "birim": "Selametti",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Selametti Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 21,
+     "birim": "Soğulcak",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Soğulcak Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 22,
+     "birim": "Taşpınar",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Taşpınar Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 23,
+     "birim": "Tepeyurt",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Tepeyurt Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 24,
+     "birim": "Tulumtaş",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Tulumtaş Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 25,
+     "birim": "Velihimmetli",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Velihimmetli Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 26,
+     "birim": "Yağlıpınar",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Yağlıpınar Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 27,
+     "birim": "Yavrucak",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Yavrucak Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 28,
+     "birim": "Yaylabag",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Yaylabag Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 29,
+     "birim": "Yurtbeyi",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Yurtbeyi Çankaya Gölbaşı",
+     "sayfa": 3
+    },
+    {
+     "sira": 30,
+     "birim": "Gölbaşı (Bucak Merkezi)",
+     "tur": null,
+     "eskiIlce": "Çankaya",
+     "eskiBucak": "Gölbaşı",
+     "okunan": "Gölbaşı (Bucak Merkezi) Çankaya Gölbaşı",
+     "sayfa": 3
+    }
+   ]
+  },
+  {
+   "listeNo": 3,
+   "il": "Ankara",
+   "plaka": 6,
+   "ad": "Keçiören",
+   "yeniIlce": {
+    "ad": "Keçiören",
+    "geomId": "TR-D-06-017",
+    "plaka": 6,
+    "secim": "1987"
+   },
+   "madde": "c) Ekli 3 sayılı listede adları yazılı köyleri kapsamak ve merkezi Keçiören olmak üzere Ankara İli Altındağ İlçesinden ayrılarak Keçiören adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 9,
+   "eskiIlceler": [
+    {
+     "ad": "Altındağ",
+     "geomId": "TR-D-06-002",
+     "birimSayisi": 9,
+     "plaka": 6
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Alacaöreh",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Bağlum",
+     "okunan": "Alacaöreh Altındağ Bağlum",
+     "sayfa": 3
+    },
+    {
+     "sira": 2,
+     "birim": "Bağlum",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Bağlum",
+     "okunan": "Bağlum Altındağ Bağlum",
+     "sayfa": 3
+    },
+    {
+     "sira": 3,
+     "birim": "Gümüsoluk",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Bağlum",
+     "okunan": "Gümüsoluk Altındağ Bağlum",
+     "sayfa": 3
+    },
+    {
+     "sira": 4,
+     "birim": "Kılıçlar",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Bağlum",
+     "okunan": "Kılıçlar Altındağ Bağlum",
+     "sayfa": 3
+    },
+    {
+     "sira": 5,
+     "birim": "Kösreük",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Bağlum",
+     "okunan": "Kösreük Altındağ Bağlum",
+     "sayfa": 3
+    },
+    {
+     "sira": 6,
+     "birim": "Kurudan",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Merkez",
+     "okunan": "Kurudan Altındağ Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 7,
+     "birim": "Pursaklar",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Merkez",
+     "okunan": "Pursaklar Altındağ Merkez",
+     "sayfa": 3
+    },
+    {
+     "sira": 8,
+     "birim": "Sarayköy",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Bağlum",
+     "okunan": "Sarayköy Altındağ Bağlum",
+     "sayfa": 3
+    },
+    {
+     "sira": 9,
+     "birim": "Sarıbeyler",
+     "tur": null,
+     "eskiIlce": "Altındağ",
+     "eskiBucak": "Bağlum",
+     "okunan": "Sarıbeyler Altındağ Bağlum",
+     "sayfa": 3
+    }
+   ]
+  },
+  {
+   "listeNo": 4,
+   "il": "Ankara",
+   "plaka": 6,
+   "ad": "Sincan",
+   "yeniIlce": {
+    "ad": "Sincan",
+    "geomId": "TR-D-06-023",
+    "plaka": 6,
+    "secim": "1987"
+   },
+   "madde": "d) Ekli 4 sayılı listede yazılı köyleri kapsamak ve merkezi Sincan olmak üzere Ankara İli Yenimahalle İlçesi Sincan Bucağında Sincan adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    3,
+    4
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 17,
+   "eskiIlceler": [
+    {
+     "ad": "Yenimahalle",
+     "geomId": "TR-D-06-025",
+     "birimSayisi": 17,
+     "plaka": 6
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Akçaâren",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Yenikent",
+     "okunan": "Akçaâren Yenimahalle Yenikent",
+     "sayfa": 3
+    },
+    {
+     "sira": 2,
+     "birim": "Anayurt",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Anayurt Yenimahalle Sincan",
+     "sayfa": 3
+    },
+    {
+     "sira": 3,
+     "birim": "Çiçektepe",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Çiçektepe Yenimahalle Sincan",
+     "sayfa": 3
+    },
+    {
+     "sira": 4,
+     "birim": "Çoğlu",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Yenikent",
+     "okunan": "Çoğlu Yenimahalle Yenikent",
+     "sayfa": 3
+    },
+    {
+     "sira": 5,
+     "birim": "Esenler",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Esenler Yenimahalle Sincan",
+     "sayfa": 3
+    },
+    {
+     "sira": 6,
+     "birim": "Ilyağut",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Yenikent",
+     "okunan": "Ilyağut Yenimahalle Yenikent",
+     "sayfa": 3
+    },
+    {
+     "sira": 7,
+     "birim": "incirlik",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Yenikent",
+     "okunan": "incirlik Yenimahalle Yenikent",
+     "sayfa": 3
+    },
+    {
+     "sira": 8,
+     "birim": "Mülkköy",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Yenikent",
+     "okunan": "Mülkköy Yenimahalle Yenikent",
+     "sayfa": 3
+    },
+    {
+     "sira": 9,
+     "birim": "Osmaniye",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Osmaniye Yenimahalle Sincan",
+     "sayfa": 3
+    },
+    {
+     "sira": 10,
+     "birim": "Polatlar",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Polatlar Yenimahalle Sincan",
+     "sayfa": 4
+    },
+    {
+     "sira": 11,
+     "birim": "Saraycık",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Saraycık Yenimahalle Sincan",
+     "sayfa": 4
+    },
+    {
+     "sira": 12,
+     "birim": "Sincan (Bucak Merkezi)",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Sincan (Bucak Merkezi) Yenimahalle Sincan",
+     "sayfa": 4
+    },
+    {
+     "sira": 13,
+     "birim": "Tatlar",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Tatlar Yenimahalle Sincan",
+     "sayfa": 4
+    },
+    {
+     "sira": 14,
+     "birim": "Yeni Çimşit",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Yeni Çimşit Yenimahalle Sincan",
+     "sayfa": 4
+    },
+    {
+     "sira": 15,
+     "birim": "Yeni Kayı",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Yenikent",
+     "okunan": "Yeni Kayı Yenimahalle Yenikent",
+     "sayfa": 4
+    },
+    {
+     "sira": 16,
+     "birim": "Yeni Peçenek",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Sincan",
+     "okunan": "Yeni Peçenek Yenimahalle Sincan",
+     "sayfa": 4
+    },
+    {
+     "sira": 17,
+     "birim": "Yenikent (Bucak Merkezi)",
+     "tur": null,
+     "eskiIlce": "Yenimahalle",
+     "eskiBucak": "Yenikent",
+     "okunan": "Yenikent (Bucak Merkezi) Yenimahalle Yenikent",
+     "sayfa": 4
+    }
+   ]
+  },
+  {
+   "listeNo": 5,
+   "il": "Adana",
+   "plaka": 1,
+   "ad": "Düziçi",
+   "yeniIlce": {
+    "ad": "Düziçi",
+    "geomId": "TR-D-80-002",
+    "plaka": 1,
+    "secim": "1987"
+   },
+   "madde": "e) Ekli 5 sayılı listede adları yazılı köyleri kapsamak ve merkezi Haruniye olmak üzere Adana İli Bahçe İlçesi Haruniye Bucağında Düziçi adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 26,
+   "eskiIlceler": [
+    {
+     "ad": "Bahçe",
+     "geomId": "TR-D-80-001",
+     "birimSayisi": 26,
+     "plaka": 1
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Alibo2İu",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Alibo2İu Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 2,
+     "birim": "Atalan",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Atalan Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 3,
+     "birim": "Bayındırlı",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Bayındırlı Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 4,
+     "birim": "Bostanlar",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Bostanlar Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 5,
+     "birim": "Böcekli",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Böcekli Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 6,
+     "birim": "Çamiçi",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Çamiçi Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 7,
+     "birim": "Çerçioğhı",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Çerçioğhı Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 8,
+     "birim": "Çitti",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Çitti Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 9,
+     "birim": "Çothı",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Çothı Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 10,
+     "birim": "Elbeyli",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Elbeyli Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 11,
+     "birim": "Ellek",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Ellek Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 12,
+     "birim": "Farsak",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Farsak Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 13,
+     "birim": "Gökçayır",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Gökçayır Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 14,
+     "birim": "Gümüş",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Gümüş Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 15,
+     "birim": "Hacılar",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Hacılar Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 16,
+     "birim": "Karacaören",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Karacaören Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 17,
+     "birim": "Karaçarlı",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Karaçarlı Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 18,
+     "birim": "Karagedik",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Karagedik Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 19,
+     "birim": "Kuşçu",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Kuşçu Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 20,
+     "birim": "Oluklu",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Oluklu Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 21,
+     "birim": "Pirsultanlı",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Pirsultanlı Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 22,
+     "birim": "Selverler",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Selverler Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 23,
+     "birim": "Yarbaşı",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Yarbaşı Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 24,
+     "birim": "Yazlamazlı",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Yazlamazlı Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 25,
+     "birim": "Yenif arsak",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Yenif arsak Bahçe Haruniye",
+     "sayfa": 4
+    },
+    {
+     "sira": 26,
+     "birim": "Haruniye (Bucak Merkezi)",
+     "tur": null,
+     "eskiIlce": "Bahçe",
+     "eskiBucak": "Haruniye",
+     "okunan": "Haruniye (Bucak Merkezi) Bahçe Haruniye",
+     "sayfa": 4
+    }
+   ]
+  },
+  {
+   "listeNo": 6,
+   "il": "Muğla",
+   "plaka": 48,
+   "ad": "Dalaman",
+   "yeniIlce": {
+    "ad": "Dalaman",
+    "geomId": "TR-D-48-002",
+    "plaka": 48,
+    "secim": "1987"
+   },
+   "madde": "f) Ekli 6 sayılı listede adları yazılı köyleri kapsamak ve merkezi Dalaman olmak üzere Muğla İli Köyceğiz İlçesinden ayrılarak Dalaman adıyla",
+   "ekHukum": null,
+   "rgSayfalari": [
+    4,
+    5
+   ],
+   "altBasliklar": [],
+   "satirSayisi": 15,
+   "eskiIlceler": [
+    {
+     "ad": "Köyceğiz",
+     "geomId": "TR-D-48-006",
+     "birimSayisi": 15,
+     "plaka": 48
+    }
+   ],
+   "tekKaynak": true,
+   "eksikSira": [],
+   "cozulemeyenSatir": 0,
+   "kaynakYazilmamisSatir": 0,
+   "satirlar": [
+    {
+     "sira": 1,
+     "birim": "Atakent",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Atakent Köyceğiz Ortaca",
+     "sayfa": 4
+    },
+    {
+     "sira": 2,
+     "birim": "Gürköy",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Gürköy Köyceğiz Ortaca",
+     "sayfa": 4
+    },
+    {
+     "sira": 3,
+     "birim": "Kapıkargın",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Kapıkargın Köyceğiz Ortaca",
+     "sayfa": 4
+    },
+    {
+     "sira": 4,
+     "birim": "Kargınkürü",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Kargınkürü Köyceğiz Ortaca",
+     "sayfa": 4
+    },
+    {
+     "sira": 5,
+     "birim": "Kayadibi",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Kayadibi Köyceğiz Ortaca",
+     "sayfa": 4
+    },
+    {
+     "sira": 6,
+     "birim": "Kızılkaya",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Kızılkaya Köyceğiz Ortaca",
+     "sayfa": 4
+    },
+    {
+     "sira": 7,
+     "birim": "Sabunlu",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Sabunlu Köyceğiz Ortaca",
+     "sayfa": 4
+    },
+    {
+     "sira": 8,
+     "birim": "Şerefler",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Şerefler Köyceğiz Ortaca",
+     "sayfa": 5
+    },
+    {
+     "sira": 9,
+     "birim": "Bozbel",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Merkez",
+     "okunan": "Bozbel Köyceğiz Merkez",
+     "sayfa": 5,
+     "siraDuzeltildi": true
+    },
+    {
+     "sira": 10,
+     "birim": "Elcik",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Merkez",
+     "okunan": "Elcik Köyceğiz Merkez",
+     "sayfa": 5
+    },
+    {
+     "sira": 11,
+     "birim": "Kavacık",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Merkez",
+     "okunan": "Kavacık Köyceğiz Merkez",
+     "sayfa": 5
+    },
+    {
+     "sira": 12,
+     "birim": "Çöymen",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Merkez",
+     "okunan": "Çöymen Köyceğiz Merkez",
+     "sayfa": 5
+    },
+    {
+     "sira": 13,
+     "birim": "Gürlek",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Merkez",
+     "okunan": "Gürlek Köyceğiz Merkez",
+     "sayfa": 5
+    },
+    {
+     "sira": 14,
+     "birim": "Narh",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Merkez",
+     "okunan": "Narh Köyceğiz Merkez",
+     "sayfa": 5
+    },
+    {
+     "sira": 15,
+     "birim": "Dalaman",
+     "tur": null,
+     "eskiIlce": "Köyceğiz",
+     "eskiBucak": "Ortaca",
+     "okunan": "Dalaman Köyceğiz Ortaca",
+     "sayfa": 5
+    }
+   ]
+  }
+ ]
+}

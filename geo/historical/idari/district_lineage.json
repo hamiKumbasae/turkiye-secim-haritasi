@@ -29,6 +29,14 @@
    "url": "https://www.yeniankara.com.tr/bolge-haberlerikirsehir/ilden-ilceye-donen-kirsehir-68-yil-once-bugun-yeniden-il-oldu-iste-tum-surec-113434"
   },
   {
+   "id": "kanun_2963",
+   "type": "official",
+   "title": "2963 sayılı Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun (RG 1983-11-30, sayı 18237)",
+   "url": "https://www.resmigazete.gov.tr/arsiv/18237_2.pdf",
+   "raw": "data/raw/resmi_gazete/18237_2.pdf",
+   "extracted": "data/kaynaklar/resmi_gazete/ilce_kurulus/2963.json"
+  },
+  {
    "id": "kanun_3392",
    "type": "official",
    "title": "3392 sayılı 103 İlçe Kurulması Hakkında Kanun (RG 1987-07-04, sayı 19507)",
@@ -3875,9 +3883,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "2963",
+    "kanunAdi": "Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1983-11-30",
+     "sayi": 18237,
+     "mukerrer": 2
+    },
+    "listeNo": 2,
+    "rgSayfalari": [
+     2,
+     3
+    ],
+    "birimSayisi": 30,
+    "eskiIlceler": [
+     {
+      "ad": "Çankaya",
+      "geomId": "TR-D-06-007",
+      "plaka": 6,
+      "birimSayisi": 30
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2963.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-06-013",
@@ -4177,9 +4208,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "2963",
+    "kanunAdi": "Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1983-11-30",
+     "sayi": 18237,
+     "mukerrer": 2
+    },
+    "listeNo": 3,
+    "rgSayfalari": [
+     3
+    ],
+    "birimSayisi": 9,
+    "eskiIlceler": [
+     {
+      "ad": "Altındağ",
+      "geomId": "TR-D-06-002",
+      "plaka": 6,
+      "birimSayisi": 9
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2963.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-06-018",
@@ -4269,9 +4322,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "2963",
+    "kanunAdi": "Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1983-11-30",
+     "sayi": 18237,
+     "mukerrer": 2
+    },
+    "listeNo": 1,
+    "rgSayfalari": [
+     2
+    ],
+    "birimSayisi": 7,
+    "eskiIlceler": [
+     {
+      "ad": "Çankaya",
+      "geomId": "TR-D-06-007",
+      "plaka": 6,
+      "birimSayisi": 7
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2963.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-06-020",
@@ -4456,9 +4531,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "2963",
+    "kanunAdi": "Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1983-11-30",
+     "sayi": 18237,
+     "mukerrer": 2
+    },
+    "listeNo": 4,
+    "rgSayfalari": [
+     3,
+     4
+    ],
+    "birimSayisi": 17,
+    "eskiIlceler": [
+     {
+      "ad": "Yenimahalle",
+      "geomId": "TR-D-06-025",
+      "plaka": 6,
+      "birimSayisi": 17
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2963.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-06-024",
@@ -36486,9 +36584,32 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "2963",
+    "kanunAdi": "Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1983-11-30",
+     "sayi": 18237,
+     "mukerrer": 2
+    },
+    "listeNo": 6,
+    "rgSayfalari": [
+     4,
+     5
+    ],
+    "birimSayisi": 15,
+    "eskiIlceler": [
+     {
+      "ad": "Köyceğiz",
+      "geomId": "TR-D-48-006",
+      "plaka": 48,
+      "birimSayisi": 15
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2963.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-48-003",
@@ -52886,25 +53007,19 @@
     "rgSayfalari": [
      75
     ],
-    "birimSayisi": 19,
+    "birimSayisi": 18,
     "eskiIlceler": [
      {
       "ad": "Karabük",
       "geomId": "TR-D-78-003",
       "plaka": 67,
       "birimSayisi": 18
-     },
-     {
-      "ad": "Merkez",
-      "geomId": "TR-D-67-008",
-      "plaka": 67,
-      "birimSayisi": 1
      }
     ],
-    "tekKaynak": false,
+    "tekKaynak": true,
     "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/3392.json"
    },
-   "lineageStatus": "kanun_cok_kaynak"
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-79-001",
@@ -53206,9 +53321,31 @@
     }
    ],
    "oncekiBirimler": [],
-   "kanunSoyu": null,
-   "lineageStatus": "unresolved",
-   "not": "Soy bilgisi (hangi eski ilçe/bucak/köylerden ayrıldığı) henüz kaynaklanmadı (Faz 2). Tarihsel sınır uydurulmaz; ilçenin seçime ayrı girmediği tarihlerde bu alan 'unresolved'."
+   "kanunSoyu": {
+    "kanun": "2963",
+    "kanunAdi": "Altı İlçe Kurulması ve Ankara İli Merkez İlçesinin Kaldırılması Hakkında Kanun",
+    "resmiGazete": {
+     "tarih": "1983-11-30",
+     "sayi": 18237,
+     "mukerrer": 2
+    },
+    "listeNo": 5,
+    "rgSayfalari": [
+     4
+    ],
+    "birimSayisi": 26,
+    "eskiIlceler": [
+     {
+      "ad": "Bahçe",
+      "geomId": "TR-D-80-001",
+      "plaka": 1,
+      "birimSayisi": 26
+     }
+    ],
+    "tekKaynak": true,
+    "kaynak": "data/kaynaklar/resmi_gazete/ilce_kurulus/2963.json"
+   },
+   "lineageStatus": "kanun_tek_kaynak"
   },
   {
    "geomId": "TR-D-80-003",
