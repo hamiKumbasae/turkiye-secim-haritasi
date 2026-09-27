@@ -46,9 +46,9 @@
     if(!b) return '';
     let h = '<div class="row tip-not"><span>Bugünkü sınırlarla: ' + b.ilceler.join(', ') + '</span></div>';
     for(const c of (b.cogunluk || [])){
-      const d = (c.digerleri || []).map(x => x[0] + ' (' + x[1] + ' birim)').join(', ');
-      if(d) h += '<div class="row tip-not"><span>' + c.ad + ' birimlerinin %' + Math.round(c.pay * 100) + '\'i '
-        + c.ana + '\'den, ' + d + ' başka ilçeden geldi; harita ana kaynağa göre çizildi.</span></div>';
+      // kisa, eksiz: 'Konyaaltı: %92 Merkez, Kemer 1 birim'
+      const d = (c.digerleri || []).map(x => x[0] + ' ' + x[1] + ' birim').join(', ');
+      if(d) h += '<div class="row tip-not"><span>' + c.ad + ': %' + Math.round(c.pay * 100) + ' ' + c.ana + ', ' + d + '</span></div>';
     }
     return h;
   }

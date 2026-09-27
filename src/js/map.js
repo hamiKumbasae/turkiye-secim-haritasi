@@ -222,21 +222,19 @@
     return n ? Object.assign({girmedi: secim[geomId] === 1}, n) : null;
   }
   function gecisNotuHtml(n){
-    const t = n.tarih ? n.tarih.split('-').reverse().join('.') : '';
-    const kanun = n.kanun ? (/^KHK/.test(n.kanun) ? n.kanun : n.kanun + ' sayılı Kanun') : 'kanun';
-    const kaynak = n.kaynaklar || [];
-    const liste = kaynak.map((k,i)=>k[0] + ' (' + k[1] + (i===0 ? ' birim' : '') + ')');
-    const listeMetni = liste.length > 1 ? liste.slice(0,-1).join(', ') + ' ve ' + liste[liste.length-1] : (liste[0] || '');
+    // kisa: kurulus yili + kanun, tek cumlelik neden
+    const yil = n.tarih ? n.tarih.slice(0, 4) : '';
+    const kanun = n.kanun ? (/^KHK/.test(n.kanun) ? n.kanun : 'Kanun ' + n.kanun) : '';
+    const adlar = (n.kaynaklar || []).map(k => k[0]);
     let neden;
-    if(n.durum === 'kanun_cok_kaynak') neden = 'Alanı bu dönemde ' + listeMetni + ' ilçeleri arasında bölünmüştü; tek bir ilçenin rengine boyanamıyor.';
-    else if(n.durum === 'kanun_tek_kaynak' && kaynak.length) neden = 'Bu dönemde ' + kaynak[0][0] + ' ilçesinin parçasıydı; bu seçimin verisinde ' + kaynak[0][0] + ' için ayrı ilçe satırı yok.';
-    else if(n.durum === 'merkez_ilce') neden = 'Eski Merkez ilçenin devamı; bu seçimin verisinde Merkez ilçe satırı yok.';
-    else neden = 'Hangi ilçeden ayrıldığı kaynaklarda henüz belirlenemedi.';
-    const kurulus = n.girmedi
-      ? kanun + ' ile ' + t + ' tarihinde kuruldu ama bu seçime ayrı ilçe olarak girmedi.'
-      : 'Bu seçimde henüz ayrı ilçe değildi (' + kanun + ', ' + t + ').';
-    return '<b>' + n.ad + '</b><div class="row"><span>' + kurulus + '</span></div><div class="row"><span>' + neden + '</span></div>';
+    if(n.durum === 'kanun_cok_kaynak' && adlar.length) neden = 'Ayrıldığı ilçeler: ' + adlar.join(', ');
+    else if(n.durum === 'kanun_tek_kaynak' && adlar.length) neden = 'O dönem bağlı olduğu ilçe: ' + adlar[0];
+    else if(n.durum === 'merkez_ilce') neden = 'Eski Merkez ilçenin devamı';
+    else neden = 'Hangi ilçeden ayrıldığı bilinmiyor';
+    const kurulus = 'Kuruluş: ' + yil + (kanun ? ' (' + kanun + ')' : '') + (n.girmedi ? ' · bu seçime ayrı girmedi' : ' · bu seçimde henüz yoktu');
+    return '<b>' + n.ad + '</b>' + '<div class="row"><span>' + kurulus + '</span></div><div class="row"><span>' + neden + '</span></div>';
   }
+
 
   function renderProvinceMap(plaka){
     view = {level:'province', plaka};
