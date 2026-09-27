@@ -62,7 +62,11 @@ KITAPLAR["1999yerel"] = {
     # YSK olcumuyle reddedildi: sayfa basliklarinin x'i - birkac px sapip
     # degeri komsu sutuna itiyor; sayi-sonu histogrami - seyrek sutunlarda gurultu.)
     # buyuksehir tablosunda DSP sol yuzde (7 + 15 sutun)
-    "tabloSutun": {"buyuksehir": {"sol": ONCU + P99_SOL + ["DSP"], "sag": P99_SAG[1:]}},
+    # il genel meclisi tablosunun sag yuzunde DEHAP sutunu yok (15 sutun: DSP DTP DYP DEPAR ...);
+    # 16 etiketli liste DSP'yi DEMTP, DTP'yi DYP, DYP'yi DEHAP diye okutuyordu (2026-09-27, YSK kesin
+    # sonuc il toplamlariyla 72/72 ilde ayni kayma; sayfa basligi s.39 ile teyit).
+    "tabloSutun": {"buyuksehir": {"sol": ONCU + P99_SOL + ["DSP"], "sag": P99_SAG[1:]},
+                   "il_genel_meclisi": {"sol": ONCU + P99_SOL, "sag": [x for x in P99_SAG if x != "DEHAP"]}},
     "tablolar": {"il_genel_meclisi": (38, 239), "buyuksehir": (242, 251),
                  "belediye_baskanligi": (254, 473), "belediye_meclisi": (476, 695)},
 }

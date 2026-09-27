@@ -85,3 +85,12 @@ tek bir parti hücresi tutmayınca değeri toplamdan geri hesaplıyordu (`ocrDuz
   görüntüsüyle gözle doğrulandı (12 satır, hepsi birebir).
 - Sonuç (satır / tutarlı): İGM 711 / 552, büyükşehir 27 / 21, belediye başkanlığı 1759 / 1027,
   belediye meclisi 1760 / 1044.
+
+## 1999 il genel meclisi — parti sütunu düzeltmesi (2026-09-27)
+
+Tablonun sağ yüzünde DEHAP sütunu yok (15 sütun: DSP, DTP, DYP, DEPAR, EMEP, FP, HADEP, İP, LDP, MP,
+MHP, ÖDP, SİP, YDP, Bağımsız; s.39 başlığı). Okuyucu belediye tablolarının 16 etiketli listesini
+kullandığı için DSP oyları DEMTP, DTP oyları DYP, DYP oyları DEHAP diye yazılmıştı. YSK 1999 kesin
+sonuç il toplamlarıyla karşılaştırmada 72/72 ilde aynı kayma görüldü; `extract_mahalli_ocr.py`'ye
+tabloya özel sütun listesi eklenip tablo yeniden okundu (değerler aynı, 2.997/3.000 satır birebir;
+yalnız etiketler ve 5 satırın doğrulama durumu değişti). Düzeltmeden sonra YSK ile 72/72 il birebir.

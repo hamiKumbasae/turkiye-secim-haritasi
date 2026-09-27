@@ -33,10 +33,17 @@ ROOT = pathlib.Path(__file__).resolve().parents[3]
 RAW = ROOT / "data" / "raw" / "ysk"
 OUT = ROOT / "data" / "kaynaklar" / "ysk" / "mahalli-kesin"
 DOSYA = {"igm": "Il-Genel-Meclisi-Uyeligi-Secimleri-Sonucu.pdf", "bm": "Belediye-Meclis-Uyeligi-Secimleri-Sonucu.pdf"}
-# 1999 okunmuyor: parti basliklari harf harf dikey; okunan etiketlerin bir kismi DIE ile parti parti
-# karsilastirmada yer degistirmis cikti (DYP/DSP/DEMTP/DEHAP) -> kullanilmaz.
 KLASOR = {"1984": "mahalli-kesin-1984-1989", "1989": "mahalli-kesin-1984-1989",
-          "1994": "mahalli-kesin-1994-1999"}
+          "1994": "mahalli-kesin-1994-1999", "1999": "mahalli-kesin-1994-1999"}
+# 1999: parti basliklari harf harf dikey; otomatik okuma bazi etiketleri yer degistirdi. Sutun
+# sirasi sayfa goruntusunden elle okundu (2026-09-27); yalniz sayfadaki parti sutunu sayisi bu
+# listeyle birebir ayniysa kullanilir.
+ELLE_SIRA = {
+    ("1999", "igm"): ["ANAP", "BP", "BBP", "CHP", "DP", "DBP99", "DSP", "DEMTP", "DYP", "DEPAR", "EMEP", "FP",
+                      "HADEP", "İP", "LDP", "MP92", "MHP", "ÖDP", "SİP", "YDP", "Bağımsız"],
+    ("1999", "bm"): ["ANAP", "BP", "BBP", "CHP", "DP", "DBP99", "DSP", "DEMTP", "DYP", "DEHAP", "DEPAR", "EMEP",
+                     "FP", "HADEP", "İP", "LDP", "MP92", "MHP", "ÖDP", "SİP", "YDP", "Bağımsız"],
+}
 # 1989 belediye meclisi basligi 'SODEP' yaziyor; parti 1985'ten beri SHP (DIE kitabi SHP; oylar
 # 62 ilde birebir ayni) -> SHP.
 ETIKET_YIL = {"1989": {"SODEP": "SHP"}}
@@ -134,16 +141,65 @@ def sayfa_oku(pg):
     return satir, baslik
 
 
+def izgara_oku(pg, n_parti):
+    """1999: sutunlar tablo cizgilerinden (dikey kenar kumeleri). Beklenen hucre sayisi
+    (il adi + 4 + partiler) tutmazsa sayfa okunmaz."""
+    xs = sorted(e["x0"] for e in pg.edges if e["orientation"] == "v")
+    if not xs:
+        return []
+    kenar = [[xs[0]]]
+    for x in xs[1:]:
+        (kenar[-1] if x - kenar[-1][-1] < 2 else kenar.append([x]) or kenar[-1]).append(x)
+    kenar = [sum(k) / len(k) for k in kenar]
+    if len(kenar) - 1 != 1 + 4 + n_parti:
+        return None
+    words = pg.extract_words(keep_blank_chars=False, use_text_flow=False)
+    ilk = kenar[1]
+    adlar = [w for w in words if w["x1"] <= ilk and not SAYI.match(w["text"])
+             and re.fullmatch(r"[A-ZÇĞİÖŞÜÂ.()\-]+", w["text"]) and len(w["text"]) >= 2]
+    capa = collections.defaultdict(list)
+    for w in adlar:
+        k = next((t for t in capa if abs(t - w["top"]) < 3), w["top"])
+        capa[k].append(w)
+    satir = collections.defaultdict(dict)
+    for w in words:
+        if not SAYI.match(w["text"]) or w["x0"] < ilk or not capa:
+            continue
+        t = min(capa, key=lambda t: abs(t - w["top"]))
+        if abs(t - w["top"]) > 7:
+            continue
+        c = (w["x0"] + w["x1"]) / 2
+        i = next((j for j in range(1, len(kenar) - 1) if kenar[j] <= c < kenar[j + 1]), None)
+        if i is not None and (i - 1) not in satir[t]:
+            satir[t][i - 1] = None if w["text"] == "-" else int(w["text"].replace(".", ""))
+    return [(" ".join(x["text"] for x in sorted(capa[t], key=lambda x: x["x0"])), satir[t])
+            for t in sorted(capa) if len(satir[t]) >= 5]
+
+
 def oku(yil, tur):
     p = pdf_yolu(yil, tur)
     out, bilinmeyen = [], set()
     with pdfplumber.open(p) as pdf:
         for pg in pdf.pages:
-            satir, baslik = sayfa_oku(pg)
+            elle = ELLE_SIRA.get((yil, tur))
+            if elle:
+                satir = izgara_oku(pg, len(elle))
+                if satir is None:
+                    bilinmeyen.add("ızgara hücre sayısı tutmadı")
+                    continue
+                baslik = [""] * (4 + len(elle))
+            else:
+                satir, baslik = sayfa_oku(pg)
             if not satir:
                 continue
             partiler = {}
-            for i, b in enumerate(baslik[4:], start=4):
+            elle = ELLE_SIRA.get((yil, tur))
+            if elle:
+                if len(baslik) - 4 == len(elle):
+                    partiler = {i + 4: ad for i, ad in enumerate(elle)}
+                else:
+                    bilinmeyen.add(f"sütun sayısı {len(baslik) - 4} != {len(elle)}")
+            for i, b in enumerate([] if elle else baslik[4:], start=4):
                 ad = parti_adi(b)
                 ad = ETIKET_YIL.get(yil, {}).get(ad, ad)
                 if ad:
