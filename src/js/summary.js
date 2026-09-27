@@ -18,7 +18,7 @@
   };
 
   function sourceInfo(){
-    if(DATA.oylama) return {cat:'full', badge:'YSK Resmî Veri', detail: OYLAMA_ACIKLAMA[DATA.oylama]};
+    if(DATA.oylama) return {cat:'full', badge: DATA.rozet || 'YSK Resmî Veri', detail: DATA.aciklama || OYLAMA_ACIKLAMA[DATA.oylama]};
     if(currentYear==='2014cb')
       return {cat:'full', badge:'YSK Resmî Veri', detail:'YSK Açık Veri Portalı (acikveri.ysk.gov.tr, resmi API) — il+ilçe düzeyi.'};
     if(currentYear==='2007referandum')

@@ -62,8 +62,8 @@
   // ---------------- yerel secim: oylama turu (baskan / il genel meclisi / belediye meclisi) ----------------
   // Meclis kayitlari scripts/pipelines/meclis_harita/build_meclis_harita.py ile uretilir; ayni
   // yilin baskanlik kaydinin ilce iskeletini kullanir (harita cografyasi ayni kalir).
-  const OYLAMA_YILLARI = new Set(['2009yerel','2014yerel','2019yerel','2024yerel']);
-  const OYLAMA_KAYNAKTA_VAR = new Set(['1984yerel','1989yerel','1994yerel','1999yerel','2004yerel']);
+  const OYLAMA_YILLARI = new Set(['2009yerel','2014yerel','2019yerel','2024yerel','2004yerel','1999yerel','1994yerel','1989yerel','1984yerel']);
+  const OYLAMA_KAYNAKTA_VAR = new Set([]);
   const OYLAMA_ACIKLAMA = {
     igm: 'YSK Açık Veri Portalı — il genel meclisi üyeliği oyları (sandık düzeyinden toplandı). İlçe sonucu ilçenin tamamıdır (beldeler dahil). 2014\'ten beri büyükşehirlerde il genel meclisi seçilmez (6360 sayılı Kanun).',
     bm: 'YSK Açık Veri Portalı — belediye meclisi üyeliği oyları (sandık düzeyinden toplandı). İlçe sonucu yalnız ilçe belediyesinin meclisidir, belde meclisleri hariç. İl sonucu ildeki bütün belediye meclislerinin toplamıdır.',

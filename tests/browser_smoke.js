@@ -619,6 +619,13 @@ async function scenario_yerelOylama(browser) {
     check('2024 belediye meclisi Adıyaman: ilçeler renkli', ilce >= 8, String(ilce));
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
+    check('1989 yerel: yıl seçilebildi', await clickYear(page, '1989'));
+    await page.waitForTimeout(600);
+    await page.click('#oylamaToggle button[data-oylama="igm"]');
+    await page.waitForTimeout(700);
+    const b89 = await page.textContent('#pageTitle');
+    const renkli89 = await page.$$eval('path[data-plaka]', (els) => els.filter((e) => e.getAttribute('fill') && e.getAttribute('fill') !== 'var(--map-empty)').length);
+    check('1989 il genel meclisi (DİE): başlık ve renkli iller', b89.includes('İl Genel Meclisi') && renkli89 >= 60, b89 + ' / ' + renkli89);
     check('1977 yerel: yıl seçilebildi', await clickYear(page, '1977'));
     await page.waitForTimeout(600);
     const durum = await page.$$eval('#oylamaToggle button', (bs) => bs.map((b) => b.dataset.oylama + (b.disabled ? ':kapali' : '') + (b.classList.contains('active') ? ':aktif' : '')));

@@ -294,8 +294,12 @@
       el.dataset.geomId = geomId;
       el.addEventListener('mousemove', e=>{
         if(not){ tip.innerHTML = gecisNotuHtml(not); positionTip(e); return; }
-        const d = districtByGeomId[geomId];
-        tip.innerHTML = '<b>'+(d?d.ad:'')+'</b><div class="row"><span>Bu dönem için veri yok</span></div>';
+        let d = districtByGeomId[geomId];
+        if(!d){ // tarihsel birlesim poligonunun parcasi: birlesimin satirindaki not
+          const e = (DISTRICT_SPLITS[String(plaka)] || []).find(x => x.hideIds.includes(geomId) && districtByGeomId[x.syntheticId]);
+          if(e) d = districtByGeomId[e.syntheticId];
+        }
+        tip.innerHTML = '<b>'+(d?d.ad:'')+'</b><div class="row"><span>'+((d && d.not) || 'Bu dönem için veri yok')+'</span></div>';
         positionTip(e);
       });
       el.addEventListener('mouseleave', hideTooltip);

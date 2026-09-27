@@ -22,6 +22,18 @@ Kurallar:
   - kazanan: bm'de kaynagin kazanani; igm ilcede toplanan oylarin birincisi (esitlikte bos).
   - oran = oy / gecerliOy * 100 (2 ondalik); katilim = oyKullanan / secmen * 100.
 
+1984-2004 (DIE "Mahalli Idareler Secimi Sonuclari" kitaplari, taranmis; bkz.
+data/raw/tuik/mahalli-kitap/PROVENANCE.md): ek/ dosyalarinda geomId yok, satirlar ad/secmen ile
+baskanlik kaydinin ilce satirlarina baglanir:
+  - Yalniz kontrol.durum = 'tutarli' ve kimligi cozulmus (kimlik.yontem != 'cozulemedi') satirlar
+    haritaya islenir (kitap okuyucusunun kurali); digerleri 'dogrulanamadi' notuyla bos kalir.
+  - Anahtarlar (ayni il icinde, tek aday): (a) secmen: bm'de satirin kendi secmeni, igm'de ilce
+    satirinin altindaki sehir satiri (ilce merkezi belediyesi) - baskanlik satirinin secmeniyle
+    birebir; (b) ad: kaynaktaki ad, baskanlik satirinin adi ya da onun TUIK kaynagindaki adiyla
+    birebir (buyuk/kucuk harf ve noktalama disinda). Iki anahtar farkli satira isaret ederse
+    baglanmaz; ayni ilceye birden cok satir duserse hicbiri baglanmaz.
+  - il satiri: kitabin il toplami, yalniz 'tutarli' ise.
+
 Cikti: data/normalized/meclis_harita/<yil>yerel_<igm|bm>.json
 
 Kullanim:
@@ -30,11 +42,24 @@ Kullanim:
 import collections
 import json
 import pathlib
+import re
+import unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 NORM = ROOT / "data" / "normalized"
 OUT = NORM / "meclis_harita"
 YILLAR = ["2009yerel", "2014yerel", "2019yerel", "2024yerel"]
+DIE_YILLARI = ["1984yerel", "1989yerel", "1994yerel", "1999yerel", "2004yerel"]
+NOT_DOGRULANAMADI = "DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor."
+NOT_ESLESMEDI = "Kaynakta bu birimle eşleşen satır bulunamadı."
+DIE_ACIKLAMA = {
+    "igm": "{yayin} — il genel meclisi üyeliği oyları, taranmış kitaptan okundu. Yalnız toplamları ve "
+           "yüzdeleri tutan (doğrulanmış) satırlar gösterilir; diğerleri boş ve açıklamalı. İlçe sonucu "
+           "ilçenin tamamıdır (şehir + köy).",
+    "bm": "{yayin} — belediye meclisi üyeliği oyları, taranmış kitaptan okundu. Yalnız toplamları ve "
+          "yüzdeleri tutan (doğrulanmış) satırlar gösterilir; diğerleri boş ve açıklamalı. İlçe sonucu "
+          "yalnız ilçe belediyesinin meclisidir, belde meclisleri hariç.",
+}
 TURLER = {"igm": ("il_genel_meclisi", "İl Genel Meclisi"), "bm": ("belediye_meclisi", "Belediye Meclisi")}
 BUYUKSEHIR_IGM_NOTU = "Bu ilde il genel meclisi seçimi yapılmadı (büyükşehir, 6360 sayılı Kanun)."
 
@@ -135,8 +160,107 @@ def kur(yil, kisa):
     return kayit, rapor, merkez_hedef, baglanmayan
 
 
+def ad_norm(s):
+    if not s:
+        return None
+    s = re.sub(r"\(.*?\)", "", s)
+    if re.search(r"-[A-Z]{3,}", s):  # 'MERKEZ-CENTRAL'
+        s = s.split("-")[0]
+    s = unicodedata.normalize("NFC", s.replace("İ", "i").replace("I", "ı").lower())
+    return re.sub(r"[^a-zçğıöşü]", "", s) or None
+
+
+def dogrulanmis(r):
+    return (r.get("kontrol") or {}).get("durum") == "tutarli" and (r.get("kimlik") or {}).get("yontem") != "cozulemedi"
+
+
+def kur_die(yil, kisa):
+    dosya, adi = TURLER[kisa]
+    ek = oku(NORM / "ek" / dosya / f"{yil}.json")
+    ana = oku(NORM / "elections" / "yerel" / f"{yil}.json")
+    by_sec, by_ad = collections.defaultdict(set), collections.defaultdict(set)
+    for r in ana["ilceler"]:
+        if r.get("secmen"):
+            by_sec[(r["plaka"], r["secmen"])].add(r["geomId"])
+        for a in (r["ad"], ((r.get("kaynak") or {}).get("tuik") or {}).get("adKaynakta")):
+            if ad_norm(a):
+                by_ad[(r["plaka"], ad_norm(a))].add(r["geomId"])
+    B = ek["birimler"]
+    eslesen = collections.defaultdict(list)
+    sayac = collections.Counter()
+    for i, r in enumerate(B):
+        if r.get("tip") != "ilce" or not r.get("plaka") or (r.get("kimlik") or {}).get("yontem") == "cozulemedi":
+            continue
+        sec = r.get("secmen")
+        if kisa == "igm":
+            alt = B[i + 1] if i + 1 < len(B) and B[i + 1].get("tip") == "sehir" else None
+            sec = alt.get("secmen") if alt else None
+        a = by_sec.get((r["plaka"], sec), set()) if sec else set()
+        b = by_ad.get((r["plaka"], ad_norm(r.get("ad") or r.get("adKaynakta"))), set())
+        a = next(iter(a)) if len(a) == 1 else None
+        b = next(iter(b)) if len(b) == 1 else None
+        if a and b and a != b:
+            sayac["çelişki"] += 1
+            continue
+        g = a or b
+        if not g:
+            sayac["eşleşmedi"] += 1
+            continue
+        sayac["ikisi" if a and b else ("seçmen" if a else "ad")] += 1
+        eslesen[g].append(r)
+    cift = [g for g, v in eslesen.items() if len(v) > 1]
+    for g in cift:
+        del eslesen[g]
+    sayac["aynı ilçeye çok satır (bırakıldı)"] = len(cift)
+
+    ek_il = {r["plaka"]: r for r in ek["iller"] if r.get("plaka")}
+    iller = []
+    for a in ana["iller"]:
+        r = ek_il.get(a["plaka"])
+        if not r or not dogrulanmis(r):
+            iller.append({"ad": a["ad"], "plaka": a["plaka"], "oy": {}, "kazanan": None, "vekil": {}, "toplamVekil": 0,
+                          "not": ("İl toplamı: " + NOT_DOGRULANAMADI) if r else "Kaynakta bu ilin satırı yok."})
+            continue
+        iller.append({"ad": a["ad"], "plaka": a["plaka"], "oy": oy_bicimi(r["oy"], r["gecerliOy"]),
+                      "kazanan": r["kazanan"], "gecerliOy": r["gecerliOy"], "secmen": r["secmen"],
+                      "sandik": r.get("sandik"), "katilim": r.get("katilim"), "ilceSayisi": a.get("ilceSayisi"),
+                      "vekil": {}, "toplamVekil": 0})
+    ilceler = []
+    for a in ana["ilceler"]:
+        v = eslesen.get(a["geomId"])
+        if not v or not dogrulanmis(v[0]):
+            ilceler.append({"ad": a["ad"], "plaka": a["plaka"], "geomId": a["geomId"], "oy": {}, "kazanan": None,
+                            "vekil": {}, "toplamVekil": 0, "not": NOT_DOGRULANAMADI if v else NOT_ESLESMEDI})
+            continue
+        r = v[0]
+        ilceler.append({"ad": a["ad"], "plaka": a["plaka"], "geomId": a["geomId"], "oy": oy_bicimi(r["oy"], r["gecerliOy"]),
+                        "kazanan": r["kazanan"], "gecerliOy": r["gecerliOy"], "secmen": r["secmen"],
+                        "sandik": r.get("sandik"), "katilim": r.get("katilim"), "vekil": {}, "toplamVekil": 0})
+
+    ulusal = collections.Counter()
+    for r in iller:
+        ulusal.update({k: v["oy"] for k, v in r["oy"].items()})
+    top = sum(ulusal.values()) or 1
+    kazananlar = {r["kazanan"] for r in iller + ilceler if r["kazanan"]}
+    major = [p for p, v in ulusal.most_common() if p in kazananlar or v / top >= 0.01]
+    major += sorted(kazananlar - set(major))
+    kayit = {"ad": ana["ad"], "tur": "yerel", "oylama": kisa, "oylamaAdi": adi, "contestType": "council_votes",
+             "resultBasis": "votes", "toplamSandalye": None, "majorPartiler": major,
+             "rozet": "TÜİK (DİE) Resmî Yayın", "aciklama": DIE_ACIKLAMA[kisa].format(yayin=ek["kaynak"]["yayin"]),
+             "kaynak": {"dosya": f"data/normalized/ek/{dosya}/{yil}.json", **ek["kaynak"]},
+             "iller": iller, "ilceler": ilceler}
+    return kayit, sayac
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    for yil in DIE_YILLARI:
+        for kisa in TURLER:
+            kayit, sayac = kur_die(yil, kisa)
+            (OUT / f"{yil}_{kisa}.json").write_text(json.dumps(kayit, ensure_ascii=False, separators=(",", ":"), sort_keys=True),
+                                                  encoding="utf-8")
+            print(f"{yil}_{kisa}: il {sum(1 for r in kayit['iller'] if r['oy'])}/{len(kayit['iller'])}, "
+                  f"ilçe {sum(1 for r in kayit['ilceler'] if r['oy'])}/{len(kayit['ilceler'])} | eşleşme {dict(sayac)}")
     for yil in YILLAR:
         for kisa in TURLER:
             kayit, rapor, hedef, bag = kur(yil, kisa)
