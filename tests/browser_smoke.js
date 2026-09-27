@@ -604,6 +604,17 @@ async function scenario_ilceBelediyesi(browser) {
     await page.waitForTimeout(200);
     const tip = await page.textContent('#tooltip');
     check('1994 yerel Çal: ilçe belediye başkanlığı DYP', tip.includes('Çal') && tip.includes('DYP önde'), tip);
+    // 1994 il genel meclisi Izmir: DIE il satiri baska ile aitti; il toplami YSK kesin sonucundan (DYP)
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+    await page.click('#oylamaToggle button[data-oylama="igm"]');
+    await page.waitForTimeout(700);
+    await page.$eval('path[data-plaka="35"]', (el) => el.dispatchEvent(new MouseEvent('mousemove', {bubbles: true, clientX: 300, clientY: 300})));
+    await page.waitForTimeout(200);
+    const tip2 = await page.textContent('#tooltip');
+    check('1994 il genel meclisi İzmir: YSK il toplamı (DYP)', tip2.includes('İzmir') && tip2.includes('DYP önde'), tip2);
+    await page.click('#oylamaToggle button[data-oylama="baskan"]');
+    await page.waitForTimeout(500);
   });
   check('ilçe belediyesi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }

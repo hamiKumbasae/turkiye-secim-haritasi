@@ -1,0 +1,1328 @@
+{
+ "secim": "1984yerel",
+ "tur": "igm",
+ "kaynak": {
+  "ana": "ysk",
+  "dosya": "data/raw/ysk/mahalli-kesin-1984-1989/1984/1984-Il-Genel-Meclisi-Uyeligi-Secimleri-Sonucu.pdf",
+  "okuma": "scripts/pipelines/ysk_kesin/parse_mahalli_kesin.py (metin katmanı; tahmin yok)"
+ },
+ "satirlar": [
+  {
+   "ilKaynakta": "ADANA",
+   "sandik": 2228,
+   "secmen": 633540,
+   "oyKullanan": 561580,
+   "gecerliOy": 543208,
+   "oy": {
+    "ANAP": 209014,
+    "DYP": 63585,
+    "HP": 46280,
+    "MDP": 39886,
+    "RP": 23344,
+    "SODEP": 155288,
+    "Bağımsız": 5811
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 88.64
+  },
+  {
+   "ilKaynakta": "ADIYAMAN",
+   "sandik": 615,
+   "secmen": 132795,
+   "oyKullanan": 120277,
+   "gecerliOy": 115857,
+   "oy": {
+    "ANAP": 29906,
+    "DYP": 23789,
+    "HP": 13027,
+    "MDP": 18662,
+    "RP": 7706,
+    "SODEP": 22767
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 90.57
+  },
+  {
+   "ilKaynakta": "AFYONKARAHİSAR",
+   "sandik": 1110,
+   "secmen": 270322,
+   "oyKullanan": 257719,
+   "gecerliOy": 246439,
+   "oy": {
+    "ANAP": 107965,
+    "DYP": 44593,
+    "HP": 12303,
+    "MDP": 21071,
+    "RP": 5529,
+    "SODEP": 48257,
+    "Bağımsız": 6721
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 95.34
+  },
+  {
+   "ilKaynakta": "AĞRI",
+   "sandik": 688,
+   "secmen": 115357,
+   "oyKullanan": 102444,
+   "gecerliOy": 98758,
+   "oy": {
+    "ANAP": 26983,
+    "DYP": 16443,
+    "HP": 14508,
+    "MDP": 15393,
+    "RP": 7961,
+    "SODEP": 10336,
+    "Bağımsız": 7134
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 88.81
+  },
+  {
+   "ilKaynakta": "AMASYA",
+   "sandik": 668,
+   "secmen": 159433,
+   "oyKullanan": 149311,
+   "gecerliOy": 143913,
+   "oy": {
+    "ANAP": 61419,
+    "DYP": 20194,
+    "HP": 13248,
+    "MDP": 2537,
+    "RP": 6262,
+    "SODEP": 40253
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 93.65
+  },
+  {
+   "ilKaynakta": "ANKARA",
+   "sandik": 4798,
+   "secmen": 1330066,
+   "oyKullanan": 1165391,
+   "gecerliOy": 1120213,
+   "oy": {
+    "ANAP": 547801,
+    "DYP": 93912,
+    "HP": 67681,
+    "MDP": 44668,
+    "RP": 42474,
+    "SODEP": 302914,
+    "Bağımsız": 20763
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 87.62
+  },
+  {
+   "ilKaynakta": "ANTALYA",
+   "sandik": 1406,
+   "secmen": 363990,
+   "oyKullanan": 344624,
+   "gecerliOy": 333850,
+   "oy": {
+    "ANAP": 175481,
+    "DYP": 50850,
+    "HP": 11265,
+    "MDP": 13352,
+    "RP": 11176,
+    "SODEP": 69222,
+    "Bağımsız": 2478
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 94.68
+  },
+  {
+   "ilKaynakta": "ARTVİN",
+   "sandik": 503,
+   "secmen": 104680,
+   "oyKullanan": 93891,
+   "gecerliOy": 91446,
+   "oy": {
+    "ANAP": 37192,
+    "DYP": 17933,
+    "MDP": 1904,
+    "RP": 1489,
+    "SODEP": 31593,
+    "Bağımsız": 1335
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 89.69
+  },
+  {
+   "ilKaynakta": "AYDIN",
+   "sandik": 1310,
+   "secmen": 346509,
+   "oyKullanan": 330598,
+   "gecerliOy": 319123,
+   "oy": {
+    "ANAP": 133187,
+    "DYP": 54385,
+    "HP": 21323,
+    "MDP": 24456,
+    "RP": 3637,
+    "SODEP": 80524,
+    "Bağımsız": 1678
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 95.41
+  },
+  {
+   "ilKaynakta": "BALIKESİR",
+   "sandik": 1841,
+   "secmen": 470705,
+   "oyKullanan": 447650,
+   "gecerliOy": 434867,
+   "oy": {
+    "ANAP": 173206,
+    "DYP": 68629,
+    "HP": 27858,
+    "MDP": 46338,
+    "RP": 11139,
+    "SODEP": 104385,
+    "Bağımsız": 3312
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 95.1
+  },
+  {
+   "ilKaynakta": "BİLECİK",
+   "sandik": 398,
+   "secmen": 81369,
+   "oyKullanan": 77721,
+   "gecerliOy": 75539,
+   "oy": {
+    "ANAP": 35275,
+    "DYP": 14898,
+    "MDP": 3224,
+    "SODEP": 22142
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 95.52
+  },
+  {
+   "ilKaynakta": "BİNGÖL",
+   "sandik": 443,
+   "secmen": 71423,
+   "oyKullanan": 63756,
+   "gecerliOy": 61195,
+   "oy": {
+    "ANAP": 23757,
+    "DYP": 8542,
+    "HP": 5541,
+    "MDP": 2451,
+    "RP": 8286,
+    "SODEP": 11882,
+    "Bağımsız": 736
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 89.27
+  },
+  {
+   "ilKaynakta": "BİTLİS",
+   "sandik": 429,
+   "secmen": 73922,
+   "oyKullanan": 68629,
+   "gecerliOy": 65722,
+   "oy": {
+    "ANAP": 19602,
+    "DYP": 7737,
+    "HP": 2135,
+    "MDP": 17326,
+    "RP": 3733,
+    "SODEP": 11283,
+    "Bağımsız": 3906
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 92.84
+  },
+  {
+   "ilKaynakta": "BOLU",
+   "sandik": 1089,
+   "secmen": 235158,
+   "oyKullanan": 221006,
+   "gecerliOy": 214884,
+   "oy": {
+    "ANAP": 110124,
+    "DYP": 32132,
+    "HP": 12651,
+    "MDP": 4088,
+    "RP": 11777,
+    "SODEP": 39629,
+    "Bağımsız": 4483
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 93.98
+  },
+  {
+   "ilKaynakta": "BURDUR",
+   "sandik": 472,
+   "secmen": 118710,
+   "oyKullanan": 113750,
+   "gecerliOy": 109397,
+   "oy": {
+    "ANAP": 44796,
+    "DYP": 23883,
+    "HP": 10775,
+    "RP": 4446,
+    "SODEP": 23889,
+    "Bağımsız": 1608
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 95.82
+  },
+  {
+   "ilKaynakta": "BURSA",
+   "sandik": 2325,
+   "secmen": 624780,
+   "oyKullanan": 589926,
+   "gecerliOy": 569333,
+   "oy": {
+    "ANAP": 248704,
+    "DYP": 86526,
+    "HP": 48693,
+    "MDP": 54647,
+    "RP": 25498,
+    "SODEP": 105265
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 94.42
+  },
+  {
+   "ilKaynakta": "ÇANAKKALE",
+   "sandik": 941,
+   "secmen": 217865,
+   "oyKullanan": 807475,
+   "gecerliOy": 202571,
+   "oy": {
+    "ANAP": 94992,
+    "DYP": 31352,
+    "HP": 10154,
+    "MDP": 8999,
+    "SODEP": 56749,
+    "Bağımsız": 325
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   }
+  },
+  {
+   "ilKaynakta": "ÇANKIRI",
+   "sandik": 614,
+   "secmen": 109452,
+   "oyKullanan": 101629,
+   "gecerliOy": 97013,
+   "oy": {
+    "ANAP": 52742,
+    "DYP": 13244,
+    "HP": 1939,
+    "MDP": 7938,
+    "RP": 3916,
+    "SODEP": 12831,
+    "Bağımsız": 4403
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 92.85
+  },
+  {
+   "ilKaynakta": "ÇORUM",
+   "sandik": 1179,
+   "secmen": 248563,
+   "oyKullanan": 232246,
+   "gecerliOy": 223770,
+   "oy": {
+    "ANAP": 78885,
+    "DYP": 27706,
+    "HP": 28124,
+    "MDP": 26917,
+    "RP": 14492,
+    "SODEP": 45408,
+    "Bağımsız": 2277
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 93.44
+  },
+  {
+   "ilKaynakta": "DENİZLİ",
+   "sandik": 1075,
+   "secmen": 292461,
+   "oyKullanan": 279661,
+   "gecerliOy": 269421,
+   "oy": {
+    "ANAP": 92703,
+    "DYP": 70788,
+    "HP": 25362,
+    "MDP": 10846,
+    "RP": 5115,
+    "SODEP": 64132,
+    "Bağımsız": 475
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 95.62
+  },
+  {
+   "ilKaynakta": "DİYARBAKIR",
+   "sandik": 1217,
+   "secmen": 247594,
+   "oyKullanan": 205877,
+   "gecerliOy": 194782,
+   "oy": {
+    "ANAP": 54550,
+    "DYP": 28477,
+    "HP": 21147,
+    "MDP": 17666,
+    "RP": 6439,
+    "SODEP": 35825,
+    "Bağımsız": 30678
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 83.15
+  },
+  {
+   "ilKaynakta": "EDİRNE",
+   "sandik": 683,
+   "secmen": 189521,
+   "oyKullanan": 179553,
+   "gecerliOy": 175184,
+   "oy": {
+    "ANAP": 67830,
+    "DYP": 19175,
+    "HP": 27204,
+    "MDP": 10381,
+    "RP": 4244,
+    "SODEP": 44066,
+    "Bağımsız": 2283
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 94.74
+  },
+  {
+   "ilKaynakta": "ELAZIĞ",
+   "sandik": 903,
+   "secmen": 177432,
+   "oyKullanan": 157403,
+   "gecerliOy": 150613,
+   "oy": {
+    "ANAP": 64716,
+    "DYP": 19234,
+    "HP": 3313,
+    "MDP": 8559,
+    "RP": 12911,
+    "SODEP": 32889,
+    "Bağımsız": 8991
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 88.71
+  },
+  {
+   "ilKaynakta": "ERZİNCAN",
+   "sandik": 752,
+   "secmen": 108064,
+   "oyKullanan": 94063,
+   "gecerliOy": 91253,
+   "oy": {
+    "ANAP": 39409,
+    "DYP": 10695,
+    "HP": 4968,
+    "MDP": 2113,
+    "RP": 3765,
+    "SODEP": 30303
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 87.04
+  },
+  {
+   "ilKaynakta": "ERZURUM",
+   "sandik": 1550,
+   "secmen": 291958,
+   "oyKullanan": 259097,
+   "gecerliOy": 249163,
+   "oy": {
+    "ANAP": 110414,
+    "DYP": 42624,
+    "HP": 12137,
+    "MDP": 24674,
+    "RP": 1222,
+    "SODEP": 25270,
+    "Bağımsız": 21752
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 88.74
+  },
+  {
+   "ilKaynakta": "ESKİŞEHİR",
+   "sandik": 1140,
+   "secmen": 284795,
+   "oyKullanan": 269688,
+   "gecerliOy": 262336,
+   "oy": {
+    "ANAP": 122684,
+    "DYP": 29662,
+    "HP": 28287,
+    "MDP": 18794,
+    "RP": 10514,
+    "SODEP": 52149,
+    "Bağımsız": 246
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 94.7
+  },
+  {
+   "ilKaynakta": "GAZİANTEP",
+   "sandik": 1416,
+   "secmen": 335927,
+   "oyKullanan": 297524,
+   "gecerliOy": 283951,
+   "oy": {
+    "ANAP": 109063,
+    "DYP": 35153,
+    "HP": 29074,
+    "MDP": 21709,
+    "RP": 12808,
+    "SODEP": 75247,
+    "Bağımsız": 897
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 88.57
+  },
+  {
+   "ilKaynakta": "GİRESUN",
+   "sandik": 893,
+   "secmen": 200963,
+   "oyKullanan": 182118,
+   "gecerliOy": 176155,
+   "oy": {
+    "ANAP": 79500,
+    "DYP": 17539,
+    "HP": 12988,
+    "MDP": 14402,
+    "RP": 9780,
+    "SODEP": 42346
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 90.62
+  },
+  {
+   "ilKaynakta": "GÜMÜŞHANE",
+   "sandik": 648,
+   "secmen": 105779,
+   "oyKullanan": 86060,
+   "gecerliOy": 83456,
+   "oy": {
+    "ANAP": 39281,
+    "DYP": 19512,
+    "RP": 4467,
+    "SODEP": 20198
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 81.36
+  },
+  {
+   "ilKaynakta": "HAKKARİ",
+   "sandik": 282,
+   "secmen": 45469,
+   "oyKullanan": 42104,
+   "gecerliOy": 40399,
+   "oy": {
+    "ANAP": 14960,
+    "DYP": 1088,
+    "HP": 12058,
+    "MDP": 1025,
+    "SODEP": 9432,
+    "Bağımsız": 1836
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 92.6
+  },
+  {
+   "ilKaynakta": "HATAY",
+   "sandik": 1202,
+   "secmen": 346151,
+   "oyKullanan": 312287,
+   "gecerliOy": 302477,
+   "oy": {
+    "ANAP": 101081,
+    "DYP": 46556,
+    "HP": 37135,
+    "MDP": 28885,
+    "RP": 10650,
+    "SODEP": 75444,
+    "Bağımsız": 2726
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 90.22
+  },
+  {
+   "ilKaynakta": "ISPARTA",
+   "sandik": 630,
+   "secmen": 159109,
+   "oyKullanan": 151202,
+   "gecerliOy": 144753,
+   "oy": {
+    "ANAP": 62706,
+    "DYP": 50082,
+    "HP": 2274,
+    "MDP": 4302,
+    "RP": 7061,
+    "SODEP": 17385,
+    "Bağımsız": 943
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 95.03
+  },
+  {
+   "ilKaynakta": "MERSİN",
+   "sandik": 1466,
+   "secmen": 378540,
+   "oyKullanan": 358599,
+   "gecerliOy": 348769,
+   "oy": {
+    "ANAP": 153155,
+    "DYP": 36332,
+    "HP": 49488,
+    "MDP": 19189,
+    "RP": 4726,
+    "SODEP": 85090,
+    "Bağımsız": 789
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 94.73
+  },
+  {
+   "ilKaynakta": "İSTANBUL",
+   "sandik": 8217,
+   "secmen": 2538444,
+   "oyKullanan": 2154048,
+   "gecerliOy": 2069004,
+   "oy": {
+    "ANAP": 1008846,
+    "DYP": 110743,
+    "HP": 203420,
+    "MDP": 115429,
+    "RP": 88267,
+    "SODEP": 537276,
+    "Bağımsız": 5023
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 84.86
+  },
+  {
+   "ilKaynakta": "İZMİR",
+   "sandik": 3612,
+   "secmen": 1078880,
+   "oyKullanan": 995280,
+   "gecerliOy": 962558,
+   "oy": {
+    "ANAP": 382576,
+    "DYP": 95805,
+    "HP": 89900,
+    "MDP": 82796,
+    "RP": 19795,
+    "SODEP": 288274,
+    "Bağımsız": 3412
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 92.25
+  },
+  {
+   "ilKaynakta": "KARS",
+   "sandik": 1133,
+   "secmen": 254414,
+   "oyKullanan": 225295,
+   "gecerliOy": 216992,
+   "oy": {
+    "ANAP": 52905,
+    "DYP": 24255,
+    "HP": 36202,
+    "MDP": 36727,
+    "RP": 5649,
+    "SODEP": 43287,
+    "Bağımsız": 17967
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 88.55
+  },
+  {
+   "ilKaynakta": "KASTAMONU",
+   "sandik": 1337,
+   "secmen": 225141,
+   "oyKullanan": 204685,
+   "gecerliOy": 194086,
+   "oy": {
+    "ANAP": 76000,
+    "DYP": 31781,
+    "HP": 12223,
+    "MDP": 26459,
+    "RP": 7955,
+    "SODEP": 37932,
+    "Bağımsız": 1736
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 90.91
+  },
+  {
+   "ilKaynakta": "KAYSERİ",
+   "sandik": 1320,
+   "secmen": 323310,
+   "oyKullanan": 295022,
+   "gecerliOy": 285528,
+   "oy": {
+    "ANAP": 109700,
+    "DYP": 65671,
+    "HP": 30887,
+    "MDP": 20287,
+    "RP": 13214,
+    "SODEP": 42909,
+    "Bağımsız": 2860
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 91.25
+  },
+  {
+   "ilKaynakta": "KIRKLARELİ",
+   "sandik": 546,
+   "secmen": 148393,
+   "oyKullanan": 140572,
+   "gecerliOy": 137456,
+   "oy": {
+    "ANAP": 51580,
+    "DYP": 15614,
+    "HP": 17114,
+    "MDP": 11436,
+    "SODEP": 41621,
+    "Bağımsız": 91
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 94.73
+  },
+  {
+   "ilKaynakta": "KIRŞEHİR",
+   "sandik": 435,
+   "secmen": 96940,
+   "oyKullanan": 88241,
+   "gecerliOy": 84486,
+   "oy": {
+    "ANAP": 26007,
+    "DYP": 10879,
+    "HP": 9112,
+    "MDP": 10876,
+    "RP": 4946,
+    "SODEP": 19210,
+    "Bağımsız": 3456
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 91.03
+  },
+  {
+   "ilKaynakta": "KOCAELİ",
+   "sandik": 1158,
+   "secmen": 304984,
+   "oyKullanan": 275444,
+   "gecerliOy": 266212,
+   "oy": {
+    "ANAP": 94793,
+    "DYP": 44339,
+    "HP": 30726,
+    "MDP": 6403,
+    "RP": 21096,
+    "SODEP": 66895,
+    "Bağımsız": 1960
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 90.31
+  },
+  {
+   "ilKaynakta": "KONYA",
+   "sandik": 2685,
+   "secmen": 660237,
+   "oyKullanan": 619654,
+   "gecerliOy": 594806,
+   "oy": {
+    "ANAP": 271566,
+    "DYP": 89859,
+    "HP": 29354,
+    "MDP": 30153,
+    "RP": 51300,
+    "SODEP": 119750,
+    "Bağımsız": 2823
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 93.85
+  },
+  {
+   "ilKaynakta": "KÜTAHYA",
+   "sandik": 1068,
+   "secmen": 248926,
+   "oyKullanan": 239301,
+   "gecerliOy": 229778,
+   "oy": {
+    "ANAP": 122814,
+    "DYP": 36039,
+    "HP": 9416,
+    "MDP": 16521,
+    "RP": 7704,
+    "SODEP": 36324,
+    "Bağımsız": 960
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 96.13
+  },
+  {
+   "ilKaynakta": "MALATYA",
+   "sandik": 1063,
+   "secmen": 231537,
+   "oyKullanan": 202603,
+   "gecerliOy": 195504,
+   "oy": {
+    "ANAP": 87395,
+    "DYP": 14877,
+    "HP": 15012,
+    "MDP": 4602,
+    "RP": 11369,
+    "SODEP": 56208,
+    "Bağımsız": 6041
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 87.5
+  },
+  {
+   "ilKaynakta": "MANİSA",
+   "sandik": 1932,
+   "secmen": 488043,
+   "oyKullanan": 470397,
+   "gecerliOy": 456359,
+   "oy": {
+    "ANAP": 194019,
+    "DYP": 90087,
+    "HP": 29370,
+    "MDP": 27117,
+    "RP": 1600,
+    "SODEP": 114166
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 96.38
+  },
+  {
+   "ilKaynakta": "KAHRAMANMARAŞ",
+   "sandik": 1052,
+   "secmen": 262393,
+   "oyKullanan": 236783,
+   "gecerliOy": 228992,
+   "oy": {
+    "ANAP": 88967,
+    "DYP": 36628,
+    "HP": 14889,
+    "MDP": 21157,
+    "RP": 20359,
+    "SODEP": 43936,
+    "Bağımsız": 3056
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 90.24
+  },
+  {
+   "ilKaynakta": "MARDİN",
+   "sandik": 975,
+   "secmen": 168887,
+   "oyKullanan": 150534,
+   "gecerliOy": 144433,
+   "oy": {
+    "ANAP": 46854,
+    "DYP": 22819,
+    "HP": 13095,
+    "MDP": 23322,
+    "RP": 5373,
+    "SODEP": 23244,
+    "Bağımsız": 9713
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 89.13
+  },
+  {
+   "ilKaynakta": "MUĞLA",
+   "sandik": 867,
+   "secmen": 234097,
+   "oyKullanan": 224640,
+   "gecerliOy": 218349,
+   "oy": {
+    "ANAP": 99380,
+    "DYP": 25659,
+    "HP": 14728,
+    "MDP": 17388,
+    "RP": 569,
+    "SODEP": 60225,
+    "Bağımsız": 400
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 95.96
+  },
+  {
+   "ilKaynakta": "MUŞ",
+   "sandik": 461,
+   "secmen": 85678,
+   "oyKullanan": 76344,
+   "gecerliOy": 73524,
+   "oy": {
+    "ANAP": 19106,
+    "DYP": 16116,
+    "HP": 8581,
+    "MDP": 3679,
+    "RP": 7038,
+    "SODEP": 10961,
+    "Bağımsız": 8043
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 89.11
+  },
+  {
+   "ilKaynakta": "NEVŞEHİR",
+   "sandik": 429,
+   "secmen": 112890,
+   "oyKullanan": 102362,
+   "gecerliOy": 97208,
+   "oy": {
+    "ANAP": 35341,
+    "DYP": 20380,
+    "HP": 5790,
+    "MDP": 3026,
+    "RP": 8106,
+    "SODEP": 22587,
+    "Bağımsız": 1975
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 90.67
+  },
+  {
+   "ilKaynakta": "NİĞDE",
+   "sandik": 786,
+   "secmen": 201692,
+   "oyKullanan": 186540,
+   "gecerliOy": 177731,
+   "oy": {
+    "ANAP": 53921,
+    "DYP": 24295,
+    "HP": 18937,
+    "MDP": 28113,
+    "RP": 15647,
+    "SODEP": 36656,
+    "Bağımsız": 162
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 92.49
+  },
+  {
+   "ilKaynakta": "ORDU",
+   "sandik": 1223,
+   "secmen": 296893,
+   "oyKullanan": 270952,
+   "gecerliOy": 260522,
+   "oy": {
+    "ANAP": 106061,
+    "DYP": 38734,
+    "HP": 22837,
+    "MDP": 10181,
+    "RP": 13537,
+    "SODEP": 60921,
+    "Bağımsız": 8237
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 91.26
+  },
+  {
+   "ilKaynakta": "RİZE",
+   "sandik": 657,
+   "secmen": 146060,
+   "oyKullanan": 124536,
+   "gecerliOy": 120525,
+   "oy": {
+    "ANAP": 49729,
+    "DYP": 18915,
+    "HP": 8047,
+    "MDP": 6711,
+    "RP": 7694,
+    "SODEP": 26325,
+    "Bağımsız": 3106
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 85.26
+  },
+  {
+   "ilKaynakta": "SAKARYA",
+   "sandik": 1144,
+   "secmen": 272120,
+   "oyKullanan": 253297,
+   "gecerliOy": 246575,
+   "oy": {
+    "ANAP": 99695,
+    "DYP": 33534,
+    "HP": 18577,
+    "MDP": 22134,
+    "RP": 18198,
+    "SODEP": 53484,
+    "Bağımsız": 953
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 93.08
+  },
+  {
+   "ilKaynakta": "SAMSUN",
+   "sandik": 1746,
+   "secmen": 454210,
+   "oyKullanan": 416161,
+   "gecerliOy": 402992,
+   "oy": {
+    "ANAP": 148230,
+    "DYP": 66598,
+    "HP": 37458,
+    "MDP": 36077,
+    "RP": 19690,
+    "SODEP": 94939
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 91.62
+  },
+  {
+   "ilKaynakta": "SİİRT",
+   "sandik": 759,
+   "secmen": 136393,
+   "oyKullanan": 123604,
+   "gecerliOy": 118818,
+   "oy": {
+    "ANAP": 40062,
+    "DYP": 17466,
+    "HP": 6269,
+    "MDP": 21154,
+    "RP": 11832,
+    "SODEP": 16441,
+    "Bağımsız": 5594
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 90.62
+  },
+  {
+   "ilKaynakta": "SİNOP",
+   "sandik": 640,
+   "secmen": 122350,
+   "oyKullanan": 113607,
+   "gecerliOy": 108878,
+   "oy": {
+    "ANAP": 34678,
+    "DYP": 10997,
+    "HP": 21157,
+    "MDP": 10406,
+    "RP": 968,
+    "SODEP": 25626,
+    "Bağımsız": 5046
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 92.85
+  },
+  {
+   "ilKaynakta": "SİVAS",
+   "sandik": 1818,
+   "secmen": 291104,
+   "oyKullanan": 258772,
+   "gecerliOy": 250203,
+   "oy": {
+    "ANAP": 116454,
+    "DYP": 13272,
+    "HP": 28136,
+    "MDP": 13268,
+    "RP": 16685,
+    "SODEP": 57715,
+    "Bağımsız": 4673
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 88.89
+  },
+  {
+   "ilKaynakta": "TEKİRDAĞ",
+   "sandik": 689,
+   "secmen": 188519,
+   "oyKullanan": 177626,
+   "gecerliOy": 173746,
+   "oy": {
+    "ANAP": 68412,
+    "DYP": 21153,
+    "HP": 27584,
+    "MDP": 11759,
+    "RP": 1352,
+    "SODEP": 41383,
+    "Bağımsız": 2103
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 94.22
+  },
+  {
+   "ilKaynakta": "TOKAT",
+   "sandik": 1178,
+   "secmen": 271494,
+   "oyKullanan": 252571,
+   "gecerliOy": 243532,
+   "oy": {
+    "ANAP": 86564,
+    "DYP": 41445,
+    "HP": 26375,
+    "MDP": 10606,
+    "RP": 20637,
+    "SODEP": 52137,
+    "Bağımsız": 5768
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 93.03
+  },
+  {
+   "ilKaynakta": "TRABZON",
+   "sandik": 1229,
+   "secmen": 301041,
+   "oyKullanan": 265331,
+   "gecerliOy": 256015,
+   "oy": {
+    "ANAP": 101020,
+    "DYP": 38521,
+    "HP": 29423,
+    "MDP": 10922,
+    "RP": 16814,
+    "SODEP": 53432,
+    "Bağımsız": 5883
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 88.14
+  },
+  {
+   "ilKaynakta": "TUNCELİ",
+   "sandik": 479,
+   "secmen": 56799,
+   "oyKullanan": 50982,
+   "gecerliOy": 49474,
+   "oy": {
+    "ANAP": 10311,
+    "HP": 7692,
+    "SODEP": 20509,
+    "Bağımsız": 10962
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 89.76
+  },
+  {
+   "ilKaynakta": "ŞANLIURFA",
+   "sandik": 1105,
+   "secmen": 218795,
+   "oyKullanan": 186318,
+   "gecerliOy": 177059,
+   "oy": {
+    "ANAP": 36899,
+    "DYP": 34084,
+    "HP": 2243,
+    "MDP": 25570,
+    "RP": 17425,
+    "SODEP": 28678,
+    "Bağımsız": 12236
+   },
+   "kontrol": {
+    "durum": "tutarsiz"
+   },
+   "katilim": 85.16
+  },
+  {
+   "ilKaynakta": "UŞAK",
+   "sandik": 514,
+   "secmen": 124412,
+   "oyKullanan": 119620,
+   "gecerliOy": 115121,
+   "oy": {
+    "ANAP": 41129,
+    "DYP": 16603,
+    "HP": 12927,
+    "MDP": 4529,
+    "RP": 3698,
+    "SODEP": 36235
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 96.15
+  },
+  {
+   "ilKaynakta": "VAN",
+   "sandik": 795,
+   "secmen": 152036,
+   "oyKullanan": 137582,
+   "gecerliOy": 131951,
+   "oy": {
+    "ANAP": 34360,
+    "DYP": 17093,
+    "HP": 16435,
+    "MDP": 26772,
+    "RP": 11994,
+    "SODEP": 16431,
+    "Bağımsız": 8866
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 90.49
+  },
+  {
+   "ilKaynakta": "YOZGAT",
+   "sandik": 942,
+   "secmen": 198755,
+   "oyKullanan": 183656,
+   "gecerliOy": 177710,
+   "oy": {
+    "ANAP": 69958,
+    "DYP": 28815,
+    "HP": 14065,
+    "MDP": 9828,
+    "RP": 7107,
+    "SODEP": 42567,
+    "Bağımsız": 5370
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 92.4
+  },
+  {
+   "ilKaynakta": "ZONGULDAK",
+   "sandik": 1756,
+   "secmen": 451848,
+   "oyKullanan": 425874,
+   "gecerliOy": 409799,
+   "oy": {
+    "ANAP": 167384,
+    "DYP": 46217,
+    "HP": 51245,
+    "MDP": 14007,
+    "RP": 25087,
+    "SODEP": 104299,
+    "Bağımsız": 1560
+   },
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "katilim": 94.25
+  }
+ ]
+}

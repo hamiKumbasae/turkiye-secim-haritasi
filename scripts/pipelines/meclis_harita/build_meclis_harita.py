@@ -32,7 +32,10 @@ baskanlik kaydinin ilce satirlarina baglanir:
     birebir; (b) ad: kaynaktaki ad, baskanlik satirinin adi ya da onun TUIK kaynagindaki adiyla
     birebir (buyuk/kucuk harf ve noktalama disinda). Iki anahtar farkli satira isaret ederse
     baglanmaz; ayni ilceye birden cok satir duserse hicbiri baglanmaz.
-  - il satiri: kitabin il toplami, yalniz 'tutarli' ise.
+  - il satiri: once YSK kesin sonucu (data/kaynaklar/ysk/mahalli-kesin/, 1984/1989/1994; parti
+    toplami gecerli oya esitse), yoksa kitabin il toplami ('tutarli' ise). YSK satirinin parti
+    toplami tutmasa bile secmeni DIE il satirinkinden farkliysa DIE satiri baska ile ait sayilir
+    ve kullanilmaz (1994'te 7 ilde DIE il satiri YSK ile tamamen farkli cikti).
 
 Cikti: data/normalized/meclis_harita/<yil>yerel_<igm|bm>.json
 
@@ -55,10 +58,12 @@ NOT_ESLESMEDI = "Kaynakta bu birimle eşleşen satır bulunamadı."
 DIE_ACIKLAMA = {
     "igm": "{yayin} — il genel meclisi üyeliği oyları, taranmış kitaptan okundu. Yalnız toplamları ve "
            "yüzdeleri tutan (doğrulanmış) satırlar gösterilir; diğerleri boş ve açıklamalı. İlçe sonucu "
-           "ilçenin tamamıdır (şehir + köy).",
+           "ilçenin tamamıdır (şehir + köy). İl toplamları 1984–1994'te okunabilen illerde YSK kesin "
+           "sonuçlarından.",
     "bm": "{yayin} — belediye meclisi üyeliği oyları, taranmış kitaptan okundu. Yalnız toplamları ve "
           "yüzdeleri tutan (doğrulanmış) satırlar gösterilir; diğerleri boş ve açıklamalı. İlçe sonucu "
-          "yalnız ilçe belediyesinin meclisidir, belde meclisleri hariç.",
+          "yalnız ilçe belediyesinin meclisidir, belde meclisleri hariç. İl toplamları 1984–1994'te "
+          "okunabilen illerde YSK kesin sonuçlarından.",
 }
 TURLER = {"igm": ("il_genel_meclisi", "İl Genel Meclisi"), "bm": ("belediye_meclisi", "Belediye Meclisi")}
 BUYUKSEHIR_IGM_NOTU = "Bu ilde il genel meclisi seçimi yapılmadı (büyükşehir, 6360 sayılı Kanun)."
@@ -174,6 +179,29 @@ def dogrulanmis(r):
     return (r.get("kontrol") or {}).get("durum") == "tutarli" and (r.get("kimlik") or {}).get("yontem") != "cozulemedi"
 
 
+YSK_KESIN = ROOT / "data" / "kaynaklar" / "ysk" / "mahalli-kesin"
+IL_TAKMA = {"İÇEL": "MERSİN", "AFYON": "AFYONKARAHİSAR", "KMARAŞ": "KAHRAMANMARAŞ"}
+
+
+def il_fold(s):
+    s = unicodedata.normalize("NFC", s).replace("i", "İ").upper()
+    s = re.sub(r"[^A-ZÇĞİÖŞÜ]", "", s)
+    return IL_TAKMA.get(s, s)
+
+
+def ysk_kesin(yil, kisa, ana):
+    p = YSK_KESIN / f"{yil}_{kisa}.json"
+    if not p.exists():
+        return {}
+    plaka = {il_fold(r["ad"]): r["plaka"] for r in ana["iller"]}
+    out = {}
+    for r in oku(p)["satirlar"]:
+        pl = plaka.get(il_fold(r["ilKaynakta"]))
+        if pl:
+            out[pl] = r
+    return out
+
+
 def kur_die(yil, kisa):
     dosya, adi = TURLER[kisa]
     ek = oku(NORM / "ek" / dosya / f"{yil}.json")
@@ -214,10 +242,20 @@ def kur_die(yil, kisa):
     sayac["aynı ilçeye çok satır (bırakıldı)"] = len(cift)
 
     ek_il = {r["plaka"]: r for r in ek["iller"] if r.get("plaka")}
+    ysk_il = ysk_kesin(yil, kisa, ana)
     iller = []
     for a in ana["iller"]:
         r = ek_il.get(a["plaka"])
-        if not r or not dogrulanmis(r):
+        y = ysk_il.get(a["plaka"])
+        if y and y["kontrol"]["durum"] == "tutarli":
+            r = dict(y, kazanan=max(y["oy"], key=y["oy"].get))
+            sayac["il: YSK"] += 1
+        elif r and dogrulanmis(r) and y and y.get("secmen") and y["secmen"] != r.get("secmen"):
+            r = None
+            sayac["il: DİE başka ile ait (YSK seçmeni farklı)"] += 1
+        elif r and dogrulanmis(r):
+            sayac["il: DİE"] += 1
+        if not r or not (r is not ek_il.get(a["plaka"]) or dogrulanmis(r)):
             iller.append({"ad": a["ad"], "plaka": a["plaka"], "oy": {}, "kazanan": None, "vekil": {}, "toplamVekil": 0,
                           "not": ("İl toplamı: " + NOT_DOGRULANAMADI) if r else "Kaynakta bu ilin satırı yok."})
             continue

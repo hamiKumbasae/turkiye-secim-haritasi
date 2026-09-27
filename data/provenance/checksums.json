@@ -137,16 +137,16 @@
     "mahalle/2023cb2tur.json": "8f0e654f3bc95777c780df6d306046664fe43a56f78353b04c9a9424e0703cb4",
     "mahalle/2024yerel.json": "803419e9b4c3ade3bfddc37fb27b67ab2537c4577a520f407d749dc4ee29d9ac",
     "meclis_2024.json": "61cd860e5ba2d3602035dfd50652328d854a746e1223425704ee0b0f6de5182e",
-    "meclis_harita/1984yerel_bm.json": "e59060ee261efba653b349ea5d27144e227f9c7bcde1e53ea18083e7a25df55c",
-    "meclis_harita/1984yerel_igm.json": "e25584ad14d31217a0a01f7ac67a0ae3f979e85f48f4f2472346f8de2d2e98be",
-    "meclis_harita/1989yerel_bm.json": "cccdbb2804b472bcc0ec933b104379870db30752bccaa67ae87568debf21a632",
-    "meclis_harita/1989yerel_igm.json": "4d2ed0ceb7c9464107bf45def11c8b0726a29d0a537f88a6188f93ad090f3347",
-    "meclis_harita/1994yerel_bm.json": "aac0d64e9932adcc37feb48a87b4816cd7ed2fb08e4ff7824b1313fc105eb32e",
-    "meclis_harita/1994yerel_igm.json": "58ef6b7213e99da2c0e9fc70717e0b93432d7d7efd026870923cf8f6934661dd",
-    "meclis_harita/1999yerel_bm.json": "51eaeeafc9f592bc89b49d2b860ef5fd35237c146e54a2d82357b5ea6f8a365e",
-    "meclis_harita/1999yerel_igm.json": "83751820e55a66484c6c413b0b21f555fc8a9c90b0f01699ccb821356d6deb4b",
-    "meclis_harita/2004yerel_bm.json": "9c12d611999a677433cb88bb1024f3fe5a32634da96ea5ea067ddbdabed89869",
-    "meclis_harita/2004yerel_igm.json": "edcaaec260b26e424a320516eff7ea727db19793439bdcb9c3054947520fdb9d",
+    "meclis_harita/1984yerel_bm.json": "82bf5db70720d03af94e9e49d2711361148adfda6e990e6348f9f0ef2c6138ae",
+    "meclis_harita/1984yerel_igm.json": "431c48e687853b9434a13e403d3d509a2ecaef0d9cf1376f0052a91c40154326",
+    "meclis_harita/1989yerel_bm.json": "6e5e86ffe6278194e6ba57aed4682994ef61978ac583b6162fa7c597f46d778c",
+    "meclis_harita/1989yerel_igm.json": "aebc5fea81570957d3ee0aee3e587be9ba597bc6edd69ef9315ddc0ae1acd0e4",
+    "meclis_harita/1994yerel_bm.json": "8d570638659ec28034a1f94c289b8b678f322dd51db02b2389db36d6757857f8",
+    "meclis_harita/1994yerel_igm.json": "b821a05c81dd0ab25d3dad39bee57f82973174be2499ecce0b788dac5892bbfc",
+    "meclis_harita/1999yerel_bm.json": "d6237f5c5c8064547510d2f4a7b0eb9791287dee082117b2eb9ec48ba74b8749",
+    "meclis_harita/1999yerel_igm.json": "91f9bc34611c5132f59f1415781b75e039b6629a7e00ae2e7231bae6e9172802",
+    "meclis_harita/2004yerel_bm.json": "1c1c9b9b09352fcd32a4047e08c235c2726d86da48658ec63882f3d1cbd0cb6c",
+    "meclis_harita/2004yerel_igm.json": "80eb17c74243b287eed894ffebc4c5e468454a5df4a92af1ec3ef3a4c1febbe4",
     "meclis_harita/2009yerel_bm.json": "a0a6ce076f072e18c1b349865efcd38d1058e4ed6aa20936d71523419a42dd86",
     "meclis_harita/2009yerel_igm.json": "daaec6d9b263f1f91c31d07d97e22a6378972c40ee6db43f12e4d28b3d00db30",
     "meclis_harita/2014yerel_bm.json": "427562d40dc799429fd22f316a79f1b592aef0bbdea8dc0420df9efc8e7b993e",
@@ -5516,7 +5516,7 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 276,
+   "file_count": 282,
    "files": {
     "ARASTIRMA_KAYDI.md": "fe463c9f25a3ef72390973e8f6ca960d922fe1e8d8714cc5f44f864030dd6531",
     "README.md": "df91400132980fcf6cb9fe43c78a22966e76895b721da267a66336cf1f56d6e6",
@@ -5793,7 +5793,13 @@
     "wikipedia/yerel/2009yerel.json": "aa071cf7af0e12fafceed38df7f1ed9a10bfef2aa6edd398b46dca283267c564",
     "wikipedia/yerel/2014yerel.json": "75e8186d5e635dbd2467105af1f01f52d74d732080b7ec3a3eed4fbd7a384bc6",
     "wikipedia/yerel/2019yerel.json": "40db0b5ada5557de92eec996e407a9985a13121608de01bf2f9cc274481c2b4c",
-    "wikipedia/yerel/2024yerel.json": "db5fcc056cbdededa25537b70a2a2607c2369eebf8f038c334a4e064341783c9"
+    "wikipedia/yerel/2024yerel.json": "db5fcc056cbdededa25537b70a2a2607c2369eebf8f038c334a4e064341783c9",
+    "ysk/mahalli-kesin/1984yerel_bm.json": "f9fb43f82d8ef85bd7087df7cb76368af6c4705c7d2614354cd0015395effeed",
+    "ysk/mahalli-kesin/1984yerel_igm.json": "301cb07ded4b2cd24465bb97d1444032b3dcb56ffca4b3fea09227e4b0f34bcf",
+    "ysk/mahalli-kesin/1989yerel_bm.json": "4e23d743e8afabf017b55752312ec88eece4969f98aed685114f5903c3a9e43a",
+    "ysk/mahalli-kesin/1989yerel_igm.json": "3fd50b412c905d90a6062b330d813de4c69c03d182ac8219773ea85fba690d03",
+    "ysk/mahalli-kesin/1994yerel_bm.json": "8fca982e33390c39a414f586208564b14eefac4a775efd688c4fc123dedb49f7",
+    "ysk/mahalli-kesin/1994yerel_igm.json": "9b3e12367226b781c5cb5a8bb17a1757a130f4ba422e1a28d4a1e0688845da86"
    }
   },
   "data/raw/tuik/halkoylamasi-0018260": {
@@ -6224,6 +6230,20 @@
     "1960_0015128_istanbul.pdf": "d00c8fd88a31c3f8f5f03d0d33368ee78f1611c21de44b7fe4151f3469d8a0e2",
     "1985_0013062_istanbul.pdf": "94edf42d14e7f32fca3dbf5722ef33fd395ffc94a20a1bb042402682ddd79468",
     "1990_0013349_istanbul.pdf": "8bb8651b3c21eaed5d2e1e627e0dec2ca86d0fa162138365b37a90342f01b086"
+   }
+  },
+  "data/raw/ysk/mahalli-kesin-1984-1989": {
+   "checksum_file": "data/raw/ysk/mahalli-kesin-1984-1989/checksums.sha256",
+   "file_count": 8,
+   "files": {
+    "1984/1984-Belediye-Baskanligi-Secimleri-Sonucu.pdf": "a1ea412772cf6032ece95b43a20338da8a51bd346f1f2a3166b884d8285695dd",
+    "1984/1984-Belediye-Meclis-Uyeligi-Secimleri-Sonucu.pdf": "a6e81ae247d38baf5b95559e9bc2cf2c5a3764064f441d5f93673d02924fe871",
+    "1984/1984-Buyuksehir-Belediye-Baskanligi-Secimleri-Sonucu.pdf": "f620c92b7681e1f0ac040aa3b95fb935ccb5ef3e835293e7bc7ae965252ff882",
+    "1984/1984-Il-Genel-Meclisi-Uyeligi-Secimleri-Sonucu.pdf": "f9083cc6ed8d4d1d1312e81b887b6064cc1ce72e06a180c3681c5ef1c7430cef",
+    "1989/1989-Belediye-Baskanligi-Secimleri-Sonucu.pdf": "68b8eb55e3d7d3895dcf6ff685b0b0e348642b7fdec1f6d1256da2963f0cf397",
+    "1989/1989-Belediye-Meclis-Uyeligi-Secimleri-Sonucu.pdf": "9b95d566b809c4cf21872fd20701a0c13e104caf338e3531a21267d91be27a4f",
+    "1989/1989-Buyuksehir-Belediye-Baskanligi-Secimleri-Sonucu.pdf": "20d34ee2a77b2213412eb45d58f15d6f77ad7ffc9babbfff3d83d9e7db3f24e1",
+    "1989/1989-Il-Genel-Meclisi-Uyeligi-Secimleri-Sonucu.pdf": "264100908ccf20c24c5369cb99b4fd35d0e508d222e9fe6f2b5898c54590633b"
    }
   }
  },
