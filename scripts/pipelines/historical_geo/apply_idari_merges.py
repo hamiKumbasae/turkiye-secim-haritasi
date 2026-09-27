@@ -53,6 +53,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "scripts/pipelines/historical_geo"))
 from build_idari_katman import secimler  # noqa: E402
+from dikis_deliklerini_doldur import bilesen_delikleri, delikleri_doldur  # noqa: E402
 from common.election_io import election_path, load_election, save_election  # noqa: E402
 
 IDARI = ROOT / "geo/historical/idari"
@@ -251,8 +252,11 @@ def main():
     for sid, p in sorted(plan.items()):
         taban = modern.get(p["taban"]) or hist_by.get(p["taban"])
         geoms = [temiz(shape(taban["geometry"]))] + [temiz(shape(modern[x]["geometry"])) for x in p["katilanlar"]]
+        # birlesim yerlerindeki dikis deliklerini doldur (bileşenlerin kendi delikleri korunur)
+        bilesen = [temiz(shape(modern[x]["geometry"])) for x in
+                   (hist_parca.get(p["taban"], {p["taban"]}) | set(p["katilanlar"])) if x in modern]
         yeni.append({"type": "Feature", "properties": {"id": sid, "plaka": p["plaka"]},
-                     "geometry": mapping(unary_union(geoms))})
+                     "geometry": mapping(delikleri_doldur(unary_union(geoms), bilesen_delikleri(bilesen)))})
     hist["features"] = sorted(list(hist_by.values()) + yeni, key=lambda f: f["properties"]["id"])
     HIST_GEO.write_text(json.dumps(hist, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
