@@ -45,7 +45,8 @@ ONEK = "HISTY-"
 
 # yerel secim -> ayni doneme en yakin genel secim (ilce listesi ve Merkez poligonu buradan)
 ESLESME = {"1963yerel": "1961", "1968yerel": "1969", "1973yerel": "1973", "1977yerel": "1977",
-           "1984yerel": "1983", "1989yerel": "1987"}
+           "1984yerel": "1983", "1989yerel": "1987", "1994yerel": "1995", "1999yerel": "1999",
+           "2004yerel": "2002"}
 # il merkezi belediyesinin Merkez disinda kapsadigi ilceler (yerel secimde kendi satirlari yok;
 # Wikipedia/YSK il sayfalarinda bu ilceler ayri belediye olarak gecmez)
 SEHIR_ILCELERI = {
@@ -61,6 +62,16 @@ SEHIR_ILCELERI = {
 # uretilmez): 1984 Istanbul, Ankara, Izmir (3030 sayili Kanun); 1986 Adana; 1987 Bursa,
 # Gaziantep, Konya; 1988 Kayseri
 BUYUKSEHIR = {"1984yerel": {34, 6, 35}, "1989yerel": {34, 6, 35, 1, 16, 27, 42, 38}}
+# 1994-2004: 1993'te (504 sayili KHK) Antalya, Diyarbakir, Erzurum, Eskisehir, Kocaeli, Mersin,
+# Samsun; 2000'de Sakarya buyuksehir oldu. Bu illerde Merkez ilce henuz bolunmedi: il satiri
+# (buyuksehir baskani) Merkez'e cizilir ve 'buyuksehir' diye isaretlenir. Merkezi bolunmus
+# buyuksehirlerde (Istanbul, Ankara, Izmir, Adana, Bursa, Gaziantep, Konya, Kayseri) genel
+# secimde 'Merkez' satiri olmadigi icin kural kendiliginden uygulanmaz.
+BUYUKSEHIR_ETIKET = {
+    "1994yerel": {34, 6, 35, 1, 16, 27, 42, 38, 7, 21, 25, 26, 41, 33, 55},
+    "1999yerel": {34, 6, 35, 1, 16, 27, 42, 38, 7, 21, 25, 26, 41, 33, 55},
+    "2004yerel": {34, 6, 35, 1, 16, 27, 42, 38, 7, 21, 25, 26, 41, 33, 55, 54},
+}
 KOPYA = ("oy", "kazanan", "gecerliOy", "secmen", "katilim", "sandik")
 
 
@@ -142,10 +153,12 @@ def main():
                     yeni_split.append((pl, {"hideIds": sorted(kalan), "splitYear": int(yerel[:4]), "syntheticId": sid}))
                     g = sid
                 geom_id, ad, kapsam = g, "Merkez", ["Merkez"]
+            bs = pl in BUYUKSEHIR_ETIKET.get(yerel, set())
             satir = {"ad": ad, "plaka": pl, "geomId": geom_id, "ilMerkeziBelediyesi": True,
+                     **({"buyuksehirSonucu": True} if bs else {}),
                      **{k: il[k] for k in KOPYA if k in il},
                      "kaynak": {"ana": "il satırı",
-                                "not": "İl merkezi belediye başkanlığı sonucu (il satırından birebir); harita, "
+                                "not": ("Büyükşehir" if bs else "İl merkezi") + " belediye başkanlığı sonucu (il satırından birebir); harita, "
                                        f"{genel} genel seçimindeki {', '.join(kapsam)} ilçe sınırlarıyla çizer."}}
             Y["ilceler"].append(satir)
             rapor.append((yerel, pl, ad, geom_id))

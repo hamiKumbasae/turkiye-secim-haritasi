@@ -35,7 +35,7 @@
       html += '<div class="row"><span>Katılım</span><span>'+(obj.katilim!=null?'%'+obj.katilim.toFixed(2):'—')+'</span></div>';
     }
     if(sandikVal!=null) html += '<div class="row"><span>Sandık</span><span>'+fmt(sandikVal)+'</span></div>';
-    if(info.kind==='ilce' && obj.ilMerkeziBelediyesi) html += '<div class="row tip-not"><span>İl merkezi belediye başkanlığı sonucu</span></div>';
+    if(info.kind==='ilce' && obj.ilMerkeziBelediyesi) html += '<div class="row tip-not"><span>' + (obj.buyuksehirSonucu ? 'Büyükşehir' : 'İl merkezi') + ' belediye başkanlığı sonucu</span></div>';
     if(info.kind==='ilce') html += birlesimNotuHtml(info.geomId);
     tip.innerHTML = html;
     positionTip(e);

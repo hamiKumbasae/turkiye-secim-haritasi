@@ -2,7 +2,7 @@
  "not": "apply_idari_merges.py ile üretilir; elle düzenlenmez.",
  "ozet": {
   "sentetik": 222,
-  "satirDegisimi": 3426,
+  "satirDegisimi": 3429,
   "secimBasina": {
    "1950yerel": 166,
    "1955yerel": 156,
@@ -24,18 +24,18 @@
    "1988referandum": 161,
    "1989yerel": 122,
    "1991": 23,
-   "1994yerel": 14,
+   "1994yerel": 15,
    "1995": 15,
    "1999": 13,
-   "1999yerel": 6,
+   "1999yerel": 7,
    "2002": 12,
-   "2004yerel": 5,
+   "2004yerel": 6,
    "2007": 12,
    "2007referandum": 9
   },
   "katilanIlce": 254,
-  "hedefBulunamadi": 84,
-  "notluBosPoligon": 1188
+  "hedefBulunamadi": 76,
+  "notluBosPoligon": 1131
  },
  "sentetikler": {
   "HISTK-01-006-bb0ee2": {
@@ -2669,8 +2669,10 @@
     "1988referandum",
     "1989yerel",
     "1991",
+    "1994yerel",
     "1995",
-    "1999"
+    "1999",
+    "1999yerel"
    ],
    "plaka": 41,
    "kanunlar": [
@@ -7031,6 +7033,7 @@
    ],
    "secimler": [
     "2002",
+    "2004yerel",
     "2007"
    ],
    "plaka": 41,
@@ -7441,24 +7444,6 @@
    "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
-   "secim": "1994yerel",
-   "ilce": "TR-D-41-001",
-   "ad": "BAŞİSKELE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
-   "secim": "1994yerel",
-   "ilce": "TR-D-41-004",
-   "ad": "DERİNCE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
-   "secim": "1994yerel",
-   "ilce": "TR-D-41-011",
-   "ad": "KARTEPE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
    "secim": "1999yerel",
    "ilce": "TR-D-07-002",
    "ad": "AKSU",
@@ -7471,24 +7456,6 @@
    "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
-   "secim": "1999yerel",
-   "ilce": "TR-D-41-001",
-   "ad": "BAŞİSKELE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
-   "secim": "1999yerel",
-   "ilce": "TR-D-41-004",
-   "ad": "DERİNCE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
-   "secim": "1999yerel",
-   "ilce": "TR-D-41-011",
-   "ad": "KARTEPE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
    "secim": "2004yerel",
    "ilce": "TR-D-07-002",
    "ad": "AKSU",
@@ -7499,18 +7466,6 @@
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
-  },
-  {
-   "secim": "2004yerel",
-   "ilce": "TR-D-41-001",
-   "ad": "BAŞİSKELE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
-   "secim": "2004yerel",
-   "ilce": "TR-D-41-011",
-   "ad": "KARTEPE",
-   "ebeveyn": "TR-D-41-008"
   },
   {
    "secim": "2007referandum",
