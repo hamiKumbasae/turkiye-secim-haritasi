@@ -178,104 +178,24 @@ Armutlu→Gemlik, Ağaçören/Sarıyahşi→Şereflikoçhisar vb.); ön yüz pol
   Yeni kanun eklendikten sonra `build_idari_katman.py` → `apply_idari_merges.py` →
   `scripts/build.py` → checksum yenile.
 
-## Mahalle düzeyinde paylaştırma (Faz 4b — `build_mahalle_bolusumu.py`, pilot İstanbul)
+## Çok kaynaklı ilçeler: Merkez çoğunluğu (2026-09-27)
 
-Birden çok eski ilçeden kurulan ilçenin alanı, güncel mahalle poligonlarıyla
-(`geo/normalized/mahalle_geo.json`) eski ilçeleri arasında paylaştırılır; her eski
-ilçenin parçası (`PARCA-*`) onun sentetik birleşimine katılır, paylaştırılamayan kısım
-(`BELIRSIZ-*`) haritada taralı ve açıklamalı çizilir (`harita_notlari.json`).
+Birden çok eski ilçeden kurulan ilçelerde (`kanun_cok_kaynak`):
 
-- Birimin eski ilçesi: kanun ek listesi; ilk kademe belediyesinin ilçesi DİE 2004 Tablo 9
-  (`district_mahalle_merges.yaml`'daki "belde ilçeleri yalnız blog kaynaklı" engeli bununla
-  kalktı: Arnavutköy, Boğazköy, Bolluca, Haraççı, Taşoluk → Gaziosmanpaşa; Hadımköy,
-  Durusu → Çatalca).
-- Eşleşme: aynı ad; belde "Merkez"i = belde adı; belde adını taşıyan güncel mahalle.
-- Çıkarım (işaretli, `cikarim: cevrelenmis`): adı eşleşmeyen mahalle ya da mahalle dışı
-  alan, dış sınıra değmeyen ve yalnız tek eski ilçenin parçalarına değen bağlı bileşense o
-  ilçeye verilir (Arnavutköy: Anadolu, Mustafa Kemal Paşa, Yunus Emre → Gaziosmanpaşa).
-- Kanunda iki ilçe arasında paylaşıldığı yazan birim çıkarımla atanmaz (Sultangazi'nin iki
-  Habipler mahallesi: Gaziosmanpaşa ya da Esenler parseli).
-- Parçalar ayrıktır, ilçeyi tam böler; komşu güncel ilçelerle kaynaktaki ince örtüşmeler
-  önce çıkarılır.
+- Birimlerinin en az %70'i ilin Merkez ilçesinden (ya da adı değişen halefinden) geliyorsa,
+  kurulmadan önceki seçimlerde bütünüyle Merkez'e katılır: Aksu, Konyaaltı (Antalya), Defne
+  (Hatay), Eğil, Kocaköy (Diyarbakır), Çeltikçi, Gönen (Isparta, Burdur), İhsangazi, Yeşilli,
+  Edremit (Van), Gülağaç, Demirözü, Hasanbeyli. Küçük diğer kaynaklar ipucunda yazılır.
+- Diğerleri (ör. Arnavutköy, Esenyurt, Kovancılar) bütün poligon hâlinde taralı çizilir;
+  ipucu kanunu, tarihi ve kaynak ilçeleri yazar.
+- `harita_notlari.json` → `birlesimler`: her tarihsel poligonun bugünkü sınırlarla
+  kapsadığı ilçeler; ön yüz bunu ipucunda gösterir ("Bugünkü sınırlarla: ...").
 
-| İlçe | Eski ilçe payları | Paylaştırılamayan |
-|---|---|---|
-| Arnavutköy (5747) | Gaziosmanpaşa %48.8, Çatalca %40.3 | %10.9 (Terkos; Sazlıdere Baraj Gölü — Küçükçekmece'nin Şamlar parçası dahil; kıyı ormanı) |
-| Sultangazi (5747) | Gaziosmanpaşa %62.8, Eyüp %12.4 (Yayla) | %24.8 (iki Habipler mahallesi ve çevresi) |
+Mahalle düzeyinde paylaştırma denendi ve arşivlendi: `arsiv/mahalle-bolusumu/README.md`
+(kaynaklar, mantık, sonuçlar; git etiketi `arsiv/mahalle-bolusumu`).
 
-Sayım dönemleri (Arnavutköy): birimlerin ilçesi DİE 1960, 1985, 1990 nüfus sayımı idari
-bölünüş kitaplarından (`data/raw/tuik/nufus-sayimi-idari-bolunus/`). İki sayım arasındaki
-seçimlerde birim yalnız iki sayımda da aynı ilçedeyse atanır:
-
-| Dönem | Seçimler | Gaziosmanpaşa | Çatalca | Paylaştırılamayan |
-|---|---|---|---|---|
-| 1960–1985 | 1961–1984 | %34.1 (1963 öncesi Eyüp) | %47.3 (Yeniköy dahil) | %18.7 (Tayakadın: 1960 Çatalca → 1985 Gaziosmanpaşa) |
-| 1985–1990 | 1987–1989 | %41.9 | %40.3 | %17.8 (Yeniköy: 1985 Çatalca → 1990 Gaziosmanpaşa) |
-| 1990–2008 | 1991–2007 | %48.8 | %40.3 | %10.9 |
-
-1960 sayımından önceki seçimlerde (1950/1955 yerel) Arnavutköy bölüştürülmez.
-
-İstanbul (2026-09-27) — bölüştürülen ilçeler ve eski ilçe payları (1990–2008 / 1960–1985):
-
-| İlçe | 1991–2007 | 1961–1984 | Paylaştırılamayan başlıca kısım |
-|---|---|---|---|
-| Arnavutköy | Gaziosmanpaşa %49, Çatalca %40 | Gaziosmanpaşa (Eyüp) %34, Çatalca %47 | Terkos, Sazlıdere Gölü; 1961–84 Tayakadın |
-| Sultangazi | Gaziosmanpaşa %63, Eyüp %12 | aynı | iki Habipler mahallesi |
-| Esenyurt | Büyükçekmece %90 | Çatalca (Büyükçekmece üzerinden) %90 | Yeşilkent (Avcılar parçası) |
-| Başakşehir | Küçükçekmece %33, Büyükçekmece %16 | Bakırköy %33, Çatalca %16 | Başakşehir ve Başak mahalleleri (Esenler parçası) |
-| Çekmeköy | — (1987–2008 Ümraniye'de) | Beykoz %52, Üsküdar %30 | Taşdelen (sayımda yok) |
-| Sancaktepe | — | 1985–87: Üsküdar %31 | Samandıra'nın 2008 sonrası adları; 1961–84 Sarıgazi (Kartal → Üsküdar) |
-| Ataşehir | — | Kadıköy %59, Kartal %14, Üsküdar %9 | 2008'de Ümraniye'ye bağlı mahalleler |
-
-Ek kurallar: `liste-tümleyeni` (kanun listesinin, kanunda paylaşılmış birim dışındaki bütün
-birimleri o dönemde tek ilçedense geri kalan alan o ilçeye; paylaşılmış birime değen alan
-hariç) ve "Mahallesinin ... kısmı" satırlarından mahalle adı. Bahçeşehir beldesi sayımlarda
-yok; 1999 ve 2004 DİE yerel kitaplarında Büyükçekmece'de (işaretli çıkarım). Eski ilçesi o
-seçimde satır olmayan parça (ör. 1991'de Esenler) `PARCA-*` olarak taralı çizilir.
-
-Kaynağı yazılmamış 1987 birimleri için `sayim_kaniti.json` (elle, köy/belde düzeyi kanıt):
-Küçükçekmece ← Bakırköy, Pendik ← Kartal.
-
-İstanbul'da ilçe verisi olan genel seçimlerde boş kalan alan (ilin %'si): 1961–1983 %6.0,
-1987 %5.5, 1991 %2.5, 1995–2007 %2.1 (başta 1961–1987 %25, 1995 %11.7). Kalanlar: bölüştürülen
-ilçelerin paylaştırılamayan kısımları; 1987 öncesi Kağıthane, Esenler, Ümraniye (şehir içi
-mahalleler — sayım kitaplarında listelenmiyor, 1987/1993 kanunlarında kaynak yazılmamış) ve
-1961–84 Sancaktepe.
-Uygulandığı seçimler: eski ilçelerin tümü o seçimde satır olarak bulunuyorsa (zincirle:
-1963 öncesi Gaziosmanpaşa → Eyüp). 1963–1977 yerel verisinde Gaziosmanpaşa/Eyüp belediye
-satırı olmadığından uygulanmaz (`merge_plan.json` → `bolusumUygulanmadi`).
-Sınırlar: sayım kitabı olmayan ilçelerde (Sultangazi) belde/mahalle bağlılığı kanun tarihindeki durumdur;
-2008 sonrası mahalle ad/sınır değişiklikleri adı eşleşen mahallelerde fark edilmez.
-Sıradaki adaylar: Başakşehir, Esenyurt, Esenler (İstanbul), sonra diğer illerin çok
-kaynaklı ilçeleri.
-
-## Sayım dizini ile otomatik dönemsel bağlılık (Faz 4c)
-
-`scripts/pipelines/historical_geo/extract_sayim_koyleri.py`: DİE 1960, 1985, 1990 sayım
-kitaplarından köy/belde → ilçe dizini (`data/kaynaklar/tuik/nufus_sayimi/<yıl>_koyler.json`;
-1960: 33.967, 1985: 33.830, 1990: 33.232 satır). Köy satırları ilçe bölümünü kapatan
-"X İLÇESİ TOPLAMI" satırıyla geriye dönük atanır (başlık OCR'da düşse bile); kitabın kendi
-köy sayılarına göre kapsama ~%90. Kitaplar depoda değil: betik TÜİK kütüphanesinden indirip
-SHA-256 ile doğrular (`.cache/`).
-
-`build_mahalle_bolusumu.py` elle `DONEMSEL` tablosu olmayan bütün çok kaynaklı ilçelere
-(mahalle poligonu olanlar) bunu uygular: birim sayımda kanundaki eski ilçesinde (ya da onun
-kanunla ayrıldığı ata ilçede) bulunursa o dönemde aynı sayılır; bulunamaz ya da farklı çıkarsa
-o dönem paylaştırılamayan kısma gider. OCR hataları yalnız taralı alanı büyütür.
-
-Merkez kasaba kuralı (işaretli çıkarım `merkez-kasaba`): kanun "listedeki köyleri kapsamak ve
-merkezi X olmak üzere" der; adı listede olmayan güncel mahalleler X'in mahalleleridir. X'in
-ilçesi sayım dizininden iki sayımda da aynı ve kanundaki eski ilçelerden biriyse bu mahalleler
-ona verilir. Güvenlik: adı sayımda köy olarak geçen mahalle atanmaz; listede merkezden başka
-kasaba/bucak merkezi varsa (ör. Körfez'de Hereke) yalnız merkezin adını taşıyan mahalleye
-bağlanan küme atanır, böyle mahalle yoksa kural uygulanmaz. Adında birim adını içeren mahalle
-(Yukarı Hereke → Hereke) o birime bağlanır.
-
-Kanundan hemen önceki dönemde eski ilçelere dağıtılan pay (İstanbul dışı): Çukurova %5, Akyurt %47, Pursaklar %3, Aksu %51, İbradı %8, Konyaaltı %26, Didim %14, Defne %21, Aliağa %30, Özvatan %7, Körfez %51, Derbent %0, Dargeçit %75, Gürgentepe %15, İkizce %30, Ondokuzmayıs %17, Salıpazarı %3, Altınyayla %3, Edremit %6, Gülağaç %0, Demirözü %0.
-Bu 22 ilçede boş alan 1977'de %15, 1987'de %11, 1995'te %26 azaldı. Kalan kısım çoğunlukla
-sayımda bulunamayan köy adları, başka kasabası olan ilçelerin merkez mahalleleri ve kanunda
-paylaşılmış birimlerdir. Mahalle/köy poligonu olmayan ilçelerde (büyükşehir dışı ~26 ilçe)
-bölüştürme yapılamaz.
+Kaynağı yazılmamış 1987 birimleri için `sayim_kaniti.json` (elle, DİE 1960/1985/1990 sayım
+kitaplarındaki köy/belde bağlılığı): Küçükçekmece ← Bakırköy, Pendik ← Kartal.
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
 

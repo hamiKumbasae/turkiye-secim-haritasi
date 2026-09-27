@@ -1,41 +1,41 @@
 {
  "not": "apply_idari_merges.py ile üretilir; elle düzenlenmez.",
  "ozet": {
-  "sentetik": 262,
-  "satirDegisimi": 3472,
+  "sentetik": 207,
+  "satirDegisimi": 3220,
   "secimBasina": {
-   "1950yerel": 160,
-   "1955yerel": 151,
-   "1961": 196,
-   "1961referandum": 196,
-   "1963yerel": 156,
-   "1965": 197,
-   "1968yerel": 156,
-   "1969": 197,
-   "1973": 197,
-   "1973yerel": 155,
-   "1977": 197,
-   "1977yerel": 156,
-   "1982referandum": 193,
-   "1983": 193,
-   "1984yerel": 158,
-   "1987": 182,
-   "1987referandum": 182,
-   "1988referandum": 168,
-   "1989yerel": 112,
-   "1991": 30,
-   "1994yerel": 20,
-   "1995": 22,
-   "1999": 20,
-   "1999yerel": 13,
-   "2002": 19,
-   "2004yerel": 12,
-   "2007": 19,
-   "2007referandum": 15
+   "1950yerel": 166,
+   "1955yerel": 156,
+   "1961": 183,
+   "1961referandum": 183,
+   "1963yerel": 143,
+   "1965": 183,
+   "1968yerel": 143,
+   "1969": 183,
+   "1973": 183,
+   "1973yerel": 142,
+   "1977": 183,
+   "1977yerel": 143,
+   "1982referandum": 182,
+   "1983": 182,
+   "1984yerel": 144,
+   "1987": 176,
+   "1987referandum": 176,
+   "1988referandum": 161,
+   "1989yerel": 99,
+   "1991": 23,
+   "1994yerel": 14,
+   "1995": 15,
+   "1999": 13,
+   "1999yerel": 6,
+   "2002": 12,
+   "2004yerel": 5,
+   "2007": 12,
+   "2007referandum": 9
   },
-  "katilanIlce": 241,
-  "hedefBulunamadi": 376,
-  "notluBosPoligon": 2082
+  "katilanIlce": 254,
+  "hedefBulunamadi": 441,
+  "notluBosPoligon": 1899
  },
  "sentetikler": {
   "HISTK-01-006-bb0ee2": {
@@ -336,6 +336,41 @@
     "MAMAK"
    ]
   },
+  "HISTK-HIST-Antalya-Merkez-8b0b75": {
+   "taban": "HIST-Antalya-Merkez",
+   "katilanlar": [
+    "TR-D-07-002",
+    "TR-D-07-005",
+    "TR-D-07-012",
+    "TR-D-07-014"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1987referandum",
+    "1987",
+    "1988referandum"
+   ],
+   "plaka": 7,
+   "kanunlar": [
+    "3644",
+    "5747"
+   ],
+   "adlar": [
+    "AKSU",
+    "DÖŞEMEALTI",
+    "KEMER",
+    "KONYAALTI"
+   ]
+  },
   "HISTK-07-011-3c9fb5": {
    "taban": "TR-D-07-011",
    "katilanlar": [
@@ -367,26 +402,6 @@
    ],
    "adlar": [
     "DEMRE"
-   ]
-  },
-  "HISTK-HIST-Antalya-Merkez-bbc5ed": {
-   "taban": "HIST-Antalya-Merkez",
-   "katilanlar": [
-    "TR-D-07-005",
-    "TR-D-07-012"
-   ],
-   "secimler": [
-    "1950yerel",
-    "1955yerel"
-   ],
-   "plaka": 7,
-   "kanunlar": [
-    "3644",
-    "5747"
-   ],
-   "adlar": [
-    "DÖŞEMEALTI",
-    "KEMER"
    ]
   },
   "HISTK-08-004-aa16c5": {
@@ -720,9 +735,10 @@
     "YENİÇAĞA"
    ]
   },
-  "HISTK-15-004-6b4caa": {
+  "HISTK-15-004-4bb96a": {
    "taban": "TR-D-15-004",
    "katilanlar": [
+    "TR-D-15-006",
     "TR-D-15-009"
    ],
    "secimler": [
@@ -741,10 +757,12 @@
    ],
    "plaka": 15,
    "kanunlar": [
-    "3392"
+    "3392",
+    "3644"
    ],
    "adlar": [
-    "KEMER"
+    "KEMER",
+    "ÇELTİKÇİ"
    ]
   },
   "HISTK-16-013-7e61b4": {
@@ -1131,6 +1149,36 @@
    ],
    "adlar": [
     "SERİNHİSAR"
+   ]
+  },
+  "HISTK-HIST-Diyarbakır-Merkez-b389dc": {
+   "taban": "HIST-Diyarbakır-Merkez",
+   "katilanlar": [
+    "TR-D-21-007",
+    "TR-D-21-012"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1987referandum",
+    "1987",
+    "1988referandum"
+   ],
+   "plaka": 21,
+   "kanunlar": [
+    "3392",
+    "3644"
+   ],
+   "adlar": [
+    "EĞİL",
+    "KOCAKÖY"
    ]
   },
   "HISTK-22-001-899d02": {
@@ -1752,6 +1800,42 @@
     "BELEN"
    ]
   },
+  "HISTK-31-002-655ba7": {
+   "taban": "TR-D-31-002",
+   "katilanlar": [
+    "TR-D-31-005"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1987referandum",
+    "1987",
+    "1988referandum",
+    "1991",
+    "1994yerel",
+    "1995",
+    "1999",
+    "1999yerel",
+    "2002",
+    "2004yerel",
+    "2007"
+   ],
+   "plaka": 31,
+   "kanunlar": [
+    "6360"
+   ],
+   "adlar": [
+    "DEFNE"
+   ]
+  },
   "HISTK-31-006-99e488": {
    "taban": "TR-D-31-006",
    "katilanlar": [
@@ -1852,6 +1936,34 @@
    ],
    "adlar": [
     "AKSU"
+   ]
+  },
+  "HISTK-32-006-930331": {
+   "taban": "TR-D-32-006",
+   "katilanlar": [
+    "TR-D-32-005"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1987referandum",
+    "1987",
+    "1988referandum"
+   ],
+   "plaka": 32,
+   "kanunlar": [
+    "3644"
+   ],
+   "adlar": [
+    "GÖNEN"
    ]
   },
   "HISTK-32-010-d2f4e5": {
@@ -1995,7 +2107,19 @@
    ],
    "secimler": [
     "1950yerel",
-    "1955yerel"
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1984yerel",
+    "1987referandum",
+    "1987",
+    "1988referandum"
    ],
    "plaka": 34,
    "kanunlar": [
@@ -2006,7 +2130,7 @@
     "Küçükçekmece (1987 sınırı: KÜÇÜKÇEKMECE)"
    ]
   },
-  "HISTK-34-019-f5245a": {
+  "HISTK-34-019-32c706": {
    "taban": "TR-D-34-019",
    "katilanlar": [
     "TR-D-34-009",
@@ -2014,23 +2138,18 @@
    ],
    "secimler": [
     "1950yerel",
-    "1955yerel"
+    "1955yerel",
+    "1961referandum",
+    "1961"
    ],
    "plaka": 34,
    "kanunlar": [
     "309",
-    "3644",
-    "5747"
+    "3644"
    ],
    "adlar": [
     "BAYRAMPAŞA",
-    "GAZİOSMANPAŞA",
-    "Sultangazi (Eyüp parçası, mahalle düzeyi)",
-    "Sultangazi (Gaziosmanpaşa parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-033-EYUP-D1",
-    "PARCA-34-033-GAZIOSMANPASA-D1"
+    "GAZİOSMANPAŞA"
    ]
   },
   "HISTK-34-015-ea5819": {
@@ -2041,7 +2160,22 @@
    ],
    "secimler": [
     "1950yerel",
-    "1955yerel"
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
+    "1987referandum",
+    "1987"
    ],
    "plaka": 34,
    "kanunlar": [
@@ -2060,7 +2194,23 @@
    ],
    "secimler": [
     "1950yerel",
-    "1955yerel"
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
+    "1987referandum",
+    "1987",
+    "1988referandum"
    ],
    "plaka": 34,
    "kanunlar": [
@@ -2170,6 +2320,34 @@
    ],
    "adlar": [
     "HANÖNÜ"
+   ]
+  },
+  "HISTK-37-014-21e821": {
+   "taban": "TR-D-37-014",
+   "katilanlar": [
+    "TR-D-37-012"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1987referandum",
+    "1987",
+    "1988referandum"
+   ],
+   "plaka": 37,
+   "kanunlar": [
+    "3392"
+   ],
+   "adlar": [
+    "İHSANGAZİ"
    ]
   },
   "HISTK-37-004-50e190": {
@@ -2371,6 +2549,14 @@
    "secimler": [
     "1950yerel",
     "1955yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
     "1987referandum",
     "1987",
     "1988referandum",
@@ -2399,6 +2585,19 @@
    "secimler": [
     "1950yerel",
     "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
     "1987referandum",
     "1987",
     "1988referandum",
@@ -3082,6 +3281,34 @@
     "NURHAK"
    ]
   },
+  "HISTK-47-001-6825ee": {
+   "taban": "TR-D-47-001",
+   "katilanlar": [
+    "TR-D-47-010"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1987referandum",
+    "1987",
+    "1988referandum"
+   ],
+   "plaka": 47,
+   "kanunlar": [
+    "3644"
+   ],
+   "adlar": [
+    "YEŞİLLİ"
+   ]
+  },
   "HISTK-48-006-6eefe9": {
    "taban": "TR-D-48-006",
    "katilanlar": [
@@ -3319,6 +3546,19 @@
    "secimler": [
     "1950yerel",
     "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
     "1987referandum",
     "1987",
     "1988referandum",
@@ -3340,7 +3580,24 @@
    ],
    "secimler": [
     "1950yerel",
-    "1955yerel"
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
+    "1987referandum",
+    "1987",
+    "1988referandum",
+    "1989yerel"
    ],
    "plaka": 52,
    "kanunlar": [
@@ -3623,6 +3880,19 @@
    "secimler": [
     "1950yerel",
     "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
     "1987referandum",
     "1987",
     "1988referandum",
@@ -4238,6 +4508,34 @@
     "BAHÇESARAY"
    ]
   },
+  "HISTK-HIST-Van-Merkez-53dbe6": {
+   "taban": "HIST-Van-Merkez",
+   "katilanlar": [
+    "TR-D-65-005"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1965",
+    "1969",
+    "1973",
+    "1977",
+    "1982referandum",
+    "1983",
+    "1987referandum",
+    "1987",
+    "1988referandum"
+   ],
+   "plaka": 65,
+   "kanunlar": [
+    "3644"
+   ],
+   "adlar": [
+    "EDREMİT"
+   ]
+  },
   "HISTK-65-011-23e8e5": {
    "taban": "TR-D-65-011",
    "katilanlar": [
@@ -4493,10 +4791,11 @@
     "KİLİMLİ"
    ]
   },
-  "HISTK-68-002-f1458d": {
+  "HISTK-68-002-25fa6a": {
    "taban": "TR-D-68-002",
    "katilanlar": [
     "TR-D-68-003",
+    "TR-D-68-004",
     "TR-D-68-005"
    ],
    "secimler": [
@@ -4527,13 +4826,15 @@
    ],
    "adlar": [
     "ESKİL",
+    "GÜLAĞAÇ",
     "GÜZELYURT"
    ]
   },
-  "HISTK-69-002-1858c3": {
+  "HISTK-69-002-3d684d": {
    "taban": "TR-D-69-002",
    "katilanlar": [
-    "TR-D-69-001"
+    "TR-D-69-001",
+    "TR-D-69-003"
    ],
    "secimler": [
     "1950yerel",
@@ -4557,7 +4858,8 @@
     "3392"
    ],
    "adlar": [
-    "AYDINTEPE"
+    "AYDINTEPE",
+    "DEMİRÖZÜ"
    ]
   },
   "HISTK-70-003-3f3a80": {
@@ -4744,6 +5046,19 @@
    "secimler": [
     "1950yerel",
     "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
     "1987referandum",
     "1987",
     "1988referandum",
@@ -5100,6 +5415,45 @@
     "DÜZİÇİ"
    ]
   },
+  "HISTK-80-005-a40fe4": {
+   "taban": "TR-D-80-005",
+   "katilanlar": [
+    "TR-D-80-003",
+    "TR-D-80-007"
+   ],
+   "secimler": [
+    "1950yerel",
+    "1955yerel",
+    "1961referandum",
+    "1961",
+    "1963yerel",
+    "1965",
+    "1968yerel",
+    "1969",
+    "1973",
+    "1973yerel",
+    "1977",
+    "1977yerel",
+    "1982referandum",
+    "1983",
+    "1984yerel",
+    "1987referandum",
+    "1987",
+    "1988referandum",
+    "1989yerel",
+    "1991",
+    "1994yerel",
+    "1995"
+   ],
+   "plaka": 80,
+   "kanunlar": [
+    "4200"
+   ],
+   "adlar": [
+    "HASANBEYLİ",
+    "TOPRAKKALE"
+   ]
+  },
   "HISTK-80-004-de32e4": {
    "taban": "TR-D-80-004",
    "katilanlar": [
@@ -5135,43 +5489,6 @@
    ],
    "adlar": [
     "SUMBAS"
-   ]
-  },
-  "HISTK-80-005-c3061d": {
-   "taban": "TR-D-80-005",
-   "katilanlar": [
-    "TR-D-80-007"
-   ],
-   "secimler": [
-    "1950yerel",
-    "1955yerel",
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel",
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel",
-    "1991",
-    "1994yerel",
-    "1995"
-   ],
-   "plaka": 80,
-   "kanunlar": [
-    "4200"
-   ],
-   "adlar": [
-    "TOPRAKKALE"
    ]
   },
   "HISTK-81-004-369225": {
@@ -5523,38 +5840,6 @@
     "SİNCAN"
    ]
   },
-  "HISTK-HIST-Antalya-Merkez-4a102a": {
-   "taban": "HIST-Antalya-Merkez",
-   "katilanlar": [
-    "TR-D-07-005",
-    "TR-D-07-012"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983"
-   ],
-   "plaka": 7,
-   "kanunlar": [
-    "3644",
-    "5747"
-   ],
-   "adlar": [
-    "Aksu (Merkez parçası, mahalle düzeyi)",
-    "DÖŞEMEALTI",
-    "KEMER",
-    "Konyaaltı (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-07-002-MERKEZ-D1",
-    "PARCA-07-014-MERKEZ-D1"
-   ]
-  },
   "HISTK-20-014-e6c1d4": {
    "taban": "TR-D-20-014",
    "katilanlar": [
@@ -5682,277 +5967,6 @@
     "YAĞLIDERE"
    ]
   },
-  "HISTK-HIST-Istanbul-Bakirkoy-966e5a": {
-   "taban": "HIST-Istanbul-Bakirkoy",
-   "katilanlar": [
-    "TR-D-34-004",
-    "TR-D-34-026"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "3392",
-    "5747"
-   ],
-   "adlar": [
-    "Başakşehir (Küçükçekmece parçası, mahalle düzeyi)",
-    "Küçükçekmece (1987 sınırı: AVCILAR)",
-    "Küçükçekmece (1987 sınırı: KÜÇÜKÇEKMECE)"
-   ],
-   "parcalar": [
-    "PARCA-34-008-KUCUKCEKMECE-D1"
-   ]
-  },
-  "HISTK-34-019-8732b3": {
-   "taban": "TR-D-34-019",
-   "katilanlar": [
-    "TR-D-34-009",
-    "TR-D-34-021"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "309",
-    "3644",
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Gaziosmanpaşa parçası, mahalle düzeyi)",
-    "BAYRAMPAŞA",
-    "GAZİOSMANPAŞA",
-    "Sultangazi (Eyüp parçası, mahalle düzeyi)",
-    "Sultangazi (Gaziosmanpaşa parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-GAZIOSMANPASA-D1",
-    "PARCA-34-033-EYUP-D1",
-    "PARCA-34-033-GAZIOSMANPASA-D1"
-   ]
-  },
-  "HISTK-34-015-743d48": {
-   "taban": "TR-D-34-015",
-   "katilanlar": [
-    "TR-D-34-012",
-    "TR-D-34-014"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "3392",
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Çatalca parçası, mahalle düzeyi)",
-    "Başakşehir (Büyükçekmece parçası, mahalle düzeyi)",
-    "Büyükçekmece (1987 sınırı: BEYLİKDÜZÜ)",
-    "Büyükçekmece (1987 sınırı: BÜYÜKÇEKMECE)",
-    "Esenyurt (Büyükçekmece parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-CATALCA-D1",
-    "PARCA-34-008-BUYUKCEKMECE-D1",
-    "PARCA-34-018-BUYUKCEKMECE-D1"
-   ]
-  },
-  "HISTK-HIST-Istanbul-Kartal8489-c5eebb": {
-   "taban": "HIST-Istanbul-Kartal8489",
-   "katilanlar": [
-    "TR-D-34-028",
-    "TR-D-34-036"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "3392",
-    "5747"
-   ],
-   "adlar": [
-    "Ataşehir (Kartal parçası, mahalle düzeyi)",
-    "Pendik (1987 sınırı: PENDİK)",
-    "Pendik (1987 sınırı: TUZLA)"
-   ],
-   "parcalar": [
-    "PARCA-34-003-KARTAL-D1"
-   ]
-  },
-  "HISTK-41-008-94d3c8": {
-   "taban": "TR-D-41-008",
-   "katilanlar": [
-    "TR-D-41-001",
-    "TR-D-41-004",
-    "TR-D-41-011"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983"
-   ],
-   "plaka": 41,
-   "kanunlar": [
-    "3392",
-    "5747",
-    "KHK 584"
-   ],
-   "adlar": [
-    "BAŞİSKELE",
-    "DERİNCE",
-    "KARTEPE",
-    "Körfez (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-41-012-MERKEZ-D1"
-   ]
-  },
-  "HISTK-41-006-85227e": {
-   "taban": "TR-D-41-006",
-   "katilanlar": [
-    "TR-D-41-002",
-    "TR-D-41-003",
-    "TR-D-41-005"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 41,
-   "kanunlar": [
-    "3392",
-    "5747"
-   ],
-   "adlar": [
-    "DARICA",
-    "DİLOVASI",
-    "Körfez (Gebze parçası, mahalle düzeyi)",
-    "ÇAYIROVA"
-   ],
-   "parcalar": [
-    "PARCA-41-012-GEBZE-D1"
-   ]
-  },
-  "HISTK-52-007-549e1b": {
-   "taban": "TR-D-52-007",
-   "katilanlar": [
-    "TR-D-52-004",
-    "TR-D-52-005"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 52,
-   "kanunlar": [
-    "3392",
-    "3644"
-   ],
-   "adlar": [
-    "Gürgentepe (Fatsa parçası, mahalle düzeyi)",
-    "ÇAMAŞ",
-    "ÇATALPINAR"
-   ],
-   "parcalar": [
-    "PARCA-52-010-FATSA-D1"
-   ]
-  },
-  "HISTK-52-019-61862f": {
-   "taban": "TR-D-52-019",
-   "katilanlar": [
-    "TR-D-52-006"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 52,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "ÇAYBAŞI",
-    "İkizce (Ünye parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-52-011-UNYE-D1"
-   ]
-  },
   "HISTK-52-003-9e1e13": {
    "taban": "TR-D-52-003",
    "katilanlar": [
@@ -5983,39 +5997,6 @@
    ],
    "adlar": [
     "KABATAŞ"
-   ]
-  },
-  "HISTK-55-008-6a2569": {
-   "taban": "TR-D-55-008",
-   "katilanlar": [
-    "TR-D-55-005"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 55,
-   "kanunlar": [
-    "3392",
-    "3644"
-   ],
-   "adlar": [
-    "AYVACIK",
-    "Salıpazarı (Çarşamba parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-55-013-CARSAMBA-D1"
    ]
   },
   "HISTK-59-001-6b7d74": {
@@ -6090,39 +6071,6 @@
     "KİLİMLİ"
    ]
   },
-  "HISTK-72-003-995193": {
-   "taban": "TR-D-72-003",
-   "katilanlar": [
-    "TR-D-72-004"
-   ],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 72,
-   "kanunlar": [
-    "3392",
-    "3647"
-   ],
-   "adlar": [
-    "Dargeçit (Gercüş parçası, mahalle düzeyi)",
-    "HASANKEYF"
-   ],
-   "parcalar": [
-    "PARCA-47-002-GERCUS-D1"
-   ]
-  },
   "HISTK-75-005-62ae0e": {
    "taban": "TR-D-75-005",
    "katilanlar": [
@@ -6156,527 +6104,7 @@
     "DAMAL"
    ]
   },
-  "HISTK-06-008-81b1bf": {
-   "taban": "TR-D-06-008",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 6,
-   "kanunlar": [
-    "3644",
-    "5747"
-   ],
-   "adlar": [
-    "Akyurt (Çubuk parçası, mahalle düzeyi)",
-    "Pursaklar (Çubuk parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-06-001-CUBUK-D1",
-    "PARCA-06-022-CUBUK-D1"
-   ]
-  },
-  "HISTK-07-019-7b6cf9": {
-   "taban": "TR-D-07-019",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 7,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Aksu (Serik parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-07-002-SERIK-D1"
-   ]
-  },
-  "HISTK-07-001-9a73ae": {
-   "taban": "TR-D-07-001",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 7,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "İbradı (Akseki parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-07-010-AKSEKI-D1"
-   ]
-  },
-  "HISTK-09-015-7f4248": {
-   "taban": "TR-D-09-015",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 9,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Didim (Söke parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-09-004-SOKE-D1"
-   ]
-  },
-  "HISTK-31-002-47588e": {
-   "taban": "TR-D-31-002",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983"
-   ],
-   "plaka": 31,
-   "kanunlar": [
-    "6360"
-   ],
-   "adlar": [
-    "Defne (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-31-005-MERKEZ-D1"
-   ]
-  },
-  "HISTK-31-014-94b6b2": {
-   "taban": "TR-D-31-014",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 31,
-   "kanunlar": [
-    "6360"
-   ],
-   "adlar": [
-    "Defne (Samandağı parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-31-005-SAMANDAGI-D1"
-   ]
-  },
-  "HISTK-34-023-6d1a5f": {
-   "taban": "TR-D-34-023",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Ataşehir (Kadıköy parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-003-KADIKOY-D1"
-   ]
-  },
-  "HISTK-34-038-341a00": {
-   "taban": "TR-D-34-038",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Ataşehir (Üsküdar parçası, mahalle düzeyi)",
-    "Çekmeköy (Üsküdar parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-003-USKUDAR-D1",
-    "PARCA-34-016-USKUDAR-D1"
-   ]
-  },
-  "HISTK-34-011-1e4a02": {
-   "taban": "TR-D-34-011",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Çekmeköy (Beykoz parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-016-BEYKOZ-D1"
-   ]
-  },
-  "HISTK-35-005-bcd314": {
-   "taban": "TR-D-35-005",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel"
-   ],
-   "plaka": 35,
-   "kanunlar": [
-    "2585"
-   ],
-   "adlar": [
-    "Aliağa (Bergama parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-35-001-BERGAMA-D1"
-   ]
-  },
-  "HISTK-35-023-779063": {
-   "taban": "TR-D-35-023",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel"
-   ],
-   "plaka": 35,
-   "kanunlar": [
-    "2585"
-   ],
-   "adlar": [
-    "Aliağa (Menemen parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-35-001-MENEMEN-D1"
-   ]
-  },
-  "HISTK-35-012-57230c": {
-   "taban": "TR-D-35-012",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel"
-   ],
-   "plaka": 35,
-   "kanunlar": [
-    "2585"
-   ],
-   "adlar": [
-    "Aliağa (Foça parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-35-001-FOCA-D1"
-   ]
-  },
-  "HISTK-38-004-3a42f2": {
-   "taban": "TR-D-38-004",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 38,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Özvatan (Felahiye parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-38-009-FELAHIYE-D1"
-   ]
-  },
-  "HISTK-47-006-665cd4": {
-   "taban": "TR-D-47-006",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 47,
-   "kanunlar": [
-    "3392"
-   ],
-   "adlar": [
-    "Dargeçit (Midyat parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-47-002-MIDYAT-D1"
-   ]
-  },
-  "HISTK-73-004-c38bf9": {
-   "taban": "TR-D-73-004",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 73,
-   "kanunlar": [
-    "3392"
-   ],
-   "adlar": [
-    "Dargeçit (İdil parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-47-002-IDIL-D1"
-   ]
-  },
-  "HISTK-52-008-eb986b": {
-   "taban": "TR-D-52-008",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 52,
-   "kanunlar": [
-    "3392"
-   ],
-   "adlar": [
-    "Gürgentepe (Gölköy parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-52-010-GOLKOY-D1"
-   ]
-  },
-  "HISTK-55-006-399670": {
-   "taban": "TR-D-55-006",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1963yerel",
-    "1965",
-    "1968yerel",
-    "1969",
-    "1973",
-    "1973yerel",
-    "1977",
-    "1977yerel",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 55,
-   "kanunlar": [
-    "3392"
-   ],
-   "adlar": [
-    "Ondokuzmayıs (Bafra parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-55-001-BAFRA-D1"
-   ]
-  },
-  "HISTK-HIST-Samsun-Merkez-b350f1": {
-   "taban": "HIST-Samsun-Merkez",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983"
-   ],
-   "plaka": 55,
-   "kanunlar": [
-    "3392"
-   ],
-   "adlar": [
-    "Ondokuzmayıs (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-55-001-MERKEZ-D1"
-   ]
-  },
-  "HISTK-HIST-Van-Merkez-1f6e4f": {
-   "taban": "HIST-Van-Merkez",
-   "katilanlar": [],
-   "secimler": [
-    "1961referandum",
-    "1961",
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983"
-   ],
-   "plaka": 65,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Edremit (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-65-005-MERKEZ-D1"
-   ]
-  },
-  "HISTK-34-019-db8477": {
+  "HISTK-34-019-d9bf10": {
    "taban": "TR-D-34-019",
    "katilanlar": [
     "TR-D-34-009"
@@ -6696,40 +6124,10 @@
    ],
    "plaka": 34,
    "kanunlar": [
-    "3644",
-    "5747"
+    "3644"
    ],
    "adlar": [
-    "BAYRAMPAŞA",
-    "Sultangazi (Eyüp parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-033-EYUP-D1"
-   ]
-  },
-  "HISTK-34-021-6128f2": {
-   "taban": "TR-D-34-021",
-   "katilanlar": [],
-   "secimler": [
-    "1965",
-    "1969",
-    "1973",
-    "1977",
-    "1982referandum",
-    "1983",
-    "1984yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Gaziosmanpaşa parçası, mahalle düzeyi)",
-    "Sultangazi (Gaziosmanpaşa parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-GAZIOSMANPASA-D1",
-    "PARCA-34-033-GAZIOSMANPASA-D1"
+    "BAYRAMPAŞA"
    ]
   },
   "HISTK-06-025-c687e0": {
@@ -6773,111 +6171,6 @@
     "ORTACA"
    ]
   },
-  "HISTK-HIST-Antalya-Merkez-205904": {
-   "taban": "HIST-Antalya-Merkez",
-   "katilanlar": [
-    "TR-D-07-005",
-    "TR-D-07-012"
-   ],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum"
-   ],
-   "plaka": 7,
-   "kanunlar": [
-    "3644",
-    "5747"
-   ],
-   "adlar": [
-    "Aksu (Merkez parçası, mahalle düzeyi)",
-    "DÖŞEMEALTI",
-    "KEMER",
-    "Konyaaltı (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-07-002-MERKEZ-D2",
-    "PARCA-07-014-MERKEZ-D2"
-   ]
-  },
-  "HISTK-HIST-Istanbul-Bakirkoy-7d3a4a": {
-   "taban": "HIST-Istanbul-Bakirkoy",
-   "katilanlar": [
-    "TR-D-34-004",
-    "TR-D-34-026"
-   ],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "3392",
-    "5747"
-   ],
-   "adlar": [
-    "Başakşehir (Küçükçekmece parçası, mahalle düzeyi)",
-    "Küçükçekmece (1987 sınırı: AVCILAR)",
-    "Küçükçekmece (1987 sınırı: KÜÇÜKÇEKMECE)"
-   ],
-   "parcalar": [
-    "PARCA-34-008-KUCUKCEKMECE-D2"
-   ]
-  },
-  "HISTK-34-015-9a6838": {
-   "taban": "TR-D-34-015",
-   "katilanlar": [
-    "TR-D-34-012",
-    "TR-D-34-014"
-   ],
-   "secimler": [
-    "1987referandum",
-    "1987"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "3392",
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Çatalca parçası, mahalle düzeyi)",
-    "Başakşehir (Büyükçekmece parçası, mahalle düzeyi)",
-    "Büyükçekmece (1987 sınırı: BEYLİKDÜZÜ)",
-    "Büyükçekmece (1987 sınırı: BÜYÜKÇEKMECE)",
-    "Esenyurt (Büyükçekmece parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-CATALCA-D2",
-    "PARCA-34-008-BUYUKCEKMECE-D2",
-    "PARCA-34-018-BUYUKCEKMECE-D2"
-   ]
-  },
-  "HISTK-HIST-Istanbul-Kartal8489-cd0b28": {
-   "taban": "HIST-Istanbul-Kartal8489",
-   "katilanlar": [
-    "TR-D-34-028",
-    "TR-D-34-036"
-   ],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "3392",
-    "5747"
-   ],
-   "adlar": [
-    "Ataşehir (Kartal parçası, mahalle düzeyi)",
-    "Pendik (1987 sınırı: PENDİK)",
-    "Pendik (1987 sınırı: TUZLA)"
-   ],
-   "parcalar": [
-    "PARCA-34-003-KARTAL-D2"
-   ]
-  },
   "HISTK-42-014-3045ab": {
    "taban": "TR-D-42-014",
    "katilanlar": [
@@ -6895,29 +6188,6 @@
    ],
    "adlar": [
     "HALKAPINAR"
-   ]
-  },
-  "HISTK-52-019-92ec25": {
-   "taban": "TR-D-52-019",
-   "katilanlar": [
-    "TR-D-52-006"
-   ],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 52,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "ÇAYBAŞI",
-    "İkizce (Ünye parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-52-011-UNYE-D2"
    ]
   },
   "HISTK-81-004-b644b7": {
@@ -6945,250 +6215,6 @@
     "GÜMÜŞOVA",
     "KAYNAŞLI",
     "ÇİLİMLİ"
-   ]
-  },
-  "HISTK-06-008-6e4662": {
-   "taban": "TR-D-06-008",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 6,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Akyurt (Çubuk parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-06-001-CUBUK-D2"
-   ]
-  },
-  "HISTK-06-016-5d7948": {
-   "taban": "TR-D-06-016",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 6,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Akyurt (Kalecik parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-06-001-KALECIK-D2"
-   ]
-  },
-  "HISTK-07-001-e2983b": {
-   "taban": "TR-D-07-001",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 7,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "İbradı (Akseki parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-07-010-AKSEKI-D2"
-   ]
-  },
-  "HISTK-09-015-a82510": {
-   "taban": "TR-D-09-015",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 9,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Didim (Söke parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-09-004-SOKE-D2"
-   ]
-  },
-  "HISTK-31-002-268b48": {
-   "taban": "TR-D-31-002",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum"
-   ],
-   "plaka": 31,
-   "kanunlar": [
-    "6360"
-   ],
-   "adlar": [
-    "Defne (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-31-005-MERKEZ-D2"
-   ]
-  },
-  "HISTK-34-021-31a90e": {
-   "taban": "TR-D-34-021",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Gaziosmanpaşa parçası, mahalle düzeyi)",
-    "Sultangazi (Gaziosmanpaşa parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-GAZIOSMANPASA-D2",
-    "PARCA-34-033-GAZIOSMANPASA-D1"
-   ]
-  },
-  "HISTK-34-023-10dfbb": {
-   "taban": "TR-D-34-023",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Ataşehir (Kadıköy parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-003-KADIKOY-D2"
-   ]
-  },
-  "HISTK-34-038-ceece7": {
-   "taban": "TR-D-34-038",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Ataşehir (Üsküdar parçası, mahalle düzeyi)",
-    "Sancaktepe (Üsküdar parçası, mahalle düzeyi)",
-    "Çekmeköy (Üsküdar parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-003-USKUDAR-D2",
-    "PARCA-34-016-USKUDAR-D2",
-    "PARCA-34-029-USKUDAR-D2"
-   ]
-  },
-  "HISTK-34-011-f5d16d": {
-   "taban": "TR-D-34-011",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Çekmeköy (Beykoz parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-016-BEYKOZ-D2"
-   ]
-  },
-  "HISTK-38-004-24d30a": {
-   "taban": "TR-D-38-004",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 38,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Özvatan (Felahiye parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-38-009-FELAHIYE-D2"
-   ]
-  },
-  "HISTK-58-014-c89b76": {
-   "taban": "TR-D-58-014",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 58,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Altınyayla (Şarkışla parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-58-002-SARKISLA-D2"
-   ]
-  },
-  "HISTK-HIST-Van-Merkez-67a207": {
-   "taban": "HIST-Van-Merkez",
-   "katilanlar": [],
-   "secimler": [
-    "1987referandum",
-    "1987",
-    "1988referandum"
-   ],
-   "plaka": 65,
-   "kanunlar": [
-    "3644"
-   ],
-   "adlar": [
-    "Edremit (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-65-005-MERKEZ-D2"
    ]
   },
   "HISTK-01-015-e8292d": {
@@ -7285,28 +6311,6 @@
    ],
    "adlar": [
     "ÇARŞIBAŞI"
-   ]
-  },
-  "HISTK-34-015-9e752c": {
-   "taban": "TR-D-34-015",
-   "katilanlar": [],
-   "secimler": [
-    "1988referandum",
-    "1989yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Çatalca parçası, mahalle düzeyi)",
-    "Başakşehir (Büyükçekmece parçası, mahalle düzeyi)",
-    "Esenyurt (Büyükçekmece parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-CATALCA-D2",
-    "PARCA-34-008-BUYUKCEKMECE-D2",
-    "PARCA-34-018-BUYUKCEKMECE-D2"
    ]
   },
   "HISTK-03-007-f0227d": {
@@ -7449,44 +6453,12 @@
     "GÜMÜŞOVA"
    ]
   },
-  "HISTK-HIST-Istanbul-Kartal8489-ebd33a": {
-   "taban": "HIST-Istanbul-Kartal8489",
-   "katilanlar": [],
-   "secimler": [
-    "1989yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Ataşehir (Kartal parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-003-KARTAL-D2"
-   ]
-  },
-  "HISTK-HIST-Istanbul-Kucukcekmece-89c840": {
-   "taban": "HIST-Istanbul-Kucukcekmece",
-   "katilanlar": [],
-   "secimler": [
-    "1989yerel"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Başakşehir (Küçükçekmece parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-008-KUCUKCEKMECE-D2"
-   ]
-  },
-  "HISTK-HIST-Antalya-Merkez-22c0ab": {
+  "HISTK-HIST-Antalya-Merkez-a67d4d": {
    "taban": "HIST-Antalya-Merkez",
    "katilanlar": [
-    "TR-D-07-005"
+    "TR-D-07-002",
+    "TR-D-07-005",
+    "TR-D-07-014"
    ],
    "secimler": [
     "1991",
@@ -7501,13 +6473,9 @@
     "5747"
    ],
    "adlar": [
-    "Aksu (Merkez parçası, mahalle düzeyi)",
+    "AKSU",
     "DÖŞEMEALTI",
-    "Konyaaltı (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-07-002-MERKEZ-D3",
-    "PARCA-07-014-MERKEZ-D3"
+    "KONYAALTI"
    ]
   },
   "HISTK-31-009-4e2712": {
@@ -7574,222 +6542,6 @@
     "KAYNAŞLI"
    ]
   },
-  "HISTK-01-012-021a6d": {
-   "taban": "TR-D-01-012",
-   "katilanlar": [],
-   "secimler": [
-    "1991",
-    "1994yerel",
-    "1995",
-    "1999",
-    "1999yerel",
-    "2002",
-    "2004yerel",
-    "2007",
-    "2007referandum"
-   ],
-   "plaka": 1,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Çukurova (Seyhan parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-01-003-SEYHAN-D3"
-   ]
-  },
-  "HISTK-06-002-d7ad01": {
-   "taban": "TR-D-06-002",
-   "katilanlar": [],
-   "secimler": [
-    "1991",
-    "1995",
-    "1999",
-    "1999yerel",
-    "2002",
-    "2004yerel",
-    "2007",
-    "2007referandum"
-   ],
-   "plaka": 6,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Pursaklar (Altındağ parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-06-022-ALTINDAG-D3"
-   ]
-  },
-  "HISTK-31-002-09062d": {
-   "taban": "TR-D-31-002",
-   "katilanlar": [],
-   "secimler": [
-    "1991",
-    "1994yerel",
-    "1995",
-    "1999",
-    "1999yerel",
-    "2002",
-    "2004yerel",
-    "2007"
-   ],
-   "plaka": 31,
-   "kanunlar": [
-    "6360"
-   ],
-   "adlar": [
-    "Defne (Merkez parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-31-005-MERKEZ-D3"
-   ]
-  },
-  "HISTK-34-021-a5da82": {
-   "taban": "TR-D-34-021",
-   "katilanlar": [],
-   "secimler": [
-    "1991",
-    "1994yerel",
-    "1995",
-    "1999",
-    "1999yerel",
-    "2002",
-    "2004yerel",
-    "2007",
-    "2007referandum"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Gaziosmanpaşa parçası, mahalle düzeyi)",
-    "Sultangazi (Gaziosmanpaşa parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-GAZIOSMANPASA-D3",
-    "PARCA-34-033-GAZIOSMANPASA-D1"
-   ]
-  },
-  "HISTK-34-015-b2f235": {
-   "taban": "TR-D-34-015",
-   "katilanlar": [],
-   "secimler": [
-    "1991",
-    "1994yerel",
-    "1995",
-    "1999",
-    "1999yerel",
-    "2002",
-    "2004yerel",
-    "2007"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Çatalca parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-CATALCA-D3"
-   ]
-  },
-  "HISTK-HIST-Istanbul-Kucukcekmece-4bffb4": {
-   "taban": "HIST-Istanbul-Kucukcekmece",
-   "katilanlar": [],
-   "secimler": [
-    "1991"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Başakşehir (Küçükçekmece parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-008-KUCUKCEKMECE-D3"
-   ]
-  },
-  "HISTK-HIST-Istanbul-Buyukcekmece-d15ac3": {
-   "taban": "HIST-Istanbul-Buyukcekmece",
-   "katilanlar": [],
-   "secimler": [
-    "1991",
-    "1994yerel",
-    "1995",
-    "1999",
-    "1999yerel",
-    "2002",
-    "2004yerel",
-    "2007"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Başakşehir (Büyükçekmece parçası, mahalle düzeyi)",
-    "Esenyurt (Büyükçekmece parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-008-BUYUKCEKMECE-D3",
-    "PARCA-34-018-BUYUKCEKMECE-D3"
-   ]
-  },
-  "HISTK-34-019-73629c": {
-   "taban": "TR-D-34-019",
-   "katilanlar": [],
-   "secimler": [
-    "1991",
-    "1994yerel",
-    "1995",
-    "1999",
-    "1999yerel",
-    "2002",
-    "2004yerel",
-    "2007",
-    "2007referandum"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Sultangazi (Eyüp parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-033-EYUP-D1"
-   ]
-  },
-  "HISTK-34-026-2864f7": {
-   "taban": "TR-D-34-026",
-   "katilanlar": [],
-   "secimler": [
-    "1994yerel",
-    "1995",
-    "1999",
-    "1999yerel",
-    "2002",
-    "2004yerel",
-    "2007",
-    "2007referandum"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Başakşehir (Küçükçekmece parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-008-KUCUKCEKMECE-D3"
-   ]
-  },
   "HISTK-41-008-9ff8a8": {
    "taban": "TR-D-41-008",
    "katilanlar": [
@@ -7807,27 +6559,6 @@
    "adlar": [
     "BAŞİSKELE",
     "KARTEPE"
-   ]
-  },
-  "HISTK-34-015-247346": {
-   "taban": "TR-D-34-015",
-   "katilanlar": [],
-   "secimler": [
-    "2007referandum"
-   ],
-   "plaka": 34,
-   "kanunlar": [
-    "5747"
-   ],
-   "adlar": [
-    "Arnavutköy (Çatalca parçası, mahalle düzeyi)",
-    "Başakşehir (Büyükçekmece parçası, mahalle düzeyi)",
-    "Esenyurt (Büyükçekmece parçası, mahalle düzeyi)"
-   ],
-   "parcalar": [
-    "PARCA-34-002-CATALCA-D3",
-    "PARCA-34-008-BUYUKCEKMECE-D3",
-    "PARCA-34-018-BUYUKCEKMECE-D3"
    ]
   }
  },
@@ -8002,6 +6733,12 @@
   },
   {
    "secim": "1955yerel",
+   "ilce": "TR-D-15-006",
+   "ad": "ÇELTİKÇİ",
+   "ebeveyn": "TR-D-15-004"
+  },
+  {
+   "secim": "1955yerel",
    "ilce": "TR-D-15-009",
    "ad": "KEMER",
    "ebeveyn": "TR-D-15-004"
@@ -8017,6 +6754,18 @@
    "ilce": "TR-D-20-006",
    "ad": "BOZKURT",
    "ebeveyn": "TR-D-20-010"
+  },
+  {
+   "secim": "1955yerel",
+   "ilce": "TR-D-21-007",
+   "ad": "EĞİL",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1955yerel",
+   "ilce": "TR-D-21-012",
+   "ad": "KOCAKÖY",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
   },
   {
    "secim": "1955yerel",
@@ -8200,6 +6949,12 @@
   },
   {
    "secim": "1963yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1963yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -8208,6 +6963,12 @@
    "secim": "1963yerel",
    "ilce": "TR-D-07-012",
    "ad": "KEMER",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-07-014",
+   "ad": "KONYAALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
@@ -8227,6 +6988,12 @@
    "ilce": "TR-D-13-004",
    "ad": "GÜROYMAK",
    "ebeveyn": "TR-D-13-003"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-15-006",
+   "ad": "ÇELTİKÇİ",
+   "ebeveyn": "TR-D-15-004"
   },
   {
    "secim": "1963yerel",
@@ -8278,6 +7045,18 @@
   },
   {
    "secim": "1963yerel",
+   "ilce": "TR-D-21-007",
+   "ad": "EĞİL",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-21-012",
+   "ad": "KOCAKÖY",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1963yerel",
    "ilce": "TR-D-22-008",
    "ad": "SÜLOĞLU",
    "ebeveyn": "TR-D-22-001"
@@ -8308,6 +7087,18 @@
   },
   {
    "secim": "1963yerel",
+   "ilce": "TR-D-31-005",
+   "ad": "DEFNE",
+   "ebeveyn": "TR-D-31-002"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-32-005",
+   "ad": "GÖNEN",
+   "ebeveyn": "TR-D-32-006"
+  },
+  {
+   "secim": "1963yerel",
    "ilce": "TR-D-34-004",
    "ad": "Küçükçekmece (1987 sınırı: AVCILAR)",
    "ebeveyn": "HIST-Istanbul-Bakirkoy"
@@ -8323,6 +7114,12 @@
    "ilce": "TR-D-34-026",
    "ad": "Küçükçekmece (1987 sınırı: KÜÇÜKÇEKMECE)",
    "ebeveyn": "HIST-Istanbul-Bakirkoy"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-37-012",
+   "ad": "İHSANGAZİ",
+   "ebeveyn": "TR-D-37-014"
   },
   {
    "secim": "1963yerel",
@@ -8383,6 +7180,12 @@
    "ilce": "TR-D-46-003",
    "ad": "ÇAĞLAYANCERİT",
    "ebeveyn": "HIST-Kahramanmaraş-Merkez"
+  },
+  {
+   "secim": "1963yerel",
+   "ilce": "TR-D-47-010",
+   "ad": "YEŞİLLİ",
+   "ebeveyn": "TR-D-47-001"
   },
   {
    "secim": "1963yerel",
@@ -8482,6 +7285,12 @@
   },
   {
    "secim": "1963yerel",
+   "ilce": "TR-D-65-005",
+   "ad": "EDREMİT",
+   "ebeveyn": "HIST-Van-Merkez"
+  },
+  {
+   "secim": "1963yerel",
    "ilce": "TR-D-67-006",
    "ad": "KİLİMLİ",
    "ebeveyn": "TR-D-67-008"
@@ -8548,6 +7357,12 @@
   },
   {
    "secim": "1968yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1968yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -8556,6 +7371,12 @@
    "secim": "1968yerel",
    "ilce": "TR-D-07-012",
    "ad": "KEMER",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-07-014",
+   "ad": "KONYAALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
@@ -8575,6 +7396,12 @@
    "ilce": "TR-D-13-004",
    "ad": "GÜROYMAK",
    "ebeveyn": "TR-D-13-003"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-15-006",
+   "ad": "ÇELTİKÇİ",
+   "ebeveyn": "TR-D-15-004"
   },
   {
    "secim": "1968yerel",
@@ -8626,6 +7453,18 @@
   },
   {
    "secim": "1968yerel",
+   "ilce": "TR-D-21-007",
+   "ad": "EĞİL",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-21-012",
+   "ad": "KOCAKÖY",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1968yerel",
    "ilce": "TR-D-22-008",
    "ad": "SÜLOĞLU",
    "ebeveyn": "TR-D-22-001"
@@ -8656,6 +7495,18 @@
   },
   {
    "secim": "1968yerel",
+   "ilce": "TR-D-31-005",
+   "ad": "DEFNE",
+   "ebeveyn": "TR-D-31-002"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-32-005",
+   "ad": "GÖNEN",
+   "ebeveyn": "TR-D-32-006"
+  },
+  {
+   "secim": "1968yerel",
    "ilce": "TR-D-34-004",
    "ad": "Küçükçekmece (1987 sınırı: AVCILAR)",
    "ebeveyn": "HIST-Istanbul-Bakirkoy"
@@ -8671,6 +7522,12 @@
    "ilce": "TR-D-34-026",
    "ad": "Küçükçekmece (1987 sınırı: KÜÇÜKÇEKMECE)",
    "ebeveyn": "HIST-Istanbul-Bakirkoy"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-37-012",
+   "ad": "İHSANGAZİ",
+   "ebeveyn": "TR-D-37-014"
   },
   {
    "secim": "1968yerel",
@@ -8731,6 +7588,12 @@
    "ilce": "TR-D-46-003",
    "ad": "ÇAĞLAYANCERİT",
    "ebeveyn": "HIST-Kahramanmaraş-Merkez"
+  },
+  {
+   "secim": "1968yerel",
+   "ilce": "TR-D-47-010",
+   "ad": "YEŞİLLİ",
+   "ebeveyn": "TR-D-47-001"
   },
   {
    "secim": "1968yerel",
@@ -8830,6 +7693,12 @@
   },
   {
    "secim": "1968yerel",
+   "ilce": "TR-D-65-005",
+   "ad": "EDREMİT",
+   "ebeveyn": "HIST-Van-Merkez"
+  },
+  {
+   "secim": "1968yerel",
    "ilce": "TR-D-67-006",
    "ad": "KİLİMLİ",
    "ebeveyn": "TR-D-67-008"
@@ -8896,6 +7765,12 @@
   },
   {
    "secim": "1973yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1973yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -8904,6 +7779,12 @@
    "secim": "1973yerel",
    "ilce": "TR-D-07-012",
    "ad": "KEMER",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-07-014",
+   "ad": "KONYAALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
@@ -8923,6 +7804,12 @@
    "ilce": "TR-D-13-004",
    "ad": "GÜROYMAK",
    "ebeveyn": "TR-D-13-003"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-15-006",
+   "ad": "ÇELTİKÇİ",
+   "ebeveyn": "TR-D-15-004"
   },
   {
    "secim": "1973yerel",
@@ -8974,6 +7861,18 @@
   },
   {
    "secim": "1973yerel",
+   "ilce": "TR-D-21-007",
+   "ad": "EĞİL",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-21-012",
+   "ad": "KOCAKÖY",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1973yerel",
    "ilce": "TR-D-22-008",
    "ad": "SÜLOĞLU",
    "ebeveyn": "TR-D-22-001"
@@ -9001,6 +7900,18 @@
    "ilce": "TR-D-26-006",
    "ad": "İNÖNÜ",
    "ebeveyn": "HIST-Eskişehir-Merkez"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-31-005",
+   "ad": "DEFNE",
+   "ebeveyn": "TR-D-31-002"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-32-005",
+   "ad": "GÖNEN",
+   "ebeveyn": "TR-D-32-006"
   },
   {
    "secim": "1973yerel",
@@ -9028,6 +7939,12 @@
   },
   {
    "secim": "1973yerel",
+   "ilce": "TR-D-37-012",
+   "ad": "İHSANGAZİ",
+   "ebeveyn": "TR-D-37-014"
+  },
+  {
+   "secim": "1973yerel",
    "ilce": "TR-D-38-005",
    "ad": "HACILAR",
    "ebeveyn": "TR-D-38-008"
@@ -9085,6 +8002,12 @@
    "ilce": "TR-D-46-003",
    "ad": "ÇAĞLAYANCERİT",
    "ebeveyn": "HIST-Kahramanmaraş-Merkez"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-47-010",
+   "ad": "YEŞİLLİ",
+   "ebeveyn": "TR-D-47-001"
   },
   {
    "secim": "1973yerel",
@@ -9181,6 +8104,12 @@
    "ilce": "TR-D-58-015",
    "ad": "ULAŞ",
    "ebeveyn": "TR-D-58-012"
+  },
+  {
+   "secim": "1973yerel",
+   "ilce": "TR-D-65-005",
+   "ad": "EDREMİT",
+   "ebeveyn": "HIST-Van-Merkez"
   },
   {
    "secim": "1973yerel",
@@ -9250,6 +8179,12 @@
   },
   {
    "secim": "1977yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1977yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -9258,6 +8193,12 @@
    "secim": "1977yerel",
    "ilce": "TR-D-07-012",
    "ad": "KEMER",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-07-014",
+   "ad": "KONYAALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
@@ -9277,6 +8218,12 @@
    "ilce": "TR-D-13-004",
    "ad": "GÜROYMAK",
    "ebeveyn": "TR-D-13-003"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-15-006",
+   "ad": "ÇELTİKÇİ",
+   "ebeveyn": "TR-D-15-004"
   },
   {
    "secim": "1977yerel",
@@ -9328,6 +8275,18 @@
   },
   {
    "secim": "1977yerel",
+   "ilce": "TR-D-21-007",
+   "ad": "EĞİL",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-21-012",
+   "ad": "KOCAKÖY",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1977yerel",
    "ilce": "TR-D-22-008",
    "ad": "SÜLOĞLU",
    "ebeveyn": "TR-D-22-001"
@@ -9358,6 +8317,18 @@
   },
   {
    "secim": "1977yerel",
+   "ilce": "TR-D-31-005",
+   "ad": "DEFNE",
+   "ebeveyn": "TR-D-31-002"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-32-005",
+   "ad": "GÖNEN",
+   "ebeveyn": "TR-D-32-006"
+  },
+  {
+   "secim": "1977yerel",
    "ilce": "TR-D-34-004",
    "ad": "Küçükçekmece (1987 sınırı: AVCILAR)",
    "ebeveyn": "HIST-Istanbul-Bakirkoy"
@@ -9373,6 +8344,12 @@
    "ilce": "TR-D-34-026",
    "ad": "Küçükçekmece (1987 sınırı: KÜÇÜKÇEKMECE)",
    "ebeveyn": "HIST-Istanbul-Bakirkoy"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-37-012",
+   "ad": "İHSANGAZİ",
+   "ebeveyn": "TR-D-37-014"
   },
   {
    "secim": "1977yerel",
@@ -9433,6 +8410,12 @@
    "ilce": "TR-D-46-003",
    "ad": "ÇAĞLAYANCERİT",
    "ebeveyn": "HIST-Kahramanmaraş-Merkez"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-47-010",
+   "ad": "YEŞİLLİ",
+   "ebeveyn": "TR-D-47-001"
   },
   {
    "secim": "1977yerel",
@@ -9529,6 +8512,12 @@
    "ilce": "TR-D-58-015",
    "ad": "ULAŞ",
    "ebeveyn": "TR-D-58-012"
+  },
+  {
+   "secim": "1977yerel",
+   "ilce": "TR-D-65-005",
+   "ad": "EDREMİT",
+   "ebeveyn": "HIST-Van-Merkez"
   },
   {
    "secim": "1977yerel",
@@ -9562,6 +8551,12 @@
   },
   {
    "secim": "1984yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1984yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -9570,6 +8565,12 @@
    "secim": "1984yerel",
    "ilce": "TR-D-07-012",
    "ad": "KEMER",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-07-014",
+   "ad": "KONYAALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
@@ -9589,6 +8590,12 @@
    "ilce": "TR-D-13-004",
    "ad": "GÜROYMAK",
    "ebeveyn": "TR-D-13-003"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-15-006",
+   "ad": "ÇELTİKÇİ",
+   "ebeveyn": "TR-D-15-004"
   },
   {
    "secim": "1984yerel",
@@ -9640,6 +8647,18 @@
   },
   {
    "secim": "1984yerel",
+   "ilce": "TR-D-21-007",
+   "ad": "EĞİL",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-21-012",
+   "ad": "KOCAKÖY",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1984yerel",
    "ilce": "TR-D-22-008",
    "ad": "SÜLOĞLU",
    "ebeveyn": "TR-D-22-001"
@@ -9667,6 +8686,24 @@
    "ilce": "TR-D-26-006",
    "ad": "İNÖNÜ",
    "ebeveyn": "HIST-Eskişehir-Merkez"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-31-005",
+   "ad": "DEFNE",
+   "ebeveyn": "TR-D-31-002"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-32-005",
+   "ad": "GÖNEN",
+   "ebeveyn": "TR-D-32-006"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-37-012",
+   "ad": "İHSANGAZİ",
+   "ebeveyn": "TR-D-37-014"
   },
   {
    "secim": "1984yerel",
@@ -9727,6 +8764,12 @@
    "ilce": "TR-D-46-003",
    "ad": "ÇAĞLAYANCERİT",
    "ebeveyn": "HIST-Kahramanmaraş-Merkez"
+  },
+  {
+   "secim": "1984yerel",
+   "ilce": "TR-D-47-010",
+   "ad": "YEŞİLLİ",
+   "ebeveyn": "TR-D-47-001"
   },
   {
    "secim": "1984yerel",
@@ -9826,6 +8869,12 @@
   },
   {
    "secim": "1984yerel",
+   "ilce": "TR-D-65-005",
+   "ad": "EDREMİT",
+   "ebeveyn": "HIST-Van-Merkez"
+  },
+  {
+   "secim": "1984yerel",
    "ilce": "TR-D-67-006",
    "ad": "KİLİMLİ",
    "ebeveyn": "TR-D-67-008"
@@ -9844,6 +8893,12 @@
   },
   {
    "secim": "1989yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1989yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -9856,9 +8911,21 @@
   },
   {
    "secim": "1989yerel",
+   "ilce": "TR-D-07-014",
+   "ad": "KONYAALTI",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1989yerel",
    "ilce": "TR-D-09-011",
    "ad": "KÖŞK",
    "ebeveyn": "TR-D-09-005"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-15-006",
+   "ad": "ÇELTİKÇİ",
+   "ebeveyn": "TR-D-15-004"
   },
   {
    "secim": "1989yerel",
@@ -9880,6 +8947,12 @@
   },
   {
    "secim": "1989yerel",
+   "ilce": "TR-D-21-012",
+   "ad": "KOCAKÖY",
+   "ebeveyn": "HIST-Diyarbakır-Merkez"
+  },
+  {
+   "secim": "1989yerel",
    "ilce": "TR-D-22-008",
    "ad": "SÜLOĞLU",
    "ebeveyn": "TR-D-22-001"
@@ -9889,6 +8962,18 @@
    "ilce": "TR-D-25-002",
    "ad": "AZİZİYE",
    "ebeveyn": "HIST-Erzurum-Merkez"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-31-005",
+   "ad": "DEFNE",
+   "ebeveyn": "TR-D-31-002"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-32-005",
+   "ad": "GÖNEN",
+   "ebeveyn": "TR-D-32-006"
   },
   {
    "secim": "1989yerel",
@@ -9913,6 +8998,12 @@
    "ilce": "TR-D-41-011",
    "ad": "KARTEPE",
    "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "1989yerel",
+   "ilce": "TR-D-47-010",
+   "ad": "YEŞİLLİ",
+   "ebeveyn": "TR-D-47-001"
   },
   {
    "secim": "1989yerel",
@@ -9982,6 +9073,12 @@
   },
   {
    "secim": "1989yerel",
+   "ilce": "TR-D-65-005",
+   "ad": "EDREMİT",
+   "ebeveyn": "HIST-Van-Merkez"
+  },
+  {
+   "secim": "1989yerel",
    "ilce": "TR-D-67-006",
    "ad": "KİLİMLİ",
    "ebeveyn": "TR-D-67-008"
@@ -9994,6 +9091,12 @@
   },
   {
    "secim": "1994yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1994yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -10018,6 +9121,12 @@
   },
   {
    "secim": "1999yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "1999yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -10042,6 +9151,12 @@
   },
   {
    "secim": "2004yerel",
+   "ilce": "TR-D-07-002",
+   "ad": "AKSU",
+   "ebeveyn": "HIST-Antalya-Merkez"
+  },
+  {
+   "secim": "2004yerel",
    "ilce": "TR-D-07-005",
    "ad": "DÖŞEMEALTI",
    "ebeveyn": "HIST-Antalya-Merkez"
@@ -10057,6 +9172,12 @@
    "ilce": "TR-D-41-011",
    "ad": "KARTEPE",
    "ebeveyn": "TR-D-41-008"
+  },
+  {
+   "secim": "2007referandum",
+   "ilce": "TR-D-31-005",
+   "ad": "DEFNE",
+   "ebeveyn": "TR-D-31-002"
   },
   {
    "secim": "2007referandum",
@@ -10087,1109 +9208,6 @@
    "ilce": "TR-D-54-014",
    "ad": "SERDİVAN",
    "ebeveyn": "TR-D-54-001"
-  }
- ],
- "bolusumUygulanmadi": [
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-01-003",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-06-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-06-022",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-07-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-07-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-07-014",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-09-004",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-31-005",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-34-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-34-003",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-34-008",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-34-016",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-34-018",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-34-029",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-35-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-38-009",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-41-012",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-42-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-47-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-52-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-52-011",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-55-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-55-013",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-58-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-65-005",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-68-004",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1950yerel",
-   "ilce": "TR-D-69-003",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-01-003",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-06-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-06-022",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-07-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-07-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-07-014",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-09-004",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-31-005",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-34-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-34-003",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-34-008",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-34-016",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-34-018",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-34-029",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-35-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-38-009",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-41-012",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-42-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-47-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-52-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-52-011",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-55-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-55-013",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-58-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-65-005",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-68-004",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1955yerel",
-   "ilce": "TR-D-69-003",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1961referandum",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961referandum",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961referandum",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961referandum",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961referandum",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961referandum",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1961",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-07-014",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-34-016",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-34-033",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-65-005",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1963yerel",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1965",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1965",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1965",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1965",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1965",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1965",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-07-014",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-34-016",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-34-033",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-65-005",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1968yerel",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1969",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1969",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1969",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1969",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1969",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1969",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-07-014",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-34-016",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-34-033",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-65-005",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1973yerel",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-07-014",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-34-016",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-34-033",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-65-005",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1977yerel",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1982referandum",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1982referandum",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1982referandum",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1982referandum",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1982referandum",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1982referandum",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1983",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1983",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1983",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1983",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1983",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1983",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1984yerel",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1984yerel",
-   "ilce": "TR-D-07-014",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1984yerel",
-   "ilce": "TR-D-34-029",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1984yerel",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1984yerel",
-   "ilce": "TR-D-58-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1984yerel",
-   "ilce": "TR-D-65-005",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1984yerel",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1984yerel",
-   "ilce": "TR-D-69-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-06-022",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-41-012",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-47-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-52-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-55-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-55-013",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987referandum",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-06-022",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-41-012",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-47-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-52-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-55-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-55-013",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1987",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1988referandum",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1988referandum",
-   "ilce": "TR-D-06-022",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1988referandum",
-   "ilce": "TR-D-41-012",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1988referandum",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1988referandum",
-   "ilce": "TR-D-47-002",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1988referandum",
-   "ilce": "TR-D-52-010",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1988referandum",
-   "ilce": "TR-D-55-001",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "1988referandum",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1989yerel",
-   "ilce": "TR-D-01-003",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1989yerel",
-   "ilce": "TR-D-06-022",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1989yerel",
-   "ilce": "TR-D-07-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1989yerel",
-   "ilce": "TR-D-07-014",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1989yerel",
-   "ilce": "TR-D-31-005",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1989yerel",
-   "ilce": "TR-D-42-010",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1989yerel",
-   "ilce": "TR-D-65-005",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1989yerel",
-   "ilce": "TR-D-68-004",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1994yerel",
-   "ilce": "TR-D-07-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "1999yerel",
-   "ilce": "TR-D-07-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "2004yerel",
-   "ilce": "TR-D-07-002",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "2007referandum",
-   "ilce": "TR-D-31-005",
-   "neden": "hiçbir eski ilçe bulunamadı"
-  },
-  {
-   "secim": "2007referandum",
-   "ilce": "TR-D-34-003",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "2007referandum",
-   "ilce": "TR-D-34-016",
-   "neden": "sayım dönemi yok"
-  },
-  {
-   "secim": "2007referandum",
-   "ilce": "TR-D-34-029",
-   "neden": "sayım dönemi yok"
-  }
- ],
- "parcaHedefsiz": [
-  {
-   "secim": "1963yerel",
-   "parca": "PARCA-07-002-MERKEZ-D1"
-  },
-  {
-   "secim": "1963yerel",
-   "parca": "PARCA-31-005-MERKEZ-D1"
-  },
-  {
-   "secim": "1963yerel",
-   "parca": "PARCA-34-002-GAZIOSMANPASA-D1"
-  },
-  {
-   "secim": "1963yerel",
-   "parca": "PARCA-34-003-KADIKOY-D1"
-  },
-  {
-   "secim": "1963yerel",
-   "parca": "PARCA-34-003-USKUDAR-D1"
-  },
-  {
-   "secim": "1963yerel",
-   "parca": "PARCA-34-008-KUCUKCEKMECE-D1"
-  },
-  {
-   "secim": "1963yerel",
-   "parca": "PARCA-41-012-MERKEZ-D1"
-  },
-  {
-   "secim": "1963yerel",
-   "parca": "PARCA-55-001-MERKEZ-D1"
-  },
-  {
-   "secim": "1968yerel",
-   "parca": "PARCA-07-002-MERKEZ-D1"
-  },
-  {
-   "secim": "1968yerel",
-   "parca": "PARCA-31-005-MERKEZ-D1"
-  },
-  {
-   "secim": "1968yerel",
-   "parca": "PARCA-34-002-GAZIOSMANPASA-D1"
-  },
-  {
-   "secim": "1968yerel",
-   "parca": "PARCA-34-003-KADIKOY-D1"
-  },
-  {
-   "secim": "1968yerel",
-   "parca": "PARCA-34-003-USKUDAR-D1"
-  },
-  {
-   "secim": "1968yerel",
-   "parca": "PARCA-34-008-KUCUKCEKMECE-D1"
-  },
-  {
-   "secim": "1968yerel",
-   "parca": "PARCA-41-012-MERKEZ-D1"
-  },
-  {
-   "secim": "1968yerel",
-   "parca": "PARCA-55-001-MERKEZ-D1"
-  },
-  {
-   "secim": "1973yerel",
-   "parca": "PARCA-07-002-MERKEZ-D1"
-  },
-  {
-   "secim": "1973yerel",
-   "parca": "PARCA-31-005-MERKEZ-D1"
-  },
-  {
-   "secim": "1973yerel",
-   "parca": "PARCA-34-002-GAZIOSMANPASA-D1"
-  },
-  {
-   "secim": "1973yerel",
-   "parca": "PARCA-34-003-KADIKOY-D1"
-  },
-  {
-   "secim": "1973yerel",
-   "parca": "PARCA-34-003-USKUDAR-D1"
-  },
-  {
-   "secim": "1973yerel",
-   "parca": "PARCA-34-008-KUCUKCEKMECE-D1"
-  },
-  {
-   "secim": "1973yerel",
-   "parca": "PARCA-41-012-MERKEZ-D1"
-  },
-  {
-   "secim": "1973yerel",
-   "parca": "PARCA-55-001-MERKEZ-D1"
-  },
-  {
-   "secim": "1977yerel",
-   "parca": "PARCA-07-002-MERKEZ-D1"
-  },
-  {
-   "secim": "1977yerel",
-   "parca": "PARCA-31-005-MERKEZ-D1"
-  },
-  {
-   "secim": "1977yerel",
-   "parca": "PARCA-34-002-GAZIOSMANPASA-D1"
-  },
-  {
-   "secim": "1977yerel",
-   "parca": "PARCA-34-003-KADIKOY-D1"
-  },
-  {
-   "secim": "1977yerel",
-   "parca": "PARCA-34-003-USKUDAR-D1"
-  },
-  {
-   "secim": "1977yerel",
-   "parca": "PARCA-34-008-KUCUKCEKMECE-D1"
-  },
-  {
-   "secim": "1977yerel",
-   "parca": "PARCA-41-012-MERKEZ-D1"
-  },
-  {
-   "secim": "1977yerel",
-   "parca": "PARCA-55-001-MERKEZ-D1"
-  },
-  {
-   "secim": "1984yerel",
-   "parca": "PARCA-07-002-MERKEZ-D1"
-  },
-  {
-   "secim": "1984yerel",
-   "parca": "PARCA-31-005-MERKEZ-D1"
-  },
-  {
-   "secim": "1984yerel",
-   "parca": "PARCA-41-012-MERKEZ-D1"
-  },
-  {
-   "secim": "1984yerel",
-   "parca": "PARCA-55-001-MERKEZ-D1"
   }
  ]
 }

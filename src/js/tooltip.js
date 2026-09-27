@@ -35,8 +35,22 @@
       html += '<div class="row"><span>Katılım</span><span>'+(obj.katilim!=null?'%'+obj.katilim.toFixed(2):'—')+'</span></div>';
     }
     if(sandikVal!=null) html += '<div class="row"><span>Sandık</span><span>'+fmt(sandikVal)+'</span></div>';
+    if(info.kind==='ilce') html += birlesimNotuHtml(info.geomId);
     tip.innerHTML = html;
     positionTip(e);
+  }
+  // Tarihsel birlesim poligonu (bu secimde ilce bugunku birden cok ilcenin alanini kapsiyordu):
+  // geo/historical/idari/harita_notlari.json -> birlesimler
+  function birlesimNotuHtml(geomId){
+    const b = ((HARITA_NOTLARI && HARITA_NOTLARI.birlesimler) || {})[geomId];
+    if(!b) return '';
+    let h = '<div class="row tip-not"><span>Bugünkü sınırlarla: ' + b.ilceler.join(', ') + '</span></div>';
+    for(const c of (b.cogunluk || [])){
+      const d = (c.digerleri || []).map(x => x[0] + ' (' + x[1] + ' birim)').join(', ');
+      if(d) h += '<div class="row tip-not"><span>' + c.ad + ' birimlerinin %' + Math.round(c.pay * 100) + '\'i '
+        + c.ana + '\'den, ' + d + ' başka ilçeden geldi; harita ana kaynağa göre çizildi.</span></div>';
+    }
+    return h;
   }
   function positionTip(e){
     tip.style.left = e.clientX+'px';

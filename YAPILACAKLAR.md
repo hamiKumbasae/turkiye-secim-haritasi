@@ -750,3 +750,12 @@ kaynak günlüğü: `data/kaynaklar/ARASTIRMA_KAYDI.md`.
   `sources.yml` içindeki eskimiş gerekçe ("seçim çevresi il'di") düzeltildi.
 
 **Sıradaki:** yerel seçimler (kapsam ve öncelik kullanıcıyla konuşulacak).
+
+## Durum — 2026-09-27: tarihsel idari katman kapandı
+
+- Kuruluş kanunlarının ek listelerinden ilçe soyu (Faz 1–2) ve haritaya yansıtma (Faz 4a)
+  tamam: tek kaynaklı ilçeler eski ilçelerine, ana kaynağı Merkez olan çok kaynaklı ilçeler
+  (≥ %70) Merkez'e katılır; kalan çok kaynaklı ilçeler bütün poligon hâlinde, nedeni ipucunda.
+  Ayrıntı: `geo/historical/idari/README.md`.
+- Mahalle düzeyinde paylaştırma denendi, arşivlendi: `arsiv/mahalle-bolusumu/README.md`.
+- Bundan sonrası: seçimler tek tek elle gözden geçirilecek; her bulgu için tekil düzeltme.

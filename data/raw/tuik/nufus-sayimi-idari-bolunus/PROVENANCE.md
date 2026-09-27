@@ -14,7 +14,7 @@ dosya URL'den indirilip SHA-256 ile doğrulanabilir.
 İçerik: ilçe → bucak → köy muhtarlığı (ve belde, "(B)"; bucak merkezi "(BM)") nüfusları.
 Şehir (il/ilçe merkezi belediyesi) içindeki mahalleler listelenmez.
 
-Kullanım: `scripts/pipelines/historical_geo/build_mahalle_bolusumu.py` → `DONEMSEL`
+Kullanım: `arsiv/mahalle-bolusumu/scripts/build_mahalle_bolusumu.py` (arşiv) → `DONEMSEL`; etkin kullanım: `geo/historical/idari/sayim_kaniti.json`
 (Arnavutköy'ün kaynak birimlerinin 1960, 1985, 1990 ilçe bağlılığı). Bulgular:
 - Tayakadın 1960'ta Çatalca (Hadımköy bucağı), 1985'te Gaziosmanpaşa.
 - Yeniköy 1960 ve 1985'te Çatalca (Hadımköy bucağı), 1990'da Gaziosmanpaşa.
@@ -39,7 +39,7 @@ Ek bulgular (Başakşehir, Esenyurt, Çekmeköy, Sancaktepe, Ataşehir, Küçük
   Yenidoğan. Beykoz M.Şevketpaşa bucağı: Ömerli (BM), Hüseyinli, Koçullu, Sırapınar (1960,
   1985, 1990). Kartal Şamandıra bucağı: Şamandıra, Paşaköy, Sarıgazi (yalnız 1960).
 
-Ülke geneli dizin: `scripts/pipelines/historical_geo/extract_sayim_koyleri.py` üç kitabın
+Ülke geneli dizin (arşiv): `arsiv/mahalle-bolusumu/scripts/extract_sayim_koyleri.py` üç kitabın
 tamamını (yukarıdaki SHA-256'larla doğrulayarak) `.cache/tuik-nufus-sayimi/` altına indirir
-ve `data/kaynaklar/tuik/nufus_sayimi/{1960,1985,1990}_koyler.json` dizinini üretir.
+ve `data/kaynaklar/tuik/nufus_sayimi/{1960,1985,1990}_koyler.json` dizinini üretir (çıktı `arsiv/mahalle-bolusumu/veri.tar.gz` içinde).
 
