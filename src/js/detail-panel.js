@@ -115,7 +115,12 @@
   // bagimsizlar dahil) - MAJOR listesi sadece hangilerinin ilk sirada, hangilerinin
   // "digerleri" acilir-kapanir bolumune gidecegini belirliyor.
   function renderPartyResults(entity){
-    const rank = r => isSeatBased(r.oy) ? (r.oy.sandalye||0) : (r.oy.oy||0);
+    // 1950-1957 genel secimleri cogunluk usulu (il tek secim cevresi): parti oy sayilari
+    // karsilastirilamaz (bagimsizlarin oyu birden cok adayin toplami); siralama ve il kazanani
+    // vekil sayisina, esitlikte resmi oy oranina gore (merge_into_normalized.py ile ayni kural)
+    const cogunluk = DATA.tur === 'genel' && COGUNLUK_YILLARI.has(currentYear);
+    const rank = r => cogunluk ? (r.vekil * 1000 + (r.oy.oran || 0))
+      : isSeatBased(r.oy) ? (r.oy.sandalye||0) : (r.oy.oy||0);
     const allNamed = Object.entries(entity.oy||{}).map(([name,oy])=>({name, oy, vekil:(entity.vekil&&entity.vekil[name])||0}))
       .filter(r=>r.oy && (r.oy.oy>0 || r.oy.sandalye>0));
     const majorSet = new Set(MAJOR);

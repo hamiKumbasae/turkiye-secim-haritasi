@@ -88,3 +88,14 @@ birebir örtüştü. `merge_into_normalized.py`'nin dahili bütünlük kontrolü
 (vekil toplamı == YSK milletvekili sayısı) 66 il × 8 yıl için hatasız
 geçti. Playwright ile tarayıcıda 1950/1961/1965 sekmeleri, Ankara detay
 paneli ve tablo görünümü test edildi.
+
+## İl kazananı: 1950, 1954, 1957 (2026-09-27)
+
+Bu yıllarda çoğunluk usulü uygulandı ve il tek seçim çevresiydi. YSK tablolarındaki parti
+"oy sayısı" karşılaştırılabilir değil: bağımsızların oyu birden çok adayın toplamı, ve bazı
+illerde oy sayısı ile oy oranı çelişiyor (1950 Mardin: Bağımsızlar 47.771 oy ama %7,6;
+DP 45.078 oy %42,8; CHP 44.882 oy %49,7). Bu yüzden il kazananı **en çok vekil kazanan
+parti, eşitlikte resmî oy oranı yüksek olan**dır (`COGUNLUK_YILLARI`); ön yüz ayrıntı paneli
+de bu yıllarda partileri aynı sırayla dizer. Değişen iller: 1950 Mardin (Bağımsız → CHP;
+vekil CHP 3, DP 3, Bağımsız 1) ve Ordu (DP → CHP; vekil CHP 6, DP 2, oran %50–%50).
+Kaynaktaki oy ve oran değerleri değiştirilmedi.

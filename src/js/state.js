@@ -1,4 +1,6 @@
   let currentTur = 'cumhurbaskanligi';
+  // cogunluk usulu genel secim yillari (il kazanani vekil sayisina gore)
+  const COGUNLUK_YILLARI = new Set(['1950', '1954', '1957']);
   let DATA, MAJOR, ilByPlaka, districtsByPlaka, districtByGeomId, currentYear;
 
   function partyColor(name){

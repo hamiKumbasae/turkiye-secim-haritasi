@@ -27,6 +27,9 @@ PARTILER_PATH = DATA_NORM / "partiler.json"
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.election_io import load_election, save_election  # noqa: E402
 
+# cogunluk usulu (il tek secim cevresi) genel secim yillari: il kazanani vekil sayisina gore
+COGUNLUK_YILLARI = {"1950", "1954", "1957"}
+
 YEARS = ["1950", "1954", "1957", "1961", "1965", "1969", "1973", "1977"]
 
 # secim_tarihi_data.json'da SEÇİM seviyesinde (il degil) 'toplamSandalye' alani
@@ -141,7 +144,14 @@ def main():
                 )
                 continue
 
-            kazanan = max(info["partiler"].items(), key=lambda kv: kv[1]["oy"])[0]
+            if year in COGUNLUK_YILLARI:
+                # 1950-1957 coğunluk usulü, il tek seçim çevresi: parti oy sayılari karsilastirilamaz
+                # (bagimsizlarin oyu birden cok adayin toplami; YSK'da oy ile oran celisebiliyor,
+                # orn. 1950 Mardin). Il kazanani = en cok vekil, esitlikte resmi oy orani.
+                kazanan = max(info["partiler"].items(),
+                              key=lambda kv: (kv[1]["mv"] or 0, kv[1]["oran"] or 0))[0]
+            else:
+                kazanan = max(info["partiler"].items(), key=lambda kv: kv[1]["oy"])[0]
             kazanan_key = map_party(kazanan, year)
 
             il["katilim"] = info["katilim_orani"]

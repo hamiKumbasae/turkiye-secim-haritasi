@@ -557,6 +557,25 @@ async function scenario_1961_1987Ilce(browser) {
   check('1961-1987 genel ilçe: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// 1950-1957 genel secimleri cogunluk usulu: il kazanani vekil sayisina gore (esitlikte oy orani).
+// 1950 Mardin: YSK'da Bagimsizlar 47.771 'oy' (birden cok adayin toplami, %7,6) ama vekil
+// CHP 3, DP 3, Bagimsiz 1 ve oran CHP %49,7 -> harita ve panel CHP.
+async function scenario_1950cogunluk(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(400);
+    check('1950 genel: yıl seçilebildi', await clickYear(page, '1950'));
+    await page.waitForTimeout(500);
+    const renk = await page.$$eval('path[data-plaka="47"], path[data-plaka="52"]', (els) => els.map((e) => e.getAttribute('fill')));
+    check('1950 genel: Mardin ve Ordu aynı (CHP) renginde', renk.length === 2 && renk[0] === renk[1], JSON.stringify(renk));
+    await page.$eval('path[data-plaka="47"]', (el) => el.dispatchEvent(new MouseEvent('click', {bubbles: true})));
+    await page.waitForTimeout(500);
+    const ilk = await page.$eval('#dParties', (el) => el.textContent.trim().slice(0, 40));
+    check('1950 genel Mardin: panelde ilk parti CHP', /^CHP/.test(ilk), ilk);
+  });
+  check('1950 çoğunluk: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function scenario_1950yerel(browser) {
   const errors = await withPage(browser, async (page) => {
     await page.click('#btnTurYerel');
@@ -700,6 +719,7 @@ async function main() {
     await scenario_2024meclis(browser);
     await scenario_referandum(browser);
     await scenario_2007referandumEminonuFatih(browser);
+    await scenario_1950cogunluk(browser);
   } finally {
     await browser.close();
   }
