@@ -17,6 +17,7 @@
       name = obj.ad; sandikVal = obj.sandik;
     }
     let html = '<b>'+name+'</b>';
+    if(!obj.kazanan && obj.not){ tip.innerHTML = html + '<div class="row tip-not"><span>' + obj.not + '</span></div>'; positionTip(e); return; }
     const isOranTip = DATA.tur === 'referandum' || DATA.tur === 'yerel' || DATA.tur === 'cumhurbaskanligi' || YEARS_NO_VEKIL.has(currentYear);
     if(mode==='winner'){
       const wOy = obj.oy[obj.kazanan];
@@ -35,6 +36,12 @@
       html += '<div class="row"><span>Katılım</span><span>'+(obj.katilim!=null?'%'+obj.katilim.toFixed(2):'—')+'</span></div>';
     }
     if(sandikVal!=null) html += '<div class="row"><span>Sandık</span><span>'+fmt(sandikVal)+'</span></div>';
+    if(DATA.tur==='yerel' && DATA.contestType!=='municipal_indirect'){
+      const alt = DATA.oylama==='igm' ? (info.kind==='il' ? 'İl genel meclisi · il toplamı' : 'İl genel meclisi · ilçenin tamamı')
+        : DATA.oylama==='bm' ? (info.kind==='il' ? 'Belediye meclisleri · ildeki tüm belediyeler' : 'İlçe belediyesi meclisi')
+        : (info.kind==='il' ? 'İl merkezi belediye başkanlığı (büyükşehirde büyükşehir)' : null);
+      if(alt && info.kind!=='mahalle') html += '<div class="row tip-not"><span>' + alt + '</span></div>';
+    }
     if(info.kind==='ilce' && obj.ilMerkeziBelediyesi) html += '<div class="row tip-not"><span>' + (obj.buyuksehirSonucu ? 'Büyükşehir' : 'İl merkezi') + ' belediye başkanlığı sonucu</span></div>';
     if(info.kind==='ilce') html += birlesimNotuHtml(info.geomId);
     tip.innerHTML = html;

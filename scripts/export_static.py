@@ -12,6 +12,7 @@ Cikti (varsayilan: dist_static/, --out ile degistirilebilir):
   data/parties.json                  - parti renk/kisa-ad tablosu (partiler.json)
   data/elections/<key>.json          - HER secim (46 dosya), normalize kaydin AYNISI
   data/mahalle_votes/<year>.json     - SADECE mahalle-duzeyi oy verisi olan yillar
+  data/meclis_harita/<yil>_<igm|bm>.json - yerel secim il genel meclisi / belediye meclisi
   geo/il_sinirlari.geojson
   geo/ilce_sinirlari.geojson
   geo/ilce_sinirlari_hist.geojson
@@ -66,6 +67,12 @@ def main():
     for key, record in secimler.items():
         write_json(out / "data" / "elections" / f"{key}.json", record)
     print(f"yazıldı: {len(secimler)} seçim -> {out / 'data' / 'elections'}/")
+
+    n_meclis = 0
+    for path in sorted((DATA_NORM / "meclis_harita").glob("*.json")):
+        write_json(out / "data" / "meclis_harita" / path.name, load_json(path))
+        n_meclis += 1
+    print(f"yazıldı: {n_meclis} yerel meclis kaydı -> {out / 'data' / 'meclis_harita'}/")
 
     mahalle_coverage = {}
     n_mahalle = 0

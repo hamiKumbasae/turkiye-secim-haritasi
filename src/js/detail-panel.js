@@ -3,7 +3,7 @@
   let detailView = 'baskanlik'; // 'baskanlik' | 'meclis' - sadece 2024yerel + MECLIS_PROVINCES'ta anlamli
 
   function meclisToggleApplicable(plaka){
-    return DATA.tur==='yerel' && currentYear==='2024yerel' && MECLIS_PROVINCES.has(plaka);
+    return DATA.tur==='yerel' && !DATA.oylama && currentYear==='2024yerel' && MECLIS_PROVINCES.has(plaka);
   }
 
   // Deger yoksa satiri TAMAMEN gizler ('—' yerine) - eski secimlerde art arda
@@ -82,6 +82,7 @@
         : 'ⓘ Bu seçimde belediye başkanı doğrudan halk tarafından seçilmiyordu. Sonuçlar belediye meclisi dağılımını temel alır.';
     }
 
+    if(p.not){ $('#dInfoNote').style.display = 'flex'; $('#dInfoNote').textContent = 'ⓘ ' + p.not; }
     $('#dSeatsLabel').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? 'Vekil / Sandalye' : 'Milletvekili';
     $('#dSeats').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? (p.toplamVekil || '—') : p.toplamVekil;
     $('#dTurnout').textContent = p.katilim!=null ? '%'+p.katilim.toFixed(2) : '—';

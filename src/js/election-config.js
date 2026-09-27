@@ -59,3 +59,36 @@
   const CB_YEAR_ORDER = ['2023cb2tur','2023cb1tur','2018cb','2014cb'];
   const CB_YEAR_LABEL = {'2023cb2tur':'2023 (2.Tur)','2023cb1tur':'2023 (1.Tur)','2018cb':'2018','2014cb':'2014'};
 
+  // ---------------- yerel secim: oylama turu (baskan / il genel meclisi / belediye meclisi) ----------------
+  // Meclis kayitlari scripts/pipelines/meclis_harita/build_meclis_harita.py ile uretilir; ayni
+  // yilin baskanlik kaydinin ilce iskeletini kullanir (harita cografyasi ayni kalir).
+  const OYLAMA_YILLARI = new Set(['2009yerel','2014yerel','2019yerel','2024yerel']);
+  const OYLAMA_KAYNAKTA_VAR = new Set(['1984yerel','1989yerel','1994yerel','1999yerel','2004yerel']);
+  const OYLAMA_ACIKLAMA = {
+    igm: 'YSK Açık Veri Portalı — il genel meclisi üyeliği oyları (sandık düzeyinden toplandı). İlçe sonucu ilçenin tamamıdır (beldeler dahil). 2014\'ten beri büyükşehirlerde il genel meclisi seçilmez (6360 sayılı Kanun).',
+    bm: 'YSK Açık Veri Portalı — belediye meclisi üyeliği oyları (sandık düzeyinden toplandı). İlçe sonucu yalnız ilçe belediyesinin meclisidir, belde meclisleri hariç. İl sonucu ildeki bütün belediye meclislerinin toplamıdır.',
+  };
+  async function oylamaKaydi(year, baskanKaydi){
+    if(baskanKaydi.tur !== 'yerel' || currentOylama === 'baskan') return baskanKaydi;
+    const k = OYLAMA_YILLARI.has(year) ? await loadOylama(year, currentOylama) : null;
+    if(k) return k;
+    currentOylama = 'baskan';
+    return baskanKaydi;
+  }
+  function renderOylamaToggle(){
+    const wrap = $('#oylamaToggle');
+    wrap.hidden = currentTur !== 'yerel' || DATA.contestType === 'municipal_indirect';
+    if(wrap.hidden) return;
+    const var_ = OYLAMA_YILLARI.has(currentYear);
+    for(const b of $$('#oylamaToggle button')){
+      const o = b.dataset.oylama;
+      b.classList.toggle('active', o === currentOylama);
+      b.disabled = o !== 'baskan' && !var_;
+      b.title = b.disabled ? (OYLAMA_KAYNAKTA_VAR.has(currentYear) ? 'Bu yılın meclis sonuçları haritaya henüz eklenmedi' : 'Bu seçim için meclis sonuçları kaynaklarda yok') : '';
+    }
+  }
+  $$('#oylamaToggle button').forEach(b => b.addEventListener('click', () => {
+    if(b.disabled || b.dataset.oylama === currentOylama) return;
+    currentOylama = b.dataset.oylama;
+    loadYear(currentYear);
+  }));

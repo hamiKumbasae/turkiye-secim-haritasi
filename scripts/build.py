@@ -107,6 +107,8 @@ def assemble_embedded() -> dict:
         "harita_notlari.json": gzip_b64(load_json(GEO_HIST / "idari" / "harita_notlari.json")),
         "turkiye_ilce_sinirlari_hist_splits.geojson": gzip_b64(load_json(GEO_HIST / "turkiye_ilce_sinirlari_hist_splits.geojson")),
         "eras": gzip_b64(eras),
+        # yerel secim meclis kayitlari (bkz. scripts/pipelines/meclis_harita/), lazy
+        "meclis_harita.json": gzip_b64({f.stem: load_json(f) for f in sorted((DATA_NORM / "meclis_harita").glob("*.json"))}),
     }
     return embedded
 

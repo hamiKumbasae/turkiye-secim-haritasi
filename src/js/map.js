@@ -180,7 +180,7 @@
 
   async function mahalleDataForDistrict(geomId){
     const geoRows = MAHALLE_GEO[geomId];
-    if(!geoRows) return null;
+    if(!geoRows || DATA.oylama) return null; // mahalle oylari yalniz baskanlik secimi icin var
     const votesForYear = await loadMahalleVotesForYear(currentYear);
     const voteRows = votesForYear[geomId];
     if(!voteRows) return null;

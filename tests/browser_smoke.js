@@ -590,6 +590,47 @@ async function scenario_yerelIlMerkezi(browser) {
   check('yerel il merkezi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// Yerel secimde oylama turu: belediye baskani / il genel meclisi / belediye meclisi.
+// 2024 il genel meclisi: buyuksehirlerde (Istanbul) secim yok -> bos ve notlu; Adiyaman'da var.
+async function scenario_yerelOylama(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurYerel');
+    await page.waitForTimeout(500);
+    check('yerel: oylama sekmeleri görünüyor', await page.$eval('#oylamaToggle', (e) => !e.hidden));
+    await page.click('#oylamaToggle button[data-oylama="igm"]');
+    await page.waitForTimeout(700);
+    const baslik = await page.textContent('#pageTitle');
+    check('2024 il genel meclisi: başlıkta oylama adı', baslik.includes('İl Genel Meclisi'), baslik);
+    const fill = async (pl) => page.$eval('path[data-plaka="' + pl + '"]', (e) => e.getAttribute('fill'));
+    const ist = await fill(34), adi = await fill(2);
+    check('2024 il genel meclisi: İstanbul boş (büyükşehir), Adıyaman renkli',
+      ist === 'var(--map-empty)' && adi && adi !== 'var(--map-empty)', ist + ' / ' + adi);
+    await page.$eval('path[data-plaka="34"]', (el) => el.dispatchEvent(new MouseEvent('mousemove', {bubbles: true, clientX: 300, clientY: 300})));
+    await page.waitForTimeout(200);
+    const tip = await page.textContent('#tooltip');
+    check('2024 il genel meclisi: İstanbul ipucunda 6360 notu', tip.includes('6360'), tip);
+    await page.click('#oylamaToggle button[data-oylama="bm"]');
+    await page.waitForTimeout(700);
+    const ist2 = await fill(34);
+    check('2024 belediye meclisi: İstanbul renkli', ist2 && ist2 !== 'var(--map-empty)', ist2);
+    await page.$eval('path[data-plaka="2"]', (el) => el.dispatchEvent(new MouseEvent('click', {bubbles: true})));
+    await page.waitForTimeout(600);
+    const ilce = await page.$$eval('path[data-geom-id]', (els) => els.filter((e) => e.getAttribute('fill') && e.getAttribute('fill') !== 'var(--map-empty)').length);
+    check('2024 belediye meclisi Adıyaman: ilçeler renkli', ilce >= 8, String(ilce));
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+    check('1977 yerel: yıl seçilebildi', await clickYear(page, '1977'));
+    await page.waitForTimeout(600);
+    const durum = await page.$$eval('#oylamaToggle button', (bs) => bs.map((b) => b.dataset.oylama + (b.disabled ? ':kapali' : '') + (b.classList.contains('active') ? ':aktif' : '')));
+    check('1977 yerel: meclis sekmeleri pasif, başkanlık seçili',
+      JSON.stringify(durum) === JSON.stringify(['baskan:aktif', 'igm:kapali', 'bm:kapali']), JSON.stringify(durum));
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(500);
+    check('genel seçim: oylama sekmeleri gizli', await page.$eval('#oylamaToggle', (e) => e.hidden));
+  });
+  check('yerel oylama: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 // 1950-1957 genel secimleri cogunluk usulu: il kazanani vekil sayisina gore (esitlikte oy orani).
 // 1950 Mardin: YSK'da Bagimsizlar 47.771 'oy' (birden cok adayin toplami, %7,6) ama vekil
 // CHP 3, DP 3, Bagimsiz 1 ve oran CHP %49,7 -> harita ve panel CHP.
@@ -754,6 +795,7 @@ async function main() {
     await scenario_2007referandumEminonuFatih(browser);
     await scenario_1950cogunluk(browser);
     await scenario_yerelIlMerkezi(browser);
+    await scenario_yerelOylama(browser);
   } finally {
     await browser.close();
   }

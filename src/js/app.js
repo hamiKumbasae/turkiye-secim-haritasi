@@ -35,7 +35,7 @@
   async function loadYear(year){
     currentYear = year;
     await ensureGeoForYear(year);
-    DATA = BUNDLE.secimler[year];
+    DATA = await oylamaKaydi(year, BUNDLE.secimler[year]);
     MAJOR = DATA.majorPartiler;
     ilByPlaka = Object.fromEntries(DATA.iller.map(p => [p.plaka, p]));
     districtsByPlaka = {};
@@ -62,6 +62,7 @@
     renderElectionBar();
     renderNationalSummary();
     renderYearPicker();
+    renderOylamaToggle();
     renderSeatBar();
     renderYurtdisiCard();
     renderCountryMap();

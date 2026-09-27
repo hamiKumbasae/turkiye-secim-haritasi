@@ -9,4 +9,4 @@
     const meta = PARTY[name] || PARTY['Diğer'];
     return dark ? meta.dark : meta.light;
   }
-
+  let currentOylama = 'baskan'; // yerel secimde gosterilen oylama: baskan | igm | bm
