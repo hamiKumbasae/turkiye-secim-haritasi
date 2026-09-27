@@ -557,6 +557,39 @@ async function scenario_1961_1987Ilce(browser) {
   check('1961-1987 genel ilçe: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// Eski yerel secimlerde il merkezi belediyesinin sonucu (il satiri) merkez ilcenin o donemki
+// sinirlariyla cizilir (ekle_il_merkezi_satirlari.py); buyuksehir yillarinda uretilmez.
+async function scenario_yerelIlMerkezi(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurYerel');
+    await page.waitForTimeout(400);
+    check('1977 yerel: yıl seçilebildi', await clickYear(page, '1977'));
+    await page.waitForTimeout(500);
+    await page.$eval('path[data-plaka="1"]', (el) => el.dispatchEvent(new MouseEvent('click', {bubbles: true})));
+    await page.waitForTimeout(600);
+    const ada = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1977 yerel Adana: Merkez (il merkezi belediyesi) poligonu çiziliyor',
+      ada.some((i) => i.startsWith('HISTK-HIST-Adana-Merkez-') || i === 'HIST-Adana-Merkez') && !ada.includes('TR-D-01-012'), JSON.stringify(ada));
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+    await page.$eval('path[data-plaka="6"]', (el) => el.dispatchEvent(new MouseEvent('click', {bubbles: true})));
+    await page.waitForTimeout(600);
+    const ank = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1977 yerel Ankara: şehir (Altındağ/Çankaya/Yenimahalle) tek il merkezi poligonu',
+      ank.some((i) => i.includes('HISTY-06-1977yerel')) && !ank.includes('TR-D-06-007'), JSON.stringify(ank));
+    await page.click('#btnBackCountry').catch(() => {});
+    await page.waitForTimeout(300);
+    check('1989 yerel: yıl seçilebildi', await clickYear(page, '1989'));
+    await page.waitForTimeout(500);
+    await page.$eval('path[data-plaka="35"]', (el) => el.dispatchEvent(new MouseEvent('click', {bubbles: true})));
+    await page.waitForTimeout(600);
+    const izm = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1989 yerel İzmir (büyükşehir): Konak kendi satırıyla, ek Merkez yok',
+      izm.some((i) => i.includes('Konak1991')) && !izm.some((i) => i.includes('Konak84')), JSON.stringify(izm));
+  });
+  check('yerel il merkezi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 // 1950-1957 genel secimleri cogunluk usulu: il kazanani vekil sayisina gore (esitlikte oy orani).
 // 1950 Mardin: YSK'da Bagimsizlar 47.771 'oy' (birden cok adayin toplami, %7,6) ama vekil
 // CHP 3, DP 3, Bagimsiz 1 ve oran CHP %49,7 -> harita ve panel CHP.
@@ -720,6 +753,7 @@ async function main() {
     await scenario_referandum(browser);
     await scenario_2007referandumEminonuFatih(browser);
     await scenario_1950cogunluk(browser);
+    await scenario_yerelIlMerkezi(browser);
   } finally {
     await browser.close();
   }

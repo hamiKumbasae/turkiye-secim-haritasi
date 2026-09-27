@@ -253,10 +253,13 @@ def main():
         taban = modern.get(p["taban"]) or hist_by.get(p["taban"])
         geoms = [temiz(shape(taban["geometry"]))] + [temiz(shape(modern[x]["geometry"])) for x in p["katilanlar"]]
         # birlesim yerlerindeki dikis deliklerini doldur (bileşenlerin kendi delikleri korunur)
-        bilesen = [temiz(shape(modern[x]["geometry"])) for x in
-                   (hist_parca.get(p["taban"], {p["taban"]}) | set(p["katilanlar"])) if x in modern]
+        icerik = (hist_parca.get(p["taban"], {p["taban"]}) | set(p["katilanlar"]))
+        bilesen = [temiz(shape(modern[x]["geometry"])) for x in icerik if x in modern]
+        u = unary_union(geoms)
+        yabanci = unary_union([temiz(shape(f["geometry"])) for k, f in modern.items()
+                               if k not in icerik and shape(f["geometry"]).intersects(u.envelope)])
         yeni.append({"type": "Feature", "properties": {"id": sid, "plaka": p["plaka"]},
-                     "geometry": mapping(delikleri_doldur(unary_union(geoms), bilesen_delikleri(bilesen)))})
+                     "geometry": mapping(delikleri_doldur(u, bilesen_delikleri(bilesen), yabanci))})
     hist["features"] = sorted(list(hist_by.values()) + yeni, key=lambda f: f["properties"]["id"])
     HIST_GEO.write_text(json.dumps(hist, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 

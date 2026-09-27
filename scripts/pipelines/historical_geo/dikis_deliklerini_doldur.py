@@ -29,9 +29,9 @@ def temiz(g):
     return g if g.is_valid else g.buffer(0)
 
 
-def delikleri_doldur(geom, koru=None):
-    """koru: bileşenlerin kendi delikleri (birlesim); bunlara yarisindan fazlasi denk gelen
-    delik korunur, digerleri doldurulur."""
+def delikleri_doldur(geom, koru=None, yabanci=None):
+    """koru: bileşenlerin kendi delikleri (gol); yabanci: birlesime ait olmayan diger ilceler.
+    Bunlardan birine yarisindan fazlasi denk gelen delik korunur, digerleri (dikis) doldurulur."""
     polys = []
     for p in getattr(geom, "geoms", [geom]):
         if p.geom_type != "Polygon":
@@ -39,7 +39,7 @@ def delikleri_doldur(geom, koru=None):
         kalan = []
         for r in p.interiors:
             h = Polygon(r)
-            if koru is not None and not koru.is_empty and h.intersection(koru).area > 0.5 * h.area:
+            if any(k is not None and not k.is_empty and h.intersection(k).area > 0.5 * h.area for k in (koru, yabanci)):
                 kalan.append(r)
         polys.append(Polygon(p.exterior, kalan))
     return polys[0] if len(polys) == 1 else MultiPolygon(polys)
@@ -76,7 +76,9 @@ def main():
             continue
         g = temiz(shape(ft["geometry"]))
         once = sum(len(p.interiors) for p in getattr(g, "geoms", [g]))
-        yeni = delikleri_doldur(g, bilesen_delikleri([mod[x] for x in parca[i] if x in mod]))
+        pl = ft["properties"].get("plaka")
+        yab = unary_union([v for k, v in mod.items() if k not in parca[i] and k.split("-")[2] == f"{pl:02d}"]) if pl else None
+        yeni = delikleri_doldur(g, bilesen_delikleri([mod[x] for x in parca[i] if x in mod]), yab)
         dolan += once - sum(len(p.interiors) for p in getattr(yeni, "geoms", [yeni]))
         ft["geometry"] = mapping(yeni)
     hp.write_text(json.dumps(h, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

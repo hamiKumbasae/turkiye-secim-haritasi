@@ -197,6 +197,26 @@ Mahalle düzeyinde paylaştırma denendi ve arşivlendi: `arsiv/mahalle-bolusumu
 Kaynağı yazılmamış 1987 birimleri için `sayim_kaniti.json` (elle, DİE 1960/1985/1990 sayım
 kitaplarındaki köy/belde bağlılığı): Küçükçekmece ← Bakırköy, Pendik ← Kartal.
 
+## Yerel seçimlerde il merkezi (2026-09-27, `ekle_il_merkezi_satirlari.py`)
+
+Yerel seçim satırları belediyedir; 1963–1989'da il merkezi belediyesinin sonucu il satırında
+durur ve Merkez ilçenin ayrı satırı yoktu (haritada merkez ilçe boş kalıyordu). Betik her
+yerel seçimi aynı döneme en yakın genel seçimle eşleştirir (1963↔1961, 1968↔1969, 1973↔1973,
+1977↔1977, 1984↔1983, 1989↔1987) ve il satırının sonucunu birebir kopyalayan bir Merkez satırı
+ekler (`ilMerkeziBelediyesi: true`); geometrisi genel seçimdeki Merkez poligonudur, Merkez'den
+sonradan ayrılan ilçeler soy kuralıyla katılır.
+
+- İl merkezi belediyesinin birden çok ilçeyi kapsadığı 1963–1977 İstanbul (14 merkez ilçe),
+  Ankara (Merkez, Altındağ, Çankaya, Yenimahalle) ve İzmir (Merkez, Karşıyaka): tek birleşik
+  şehir poligonu (`HISTY-*`). Kendi satırı olmayan ve dört yanı şehirle çevrili ilçe şehre
+  katılır (1963–1977 Kağıthane).
+- Büyükşehir yıllarında il satırı büyükşehir başkanının sonucudur; Merkez satırı üretilmez
+  (1984: İstanbul, Ankara, İzmir; 1989: + Adana, Bursa, Gaziantep, Konya, Kayseri).
+- Merkez içindeki belde kendi satırıyla varsa Merkez onu dışarıda bırakır (1989 Samsun
+  Tekkeköy). Merkez'in bütün alanı başka satıra bağlıysa eklenmez (1989 Malatya: Battalgazi
+  beldesi satırı bugünkü Battalgazi ilçesine bağlı).
+- Sonuç: 390 satır (1963–1977 her yıl 67, 1984 64, 1989 58).
+
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
 - **1955 yerel ve 1994 yerel için il sınır dosyası yok** (66 ve 76 il). Snapshot'ta

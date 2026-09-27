@@ -278,8 +278,8 @@ def main():
     bilinen = collections.defaultdict(list)
     for girdiler in splits.values():
         for e in girdiler:
-            if e["syntheticId"].startswith("HISTK-"):
-                continue  # apply_idari_merges.py ciktisi, bu katmandan uretiliyor
+            if e["syntheticId"].startswith(("HISTK-", "HISTY-")):
+                continue  # apply_idari_merges.py / ekle_il_merkezi_satirlari.py ciktisi
             m = metro.get(e["syntheticId"], {})
             for h in e["hideIds"]:
                 bilinen[h].append({"tarihselBirim": e["syntheticId"], "birlesimParcalari": e["hideIds"],
