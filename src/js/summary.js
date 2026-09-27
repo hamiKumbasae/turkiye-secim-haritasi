@@ -32,7 +32,7 @@
     if(YEARS_IL_YSK_ILCE_GITHUB.has(currentYear))
       return {cat:'mixed', badge:'YSK (İl) + İkincil (İlçe)', detail:'İl düzeyi — YSK resmi arşivi. İlçe düzeyi — mertnuhoglu/secim_verileri (GitHub, memurlar.net kaynaklı, MIT lisanslı yerel arşiv).'};
     if(YEARS_YEREL_IL_YSK_ILCE_WIKI.has(currentYear))
-      return {cat:'mixed', badge:'YSK (İl) + İkincil (İlçe)', detail:'İl merkezi — YSK resmi arşivi. Diğer ilçeler — çoğunlukla YSK (aynı arşivin ilçe/belde kırılımından), bir kısmı hâlâ Türkçe Wikipedia.'};
+      return {cat:'mixed', badge:'YSK (İl) + İkincil (İlçe)', detail:'İl merkezi — YSK resmi arşivi. İlçeler — ilçe belediye başkanlığı: çoğunlukla YSK arşivi; YSK satırı ilçe merkezi ile beldelerin toplamı ya da büyükşehir başkanlığı oyu olduğunda DİE "Mahalli İdareler Seçimi Sonuçları" kitabındaki doğrulanmış ilçe belediyesi satırı. Bir kısmı Türkçe Wikipedia.'};
     if(YEARS_YEREL_1950_1977.has(currentYear))
       return {cat:'secondary', badge:'İkincil Kaynak', detail:'Türkçe Wikipedia (il alt-sayfaları; il merkezi ve ilçe belediye başkanlıkları) — YSK\'nin bu dönem için sadece ulusal toplam PDF\'i var, il-bazlı kırılım yok. Wikipedia verisi YSK ulusal toplamıyla çapraz kontrol edildi.' + (currentYear==='1950yerel'||currentYear==='1955yerel' ? ' Bu seçimde ilçeler için yalnızca kazanan parti biliniyor (oy sayısı yok).' : '')};
     if(YEARS_IL_ONLY.has(currentYear))

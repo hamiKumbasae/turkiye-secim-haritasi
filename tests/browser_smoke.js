@@ -590,6 +590,24 @@ async function scenario_yerelIlMerkezi(browser) {
   check('yerel il merkezi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// 1994-2004 yerel: ilce rengi ilce belediye baskaninin partisi (YSK ilce toplami degil).
+// 1994 Cal (Denizli): YSK satiri merkez+belde toplami SHP; DIE ilce belediyesi DYP.
+async function scenario_ilceBelediyesi(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurYerel');
+    await page.waitForTimeout(400);
+    check('1994 yerel: yıl seçilebildi', await clickYear(page, '1994'));
+    await page.waitForTimeout(600);
+    await page.$eval('path[data-plaka="20"]', (el) => el.dispatchEvent(new MouseEvent('click', {bubbles: true})));
+    await page.waitForTimeout(700);
+    await page.$eval('path[data-geom-id="TR-D-20-008"]', (el) => el.dispatchEvent(new MouseEvent('mousemove', {bubbles: true, clientX: 300, clientY: 300})));
+    await page.waitForTimeout(200);
+    const tip = await page.textContent('#tooltip');
+    check('1994 yerel Çal: ilçe belediye başkanlığı DYP', tip.includes('Çal') && tip.includes('DYP önde'), tip);
+  });
+  check('ilçe belediyesi: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 // Yerel secimde oylama turu: belediye baskani / il genel meclisi / belediye meclisi.
 // 2024 il genel meclisi: buyuksehirlerde (Istanbul) secim yok -> bos ve notlu; Adiyaman'da var.
 async function scenario_yerelOylama(browser) {
@@ -803,6 +821,7 @@ async function main() {
     await scenario_1950cogunluk(browser);
     await scenario_yerelIlMerkezi(browser);
     await scenario_yerelOylama(browser);
+    await scenario_ilceBelediyesi(browser);
   } finally {
     await browser.close();
   }

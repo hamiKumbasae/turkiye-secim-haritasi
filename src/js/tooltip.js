@@ -42,6 +42,7 @@
         : (info.kind==='il' ? 'İl merkezi belediye başkanlığı (büyükşehirde büyükşehir)' : null);
       if(alt && info.kind!=='mahalle') html += '<div class="row tip-not"><span>' + alt + '</span></div>';
     }
+    if(info.kind==='ilce' && obj.ilceGeneliSonuc && !DATA.oylama) html += '<div class="row tip-not"><span>Sonuç: ' + obj.ilceGeneliSonuc + ' (ilçe belediyesi satırı doğrulanamadı)</span></div>';
     if(info.kind==='ilce' && obj.ilMerkeziBelediyesi) html += '<div class="row tip-not"><span>' + (obj.buyuksehirSonucu ? 'Büyükşehir' : 'İl merkezi') + ' belediye başkanlığı sonucu</span></div>';
     if(info.kind==='ilce') html += birlesimNotuHtml(info.geomId);
     tip.innerHTML = html;
