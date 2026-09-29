@@ -26,6 +26,12 @@ Ne kullanilir:
     %70'i ilin Merkez ilcesinden (ya da Merkez'in adi degisen halefinden) gelen ilceler butunuyle
     Merkez'e katilir (Aksu, Konyaalti, Defne ...); kucuk diger kaynaklar notta yazilir. Mahalle
     duzeyinde paylastirma denendi ve arsivlendi (arsiv/mahalle-bolusumu/).
+  - Mahalle duzeyinde bolunen cok kaynakli ilceler (build_ilce_bolusumu.py ->
+    ilce_bolusumu_parcalar.geojson): secim tarihindeki donemin her parcasi o donemdeki eski
+    ilcenin satirina katilir (Pursaklar 2002: Kecioren, Altindag, Cubuk parcalari). Butun
+    parcalarin hedefi bulunmazsa ilce bolunmez (eski kural: Merkez cogunlugu ya da tarali).
+  - Istanbul 1961-1991 (build_istanbul_1961_1992.py -> istanbul_1961_1992.json): satirlar o
+    donemin sinirlarina bagli; orada tarali birakilan bugunku ilce zincirle bir satira katilmaz.
   - Repodaki mevcut HIST-* birlesimleri (district_splits.json) korunur; C onlarin
     parcasiysa katilmaz, hedef satir HIST ise onun uzerine eklenir.
 
@@ -63,7 +69,10 @@ MODERN = ROOT / "geo/normalized/turkiye_ilce_sinirlari.geojson"
 PLAN = IDARI / "merge_plan.json"
 NOTLAR = IDARI / "harita_notlari.json"
 IST9208 = IDARI / "istanbul_1992_2008.json"
+IST6192 = IDARI / "istanbul_1961_1992.json"
 SAYIM = IDARI / "sayim_kaniti.json"
+BOLUSUM = IDARI / "ilce_bolusumu_parcalar.geojson"
+BOLUSUM_TABLO = IDARI / "ilce_bolusumu.json"
 MERKEZ_ESIK = 0.7
 ONEK = "HISTK-"
 ILCE_DUZEYLI = {"genel", "referandum", "cumhurbaskanligi"}
@@ -159,8 +168,26 @@ def main():
         cogunluk[g] = {"ana": top["ad"], "pay": round(top["birimSayisi"] / toplam, 2),
                        "digerleri": [[e["ad"] or "kaynağı yazılmamış", e["birimSayisi"]] for e in es[1:]]}
 
+    # mahalle duzeyinde bolunen cok kaynakli ilceler: ilce -> [(baslangic, bitis, {eski ilce: parca id})]
+    bolusum, parca_geo = collections.defaultdict(list), {}
+    if BOLUSUM.exists():
+        donem = collections.defaultdict(dict)
+        for f in oku(BOLUSUM)["features"]:
+            p = f["properties"]
+            parca_geo[p["id"]] = f
+            donem[(p["ilce"], p["baslangic"], p["bitis"])][p["ebeveyn"]] = p["id"]
+        for (g, a, b), parcalar in sorted(donem.items()):
+            bolusum[g].append((a, b, parcalar))
+    parca_ilce = {pid: f["properties"]["ilce"] for pid, f in parca_geo.items()}
+    # bolusumun uygulandigi secimler (2002'den geriye secim secim acilir)
+    uygulanan = set(oku(BOLUSUM_TABLO).get("uygulananSecimler", [])) if BOLUSUM_TABLO.exists() else set()
+    # Istanbul'un 1961-1991 sinirlari build_istanbul_1961_1992.py ile kuruldugu secimler: orada
+    # tarali birakilan bugunku ilce ilce duzeyi zincirle bir satira katilmaz
+    ist6192 = set(oku(IST6192)["secimler"]) if IST6192.exists() else set()
+
     plan, rapor = {}, rapor_on
     satir_degisim = collections.Counter()
+    bolusum_say = collections.Counter()
     modern_plaka = {f["properties"]["id"]: f["properties"]["plaka"] for f in oku(MODERN)["features"]}
     ilk_ayri = {g: v for g, v in ilk_gorunum.items()}
     not_secim = {}
@@ -184,8 +211,51 @@ def main():
             for parca in hist_parca.get(g, {g}) | {g}:
                 kapsayan[parca] = g
         katilan = collections.defaultdict(set)
+
+        def hedef_bul(e):
+            # eski ilce secimde yoksa ve kendisi de henuz ayri degilse bir ust eski ilceye cik
+            zincir = []
+            for _ in range(6):
+                if e in kapsayan:
+                    return kapsayan[e], zincir
+                if e in cocuk:
+                    zincir.append(e)
+                    e = cocuk[e]["ebeveyn"]
+                    continue
+                break
+            return None, zincir
+
+        # mahalle duzeyinde bolunen ilceler: donemin butun parcalarinin hedefi varsa bolunur
+        bolunen = set()
+        for d, dlar in sorted(bolusum.items()):
+            if d in kapsayan or s["anahtar"] not in uygulanan:
+                continue
+            l = lineage[d]
+            kur = (l.get("kurulus") or {}).get("tarih")
+            if not ((kur and kur > s["tarih"]) or
+                    (s["tur"] in ILCE_DUZEYLI and s["anahtar"] in set(l["kurulduAmaSecimeAyriGirmedi"]))):
+                continue
+            don = [x for x in dlar if x[0] <= s["tarih"] < x[1]]
+            if not don and kur and kur <= s["tarih"] and dlar[-1][1] == kur:
+                don = [dlar[-1]]  # kanunla kurulmus ama bu secime ayri girmemis: kanun tarihindeki bolusum
+            if not don:
+                rapor["bolusumDonemiYok"].append({"secim": s["anahtar"], "ilce": d})
+                continue
+            hedefler = {}
+            for e, pid in sorted(don[0][2].items()):
+                h, _ = hedef_bul(e)
+                if h is None:
+                    rapor["bolusumHedefiYok"].append({"secim": s["anahtar"], "ilce": d, "ebeveyn": e})
+                    break
+                hedefler[pid] = h
+            else:
+                for pid, h in hedefler.items():
+                    katilan[h].add(pid)
+                bolunen.add(d)
+                bolusum_say[s["anahtar"]] += 1
+
         for c, bilgi in sorted(cocuk.items()):
-            if c in kapsayan:
+            if c in kapsayan or c in bolunen or (bilgi["plaka"] == 34 and s["anahtar"] in ist6192):
                 continue
             uygun = (bilgi["kurulus"] and bilgi["kurulus"] > s["tarih"]) or \
                     (s["tur"] in ILCE_DUZEYLI and s["anahtar"] in bilgi["girmedi"]) or \
@@ -193,17 +263,12 @@ def main():
                      and bilgi["kurulus"] <= s["tarih"] < bilgi["ilkGorunum"])
             if not uygun:
                 continue
-            # zincir: ebeveyn secimde yoksa ve kendisi de henuz ayri degilse bir ust
-            hedef, zincir, e = None, [c], bilgi["ebeveyn"]
-            for _ in range(6):
-                if e in kapsayan:
-                    hedef = kapsayan[e]
-                    break
-                if e in cocuk:
-                    zincir.append(e)
-                    e = cocuk[e]["ebeveyn"]
-                    continue
-                break
+            hedef, ara = hedef_bul(bilgi["ebeveyn"])
+            zincir = [c] + ara
+            if bolunen & set(ara):
+                # ebeveyni bu secimde mahalle duzeyinde bolunen ilce: hangi parcaya katilacagi belli degil
+                rapor["bolunenEbeveyn"].append({"secim": s["anahtar"], "ilce": c, "zincir": ara})
+                continue
             if hedef is None:
                 rapor["hedefBulunamadi"].append({"secim": s["anahtar"], "ilce": c, "ad": bilgi["ad"], "ebeveyn": bilgi["ebeveyn"]})
                 continue
@@ -215,18 +280,25 @@ def main():
                 continue
             anahtar = hedef + "|" + ",".join(sorted(parcalar))
             sid = f"{ONEK}{hedef.replace('TR-D-', '')}-{hashlib.sha1(anahtar.encode()).hexdigest()[:6]}"
-            p = plan.setdefault(sid, {"taban": hedef, "katilanlar": sorted(parcalar), "secimler": [],
+            tam = sorted(x for x in parcalar if x not in parca_geo)
+            kismen = sorted(x for x in parcalar if x in parca_geo)
+            p = plan.setdefault(sid, {"taban": hedef, "katilanlar": tam, "secimler": [],
                                       "plaka": int(hedef.split("-")[2]) if hedef.startswith("TR-D-") else
                                       next(f["properties"]["plaka"] for f in hist["features"] if f["properties"]["id"] == hedef),
-                                      "kanunlar": sorted({cocuk[x]["kanun"] for x in parcalar}),
-                                      "adlar": sorted(cocuk[x]["ad"] for x in parcalar)})
+                                      "kanunlar": sorted({cocuk[x]["kanun"] for x in tam} |
+                                                         {lineage[parca_ilce[x]]["kurulus"]["kanun"] for x in kismen}),
+                                      "adlar": sorted([cocuk[x]["ad"] for x in tam] +
+                                                      [f"{tr_baslik(lineage[parca_ilce[x]]['ad'])} (mahalle düzeyinde parça)"
+                                                       for x in kismen])})
+            if kismen:
+                p["parcalar"] = kismen
             p["secimler"].append(s["anahtar"])
             for r in kayit["ilceler"]:
                 if r.get("geomId") == hedef:
                     r["geomId"] = sid
                     satir_degisim[s["anahtar"]] += 1
         # haritada 'veri yok' kalacak modern ilceler: o tarihte henuz ayri ilce degilse notu
-        kapsanan = set(kapsayan)
+        kapsanan = set(kapsayan) | bolunen
         for hedef, parcalar in katilan.items():
             kapsanan |= parcalar
         satirli_il = {r["plaka"] for r in kayit["ilceler"] if r.get("geomId")}
@@ -252,13 +324,19 @@ def main():
     yeni = []
     for sid, p in sorted(plan.items()):
         taban = modern.get(p["taban"]) or hist_by.get(p["taban"])
-        geoms = [temiz(shape(taban["geometry"]))] + [temiz(shape(modern[x]["geometry"])) for x in p["katilanlar"]]
+        parca_g = {x: temiz(shape(parca_geo[x]["geometry"])) for x in p.get("parcalar", [])}
+        geoms = [temiz(shape(taban["geometry"]))] + [temiz(shape(modern[x]["geometry"])) for x in p["katilanlar"]] + \
+            list(parca_g.values())
         # birlesim yerlerindeki dikis deliklerini doldur (bileşenlerin kendi delikleri korunur)
         icerik = (hist_parca.get(p["taban"], {p["taban"]}) | set(p["katilanlar"]))
         bilesen = [temiz(shape(modern[x]["geometry"])) for x in icerik if x in modern]
         u = unary_union(geoms)
+        kismi_ilce = {parca_ilce[x] for x in parca_g}
         yabanci = unary_union([temiz(shape(f["geometry"])) for k, f in modern.items()
-                               if k not in icerik and shape(f["geometry"]).intersects(u.envelope)])
+                               if k not in icerik and k not in kismi_ilce and shape(f["geometry"]).intersects(u.envelope)] +
+                              # bolunen ilcenin bu birlesime girmeyen parcalari da yabancidir
+                              [temiz(shape(modern[d]["geometry"])).difference(
+                                  unary_union([g for x, g in parca_g.items() if parca_ilce[x] == d])) for d in kismi_ilce])
         yeni.append({"type": "Feature", "properties": {"id": sid, "plaka": p["plaka"]},
                      "geometry": mapping(delikleri_doldur(u, bilesen_delikleri(bilesen), yabanci))})
     hist["features"] = sorted(list(hist_by.values()) + yeni, key=lambda f: f["properties"]["id"])
@@ -270,9 +348,11 @@ def main():
         if not splits[pl]:
             del splits[pl]
     for sid, p in sorted(plan.items()):
+        kismi_ilce = sorted({parca_ilce[x] for x in p.get("parcalar", [])})
         gizle = sorted(hist_parca.get(p["taban"], {p["taban"]}) | {p["taban"]} if p["taban"].startswith("TR-D-")
-                       else hist_parca[p["taban"]]) + p["katilanlar"]
-        yil = min(int(cocuk[x]["kurulus"][:4]) for x in p["katilanlar"] if cocuk[x]["kurulus"])
+                       else hist_parca[p["taban"]]) + p["katilanlar"] + kismi_ilce
+        yil = min([int(cocuk[x]["kurulus"][:4]) for x in p["katilanlar"] if cocuk[x]["kurulus"]] +
+                  [int(lineage[d]["kurulus"]["tarih"][:4]) for d in kismi_ilce])
         splits.setdefault(str(p["plaka"]), []).append({"hideIds": sorted(set(gizle)), "splitYear": yil, "syntheticId": sid})
     SPLITS.write_text(json.dumps(splits, ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -294,6 +374,18 @@ def main():
         for ad, v in k9208["ilceler"].items():
             kismi[v["id"]] = {m: k9208["bugunkuIlceler"][m]["parcalar"][ad]["pay"] for m in v["bugunkuIlceler"]
                               if k9208["bugunkuIlceler"].get(m, {}).get("tur") == "mahalle"}
+    if IST6192.exists():  # build_istanbul_1961_1992.py
+        for sid, v in oku(IST6192)["sentetikler"].items():
+            if v["paylar"]:
+                kismi[sid] = dict(v["paylar"])
+    # mahalle duzeyinde bolunen ilcelerin bu birlesime dusen payi (build_ilce_bolusumu.py)
+    for sid, p in plan.items():
+        for x in p.get("parcalar", []):
+            d = kismi.setdefault(sid, {})
+            d[parca_ilce[x]] = round(d.get(parca_ilce[x], 0) + parca_geo[x]["properties"]["pay"], 4)
+        for d, pay in list(kismi.get(sid, {}).items()):
+            if pay >= 0.995:  # butun parcalari ayni satira gitmis: ilcenin tamami
+                del kismi[sid][d]
     for girdiler in splits.values():
         for e in girdiler:
             adlar = sorted({guncel_ad.get(x) or tr_baslik(lineage[x]["ad"]) if x in lineage else x
@@ -303,8 +395,9 @@ def main():
             b = {"ilceler": adlar}
             if kismi.get(e["syntheticId"]):
                 b["paylar"] = {guncel_ad.get(x, x): pay for x, pay in sorted(kismi[e["syntheticId"]].items())}
+            bolunmus = {parca_ilce[x] for x in plan.get(e["syntheticId"], {}).get("parcalar", [])}
             cg = [dict(cogunluk[x], ad=guncel_ad.get(x) or tr_baslik(lineage[x]["ad"]))
-                  for x in e["hideIds"] if x in cogunluk]
+                  for x in e["hideIds"] if x in cogunluk and x not in bolunmus]
             if cg:
                 b["cogunluk"] = cg
             birlesimler[e["syntheticId"]] = b
@@ -316,6 +409,7 @@ def main():
     ozet = {"sentetik": len(plan), "satirDegisimi": sum(satir_degisim.values()),
             "secimBasina": dict(sorted(satir_degisim.items())), "katilanIlce": len({x for p in plan.values() for x in p["katilanlar"]}),
             "hedefBulunamadi": len(rapor["hedefBulunamadi"]),
+            "mahalleDuzeyindeBolunen": dict(sorted(bolusum_say.items())),
             "notluBosPoligon": sum(len(v) for v in not_secim.values())}
     PLAN.write_text(json.dumps({"not": "apply_idari_merges.py ile üretilir; elle düzenlenmez.", "ozet": ozet,
                                 "sentetikler": plan, **rapor}, ensure_ascii=False, indent=1), encoding="utf-8")

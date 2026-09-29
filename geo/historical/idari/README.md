@@ -241,7 +241,44 @@ Sultangazi) bu seçimlerde taranıyordu; mahalle düzeyinde bölüşüm denemesi
   ayrılamıyor; hangileri olduğu `istanbul_1992_2008.json` → `kismiNotlar`'da.
 - 1994–2004 yerel kayıtlarında Eminönü belediye satırı yok (DİE kitabında var); bu yüzden
   yerel seçimlerde Fatih bugünkü poligonunda (Eminönü dahil) kalıyor.
-- 1991 ve öncesi bu betiğin dışında (sıradaki adım).
+- 1991 ve öncesi: aşağıdaki "İstanbul 1961–1992" bölümü.
+
+## İstanbul 1961–1992 ilçe sınırları (2026-09-29, `build_istanbul_1961_1992.py`)
+
+`build_istanbul_1992_2008.py`'nin geriye doğru devamı. İstanbul'da ilçe kuran kanunlar
+309 (1963, Gaziosmanpaşa), 3392 (1987, Büyükçekmece, Küçükçekmece, Pendik, Ümraniye,
+Kağıthane), 3644 (1990, Bayrampaşa), 3806 (1992), 3949 (1993, Esenler) ve 5747 (2008).
+Her seçim tarihinde:
+
+- Bugünkü ilçe ya bütünüyle tek bir eski ilçeye aittir (kanun ek listesi ya da sayım
+  zinciri; dayanağı betikteki `ZINCIR`'da), ya da mahalle mahalle atanır
+  (`istanbul_1961_1992_mahalle.json`: 2008 ilçeleri 1961–1992, Kağıthane ve Ümraniye
+  1961–1987; her mahallenin dönem dönem ilçesi ve dayanağı). 1992–2008 arası atamalar
+  `istanbul_1992_2008.json`'dan gelir.
+- Seçimde ayrı satırı olmayan yeni ilçe (1987 genel ve referandumunda 3392 ilçeleri, 1988
+  referandumunda Küçükçekmece ve Pendik, 1989 yerelde Bayrampaşa'yı içeren Eyüp) kuruluşundan
+  bir gün önceki ilçesinin satırına katılır.
+- Tek bir mahallesinin bile o tarihteki ilçesi kaynakla bulunamayan bugünkü ilçe o seçimde
+  bütün hâlinde taralı kalır (yarım taralı parça çizilmez).
+- Parçalar `paylastir` ile üretilir (mahalle poligonları + Voronoi); birleşimleri bugünkü ilçe
+  poligonuna eşittir. Her satırın poligonu kimliği `HIST-Istanbul-<Ad>-<bileşim özeti>`; aynı
+  bileşim her seçimde aynı kimliği alır. Tek bir bugünkü ilçeye eşit satır bugünkü kimliğini
+  korur.
+- Seçimler `ilce_bolusumu.json` → `uygulananSecimler` ile tek tek açılır; kayıt
+  `istanbul_1961_1992.json` (seçim seçim satır bileşimleri, taralı ilçeler ve belirsiz
+  mahalleler).
+- Kapsam dışı: 1963–1977 yerel seçimleri (il merkezi belediyesi satırı `HISTY-*`, köyler
+  belediye seçimine girmez) ve Yalova (1995'e kadar İstanbul'un ilçesi; il katmanında).
+
+## Çok kaynaklı ilçelerde mahalle bölüşümü (2026-09-29, `build_ilce_bolusumu.py`)
+
+"Merkez çoğunluğu" kuralının yerine geçmez; yalnız bir dönemde **bütün** mahallelerin ilçesi
+kaynakla bulunduysa o dönemde bugünkü ilçe eski ilçelere bölünür (`ilce_bolusumu.json`:
+mahalle, dönem, ilçe, dayanak). Tek bir mahalle belirsizse dönem eskisi gibi kalır: ya Merkez'e
+bütünüyle katılır ya da bütün hâlinde taranır. Mahalle poligonu kaynağı `mahalle_geo.json`
+(`mg:`) ya da ttezer/turkiye-harita-verisi 83eeb7a (`tt:`, kullanılanlar
+`ilce_bolusumu_mahalleler.json`'da). Parçalar `ilce_bolusumu_parcalar.geojson`'da;
+`apply_idari_merges.py` her parçayı o seçimdeki eski ilçenin satırına katar ve ipucu payı yazar.
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
