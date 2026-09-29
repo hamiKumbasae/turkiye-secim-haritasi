@@ -66,6 +66,11 @@ async function scenario_2023genel(browser) {
   check('2023 genel: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// 1992-2008 (3806 ile 5747 arasi) Istanbul'un 32 ilcesi: bugunku ilcelerden bosluksuz kurulan
+// poligonlar (scripts/pipelines/historical_geo/build_istanbul_1992_2008.py)
+const IST_9208 = ['Buyukcekmece', 'Catalca', 'Esenler', 'Eyup', 'Gaziosmanpasa', 'Kadikoy', 'Kartal',
+  'Kucukcekmece', 'Umraniye', 'Uskudar'].map((ad) => 'HIST-Istanbul-' + ad + '-9208');
+
 async function scenario_istanbul1994geometri(browser) {
   const errors = await withPage(browser, async (page) => {
     await page.click('#btnTurYerel');
@@ -75,15 +80,11 @@ async function scenario_istanbul1994geometri(browser) {
     await page.waitForTimeout(500);
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(400);
-    // 2008 sonrasi kurulan ilceler (Ataşehir, Sancaktepe vb.) 1994'te veri
-    // satırı olarak yok - haritada "delik" birakmak yerine notr/tiklanamaz
-    // gosterilmeli (bkz. son inceleme: İstanbul'un değişen ilçe sınırları).
-    const nodataCount = await page.$$eval('.il-path-nodata', (els) => els.length);
-    check('1994 yerel İstanbul: veri olmayan ilçeler nötr/tıklanamaz gösteriliyor (harita deliksiz)', nodataCount > 0, 'count=' + nodataCount);
-    const nodataCursor = nodataCount > 0
-      ? await page.$eval('.il-path-nodata', (el) => getComputedStyle(el).cursor)
-      : null;
-    check('1994 yerel İstanbul: veri olmayan ilçe tıklanabilir görünmüyor (cursor=default)', nodataCursor === 'default', 'cursor=' + nodataCursor);
+    // 2008 sonrasi kurulan ilceler (Ataşehir, Sancaktepe, Arnavutköy ...) 1994'te yoktu; alanlari
+    // 1992-2008 ilcelerine paylastirildigi icin "veri yok" poligonu kalmamali.
+    const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+    check('1994 yerel İstanbul: "veri yok" ilçe kalmadı (2008 ilçeleri 1994 sınırlarına paylaştırıldı)',
+      nodataIds.length === 0, JSON.stringify(nodataIds));
 
     // Buyukcekmece (Beylikduzu'nun eski, tek-ebeveynli hali) ve Umraniye
     // (Cekmekoy'un eski hali) icin gercek tarihsel birlesim poligonu var
@@ -94,16 +95,16 @@ async function scenario_istanbul1994geometri(browser) {
       els.map((e) => e.dataset.geomId)
         // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
         .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
-    const expectedHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
-      'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar', 'HIST-Istanbul-Kartal'];
-    check('1994 yerel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor (Büyükçekmece/Ümraniye/Kadıköy/Üsküdar/Kartal)',
+    const expectedHist = IST_9208;
+    check('1994 yerel İstanbul: 1992-2008 sınırlı ilçe poligonlarının tümü çiziliyor',
       expectedHist.every((id) => histIds.includes(id)), JSON.stringify(histIds));
     // Ataşehir (TR-D-34-003) 4 ebeveyne (Kadıköy/Üsküdar/Ümraniye/Kartal) TAM
     // dağıtıldığı için (16/16 mahalle, kalıntı yok) artık ayrıca "veri yok"
     // gösterilmemeli - bkz. geo/historical/district_mahalle_merges.yaml.
     const staleDuplicates = await page.$$eval(
       ['TR-D-34-014', 'TR-D-34-037', 'TR-D-34-012', 'TR-D-34-016',
-        'TR-D-34-003', 'TR-D-34-023', 'TR-D-34-038', 'TR-D-34-025']
+        'TR-D-34-003', 'TR-D-34-023', 'TR-D-34-038', 'TR-D-34-025',
+        'TR-D-34-002', 'TR-D-34-008', 'TR-D-34-018', 'TR-D-34-033', 'TR-D-34-021', 'TR-D-34-015']
         .map((id) => `path.il-path[data-geom-id="${id}"]`).join(', '),
       (els) => els.length);
     check('1994 yerel İstanbul: birleşimin parçası olan eski modern şekiller ayrıca (üst üste) çizilmiyor', staleDuplicates === 0, 'count=' + staleDuplicates);
@@ -111,7 +112,7 @@ async function scenario_istanbul1994geometri(browser) {
     // Tarihsel (HIST-*) bir ilçeye tıklamak, o ilçenin KENDİ (genişletilmiş)
     // gerçek oy verisini göstermeli - sentetik geomId'ye geçiş sadece haritayı
     // etkilemeli, panel/veri akışını bozmamalı.
-    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Kadikoy"]');
+    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Kadikoy-9208"]');
     await page.waitForTimeout(400);
     const histDName = await page.$eval('#dName', (el) => el.textContent);
     const histDSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -130,8 +131,7 @@ async function scenario_istanbul19992004Gecmisi(browser) {
   const errors = await withPage(browser, async (page) => {
     await page.click('#btnTurYerel');
     await page.waitForTimeout(500);
-    const expectedHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
-      'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar', 'HIST-Istanbul-Kartal'];
+    const expectedHist = IST_9208;
     for (const year of ['1999', '2004']) {
       const found = await clickYear(page, year);
       check(year + ' yerel: yıl seçilebildi', found);
@@ -260,15 +260,14 @@ async function scenario_sancaktepeCozumu(browser) {
     const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
     check('1995 genel İstanbul: Sancaktepe (TR-D-34-029) artık "veri yok" değil',
       !nodataIds.includes('TR-D-34-029'), JSON.stringify(nodataIds));
-    check('1995 genel İstanbul: yalnız çok kaynaklı 4 ilçe "veri yok" (Arnavutköy/Başakşehir/Esenyurt/Sultangazi)',
-      nodataIds.length === 4 && ['TR-D-34-002', 'TR-D-34-008', 'TR-D-34-018', 'TR-D-34-033'].every((id) => nodataIds.includes(id)),
-      JSON.stringify(nodataIds));
+    check('1995 genel İstanbul: "veri yok" ilçe kalmadı (Arnavutköy/Başakşehir/Esenyurt/Sultangazi dahil)',
+      nodataIds.length === 0, JSON.stringify(nodataIds));
 
-    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Umraniye"]');
+    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Umraniye-9208"]');
     await page.waitForTimeout(400);
     const dName = await page.$eval('#dName', (el) => el.textContent);
     const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
-    check('1995 genel: HIST-Istanbul-Umraniye (Sancaktepe\'nin bir kısmını içerir) tıklanınca gerçek veri gösteriyor',
+    check('1995 genel: HIST-Istanbul-Umraniye-9208 (Sancaktepe\'nin bir kısmını içerir) tıklanınca gerçek veri gösteriyor',
       dName === 'Ümraniye' && dSecmen !== '—' && dSecmen !== '', 'dName=' + dName + ' dSecmen=' + dSecmen);
   });
   check('Sancaktepe çözümü: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
@@ -278,15 +277,11 @@ async function scenario_istanbulGenelGecmisi(browser) {
   const errors = await withPage(browser, async (page) => {
     const baseHist = ['HIST-Istanbul-Buyukcekmece', 'HIST-Istanbul-Umraniye',
       'HIST-Istanbul-Kadikoy', 'HIST-Istanbul-Uskudar'];
-    // Kartal'ın sentetiği yıla göre değişir: 1991'de Kadıköy/Üsküdar/Ümraniye
-    // de kendi satırlarıyla var olduğu için Ataşehir+Sancaktepe parçasını da
-    // güvenle içeren "Kartal1991" kullanılıyor; 1995-2007'de Maltepe/
-    // Sultanbeyli'nin KENDİ gerçek satırı olduğu için sadece 2008 dalgasını
-    // içeren (Maltepe/Sultanbeyli'siz) düz "Kartal" kullanılıyor - bkz.
-    // apply_verified_district_merges.py'deki Kartal yorumu (çakışma testinin
-    // yakaladığı bir regresyonun düzeltmesi).
+    // 1991'de Kartal'ın sentetiği Maltepe/Sultanbeyli'yi de içeren "Kartal1991"
+    // (apply_verified_district_merges.py); 1995-2007'de 1992-2008 sınırları (IST_9208).
     for (const year of ['1991', '1995', '1999', '2002', '2007']) {
-      const expectedHist = [...baseHist, year === '1991' ? 'HIST-Istanbul-Kartal1991' : 'HIST-Istanbul-Kartal'];
+      // 1995-2007: 1992-2008 sinirlari (IST_9208); 1991: onceki birlesimler
+      const expectedHist = year === '1991' ? [...baseHist, 'HIST-Istanbul-Kartal1991'] : IST_9208;
       const found = await clickYear(page, year);
       check(year + ' genel: yıl seçilebildi', found);
       await page.waitForTimeout(400);
@@ -298,8 +293,14 @@ async function scenario_istanbulGenelGecmisi(browser) {
         .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
       check(year + ' genel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor',
         expectedHist.every((id) => histIds.includes(id)), JSON.stringify(histIds));
+      if (year !== '1991') {
+        const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+        check(year + ' genel İstanbul: "veri yok" ilçe kalmadı', nodataIds.length === 0, JSON.stringify(nodataIds));
+      }
 
-      await page.click('path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece"], path.il-path[data-geom-id^="HISTK-HIST-Istanbul-Buyukcekmece-"]');
+      await page.click(year === '1991'
+        ? 'path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece"], path.il-path[data-geom-id^="HISTK-HIST-Istanbul-Buyukcekmece-"]'
+        : 'path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece-9208"]');
       await page.waitForTimeout(400);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -492,21 +493,24 @@ async function scenario_1961_1987Ilce(browser) {
       trb.some((i) => i.startsWith('HISTK-61-014-')) && !trb.includes('TR-D-61-010') && !trb.includes('TR-D-61-014'), JSON.stringify(trb));
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
-    // Harita notlari: 1995'te Arnavutkoy ayri ilce degildi ve alani Gaziosmanpasa/Catalca
-    // arasinda bolunmustu -> butun poligon taranir, ipucu nedenini yazar
+    // 1995'te Arnavutkoy ayri ilce degildi; alani Gaziosmanpasa ve Catalca arasinda mahalle
+    // duzeyinde paylastirildi (build_istanbul_1992_2008.py): bugunku Arnavutkoy cizilmez,
+    // Gaziosmanpasa'nin ipucu bugunku ilcelerden aldigi paylari yazar
     await clickYear(page, '1995');
     await page.waitForTimeout(400);
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(500);
-    const arn = await page.$eval('path[data-geom-id="TR-D-34-002"]', (el) => ({cls: el.getAttribute('class'), fill: el.getAttribute('fill')}));
-    check('1995 genel İstanbul: Arnavutköy taranmış (henüz ayrı ilçe değil)', /il-path-gecis/.test(arn.cls) && arn.fill === 'url(#hatchGecis)', JSON.stringify(arn));
-    const arnTip = await page.$eval('path[data-geom-id="TR-D-34-002"]', (el) => {
+    const ist95 = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    check('1995 genel İstanbul: Arnavutköy ayrıca çizilmiyor, Gaziosmanpaşa ve Çatalca 1992-2008 sınırlarıyla',
+      !ist95.includes('TR-D-34-002') && ist95.includes('HIST-Istanbul-Gaziosmanpasa-9208') && ist95.includes('HIST-Istanbul-Catalca-9208'),
+      JSON.stringify(ist95));
+    const gopTip = await page.$eval('path[data-geom-id="HIST-Istanbul-Gaziosmanpasa-9208"]', (el) => {
       const r = el.getBoundingClientRect();
       el.dispatchEvent(new MouseEvent('mousemove', {bubbles: true, clientX: r.x + r.width / 2, clientY: r.y + r.height / 2}));
       return document.querySelector('#tooltip').textContent;
     });
-    check('1995 genel İstanbul: Arnavutköy ipucu kaynak ilçeleri ve kanunu yazıyor',
-      /Gaziosmanpaşa/.test(arnTip) && /Çatalca/.test(arnTip) && /5747/.test(arnTip), arnTip);
+    check('1995 genel İstanbul: Gaziosmanpaşa ipucu bugünkü Arnavutköy ve Sultangazi paylarını yazıyor',
+      /Arnavutköy \(%\d+\)/.test(gopTip) && /Sultangazi \(%\d+\)/.test(gopTip), gopTip);
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
     // Merkez cogunlugu: Konyaalti (12 birim Merkez, 1 Kemer) ve Aksu 2008 oncesi Antalya Merkez'e

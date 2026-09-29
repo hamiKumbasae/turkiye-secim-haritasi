@@ -62,6 +62,7 @@ SPLITS = ROOT / "geo/historical/district_splits.json"
 MODERN = ROOT / "geo/normalized/turkiye_ilce_sinirlari.geojson"
 PLAN = IDARI / "merge_plan.json"
 NOTLAR = IDARI / "harita_notlari.json"
+IST9208 = IDARI / "istanbul_1992_2008.json"
 SAYIM = IDARI / "sayim_kaniti.json"
 MERKEZ_ESIK = 0.7
 ONEK = "HISTK-"
@@ -286,6 +287,13 @@ def main():
                      "kaynaklar": [[e["ad"], e["birimSayisi"]] for e in k.get("eskiIlceler", []) if e.get("ad")]}
     # birlesimler: her tarihsel poligonun bugunku sinirlarla kapsadigi ilceler (+ Merkez cogunlugu notu)
     birlesimler = {}
+    # mahalle duzeyinde paylastirilan bugunku ilcelerin payi (build_istanbul_1992_2008.py)
+    kismi = {}
+    if IST9208.exists():
+        k9208 = oku(IST9208)
+        for ad, v in k9208["ilceler"].items():
+            kismi[v["id"]] = {m: k9208["bugunkuIlceler"][m]["parcalar"][ad]["pay"] for m in v["bugunkuIlceler"]
+                              if k9208["bugunkuIlceler"].get(m, {}).get("tur") == "mahalle"}
     for girdiler in splits.values():
         for e in girdiler:
             adlar = sorted({guncel_ad.get(x) or tr_baslik(lineage[x]["ad"]) if x in lineage else x
@@ -293,6 +301,8 @@ def main():
             if len(adlar) < 2:
                 continue
             b = {"ilceler": adlar}
+            if kismi.get(e["syntheticId"]):
+                b["paylar"] = {guncel_ad.get(x, x): pay for x, pay in sorted(kismi[e["syntheticId"]].items())}
             cg = [dict(cogunluk[x], ad=guncel_ad.get(x) or tr_baslik(lineage[x]["ad"]))
                   for x in e["hideIds"] if x in cogunluk]
             if cg:

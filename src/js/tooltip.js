@@ -53,7 +53,9 @@
   function birlesimNotuHtml(geomId){
     const b = ((HARITA_NOTLARI && HARITA_NOTLARI.birlesimler) || {})[geomId];
     if(!b) return '';
-    let h = '<div class="row tip-not"><span>Bugünkü sınırlarla: ' + b.ilceler.join(', ') + '</span></div>';
+    // paylar: mahalle duzeyinde bolunen bugunku ilcenin bu poligona dusen alan payi (ornek 'Ataşehir %60')
+    const ad = x => (b.paylar && b.paylar[x] != null) ? x + ' (%' + Math.round(b.paylar[x] * 100) + ')' : x;
+    let h = '<div class="row tip-not"><span>Bugünkü sınırlarla: ' + b.ilceler.map(ad).join(', ') + '</span></div>';
     for(const c of (b.cogunluk || [])){
       // kisa, eksiz: 'Konyaaltı: %92 Merkez, Kemer 1 birim'
       const d = (c.digerleri || []).map(x => x[0] + ' ' + x[1] + ' birim').join(', ');

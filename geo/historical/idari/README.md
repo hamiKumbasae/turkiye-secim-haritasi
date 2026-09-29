@@ -217,6 +217,32 @@ sonradan ayrılan ilçeler soy kuralıyla katılır.
   beldesi satırı bugünkü Battalgazi ilçesine bağlı).
 - Sonuç: 390 satır (1963–1977 her yıl 67, 1984 64, 1989 58).
 
+## İstanbul 1992–2008 ilçe sınırları (2026-09-29, `build_istanbul_1992_2008.py`)
+
+3806 (1992) ile 5747 (2008) arasında İstanbul'un 32 ilçesi vardı; bu sınırlar 1994/1999/2004
+yerel, 1995/1999/2002/2007 genel seçimleri ve 2007 referandumunda geçerli. Önceki durumda
+2008'de birden çok eski ilçeden kurulan dört ilçe (Arnavutköy, Başakşehir, Esenyurt,
+Sultangazi) bu seçimlerde taranıyordu; mahalle düzeyinde bölüşüm denemesi de
+(`arsiv/mahalle-bolusumu/`) ilçelerin içinde taralı parçalar bıraktığı için kaldırılmıştı.
+
+Şimdi bütün il boşluksuz kuruluyor:
+
+- 2008 ilçelerinin her bugünkü mahallesi, 5747'nin ek listesine göre (belde ilçesi DİE 2004
+  Tablo 9) 1992–2008 ilçesine atanır. Listede adı olmayan birkaç mahallenin dayanağı
+  (çevrelenmiş, belde merkezi, komşuluk) `istanbul_1992_2008.json`'da satır satır yazılı.
+- Mahalle poligonları (OSM) ilçe poligonunu tam kaplamadığı için kalan alan en yakın
+  mahallenin ilçesine verilir (Voronoi). Parçaların birleşimi bugünkü ilçe poligonuna eşit
+  olduğundan delik ve çift çizim yok; `tests/validate_elections.py` bunu denetler.
+- Sonuç 10 yeni poligon (`HIST-Istanbul-<Ad>-9208`: Büyükçekmece, Çatalca, Esenler, Eyüp,
+  Gaziosmanpaşa, Kadıköy, Kartal, Küçükçekmece, Ümraniye, Üsküdar) ve yeniden kurulan
+  `HIST-Istanbul-Eminonu`/`-Fatih`. Diğer 20 ilçe bugünkü poligonuyla aynı.
+- İpucu, bugünkü ilçelerden alınan payı yazar (ör. "Arnavutköy (%50)").
+- Mahalle altı kanun parçaları (yol/parsel sınırlı, 6 madde) bugünkü mahalle poligonlarıyla
+  ayrılamıyor; hangileri olduğu `istanbul_1992_2008.json` → `kismiNotlar`'da.
+- 1994–2004 yerel kayıtlarında Eminönü belediye satırı yok (DİE kitabında var); bu yüzden
+  yerel seçimlerde Fatih bugünkü poligonunda (Eminönü dahil) kalıyor.
+- 1991 ve öncesi bu betiğin dışında (sıradaki adım).
+
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
 - **1955 yerel ve 1994 yerel için il sınır dosyası yok** (66 ve 76 il). Snapshot'ta

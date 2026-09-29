@@ -49,6 +49,10 @@ provenance/checksums.json` (tüm snapshot klasörlerinin konsolide kaydı).
     çok-ebeveynli (Ataşehir, Sancaktepe, Başakşehir, Sultangazi, Arnavutköy,
     Esenyurt) veya kaynakları çelişen vakalar BİLEREK atlandı, `scripts/
     audit_district_coverage.py` ile envanteri çıkarılabilir.
+  - 2026-09-29: İstanbul'un 1992–2008 dönemi (1994yerel … 2007referandum) artık
+    `scripts/pipelines/historical_geo/build_istanbul_1992_2008.py` ile boşluksuz
+    kuruluyor (`HIST-Istanbul-*-9208`, bkz. `idari/README.md`); yukarıdaki
+    mekanizmalar İstanbul için yalnız 1991'de kullanılıyor.
 - `turkiye_ilce_sinirlari_hist_splits.geojson` — yukarıdaki eşlemeye karşılık
   gelen, bölünmüş ilçelerin birleştirilmiş (eski hâle döndürülmüş) poligonları
 
