@@ -84,7 +84,10 @@ istanbul_2008:
   # dolayisiyla eski ilcelerin GENISLETILMIS halinin gosterilmesi gereken
   # secimler). 1991/1995-2007: 2008-oncesi Istanbul'da ilce-duzeyinde veri
   # iceren TEK genel secimler (audit_district_coverage.py ile dogrulandi).
-  affected_years: [1994yerel, 1999yerel, 2004yerel, "1991", "1995", "1999", "2002", "2007"]
+  # 2026-09-29: 1992-2008 donemi (1994yerel ... 2007referandum) artik
+  # build_istanbul_1992_2008.py ile bosluksuz kuruluyor (HIST-Istanbul-*-9208);
+  # bu dosya o donem icin yalniz kaynak kaydidir. Burada kalan tek yil 1991.
+  affected_years: ["1991"]
 
   # --- Beylikduzu/Cekmekoy: TEK ebeveynli, apply_verified_district_merges.py
   # icindeki VERIFIED_MERGES ile ZATEN uygulandi (bu YAML'a henuz tasinmadi -
@@ -144,7 +147,7 @@ istanbul_2008:
         # birlikte) TEKRAR ekleniyor, o yuzden BURADA o yillar HARIC tutuluyor -
         # yoksa 1995-2007/1994-2004'te Maltepe/Sultanbeyli'nin KENDI gercek veri
         # satiriyla bu genis poligon CAKISIR (bkz. o dosyadaki Kartal yorumu).
-        affected_years_override: ["1994yerel", "1999yerel", "2004yerel", "1995", "1999", "2002", "2007"]
+        affected_years_override: []  # 1992-2008: build_istanbul_1992_2008.py (HIST-Istanbul-Kartal-9208)
         mahalle_names:
           - "FERHATPAŞA MAH."
 
@@ -339,7 +342,7 @@ istanbul_2008:
         # (Maltepe/Sultanbeyli) da kaynagi, 1991/1984yerel/1989yerel HARIC
         # tutuluyor (o yillar apply_verified_district_merges.py'deki AYRI
         # "HIST-Istanbul-Kartal1991" sentetigiyle kapsaniyor).
-        affected_years_override: ["1994yerel", "1999yerel", "2004yerel", "1995", "1999", "2002", "2007"]
+        affected_years_override: []  # 1992-2008: build_istanbul_1992_2008.py (HIST-Istanbul-Kartal-9208)
         mahalle_names:
           - "ABDURRAHMANGAZİ MAH."
           - "AKPINAR MAH."

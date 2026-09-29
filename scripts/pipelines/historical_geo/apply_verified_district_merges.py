@@ -78,8 +78,8 @@ VERIFIED_MERGES = [
         # 1991/1995-2007: 2008-oncesi TEK Istanbul genel secimleri ilce-duzeyinde
         # veri iceriyor (bkz. audit_district_coverage.py) - Beylikduzu'nun alani
         # bu yillarda da Buyukcekmece'nin satirina dahildi, ayni duzeltme gecerli.
-        "affected_years": ["1994yerel", "1999yerel", "2004yerel",
-                            "1991", "1995", "1999", "2002", "2007"],
+        # 1992-2008 (1994yerel ... 2007): build_istanbul_1992_2008.py
+        "affected_years": ["1991"],
     },
     {
         "plaka": 34,
@@ -87,8 +87,8 @@ VERIFIED_MERGES = [
         "whole_child_geomids": ["TR-D-34-016"],  # Cekmekoy (TAMAMI)
         "synthetic_id": "HIST-Istanbul-Umraniye",
         "split_year": 2008,
-        "affected_years": ["1994yerel", "1999yerel", "2004yerel",
-                            "1991", "1995", "1999", "2002", "2007"],
+        # 1992-2008 (1994yerel ... 2007): build_istanbul_1992_2008.py
+        "affected_years": ["1991"],
     },
     # --- 1992 dalgasi (3806 sayili Kanun, 27 Mayis 1992 kabul, 3 Haziran 1992
     # Mukerrer Resmi Gazete Sayi 21247 - "Onuc Ilce ve Iki Il Kurulmasi Hakkinda
@@ -325,6 +325,9 @@ def load_yaml_verified_sources():
                 # "HIST-Istanbul-Kartal1991" gerekir - cunku o yillarda
                 # Maltepe/Sultanbeyli'nin KENDI gercek veri satiri YOK, ama
                 # 1994yerel+ icin VAR (cakisma/cift-cizim onlenir).
+                years = src.get("affected_years_override", entry.get("affected_years", affected_years))
+                if not years:
+                    continue  # bu kaynak baska bir betikle isleniyor (bkz. YAML'daki not)
                 out.append({
                     "old_district_geomid": src["old_district_geomid"],
                     "mahalle_source_geomid": new_geomid,  # hangi (yeni) ilcenin mahalle_geo'sundan cekilecek
@@ -332,7 +335,7 @@ def load_yaml_verified_sources():
                     "fully_covered_new_geomid": new_geomid,  # bu id, TUM mahalleleri baska ebeveynlere dagitildigi icin ayrica "veri yok" gosterilmemeli
                     "synthetic_id": src.get("synthetic_id_override") or f"HIST-{il_prefix}-{name_ascii}",
                     "split_year": src.get("split_year_override", split_year),
-                    "affected_years": src.get("affected_years_override", entry.get("affected_years", affected_years)),
+                    "affected_years": years,
                     "plaka": plaka,
                 })
     return out
