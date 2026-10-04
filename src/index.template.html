@@ -21,6 +21,7 @@
       <span class="brand-sub">1950–2024 Türkiye seçim sonuçları ve tarihsel seçim coğrafyası</span>
     </div>
     <nav class="brand-links">
+      <a href="yontem.html">Kaynaklar ve yöntem</a>
       <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
   </header>
@@ -51,6 +52,7 @@
         <span id="sourceBadgeText">YSK Resmî Veri</span>
       </button>
       <button class="link-btn" id="btnKaynaklar">Kaynaklar →</button>
+      <button class="link-btn" id="btnPaylas" type="button" title="Bu görünümün (seçim, il, ilçe, harita modu) bağlantısını kopyalar">Bağlantıyı kopyala</button>
     </div>
   </div>
 
@@ -77,8 +79,10 @@
             <button data-mode="winner" class="active">Kazanan</button>
             <button data-mode="katilim">Katılım</button>
             <button data-mode="parti">Parti</button>
+            <button data-mode="degisim" title="Seçilen partinin oy oranındaki değişim (önceki seçime göre, yüzde puan)">Değişim</button>
           </div>
-          <select id="partySelect" style="display:none"></select>
+          <select id="partySelect" style="display:none" aria-label="Parti"></select>
+          <button id="btnRenkKoru" class="toggle-btn" type="button" aria-pressed="false" title="Partileri renk körlüğünde de ayırt edilebilen renklerle gösterir">Renk körü dostu</button>
           <div class="search-wrap">
             <span class="search-icon">⌕</span>
             <input id="searchBox" type="text" placeholder="İl ara…" autocomplete="off">
@@ -91,6 +95,7 @@
             <div class="seq-ramp" id="seqRamp"></div>
             <span id="seqMax">100%</span>
           </div>
+          <div class="seq-note" id="seqNote" hidden></div>
         </div>
         <div class="winner-legend" id="winnerLegend"></div>
       </div>
@@ -99,7 +104,7 @@
         <div id="detailEmpty">Bir ile tıklayarak veya arayarak detayları görün.</div>
         <div id="detailBody" style="display:none">
           <div class="detail-title">
-            <h3 id="dName"></h3>
+            <h3 id="dName" aria-live="polite"></h3>
             <span class="plaka" id="dPlaka"></span>
           </div>
           <div class="detail-view-toggle" id="detailViewToggle" style="display:none">
@@ -138,6 +143,7 @@
       <div class="table-head-row">
         <div class="table-title" id="tableTitle">Türkiye · İl Sonuçları</div>
         <input id="tableSearch" type="text" placeholder="İl ara…" autocomplete="off">
+        <button class="link-btn" id="btnCsv" type="button" title="Bu seçimin il ve ilçe sonuçlarını CSV olarak indirir">CSV indir ↓</button>
       </div>
       <div class="table-scroll">
         <table class="data-table" id="ilTable">
@@ -169,7 +175,8 @@
   <footer>
     <div class="footer-brand">Türkiye Seçim Tarihi Atlası</div>
     <div class="footer-links">
-      <button class="link-btn" id="footerKaynaklar">Veri kaynakları · Metodoloji · Bilinen sorunlar</button>
+      <button class="link-btn" id="footerKaynaklar">Bu seçimin kaynakları</button>
+      · <a class="link-btn" href="yontem.html">Kaynaklar, yöntem ve bilinen eksikler</a>
       · <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" target="_blank" rel="noopener">GitHub</a>
     </div>
     <div class="footer-disclaimer">Veriler YSK, TÜİK, TBMM ve belgelenmiş diğer kaynaklardan derlenmiştir. Resmî YSK yayını değildir.</div>

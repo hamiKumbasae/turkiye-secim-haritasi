@@ -1,6 +1,8 @@
   const $ = (s,el=document) => el.querySelector(s);
   const $$ = (s,el=document) => [...el.querySelectorAll(s)];
   const fmt = n => n==null ? '—' : n.toLocaleString('tr-TR');
+  const ESCAPE_MAP = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
+  const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ESCAPE_MAP[c]);
   const fmt1 = n => n==null ? '—' : n.toLocaleString('tr-TR',{maximumFractionDigits:1,minimumFractionDigits:1});
 
   // Gomulu veri window.__EMBEDDED_GZ__ altinda gzip+base64 olarak tutuluyor (boyutu
@@ -19,21 +21,19 @@
     return EMBEDDED_CACHE[key];
   }
 
-  let BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MECLIS_2024, MAHALLE_COVERAGE, DISTRICT_SPLITS, HARITA_NOTLARI;
+  // Acilista yalniz gosterilen secim (fetchElection) ve harita sinirlari cozulur; mahalle poligonlari
+  // (MAHALLE_GEO, ~17MB acik) ilk mahalleye inilince (loadMahalleGeo).
+  let BUNDLE, PARTILER, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO_IDS, MECLIS_2024, MAHALLE_COVERAGE, DISTRICT_SPLITS, HARITA_NOTLARI;
   try{
-    // mahalle_votes.json ARTIK burada YOK: 15 yilin tamami acik haliyle ~75MB,
-    // her sayfa acilisinda (kullanici mahalle seviyesine hic inmese bile)
-    // hepsini decompress etmek gereksizdi. Yil basina ayri gomulu anahtar
-    // olarak (mahalle_votes_<yil>.json) sadece kullanici o yilin bir ilcesine
-    // tikladiginda lazy-load edilir (bkz. map.js: mahalleDataForDistrict).
-    // mahalle_geo.json (poligonlar, ~5MB) yillar arasi paylasimli ve nispeten
-    // kucuk oldugu icin hala eager yukleniyor.
-    [BUNDLE, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO, MECLIS_2024, MAHALLE_COVERAGE, DISTRICT_SPLITS, HARITA_NOTLARI] = await Promise.all([
-      loadEmbeddedCached("secim_tarihi_data.json"),
+    // mahalle oylari (mahalle_votes_<yil>.json) ve poligonlari (mahalle_geo.json) da
+    // yalniz kullanici bir ilcenin mahallelerine inince lazy-load edilir (bkz. map.js:
+    // mahalleDataForDistrict).
+    [PARTILER, GEO, GEO_ILCE, GEO_ILCE_HIST, MAHALLE_GEO_IDS, MECLIS_2024, MAHALLE_COVERAGE, DISTRICT_SPLITS, HARITA_NOTLARI] = await Promise.all([
+      loadEmbeddedCached("partiler.json"),
       loadEmbeddedCached("turkiye_il_sinirlari.geojson"),
       loadEmbeddedCached("turkiye_ilce_sinirlari.geojson"),
       loadEmbeddedCached("turkiye_ilce_sinirlari_hist_splits.geojson"),
-      loadEmbeddedCached("mahalle_geo.json", {}),
+      loadEmbeddedCached("mahalle_geo_ids.json", []).then(ids => new Set(ids)),
       loadEmbeddedCached("meclis_2024.json", {}),
       loadEmbeddedCached("mahalle_coverage.json", {}),
       loadEmbeddedCached("district_splits.json", {}),
@@ -42,6 +42,14 @@
   }catch(e){
     document.body.innerHTML = '<div class="wrap"><p>Veri yüklenemedi: '+e+'</p></div>';
     return;
+  }
+  BUNDLE = {partiler: PARTILER, secimler: {}};
+  async function fetchElection(year){
+    if(!(year in BUNDLE.secimler)) BUNDLE.secimler[year] = await loadEmbeddedCached("secim_"+year+".json");
+    return BUNDLE.secimler[year];
+  }
+  function loadMahalleGeo(){
+    return loadEmbeddedCached("mahalle_geo.json", {});
   }
   function loadMahalleVotesForYear(year){
     return loadEmbeddedCached("mahalle_votes_"+year+".json", {});

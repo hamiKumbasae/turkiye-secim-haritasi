@@ -824,6 +824,111 @@ async function scenario_2007referandumEminonuFatih(browser) {
   check('2007 referandum Eminönü/Fatih: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// Degisim modu: secilen partinin oy orani, ayni turdeki onceki secimle karsilastirilir.
+async function scenario_degisim(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(500);
+    await page.click('#modeGroup button[data-mode="degisim"]');
+    await page.waitForTimeout(500);
+    const note = await page.$eval('#seqNote', (el) => el.hidden ? '' : el.textContent);
+    check('değişim: 2023 genel, 2018 ile karşılaştırılıyor', /2018 → 2023/.test(note), note);
+    const renkli = await page.$$eval('path.il-path', (els) => els.filter((e) => (e.getAttribute('fill') || '').startsWith('hsl(')).length);
+    check('değişim: illerin çoğu renklendi', renkli > 70, String(renkli));
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(500);
+    const ilce = await page.$$eval('path.il-path[data-geom-id]', (els) => els.filter((e) => (e.getAttribute('fill') || '').startsWith('hsl(')).length);
+    check('değişim: İstanbul ilçeleri renklendi', ilce >= 30, String(ilce));
+    await page.click('#btnBackCountry');
+    const found = await clickYear(page, '1950');
+    await page.waitForTimeout(500);
+    const gizli = await page.$eval('#modeGroup button[data-mode="degisim"]', (el) => el.hidden);
+    check('değişim: en eski seçimde (1950) mod gizli', found && gizli);
+  });
+  check('değişim: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+// Paylasilabilir baglanti: gorunum adreste tutulur, baglantiyla acilan sayfa ayni gorunume gider.
+async function scenario_baglanti(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(400);
+    await clickYear(page, '1977');
+    await page.waitForTimeout(500);
+    await page.click('#modeGroup button[data-mode="parti"]');
+    await page.selectOption('#partySelect', 'CHP');
+    await page.click('path[data-plaka="6"]');
+    await page.waitForTimeout(500);
+    const hash = new URL(page.url()).hash;
+    check('bağlantı: adres seçimi, ili, modu ve partiyi tutuyor',
+      /secim=1977/.test(hash) && /il=6/.test(hash) && /mod=parti/.test(hash) && /parti=CHP/.test(hash), hash);
+    await page.goto('about:blank');
+    await page.goto(INDEX_HTML + '#secim=2023&il=34&ilce=TR-D-34-001');
+    await page.waitForTimeout(2000);
+    const crumb = await page.$eval('#mapBreadcrumbName', (el) => el.textContent);
+    const aktif = await page.$eval('.year-item.active', (el) => el.textContent.trim());
+    check('bağlantı: #secim=2023&il=34&ilce=Adalar ile açılınca Adalar mahalleleri gösteriliyor',
+      aktif === '2023' && /Adalar/.test(crumb), aktif + ' | ' + crumb);
+  });
+  check('bağlantı: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+// Kaynaklar ve yontem sayfasi: siteden bagli ve aciliyor.
+async function scenario_yontem(browser) {
+  const errors = await withPage(browser, async (page) => {
+    const n = await page.$$eval('a[href="yontem.html"]', (els) => els.length);
+    check('yöntem: başlık ve alt bilgide sayfaya bağlantı var', n >= 2, String(n));
+    await page.goto(INDEX_HTML.replace(/index\.html$/, 'yontem.html'));
+    const h1 = await page.$eval('h1', (el) => el.textContent);
+    const bolum = await page.$$eval('h2', (els) => els.length);
+    check('yöntem: sayfa açılıyor ve 7 bölüm içeriyor', h1 === 'Kaynaklar ve yöntem' && bolum === 7, h1 + ' / ' + bolum);
+  });
+  check('yöntem: konsol hatası yok', errors.filter((e) => !/fonts\.g/.test(e)).length === 0, JSON.stringify(errors));
+}
+
+// CSV indirme: acik secimin il ve ilce sonuclari.
+async function scenario_csv(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(500);
+    await page.click('#btnTableView');
+    const [download] = await Promise.all([page.waitForEvent('download'), page.click('#btnCsv')]);
+    const text = require('fs').readFileSync(await download.path(), 'utf8');
+    const lines = text.slice(1).trimEnd().split('\r\n');
+    check('CSV: dosya adı ve BOM', download.suggestedFilename() === 'secim_2023.csv' && text.charCodeAt(0) === 0xfeff, download.suggestedFilename());
+    check('CSV: 81 il ve 900+ ilçe satırı',
+      lines.filter((l) => l.startsWith('2023,il,')).length === 81 && lines.filter((l) => l.startsWith('2023,ilçe,')).length > 900,
+      String(lines.length));
+  });
+  check('CSV: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
+// Erisilebilirlik: klavye, ekran okuyucu etiketi, renk koru paleti, telefonda yatay kayma yok.
+async function scenario_erisim(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(500);
+    const ankara = page.locator('path[data-plaka="6"]');
+    const etiket = await ankara.getAttribute('aria-label');
+    check('erişim: il bölgesinin ekran okuyucu etiketi var', /^Ankara: .+ önde$/.test(etiket || ''), etiket);
+    await ankara.focus();
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(500);
+    const crumb = await page.$eval('#mapBreadcrumbName', (el) => el.textContent);
+    check('erişim: Enter ile ile iniliyor', /Ankara/.test(crumb), crumb);
+    await page.click('#btnBackCountry');
+    const once = await page.locator('path[data-plaka="6"]').getAttribute('fill');
+    await page.click('#btnRenkKoru');
+    const sonra = await page.locator('path[data-plaka="6"]').getAttribute('fill');
+    check('erişim: renk körü dostu palet uygulanıyor', once !== sonra && /^#(E69F00|0072B2|009E73|D55E00|56B4E9|CC79A7|F0E442|9a9a9a)$/.test(sonra), once + ' -> ' + sonra);
+    await page.click('#btnRenkKoru');
+    await page.setViewportSize({ width: 390, height: 844 });
+    const genislik = await page.evaluate(() => document.documentElement.scrollWidth);
+    check('erişim: 390 px telefonda yatay kayma yok', genislik === 390, String(genislik));
+  });
+  check('erişim: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function main() {
   const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {});
   try {
@@ -847,6 +952,11 @@ async function main() {
     await scenario_yerelIlMerkezi(browser);
     await scenario_yerelOylama(browser);
     await scenario_ilceBelediyesi(browser);
+    await scenario_degisim(browser);
+    await scenario_baglanti(browser);
+    await scenario_yontem(browser);
+    await scenario_csv(browser);
+    await scenario_erisim(browser);
   } finally {
     await browser.close();
   }
