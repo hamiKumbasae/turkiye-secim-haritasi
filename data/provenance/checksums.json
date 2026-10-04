@@ -108,7 +108,7 @@
     "elections/referandum/2017referandum.json": "54fee5bdfa609f002e5fbf2eca459ddc6d10b4d885f45207365e337de2aacede",
     "elections/yerel/1950yerel.json": "0bb0aea7cfe851d088f235c5158e6cbc154e668827b898b15c789fdfbf673750",
     "elections/yerel/1955yerel.json": "bc9c3dc4103168309823b2c4fb9513f2ed27cddb97d92490e123e6fd6b116733",
-    "elections/yerel/1963yerel.json": "86c272039c786b852664455529e12570ad4de43221e4d618f21c32b83527d1be",
+    "elections/yerel/1963yerel.json": "bdffafecbe777eab9d57a4bc9d20390d29a2d4f8d7824886be78d908237d5e05",
     "elections/yerel/1968yerel.json": "b228128dd79b95beca82a99111936d0c4c418ae8793149f7aa82d1ed744c29a9",
     "elections/yerel/1973yerel.json": "9079a1569ba7f2a30d9977ae30e8e67c1d1635d9db1bbe037980fa3957d421b6",
     "elections/yerel/1977yerel.json": "65d4314f1b0c259014c10e59b981d9ca8a1ab93f1ee70ecbbf9f096ba442fd08",
@@ -546,23 +546,25 @@
   },
   "geo/historical": {
    "checksum_file": "geo/historical/checksums.sha256",
-   "file_count": 58,
+   "file_count": 60,
    "files": {
     "NATIONWIDE_DISTRICT_AUDIT.md": "db738506e517f5e9a788d2f341e28338ab57aba75e14c26d3793cf31eed2b7eb",
     "district_mahalle_merges.yaml": "79e4854970055d8befa837debdecd327b6913e9172d9e91baaf31c3505822272",
-    "district_splits.json": "de0697c068f541464168178a634d91df666f21a8224e65efa4096d1def30e97f",
+    "district_splits.json": "1191b7aa942b75cc79f6797c0487e426a8a9cc4ae973030f91da464d321e124b",
     "idari/README.md": "104ec1af3c2ad489c5d65b8ff120d9f104de628692f459a641d0ede2c5089826",
     "idari/administrative_events.json": "83e79c76814fecdac0ad2ccdeae2c7c594e3992bb1fb0b41ed870b3102da3adf",
     "idari/district_lineage.json": "6c1c5e851169fa3916c80904ebd4923d051d77dd39cebff194562a2829f9d664",
     "idari/election_admin_snapshots.json": "109b565ef85469210b730f14ed9b3bd4a1bd7148e3a9b3388721df933d551810",
     "idari/elle_olaylar.json": "2f9ecd043aa520a87c86406fb392320282a3279d3336cd4286edc07738a10512",
     "idari/faz1_rapor.json": "b84567bb7e980d13af3f04523f2bb0efcb22bb87607eb3b27514e707798ffed9",
-    "idari/harita_notlari.json": "6f41579c561a7580a03058245f9343d4f82ceafaa68ba3bd2f9e118c8f633377",
+    "idari/harita_notlari.json": "8f3573dd6646a5252962968357b45dd506aa1eaa5945528a0d37c92609744182",
     "idari/ilce_bolusumu.json": "c1cf33deb88a0388b7e8b3c65f1cb7c3f019ad4eaef30fb426eff2df4563c78c",
     "idari/ilce_eslesme/1961.csv": "6486a98be9f7403863920c8366ed8dd58b1151e837a45c245afcc3d6b5daea5f",
     "idari/ilce_eslesme/1961.json": "d654dd0c073f8bfce6f804e9e60bebcca77cc307d160cfba50c315b9a11573b0",
     "idari/ilce_eslesme/1961referandum.csv": "4f41bd746013853916227c813753fbe7f01d7a0656e86067ceae278e47155f63",
     "idari/ilce_eslesme/1961referandum.json": "3d76c67261ef968ea10eab2db914a5f2934a2028631b7c40805d1153ede54676",
+    "idari/ilce_eslesme/1963yerel.csv": "e7ac35ad31dcc813dfddc7cc634424cad5cd33e8498bb8e1e63592ac12868c67",
+    "idari/ilce_eslesme/1963yerel.json": "40cc840ecea000b1536d727d3e571bf6ff7717ea3002d6db8378de10f4035faf",
     "idari/ilce_eslesme/1965.csv": "1992d361fab4404a0e804c3606da43db3ac7917b93dacda67d86b73a3f817694",
     "idari/ilce_eslesme/1965.json": "dd4c2c7dc7ba2ad0ece6b6b0128344d88a839a15f86dba7d238fcf0ba0976a09",
     "idari/ilce_eslesme/1969.csv": "d656bbb1d73bc2612e2cd664afe1d8d710930472114a28086402d49938b7becd",
@@ -605,7 +607,7 @@
     "turkiye_il_sinirlari_era1991.geojson": "77e3c883f802307a32a09da10295b5d49db380676bdb34304ae6170d8d46fd34",
     "turkiye_il_sinirlari_era1995.geojson": "b880de6aa1b869c54ce024880acec12aa5ae41ade89e4d1cbfd73cbb4d02a141",
     "turkiye_il_sinirlari_era1999.geojson": "d5c8c67c98dbaf69ddf888bca6ae996655b508c73b65438de0df4abbb9321635",
-    "turkiye_ilce_sinirlari_hist_splits.geojson": "88821f2ac75ad63866112b0e77a920b955eb393ce4025e219f7f756eb66e0055"
+    "turkiye_ilce_sinirlari_hist_splits.geojson": "163a2e22bc9f398f5bbcc7abefb90b322825dff6efa0ef0be7d960a5bad33cf8"
    }
   },
   "geo/normalized": {

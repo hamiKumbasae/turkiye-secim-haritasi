@@ -50,6 +50,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "scripts/pipelines/historical_geo"))
 from build_istanbul_1961_1992 import ZINCIR  # noqa: E402
+import build_istanbul_1992_2008 as b9208  # noqa: E402
 from common.election_io import election_path, load_election, save_election  # noqa: E402
 from dikis_deliklerini_doldur import bilesen_delikleri, delikleri_doldur  # noqa: E402
 
@@ -274,15 +275,45 @@ def tablo():
         return None
 
     kalan = sorted(g for g in modern_plaka if g not in satir)
+    # Istanbul: ZINCIR ya da mahalle tablosundaki o tarihteki ilce -> o ilceyi bu secimde kapsayan satir
+    # (yerel secimlerde ilce satiri yerine il merkezi belediyesi poligonu olabilir: 1963-1977 HISTY)
+    ist_kod = {a: k for a, k in b9208.ILCELER.items() if k}
+
+    def ist_satir(il):
+        if (34, il) in satirlar:
+            return (34, il)
+        ks = bagli.get(f"TR-D-34-{ist_kod.get(il, '')}", [])
+        return ks[0] if len(ks) == 1 else None
+
+    ist_kaynak = {}
     for g in kalan:
         kod = g.split("-")[-1]
-        if modern_plaka[g] == 34 and kod in ZINCIR:
-            for bas, bit, il, dayanak in ZINCIR[kod]:
-                if bas <= TARIH < bit:
-                    k = (34, il)
-                    assert k in satirlar, k
-                    yaz(g, k, "istanbul_zinciri", dayanak, "build_istanbul_1961_1992.py → ZINCIR")
-                    dagilim[g] = {k: 1.0}
+        if modern_plaka[g] != 34:
+            continue
+        say = collections.Counter()
+        for bas, bit, il, dayanak in ZINCIR.get(kod, []):
+            if bas <= TARIH < bit:
+                say[il] += 1
+                ist_kaynak[g] = ("build_istanbul_1961_1992.py → ZINCIR", dayanak)
+        if not say and g in ist_tablo:
+            say = collections.Counter(d["ilce"] for m in ist_tablo[g]["mahalleler"] for d in m["donemler"]
+                                      if d["baslangic"] <= TARIH < d["bitis"] and d["ilce"])
+            ist_kaynak[g] = ("geo/historical/idari/istanbul_1961_1992_mahalle.json",
+                             "Mahalle düzeyinde: " + ", ".join(f"{a} {n}" for a, n in say.most_common()))
+        if not say:
+            continue
+        pay = collections.Counter()
+        for il, n in say.items():
+            pay[ist_satir(il)] += n / sum(say.values())
+        if None in pay:
+            ist_kaynak.pop(g, None)
+            continue
+        if len(pay) == 1:
+            k = next(iter(pay))
+            kaynak, not_ = ist_kaynak.pop(g)
+            yaz(g, k, "istanbul_zinciri", kaynak, not_ + ("" if k[1] in say else f" (bu seçimde {k[1]} satırında)"))
+            satir[g]["guven"] = "yaklasik" if not_.startswith("Yaklaşık") else "kesin"
+        dagilim[g] = dict(pay)
     degisti = True
     while degisti:
         degisti = False
@@ -332,6 +363,9 @@ def tablo():
         kaynak = ((f"{ks['kanun']} sayılı Kanun ek ({ks['listeNo']}) sayılı liste" if ks.get("listeNo")
                    else f"{ks['kanun']} sayılı Kanun (ek listesiz, madde metni)") if ks else LINEAGE_KAYNAK)
         birim = ", ".join(f"{e['ad'] or 'kaynağı yazılmamış'} {e['birimSayisi']}" for e in ek)
+        etiket = "Ek liste birimleri: "
+        if g in ist_kaynak:
+            (kaynak, birim), etiket = ist_kaynak[g], ""
         kanit = f". {KISMI_KANIT[g]}" if g in KISMI_KANIT else ""
         d = dagilim.get(g)
         if d:
@@ -342,17 +376,17 @@ def tablo():
             payli = ", ".join(f"%{round(v * 100)} {a}" for a, v in digerleri)
             if enbuyuk and pay > 0.9999:
                 yaz(g, enbuyuk, "ayni_eski_ilce", kaynak,
-                    f"Ek liste birimleri: {birim}; hepsi seçim tarihinde {enbuyuk[1]} ilçesindeydi")
+                    f"{etiket}{birim}; hepsi seçim tarihinde {enbuyuk[1]} ilçesindeydi")
                 continue
             if enbuyuk:
                 yontem = "cogunluk" if pay >= ESIK else "en_buyuk_pay"
                 yaz(g, enbuyuk, yontem, kaynak,
-                    f"Ek liste birimleri: {birim}; seçimdeki ilçelere göre %{round(pay * 100)} {enbuyuk[1]}"
+                    f"{etiket}{birim}; seçimdeki ilçelere göre %{round(pay * 100)} {enbuyuk[1]}"
                     + (", " + payli if payli else "") + kanit)
                 satir[g]["_cogunluk"] = {"ana": enbuyuk[1], "pay": round(pay, 2),
                                          "digerleri": [[a, round(v, 2)] for a, v in digerleri]}
                 continue
-            komsu[g] = (kaynak, f"Ek liste birimleri: {birim}; eski ilçelerin seçim tarihindeki karşılığı "
+            komsu[g] = (kaynak, f"{etiket}{birim}; eski ilçelerin seçim tarihindeki karşılığı "
                                 "bilinmiyor ya da başka ilde" + kanit)
             continue
         neden = {"unresolved": "kuruluş kanununun ek listesi repoda yok",
