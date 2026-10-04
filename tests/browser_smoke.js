@@ -33,6 +33,12 @@ async function withPage(browser, fn) {
   return errors;
 }
 
+// tarihsel Merkez poligonu: repodaki HIST-<Il>-Merkez, apply_idari_merges.py birlesimi HISTK-<hist>-*
+// ya da build_ilce_secim.py birlesimi HIST<secim>-<plaka>-Merkez
+function merkezPoligonu(id, hist, secim, plaka) {
+  return id === hist || id.startsWith('HISTK-' + hist + '-') || id === 'HIST' + secim + '-' + plaka.padStart(2, '0') + '-Merkez';
+}
+
 async function clickYear(page, label) {
   const items = await page.$$('.year-item');
   for (const item of items) {
@@ -428,7 +434,7 @@ async function scenario_referandumIlce(browser) {
       const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
       check(y + ' referandum: ilçe haritası çiziliyor (' + plaka + ')', ids.length > 3, 'n=' + ids.length);
       if (hist) check(y + ' referandum: ' + hist + ' çiziliyor',
-        ids.some((i) => i === hist || i.startsWith('HISTK-' + hist + '-')), JSON.stringify(ids.slice(0, 8)));
+        ids.some((i) => merkezPoligonu(i, hist, y + 'referandum', plaka)), JSON.stringify(ids.slice(0, 8)));
       await page.click('#btnBackCountry').catch(() => {});
       await page.waitForTimeout(300);
     }
@@ -458,8 +464,9 @@ async function scenario_1961_1987Ilce(browser) {
       const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
       check(year + ' genel: ilçe haritası çiziliyor (' + plaka + ')', ids.length > 3, 'n=' + ids.length);
       // apply_idari_merges.py: sonradan kurulan ilceler (orn. 1990'da Gursu/Kestel)
-      // o donemde Merkez'e bagliysa poligon HISTK-<hist>-* birlesimi olur.
-      const histId = ids.find((i) => i === hist || i.startsWith('HISTK-' + hist + '-'));
+      // o donemde Merkez'e bagliysa poligon HISTK-<hist>-* birlesimi olur; build_ilce_secim.py
+      // cok kaynakli ilceleri de katarsa HIST<secim>-<plaka>-Merkez.
+      const histId = ids.find((i) => merkezPoligonu(i, hist, year, plaka));
       check(year + ' genel: ' + hist + ' çiziliyor', !!histId, JSON.stringify(ids));
       const nodata = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
       check(year + ' genel: Merkez halefleri ayrıca "veri yok" olarak çizilmiyor',
@@ -536,7 +543,9 @@ async function scenario_1961_1987Ilce(browser) {
     await page.waitForTimeout(500);
     const ist83 = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
     check('1983 genel İstanbul: Çatalca, Büyükçekmece ile birleşik (HISTK) çiziliyor',
-      ist83.some((i) => i.startsWith('HISTK-34-015-')) && !ist83.includes('TR-D-34-014') && !ist83.includes('TR-D-34-012'), JSON.stringify(ist83));
+      // build_istanbul_1961_1992.py 1983'te de calisir: Catalca poligonu HIST-Istanbul-Catalca-*
+      ist83.some((i) => i.startsWith('HISTK-34-015-') || i.startsWith('HIST-Istanbul-Catalca-'))
+        && !ist83.includes('TR-D-34-014') && !ist83.includes('TR-D-34-012'), JSON.stringify(ist83));
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
     await page.click('path[data-plaka="6"]');
