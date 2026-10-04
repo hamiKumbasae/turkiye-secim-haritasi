@@ -15,7 +15,7 @@ koşuluyla yayımlanır. Mahalle sınırlarının bir kısmı OpenStreetMap'ten 
 
 ## Nasıl atıf yapılır
 
-> Türkiye Seçim Tarihi Atlası (https://hamikumbasae.github.io/turkiye-secim-atlasi/), CC BY-SA 4.0. Asıl kaynaklar: YSK, TÜİK.
+> Türkiye Seçim Tarihi Atlası (https://hamikumbasae.github.io/turkiye-secim-haritasi/), CC BY-SA 4.0. Asıl kaynaklar: YSK, TÜİK.
 > Mahalle sınırları: © OpenStreetMap katkıcıları (ODbL).
 
 Veriyi değiştirip yayımlarsanız aynı lisansla (CC BY-SA 4.0; OSM'den türeyen sınırlar için ODbL)

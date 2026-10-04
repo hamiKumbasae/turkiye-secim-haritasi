@@ -1,12 +1,9 @@
 """
-data/normalized/ + geo/normalized/ + geo/historical/ kaynaklarindan, build.py'nin
-TEK-DOSYA (index.html icine gomulu gzip) modeli YERINE GECMEDEN, AYRI/granular
-statik JSON dosyalari uretir - bunlar turkiye-secim-atlasi (public frontend
-reposu) icin veri kaynagi olur, frontend onlari fetch() ile okur.
-
-build.py'deki assemble_embedded() ile AYNI kaynaklari okur, ama TEK gzip blogu
-yerine her parcayi kendi dosyasina yazar (offline tek-dosya build.py hala
-degismeden calisir, bu script ONA EK bir cikti yolu).
+data/normalized/ + geo/normalized/ + geo/historical/ kaynaklarindan yayin dosyalarini uretir
+(public_files). Ayni dosyalar iki yerde kullanilir:
+  - site/build.py: site/dist/ altina yazar; GitHub Pages sitesi bunlari fetch() ile okur,
+  - scripts/build.py: ayni yollarla tek dosyalik index.html'e gomer.
+Bu betik tek basina calistirilinca dosyalari --out klasorune yazar (inceleme icin).
 
 Cikti (varsayilan: dist_static/, --out ile degistirilebilir):
   data/parties.json                  - parti renk/kisa-ad tablosu (partiler.json)
@@ -24,9 +21,6 @@ Cikti (varsayilan: dist_static/, --out ile degistirilebilir):
   geo/meclis_2024.json
   geo/eras/<era>.geojson             - 8 tarihsel il-sinirlari donemi
 
-Bu dosyalar turkiye-secim-atlasi reposunun kendi data/+geo/ klasorlerine
-KOPYALANIR (elle, bkz. proje ust-duzey plani) - bu script o kopyalama islemini
-YAPMAZ, sadece kaynagi URETIR.
 
 Kullanim:
   python3 scripts/export_static.py [--out dist_static]

@@ -51,10 +51,9 @@ data/normalized/    Seçim türüne göre ayrılmış, kayıpsız veri
                     referandumlar/mahalle/meclis_2024)
 geo/normalized/     Güncel, basitleştirilmiş il/ilçe/mahalle geometrisi
 
-frontend/                 Ön yüzün kopyası (turkiye-secim-atlasi'ndan, scripts/frontend_sync.py);
-                          elle değiştirmeyin — frontend/KAYNAK.json sağlama toplamlarını tutar
-scripts/export_static.py  Yayın dosyaları (data/elections/…, geo/…): atlas'a kopyalanır
-scripts/build.py          frontend/ + aynı yayın dosyalarını gömerek tek dosyalık index.html üretir
+site/                     Sitenin ön yüzü (src/), Pages derlemesi (build.py -> site/dist/), testleri
+scripts/export_static.py  Yayın dosyaları (data/elections/…, geo/…; public_files)
+scripts/build.py          site/ ön yüzü + aynı yayın dosyalarını gömerek tek dosyalık index.html üretir
 scripts/validate.py         build.py'ye gömülü hızlı yapısal kontrol (gate)
 tests/validate_elections.py Ayrı, yavaş/analitik kontrol seti
 .github/workflows/validate.yml  Her push/PR'da validate.py + validate_elections.py +
@@ -63,13 +62,11 @@ tests/validate_elections.py Ayrı, yavaş/analitik kontrol seti
 index.html, yontem.html (repo kökü)  build.py'nin çıktısı, commit'lenir; çift tıklayınca açılır
 ```
 
-**Tek ön yüz.** Sitenin HTML/CSS/JS'i yalnız
-[`turkiye-secim-atlasi`](https://github.com/hamiKumbasae/turkiye-secim-atlasi)'nda geliştirilir;
-bu repo onun kopyasını `frontend/` altında taşır. Atlas veriyi `data/`, `geo/` dosyalarından
-`fetch()` ile okur; buradaki `index.html` aynı dosyaları aynı yollarla gömer
-(`window.__EMBEDDED_GZ__`) ve atlas'ın veri yükleyicisi gömülü veri varsa onu kullanır. Yani iki
-dağıtım tek kod: ön yüz değişikliği önce atlas'ta yapılır, sonra
-`python3 scripts/frontend_sync.py ../turkiye-secim-atlasi` ve `python3 scripts/build.py`.
+**Tek repo, tek ön yüz.** Sitenin HTML/CSS/JS'i `site/src/` altındadır ve iki şekilde dağıtılır:
+GitHub Pages sitesi (`python3 site/build.py` → `site/dist/`, veriyi `data/`, `geo/` dosyalarından
+`fetch()` ile okur; `.github/workflows/pages.yml` main'e her birleştirmede yayınlar) ve repo
+kökündeki tek dosyalık `index.html` (`python3 scripts/build.py`; aynı dosyaları aynı yollarla gömer,
+çift tıklayınca açılır). Eskiden ayrı olan `turkiye-secim-atlasi` reposu buraya taşındı.
 
 Her klasörün kendi `PROVENANCE.md`'si var (nereden geldiği, nasıl
 doğrulandığı). Kaynakların tam listesi için bkz. [`SOURCES.md`](SOURCES.md)
@@ -109,9 +106,15 @@ ait) artık kullanılmıyor, sadece tarihsel referans.
 
 ## Web'e yayınlama (GitHub Pages)
 
-`index.html` repo kökünde olduğu için GitHub Pages'in "Deploy from a branch"
-modu (kök dizin) ek bir adım gerektirmeden çalışır — Settings → Pages'ten
-etkinleştirmeniz yeterli.
+**Canlı site: https://hamikumbasae.github.io/turkiye-secim-haritasi/**
+
+`.github/workflows/pages.yml`, main'e her birleştirmede `python3 site/build.py` ile siteyi
+`site/dist/` altında üretir ve GitHub Pages'e yayınlar (derlenen site commit'lenmez). Bir kez:
+Settings → Pages → Build and deployment → Source: **GitHub Actions**. Eski adres
+(`hamikumbasae.github.io/turkiye-secim-atlasi/`) buraya yönlendirir.
+
+Yerelde: `python3 site/build.py && python3 -m http.server -d site/dist 8000`; site testleri
+`cd site && npm ci && npm test`.
 
 ## Lisans
 
@@ -194,9 +197,8 @@ Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
   çıkmaz. Tek tek betikleri elle ve başka sırayla çalıştırmayın.
 - **Önceki 04.10.2026 işleri:** 2007 referandumu resmî PDF'lerden 923 ilçeye tamamlandı;
   2009/2011 tarihî ana ilçe birleşimleri; Tillo'nun YSK meclis kayıtları eşleştirildi.
-- **Yayın kopyası:** `turkiye-secim-atlasi` (canlı site) aynı veriyi
-  `scripts/export_static.py --public` ile alır; kaynak repoda veri değişince atlasa ayrıca
-  aktarılmalıdır (otomatik değil).
+- **Yayın:** site artık bu repodan (`site/`) GitHub Actions ile yayınlanıyor; veri değişince
+  ayrıca bir yere aktarmak gerekmiyor.
 - Ayrıntı ve yöntem: [`geo/historical/idari/README.md`](geo/historical/idari/README.md);
   güncel sayılar `docs/rapor/ozet.json` ve yanındaki CSV'ler.
 
