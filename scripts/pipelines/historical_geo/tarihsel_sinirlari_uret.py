@@ -11,7 +11,9 @@ tutarli sonuc verir:
                                            Istanbul 1961-1991 ilce sinirlari (HIST-Istanbul-*)
   3. build_ilce_secim.py <secim>           her secim icin kalan ilceler (HIST<secim>-*); secimler
                                            geo/historical/idari/ilce_eslesme/*.csv'deki anahtarlar
-  4. build_il_sinirlari.py                 secim verisinden donem il sinirlari (era*.geojson)
+  4. ortusmeleri_temizle.py               birlikte cizilen poligonlar arasindaki ince ortusme seritleri
+                                           (Istanbul; haritada ilce icinde ortada biten cizgiler)
+     build_il_sinirlari.py                 secim verisinden donem il sinirlari (era*.geojson)
   5. build_meclis_harita.py                meclis haritalari (baskanlik satirlarinin poligonlari)
   6. harita_durum_raporu.py, checksum, scripts/build.py
 
@@ -56,11 +58,11 @@ def main():
     calistir(HG / "build_istanbul_1961_1992.py")
     for s in [s for s in SIRA if s in secimler]:
         calistir(HG / "build_ilce_secim.py", s)
-    if (HG / "build_il_sinirlari.py").exists():
-        calistir(HG / "build_il_sinirlari.py")
+    calistir(HG / "ortusmeleri_temizle.py")
+    calistir(HG / "build_il_sinirlari.py")
     calistir(ROOT / "scripts/pipelines/meclis_harita/build_meclis_harita.py")
     calistir(ROOT / "scripts/rapor/harita_durum_raporu.py")
-    for klasor in ("geo/historical", "data/normalized"):
+    for klasor in ("geo/normalized", "geo/historical", "data/normalized"):
         calistir(ROOT / "scripts/regenerate_checksums.py", klasor)
     calistir(ROOT / "scripts/build.py")
 

@@ -160,12 +160,19 @@ Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
   Uludere → Hakkâri; Ağaçören, Sarıyahşi → Ankara; Armutlu → Bursa; Altınova → Kocaeli;
   Eflani, Ovacık → Çankırı). Kaynarca 1958–1965'te Kocaeli'de; 1994 yerelde Ardahan ve Iğdır
   ayrı il.
+- **İstanbul'da gereksiz çizgiler (1961–2007):** birleşim poligonlarında kaynak parçalar tam
+  oturmadığı için ilçe içinde ortada biten çizgiler (sıfır genişlikli çatlaklar; ör. 1991–2007
+  Eyüp, Ümraniye, Kartal, Üsküdar), komşular arasında ince beyaz kamalar ve ince örtüşme şeritleri
+  vardı. `ortusmeleri_temizle.py` bunları temizler: örtüşmeler çıkarılır, ~30 m'den dar çatlaklar
+  kapatılır, birlikte çizilen ilçeler arasındaki ince boşluklar komşu tarihsel ilçeye eklenir.
+  Gerçek ilçe sınırları değişmez.
 - **Veri düzeltmeleri:** 1994/1999/2004 yerelde Artvin Hopa'nın aynı oylarla iki kez geçen
   satırının kopyası silindi; 1994 ve 1999 yerelde Kaynaşlı belde satırının plakası 81 → 14
   (o tarihte Bolu).
 - **Tek betikle yeniden üretim:** `scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py`
   bütün tarihsel sınır adımlarını doğru sırayla çalıştırır (seçim katmanını geri al →
-  `apply_idari_merges.py` → İstanbul → her seçim için `build_ilce_secim.py` → il sınırları →
+  `apply_idari_merges.py` → İstanbul → her seçim için `build_ilce_secim.py` →
+  `ortusmeleri_temizle.py` → il sınırları →
   meclis → rapor → checksum → `build.py`). İdempotenttir: main üzerinde çalıştırınca fark
   çıkmaz. Tek tek betikleri elle ve başka sırayla çalıştırmayın.
 - **Önceki 04.10.2026 işleri:** 2007 referandumu resmî PDF'lerden 923 ilçeye tamamlandı;
