@@ -314,15 +314,17 @@ kalmasın; harita genel olarak doğru görünsün. Her seçim için:
   sonradan kurulan İstanbul ilçeleri, o tarihteki ilçelerini kapsayan satıra (il merkezi belediyesi
   poligonu, Çatalca, Kartal) bağlanır. Sonuç 1940/1963 İstanbul ilçe haritalarıyla görsel olarak
   karşılaştırıldı.
-- İşlenen seçimler: 1961–2007 genel seçimleri, 1961/1982/1987/1988/2007 referandumları, 1963–1989
-  yerel seçimleri. 1994, 1999 ve 2004 yerel bekliyor (aşağıda).
+- İşlenen seçimler: 1961–2007 genel seçimleri, 1961/1982/1987/1988/2007 referandumları, 1963–2004
+  yerel seçimleri.
 - Geometrisiz satır: Ankara Merkez (1961–1983 ayrı ilçe, sınırı kaynakta yok; 2963 madde 2).
 - Şüpheli: Kastamonu "Bozkurt" satırı 1961/1965'te bugünkü Bozkurt'a (1055, 1968) bağlı; korunuyor.
-- Veri sorunları (değiştirilmedi): 1991'de İstanbul'da iki "Bakırköy" satırı (seçim çevresi
-  bölünmesi; aynı poligon). 1994 yerel Kaynaşlı belde satırının plakası 81 (o tarihte Bolu). 1994,
-  1999, 2004 yerel kayıtlarında Artvin Hopa iki kez (aynı oy; biri Hopa + Kemalpaşa, öteki yalnız
-  Hopa poligonuyla) ve Kemalpaşa'nın ayrı belde satırı var: Kemalpaşa iki kez çiziliyor; bu üç seçim
-  karar bekliyor.
+- Veri düzeltmeleri (2026-10-04, kullanıcı onayıyla): 1994, 1999, 2004 yerel kayıtlarında Artvin Hopa
+  iki kez vardı (aynı oy); kaynaklı satır yalnız Hopa poligonuyla tutuldu, kopyası silindi (Kemalpaşa
+  kendi belde satırıyla). 1994 yerel Kaynaşlı belde satırının plakası 81 → 14 (o tarihte Bolu).
+- Değiştirilmeyen veri sorunları: 1991'de İstanbul'da iki "Bakırköy" satırı (seçim çevresi bölünmesi;
+  aynı poligon, kontrolde tek ilçe sayılır). 2004 yerelde poligonsuz "Karadeniz Ereğli" satırı (seçmen
+  0; Ereğli'nin ayrı satırı var). 1961–1965'te Kaynarca kaynakta Kocaeli'de (il toplamı da); Sakarya
+  haritasında gri görünür (il sınırı konusu).
 - Sıra: [`prepare_istanbul_historical_assignments.py` → `build_istanbul_1961_1992.py`] →
   `build_ilce_secim.py <seçim>` → [yerel: `build_meclis_harita.py`] → checksum yenile →
   `scripts/build.py`.
