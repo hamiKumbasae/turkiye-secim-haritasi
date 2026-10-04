@@ -206,6 +206,37 @@
    ],
    "alanKm2": 121.3
   },
+  "HIST-Istanbul-Bakirkoy-77b597": {
+   "ad": "Bakırköy",
+   "bugunkuIlceler": [
+    "TR-D-34-004",
+    "TR-D-34-005",
+    "TR-D-34-006",
+    "TR-D-34-007",
+    "TR-D-34-008",
+    "TR-D-34-017",
+    "TR-D-34-022",
+    "TR-D-34-026"
+   ],
+   "paylar": {
+    "TR-D-34-008": 0.8294
+   },
+   "mahalleler": {
+    "TR-D-34-008": [
+     "ALTINŞEHİR MAH.",
+     "BAŞAK MAH.",
+     "BAŞAKŞEHİR MAH.",
+     "GÜVERCİNTEPE MAH.",
+     "KAYABAŞI MAH.",
+     "ZİYA GÖKALP MAH.",
+     "ŞAMLAR MAH."
+    ]
+   },
+   "secimler": [
+    "1988referandum"
+   ],
+   "alanKm2": 278.6
+  },
   "HIST-Istanbul-Beykoz-452121": {
    "ad": "Beykoz",
    "bugunkuIlceler": [
@@ -261,6 +292,28 @@
    ],
    "alanKm2": 274.8
   },
+  "HIST-Istanbul-Buyukcekmece-c47510": {
+   "ad": "Büyükçekmece",
+   "bugunkuIlceler": [
+    "TR-D-34-008",
+    "TR-D-34-012",
+    "TR-D-34-014",
+    "TR-D-34-018"
+   ],
+   "paylar": {
+    "TR-D-34-008": 0.1706
+   },
+   "mahalleler": {
+    "TR-D-34-008": [
+     "BAHÇEŞEHİR 1. KISIM MAH.",
+     "BAHÇEŞEHİR 2. KISIM MAH."
+    ]
+   },
+   "secimler": [
+    "1988referandum"
+   ],
+   "alanKm2": 274.8
+  },
   "HIST-Istanbul-Catalca-21fac6": {
    "ad": "Çatalca",
    "bugunkuIlceler": [
@@ -288,6 +341,7 @@
     ]
    },
    "secimler": [
+    "1988referandum",
     "1989yerel",
     "1991"
    ],
@@ -399,6 +453,7 @@
    "secimler": [
     "1987referandum",
     "1987",
+    "1988referandum",
     "1989yerel"
    ],
    "alanKm2": 245.2
@@ -568,6 +623,7 @@
    "secimler": [
     "1987referandum",
     "1987",
+    "1988referandum",
     "1989yerel",
     "1991"
    ],
@@ -631,6 +687,7 @@
     ]
    },
    "secimler": [
+    "1988referandum",
     "1989yerel",
     "1991"
    ],
@@ -726,6 +783,39 @@
     "1987"
    ],
    "alanKm2": 515.8
+  },
+  "HIST-Istanbul-Kartal-87a264": {
+   "ad": "Kartal",
+   "bugunkuIlceler": [
+    "TR-D-34-003",
+    "TR-D-34-025",
+    "TR-D-34-027",
+    "TR-D-34-028",
+    "TR-D-34-029",
+    "TR-D-34-032",
+    "TR-D-34-036"
+   ],
+   "paylar": {
+    "TR-D-34-003": 0.1711,
+    "TR-D-34-029": 0.3459
+   },
+   "mahalleler": {
+    "TR-D-34-003": [
+     "FERHATPAŞA MAH."
+    ],
+    "TR-D-34-029": [
+     "ABDURRAHMANGAZİ MAH.",
+     "AKPINAR MAH.",
+     "EYÜP SULTAN MAH.",
+     "FATİH MAH.",
+     "OSMANGAZİ MAH.",
+     "VEYSEL KARANİ MAH."
+    ]
+   },
+   "secimler": [
+    "1988referandum"
+   ],
+   "alanKm2": 475.1
   },
   "HIST-Istanbul-Kucukcekmece-8a047e": {
    "ad": "Küçükçekmece",
@@ -826,6 +916,7 @@
     ]
    },
    "secimler": [
+    "1988referandum",
     "1989yerel",
     "1991"
    ],
@@ -848,6 +939,7 @@
     ]
    },
    "secimler": [
+    "1988referandum",
     "1989yerel",
     "1991"
    ],
@@ -2328,6 +2420,164 @@
      "geomId": "HIST-Istanbul-Sisli-d44c9c",
      "bugunkuIlceler": [
       "TR-D-34-024",
+      "TR-D-34-035"
+     ]
+    }
+   },
+   "tarali": {}
+  },
+  "1988referandum": {
+   "tarih": "1988-09-25",
+   "satirlar": {
+    "Adalar": {
+     "geomId": "TR-D-34-001",
+     "bugunkuIlceler": [
+      "TR-D-34-001"
+     ]
+    },
+    "Bakırköy": {
+     "geomId": "HIST-Istanbul-Bakirkoy-77b597",
+     "bugunkuIlceler": [
+      "TR-D-34-004",
+      "TR-D-34-005",
+      "TR-D-34-006",
+      "TR-D-34-007",
+      "TR-D-34-008",
+      "TR-D-34-017",
+      "TR-D-34-022",
+      "TR-D-34-026"
+     ]
+    },
+    "Beykoz": {
+     "geomId": "TR-D-34-011",
+     "bugunkuIlceler": [
+      "TR-D-34-011"
+     ]
+    },
+    "Beyoğlu": {
+     "geomId": "TR-D-34-013",
+     "bugunkuIlceler": [
+      "TR-D-34-013"
+     ]
+    },
+    "Beşiktaş": {
+     "geomId": "TR-D-34-010",
+     "bugunkuIlceler": [
+      "TR-D-34-010"
+     ]
+    },
+    "Büyükçekmece": {
+     "geomId": "HIST-Istanbul-Buyukcekmece-c47510",
+     "bugunkuIlceler": [
+      "TR-D-34-008",
+      "TR-D-34-012",
+      "TR-D-34-014",
+      "TR-D-34-018"
+     ]
+    },
+    "Eminönü": {
+     "geomId": "HIST-Istanbul-Eminonu",
+     "bugunkuIlceler": [
+      "TR-D-34-020"
+     ]
+    },
+    "Eyüp": {
+     "geomId": "HIST-Istanbul-Eyup-3b0f2c",
+     "bugunkuIlceler": [
+      "TR-D-34-009",
+      "TR-D-34-019",
+      "TR-D-34-033"
+     ]
+    },
+    "Fatih": {
+     "geomId": "HIST-Istanbul-Fatih",
+     "bugunkuIlceler": [
+      "TR-D-34-020"
+     ]
+    },
+    "Gaziosmanpaşa": {
+     "geomId": "HIST-Istanbul-Gaziosmanpasa-81383d",
+     "bugunkuIlceler": [
+      "TR-D-34-002",
+      "TR-D-34-021",
+      "TR-D-34-033"
+     ]
+    },
+    "Kadıköy": {
+     "geomId": "HIST-Istanbul-Kadikoy-510ecd",
+     "bugunkuIlceler": [
+      "TR-D-34-003",
+      "TR-D-34-023"
+     ]
+    },
+    "Kartal": {
+     "geomId": "HIST-Istanbul-Kartal-87a264",
+     "bugunkuIlceler": [
+      "TR-D-34-003",
+      "TR-D-34-025",
+      "TR-D-34-027",
+      "TR-D-34-028",
+      "TR-D-34-029",
+      "TR-D-34-032",
+      "TR-D-34-036"
+     ]
+    },
+    "Kâğıthane": {
+     "geomId": "TR-D-34-024",
+     "bugunkuIlceler": [
+      "TR-D-34-024"
+     ]
+    },
+    "Sarıyer": {
+     "geomId": "TR-D-34-030",
+     "bugunkuIlceler": [
+      "TR-D-34-030"
+     ]
+    },
+    "Silivri": {
+     "geomId": "TR-D-34-031",
+     "bugunkuIlceler": [
+      "TR-D-34-031"
+     ]
+    },
+    "Zeytinburnu": {
+     "geomId": "TR-D-34-039",
+     "bugunkuIlceler": [
+      "TR-D-34-039"
+     ]
+    },
+    "Çatalca": {
+     "geomId": "HIST-Istanbul-Catalca-21fac6",
+     "bugunkuIlceler": [
+      "TR-D-34-002",
+      "TR-D-34-015"
+     ]
+    },
+    "Ümraniye": {
+     "geomId": "HIST-Istanbul-Umraniye-fb42ce",
+     "bugunkuIlceler": [
+      "TR-D-34-003",
+      "TR-D-34-016",
+      "TR-D-34-029",
+      "TR-D-34-037"
+     ]
+    },
+    "Üsküdar": {
+     "geomId": "HIST-Istanbul-Uskudar-349dc4",
+     "bugunkuIlceler": [
+      "TR-D-34-003",
+      "TR-D-34-038"
+     ]
+    },
+    "Şile": {
+     "geomId": "TR-D-34-034",
+     "bugunkuIlceler": [
+      "TR-D-34-034"
+     ]
+    },
+    "Şişli": {
+     "geomId": "TR-D-34-035",
+     "bugunkuIlceler": [
       "TR-D-34-035"
      ]
     }
