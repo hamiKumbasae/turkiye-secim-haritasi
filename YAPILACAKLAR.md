@@ -782,3 +782,9 @@ Tekrar üretim sırası: `prepare_istanbul_historical_assignments.py`,
 `build_meclis_harita.py`, `harita_durum_raporu.py`, checksum güncellemesi,
 `build.py`. Genel amaçlı `ilce_bolusumu.json` boş bırakılmıştır; bilinmeyen
 çok kaynaklı bölüşümler bu dosyada varsayımla doldurulmaz.
+
+1961 çalışması da birleştirildi: kanun/sayım zincirleri ve açıkça yaklaşık
+olarak işaretlenen %70 birim çoğunluğu yöntemiyle 21 ilçe daha bağlandı.
+23 ilçe belirsiz kalır; Ankara Merkez'in tarihî poligonu kaynak bekler.
+Tekrar üretimde `build_ilce_1961.py`, `apply_idari_merges.py` sonrasında ve
+rapor/checksum/build adımlarından önce çalıştırılmalıdır.

@@ -403,6 +403,21 @@ def check_historical_district_geometry():
     )
 
 
+def check_ilce_1961():
+    """1961 ilce haritasi (scripts/pipelines/historical_geo/build_ilce_1961.py): her 1961 satiri tek
+    bir poligona, her bugunku ilce en fazla bir satira bagli; tablo (ilce_1961_eslesme.csv) ile harita
+    tutarli; tabloda belirsiz olmayan hicbir bugunku ilce sonucsuz kalmiyor; birlesimler il disina
+    tasmiyor."""
+    try:
+        sys.path.insert(0, str(ROOT / "scripts" / "pipelines" / "historical_geo"))
+        import build_ilce_1961
+    except ImportError:
+        check("1961 ilçe eşleme tablosu ve birleşim poligonları (shapely kurulu değil, ATLANDI)", True)
+        return
+    sorun = build_ilce_1961.kontrol(sessiz=True)
+    check("1961 ilçe eşleme tablosu ve birleşim poligonları tutarlı", not sorun, "; ".join(sorun[:5]))
+
+
 def check_dist_size():
     if not DIST.exists():
         check("index.html boyut tavanı", False, "dosya yok — önce scripts/build.py çalıştırın")
@@ -483,6 +498,7 @@ def main():
     check_kazanan_has_oy_entry()
     check_dtp_bdp_bagimsiz_attribution()
     check_historical_district_geometry()
+    check_ilce_1961()
     check_dist_size()
     check_index_in_sync_with_sources()
     check_reproducibility()
