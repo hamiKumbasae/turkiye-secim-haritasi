@@ -1,0 +1,125 @@
+{
+ "not": "build_ilce_secim.py ile üretilir; elle düzenlenmez. Tablo: ilce_eslesme/2004yerel.csv.",
+ "ozet": {
+  "birlesimPoligonu": 4,
+  "katilanIlce": 4,
+  "belirsizIlce": 0,
+  "geometrisizSatir": 1,
+  "yontem": {
+   "kendi_satiri": 919,
+   "en_buyuk_pay": 3,
+   "tarihsel_birlesim": 45,
+   "komsuluk": 1,
+   "bolunmus_poligon": 5
+  }
+ },
+ "birlesimler": [
+  {
+   "plaka": 1,
+   "ilce": "Seyhan",
+   "geomId": "HIST2004yerel-01-Seyhan",
+   "oncekiGeomId": "TR-D-01-012",
+   "katilanlar": [
+    "TR-D-01-003"
+   ],
+   "katilanAdlar": [
+    "Çukurova"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-01-003",
+    "TR-D-01-012"
+   ]
+  },
+  {
+   "plaka": 6,
+   "ilce": "Altındağ",
+   "geomId": "HIST2004yerel-06-Altindag",
+   "oncekiGeomId": "TR-D-06-002",
+   "katilanlar": [
+    "TR-D-06-022"
+   ],
+   "katilanAdlar": [
+    "Pursaklar"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-06-002",
+    "TR-D-06-022"
+   ]
+  },
+  {
+   "plaka": 7,
+   "ilce": "Korkuteli",
+   "geomId": "HIST2004yerel-07-Korkuteli",
+   "oncekiGeomId": "TR-D-07-015",
+   "katilanlar": [
+    "TR-D-07-005"
+   ],
+   "katilanAdlar": [
+    "Döşemealtı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-07-005",
+    "TR-D-07-015"
+   ]
+  },
+  {
+   "plaka": 7,
+   "ilce": "Serik",
+   "geomId": "HIST2004yerel-07-Serik",
+   "oncekiGeomId": "TR-D-07-019",
+   "katilanlar": [
+    "TR-D-07-002"
+   ],
+   "katilanAdlar": [
+    "Aksu"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-07-002",
+    "TR-D-07-019"
+   ]
+  }
+ ],
+ "cogunluk": {
+  "TR-D-01-003": {
+   "ana": "Seyhan",
+   "pay": 0.58,
+   "digerleri": [
+    [
+     "Karaisalı",
+     0.42
+    ]
+   ]
+  },
+  "TR-D-06-022": {
+   "ana": "Altındağ",
+   "pay": 0.4,
+   "digerleri": [
+    [
+     "Keçiören",
+     0.4
+    ],
+    [
+     "Çubuk",
+     0.2
+    ]
+   ]
+  },
+  "TR-D-07-002": {
+   "ana": "Serik",
+   "pay": 0.06,
+   "digerleri": [
+    [
+     "bilinmiyor",
+     0.94
+    ]
+   ]
+  }
+ },
+ "belirsiz": [],
+ "geometrisizSatir": [
+  {
+   "plaka": 67,
+   "ilce": "Karadeniz Ereğli"
+  }
+ ]
+}
