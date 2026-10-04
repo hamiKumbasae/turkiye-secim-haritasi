@@ -1,18 +1,18 @@
 {
  "not": "build_ilce_1961.py ile üretilir; elle düzenlenmez. Tablo: ilce_1961_eslesme.csv.",
  "ozet": {
-  "birlesimPoligonu": 19,
-  "katilanIlce": 21,
-  "belirsizIlce": 23,
+  "birlesimPoligonu": 16,
+  "katilanIlce": 17,
+  "belirsizIlce": 17,
   "geometrisizSatir": 1,
   "yontem": {
-   "tarihsel_birlesim": 489,
-   "kendi_satiri": 439,
-   "belirsiz": 23,
-   "cogunluk": 18,
+   "tarihsel_birlesim": 472,
+   "kendi_satiri": 435,
+   "belirsiz": 17,
+   "cogunluk": 15,
    "ayni_1961_ilcesi": 2,
-   "istanbul_zinciri": 1,
-   "bolunmus_poligon": 1
+   "bolunmus_poligon": 6,
+   "istanbul_mahalle": 26
   }
  },
  "birlesimler": [
@@ -129,66 +129,6 @@
    "bugunkuIlceler": [
     "TR-D-29-004",
     "TR-D-29-006"
-   ]
-  },
-  {
-   "plaka": 34,
-   "ilce": "Bakırköy",
-   "geomId": "HIST1961-34-Bakirkoy",
-   "oncekiGeomId": "HISTK-HIST-Istanbul-Bakirkoy-9bd420",
-   "katilanlar": [
-    "TR-D-34-008",
-    "TR-D-34-017"
-   ],
-   "katilanAdlar": [
-    "Başakşehir",
-    "Esenler"
-   ],
-   "bugunkuIlceler": [
-    "TR-D-34-004",
-    "TR-D-34-005",
-    "TR-D-34-006",
-    "TR-D-34-007",
-    "TR-D-34-008",
-    "TR-D-34-017",
-    "TR-D-34-022",
-    "TR-D-34-026"
-   ]
-  },
-  {
-   "plaka": 34,
-   "ilce": "Eyüp",
-   "geomId": "HIST1961-34-Eyup",
-   "oncekiGeomId": "HISTK-34-019-32c706",
-   "katilanlar": [
-    "TR-D-34-033"
-   ],
-   "katilanAdlar": [
-    "Sultangazi"
-   ],
-   "bugunkuIlceler": [
-    "TR-D-34-009",
-    "TR-D-34-019",
-    "TR-D-34-021",
-    "TR-D-34-033"
-   ]
-  },
-  {
-   "plaka": 34,
-   "ilce": "Çatalca",
-   "geomId": "HIST1961-34-Catalca",
-   "oncekiGeomId": "HISTK-34-015-ea5819",
-   "katilanlar": [
-    "TR-D-34-018"
-   ],
-   "katilanAdlar": [
-    "Esenyurt"
-   ],
-   "bugunkuIlceler": [
-    "TR-D-34-012",
-    "TR-D-34-014",
-    "TR-D-34-015",
-    "TR-D-34-018"
    ]
   },
   {
@@ -408,36 +348,6 @@
     ]
    ]
   },
-  "TR-D-34-008": {
-   "ana": "Bakırköy",
-   "pay": 0.75,
-   "digerleri": [
-    [
-     "Çatalca",
-     0.25
-    ]
-   ]
-  },
-  "TR-D-34-018": {
-   "ana": "Çatalca",
-   "pay": 0.96,
-   "digerleri": [
-    [
-     "Bakırköy",
-     0.04
-    ]
-   ]
-  },
-  "TR-D-34-033": {
-   "ana": "Eyüp",
-   "pay": 0.94,
-   "digerleri": [
-    [
-     "Bakırköy",
-     0.06
-    ]
-   ]
-  },
   "TR-D-40-001": {
    "ana": "Çiçekdağı",
    "pay": 0.81,
@@ -573,42 +483,6 @@
    "il": "Hakkari",
    "ilce": "Derecik",
    "not": "kuruluş kanununun ek listesi repoda yok. data/normalized/ek/beldeler/1999yerel.json–2014yerel.json: Derecik beldesi Şemdinli'de; köylerin eski ilçesi 7148 ekinde, repoda yok"
-  },
-  {
-   "geomId": "TR-D-34-002",
-   "il": "İstanbul",
-   "ilce": "Arnavutköy",
-   "not": "Ek liste birimleri: Gaziosmanpaşa 26, Çatalca 18, Küçükçekmece 1; 1961 ilçelerine göre en büyük pay %58 Eyüp (<%70)"
-  },
-  {
-   "geomId": "TR-D-34-003",
-   "il": "İstanbul",
-   "ilce": "Ataşehir",
-   "not": "Ek liste birimleri: Kadıköy 7, Üsküdar 3, Ümraniye 3, Kartal 2; eski ilçelerin 1961'deki karşılığı bilinmiyor (Kadıköy, Kartal, Ümraniye, Üsküdar 1961'de yoktu ya da kendisi belirsiz)"
-  },
-  {
-   "geomId": "TR-D-34-016",
-   "il": "İstanbul",
-   "ilce": "Çekmeköy",
-   "not": "Ek liste birimleri: Ümraniye 25, Kartal 1; eski ilçelerin 1961'deki karşılığı bilinmiyor (Kartal, Ümraniye 1961'de yoktu ya da kendisi belirsiz)"
-  },
-  {
-   "geomId": "TR-D-34-024",
-   "il": "İstanbul",
-   "ilce": "Kağıthane",
-   "not": "Ek liste birimleri: kaynağı yazılmamış 8; kanun ek listesinde birimlerin eski ilçesi yazılmamış. 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Kâğıthane köyü Şişli Merkez bucağında; 1987 ilçesinin mahallelerinin tamamının Şişli'den geldiği kaynakta yok"
-  },
-  {
-   "geomId": "TR-D-34-029",
-   "il": "İstanbul",
-   "ilce": "Sancaktepe",
-   "not": "Ek liste birimleri: Ümraniye 15, Kartal 1; eski ilçelerin 1961'deki karşılığı bilinmiyor (Kartal, Ümraniye 1961'de yoktu ya da kendisi belirsiz)"
-  },
-  {
-   "geomId": "TR-D-34-037",
-   "il": "İstanbul",
-   "ilce": "Ümraniye",
-   "not": "Ek liste birimleri: kaynağı yazılmamış 7, Üsküdar 6, Beykoz 3; 1961 ilçelerine göre en büyük pay %38 Üsküdar (<%70). 1960 sayımı: Ümraniye, Alemdar, Çekme, Reşadiye, Sultançiftliği, Dudullu köyleri Üsküdar'da; 3392 listesindeki Beykoz köyleri ve 7 mahallenin eski ilçesi ayrı"
   },
   {
    "geomId": "TR-D-35-001",

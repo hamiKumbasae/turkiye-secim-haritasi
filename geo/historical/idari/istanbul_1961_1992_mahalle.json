@@ -1,5 +1,5 @@
 {
- "not": "Mevcut kaynaklı 1992-2008 atamalarını 1987-1992 için geriye bağlar.\n\nYeni kaynak veya sınır tahmini üretmez. 3392/3644/3806/3949 zincirleri\nbuild_istanbul_1961_1992.ZINCIR'dan alınır; daha eski mahalle bağlılığı\nkanıtlanmamış alanlar açıkça belirsiz kalır. Yalnız 1989 yerel ve 1991\ngenel kayıtları etkinleştirilir. Diğer dönemler ayrıca doğrulanmalıdır.\n",
+ "not": "Mevcut kaynaklı 1992-2008 atamalarını 1961-1992 için geriye bağlar.\n\n3392/3644/3806/3949 zincirleri build_istanbul_1961_1992.ZINCIR'dan alınır.\n1987'de kurulan Ümraniye'nin (Üsküdar + Beykoz + kaynağı yazılmamış mahalleler)\n1987 öncesi bağlılığı kanun listesinden çıkmaz; bu mahalleler 1960 sayımının köy\nlistesiyle (SAYIM_1960) bağlanır, adı sayımda olmayanlar komşu mahallelerin\nçoğunluğuna verilir. Bu atamalar yaklaşıktır ('yaklasik': true); amaç 1961\nharitasının genel olarak doğru görünmesi (1940/1963 ilçe haritalarıyla görsel\nolarak karşılaştırıldı). Etkinleştirilen seçimler: 1961 genel, 1989 yerel,\n1991 genel.\n",
  "ilceler": {
   "TR-D-34-002": {
    "bitis": "1992-06-03",
@@ -1072,8 +1072,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kadıköy",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kadıköy (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1096,8 +1097,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kadıköy",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %39 kadarı Kadıköy (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1120,8 +1122,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kadıköy",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %57 kadarı Kadıköy (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1168,8 +1171,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %56 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1216,8 +1220,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %62 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1711,8 +1716,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Alemdar köyü, Üsküdar Merkez bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1735,8 +1741,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %71 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1759,8 +1766,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1783,8 +1791,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %91 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1807,8 +1816,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Beykoz",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Cumhuriyet köyü, Beykoz M. Şevketpaşa bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1831,8 +1841,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %67 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1855,8 +1866,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %97 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1879,8 +1891,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1903,8 +1916,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Beykoz",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Hüseyinli köyü, Beykoz M. Şevketpaşa bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1927,8 +1941,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %56 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1951,8 +1966,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Beykoz",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Koçullu köyü, Beykoz M. Şevketpaşa bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1975,8 +1991,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -1999,8 +2016,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Çekme köyü, Üsküdar Merkez bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -2023,8 +2041,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -2047,8 +2066,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %40 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -2071,8 +2091,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Beykoz",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Ömerli bucak merkezi, Beykoz M. Şevketpaşa bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -2095,8 +2116,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Reşadiye köyü, Üsküdar Merkez bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -2119,8 +2141,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Beykoz",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Sırapınar köyü, Beykoz M. Şevketpaşa bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -2143,8 +2166,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %48 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -2167,8 +2191,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Sultançiftliği köyü, Üsküdar Merkez bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -2191,8 +2216,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %95 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3305,8 +3331,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3329,8 +3356,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %64 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3401,8 +3429,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3425,8 +3454,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3449,8 +3479,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3473,8 +3504,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Üsküdar",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %52 kadarı Üsküdar (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3497,8 +3529,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3521,8 +3554,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3569,8 +3603,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Paşaköy köyü, Kartal Şamandıra bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3593,8 +3628,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3617,8 +3653,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Sarıgazi köyü, Kartal Şamandıra bucağı",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3665,8 +3702,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",
@@ -3689,8 +3727,9 @@
       {
        "baslangic": "1961-01-01",
        "bitis": "1987-07-04",
-       "ilce": null,
-       "dayanak": "1987 öncesi Üsküdar/Beykoz mahalle bölüşümü henüz kaynaklanmadı"
+       "ilce": "Kartal",
+       "dayanak": "Yaklaşık: 1960 sayımında adı yok; komşu sınırın %100 kadarı Kartal (1940/1963 ilçe haritalarıyla görsel olarak tutarlı)",
+       "yaklasik": true
       },
       {
        "baslangic": "1987-07-04",

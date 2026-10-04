@@ -18,7 +18,11 @@ Esleme yontemleri (CSV -> yontem):
   kendi_satiri            Bugunku ilce 1961'de de ilceydi; satirin poligonu bugunku poligonudur.
   tarihsel_birlesim       Mevcut kaynakli birlesimin parcasi: apply_idari_merges.py (HISTK-*, kurulus
                           kanununun ek listesine gore tek kaynakli) ya da repoda dogrulanmis HIST-*.
-  bolunmus_poligon        Bugunku poligon 1961'de iki ilce arasinda bolunmus (Eminonu/Fatih).
+  bolunmus_poligon        Bugunku poligon 1961'de iki ilce arasinda bolunmus (Eminonu/Fatih; Istanbul'da
+                          mahalle duzeyinde bolunen ilceler, ornek Arnavutkoy: Eyup + Catalca).
+  istanbul_mahalle        build_istanbul_1961_1992.py: Istanbul'un 1961 ilce sinirlari (mahalle tablosu
+                          istanbul_1961_1992_mahalle.json ya da ZINCIR). 1987 oncesi Umraniye mahalleleri
+                          ve Kagithane/Umraniye 1960 sayimi ve komsulukla, yaklasik.
   istanbul_zinciri        build_istanbul_1961_1992.py -> ZINCIR (kanun ek listesi / sayim zinciri).
   ayni_1961_ilcesi        Kanun ek listesine gore birden cok eski ilceden kuruldu, ama bu eski
                           ilcelerin hepsi 1961'de ayni ilcenin parcasiydi (birimlerin %100'u).
@@ -57,6 +61,8 @@ CSV = IDARI / "ilce_1961_eslesme.csv"
 KAYIT = IDARI / "ilce_1961.json"
 LINEAGE = IDARI / "district_lineage.json"
 PLAN = IDARI / "merge_plan.json"
+IST = IDARI / "istanbul_1961_1992.json"
+IST_TABLO = IDARI / "istanbul_1961_1992_mahalle.json"
 NOTLAR = IDARI / "harita_notlari.json"
 HIST_GEO = ROOT / "geo/historical/turkiye_ilce_sinirlari_hist_splits.geojson"
 SPLITS = ROOT / "geo/historical/district_splits.json"
@@ -65,7 +71,7 @@ ONEK = "HIST1961-"
 ESIK = 0.7
 ALANLAR = ["guncel_geomId", "guncel_il", "guncel_ilce", "kurulus_tarihi", "kurulus_kanunu", "plaka_1961",
            "il_1961", "ilce_1961", "geomId_1961", "yontem", "guven", "kaynak", "not"]
-GUVEN = {"kendi_satiri": "kesin", "tarihsel_birlesim": "kesin", "bolunmus_poligon": "kesin",
+GUVEN = {"kendi_satiri": "kesin", "tarihsel_birlesim": "kesin", "bolunmus_poligon": "kesin", "istanbul_mahalle": "kesin",
          "istanbul_zinciri": "kesin", "ayni_1961_ilcesi": "kesin", "cogunluk": "yaklasik", "belirsiz": ""}
 LINEAGE_KAYNAK = "geo/historical/idari/district_lineage.json"
 # belirsiz kalan ilcelerde repodaki kismi kanit (esleme icin yetmez, yalniz not)
@@ -145,6 +151,25 @@ def tablo():
     satirlar = {(r["plaka"], r["ad"]): r for r in rec["ilceler"]}
     sk = satir_kapsami(rec, hide)
 
+    ist = oku(IST) if IST.exists() else {"secimler": {}}
+    ist_ids = {v["geomId"] for v in ist["secimler"].get(SECIM, {}).get("satirlar", {}).values()}
+    ist_tablo = oku(IST_TABLO)["ilceler"] if IST_TABLO.exists() else {}
+
+    def ist_bilgi(g):
+        """Istanbul bugunku ilcesinin 1961 atamasi: (guven, kaynak, not)"""
+        for bas, bit, _, dayanak in ZINCIR.get(g[-3:], []) if modern_plaka[g] == 34 else []:
+            if bas <= TARIH < bit:
+                return ("yaklasik" if dayanak.startswith("Yaklaşık") else "kesin",
+                        "build_istanbul_1961_1992.py → ZINCIR", dayanak)
+        if g in ist_tablo:
+            ds = [d for m in ist_tablo[g]["mahalleler"] for d in m["donemler"] if d["baslangic"] <= TARIH < d["bitis"]]
+            say = collections.Counter(d["ilce"] for d in ds)
+            yk = sum(1 for d in ds if d.get("yaklasik"))
+            return ("yaklasik" if yk else "kesin", "geo/historical/idari/istanbul_1961_1992_mahalle.json",
+                    "Mahalle düzeyinde: " + ", ".join(f"{a} {n}" for a, n in say.most_common())
+                    + (f" ({yk} mahalle yaklaşık: 1960 sayımı / komşuluk)" if yk else ""))
+        return "kesin", "build_istanbul_1961_1992.py", ""
+
     bagli = collections.defaultdict(list)          # bugunku ilce -> [(plaka, ad)]
     for k, ids in sk.items():
         for g in ids:
@@ -169,8 +194,14 @@ def tablo():
     for g in sorted(modern_plaka):
         ks = bagli.get(g, [])
         if len(ks) > 1:
-            yaz(g, None, "bolunmus_poligon", "scripts/pipelines/historical_geo/split_eminonu_fatih.py",
-                "1961'de " + " ve ".join(k[1] for k in ks) + " arasında bölünmüş; her biri kendi HIST poligonuyla")
+            if g == "TR-D-34-020":
+                yaz(g, None, "bolunmus_poligon", "scripts/pipelines/historical_geo/split_eminonu_fatih.py",
+                    "1961'de " + " ve ".join(k[1] for k in ks) + " arasında bölünmüş; her biri kendi HIST poligonuyla")
+            else:
+                gv, kaynak, not_ = ist_bilgi(g)
+                yaz(g, None, "bolunmus_poligon", kaynak,
+                    "1961'de " + " ve ".join(k[1] for k in ks) + " arasında bölünmüş. " + not_)
+                satir[g]["guven"] = gv
             satir[g].update(plaka_1961=ks[0][0], il_1961=il61[ks[0][0]], ilce_1961=" + ".join(k[1] for k in ks),
                             geomId_1961=" + ".join(satirlar[k]["geomId"] for k in ks))
             continue
@@ -188,6 +219,11 @@ def tablo():
                     satir[g]["guven"] = "şüpheli"
                     satir[g]["not"] = ("Kuruluşu 1961'den sonra; 1961 verisindeki satır bu ilçe olamaz "
                                        "(idari/README.md → Bilinen boşluklar). Eşleşme korunuyor, doğrulanmalı")
+            continue
+        if gid in ist_ids:
+            gv, kaynak, not_ = ist_bilgi(g)
+            yaz(g, k, "istanbul_mahalle", kaynak, not_ or f"1961 satırı {k[1]} poligonu")
+            satir[g]["guven"] = gv
             continue
         p = plan.get(gid)
         if p and g in p["katilanlar"]:
@@ -351,7 +387,8 @@ def uygula(cogunluk=None):
     for k, ids in sorted(hedef.items()):
         once = sk[k]
         # yalniz bugunku poligonun parcasi olanlar (Eminonu/Fatih gibi bolunmus HIST parcalari haric)
-        if not once - ids <= {g for g in once if g not in modern}:
+        bolunmus = {s["guncel_geomId"] for s in tab if s["yontem"] == "bolunmus_poligon"}
+        if not once - ids <= {g for g in once if g not in modern} | bolunmus:
             raise SystemExit(f"HATA: {k} satırının poligonu tabloda başka satıra bağlı ilçeleri kapsıyor: {sorted(once - ids)}")
         yeni = sorted(ids - once)
         if not yeni:
@@ -384,8 +421,24 @@ def uygula(cogunluk=None):
     # harita notlari: artik kapsanan ilceler 1961'de taranmaz; birlesimlerin ipucu
     notlar = oku(NOTLAR)
     sec = notlar["secimler"].get(SECIM, {})
-    for g in eklenen:
-        sec.pop(g, None)
+    kapsanan = set()
+    for r in rec["ilceler"]:
+        if r.get("geomId"):
+            kapsanan |= {r["geomId"]} | set(kapsam(splits).get(r["geomId"], ()))
+    for g in list(sec):
+        if g in kapsanan:
+            sec.pop(g)
+    # Istanbul 1961 birlesimleri (build_istanbul_1961_1992.py): bugunku ilceler ve mahalle paylari
+    if IST.exists():
+        ist = oku(IST)
+        for v in ist["secimler"].get(SECIM, {}).get("satirlar", {}).values():
+            sid = v["geomId"]
+            if sid in ist["sentetikler"] and len(v["bugunkuIlceler"]) > 1:
+                b = {"ilceler": sorted(ad[g] for g in v["bugunkuIlceler"])}
+                paylar = ist["sentetikler"][sid].get("paylar") or {}
+                if paylar:
+                    b["paylar"] = {ad[g]: pay for g, pay in sorted(paylar.items())}
+                notlar["birlesimler"][sid] = b
     notlar["secimler"][SECIM] = dict(sorted(sec.items()))
     for b in birlesimler:
         e = {"ilceler": sorted({ad[g] for g in b["bugunkuIlceler"] if g in modern})}
