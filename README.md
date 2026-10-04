@@ -15,14 +15,24 @@ yoksa bu sessizce atlanır, harita/veri işlevselliğini etkilemez.)
 
 ## Performans
 
-Mahalle/muhtarlık düzeyi oy verisi (15 seçim, açık haliyle ~75MB) sayfa
-açılışında DEĞİL, kullanıcı gerçekten bir ilçeye tıklayıp o yılın mahalle
-verisine indiğinde, sadece o yıl için lazy-load edilir (bkz. `src/js/
-data-loader.js` + `map.js`). Mahalle poligonları (`mahalle_geo.json`, ~17MB
-açık, yıllar arası paylaşımlı) hâlâ eager yükleniyor — bu bilinçli bir
-basitleştirme: il/ilçe bazında da bölünebilirdi ama görece küçük olduğu ve
-her yeni seçimde büyümediği (sadece yeni ilçe eklenince büyür) için şimdilik
-gerekli görülmedi.
+Açılışta yalnız gösterilen seçim çözülür: seçimler `index.html`'e seçim başına ayrı gömülüdür
+(`secim_<anahtar>.json`), eskiden 46 seçimin tamamı (~40 MB açık JSON) tek seferde çözülüyordu.
+Mahalle oyları (yıl başına) ve mahalle poligonları (`mahalle_geo.json`, ~17 MB açık) yalnız
+kullanıcı bir ilçenin mahallelerine inince açılır; hangi ilçenin poligonu olduğu küçük
+`mahalle_geo_ids.json`'dan bilinir. Ölçüm (yerel Chromium, açılıştan harita çizilene dek):
+2,0 sn → 0,9 sn, JS belleği 269 MB → 81 MB.
+
+## Site özellikleri
+
+- **Harita modları:** Kazanan, Katılım, Parti (oy oranı) ve **Değişim** (seçilen partinin aynı
+  türdeki önceki seçime göre oy oranı farkı, yüzde puan; sınırı değişen ilçe karşılaştırılmaz).
+- **Paylaşılabilir bağlantı:** seçim, il, ilçe/mahalle, mod, parti ve oylama türü adresin `#`
+  kısmında (`#secim=1977&il=6&mod=parti&parti=CHP`); "Bağlantıyı kopyala" düğmesi.
+- **Kaynaklar ve yöntem:** [`yontem.html`](yontem.html) — kaynaklar, tarihsel sınırlar, harita
+  okuma, bilinen eksikler; sade dille.
+- **CSV indirme:** tablo görünümünde ve Kaynaklar çekmecesinde; açık seçimin il ve ilçe sonuçları.
+- **Erişilebilirlik:** renk körü dostu palet (Okabe–Ito), klavyeyle gezinme ve ekran okuyucu
+  etiketleri, telefonda yatay kayma yok.
 
 ## Veri mimarisi: raw → normalized → build
 
