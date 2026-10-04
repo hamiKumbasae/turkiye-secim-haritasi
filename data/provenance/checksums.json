@@ -100,7 +100,7 @@
     "elections/genel/2018.json": "5251812bccd246c7efb1f92fe1d8c720f4a21a94a3a75e87788d6fa97ed2e4f2",
     "elections/genel/2023.json": "11d6f896ab812d0a3407bdf8309b2cf228756d97983ac71b99370363594ae198",
     "elections/referandum/1961referandum.json": "e5c12650e2686616eef10d85200818a84d7bb0f441ecbba4c7817d2c6f647edf",
-    "elections/referandum/1982referandum.json": "c2775f9ce62bef7c7cca9b75224a2d066691572974adbbe97c92b319ff429eef",
+    "elections/referandum/1982referandum.json": "4d9d50339541210e841e547a679f827533d873914b33ff0a21f63a715dfba250",
     "elections/referandum/1987referandum.json": "322539edf4ac5add1604972dd86305a7aec39b651d36c06577aefa23425717ab",
     "elections/referandum/1988referandum.json": "d735e29fe274d76c44b15b570e06029474516ae77235bc57b914c72dad1a8288",
     "elections/referandum/2007referandum.json": "9076293fe18e05d7fe665f06fca411bb8fe5a5b1397f0182b8428638ddfb2fc7",
@@ -546,19 +546,19 @@
   },
   "geo/historical": {
    "checksum_file": "geo/historical/checksums.sha256",
-   "file_count": 36,
+   "file_count": 38,
    "files": {
     "NATIONWIDE_DISTRICT_AUDIT.md": "db738506e517f5e9a788d2f341e28338ab57aba75e14c26d3793cf31eed2b7eb",
     "district_mahalle_merges.yaml": "79e4854970055d8befa837debdecd327b6913e9172d9e91baaf31c3505822272",
-    "district_splits.json": "789acf6ab6d579b1d1ec76a36a9cc08eb65a03d67e6f1f667bb9d03bc4ba819e",
+    "district_splits.json": "59266ef74a6e3dd5bbc7de3002221836336923db86f404b18c8121633c962a81",
     "idari/README.md": "104ec1af3c2ad489c5d65b8ff120d9f104de628692f459a641d0ede2c5089826",
     "idari/administrative_events.json": "83e79c76814fecdac0ad2ccdeae2c7c594e3992bb1fb0b41ed870b3102da3adf",
     "idari/district_lineage.json": "6c1c5e851169fa3916c80904ebd4923d051d77dd39cebff194562a2829f9d664",
     "idari/election_admin_snapshots.json": "109b565ef85469210b730f14ed9b3bd4a1bd7148e3a9b3388721df933d551810",
     "idari/elle_olaylar.json": "2f9ecd043aa520a87c86406fb392320282a3279d3336cd4286edc07738a10512",
     "idari/faz1_rapor.json": "b84567bb7e980d13af3f04523f2bb0efcb22bb87607eb3b27514e707798ffed9",
-    "idari/harita_notlari.json": "c7d54875a06086bb705da437415e366b6282b399586525ace7ab4c0f974860cd",
-    "idari/ilce_bolusumu.json": "1808fdcedc19b8bfcfdb1e3179d248d9aa58c7e301c586a1ca81c60fb4bb647a",
+    "idari/harita_notlari.json": "bf4f551a24a3fad5363a714cbff1c19eac0f980d0a716af3a0e0b73011d32be5",
+    "idari/ilce_bolusumu.json": "9dcb091cda260e7fb37abf54447ebcfff186a7f4239e1f7b5fc04723c85afab6",
     "idari/ilce_eslesme/1961.csv": "6486a98be9f7403863920c8366ed8dd58b1151e837a45c245afcc3d6b5daea5f",
     "idari/ilce_eslesme/1961.json": "d654dd0c073f8bfce6f804e9e60bebcca77cc307d160cfba50c315b9a11573b0",
     "idari/ilce_eslesme/1961referandum.csv": "4f41bd746013853916227c813753fbe7f01d7a0656e86067ceae278e47155f63",
@@ -571,7 +571,9 @@
     "idari/ilce_eslesme/1973.json": "de201df25e753d8736ae71e498a4cdcd0266657b47d7cb71a1cba5a5d510c976",
     "idari/ilce_eslesme/1977.csv": "2fc120832240fc5ac974ba8d5a0d836392015d210e86ed7b380f4bab56f0f3bc",
     "idari/ilce_eslesme/1977.json": "2d01bbf995d88926ebe987d8a76d4432bbb376f1e3f4099ab796abcb0e461c8a",
-    "idari/istanbul_1961_1992.json": "ae4a0f02100159b8b2b19bc6f72316114fa07d456dc1098c7a5e54f6b224b4be",
+    "idari/ilce_eslesme/1982referandum.csv": "98720043f8fdbfb827c1fc12647873ed90f381572ca146964d2df657b0ffdf0f",
+    "idari/ilce_eslesme/1982referandum.json": "a6693f1108678bf3e49182f0d7812ce1e35840ee50b7d1905c10e62fc9922d68",
+    "idari/istanbul_1961_1992.json": "aef29752136217f6e928a13017b4792eb321544ee6d341eb33d1fe8bdfb4c792",
     "idari/istanbul_1961_1992_mahalle.json": "c1e9b2767eaf68abd53b25a93746d4117be22e4c18341deef1b9c593dcde062e",
     "idari/istanbul_1992_2008.json": "2fdaa4565eed283ef0373263e7bb6d9b7f15799fa873b63d6d10815d65eb465d",
     "idari/merge_plan.json": "690f1e7474f2c469fc560def69f5db74a4aeae83f28aab7b07c536f8f61057dd",
@@ -583,7 +585,7 @@
     "turkiye_il_sinirlari_era1991.geojson": "77e3c883f802307a32a09da10295b5d49db380676bdb34304ae6170d8d46fd34",
     "turkiye_il_sinirlari_era1995.geojson": "b880de6aa1b869c54ce024880acec12aa5ae41ade89e4d1cbfd73cbb4d02a141",
     "turkiye_il_sinirlari_era1999.geojson": "d5c8c67c98dbaf69ddf888bca6ae996655b508c73b65438de0df4abbb9321635",
-    "turkiye_ilce_sinirlari_hist_splits.geojson": "0b5ddf9e1d6409c85d4572bfc5f30523ec53a89f5b11a0ac832c628d122698ac"
+    "turkiye_ilce_sinirlari_hist_splits.geojson": "52a55af8ee32a128b0a4df07c4e5c2f322cf3dc36602c614a4a8e36eb7149ca5"
    }
   },
   "geo/normalized": {
