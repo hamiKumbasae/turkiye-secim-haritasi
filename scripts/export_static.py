@@ -21,7 +21,7 @@ Cikti (varsayilan: dist_static/, --out ile degistirilebilir):
   geo/district_splits.json
   geo/harita_notlari.json            - 'veri yok' poligon aciklamalari (tarihsel idari katman)
   geo/meclis_2024.json
-  geo/eras/<era>.geojson             - 6 tarihsel il-sinirlari donemi
+  geo/eras/<era>.geojson             - 8 tarihsel il-sinirlari donemi
 
 Bu dosyalar turkiye-secim-atlasi reposunun kendi data/+geo/ klasorlerine
 KOPYALANIR (elle, bkz. proje ust-duzey plani) - bu script o kopyalama islemini
@@ -43,7 +43,7 @@ DATA_NORM = ROOT / "data" / "normalized"
 GEO_NORM = ROOT / "geo" / "normalized"
 GEO_HIST = ROOT / "geo" / "historical"
 
-ERA_ADLARI = ["era1950", "era1954", "era1957_1987", "era1991", "era1995", "era1999"]
+ERA_ADLARI = ["era1950", "era1954", "era1957_1965", "era1957_1987", "era1991", "era1994", "era1995", "era1999"]
 
 
 def load_json(path: pathlib.Path):

@@ -140,6 +140,21 @@ def geri_al(rec, splits, hist):
     hist["features"] = [f for f in hist["features"] if not f["properties"]["id"].startswith(ONEK)]
 
 
+def geri_al_yaz():
+    """bu secimin HIST<secim> katmanini kaldirip satirlari onceki geomId'lerine dondurur ve yazar.
+    tarihsel_sinirlari_uret.py bunu apply_idari_merges.py'den once her secim icin cagirir: aksi halde
+    apply_idari_merges.py HIST<secim> satirlarinin tabanindaki HISTK birlesimlerini kullanilmiyor sayip
+    siler."""
+    rec = load_election(SECIM)
+    splits, hist = oku(SPLITS), oku(HIST_GEO)
+    eski = json.dumps(rec, ensure_ascii=False)
+    geri_al(rec, splits, hist)
+    HIST_GEO.write_text(json.dumps(hist, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    SPLITS.write_text(json.dumps(splits, ensure_ascii=False, indent=1), encoding="utf-8")
+    if json.dumps(rec, ensure_ascii=False) != eski:
+        save_election(SECIM, rec)
+
+
 # ---------------------------------------------------------------- tablo
 def tablo():
     rec = load_election(SECIM)
@@ -613,7 +628,7 @@ def kontrol(sessiz=False):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        raise SystemExit("kullanım: build_ilce_secim.py <seçim> [tablo|uygula|kontrol]")
+        raise SystemExit("kullanım: build_ilce_secim.py <seçim> [tablo|uygula|kontrol|geri_al]")
     ayarla(sys.argv[1])
     adim = sys.argv[2] if len(sys.argv) > 2 else "hepsi"
     if adim == "tablo":
@@ -626,6 +641,8 @@ if __name__ == "__main__":
         uygula()
     elif adim == "kontrol":
         sys.exit(1 if kontrol() else 0)
+    elif adim == "geri_al":
+        geri_al_yaz()
     else:
         uygula(tablo())
         sys.exit(1 if kontrol() else 0)

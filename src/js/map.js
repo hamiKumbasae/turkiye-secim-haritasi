@@ -49,9 +49,12 @@
   // Usak (1954) ve Duzce (1999) o yillarda henuz bagimsiz il degildi - o donemin secim
   // haritasinda bos/gri gorunmemeleri icin kendi donemlerinde ait olduklari ile
   // birlestirilmis ozel bir GeoJSON kullaniliyor (bkz. build_historical_geo.py).
-  const GEO_ERAS = [ // [esik_yili, dosya_eki] - yil < esik_yili ise bu era kullanilir
-    [1954, 'era1950'], [1957, 'era1954'], [1991, 'era1957_1987'],
-    [1995, 'era1991'], [1999, 'era1995'], [2002, 'era1999'],
+  // era1957_1965/era1957_1987/era1991/era1994: secim verisindeki ilce-il bagliligindan
+  // (scripts/pipelines/historical_geo/build_il_sinirlari.py); 1957 ilce verisi olmadigi icin
+  // era1957_1987'de, 1958-1965 Kaynarca'nin Kocaeli'de oldugu era1957_1965'te.
+  const GEO_ERAS = [ // [esik_yili, dosya_eki] - yil < esik_yili ise (ilk eslesen) bu era kullanilir
+    [1954, 'era1950'], [1957, 'era1954'], [1958, 'era1957_1987'], [1966, 'era1957_1965'],
+    [1991, 'era1957_1987'], [1994, 'era1991'], [1995, 'era1994'], [1999, 'era1995'], [2002, 'era1999'],
   ];
   function eraSuffixForYear(year){
     const y = parseInt(String(year).match(/^\d{4}/)[0], 10);
