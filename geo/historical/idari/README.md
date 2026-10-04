@@ -333,7 +333,9 @@ kalmasın; harita genel olarak doğru görünsün. Her seçim için:
   `era1950`, `era1954` (ilçe verisi yok), `era1995` ve `era1999` (zaten örtüşüyor) değişmedi.
 - Yeniden üretim: `scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py` bütün adımları doğru
   sırayla çalıştırır: seçim katmanını geri al (`build_ilce_secim.py <seçim> geri_al`) →
-  `apply_idari_merges.py` → İstanbul → `build_ilce_secim.py <seçim>` (her seçim) → il sınırları →
+  `apply_idari_merges.py` → İstanbul → `build_ilce_secim.py <seçim>` (her seçim) →
+  `ortusmeleri_temizle.py` (İstanbul: örtüşme şeritleri, ~30 m'den dar çatlaklar ve birlikte çizilen
+  ilçeler arasındaki ince boşluklar; haritada ilçe içinde ortada biten çizgiler) → il sınırları →
   meclis → rapor → checksum → `scripts/build.py`. Tek tek betikler birbirinin çıktısını yeniden
   yazdığı için (`apply_idari_merges.py` HISTK birleşimlerini ve `harita_notlari.json`'u sıfırdan
   kurar) yalnız bu sıra tutarlıdır; betik idempotenttir (main üzerinde çalıştırınca fark çıkmaz).
