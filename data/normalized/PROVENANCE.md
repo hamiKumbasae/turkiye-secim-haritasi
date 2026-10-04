@@ -82,3 +82,22 @@ Atlas düzeltmesi: https://github.com/hamiKumbasae/turkiye-secim-atlasi/pull/9
 - Özgün `kaynak` alanları korunur; kaynakla yapılan onarım bu alana `duzeltme` olarak eklenir. `export_static.py --public` çıktısı atlas düzeltmeleriyle eşleşir.
 - Bağımsız oy aktarımı, `bagimsiz_TOPLAM_OY` ile numaralı aday oylarını çift saymaz. Cumhurbaşkanlığı ve referandum seçenekleri ayrı kalır. Eski progress dosyaları yeni hesapla karıştırılmamak için yeniden kullanılmaz.
 - `scripts/validate_public_data.py` yeni/değişmiş veri sorunlarını reddeder. Mevcut 3.554 bulgu `tests/fixtures/known-validation-issues.json` içinde kaynak doğrulaması bekler; bu liste otomatik yenilenmemelidir. Ön yüz doğrulanmamış yüzdeleri göstermez.
+
+## Oy toplamı tamamlamaları (2026-10-04)
+
+- **2024 yerel, bağımsız adaylar:** eski YSK aktarımı (`fetch_yerel_v2.js`, sonradan `ballot_votes.js`
+  ile düzeltildi ama veri yeniden çekilmedi) bağımsız aday oylarını almıyordu: 489 kayıtta parti
+  toplamı geçerli oydan azdı, oranlar eksik toplama göre hesaplanmıştı. Eksikler depodaki Vikipedi il
+  sayfalarından (`data/raw/wikipedia/il-sayfalari/yerel/2024yerel/`, YSK sonuçları) tamamlandı:
+  `scripts/pipelines/election_import/wiki_bagimsiz.py`. Parti oyları (YSK, ilçe toplamı = ilçe
+  belediyesi + beldeler) korundu; `Bağımsız` eklendi, kalan fark `Diğer`; oranlar geçerli oya göre;
+  kazanan Vikipedi'nin "seçildi" işaretinden (26 kayıtta değişti, ör. Vakfıkebir bağımsız, Kırklareli
+  merkez MHP, Kütahya merkez CHP). Kayıtlarda `kaynak.bagimsizTamamlama`, kullanıcıya `veriNotu`.
+- **Küçük farklar:** parti toplamı geçerli oydan en çok %5 az olan 2.143 kayıtta (22 seçim; halk
+  oylamaları ve cumhurbaşkanlığı hariç) fark `Diğer`e eklendi, oranlar geçerli oya göre yeniden
+  hesaplandı, kazanan değişmedi: `diger_tamamla.py`, kayıtta `kaynak.digerTamamlama`.
+- **1961, kaynak içi tutarsızlık:** Feke, Ağlasun, Yeşilova, Susuz — TÜİK tablosunun kendisinde parti
+  toplamı geçerli oyla tutmuyor (yüzdeler %86–113). Kaynaktaki haliyle bırakıldı; `veriNotu` ile
+  belirtildi. Basılı DİE yayınıyla (0014128) doğrulanmalı.
+- Kalan 923 bulgu (`tests/fixtures/known-validation-issues.json`) kaynakla incelenmeli; 2009–2019
+  yerel seçimlerdeki büyük farklar bunların çoğu (Vikipedi sayfa biçimi farklı, ayrıca ele alınmalı).

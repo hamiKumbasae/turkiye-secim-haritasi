@@ -1,5 +1,5 @@
 """
-Harita durum raporu: her secim x il x guncel ilce poligonu icin ön yüzün (src/js/map.js
+Harita durum raporu: her secim x il x guncel ilce poligonu icin ön yüzün (frontend/src/js/map.js
 renderProvinceMap) nasil cizdigini Python'da aynen yeniden kurar ve siniflandirir; eksik
 secim verilerini listeler. docs/rapor/ altina CSV + ozet JSON yazar.
 

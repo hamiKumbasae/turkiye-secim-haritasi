@@ -31,8 +31,8 @@ jobs:
       - name: index.html'i yeniden üret
         run: python3 scripts/build.py
 
-      - name: Commit'li index.html güncel mi (build sonrası fark olmamalı)
-        run: git diff --exit-code index.html
+      - name: Commit'li index.html ve yontem.html güncel mi (build sonrası fark olmamalı)
+        run: git diff --exit-code index.html yontem.html
 
       - uses: actions/setup-node@v4
         with:

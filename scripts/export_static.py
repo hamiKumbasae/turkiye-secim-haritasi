@@ -51,9 +51,6 @@ def load_json(path: pathlib.Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-PUBLIC_EXPORT = False
-
-
 def without_provenance(obj):
     if isinstance(obj, dict):
         return {k: without_provenance(v) for k, v in obj.items() if k != "kaynak"}
@@ -62,11 +59,36 @@ def without_provenance(obj):
     return obj
 
 
-def write_json(path: pathlib.Path, obj) -> None:
-    if PUBLIC_EXPORT:
-        obj = without_provenance(obj)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+def public_files(public=True) -> dict:
+    """Yayin dosyalari: {goreli yol: JSON nesnesi}. Atlas bunlari ayri dosya olarak fetch eder;
+    build.py ayni yollarla index.html'e gomer (tek on yuz, iki dagitim)."""
+    files = {}
+
+    def ekle(rel, obj):
+        files[rel] = without_provenance(obj) if public else obj
+
+    ekle("data/parties.json", load_json(DATA_NORM / "partiler.json"))
+    for key, record in load_all_elections().items():
+        ekle(f"data/elections/{key}.json", record)
+    for path in sorted((DATA_NORM / "meclis_harita").glob("*.json")):
+        ekle(f"data/meclis_harita/{path.name}", load_json(path))
+    mahalle_coverage = {}
+    for path in sorted((DATA_NORM / "mahalle").glob("*.json")):
+        rows = load_json(path)
+        ekle(f"data/mahalle_votes/{path.name}", rows)
+        mahalle_coverage[path.stem] = len(rows)
+    ekle("geo/il_sinirlari.geojson", load_json(GEO_NORM / "turkiye_il_sinirlari.geojson"))
+    ekle("geo/ilce_sinirlari.geojson", load_json(GEO_NORM / "turkiye_ilce_sinirlari.geojson"))
+    ekle("geo/ilce_sinirlari_hist.geojson", load_json(GEO_HIST / "turkiye_ilce_sinirlari_hist_splits.geojson"))
+    for geom_id, rows in load_json(GEO_NORM / "mahalle_geo.json").items():
+        ekle(f"geo/mahalle/{geom_id}.json", rows)
+    ekle("geo/district_splits.json", load_json(GEO_HIST / "district_splits.json"))
+    ekle("geo/harita_notlari.json", load_json(GEO_HIST / "idari" / "harita_notlari.json"))
+    ekle("geo/meclis_2024.json", load_json(DATA_NORM / "meclis_2024.json"))
+    ekle("geo/mahalle_coverage.json", mahalle_coverage)
+    for name in ERA_ADLARI:
+        ekle(f"geo/eras/{name}.geojson", load_json(GEO_HIST / f"turkiye_il_sinirlari_{name}.geojson"))
+    return files
 
 
 def main():
@@ -74,49 +96,19 @@ def main():
     ap.add_argument("--out", default="dist_static", help="çıktı klasörü (varsayılan: dist_static/)")
     ap.add_argument("--public", action="store_true", help="kayıtlardaki kaynak alanlarını yayın kopyasından çıkar")
     args = ap.parse_args()
-    global PUBLIC_EXPORT
-    PUBLIC_EXPORT = args.public
     out = ROOT / args.out
-
-    write_json(out / "data" / "parties.json", load_json(DATA_NORM / "partiler.json"))
-
-    secimler = load_all_elections()
-    for key, record in secimler.items():
-        write_json(out / "data" / "elections" / f"{key}.json", record)
-    print(f"yazıldı: {len(secimler)} seçim -> {out / 'data' / 'elections'}/")
-
-    n_meclis = 0
-    for path in sorted((DATA_NORM / "meclis_harita").glob("*.json")):
-        write_json(out / "data" / "meclis_harita" / path.name, load_json(path))
-        n_meclis += 1
-    print(f"yazıldı: {n_meclis} yerel meclis kaydı -> {out / 'data' / 'meclis_harita'}/")
-
-    mahalle_coverage = {}
-    n_mahalle = 0
-    for path in sorted((DATA_NORM / "mahalle").glob("*.json")):
-        rows = load_json(path)
-        write_json(out / "data" / "mahalle_votes" / path.name, rows)
-        mahalle_coverage[path.stem] = len(rows)
-        n_mahalle += 1
-    print(f"yazıldı: {n_mahalle} yıl mahalle oy verisi -> {out / 'data' / 'mahalle_votes'}/")
-
-    write_json(out / "geo" / "il_sinirlari.geojson", load_json(GEO_NORM / "turkiye_il_sinirlari.geojson"))
-    write_json(out / "geo" / "ilce_sinirlari.geojson", load_json(GEO_NORM / "turkiye_ilce_sinirlari.geojson"))
-    write_json(out / "geo" / "ilce_sinirlari_hist.geojson", load_json(GEO_HIST / "turkiye_ilce_sinirlari_hist_splits.geojson"))
-    mahalle_geo = load_json(GEO_NORM / "mahalle_geo.json")
-    for geom_id, rows in mahalle_geo.items():
-        write_json(out / "geo" / "mahalle" / f"{geom_id}.json", rows)
-    print(f"yazıldı: {len(mahalle_geo)} ilçe mahalle poligonu -> {out / 'geo' / 'mahalle'}/")
-    write_json(out / "geo" / "district_splits.json", load_json(GEO_HIST / "district_splits.json"))
-    write_json(out / "geo" / "harita_notlari.json", load_json(GEO_HIST / "idari" / "harita_notlari.json"))
-    write_json(out / "geo" / "meclis_2024.json", load_json(DATA_NORM / "meclis_2024.json"))
-    write_json(out / "geo" / "mahalle_coverage.json", mahalle_coverage)
-
-    for name in ERA_ADLARI:
-        write_json(out / "geo" / "eras" / f"{name}.geojson", load_json(GEO_HIST / f"turkiye_il_sinirlari_{name}.geojson"))
-    print(f"yazıldı: {len(ERA_ADLARI)} tarihsel il-sınırları dönemi -> {out / 'geo' / 'eras'}/")
-
-    print(f"\nTamamlandı: {out}/ altında statik veri üretildi.")
+    files = public_files(args.public)
+    for rel, obj in files.items():
+        path = out / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    sayac = {}
+    for rel in files:
+        k = "/".join(rel.split("/")[:2]) if rel.count("/") > 1 else rel
+        sayac[k] = sayac.get(k, 0) + 1
+    for k, n in sorted(sayac.items()):
+        print(f"yazıldı: {n:4d}  {k}")
+    print(f"\nTamamlandı: {out}/ altında {len(files)} statik veri dosyası üretildi.")
 
 
 if __name__ == "__main__":

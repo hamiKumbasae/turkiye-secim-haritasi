@@ -142,7 +142,6 @@
   </ul>
   <p>Görünümü paylaşmak için “Bağlantıyı kopyala” düğmesini kullanabilirsiniz; bağlantı seçimi, ili, ilçeyi ve
   harita modunu korur.</p>
-
   <h3>Erişilebilirlik</h3>
   <ul>
     <li><b>Renk körü dostu</b> düğmesi parti renklerini, renk körlüğünde de birbirinden ayırt edilebilen bir paletle
@@ -153,6 +152,9 @@
   </ul>
 
   <h2 id="eksikler">5. Bilinen eksikler ve sınırlamalar</h2>
+  <p><b>Veri tutarlılığı:</b> Parti oyları toplamı ile geçerli oy sayısı uyuşmayan veya aynı harita bölgesine birden fazla kayıt eşleşen satırlarda yüzdeler ve değişim karşılaştırması gösterilmez. Ham sayımlar korunur; ayrıntı paneli, ipucu ve CSV dosyasında doğrulama notu bulunur. Kaynakta %100'ü aşan ve henüz doğrulanamayan katılım değerleri gösterilmez.</p>
+  <p><b>Kaynakla onarılan kayıtlar:</b> 2004 yerel seçimindeki 81 il ve 910 ilçe kaydı <a href="https://kutuphane.tuik.gov.tr/pdf/0018169.pdf">DİE'nin resmî 2004 tablolarından</a> yenilenmiştir. İl kaydı büyükşehir başkanlığı veya il merkezi belediyesidir; ildeki bütün belediyelerin toplamı değildir. Sakarya'nın 1957 ve 1961 sandalye dağılımları ikincil arşivle tamamlanmıştır. Batman 1982 seçmen toplamı şehir ve köy kırılımından onarılmıştır. Tillo'nun 15 seçim ve sekiz meclis pusulası ile Karaisalı 2024 bağımsız oyları <a href="https://acikveri.ysk.gov.tr/">YSK sandık sonuçlarıyla</a> tamamlanmıştır. İlgili kayıtların kaynak notları atlasın Kaynaklar panelindedir.</p>
+  <p><b>Meclis karşılaştırmaları:</b> Belediye ve il genel meclisi oyları yalnız aynı pusula türü ve sonuç temeliyle karşılaştırılır. Belediye başkanlığına otomatik dönüş yapılmaz. Ulusal meclis oy grafiği, oy toplamı tutarlı il kayıtlarını kapsar ve sandalye sayısını göstermez. 2024 ilçe meclisi sandalye görünümü ayrı bir veri kümesidir.</p>
   <ul>
     <li><b>1950, 1954 ve 1957 genel seçimlerinde ilçe verisi yoktur;</b> resmî bir ilçe kaynağı bulunamamıştır. Bu
       yıllarda harita yalnızca il düzeyindedir.</li>
@@ -176,9 +178,9 @@
   <p>Dosya virgülle ayrılmış, UTF-8 biçimindedir; Excel'de Türkçe karakterler doğru görünür. Excel sütunlara
     ayırmazsa <i>Veri → Metni Sütunlara Dönüştür</i> ile ayırıcı olarak virgülü seçin.</p>
   <h3>Tüm veri</h3>
-  <p>Bütün seçimlerin işlenmiş verisi (JSON), ham kaynak dosyaları ve harita sınırları GitHub'da açıktır:
-    <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" rel="noopener">github.com/hamiKumbasae/turkiye-secim-haritasi</a>
-    (<code>data/normalized/</code>, <code>data/raw/</code>, <code>geo/</code>).</p>
+  <p>Bütün seçimlerin işlenmiş verisi (JSON) ve harita sınırları GitHub'da açıktır:
+    <a href="https://github.com/hamiKumbasae/turkiye-secim-atlasi" rel="noopener">github.com/hamiKumbasae/turkiye-secim-atlasi</a>
+    (<code>data/elections/</code>, <code>geo/</code>).</p>
   <h3>Lisans ve atıf</h3>
   <p>Sitenin kaynak kodu <b>MIT</b>, işlenmiş veri <b>CC BY-SA 4.0</b> lisanslıdır; OpenStreetMap'ten türetilen
     mahalle sınırları <b>ODbL</b>'ye tabidir (© OpenStreetMap katkıcıları). Veriyi kullanırken asıl kaynağı (YSK,
@@ -193,7 +195,7 @@
 
   <h2 id="iletisim">7. Hata bildirimi</h2>
   <p>Yanlış bir sonuç, sınır ya da isim fark ederseniz lütfen GitHub'da bir kayıt açın:
-    <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi/issues" rel="noopener">github.com/hamiKumbasae/turkiye-secim-haritasi/issues</a>.
+    <a href="https://github.com/hamiKumbasae/turkiye-secim-atlasi/issues" rel="noopener">github.com/hamiKumbasae/turkiye-secim-atlasi/issues</a>.
     Mümkünse seçimi, il/ilçeyi ve doğru değerin kaynağını yazın.</p>
 
   <footer>Türkiye Seçim Tarihi Atlası · <a href="index.html">Haritaya dön</a></footer>

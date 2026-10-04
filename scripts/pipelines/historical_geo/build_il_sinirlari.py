@@ -9,7 +9,7 @@ Silopi, Gercus, Hasankeyf Siirt'te; 1990'a kadar Mardin'e bagliydilar. Beytusseb
 Hakkari'ye bagliydilar. Agacoren ve Saryahsi Nigde'de; Ankara/Serefikochisar'a bagliydilar) ve 1994
 yerel icin dosya yoktu (Ardahan ve Igdir Kars icinde).
 
-Donemler (src/js/map.js -> GEO_ERAS ile ayni):
+Donemler (frontend/src/js/map.js -> GEO_ERAS ile ayni):
   era1957_1965  <- 1961        1958-1965 (Kaynarca Kocaeli'de; 1969'dan Sakarya)
   era1957_1987  <- 1987        1957 ve 1966-1990
   era1991       <- 1991        1991-1993
