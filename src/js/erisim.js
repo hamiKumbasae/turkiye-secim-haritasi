@@ -29,6 +29,7 @@
   const haritaSvg = $('#mapSvg');
   function bolgeKaydi(el){
     if(el.dataset.mahalleId) return currentMahalleRows.find(r => r.id === el.dataset.mahalleId);
+    if(el.dataset.geomId && view.level==='meclis-ilce') return MECLIS_2024[el.dataset.geomId];
     if(el.dataset.geomId) return districtByGeomId[el.dataset.geomId];
     if(el.dataset.plaka) return ilByPlaka[+el.dataset.plaka];
     return null;
@@ -44,7 +45,7 @@
       if(!r || el.classList.contains('il-path-nodata')) continue;
       el.setAttribute('tabindex', '0');
       el.setAttribute('role', 'button');
-      el.setAttribute('aria-label', r.ad + (r.kazanan ? ': ' + partyShort(r.kazanan) + ' önde' : ''));
+      el.setAttribute('aria-label', r.ad + (r.kazanan ? ': ' + partyShort(r.kazanan) + (view.level==='meclis-ilce' ? ' mecliste en çok sandalye' : ' önde') : ''));
       if(el.dataset.klavye) continue;
       el.dataset.klavye = '1';
       el.addEventListener('keydown', e => {

@@ -84,7 +84,8 @@
         : 'ⓘ Bu seçimde belediye başkanı doğrudan halk tarafından seçilmiyordu. Sonuçlar belediye meclisi dağılımını temel alır.';
     }
 
-    if(p.not){ $('#dInfoNote').style.display = 'flex'; $('#dInfoNote').textContent = 'ⓘ ' + p.not; }
+    const note = [p.not, p.veriNotu, p.duzeltmeKaynagi && p.duzeltmeKaynagi.aciklama].filter(Boolean).join(' ');
+    if(note){ $('#dInfoNote').style.display = 'flex'; $('#dInfoNote').textContent = 'ⓘ ' + note; }
     $('#dSeatsLabel').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? 'Vekil / Sandalye' : 'Milletvekili';
     $('#dSeats').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? (p.toplamVekil || '—') : p.toplamVekil;
     $('#dTurnout').textContent = p.katilim!=null ? '%'+p.katilim.toFixed(2) : '—';
@@ -241,6 +242,8 @@
     $('#detailBody').style.display='block';
     $('#detailViewToggle').style.display='none';
     $('#dInfoNote').style.display='none';
+    const note = [d.not, d.veriNotu, d.duzeltmeKaynagi && d.duzeltmeKaynagi.aciklama].filter(Boolean).join(' ');
+    if(note){ $('#dInfoNote').style.display='flex'; $('#dInfoNote').textContent='ⓘ '+note; }
     $('#dName').textContent = d.ad;
     $('#dPlaka').textContent = p ? p.ad : '';
 

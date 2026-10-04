@@ -19,6 +19,9 @@ jobs:
       - name: Bağımlılıkları kur
         run: pip install -r requirements.txt
 
+      - name: Yayın verisi doğruluk kontrolleri
+        run: python3 scripts/validate_public_data.py
+
       - name: Hızlı yapısal doğrulama
         run: python3 scripts/validate.py
 
@@ -34,6 +37,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: Kaynak onarım ve bağımsız oy regresyonları
+        run: node --test tests/ballot_votes.test.cjs tests/data-integrity.test.cjs
 
       - name: Tarayıcı smoke test bağımlılıklarını kur
         working-directory: tests

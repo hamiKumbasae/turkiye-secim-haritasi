@@ -70,3 +70,15 @@ görünmesi değil.
 [`../provenance/checksums.json`](../provenance/checksums.json) —
 `tests/validate_elections.py` her ikisini de diskteki dosyalarla
 karşılaştırır.
+
+## 2026-10-04 — Atlas ile eşlenen kaynak onarımları
+
+Atlas düzeltmesi: https://github.com/hamiKumbasae/turkiye-secim-atlasi/pull/9
+
+- 2004 başkanlık kayıtlarında 81 il ve 910 ilçe DİE yayın no.2935'in temiz tablo arşivinden onarıldı. İl merkezi, büyükşehir ve ilçe belediyesi kapsamı `oyKapsami` ile belirtilir; kullanılan PDF sayfaları `duzeltmeKaynagi` alanındadır.
+- Sakarya 1957 (DP8) ve 1961 (AP3, CHP2, YTP61:1) sandalyeleri ikincil arşivle tamamlandı. İl toplamlarını eksik kabul eden test istisnası kaldırıldı; 610 ve 450 toplamları artık gerçekten doğrulanır.
+- Batman 1982 seçmen toplamı şehir/köy kırılımından 31.121 olarak onarıldı. Doğrulanamayan dört katılım `kaynakKatilim` alanında tutulur, gösterim değeri null'dır.
+- Tillo'nun 15 seçim ve sekiz meclis pusulası YSK sandık sorgularından tamamlandı. Önceki Tillo eşleme eksikliği notları bu kayıtlar için geçerli değildir. Karaisalı 2024'ün 3.963 bağımsız oyu ayrıca tamamlandı.
+- Özgün `kaynak` alanları korunur; kaynakla yapılan onarım bu alana `duzeltme` olarak eklenir. `export_static.py --public` çıktısı atlas düzeltmeleriyle eşleşir.
+- Bağımsız oy aktarımı, `bagimsiz_TOPLAM_OY` ile numaralı aday oylarını çift saymaz. Cumhurbaşkanlığı ve referandum seçenekleri ayrı kalır. Eski progress dosyaları yeni hesapla karıştırılmamak için yeniden kullanılmaz.
+- `scripts/validate_public_data.py` yeni/değişmiş veri sorunlarını reddeder. Mevcut 3.554 bulgu `tests/fixtures/known-validation-issues.json` içinde kaynak doğrulaması bekler; bu liste otomatik yenilenmemelidir. Ön yüz doğrulanmamış yüzdeleri göstermez.

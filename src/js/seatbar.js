@@ -8,8 +8,9 @@
     const legend = $('#seatLegend'); legend.innerHTML = '';
     const seatTotals = {};
     for(const p of DATA.iller){ for(const [party,n] of Object.entries(p.vekil)){ seatTotals[party]=(seatTotals[party]||0)+n; } }
-    const order = MAJOR.includes('Diğer') ? [...MAJOR] : [...MAJOR, 'Diğer'];
+    const order = [...new Set([...MAJOR,...Object.keys(seatTotals)])];
     const total = DATA.toplamSandalye;
+    const missing = total - Object.values(seatTotals).reduce((a,b)=>a+b,0);
     const majority = Math.floor(total/2)+1;
     $('#seatbarTitle').textContent = 'Meclis Dağılımı — '+total+' Sandalye';
     $('#majoritySub').textContent = 'Salt çoğunluk için '+majority+' vekil gerekir';
@@ -22,6 +23,11 @@
       seg.style.background = partyColor(party);
       seg.title = party+': '+n+' vekil';
       track.appendChild(seg);
+    }
+    if(missing>0){
+      const seg=document.createElement('div'); seg.className='seatbar-seg'; seg.style.width=(missing/total*100)+'%'; seg.style.background='var(--ink-3)'; seg.title=missing+' sandalye: dağılım doğrulanmadı'; track.appendChild(seg);
+      const item=document.createElement('div'); item.className='legend-item'; item.textContent=missing+' sandalye: dağılım doğrulanmadı'; legend.appendChild(item);
+      $('#majoritySub').textContent+=' · '+missing+' sandalyenin dağılımı eksik';
     }
     const ml = document.createElement('div');
     ml.className='majority-line'; ml.style.left=(majority/total*100)+'%';
@@ -142,7 +148,22 @@
     }
   }
 
+  function renderCouncilVoteBar(){
+    const track=$('#seatTrack'), legend=$('#seatLegend'); track.innerHTML=''; legend.innerHTML='';
+    const eligible=DATA.iller.filter(r=>r.kazanan && !r.yuzdeDogrulanmadi);
+    const totals={};
+    for(const row of eligible) for(const [party,value] of Object.entries(row.oy||{})) totals[party]=(totals[party]||0)+(value.oy||0);
+    const total=Object.values(totals).reduce((a,b)=>a+b,0);
+    $('#seatbarTitle').textContent=DATA.oylama==='igm' ? 'İl Genel Meclisi Oy Dağılımı' : 'Belediye Meclisleri Oy Dağılımı';
+    $('#majoritySub').textContent=eligible.length+' ilin oy toplamı tutarlı kayıtları · '+(DATA.oylama==='igm' ? '2014 sonrası büyükşehirler kapsam dışında' : 'İllerdeki tüm belediye meclisleri; sandalye dağılımı değildir');
+    for(const [party,n] of Object.entries(totals).sort((a,b)=>b[1]-a[1])){
+      if(!n) continue;
+      const pct=n/total*100, seg=document.createElement('div'); seg.className='seatbar-seg'; seg.style.width=pct+'%'; seg.style.background=partyColor(party); seg.title=party+': '+fmt(n)+' oy · %'+pct.toFixed(2); track.appendChild(seg);
+      const item=document.createElement('div'); item.className='legend-item'; item.innerHTML='<span class="swatch" style="background:'+partyColor(party)+'"></span><span class="n">%'+pct.toFixed(2)+'</span><b>'+escapeHtml(partyShort(party))+'</b>'; legend.appendChild(item);
+    }
+  }
   function renderYerelBar(){
+    if(DATA.oylama){ renderCouncilVoteBar(); return; }
     const track = $('#seatTrack'); track.innerHTML = '';
     const legend = $('#seatLegend'); legend.innerHTML = '';
     const wins = {};

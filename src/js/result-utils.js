@@ -15,8 +15,9 @@
   // Siralama/renk-skalasi/bar-genisligi icin TEK sayisal yuzde - hangi alanin
   // (oran vs oranSandalye) okunacagini cagiran taraf bilmek zorunda degil.
   function resultPercent(result){
-    if(!result) return null;
-    return isSeatBased(result) ? result.oranSandalye : result.oran;
+    if(!result || result.yuzdeDogrulanmadi) return null;
+    const value = isSeatBased(result) ? result.oranSandalye : result.oran;
+    return Number.isFinite(value) && value>=0 && value<=100 ? value : null;
   }
 
   // Insan-okunur yuzde etiketi ('%12.34' / '%12.3' / '—'). Sandalye-bazli

@@ -1,6 +1,11 @@
   // ---------------- tooltip ----------------
   const tip = $('#tooltip');
   function showTooltip(e, info){
+    if(view.level==='meclis-ilce'){
+      const m = MECLIS_2024[info.geomId];
+      tip.innerHTML = m ? '<b>'+escapeHtml(m.ad)+'</b><div class="row"><span>Mecliste en çok sandalye</span><span>'+escapeHtml(partyShort(m.kazanan))+'</span></div>'+Object.entries(m.partiler).sort((a,b)=>b[1]-a[1]).map(([party,n])=>'<div class="row"><span>'+escapeHtml(partyShort(party))+'</span><span>'+n+' / '+m.toplam+' sandalye</span></div>').join('') : '<b>Meclis verisi yok</b>';
+      positionTip(e); return;
+    }
     const mode = currentMapMode;
     let name, obj, sandikVal;
     if(info.kind==='il'){
@@ -41,6 +46,7 @@
     } else {
       html += '<div class="row"><span>Katılım</span><span>'+(obj.katilim!=null?'%'+obj.katilim.toFixed(2):'—')+'</span></div>';
     }
+    if(obj.veriNotu) html += '<div class="row tip-not"><span>'+escapeHtml(obj.veriNotu)+'</span></div>';
     if(sandikVal!=null) html += '<div class="row"><span>Sandık</span><span>'+fmt(sandikVal)+'</span></div>';
     if(DATA.tur==='yerel' && DATA.contestType!=='municipal_indirect'){
       const alt = DATA.oylama==='igm' ? (info.kind==='il' ? 'İl genel meclisi · il toplamı' : 'İl genel meclisi · ilçenin tamamı')
