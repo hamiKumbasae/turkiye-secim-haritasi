@@ -759,3 +759,32 @@ kaynak günlüğü: `data/kaynaklar/ARASTIRMA_KAYDI.md`.
   Ayrıntı: `geo/historical/idari/README.md`.
 - Mahalle düzeyinde paylaştırma denendi, arşivlendi: `arsiv/mahalle-bolusumu/README.md`.
 - Bundan sonrası: seçimler tek tek elle gözden geçirilecek; her bulgu için tekil düzeltme.
+
+## 04.10.2026 durum güncellemesi
+
+- 2007 referandumu: mevcut resmî PDF'lerden eksik 17 ilçe eklendi; 923 ilçe kaydı var.
+- İstanbul 1989 yerel ve 1991 genel sınırları, depodaki mahalle atamaları ve
+  idari kuruluş zincirleriyle üretildi. Bu geometriler tarihî sınırların
+  belgelenmiş yeniden kurulumudur; güncel mahalle geometrisi ve boşluk
+  tamamlama yöntemi nedeniyle kadastro kesinliği iddiası taşımaz.
+- Oy içermeyen modern ilçe iskeletleri, 2009/2011 tarihî ana ilçe birleşimini
+  artık engellemiyor. Meclis görünümü de aynı tarihî geometriye bağlanıyor.
+- Tillo'nun mevcut YSK meclis kayıtları eşleştirildi. Başkanlık/genel seçim
+  hattındaki eksik Tillo oyları için başka seçimden oy aktarılmadı.
+- 1961–1987 İstanbul mahalle bölüşümleri ve genel çok kaynaklı ilçe bölüşümleri
+  hâlâ ek kaynak/doğrulama bekliyor; yalnız 1989 ve 1991 yeni katmanı etkin.
+- 1950/1954/1957 genel seçimlerde ülke çapında ilçe kaynak araması önceki
+  çalışma kararına göre kapalıdır; bu seçimler il düzeyinde kalır.
+- Güncel sayılar `docs/rapor/ozet.json` ve yanındaki CSV'lerden okunmalıdır.
+
+Tekrar üretim sırası: `prepare_istanbul_historical_assignments.py`,
+`build_istanbul_1961_1992.py`, `apply_idari_merges.py`,
+`build_meclis_harita.py`, `harita_durum_raporu.py`, checksum güncellemesi,
+`build.py`. Genel amaçlı `ilce_bolusumu.json` boş bırakılmıştır; bilinmeyen
+çok kaynaklı bölüşümler bu dosyada varsayımla doldurulmaz.
+
+1961 çalışması da birleştirildi: kanun/sayım zincirleri ve açıkça yaklaşık
+olarak işaretlenen %70 birim çoğunluğu yöntemiyle 21 ilçe daha bağlandı.
+23 ilçe belirsiz kalır; Ankara Merkez'in tarihî poligonu kaynak bekler.
+Tekrar üretimde `build_ilce_1961.py`, `apply_idari_merges.py` sonrasında ve
+rapor/checksum/build adımlarından önce çalıştırılmalıdır.

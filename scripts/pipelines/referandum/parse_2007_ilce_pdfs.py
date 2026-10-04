@@ -25,6 +25,7 @@ import pdfplumber
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from common.tr_numbers import to_int as _to_int  # noqa: E402
+from common.election_io import load_election  # noqa: E402
 
 def to_int(s):
     return _to_int(s, strict=False)
@@ -71,8 +72,24 @@ def load_merkez_synthetic_ids():
     ilcelerin BOLUNMESINDEN (splitYear, hepsi >=2008) ONCE oldugu icin bu
     birlesik/tarihsel geometri dogru secim — bkz. geo/historical/
     district_splits.json + turkiye_ilce_sinirlari_hist_splits.geojson."""
-    splits = json.loads(DISTRICT_SPLITS_PATH.read_text(encoding="utf-8"))
-    return {plaka: entries[0]["syntheticId"] for plaka, entries in splits.items() if entries}
+    # Dosyadaki ilk birleşim bu ilin Merkez ilçesi olmayabilir. Aynı yılın
+    # doğrulanmış genel seçim kaydındaki Merkez kimliğini kullan.
+    return {str(r["plaka"]): r["geomId"] for r in load_election("2007")["ilceler"]
+            if r["ad"] == "Merkez" and r.get("geomId")}
+
+
+def historical_lookup():
+    """2007 genel seçimindeki adlar; yalnız kimlik/geometri, oy aktarılmaz."""
+    by_il = {}
+    aliases = {"Demre": ["KALE"], "Hadim": ["HADIM"], "Çağlayancerit": ["ÇAĞLIYANCERİT"],
+               "Ondokuz Mayıs": ["ONDOKUZMAYIS"], "19 Mayıs": ["ONDOKUZMAYIS"]}
+    for r in load_election("2007")["ilceler"]:
+        if not r.get("geomId"):
+            continue
+        names = [r["ad"], *aliases.get(r["ad"], [])]
+        for name in names:
+            by_il.setdefault((r["plaka"], strip_corrupt_chars(name)), []).append(r)
+    return by_il
 
 
 def load_ilce_lookup():
@@ -97,6 +114,7 @@ def parse_file(path: pathlib.Path, il_adi_hint: str, lookup: dict, il_id_by_il: 
         raise KeyError(f"{path.name}: il '{il_adi_hint}' ysk_ilce_matched.json'da yok")
     il_id = il_id_by_il.get(stripped_il)
     merkez_geom_id = merkez_synthetic.get(str(il_id)) if il_id is not None else None
+    historical = historical_lookup()
 
     rows_out = []
     unmatched = []
@@ -127,11 +145,14 @@ def parse_file(path: pathlib.Path, il_adi_hint: str, lookup: dict, il_id_by_il: 
                     stripped = strip_corrupt_chars(ilce_name_only)
                     matches = [c for c in candidates if c[0] == stripped]
                     if len(matches) != 1:
+                        old = historical.get((il_id, stripped), [])
                         # "X MERKEZ" satirlari icin, o il buyuksehir-Merkez
                         # bolunmesi gecirmisse (splitYear >= 2008, 2007'den
                         # SONRA) tarihsel/birlesik sentetik geometriyi kullan.
                         if stripped.endswith("MERKEZ") and merkez_geom_id:
                             real_name, ilce_id, geom_id = "Merkez", None, merkez_geom_id
+                        elif len(old) == 1:
+                            real_name, ilce_id, geom_id = old[0]["ad"], None, old[0]["geomId"]
                         else:
                             unmatched.append((ilce_raw, stripped, len(matches)))
                             continue

@@ -39,7 +39,15 @@ def main():
 
     il_by_plaka = {il["plaka"]: il for il in secim["iller"]}
     plaka_by_ad = {il["ad"]: il["plaka"] for il in secim["iller"]}
-    ilceler = []
+    # Mevcut 906 satırın oyları ve sonradan doğrulanmış tarihsel geometrileri
+    # korunur. Ayrıştırmada atlanmış kaynak satırları eklenir; aynı ildeki
+    # sayısal imza kimlik kontrolüdür, il sonucundan ilçe türetilmez.
+    ilceler = list(secim["ilceler"])
+    def imza(plaka, sandik, secmen, gecerli, evet, hayir):
+        return (plaka, sandik, secmen, gecerli, evet, hayir)
+    mevcut = {imza(r["plaka"], r.get("sandik"), r.get("secmen"), r.get("gecerliOy"),
+                   r["oy"]["Evet"]["oy"], r["oy"]["Hayır"]["oy"]) for r in ilceler}
+    eklenen = 0
     validation = []
 
     for il_adi, rows in parsed.items():
@@ -50,6 +58,11 @@ def main():
         for r in rows:
             gecerli = r["gecerli_oy"] or 0
             evet, hayir = r["evet"] or 0, r["hayir"] or 0
+            if evet + hayir != gecerli:
+                raise ValueError(f"{il_adi} {r['ilce_ADI']}: Evet + Hayır geçerli oya eşit değil")
+            sig = imza(plaka, r["sandik"], r["kayitli_secmen"], gecerli, evet, hayir)
+            if sig in mevcut:
+                continue
             oran_evet = round(100 * evet / gecerli, 2) if gecerli else 0.0
             oran_hayir = round(100 * hayir / gecerli, 2) if gecerli else 0.0
             ilceler.append({
@@ -67,7 +80,11 @@ def main():
                 },
                 "toplamVekil": 0,
                 "vekil": {},
+                "kaynak": {"ana": "ysk", "dosya": "data/raw/ysk/referandum-2007-ilce/parsed.json",
+                           "adKaynakta": r["ilce_ADI"], "esleme": "2007 genel seçim ilçe kimliği; yalnız geometri"},
             })
+            mevcut.add(sig)
+            eklenen += 1
 
     secim["ilceler"] = ilceler
 
@@ -90,7 +107,7 @@ def main():
                                f"il kaydı evet={il_evet} (%{diff_pct:.1f} fark)")
 
     save_election("2007referandum", secim)
-    print(f"{len(ilceler)} ilçe eklendi -> 2007referandum")
+    print(f"{eklenen} yeni kaynak satırı; toplam {len(ilceler)} ilçe -> 2007referandum")
     if validation:
         print(f"\n{len(validation)} il için büyük fark (>%5, muhtemelen eksik 'Merkez' ilçesi olan büyükşehirler):")
         for v in validation:

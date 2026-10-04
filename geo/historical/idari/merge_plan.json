@@ -2,10 +2,10 @@
  "not": "apply_idari_merges.py ile üretilir; elle düzenlenmez.",
  "ozet": {
   "sentetik": 222,
-  "satirDegisimi": 3429,
+  "satirDegisimi": 3442,
   "secimBasina": {
    "1950yerel": 166,
-   "1955yerel": 156,
+   "1955yerel": 155,
    "1961": 183,
    "1961referandum": 183,
    "1963yerel": 180,
@@ -22,7 +22,7 @@
    "1987": 176,
    "1987referandum": 176,
    "1988referandum": 161,
-   "1989yerel": 122,
+   "1989yerel": 121,
    "1991": 23,
    "1994yerel": 15,
    "1995": 15,
@@ -31,10 +31,13 @@
    "2002": 12,
    "2004yerel": 6,
    "2007": 12,
-   "2007referandum": 9
+   "2007referandum": 12,
+   "2009yerel": 6,
+   "2011": 6
   },
   "katilanIlce": 254,
-  "hedefBulunamadi": 76,
+  "hedefBulunamadi": 74,
+  "mahalleDuzeyindeBolunen": {},
   "notluBosPoligon": 1095
  },
  "sentetikler": {
@@ -660,7 +663,6 @@
    ],
    "secimler": [
     "1950yerel",
-    "1955yerel",
     "1961referandum",
     "1961",
     "1963yerel",
@@ -1906,7 +1908,8 @@
     "1999yerel",
     "2002",
     "2004yerel",
-    "2007"
+    "2007",
+    "2007referandum"
    ],
    "plaka": 31,
    "kanunlar": [
@@ -3539,7 +3542,9 @@
     "2002",
     "2004yerel",
     "2007",
-    "2007referandum"
+    "2007referandum",
+    "2009yerel",
+    "2011"
    ],
    "plaka": 48,
    "kanunlar": [
@@ -4341,7 +4346,9 @@
     "2002",
     "2004yerel",
     "2007",
-    "2007referandum"
+    "2007referandum",
+    "2009yerel",
+    "2011"
    ],
    "plaka": 59,
    "kanunlar": [
@@ -6213,7 +6220,9 @@
     "1999",
     "2002",
     "2007",
-    "2007referandum"
+    "2007referandum",
+    "2009yerel",
+    "2011"
    ],
    "plaka": 59,
    "kanunlar": [
@@ -6252,7 +6261,9 @@
     "1999",
     "2002",
     "2007",
-    "2007referandum"
+    "2007referandum",
+    "2009yerel",
+    "2011"
    ],
    "plaka": 67,
    "kanunlar": [
@@ -6355,8 +6366,7 @@
     "1984yerel",
     "1987referandum",
     "1987",
-    "1988referandum",
-    "1989yerel"
+    "1988referandum"
    ],
    "plaka": 34,
    "kanunlar": [
@@ -6808,7 +6818,9 @@
     "1999yerel",
     "2002",
     "2007",
-    "2007referandum"
+    "2007referandum",
+    "2009yerel",
+    "2011"
    ],
    "plaka": 31,
    "kanunlar": [
@@ -6973,7 +6985,9 @@
     "1999",
     "2002",
     "2007",
-    "2007referandum"
+    "2007referandum",
+    "2009yerel",
+    "2011"
    ],
    "plaka": 31,
    "kanunlar": [
@@ -6995,7 +7009,8 @@
     "1995",
     "1999",
     "2002",
-    "2007"
+    "2007",
+    "2007referandum"
    ],
    "plaka": 54,
    "kanunlar": [
@@ -7034,7 +7049,8 @@
    "secimler": [
     "2002",
     "2004yerel",
-    "2007"
+    "2007",
+    "2007referandum"
    ],
    "plaka": 41,
    "kanunlar": [
@@ -7214,6 +7230,18 @@
    "ilce": "TR-D-06-023",
    "ad": "SİNCAN",
    "ebeveyn": "TR-D-06-025"
+  },
+  {
+   "secim": "1955yerel",
+   "ilce": "TR-D-12-001",
+   "ad": "ADAKLI",
+   "ebeveyn": "TR-D-12-005"
+  },
+  {
+   "secim": "1955yerel",
+   "ilce": "TR-D-12-007",
+   "ad": "YAYLADERE",
+   "ebeveyn": "TR-D-12-005"
   },
   {
    "secim": "1955yerel",
@@ -7468,40 +7496,16 @@
    "ebeveyn": "HIST-Antalya-Merkez"
   },
   {
-   "secim": "2007referandum",
+   "secim": "2009yerel",
    "ilce": "TR-D-31-005",
    "ad": "DEFNE",
    "ebeveyn": "TR-D-31-002"
   },
   {
-   "secim": "2007referandum",
-   "ilce": "TR-D-41-001",
-   "ad": "BAŞİSKELE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
-   "secim": "2007referandum",
-   "ilce": "TR-D-41-011",
-   "ad": "KARTEPE",
-   "ebeveyn": "TR-D-41-008"
-  },
-  {
-   "secim": "2007referandum",
-   "ilce": "TR-D-54-003",
-   "ad": "ARİFİYE",
-   "ebeveyn": "TR-D-54-001"
-  },
-  {
-   "secim": "2007referandum",
-   "ilce": "TR-D-54-004",
-   "ad": "ERENLER",
-   "ebeveyn": "TR-D-54-001"
-  },
-  {
-   "secim": "2007referandum",
-   "ilce": "TR-D-54-014",
-   "ad": "SERDİVAN",
-   "ebeveyn": "TR-D-54-001"
+   "secim": "2011",
+   "ilce": "TR-D-31-005",
+   "ad": "DEFNE",
+   "ebeveyn": "TR-D-31-002"
   }
  ]
 }

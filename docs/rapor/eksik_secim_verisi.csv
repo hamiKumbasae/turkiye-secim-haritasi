@@ -47,7 +47,7 @@ secim,tur,oylama,duzey,plaka,il,ad,geomId,neden
 1950yerel,yerel,baskanlik,ilce,56,Siirt,Şırnak,TR-D-73-006,ilçe satırında sonuç yok
 1950yerel,yerel,baskanlik,ilce,60,Tokat,Taşova,,sonuç var ama çizilecek poligon yok
 1955yerel,yerel,baskanlik,ilce,6,Ankara,Merkez,,sonuç var ama çizilecek poligon yok
-1955yerel,yerel,baskanlik,ilce,12,Bingöl,Kiğı,HISTK-12-005-ee6bfa,ilçe satırında sonuç yok
+1955yerel,yerel,baskanlik,ilce,12,Bingöl,Kiğı,TR-D-12-005,ilçe satırında sonuç yok
 1955yerel,yerel,baskanlik,ilce,12,Bingöl,Solhan,TR-D-12-006,ilçe satırında sonuç yok
 1955yerel,yerel,baskanlik,ilce,67,Zonguldak,Çatalağzı,,sonuç var ama çizilecek poligon yok
 1955yerel,yerel,baskanlik,ilce,67,Zonguldak,Filyos (Hisarönü),,sonuç var ama çizilecek poligon yok
@@ -72,7 +72,7 @@ secim,tur,oylama,duzey,plaka,il,ad,geomId,neden
 1999yerel,yerel,baskanlik,ilce,32,Isparta,Gelendost,TR-D-32-004,gösterilen sonuç ilçe belediyesinin değil: ilçe merkezi ve bağlı beldelerin toplamı
 1999yerel,yerel,baskanlik,ilce,32,Isparta,Şarkikaraağaç,TR-D-32-010,gösterilen sonuç ilçe belediyesinin değil: ilçe merkezi ve bağlı beldelerin toplamı
 1999yerel,yerel,baskanlik,ilce,34,İstanbul,Beyoğlu,TR-D-34-013,gösterilen sonuç ilçe belediyesinin değil: büyükşehir belediye başkanlığı oylarının ilçedeki dağılımı
-1999yerel,yerel,baskanlik,ilce,34,İstanbul,Küçükçekmece,TR-D-34-026,gösterilen sonuç ilçe belediyesinin değil: büyükşehir belediye başkanlığı oylarının ilçedeki dağılımı
+1999yerel,yerel,baskanlik,ilce,34,İstanbul,Küçükçekmece,HIST-Istanbul-Kucukcekmece-9208,gösterilen sonuç ilçe belediyesinin değil: büyükşehir belediye başkanlığı oylarının ilçedeki dağılımı
 1999yerel,yerel,baskanlik,ilce,34,İstanbul,Sarıyer,TR-D-34-030,gösterilen sonuç ilçe belediyesinin değil: büyükşehir belediye başkanlığı oylarının ilçedeki dağılımı
 1999yerel,yerel,baskanlik,ilce,51,Niğde,Bor,TR-D-51-002,gösterilen sonuç ilçe belediyesinin değil: ilçe merkezi ve bağlı beldelerin toplamı
 1999yerel,yerel,baskanlik,ilce,51,Niğde,Çiftlik,TR-D-51-004,gösterilen sonuç ilçe belediyesinin değil: ilçe merkezi ve bağlı beldelerin toplamı
@@ -942,10 +942,10 @@ secim,tur,oylama,duzey,plaka,il,ad,geomId,neden
 1994yerel_bm,yerel,bm,ilce,33,Mersin,Toroslar,TR-D-33-012,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_bm,yerel,bm,ilce,33,Mersin,Yenişehir,TR-D-33-013,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_bm,yerel,bm,ilce,33,Mersin,Merkez,HISTY-33-1994yerel-merkez,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,ilce,34,İstanbul,Büyükçekmece,HIST-Istanbul-Buyukcekmece,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_bm,yerel,bm,ilce,34,İstanbul,Büyükçekmece,HIST-Istanbul-Buyukcekmece-9208,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,ilce,34,İstanbul,Silivri,TR-D-34-031,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,ilce,34,İstanbul,Yalova,HISTK-77-006-c2d311,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,ilce,34,İstanbul,Çatalca,TR-D-34-015,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_bm,yerel,bm,ilce,34,İstanbul,Çatalca,HIST-Istanbul-Catalca-9208,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,ilce,35,İzmir,Aliağa,TR-D-35-001,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,ilce,35,İzmir,Balçova,TR-D-35-002,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_bm,yerel,bm,ilce,35,İzmir,Bayındır,TR-D-35-003,Kaynakta bu birimle eşleşen satır bulunamadı.
@@ -1256,11 +1256,11 @@ secim,tur,oylama,duzey,plaka,il,ad,geomId,neden
 1994yerel_igm,yerel,igm,ilce,33,Mersin,Yenişehir,TR-D-33-013,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,ilce,33,Mersin,Çamlıyayla,TR-D-33-005,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,ilce,33,Mersin,Merkez,HISTY-33-1994yerel-merkez,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,ilce,34,İstanbul,Büyükçekmece,HIST-Istanbul-Buyukcekmece,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,ilce,34,İstanbul,Küçükçekmece,TR-D-34-026,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
+1994yerel_igm,yerel,igm,ilce,34,İstanbul,Büyükçekmece,HIST-Istanbul-Buyukcekmece-9208,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_igm,yerel,igm,ilce,34,İstanbul,Küçükçekmece,HIST-Istanbul-Kucukcekmece-9208,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_igm,yerel,igm,ilce,34,İstanbul,Silivri,TR-D-34-031,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,ilce,34,İstanbul,Yalova,HISTK-77-006-c2d311,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,ilce,34,İstanbul,Çatalca,TR-D-34-015,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_igm,yerel,igm,ilce,34,İstanbul,Çatalca,HIST-Istanbul-Catalca-9208,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,ilce,35,İzmir,Aliağa,TR-D-35-001,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,ilce,35,İzmir,Bayındır,TR-D-35-003,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,ilce,35,İzmir,Bergama,TR-D-35-005,Kaynakta bu birimle eşleşen satır bulunamadı.
@@ -1632,7 +1632,7 @@ secim,tur,oylama,duzey,plaka,il,ad,geomId,neden
 1999yerel_igm,yerel,igm,ilce,33,Mersin,Toroslar,TR-D-33-012,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,ilce,33,Mersin,Yenişehir,TR-D-33-013,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,ilce,33,Mersin,Merkez,HISTY-33-1999yerel-merkez,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,ilce,34,İstanbul,Eyüp,TR-D-34-019,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
+1999yerel_igm,yerel,igm,ilce,34,İstanbul,Eyüp,HIST-Istanbul-Eyup-9208,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,ilce,35,İzmir,Konak,HIST-Izmir-Konak,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,ilce,36,Kars,Sarıkamış,TR-D-36-006,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,ilce,37,Kastamonu,Hanönü,TR-D-37-011,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
@@ -1772,7 +1772,7 @@ secim,tur,oylama,duzey,plaka,il,ad,geomId,neden
 2004yerel_igm,yerel,igm,ilce,33,Mersin,Akdeniz,TR-D-33-001,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,ilce,33,Mersin,Toroslar,TR-D-33-012,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,ilce,33,Mersin,Yenişehir,TR-D-33-013,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,ilce,34,İstanbul,Gaziosmanpaşa,TR-D-34-021,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
+2004yerel_igm,yerel,igm,ilce,34,İstanbul,Gaziosmanpaşa,HIST-Istanbul-Gaziosmanpasa-9208,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,ilce,34,İstanbul,Sarıyer,TR-D-34-030,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,ilce,35,İzmir,Tire,TR-D-35-028,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,ilce,37,Kastamonu,Pınarbaşı,TR-D-37-016,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.

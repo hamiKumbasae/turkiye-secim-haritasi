@@ -13,6 +13,8 @@ const { chromium } = require('playwright');
 
 const INDEX_HTML = 'file://' + path.resolve(__dirname, '..', 'index.html');
 
+const IST_1991 = Object.values(require('../geo/historical/idari/istanbul_1961_1992.json').secimler['1991'].satirlar).map((r) => r.geomId).filter((id) => id.startsWith('HIST-'));
+
 const results = [];
 function check(name, ok, detail) {
   results.push({ name, ok, detail });
@@ -231,14 +233,11 @@ async function scenario_1992DalgasiCozumu(browser) {
     await page.waitForTimeout(400);
 
     const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
-    // cok kaynakli 2008 ilceleri (Arnavutkoy, Basaksehir, Esenyurt, Sultangazi) ve 1991'de henuz
-    // kurulmamis Esenler: butun poligon, nedeniyle
-    const stillBlocked = ['TR-D-34-002', 'TR-D-34-008', 'TR-D-34-017', 'TR-D-34-018', 'TR-D-34-033'];
-    check('1991 genel İstanbul: yalnız 5 çok kaynaklı / henüz kurulmamış ilçe "veri yok" (1992 dalgasının 7\'si artık değil)',
-      nodataIds.length === 5 && stillBlocked.every((id) => nodataIds.includes(id)), JSON.stringify(nodataIds));
+    check('1991 genel İstanbul: tarihî bölüşüm sonrası veri yok poligonu kalmadı',
+      nodataIds.length === 0, JSON.stringify(nodataIds));
 
     for (const [histId, adi] of [['HIST-Istanbul-Bakirkoy', 'Bakırköy'], ['HIST-Istanbul-Kucukcekmece', 'Küçükçekmece'], ['HIST-Istanbul-Pendik', 'Pendik']]) {
-      await page.click(`path.il-path[data-geom-id="${histId}"], path.il-path[data-geom-id^="HISTK-${histId}-"]`);
+      await page.click(`path.il-path[data-geom-id^="${histId}-"]`);
       await page.waitForTimeout(300);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -281,7 +280,7 @@ async function scenario_istanbulGenelGecmisi(browser) {
     // (apply_verified_district_merges.py); 1995-2007'de 1992-2008 sınırları (IST_9208).
     for (const year of ['1991', '1995', '1999', '2002', '2007']) {
       // 1995-2007: 1992-2008 sinirlari (IST_9208); 1991: onceki birlesimler
-      const expectedHist = year === '1991' ? [...baseHist, 'HIST-Istanbul-Kartal1991'] : IST_9208;
+      const expectedHist = year === '1991' ? IST_1991 : IST_9208;
       const found = await clickYear(page, year);
       check(year + ' genel: yıl seçilebildi', found);
       await page.waitForTimeout(400);
@@ -299,7 +298,7 @@ async function scenario_istanbulGenelGecmisi(browser) {
       }
 
       await page.click(year === '1991'
-        ? 'path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece"], path.il-path[data-geom-id^="HISTK-HIST-Istanbul-Buyukcekmece-"]'
+        ? 'path.il-path[data-geom-id^="HIST-Istanbul-Buyukcekmece-"]'
         : 'path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece-9208"]');
       await page.waitForTimeout(400);
       const dName = await page.$eval('#dName', (el) => el.textContent);
@@ -815,7 +814,7 @@ async function scenario_2007referandumEminonuFatih(browser) {
 }
 
 async function main() {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {});
   try {
     await scenario_2023genel(browser);
     await scenario_istanbul1994geometri(browser);

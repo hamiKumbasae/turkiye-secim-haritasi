@@ -1,5 +1,10 @@
 # Türkiye Seçim Haritası — İlçe Poligonu Sorunları ve Eksik Veri Raporu
 
+> **Arşiv raporu:** Aşağıdaki sayılar 27.09.2026 durumuna aittir. 04.10.2026
+> düzeltmelerinden sonra güncel durum `ozet.json`, `poligon_durumu.csv` ve
+> `eksik_secim_verisi.csv` dosyalarındadır. 2007 referandumu 923 ilçeye
+> tamamlandı; İstanbul 1989/1991 ve Tillo meclis eşleşmeleri düzeltildi.
+
 Tarih: 27.09.2026 · Depo durumu: `801483a` sonrası · Kapsam: 46 seçim (genel, yerel başkanlık,
 referandum, cumhurbaşkanlığı) + 18 yerel meclis kaydı (il genel meclisi, belediye meclisi)
 
