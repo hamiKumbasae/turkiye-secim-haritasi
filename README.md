@@ -113,6 +113,13 @@ ait) artık kullanılmıyor, sadece tarihsel referans.
 modu (kök dizin) ek bir adım gerektirmeden çalışır — Settings → Pages'ten
 etkinleştirmeniz yeterli.
 
+## Lisans
+
+- **Kod:** MIT — bkz. [LICENSE](LICENSE).
+- **Veri** (`data/normalized/`, `geo/`, `index.html`'e gömülü veri): CC BY-SA 4.0;
+  OpenStreetMap'ten türetilen mahalle sınırları ODbL (© OpenStreetMap katkıcıları) — bkz.
+  [LICENSE-DATA.md](LICENSE-DATA.md).
+
 ## Veri kökeni
 
 Her seçimin il/ilçe kaynağı `sources.yml`'de; birden fazla kaynaktan beslenen
