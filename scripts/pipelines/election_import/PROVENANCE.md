@@ -241,3 +241,7 @@ Yukarıdaki "hâlâ çözülemeyen" listesindeki her madde tek tek araştırıld
 YOK — oyları kendi ilinin toplamında var, sadece ilçe kırılımında
 görünmüyor. Bu, projenin zaten 2007referandum için belgelediği aynı
 kategori bir sınırlama (geo/historical/ tarihsel geometri eksikliği).
+
+## 2026-10-04 bağımsız oy onarımı
+
+`ballot_votes.js`, belediye/genel seçimlerde bağımsız toplamını tek sentetik `bagimsiz0_ALDIGI_OY` sütununda taşır. Bu sütun mevcut merge scriptlerinin numaralı bağımsız eşlemesiyle uyumludur. Cumhurbaşkanlığı (9) ve referandum (7) aday/tercih sütunları birleştirilmez. `fetch_and_aggregate.js` ve `fetch_yerel_v2.js` repo kök yolunu doğru çözer. Aggregation version 2 olmayan progress dosyaları arşivlenip sorgu yeniden çalıştırılmalıdır. Regresyonlar: `node --test tests/ballot_votes.test.cjs`.

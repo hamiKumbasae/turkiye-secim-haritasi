@@ -18,6 +18,9 @@
   };
 
   function sourceInfo(){
+    if(currentYear==='2004yerel' && !DATA.oylama) return {cat:'mixed',badge:'YSK + TÜİK',detail:'81 il ve 910 ilçe kaydı DİE 2004 tablolarıyla doğrulandı. Eşleşmeyen tarihsel kapsamlar ayrıca notlanır.'};
+    if(currentYear==='1957' || currentYear==='1961') return {cat:'mixed',badge:'YSK + İkincil Kaynak',detail:'Sakarya sandalye dağılımı ikincil arşivdeki parti tablosu ve seçilen vekiller listesiyle tamamlandı.'};
+
     if(DATA.oylama) return {cat:'full', badge: DATA.rozet || 'YSK Resmî Veri', detail: DATA.aciklama || OYLAMA_ACIKLAMA[DATA.oylama]};
     if(currentYear==='2014cb')
       return {cat:'full', badge:'YSK Resmî Veri', detail:'YSK Açık Veri Portalı (acikveri.ysk.gov.tr, resmi API) — il+ilçe düzeyi.'};
@@ -90,6 +93,7 @@
     // etiketleri "Yurt İçi ..." yaparak yaniltici bir "ulusal toplam"
     // izlenimi vermiyoruz.
     const hasYurtdisi = !!(DATA.yurtdisi && DATA.yurtdisi.oy && Object.keys(DATA.yurtdisi.oy).length);
+    const prefix = DATA.tur==='yerel' && !DATA.oylama && DATA.contestType!=='municipal_indirect' ? 'Gösterilen belediyelerde ' : '';
     const items = [
       [hasYurtdisi ? 'Yurt İçi Katılım' : 'Katılım', katilim!=null ? '%'+katilim.toFixed(2) : '—'],
       [hasYurtdisi ? 'Yurt İçi Seçmen' : 'Seçmen', secmen ? fmt(secmen) : '—'],
@@ -99,7 +103,7 @@
     items.push(['İl', iller.filter(i => i.kazanan || !i.not).length]);
 
     $('#nationalSummary').innerHTML = items.map(([l,v])=>
-      '<div class="ns-item"><div class="l">'+l+'</div><div class="v num">'+v+'</div></div>'
+      '<div class="ns-item"><div class="l">'+(l==='İl' ? l : prefix+l)+'</div><div class="v num">'+v+'</div></div>'
     ).join('');
   }
 
@@ -119,6 +123,11 @@
       html += '<div class="drawer-section-title">Bilinen kaynak uyuşmazlığı</div>';
       html += '<p>1950 genel seçimi için YSK\'nin kendi il-bazlı arşivinden derlediğimiz ulusal toplam, YSK\'nin AYRI bir "ulusal özet" sayfasından ve TBMM\'nin kendi seçim veritabanından küçük farklarla (binde birkaç mertebesinde) ayrılıyor. İlginç olan: il-bazlı toplamımız YSK\'nin kendi ulusal özetinden çok TBMM\'ye yakın çıkıyor — yani YSK\'nin kendi sitesi bile kendi içinde tam tutarlı değil. Bu proje, çözmeye çalışmak yerine üç kaynağı da olduğu gibi kaydediyor.</p>';
     }
+    const flagged = [...DATA.iller,...DATA.ilceler].filter(r=>r.veriNotu);
+    if(flagged.length) html += '<p>'+flagged.length+' kayıt kaynak doğrulaması bekliyor. Uyuşmayan oy toplamlarının yüzdeleri ve değişimleri gösterilmez; ham sayımlar ve kayıt notları korunur.</p>';
+    const repairs = new Map();
+    for(const r of [...DATA.iller,...DATA.ilceler]) if(r.duzeltmeKaynagi) repairs.set(r.duzeltmeKaynagi.url,r.duzeltmeKaynagi.aciklama);
+    for(const [url,note] of repairs) if(/^https:\/\//.test(url)) html += '<p><a href="'+escapeHtml(url)+'" target="_blank" rel="noopener">'+escapeHtml(note)+'</a></p>';
     html += '<div class="drawer-section-title">Genel metodoloji</div>';
     html += '<p>Bu proje 1950–2024 arası Türkiye\'deki genel, yerel, referandum ve cumhurbaşkanlığı seçimlerinin sonuçlarını mümkün olduğunca YSK (Yüksek Seçim Kurulu) ve TÜİK\'in resmi arşivlerinden derler. Resmi bir il/ilçe kırılımı bulunamayan dönemlerde, YSK\'nin ulusal toplamıyla çapraz kontrol edilmiş ikincil kaynaklar (Türkçe Wikipedia, MIT lisanslı açık kaynaklı arşivler) kullanılır — hangisinin kullanıldığı her seçim için yukarıda ayrı ayrı belirtilir.</p>';
     html += '<p>İl/ilçe sınırları: ttezer/turkiye-harita-verisi (HDX kaynaklı, basitleştirilmiş). Tarihsel il/ilçe değişiklikleri (sonradan il olan ilçeler, büyükşehir ilçe bölünmeleri) ayrı bir tarihsel geometri katmanıyla o dönemin gerçek sınırlarına göre gösterilir.</p>';

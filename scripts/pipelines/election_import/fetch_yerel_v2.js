@@ -14,6 +14,7 @@
 // Kullanim: node fetch_yerel_v2.js <label> <secimId> <baslikFile>
 const { chromium } = require('../mahalle_veri/node_modules/playwright');
 const fs = require('fs');
+const {ballotVotes} = require('./ballot_votes');
 const path = require('path');
 
 const LABEL = process.argv[2];
@@ -22,7 +23,7 @@ const BASLIK_FILE = process.argv[4];
 const SECIM_TURU_ILCE = 2;
 const SECIM_TURU_BUYUKSEHIR = 6;
 
-const ROOT = path.join(__dirname, '..', '..');
+const ROOT = path.join(__dirname, '..', '..', '..');
 const IL_ILCE_LIST = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'raw', 'ysk', 'acikveri-il-ilce-listesi.json'), 'utf8'));
 const BASLIK = JSON.parse(fs.readFileSync(BASLIK_FILE, 'utf8'));
 
@@ -42,10 +43,7 @@ function addRow(agg, row) {
   agg.oyKullanan += row.oy_KULLANAN_SECMEN_SAYISI || 0;
   agg.gecerli += row.gecerli_OY_TOPLAMI || 0;
   agg.gecersiz += row.gecersiz_OY_TOPLAMI || 0;
-  for (const col of relevantCols) {
-    const v = row[col];
-    if (v) agg.oy[col] = (agg.oy[col] || 0) + v;
-  }
+  for (const [col,v] of Object.entries(ballotVotes(row,relevantCols,false))) agg.oy[col] = (agg.oy[col] || 0) + v;
 }
 
 async function queryList(page, secimTuru, ilId, ilceId) {
@@ -86,6 +84,7 @@ async function withRetry(fn, label) {
   const ilceResults = {};
   if (fs.existsSync(PROGRESS_FILE)) {
     const prog = JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf8'));
+    if(prog.aggregationVersion !== 2) throw new Error('Eski bağımsız oy hesabıyla üretilmiş progress dosyası: arşivleyip sorguyu baştan çalıştırın.');
     startIdx = prog.nextIdx;
     Object.assign(ilResults, prog.ilResults);
     Object.assign(ilceResults, prog.ilceResults);
@@ -143,7 +142,7 @@ async function withRetry(fn, label) {
 
     const elapsed = ((Date.now() - t0) / 1000).toFixed(0);
     console.log(`[${LABEL}] il ${i + 1}/${ilList.length} (${il.ilAdi}, ${kind}) - ${elapsed}s`);
-    fs.writeFileSync(PROGRESS_FILE, JSON.stringify({ nextIdx: i + 1, ilResults, ilceResults }));
+    fs.writeFileSync(PROGRESS_FILE, JSON.stringify({ aggregationVersion: 2, nextIdx: i + 1, ilResults, ilceResults }));
   }
 
   fs.writeFileSync(OUT_FILE, JSON.stringify({ secimId: SECIM_ID, colToName, iller: ilResults, ilceler: ilceResults }, null, 1));

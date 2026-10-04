@@ -94,11 +94,11 @@
       if(vekilVar) row.push(r.toplamVekil);
       for(const p of partiler){
         const o = (r.oy || {})[p];
-        row.push(o ? o.oy : null, o ? (isSeatBased(o) ? null : o.oran) : null);
+        row.push(o ? o.oy : null, o ? (isSeatBased(o) ? null : resultPercent(o)) : null);
         if(vekilVar) row.push((r.vekil || {})[p]);
         if(sandalyeVar) row.push(o ? o.sandalye : null);
       }
-      row.push(r.not);
+      row.push([r.not,r.veriNotu].filter(Boolean).join(' '));
       out.push(row);
     }
     return '﻿' + out.map(r => r.map(csvHucre).join(',')).join('\r\n') + '\r\n';

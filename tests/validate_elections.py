@@ -129,12 +129,9 @@ def check_raw_checksum_coverage():
     )
 
 
-# 1957/1961: YSK'nin 1950-1977 il arsivinde Sakarya YOK (bilinen, belgelenmis
-# kaynak boslugu — bkz. scripts/pipelines/genel_1950_1977/PROVENANCE.md). Bu
-# yuzden il-bazli vekil toplami resmi ulusal rakamdan Sakarya'nin sandalye
-# sayisi kadar dusuk cikar; bu YILLAR icin sadece 'declared' (resmi rakam)
-# kontrol edilir, il toplami degil.
-SANDALYE_ILLER_TOPLAMI_ISTISNA = {"1957", "1961"}
+# Sakarya 1957/1961 ikincil arşivle tamamlandı; tüm yıllarda il ve ulusal
+# sandalye toplamları eşit olmak zorunda.
+SANDALYE_ILLER_TOPLAMI_ISTISNA = set()  # Sakarya ikincil arşivle tamamlandı.
 
 
 def check_sandalye_totals():

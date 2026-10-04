@@ -10,6 +10,7 @@
 // Resumable: .work/<label>_progress.json her 20 ilcede bir yazilir.
 const { chromium } = require('../mahalle_veri/node_modules/playwright');
 const fs = require('fs');
+const {ballotVotes} = require('./ballot_votes');
 const path = require('path');
 
 const LABEL = process.argv[2];
@@ -17,7 +18,7 @@ const SECIM_ID = parseInt(process.argv[3]);
 const SECIM_TURU = parseInt(process.argv[4]);
 const BASLIK_FILE = process.argv[5];
 
-const ROOT = path.join(__dirname, '..', '..');
+const ROOT = path.join(__dirname, '..', '..', '..');
 const IL_ILCE_LIST = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'raw', 'ysk', 'acikveri-il-ilce-listesi.json'), 'utf8'));
 const BASLIK = JSON.parse(fs.readFileSync(BASLIK_FILE, 'utf8'));
 
@@ -43,10 +44,7 @@ function addRow(agg, row) {
   agg.oyKullanan += row.oy_KULLANAN_SECMEN_SAYISI || 0;
   agg.gecerli += row.gecerli_OY_TOPLAMI || 0;
   agg.gecersiz += row.gecersiz_OY_TOPLAMI || 0;
-  for (const col of relevantCols) {
-    const v = row[col];
-    if (v) agg.oy[col] = (agg.oy[col] || 0) + v;
-  }
+  for (const [col,v] of Object.entries(ballotVotes(row,relevantCols,SECIM_TURU === 7 || SECIM_TURU === 9))) agg.oy[col] = (agg.oy[col] || 0) + v;
 }
 
 (async () => {
@@ -68,6 +66,7 @@ function addRow(agg, row) {
   const ilAgg = {};
   if (fs.existsSync(PROGRESS_FILE)) {
     const prog = JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf8'));
+    if(prog.aggregationVersion !== 2) throw new Error('Eski bağımsız oy hesabıyla üretilmiş progress dosyası: arşivleyip sorguyu baştan çalıştırın.');
     startIdx = prog.nextIdx;
     Object.assign(ilceAgg, prog.ilceAgg);
     Object.assign(ilAgg, prog.ilAgg);
@@ -115,7 +114,7 @@ function addRow(agg, row) {
     if ((i + 1) % 20 === 0 || i === targets.length - 1) {
       const elapsed = ((Date.now() - t0) / 1000).toFixed(0);
       console.log(`[${LABEL}] ${i + 1}/${targets.length} ilce islendi (${errors.length} hata) - ${elapsed}s`);
-      fs.writeFileSync(PROGRESS_FILE, JSON.stringify({ nextIdx: i + 1, ilceAgg, ilAgg }));
+      fs.writeFileSync(PROGRESS_FILE, JSON.stringify({ aggregationVersion: 2, nextIdx: i + 1, ilceAgg, ilAgg }));
     }
     await sleep(110);
   }
