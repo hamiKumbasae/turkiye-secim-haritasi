@@ -1,0 +1,110 @@
+{
+ "not": "build_ilce_secim.py ile üretilir; elle düzenlenmez. Tablo: ilce_eslesme/1999.csv.",
+ "ozet": {
+  "birlesimPoligonu": 4,
+  "katilanIlce": 4,
+  "belirsizIlce": 0,
+  "geometrisizSatir": 0,
+  "yontem": {
+   "kendi_satiri": 879,
+   "en_buyuk_pay": 2,
+   "tarihsel_birlesim": 81,
+   "komsuluk": 2,
+   "bolunmus_poligon": 9
+  }
+ },
+ "birlesimler": [
+  {
+   "plaka": 1,
+   "ilce": "Seyhan",
+   "geomId": "HIST1999-01-Seyhan",
+   "oncekiGeomId": "TR-D-01-012",
+   "katilanlar": [
+    "TR-D-01-003"
+   ],
+   "katilanAdlar": [
+    "Çukurova"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-01-003",
+    "TR-D-01-012"
+   ]
+  },
+  {
+   "plaka": 6,
+   "ilce": "Altındağ",
+   "geomId": "HIST1999-06-Altindag",
+   "oncekiGeomId": "TR-D-06-002",
+   "katilanlar": [
+    "TR-D-06-022"
+   ],
+   "katilanAdlar": [
+    "Pursaklar"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-06-002",
+    "TR-D-06-022"
+   ]
+  },
+  {
+   "plaka": 30,
+   "ilce": "Şemdinli",
+   "geomId": "HIST1999-30-Semdinli",
+   "oncekiGeomId": "TR-D-30-003",
+   "katilanlar": [
+    "TR-D-30-005"
+   ],
+   "katilanAdlar": [
+    "Derecik"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-30-003",
+    "TR-D-30-005"
+   ]
+  },
+  {
+   "plaka": 68,
+   "ilce": "Merkez",
+   "geomId": "HIST1999-68-Merkez",
+   "oncekiGeomId": "TR-D-68-002",
+   "katilanlar": [
+    "TR-D-68-008"
+   ],
+   "katilanAdlar": [
+    "Sultanhanı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-68-002",
+    "TR-D-68-008"
+   ]
+  }
+ ],
+ "cogunluk": {
+  "TR-D-01-003": {
+   "ana": "Seyhan",
+   "pay": 0.58,
+   "digerleri": [
+    [
+     "Karaisalı",
+     0.42
+    ]
+   ]
+  },
+  "TR-D-06-022": {
+   "ana": "Altındağ",
+   "pay": 0.4,
+   "digerleri": [
+    [
+     "Keçiören",
+     0.4
+    ],
+    [
+     "Çubuk",
+     0.2
+    ]
+   ]
+  }
+ },
+ "belirsiz": [],
+ "geometrisizSatir": []
+}
