@@ -116,9 +116,9 @@ Kaynak başına ayrıştırılmış veri `data/kaynaklar/`, ham dosyalar `data/r
 
 ## Bilinen kapsam sınırları
 
-- 1950/1954/1957 genel seçimlerinde (ve 1961/1982/1987/1988 referandumlarında)
-  ilçe düzeyi veri yok, sadece il düzeyi — resmî bir ilçe kaynağı
-  bulunamadı. 1961-1987 arası 7 genel seçimin ilçe düzeyi 2026-09-24'te
+- 1950/1954/1957 genel seçimlerinde ilçe düzeyi veri yok, sadece il düzeyi —
+  resmî bir ilçe kaynağı bulunamadı (1961/1982/1987/1988 referandumlarının ilçe
+  düzeyi TÜİK "Halk Oylaması Sonuçları" yayınından eklendi). 1961-1987 arası 7 genel seçimin ilçe düzeyi 2026-09-24'te
   TÜİK'ten eklendi (bkz. `scripts/pipelines/genel_ilce_1961_1987/`);
   "seçim çevresi il olduğu için ilçe kırılımı yok" varsayımı yanlıştı.
 - 1957/1961 genel seçimlerinde Sakarya'nın vekil dağılımı yok (YSK'nin
@@ -133,36 +133,59 @@ Kaynak başına ayrıştırılmış veri `data/kaynaklar/`, ham dosyalar `data/r
   yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
 
 Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
-- 1984 öncesi 6 yerel seçimin (1950, 1955, 1963, 1968, 1973, 1977) sadece
-  il merkezi düzeyi var, ilçeler yok — bkz.
+- 1950 ve 1955 yerel seçimlerinde ilçeler için yalnız kazanan parti var (oy sayısı
+  yok); 1963–1977 yerel seçimlerinde ilçe belediye başkanlığı satırları var — bkz.
   [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md) (1950-2024 arası tüm seçimlerin tam
   takvimi ve bu projedeki kapsam durumu).
 
 ## 04.10.2026 durum güncellemesi
 
-- 2007 referandumu: mevcut resmî PDF'lerden eksik 17 ilçe eklendi; 923 ilçe kaydı var.
-- İstanbul 1989 yerel ve 1991 genel sınırları, depodaki mahalle atamaları ve
-  idari kuruluş zincirleriyle üretildi. Bu geometriler tarihî sınırların
-  belgelenmiş yeniden kurulumudur; güncel mahalle geometrisi ve boşluk
-  tamamlama yöntemi nedeniyle kadastro kesinliği iddiası taşımaz.
-- Oy içermeyen modern ilçe iskeletleri, 2009/2011 tarihî ana ilçe birleşimini
-  artık engellemiyor. Meclis görünümü de aynı tarihî geometriye bağlanıyor.
-- Tillo'nun mevcut YSK meclis kayıtları eşleştirildi. Başkanlık/genel seçim
-  hattındaki eksik Tillo oyları için başka seçimden oy aktarılmadı.
-- 1961–1987 İstanbul mahalle bölüşümleri ve genel çok kaynaklı ilçe bölüşümleri
-  hâlâ ek kaynak/doğrulama bekliyor; yalnız 1989 ve 1991 yeni katmanı etkin.
-- 1950/1954/1957 genel seçimlerde ülke çapında ilçe kaynak araması önceki
-  çalışma kararına göre kapalıdır; bu seçimler il düzeyinde kalır.
-- Güncel sayılar `docs/rapor/ozet.json` ve yanındaki CSV'lerden okunmalıdır.
+### Yapılanlar
 
-Tekrar üretim sırası: `prepare_istanbul_historical_assignments.py`,
-`build_istanbul_1961_1992.py`, `apply_idari_merges.py`,
-`build_meclis_harita.py`, `harita_durum_raporu.py`, checksum güncellemesi,
-`build.py`. Genel amaçlı `ilce_bolusumu.json` boş bırakılmıştır; bilinmeyen
-çok kaynaklı bölüşümler bu dosyada varsayımla doldurulmaz.
+- **1961–2007 ilçe haritaları:** 26 seçimin ilçe haritasında hiçbir bugünkü ilçe
+  sonuçsuz (taralı) kalmıyor: 1961–2007 genel seçimleri, 1961/1982/1987/1988/2007
+  referandumları ve 1963–2004 yerel seçimleri. Sonradan kurulan her ilçe, o seçimdeki
+  ilçesinin poligonuna katılır (`scripts/pipelines/historical_geo/build_ilce_secim.py`).
+  Her ilçenin nereye ve neden bağlandığı `geo/historical/idari/ilce_eslesme/<seçim>.csv`
+  tablosunda; güven sütunu `kesin` (kanun/sayım kaynağı), `yaklasik` (%70 ve üzeri birim
+  çoğunluğu) ya da `kaba` (en büyük pay veya en uzun sınır komşusu).
+- **İstanbul 1961–1991:** mahalle düzeyinde eski ilçe sınırları (Arnavutköy Eyüp ile Çatalca
+  arasında vb.); 1987 öncesi Ümraniye mahalleleri 1960 nüfus sayımının köy listesi ve komşuluk
+  ile, Kağıthane Şişli'ye, Ümraniye Üsküdar'a bağlı (yaklaşık; 1940 ve 1963 İstanbul ilçe
+  haritalarıyla görsel olarak karşılaştırıldı).
+- **Dönem il sınırları seçim verisinden:** `era1957_1965`, `era1957_1987`, `era1991` ve yeni
+  `era1994`, o seçimde her ilin satırlarına bağlı ilçelerin birleşimi
+  (`build_il_sinirlari.py`); il ve ilçe haritası birebir örtüşür. Eski dosyalarda yanlış ilde
+  olan 13 ilçe düzeldi (Cizre, İdil, Silopi, Gercüş, Hasankeyf → Mardin; Beytüşşebap,
+  Uludere → Hakkâri; Ağaçören, Sarıyahşi → Ankara; Armutlu → Bursa; Altınova → Kocaeli;
+  Eflani, Ovacık → Çankırı). Kaynarca 1958–1965'te Kocaeli'de; 1994 yerelde Ardahan ve Iğdır
+  ayrı il.
+- **Veri düzeltmeleri:** 1994/1999/2004 yerelde Artvin Hopa'nın aynı oylarla iki kez geçen
+  satırının kopyası silindi; 1994 ve 1999 yerelde Kaynaşlı belde satırının plakası 81 → 14
+  (o tarihte Bolu).
+- **Tek betikle yeniden üretim:** `scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py`
+  bütün tarihsel sınır adımlarını doğru sırayla çalıştırır (seçim katmanını geri al →
+  `apply_idari_merges.py` → İstanbul → her seçim için `build_ilce_secim.py` → il sınırları →
+  meclis → rapor → checksum → `build.py`). İdempotenttir: main üzerinde çalıştırınca fark
+  çıkmaz. Tek tek betikleri elle ve başka sırayla çalıştırmayın.
+- **Önceki 04.10.2026 işleri:** 2007 referandumu resmî PDF'lerden 923 ilçeye tamamlandı;
+  2009/2011 tarihî ana ilçe birleşimleri; Tillo'nun YSK meclis kayıtları eşleştirildi.
+- **Yayın kopyası:** `turkiye-secim-atlasi` (canlı site) aynı veriyi
+  `scripts/export_static.py --public` ile alır; kaynak repoda veri değişince atlasa ayrıca
+  aktarılmalıdır (otomatik değil).
+- Ayrıntı ve yöntem: [`geo/historical/idari/README.md`](geo/historical/idari/README.md);
+  güncel sayılar `docs/rapor/ozet.json` ve yanındaki CSV'ler.
 
-1961 çalışması da birleştirildi: kanun/sayım zincirleri ve açıkça yaklaşık
-olarak işaretlenen %70 birim çoğunluğu yöntemiyle 21 ilçe daha bağlandı.
-23 ilçe belirsiz kalır; Ankara Merkez'in tarihî poligonu kaynak bekler.
-Tekrar üretimde `build_ilce_1961.py`, `apply_idari_merges.py` sonrasında ve
-rapor/checksum/build adımlarından önce çalıştırılmalıdır.
+### Bilinen eksikler
+
+- **Kaba eşlemeler:** her seçimde 15–20 civarı çok kaynaklı ilçe (ör. Çukurova, Körfez, Aliağa,
+  Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı; köy düzeyinde
+  kaynak bulunursa bölünerek düzeltilebilir.
+- **Ankara Merkez (1961–1983):** ayrı ilçeydi ama sınırı kaynakta yok; haritada poligonu yok.
+- **Meclis haritaları:** 1984 ve 1994 yerelde il genel meclisi / belediye meclisi oy verisi
+  eksik (1984'te yaklaşık 190 ilçe boş); sınır değil, veri sorunu.
+- **Küçük kayıt sorunları:** 1991'de İstanbul'da iki "Bakırköy" satırı (muhtemelen seçim
+  çevresi bölünmesi, aynı poligon); 2004 yerelde poligonsuz "Karadeniz Ereğli" satırı (seçmen 0).
+- **İncelenmeyenler:** 1950–1957 il sınırları (`era1950`, `era1954`) ve 2009 sonrası
+  seçimlerin ilçe haritaları bu çalışmada denetlenmedi.
+- 1950/1954/1957 genel seçimler il düzeyinde kalır (ülke çapında ilçe kaynağı yok).
