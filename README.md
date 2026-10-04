@@ -15,12 +15,10 @@ yoksa bu sessizce atlanır, harita/veri işlevselliğini etkilemez.)
 
 ## Performans
 
-Açılışta yalnız gösterilen seçim çözülür: seçimler `index.html`'e seçim başına ayrı gömülüdür
-(`secim_<anahtar>.json`), eskiden 46 seçimin tamamı (~40 MB açık JSON) tek seferde çözülüyordu.
-Mahalle oyları (yıl başına) ve mahalle poligonları (`mahalle_geo.json`, ~17 MB açık) yalnız
-kullanıcı bir ilçenin mahallelerine inince açılır; hangi ilçenin poligonu olduğu küçük
-`mahalle_geo_ids.json`'dan bilinir. Ölçüm (yerel Chromium, açılıştan harita çizilene dek):
-2,0 sn → 0,9 sn, JS belleği 269 MB → 81 MB.
+`index.html`'e her yayın dosyası (seçim, mahalle oyları, ilçe başına mahalle poligonları, dönem
+sınırları) ayrı gömülüdür ve yalnız gerektiğinde açılır: açılışta il sınırları ve gösterilen seçim,
+ilçe sınırları arka planda, mahalleler o ilçeye inilince. Ölçüm (yerel Chromium, `file://`,
+açılıştan harita çizilene dek): ~1,1 sn.
 
 ## Site özellikleri
 
@@ -53,23 +51,25 @@ data/normalized/    Seçim türüne göre ayrılmış, kayıpsız veri
                     referandumlar/mahalle/meclis_2024)
 geo/normalized/     Güncel, basitleştirilmiş il/ilçe/mahalle geometrisi
 
-src/index.template.html   HTML iskeleti (veri hariç, placeholder'lı)
-src/styles/main.css        Uygulamanın tüm CSS'i
-src/js/*.js                 Uygulamanın JS'i, 11 dosyaya bölünmüş (data-loader,
-                             election-config, state, seatbar, map, tooltip,
-                             detail-panel, search, nav, table, app)
-scripts/build.py            Yukarıdakileri birleştirip index.html üretir
+frontend/                 Ön yüzün kopyası (turkiye-secim-atlasi'ndan, scripts/frontend_sync.py);
+                          elle değiştirmeyin — frontend/KAYNAK.json sağlama toplamlarını tutar
+scripts/export_static.py  Yayın dosyaları (data/elections/…, geo/…): atlas'a kopyalanır
+scripts/build.py          frontend/ + aynı yayın dosyalarını gömerek tek dosyalık index.html üretir
 scripts/validate.py         build.py'ye gömülü hızlı yapısal kontrol (gate)
 tests/validate_elections.py Ayrı, yavaş/analitik kontrol seti
 .github/workflows/validate.yml  Her push/PR'da validate.py + validate_elections.py +
                                  build.py + "index.html güncel mi" kontrolü
 
-index.html (repo kökü)   TEK GERÇEK/ÇALIŞAN DOSYA — build.py'nin çıktısı, commit'lenir
+index.html, yontem.html (repo kökü)  build.py'nin çıktısı, commit'lenir; çift tıklayınca açılır
 ```
 
-`src/js/*.js` gerçek ES modülleri değil — build.py bunları tanımlı bir
-sırayla tek `<script>` içine metin olarak birleştirir (aynı paylaşımlı
-closure/state korunur). Kaynakta ayrı dosyalar, dağıtımda hâlâ tek dosya.
+**Tek ön yüz.** Sitenin HTML/CSS/JS'i yalnız
+[`turkiye-secim-atlasi`](https://github.com/hamiKumbasae/turkiye-secim-atlasi)'nda geliştirilir;
+bu repo onun kopyasını `frontend/` altında taşır. Atlas veriyi `data/`, `geo/` dosyalarından
+`fetch()` ile okur; buradaki `index.html` aynı dosyaları aynı yollarla gömer
+(`window.__EMBEDDED_GZ__`) ve atlas'ın veri yükleyicisi gömülü veri varsa onu kullanır. Yani iki
+dağıtım tek kod: ön yüz değişikliği önce atlas'ta yapılır, sonra
+`python3 scripts/frontend_sync.py ../turkiye-secim-atlasi` ve `python3 scripts/build.py`.
 
 Her klasörün kendi `PROVENANCE.md`'si var (nereden geldiği, nasıl
 doğrulandığı). Kaynakların tam listesi için bkz. [`SOURCES.md`](SOURCES.md)
@@ -78,8 +78,8 @@ birincil/yedek kaynağı + bilinen sorunlar).
 
 ## Veriyi güncellemek
 
-1. `data/normalized/`, `geo/normalized/`, `src/styles/`, `src/js/` veya
-   `src/index.template.html` altındaki ilgili dosyayı düzenleyin (yeni bir
+1. `data/normalized/` ya da `geo/normalized/` altındaki ilgili dosyayı düzenleyin (ön yüz için
+   bkz. yukarıdaki "Tek ön yüz") (yeni bir
    seçim ekliyorsanız yeni bir `data/normalized/mahalle/<yil>.json` gibi —
    mahalle verisi için elle yerine `scripts/pipelines/mahalle_veri/transform/
    import_mahalle.py` kullanın, aşağıya bakın).

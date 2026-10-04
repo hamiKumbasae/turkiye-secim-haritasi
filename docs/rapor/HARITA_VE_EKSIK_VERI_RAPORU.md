@@ -126,7 +126,7 @@ ekle_il_merkezi_satirlari.py → build_idari_katman.py → apply_idari_merges.py
 → scripts/build.py (tek dosya index.html) / scripts/export_static.py (atlas)
 ```
 
-### 2.4 Ön yüzde çizim algoritması (`src/js/map.js`)
+### 2.4 Ön yüzde çizim algoritması (`frontend/src/js/map.js`)
 
 Projeksiyon: eşdikdörtgen (equirectangular), boylam enlemin kosinüsüyle ölçeklenir.
 Görünüme sığdırılır ve SVG `path` üretilir. Harita karosu ve kütüphane yok.

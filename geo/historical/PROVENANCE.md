@@ -70,7 +70,7 @@ il-sınırı dosyalarından uygun olanı seçip haritayı ona göre çiziyor. Da
 bu taşımayla DEĞİŞMEDİ — sadece dosyaların diskteki konumu.
 
 `district_splits.json` ise (2026-09-23'ten itibaren) hem Python pipeline'da
-(ingestion sırasında) HEM DE doğrudan frontend'de (`src/js/map.js`,
+(ingestion sırasında) HEM DE doğrudan frontend'de (`frontend/src/js/map.js`,
 `DISTRICT_SPLITS` embedded değişkeni) kullanılıyor — haritada bir sentetik
 HIST-* poligon o yıl gerçekten kullanılıyorsa, `hideIds` alanındaki modern
 ilçe id'leri (birleşimin PARÇASI oldukları için) AYRICA "veri yok" katmanında

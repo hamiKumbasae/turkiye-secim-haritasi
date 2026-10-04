@@ -27,7 +27,8 @@ async function withPage(browser, fn) {
   page.on('pageerror', (e) => errors.push('PAGEERROR: ' + e.message));
   page.on('console', (msg) => { if (msg.type() === 'error') errors.push('CONSOLE: ' + msg.text()); });
   await page.goto(INDEX_HTML);
-  await page.waitForTimeout(1000);
+  // atlas on yuzu veriyi eszamansiz acar; sonuclar hazir olunca aria-busy=false
+  await page.locator('#results[aria-busy="false"]').waitFor({ timeout: 60000 });
   await fn(page, errors);
   await page.close();
   return errors;
@@ -63,7 +64,7 @@ async function scenario_2023genel(browser) {
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(400);
     const provinceSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
-    await page.click('path.il-path[data-geom-id="TR-D-34-001"]'); // Adalar
+    await page.click('path.geo-path[data-geom-id="TR-D-34-001"]'); // Adalar
     await page.waitForTimeout(400);
     const dName = await page.$eval('#dName', (el) => el.textContent);
     const districtSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -90,7 +91,7 @@ async function scenario_istanbul1994geometri(browser) {
     await page.waitForTimeout(400);
     // 2008 sonrasi kurulan ilceler (Ataşehir, Sancaktepe, Arnavutköy ...) 1994'te yoktu; alanlari
     // 1992-2008 ilcelerine paylastirildigi icin "veri yok" poligonu kalmamali.
-    const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+    const nodataIds = await page.$$eval('.geo-path-nodata', (els) => els.map((e) => e.dataset.geomId));
     check('1994 yerel İstanbul: "veri yok" ilçe kalmadı (2008 ilçeleri 1994 sınırlarına paylaştırıldı)',
       nodataIds.length === 0, JSON.stringify(nodataIds));
 
@@ -99,7 +100,7 @@ async function scenario_istanbul1994geometri(browser) {
     // (bkz. scripts/pipelines/election_import/apply_verified_district_merges.py) -
     // hem sentetik HIST- poligon render edilmeli HEM DE ust uste binen eski
     // modern (kucuk) sekilleri AYRICA "veri yok" olarak cizilmemeli.
-    const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+    const histIds = await page.$$eval('path.geo-path[data-geom-id]', (els) =>
       els.map((e) => e.dataset.geomId)
         // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
         .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
@@ -113,14 +114,14 @@ async function scenario_istanbul1994geometri(browser) {
       ['TR-D-34-014', 'TR-D-34-037', 'TR-D-34-012', 'TR-D-34-016',
         'TR-D-34-003', 'TR-D-34-023', 'TR-D-34-038', 'TR-D-34-025',
         'TR-D-34-002', 'TR-D-34-008', 'TR-D-34-018', 'TR-D-34-033', 'TR-D-34-021', 'TR-D-34-015']
-        .map((id) => `path.il-path[data-geom-id="${id}"]`).join(', '),
+        .map((id) => `path.geo-path[data-geom-id="${id}"]`).join(', '),
       (els) => els.length);
     check('1994 yerel İstanbul: birleşimin parçası olan eski modern şekiller ayrıca (üst üste) çizilmiyor', staleDuplicates === 0, 'count=' + staleDuplicates);
 
     // Tarihsel (HIST-*) bir ilçeye tıklamak, o ilçenin KENDİ (genişletilmiş)
     // gerçek oy verisini göstermeli - sentetik geomId'ye geçiş sadece haritayı
     // etkilemeli, panel/veri akışını bozmamalı.
-    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Kadikoy-9208"]');
+    await page.click('path.geo-path[data-geom-id="HIST-Istanbul-Kadikoy-9208"]');
     await page.waitForTimeout(400);
     const histDName = await page.$eval('#dName', (el) => el.textContent);
     const histDSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -146,7 +147,7 @@ async function scenario_istanbul19992004Gecmisi(browser) {
       await page.waitForTimeout(400);
       await page.click('path[data-plaka="34"]');
       await page.waitForTimeout(400);
-      const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+      const histIds = await page.$$eval('path.geo-path[data-geom-id]', (els) =>
         els.map((e) => e.dataset.geomId)
         // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
         .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
@@ -208,7 +209,7 @@ async function scenario_izmirDalgalariCozumu(browser) {
       // click() ile dogrudan tetikleyip piksel-hit-testini atliyoruz.
       await page.$eval('path[data-plaka="35"]', (el) => el.dispatchEvent(new MouseEvent('click', { bubbles: true })));
       await page.waitForTimeout(400);
-      const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+      const histIds = await page.$$eval('path.geo-path[data-geom-id]', (els) =>
         els.map((e) => e.dataset.geomId)
         // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
         .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
@@ -216,7 +217,7 @@ async function scenario_izmirDalgalariCozumu(browser) {
         expectedHist.every((id) => histIds.includes(id)) && !histIds.some((id) => id.startsWith('HIST-Izmir') && !expectedHist.includes(id)),
         JSON.stringify(histIds));
 
-      await page.$eval(`path.il-path[data-geom-id="${expectedHist[0]}"]`,
+      await page.$eval(`path.geo-path[data-geom-id="${expectedHist[0]}"]`,
         (el) => el.dispatchEvent(new MouseEvent('click', { bubbles: true })));
       await page.waitForTimeout(300);
       const dName = await page.$eval('#dName', (el) => el.textContent);
@@ -238,12 +239,12 @@ async function scenario_1992DalgasiCozumu(browser) {
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(400);
 
-    const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+    const nodataIds = await page.$$eval('.geo-path-nodata', (els) => els.map((e) => e.dataset.geomId));
     check('1991 genel İstanbul: tarihî bölüşüm sonrası veri yok poligonu kalmadı',
       nodataIds.length === 0, JSON.stringify(nodataIds));
 
     for (const [histId, adi] of [['HIST-Istanbul-Bakirkoy', 'Bakırköy'], ['HIST-Istanbul-Kucukcekmece', 'Küçükçekmece'], ['HIST-Istanbul-Pendik', 'Pendik']]) {
-      await page.click(`path.il-path[data-geom-id^="${histId}-"]`);
+      await page.click(`path.geo-path[data-geom-id^="${histId}-"]`);
       await page.waitForTimeout(300);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -262,13 +263,13 @@ async function scenario_sancaktepeCozumu(browser) {
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(400);
 
-    const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+    const nodataIds = await page.$$eval('.geo-path-nodata', (els) => els.map((e) => e.dataset.geomId));
     check('1995 genel İstanbul: Sancaktepe (TR-D-34-029) artık "veri yok" değil',
       !nodataIds.includes('TR-D-34-029'), JSON.stringify(nodataIds));
     check('1995 genel İstanbul: "veri yok" ilçe kalmadı (Arnavutköy/Başakşehir/Esenyurt/Sultangazi dahil)',
       nodataIds.length === 0, JSON.stringify(nodataIds));
 
-    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Umraniye-9208"]');
+    await page.click('path.geo-path[data-geom-id="HIST-Istanbul-Umraniye-9208"]');
     await page.waitForTimeout(400);
     const dName = await page.$eval('#dName', (el) => el.textContent);
     const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -292,20 +293,20 @@ async function scenario_istanbulGenelGecmisi(browser) {
       await page.waitForTimeout(400);
       await page.click('path[data-plaka="34"]');
       await page.waitForTimeout(400);
-      const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+      const histIds = await page.$$eval('path.geo-path[data-geom-id]', (els) =>
         els.map((e) => e.dataset.geomId)
         // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
         .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
       check(year + ' genel İstanbul: tarihsel birleşim poligonlarının tümü çiziliyor',
         expectedHist.every((id) => histIds.includes(id)), JSON.stringify(histIds));
       if (year !== '1991') {
-        const nodataIds = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+        const nodataIds = await page.$$eval('.geo-path-nodata', (els) => els.map((e) => e.dataset.geomId));
         check(year + ' genel İstanbul: "veri yok" ilçe kalmadı', nodataIds.length === 0, JSON.stringify(nodataIds));
       }
 
       await page.click(year === '1991'
-        ? 'path.il-path[data-geom-id^="HIST-Istanbul-Buyukcekmece-"]'
-        : 'path.il-path[data-geom-id="HIST-Istanbul-Buyukcekmece-9208"]');
+        ? 'path.geo-path[data-geom-id^="HIST-Istanbul-Buyukcekmece-"]'
+        : 'path.geo-path[data-geom-id="HIST-Istanbul-Buyukcekmece-9208"]');
       await page.waitForTimeout(400);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -336,11 +337,11 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     await page.waitForTimeout(400);
     await page.fill('#searchBox', 'İstanbul');
     await page.waitForTimeout(300);
-    let nodata = await page.$$eval('.il-path-nodata', (els) => els.length);
-    let countryPaths = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
+    let nodata = await page.$$eval('.geo-path-nodata', (els) => els.length);
+    let countryPaths = await page.$$eval('path.geo-path[data-plaka]', (els) => els.length);
     let breadcrumbHidden = await page.$eval('#mapBreadcrumb', (el) => getComputedStyle(el).display === 'none');
     let dName = await page.$eval('#dName', (el) => el.textContent);
-    let selectedPlaka = await page.$eval('path.il-path.selected', (el) => el.dataset.plaka).catch(() => null);
+    let selectedPlaka = await page.$eval('path.geo-path.selected', (el) => el.dataset.plaka).catch(() => null);
     check('1957 genel (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok', nodata === 0, 'nodata=' + nodata);
     check('1957 genel (hiç ilçe verisi yok): harita ülke görünümünde kaldı (tek ile zoom yapmadı)', countryPaths > 1, 'countryPaths=' + countryPaths);
     check('1957 genel (hiç ilçe verisi yok): "İlçe Sonuçları" breadcrumb\'ı hiç açılmadı', breadcrumbHidden);
@@ -369,8 +370,8 @@ async function scenario_ilOnlyYearsTekParca(browser) {
     await page.waitForTimeout(400);
     await page.fill('#searchBox', 'İstanbul');
     await page.waitForTimeout(300);
-    nodata = await page.$$eval('.il-path-nodata', (els) => els.length);
-    countryPaths = await page.$$eval('path.il-path[data-plaka]', (els) => els.length);
+    nodata = await page.$$eval('.geo-path-nodata', (els) => els.length);
+    countryPaths = await page.$$eval('path.geo-path[data-plaka]', (els) => els.length);
     breadcrumbHidden = await page.$eval('#mapBreadcrumb', (el) => getComputedStyle(el).display === 'none');
     dName = await page.$eval('#dName', (el) => el.textContent);
     check('1954 genel (hiç ilçe verisi yok): "ilçe" alt katmanı/parçalaması yok, ülke görünümünde kaldı, breadcrumb açılmadı',
@@ -392,13 +393,13 @@ async function scenario_yerelIlce1950_1977(browser) {
     await page.waitForTimeout(400);
     await page.click('path[data-plaka="1"]');
     await page.waitForTimeout(500);
-    const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    const ids = await page.$$eval('path.geo-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
     check('1968 yerel Adana: ilçe haritası çiziliyor', ids.length > 5, 'n=' + ids.length);
-    const ceyhan = await page.$$eval('path.il-path[data-geom-id]', (els) => {
+    const ceyhan = await page.$$eval('path.geo-path[data-geom-id]', (els) => {
       const e = els.find((x) => x.dataset.geomId === 'TR-D-01-002'); return e ? e.getAttribute('fill') : null; });
     check('1968 yerel Adana: Ceyhan boyalı (veri var)', !!ceyhan && !/map-empty/.test(ceyhan), String(ceyhan));
     if (ceyhan) {
-      await page.click('path.il-path[data-geom-id="TR-D-01-002"]');
+      await page.click('path.geo-path[data-geom-id="TR-D-01-002"]');
       await page.waitForTimeout(400);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const body = await page.$eval('#detailPanel', (el) => el.textContent).catch(() => '');
@@ -411,7 +412,7 @@ async function scenario_yerelIlce1950_1977(browser) {
     await page.waitForTimeout(400);
     await page.click('path[data-plaka="1"]');
     await page.waitForTimeout(500);
-    const ids50 = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    const ids50 = await page.$$eval('path.geo-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
     check('1950 yerel Adana: sadece-kazanan ilçeler haritada çiziliyor', ids50.length > 3, 'n=' + ids50.length);
     const labels = await page.$$eval('#legend, #seqMin, #seqMax', (els) => els.map((e) => e.textContent).join(' ')).catch(() => '');
     check('1950 yerel: legend bozulmuyor (Infinity/NaN yok)', !/Infinity|NaN/.test(labels), labels.slice(0, 120));
@@ -431,7 +432,7 @@ async function scenario_referandumIlce(browser) {
       await page.waitForTimeout(400);
       await page.click('path[data-plaka="' + plaka + '"]');
       await page.waitForTimeout(500);
-      const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+      const ids = await page.$$eval('path.geo-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
       check(y + ' referandum: ilçe haritası çiziliyor (' + plaka + ')', ids.length > 3, 'n=' + ids.length);
       if (hist) check(y + ' referandum: ' + hist + ' çiziliyor',
         ids.some((i) => merkezPoligonu(i, hist, y + 'referandum', plaka)), JSON.stringify(ids.slice(0, 8)));
@@ -461,17 +462,17 @@ async function scenario_1961_1987Ilce(browser) {
       await page.waitForTimeout(400);
       await page.click('path[data-plaka="' + plaka + '"]');
       await page.waitForTimeout(500);
-      const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+      const ids = await page.$$eval('path.geo-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
       check(year + ' genel: ilçe haritası çiziliyor (' + plaka + ')', ids.length > 3, 'n=' + ids.length);
       // apply_idari_merges.py: sonradan kurulan ilceler (orn. 1990'da Gursu/Kestel)
       // o donemde Merkez'e bagliysa poligon HISTK-<hist>-* birlesimi olur; build_ilce_secim.py
       // cok kaynakli ilceleri de katarsa HIST<secim>-<plaka>-Merkez.
       const histId = ids.find((i) => merkezPoligonu(i, hist, year, plaka));
       check(year + ' genel: ' + hist + ' çiziliyor', !!histId, JSON.stringify(ids));
-      const nodata = await page.$$eval('.il-path-nodata', (els) => els.map((e) => e.dataset.geomId));
+      const nodata = await page.$$eval('.geo-path-nodata', (els) => els.map((e) => e.dataset.geomId));
       check(year + ' genel: Merkez halefleri ayrıca "veri yok" olarak çizilmiyor',
         hidden.every((h) => !nodata.includes(h) && !ids.includes(h)), JSON.stringify(nodata));
-      await page.click('path.il-path[data-geom-id="' + histId + '"]');
+      await page.click('path.geo-path[data-geom-id="' + histId + '"]');
       await page.waitForTimeout(400);
       const dName = await page.$eval('#dName', (el) => el.textContent);
       const dSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
@@ -485,7 +486,7 @@ async function scenario_1961_1987Ilce(browser) {
     await page.waitForTimeout(400);
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(500);
-    const ist = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+    const ist = await page.$$eval('path.geo-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
     check('1973 genel İstanbul: Eminönü ve Fatih ayrı tarihsel poligonlarla, modern Fatih çizilmeden',
       ist.includes('HIST-Istanbul-Eminonu') && ist.includes('HIST-Istanbul-Fatih') && !ist.includes('TR-D-34-020'), JSON.stringify(ist));
     await page.click('#btnBackCountry').catch(() => {});
@@ -561,7 +562,7 @@ async function scenario_1961_1987Ilce(browser) {
       await page.waitForTimeout(400);
       await page.click('path[data-plaka="34"]');
       await page.waitForTimeout(500);
-      const ids = await page.$$eval('path.il-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
+      const ids = await page.$$eval('path.geo-path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
       check(y + ' genel İstanbul (TÜİK): Eminönü ve Fatih ayrı, modern Fatih çizilmeden',
         ids.includes('HIST-Istanbul-Eminonu') && ids.includes('HIST-Istanbul-Fatih') && !ids.includes('TR-D-34-020'), JSON.stringify(ids.slice(0, 8)));
     }
@@ -707,7 +708,7 @@ async function scenario_1950yerel(browser) {
     const found = await clickYear(page, '1950');
     check('1950 yerel: yıl seçilebildi', found);
     await page.waitForTimeout(500);
-    const path1 = await page.$('path.il-path[data-plaka]');
+    const path1 = await page.$('path.geo-path[data-plaka]');
     if (path1) await path1.click();
     await page.waitForTimeout(400);
     const noteVisible = await page.$eval('#dInfoNote', (el) => getComputedStyle(el).display !== 'none');
@@ -770,7 +771,7 @@ async function scenario_referandum(browser) {
     await page.waitForTimeout(500);
     const activeYear = await page.$eval('.year-item.active', (el) => el.textContent.trim());
     check('referandum: bir yıl otomatik seçili', !!activeYear, activeYear);
-    const path1 = await page.$('path.il-path[data-plaka]');
+    const path1 = await page.$('path.geo-path[data-plaka]');
     if (path1) await path1.click();
     await page.waitForTimeout(400);
     const heroName = await page.$eval('#dHeroName', (el) => el.textContent);
@@ -797,28 +798,28 @@ async function scenario_2007referandumEminonuFatih(browser) {
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(400);
 
-    const histIds = await page.$$eval('path.il-path[data-geom-id]', (els) =>
+    const histIds = await page.$$eval('path.geo-path[data-geom-id]', (els) =>
       els.map((e) => e.dataset.geomId)
         // apply_idari_merges: HIST-* birlesimi sonradan eklenen parcalarla HISTK-<HIST-id>-* olabilir
         .map((id) => id.replace(/^HISTK-(HIST-.+)-[0-9a-f]{6}$/, '$1')).filter((id) => id.startsWith('HIST-')));
     check('2007 referandum İstanbul: Eminönü/Fatih ayrı tarihsel poligonlarla çiziliyor',
       histIds.includes('HIST-Istanbul-Eminonu') && histIds.includes('HIST-Istanbul-Fatih'), JSON.stringify(histIds));
 
-    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Eminonu"]');
+    await page.click('path.geo-path[data-geom-id="HIST-Istanbul-Eminonu"]');
     await page.waitForTimeout(300);
     const eminonuName = await page.$eval('#dName', (el) => el.textContent);
     const eminonuSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
     check('2007 referandum: Eminönü kendi (25.771 seçmenlik) verisini gösteriyor',
       eminonuName === 'Eminönü' && eminonuSecmen === '25.771', 'dName=' + eminonuName + ' dSecmen=' + eminonuSecmen);
 
-    await page.click('path.il-path[data-geom-id="HIST-Istanbul-Fatih"]');
+    await page.click('path.geo-path[data-geom-id="HIST-Istanbul-Fatih"]');
     await page.waitForTimeout(300);
     const fatihName = await page.$eval('#dName', (el) => el.textContent);
     const fatihSecmen = await page.$eval('#dSecmen', (el) => el.textContent);
     check('2007 referandum: Fatih kendi (292.980 seçmenlik) verisini gösteriyor - Eminönü ile karışmıyor',
       fatihName === 'Fatih' && fatihSecmen === '292.980', 'dName=' + fatihName + ' dSecmen=' + fatihSecmen);
 
-    const staleModern = await page.$$eval('path.il-path[data-geom-id="TR-D-34-020"]', (els) => els.length);
+    const staleModern = await page.$$eval('path.geo-path[data-geom-id="TR-D-34-020"]', (els) => els.length);
     check('2007 referandum: eski/modern Fatih şekli ayrıca (üst üste) çizilmiyor', staleModern === 0, 'count=' + staleModern);
   });
   check('2007 referandum Eminönü/Fatih: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
@@ -833,11 +834,11 @@ async function scenario_degisim(browser) {
     await page.waitForTimeout(500);
     const note = await page.$eval('#seqNote', (el) => el.hidden ? '' : el.textContent);
     check('değişim: 2023 genel, 2018 ile karşılaştırılıyor', /2018 → 2023/.test(note), note);
-    const renkli = await page.$$eval('path.il-path', (els) => els.filter((e) => (e.getAttribute('fill') || '').startsWith('hsl(')).length);
+    const renkli = await page.$$eval('path.geo-path', (els) => els.filter((e) => (e.getAttribute('fill') || '').startsWith('hsl(')).length);
     check('değişim: illerin çoğu renklendi', renkli > 70, String(renkli));
     await page.click('path[data-plaka="34"]');
     await page.waitForTimeout(500);
-    const ilce = await page.$$eval('path.il-path[data-geom-id]', (els) => els.filter((e) => (e.getAttribute('fill') || '').startsWith('hsl(')).length);
+    const ilce = await page.$$eval('path.geo-path[data-geom-id]', (els) => els.filter((e) => (e.getAttribute('fill') || '').startsWith('hsl(')).length);
     check('değişim: İstanbul ilçeleri renklendi', ilce >= 30, String(ilce));
     await page.click('#btnBackCountry');
     const found = await clickYear(page, '1950');

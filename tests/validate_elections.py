@@ -503,7 +503,23 @@ def check_vote_completion():
           and ilce[(43, "Merkez")]["kazanan"] == "CHP")
 
 
+def check_frontend_copy():
+    """frontend/ atlas'tan kopyalanir (scripts/frontend_sync.py); elle degistirilmemis olmali, kokteki
+    yontem.html onun kopyasi olmali (build.py)."""
+    import hashlib
+    kaynak = json.loads((ROOT / "frontend" / "KAYNAK.json").read_text(encoding="utf-8"))
+    simdi = {str(p.relative_to(ROOT / "frontend")): hashlib.sha256(p.read_bytes()).hexdigest()
+             for p in sorted((ROOT / "frontend").rglob("*"))
+             if p.is_file() and p.name != "KAYNAK.json" and "__pycache__" not in p.parts}
+    farkli = sorted(set(simdi.items()) ^ set(kaynak["dosyalar"].items()))
+    check("frontend/ atlas kopyasıyla aynı (elle değişiklik yok; önce atlas'ta değiştirip frontend_sync.py)",
+          not farkli, ", ".join(sorted({k for k, _ in farkli})[:5]))
+    check("kökteki yontem.html frontend/yontem.html ile aynı (scripts/build.py)",
+          (ROOT / "yontem.html").read_bytes() == (ROOT / "frontend" / "yontem.html").read_bytes())
+
+
 def main():
+    check_frontend_copy()
     check_completed_records()
     check_vote_completion()
     check_checksums()

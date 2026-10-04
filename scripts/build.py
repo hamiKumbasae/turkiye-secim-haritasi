@@ -1,51 +1,41 @@
 """
-src/index.template.html + data/normalized/ + geo/normalized/ + geo/historical/
-kaynaklarindan index.html uretir (repo kokunde — GitHub'dan indirip cift
-tiklayarak acmak icin, ayrica GitHub Pages "Deploy from branch" kok dizin
-modunu de destekler).
+Tek dosyalik index.html uretir: atlas on yuzu (frontend/, bkz. scripts/frontend_sync.py) + gomulu veri.
 
-gzip mtime=0 ile deterministik: ayni veriden iki calistirma bayt-bayt ayni
-cikti uretir.
+Tek on yuz: HTML/CSS/JS yalniz turkiye-secim-atlasi'nda gelistirilir, burada frontend/ altinda kopyasi
+durur. Veri, atlas'in fetch ettigi dosyalarla AYNI yollarla (data/elections/2023.json, geo/eras/...,
+scripts/export_static.py: public_files) gzip+base64 olarak window.__EMBEDDED_GZ__ icine gomulur; atlas'in
+veri yukleyicisi gomulu veri varsa fetch yerine onu okur. Boylece repo kokundeki index.html cift
+tiklayinca (file://) acilir ve atlas sitesiyle ayni ozellikleri tasir. GitHub Pages "Deploy from
+branch" kok dizin modunu da destekler (yontem.html yaninda).
+
+gzip mtime=0 ve tarih yerine icerik ozeti: ayni veriden iki calistirma bayt-bayt ayni cikti uretir
+(CI 'git diff --exit-code index.html' ile kontrol eder).
 
 Kullanim:
   python3 scripts/build.py
 """
-import json
-import gzip
 import base64
+import gzip
+import hashlib
+import importlib.util
+import json
 import pathlib
+import shutil
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import validate as _validate  # noqa: E402
 from common.election_io import load_all_elections  # noqa: E402
+from export_static import public_files  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-TEMPLATE = ROOT / "src" / "index.template.html"
-STYLES = ROOT / "src" / "styles" / "main.css"
-JS_DIR = ROOT / "src" / "js"
+FRONTEND = ROOT / "frontend"
 OUT = ROOT / "index.html"
 DATA_NORM = ROOT / "data" / "normalized"
 GEO_NORM = ROOT / "geo" / "normalized"
-GEO_HIST = ROOT / "geo" / "historical"
-
-DATA_PLACEHOLDER = '"__BUILD_WILL_INSERT_EMBEDDED_GZ_JSON__"'
-CSS_PLACEHOLDER = "/*__BUILD_WILL_INSERT_CSS__*/"
-JS_PLACEHOLDER = "//__BUILD_WILL_INSERT_JS__"
-
-ERA_ADLARI = ["era1950", "era1954", "era1957_1965", "era1957_1987", "era1991", "era1994", "era1995", "era1999"]
-
-# src/js/*.js, tek bir paylasimli closure'a (async IIFE) derlenecek sekilde
-# BU SIRAYLA concatenate edilir — modul degil, dogrudan metin birlestirme
-# (build.py bunlari tek <script> icine "inline" eder). Sira onemli: alt
-# bolumler ustteki let/const'lari referans alir (ayni async IIFE govdesinde
-# calisir, fonksiyon hoisting'i sayesinde fonksiyon SIRASI onemli degil ama
-# ilk calisan top-level kod olan data-loader.js'in en basta olmasi gerekir).
-JS_FILES = [
-    "data-loader.js", "election-config.js", "state.js", "result-utils.js", "seatbar.js",
-    "summary.js", "map.js", "tooltip.js", "detail-panel.js", "search.js", "nav.js",
-    "table.js", "link.js", "erisim.js", "app.js",
-]
+GOMULU_YER = "<!--__GOMULU_VERI__-->"
+# atlas sitesinde "Son güncelleme: <bugün>"; tek dosyada tarih yerine yalniz veri surumu (deterministik)
+YAYIN_TARIHI_IFADESI = "Son güncelleme: __YAYIN_TARIHI__ · "
 
 
 def load_json(path: pathlib.Path):
@@ -54,92 +44,59 @@ def load_json(path: pathlib.Path):
 
 def gzip_b64(obj) -> str:
     raw = json.dumps(obj, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
-    # mtime=0: gzip varsayilan olarak sikistirma anini gomer, bu da ayni
-    # veriden iki farkli build'de farkli bayt uretir. mtime=0 ile deterministik.
-    compressed = gzip.compress(raw, compresslevel=9, mtime=0)
-    return base64.b64encode(compressed).decode("ascii")
+    # mtime=0: gzip varsayilan olarak sikistirma anini gomer; ayni veriden ayni bayt
+    return base64.b64encode(gzip.compress(raw, compresslevel=9, mtime=0)).decode("ascii")
 
 
-def assemble_embedded() -> dict:
+def atlas_build():
+    """frontend/atlas_build.py: sablon, CSS, JS yollari ve JS birlestirme sirasi (atlas'la ayni)."""
+    spec = importlib.util.spec_from_file_location("atlas_build", FRONTEND / "atlas_build.py")
+    mod = importlib.util.module_from_spec(spec)
+    eski, sys.dont_write_bytecode = sys.dont_write_bytecode, True  # frontend/ altina __pycache__ yazma
+    try:
+        spec.loader.exec_module(mod)
+    finally:
+        sys.dont_write_bytecode = eski
+    return mod
+
+
+def on_kontrol():
+    """Yapisal dogrulama (scripts/validate.py); hata varsa build durur."""
     partiler = load_json(DATA_NORM / "partiler.json")
-    secimler = load_all_elections()
-    secim_tarihi_data = {"partiler": partiler, "secimler": secimler}
-
-    mahalle_votes = {}
-    for path in sorted((DATA_NORM / "mahalle").glob("*.json")):
-        mahalle_votes[path.stem] = load_json(path)
-
-    # Yil basina GERCEKTEN mahalle-duzeyi oy verisi olan ilce sayisi (mahalle_votes
-    # dosyasinin ust-seviye anahtar sayisi = {geomId: {osmId:...}} seklinde) -
-    # frontend'in (summary.js computeLevels()) sadece poligon (MAHALLE_GEO) degil,
-    # gercek oy verisi olup olmadigini soylemesi icin kucuk, eager-yuklu bir ozet.
-    mahalle_coverage = {year: len(rows) for year, rows in mahalle_votes.items()}
-
-    mahalle_geo = load_json(GEO_NORM / "mahalle_geo.json")
-    meclis_2024 = load_json(DATA_NORM / "meclis_2024.json")
-
-    # Pre-flight gate: sikistirip yazmadan once yapisal dogrulama (bkz.
-    # scripts/validate.py). Hata varsa build burada durur.
-    errors = _validate.validate_structural(secim_tarihi_data, mahalle_votes, mahalle_geo, meclis_2024)
+    mahalle_votes = {p.stem: load_json(p) for p in sorted((DATA_NORM / "mahalle").glob("*.json"))}
+    errors = _validate.validate_structural(
+        {"partiler": partiler, "secimler": load_all_elections()}, mahalle_votes,
+        load_json(GEO_NORM / "mahalle_geo.json"), load_json(DATA_NORM / "meclis_2024.json"))
     if errors:
         print(f"{len(errors)} DOGRULAMA HATASI, build durduruldu:")
         for e in errors:
             print(f"  - {e}")
         raise SystemExit(1)
 
-    eras = {name: load_json(GEO_HIST / f"turkiye_il_sinirlari_{name}.geojson") for name in ERA_ADLARI}
-
-    embedded = {
-        # mahalle_geo.json TEK blok kaliyor (tum yillar arasinda paylasimli,
-        # ~5MB sikistirilmis — buyumesi yeni ilce eklenince olur, yeni yil
-        # eklenince degil). mahalle_votes ise YIL BASINA ayri anahtar: sayfa
-        # acilisinda 15 yilin TAMAMINI (75MB acik veri) decompress etmek
-        # yerine, JS sadece kullanicinin gercekten actigi yili lazy-load
-        # ediyor (bkz. src/js/data-loader.js + map.js).
-        # mahalle_geo.json (~17MB acik) artik acilista cozulmuyor: ilk mahalleye inilince
-        # (lazy). Hangi ilcenin mahalle poligonu oldugu kucuk mahalle_geo_ids.json'dan bilinir.
-        "mahalle_geo.json": gzip_b64(mahalle_geo),
-        "mahalle_geo_ids.json": gzip_b64(sorted(mahalle_geo)),
-        "mahalle_coverage.json": gzip_b64(mahalle_coverage),
-        **{f"mahalle_votes_{year}.json": gzip_b64(rows) for year, rows in mahalle_votes.items()},
-        "meclis_2024.json": gzip_b64(meclis_2024),
-        # secimler secim basina ayri anahtarda: acilista yalniz gosterilen secim cozulur
-        # (eskiden 46 secimin tamami, ~40MB acik JSON, tek seferde cozuluyordu)
-        "partiler.json": gzip_b64(partiler),
-        **{f"secim_{key}.json": gzip_b64(rec) for key, rec in secimler.items()},
-        "turkiye_il_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_il_sinirlari.geojson")),
-        "turkiye_ilce_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_ilce_sinirlari.geojson")),
-        "district_splits.json": gzip_b64(load_json(GEO_HIST / "district_splits.json")),
-        "harita_notlari.json": gzip_b64(load_json(GEO_HIST / "idari" / "harita_notlari.json")),
-        "turkiye_ilce_sinirlari_hist_splits.geojson": gzip_b64(load_json(GEO_HIST / "turkiye_ilce_sinirlari_hist_splits.geojson")),
-        "eras": gzip_b64(eras),
-        # yerel secim meclis kayitlari (bkz. scripts/pipelines/meclis_harita/), lazy
-        "meclis_harita.json": gzip_b64({f.stem: load_json(f) for f in sorted((DATA_NORM / "meclis_harita").glob("*.json"))}),
-    }
-    return embedded
-
 
 def main():
-    embedded = assemble_embedded()
+    on_kontrol()
+    ab = atlas_build()
+    html = ab.TEMPLATE.read_text(encoding="utf-8")
+    for yer in (ab.CSS_PLACEHOLDER, ab.JS_PLACEHOLDER, GOMULU_YER, YAYIN_TARIHI_IFADESI):
+        if yer not in html:
+            raise SystemExit(f"Yer tutucu şablonda yok: {yer!r} ({ab.TEMPLATE}) - frontend/ güncel mi?")
+    css = ab.STYLES.read_text(encoding="utf-8")
+    js = "\n".join((ab.JS_DIR / name).read_text(encoding="utf-8") for name in ab.JS_FILES)
 
-    template_html = TEMPLATE.read_text(encoding="utf-8")
-    for placeholder in (DATA_PLACEHOLDER, CSS_PLACEHOLDER, JS_PLACEHOLDER):
-        if placeholder not in template_html:
-            raise SystemExit(f"Placeholder sablonda bulunamadi: {placeholder!r} ({TEMPLATE})")
+    gomulu = {rel: gzip_b64(obj) for rel, obj in public_files(public=True).items()}
+    veri = json.dumps(gomulu, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    surum = hashlib.sha256((veri + js + css).encode("utf-8")).hexdigest()[:10]
 
-    # rstrip: kaynak dosyalar standart sekilde sondaki \n ile bitiyor, ama
-    # sablondaki placeholder'in KENDI satirinda zaten bir \n var — ikisini
-    # birden birakmak (orijinalde olmayan) fazladan bos satir yaratir.
-    css = STYLES.read_text(encoding="utf-8").rstrip("\n")
-    js = "".join((JS_DIR / name).read_text(encoding="utf-8") for name in JS_FILES).rstrip("\n")
-    embedded_json_str = json.dumps(embedded, ensure_ascii=False, separators=(",", ":"))
-
-    out_html = template_html.replace(CSS_PLACEHOLDER, css, 1)
-    out_html = out_html.replace(JS_PLACEHOLDER, js, 1)
-    out_html = out_html.replace(DATA_PLACEHOLDER, embedded_json_str, 1)
-
-    OUT.write_text(out_html, encoding="utf-8")
-    print(f"yazildi: {OUT} ({len(out_html)} bayt)")
+    html = html.replace(ab.CSS_PLACEHOLDER, css, 1).replace(ab.JS_PLACEHOLDER, js, 1)
+    html = html.replace(YAYIN_TARIHI_IFADESI, "Tek dosya sürümü · ", 1).replace("__VERI_SURUMU__", surum)
+    # str.replace yerine bolme: gomulu veri icinde yer tutucu gecse bile tek yere yazilir
+    once, sonra = html.split(GOMULU_YER, 1)
+    html = once + '<script id="embedded-data">\nwindow.__EMBEDDED_GZ__ = ' + veri + ";\n</script>" + sonra
+    OUT.write_text(html, encoding="utf-8")
+    # yontem.html index.html'in yaninda olmali (baglantilar goreli)
+    shutil.copyfile(FRONTEND / "yontem.html", ROOT / "yontem.html")
+    print(f"yazildi: {OUT} ({len(html)} bayt, {len(gomulu)} gömülü dosya, veri sürümü {surum})")
 
 
 if __name__ == "__main__":

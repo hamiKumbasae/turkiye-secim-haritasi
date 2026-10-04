@@ -11,7 +11,7 @@ asagida) gosterdi ki bu bosluklarin EN AZ IKI FARKLI kok nedeni var:
      1994 PDF'i bu alanlari ayri satir olarak HIC listelemiyor, oylari
      o zamanki ebeveyn ilcenin (Umraniye/Kadikoy) toplamina karisik).
      Bu durumda dogru davranis onceden UYGULANDI: harita bu ilceyi notr/
-     tiklanamaz gosteriyor (bkz. src/js/map.js .il-path-nodata), UYDURMA
+     tiklanamaz gosteriyor (bkz. frontend/src/js/map.js .il-path-nodata), UYDURMA
      sinir CIZILMIYOR.
 
   2) YANLIŞ ALARM (gercek boslukmus gibi GORUNEN ama aslinda boyle
@@ -85,7 +85,7 @@ def modern_name_by_geomid(secimler):
 def hidden_ids_by_plaka(splits, have_set_by_plaka):
     """plaka -> o secimde AKTIF olan (yani syntheticId'si o yilin veri
     satirlarinda GERCEKTEN kullanilan) birlesimlerin hideIds'lerinin
-    BIRLESIMI - bkz. src/js/map.js hiddenModernIdsForProvince() ile AYNI
+    BIRLESIMI - bkz. frontend/src/js/map.js hiddenModernIdsForProvince() ile AYNI
     mantik (frontend'in GERCEKTE ne gosterdigini yansitmasi icin)."""
     hidden = {}
     for plaka_str, entries in splits.items():
