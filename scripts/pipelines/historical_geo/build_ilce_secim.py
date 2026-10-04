@@ -40,6 +40,7 @@ import collections
 import csv
 import json
 import pathlib
+import re
 import sys
 
 from shapely.geometry import mapping, shape
@@ -65,6 +66,7 @@ HIST_GEO = ROOT / "geo/historical/turkiye_ilce_sinirlari_hist_splits.geojson"
 SPLITS = ROOT / "geo/historical/district_splits.json"
 MODERN = ROOT / "geo/normalized/turkiye_ilce_sinirlari.geojson"
 ESIK = 0.7
+BIZIM = re.compile(r"^HIST\d{4}[a-z]*-")
 ALANLAR = ["guncel_geomId", "guncel_il", "guncel_ilce", "kurulus_tarihi", "kurulus_kanunu", "plaka_secim",
            "il_secim", "ilce_secim", "geomId_secim", "yontem", "guven", "kaynak", "not"]
 GUVEN = {"kendi_satiri": "kesin", "tarihsel_birlesim": "kesin", "bolunmus_poligon": "kesin", "istanbul_mahalle": "kesin",
@@ -451,13 +453,21 @@ def uygula(cogunluk=None):
         sid = f"{ONEK}{k[0]:02d}-{ascii_ad(k[1])}"
         hist["features"].append({"type": "Feature", "properties": {"id": sid, "plaka": k[0]}, "geometry": mapping(u)})
         splits.setdefault(str(k[0]), []).append({"hideIds": sorted(icerik), "splitYear": 1962, "syntheticId": sid})
-        r["geomId"] = sid
+        for r2 in rec["ilceler"]:   # ayni adli birden cok satir (ornek 1991 Bakirkoy: iki secim cevresi)
+            if (r2["plaka"], r2["ad"]) == k:
+                r2["geomId"] = sid
         eklenen |= set(yeni)
         birlesimler.append({"plaka": k[0], "ilce": k[1], "geomId": sid, "oncekiGeomId": taban_id,
                             "katilanlar": yeni, "katilanAdlar": [ad[g] for g in yeni],
                             "bugunkuIlceler": sorted(icerik)})
     hist["features"].sort(key=lambda f: f["properties"]["id"])
     HIST_GEO.write_text(json.dumps(hist, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # bu betigin girisleri (HIST<secim>-*) her ilde sona, kimlige gore sirali: secimler hangi sirayla
+    # calistirilirsa calistirilsin ayni dosya
+    for pl in splits:
+        bizim = [e for e in splits[pl] if BIZIM.match(e["syntheticId"])]
+        splits[pl] = [e for e in splits[pl] if not BIZIM.match(e["syntheticId"])] + \
+            sorted(bizim, key=lambda e: e["syntheticId"])
     SPLITS.write_text(json.dumps(splits, ensure_ascii=False, indent=1), encoding="utf-8")
     eski = json.loads(election_path(SECIM).read_text(encoding="utf-8"))
     if eski != rec:
@@ -527,6 +537,10 @@ def kontrol(sessiz=False):
         sorun.append(f"tablo bugünkü ilçelerle eşleşmiyor: eksik {sorted(set(modern) - set(tab))[:5]}")
     kapsayan = collections.defaultdict(list)
     for r in rec["ilceler"]:
+        # ayni ad ve poligonlu ikinci satir (secim cevresi bolunmesi, ornek 1991 Bakirkoy) tek ilce sayilir
+        if any(x is not r and (x["plaka"], x["ad"], x.get("geomId")) == (r["plaka"], r["ad"], r.get("geomId"))
+               for x in rec["ilceler"][:rec["ilceler"].index(r)]):
+            continue
         g, k = r.get("geomId"), (r["plaka"], r["ad"])
         if not g or (g not in modern and g not in hist_ids):
             if k not in izinli_geomsuz:
