@@ -1,0 +1,158 @@
+{
+ "not": "build_ilce_secim.py ile üretilir; elle düzenlenmez. Tablo: ilce_eslesme/2007referandum.csv.",
+ "ozet": {
+  "birlesimPoligonu": 7,
+  "katilanIlce": 7,
+  "belirsizIlce": 0,
+  "geometrisizSatir": 0,
+  "yontem": {
+   "kendi_satiri": 886,
+   "en_buyuk_pay": 2,
+   "tarihsel_birlesim": 72,
+   "komsuluk": 5,
+   "bolunmus_poligon": 8
+  }
+ },
+ "birlesimler": [
+  {
+   "plaka": 1,
+   "ilce": "Seyhan",
+   "geomId": "HIST2007referandum-01-Seyhan",
+   "oncekiGeomId": "TR-D-01-012",
+   "katilanlar": [
+    "TR-D-01-003"
+   ],
+   "katilanAdlar": [
+    "Çukurova"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-01-003",
+    "TR-D-01-012"
+   ]
+  },
+  {
+   "plaka": 6,
+   "ilce": "Altındağ",
+   "geomId": "HIST2007referandum-06-Altindag",
+   "oncekiGeomId": "TR-D-06-002",
+   "katilanlar": [
+    "TR-D-06-022"
+   ],
+   "katilanAdlar": [
+    "Pursaklar"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-06-002",
+    "TR-D-06-022"
+   ]
+  },
+  {
+   "plaka": 8,
+   "ilce": "Borçka",
+   "geomId": "HIST2007referandum-08-Borcka",
+   "oncekiGeomId": "TR-D-08-004",
+   "katilanlar": [
+    "TR-D-08-006"
+   ],
+   "katilanAdlar": [
+    "Kemalpaşa"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-08-004",
+    "TR-D-08-006"
+   ]
+  },
+  {
+   "plaka": 30,
+   "ilce": "Şemdinli",
+   "geomId": "HIST2007referandum-30-Semdinli",
+   "oncekiGeomId": "TR-D-30-003",
+   "katilanlar": [
+    "TR-D-30-005"
+   ],
+   "katilanAdlar": [
+    "Derecik"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-30-003",
+    "TR-D-30-005"
+   ]
+  },
+  {
+   "plaka": 35,
+   "ilce": "Bornova",
+   "geomId": "HIST2007referandum-35-Bornova",
+   "oncekiGeomId": "TR-D-35-007",
+   "katilanlar": [
+    "TR-D-35-004"
+   ],
+   "katilanAdlar": [
+    "Bayraklı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-35-004",
+    "TR-D-35-007"
+   ]
+  },
+  {
+   "plaka": 35,
+   "ilce": "Menderes",
+   "geomId": "HIST2007referandum-35-Menderes",
+   "oncekiGeomId": "TR-D-35-022",
+   "katilanlar": [
+    "TR-D-35-015"
+   ],
+   "katilanAdlar": [
+    "Karabağlar"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-35-015",
+    "TR-D-35-022"
+   ]
+  },
+  {
+   "plaka": 68,
+   "ilce": "Aksaray merkez",
+   "geomId": "HIST2007referandum-68-Aksaraymerkez",
+   "oncekiGeomId": "TR-D-68-002",
+   "katilanlar": [
+    "TR-D-68-008"
+   ],
+   "katilanAdlar": [
+    "Sultanhanı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-68-002",
+    "TR-D-68-008"
+   ]
+  }
+ ],
+ "cogunluk": {
+  "TR-D-01-003": {
+   "ana": "Seyhan",
+   "pay": 0.58,
+   "digerleri": [
+    [
+     "Karaisalı",
+     0.42
+    ]
+   ]
+  },
+  "TR-D-06-022": {
+   "ana": "Altındağ",
+   "pay": 0.4,
+   "digerleri": [
+    [
+     "Keçiören",
+     0.4
+    ],
+    [
+     "Çubuk",
+     0.2
+    ]
+   ]
+  }
+ },
+ "belirsiz": [],
+ "geometrisizSatir": []
+}
