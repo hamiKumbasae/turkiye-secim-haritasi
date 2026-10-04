@@ -50,3 +50,36 @@ jobs:
       - name: Tarayıcı smoke testleri (2023 genel, 1950/1955 yerel, 2024 ilçe meclisi, referandum)
         working-directory: tests
         run: node browser_smoke.js
+
+  site:
+    # Yayinlanan site (site/): yayin verisiyle derlenir, Playwright testleri dist/ uzerinde calisir
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+
+      - name: Bağımlılıkları kur
+        run: pip install -r requirements.txt
+
+      - name: Siteyi derle (site/dist/)
+        run: python3 site/build.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Site test bağımlılıkları
+        working-directory: site
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Site testleri (yükleme, değişim, bağlantı, CSV, erişilebilirlik)
+        working-directory: site
+        run: npm test

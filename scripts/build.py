@@ -1,15 +1,13 @@
 """
-Tek dosyalik index.html uretir: atlas on yuzu (frontend/, bkz. scripts/frontend_sync.py) + gomulu veri.
+Tek dosyalik index.html uretir: site/ on yuzu + gomulu yayin verisi (cift tiklayinca file:// ile acilir).
 
-Tek on yuz: HTML/CSS/JS yalniz turkiye-secim-atlasi'nda gelistirilir, burada frontend/ altinda kopyasi
-durur. Veri, atlas'in fetch ettigi dosyalarla AYNI yollarla (data/elections/2023.json, geo/eras/...,
-scripts/export_static.py: public_files) gzip+base64 olarak window.__EMBEDDED_GZ__ icine gomulur; atlas'in
-veri yukleyicisi gomulu veri varsa fetch yerine onu okur. Boylece repo kokundeki index.html cift
-tiklayinca (file://) acilir ve atlas sitesiyle ayni ozellikleri tasir. GitHub Pages "Deploy from
-branch" kok dizin modunu da destekler (yontem.html yaninda).
+Sitenin tek on yuzu site/src/ altindadir; GitHub Pages surumu (site/build.py -> site/dist/) veriyi
+data/, geo/ dosyalarindan fetch() ile okur. Bu betik ayni yayin dosyalarini (export_static.py:
+public_files) ayni yollarla gzip+base64 olarak window.__EMBEDDED_GZ__ icine gomer; data-loader.js
+gomulu veri varsa fetch yerine onu okur. Yani iki dagitim tek kod.
 
 gzip mtime=0 ve tarih yerine icerik ozeti: ayni veriden iki calistirma bayt-bayt ayni cikti uretir
-(CI 'git diff --exit-code index.html' ile kontrol eder).
+(CI 'git diff --exit-code index.html yontem.html' ile kontrol eder).
 
 Kullanim:
   python3 scripts/build.py
@@ -29,7 +27,7 @@ from common.election_io import load_all_elections  # noqa: E402
 from export_static import public_files  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-FRONTEND = ROOT / "frontend"
+SITE = ROOT / "site"
 OUT = ROOT / "index.html"
 DATA_NORM = ROOT / "data" / "normalized"
 GEO_NORM = ROOT / "geo" / "normalized"
@@ -49,10 +47,10 @@ def gzip_b64(obj) -> str:
 
 
 def atlas_build():
-    """frontend/atlas_build.py: sablon, CSS, JS yollari ve JS birlestirme sirasi (atlas'la ayni)."""
-    spec = importlib.util.spec_from_file_location("atlas_build", FRONTEND / "atlas_build.py")
+    """site/build.py: sablon, CSS, JS yollari ve JS birlestirme sirasi (Pages surumuyle ayni)."""
+    spec = importlib.util.spec_from_file_location("site_build", SITE / "build.py")
     mod = importlib.util.module_from_spec(spec)
-    eski, sys.dont_write_bytecode = sys.dont_write_bytecode, True  # frontend/ altina __pycache__ yazma
+    eski, sys.dont_write_bytecode = sys.dont_write_bytecode, True  # site/ altina __pycache__ yazma
     try:
         spec.loader.exec_module(mod)
     finally:
@@ -80,7 +78,7 @@ def main():
     html = ab.TEMPLATE.read_text(encoding="utf-8")
     for yer in (ab.CSS_PLACEHOLDER, ab.JS_PLACEHOLDER, GOMULU_YER, YAYIN_TARIHI_IFADESI):
         if yer not in html:
-            raise SystemExit(f"Yer tutucu şablonda yok: {yer!r} ({ab.TEMPLATE}) - frontend/ güncel mi?")
+            raise SystemExit(f"Yer tutucu şablonda yok: {yer!r} ({ab.TEMPLATE})")
     css = ab.STYLES.read_text(encoding="utf-8")
     js = "\n".join((ab.JS_DIR / name).read_text(encoding="utf-8") for name in ab.JS_FILES)
 
@@ -95,7 +93,7 @@ def main():
     html = once + '<script id="embedded-data">\nwindow.__EMBEDDED_GZ__ = ' + veri + ";\n</script>" + sonra
     OUT.write_text(html, encoding="utf-8")
     # yontem.html index.html'in yaninda olmali (baglantilar goreli)
-    shutil.copyfile(FRONTEND / "yontem.html", ROOT / "yontem.html")
+    shutil.copyfile(SITE / "yontem.html", ROOT / "yontem.html")
     print(f"yazildi: {OUT} ({len(html)} bayt, {len(gomulu)} gömülü dosya, veri sürümü {surum})")
 
 

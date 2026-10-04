@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaynaklar ve Yöntem · Türkiye Seçim Tarihi Atlası</title>
+<meta name="description" content="Türkiye Seçim Tarihi Atlası'ndaki verilerin nereden geldiği, haritaların nasıl hazırlandığı ve bilinen sınırlamalar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface-0:#f6f4ef; --surface-1:#fcfbf8; --line:#ddd8cb;
+    --ink-1:#211f1a; --ink-2:#5a564a; --ink-3:#8a8574; --link:#2b5f8a;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --surface-0:#161512; --surface-1:#1d1c18; --line:#38352b;
+      --ink-1:#f1efe6; --ink-2:#c7c2b2; --ink-3:#8f8a78; --link:#8cbfe8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --surface-0:#161512; --surface-1:#1d1c18; --line:#38352b;
+    --ink-1:#f1efe6; --ink-2:#c7c2b2; --ink-3:#8f8a78; --link:#8cbfe8;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--surface-0); color:var(--ink-1);
+    font-family:'Inter',system-ui,-apple-system,sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px; margin:0 auto; padding:28px 16px 64px;}
+  .back{font-size:14px; color:var(--link); text-decoration:none;}
+  .back:hover{text-decoration:underline;}
+  h1{font-family:'Newsreader',Georgia,serif; font-weight:600; font-size:clamp(28px,5vw,38px); line-height:1.2; margin:18px 0 6px;}
+  .lead{color:var(--ink-2); font-size:17px; margin:0 0 28px;}
+  h2{font-family:'Newsreader',Georgia,serif; font-weight:600; font-size:24px; margin:40px 0 8px; padding-top:16px; border-top:1px solid var(--line);}
+  h3{font-size:15px; margin:22px 0 4px;}
+  p, li{font-size:15.5px; color:var(--ink-1);}
+  ul{padding-left:22px;}
+  li{margin:4px 0;}
+  a{color:var(--link);}
+  nav.toc{background:var(--surface-1); border:1px solid var(--line); border-radius:10px; padding:12px 18px; font-size:14px;}
+  nav.toc ol{margin:6px 0; padding-left:20px;}
+  .tablo{width:100%; border-collapse:collapse; font-size:14px; margin:10px 0;}
+  .tablo th, .tablo td{text-align:left; vertical-align:top; padding:8px 10px; border-bottom:1px solid var(--line);}
+  .tablo th{font-weight:600; color:var(--ink-2);}
+  .tablo-wrap{overflow-x:auto;}
+  .kutu{background:var(--surface-1); border-left:3px solid var(--ink-3); padding:10px 14px; margin:14px 0; font-size:15px;}
+  footer{margin-top:48px; font-size:13px; color:var(--ink-3);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Haritaya dön</a>
+  <h1>Kaynaklar ve yöntem</h1>
+  <p class="lead">Bu sayfa, atlastaki sonuçların nereden geldiğini, haritaların nasıl hazırlandığını ve verinin
+  nerelerde eksik ya da yaklaşık olduğunu sade bir dille anlatır.</p>
+
+  <nav class="toc" aria-label="İçindekiler">
+    <b>İçindekiler</b>
+    <ol>
+      <li><a href="#kapsam">Atlas neleri gösteriyor?</a></li>
+      <li><a href="#kaynaklar">Sonuçlar nereden geliyor?</a></li>
+      <li><a href="#sinirlar">Haritalar nasıl çiziliyor?</a></li>
+      <li><a href="#okuma">Haritayı okuma</a></li>
+      <li><a href="#eksikler">Bilinen eksikler ve sınırlamalar</a></li>
+      <li><a href="#indir">Veriyi indirme ve lisans</a></li>
+      <li><a href="#iletisim">Hata bildirimi</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="kapsam">1. Atlas neleri gösteriyor?</h2>
+  <p>1950'den 2024'e kadar Türkiye'deki seçimlerin sonuçlarını harita ve tablo olarak gösterir:</p>
+  <ul>
+    <li><b>Genel seçimler</b> (1950–2023, 20 seçim): partilerin oy oranları ve milletvekili dağılımı.</li>
+    <li><b>Yerel seçimler</b> (1950–2024, 15 seçim): belediye başkanlıkları; bazı yıllarda il genel meclisi ve belediye meclisi oyları da.</li>
+    <li><b>Halk oylamaları</b> (1961–2017, 7 referandum): Evet/Hayır oranları.</li>
+    <li><b>Cumhurbaşkanlığı seçimleri</b> (2014, 2018, 2023'ün iki turu).</li>
+  </ul>
+  <p>Sonuçlar il düzeyinde her seçim için, ilçe düzeyinde 1961'den bu yana çoğu seçim için, mahalle/muhtarlık
+  düzeyinde ise 2009 sonrasındaki 15 seçim için vardır.</p>
+
+  <h2 id="kaynaklar">2. Sonuçlar nereden geliyor?</h2>
+  <p>Öncelik her zaman resmî kaynaklardadır. Resmî bir kaynak bulunamayan yerlerde ikincil kaynak kullanılır ve
+  bu, sitedeki “Kaynaklar” panelinde o seçim için ayrıca belirtilir.</p>
+  <div class="tablo-wrap">
+  <table class="tablo">
+    <thead><tr><th>Dönem</th><th>Kaynak</th></tr></thead>
+    <tbody>
+      <tr><td>2009 ve sonrası (tüm seçim türleri)</td><td><b>YSK Açık Veri Portalı</b> (acikveri.ysk.gov.tr). Sandık düzeyindeki resmî sonuçlar mahalle, ilçe ve il toplamlarına toplanmıştır.</td></tr>
+      <tr><td>Genel seçimler 1950–2007, il düzeyi</td><td><b>YSK'nin il bazlı resmî arşivi</b> (1950–1977 için TÜİK verilerine dayanır).</td></tr>
+      <tr><td>Genel seçimler 1961–1987, ilçe düzeyi</td><td><b>TÜİK</b> seçim yayınları (seçim çevresi ve ilçelere göre tablolar).</td></tr>
+      <tr><td>Genel seçimler 1991–2007, ilçe düzeyi</td><td>Açık kaynak bir derleme (memurlar.net kaynaklı); farklı ya da eksik değerler <b>TÜİK</b> tablolarıyla düzeltilmiştir.</td></tr>
+      <tr><td>Yerel seçimler 1984–2004</td><td><b>YSK arşivi</b> ve <b>DİE/TÜİK “Mahalli İdareler Seçimi Sonuçları”</b> kitapları; kitaplarla doğrulanamayan satırlarda Vikipedi.</td></tr>
+      <tr><td>Yerel seçimler 1950–1977</td><td>Vikipedi'deki il sayfaları (resmî il ve ilçe kaynağı bulunamadı).</td></tr>
+      <tr><td>Halk oylamaları 1961–1988, 2007</td><td><b>TÜİK</b> “Halk Oylaması Sonuçları” ve resmî PDF yayınları.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Her sonuç dosyası yayından önce otomatik kontrollerden geçer. Örneğin genel seçimlerde il milletvekili toplamlarının meclis sandalye
+  sayısıyla, halk oylamalarında oranların resmî ulusal sonuçla tutması ve her kaydın kazananının kendi oy
+  listesinde bulunması bu kontroller arasındadır.</p>
+  <div class="kutu">Bu atlas bağımsız bir derleme çalışmasıdır; <b>resmî bir YSK yayını değildir</b>. Kesin resmî
+  sonuç için YSK'nin kendi yayınlarına başvurun.</div>
+
+  <h2 id="sinirlar">3. Haritalar nasıl çiziliyor?</h2>
+  <h3>Bugünkü sınırlar</h3>
+  <p>İl ve ilçe sınırları açık kaynaklı Türkiye harita verisinden (HDX kaynaklı), mahalle sınırları belediye açık
+  verisinden ve OpenStreetMap'ten alınmıştır. Hızlı açılması için sınırlar sadeleştirilmiştir; resmî sınırlarla
+  aradaki küçük farklar bundandır.</p>
+  <h3>Tarihsel sınırlar</h3>
+  <p>Türkiye'nin idari haritası 1950'den bu yana çok değişti: il sayısı 63'ten 81'e çıktı, yüzlerce yeni ilçe kuruldu (bugün 973). Eski bir
+  seçimi bugünkü sınırlarla çizmek yanıltıcı olur, çünkü o tarihte henüz kurulmamış bir ilçe kendi sonucuyla
+  görünür. Bu yüzden atlas her seçimi <b>o dönemin sınırlarıyla</b> çizer:</p>
+  <ul>
+    <li>Sonradan kurulan bir ilçe, kuruluş kanunundaki “şu ilçeden ayrıldı” bilgisine göre o dönemde bağlı olduğu
+      ilçeyle birleştirilir.</li>
+    <li>Birden çok ilçeden toprak alarak kurulan ilçeler mahalle ve köy düzeyinde bölünür; her parça o dönemde
+      bağlı olduğu ilçeye verilir.</li>
+    <li>Sonradan il olan yerler (ör. 1992 öncesinde Ardahan ve Iğdır, Kars'a bağlıydı) o dönemde bağlı oldukları
+      ilin içinde gösterilir.</li>
+  </ul>
+  <p>Bazı yerlerde kesin sınır bilinmez. Örneğin 1987 öncesi İstanbul'un Anadolu yakasında bazı köylerin hangi
+  ilçeye bağlı olduğu 1960 nüfus sayımından, sayımda adı geçmeyenler ise komşularına bakılarak belirlenmiştir.
+  Bu sınırlar <b>yaklaşıktır</b>; amaç dönemin genel görünümünü doğru vermektir, sahadaki birkaç kilometrelik
+  sapma olabilir.</p>
+
+  <h2 id="okuma">4. Haritayı okuma</h2>
+  <ul>
+    <li><b>Kazanan:</b> her il ya da ilçe, en çok oyu alan partinin rengindedir. 1950–1957 genel seçimlerinde il
+      kazananı, çoğunluk sistemi nedeniyle milletvekillerinin hangi partiden olduğuna göre belirlenir.</li>
+    <li><b>Katılım:</b> açık renk düşük, koyu renk yüksek katılım.</li>
+    <li><b>Parti:</b> seçilen partinin oy oranı; renk koyulaştıkça oran yükselir. Lejanttaki uçlar o haritadaki en
+      düşük ve en yüksek oranlardır.</li>
+    <li><b>Değişim:</b> seçilen partinin oy oranının aynı türdeki bir önceki seçime göre farkı (yüzde puan).
+      Artış partinin renginde, düşüş zıt renktedir. Sınırı değişen ilçeler karşılaştırılmaz, gri kalır.</li>
+    <li><b>Gri alanlar:</b> o seçim için o yerin verisi yok. <b>Taralı alanlar:</b> o tarihte henüz ayrı bir ilçe
+      değildi; üzerine gelince kuruluş yılı ve bağlı olduğu ilçe yazar.</li>
+    <li><b>Yurt dışı oyları</b> hiçbir ile bağlı olmadığı için haritada yer almaz; olduğu seçimlerde ayrı bir panelde
+      gösterilir.</li>
+  </ul>
+  <p>Görünümü paylaşmak için “Bağlantıyı kopyala” düğmesini kullanabilirsiniz; bağlantı seçimi, ili, ilçeyi ve
+  harita modunu korur.</p>
+  <h3>Erişilebilirlik</h3>
+  <ul>
+    <li><b>Renk körü dostu</b> düğmesi parti renklerini, renk körlüğünde de birbirinden ayırt edilebilen bir paletle
+      (Okabe–Ito) değiştirir; tercih tarayıcınızda hatırlanır. Katılım, parti ve değişim haritaları zaten açıklık–koyuluk
+      farkına dayanır.</li>
+    <li>Harita klavyeyle kullanılabilir: <b>Tab</b> ile il, ilçe ya da mahalleler arasında gezinip <b>Enter</b> ile
+      açabilirsiniz; odaklanan bölgenin bilgisi gösterilir ve ekran okuyucular bölgenin adını ve kazananı okur.</li>
+  </ul>
+
+  <h2 id="eksikler">5. Bilinen eksikler ve sınırlamalar</h2>
+  <p><b>Veri tutarlılığı:</b> Parti oyları toplamı ile geçerli oy sayısı uyuşmayan veya aynı harita bölgesine birden fazla kayıt eşleşen satırlarda yüzdeler ve değişim karşılaştırması gösterilmez. Ham sayımlar korunur; ayrıntı paneli, ipucu ve CSV dosyasında doğrulama notu bulunur. Kaynakta %100'ü aşan ve henüz doğrulanamayan katılım değerleri gösterilmez.</p>
+  <p><b>Kaynakla onarılan kayıtlar:</b> 2004 yerel seçimindeki 81 il ve 910 ilçe kaydı <a href="https://kutuphane.tuik.gov.tr/pdf/0018169.pdf">DİE'nin resmî 2004 tablolarından</a> yenilenmiştir. İl kaydı büyükşehir başkanlığı veya il merkezi belediyesidir; ildeki bütün belediyelerin toplamı değildir. Sakarya'nın 1957 ve 1961 sandalye dağılımları ikincil arşivle tamamlanmıştır. Batman 1982 seçmen toplamı şehir ve köy kırılımından onarılmıştır. Tillo'nun 15 seçim ve sekiz meclis pusulası ile Karaisalı 2024 bağımsız oyları <a href="https://acikveri.ysk.gov.tr/">YSK sandık sonuçlarıyla</a> tamamlanmıştır. İlgili kayıtların kaynak notları atlasın Kaynaklar panelindedir.</p>
+  <p><b>Meclis karşılaştırmaları:</b> Belediye ve il genel meclisi oyları yalnız aynı pusula türü ve sonuç temeliyle karşılaştırılır. Belediye başkanlığına otomatik dönüş yapılmaz. Ulusal meclis oy grafiği, oy toplamı tutarlı il kayıtlarını kapsar ve sandalye sayısını göstermez. 2024 ilçe meclisi sandalye görünümü ayrı bir veri kümesidir.</p>
+  <ul>
+    <li><b>1950, 1954 ve 1957 genel seçimlerinde ilçe verisi yoktur;</b> resmî bir ilçe kaynağı bulunamamıştır. Bu
+      yıllarda harita yalnızca il düzeyindedir.</li>
+    <li><b>1950–1977 yerel seçimleri</b> ikincil kaynağa (Vikipedi) dayanır; 1950 ve 1955'te belediye başkanları
+      meclis tarafından seçildiği için yalnızca kazanan parti bilinir.</li>
+    <li><b>1991–2007 genel seçimlerinin ilçe sonuçları</b> resmî bir ilçe arşivi olmadığı için açık kaynak bir
+      derlemeye dayanır; TÜİK ile karşılaştırılıp farklar düzeltilmiştir.</li>
+    <li><b>Mahalle düzeyi</b> yalnızca 2009 sonrasında ve mahalle sınırı bulunan ilçelerde vardır (yaklaşık 640
+      ilçe).</li>
+    <li><b>Tarihsel sınırların bir kısmı yaklaşıktır</b> (bkz. 3. bölüm).</li>
+    <li>Bazı yıllarda yurt dışı oylarının seçmen ve katılım sayıları eksik ya da tutarsızdır.</li>
+  </ul>
+
+  <h2 id="indir">6. Veriyi indirme ve lisans</h2>
+  <h3>CSV</h3>
+  <p>Açık olan seçimin il ve ilçe sonuçlarını tek dosya olarak indirebilirsiniz: <b>Tablo</b> görünümündeki
+    <b>CSV indir</b> düğmesi ya da “Kaynaklar” panelindeki bağlantı. Dosyada her il/ilçe için seçmen, sandık,
+    geçerli oy, katılım ve kazanan; her parti için oy sayısı, oy oranı ve varsa milletvekili ya da meclis sandalyesi
+    sütunları bulunur. Yerel seçimde seçili oylama türü (belediye başkanı, il genel meclisi, belediye meclisi)
+    indirilir.</p>
+  <p>Dosya virgülle ayrılmış, UTF-8 biçimindedir; Excel'de Türkçe karakterler doğru görünür. Excel sütunlara
+    ayırmazsa <i>Veri → Metni Sütunlara Dönüştür</i> ile ayırıcı olarak virgülü seçin.</p>
+  <h3>Tüm veri</h3>
+  <p>Bütün seçimlerin işlenmiş verisi (JSON) ve harita sınırları GitHub'da açıktır:
+    <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" rel="noopener">github.com/hamiKumbasae/turkiye-secim-haritasi</a>
+    (işlenmiş veri <code>data/normalized/</code>, ham kaynaklar <code>data/raw/</code>, sınırlar <code>geo/</code>).</p>
+  <h3>Lisans ve atıf</h3>
+  <p>Sitenin kaynak kodu <b>MIT</b>, işlenmiş veri <b>CC BY-SA 4.0</b> lisanslıdır; OpenStreetMap'ten türetilen
+    mahalle sınırları <b>ODbL</b>'ye tabidir (© OpenStreetMap katkıcıları). Veriyi kullanırken asıl kaynağı (YSK,
+    TÜİK) ve bu atlası belirtin; değiştirip yayımlarsanız aynı lisansla paylaşın. Ayrıntı: depodaki
+    <code>LICENSE-DATA.md</code>.</p>
+  <ul>
+    <li>Örnek atıf: “Türkiye Seçim Tarihi Atlası, CC BY-SA 4.0. Asıl kaynaklar: YSK, TÜİK. Mahalle sınırları:
+      © OpenStreetMap katkıcıları (ODbL).”</li>
+    <li>Neden CC BY-SA: sonuçların bir kısmı Vikipedi'den derlendi (ör. 1950–1977 yerel seçimleri) ve Vikipedi
+      içeriği CC BY-SA lisanslıdır.</li>
+  </ul>
+
+  <h2 id="iletisim">7. Hata bildirimi</h2>
+  <p>Yanlış bir sonuç, sınır ya da isim fark ederseniz lütfen GitHub'da bir kayıt açın:
+    <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi/issues" rel="noopener">github.com/hamiKumbasae/turkiye-secim-haritasi/issues</a>.
+    Mümkünse seçimi, il/ilçeyi ve doğru değerin kaynağını yazın.</p>
+
+  <footer>Türkiye Seçim Tarihi Atlası · <a href="index.html">Haritaya dön</a></footer>
+</div>
+</body>
+</html>
