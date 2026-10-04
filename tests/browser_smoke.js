@@ -824,6 +824,30 @@ async function scenario_2007referandumEminonuFatih(browser) {
   check('2007 referandum Eminönü/Fatih: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// Degisim modu: secilen partinin oy orani, ayni turdeki onceki secimle karsilastirilir.
+async function scenario_degisim(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(500);
+    await page.click('#modeGroup button[data-mode="degisim"]');
+    await page.waitForTimeout(500);
+    const note = await page.$eval('#seqNote', (el) => el.hidden ? '' : el.textContent);
+    check('değişim: 2023 genel, 2018 ile karşılaştırılıyor', /2018 → 2023/.test(note), note);
+    const renkli = await page.$$eval('path.il-path', (els) => els.filter((e) => (e.getAttribute('fill') || '').startsWith('hsl(')).length);
+    check('değişim: illerin çoğu renklendi', renkli > 70, String(renkli));
+    await page.click('path[data-plaka="34"]');
+    await page.waitForTimeout(500);
+    const ilce = await page.$$eval('path.il-path[data-geom-id]', (els) => els.filter((e) => (e.getAttribute('fill') || '').startsWith('hsl(')).length);
+    check('değişim: İstanbul ilçeleri renklendi', ilce >= 30, String(ilce));
+    await page.click('#btnBackCountry');
+    const found = await clickYear(page, '1950');
+    await page.waitForTimeout(500);
+    const gizli = await page.$eval('#modeGroup button[data-mode="degisim"]', (el) => el.hidden);
+    check('değişim: en eski seçimde (1950) mod gizli', found && gizli);
+  });
+  check('değişim: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function main() {
   const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {});
   try {
@@ -847,6 +871,7 @@ async function main() {
     await scenario_yerelIlMerkezi(browser);
     await scenario_yerelOylama(browser);
     await scenario_ilceBelediyesi(browser);
+    await scenario_degisim(browser);
   } finally {
     await browser.close();
   }

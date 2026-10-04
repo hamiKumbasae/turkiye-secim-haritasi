@@ -1,6 +1,8 @@
   const $ = (s,el=document) => el.querySelector(s);
   const $$ = (s,el=document) => [...el.querySelectorAll(s)];
   const fmt = n => n==null ? '—' : n.toLocaleString('tr-TR');
+  const ESCAPE_MAP = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
+  const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ESCAPE_MAP[c]);
   const fmt1 = n => n==null ? '—' : n.toLocaleString('tr-TR',{maximumFractionDigits:1,minimumFractionDigits:1});
 
   // Gomulu veri window.__EMBEDDED_GZ__ altinda gzip+base64 olarak tutuluyor (boyutu

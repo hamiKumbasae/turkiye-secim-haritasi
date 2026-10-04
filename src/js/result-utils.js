@@ -35,3 +35,7 @@
     return result.oy!=null ? fmt(result.oy)+' oy' : '—';
   }
 
+  // Bir parti anahtarinin gosterim adi.
+  function partyShort(name){
+    return PARTY[name] ? PARTY[name].short : name;
+  }

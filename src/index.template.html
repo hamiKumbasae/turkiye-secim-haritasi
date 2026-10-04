@@ -77,6 +77,7 @@
             <button data-mode="winner" class="active">Kazanan</button>
             <button data-mode="katilim">Katılım</button>
             <button data-mode="parti">Parti</button>
+            <button data-mode="degisim" title="Seçilen partinin oy oranındaki değişim (önceki seçime göre, yüzde puan)">Değişim</button>
           </div>
           <select id="partySelect" style="display:none"></select>
           <div class="search-wrap">
@@ -91,6 +92,7 @@
             <div class="seq-ramp" id="seqRamp"></div>
             <span id="seqMax">100%</span>
           </div>
+          <div class="seq-note" id="seqNote" hidden></div>
         </div>
         <div class="winner-legend" id="winnerLegend"></div>
       </div>
