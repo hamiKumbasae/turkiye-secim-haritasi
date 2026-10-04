@@ -873,6 +873,19 @@ async function scenario_baglanti(browser) {
   check('bağlantı: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// Kaynaklar ve yontem sayfasi: siteden bagli ve aciliyor.
+async function scenario_yontem(browser) {
+  const errors = await withPage(browser, async (page) => {
+    const n = await page.$$eval('a[href="yontem.html"]', (els) => els.length);
+    check('yöntem: başlık ve alt bilgide sayfaya bağlantı var', n >= 2, String(n));
+    await page.goto(INDEX_HTML.replace(/index\.html$/, 'yontem.html'));
+    const h1 = await page.$eval('h1', (el) => el.textContent);
+    const bolum = await page.$$eval('h2', (els) => els.length);
+    check('yöntem: sayfa açılıyor ve 7 bölüm içeriyor', h1 === 'Kaynaklar ve yöntem' && bolum === 7, h1 + ' / ' + bolum);
+  });
+  check('yöntem: konsol hatası yok', errors.filter((e) => !/fonts\.g/.test(e)).length === 0, JSON.stringify(errors));
+}
+
 async function main() {
   const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {});
   try {
@@ -898,6 +911,7 @@ async function main() {
     await scenario_ilceBelediyesi(browser);
     await scenario_degisim(browser);
     await scenario_baglanti(browser);
+    await scenario_yontem(browser);
   } finally {
     await browser.close();
   }

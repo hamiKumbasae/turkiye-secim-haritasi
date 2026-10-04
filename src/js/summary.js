@@ -123,6 +123,7 @@
     html += '<p>Bu proje 1950–2024 arası Türkiye\'deki genel, yerel, referandum ve cumhurbaşkanlığı seçimlerinin sonuçlarını mümkün olduğunca YSK (Yüksek Seçim Kurulu) ve TÜİK\'in resmi arşivlerinden derler. Resmi bir il/ilçe kırılımı bulunamayan dönemlerde, YSK\'nin ulusal toplamıyla çapraz kontrol edilmiş ikincil kaynaklar (Türkçe Wikipedia, MIT lisanslı açık kaynaklı arşivler) kullanılır — hangisinin kullanıldığı her seçim için yukarıda ayrı ayrı belirtilir.</p>';
     html += '<p>İl/ilçe sınırları: ttezer/turkiye-harita-verisi (HDX kaynaklı, basitleştirilmiş). Tarihsel il/ilçe değişiklikleri (sonradan il olan ilçeler, büyükşehir ilçe bölünmeleri) ayrı bir tarihsel geometri katmanıyla o dönemin gerçek sınırlarına göre gösterilir.</p>';
     html += '<p>Yurtdışı seçmen oyları (temsilcilik/konsolosluk sandıkları) hiçbir ile bağlı olmadığı için haritaya dahil edilmez, mevcut olduğu seçimlerde ayrı bir panelde gösterilir.</p>';
+    html += '<p><a class="link-btn" href="yontem.html" style="text-decoration:underline;">Kaynaklar ve yöntem sayfası →</a> (dönem sınırları, harita modları, bilinen eksikler)</p>';
     html += '<p>Bu bir kişisel veri derleme çalışmasıdır, resmî bir YSK yayını değildir. Kaynak kodu ve tam sağlama (checksum) kayıtları GitHub\'da:<br><a class="link-btn" href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" target="_blank" rel="noopener" style="text-decoration:underline;">github.com/hamiKumbasae/turkiye-secim-haritasi</a></p>';
     $('#drawerBody').innerHTML = html;
   }
