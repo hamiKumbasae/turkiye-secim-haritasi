@@ -320,7 +320,7 @@ kalmasın; harita genel olarak doğru görünsün. Her seçim için:
 - Şüpheli: Kastamonu "Bozkurt" satırı 1961/1965'te bugünkü Bozkurt'a (1055, 1968) bağlı; korunuyor.
 - Veri düzeltmeleri (2026-10-04, kullanıcı onayıyla): 1994, 1999, 2004 yerel kayıtlarında Artvin Hopa
   iki kez vardı (aynı oy); kaynaklı satır yalnız Hopa poligonuyla tutuldu, kopyası silindi (Kemalpaşa
-  kendi belde satırıyla). 1994 yerel Kaynaşlı belde satırının plakası 81 → 14 (o tarihte Bolu).
+  kendi belde satırıyla). 1994 ve 1999 yerel Kaynaşlı belde satırının plakası 81 → 14 (Düzce Aralık 1999'da il oldu; o tarihte Bolu).
 - Değiştirilmeyen veri sorunları: 1991'de İstanbul'da iki "Bakırköy" satırı (seçim çevresi bölünmesi;
   aynı poligon, kontrolde tek ilçe sayılır). 2004 yerelde poligonsuz "Karadeniz Ereğli" satırı (seçmen
   0; Ereğli'nin ayrı satırı var). 1961–1965'te Kaynarca kaynakta Kocaeli'de (il toplamı da); Sakarya
