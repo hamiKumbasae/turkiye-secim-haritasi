@@ -848,6 +848,31 @@ async function scenario_degisim(browser) {
   check('değişim: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// Paylasilabilir baglanti: gorunum adreste tutulur, baglantiyla acilan sayfa ayni gorunume gider.
+async function scenario_baglanti(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(400);
+    await clickYear(page, '1977');
+    await page.waitForTimeout(500);
+    await page.click('#modeGroup button[data-mode="parti"]');
+    await page.selectOption('#partySelect', 'CHP');
+    await page.click('path[data-plaka="6"]');
+    await page.waitForTimeout(500);
+    const hash = new URL(page.url()).hash;
+    check('bağlantı: adres seçimi, ili, modu ve partiyi tutuyor',
+      /secim=1977/.test(hash) && /il=6/.test(hash) && /mod=parti/.test(hash) && /parti=CHP/.test(hash), hash);
+    await page.goto('about:blank');
+    await page.goto(INDEX_HTML + '#secim=2023&il=34&ilce=TR-D-34-001');
+    await page.waitForTimeout(2000);
+    const crumb = await page.$eval('#mapBreadcrumbName', (el) => el.textContent);
+    const aktif = await page.$eval('.year-item.active', (el) => el.textContent.trim());
+    check('bağlantı: #secim=2023&il=34&ilce=Adalar ile açılınca Adalar mahalleleri gösteriliyor',
+      aktif === '2023' && /Adalar/.test(crumb), aktif + ' | ' + crumb);
+  });
+  check('bağlantı: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function main() {
   const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {});
   try {
@@ -872,6 +897,7 @@ async function main() {
     await scenario_yerelOylama(browser);
     await scenario_ilceBelediyesi(browser);
     await scenario_degisim(browser);
+    await scenario_baglanti(browser);
   } finally {
     await browser.close();
   }

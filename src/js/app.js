@@ -23,13 +23,13 @@
     if(active) active.scrollIntoView({inline:'center', block:'nearest'});
   }
 
-  function switchTur(tur){
+  function switchTur(tur, year){
     currentTur = tur;
     $('#btnTurGenel').classList.toggle('active', tur==='genel');
     $('#btnTurReferandum').classList.toggle('active', tur==='referandum');
     $('#btnTurYerel').classList.toggle('active', tur==='yerel');
     $('#btnTurCB').classList.toggle('active', tur==='cumhurbaskanligi');
-    loadYear(TUR_YEARS[tur][0]);
+    return loadYear(year || TUR_YEARS[tur][0]);
   }
 
   // hizli art arda yil degistirmede yalniz son istegin sonucu uygulanir
@@ -73,6 +73,7 @@
     renderYurtdisiCard();
     renderCountryMap();
     renderTable();
+    durumuYaz();
   }
 
   $('#btnTurGenel').addEventListener('click', ()=> switchTur('genel'));
@@ -80,4 +81,4 @@
   $('#btnTurYerel').addEventListener('click', ()=> switchTur('yerel'));
   $('#btnTurCB').addEventListener('click', ()=> switchTur('cumhurbaskanligi'));
 
-  switchTur('genel');
+  baglantiyiUygula(); // adresteki #secim=... gorunumu, yoksa son genel secim

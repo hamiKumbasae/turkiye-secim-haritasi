@@ -103,6 +103,7 @@
     $$('#modeGroup button').forEach(b=>b.classList.toggle('active', b.dataset.mode===mode));
     $('#partySelect').style.display = (mode==='parti' || mode==='degisim') ? '' : 'none';
     applyMapMode();
+    durumuYaz();
   }
   // council_seats/mixed (1950/1955 yerel): oy oranlari ile sandalye paylari
   // AYNI renk skalasinda karsilastirilamaz (biri gercek oy yuzdesi, digeri
@@ -121,7 +122,7 @@
   $$('#modeGroup button').forEach(b=>{
     b.addEventListener('click', ()=> setMapMode(b.dataset.mode));
   });
-  $('#partySelect').addEventListener('change', e=>{ currentMapParty = e.target.value; applyMapMode(); });
+  $('#partySelect').addEventListener('change', e=>{ currentMapParty = e.target.value; applyMapMode(); durumuYaz(); });
 
   // hex/renk stringini hue'ya cevirir (parti oran gradyani icin) - canvas
   // normalizasyonu kullanir, boylece partiler.json'daki her renk formati
@@ -176,6 +177,7 @@
     $('#mapTitleCountry').style.display='block';
     $('#searchBox').placeholder='İl ara…';
     applyMapMode();
+    durumuYaz();
   }
 
   // Ucuz, senkron on-kontrol: bu ilcenin HIC mahalle poligonu var mi (yildan
@@ -346,6 +348,8 @@
     $('#searchBox').value='';
     $('#searchBox').placeholder='İlçe ara…';
     applyMapMode();
+    seciliIlce = null;
+    durumuYaz();
   }
 
   function drillIntoProvince(plaka){
@@ -403,6 +407,7 @@
     $('#searchBox').value='';
     $('#searchBox').placeholder='Mahalle ara…';
     applyMapMode();
+    durumuYaz();
   }
 
   // ---------------- map coloring modes ----------------
