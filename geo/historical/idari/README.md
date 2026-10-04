@@ -325,11 +325,12 @@ kalmasın; harita genel olarak doğru görünsün. Her seçim için:
   aynı poligon, kontrolde tek ilçe sayılır). 2004 yerelde poligonsuz "Karadeniz Ereğli" satırı (seçmen
   0; Ereğli'nin ayrı satırı var). 1961–1965'te Kaynarca kaynakta Kocaeli'de (il toplamı da); Sakarya
   haritasında gri görünür (il sınırı konusu).
-- Sıra: [`prepare_istanbul_historical_assignments.py` → `build_istanbul_1961_1992.py`] →
-  `build_ilce_secim.py <seçim>` → [yerel: `build_meclis_harita.py`] → checksum yenile →
-  `scripts/build.py`.
-- Bilinen tutarsızlık: `apply_idari_merges.py` yeniden çalıştırılırsa bu katmanın üzerine yazabilir
-  (ör. 1987/1988 İstanbul HISTK birleşimleri); bu çalışmada o betik çalıştırılmadı.
+- Yeniden üretim: `scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py` bütün adımları doğru
+  sırayla çalıştırır: seçim katmanını geri al (`build_ilce_secim.py <seçim> geri_al`) →
+  `apply_idari_merges.py` → İstanbul → `build_ilce_secim.py <seçim>` (her seçim) → il sınırları →
+  meclis → rapor → checksum → `scripts/build.py`. Tek tek betikler birbirinin çıktısını yeniden
+  yazdığı için (`apply_idari_merges.py` HISTK birleşimlerini ve `harita_notlari.json`'u sıfırdan
+  kurar) yalnız bu sıra tutarlıdır; betik idempotenttir (main üzerinde çalıştırınca fark çıkmaz).
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
