@@ -53,6 +53,9 @@ provenance/checksums.json` (tüm snapshot klasörlerinin konsolide kaydı).
     `scripts/pipelines/historical_geo/build_istanbul_1992_2008.py` ile boşluksuz
     kuruluyor (`HIST-Istanbul-*-9208`, bkz. `idari/README.md`); yukarıdaki
     mekanizmalar İstanbul için yalnız 1991'de kullanılıyor.
+  - 2026-10-04: 1961 genel seçimi için `HIST1961-*` birleşimleri
+    (`scripts/pipelines/historical_geo/build_ilce_1961.py`, tablo
+    `idari/ilce_1961_eslesme.csv`; bkz. `idari/README.md`).
 - `turkiye_ilce_sinirlari_hist_splits.geojson` — yukarıdaki eşlemeye karşılık
   gelen, bölünmüş ilçelerin birleştirilmiş (eski hâle döndürülmüş) poligonları
 
