@@ -22,6 +22,10 @@ provenance/checksums.json` (tüm snapshot klasörlerinin konsolide kaydı).
   sınırları (o dönem 63 il)
 - `turkiye_il_sinirlari_era1954.geojson` — 1954 (Bilecik düzeltmesi sonrası,
   64 il)
+- 2026-10-04: `era1957_1965`, `era1957_1987`, `era1991`, `era1994` artık
+  `scripts/pipelines/historical_geo/build_il_sinirlari.py` ile seçim verisindeki
+  ilçe-il bağlılığından üretiliyor (bkz. `idari/README.md`); aşağıdaki açıklamalar
+  ilk sürüm içindir.
 - `turkiye_il_sinirlari_era1957_1987.geojson` — 1957-1987 arası ortak sınır
   kümesi (bu aralıkta il sayısı sabit kaldı)
 - `turkiye_il_sinirlari_era1991.geojson`, `era1995.geojson`, `era1999.geojson`

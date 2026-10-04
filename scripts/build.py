@@ -33,7 +33,7 @@ DATA_PLACEHOLDER = '"__BUILD_WILL_INSERT_EMBEDDED_GZ_JSON__"'
 CSS_PLACEHOLDER = "/*__BUILD_WILL_INSERT_CSS__*/"
 JS_PLACEHOLDER = "//__BUILD_WILL_INSERT_JS__"
 
-ERA_ADLARI = ["era1950", "era1954", "era1957_1987", "era1991", "era1995", "era1999"]
+ERA_ADLARI = ["era1950", "era1954", "era1957_1965", "era1957_1987", "era1991", "era1994", "era1995", "era1999"]
 
 # src/js/*.js, tek bir paylasimli closure'a (async IIFE) derlenecek sekilde
 # BU SIRAYLA concatenate edilir — modul degil, dogrudan metin birlestirme

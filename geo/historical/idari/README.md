@@ -323,8 +323,14 @@ kalmasın; harita genel olarak doğru görünsün. Her seçim için:
   kendi belde satırıyla). 1994 ve 1999 yerel Kaynaşlı belde satırının plakası 81 → 14 (Düzce Aralık 1999'da il oldu; o tarihte Bolu).
 - Değiştirilmeyen veri sorunları: 1991'de İstanbul'da iki "Bakırköy" satırı (seçim çevresi bölünmesi;
   aynı poligon, kontrolde tek ilçe sayılır). 2004 yerelde poligonsuz "Karadeniz Ereğli" satırı (seçmen
-  0; Ereğli'nin ayrı satırı var). 1961–1965'te Kaynarca kaynakta Kocaeli'de (il toplamı da); Sakarya
-  haritasında gri görünür (il sınırı konusu).
+  0; Ereğli'nin ayrı satırı var). 1961–1965'te Kaynarca kaynakta Kocaeli'de (il toplamı da); `era1957_1965` ile il haritası da öyle.
+- İl sınırları (2026-10-04, `build_il_sinirlari.py`): `era1957_1965` (1961), `era1957_1987` (1987),
+  `era1991` (1991) ve `era1994` (1994 yerel) dönem il dosyaları, o seçimde her ilin satırlarına bağlı
+  bugünkü ilçelerin birleşimidir; il haritası ilçe haritasıyla birebir örtüşür. Önceki elle üretilmiş
+  dosyalarda 13 ilçe yanlış ildeydi (Cizre, İdil, Silopi, Gercüş, Hasankeyf → Mardin; Beytüşşebap,
+  Uludere → Hakkâri; Ağaçören, Sarıyahşi → Ankara; Armutlu → Bursa; Altınova → Kocaeli; Eflani, Ovacık
+  → Çankırı), 1961–1965'te Kaynarca (Kocaeli) ve 1994 yerelde Ardahan ile Iğdır (Kars içinde) eksikti.
+  `era1950`, `era1954` (ilçe verisi yok), `era1995` ve `era1999` (zaten örtüşüyor) değişmedi.
 - Yeniden üretim: `scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py` bütün adımları doğru
   sırayla çalıştırır: seçim katmanını geri al (`build_ilce_secim.py <seçim> geri_al`) →
   `apply_idari_merges.py` → İstanbul → `build_ilce_secim.py <seçim>` (her seçim) → il sınırları →
@@ -334,8 +340,9 @@ kalmasın; harita genel olarak doğru görünsün. Her seçim için:
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
-- **1955 yerel ve 1994 yerel için il sınır dosyası yok** (66 ve 76 il). Snapshot'ta
-  `provinceGeometryStatus: "missing_snapshot_do_not_guess"`.
+- **1955 yerel için il sınır dosyası yok** (66 il). Snapshot'ta
+  `provinceGeometryStatus: "missing_snapshot_do_not_guess"`. 1994 yerel için 2026-10-04'ten beri
+  `era1994` var (`build_il_sinirlari.py`; snapshot dosyası yeniden üretilmedi).
 - **1955 yerel verisi 64 il**: Adıyaman, Nevşehir, Sakarya yok, Kırşehir il olarak var.
 - **Bozkurt (Kastamonu)**: 1055 sayılı Kanunla 17.07.1968'de (merkezi Pazaryeri)
   kuruldu; 1961 ve 1965 seçim verisindeki "Bozkurt" satırları bu ilçe olamaz — seçim
