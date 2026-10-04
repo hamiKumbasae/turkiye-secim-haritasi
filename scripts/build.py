@@ -96,11 +96,17 @@ def assemble_embedded() -> dict:
         # acilisinda 15 yilin TAMAMINI (75MB acik veri) decompress etmek
         # yerine, JS sadece kullanicinin gercekten actigi yili lazy-load
         # ediyor (bkz. src/js/data-loader.js + map.js).
+        # mahalle_geo.json (~17MB acik) artik acilista cozulmuyor: ilk mahalleye inilince
+        # (lazy). Hangi ilcenin mahalle poligonu oldugu kucuk mahalle_geo_ids.json'dan bilinir.
         "mahalle_geo.json": gzip_b64(mahalle_geo),
+        "mahalle_geo_ids.json": gzip_b64(sorted(mahalle_geo)),
         "mahalle_coverage.json": gzip_b64(mahalle_coverage),
         **{f"mahalle_votes_{year}.json": gzip_b64(rows) for year, rows in mahalle_votes.items()},
         "meclis_2024.json": gzip_b64(meclis_2024),
-        "secim_tarihi_data.json": gzip_b64(secim_tarihi_data),
+        # secimler secim basina ayri anahtarda: acilista yalniz gosterilen secim cozulur
+        # (eskiden 46 secimin tamami, ~40MB acik JSON, tek seferde cozuluyordu)
+        "partiler.json": gzip_b64(partiler),
+        **{f"secim_{key}.json": gzip_b64(rec) for key, rec in secimler.items()},
         "turkiye_il_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_il_sinirlari.geojson")),
         "turkiye_ilce_sinirlari.geojson": gzip_b64(load_json(GEO_NORM / "turkiye_ilce_sinirlari.geojson")),
         "district_splits.json": gzip_b64(load_json(GEO_HIST / "district_splits.json")),

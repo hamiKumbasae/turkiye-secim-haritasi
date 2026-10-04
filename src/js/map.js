@@ -74,8 +74,9 @@
       GEO = geoEraCache[suffix];
     } else {
       const eras = await loadEmbeddedCached("eras", {});
+      geoEraCache[suffix] = eras[suffix];
+      if(currentGeoEra !== suffix) return; // bu arada baska donem secildi
       GEO = eras[suffix];
-      geoEraCache[suffix] = GEO;
     }
     countryProject = computeProjection(GEO.features, PAD);
   }
@@ -175,18 +176,20 @@
   }
 
   // Ucuz, senkron on-kontrol: bu ilcenin HIC mahalle poligonu var mi (yildan
-  // bagimsiz, MAHALLE_GEO hep eager yuklu). Gercek oy verisi (yil bazli,
+  // bagimsiz, MAHALLE_GEO_IDS hep eager yuklu). Gercek oy verisi (yil bazli,
   // lazy) icin mahalleDataForDistrict'i await edin.
   function mahalleGeoExistsForDistrict(geomId){
-    return !!MAHALLE_GEO[geomId];
+    return MAHALLE_GEO_IDS.has(geomId);
   }
 
   async function mahalleDataForDistrict(geomId){
-    const geoRows = MAHALLE_GEO[geomId];
-    if(!geoRows || DATA.oylama) return null; // mahalle oylari yalniz baskanlik secimi icin var
+    if(!MAHALLE_GEO_IDS.has(geomId) || DATA.oylama) return null; // mahalle oylari yalniz baskanlik secimi icin var
     const votesForYear = await loadMahalleVotesForYear(currentYear);
     const voteRows = votesForYear[geomId];
     if(!voteRows) return null;
+    // poligonlar yalniz bu yil/ilce icin gercekten mahalle oyu varsa cozulur
+    const geoRows = (await loadMahalleGeo())[geomId];
+    if(!geoRows) return null;
     const rows = [];
     for(const osmId in voteRows){
       const g = geoRows[osmId]; if(!g) continue;

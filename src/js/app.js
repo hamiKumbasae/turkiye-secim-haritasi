@@ -32,10 +32,16 @@
     loadYear(TUR_YEARS[tur][0]);
   }
 
+  // hizli art arda yil degistirmede yalniz son istegin sonucu uygulanir
+  let loadYearTicket = 0;
   async function loadYear(year){
+    const ticket = ++loadYearTicket;
+    const kayit = await fetchElection(year);
+    if(ticket !== loadYearTicket) return;
     currentYear = year;
     await ensureGeoForYear(year);
-    DATA = await oylamaKaydi(year, BUNDLE.secimler[year]);
+    DATA = await oylamaKaydi(year, kayit);
+    if(ticket !== loadYearTicket) return;
     MAJOR = DATA.majorPartiler;
     ilByPlaka = Object.fromEntries(DATA.iller.map(p => [p.plaka, p]));
     districtsByPlaka = {};

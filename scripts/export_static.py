@@ -16,7 +16,8 @@ Cikti (varsayilan: dist_static/, --out ile degistirilebilir):
   geo/il_sinirlari.geojson
   geo/ilce_sinirlari.geojson
   geo/ilce_sinirlari_hist.geojson
-  geo/mahalle_geo.json
+  geo/mahalle/<geomId>.json          - ilce basina mahalle poligonlari (yalniz o ilceye inilince
+                                       indirilir; tek dosya 17MB idi)
   geo/mahalle_coverage.json
   geo/district_splits.json
   geo/harita_notlari.json            - 'veri yok' poligon aciklamalari (tarihsel idari katman)
@@ -102,7 +103,10 @@ def main():
     write_json(out / "geo" / "il_sinirlari.geojson", load_json(GEO_NORM / "turkiye_il_sinirlari.geojson"))
     write_json(out / "geo" / "ilce_sinirlari.geojson", load_json(GEO_NORM / "turkiye_ilce_sinirlari.geojson"))
     write_json(out / "geo" / "ilce_sinirlari_hist.geojson", load_json(GEO_HIST / "turkiye_ilce_sinirlari_hist_splits.geojson"))
-    write_json(out / "geo" / "mahalle_geo.json", load_json(GEO_NORM / "mahalle_geo.json"))
+    mahalle_geo = load_json(GEO_NORM / "mahalle_geo.json")
+    for geom_id, rows in mahalle_geo.items():
+        write_json(out / "geo" / "mahalle" / f"{geom_id}.json", rows)
+    print(f"yazıldı: {len(mahalle_geo)} ilçe mahalle poligonu -> {out / 'geo' / 'mahalle'}/")
     write_json(out / "geo" / "district_splits.json", load_json(GEO_HIST / "district_splits.json"))
     write_json(out / "geo" / "harita_notlari.json", load_json(GEO_HIST / "idari" / "harita_notlari.json"))
     write_json(out / "geo" / "meclis_2024.json", load_json(DATA_NORM / "meclis_2024.json"))

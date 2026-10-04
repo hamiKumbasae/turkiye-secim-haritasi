@@ -45,7 +45,7 @@
   function computeLevels(){
     const ilceTotal = DATA.ilceler.length;
     const ilceWithData = DATA.ilceler.filter(d=>d.oy && Object.keys(d.oy).length>0).length;
-    // MAHALLE_GEO sadece poligon var mi'yi soyler (yildan bagimsiz, hep yuklu) -
+    // MAHALLE_GEO_IDS sadece poligon var mi'yi soyler (yildan bagimsiz, hep yuklu) -
     // bu yilin GERCEKTEN mahalle-duzeyi oy verisi olup olmadigini (build.py'nin
     // her yil icin data/normalized/mahalle/<yil>.json'daki ilce sayisini onceden
     // hesaplayip gomdugu MAHALLE_COVERAGE) ayrica kontrol ediyoruz - yoksa
