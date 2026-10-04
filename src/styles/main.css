@@ -66,6 +66,13 @@
   .tur-tabs button{font:inherit; font-family:'Inter',sans-serif; font-size:13px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; padding:9px 1px 11px; border:none; background:none; color:var(--ink-3); cursor:pointer; border-bottom:3px solid transparent; margin-bottom:-1px; transition:color .12s;}
   .tur-tabs button:hover{color:var(--ink-1);}
   .tur-tabs button.active{color:var(--ink-1); border-bottom-color:var(--ink-1);}
+  /* telefonda dort sekme tek satira sigmiyor, sayfa yatay kayiyordu: yatay kaydirilan satir */
+  @media (max-width:600px){
+    .tur-tabs{gap:18px; overflow-x:auto; scrollbar-width:none;}
+    .tur-tabs::-webkit-scrollbar{display:none;}
+    .tur-tabs button{flex:none; font-size:12px;}
+    .wrap{padding-inline:16px;}
+  }
 
   /* ---- year timeline ---- */
   .year-timeline{display:flex; align-items:center; gap:0; overflow-x:auto; padding:6px 0 20px; margin-bottom:22px; border-bottom:1px solid var(--line); scrollbar-width:thin;}
@@ -148,6 +155,12 @@
   .il-path{stroke:var(--map-stroke); stroke-width:1; cursor:pointer; transition:filter .1s;}
   .il-path:hover{filter:brightness(1.12); stroke-width:1.6;}
   .il-path.selected{stroke:var(--ink-1); stroke-width:2.2;}
+  .il-path:focus{outline:none;}
+  .il-path:focus-visible{stroke:var(--ink-1); stroke-width:2.8; filter:brightness(1.12);}
+  .toggle-btn{font:inherit; font-size:12.5px; font-weight:600; padding:6px 11px; border:1px solid var(--line); border-radius:8px; background:var(--surface-1); color:var(--ink-2); cursor:pointer;}
+  .toggle-btn.active{background:var(--ink-1); color:var(--surface-0); border-color:var(--ink-1);}
+  .toggle-btn:hover:not(.active){background:var(--surface-2);}
+  button:focus-visible, select:focus-visible, a:focus-visible{outline:2px solid var(--ink-1); outline-offset:2px;}
   /* Bu donem icin gercek sonucu olmayan ilce (orn. henuz kurulmamis modern
      ilce) - haritada bos birakmamak icin cizilir ama tiklanabilir/vurgulanir
      GORUNMEZ, yaniltici bir "veri var" izlenimi vermez. */

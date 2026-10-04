@@ -70,8 +70,10 @@
     return h;
   }
   function positionTip(e){
-    tip.style.left = e.clientX+'px';
-    tip.style.top = (e.clientY-10)+'px';
+    // kutu imlecin ustunde ortalanir (translate -50%,-100%); dar ekranda kenardan tasmasin
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    tip.style.left = Math.min(Math.max(e.clientX, w/2 + 8), innerWidth - w/2 - 8)+'px';
+    tip.style.top = Math.max(e.clientY - 10, h + 8)+'px';
     tip.style.opacity = 1;
   }
   function hideTooltip(){ tip.style.opacity=0; }

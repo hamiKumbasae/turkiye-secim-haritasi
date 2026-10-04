@@ -44,7 +44,7 @@ ERA_ADLARI = ["era1950", "era1954", "era1957_1965", "era1957_1987", "era1991", "
 JS_FILES = [
     "data-loader.js", "election-config.js", "state.js", "result-utils.js", "seatbar.js",
     "summary.js", "map.js", "tooltip.js", "detail-panel.js", "search.js", "nav.js",
-    "table.js", "link.js", "app.js",
+    "table.js", "link.js", "erisim.js", "app.js",
 ]
 
 

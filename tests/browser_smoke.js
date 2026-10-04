@@ -903,6 +903,32 @@ async function scenario_csv(browser) {
   check('CSV: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
 }
 
+// Erisilebilirlik: klavye, ekran okuyucu etiketi, renk koru paleti, telefonda yatay kayma yok.
+async function scenario_erisim(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(500);
+    const ankara = page.locator('path[data-plaka="6"]');
+    const etiket = await ankara.getAttribute('aria-label');
+    check('erişim: il bölgesinin ekran okuyucu etiketi var', /^Ankara: .+ önde$/.test(etiket || ''), etiket);
+    await ankara.focus();
+    await page.keyboard.press('Enter');
+    await page.waitForTimeout(500);
+    const crumb = await page.$eval('#mapBreadcrumbName', (el) => el.textContent);
+    check('erişim: Enter ile ile iniliyor', /Ankara/.test(crumb), crumb);
+    await page.click('#btnBackCountry');
+    const once = await page.locator('path[data-plaka="6"]').getAttribute('fill');
+    await page.click('#btnRenkKoru');
+    const sonra = await page.locator('path[data-plaka="6"]').getAttribute('fill');
+    check('erişim: renk körü dostu palet uygulanıyor', once !== sonra && /^#(E69F00|0072B2|009E73|D55E00|56B4E9|CC79A7|F0E442|9a9a9a)$/.test(sonra), once + ' -> ' + sonra);
+    await page.click('#btnRenkKoru');
+    await page.setViewportSize({ width: 390, height: 844 });
+    const genislik = await page.evaluate(() => document.documentElement.scrollWidth);
+    check('erişim: 390 px telefonda yatay kayma yok', genislik === 390, String(genislik));
+  });
+  check('erişim: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function main() {
   const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {});
   try {
@@ -930,6 +956,7 @@ async function main() {
     await scenario_baglanti(browser);
     await scenario_yontem(browser);
     await scenario_csv(browser);
+    await scenario_erisim(browser);
   } finally {
     await browser.close();
   }
