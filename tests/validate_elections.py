@@ -489,8 +489,23 @@ def check_completed_records():
               and any(r.get("geomId") == "TR-D-56-007" and r.get("oy") for r in rec["ilceler"]))
 
 
+def check_vote_completion():
+    """2024 yerel: YSK agregesine aktarilmamis bagimsiz oylari Vikipedi'den tamamlandi
+    (scripts/pipelines/election_import/wiki_bagimsiz.py); kucuk farklar 'Diğer'de (diger_tamamla.py)."""
+    rec = load_all_elections()["2024yerel"]
+    ilce = {(r["plaka"], r["ad"]): r for r in rec["ilceler"]}
+    eksik = [r["ad"] for r in rec["iller"] + rec["ilceler"]
+             if r.get("gecerliOy") and r.get("oy") and all(v.get("oy") is not None for v in r["oy"].values())
+             and abs(sum(v["oy"] for v in r["oy"].values()) - r["gecerliOy"]) > max(1, r["gecerliOy"] * .0001)]
+    check("2024 yerel: her kaydın parti oyları toplamı geçerli oya eşit", not eksik, ", ".join(eksik[:5]))
+    check("2024 yerel: Vakfıkebir bağımsız, Kırklareli merkez MHP, Kütahya merkez CHP kazandı",
+          ilce[(61, "Vakfıkebir")]["kazanan"] == "Bağımsız" and ilce[(39, "Merkez")]["kazanan"] == "MHP"
+          and ilce[(43, "Merkez")]["kazanan"] == "CHP")
+
+
 def main():
     check_completed_records()
+    check_vote_completion()
     check_checksums()
     check_raw_checksum_coverage()
     check_sandalye_totals()
