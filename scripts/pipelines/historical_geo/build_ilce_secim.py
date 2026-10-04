@@ -196,7 +196,7 @@ def tablo():
         satir[g] = {"guncel_geomId": g, "guncel_il": guncel_il[modern_plaka[g]], "guncel_ilce": ad(g),
                     "kurulus_tarihi": "" if kur.get("cumhuriyetOncesi") else (kur.get("tarih") or ""),
                     "kurulus_kanunu": kur.get("kanun") or "",
-                    "plaka_secim": hedef[0] if hedef else "", "il_secim": il61[hedef[0]] if hedef else "",
+                    "plaka_secim": hedef[0] if hedef else "", "il_secim": il61.get(hedef[0], f"plaka {hedef[0]}") if hedef else "",
                     "ilce_secim": hedef[1] if hedef else "", "geomId_secim": satirlar[hedef]["geomId"] if hedef else "",
                     "yontem": yontem, "guven": GUVEN[yontem], "kaynak": kaynak, "not": not_}
 
@@ -212,7 +212,7 @@ def tablo():
                 yaz(g, None, "bolunmus_poligon", kaynak,
                     "Seçim tarihinde " + " ve ".join(k[1] for k in ks) + " arasında bölünmüş. " + not_)
                 satir[g]["guven"] = gv
-            satir[g].update(plaka_secim=ks[0][0], il_secim=il61[ks[0][0]], ilce_secim=" + ".join(k[1] for k in ks),
+            satir[g].update(plaka_secim=ks[0][0], il_secim=il61.get(ks[0][0], f"plaka {ks[0][0]}"), ilce_secim=" + ".join(k[1] for k in ks),
                             geomId_secim=" + ".join(satirlar[k]["geomId"] for k in ks))
             continue
         if not ks:
