@@ -110,7 +110,9 @@ def tr_baslik(s):
 
 
 def ascii_ad(ad):
-    return ad.translate(str.maketrans("İıĞğÜüŞşÖöÇçÂâÎîÛû", "IiGgUuSsOoCcAaIiUu")).replace(" ", "")
+    """kimlik icin: 'Ankara (il merkezi belediyesi)' -> 'Ankara', 'Felâhiye' -> 'Felahiye'"""
+    ad = ad.split(" (")[0].translate(str.maketrans("İıĞğÜüŞşÖöÇçÂâÎîÛû", "IiGgUuSsOoCcAaIiUu"))
+    return re.sub(r"[^A-Za-z0-9]", "", ad)
 
 
 def kapsam(splits):

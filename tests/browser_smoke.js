@@ -581,14 +581,16 @@ async function scenario_yerelIlMerkezi(browser) {
     await page.waitForTimeout(600);
     const ada = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
     check('1977 yerel Adana: Merkez (il merkezi belediyesi) poligonu çiziliyor',
-      ada.some((i) => i.startsWith('HISTK-HIST-Adana-Merkez-') || i === 'HIST-Adana-Merkez') && !ada.includes('TR-D-01-012'), JSON.stringify(ada));
+      ada.some((i) => merkezPoligonu(i, 'HIST-Adana-Merkez', '1977yerel', '1') || i.startsWith('HISTK-HIST-Adana-Merkez-'))
+        && !ada.includes('TR-D-01-012'), JSON.stringify(ada));
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
     await page.$eval('path[data-plaka="6"]', (el) => el.dispatchEvent(new MouseEvent('click', {bubbles: true})));
     await page.waitForTimeout(600);
     const ank = await page.$$eval('path[data-geom-id]', (els) => els.map((e) => e.dataset.geomId));
     check('1977 yerel Ankara: şehir (Altındağ/Çankaya/Yenimahalle) tek il merkezi poligonu',
-      ank.some((i) => i.includes('HISTY-06-1977yerel')) && !ank.includes('TR-D-06-007'), JSON.stringify(ank));
+      // build_ilce_secim.py sonradan kurulan ilceleri sehre katarsa HIST1977yerel-06-Ankara
+      ank.some((i) => i.includes('HISTY-06-1977yerel') || i === 'HIST1977yerel-06-Ankara') && !ank.includes('TR-D-06-007'), JSON.stringify(ank));
     await page.click('#btnBackCountry').catch(() => {});
     await page.waitForTimeout(300);
     check('1989 yerel: yıl seçilebildi', await clickYear(page, '1989'));
