@@ -98,6 +98,7 @@ SATIRSIZ = {"Eminönü": "Fatih"}
 K = "{} sayılı Kanun ek ({}) sayılı liste"
 AUDIT = "geo/historical/NATIONWIDE_DISTRICT_AUDIT.md (3806 dalgası: kaymakamlık tarihçeleri)"
 SAYIM = "geo/historical/idari/sayim_kaniti.json (DİE 1960/1985/1990 GNS köy bağlılığı)"
+SAYIM60 = "1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf)"
 # butunuyle tek eski ilceye bagli bugunku ilceler: kod -> [(baslangic, bitis, ilce, dayanak)];
 # son bitis kurulus tarihidir (ondan sonra kendisi)
 ZINCIR = {
@@ -124,6 +125,12 @@ ZINCIR = {
     "036": [(BASLANGIC, "1987-07-04", "Kartal", "Pendik'in parçası (3392 öncesi): " + SAYIM),
             ("1987-07-04", "1992-06-03", "Pendik",
              K.format(3392, 48) + ": Tuzla, Aydınlı, Aydıntepe, İçmeler, Şifa, Esenyalı; 3806 ek (6) Tuzla listesi")],
+    # 3392 listelerinde mahallelerin eski ilcesi yazili degil; 1960 sayimina gore yaklasik (butun ilce)
+    "024": [(BASLANGIC, "1987-07-04", "Şişli", "Yaklaşık: " + SAYIM60 + ": Kâğıthane (Sadabat) ve Ayazağa köyleri Şişli "
+                                                "Merkez bucağında; 1963 belediye haritasıyla tutarlı")],
+    "037": [(BASLANGIC, "1987-07-04", "Üsküdar", "Yaklaşık: " + SAYIM60 + ": Ümraniye, Aşağıdudullu, Yukarıdudullu köyleri "
+                                                 "Üsküdar Merkez bucağında; 3392 (51) listesindeki Beykoz köyleri bugün "
+                                                 "Çekmeköy'de")],
 }
 # mahalle tablosu kapsamindan sonra kendi adini alan ilceler (1987'de kurulan, mahalle tablosu 1961-1987)
 SONRA_KENDISI = {"024": "Kağıthane", "037": "Ümraniye"}

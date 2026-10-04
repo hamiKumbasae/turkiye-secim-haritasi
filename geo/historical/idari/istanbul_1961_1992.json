@@ -123,9 +123,56 @@
     "ilce": "Pendik",
     "dayanak": "3392 sayılı Kanun ek (48) sayılı liste: Tuzla, Aydınlı, Aydıntepe, İçmeler, Şifa, Esenyalı; 3806 ek (6) Tuzla listesi"
    }
+  ],
+  "TR-D-34-024": [
+   {
+    "baslangic": "1961-01-01",
+    "bitis": "1987-07-04",
+    "ilce": "Şişli",
+    "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Kâğıthane (Sadabat) ve Ayazağa köyleri Şişli Merkez bucağında; 1963 belediye haritasıyla tutarlı"
+   }
+  ],
+  "TR-D-34-037": [
+   {
+    "baslangic": "1961-01-01",
+    "bitis": "1987-07-04",
+    "ilce": "Üsküdar",
+    "dayanak": "Yaklaşık: 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Ümraniye, Aşağıdudullu, Yukarıdudullu köyleri Üsküdar Merkez bucağında; 3392 (51) listesindeki Beykoz köyleri bugün Çekmeköy'de"
+   }
   ]
  },
  "sentetikler": {
+  "HIST-Istanbul-Bakirkoy-6f7b51": {
+   "ad": "Bakırköy",
+   "bugunkuIlceler": [
+    "TR-D-34-004",
+    "TR-D-34-005",
+    "TR-D-34-006",
+    "TR-D-34-007",
+    "TR-D-34-008",
+    "TR-D-34-017",
+    "TR-D-34-022",
+    "TR-D-34-026"
+   ],
+   "paylar": {
+    "TR-D-34-008": 0.8294
+   },
+   "mahalleler": {
+    "TR-D-34-008": [
+     "ALTINŞEHİR MAH.",
+     "BAŞAK MAH.",
+     "BAŞAKŞEHİR MAH.",
+     "GÜVERCİNTEPE MAH.",
+     "KAYABAŞI MAH.",
+     "ZİYA GÖKALP MAH.",
+     "ŞAMLAR MAH."
+    ]
+   },
+   "secimler": [
+    "1961"
+   ],
+   "alanKm2": 278.6
+  },
   "HIST-Istanbul-Bakirkoy-733c6e": {
    "ad": "Bakırköy",
    "bugunkuIlceler": [
@@ -149,6 +196,29 @@
     "1991"
    ],
    "alanKm2": 121.3
+  },
+  "HIST-Istanbul-Beykoz-452121": {
+   "ad": "Beykoz",
+   "bugunkuIlceler": [
+    "TR-D-34-011",
+    "TR-D-34-016"
+   ],
+   "paylar": {
+    "TR-D-34-016": 0.553
+   },
+   "mahalleler": {
+    "TR-D-34-016": [
+     "CUMHURİYET MAH.",
+     "HÜSEYİNLİ MAH.",
+     "KOÇULLU MAH.",
+     "SIRAPINAR MAH.",
+     "ÖMERLİ MAH."
+    ]
+   },
+   "secimler": [
+    "1961"
+   ],
+   "alanKm2": 396.8
   },
   "HIST-Istanbul-Buyukcekmece-a53455": {
    "ad": "Büyükçekmece",
@@ -205,6 +275,46 @@
    ],
    "alanKm2": 1378.8
   },
+  "HIST-Istanbul-Catalca-eb02ce": {
+   "ad": "Çatalca",
+   "bugunkuIlceler": [
+    "TR-D-34-002",
+    "TR-D-34-008",
+    "TR-D-34-012",
+    "TR-D-34-014",
+    "TR-D-34-015",
+    "TR-D-34-018"
+   ],
+   "paylar": {
+    "TR-D-34-002": 0.5033,
+    "TR-D-34-008": 0.1706
+   },
+   "mahalleler": {
+    "TR-D-34-002": [
+     "BAKLALI MAH.",
+     "BOYALIK MAH.",
+     "DELİKLİKAYA MAH.",
+     "DURSUNKÖY MAH.",
+     "DURUSU MAH.",
+     "HADIMKÖY MAH.",
+     "HASTANE MAH.",
+     "KARABURUN MAH.",
+     "SAZLIBOSNA MAH.",
+     "TERKOS MAH.",
+     "YASSIÖREN MAH.",
+     "YEŞİLBAYIR MAH.",
+     "ÖMERLİ MAH."
+    ],
+    "TR-D-34-008": [
+     "BAHÇEŞEHİR 1. KISIM MAH.",
+     "BAHÇEŞEHİR 2. KISIM MAH."
+    ]
+   },
+   "secimler": [
+    "1961"
+   ],
+   "alanKm2": 1653.4
+  },
   "HIST-Istanbul-Eyup-3b0f2c": {
    "ad": "Eyüp",
    "bugunkuIlceler": [
@@ -224,6 +334,49 @@
     "1989yerel"
    ],
    "alanKm2": 245.2
+  },
+  "HIST-Istanbul-Eyup-595459": {
+   "ad": "Eyüp",
+   "bugunkuIlceler": [
+    "TR-D-34-002",
+    "TR-D-34-009",
+    "TR-D-34-019",
+    "TR-D-34-021",
+    "TR-D-34-033"
+   ],
+   "paylar": {
+    "TR-D-34-002": 0.4967
+   },
+   "mahalleler": {
+    "TR-D-34-002": [
+     "ADNAN MENDERES MAH.",
+     "ANADOLU MAH.",
+     "ARNAVUTKÖY MERKEZ MAH.",
+     "BOLLUCA MAH.",
+     "BOĞAZKÖY İSTİKLAL MAH.",
+     "FATİH MAH.",
+     "HACIMAŞLI MAH.",
+     "HARAÇÇI MAH.",
+     "HİCRET MAH.",
+     "KARLIBAYIR MAH.",
+     "MAREŞAL FEVZİ ÇAKMAK MAH.",
+     "MAVİGÖL MAH.",
+     "MEHMET AKİF ERSOY MAH.",
+     "MUSTAFA KEMAL PAŞA MAH.",
+     "TAYAKADIN MAH.",
+     "TAŞOLUK MAH.",
+     "YAVUZ SELİM MAH.",
+     "YENİKÖY MAH.",
+     "YUNUS EMRE MAH.",
+     "ÇİLİNGİR MAH.",
+     "İMRAHOR MAH.",
+     "İSLAMBEY MAH."
+    ]
+   },
+   "secimler": [
+    "1961"
+   ],
+   "alanKm2": 514.9
   },
   "HIST-Istanbul-Eyup-c7f419": {
    "ad": "Eyüp",
@@ -302,6 +455,34 @@
    ],
    "alanKm2": 269.8
   },
+  "HIST-Istanbul-Kadikoy-4ae9af": {
+   "ad": "Kadıköy",
+   "bugunkuIlceler": [
+    "TR-D-34-003",
+    "TR-D-34-023"
+   ],
+   "paylar": {
+    "TR-D-34-003": 0.6822
+   },
+   "mahalleler": {
+    "TR-D-34-003": [
+     "ATATÜRK MAH.",
+     "BARBAROS MAH.",
+     "KAYIŞDAĞI MAH.",
+     "KÜÇÜKBAKKALKÖY MAH.",
+     "MEVLANA MAH.",
+     "MUSTAFA KEMAL MAH.",
+     "MİMAR SİNAN MAH.",
+     "YENİSAHRA MAH.",
+     "İNÖNÜ MAH.",
+     "İÇERENKÖY MAH."
+    ]
+   },
+   "secimler": [
+    "1961"
+   ],
+   "alanKm2": 42.6
+  },
   "HIST-Istanbul-Kadikoy-510ecd": {
    "ad": "Kadıköy",
    "bugunkuIlceler": [
@@ -360,6 +541,56 @@
    ],
    "alanKm2": 146.4
   },
+  "HIST-Istanbul-Kartal-523af3": {
+   "ad": "Kartal",
+   "bugunkuIlceler": [
+    "TR-D-34-003",
+    "TR-D-34-016",
+    "TR-D-34-025",
+    "TR-D-34-027",
+    "TR-D-34-028",
+    "TR-D-34-029",
+    "TR-D-34-032",
+    "TR-D-34-036"
+   ],
+   "paylar": {
+    "TR-D-34-003": 0.171,
+    "TR-D-34-016": 0.0043,
+    "TR-D-34-029": 0.9847
+   },
+   "mahalleler": {
+    "TR-D-34-003": [
+     "FERHATPAŞA MAH."
+    ],
+    "TR-D-34-016": [
+     "AYDINLAR MAH."
+    ],
+    "TR-D-34-029": [
+     "ABDURRAHMANGAZİ MAH.",
+     "AKPINAR MAH.",
+     "ATATÜRK MAH.",
+     "EMEK MAH.",
+     "EYÜP SULTAN MAH.",
+     "FATİH MAH.",
+     "HİLAL MAH.",
+     "KEMAL TÜRKLER MAH.",
+     "MERVE MAH.",
+     "MEVLANA MAH.",
+     "OSMANGAZİ MAH.",
+     "PAŞAKÖY MAH.",
+     "SAFA MAH.",
+     "SARIGAZİ MAH.",
+     "VEYSEL KARANİ MAH.",
+     "YENİDOĞAN MAH.",
+     "YUNUS EMRE MAH.",
+     "İNÖNÜ MAH."
+    ]
+   },
+   "secimler": [
+    "1961"
+   ],
+   "alanKm2": 515.8
+  },
   "HIST-Istanbul-Kucukcekmece-8a047e": {
    "ad": "Küçükçekmece",
    "bugunkuIlceler": [
@@ -399,6 +630,19 @@
     "1991"
    ],
    "alanKm2": 328.8
+  },
+  "HIST-Istanbul-Sisli-d44c9c": {
+   "ad": "Şişli",
+   "bugunkuIlceler": [
+    "TR-D-34-024",
+    "TR-D-34-035"
+   ],
+   "paylar": {},
+   "mahalleler": {},
+   "secimler": [
+    "1961"
+   ],
+   "alanKm2": 25.5
   },
   "HIST-Istanbul-Umraniye-fb42ce": {
    "ad": "Ümraniye",
@@ -463,9 +707,195 @@
     "1991"
    ],
    "alanKm2": 37.8
+  },
+  "HIST-Istanbul-Uskudar-5de88e": {
+   "ad": "Üsküdar",
+   "bugunkuIlceler": [
+    "TR-D-34-003",
+    "TR-D-34-016",
+    "TR-D-34-029",
+    "TR-D-34-037",
+    "TR-D-34-038"
+   ],
+   "paylar": {
+    "TR-D-34-003": 0.1468,
+    "TR-D-34-016": 0.4427,
+    "TR-D-34-029": 0.0153
+   },
+   "mahalleler": {
+    "TR-D-34-003": [
+     "ESATPAŞA MAH.",
+     "FETİH MAH.",
+     "YENİ ÇAMLICA MAH.",
+     "YENİŞEHİR MAH.",
+     "ÖRNEK MAH."
+    ],
+    "TR-D-34-016": [
+     "ALEMDAĞ MAH.",
+     "EKŞİOĞLU MAH.",
+     "GÜNGÖREN MAH.",
+     "HAMİDİYE MAH.",
+     "KİRAZLIDERE MAH.",
+     "MEHMET AKİF MAH.",
+     "MERKEZ MAH.",
+     "MİMAR SİNAN MAH.",
+     "NİŞANTEPE MAH.",
+     "REŞADİYE MAH.",
+     "SOĞUKPINAR MAH.",
+     "SULTANÇİFTLİĞİ MAH.",
+     "TAŞDELEN MAH.",
+     "ÇAMLIK MAH.",
+     "ÇATALMEŞE MAH."
+    ],
+    "TR-D-34-029": [
+     "MECLİS MAH."
+    ]
+   },
+   "secimler": [
+    "1961"
+   ],
+   "alanKm2": 153.6
   }
  },
  "secimler": {
+  "1961": {
+   "tarih": "1961-10-15",
+   "satirlar": {
+    "Adalar": {
+     "geomId": "TR-D-34-001",
+     "bugunkuIlceler": [
+      "TR-D-34-001"
+     ]
+    },
+    "Bakırköy": {
+     "geomId": "HIST-Istanbul-Bakirkoy-6f7b51",
+     "bugunkuIlceler": [
+      "TR-D-34-004",
+      "TR-D-34-005",
+      "TR-D-34-006",
+      "TR-D-34-007",
+      "TR-D-34-008",
+      "TR-D-34-017",
+      "TR-D-34-022",
+      "TR-D-34-026"
+     ]
+    },
+    "Beykoz": {
+     "geomId": "HIST-Istanbul-Beykoz-452121",
+     "bugunkuIlceler": [
+      "TR-D-34-011",
+      "TR-D-34-016"
+     ]
+    },
+    "Beyoğlu": {
+     "geomId": "TR-D-34-013",
+     "bugunkuIlceler": [
+      "TR-D-34-013"
+     ]
+    },
+    "Beşiktaş": {
+     "geomId": "TR-D-34-010",
+     "bugunkuIlceler": [
+      "TR-D-34-010"
+     ]
+    },
+    "Eminönü": {
+     "geomId": "HIST-Istanbul-Eminonu",
+     "bugunkuIlceler": [
+      "TR-D-34-020"
+     ]
+    },
+    "Eyüp": {
+     "geomId": "HIST-Istanbul-Eyup-595459",
+     "bugunkuIlceler": [
+      "TR-D-34-002",
+      "TR-D-34-009",
+      "TR-D-34-019",
+      "TR-D-34-021",
+      "TR-D-34-033"
+     ]
+    },
+    "Fatih": {
+     "geomId": "HIST-Istanbul-Fatih",
+     "bugunkuIlceler": [
+      "TR-D-34-020"
+     ]
+    },
+    "Kadıköy": {
+     "geomId": "HIST-Istanbul-Kadikoy-4ae9af",
+     "bugunkuIlceler": [
+      "TR-D-34-003",
+      "TR-D-34-023"
+     ]
+    },
+    "Kartal": {
+     "geomId": "HIST-Istanbul-Kartal-523af3",
+     "bugunkuIlceler": [
+      "TR-D-34-003",
+      "TR-D-34-016",
+      "TR-D-34-025",
+      "TR-D-34-027",
+      "TR-D-34-028",
+      "TR-D-34-029",
+      "TR-D-34-032",
+      "TR-D-34-036"
+     ]
+    },
+    "Sarıyer": {
+     "geomId": "TR-D-34-030",
+     "bugunkuIlceler": [
+      "TR-D-34-030"
+     ]
+    },
+    "Silivri": {
+     "geomId": "TR-D-34-031",
+     "bugunkuIlceler": [
+      "TR-D-34-031"
+     ]
+    },
+    "Zeytinburnu": {
+     "geomId": "TR-D-34-039",
+     "bugunkuIlceler": [
+      "TR-D-34-039"
+     ]
+    },
+    "Çatalca": {
+     "geomId": "HIST-Istanbul-Catalca-eb02ce",
+     "bugunkuIlceler": [
+      "TR-D-34-002",
+      "TR-D-34-008",
+      "TR-D-34-012",
+      "TR-D-34-014",
+      "TR-D-34-015",
+      "TR-D-34-018"
+     ]
+    },
+    "Üsküdar": {
+     "geomId": "HIST-Istanbul-Uskudar-5de88e",
+     "bugunkuIlceler": [
+      "TR-D-34-003",
+      "TR-D-34-016",
+      "TR-D-34-029",
+      "TR-D-34-037",
+      "TR-D-34-038"
+     ]
+    },
+    "Şile": {
+     "geomId": "TR-D-34-034",
+     "bugunkuIlceler": [
+      "TR-D-34-034"
+     ]
+    },
+    "Şişli": {
+     "geomId": "HIST-Istanbul-Sisli-d44c9c",
+     "bugunkuIlceler": [
+      "TR-D-34-024",
+      "TR-D-34-035"
+     ]
+    }
+   },
+   "tarali": {}
+  },
   "1989yerel": {
    "tarih": "1989-03-26",
    "satirlar": {
