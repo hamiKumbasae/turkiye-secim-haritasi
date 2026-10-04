@@ -19,8 +19,8 @@ alanına boyamaktır. Bu katman, bunun için gereken kaydı tutar.
 | `election_admin_snapshots.json` | Üretilir, **elle düzenlenmez** | Her seçim tarihinde iller, il sınır dosyası, ilçeler, henüz ayrı olmayan ilçeler ve geometri kuralları |
 | `elle_olaylar.json` | Elle, kaynaklı | Kuruluş listesinde olmayan olaylar (şimdilik Kırşehir 1954–1957) |
 | `faz1_rapor.json` | Üretilir | Tutarlılık denetimi |
-| `ilce_1961_eslesme.csv` | Üretilir (`build_ilce_1961.py tablo`) | Bugünkü ilçe → 1961 ilçesi eşleme tablosu |
-| `ilce_1961.json` | Üretilir (`build_ilce_1961.py uygula`) | 1961 birleşim poligonları, belirsizler, geometrisiz satırlar |
+| `ilce_eslesme/<seçim>.csv` | Üretilir (`build_ilce_secim.py <seçim> tablo`) | Bugünkü ilçe → o seçimdeki ilçe eşleme tablosu |
+| `ilce_eslesme/<seçim>.json` | Üretilir (`build_ilce_secim.py <seçim> uygula`) | Birleşim poligonları, belirsizler, geometrisiz satırlar |
 
 Üretim:
 
@@ -269,6 +269,7 @@ Her seçim tarihinde:
 - Seçimler `ilce_bolusumu.json` → `uygulananSecimler` ile tek tek açılır; kayıt
   `istanbul_1961_1992.json` (seçim seçim satır bileşimleri, taralı ilçeler ve belirsiz
   mahalleler).
+- 2026-10-04: 1961–1991 genel seçimleri, referandumları ve 1984 yerel de açıldı (bkz. "Seçim seçim ilçe sınırları").
 - Kapsam dışı: 1963–1977 yerel seçimleri (il merkezi belediyesi satırı `HISTY-*`, köyler
   belediye seçimine girmez) ve Yalova (1995'e kadar İstanbul'un ilçesi; il katmanında).
 
@@ -282,32 +283,53 @@ bütünüyle katılır ya da bütün hâlinde taranır. Mahalle poligonu kaynağ
 `ilce_bolusumu_mahalleler.json`'da). Parçalar `ilce_bolusumu_parcalar.geojson`'da;
 `apply_idari_merges.py` her parçayı o seçimdeki eski ilçenin satırına katar ve ipucu payı yazar.
 
-## 1961 genel seçimi ilçe sınırları (2026-10-04, `build_ilce_1961.py`)
+## Seçim seçim ilçe sınırları, 1961–2007 (2026-10-04, `build_ilce_secim.py`)
 
-1961 ilçe haritasında 973 bugünkü ilçenin 929'u daha önce de (yukarıdaki HISTK/HIST birleşimleriyle) bir
-1961 satırına bağlıydı; 44'ü taralı kalıyordu. Bu adım 1961'i tek bir tabloya bağlar:
+Amaç: 1961–2007 arası her ilçe düzeyli seçimin haritasında hiçbir bugünkü ilçe sonuçsuz (taralı)
+kalmasın; harita genel olarak doğru görünsün. Her seçim için:
 
-- `ilce_1961_eslesme.csv`: her bugünkü ilçe için 1961'deki ilçesi, kuruluş tarihi/kanunu, yöntem, güven,
-  kaynak ve not. 1961'de var olan ilçeler 1961 seçim sonucunun satırlarıdır (esas kaynak).
-- Yöntemler: `kendi_satiri` (439), `tarihsel_birlesim` (489, mevcut kaynaklı HISTK/HIST),
-  `bolunmus_poligon` (Fatih: 1961'de Eminönü + Fatih), `istanbul_zinciri` (Esenler → Bakırköy,
-  `build_istanbul_1961_1992.py` → `ZINCIR`), `ayni_1961_ilcesi` (çok kaynaklı ama bütün eski ilçeleri
-  1961'de aynı ilçenin parçası: Bayramören → Kurşunlu, Derbent → Konya Merkez), `cogunluk` (ek liste
-  birimlerinin en az %70'i aynı 1961 ilçesinden; "Merkez çoğunluğu" kuralının her ilçeye uygulanmışı,
-  yalnız 1961 için; 18 ilçe, güven `yaklasik`), `belirsiz` (23 ilçe, taralı kalır).
-- Pay hesabı: ek listedeki her eski ilçe 1961 karşılığına çevrilir (zincirle; ör. Esenyurt'un
-  Büyükçekmece birimleri 1961'de Çatalca); kaynağı yazılmamış birim "bilinmiyor" sayılır ve paydaya girer.
-- `uygula`: bir satırın bugünkü ilçeleri mevcut poligonundan fazlaysa `HIST1961-<plaka>-<Ad>` poligonu
-  üretilir (mevcut poligon + katılan bugünkü ilçeler, dikiş delikleri doldurulur) ve yalnız 1961
-  satırının `geomId`'si değişir. 19 poligon, 21 ilçe. `harita_notlari.json`'da 1961 taraması ve ipucu
-  ("Bugünkü sınırlarla", çoğunluk payları) güncellenir. Kayıt: `ilce_1961.json`.
-- `kontrol` (ayrıca `tests/validate_elections.py`): her 1961 satırı tek poligona, her bugünkü ilçe en
-  fazla bir satıra bağlı (Fatih hariç, bölünmüş poligon); tablo ile harita tutarlı; birleşimler il dışına
-  taşmıyor.
+- `ilce_eslesme/<seçim>.csv`: her bugünkü ilçenin o seçimdeki satırı, kuruluş tarihi/kanunu, yöntem,
+  güven (`kesin`, `yaklasik`, `kaba`), kaynak ve not. O tarihte var olan ilçeler seçim sonucunun
+  satırlarıdır (esas kaynak). Kayıt ve birleşimler: `ilce_eslesme/<seçim>.json`.
+- Yöntemler: `kendi_satiri`, `tarihsel_birlesim` (mevcut kaynaklı HISTK/HIST), `istanbul_mahalle` ve
+  `bolunmus_poligon` (İstanbul mahalle tablosu; Eminönü/Fatih), `istanbul_zinciri`, `ayni_eski_ilce`
+  (bütün eski ilçeleri o tarihte aynı ilçede), `cogunluk` (ek liste birimlerinin ≥%70'i aynı ilçeden;
+  yaklaşık), `en_buyuk_pay` (%70'e ulaşan yok; kaba), `komsuluk` (soy bilgisi yok ya da eski ilçeleri
+  o tarihte belirsiz: en uzun sınır komşusu satır, aynı ilde; il o seçimde yoksa komşu ilde; kaba).
+- Pay hesabı: ek listedeki her eski ilçe o seçimdeki karşılığına çevrilir (zincirle); kaynağı
+  yazılmamış birim "bilinmiyor" sayılır ve paydaya girer.
+- `uygula`: bir satırın bugünkü ilçeleri mevcut poligonundan fazlaysa `HIST<seçim>-<plaka>-<Ad>`
+  poligonu üretilir (mevcut poligon + katılan bugünkü ilçeler, dikiş delikleri doldurulur); yalnız o
+  seçimin satırlarının `geomId`'si değişir, oy değişmez. `harita_notlari.json`'da tarama ve ipucu
+  ("Bugünkü sınırlarla", mahalle ve çoğunluk payları) güncellenir. Yerel seçimlerde ardından
+  `build_meclis_harita.py` (meclis haritaları başkanlık satırlarının poligonlarını kullanır).
+- `kontrol` (ayrıca `tests/validate_elections.py`, bütün `ilce_eslesme/*.csv` için): her satır tek
+  poligona, her bugünkü ilçe en fazla bir satıra bağlı (bölünmüş poligonlar ve aynı ad/poligonlu çift
+  satır hariç); tablo ile harita tutarlı; birleşimler il dışına taşmıyor.
+- İstanbul: `build_istanbul_1961_1992.py` 1961–1991 genel seçimleri, referandumları ve 1984/1989
+  yerel için çalışır (`ilce_bolusumu.json` → `uygulananSecimler`). 1987 öncesi Ümraniye mahalleleri
+  (bugünkü Ataşehir, Çekmeköy, Sancaktepe parçaları) `prepare_istanbul_historical_assignments.py`
+  içinde 1960 sayımının köy listesiyle, adı sayımda olmayanlar komşu sınır çoğunluğuyla (yaklaşık);
+  Kağıthane → Şişli, Ümraniye → Üsküdar `ZINCIR`'da (1960 sayımı, yaklaşık). 1963–1977 yerelde
+  sonradan kurulan İstanbul ilçeleri, o tarihteki ilçelerini kapsayan satıra (il merkezi belediyesi
+  poligonu, Çatalca, Kartal) bağlanır. Sonuç 1940/1963 İstanbul ilçe haritalarıyla görsel olarak
+  karşılaştırıldı.
+- İşlenen seçimler: 1961–2007 genel seçimleri, 1961/1982/1987/1988/2007 referandumları, 1963–2004
+  yerel seçimleri.
 - Geometrisiz satır: Ankara Merkez (1961–1983 ayrı ilçe, sınırı kaynakta yok; 2963 madde 2).
-- Şüpheli: Kastamonu "Bozkurt" satırı bugünkü Bozkurt'a (1055, 1968) bağlı; eşleşme korunuyor, doğrulanmalı.
-- 1961 referandumu ve diğer seçimler bu adımın dışında.
-- Sıra: `apply_idari_merges.py` → `build_ilce_1961.py` → `scripts/build.py` → checksum yenile.
+- Şüpheli: Kastamonu "Bozkurt" satırı 1961/1965'te bugünkü Bozkurt'a (1055, 1968) bağlı; korunuyor.
+- Veri düzeltmeleri (2026-10-04, kullanıcı onayıyla): 1994, 1999, 2004 yerel kayıtlarında Artvin Hopa
+  iki kez vardı (aynı oy); kaynaklı satır yalnız Hopa poligonuyla tutuldu, kopyası silindi (Kemalpaşa
+  kendi belde satırıyla). 1994 ve 1999 yerel Kaynaşlı belde satırının plakası 81 → 14 (Düzce Aralık 1999'da il oldu; o tarihte Bolu).
+- Değiştirilmeyen veri sorunları: 1991'de İstanbul'da iki "Bakırköy" satırı (seçim çevresi bölünmesi;
+  aynı poligon, kontrolde tek ilçe sayılır). 2004 yerelde poligonsuz "Karadeniz Ereğli" satırı (seçmen
+  0; Ereğli'nin ayrı satırı var). 1961–1965'te Kaynarca kaynakta Kocaeli'de (il toplamı da); Sakarya
+  haritasında gri görünür (il sınırı konusu).
+- Sıra: [`prepare_istanbul_historical_assignments.py` → `build_istanbul_1961_1992.py`] →
+  `build_ilce_secim.py <seçim>` → [yerel: `build_meclis_harita.py`] → checksum yenile →
+  `scripts/build.py`.
+- Bilinen tutarsızlık: `apply_idari_merges.py` yeniden çalıştırılırsa bu katmanın üzerine yazabilir
+  (ör. 1987/1988 İstanbul HISTK birleşimleri); bu çalışmada o betik çalıştırılmadı.
 
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
@@ -361,8 +383,6 @@ Tekrar üretim sırası: `prepare_istanbul_historical_assignments.py`,
 `build.py`. Genel amaçlı `ilce_bolusumu.json` boş bırakılmıştır; bilinmeyen
 çok kaynaklı bölüşümler bu dosyada varsayımla doldurulmaz.
 
-1961 çalışması da birleştirildi: kanun/sayım zincirleri ve açıkça yaklaşık
-olarak işaretlenen %70 birim çoğunluğu yöntemiyle 21 ilçe daha bağlandı.
-23 ilçe belirsiz kalır; Ankara Merkez'in tarihî poligonu kaynak bekler.
-Tekrar üretimde `build_ilce_1961.py`, `apply_idari_merges.py` sonrasında ve
-rapor/checksum/build adımlarından önce çalıştırılmalıdır.
+1961–2007 seçim seçim ilçe sınırları için bkz. "Seçim seçim ilçe sınırları, 1961–2007"
+(`build_ilce_secim.py <seçim>`); İstanbul adımlarından sonra, meclis/rapor/checksum/build
+adımlarından önce çalıştırılır.

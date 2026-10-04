@@ -403,19 +403,23 @@ def check_historical_district_geometry():
     )
 
 
-def check_ilce_1961():
-    """1961 ilce haritasi (scripts/pipelines/historical_geo/build_ilce_1961.py): her 1961 satiri tek
-    bir poligona, her bugunku ilce en fazla bir satira bagli; tablo (ilce_1961_eslesme.csv) ile harita
+def check_ilce_secim():
+    """Secim ilce haritalari (scripts/pipelines/historical_geo/build_ilce_secim.py): her secim satiri tek
+    bir poligona, her bugunku ilce en fazla bir satira bagli; tablo (ilce_eslesme/<secim>.csv) ile harita
     tutarli; tabloda belirsiz olmayan hicbir bugunku ilce sonucsuz kalmiyor; birlesimler il disina
     tasmiyor."""
     try:
         sys.path.insert(0, str(ROOT / "scripts" / "pipelines" / "historical_geo"))
-        import build_ilce_1961
+        import build_ilce_secim
     except ImportError:
-        check("1961 ilçe eşleme tablosu ve birleşim poligonları (shapely kurulu değil, ATLANDI)", True)
+        check("seçim ilçe eşleme tabloları (shapely kurulu değil, ATLANDI)", True)
         return
-    sorun = build_ilce_1961.kontrol(sessiz=True)
-    check("1961 ilçe eşleme tablosu ve birleşim poligonları tutarlı", not sorun, "; ".join(sorun[:5]))
+    sorun, secimler = [], sorted(p.stem for p in (build_ilce_secim.ESLESME).glob("*.csv"))
+    for s in secimler:
+        build_ilce_secim.ayarla(s)
+        sorun += [f"{s}: {x}" for x in build_ilce_secim.kontrol(sessiz=True)]
+    check(f"seçim ilçe eşleme tabloları ve birleşim poligonları tutarlı ({len(secimler)} seçim)", not sorun,
+          "; ".join(sorun[:5]))
 
 
 def check_dist_size():
@@ -498,7 +502,7 @@ def main():
     check_kazanan_has_oy_entry()
     check_dtp_bdp_bagimsiz_attribution()
     check_historical_district_geometry()
-    check_ilce_1961()
+    check_ilce_secim()
     check_dist_size()
     check_index_in_sync_with_sources()
     check_reproducibility()

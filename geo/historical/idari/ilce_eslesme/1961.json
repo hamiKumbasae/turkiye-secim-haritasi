@@ -1,21 +1,40 @@
 {
- "not": "build_ilce_1961.py ile üretilir; elle düzenlenmez. Tablo: ilce_1961_eslesme.csv.",
+ "not": "build_ilce_secim.py ile üretilir; elle düzenlenmez. Tablo: ilce_eslesme/1961.csv.",
  "ozet": {
-  "birlesimPoligonu": 19,
-  "katilanIlce": 21,
-  "belirsizIlce": 23,
+  "birlesimPoligonu": 33,
+  "katilanIlce": 34,
+  "belirsizIlce": 0,
   "geometrisizSatir": 1,
   "yontem": {
-   "tarihsel_birlesim": 489,
-   "kendi_satiri": 439,
-   "belirsiz": 23,
-   "cogunluk": 18,
-   "ayni_1961_ilcesi": 2,
-   "istanbul_zinciri": 1,
-   "bolunmus_poligon": 1
+   "tarihsel_birlesim": 472,
+   "kendi_satiri": 435,
+   "en_buyuk_pay": 14,
+   "cogunluk": 15,
+   "ayni_eski_ilce": 2,
+   "komsuluk": 3,
+   "bolunmus_poligon": 6,
+   "istanbul_mahalle": 26
   }
  },
  "birlesimler": [
+  {
+   "plaka": 1,
+   "ilce": "Merkez",
+   "geomId": "HIST1961-01-Merkez",
+   "oncekiGeomId": "HISTK-HIST-Adana-Merkez-a2f73c",
+   "katilanlar": [
+    "TR-D-01-003"
+   ],
+   "katilanAdlar": [
+    "Çukurova"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-01-003",
+    "TR-D-01-011",
+    "TR-D-01-012",
+    "TR-D-01-015"
+   ]
+  },
   {
    "plaka": 6,
    "ilce": "Altındağ",
@@ -82,6 +101,40 @@
    ]
   },
   {
+   "plaka": 12,
+   "ilce": "Kığı",
+   "geomId": "HIST1961-12-Kigi",
+   "oncekiGeomId": "HISTK-12-005-ee6bfa",
+   "katilanlar": [
+    "TR-D-12-008"
+   ],
+   "katilanAdlar": [
+    "Yedisu"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-12-001",
+    "TR-D-12-005",
+    "TR-D-12-007",
+    "TR-D-12-008"
+   ]
+  },
+  {
+   "plaka": 15,
+   "ilce": "Tefenni",
+   "geomId": "HIST1961-15-Tefenni",
+   "oncekiGeomId": "TR-D-15-010",
+   "katilanlar": [
+    "TR-D-15-008"
+   ],
+   "katilanAdlar": [
+    "Karamanlı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-15-008",
+    "TR-D-15-010"
+   ]
+  },
+  {
    "plaka": 18,
    "ilce": "Kurşunlu",
    "geomId": "HIST1961-18-Kursunlu",
@@ -96,6 +149,39 @@
     "TR-D-18-001",
     "TR-D-18-002",
     "TR-D-18-009"
+   ]
+  },
+  {
+   "plaka": 19,
+   "ilce": "İskilip",
+   "geomId": "HIST1961-19-Iskilip",
+   "oncekiGeomId": "HISTK-19-006-c7a151",
+   "katilanlar": [
+    "TR-D-19-014"
+   ],
+   "katilanAdlar": [
+    "Uğurludağ"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-19-006",
+    "TR-D-19-010",
+    "TR-D-19-014"
+   ]
+  },
+  {
+   "plaka": 23,
+   "ilce": "Maden",
+   "geomId": "HIST1961-23-Maden",
+   "oncekiGeomId": "TR-D-23-009",
+   "katilanlar": [
+    "TR-D-23-002"
+   ],
+   "katilanAdlar": [
+    "Alacakaya"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-23-002",
+    "TR-D-23-009"
    ]
   },
   {
@@ -132,63 +218,100 @@
    ]
   },
   {
-   "plaka": 34,
-   "ilce": "Bakırköy",
-   "geomId": "HIST1961-34-Bakirkoy",
-   "oncekiGeomId": "HISTK-HIST-Istanbul-Bakirkoy-9bd420",
+   "plaka": 30,
+   "ilce": "Şemdinli",
+   "geomId": "HIST1961-30-Semdinli",
+   "oncekiGeomId": "TR-D-30-003",
    "katilanlar": [
-    "TR-D-34-008",
-    "TR-D-34-017"
+    "TR-D-30-005"
    ],
    "katilanAdlar": [
-    "Başakşehir",
-    "Esenler"
+    "Derecik"
    ],
    "bugunkuIlceler": [
-    "TR-D-34-004",
-    "TR-D-34-005",
-    "TR-D-34-006",
-    "TR-D-34-007",
-    "TR-D-34-008",
-    "TR-D-34-017",
-    "TR-D-34-022",
-    "TR-D-34-026"
+    "TR-D-30-003",
+    "TR-D-30-005"
    ]
   },
   {
-   "plaka": 34,
-   "ilce": "Eyüp",
-   "geomId": "HIST1961-34-Eyup",
-   "oncekiGeomId": "HISTK-34-019-32c706",
+   "plaka": 35,
+   "ilce": "Menemen",
+   "geomId": "HIST1961-35-Menemen",
+   "oncekiGeomId": "TR-D-35-023",
    "katilanlar": [
-    "TR-D-34-033"
+    "TR-D-35-001"
    ],
    "katilanAdlar": [
-    "Sultangazi"
+    "Aliağa"
    ],
    "bugunkuIlceler": [
-    "TR-D-34-009",
-    "TR-D-34-019",
-    "TR-D-34-021",
-    "TR-D-34-033"
+    "TR-D-35-001",
+    "TR-D-35-023"
    ]
   },
   {
-   "plaka": 34,
-   "ilce": "Çatalca",
-   "geomId": "HIST1961-34-Catalca",
-   "oncekiGeomId": "HISTK-34-015-ea5819",
+   "plaka": 37,
+   "ilce": "Azdavay",
+   "geomId": "HIST1961-37-Azdavay",
+   "oncekiGeomId": "HISTK-37-004-50e190",
    "katilanlar": [
-    "TR-D-34-018"
+    "TR-D-37-002"
    ],
    "katilanAdlar": [
-    "Esenyurt"
+    "Ağlı"
    ],
    "bugunkuIlceler": [
-    "TR-D-34-012",
-    "TR-D-34-014",
-    "TR-D-34-015",
-    "TR-D-34-018"
+    "TR-D-37-002",
+    "TR-D-37-004",
+    "TR-D-37-016"
+   ]
+  },
+  {
+   "plaka": 37,
+   "ilce": "Bozkurt",
+   "geomId": "HIST1961-37-Bozkurt",
+   "oncekiGeomId": "TR-D-37-005",
+   "katilanlar": [
+    "TR-D-37-001"
+   ],
+   "katilanAdlar": [
+    "Abana"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-37-001",
+    "TR-D-37-005"
+   ]
+  },
+  {
+   "plaka": 37,
+   "ilce": "Devrekâni",
+   "geomId": "HIST1961-37-Devrekani",
+   "oncekiGeomId": "TR-D-37-009",
+   "katilanlar": [
+    "TR-D-37-017"
+   ],
+   "katilanAdlar": [
+    "Seydiler"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-37-009",
+    "TR-D-37-017"
+   ]
+  },
+  {
+   "plaka": 38,
+   "ilce": "Felâhiye",
+   "geomId": "HIST1961-38-Felahiye",
+   "oncekiGeomId": "TR-D-38-004",
+   "katilanlar": [
+    "TR-D-38-009"
+   ],
+   "katilanAdlar": [
+    "Özvatan"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-38-004",
+    "TR-D-38-009"
    ]
   },
   {
@@ -208,6 +331,25 @@
    ]
   },
   {
+   "plaka": 41,
+   "ilce": "Gebze",
+   "geomId": "HIST1961-41-Gebze",
+   "oncekiGeomId": "HISTK-41-006-c17594",
+   "katilanlar": [
+    "TR-D-41-012"
+   ],
+   "katilanAdlar": [
+    "Körfez"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-41-002",
+    "TR-D-41-003",
+    "TR-D-41-005",
+    "TR-D-41-006",
+    "TR-D-41-012"
+   ]
+  },
+  {
    "plaka": 42,
    "ilce": "Merkez",
    "geomId": "HIST1961-42-Merkez",
@@ -223,6 +365,23 @@
     "TR-D-42-022",
     "TR-D-42-024",
     "TR-D-42-026"
+   ]
+  },
+  {
+   "plaka": 43,
+   "ilce": "Emet",
+   "geomId": "HIST1961-43-Emet",
+   "oncekiGeomId": "HISTK-43-006-a2f82f",
+   "katilanlar": [
+    "TR-D-43-003"
+   ],
+   "katilanAdlar": [
+    "Çavdarhisar"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-43-003",
+    "TR-D-43-006",
+    "TR-D-43-008"
    ]
   },
   {
@@ -258,6 +417,41 @@
    ]
   },
   {
+   "plaka": 51,
+   "ilce": "Aksaray",
+   "geomId": "HIST1961-51-Aksaray",
+   "oncekiGeomId": "HISTK-68-002-25fa6a",
+   "katilanlar": [
+    "TR-D-68-008"
+   ],
+   "katilanAdlar": [
+    "Sultanhanı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-68-002",
+    "TR-D-68-003",
+    "TR-D-68-004",
+    "TR-D-68-005",
+    "TR-D-68-008"
+   ]
+  },
+  {
+   "plaka": 52,
+   "ilce": "Gölköy",
+   "geomId": "HIST1961-52-Golkoy",
+   "oncekiGeomId": "TR-D-52-008",
+   "katilanlar": [
+    "TR-D-52-010"
+   ],
+   "katilanAdlar": [
+    "Gürgentepe"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-52-008",
+    "TR-D-52-010"
+   ]
+  },
+  {
    "plaka": 52,
    "ilce": "Ünye",
    "geomId": "HIST1961-52-Unye",
@@ -272,6 +466,38 @@
     "TR-D-52-006",
     "TR-D-52-011",
     "TR-D-52-019"
+   ]
+  },
+  {
+   "plaka": 55,
+   "ilce": "Bafra",
+   "geomId": "HIST1961-55-Bafra",
+   "oncekiGeomId": "TR-D-55-006",
+   "katilanlar": [
+    "TR-D-55-001"
+   ],
+   "katilanAdlar": [
+    "Ondokuzmayıs"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-55-001",
+    "TR-D-55-006"
+   ]
+  },
+  {
+   "plaka": 55,
+   "ilce": "Terme",
+   "geomId": "HIST1961-55-Terme",
+   "oncekiGeomId": "TR-D-55-015",
+   "katilanlar": [
+    "TR-D-55-013"
+   ],
+   "katilanAdlar": [
+    "Salıpazarı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-55-013",
+    "TR-D-55-015"
    ]
   },
   {
@@ -344,6 +570,16 @@
   }
  ],
  "cogunluk": {
+  "TR-D-01-003": {
+   "ana": "Merkez",
+   "pay": 0.58,
+   "digerleri": [
+    [
+     "Karaisalı",
+     0.42
+    ]
+   ]
+  },
   "TR-D-06-001": {
    "ana": "Çubuk",
    "pay": 0.8,
@@ -384,6 +620,58 @@
     ]
    ]
   },
+  "TR-D-12-008": {
+   "ana": "Kığı",
+   "pay": 0.6,
+   "digerleri": [
+    [
+     "Karlıova",
+     0.15
+    ],
+    [
+     "Pülümür",
+     0.25
+    ]
+   ]
+  },
+  "TR-D-15-008": {
+   "ana": "Tefenni",
+   "pay": 0.5,
+   "digerleri": [
+    [
+     "Merkez",
+     0.2
+    ],
+    [
+     "Yeşilova",
+     0.3
+    ]
+   ]
+  },
+  "TR-D-19-014": {
+   "ana": "İskilip",
+   "pay": 0.52,
+   "digerleri": [
+    [
+     "Merkez",
+     0.12
+    ],
+    [
+     "Sungurlu",
+     0.36
+    ]
+   ]
+  },
+  "TR-D-23-002": {
+   "ana": "Maden",
+   "pay": 0.58,
+   "digerleri": [
+    [
+     "Palu",
+     0.42
+    ]
+   ]
+  },
   "TR-D-23-008": {
    "ana": "Palu",
    "pay": 0.97,
@@ -408,33 +696,55 @@
     ]
    ]
   },
-  "TR-D-34-008": {
-   "ana": "Bakırköy",
-   "pay": 0.75,
+  "TR-D-35-001": {
+   "ana": "Menemen",
+   "pay": 0.6,
    "digerleri": [
     [
-     "Çatalca",
-     0.25
+     "Bergama",
+     0.3
+    ],
+    [
+     "Foça",
+     0.1
     ]
    ]
   },
-  "TR-D-34-018": {
-   "ana": "Çatalca",
-   "pay": 0.96,
+  "TR-D-37-002": {
+   "ana": "Azdavay",
+   "pay": 0.47,
    "digerleri": [
     [
-     "Bakırköy",
-     0.04
+     "Daday",
+     0.2
+    ],
+    [
+     "Küre",
+     0.33
     ]
    ]
   },
-  "TR-D-34-033": {
-   "ana": "Eyüp",
-   "pay": 0.94,
+  "TR-D-37-017": {
+   "ana": "Devrekâni",
+   "pay": 0.65,
    "digerleri": [
     [
-     "Bakırköy",
-     0.06
+     "Küre",
+     0.35
+    ]
+   ]
+  },
+  "TR-D-38-009": {
+   "ana": "Felâhiye",
+   "pay": 0.5,
+   "digerleri": [
+    [
+     "Merkez",
+     0.2
+    ],
+    [
+     "Sarıoğlan",
+     0.3
     ]
    ]
   },
@@ -445,6 +755,30 @@
     [
      "Kaman",
      0.18
+    ]
+   ]
+  },
+  "TR-D-41-012": {
+   "ana": "Gebze",
+   "pay": 0.53,
+   "digerleri": [
+    [
+     "Merkez",
+     0.47
+    ]
+   ]
+  },
+  "TR-D-43-003": {
+   "ana": "Emet",
+   "pay": 0.61,
+   "digerleri": [
+    [
+     "Gediz",
+     0.33
+    ],
+    [
+     "Merkez",
+     0.06
     ]
    ]
   },
@@ -476,6 +810,24 @@
     ]
    ]
   },
+  "TR-D-52-010": {
+   "ana": "Gölköy",
+   "pay": 0.5,
+   "digerleri": [
+    [
+     "Fatsa",
+     0.3
+    ],
+    [
+     "Merkez",
+     0.1
+    ],
+    [
+     "Ulubey",
+     0.1
+    ]
+   ]
+  },
   "TR-D-52-011": {
    "ana": "Ünye",
    "pay": 0.82,
@@ -483,6 +835,26 @@
     [
      "Terme",
      0.18
+    ]
+   ]
+  },
+  "TR-D-55-001": {
+   "ana": "Bafra",
+   "pay": 0.63,
+   "digerleri": [
+    [
+     "Merkez",
+     0.37
+    ]
+   ]
+  },
+  "TR-D-55-013": {
+   "ana": "Terme",
+   "pay": 0.55,
+   "digerleri": [
+    [
+     "Çarşamba",
+     0.45
     ]
    ]
   },
@@ -537,146 +909,7 @@
    ]
   }
  },
- "belirsiz": [
-  {
-   "geomId": "TR-D-01-003",
-   "il": "Adana",
-   "ilce": "Çukurova",
-   "not": "Ek liste birimleri: Seyhan 14, Karaisalı 10; 1961 ilçelerine göre en büyük pay %58 Merkez (<%70)"
-  },
-  {
-   "geomId": "TR-D-12-008",
-   "il": "Bingöl",
-   "ilce": "Yedisu",
-   "not": "Ek liste birimleri: Kiğı 12, Pülümür 5, Karlıova 3; 1961 ilçelerine göre en büyük pay %60 Kığı (<%70)"
-  },
-  {
-   "geomId": "TR-D-15-008",
-   "il": "Burdur",
-   "ilce": "Karamanlı",
-   "not": "Ek liste birimleri: Tefenni 5, Yeşilova 3, Merkez 2; 1961 ilçelerine göre en büyük pay %50 Tefenni (<%70)"
-  },
-  {
-   "geomId": "TR-D-19-014",
-   "il": "Çorum",
-   "ilce": "Uğurludağ",
-   "not": "Ek liste birimleri: İskilip 17, Sungurlu 12, Merkez 4; 1961 ilçelerine göre en büyük pay %52 İskilip (<%70)"
-  },
-  {
-   "geomId": "TR-D-23-002",
-   "il": "Elazığ",
-   "ilce": "Alacakaya",
-   "not": "Ek liste birimleri: Maden 7, Arıcak 5; 1961 ilçelerine göre en büyük pay %58 Maden (<%70)"
-  },
-  {
-   "geomId": "TR-D-30-005",
-   "il": "Hakkari",
-   "ilce": "Derecik",
-   "not": "kuruluş kanununun ek listesi repoda yok. data/normalized/ek/beldeler/1999yerel.json–2014yerel.json: Derecik beldesi Şemdinli'de; köylerin eski ilçesi 7148 ekinde, repoda yok"
-  },
-  {
-   "geomId": "TR-D-34-002",
-   "il": "İstanbul",
-   "ilce": "Arnavutköy",
-   "not": "Ek liste birimleri: Gaziosmanpaşa 26, Çatalca 18, Küçükçekmece 1; 1961 ilçelerine göre en büyük pay %58 Eyüp (<%70)"
-  },
-  {
-   "geomId": "TR-D-34-003",
-   "il": "İstanbul",
-   "ilce": "Ataşehir",
-   "not": "Ek liste birimleri: Kadıköy 7, Üsküdar 3, Ümraniye 3, Kartal 2; eski ilçelerin 1961'deki karşılığı bilinmiyor (Kadıköy, Kartal, Ümraniye, Üsküdar 1961'de yoktu ya da kendisi belirsiz)"
-  },
-  {
-   "geomId": "TR-D-34-016",
-   "il": "İstanbul",
-   "ilce": "Çekmeköy",
-   "not": "Ek liste birimleri: Ümraniye 25, Kartal 1; eski ilçelerin 1961'deki karşılığı bilinmiyor (Kartal, Ümraniye 1961'de yoktu ya da kendisi belirsiz)"
-  },
-  {
-   "geomId": "TR-D-34-024",
-   "il": "İstanbul",
-   "ilce": "Kağıthane",
-   "not": "Ek liste birimleri: kaynağı yazılmamış 8; kanun ek listesinde birimlerin eski ilçesi yazılmamış. 1960 sayımı (data/raw/tuik/nufus-sayimi-idari-bolunus/1960_0015128_istanbul.pdf): Kâğıthane köyü Şişli Merkez bucağında; 1987 ilçesinin mahallelerinin tamamının Şişli'den geldiği kaynakta yok"
-  },
-  {
-   "geomId": "TR-D-34-029",
-   "il": "İstanbul",
-   "ilce": "Sancaktepe",
-   "not": "Ek liste birimleri: Ümraniye 15, Kartal 1; eski ilçelerin 1961'deki karşılığı bilinmiyor (Kartal, Ümraniye 1961'de yoktu ya da kendisi belirsiz)"
-  },
-  {
-   "geomId": "TR-D-34-037",
-   "il": "İstanbul",
-   "ilce": "Ümraniye",
-   "not": "Ek liste birimleri: kaynağı yazılmamış 7, Üsküdar 6, Beykoz 3; 1961 ilçelerine göre en büyük pay %38 Üsküdar (<%70). 1960 sayımı: Ümraniye, Alemdar, Çekme, Reşadiye, Sultançiftliği, Dudullu köyleri Üsküdar'da; 3392 listesindeki Beykoz köyleri ve 7 mahallenin eski ilçesi ayrı"
-  },
-  {
-   "geomId": "TR-D-35-001",
-   "il": "İzmir",
-   "ilce": "Aliağa",
-   "not": "Ek liste birimleri: Menemen 12, Bergama 6, Foça 2; 1961 ilçelerine göre en büyük pay %60 Menemen (<%70)"
-  },
-  {
-   "geomId": "TR-D-37-001",
-   "il": "Kastamonu",
-   "ilce": "Abana",
-   "not": "kanun ek listesinde birimlerin eski ilçesi yazılmamış"
-  },
-  {
-   "geomId": "TR-D-37-002",
-   "il": "Kastamonu",
-   "ilce": "Ağlı",
-   "not": "Ek liste birimleri: Azdavay 7, Küre 5, Daday 3; 1961 ilçelerine göre en büyük pay %47 Azdavay (<%70)"
-  },
-  {
-   "geomId": "TR-D-37-017",
-   "il": "Kastamonu",
-   "ilce": "Seydiler",
-   "not": "Ek liste birimleri: Devrakani 11, Küre 6; 1961 ilçelerine göre en büyük pay %65 Devrekâni (<%70)"
-  },
-  {
-   "geomId": "TR-D-38-009",
-   "il": "Kayseri",
-   "ilce": "Özvatan",
-   "not": "Ek liste birimleri: Felahiye 5, Sarıoğlan 3, Kocasinan 2; 1961 ilçelerine göre en büyük pay %50 Felâhiye (<%70)"
-  },
-  {
-   "geomId": "TR-D-41-012",
-   "il": "Kocaeli",
-   "ilce": "Körfez",
-   "not": "Ek liste birimleri: Gebze 9, Merkez 8; 1961 ilçelerine göre en büyük pay %53 Gebze (<%70)"
-  },
-  {
-   "geomId": "TR-D-43-003",
-   "il": "Kütahya",
-   "ilce": "Çavdarhisar",
-   "not": "Ek liste birimleri: Emet 11, Gediz 6, Aslanapa 1; 1961 ilçelerine göre en büyük pay %61 Emet (<%70)"
-  },
-  {
-   "geomId": "TR-D-52-010",
-   "il": "Ordu",
-   "ilce": "Gürgentepe",
-   "not": "Ek liste birimleri: Gölköy 5, Fatsa 3, Merkez 1, Ulubey 1; 1961 ilçelerine göre en büyük pay %50 Gölköy (<%70)"
-  },
-  {
-   "geomId": "TR-D-55-001",
-   "il": "Samsun",
-   "ilce": "Ondokuzmayıs",
-   "not": "Ek liste birimleri: Bafra 22, Merkez 13; 1961 ilçelerine göre en büyük pay %63 Bafra (<%70)"
-  },
-  {
-   "geomId": "TR-D-55-013",
-   "il": "Samsun",
-   "ilce": "Salıpazarı",
-   "not": "Ek liste birimleri: Terme 17, Çarşamba 14; 1961 ilçelerine göre en büyük pay %55 Terme (<%70)"
-  },
-  {
-   "geomId": "TR-D-68-008",
-   "il": "Aksaray",
-   "ilce": "Sultanhanı",
-   "not": "kuruluş kanununun ek listesi repoda yok. data/normalized/ek/beldeler/1963yerel.json: Sultanhanı beldesi Aksaray ilçesinde (Niğde); ilçeye bağlanan köylerin eski ilçesi KHK 694 ekinde, repoda yok"
-  }
- ],
+ "belirsiz": [],
  "geometrisizSatir": [
   {
    "plaka": 6,

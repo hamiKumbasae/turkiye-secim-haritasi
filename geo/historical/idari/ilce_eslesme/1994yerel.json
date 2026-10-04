@@ -1,0 +1,106 @@
+{
+ "not": "build_ilce_secim.py ile üretilir; elle düzenlenmez. Tablo: ilce_eslesme/1994yerel.csv.",
+ "ozet": {
+  "birlesimPoligonu": 4,
+  "katilanIlce": 4,
+  "belirsizIlce": 0,
+  "geometrisizSatir": 0,
+  "yontem": {
+   "kendi_satiri": 896,
+   "en_buyuk_pay": 2,
+   "tarihsel_birlesim": 68,
+   "komsuluk": 2,
+   "bolunmus_poligon": 5
+  }
+ },
+ "birlesimler": [
+  {
+   "plaka": 1,
+   "ilce": "Seyhan",
+   "geomId": "HIST1994yerel-01-Seyhan",
+   "oncekiGeomId": "TR-D-01-012",
+   "katilanlar": [
+    "TR-D-01-003"
+   ],
+   "katilanAdlar": [
+    "Çukurova"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-01-003",
+    "TR-D-01-012"
+   ]
+  },
+  {
+   "plaka": 7,
+   "ilce": "Korkuteli",
+   "geomId": "HIST1994yerel-07-Korkuteli",
+   "oncekiGeomId": "TR-D-07-015",
+   "katilanlar": [
+    "TR-D-07-005"
+   ],
+   "katilanAdlar": [
+    "Döşemealtı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-07-005",
+    "TR-D-07-015"
+   ]
+  },
+  {
+   "plaka": 7,
+   "ilce": "Serik",
+   "geomId": "HIST1994yerel-07-Serik",
+   "oncekiGeomId": "TR-D-07-019",
+   "katilanlar": [
+    "TR-D-07-002"
+   ],
+   "katilanAdlar": [
+    "Aksu"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-07-002",
+    "TR-D-07-019"
+   ]
+  },
+  {
+   "plaka": 30,
+   "ilce": "Şemdinli",
+   "geomId": "HIST1994yerel-30-Semdinli",
+   "oncekiGeomId": "TR-D-30-003",
+   "katilanlar": [
+    "TR-D-30-005"
+   ],
+   "katilanAdlar": [
+    "Derecik"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-30-003",
+    "TR-D-30-005"
+   ]
+  }
+ ],
+ "cogunluk": {
+  "TR-D-01-003": {
+   "ana": "Seyhan",
+   "pay": 0.58,
+   "digerleri": [
+    [
+     "Karaisalı",
+     0.42
+    ]
+   ]
+  },
+  "TR-D-07-002": {
+   "ana": "Serik",
+   "pay": 0.06,
+   "digerleri": [
+    [
+     "bilinmiyor",
+     0.94
+    ]
+   ]
+  }
+ },
+ "belirsiz": [],
+ "geometrisizSatir": []
+}
