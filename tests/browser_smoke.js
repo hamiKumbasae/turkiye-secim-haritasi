@@ -886,6 +886,23 @@ async function scenario_yontem(browser) {
   check('yöntem: konsol hatası yok', errors.filter((e) => !/fonts\.g/.test(e)).length === 0, JSON.stringify(errors));
 }
 
+// CSV indirme: acik secimin il ve ilce sonuclari.
+async function scenario_csv(browser) {
+  const errors = await withPage(browser, async (page) => {
+    await page.click('#btnTurGenel');
+    await page.waitForTimeout(500);
+    await page.click('#btnTableView');
+    const [download] = await Promise.all([page.waitForEvent('download'), page.click('#btnCsv')]);
+    const text = require('fs').readFileSync(await download.path(), 'utf8');
+    const lines = text.slice(1).trimEnd().split('\r\n');
+    check('CSV: dosya adı ve BOM', download.suggestedFilename() === 'secim_2023.csv' && text.charCodeAt(0) === 0xfeff, download.suggestedFilename());
+    check('CSV: 81 il ve 900+ ilçe satırı',
+      lines.filter((l) => l.startsWith('2023,il,')).length === 81 && lines.filter((l) => l.startsWith('2023,ilçe,')).length > 900,
+      String(lines.length));
+  });
+  check('CSV: konsol hatası yok', errors.length === 0, JSON.stringify(errors));
+}
+
 async function main() {
   const browser = await chromium.launch(process.env.CHROMIUM_EXECUTABLE ? {executablePath: process.env.CHROMIUM_EXECUTABLE} : {});
   try {
@@ -912,6 +929,7 @@ async function main() {
     await scenario_degisim(browser);
     await scenario_baglanti(browser);
     await scenario_yontem(browser);
+    await scenario_csv(browser);
   } finally {
     await browser.close();
   }

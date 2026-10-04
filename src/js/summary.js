@@ -125,7 +125,9 @@
     html += '<p>Yurtdışı seçmen oyları (temsilcilik/konsolosluk sandıkları) hiçbir ile bağlı olmadığı için haritaya dahil edilmez, mevcut olduğu seçimlerde ayrı bir panelde gösterilir.</p>';
     html += '<p><a class="link-btn" href="yontem.html" style="text-decoration:underline;">Kaynaklar ve yöntem sayfası →</a> (dönem sınırları, harita modları, bilinen eksikler)</p>';
     html += '<p>Bu bir kişisel veri derleme çalışmasıdır, resmî bir YSK yayını değildir. Kaynak kodu ve tam sağlama (checksum) kayıtları GitHub\'da:<br><a class="link-btn" href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" target="_blank" rel="noopener" style="text-decoration:underline;">github.com/hamiKumbasae/turkiye-secim-haritasi</a></p>';
+    html += '<p><button class="link-btn" id="drawerCsv" type="button" style="text-decoration:underline;">Bu seçimin il ve ilçe sonuçlarını indir (CSV) ↓</button></p>';
     $('#drawerBody').innerHTML = html;
+    $('#drawerCsv').addEventListener('click', csvIndir);
   }
 
   function openDrawer(){

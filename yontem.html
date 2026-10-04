@@ -158,8 +158,24 @@
   </ul>
 
   <h2 id="indir">6. Veriyi indirme ve lisans</h2>
-  <p>Kaynak kodu ve işlenmiş veri GitHub'da açıktır:
-    <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" rel="noopener">github.com/hamiKumbasae/turkiye-secim-haritasi</a>.</p>
+  <h3>CSV</h3>
+  <p>Açık olan seçimin il ve ilçe sonuçlarını tek dosya olarak indirebilirsiniz: <b>Tablo</b> görünümündeki
+    <b>CSV indir</b> düğmesi ya da “Kaynaklar” panelindeki bağlantı. Dosyada her il/ilçe için seçmen, sandık,
+    geçerli oy, katılım ve kazanan; her parti için oy sayısı, oy oranı ve varsa milletvekili ya da meclis sandalyesi
+    sütunları bulunur. Yerel seçimde seçili oylama türü (belediye başkanı, il genel meclisi, belediye meclisi)
+    indirilir.</p>
+  <p>Dosya virgülle ayrılmış, UTF-8 biçimindedir; Excel'de Türkçe karakterler doğru görünür. Excel sütunlara
+    ayırmazsa <i>Veri → Metni Sütunlara Dönüştür</i> ile ayırıcı olarak virgülü seçin.</p>
+  <h3>Tüm veri</h3>
+  <p>Bütün seçimlerin işlenmiş verisi (JSON), ham kaynak dosyaları ve harita sınırları GitHub'da açıktır:
+    <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" rel="noopener">github.com/hamiKumbasae/turkiye-secim-haritasi</a>
+    (<code>data/normalized/</code>, <code>data/raw/</code>, <code>geo/</code>).</p>
+  <h3>Lisans ve atıf</h3>
+  <p>Seçim sonuçları kamuya açık resmî kaynaklardan derlenmiştir; kullanırken asıl kaynağı (YSK, TÜİK) ve bu atlası belirtmeniz rica olunur.</p>
+  <ul>
+    <li>Mahalle sınırlarının bir kısmı OpenStreetMap'ten gelir: © OpenStreetMap katkıcıları, ODbL lisansı.</li>
+    <li>Vikipedi'den alınan sonuçlar (ör. 1950–1977 yerel seçimleri) Vikipedi'nin CC BY-SA lisansına tabidir.</li>
+  </ul>
 
   <h2 id="iletisim">7. Hata bildirimi</h2>
   <p>Yanlış bir sonuç, sınır ya da isim fark ederseniz lütfen GitHub'da bir kayıt açın:
