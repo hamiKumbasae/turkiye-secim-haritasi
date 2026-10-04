@@ -206,7 +206,9 @@ def main():
         kapsayan = {}
         for r in kayit["ilceler"]:
             g = r.get("geomId")
-            if not g:
+            # Yeni ilçelerin eski seçimlerdeki boş yer tutucuları tarihsel
+            # sınır kanıtı değildir ve ebeveyn birleşimini engellememeli.
+            if not g or not r.get("oy"):
                 continue
             for parca in hist_parca.get(g, {g}) | {g}:
                 kapsayan[parca] = g

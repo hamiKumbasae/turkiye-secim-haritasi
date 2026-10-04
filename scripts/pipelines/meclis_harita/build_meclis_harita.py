@@ -103,12 +103,30 @@ def kur(yil, kisa):
     dosya, adi = TURLER[kisa]
     ek = oku(NORM / "ek" / dosya / f"{yil}.json")
     ana = oku(NORM / "elections" / "yerel" / f"{yil}.json")
+    # Başkanlık hattındaki eksik Tillo kaydı, bağımsız meclis kaynağını
+    # gizlememeli. İskelet yalnız bu meclis görünümü için genişletilir.
+    if not any(r.get("geomId") == "TR-D-56-007" for r in ana["ilceler"]):
+        tillo = next((b for b in ek["birimler"] if b.get("geomId") == "TR-D-56-007"), None)
+        if tillo:
+            ana["ilceler"].append({"ad": tillo["ilce"], "plaka": 56, "geomId": "TR-D-56-007"})
     ek_geom = {b["geomId"] for b in ek["birimler"] if b["geomId"]}
+    plan_path = ROOT / "geo/historical/idari/merge_plan.json"
+    plan = oku(plan_path)["sentetikler"] if plan_path.exists() else {}
+    kaynak_hedef = {}
+    for r in ana["ilceler"]:
+        g = r.get("geomId")
+        base = plan.get(g, {}).get("taban", g)
+        if base and r.get("oy"):
+            if base in kaynak_hedef and kaynak_hedef[base] != g:
+                raise ValueError(f"{yil}: aynı kaynak ilçesi iki poligona bağlanıyor: {base}")
+            kaynak_hedef[base] = g
+
+    ek_hedefler = {kaynak_hedef.get(g, g) for g in ek_geom}
 
     # geomId'siz Merkez satirlari -> baskanlik kaydindaki tek aday satir
     merkez_hedef, rapor = {}, []
     for (pl, ilce) in sorted({(b["plaka"], b["ilce"]) for b in ek["birimler"] if not b["geomId"]}):
-        aday = [r for r in ana["ilceler"] if r["plaka"] == pl and r["geomId"] not in ek_geom and (r.get("gecerliOy") or 0) > 0]
+        aday = [r for r in ana["ilceler"] if r["plaka"] == pl and r["geomId"] not in ek_hedefler and (r.get("gecerliOy") or 0) > 0]
         if len(aday) == 1:
             merkez_hedef[(pl, ilce)] = aday[0]["geomId"]
         else:
@@ -118,7 +136,7 @@ def kur(yil, kisa):
     for b in ek["birimler"]:
         if kisa == "bm" and b.get("beldeId"):
             continue
-        g = b["geomId"] or merkez_hedef.get((b["plaka"], b["ilce"]))
+        g = kaynak_hedef.get(b["geomId"], b["geomId"]) or merkez_hedef.get((b["plaka"], b["ilce"]))
         if g:
             geom_birim[g].append(b)
 

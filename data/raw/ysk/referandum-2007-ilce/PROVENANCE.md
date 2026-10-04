@@ -62,3 +62,12 @@ karşılaştırdı: eşleşmeyen "Merkez"i olan 10 il dışında **hiçbir ilde*
 ## Bütünlük
 
 `checksums.sha256` — 2026-09-22.
+
+## 04.10.2026 tamamlaması
+
+81 PDF yeniden ayrıştırıldı: 923/923 ilçe eşleşti, eşleşmeyen satır kalmadı.
+Eksik 17 kayıt için ad ve geometri kimlikleri 2007 genel seçiminin aynı yıl
+ilçe listesinden alındı; oylar yalnız referandum PDF'lerinden geldi. Eski
+906 kaydın seçim değerleri ve sonradan düzeltilmiş geometri bağları korundu.
+Her yeni satırda Evet + Hayır = geçerli oy kontrolü uygulandı.
+Üstteki 906/923 değerlendirmesi ilk aktarımın tarihsel kaydıdır.

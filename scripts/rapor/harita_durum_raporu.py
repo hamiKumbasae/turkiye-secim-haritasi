@@ -136,11 +136,11 @@ def main():
     alanlar = ["secim", "tur", "oylama", "plaka", "il", "geomId", "ilce_bugun", "durum", "kurulus", "kanun", "soy",
                "kaynak_ilceler", "satir_notu"]
     with open(OUT / "poligon_durumu.csv", "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, alanlar)
+        w = csv.DictWriter(fh, alanlar, lineterminator="\n")
         w.writeheader()
         w.writerows(poligon_rows)
     with open(OUT / "eksik_secim_verisi.csv", "w", newline="", encoding="utf-8") as fh:
-        w = csv.DictWriter(fh, ["secim", "tur", "oylama", "duzey", "plaka", "il", "ad", "geomId", "neden"])
+        w = csv.DictWriter(fh, ["secim", "tur", "oylama", "duzey", "plaka", "il", "ad", "geomId", "neden"], lineterminator="\n")
         w.writeheader()
         w.writerows(eksik_rows)
     (OUT / "ozet.json").write_text(json.dumps(ozet, ensure_ascii=False, indent=1), encoding="utf-8")

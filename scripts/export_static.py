@@ -50,7 +50,20 @@ def load_json(path: pathlib.Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+PUBLIC_EXPORT = False
+
+
+def without_provenance(obj):
+    if isinstance(obj, dict):
+        return {k: without_provenance(v) for k, v in obj.items() if k != "kaynak"}
+    if isinstance(obj, list):
+        return [without_provenance(v) for v in obj]
+    return obj
+
+
 def write_json(path: pathlib.Path, obj) -> None:
+    if PUBLIC_EXPORT:
+        obj = without_provenance(obj)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
@@ -58,7 +71,10 @@ def write_json(path: pathlib.Path, obj) -> None:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="dist_static", help="çıktı klasörü (varsayılan: dist_static/)")
+    ap.add_argument("--public", action="store_true", help="kayıtlardaki kaynak alanlarını yayın kopyasından çıkar")
     args = ap.parse_args()
+    global PUBLIC_EXPORT
+    PUBLIC_EXPORT = args.public
     out = ROOT / args.out
 
     write_json(out / "data" / "parties.json", load_json(DATA_NORM / "partiler.json"))

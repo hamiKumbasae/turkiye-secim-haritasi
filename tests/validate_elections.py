@@ -460,7 +460,21 @@ def check_reproducibility():
     check("build.py iki kez çalıştırıldığında bayt-bayt aynı çıktı üretiyor", ok)
 
 
+def check_completed_records():
+    ref = load_all_elections()["2007referandum"]
+    rows = ref["ilceler"]
+    check("2007 referandumu 923 benzersiz ilçe ve tutarlı Evet/Hayır",
+          len(rows) == 923 and len({(r["plaka"], r["geomId"]) for r in rows}) == 923
+          and all(sum(v["oy"] for v in r["oy"].values()) == r["gecerliOy"] for r in rows))
+    for year in ("2019yerel", "2024yerel"):
+        rec = json.loads((ROOT / "data/normalized/meclis_harita" / (year + "_bm.json")).read_text())
+        check(year + " belediye meclisi Tillo dahil 973 sonuç",
+              len([r for r in rec["ilceler"] if r.get("oy")]) == 973
+              and any(r.get("geomId") == "TR-D-56-007" and r.get("oy") for r in rec["ilceler"]))
+
+
 def main():
+    check_completed_records()
     check_checksums()
     check_raw_checksum_coverage()
     check_sandalye_totals()
