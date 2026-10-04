@@ -1,0 +1,574 @@
+{
+ "not": "build_ilce_secim.py ile üretilir; elle düzenlenmez. Tablo: ilce_eslesme/1989yerel.csv.",
+ "ozet": {
+  "birlesimPoligonu": 21,
+  "katilanIlce": 21,
+  "belirsizIlce": 0,
+  "geometrisizSatir": 0,
+  "yontem": {
+   "kendi_satiri": 610,
+   "en_buyuk_pay": 8,
+   "tarihsel_birlesim": 314,
+   "cogunluk": 11,
+   "komsuluk": 2,
+   "bolunmus_poligon": 5,
+   "istanbul_mahalle": 23
+  }
+ },
+ "birlesimler": [
+  {
+   "plaka": 1,
+   "ilce": "Seyhan",
+   "geomId": "HIST1989yerel-01-Seyhan",
+   "oncekiGeomId": "TR-D-01-012",
+   "katilanlar": [
+    "TR-D-01-003"
+   ],
+   "katilanAdlar": [
+    "Çukurova"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-01-003",
+    "TR-D-01-012"
+   ]
+  },
+  {
+   "plaka": 6,
+   "ilce": "Altındağ",
+   "geomId": "HIST1989yerel-06-Altindag",
+   "oncekiGeomId": "TR-D-06-002",
+   "katilanlar": [
+    "TR-D-06-022"
+   ],
+   "katilanAdlar": [
+    "Pursaklar"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-06-002",
+    "TR-D-06-022"
+   ]
+  },
+  {
+   "plaka": 6,
+   "ilce": "Çubuk",
+   "geomId": "HIST1989yerel-06-Cubuk",
+   "oncekiGeomId": "TR-D-06-008",
+   "katilanlar": [
+    "TR-D-06-001"
+   ],
+   "katilanAdlar": [
+    "Akyurt"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-06-001",
+    "TR-D-06-008"
+   ]
+  },
+  {
+   "plaka": 7,
+   "ilce": "Akseki",
+   "geomId": "HIST1989yerel-07-Akseki",
+   "oncekiGeomId": "TR-D-07-001",
+   "katilanlar": [
+    "TR-D-07-010"
+   ],
+   "katilanAdlar": [
+    "İbradı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-07-001",
+    "TR-D-07-010"
+   ]
+  },
+  {
+   "plaka": 9,
+   "ilce": "Söke",
+   "geomId": "HIST1989yerel-09-Soke",
+   "oncekiGeomId": "TR-D-09-015",
+   "katilanlar": [
+    "TR-D-09-004"
+   ],
+   "katilanAdlar": [
+    "Didim"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-09-004",
+    "TR-D-09-015"
+   ]
+  },
+  {
+   "plaka": 12,
+   "ilce": "Kiğı",
+   "geomId": "HIST1989yerel-12-Kigi",
+   "oncekiGeomId": "TR-D-12-005",
+   "katilanlar": [
+    "TR-D-12-008"
+   ],
+   "katilanAdlar": [
+    "Yedisu"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-12-005",
+    "TR-D-12-008"
+   ]
+  },
+  {
+   "plaka": 18,
+   "ilce": "Kurşunlu",
+   "geomId": "HIST1989yerel-18-Kursunlu",
+   "oncekiGeomId": "TR-D-18-009",
+   "katilanlar": [
+    "TR-D-18-002"
+   ],
+   "katilanAdlar": [
+    "Bayramören"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-18-002",
+    "TR-D-18-009"
+   ]
+  },
+  {
+   "plaka": 23,
+   "ilce": "Maden",
+   "geomId": "HIST1989yerel-23-Maden",
+   "oncekiGeomId": "TR-D-23-009",
+   "katilanlar": [
+    "TR-D-23-002"
+   ],
+   "katilanAdlar": [
+    "Alacakaya"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-23-002",
+    "TR-D-23-009"
+   ]
+  },
+  {
+   "plaka": 29,
+   "ilce": "Torul",
+   "geomId": "HIST1989yerel-29-Torul",
+   "oncekiGeomId": "TR-D-29-006",
+   "katilanlar": [
+    "TR-D-29-004"
+   ],
+   "katilanAdlar": [
+    "Kürtün"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-29-004",
+    "TR-D-29-006"
+   ]
+  },
+  {
+   "plaka": 30,
+   "ilce": "Şemdinli",
+   "geomId": "HIST1989yerel-30-Semdinli",
+   "oncekiGeomId": "TR-D-30-003",
+   "katilanlar": [
+    "TR-D-30-005"
+   ],
+   "katilanAdlar": [
+    "Derecik"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-30-003",
+    "TR-D-30-005"
+   ]
+  },
+  {
+   "plaka": 37,
+   "ilce": "Azdavay",
+   "geomId": "HIST1989yerel-37-Azdavay",
+   "oncekiGeomId": "TR-D-37-004",
+   "katilanlar": [
+    "TR-D-37-002"
+   ],
+   "katilanAdlar": [
+    "Ağlı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-37-002",
+    "TR-D-37-004"
+   ]
+  },
+  {
+   "plaka": 37,
+   "ilce": "Devrekani",
+   "geomId": "HIST1989yerel-37-Devrekani",
+   "oncekiGeomId": "TR-D-37-009",
+   "katilanlar": [
+    "TR-D-37-017"
+   ],
+   "katilanAdlar": [
+    "Seydiler"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-37-009",
+    "TR-D-37-017"
+   ]
+  },
+  {
+   "plaka": 38,
+   "ilce": "Felahiye",
+   "geomId": "HIST1989yerel-38-Felahiye",
+   "oncekiGeomId": "TR-D-38-004",
+   "katilanlar": [
+    "TR-D-38-009"
+   ],
+   "katilanAdlar": [
+    "Özvatan"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-38-004",
+    "TR-D-38-009"
+   ]
+  },
+  {
+   "plaka": 40,
+   "ilce": "Çiçekdağı",
+   "geomId": "HIST1989yerel-40-Cicekdagi",
+   "oncekiGeomId": "TR-D-40-004",
+   "katilanlar": [
+    "TR-D-40-001"
+   ],
+   "katilanAdlar": [
+    "Akçakent"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-40-001",
+    "TR-D-40-004"
+   ]
+  },
+  {
+   "plaka": 42,
+   "ilce": "Selçuklu",
+   "geomId": "HIST1989yerel-42-Selcuklu",
+   "oncekiGeomId": "TR-D-42-026",
+   "katilanlar": [
+    "TR-D-42-010"
+   ],
+   "katilanAdlar": [
+    "Derbent"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-42-010",
+    "TR-D-42-026"
+   ]
+  },
+  {
+   "plaka": 43,
+   "ilce": "Emet",
+   "geomId": "HIST1989yerel-43-Emet",
+   "oncekiGeomId": "TR-D-43-006",
+   "katilanlar": [
+    "TR-D-43-003"
+   ],
+   "katilanAdlar": [
+    "Çavdarhisar"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-43-003",
+    "TR-D-43-006"
+   ]
+  },
+  {
+   "plaka": 45,
+   "ilce": "Gördes",
+   "geomId": "HIST1989yerel-45-Gordes",
+   "oncekiGeomId": "TR-D-45-006",
+   "katilanlar": [
+    "TR-D-45-008"
+   ],
+   "katilanAdlar": [
+    "Köprübaşı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-45-006",
+    "TR-D-45-008"
+   ]
+  },
+  {
+   "plaka": 51,
+   "ilce": "Aksaray",
+   "geomId": "HIST1989yerel-51-Aksaray",
+   "oncekiGeomId": "HISTK-68-002-25fa6a",
+   "katilanlar": [
+    "TR-D-68-008"
+   ],
+   "katilanAdlar": [
+    "Sultanhanı"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-68-002",
+    "TR-D-68-003",
+    "TR-D-68-004",
+    "TR-D-68-005",
+    "TR-D-68-008"
+   ]
+  },
+  {
+   "plaka": 52,
+   "ilce": "Ünye",
+   "geomId": "HIST1989yerel-52-Unye",
+   "oncekiGeomId": "HISTK-52-019-46579d",
+   "katilanlar": [
+    "TR-D-52-011"
+   ],
+   "katilanAdlar": [
+    "İkizce"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-52-006",
+    "TR-D-52-011",
+    "TR-D-52-019"
+   ]
+  },
+  {
+   "plaka": 58,
+   "ilce": "Şarkışla",
+   "geomId": "HIST1989yerel-58-Sarkisla",
+   "oncekiGeomId": "TR-D-58-014",
+   "katilanlar": [
+    "TR-D-58-002"
+   ],
+   "katilanAdlar": [
+    "Altınyayla"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-58-002",
+    "TR-D-58-014"
+   ]
+  },
+  {
+   "plaka": 60,
+   "ilce": "Yeşilyurt",
+   "geomId": "HIST1989yerel-60-Yesilyurt",
+   "oncekiGeomId": "TR-D-60-011",
+   "katilanlar": [
+    "TR-D-60-008"
+   ],
+   "katilanAdlar": [
+    "Sulusaray"
+   ],
+   "bugunkuIlceler": [
+    "TR-D-60-008",
+    "TR-D-60-011"
+   ]
+  }
+ ],
+ "cogunluk": {
+  "TR-D-01-003": {
+   "ana": "Seyhan",
+   "pay": 0.58,
+   "digerleri": [
+    [
+     "Karaisalı",
+     0.42
+    ]
+   ]
+  },
+  "TR-D-06-001": {
+   "ana": "Çubuk",
+   "pay": 0.8,
+   "digerleri": [
+    [
+     "Kalecik",
+     0.2
+    ]
+   ]
+  },
+  "TR-D-06-022": {
+   "ana": "Altındağ",
+   "pay": 0.4,
+   "digerleri": [
+    [
+     "Keçiören",
+     0.4
+    ],
+    [
+     "Çubuk",
+     0.2
+    ]
+   ]
+  },
+  "TR-D-07-010": {
+   "ana": "Akseki",
+   "pay": 0.72,
+   "digerleri": [
+    [
+     "Manavgat",
+     0.28
+    ]
+   ]
+  },
+  "TR-D-09-004": {
+   "ana": "Söke",
+   "pay": 0.83,
+   "digerleri": [
+    [
+     "Milas",
+     0.17
+    ]
+   ]
+  },
+  "TR-D-12-008": {
+   "ana": "Kiğı",
+   "pay": 0.6,
+   "digerleri": [
+    [
+     "Karlıova",
+     0.15
+    ],
+    [
+     "Pülümür",
+     0.25
+    ]
+   ]
+  },
+  "TR-D-18-002": {
+   "ana": "Kurşunlu",
+   "pay": 0.89,
+   "digerleri": [
+    [
+     "Atkaracalar",
+     0.11
+    ]
+   ]
+  },
+  "TR-D-23-002": {
+   "ana": "Maden",
+   "pay": 0.58,
+   "digerleri": [
+    [
+     "Arıcak",
+     0.42
+    ]
+   ]
+  },
+  "TR-D-29-004": {
+   "ana": "Torul",
+   "pay": 0.94,
+   "digerleri": [
+    [
+     "Tirebolu",
+     0.06
+    ]
+   ]
+  },
+  "TR-D-37-002": {
+   "ana": "Azdavay",
+   "pay": 0.47,
+   "digerleri": [
+    [
+     "Daday",
+     0.2
+    ],
+    [
+     "Küre",
+     0.33
+    ]
+   ]
+  },
+  "TR-D-37-017": {
+   "ana": "Devrekani",
+   "pay": 0.65,
+   "digerleri": [
+    [
+     "Küre",
+     0.35
+    ]
+   ]
+  },
+  "TR-D-38-009": {
+   "ana": "Felahiye",
+   "pay": 0.5,
+   "digerleri": [
+    [
+     "Kocasinan",
+     0.2
+    ],
+    [
+     "Sarıoğlan",
+     0.3
+    ]
+   ]
+  },
+  "TR-D-40-001": {
+   "ana": "Çiçekdağı",
+   "pay": 0.81,
+   "digerleri": [
+    [
+     "Akpınar",
+     0.18
+    ]
+   ]
+  },
+  "TR-D-42-010": {
+   "ana": "Selçuklu",
+   "pay": 0.9,
+   "digerleri": [
+    [
+     "Meram",
+     0.1
+    ]
+   ]
+  },
+  "TR-D-43-003": {
+   "ana": "Emet",
+   "pay": 0.61,
+   "digerleri": [
+    [
+     "Aslanapa",
+     0.06
+    ],
+    [
+     "Gediz",
+     0.33
+    ]
+   ]
+  },
+  "TR-D-45-008": {
+   "ana": "Gördes",
+   "pay": 0.97,
+   "digerleri": [
+    [
+     "Salihli",
+     0.03
+    ]
+   ]
+  },
+  "TR-D-52-011": {
+   "ana": "Ünye",
+   "pay": 0.82,
+   "digerleri": [
+    [
+     "Terme",
+     0.18
+    ]
+   ]
+  },
+  "TR-D-58-002": {
+   "ana": "Şarkışla",
+   "pay": 0.9,
+   "digerleri": [
+    [
+     "Merkez",
+     0.1
+    ]
+   ]
+  },
+  "TR-D-60-008": {
+   "ana": "Yeşilyurt",
+   "pay": 0.95,
+   "digerleri": [
+    [
+     "Artova",
+     0.05
+    ]
+   ]
+  }
+ },
+ "belirsiz": [],
+ "geometrisizSatir": []
+}
