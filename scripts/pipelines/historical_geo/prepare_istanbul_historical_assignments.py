@@ -118,7 +118,7 @@ def main():
         'not': __doc__, 'ilceler': tablo}, ensure_ascii=False, indent=1))
     (IDARI / 'ilce_bolusumu.json').write_text(json.dumps({
         'not': 'Genel çok kaynaklı bölüşüm henüz kaynaklanmadı. İstanbul kendi tablosundan üretilir.',
-        'uygulananSecimler': ['1961referandum', '1961', '1989yerel', '1991'], 'ilceler': {}}, ensure_ascii=False, indent=1))
+        'uygulananSecimler': ['1961referandum', '1961', '1965', '1989yerel', '1991'], 'ilceler': {}}, ensure_ascii=False, indent=1))
     print("1987 öncesi Ümraniye mahalleleri:", len(umraniye), "→",
           {il: sum(1 for v in atama.values() if v[0] == il) for il in sorted({v[0] for v in atama.values()})})
 
