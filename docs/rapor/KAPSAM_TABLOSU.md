@@ -19,7 +19,7 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 - **Referandum:** 7 satırın hepsi ilçe düzeyinde tam.
 - **Yerel seçim:** 45 satırdan 22 tam; eksik olanlar: 1950 (VERY_PARTIAL), 1950 BM (UNKNOWN), 1950 İGM (UNKNOWN), 1955 (VERY_PARTIAL), 1955 BM (UNKNOWN), 1955 İGM (UNKNOWN), 1963 BM (UNKNOWN), 1963 İGM (UNKNOWN), 1968 BM (UNKNOWN), 1968 İGM (UNKNOWN), 1973 BM (UNKNOWN), 1973 İGM (UNKNOWN), 1977 BM (UNKNOWN), 1977 İGM (UNKNOWN), 1984 BM (PARTIAL), 1984 İGM (PARTIAL), 1989 BM (MOSTLY_COMPLETE), 1994 BM (PARTIAL), 1994 İGM (PARTIAL), 1999 BM (PARTIAL), 1999 İGM (PARTIAL), 2004 BM (MOSTLY_COMPLETE), 2004 İGM (MOSTLY_COMPLETE).
 - **Cumhurbaşkanlığı:** 4 satırın hepsi ilçe düzeyinde tam.
-- **Tam ama zayıf kaynaklı:** 1963 yerel, 1968 yerel, 1973 yerel, 1977 yerel — sayılar tam, ancak satırların bir kısmı ya da tamamı yalnız Wikipedia'dan; A kaynağıyla doğrulanmadı.
+- **Tam ama zayıf kaynaklı:** 1963 yerel, 1968 yerel, 1973 yerel, 1977 yerel, 2009 yerel — sayılar tam, ancak satırların bir kısmı ya da tamamı yalnız Wikipedia'dan; A kaynağıyla doğrulanmadı.
 
 ## Ana tablo
 
@@ -55,7 +55,7 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 | Yerel seçim | 1950 | Belediye başkanlığı | 2/63 (+61 yalnız kazanan) | Çok kısmi | 478 | 496 | 5 | 491 | 99,0 | VERY_PARTIAL | Türkçe Wikipedia (D) | Evet |
 | Yerel seçim | 1950 | Belediye meclisi | 0 | Yok | 478 | – | 0 | 478 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
 | Yerel seçim | 1950 | İl genel meclisi | 0 | Yok | 478 | – | 0 | 478 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
-| Yerel seçim | 1955 | Belediye başkanlığı | 40/64 (+24 yalnız kazanan) | Çok kısmi | 539 | 530 | 0 | 530 | 100,0 | VERY_PARTIAL | Türkçe Wikipedia (D) | Evet |
+| Yerel seçim | 1955 | Belediye başkanlığı | 40/66 (+25 yalnız kazanan) | Çok kısmi | 539 | 547 | 0 | 547 | 100,0 | VERY_PARTIAL | Türkçe Wikipedia (D) | Evet |
 | Yerel seçim | 1955 | Belediye meclisi | 0 | Yok | 539 | – | 0 | 539 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
 | Yerel seçim | 1955 | İl genel meclisi | 0 | Yok | 539 | – | 0 | 539 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
 | Yerel seçim | 1963 | Belediye başkanlığı | 67/67 | Tam | 615 | 620 | 620 | 0 | 0,0 | COMPLETE | Türkçe Wikipedia (D) | Doğrulama (D kaynaklı satırlar A kaynağıyla) |
@@ -85,7 +85,7 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 | Yerel seçim | 2004 | Belediye başkanlığı | 81/81 | Tam | 906 | 945 | 945 | 0 | 0,0 | COMPLETE | TÜİK/DİE %50; YSK %26; Wikipedia satırları, sayılar DİE kitabıyla teyitli %25 (A) | Hayır |
 | Yerel seçim | 2004 | Belediye meclisi | 79/81 | Neredeyse tam | 906 | 945 | 902 | 43 | 4,6 | MOSTLY_COMPLETE | TÜİK/DİE (A) | Evet |
 | Yerel seçim | 2004 | İl genel meclisi | 81/81 | Neredeyse tam | 906 | 945 | 878 | 67 | 7,1 | MOSTLY_COMPLETE | TÜİK/DİE (A) | Evet |
-| Yerel seçim | 2009 | Belediye başkanlığı | 81/81 | Tam | 950 | 957 | 956 | 1 | 0,1 | COMPLETE | YSK (A) | Hayır |
+| Yerel seçim | 2009 | Belediye başkanlığı | 81/81 | Tam | 950 | 957 | 957 | 0 | 0,0 | COMPLETE | Türkçe Wikipedia %50; YSK %50 (A/D) | Doğrulama (D kaynaklı satırlar A kaynağıyla) |
 | Yerel seçim | 2009 | Belediye meclisi | 81/81 | Tam | 950 | 957 | 956 | 1 | 0,1 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 2009 | İl genel meclisi | 81/81 | Tam | 950 | 955 | 955 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 2014 | Belediye başkanlığı | 81/81 | Tam | 973 | 970 | 970 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
@@ -107,7 +107,7 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 - Yerel seçim 1950 — Belediye başkanlığı: 491 satırda yalnız kazanan parti (oy yok); bazı satırlarda katılım yok; 61 ilde yalnız kazanan / sandalye dağılımı.
 - Yerel seçim 1950 — Belediye meclisi: projede kayıt yok; 1950/1955'te başkanlık satırları zaten meclis sandalyesi.
 - Yerel seçim 1950 — İl genel meclisi: projede kayıt yok; 1950/1955'te başkanlık satırları zaten meclis sandalyesi.
-- Yerel seçim 1955 — Belediye başkanlığı: 530 satırda yalnız kazanan parti (oy yok); 24 ilde yalnız kazanan / sandalye dağılımı.
+- Yerel seçim 1955 — Belediye başkanlığı: 547 satırda yalnız kazanan parti (oy yok); 25 ilde yalnız kazanan / sandalye dağılımı.
 - Yerel seçim 1955 — Belediye meclisi: projede kayıt yok; 1950/1955'te başkanlık satırları zaten meclis sandalyesi.
 - Yerel seçim 1955 — İl genel meclisi: projede kayıt yok; 1950/1955'te başkanlık satırları zaten meclis sandalyesi.
 - Yerel seçim 1963 — Belediye başkanlığı: bazı satırlarda katılım yok.
@@ -171,7 +171,7 @@ A tam veri (≥ %90) · B kısmi · C yalnız il/genel toplam · D sonuç veri s
 | 1994 | A (%100,0) | B (%70,1) | B (%69,0) |
 | 1999 | A (%100,0) | B (%79,9) | B (%88,0) |
 | 2004 | A (%100,0) | A (%95,4) | A (%92,9) |
-| 2009 | A (%99,9) | A (%99,9) | A (%100,0) |
+| 2009 | A (%100,0) | A (%99,9) | A (%100,0) |
 | 2014 | A (%100,0) | A (%100,0) | A (%100,0) |
 | 2019 | A (%100,0) | A (%100,0) | A (%100,0) |
 | 2024 | A (%100,0) | A (%100,0) | A (%100,0) |
@@ -197,7 +197,7 @@ teyitli. Bu yıllardaki boşluk meclis sonuçlarında (taranmış kitabın okuna
 | 3 — Dağınık veri mevcut | Yerel seçim 1950 belediye başkanlığı | 491 birim (%99,0) | 5/496 birim; 62 il hiç yok, 1 il tam | DİE 1950/1955 mahalli seçim yayınları, il yıllıkları, dönemin gazeteleri |
 | 3 — Dağınık veri mevcut | Genel seçim 1950 | 478 birim (%100,0) | il düzeyi tam (63/63) | Parçalı il çalışmaları (ACADEMIC-002), yerel gazeteler, BCA; ulusal kaynak araması kapandı |
 | 3 — Dağınık veri mevcut | Genel seçim 1954 | 506 birim (%100,0) | il düzeyi tam (64/64) | Parçalı il çalışmaları (ACADEMIC-002), yerel gazeteler, BCA; ulusal kaynak araması kapandı |
-| 3 — Dağınık veri mevcut | Yerel seçim 1955 belediye başkanlığı | 530 birim (%100,0) | 0/530 birim; 63 il hiç yok | DİE 1950/1955 mahalli seçim yayınları, il yıllıkları, dönemin gazeteleri |
+| 3 — Dağınık veri mevcut | Yerel seçim 1955 belediye başkanlığı | 547 birim (%100,0) | 0/547 birim; 66 il hiç yok | DİE 1950/1955 mahalli seçim yayınları, il yıllıkları, dönemin gazeteleri |
 | 3 — Dağınık veri mevcut | Genel seçim 1957 | 560 birim (%100,0) | il düzeyi tam (67/67) | Parçalı il çalışmaları (ACADEMIC-002), yerel gazeteler, BCA; ulusal kaynak araması kapandı |
 | 4 — Neredeyse hiç veri yok | Yerel seçim 1950 belediye meclisi | 478 birim (%100,0) | yok | İstatistik Umum Müdürlüğü yayınları, il yıllıkları, dönemin gazeteleri |
 | 4 — Neredeyse hiç veri yok | Yerel seçim 1950 il genel meclisi | 478 birim (%100,0) | yok | İstatistik Umum Müdürlüğü yayınları, il yıllıkları, dönemin gazeteleri |

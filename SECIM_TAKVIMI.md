@@ -32,7 +32,7 @@ yöntemle birebir aynı ("Wikipedia (il başına alt makaleler)", bkz.
 | Yıl | Tarih | İl sayısı | Not |
 |---|---|---|---|
 | 1950 | 3 Eylül 1950 | 63/63 | Dolaylı sistem: başkan, meclisin kendi içinden seçiliyordu — çoğu ilde sadece meclis sandalye dağılımı var, gerçek oy sayısı yalnızca 2 ilde (Ağrı, Bursa) |
-| 1955 | 13 Kasım 1955 | 64/64 | Aynı dolaylı sistem; CHP ve Cumhuriyetçi Millet Partisi bu seçime hiç katılmadı (tarihi olgu) |
+| 1955 | 13 Kasım 1955 | 66/66 | 1954'te kurulan Nevşehir, Adıyaman ve Sakarya il; Kırşehir Nevşehir'in ilçesi (2026-10-05'te düzeltildi). Aynı dolaylı sistem; CHP ve Cumhuriyetçi Millet Partisi bu seçime hiç katılmadı (tarihi olgu) |
 | 1963 | 17 Kasım 1963 | 67/67 | İlk tek dereceli (doğrudan) yerel seçim; ana makalenin karşılaştırma tablosuyla 66/67 örtüştü (İstanbul'da bilinen bir diskalifiye vakası hariç, ayrıntı `sources.yml`'de) |
 | 1968 | 2 Haziran 1968 | 67/67 | Ana makale karşılaştırma tablosuyla 67/67 birebir örtüştü |
 | 1973 | 9 Aralık 1973 | 67/67 | Ana makale karşılaştırma tablosuyla VE düz metin özetiyle (32/22/8 CHP/AP/Bağımsız) birebir örtüştü |

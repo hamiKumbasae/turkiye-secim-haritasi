@@ -159,6 +159,8 @@ Kaynak başına ayrıştırılmış veri `data/kaynaklar/`, ham dosyalar `data/r
 - `data/raw/{haberturk,wikipedia}/` ve `data/raw/ysk/`'nin mahalle-düzeyi
   kısmı şu an boş — bu kaynakların orijinal ham çıktısı hiç saklanmamış veya
   yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
+- 2009 yerelde Ağın ve Kadışehri başkanlık seçimi 29 Mart'ta iptal edilip 7 Haziran'da yenilendi:
+  haritada 29 Mart sonucu (2019 İstanbul gibi), yenileme `data/normalized/ek/yenileme_ara/`'da.
 - 1950 ve 1955 yerel seçimlerinde ilçeler için yalnız kazanan parti var (oy sayısı
   yok); 1963–1977 yerel seçimlerinde ilçe belediye başkanlığı satırları var — bkz.
   [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md) (1950-2024 arası tüm seçimlerin tam
@@ -182,10 +184,8 @@ Aşağıdakiler depodaki veriyle çözülemiyor; her biri yeni bir kaynak gerekt
   Körfez, Aliağa, Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı
   (`geo/historical/idari/ilce_eslesme/*.csv`, güven `kaba`); köy düzeyinde kaynak bulunursa bölünebilir.
 - **Ankara Merkez (1961–1983):** ayrı ilçeydi ama sınırı kaynakta yok; haritada poligonu yok.
-- **1955 yerel il sınırları:** Kırşehir ili 1954–1957 arasında kaldırılmıştı; 1955 verisinde Kaman
-  Ankara'da, Çiçekdağı Yozgat'ta, ama il haritası 1954 sınırlarıyla (Kırşehir il) çiziliyor.
-- **2009 yerel:** Ağın (Elazığ) başkanlık ve Kadışehri (Yozgat) belediye meclisi sonucu YSK açık
-  verisinde yok.
+- **2009 yerel, Kadışehri belediye meclisi:** ilçede 29 Mart seçimi iptal edilip 7 Haziran'da
+  yenilendi; ilçe merkezi meclis sonucu YSK açık verisinde ve Vikipedi'de yok.
 - 1950/1954/1957 genel seçimler il düzeyinde kalır (ülke çapında ilçe kaynağı bulunamadı).
 
 Bilgi notu: 2011'de BDP adayları bağımsız girdi. İl satırı bu oyları "BDP" sayan yedi ilde

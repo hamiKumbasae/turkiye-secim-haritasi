@@ -356,10 +356,10 @@ beldesi) haritada ayrıca çizilmez, tabloda kalır.
 - **1950 ve 1954 il sınırları** 2026-10-05'ten beri 1950/1955 yerel seçim verisinden
   (`build_il_sinirlari.py`); satırı olmayan ilçe önce kuruluş kanunundaki eski ilçesinin, sonra
   1961'deki ilinin ilini alır.
-- **1955 yerel için il sınır dosyası yok** (66 il). Snapshot'ta
-  `provinceGeometryStatus: "missing_snapshot_do_not_guess"`. 1994 yerel için 2026-10-04'ten beri
-  `era1994` var (`build_il_sinirlari.py`; snapshot dosyası yeniden üretilmedi).
-- **1955 yerel verisi 64 il**: Adıyaman, Nevşehir, Sakarya yok, Kırşehir il olarak var.
+- **1955 yerel:** 2026-10-05'ten beri `era1955` (66 il) seçim verisinden üretiliyor; veri 1954'te kurulan
+  Nevşehir, Adıyaman ve Sakarya illerini içeriyor, Kırşehir Nevşehir'in ilçesi
+  (`election_import/yerel_1955_iller.py`). 1994 yerel için 2026-10-04'ten beri `era1994` var. Snapshot
+  dosyası (`election_admin_snapshots.json`) yeniden üretilmedi; oradaki "missing_snapshot" notları eskidir.
 - **Bozkurt (Kastamonu)**: 1055 sayılı Kanunla 17.07.1968'de (merkezi Pazaryeri)
   kuruldu; 1961 ve 1965 seçim verisindeki "Bozkurt" satırları bu ilçe olamaz — seçim
   verisinin adı ya da eşlemesi doğrulanmalı.

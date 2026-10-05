@@ -116,4 +116,12 @@ Atlas düzeltmesi: https://github.com/hamiKumbasae/turkiye-secim-atlasi/pull/9
   ayrıştırılamadığında aynı sayfaların ayrıştırılmış katmanını (`data/kaynaklar/wikipedia/yerel/`)
   kullanacak şekilde genişletildi ve üç seçime uygulandı (2009: 91, 2014: 44, 2019: 73 kayıt; 106 kayıtta
   bağımsız eklendi). Doğrulanmamış bulgular 924 → 731.
+- **1955 yerel, il listesi:** kayıt 1954 öncesi il listesiyle kurulmuştu (64 il). 13 Kasım 1955'te var olan
+  Nevşehir, Adıyaman ve Sakarya eklendi, "Kırşehir" il satırı (aslında Nevşehir'in Kırşehir ilçesi)
+  ilçe satırına çevrildi; 17 ilçe satırı (yalnız kazanan) depodaki ayrıştırılmış Vikipedi katmanından
+  (`election_import/yerel_1955_iller.py`). 66 il.
+- **2009 yerel, Ağın ve Kadışehri:** 29 Mart başkanlık seçimi iptal edilip 7 Haziran 2009'da yenilendi;
+  YSK açık verisinde ilçe merkezi yoktu (Ağın boş; Kadışehri satırında Halıköy beldesinin sonucu vardı).
+  29 Mart sonucu seçim kaydına, 7 Haziran sonucu `ek/yenileme_ara/2009yenileme_belediye_baskanligi.json`'a
+  (Vikipedi il sayfaları, `election_import/yenileme_2009.py`).
 

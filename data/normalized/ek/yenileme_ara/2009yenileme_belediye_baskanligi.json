@@ -1,0 +1,80 @@
+{
+ "secim": "2009yenileme_belediye_baskanligi",
+ "tur": "yenileme_ara",
+ "aciklama": "7 Haziran 2009 yenileme seçimi — belediye başkanlığı (29 Mart'ta iptal edilen Ağın ve Kadışehri)",
+ "kaynak": {
+  "ana": "wikipedia",
+  "not": "Vikipedi il sayfaları (gazetevatan.com, ntv.com.tr kaynaklı); YSK açık verisinde yok. scripts/pipelines/election_import/yenileme_2009.py"
+ },
+ "ozet": {
+  "birim": 2,
+  "belde": 0,
+  "il": 2
+ },
+ "birimler": [
+  {
+   "il": "Elazığ",
+   "plaka": 23,
+   "ilce": "Ağın",
+   "geomId": "TR-D-23-001",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 8,
+   "secmen": 1414,
+   "gecerliOy": 1208,
+   "gecersizOy": 28,
+   "katilim": 87.41,
+   "oy": {
+    "AK Parti": 649,
+    "MHP": 529,
+    "SP": 14,
+    "CHP": 10,
+    "BTP": 4,
+    "DSP": 1,
+    "DP": 1,
+    "Bağımsız": 0
+   },
+   "adaylar": {
+    "AK Parti": "Mustafa Yentür",
+    "MHP": "Mehmet Çelenk",
+    "SP": "Mehmet Özdem",
+    "CHP": "Kemal Zeki Aktaş",
+    "BTP": "Muhsin Hüseyin Öztürk",
+    "DSP": "Ramazan Kalkan",
+    "DP": "Hasan Ergün Yılmaz",
+    "Bağımsız": "Mustafa Nizamettin Karadağ"
+   },
+   "kazanan": "AK Parti",
+   "kaynakUrl": "https://tr.wikipedia.org/w/index.php?oldid=37726747"
+  },
+  {
+   "il": "Yozgat",
+   "plaka": 66,
+   "ilce": "Kadışehri",
+   "geomId": "TR-D-66-007",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 9,
+   "secmen": 2447,
+   "gecerliOy": 2215,
+   "gecersizOy": 77,
+   "katilim": 93.58,
+   "oy": {
+    "AK Parti": 1195,
+    "SP": 1000,
+    "CHP": 10,
+    "MHP": 9,
+    "DSP": 1
+   },
+   "adaylar": {
+    "AK Parti": "Davut Karadavut",
+    "SP": "Mustafa Aksu",
+    "CHP": "Hayri Cansever",
+    "MHP": "Hacı Mehmet Aksu",
+    "DSP": "Mihrali Yaşar"
+   },
+   "kazanan": "AK Parti",
+   "kaynakUrl": "https://tr.wikipedia.org/w/index.php?oldid=37778156"
+  }
+ ]
+}

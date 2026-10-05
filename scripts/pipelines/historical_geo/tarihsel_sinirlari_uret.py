@@ -8,6 +8,7 @@ tutarli sonuc verir:
                                            onun tabanindaki HISTK birlesimlerini kullanilmiyor sayip siler
   -  election_import/merkez_ilce_tamamla.py  2009-2011'de YSK aktarimindan dusen Merkez ilce satirlari
      election_import/etiket_2011_bdp.py    2011 BDP destekli bagimsizlarin ilce etiketi = il etiketi
+     election_import/yerel_1955_iller.py   1955 yerel: Nevsehir/Adiyaman/Sakarya il, Kirsehir ilce
   1. apply_idari_merges.py                 kanun kaynakli tek kaynakli birlesimler (HISTK-*)
      birlesim_2009_sonrasi.py              2009+ secimlerde henuz kurulmamis ilceler (HIST-*)
   2. prepare_istanbul_historical_assignments.py + build_istanbul_1961_1992.py
@@ -55,6 +56,7 @@ def main():
         raise SystemExit(f"SIRA listesinde olmayan secim: {sorted(bilinmeyen)}")
     # 2009-2011'de YSK aktarimindan dusen Merkez ilce satirlari (veri; geometriden once)
     calistir(ROOT / "scripts/pipelines/election_import/merkez_ilce_tamamla.py")
+    calistir(ROOT / "scripts/pipelines/election_import/yerel_1955_iller.py")
     calistir(ROOT / "scripts/pipelines/election_import/etiket_2011_bdp.py")
     # 0. secim katmanini geri al: apply_idari_merges.py tabandaki HISTK birlesimlerini gormeli
     for s in [s for s in SIRA if s in secimler]:

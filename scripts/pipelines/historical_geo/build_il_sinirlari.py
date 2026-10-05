@@ -16,7 +16,10 @@ Donemler (frontend/src/js/map.js -> GEO_ERAS ile ayni):
   era1994       <- 1994yerel   1994 (Bartin, Ardahan, Igdir il)
   era1950       <- 1950yerel   1950-1953 (genel secimde ilce verisi yok; yerel secim belediye
                                satirlarinin ili kullanilir)
-  era1954       <- 1955yerel   1954-1956, Kaman ve Cicekdagi haric (HARIC)
+  era1954       <- 1955yerel   1954 genel (2 Mayis 1954): il listesi 1954 genel secimden (IL_LISTESI);
+                               1954 yazinda kurulan Nevsehir/Adiyaman/Sakarya satirlari ve Kaman/Cicekdagi
+                               (Kirsehir'in kaldirilmasiyla tasindi) haric, onlar era1950'deki ilinde
+  era1955       <- 1955yerel   13 Kasim 1955 yerel (66 il; Kirsehir Nevsehir'in ilcesi)
 era1995, era1999 (zaten ilce verisiyle ortusuyor) degismez.
 
 1950/1954 eski elle uretilmis dosyalarda 2026-10-05'te bulunan hatalar (secim verisi ve kaynakla
@@ -24,9 +27,8 @@ dogrulandi): Kusadasi 1957'ye kadar Izmir'de (7033 sayili Kanun, RG 27.06.1957);
 Mardin'de, Beytussebap Hakkari'de, Eskipazar Cankiri'da (1990/1995'e kadar); 1950'de Findikli Artvin'de
 (27.11.1953'te Rize'ye), Esme Manisa'da (1953'te Usak'a), Kargi Kastamonu'da (1953'te Corum'a), Urgup
 Kayseri'de, Avanos ve Hacibektas Kirsehir'de (1954'te Nevsehir'e).
-Kirsehir ili 30.06.1954'te (6429) kaldirildi, 1957'de yeniden kuruldu: era1954 hem 1954 genel (Kirsehir il)
-hem 1955 yerel icin kullanildigindan 1955 verisindeki Kaman -> Ankara, Cicekdagi -> Yozgat bagliligi
-uygulanmaz (1955 yerel icin ayri il sinir dosyasi yok, bkz. idari/README.md).
+Kirsehir ili 30.06.1954'te (6429) kaldirildi, 1957'de yeniden kuruldu; ayni yaz Nevsehir, Adiyaman ve
+Sakarya il oldu. 1954 genel bu degisikliklerden once, 1955 yerel sonra: era1954 ve era1955 ayri dosyalar.
 
 Bugunku ilce secimde hicbir satira bagli degilse onceki donem dosyasindaki ili kullanilir.
 Delikler (dikis) doldurulur; bugunku il sinirlarinda delik yok.
@@ -53,16 +55,18 @@ from dikis_deliklerini_doldur import delikleri_doldur  # noqa: E402
 GEO_HIST = ROOT / "geo/historical"
 MODERN = ROOT / "geo/normalized/turkiye_ilce_sinirlari.geojson"
 SPLITS = GEO_HIST / "district_splits.json"
-DONEMLER = {"era1950": "1950yerel", "era1954": "1955yerel", "era1957_1965": "1961", "era1957_1987": "1987",
+DONEMLER = {"era1950": "1950yerel", "era1954": "1955yerel", "era1955": "1955yerel", "era1957_1965": "1961", "era1957_1987": "1987",
             "era1991": "1991", "era1994": "1994yerel"}
 # donem dosyasina yansitilmayan satirlar (ilce adi): ayni donem dosyasini kullanan iki secim arasinda il degisti
 HARIC = {"era1954": {"Kaman", "Çiçekdağı"}}
 # 1950/1954: satiri olmayan ilcede eski dosyadan once soy ve 1961 ili denenir (eski dosyalar elle yapilmisti)
-SOY_YEDEK = {"era1950", "era1954"}
+SOY_YEDEK = {"era1950", "era1954", "era1955"}
+# donemin il listesi baska secimden (bu secimde olmayan ilin satiri donem dosyasina yansimaz)
+IL_LISTESI = {"era1954": "1954"}
 LINEAGE = ROOT / "geo/historical/idari/district_lineage.json"
 ESLESME61 = ROOT / "geo/historical/idari/ilce_eslesme/1961.csv"
 # ilce satiri olmayan bugunku ilce icin yedek donem dosyasi
-YEDEK = {"era1950": "era1950", "era1954": "era1954", "era1957_1965": "era1957_1987", "era1957_1987": "era1957_1987", "era1991": "era1991",
+YEDEK = {"era1950": "era1950", "era1954": "era1950", "era1955": "era1954", "era1957_1965": "era1957_1987", "era1957_1987": "era1957_1987", "era1991": "era1991",
          "era1994": "era1995"}
 
 
@@ -80,7 +84,7 @@ def main():
     yedek_bellek = {}
     for era, secim in DONEMLER.items():
         rec = load_election(secim)
-        iller = {i["plaka"] for i in rec["iller"]}
+        iller = {i["plaka"] for i in load_election(IL_LISTESI.get(era, secim))["iller"]}
         il_of = {}
         for r in rec["ilceler"]:
             g = r.get("geomId")
@@ -113,7 +117,9 @@ def main():
             if yp not in yedek_bellek:
                 yedek_bellek[yp] = [(f["properties"]["plaka"], temiz(shape(f["geometry"]))) for f in oku(yp)["features"]]
             for g in eksik:
-                il_of[g] = max(yedek_bellek[yp], key=lambda pg: pg[1].intersection(modern[g]).area)[0]
+                # yedek dosyada bu donemde olmayan il (ornek 1955'te Kirsehir) secilmez
+                adaylar = [pg for pg in yedek_bellek[yp] if pg[0] in iller] or yedek_bellek[yp]
+                il_of[g] = max(adaylar, key=lambda pg: pg[1].intersection(modern[g]).area)[0]
         parcalar = collections.defaultdict(list)
         for g, p in il_of.items():
             parcalar[p].append(modern[g])
