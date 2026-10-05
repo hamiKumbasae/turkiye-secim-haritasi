@@ -22,6 +22,10 @@ korunur, yalniz:
 Vikipedi'de ilce bulunamazsa ya da bagimsiz aday yoksa yalniz fark 'Diğer'e eklenir
 (kaynak.digerTamamlama).
 
+Ham sayfa ayristirilamazsa (2009-2019 sayfalarinin tablo bicimi farkli) ayni sayfalarin
+ayristirilmis kaynak katmani (data/kaynaklar/wikipedia/yerel/<secim>.json: il_merkezi ve ilce
+kayitlari, adaylar ve kazanan) yedek olarak kullanilir.
+
 Kullanim:
   .venv/bin/python scripts/pipelines/election_import/wiki_bagimsiz.py <secim> [kontrol|uygula]
 """
@@ -107,10 +111,29 @@ def il_sayfalari(secim):
     return sayfa
 
 
+def katman(secim):
+    """ayristirilmis Vikipedi katmani: (plaka, '__il__' | sade(ilce)) -> (adaylar, kazanan, url)"""
+    p = ROOT / "data/kaynaklar/wikipedia/yerel" / f"{secim}.json"
+    if not p.exists():
+        return {}
+    out = {}
+    for k in json.loads(p.read_text(encoding="utf-8"))["kayitlar"]:
+        if k.get("tur") not in ("il_merkezi", "ilce") or not k.get("adaylar") or not k.get("plaka"):
+            continue
+        anahtar = (k["plaka"], "__il__" if k["tur"] == "il_merkezi" else sade(k["ad"]))
+        if anahtar in out:          # ayni ad iki kez: belirsiz, kullanma
+            out[anahtar] = None
+            continue
+        url = f"https://tr.wikipedia.org/w/index.php?oldid={k['revid']}" if k.get("revid") else k.get("sayfa", "")
+        out[anahtar] = ([(a.get("parti"), a.get("aday"), a.get("oy") or 0) for a in k["adaylar"]], k.get("kazanan"), url)
+    return out
+
+
 def duzelt(secim, uygula):
     rec = load_election(secim)
     il_ad = {r["plaka"]: r["ad"] for r in rec["iller"]}
     sayfa = il_sayfalari(secim)
+    yedek = katman(secim)
     rapor = []
     for lv in ("iller", "ilceler"):
         for r in rec[lv]:
@@ -124,10 +147,17 @@ def duzelt(secim, uygula):
             sp = sayfa.get(sade(il_ad.get(r["plaka"], "")))
             bol = None
             if sp:
-                anahtar = "__il__" if lv == "iller" or r["ad"] == "Merkez" else sade(r["ad"])
+                anahtar = "__il__" if lv == "iller" or r["ad"] in ("Merkez", il_ad.get(r["plaka"], "") + " Merkez") else sade(r["ad"])
                 bol = sp[0].get(anahtar)
             bag = sorted([(a, o) for p, a, o, _ in (bol or []) if p == "Bağımsız"], key=lambda x: -x[1])
             secilen = next((p for p, _, _, s in (bol or []) if s), None)
+            secilen = PARTI.get(secilen) if secilen else None
+            kaynak_url = sp[1]["url"] if sp else ""
+            if not bag:
+                y = yedek.get((r["plaka"], "__il__" if lv == "iller" or r["ad"] in ("Merkez", il_ad.get(r["plaka"], "") + " Merkez") else sade(r["ad"])))
+                if y:
+                    bag = sorted([(a, o) for p, a, o in y[0] if p == "Bağımsız" and o], key=lambda x: -x[1])
+                    secilen, kaynak_url = y[1], y[2]
             bag_top = min(sum(o for _, o in bag), fark)
             ek = {}
             if bag_top:
@@ -139,7 +169,7 @@ def duzelt(secim, uygula):
             en_parti = max(partiler, key=partiler.get) if partiler else eski_kazanan
             kazanan = "Bağımsız" if bag and bag[0][1] > partiler.get(en_parti, 0) else en_parti
             if secilen:
-                k = PARTI.get(secilen)
+                k = secilen
                 kazanan = k if k in oy or k in ek else ("Diğer" if "Diğer" in oy or "Diğer" in ek else eski_kazanan)
             rapor.append((lv, r["plaka"], r["ad"], round(fark / v * 100, 1), ek, eski_kazanan, kazanan, bag[:1]))
             if uygula:
@@ -154,7 +184,7 @@ def duzelt(secim, uygula):
                 k = r["kaynak"]
                 if bag_top:
                     k["bagimsizTamamlama"] = {
-                        "kaynak": "Vikipedi il sayfası (YSK sonuçları), " + sp[1]["url"],
+                        "kaynak": "Vikipedi il sayfası (YSK sonuçları), " + kaynak_url,
                         "adaylar": [[a, o] for a, o in bag],
                         "not": "YSK agregesine aktarılmamış bağımsız aday oyları; kazanan aday düzeyinde belirlendi",
                     }

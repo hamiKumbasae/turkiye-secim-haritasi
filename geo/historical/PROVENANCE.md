@@ -22,6 +22,11 @@ provenance/checksums.json` (tüm snapshot klasörlerinin konsolide kaydı).
   sınırları (o dönem 63 il)
 - `turkiye_il_sinirlari_era1954.geojson` — 1954 (Bilecik düzeltmesi sonrası,
   64 il)
+- 2026-10-05: `era1950` (1950 yerel) ve `era1954` (1955 yerel) de seçim verisinden üretiliyor. Eski
+  elle yapılmış dosyalarda Kuşadası (1957'ye kadar İzmir), Cizre/İdil/Gercüş/Silopi/Hasankeyf (Mardin),
+  Beytüşşebap/Uludere (Hakkari), Eskipazar/Ovacık (Çankırı), Ağaçören/Sarıyahşi (Ankara), Armutlu
+  (Bursa), Altınova (Kocaeli) ve 1950'de Fındıklı (Artvin), Eşme (Manisa), Kargı (Kastamonu), Ürgüp
+  (Kayseri), Avanos/Hacıbektaş (Kırşehir) yanlış ildeydi.
 - 2026-10-04: `era1957_1965`, `era1957_1987`, `era1991`, `era1994` artık
   `scripts/pipelines/historical_geo/build_il_sinirlari.py` ile seçim verisindeki
   ilçe-il bağlılığından üretiliyor (bkz. `idari/README.md`); aşağıdaki açıklamalar

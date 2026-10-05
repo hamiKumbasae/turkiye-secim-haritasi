@@ -14,7 +14,19 @@ Donemler (frontend/src/js/map.js -> GEO_ERAS ile ayni):
   era1957_1987  <- 1987        1957 ve 1966-1990
   era1991       <- 1991        1991-1993
   era1994       <- 1994yerel   1994 (Bartin, Ardahan, Igdir il)
-era1950, era1954 (ilce verisi yok), era1995, era1999 (zaten ilce verisiyle ortusuyor) degismez.
+  era1950       <- 1950yerel   1950-1953 (genel secimde ilce verisi yok; yerel secim belediye
+                               satirlarinin ili kullanilir)
+  era1954       <- 1955yerel   1954-1956, Kaman ve Cicekdagi haric (HARIC)
+era1995, era1999 (zaten ilce verisiyle ortusuyor) degismez.
+
+1950/1954 eski elle uretilmis dosyalarda 2026-10-05'te bulunan hatalar (secim verisi ve kaynakla
+dogrulandi): Kusadasi 1957'ye kadar Izmir'de (7033 sayili Kanun, RG 27.06.1957); Cizre, Gercus, Idil
+Mardin'de, Beytussebap Hakkari'de, Eskipazar Cankiri'da (1990/1995'e kadar); 1950'de Findikli Artvin'de
+(27.11.1953'te Rize'ye), Esme Manisa'da (1953'te Usak'a), Kargi Kastamonu'da (1953'te Corum'a), Urgup
+Kayseri'de, Avanos ve Hacibektas Kirsehir'de (1954'te Nevsehir'e).
+Kirsehir ili 30.06.1954'te (6429) kaldirildi, 1957'de yeniden kuruldu: era1954 hem 1954 genel (Kirsehir il)
+hem 1955 yerel icin kullanildigindan 1955 verisindeki Kaman -> Ankara, Cicekdagi -> Yozgat bagliligi
+uygulanmaz (1955 yerel icin ayri il sinir dosyasi yok, bkz. idari/README.md).
 
 Bugunku ilce secimde hicbir satira bagli degilse onceki donem dosyasindaki ili kullanilir.
 Delikler (dikis) doldurulur; bugunku il sinirlarinda delik yok.
@@ -23,6 +35,7 @@ Kullanim:
   .venv/bin/python scripts/pipelines/historical_geo/build_il_sinirlari.py
 """
 import collections
+import csv
 import json
 import pathlib
 import sys
@@ -40,9 +53,16 @@ from dikis_deliklerini_doldur import delikleri_doldur  # noqa: E402
 GEO_HIST = ROOT / "geo/historical"
 MODERN = ROOT / "geo/normalized/turkiye_ilce_sinirlari.geojson"
 SPLITS = GEO_HIST / "district_splits.json"
-DONEMLER = {"era1957_1965": "1961", "era1957_1987": "1987", "era1991": "1991", "era1994": "1994yerel"}
+DONEMLER = {"era1950": "1950yerel", "era1954": "1955yerel", "era1957_1965": "1961", "era1957_1987": "1987",
+            "era1991": "1991", "era1994": "1994yerel"}
+# donem dosyasina yansitilmayan satirlar (ilce adi): ayni donem dosyasini kullanan iki secim arasinda il degisti
+HARIC = {"era1954": {"Kaman", "Çiçekdağı"}}
+# 1950/1954: satiri olmayan ilcede eski dosyadan once soy ve 1961 ili denenir (eski dosyalar elle yapilmisti)
+SOY_YEDEK = {"era1950", "era1954"}
+LINEAGE = ROOT / "geo/historical/idari/district_lineage.json"
+ESLESME61 = ROOT / "geo/historical/idari/ilce_eslesme/1961.csv"
 # ilce satiri olmayan bugunku ilce icin yedek donem dosyasi
-YEDEK = {"era1957_1965": "era1957_1987", "era1957_1987": "era1957_1987", "era1991": "era1991",
+YEDEK = {"era1950": "era1950", "era1954": "era1954", "era1957_1965": "era1957_1987", "era1957_1987": "era1957_1987", "era1991": "era1991",
          "era1994": "era1995"}
 
 
@@ -64,12 +84,30 @@ def main():
         il_of = {}
         for r in rec["ilceler"]:
             g = r.get("geomId")
-            if not g or r["plaka"] not in iller:
+            if not g or r["plaka"] not in iller or r["ad"] in HARIC.get(era, ()):
                 continue
             for x in hide.get(g, {g}):
                 if x in modern:
                     il_of.setdefault(x, r["plaka"])
         eksik = [g for g in modern if g not in il_of]
+        if era in SOY_YEDEK and eksik:
+            # satiri olmayan (sonradan kurulan) ilce: once kurulus kanunundaki tek eski ilcesinin ili
+            # (zincirle), sonra 1961'deki ili (o il bu donemde varsa); kalanlar eski donem dosyasindan
+            soy = {d["geomId"]: d for d in oku(LINEAGE)["districts"]}
+            il61 = {}
+            with open(ESLESME61, encoding="utf-8") as f:
+                for row in csv.DictReader(f):
+                    if row["plaka_secim"].isdigit():
+                        il61[row["guncel_geomId"]] = int(row["plaka_secim"])
+            for _ in range(5):
+                for g in [x for x in eksik if x not in il_of]:
+                    ek = ((soy.get(g) or {}).get("kanunSoyu") or {}).get("eskiIlceler") or []
+                    if len(ek) == 1 and ek[0].get("geomId") in il_of:
+                        il_of[g] = il_of[ek[0]["geomId"]]
+            for g in [x for x in eksik if x not in il_of]:
+                if il61.get(g) in iller:
+                    il_of[g] = il61[g]
+            eksik = [g for g in eksik if g not in il_of]
         if eksik:
             yp = GEO_HIST / f"turkiye_il_sinirlari_{YEDEK[era]}.geojson"
             if yp not in yedek_bellek:

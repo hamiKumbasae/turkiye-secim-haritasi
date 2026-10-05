@@ -153,20 +153,18 @@ Kaynak başına ayrıştırılmış veri `data/kaynaklar/`, ham dosyalar `data/r
 - 1950/1954/1957 genel seçimlerinde ilçe düzeyi veri yok, sadece il düzeyi —
   resmî bir ilçe kaynağı bulunamadı. 1961–1987 genel seçimlerinin ve 1961/1982/1987/1988
   referandumlarının ilçe düzeyi TÜİK yayınlarından (bkz. `scripts/pipelines/genel_ilce_1961_1987/`).
-- 1957/1961 genel seçimlerinde Sakarya'nın vekil dağılımı yok (YSK'nin
-  1950-1977 arşivinde bu il hiç yok, bkz. `data/raw/ysk/1950-1977/PROVENANCE.md`).
+- 1957/1961 Sakarya vekil dağılımı YSK'nin 1950–1977 arşivinde yok; ikincil arşivden tamamlandı
+  (bkz. `data/normalized/PROVENANCE.md`).
 - 2002 Siirt: il ve ilçe sonuçları, iptal edilip 9 Mart 2003'te yenilenen seçimin resmî sonucudur (YSK ve TÜİK aynı rakamı veriyor; hata değil — bkz. `sources.yml`).
-- 2014 yerel seçiminde BDP il/ilçe verisi hatalı (gerçek oylar mahalle
-  düzeyinde "HDP" altında bulundu, il/ilçe düzeyi düzeltilmedi).
 - `data/raw/{haberturk,wikipedia}/` ve `data/raw/ysk/`'nin mahalle-düzeyi
   kısmı şu an boş — bu kaynakların orijinal ham çıktısı hiç saklanmamış veya
   yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
-
-Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
 - 1950 ve 1955 yerel seçimlerinde ilçeler için yalnız kazanan parti var (oy sayısı
   yok); 1963–1977 yerel seçimlerinde ilçe belediye başkanlığı satırları var — bkz.
   [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md) (1950-2024 arası tüm seçimlerin tam
   takvimi ve bu projedeki kapsam durumu).
+
+Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
 
 ## Bilinen eksikler
 
@@ -175,19 +173,21 @@ kalite sınıfı, en iyi kaynağı ve araştırma önceliği: [`docs/rapor/KAPSA
 (`python3 scripts/rapor/kapsam_tablosu.py` üretir). Nerelere bakıldığı:
 [`data/kaynaklar/ARASTIRMA_KAYDI.md`](data/kaynaklar/ARASTIRMA_KAYDI.md).
 
+Aşağıdakiler depodaki veriyle çözülemiyor; her biri yeni bir kaynak gerektirir:
 
-- **Kaba eşlemeler:** her seçimde 15–20 civarı çok kaynaklı ilçe (ör. Çukurova, Körfez, Aliağa,
-  Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı; köy düzeyinde
-  kaynak bulunursa bölünerek düzeltilebilir.
+- **Yerel meclis sonuçları (1984–2004):** taranmış DİE kitaplarında okunamayan ya da toplamı tutmayan
+  satırlar boş (en çok 1984, 1994 ve 1999; sayılar kapsam tablosunda). Kitap sayfaları elle ya da
+  yeniden OCR ile okunmalı. 1950–1977 meclis seçimleri için kaynak henüz aranmadı.
+- **Kaba eşlemeler:** sonradan kurulan ve birden çok eski ilçeden pay alan bazı ilçeler (ör. Çukurova,
+  Körfez, Aliağa, Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı
+  (`geo/historical/idari/ilce_eslesme/*.csv`, güven `kaba`); köy düzeyinde kaynak bulunursa bölünebilir.
 - **Ankara Merkez (1961–1983):** ayrı ilçeydi ama sınırı kaynakta yok; haritada poligonu yok.
-- **Meclis haritaları:** 1984 ve 1994 yerelde il genel meclisi / belediye meclisi oy verisi
-  eksik (1984'te yaklaşık 190 ilçe boş); sınır değil, veri sorunu.
-- **Küçük kayıt sorunları:** 1991'de İstanbul'da iki "Bakırköy" satırı (muhtemelen seçim
-  çevresi bölünmesi, aynı poligon); 2004 yerelde poligonsuz "Karadeniz Ereğli" satırı (seçmen 0).
-- **2009 sonrası:** haritada taralı ilçe kalmadı. Kaynakta olmayanlar: 2009 yerelde Ağın
-  (Elazığ) başkanlık ve Kadışehri (Yozgat) belediye meclisi sonucu.
-- **2011 BDP:** BDP adayları bağımsız girdi. Il satırı bu oyları "BDP" sayan yedi ilde
-  (Diyarbakır, Hakkari, Mardin, Muş, Van, Batman, Şırnak) ilçe satırları da "BDP"
-  (`election_import/etiket_2011_bdp.py`); diğer illerde blok adayları "Bağımsız" içinde.
-- **İncelenmeyenler:** 1950–1957 il sınırları (`era1950`, `era1954`) denetlenmedi.
-- 1950/1954/1957 genel seçimler il düzeyinde kalır (ülke çapında ilçe kaynağı yok).
+- **1955 yerel il sınırları:** Kırşehir ili 1954–1957 arasında kaldırılmıştı; 1955 verisinde Kaman
+  Ankara'da, Çiçekdağı Yozgat'ta, ama il haritası 1954 sınırlarıyla (Kırşehir il) çiziliyor.
+- **2009 yerel:** Ağın (Elazığ) başkanlık ve Kadışehri (Yozgat) belediye meclisi sonucu YSK açık
+  verisinde yok.
+- 1950/1954/1957 genel seçimler il düzeyinde kalır (ülke çapında ilçe kaynağı bulunamadı).
+
+Bilgi notu: 2011'de BDP adayları bağımsız girdi. İl satırı bu oyları "BDP" sayan yedi ilde
+(Diyarbakır, Hakkari, Mardin, Muş, Van, Batman, Şırnak) ilçe satırları da "BDP"
+(`election_import/etiket_2011_bdp.py`); diğer illerde blok adayları "Bağımsız" içinde.

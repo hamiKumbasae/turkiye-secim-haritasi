@@ -101,3 +101,19 @@ Atlas düzeltmesi: https://github.com/hamiKumbasae/turkiye-secim-atlasi/pull/9
   belirtildi. Basılı DİE yayınıyla (0014128) doğrulanmalı.
 - Kalan 923 bulgu (`tests/fixtures/known-validation-issues.json`) kaynakla incelenmeli; 2009–2019
   yerel seçimlerdeki büyük farklar bunların çoğu (Vikipedi sayfa biçimi farklı, ayrıca ele alınmalı).
+
+## Kayıt temizliği (2026-10-05)
+
+- **2004 yerel, "Karadeniz Ereğli":** Zonguldak Ereğli satırının (TR-D-67-004) poligonsuz kopyasıydı
+  (aynı DİE sayfası 378–379, aynı seçmen ve oylar). Kopyadaki aday adları asıl satıra taşındı, kopya
+  silindi.
+- **1991 genel, Bakırköy:** TÜİK ilçe tablosunda iki seçim çevresi parçası olarak iki satırdı; ikisi aynı
+  poligona bağlı olduğu için haritada yalnız biri görünüyordu. Tek satırda toplandı (geçerli oy 510.106 =
+  mertnuhoglu tabanındaki tek satır); iki parçanın kaynak kaydı `kaynak.parcalar` alanında.
+- **2009, 2014, 2019 yerel, bağımsız adaylar:** 2024'teki aynı aktarım hatası (YSK agregesinde bağımsız
+  aday oyları yok) bu üç seçimde de vardı; örneğin 2014 Mardin büyükşehirde kazanan bağımsız Ahmet Türk
+  (%52,1) hiç görünmüyor, AK Parti %78 görünüyordu. `wiki_bagimsiz.py`, ham Vikipedi sayfası
+  ayrıştırılamadığında aynı sayfaların ayrıştırılmış katmanını (`data/kaynaklar/wikipedia/yerel/`)
+  kullanacak şekilde genişletildi ve üç seçime uygulandı (2009: 91, 2014: 44, 2019: 73 kayıt; 106 kayıtta
+  bağımsız eklendi). Doğrulanmamış bulgular 924 → 731.
+
