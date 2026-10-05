@@ -101,8 +101,6 @@ scripts/pipelines/mahalle_veri && npm install && npx playwright install
 chromium`). Yeni bir seçim eklerken `transform/import_mahalle.py --year
 <yil> --input mahalle_<yil>.json --build` komutu veriyi doğru yerlere
 otomatik yerleştirip doğrular (bkz. o klasörün kendi README'si).
-`scripts/legacy/` altındaki iki script (mimarinin eski, ters yönlü hâline
-ait) artık kullanılmıyor, sadece tarihsel referans.
 
 ## Web'e yayınlama (GitHub Pages)
 

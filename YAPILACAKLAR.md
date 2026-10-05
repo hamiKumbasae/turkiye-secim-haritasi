@@ -757,7 +757,7 @@ kaynak günlüğü: `data/kaynaklar/ARASTIRMA_KAYDI.md`.
   tamam: tek kaynaklı ilçeler eski ilçelerine, ana kaynağı Merkez olan çok kaynaklı ilçeler
   (≥ %70) Merkez'e katılır; kalan çok kaynaklı ilçeler bütün poligon hâlinde, nedeni ipucunda.
   Ayrıntı: `geo/historical/idari/README.md`.
-- Mahalle düzeyinde paylaştırma denendi, arşivlendi: `arsiv/mahalle-bolusumu/README.md`.
+- Mahalle düzeyinde paylaştırma denendi, arşivlendi: git etiketi `arsiv/mahalle-bolusumu`.
 - Bundan sonrası: seçimler tek tek elle gözden geçirilecek; her bulgu için tekil düzeltme.
 
 ## 04.10.2026 durum güncellemesi

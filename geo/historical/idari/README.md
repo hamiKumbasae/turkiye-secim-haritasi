@@ -193,8 +193,8 @@ Birden çok eski ilçeden kurulan ilçelerde (`kanun_cok_kaynak`):
 - `harita_notlari.json` → `birlesimler`: her tarihsel poligonun bugünkü sınırlarla
   kapsadığı ilçeler; ön yüz bunu ipucunda gösterir ("Bugünkü sınırlarla: ...").
 
-Mahalle düzeyinde paylaştırma denendi ve arşivlendi: `arsiv/mahalle-bolusumu/README.md`
-(kaynaklar, mantık, sonuçlar; git etiketi `arsiv/mahalle-bolusumu`).
+Mahalle düzeyinde paylaştırma denendi ve arşivlendi: git etiketi `arsiv/mahalle-bolusumu`
+(kaynaklar, mantık, sonuçlar o etiketteki `arsiv/mahalle-bolusumu/README.md`'de).
 
 Kaynağı yazılmamış 1987 birimleri için `sayim_kaniti.json` (elle, DİE 1960/1985/1990 sayım
 kitaplarındaki köy/belde bağlılığı): Küçükçekmece ← Bakırköy, Pendik ← Kartal.
@@ -225,7 +225,7 @@ sonradan ayrılan ilçeler soy kuralıyla katılır.
 yerel, 1995/1999/2002/2007 genel seçimleri ve 2007 referandumunda geçerli. Önceki durumda
 2008'de birden çok eski ilçeden kurulan dört ilçe (Arnavutköy, Başakşehir, Esenyurt,
 Sultangazi) bu seçimlerde taranıyordu; mahalle düzeyinde bölüşüm denemesi de
-(`arsiv/mahalle-bolusumu/`) ilçelerin içinde taralı parçalar bıraktığı için kaldırılmıştı.
+(git etiketi `arsiv/mahalle-bolusumu`) ilçelerin içinde taralı parçalar bıraktığı için kaldırılmıştı.
 
 Şimdi bütün il boşluksuz kuruluyor:
 
