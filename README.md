@@ -179,7 +179,12 @@ Aşağıdakiler depodaki veriyle çözülemiyor; her biri yeni bir kaynak gerekt
 
 - **Yerel meclis sonuçları (1984–2004):** taranmış DİE kitaplarında okunamayan ya da toplamı tutmayan
   satırlar boş (en çok 1984, 1994 ve 1999; sayılar kapsam tablosunda). Kitap sayfaları elle ya da
-  yeniden OCR ile okunmalı. 1950–1977 meclis seçimleri için kaynak henüz aranmadı.
+  yeniden OCR ile okunmalı. 1963–1977 meclis ve il genel meclisi sonuçlarının DİE kitapları depoda
+  (`data/raw/tuik/mahalli-kitap/`) ama henüz okunmadı; 1950/1955 için DİE kitabı yok.
+- **1963–1977 belediye başkanlığı (Vikipedi):** DİE kitaplarıyla karşılaştırıldı
+  ([`docs/rapor/KITAP_DOGRULAMA_1963_1977.md`](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)). Kitabın
+  yüzdesi ya da toplamıyla desteklenen farklar ve oyları geniş ölçüde farklı satırlar orada listeli;
+  veriye işlenmedi.
 - **Kaba eşlemeler:** sonradan kurulan ve birden çok eski ilçeden pay alan bazı ilçeler (ör. Çukurova,
   Körfez, Aliağa, Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı
   (`geo/historical/idari/ilce_eslesme/*.csv`, güven `kaba`); köy düzeyinde kaynak bulunursa bölünebilir.

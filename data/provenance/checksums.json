@@ -5576,7 +5576,7 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 284,
+   "file_count": 288,
    "files": {
     "ARASTIRMA_KAYDI.md": "8a4cce5939c5a91f6761997798f39f60d16a58cda05fb0d65fe26e8fdc657cea",
     "README.md": "df91400132980fcf6cb9fe43c78a22966e76895b721da267a66336cf1f56d6e6",
@@ -5643,6 +5643,10 @@
     "tuik/senato/1975senato.json": "78f317e201d7445e60a368a53b1675e294ef7d293f3d60d5c0d78e98f50e9263",
     "tuik/senato/1977senato.json": "01b751baabbd8f688d8bf2990b2c622b1c90d30f4d43281a680285e857564800",
     "tuik/senato/1979senato.json": "7c752af2568d96206b1297fff93e55f370a1ad1b5e4ea1d7b7c387d7c7d1f16a",
+    "tuik/yerel/1963yerel/kitap_dogrulama.json": "656118c2911e4005d0a96ae24a9b5d893f3f8f0ea824f12d7340ef77c334ba23",
+    "tuik/yerel/1968yerel/kitap_dogrulama.json": "c7d862aaf57a5b139abbf4514fb49699210b9ff2177f42325650c0f9e5b6d140",
+    "tuik/yerel/1973yerel/kitap_dogrulama.json": "d4df88432df2c9faee44f1cc316a4ac77fcc417b1d97f8c75c399e17185fd583",
+    "tuik/yerel/1977yerel/kitap_dogrulama.json": "b82957bfc20bf9a3d29a4419feacc79bdb93d1fb642652f84cffbffaae0b8e28",
     "tuik/yerel/1984yerel/belediye_baskanligi.json": "088a3f22baa4e51d662b34acb83a070fb0ad791c93b16fc3e0f7178583f47898",
     "tuik/yerel/1984yerel/belediye_meclisi.json": "fac37e90e870d193cc4576202ad912fbcffd0c69480a579aba17e9e2e2546744",
     "tuik/yerel/1984yerel/buyuksehir.json": "f6e594eacf8dfce3f4c35738be8477186c8e7c5159b2b3f9a8744047ef5a7f89",
@@ -6240,12 +6244,17 @@
   },
   "data/raw/tuik/mahalli-kitap": {
    "checksum_file": "data/raw/tuik/mahalli-kitap/checksums.sha256",
-   "file_count": 5,
+   "file_count": 10,
    "files": {
     "0012953.pdf": "a41d20bd7c3678b2379ae5a75e8a873ed3324510304b5be3b18593443ddab02a",
     "0013280.pdf": "c817938c1b2b362f462d463aac0ce45bb72aac1d414a3fb28be26feba924c50d",
     "0013623.pdf": "a73523682ba1356475556e49fb9578e2248c19c24edd3b2949030c109bda3cd7",
     "0014361.pdf": "7115fc725e465d8440655019aadc2624b4ec398355a4fb8a619e20ac9d53b1e5",
+    "0015160.pdf.parca0": "f767fba40ca1ab42d6eb7521d0a9f5b22b8061a91c95122d1da7d74de54d4580",
+    "0015160.pdf.parca1": "3d57a430025e071752eb61deaab99edec4d6718817c79e48e4b8f172301ab250",
+    "0015244.pdf": "410b0907431e12225421a200c9e02855e7d617959a584c8bcdb15ab5bf92442e",
+    "0015468.pdf": "c743edf57d2084625b9f78a30553f0eacbe42a4d7f484003a33a04cd92ef2e02",
+    "0015740.pdf": "ff79d033b9b564f8d6f799e80cf71c94a84f3599b40aa0baeb6bc89d2199215b",
     "0018169.pdf": "c09183affc24b3e6092677ce8ab2a1af0c32f8bedebb05356e8303f3e7cfcdd9"
    }
   },

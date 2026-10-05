@@ -7,9 +7,36 @@
 | `0014361.pdf` | DİE, *Mahalli İdareler Seçimi Sonuçları 18.4.1999* | 696 | 2 İGM s.38-239 · 3 Büyükşehir s.242-251 · 4 Belediye başkanlığı s.254-473 · 5 Belediye meclisi s.476-695 |
 | `0018169.pdf` | DİE, *Mahalli İdareler Seçimi 28.03.2004* (yayın no. 2935, 2005) — **dijital dizgi, OCR değil** | 653 | 7 İGM il+ilçe+kent/kır s.110-253 · 8 Büyükşehir s.255-260 · 9 Belediye başkanlığı s.262-389 · 10 Belediye meclisi s.391-594 · Ek: kazanan başkanların listesi s.595- (henüz kullanılmadı) |
 | `0013280.pdf` | DİE, *Mahalli İdareler Seçimi Sonuçları 26.3.1989* | 300 | 1 İGM il 1984/1989 (kullanılmadı) · 2 İGM il+ilçe+şehir/köy s.17-115 · 3 Büyükşehir s.118-119 · 4 Belediye başkanlığı s.122-209 · 5 Belediye meclisi s.212-299 |
+| `0015160.pdf.parca0` + `.parca1` | DİE, *Mahalli Seçimler Sonuçları 17 Kasım 1963* (yayın no. 474, 1965) — **iki parçaya bölünmüş**, aşağıya bakın | 1796 | İl fasikülleri (sayfa no. `<il>/<sayfa>`, sürekli değil): A belediye başkanlığı · B belediye meclisi · C il genel meclisi · D muhtarlık. Ad/sandık/seçmen ve sonuçlar karşılıklı sayfalarda |
+| `0015244.pdf` | DİE, *Mahalli Seçimler Sonuçları 2 Haziran 1968* (yayın no. 555, 1969) | 1512 | İl fasikülleri: A il genel meclisi · B belediye başkanlığı · C belediye meclisi · D muhtarlık; s.8-10 il toplamları |
+| `0015468.pdf` | DİE, *Mahalli Seçimler Sonuçları 9 Aralık 1973* (yayın no. 716, 1974) | 224 | İGM (il, ilçe) · 3 belediye başkanlığı il toplamları s.44 · 4 belediye başkanlığı (belediye; kazanan başkanın adı) PDF s.52-133 · belediye meclisi. Muhtarlık ayrı yayında (depoda yok) |
+| `0015740.pdf` | DİE, *Yerel Seçim Sonuçları 11 Aralık 1977* (1979) | 236 | 1 İGM (ilçe) s.1 · 2 belediye başkanlığı (belediye) s.39 · 3 belediye meclisi s.121 · 4 muhtarlık (ilçe) s.203 |
 
 **Kaynak:** TÜİK Kütüphanesi (yordam kataloğu), `https://kutuphane.tuik.gov.tr/pdf/<demirbaş>.pdf`.
-**İndirilme tarihi:** 2026-09-25. Dosyalar değiştirilmeden saklandı (checksum'lı).
+**İndirilme tarihi:** 2026-09-25 (1984–2004); 2026-10-05 (1963–1977, kullanıcının tarayıcısından; bağlantılar
+Vikipedi il sayfalarının kaynakçasından). Dosyalar değiştirilmeden saklandı (checksum'lı).
+
+### 1963–1977 kitapları (2026-10-05)
+
+| Demirbaş | SHA-256 (bütün dosya) |
+|---|---|
+| 0015160 | `69a3a5cc06e8c44d1e14d74a6d33a1534f7a592fdead659acd356a7a0a231255` |
+| 0015244 | `410b0907431e12225421a200c9e02855e7d617959a584c8bcdb15ab5bf92442e` |
+| 0015468 | `c743edf57d2084625b9f78a30553f0eacbe42a4d7f484003a33a04cd92ef2e02` |
+| 0015740 | `ff79d033b9b564f8d6f799e80cf71c94a84f3599b40aa0baeb6bc89d2199215b` |
+
+- **1963 kitabı 120,7 MB**, GitHub'ın 100 MB dosya sınırını aşıyor. Bayt bayt iki parçaya bölündü
+  (`split -b 90000000 -d -a 1`); içerik değişmedi. Birleştirmek ve SHA-256'yı doğrulamak için:
+  `python3 scripts/pipelines/tuik_arsiv/kitap_birlestir.py` → `.cache/tuik/0015160.pdf`
+  (elle: `cat 0015160.pdf.parca0 0015160.pdf.parca1 > 0015160.pdf`).
+- Dört kitapta da taramanın metin katmanı var (ABBYY FineReader, 2009). Dört kitabın açıklaması da parti
+  oyları toplamının geçerli oyla her yerde tutmadığını, DİE'nin birleştirme tutanaklarını düzeltmeden
+  bastığını söylüyor.
+- 1950 ve 1955 yerel seçimleri için DİE kitabı yok; Vikipedi sayfaları Başbakanlık Cumhuriyet Arşivi
+  belgelerine (Fon 030.01, Yer No 52.312.7 / 51.309.3 / 51.309.8) ve gazetelere dayanıyor.
+- Kullanım: depodaki 1963–1977 belediye başkanlığı kayıtları (Vikipedi) bu kitaplarla karşılaştırıldı —
+  `scripts/pipelines/tuik_arsiv/kitap_dogrula_1963_1977.py` → `docs/rapor/KITAP_DOGRULAMA_1963_1977.md`.
+  Belediye meclisi ve il genel meclisi tabloları henüz okunmadı.
 
 Kitabın açıklamasına göre ilçe/belediye düzeyi değerler ilçe seçim kurullarının
 DİE'ye gönderdiği birleştirme tutanaklarından değiştirilmeden alınmış; Türkiye
