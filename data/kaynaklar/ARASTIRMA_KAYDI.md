@@ -31,6 +31,40 @@ ANAP hücresi boş), 1995 Bozüyük, 1995 Marmaris (katılım basılıda %100,1)
 Kaynak hatası; tahminle doldurulmadı. Bkz.
 `data/raw/tuik/secimdagitimapp-ilce-1961-1987/PROVENANCE.md`.
 
+## Referandumlar — durum (2026-10-05, depo taraması)
+
+2007 öncesi referandum listesi tam: 1961, 1982, 1987, 1988 (atlanan yok). Yedi referandumun
+hepsinde il ve ilçe sonucu tam. Ülke sonucu ayrı kayıt değil, il toplamından hesaplanır.
+
+| Referandum | İl | İlçe | Alanlar | Kaynak |
+|---|---|---|---|---|
+| 1961, 1982, 1987, 1988 | tam | tam | EVET, HAYIR, geçerli, geçersiz, katılım, kayıtlı seçmen, sandık; şehir/köy ayrımı | PRIMARY-006 |
+| 2007 | tam | tam (923) | geçersiz oy yok | YSK (PRIMARY-008); 17 ilçe imzalı birleştirme tutanaklarından |
+| 2010, 2017 | tam | tam | geçersiz oy yok | YSK açık veri (PRIMARY-009) |
+
+Tek alan boşluğu: 2007, 2010 ve 2017'de geçersiz oy sayısı. Ayrıntı ve alan tablosu:
+`docs/rapor/KAPSAM_TABLOSU.md`.
+
+## Yerel seçimler — durum (2026-10-05, depo taraması)
+
+Belediye başkanlığı, belediye meclisi ve il genel meclisi ayrı değerlendirildi; birim belediyedir.
+Sayılar ve il il kırılım: `docs/rapor/KAPSAM_TABLOSU.md`, `docs/rapor/kapsam_il_bazinda.csv`.
+
+| Yıl | Başkanlık | Belediye meclisi | İl genel meclisi |
+|---|---|---|---|
+| 1950, 1955 | B: ilçelerde yalnız kazanan parti (SECONDARY-004) | D: aranmadı | D: aranmadı |
+| 1963–1977 | A, ama yalnız Wikipedia (SECONDARY-004); A kaynağıyla doğrulanmadı | D: aranmadı | D: aranmadı |
+| 1984 | A (DİE ile teyitli) | B: ~%52 | B: ~%56 |
+| 1989 | A (DİE ile teyitli) | A: ~%99 | A: ~%99 |
+| 1994 | A | B: ~%70 | B: ~%69 |
+| 1999 | A | B: ~%80 | B: ~%88 |
+| 2004 | A | A: ~%95 | A: ~%93 |
+| 2009–2024 | A | A | A (2014'ten beri yalnız büyükşehir olmayan 51 il) |
+
+1984–2004 meclis boşluklarının nedeni kaynak yokluğu değil: DİE kitaplarında (PRIMARY-007) satırlar
+var, ama taranmış sayfaların bir kısmı okunamadı ya da toplamı tutmadı. Hiç ilçe/belediye verisi
+olmayan yerel seçim yılı yok; hiç verisi olmayanlar yalnız 1950–1977 meclis seçimleri.
+
 ## Kaynak günlüğü
 
 | ID | Kaynak | Tür | Güv. | Yıllar | Kontrol edilen | Sonuç | Tekrar? |
@@ -49,3 +83,13 @@ Kaynak hatası; tahminle doldurulmadı. Bkz.
 | ARCHIVE-001 | Internet Archive (archive.org) | Dijital arşiv | – | 1950–1957 | DİE/İstatistik Umum Müdürlüğü seçim yayını | İlgili kayıt yok | Hayır |
 | ARCHIVE-002 | HathiTrust | Dijital kütüphane | – | 1950–1965 | DİE yayınları | Katalog 403; IUCAT'a göre Yayın 513 orada (içeriği PRIMARY-003 ile biliniyor) | Hayır |
 | GITHUB-001 | GitHub seçim veri setleri | Kullanıcı verisi | D | 1950–1977 | Hazır ilçe seti | Önceki oturumlarda tarandı; güvenilir tam set yok | Yalnız yeni repo çıkarsa |
+| PRIMARY-006 | TÜİK, *Halk Oylaması Sonuçları 2007, 1988, 1987, 1982, 1961* (2008), kutuphane.tuik.gov.tr/pdf/0018260.pdf | Resmî | A | 1961–1988 | Referandum il/ilçe sonuçları | İl ve ilçe tam, tüm alanlar; repoda (`data/raw/tuik/halkoylamasi-0018260/`) | Hayır |
+| PRIMARY-007 | DİE, *Mahalli İdareler Seçimi Sonuçları* 1984 (0012953), 1989 (0013280), 1994 (0013623), 1999 (0014361), 2004 (0018169) | Resmî | A | 1984–2004 | Belediye başkanlığı, belediye meclisi, il genel meclisi; ilçe/belde | Başkanlık tam; meclis tablolarında okunamayan/tutmayan satırlar boş bırakıldı | Evet: okunamayan sayfalar elle ya da yeniden OCR |
+| PRIMARY-008 | YSK sonuç PDF arşivi: mahalli idareler 1994/1999/2004 (ysk.gov.tr/doc/dosyalar/docs/Mahalli/), 2007 referandumu birleştirme tutanakları | Resmî | A | 1994–2007 | İl merkezi + ilçe/belde başkanlık; referandum ilçe | Ana ilçe kaynağı; kalan ilçeler DİE kitabından | Hayır |
+| PRIMARY-009 | YSK açık veri (acikveri.ysk.gov.tr, sandık düzeyi) | Resmî | A | 2009–2024 | Tüm seçimler il/ilçe/mahalle | Tam | Hayır |
+| PRIMARY-010 | TÜİK secimdagitimapp (biruni.tuik.gov.tr) | Resmî | A | 1961–2007 | Genel seçim ilçe sonuçları | Tam | Hayır |
+| SECONDARY-004 | Türkçe Wikipedia, "<İl>'da <yıl> Türkiye yerel seçimleri" il alt makaleleri | Ansiklopedi | D | 1950–2004 | İl merkezi ve ilçe belediye başkanlığı | 1963–1977 tek kaynak; 1950/1955 ilçelerde yalnız kazanan; 1984–2004 satırları DİE ile teyitli | Evet: 1950–1977 A kaynağıyla doğrulama |
+
+**Henüz hiç aranmayan:** 1950–1977 belediye meclisi ve il genel meclisi sonuçları (UNKNOWN);
+DİE'nin bu yıllar için mahalli seçim yayını olup olmadığı TÜİK kütüphanesi kataloğunda kontrol
+edilmeli.

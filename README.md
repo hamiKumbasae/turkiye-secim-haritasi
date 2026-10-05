@@ -102,6 +102,22 @@ chromium`). Yeni bir seçim eklerken `transform/import_mahalle.py --year
 <yil> --input mahalle_<yil>.json --build` komutu veriyi doğru yerlere
 otomatik yerleştirip doğrular (bkz. o klasörün kendi README'si).
 
+### Tarihsel ilçe sınırları
+
+Bir seçimden sonra kurulan ilçe, o seçimde bağlı olduğu ilçenin poligonuna katılır. Her ilçenin
+nereye ve neden bağlandığı `geo/historical/idari/ilce_eslesme/<seçim>.csv` tablosunda; güven
+sütunu `kesin` (kanun/sayım kaynağı), `yaklasik` (%70 ve üzeri birim çoğunluğu) ya da `kaba`
+(en büyük pay veya en uzun sınır komşusu). Dönem il sınırları (`geo/historical/turkiye_il_sinirlari_era*.geojson`) seçim
+verisindeki ilçe-il bağlılığından üretilir.
+
+Tarihsel sınırları yeniden üretmek için yalnız
+`scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py` kullanın: bütün adımları doğru
+sırayla çalıştırır (seçim katmanını geri al → `apply_idari_merges.py` → İstanbul → her seçim için
+`build_ilce_secim.py` → `ortusmeleri_temizle.py` → il sınırları → meclis → rapor → checksum →
+`build.py`) ve idempotenttir. Tek tek betikleri elle ve başka sırayla çalıştırmayın. Ayrıntı:
+[`geo/historical/idari/README.md`](geo/historical/idari/README.md); güncel kapsam sayıları
+`docs/rapor/`.
+
 ## Web'e yayınlama (GitHub Pages)
 
 **Canlı site: https://hamikumbasae.github.io/turkiye-secim-haritasi/**
@@ -135,17 +151,13 @@ Kaynak başına ayrıştırılmış veri `data/kaynaklar/`, ham dosyalar `data/r
 ## Bilinen kapsam sınırları
 
 - 1950/1954/1957 genel seçimlerinde ilçe düzeyi veri yok, sadece il düzeyi —
-  resmî bir ilçe kaynağı bulunamadı (1961/1982/1987/1988 referandumlarının ilçe
-  düzeyi TÜİK "Halk Oylaması Sonuçları" yayınından eklendi). 1961-1987 arası 7 genel seçimin ilçe düzeyi 2026-09-24'te
-  TÜİK'ten eklendi (bkz. `scripts/pipelines/genel_ilce_1961_1987/`);
-  "seçim çevresi il olduğu için ilçe kırılımı yok" varsayımı yanlıştı.
+  resmî bir ilçe kaynağı bulunamadı. 1961–1987 genel seçimlerinin ve 1961/1982/1987/1988
+  referandumlarının ilçe düzeyi TÜİK yayınlarından (bkz. `scripts/pipelines/genel_ilce_1961_1987/`).
 - 1957/1961 genel seçimlerinde Sakarya'nın vekil dağılımı yok (YSK'nin
   1950-1977 arşivinde bu il hiç yok, bkz. `data/raw/ysk/1950-1977/PROVENANCE.md`).
 - 2002 Siirt: il ve ilçe sonuçları, iptal edilip 9 Mart 2003'te yenilenen seçimin resmî sonucudur (YSK ve TÜİK aynı rakamı veriyor; hata değil — bkz. `sources.yml`).
 - 2014 yerel seçiminde BDP il/ilçe verisi hatalı (gerçek oylar mahalle
   düzeyinde "HDP" altında bulundu, il/ilçe düzeyi düzeltilmedi).
-- 2010 referandumunun ilçe düzeyi oy SAYILARI tahmini (`~300 oy/sandık`
-  varsayımı) — yüzdeler gerçek.
 - `data/raw/{haberturk,wikipedia}/` ve `data/raw/ysk/`'nin mahalle-düzeyi
   kısmı şu an boş — bu kaynakların orijinal ham çıktısı hiç saklanmamış veya
   yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
@@ -156,51 +168,13 @@ Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
   [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md) (1950-2024 arası tüm seçimlerin tam
   takvimi ve bu projedeki kapsam durumu).
 
-## 04.10.2026 durum güncellemesi
+## Bilinen eksikler
 
-### Yapılanlar
+Her seçimin (yerel seçimlerde başkanlık, belediye meclisi, il genel meclisi ayrı) il/ilçe kapsamı,
+kalite sınıfı, en iyi kaynağı ve araştırma önceliği: [`docs/rapor/KAPSAM_TABLOSU.md`](docs/rapor/KAPSAM_TABLOSU.md)
+(`python3 scripts/rapor/kapsam_tablosu.py` üretir). Nerelere bakıldığı:
+[`data/kaynaklar/ARASTIRMA_KAYDI.md`](data/kaynaklar/ARASTIRMA_KAYDI.md).
 
-- **1961–2007 ilçe haritaları:** 26 seçimin ilçe haritasında hiçbir bugünkü ilçe
-  sonuçsuz (taralı) kalmıyor: 1961–2007 genel seçimleri, 1961/1982/1987/1988/2007
-  referandumları ve 1963–2004 yerel seçimleri. Sonradan kurulan her ilçe, o seçimdeki
-  ilçesinin poligonuna katılır (`scripts/pipelines/historical_geo/build_ilce_secim.py`).
-  Her ilçenin nereye ve neden bağlandığı `geo/historical/idari/ilce_eslesme/<seçim>.csv`
-  tablosunda; güven sütunu `kesin` (kanun/sayım kaynağı), `yaklasik` (%70 ve üzeri birim
-  çoğunluğu) ya da `kaba` (en büyük pay veya en uzun sınır komşusu).
-- **İstanbul 1961–1991:** mahalle düzeyinde eski ilçe sınırları (Arnavutköy Eyüp ile Çatalca
-  arasında vb.); 1987 öncesi Ümraniye mahalleleri 1960 nüfus sayımının köy listesi ve komşuluk
-  ile, Kağıthane Şişli'ye, Ümraniye Üsküdar'a bağlı (yaklaşık; 1940 ve 1963 İstanbul ilçe
-  haritalarıyla görsel olarak karşılaştırıldı).
-- **Dönem il sınırları seçim verisinden:** `era1957_1965`, `era1957_1987`, `era1991` ve yeni
-  `era1994`, o seçimde her ilin satırlarına bağlı ilçelerin birleşimi
-  (`build_il_sinirlari.py`); il ve ilçe haritası birebir örtüşür. Eski dosyalarda yanlış ilde
-  olan 13 ilçe düzeldi (Cizre, İdil, Silopi, Gercüş, Hasankeyf → Mardin; Beytüşşebap,
-  Uludere → Hakkâri; Ağaçören, Sarıyahşi → Ankara; Armutlu → Bursa; Altınova → Kocaeli;
-  Eflani, Ovacık → Çankırı). Kaynarca 1958–1965'te Kocaeli'de; 1994 yerelde Ardahan ve Iğdır
-  ayrı il.
-- **İstanbul'da gereksiz çizgiler (1961–2007):** birleşim poligonlarında kaynak parçalar tam
-  oturmadığı için ilçe içinde ortada biten çizgiler (sıfır genişlikli çatlaklar; ör. 1991–2007
-  Eyüp, Ümraniye, Kartal, Üsküdar), komşular arasında ince beyaz kamalar ve ince örtüşme şeritleri
-  vardı. `ortusmeleri_temizle.py` bunları temizler: örtüşmeler çıkarılır, ~30 m'den dar çatlaklar
-  kapatılır, birlikte çizilen ilçeler arasındaki ince boşluklar komşu tarihsel ilçeye eklenir.
-  Gerçek ilçe sınırları değişmez.
-- **Veri düzeltmeleri:** 1994/1999/2004 yerelde Artvin Hopa'nın aynı oylarla iki kez geçen
-  satırının kopyası silindi; 1994 ve 1999 yerelde Kaynaşlı belde satırının plakası 81 → 14
-  (o tarihte Bolu).
-- **Tek betikle yeniden üretim:** `scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py`
-  bütün tarihsel sınır adımlarını doğru sırayla çalıştırır (seçim katmanını geri al →
-  `apply_idari_merges.py` → İstanbul → her seçim için `build_ilce_secim.py` →
-  `ortusmeleri_temizle.py` → il sınırları →
-  meclis → rapor → checksum → `build.py`). İdempotenttir: main üzerinde çalıştırınca fark
-  çıkmaz. Tek tek betikleri elle ve başka sırayla çalıştırmayın.
-- **Önceki 04.10.2026 işleri:** 2007 referandumu resmî PDF'lerden 923 ilçeye tamamlandı;
-  2009/2011 tarihî ana ilçe birleşimleri; Tillo'nun YSK meclis kayıtları eşleştirildi.
-- **Yayın:** site artık bu repodan (`site/`) GitHub Actions ile yayınlanıyor; veri değişince
-  ayrıca bir yere aktarmak gerekmiyor.
-- Ayrıntı ve yöntem: [`geo/historical/idari/README.md`](geo/historical/idari/README.md);
-  güncel sayılar `docs/rapor/ozet.json` ve yanındaki CSV'ler.
-
-### Bilinen eksikler
 
 - **Kaba eşlemeler:** her seçimde 15–20 civarı çok kaynaklı ilçe (ör. Çukurova, Körfez, Aliağa,
   Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı; köy düzeyinde

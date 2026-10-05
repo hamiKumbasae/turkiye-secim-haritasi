@@ -788,3 +788,11 @@ olarak işaretlenen %70 birim çoğunluğu yöntemiyle 21 ilçe daha bağlandı.
 23 ilçe belirsiz kalır; Ankara Merkez'in tarihî poligonu kaynak bekler.
 Tekrar üretimde `build_ilce_1961.py`, `apply_idari_merges.py` sonrasında ve
 rapor/checksum/build adımlarından önce çalıştırılmalıdır.
+
+## Durum — 2026-10-05: kapsam tablosu
+
+2. (referandumlar), 3. (yerel seçimler), 9. (ana tablo) ve 10. (araştırma önceliği) maddeleri
+depo taramasıyla çıkarıldı: `docs/rapor/KAPSAM_TABLOSU.md` (`scripts/rapor/kapsam_tablosu.py`
+üretir) ve `data/kaynaklar/ARASTIRMA_KAYDI.md`. Harici (web/arşiv) araştırma yapılmadı; sıradaki
+seçimi öncelik tablosundan kullanıcı seçecek.
+
