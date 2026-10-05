@@ -142,12 +142,12 @@
     "meclis_harita/1984yerel_igm.json": "94026f76fa56bd70bdd57527ead9407e145b436909924ef00a6e4e3b3932c4be",
     "meclis_harita/1989yerel_bm.json": "9e10b5b9e456debefdfa918098060d2f89206fc7ba62b6a8189bfe1b457c1d1b",
     "meclis_harita/1989yerel_igm.json": "8990e942c98cb544f064df0c4978633597c4e5ce24b2b6de04060931ada7d5cf",
-    "meclis_harita/1994yerel_bm.json": "31fd93f07fec2dc47e52924b41219c26aef11fddebc29f69a1f33846ea5a0fe5",
-    "meclis_harita/1994yerel_igm.json": "584d2fa11ed62ef3e7144480bcf324b37385227f1027f8c01261d186c02d5991",
-    "meclis_harita/1999yerel_bm.json": "5565f34dae083a6f4d236118a13e389602fde3ff4110ad08d40899c66ffcd8bc",
-    "meclis_harita/1999yerel_igm.json": "7678f70a9158dbc9df76b2f28398d2b0f4f66ad0c88e00665e3b3094d5945f1a",
-    "meclis_harita/2004yerel_bm.json": "602d79cdb9e31a2005972d735ef6b6d48cf1d7dbf70da2be28521ee0dc517cf7",
-    "meclis_harita/2004yerel_igm.json": "50ac65f9815733e3b69446a12cb3f9feff4fc7079b6856fdbd0404eb2033677d",
+    "meclis_harita/1994yerel_bm.json": "e0b9ca618f7c1637a6c08d0e0e3d2c9cda960efa5222e35afc8d1c4c6f345627",
+    "meclis_harita/1994yerel_igm.json": "3fd8d4d9a03e815396a080429c8108ee2b6efa288a1ae0705395a8df9fa19e32",
+    "meclis_harita/1999yerel_bm.json": "baa27b270e00bfeaefc7e96deaf5e49bb17473e0409ca1f46719f44c7f2fdaf2",
+    "meclis_harita/1999yerel_igm.json": "27bc1d847081efe4d69a675a0fabdbaca6a8197ae4ae75fe8e0cf5076b7b9239",
+    "meclis_harita/2004yerel_bm.json": "45691c0ae0f102d6e25453ab28df24325cf2f0336b7008a11c1a33aa2d0df1ad",
+    "meclis_harita/2004yerel_igm.json": "3e8cd71e3e8e2b799d15758618936958f64560c66ef024b2b37ec76c91a72aaf",
     "meclis_harita/2009yerel_bm.json": "33da01576fefd70fa39f829e7b7ed2ae94de46b6caf576769ab024858c098a4a",
     "meclis_harita/2009yerel_igm.json": "53ecbc6f3e3d53b8dc110b41a6eb1737c5dcd6429ca84b95dce2dc6f6643595e",
     "meclis_harita/2014yerel_bm.json": "3b793fff9276e32f457840d30c244158cebbefd443d6ba95856c177835a25094",
@@ -5576,10 +5576,10 @@
   },
   "data/kaynaklar": {
    "checksum_file": "data/kaynaklar/checksums.sha256",
-   "file_count": 290,
+   "file_count": 296,
    "files": {
-    "ARASTIRMA_KAYDI.md": "8a4cce5939c5a91f6761997798f39f60d16a58cda05fb0d65fe26e8fdc657cea",
-    "INDIRILECEK_KAYNAKLAR.md": "b76a97af46398e4ae1a2d48335e867661e6529949c00ab0ccf715b56584a1568",
+    "ARASTIRMA_KAYDI.md": "fe5baee73b22f74fe75baf3c41629da852f8c0cb4b3bce6fd4d41993b907694b",
+    "INDIRILECEK_KAYNAKLAR.md": "85c9d6468f74630e1759ef942d639a120f8d7a7b981afdfb5fb667ddb59389fc",
     "README.md": "df91400132980fcf6cb9fe43c78a22966e76895b721da267a66336cf1f56d6e6",
     "icisleri/il_ilce_kurulus_2018.json": "f4f2d24c58a63691399eb86e04190793318c7f4e43bff6ecd163ee692aabc9cb",
     "mertnuhoglu/genel/1991.json": "39fbdc09dae77a625bd4afe8a81165c0bfb5e73b25541202ecc273d457debcb9",
@@ -5867,6 +5867,12 @@
     "ysk/mahalli-kesin/1994yerel_igm.json": "9b3e12367226b781c5cb5a8bb17a1757a130f4ba422e1a28d4a1e0688845da86",
     "ysk/mahalli-kesin/1999yerel_bm.json": "16c1c5ff672ab3b42ecdc8692a7bc081286c61e72d9313ab684db29ff01454ba",
     "ysk/mahalli-kesin/1999yerel_igm.json": "ed7188c87556bc2fa0fde21606cfa8367c00ea2789f7da37ebc669b04e2c6606",
+    "ysk/mahalli-meclis/1994yerel_bm.json": "59863c419172b2276e7e910a55c1a9430d317dc0b7b0f0a22bcad4423b1825c3",
+    "ysk/mahalli-meclis/1994yerel_igm.json": "cfd57355cd547b635987c76585c49055a6cb0eae26eba93aaa71b25a2e8c9dee",
+    "ysk/mahalli-meclis/1999yerel_bm.json": "17e4cc6d06cedcbeff9a47d0f944d43412fa1050c37a364d816e4db6481beed2",
+    "ysk/mahalli-meclis/1999yerel_igm.json": "a3ad3b24ee0c9c884529377b88524ce93ba486f082471222ca1fb8ff481db2fd",
+    "ysk/mahalli-meclis/2004yerel_bm.json": "5fdb4456eeb18f07186d1a541f16db39141eaf39e8e21fc52a7b20ac430aa88f",
+    "ysk/mahalli-meclis/2004yerel_igm.json": "6a031c67c58e33c41f8913186691090d18d962801dd706f89a274356ce790b14",
     "ysk_meclis_1994_2004_url.txt": "3cbd9503fa238069ec8fda53dce7aa144586f2ca7f2e260bf97d368fac7ad07c"
    }
   },
@@ -6317,6 +6323,18 @@
     "1989/1989-Belediye-Meclis-Uyeligi-Secimleri-Sonucu.pdf": "9b95d566b809c4cf21872fd20701a0c13e104caf338e3531a21267d91be27a4f",
     "1989/1989-Buyuksehir-Belediye-Baskanligi-Secimleri-Sonucu.pdf": "20d34ee2a77b2213412eb45d58f15d6f77ad7ffc9babbfff3d83d9e7db3f24e1",
     "1989/1989-Il-Genel-Meclisi-Uyeligi-Secimleri-Sonucu.pdf": "264100908ccf20c24c5369cb99b4fd35d0e508d222e9fe6f2b5898c54590633b"
+   }
+  },
+  "data/raw/ysk/mahalli-meclis-1994-2004": {
+   "checksum_file": "data/raw/ysk/mahalli-meclis-1994-2004/checksums.sha256",
+   "file_count": 6,
+   "files": {
+    "1994Mahalli-BelediyeMeclis-Tumu.pdf": "86643afe4b1486664ecb70d83400ced5e8fe7ae0263685d09a9fa8bdbc1900a1",
+    "1994Mahalli-ilGenel-Tumu.pdf": "f0947daa3c1b0ebefdc6c4530cedbe77047bfba714f4677227ede7cd6807678f",
+    "1999Mahalli-BelediyeMeclis-Tumu.pdf": "7440a597e722a8e80fbb2849a2facb77dcee2a85358eb34e491158bb1fc800ce",
+    "1999Mahalli-ilGenel-Tumu.pdf": "e5f0eb21630e46ad2679352d804a9a7e36985d53dabb660079fd5d93e12b42d3",
+    "2004Mahalli-BelediyeMeclis-Tumu.pdf": "7ce76a606046cbc51b893f0f844963b012322544a817df264b510d390effc54f",
+    "2004Mahalli-ilGenel-Tumu.pdf": "b1ef8c41f7d67f1fe039a0a83283fad0a7ade94a80524949224131ae414e6ec6"
    }
   }
  },

@@ -477,11 +477,13 @@ ek_kayitlar:
     files: "data/normalized/ek/belediye_meclisi/<secim>.json (1984yerel, 1989yerel, 1994yerel, 1999yerel, 2004yerel — DİE; 2009yerel, 2014yerel, 2019yerel, 2024yerel — YSK)"
     source_1984_1989: {authority: DİE, url: "kutuphane.tuik.gov.tr/pdf/0012953.pdf, 0013280.pdf, 0013623.pdf, 0014361.pdf, 0018169.pdf (Mahalli İdareler Seçimi Sonuçları)", status: official, raw: "data/raw/tuik/mahalli-kitap/", kaynak_katmani: "data/kaynaklar/tuik/yerel/<secim>/belediye_meclisi.json", note: "belediye bazında (il merkezi/ilçe merkezi/belde); satır başına kontrol.durum"}
     source: {authority: YSK, url: "acikveri.ysk.gov.tr getSecimSandikSonucList (secimTuru=3; secimId 4290, 11979, 16400, 20260)", status: official, raw: "data/raw/ysk/acikveri-belde-agrege/"}
+    source_1994_2004_ysk: {authority: "YSK (TÜİK tablosu)", url: "ysk.gov.tr/doc/dosyalar/docs/Mahalli/<yıl>/BelediyeMeclis/Pdf/<yıl>Mahalli-BelediyeMeclis-Tumu.pdf", status: official, raw: "data/raw/ysk/mahalli-meclis-1994-2004/", kaynak_katmani: "data/kaynaklar/ysk/mahalli-meclis/<secim>_bm.json", note: "dijital; DİE kitabıyla aynı tutanaklardan. Haritada DİE satırı okunamayan il/ilçe/belde satırlarını doldurur (meclis_harita/build_meclis_harita.py)"}
     content: [il / ilçe / belde bazında belediye meclisi üyeliği parti oyları]
   il_genel_meclisi:
     files: "data/normalized/ek/il_genel_meclisi/<secim>.json (1984yerel, 1989yerel, 1994yerel, 1999yerel, 2004yerel — DİE; 2009yerel, 2014yerel, 2019yerel, 2024yerel — YSK)"
     source_1984_1989: {authority: DİE, url: "kutuphane.tuik.gov.tr/pdf/0012953.pdf, 0013280.pdf, 0013623.pdf, 0014361.pdf, 0018169.pdf", status: official, raw: "data/raw/tuik/mahalli-kitap/", kaynak_katmani: "data/kaynaklar/tuik/yerel/<secim>/il_genel_meclisi.json", note: "ilçe bazında; 1989, 1994, 1999 ve 2004'te her ilçe için şehir(kent)/köy(kır) kırılımı da var"}
     source: {authority: YSK, url: "acikveri.ysk.gov.tr getSecimSandikSonucList (secimTuru=4)", status: official, raw: "data/raw/ysk/acikveri-belde-agrege/"}
+    source_1994_2004_ysk: {authority: "YSK (TÜİK tablosu)", url: "ysk.gov.tr/doc/dosyalar/docs/Mahalli/<yıl>/ilGenel/Pdf/<yıl>Mahalli-ilGenel-Tumu.pdf", status: official, raw: "data/raw/ysk/mahalli-meclis-1994-2004/", kaynak_katmani: "data/kaynaklar/ysk/mahalli-meclis/<secim>_igm.json", note: "dijital; ilçe ve Şehir/Köy kırılımı. Haritada DİE satırı okunamayan il/ilçe satırlarını doldurur"}
     content: [il / ilçe / belde bazında il genel meclisi üyeliği parti oyları]
     note: "2014'ten itibaren 30 büyükşehirde il genel meclisi yok (51 il)"
   yenileme_ara:

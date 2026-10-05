@@ -1175,850 +1175,145 @@ secim,tur,oylama,plaka,il,geomId,ilce_bugun,durum,kurulus,kanun,soy,kaynak_ilcel
 1989yerel_igm,yerel,igm,31,Hatay,TR-D-31-002,ANTAKYA,gri_satir_yok,,,,,
 1989yerel_igm,yerel,igm,31,Hatay,TR-D-31-005,DEFNE,gri_satir_yok,,,,,
 1994yerel_bm,yerel,bm,1,Adana,TR-D-01-005,İMAMOĞLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,1,Adana,TR-D-01-007,Karataş,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Merkez (3),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,1,Adana,TR-D-01-013,Tufanbeyli,gri_satir_bos,1958-04-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,1,Adana,TR-D-01-014,Yumurtalık,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-001,Akyurt,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Çubuk (16); Kalecik (4),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-005,BEYPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-006,Çamlıdere,gri_satir_bos,1953-12-04,6191,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-008,ÇUBUK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-009,Elmadağ,gri_satir_bos,1960-04-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-011,EVREN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-013,Güdül,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Ayaş (1); Beypazarı (1); Kızılcahamam (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-014,HAYMANA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-015,Kahramankazan,gri_satir_bos,1987-07-04,3392,kanun_tek_kaynak,Yenimahalle (31),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-016,KALECİK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-018,KIZILCAHAMAM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-020,NALLIHAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,6,Ankara,TR-D-06-024,ŞEREFLİKOÇHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-001,AKSEKİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-002,Aksu,gri_satir_yok,2008-03-22,5747,kanun_cok_kaynak,Merkez (16); Serik (1),
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-003,ALANYA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-005,Döşemealtı,gri_satir_yok,2008-03-22,5747,kanun_tek_kaynak,Merkez (22),
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-006,ELMALI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-007,FİNİKE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-008,GAZİPAŞA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-009,GÜNDOĞMUŞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-010,İbradı,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Akseki (13); Manavgat (5),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-015,KORKUTELİ,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-016,Kumluca,gri_satir_bos,1958-04-01,7033,kanun_dogrulanmadi,Finike (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-017,MANAVGAT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,7,Antalya,TR-D-07-019,SERİK,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,9,Aydın,TR-D-09-001,BOZDOĞAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,9,Aydın,TR-D-09-003,ÇİNE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,9,Aydın,TR-D-09-005,EFELER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,9,Aydın,TR-D-09-006,GERMENCİK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,9,Aydın,TR-D-09-007,İNCİRLİOVA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,9,Aydın,TR-D-09-008,KARACASU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,9,Aydın,TR-D-09-010,KOÇARLI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,9,Aydın,TR-D-09-017,Yenipazar,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Bozdoğan (1); Merkez (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,10,Balıkesir,TR-D-10-017,MARMARA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,10,Balıkesir,TR-D-10-018,Savaştepe,gri_satir_bos,1954-06-01,6325,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,11,Bilecik,TR-D-11-004,İNHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,12,Bingöl,TR-D-12-002,BİNGÖL MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,12,Bingöl,TR-D-12-005,KİĞI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,12,Bingöl,TR-D-12-008,Yedisu,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Kiğı (12); Pülümür (5); Karlıova (3),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,13,Bitlis,TR-D-13-001,Adilcevaz,gri_satir_bos,1953-03-01,6068,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,13,Bitlis,TR-D-13-003,BİTLİS MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,15,Burdur,TR-D-15-008,Karamanlı,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Tefenni (5); Yeşilova (3); Merkez (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,16,Bursa,TR-D-16-001,BÜYÜKORHAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,16,Bursa,TR-D-16-002,GEMLİK,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,16,Bursa,TR-D-16-003,GÜRSU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,16,Bursa,TR-D-16-005,İNEGÖL,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,16,Bursa,TR-D-16-006,İZNİK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,16,Bursa,TR-D-16-007,KARACABEY,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,16,Bursa,TR-D-16-014,ORHANGAZİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,16,Bursa,TR-D-16-017,YILDIRIM,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,18,Çankırı,TR-D-18-011,ŞABANÖZÜ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,18,Çankırı,TR-D-18-012,Yapraklı,gri_satir_bos,1958-04-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,20,Denizli,TR-D-20-016,PAMUKKALE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,20,Denizli,TR-D-20-019,TAVAS,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-002,BİSMİL,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-003,ÇERMİK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-004,ÇINAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-005,Çüngüş,gri_satir_bos,1953-03-01,6068,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-006,DİCLE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-007,Eğil,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Merkez (21); Dicle (6),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-008,ERGANİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-009,Hani,gri_satir_bos,1958-04-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-010,Hazro,gri_satir_bos,1954-06-01,6325,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-011,Kayapınar,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (17),
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-012,Kocaköy,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Merkez (8); Lice (3),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-015,SİLVAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,23,Elazığ,TR-D-23-005,ELAZIĞ MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,23,Elazığ,TR-D-23-008,Kovancılar,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Palu (78); Ağın (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,23,Elazığ,TR-D-23-009,MADEN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,24,Erzincan,TR-D-24-002,ERZİNCAN MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-001,AŞKALE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-002,Aziziye,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Merkez (74),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-004,HINIS,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-005,Horasan,gri_satir_bos,1953-12-04,6191,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-006,İSPİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-007,KARAÇOBAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-008,KARAYAZI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-009,KÖPRÜKÖY,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-010,Narman,gri_satir_bos,1954-06-01,6324,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-013,Palandöken,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (2),
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-015,PAZARYOLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-016,ŞENKAYA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-017,TEKMAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-018,TORTUM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,25,Erzurum,TR-D-25-019,UZUNDERE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-001,ALPU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-002,BEYLİKOVA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-003,Çifteler,gri_satir_bos,1954-06-01,6321,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-004,GÜNYÜZÜ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-006,İNÖNÜ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-008,Mihalgazi,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Sarıcakaya (5),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-011,Sarıcakaya,gri_satir_bos,1958-04-01,7033,kanun_dogrulanmadi,Merkez (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-012,SEYİTGAZİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,28,Giresun,TR-D-28-001,ALUCRA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,28,Giresun,TR-D-28-004,ÇANAKÇI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,28,Giresun,TR-D-28-005,Dereli,gri_satir_bos,1958-04-01,7033,kanun_dogrulanmadi,Merkez (2),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,28,Giresun,TR-D-28-010,GÖRELE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,28,Giresun,TR-D-28-011,GÜCE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,28,Giresun,TR-D-28-013,PİRAZİZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,28,Giresun,TR-D-28-015,TİREBOLU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,28,Giresun,TR-D-28-016,Yağlıdere,gri_satir_bos,1987-07-04,3392,kanun_tek_kaynak,Espiye (30),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,29,Gümüşhane,TR-D-29-001,GÜMÜŞHANE MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,29,Gümüşhane,TR-D-29-003,KÖSE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,29,Gümüşhane,TR-D-29-005,ŞİRAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,29,Gümüşhane,TR-D-29-006,TORUL,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,31,Hatay,TR-D-31-002,ANTAKYA,gri_satir_yok,,,,,
 1994yerel_bm,yerel,bm,31,Hatay,TR-D-31-005,DEFNE,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,31,Hatay,TR-D-31-010,KIRIKHAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,32,Isparta,TR-D-32-013,YENİŞARBADEMLİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,33,Mersin,TR-D-33-006,Erdemli,gri_satir_bos,1954-06-01,6325,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,33,Mersin,TR-D-33-007,GÜLNAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,33,Mersin,TR-D-33-008,MEZİTLİ,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,33,Mersin,TR-D-33-011,TARSUS,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,33,Mersin,TR-D-33-012,TOROSLAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,33,Mersin,TR-D-33-013,YENİŞEHİR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,34,İstanbul,TR-D-34-012,BEYLİKDÜZÜ,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,34,İstanbul,TR-D-34-014,BÜYÜKÇEKMECE,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,34,İstanbul,TR-D-34-015,ÇATALCA,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,34,İstanbul,TR-D-34-018,Esenyurt,gri_satir_yok,2008-03-22,5747,kanun_cok_kaynak,Büyükçekmece (23); Avcılar (1),
-1994yerel_bm,yerel,bm,34,İstanbul,TR-D-34-031,SİLİVRİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-001,Aliağa,gri_satir_bos,1982-01-21,2585,kanun_cok_kaynak,Menemen (12); Bergama (6); Foça (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-002,BALÇOVA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-003,BAYINDIR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-005,BERGAMA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-006,BEYDAĞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-009,ÇEŞME,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-012,FOÇA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-016,KARABURUN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-018,KEMALPAŞA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-020,KİRAZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-023,MENEMEN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-025,ÖDEMİŞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-026,SEFERİHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-027,Selçuk,gri_satir_bos,1957-09-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-028,TİRE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,35,İzmir,TR-D-35-029,TORBALI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,36,Kars,TR-D-36-006,SARIKAMIŞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,36,Kars,TR-D-36-007,Selim,gri_satir_bos,1957-09-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,36,Kars,TR-D-36-008,Susuz,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Merkez (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-001,AKKIŞLA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-002,BÜNYAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-003,DEVELİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-004,Felahiye,gri_satir_bos,1957-09-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-005,HACILAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-006,İNCESU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-009,Özvatan,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Felahiye (5); Sarıoğlan (3); Kocasinan (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-010,PINARBAŞI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-011,Sarıoğlan,gri_satir_bos,1960-04-01,7033,kanun_dogrulanmadi,Bünyan (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-012,SARIZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-013,TALAS,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-014,Tomarza,gri_satir_bos,1953-03-01,6068,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-015,Yahyalı,gri_satir_bos,1954-06-01,6324,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,38,Kayseri,TR-D-38-016,YEŞİLHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,39,Kırklareli,TR-D-39-003,KIRKLARELİ MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-001,BAŞİSKELE,gri_satir_yok,,,,,
 1994yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-004,DERİNCE,gri_satir_yok,,,,,
 1994yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-008,İZMİT,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-009,KANDIRA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-011,KARTEPE,gri_satir_yok,,,,,
-1994yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-012,Körfez,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Gebze (9); Merkez (8),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-001,AHIRLI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-002,AKÖREN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-003,AKŞEHİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-013,EMİRGAZİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-014,EREĞLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-015,GÜNEYSINIR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,42,Konya,TR-D-42-016,HADİM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-017,HALKAPINAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-018,HÜYÜK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-022,Karatay,gri_satir_bos,1987-06-27,3399,repo_dogrulanmis,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-024,Meram,gri_satir_bos,1987-06-27,3399,repo_dogrulanmis,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-026,Selçuklu,gri_satir_bos,1987-06-27,3399,repo_dogrulanmis,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-027,SEYDİŞEHİR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-028,TAŞKENT,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-029,TUZLUKÇU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-030,YALIHÜYÜK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,42,Konya,TR-D-42-031,Yunak,gri_satir_bos,1953-03-01,6068,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,43,Kütahya,TR-D-43-008,HİSARCIK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,43,Kütahya,TR-D-43-009,KÜTAHYA MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,43,Kütahya,TR-D-43-011,SİMAV,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,44,Malatya,TR-D-44-004,BATTALGAZİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,44,Malatya,TR-D-44-008,HEKİMHAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,45,Manisa,TR-D-45-006,GÖRDES,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,45,Manisa,TR-D-45-007,KIRKAĞAÇ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,45,Manisa,TR-D-45-008,Köprübaşı,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Gördes (30); Salihli (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,45,Manisa,TR-D-45-009,KULA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,45,Manisa,TR-D-45-010,SALİHLİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,45,Manisa,TR-D-45-014,SOMA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,45,Manisa,TR-D-45-016,TURGUTLU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,46,Kahramanmaraş,TR-D-46-004,Dülkadiroğlu,gri_satir_yok,2012-12-06,6360,repo_dogrulanmis,Merkez (43),
-1994yerel_bm,yerel,bm,46,Kahramanmaraş,TR-D-46-009,Onikişubat,gri_satir_yok,2012-12-06,6360,repo_dogrulanmis,Merkez (47),
-1994yerel_bm,yerel,bm,47,Mardin,TR-D-47-002,Dargeçit,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Midyat (32); İdil (5); Gercüş (3); Merkez (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,47,Mardin,TR-D-47-004,KIZILTEPE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,47,Mardin,TR-D-47-007,NUSAYBİN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,47,Mardin,TR-D-47-010,YEŞİLLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,48,Muğla,TR-D-48-008,MENTEŞE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,50,Nevşehir,TR-D-50-007,NEVŞEHİR MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,51,Niğde,TR-D-51-002,BOR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_bm,yerel,bm,52,Ordu,TR-D-52-002,Altınordu,gri_satir_bos,2013-03-22,6447,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,52,Ordu,TR-D-52-012,Kabadüz,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Merkez (19),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,52,Ordu,TR-D-52-014,Korgan,gri_satir_bos,1960-04-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,54,Sakarya,TR-D-54-003,ARİFİYE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,54,Sakarya,TR-D-54-004,ERENLER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,54,Sakarya,TR-D-54-014,SERDİVAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-001,Ondokuzmayıs,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Bafra (22); Merkez (13),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-002,ALAÇAM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-003,ASARCIK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-005,AYVACIK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-008,ÇARŞAMBA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-009,HAVZA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-011,KAVAK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-013,Salıpazarı,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Terme (17); Çarşamba (14),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-015,TERME,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-016,VEZİRKÖPRÜ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,55,Samsun,TR-D-55-017,YAKAKENT,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,56,Siirt,TR-D-56-005,SİİRT MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,57,Sinop,TR-D-57-008,SİNOP MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,58,Sivas,TR-D-58-003,DİVRİĞİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,58,Sivas,TR-D-58-011,KOYULHİSAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,58,Sivas,TR-D-58-012,SİVAS MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,59,Tekirdağ,TR-D-59-005,Kapaklı,gri_satir_bos,2012-12-06,6360,kanun_tek_kaynak,Çerkezköy (7),Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,59,Tekirdağ,TR-D-59-010,Süleymanpaşa,gri_satir_bos,2012-12-06,6360,merkez_ilce,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_bm,yerel,bm,61,Trabzon,TR-D-61-013,ORTAHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,62,Tunceli,TR-D-62-004,NAZIMİYE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-001,AKÇAKALE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-003,BOZOVA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-004,CEYLANPINAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-005,Eyyubiye,gri_satir_yok,2012-12-06,6360,repo_dogrulanmis,Merkez (151),
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-006,Halfeti,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-007,Haliliye,gri_satir_yok,2012-12-06,6360,repo_dogrulanmis,Merkez (168),
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-009,HİLVAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-010,Karaköprü,gri_satir_bos,2012-12-06,6360,repo_dogrulanmis,Merkez (88),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-012,SURUÇ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,66,Yozgat,TR-D-66-003,BOĞAZLIYAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,66,Yozgat,TR-D-66-005,ÇAYIRALAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,66,Yozgat,TR-D-66-006,ÇEKEREK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,66,Yozgat,TR-D-66-011,Şefaatli,gri_satir_bos,1954-06-01,6324,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,66,Yozgat,TR-D-66-012,YENİFAKILI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,66,Yozgat,TR-D-66-013,YERKÖY,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-006,KİLİMLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-007,KOZLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-008,ZONGULDAK MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,68,Aksaray,TR-D-68-006,ORTAKÖY,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,68,Aksaray,TR-D-68-007,SARIYAHŞİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,68,Aksaray,TR-D-68-008,Sultanhanı,gri_satir_bos,2017-08-25,KHK 694,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,69,Bayburt,TR-D-69-002,BAYBURT MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,70,Karaman,TR-D-70-004,KARAMAN MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,70,Karaman,TR-D-70-006,SARIVELİLER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_bm,yerel,bm,71,Kırıkkale,TR-D-71-007,KIRIKKALE MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_bm,yerel,bm,76,Iğdır,TR-D-76-001,ARALIK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-001,ALADAĞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-002,CEYHAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-004,FEKE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-005,İMAMOĞLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-006,KARAİSALI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-007,Karataş,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Merkez (3),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-008,KOZAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-009,Pozantı,gri_satir_bos,1954-06-01,6324,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-010,SAİMBEYLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-013,Tufanbeyli,gri_satir_bos,1958-04-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,1,Adana,TR-D-01-014,Yumurtalık,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-001,Akyurt,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Çubuk (16); Kalecik (4),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-003,AYAŞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-004,BALA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-005,BEYPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-006,Çamlıdere,gri_satir_bos,1953-12-04,6191,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-008,ÇUBUK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-009,Elmadağ,gri_satir_bos,1960-04-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-011,EVREN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-013,Güdül,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Ayaş (1); Beypazarı (1); Kızılcahamam (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-014,HAYMANA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-015,Kahramankazan,gri_satir_bos,1987-07-04,3392,kanun_tek_kaynak,Yenimahalle (31),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-016,KALECİK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-018,KIZILCAHAMAM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-020,NALLIHAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-022,Pursaklar,gri_satir_bos,2008-03-22,5747,kanun_cok_kaynak,Altındağ (2); Keçiören (2); Çubuk (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,6,Ankara,TR-D-06-024,ŞEREFLİKOÇHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-001,AKSEKİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-002,Aksu,gri_satir_yok,2008-03-22,5747,kanun_cok_kaynak,Merkez (16); Serik (1),
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-003,ALANYA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-006,ELMALI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-007,FİNİKE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-008,GAZİPAŞA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-009,GÜNDOĞMUŞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-013,KEPEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-014,KONYAALTI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-016,Kumluca,gri_satir_bos,1958-04-01,7033,kanun_dogrulanmadi,Finike (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-017,MANAVGAT,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-018,MURATPAŞA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,7,Antalya,TR-D-07-019,SERİK,gri_satir_yok,,,,,
 1994yerel_igm,yerel,igm,8,Artvin,TR-D-08-006,Kemalpaşa,gri_satir_bos,2017-08-25,KHK 694,repo_dogrulanmis,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,9,Aydın,TR-D-09-005,EFELER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,9,Aydın,TR-D-09-012,KUŞADASI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,9,Aydın,TR-D-09-017,Yenipazar,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Bozdoğan (1); Merkez (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,11,Bilecik,TR-D-11-004,İNHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,13,Bitlis,TR-D-13-005,HİZAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,13,Bitlis,TR-D-13-007,TATVAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-001,BÜYÜKORHAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-002,GEMLİK,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-003,GÜRSU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-004,HARMANCIK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-005,İNEGÖL,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-006,İZNİK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-007,KARACABEY,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-010,MUDANYA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-013,ORHANELİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-014,ORHANGAZİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,16,Bursa,TR-D-16-016,YENİŞEHİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,17,Çanakkale,TR-D-17-004,BOZCAADA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,17,Çanakkale,TR-D-17-010,GÖKÇEADA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,18,Çankırı,TR-D-18-009,KURŞUNLU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,18,Çankırı,TR-D-18-010,Orta,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Tavas (2),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_igm,yerel,igm,20,Denizli,TR-D-20-016,PAMUKKALE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-001,Bağlar,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (11),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-002,BİSMİL,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-003,ÇERMİK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-004,ÇINAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-005,Çüngüş,gri_satir_bos,1953-03-01,6068,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-006,DİCLE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-011,Kayapınar,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (17),
 1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-016,Sur,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (51),Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-017,Yenişehir,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (10),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-001,AŞKALE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-002,Aziziye,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Merkez (74),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-004,HINIS,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-005,Horasan,gri_satir_bos,1953-12-04,6191,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-006,İSPİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-007,KARAÇOBAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-008,KARAYAZI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-009,KÖPRÜKÖY,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-012,Olur,gri_satir_bos,1958-04-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-013,Palandöken,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (2),
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-014,PASİNLER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-015,PAZARYOLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-016,ŞENKAYA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-017,TEKMAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-018,TORTUM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-019,UZUNDERE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,25,Erzurum,TR-D-25-020,Yakutiye,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (13),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,27,Gaziantep,TR-D-27-001,Araban,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Tirebolu (3); Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,27,Gaziantep,TR-D-27-002,İSLAHİYE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,27,Gaziantep,TR-D-27-003,KARKAMIŞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,27,Gaziantep,TR-D-27-004,NİZİP,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,27,Gaziantep,TR-D-27-005,NURDAĞI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,27,Gaziantep,TR-D-27-009,Yavuzeli,gri_satir_bos,1958-04-01,7033,kanun_dogrulanmadi,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,28,Giresun,TR-D-28-005,Dereli,gri_satir_bos,1958-04-01,7033,kanun_dogrulanmadi,Merkez (2),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,29,Gümüşhane,TR-D-29-001,GÜMÜŞHANE MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,29,Gümüşhane,TR-D-29-006,TORUL,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_igm,yerel,igm,26,Eskişehir,TR-D-26-010,ODUNPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_igm,yerel,igm,26,Eskişehir,TR-D-26-014,TEPEBAŞI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,31,Hatay,TR-D-31-002,ANTAKYA,gri_satir_yok,,,,,
 1994yerel_igm,yerel,igm,31,Hatay,TR-D-31-005,DEFNE,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,31,Hatay,TR-D-31-013,REYHANLI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,34,İstanbul,TR-D-34-012,BEYLİKDÜZÜ,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,34,İstanbul,TR-D-34-014,BÜYÜKÇEKMECE,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,34,İstanbul,TR-D-34-015,ÇATALCA,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,34,İstanbul,TR-D-34-018,Esenyurt,gri_satir_yok,2008-03-22,5747,kanun_cok_kaynak,Büyükçekmece (23); Avcılar (1),
-1994yerel_igm,yerel,igm,34,İstanbul,TR-D-34-026,Küçükçekmece,gri_satir_yok,1987-07-04,3392,repo_dogrulanmis,,
-1994yerel_igm,yerel,igm,34,İstanbul,TR-D-34-031,SİLİVRİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-001,Aliağa,gri_satir_bos,1982-01-21,2585,kanun_cok_kaynak,Menemen (12); Bergama (6); Foça (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-003,BAYINDIR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-005,BERGAMA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-006,BEYDAĞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-009,ÇEŞME,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-012,FOÇA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-016,KARABURUN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-018,KEMALPAŞA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-020,KİRAZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-022,MENDERES,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-023,MENEMEN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-025,ÖDEMİŞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-026,SEFERİHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,35,İzmir,TR-D-35-029,TORBALI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-001,AKKIŞLA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-002,BÜNYAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-003,DEVELİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_igm,yerel,igm,33,Mersin,TR-D-33-001,AKDENİZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_igm,yerel,igm,33,Mersin,TR-D-33-012,TOROSLAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
+1994yerel_igm,yerel,igm,33,Mersin,TR-D-33-013,YENİŞEHİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-004,Felahiye,gri_satir_bos,1957-09-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-005,HACILAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-006,İNCESU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-009,Özvatan,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Felahiye (5); Sarıoğlan (3); Kocasinan (2),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-010,PINARBAŞI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-011,Sarıoğlan,gri_satir_bos,1960-04-01,7033,kanun_dogrulanmadi,Bünyan (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-012,SARIZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-013,TALAS,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-014,Tomarza,gri_satir_bos,1953-03-01,6068,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-015,Yahyalı,gri_satir_bos,1954-06-01,6324,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,38,Kayseri,TR-D-38-016,YEŞİLHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-001,BAŞİSKELE,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-002,ÇAYIROVA,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-003,DARICA,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-004,DERİNCE,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-005,DİLOVASI,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-006,GEBZE,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-007,GÖLCÜK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-008,İZMİT,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-009,KANDIRA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-010,KARAMÜRSEL,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-011,KARTEPE,gri_satir_yok,,,,,
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-001,AHIRLI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-002,AKÖREN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-004,ALTINEKİN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-005,BEYŞEHİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-006,BOZKIR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-007,CİHANBEYLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-008,Çeltik,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Yunak (10),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-009,ÇUMRA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-012,Doğanhisar,gri_satir_bos,1957-09-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-013,EMİRGAZİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-014,EREĞLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-015,GÜNEYSINIR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_igm,yerel,igm,42,Konya,TR-D-42-016,HADİM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-017,HALKAPINAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-018,HÜYÜK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-020,KADINHANI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-025,Sarayönü,gri_satir_bos,1959-04-01,7033,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-027,SEYDİŞEHİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-029,TUZLUKÇU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-030,YALIHÜYÜK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,42,Konya,TR-D-42-031,Yunak,gri_satir_bos,1953-03-01,6068,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,47,Mardin,TR-D-47-003,DERİK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,47,Mardin,TR-D-47-004,KIZILTEPE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,47,Mardin,TR-D-47-010,YEŞİLLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,48,Muğla,TR-D-48-008,MENTEŞE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,52,Ordu,TR-D-52-002,Altınordu,gri_satir_bos,2013-03-22,6447,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,54,Sakarya,TR-D-54-003,ARİFİYE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,54,Sakarya,TR-D-54-004,ERENLER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,54,Sakarya,TR-D-54-010,Kaynarca,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Kandıra (2); Kadınhanı (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_igm,yerel,igm,54,Sakarya,TR-D-54-014,SERDİVAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-001,Ondokuzmayıs,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Bafra (22); Merkez (13),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-002,ALAÇAM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-003,ASARCIK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-004,Atakum,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (32),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-005,AYVACIK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-006,BAFRA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-007,Canik,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (41),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-008,ÇARŞAMBA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-009,HAVZA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-010,İlkadım,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (14),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-011,KAVAK,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-013,Salıpazarı,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Terme (17); Çarşamba (14),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-014,Tekkeköy,gri_satir_bos,1987-07-04,3392,repo_dogrulanmis,Çarşamba (26); Merkez (15),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-015,TERME,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,55,Samsun,TR-D-55-016,VEZİRKÖPRÜ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-005,Kapaklı,gri_satir_bos,2012-12-06,6360,kanun_tek_kaynak,Çerkezköy (7),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-007,Marmaraereğlisi,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Çorlu (4),Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-010,Süleymanpaşa,gri_satir_bos,2012-12-06,6360,merkez_ilce,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,61,Trabzon,TR-D-61-013,ORTAHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,61,Trabzon,TR-D-61-018,Yomra,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Merkez (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1994yerel_igm,yerel,igm,63,Şanlıurfa,TR-D-63-010,Karaköprü,gri_satir_bos,2012-12-06,6360,repo_dogrulanmis,Merkez (88),Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,66,Yozgat,TR-D-66-011,Şefaatli,gri_satir_bos,1954-06-01,6324,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,67,Zonguldak,TR-D-67-006,KİLİMLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,67,Zonguldak,TR-D-67-007,KOZLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1994yerel_igm,yerel,igm,68,Aksaray,TR-D-68-008,Sultanhanı,gri_satir_bos,2017-08-25,KHK 694,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1994yerel_igm,yerel,igm,70,Karaman,TR-D-70-003,ERMENEK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1994yerel_igm,yerel,igm,71,Kırıkkale,TR-D-71-007,KIRIKKALE MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,3,Afyonkarahisar,TR-D-03-008,DİNAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,3,Afyonkarahisar,TR-D-03-009,EMİRDAĞ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,3,Afyonkarahisar,TR-D-03-012,İhsaniye,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Merkez (2),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,3,Afyonkarahisar,TR-D-03-013,İSCEHİSAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,3,Afyonkarahisar,TR-D-03-014,KIZILÖREN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,3,Afyonkarahisar,TR-D-03-015,SANDIKLI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,3,Afyonkarahisar,TR-D-03-016,Sinanpaşa,gri_satir_bos,1953-03-01,6068,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,4,Ağrı,TR-D-04-001,AĞRI MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,5,Amasya,TR-D-05-002,Göynücek,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,5,Amasya,TR-D-05-004,HAMAMÖZÜ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,5,Amasya,TR-D-05-005,MERZİFON,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,5,Amasya,TR-D-05-007,TAŞOVA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,6,Ankara,TR-D-06-011,EVREN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,6,Ankara,TR-D-06-013,Güdül,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Ayaş (1); Beypazarı (1); Kızılcahamam (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,6,Ankara,TR-D-06-014,HAYMANA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,6,Ankara,TR-D-06-015,Kahramankazan,gri_satir_bos,1987-07-04,3392,kanun_tek_kaynak,Yenimahalle (31),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,6,Ankara,TR-D-06-016,KALECİK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,6,Ankara,TR-D-06-018,KIZILCAHAMAM,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,6,Ankara,TR-D-06-020,NALLIHAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,6,Ankara,TR-D-06-024,ŞEREFLİKOÇHİSAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,7,Antalya,TR-D-07-004,DEMRE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,7,Antalya,TR-D-07-008,GAZİPAŞA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,7,Antalya,TR-D-07-013,KEPEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,7,Antalya,TR-D-07-014,KONYAALTI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,8,Artvin,TR-D-08-006,Kemalpaşa,gri_satir_bos,2017-08-25,KHK 694,repo_dogrulanmis,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,9,Aydın,TR-D-09-002,Buharkent,gri_satir_bos,1987-07-04,3392,kanun_tek_kaynak,Kuyucak (8),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,9,Aydın,TR-D-09-005,EFELER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,9,Aydın,TR-D-09-006,GERMENCİK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,9,Aydın,TR-D-09-011,KÖŞK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,9,Aydın,TR-D-09-013,Kuyucak,gri_satir_bos,1953-03-01,6068,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,10,Balıkesir,TR-D-10-005,BİGADİÇ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,10,Balıkesir,TR-D-10-016,MANYAS,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,11,Bilecik,TR-D-11-005,OSMANELİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,12,Bingöl,TR-D-12-005,KİĞI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,12,Bingöl,TR-D-12-007,Yayladere,gri_satir_bos,1987-07-04,3392,kanun_tek_kaynak,Kiğı (20),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,12,Bingöl,TR-D-12-008,Yedisu,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Kiğı (12); Pülümür (5); Karlıova (3),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,14,Bolu,TR-D-14-001,BOLU MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,14,Bolu,TR-D-14-004,GÖYNÜK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,16,Bursa,TR-D-16-008,Keles,gri_satir_bos,1953-03-01,6068,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,18,Çankırı,TR-D-18-002,Bayramören,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Kurşunlu (24); Atkaracalar (3),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,18,Çankırı,TR-D-18-004,ÇERKEŞ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,18,Çankırı,TR-D-18-005,Eldivan,gri_satir_bos,1960-04-01,7033,kanun_dogrulanmadi,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,18,Çankırı,TR-D-18-009,KURŞUNLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,19,Çorum,TR-D-19-003,BOĞAZKALE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,19,Çorum,TR-D-19-012,OSMANCIK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,20,Denizli,TR-D-20-014,Kale,gri_satir_bos,1959-04-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,20,Denizli,TR-D-20-016,PAMUKKALE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-005,Çüngüş,gri_satir_bos,1953-03-01,6068,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-011,Kayapınar,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (17),
-1999yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-013,KULP,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-014,LİCE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,22,Edirne,TR-D-22-009,UZUNKÖPRÜ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,23,Elazığ,TR-D-23-001,Ağın,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,23,Elazığ,TR-D-23-002,Alacakaya,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Maden (7); Arıcak (5),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,23,Elazığ,TR-D-23-003,ARICAK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,23,Elazığ,TR-D-23-004,BASKİL,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,23,Elazığ,TR-D-23-007,KEBAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,23,Elazığ,TR-D-23-008,Kovancılar,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Palu (78); Ağın (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,24,Erzincan,TR-D-24-002,ERZİNCAN MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,25,Erzurum,TR-D-25-002,Aziziye,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Merkez (74),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,25,Erzurum,TR-D-25-003,Çat,gri_satir_bos,1954-06-01,6325,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,25,Erzurum,TR-D-25-007,KARAÇOBAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_bm,yerel,bm,25,Erzurum,TR-D-25-013,Palandöken,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (2),
-1999yerel_bm,yerel,bm,25,Erzurum,TR-D-25-015,PAZARYOLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,25,Erzurum,TR-D-25-018,TORTUM,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-012,SEYİTGAZİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,28,Giresun,TR-D-28-010,GÖRELE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,30,Hakkari,TR-D-30-005,Derecik,gri_satir_bos,2018-10-25,7148,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,31,Hatay,TR-D-31-001,ALTINÖZÜ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,31,Hatay,TR-D-31-002,ANTAKYA,gri_satir_yok,,,,,
-1999yerel_bm,yerel,bm,31,Hatay,TR-D-31-004,BELEN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,31,Hatay,TR-D-31-005,DEFNE,gri_satir_yok,,,,,
-1999yerel_bm,yerel,bm,32,Isparta,TR-D-32-004,Gelendost,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,32,Isparta,TR-D-32-008,Senirkent,gri_satir_bos,1952-06-30,5959,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,32,Isparta,TR-D-32-011,ULUBORLU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,33,Mersin,TR-D-33-008,MEZİTLİ,gri_satir_yok,,,,,
-1999yerel_bm,yerel,bm,34,İstanbul,TR-D-34-031,SİLİVRİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,35,İzmir,TR-D-35-004,Bayraklı,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Karşıyaka (23),
-1999yerel_bm,yerel,bm,35,İzmir,TR-D-35-017,Karşıyaka,gri_satir_yok,1954-06-01,6325,repo_dogrulanmis,,
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-001,AKKIŞLA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-004,Felahiye,gri_satir_bos,1957-09-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-005,HACILAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-006,İNCESU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-009,Özvatan,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Felahiye (5); Sarıoğlan (3); Kocasinan (2),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-010,PINARBAŞI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-011,Sarıoğlan,gri_satir_bos,1960-04-01,7033,kanun_dogrulanmadi,Bünyan (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-012,SARIZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-014,Tomarza,gri_satir_bos,1953-03-01,6068,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,38,Kayseri,TR-D-38-015,Yahyalı,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,40,Kırşehir,TR-D-40-007,MUCUR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-001,BAŞİSKELE,gri_satir_yok,,,,,
 1999yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-004,DERİNCE,gri_satir_yok,,,,,
 1999yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-008,İZMİT,gri_satir_yok,,,,,
 1999yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-011,KARTEPE,gri_satir_yok,,,,,
-1999yerel_bm,yerel,bm,42,Konya,TR-D-42-002,AKÖREN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,42,Konya,TR-D-42-004,ALTINEKİN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,42,Konya,TR-D-42-014,EREĞLİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,42,Konya,TR-D-42-022,Karatay,gri_satir_bos,1987-06-27,3399,repo_dogrulanmis,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,42,Konya,TR-D-42-026,Selçuklu,gri_satir_bos,1987-06-27,3399,repo_dogrulanmis,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,43,Kütahya,TR-D-43-010,PAZARLAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,43,Kütahya,TR-D-43-011,SİMAV,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,43,Kütahya,TR-D-43-012,ŞAPHANE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,44,Malatya,TR-D-44-007,DOĞANYOL,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,45,Manisa,TR-D-45-004,DEMİRCİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,45,Manisa,TR-D-45-005,GÖLMARMARA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,45,Manisa,TR-D-45-008,Köprübaşı,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Gördes (30); Salihli (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,45,Manisa,TR-D-45-009,KULA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,45,Manisa,TR-D-45-011,Sarıgöl,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Alaşehir (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,45,Manisa,TR-D-45-014,SOMA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,45,Manisa,TR-D-45-016,TURGUTLU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,46,Kahramanmaraş,TR-D-46-002,ANDIRIN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,46,Kahramanmaraş,TR-D-46-006,ELBİSTAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,48,Muğla,TR-D-48-008,MENTEŞE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,49,Muş,TR-D-49-003,KORKUT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,49,Muş,TR-D-49-004,MALAZGİRT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,49,Muş,TR-D-49-005,MUŞ MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,50,Nevşehir,TR-D-50-001,ACIGÖL,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,50,Nevşehir,TR-D-50-002,AVANOS,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,50,Nevşehir,TR-D-50-003,Derinkuyu,gri_satir_bos,1960-04-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,50,Nevşehir,TR-D-50-004,GÜLŞEHİR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,50,Nevşehir,TR-D-50-005,HACIBEKTAŞ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,50,Nevşehir,TR-D-50-006,KOZAKLI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-001,Akkuş,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-002,Altınordu,gri_satir_bos,2013-03-22,6447,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-004,ÇAMAŞ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-005,ÇATALPINAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-006,ÇAYBAŞI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-007,FATSA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-009,Gülyalı,gri_satir_bos,1987-07-04,3392,kanun_tek_kaynak,Merkez (7),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-010,Gürgentepe,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Gölköy (5); Fatsa (3); Merkez (1); Ulubey (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-011,İkizce,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Ünye (14); Terme (3),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-012,Kabadüz,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Merkez (19),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-013,Kabataş,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Aybastı (4),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-017,PERŞEMBE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,52,Ordu,TR-D-52-018,Ulubey,gri_satir_bos,1958-04-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,53,Rize,TR-D-53-012,RİZE MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,54,Sakarya,TR-D-54-001,ADAPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,54,Sakarya,TR-D-54-003,ARİFİYE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,54,Sakarya,TR-D-54-004,ERENLER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,54,Sakarya,TR-D-54-013,Sapanca,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Beşiri (4); Merkez (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,54,Sakarya,TR-D-54-014,SERDİVAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,55,Samsun,TR-D-55-001,Ondokuzmayıs,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Bafra (22); Merkez (13),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,58,Sivas,TR-D-58-003,DİVRİĞİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,58,Sivas,TR-D-58-007,GÜRÜN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,59,Tekirdağ,TR-D-59-005,Kapaklı,gri_satir_bos,2012-12-06,6360,kanun_tek_kaynak,Çerkezköy (7),Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_bm,yerel,bm,59,Tekirdağ,TR-D-59-010,Süleymanpaşa,gri_satir_bos,2012-12-06,6360,merkez_ilce,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,60,Tokat,TR-D-60-009,TOKAT MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-002,Araklı,gri_satir_bos,1953-03-01,6068,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-003,Arsin,gri_satir_bos,1959-04-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-004,BEŞİKDÜZÜ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-005,ÇARŞIBAŞI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-006,ÇAYKARA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-007,DERNEKPAZARI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-008,DÜZKÖY,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-009,HAYRAT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-013,ORTAHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,61,Trabzon,TR-D-61-014,SÜRMENE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,62,Tunceli,TR-D-62-001,ÇEMİŞGEZEK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,62,Tunceli,TR-D-62-002,HOZAT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,62,Tunceli,TR-D-62-003,MAZGİRT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,62,Tunceli,TR-D-62-004,NAZIMİYE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,62,Tunceli,TR-D-62-005,OVACIK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,62,Tunceli,TR-D-62-006,PERTEK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,62,Tunceli,TR-D-62-007,PÜLÜMÜR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-003,BOZOVA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-004,CEYLANPINAR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-005,Eyyubiye,gri_satir_yok,2012-12-06,6360,repo_dogrulanmis,Merkez (151),
-1999yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-006,Halfeti,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-007,Haliliye,gri_satir_yok,2012-12-06,6360,repo_dogrulanmis,Merkez (168),
-1999yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-010,Karaköprü,gri_satir_bos,2012-12-06,6360,repo_dogrulanmis,Merkez (88),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,64,Uşak,TR-D-64-001,BANAZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,64,Uşak,TR-D-64-002,EŞME,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,65,Van,TR-D-65-007,GEVAŞ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,65,Van,TR-D-65-009,İPEKYOLU,gri_satir_yok,,,,,
-1999yerel_bm,yerel,bm,65,Van,TR-D-65-013,TUŞBA,gri_satir_yok,,,,,
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-001,AKDAĞMADENİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-002,AYDINCIK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-003,BOĞAZLIYAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-005,ÇAYIRALAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-007,KADIŞEHRİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-008,SARAYKENT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-010,SORGUN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-011,Şefaatli,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,66,Yozgat,TR-D-66-012,YENİFAKILI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-003,DEVREK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-005,GÖKÇEBEY,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-006,KİLİMLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-007,KOZLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,68,Aksaray,TR-D-68-005,GÜZELYURT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,68,Aksaray,TR-D-68-007,SARIYAHŞİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,68,Aksaray,TR-D-68-008,Sultanhanı,gri_satir_bos,2017-08-25,KHK 694,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_bm,yerel,bm,70,Karaman,TR-D-70-002,BAŞYAYLA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,73,Şırnak,TR-D-73-002,CİZRE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_bm,yerel,bm,74,Bartın,TR-D-74-003,KURUCAŞİLE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,78,Karabük,TR-D-78-006,YENİCE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_bm,yerel,bm,80,Osmaniye,TR-D-80-002,DÜZİÇİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,1,Adana,TR-D-01-004,FEKE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,1,Adana,TR-D-01-006,KARAİSALI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,1,Adana,TR-D-01-014,Yumurtalık,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Merkez (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,4,Ağrı,TR-D-04-007,Taşlıçay,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,6,Ankara,TR-D-06-012,GÖLBAŞI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,6,Ankara,TR-D-06-016,KALECİK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,6,Ankara,TR-D-06-024,ŞEREFLİKOÇHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,6,Ankara,TR-D-06-025,Yenimahalle,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Merkez (3),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,7,Antalya,TR-D-07-002,Aksu,gri_satir_yok,2008-03-22,5747,kanun_cok_kaynak,Merkez (16); Serik (1),
-1999yerel_igm,yerel,igm,7,Antalya,TR-D-07-004,DEMRE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,7,Antalya,TR-D-07-006,ELMALI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,7,Antalya,TR-D-07-013,KEPEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,7,Antalya,TR-D-07-014,KONYAALTI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,7,Antalya,TR-D-07-018,MURATPAŞA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,7,Antalya,TR-D-07-019,SERİK,gri_satir_yok,,,,,
-1999yerel_igm,yerel,igm,8,Artvin,TR-D-08-001,ARDANUÇ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,8,Artvin,TR-D-08-002,Arhavi,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,8,Artvin,TR-D-08-004,BORÇKA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,8,Artvin,TR-D-08-005,HOPA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,8,Artvin,TR-D-08-006,Kemalpaşa,gri_satir_bos,2017-08-25,KHK 694,repo_dogrulanmis,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,9,Aydın,TR-D-09-005,EFELER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,13,Bitlis,TR-D-13-002,AHLAT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,16,Bursa,TR-D-16-001,BÜYÜKORHAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,17,Çanakkale,TR-D-17-004,BOZCAADA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,17,Çanakkale,TR-D-17-010,GÖKÇEADA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,18,Çankırı,TR-D-18-012,Yapraklı,gri_satir_bos,1958-04-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,19,Çorum,TR-D-19-014,Uğurludağ,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,İskilip (17); Sungurlu (12); Merkez (4),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,20,Denizli,TR-D-20-005,Beyağaç,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Kale (7),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,20,Denizli,TR-D-20-008,ÇAL,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,20,Denizli,TR-D-20-016,PAMUKKALE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-001,Bağlar,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (11),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-008,ERGANİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-011,Kayapınar,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (17),
 1999yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-016,Sur,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (51),Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-017,Yenişehir,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (10),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,23,Elazığ,TR-D-23-007,KEBAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,24,Erzincan,TR-D-24-002,ERZİNCAN MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,24,Erzincan,TR-D-24-009,ÜZÜMLÜ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,25,Erzurum,TR-D-25-002,Aziziye,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Merkez (74),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,25,Erzurum,TR-D-25-009,KÖPRÜKÖY,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,25,Erzurum,TR-D-25-013,Palandöken,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (2),
 1999yerel_igm,yerel,igm,25,Erzurum,TR-D-25-015,PAZARYOLU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,25,Erzurum,TR-D-25-020,Yakutiye,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (13),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,26,Eskişehir,TR-D-26-001,ALPU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,26,Eskişehir,TR-D-26-010,ODUNPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,26,Eskişehir,TR-D-26-014,TEPEBAŞI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,28,Giresun,TR-D-28-012,KEŞAP,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,29,Gümüşhane,TR-D-29-001,GÜMÜŞHANE MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,30,Hakkari,TR-D-30-005,Derecik,gri_satir_bos,2018-10-25,7148,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,31,Hatay,TR-D-31-002,ANTAKYA,gri_satir_yok,,,,,
 1999yerel_igm,yerel,igm,31,Hatay,TR-D-31-003,ARSUZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,31,Hatay,TR-D-31-005,DEFNE,gri_satir_yok,,,,,
-1999yerel_igm,yerel,igm,31,Hatay,TR-D-31-011,KUMLU,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,32,Isparta,TR-D-32-008,Senirkent,gri_satir_bos,1952-06-30,5959,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,33,Mersin,TR-D-33-001,AKDENİZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,33,Mersin,TR-D-33-006,Erdemli,gri_satir_bos,1954-06-01,6325,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,33,Mersin,TR-D-33-008,MEZİTLİ,gri_satir_yok,,,,,
 1999yerel_igm,yerel,igm,33,Mersin,TR-D-33-012,TOROSLAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,33,Mersin,TR-D-33-013,YENİŞEHİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,34,İstanbul,TR-D-34-019,EYÜPSULTAN,gri_satir_yok,,,,,
-1999yerel_igm,yerel,igm,35,İzmir,TR-D-35-015,Karabağlar,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Konak (57),
-1999yerel_igm,yerel,igm,35,İzmir,TR-D-35-021,KONAK,gri_satir_yok,,,,,
-1999yerel_igm,yerel,igm,36,Kars,TR-D-36-006,SARIKAMIŞ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,37,Kastamonu,TR-D-37-011,HANÖNÜ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,38,Kayseri,TR-D-38-012,SARIZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,39,Kırklareli,TR-D-39-005,LÜLEBURGAZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,39,Kırklareli,TR-D-39-008,VİZE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-001,BAŞİSKELE,gri_satir_yok,,,,,
-1999yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-004,DERİNCE,gri_satir_yok,,,,,
-1999yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-008,İZMİT,gri_satir_yok,,,,,
-1999yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-011,KARTEPE,gri_satir_yok,,,,,
-1999yerel_igm,yerel,igm,45,Manisa,TR-D-45-009,KULA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,45,Manisa,TR-D-45-011,Sarıgöl,gri_satir_bos,1957-09-01,7033,kanun_dogrulanmadi,Alaşehir (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,48,Muğla,TR-D-48-008,MENTEŞE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,49,Muş,TR-D-49-005,MUŞ MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,50,Nevşehir,TR-D-50-001,ACIGÖL,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,50,Nevşehir,TR-D-50-004,GÜLŞEHİR,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,50,Nevşehir,TR-D-50-005,HACIBEKTAŞ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,50,Nevşehir,TR-D-50-007,NEVŞEHİR MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,52,Ordu,TR-D-52-002,Altınordu,gri_satir_bos,2013-03-22,6447,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,53,Rize,TR-D-53-005,FINDIKLI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,53,Rize,TR-D-53-007,HEMŞİN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,54,Sakarya,TR-D-54-001,ADAPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,54,Sakarya,TR-D-54-003,ARİFİYE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,54,Sakarya,TR-D-54-004,ERENLER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,54,Sakarya,TR-D-54-014,SERDİVAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,55,Samsun,TR-D-55-001,Ondokuzmayıs,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Bafra (22); Merkez (13),Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,55,Samsun,TR-D-55-004,Atakum,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (32),Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,55,Samsun,TR-D-55-007,Canik,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (41),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,55,Samsun,TR-D-55-009,HAVZA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,55,Samsun,TR-D-55-010,İlkadım,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (14),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,55,Samsun,TR-D-55-013,Salıpazarı,gri_satir_bos,1987-07-04,3392,kanun_cok_kaynak,Terme (17); Çarşamba (14),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,55,Samsun,TR-D-55-014,Tekkeköy,gri_satir_bos,1987-07-04,3392,repo_dogrulanmis,Çarşamba (26); Merkez (15),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,57,Sinop,TR-D-57-008,SİNOP MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,58,Sivas,TR-D-58-015,Ulaş,gri_satir_bos,1990-05-20,3644,kanun_tek_kaynak,Merkez (32),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-005,Kapaklı,gri_satir_bos,2012-12-06,6360,kanun_tek_kaynak,Çerkezköy (7),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-008,Muratlı,gri_satir_bos,1957-09-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-010,Süleymanpaşa,gri_satir_bos,2012-12-06,6360,merkez_ilce,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,60,Tokat,TR-D-60-003,BAŞÇİFTLİK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,60,Tokat,TR-D-60-012,ZİLE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,61,Trabzon,TR-D-61-008,DÜZKÖY,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,61,Trabzon,TR-D-61-013,ORTAHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,63,Şanlıurfa,TR-D-63-010,Karaköprü,gri_satir_bos,2012-12-06,6360,repo_dogrulanmis,Merkez (88),Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,65,Van,TR-D-65-012,SARAY,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,66,Yozgat,TR-D-66-005,ÇAYIRALAN,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,67,Zonguldak,TR-D-67-006,KİLİMLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 1999yerel_igm,yerel,igm,67,Zonguldak,TR-D-67-007,KOZLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,67,Zonguldak,TR-D-67-008,ZONGULDAK MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,68,Aksaray,TR-D-68-004,GÜLAĞAÇ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,68,Aksaray,TR-D-68-005,GÜZELYURT,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 1999yerel_igm,yerel,igm,68,Aksaray,TR-D-68-008,Sultanhanı,gri_satir_bos,2017-08-25,KHK 694,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-1999yerel_igm,yerel,igm,69,Bayburt,TR-D-69-001,AYDINTEPE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,73,Şırnak,TR-D-73-004,İDİL,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,74,Bartın,TR-D-74-001,AMASRA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,77,Yalova,TR-D-77-001,ALTINOVA,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,77,Yalova,TR-D-77-006,YALOVA MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-1999yerel_igm,yerel,igm,79,Kilis,TR-D-79-001,ELBEYLİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_bm,yerel,bm,6,Ankara,TR-D-06-020,NALLIHAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,7,Antalya,TR-D-07-013,KEPEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,7,Antalya,TR-D-07-014,KONYAALTI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,7,Antalya,TR-D-07-018,MURATPAŞA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,8,Artvin,TR-D-08-006,Kemalpaşa,gri_satir_bos,2017-08-25,KHK 694,repo_dogrulanmis,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_bm,yerel,bm,9,Aydın,TR-D-09-005,EFELER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,15,Burdur,TR-D-15-007,Gölhisar,gri_satir_bos,1953-03-01,6068,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_bm,yerel,bm,16,Bursa,TR-D-16-003,GÜRSU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,20,Denizli,TR-D-20-016,PAMUKKALE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-001,Bağlar,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (11),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-011,Kayapınar,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (17),
-2004yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-016,Sur,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (51),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,21,Diyarbakır,TR-D-21-017,Yenişehir,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (10),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_bm,yerel,bm,25,Erzurum,TR-D-25-013,Palandöken,gri_satir_yok,2008-03-22,5747,repo_dogrulanmis,Merkez (2),
-2004yerel_bm,yerel,bm,25,Erzurum,TR-D-25-020,Yakutiye,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (13),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-010,ODUNPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,26,Eskişehir,TR-D-26-014,TEPEBAŞI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,30,Hakkari,TR-D-30-005,Derecik,gri_satir_bos,2018-10-25,7148,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,31,Hatay,TR-D-31-003,ARSUZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,31,Hatay,TR-D-31-012,PAYAS,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,33,Mersin,TR-D-33-001,AKDENİZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_bm,yerel,bm,33,Mersin,TR-D-33-008,MEZİTLİ,gri_satir_yok,,,,,
-2004yerel_bm,yerel,bm,33,Mersin,TR-D-33-012,TOROSLAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,33,Mersin,TR-D-33-013,YENİŞEHİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,37,Kastamonu,TR-D-37-014,KASTAMONU MERKEZ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-001,BAŞİSKELE,gri_satir_yok,,,,,
 2004yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-008,İZMİT,gri_satir_yok,,,,,
 2004yerel_bm,yerel,bm,41,Kocaeli,TR-D-41-011,KARTEPE,gri_satir_yok,,,,,
 2004yerel_bm,yerel,bm,48,Muğla,TR-D-48-008,MENTEŞE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_bm,yerel,bm,52,Ordu,TR-D-52-002,Altınordu,gri_satir_bos,2013-03-22,6447,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_bm,yerel,bm,54,Sakarya,TR-D-54-001,ADAPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,54,Sakarya,TR-D-54-003,ARİFİYE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,54,Sakarya,TR-D-54-004,ERENLER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,54,Sakarya,TR-D-54-014,SERDİVAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,55,Samsun,TR-D-55-004,Atakum,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (32),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,55,Samsun,TR-D-55-007,Canik,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (41),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,55,Samsun,TR-D-55-010,İlkadım,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (14),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,58,Sivas,TR-D-58-009,İMRANLI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,59,Tekirdağ,TR-D-59-005,Kapaklı,gri_satir_bos,2012-12-06,6360,kanun_tek_kaynak,Çerkezköy (7),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_bm,yerel,bm,59,Tekirdağ,TR-D-59-010,Süleymanpaşa,gri_satir_bos,2012-12-06,6360,merkez_ilce,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_bm,yerel,bm,61,Trabzon,TR-D-61-013,ORTAHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,63,Şanlıurfa,TR-D-63-010,Karaköprü,gri_satir_bos,2012-12-06,6360,repo_dogrulanmis,Merkez (88),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-006,KİLİMLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,67,Zonguldak,TR-D-67-007,KOZLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_bm,yerel,bm,68,Aksaray,TR-D-68-008,Sultanhanı,gri_satir_bos,2017-08-25,KHK 694,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,2,Adıyaman,TR-D-02-001,ADIYAMAN MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,5,Amasya,TR-D-05-005,MERZİFON,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,6,Ankara,TR-D-06-004,BALA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,7,Antalya,TR-D-07-002,Aksu,gri_satir_yok,2008-03-22,5747,kanun_cok_kaynak,Merkez (16); Serik (1),
 2004yerel_igm,yerel,igm,7,Antalya,TR-D-07-013,KEPEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,7,Antalya,TR-D-07-014,KONYAALTI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,7,Antalya,TR-D-07-018,MURATPAŞA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,7,Antalya,TR-D-07-019,SERİK,gri_satir_yok,,,,,
 2004yerel_igm,yerel,igm,8,Artvin,TR-D-08-006,Kemalpaşa,gri_satir_bos,2017-08-25,KHK 694,repo_dogrulanmis,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,9,Aydın,TR-D-09-005,EFELER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,10,Balıkesir,TR-D-10-007,DURSUNBEY,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_igm,yerel,igm,10,Balıkesir,TR-D-10-016,MANYAS,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,16,Bursa,TR-D-16-015,OSMANGAZİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,17,Çanakkale,TR-D-17-004,BOZCAADA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,17,Çanakkale,TR-D-17-010,GÖKÇEADA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,18,Çankırı,TR-D-18-003,ÇANKIRI MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,20,Denizli,TR-D-20-014,Kale,gri_satir_bos,1959-04-01,7033,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_igm,yerel,igm,20,Denizli,TR-D-20-015,MERKEZEFENDİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,20,Denizli,TR-D-20-016,PAMUKKALE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-001,Bağlar,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (11),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-016,Sur,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (51),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,21,Diyarbakır,TR-D-21-017,Yenişehir,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (10),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,22,Edirne,TR-D-22-009,UZUNKÖPRÜ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,25,Erzurum,TR-D-25-011,OLTU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,25,Erzurum,TR-D-25-020,Yakutiye,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (13),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,26,Eskişehir,TR-D-26-010,ODUNPAZARI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,26,Eskişehir,TR-D-26-014,TEPEBAŞI,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,30,Hakkari,TR-D-30-005,Derecik,gri_satir_bos,2018-10-25,7148,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,31,Hatay,TR-D-31-001,ALTINÖZÜ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,31,Hatay,TR-D-31-002,ANTAKYA,gri_satir_yok,,,,,
 2004yerel_igm,yerel,igm,31,Hatay,TR-D-31-003,ARSUZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,31,Hatay,TR-D-31-005,DEFNE,gri_satir_yok,,,,,
@@ -2026,39 +1321,21 @@ secim,tur,oylama,plaka,il,geomId,ilce_bugun,durum,kurulus,kanun,soy,kaynak_ilcel
 2004yerel_igm,yerel,igm,33,Mersin,TR-D-33-001,AKDENİZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,33,Mersin,TR-D-33-012,TOROSLAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,33,Mersin,TR-D-33-013,YENİŞEHİR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,34,İstanbul,TR-D-34-021,GAZİOSMANPAŞA,gri_satir_yok,,,,,
-2004yerel_igm,yerel,igm,34,İstanbul,TR-D-34-030,SARIYER,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_igm,yerel,igm,35,İzmir,TR-D-35-028,TİRE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,37,Kastamonu,TR-D-37-016,PINARBAŞI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_igm,yerel,igm,41,Kocaeli,TR-D-41-007,GÖLCÜK,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_igm,yerel,igm,42,Konya,TR-D-42-024,Meram,gri_satir_bos,1987-06-27,3399,repo_dogrulanmis,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,45,Manisa,TR-D-45-012,Saruhanlı,gri_satir_bos,1959-04-01,7033,kanun_dogrulanmadi,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,46,Kahramanmaraş,TR-D-46-011,Türkoğlu,gri_satir_bos,1960-04-01,7033,kanun_dogrulanmadi,Merkez (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,48,Muğla,TR-D-48-008,MENTEŞE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,52,Ordu,TR-D-52-002,Altınordu,gri_satir_bos,2013-03-22,6447,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,54,Sakarya,TR-D-54-001,ADAPAZARI,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,54,Sakarya,TR-D-54-003,ARİFİYE,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,54,Sakarya,TR-D-54-004,ERENLER,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,54,Sakarya,TR-D-54-014,SERDİVAN,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,55,Samsun,TR-D-55-004,Atakum,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (32),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,55,Samsun,TR-D-55-007,Canik,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (41),Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,55,Samsun,TR-D-55-010,İlkadım,gri_satir_bos,2008-03-22,5747,repo_dogrulanmis,Merkez (14),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,57,Sinop,TR-D-57-004,Durağan,gri_satir_bos,1954-06-01,6324,unresolved,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-005,Kapaklı,gri_satir_bos,2012-12-06,6360,kanun_tek_kaynak,Çerkezköy (7),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-006,MALKARA,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,59,Tekirdağ,TR-D-59-010,Süleymanpaşa,gri_satir_bos,2012-12-06,6360,merkez_ilce,Merkez (1),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,60,Tokat,TR-D-60-008,Sulusaray,gri_satir_bos,1990-05-20,3644,kanun_cok_kaynak,Yeşilyurt (18); Artova (1),DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,61,Trabzon,TR-D-61-013,ORTAHİSAR,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,63,Şanlıurfa,TR-D-63-010,Karaköprü,gri_satir_bos,2012-12-06,6360,repo_dogrulanmis,Merkez (88),Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,63,Şanlıurfa,TR-D-63-012,SURUÇ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_igm,yerel,igm,65,Van,TR-D-65-012,SARAY,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_igm,yerel,igm,67,Zonguldak,TR-D-67-004,EREĞLİ,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
 2004yerel_igm,yerel,igm,67,Zonguldak,TR-D-67-006,KİLİMLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,67,Zonguldak,TR-D-67-007,KOZLU,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2004yerel_igm,yerel,igm,68,Aksaray,TR-D-68-008,Sultanhanı,gri_satir_bos,2017-08-25,KHK 694,unresolved,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,71,Kırıkkale,TR-D-71-007,KIRIKKALE MERKEZ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
-2004yerel_igm,yerel,igm,78,Karabük,TR-D-78-006,YENİCE,gri_satir_bos,,,,,DİE kitabındaki satır doğrulanamadı (tarama okuma hatası); gösterilmiyor.
-2004yerel_igm,yerel,igm,79,Kilis,TR-D-79-003,MUSABEYLİ,gri_satir_bos,,,,,Kaynakta bu birimle eşleşen satır bulunamadı.
 2009yerel_bm,yerel,bm,66,Yozgat,TR-D-66-007,KADIŞEHRİ,gri_satir_bos,,,,,İlçede 29 Mart 2009 seçimi iptal edilip 7 Haziran'da yenilendi; YSK açık verisinde ilçe merkezi belediye meclisi sonucu yok (yalnız Halıköy beldesi).
 2009yerel_igm,yerel,igm,17,Çanakkale,TR-D-17-004,BOZCAADA,gri_satir_bos,,,,,YSK açık verisinde bu ilçede il genel meclisi sandığı yok (seçim yapılmadı).
 2009yerel_igm,yerel,igm,17,Çanakkale,TR-D-17-010,GÖKÇEADA,gri_satir_bos,,,,,YSK açık verisinde bu ilçede il genel meclisi sandığı yok (seçim yapılmadı).

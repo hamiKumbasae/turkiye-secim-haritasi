@@ -88,6 +88,7 @@ olmayan yerel seçim yılı yok; hiç verisi olmayanlar yalnız 1950–1977 mecl
 | PRIMARY-008 | YSK sonuç PDF arşivi: mahalli idareler 1994/1999/2004 (ysk.gov.tr/doc/dosyalar/docs/Mahalli/), 2007 referandumu birleştirme tutanakları | Resmî | A | 1994–2007 | İl merkezi + ilçe/belde başkanlık; referandum ilçe | Ana ilçe kaynağı; kalan ilçeler DİE kitabından | Hayır |
 | PRIMARY-009 | YSK açık veri (acikveri.ysk.gov.tr, sandık düzeyi) | Resmî | A | 2009–2024 | Tüm seçimler il/ilçe/mahalle | Tam | Hayır |
 | PRIMARY-010 | TÜİK secimdagitimapp (biruni.tuik.gov.tr) | Resmî | A | 1961–2007 | Genel seçim ilçe sonuçları | Tam | Hayır |
+| PRIMARY-011 | YSK mahalli idareler "Tumu" tabloları 1994/1999/2004 (belediye meclisi, il genel meclisi; ysk.gov.tr/doc/dosyalar/docs/Mahalli/<yıl>/) | Resmî | A | 1994–2004 | Meclis il/ilçe/belde sonuçları | TÜİK'in aynı tutanaklardan hazırladığı dijital tablolar; DİE doğrulanmış satırlarıyla 15.600 satırda birebir. Repoda (`data/raw/ysk/mahalli-meclis-1994-2004/`); meclis boşluklarını doldurdu (1994 bm %30→%3, igm %31→%4) | Hayır |
 | SECONDARY-004 | Türkçe Wikipedia, "<İl>'da <yıl> Türkiye yerel seçimleri" il alt makaleleri | Ansiklopedi | D | 1950–2004 | İl merkezi ve ilçe belediye başkanlığı | 1963–1977 tek kaynak; 1950/1955 ilçelerde yalnız kazanan; 1984–2004 satırları DİE ile teyitli | Evet: 1950–1977 A kaynağıyla doğrulama |
 
 **Henüz hiç aranmayan:** 1950–1977 belediye meclisi ve il genel meclisi sonuçları (UNKNOWN);

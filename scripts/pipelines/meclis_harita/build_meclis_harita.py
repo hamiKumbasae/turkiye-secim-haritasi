@@ -37,6 +37,18 @@ baskanlik kaydinin ilce satirlarina baglanir:
     toplami tutmasa bile secmeni DIE il satirinkinden farkliysa DIE satiri baska ile ait sayilir
     ve kullanilmaz (1994'te 7 ilde DIE il satiri YSK ile tamamen farkli cikti).
 
+1994/1999/2004 bosluklari: DIE satiri dogrulanamayan ya da eslesmeyen il/ilce satirlari YSK'nin ayni
+yillar icin yayimladigi "Tumu" dosyalarindan doldurulur (data/kaynaklar/ysk/mahalli-meclis/, okuyucu
+scripts/pipelines/ysk_kesin/parse_mahalli_meclis_tumu.py). Bu dosyalar TUIK'in ayni birlestirme
+tutanaklarindan hazirladigi dijital tablolardir; DIE'nin dogrulanmis satirlariyla karsilastirmada
+15.600 satirdan 1'i disinda birebir ayni. Kurallar (tahmin yok):
+  - Yalniz parti toplami gecerli oya esit ('tutarli') satirlar.
+  - Il satiri tutarli oldugu halde ilce(+belde) toplami il satirini tutmayan illerde (sutun kaymasi
+    olabilir) YSK ilce satirlari kullanilmaz.
+  - Eslesme DIE ile ayni: secmen (bm: ilce belediyesi satiri; igm: ilce satirinin altindaki Sehir
+    satiri) ya da ad, ayni il icinde tek aday; ikisi farkli satira isaret ederse baglanmaz.
+  - Doldurulan satira veriNotu yazilir.
+
 Elle dogrulanmis satir onarimlari (Tillo YSK meclis kayitlari vb.) duzeltmeler.json'da durur ve
 her calistirmada en son uygulanir; cikti dosyalari elle duzenlenmez.
 
@@ -223,6 +235,71 @@ def ysk_kesin(yil, kisa, ana):
     return out
 
 
+YSK_TUMU = ROOT / "data" / "kaynaklar" / "ysk" / "mahalli-meclis"
+NOT_YSK = ("Kaynak: YSK/TÜİK {yil} {tur} tablosu (dijital); DİE kitabının taranmış satırı okunamadığı için "
+           "buradan alındı.")
+
+
+def ysk_tumu(yil, kisa, ana, by_sec, by_ad):
+    """YSK 'Tumu' tablosundan il satirlari {plaka: satir} ve ilce satirlari {geomId: satir}"""
+    p = YSK_TUMU / f"{yil}_{kisa}.json"
+    if not p.exists():
+        return {}, {}, collections.Counter()
+    S = oku(p)["satirlar"]
+    plaka = {il_fold(r["ad"]): r["plaka"] for r in ana["iller"]}
+    sayac = collections.Counter()
+    iller, supheli = {}, set()
+    for r in S:
+        if r.get("tip") != "il" or r["kontrol"]["durum"] != "tutarli":
+            continue
+        pl = plaka.get(il_fold(r["il"]))
+        if not pl:
+            sayac["il eşleşmedi"] += 1
+            continue
+        iller[pl] = r
+        alt = [x for x in S if x.get("il") == r["il"] and x.get("tip") in (("ilce", "belde") if kisa == "bm" else ("ilce",))]
+        t = collections.Counter()
+        for x in alt:
+            t.update(x.get("oy") or {})
+        if dict(t) != r["oy"]:
+            supheli.add(pl)
+    eslesen = collections.defaultdict(list)
+    for i, r in enumerate(S):
+        belde = kisa == "bm" and r.get("tip") == "belde"
+        if (r.get("tip") != "ilce" and not belde) or r["kontrol"]["durum"] != "tutarli":
+            continue
+        pl = plaka.get(il_fold(r["il"] or ""))
+        if not pl or pl in supheli:
+            sayac["il toplamı tutmuyor (kullanılmadı)" if pl else "il eşleşmedi"] += 1
+            continue
+        sec = r.get("secmen")
+        if kisa == "igm":
+            alt = S[i + 1] if i + 1 < len(S) and S[i + 1].get("tip") == "sehir" else None
+            sec = alt.get("secmen") if alt else None
+        a = by_sec.get((pl, sec), set()) if sec else set()
+        b = by_ad.get((pl, ad_norm(r["ad"])), set())
+        a = next(iter(a)) if len(a) == 1 else None
+        b = next(iter(b)) if len(b) == 1 else None
+        if a and b and a != b:
+            sayac["çelişki"] += 1
+            continue
+        if belde:
+            # sonradan ilce olan belde (ornek Artvin Kemalpasa): yalniz ad ve secmen ayni satira isaret ederse
+            if a and a == b:
+                eslesen[a].append(r)
+                sayac["belde (ad+seçmen)"] += 1
+            continue
+        g = a or b
+        if not g:
+            sayac["eşleşmedi"] += 1
+            continue
+        eslesen[g].append(r)
+    for g in [g for g, v in eslesen.items() if len(v) > 1]:
+        del eslesen[g]
+        sayac["aynı ilçeye çok satır"] += 1
+    return iller, {g: v[0] for g, v in eslesen.items()}, sayac
+
+
 def kur_die(yil, kisa):
     dosya, adi = TURLER[kisa]
     ek = oku(NORM / "ek" / dosya / f"{yil}.json")
@@ -264,6 +341,8 @@ def kur_die(yil, kisa):
 
     ek_il = {r["plaka"]: r for r in ek["iller"] if r.get("plaka")}
     ysk_il = ysk_kesin(yil, kisa, ana)
+    ysk_il_tumu, ysk_ilce, ysk_sayac = ysk_tumu(yil, kisa, ana, by_sec, by_ad)
+    not_ysk = NOT_YSK.format(yil=yil[:4], tur=adi.lower())
     iller = []
     for a in ana["iller"]:
         r = ek_il.get(a["plaka"])
@@ -277,6 +356,14 @@ def kur_die(yil, kisa):
         elif r and dogrulanmis(r):
             sayac["il: DİE"] += 1
         if not r or not (r is not ek_il.get(a["plaka"]) or dogrulanmis(r)):
+            t = ysk_il_tumu.get(a["plaka"])
+            if t:
+                sayac["il: YSK tablosu"] += 1
+                iller.append({"ad": a["ad"], "plaka": a["plaka"], "oy": oy_bicimi(t["oy"], t["gecerliOy"]),
+                              "kazanan": birinci(t["oy"]), "gecerliOy": t["gecerliOy"], "secmen": t["secmen"],
+                              "sandik": t.get("sandik"), "katilim": t.get("katilim"), "ilceSayisi": a.get("ilceSayisi"),
+                              "vekil": {}, "toplamVekil": 0, "veriNotu": not_ysk})
+                continue
             iller.append({"ad": a["ad"], "plaka": a["plaka"], "oy": {}, "kazanan": None, "vekil": {}, "toplamVekil": 0,
                           "not": ("İl toplamı: " + NOT_DOGRULANAMADI) if r else "Kaynakta bu ilin satırı yok."})
             continue
@@ -288,6 +375,14 @@ def kur_die(yil, kisa):
     for a in ana["ilceler"]:
         v = eslesen.get(a["geomId"])
         if not v or not dogrulanmis(v[0]):
+            t = ysk_ilce.get(a["geomId"])
+            if t:
+                sayac["ilçe: YSK tablosu"] += 1
+                ilceler.append({"ad": a["ad"], "plaka": a["plaka"], "geomId": a["geomId"],
+                                "oy": oy_bicimi(t["oy"], t["gecerliOy"]), "kazanan": birinci(t["oy"]),
+                                "gecerliOy": t["gecerliOy"], "secmen": t["secmen"], "sandik": t.get("sandik"),
+                                "katilim": t.get("katilim"), "vekil": {}, "toplamVekil": 0, "veriNotu": not_ysk})
+                continue
             ilceler.append({"ad": a["ad"], "plaka": a["plaka"], "geomId": a["geomId"], "oy": {}, "kazanan": None,
                             "vekil": {}, "toplamVekil": 0, "not": NOT_DOGRULANAMADI if v else NOT_ESLESMEDI})
             continue
@@ -308,6 +403,10 @@ def kur_die(yil, kisa):
              "rozet": "TÜİK (DİE) Resmî Yayın", "aciklama": DIE_ACIKLAMA[kisa].format(yayin=ek["kaynak"]["yayin"]),
              "kaynak": {"dosya": f"data/normalized/ek/{dosya}/{yil}.json", **ek["kaynak"]},
              "iller": iller, "ilceler": ilceler}
+    sayac.update({f"YSK eşleşme: {k}": n for k, n in ysk_sayac.items()})
+    if ysk_sayac or sayac.get("ilçe: YSK tablosu") or sayac.get("il: YSK tablosu"):
+        kayit["aciklama"] += (" DİE satırı okunamayan il ve ilçeler YSK'nin aynı tutanaklardan hazırlanmış dijital "
+                              "tablosundan dolduruldu (satırın notunda belirtilir).")
     return kayit, sayac
 
 

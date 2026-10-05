@@ -7,6 +7,12 @@ eklenmeden önce içeriği ve SHA-256'sı kontrol edilir (bilinen SHA-256'lar a�
 
 Eklenip eklenmeyeceği sonra kararlaştırılacak; bu liste yalnızca nerede ne olduğunu kaydeder.
 
+**Durum (2026-10-05, ikinci tur):** Aşağıdakilerin hepsi indirildi ve kullanıcının yerel kopyasında
+(`seçimlerimin kodları/kaynak-pdfler/`, `KAYNAK_LISTESI.md`) checksum'larıyla duruyor; yalnız YSK halk
+oylaması dosyaları (C) ve TÜİK 2009 kitabının tamamı (C) bulunamadı. Depoya eklenen ve kullanılan:
+A1 (`data/raw/ysk/mahalli-meclis-1994-2004/`, 1994–2004 meclis boşluklarını doldurdu). A2'deki
+7 Haziran 2009 dosyaları belediye **başkanı** birleştirme tutanağı çıktı (meclis yok).
+
 ## A. Veri boşluğunu doğrudan dolduranlar
 
 ### A1. YSK 1994 / 1999 / 2004 belediye meclisi ve il genel meclisi (belediye/ilçe düzeyi)

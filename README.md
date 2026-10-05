@@ -177,10 +177,12 @@ kalite sınıfı, en iyi kaynağı ve araştırma önceliği: [`docs/rapor/KAPSA
 
 Aşağıdakiler depodaki veriyle çözülemiyor; her biri yeni bir kaynak gerektirir:
 
-- **Yerel meclis sonuçları (1984–2004):** taranmış DİE kitaplarında okunamayan ya da toplamı tutmayan
-  satırlar boş (en çok 1984, 1994 ve 1999; sayılar kapsam tablosunda). Kitap sayfaları elle ya da
-  yeniden OCR ile okunmalı. 1963–1977 meclis ve il genel meclisi sonuçlarının DİE kitapları depoda
-  (`data/raw/tuik/mahalli-kitap/`) ama henüz okunmadı; 1950/1955 için DİE kitabı yok.
+- **Yerel meclis sonuçları (1984):** taranmış DİE kitabında okunamayan ya da toplamı tutmayan satırlar
+  boş (belediye meclisi %48, il genel meclisi %44 eksik; sayılar kapsam tablosunda). 1994, 1999 ve 2004
+  boşlukları YSK'nin dijital tablolarıyla dolduruldu; bu yıllarda kalan boş satırlar haritada sonradan
+  bölünen il merkezleri (il genel meclisinde seçim çevresi bütün Merkez ilçesiydi) ve başkanlık
+  haritasında birleştirilmiş beldeler. 1963–1977 meclis ve il genel meclisi sonuçlarının DİE kitapları
+  depoda (`data/raw/tuik/mahalli-kitap/`) ama henüz okunmadı; 1950/1955 için DİE kitabı yok.
 - **1963–1977 belediye başkanlığı (Vikipedi):** DİE kitaplarıyla karşılaştırıldı
   ([`docs/rapor/KITAP_DOGRULAMA_1963_1977.md`](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)). Kitabın
   yüzdesi ya da toplamıyla desteklenen farklar ve oyları geniş ölçüde farklı satırlar orada listeli;
