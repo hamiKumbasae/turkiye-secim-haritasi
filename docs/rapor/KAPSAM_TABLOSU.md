@@ -40,7 +40,7 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 | Genel seçim | 1999 | - | 80/80 | Tam | 921 | 921 | 921 | 0 | 0,0 | COMPLETE | mertnuhoglu tabanı, TÜİK ile karşılaştırılmış (A) | Hayır |
 | Genel seçim | 2002 | - | 81/81 | Tam | 923 | 923 | 923 | 0 | 0,0 | COMPLETE | mertnuhoglu tabanı, TÜİK ile karşılaştırılmış (A) | Hayır |
 | Genel seçim | 2007 | - | 81/81 | Tam | 923 | 923 | 923 | 0 | 0,0 | COMPLETE | mertnuhoglu tabanı, TÜİK ile karşılaştırılmış (A) | Hayır |
-| Genel seçim | 2011 | - | 81/81 | Tam | 977 | 954 | 954 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
+| Genel seçim | 2011 | - | 81/81 | Tam | 977 | 957 | 957 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Genel seçim | 2015 Haziran | - | 81/81 | Tam | 972 | 970 | 970 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Genel seçim | 2015 Kasım | - | 81/81 | Tam | 972 | 970 | 970 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Genel seçim | 2018 | - | 81/81 | Tam | 972 | 972 | 972 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
@@ -50,7 +50,7 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 | Referandum | 1987 | - | 67/67 | Tam | 645 | 645 | 645 | 0 | 0,0 | COMPLETE | TÜİK/DİE (A) | Hayır |
 | Referandum | 1988 | - | 67/67 | Tam | 674 | 674 | 674 | 0 | 0,0 | COMPLETE | TÜİK/DİE (A) | Hayır |
 | Referandum | 2007 | - | 81/81 | Tam | 906 | 923 | 923 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
-| Referandum | 2010 | - | 81/81 | Tam | 978 | 955 | 955 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
+| Referandum | 2010 | - | 81/81 | Tam | 978 | 957 | 957 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Referandum | 2017 | - | 81/81 | Tam | 972 | 970 | 970 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 1950 | Belediye başkanlığı | 2/63 (+61 yalnız kazanan) | Çok kısmi | 478 | 496 | 5 | 491 | 99,0 | VERY_PARTIAL | Türkçe Wikipedia (D) | Evet |
 | Yerel seçim | 1950 | Belediye meclisi | 0 | Yok | 478 | – | 0 | 478 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
@@ -83,20 +83,20 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 | Yerel seçim | 1999 | Belediye meclisi | 77/80 | Kısmi | 904 | 943 | 753 | 190 | 20,1 | PARTIAL | TÜİK/DİE (A) | Evet |
 | Yerel seçim | 1999 | İl genel meclisi | 79/80 | Kısmi | 904 | 943 | 830 | 113 | 12,0 | PARTIAL | TÜİK/DİE (A) | Evet |
 | Yerel seçim | 2004 | Belediye başkanlığı | 81/81 | Tam | 906 | 946 | 946 | 0 | 0,0 | COMPLETE | TÜİK/DİE %50; YSK %26; Wikipedia satırları, sayılar DİE kitabıyla teyitli %25 (A) | Hayır |
-| Yerel seçim | 2004 | Belediye meclisi | 79/81 | Neredeyse tam | 906 | 946 | 901 | 45 | 4,8 | MOSTLY_COMPLETE | TÜİK/DİE (A) | Evet |
+| Yerel seçim | 2004 | Belediye meclisi | 79/81 | Neredeyse tam | 906 | 946 | 902 | 44 | 4,7 | MOSTLY_COMPLETE | TÜİK/DİE (A) | Evet |
 | Yerel seçim | 2004 | İl genel meclisi | 81/81 | Neredeyse tam | 906 | 946 | 878 | 68 | 7,2 | MOSTLY_COMPLETE | TÜİK/DİE (A) | Evet |
-| Yerel seçim | 2009 | Belediye başkanlığı | 81/81 | Tam | 950 | 955 | 954 | 1 | 0,1 | COMPLETE | YSK (A) | Hayır |
-| Yerel seçim | 2009 | Belediye meclisi | 81/81 | Tam | 950 | 955 | 954 | 1 | 0,1 | COMPLETE | YSK (A) | Hayır |
-| Yerel seçim | 2009 | İl genel meclisi | 81/81 | Tam | 950 | 955 | 953 | 2 | 0,2 | COMPLETE | YSK (A) | Hayır |
+| Yerel seçim | 2009 | Belediye başkanlığı | 81/81 | Tam | 950 | 957 | 956 | 1 | 0,1 | COMPLETE | YSK (A) | Hayır |
+| Yerel seçim | 2009 | Belediye meclisi | 81/81 | Tam | 950 | 957 | 956 | 1 | 0,1 | COMPLETE | YSK (A) | Hayır |
+| Yerel seçim | 2009 | İl genel meclisi | 81/81 | Tam | 950 | 955 | 955 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 2014 | Belediye başkanlığı | 81/81 | Tam | 973 | 970 | 970 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 2014 | Belediye meclisi | 81/81 | Tam | 973 | 970 | 970 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
-| Yerel seçim | 2014 | İl genel meclisi | 51/51 | Tam | – | 451 | 449 | 2 | 0,4 | COMPLETE | YSK (A) | Hayır |
+| Yerel seçim | 2014 | İl genel meclisi | 51/51 | Tam | – | 449 | 449 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 2019 | Belediye başkanlığı | 81/81 | Tam | 973 | 973 | 973 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 2019 | Belediye meclisi | 81/81 | Tam | 973 | 973 | 973 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
-| Yerel seçim | 2019 | İl genel meclisi | 51/51 | Tam | – | 454 | 452 | 2 | 0,4 | COMPLETE | YSK (A) | Hayır |
+| Yerel seçim | 2019 | İl genel meclisi | 51/51 | Tam | – | 452 | 452 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 2024 | Belediye başkanlığı | 81/81 | Tam | 973 | 973 | 973 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Yerel seçim | 2024 | Belediye meclisi | 81/81 | Tam | 973 | 973 | 973 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
-| Yerel seçim | 2024 | İl genel meclisi | 51/51 | Tam | – | 454 | 452 | 2 | 0,4 | COMPLETE | YSK (A) | Hayır |
+| Yerel seçim | 2024 | İl genel meclisi | 51/51 | Tam | – | 452 | 452 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Cumhurbaşkanlığı | 2014 CB | - | 81/81 | Tam | 972 | 970 | 970 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Cumhurbaşkanlığı | 2018 CB | - | 81/81 | Tam | 972 | 972 | 972 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
 | Cumhurbaşkanlığı | 2023 CB 1. tur | - | 81/81 | Tam | 972 | 973 | 973 | 0 | 0,0 | COMPLETE | YSK (A) | Hayır |
@@ -170,11 +170,11 @@ A tam veri (≥ %90) · B kısmi · C yalnız il/genel toplam · D sonuç veri s
 | 1989 | A (%100,0) | A (%98,7) | A (%99,5) |
 | 1994 | A (%100,0) | B (%70,1) | B (%69,0) |
 | 1999 | A (%100,0) | B (%79,9) | B (%88,0) |
-| 2004 | A (%100,0) | A (%95,2) | A (%92,8) |
-| 2009 | A (%99,9) | A (%99,9) | A (%99,8) |
-| 2014 | A (%100,0) | A (%100,0) | A (%99,6) |
-| 2019 | A (%100,0) | A (%100,0) | A (%99,6) |
-| 2024 | A (%100,0) | A (%100,0) | A (%99,6) |
+| 2004 | A (%100,0) | A (%95,3) | A (%92,8) |
+| 2009 | A (%99,9) | A (%99,9) | A (%100,0) |
+| 2014 | A (%100,0) | A (%100,0) | A (%100,0) |
+| 2019 | A (%100,0) | A (%100,0) | A (%100,0) |
+| 2024 | A (%100,0) | A (%100,0) | A (%100,0) |
 
 1984 ve 1989'u yanlışlıkla "eksik" saymayın: başkanlık satırlarının tamamı DİE kitaplarıyla
 teyitli. Bu yıllardaki boşluk meclis sonuçlarında (taranmış kitabın okunamayan satırları).
@@ -186,7 +186,7 @@ teyitli. Bu yıllardaki boşluk meclis sonuçlarında (taranmış kitabın okuna
 | Öncelik | Seçim | Eksiklik | Mevcut veri | Araştırılması gereken kaynak türü |
 |---|---|---|---|---|
 | 1 — Tamamlanmaya çok yakın | Yerel seçim 1989 belediye meclisi | 10 birim (%1,3) | 742/752 birim; 10 il kısmi, 57 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
-| 1 — Tamamlanmaya çok yakın | Yerel seçim 2004 belediye meclisi | 45 birim (%4,8) | 901/946 birim; 25 il kısmi, 56 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
+| 1 — Tamamlanmaya çok yakın | Yerel seçim 2004 belediye meclisi | 44 birim (%4,7) | 902/946 birim; 25 il kısmi, 56 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 1 — Tamamlanmaya çok yakın | Yerel seçim 2004 il genel meclisi | 68 birim (%7,2) | 878/946 birim; 40 il kısmi, 41 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 2 — Kısmi veri mevcut | Yerel seçim 1999 il genel meclisi | 113 birim (%12,0) | 830/943 birim; 54 il kısmi, 26 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 2 — Kısmi veri mevcut | Yerel seçim 1999 belediye meclisi | 190 birim (%20,1) | 753/943 birim; 59 il kısmi, 21 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |

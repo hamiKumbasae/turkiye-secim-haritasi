@@ -340,6 +340,17 @@ kalmasın; harita genel olarak doğru görünsün. Her seçim için:
   yazdığı için (`apply_idari_merges.py` HISTK birleşimlerini ve `harita_notlari.json`'u sıfırdan
   kurar) yalnız bu sıra tutarlıdır; betik idempotenttir (main üzerinde çalıştırınca fark çıkmaz).
 
+## 2009 ve sonrası (2026-10-05, `birlesim_2009_sonrasi.py`)
+
+2009 sonrası seçimlerde taralı kalan ilçeler ana ilçelerinin poligonuna katılır: Kemalpaşa →
+Hopa (`HIST-Artvin-Hopa`), Sultanhanı → Aksaray Merkez (`HIST-Aksaray-Merkez`, kaba: beldesi
+Aksaray ilçesinde), Derecik → Şemdinli (`HIST-Hakkari-Semdinli`, kaba: beldesi Şemdinli'de).
+Kural seçim seçim: yeni ilçenin o seçimde oyu yoksa ana ilçenin satırı birleşime bağlanır.
+2012'de bölünen Denizli, Hatay ve Van Merkez ilçeleri için `HIST-Denizli-Merkez`,
+`HIST-Hatay-Merkez`, `HIST-Van-Merkez`; satırları `election_import/merkez_ilce_tamamla.py`
+geri koyar. Birleşimin gizlediği ilçenin kendi sonuçlu satırı (2012 öncesi Pamukkale
+beldesi) haritada ayrıca çizilmez, tabloda kalır.
+
 ## Bilinen boşluklar (`faz1_rapor.json`)
 
 - **1955 yerel için il sınır dosyası yok** (66 il). Snapshot'ta

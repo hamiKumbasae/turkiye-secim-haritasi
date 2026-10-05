@@ -106,11 +106,16 @@ def main():
                 if e["syntheticId"] in data:
                     gizli.update(e["hideIds"])
             satir_geom = {r.get("geomId"): r for r in rows}
+            for r in rows:   # on yuz: birlesimin gizledigi ilcenin kendi sonuclu satiri cizilmez
+                if gercek(r) and r.get("geomId") in gizli:
+                    eksik_rows.append({"secim": key, "tur": tur, "oylama": oylama, "duzey": "ilce", "plaka": pl,
+                                       "il": il_ad.get(pl, ""), "ad": r["ad"], "geomId": r["geomId"],
+                                       "neden": "sonuç var; alanı birleşim poligonunda, ayrı çizilmez"})
             for gid in modern_by_pl.get(pl, []):
-                if gid in data:
-                    durum = "veri"
-                elif gid in gizli:
+                if gid in gizli:
                     durum = "birlesimde"
+                elif gid in data:
+                    durum = "veri"
                 elif gid in not_secim:
                     durum = "tarali_ayri_girmedi" if not_secim[gid] == 1 else "tarali_henuz_yok"
                 elif gid in satir_geom:

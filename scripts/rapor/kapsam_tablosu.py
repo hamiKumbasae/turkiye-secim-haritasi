@@ -166,6 +166,8 @@ def main():
         iller = d.get("iller") or []
 
         def iskelet(r):
+            if not oylu(r) and "seçim yapılmadı" in (r.get("not") or ""):
+                return True   # o ilcede bu oylama yapilmadi (Bozcaada/Gokceada il genel meclisi)
             t = kurulus.get(r.get("geomId") or "")
             return not oylu(r) and not r.get("not") and not yalniz_kazanan(r) and t and t > tarih
 
@@ -204,6 +206,19 @@ def main():
             notlar.append(f"yalnız büyükşehir olmayan {len(il_payda)} ilde seçilir (6360 sayılı Kanun)")
         if il_kaz:
             notlar.append(f"{il_kaz} ilde yalnız kazanan / sandalye dağılımı")
+        if tur != "yerel" and sonuclu and yil(key) >= 2009:
+            # 2009+ YSK sandik verisinde il satiri ilce satirlarinin toplamidir; tutmayan il = dusen
+            # ilce satiri. (1961-2007'de il Resmi Gazete ilani, ilce tutanaklar: kucuk farklar kaynakta.)
+            tutmayan = []
+            for il in iller:
+                g = il.get("gecerliOy") or 0
+                t = sum(r.get("gecerliOy") or 0 for r in ilceler if r.get("plaka") == il.get("plaka"))
+                if g and t and (g - t) / g > 0.01:
+                    tutmayan.append(f"{il['ad']} %{round(100 * (g - t) / g)}")
+            if tutmayan:
+                notlar.append("ilçe toplamı il toplamından eksik: " + ", ".join(tutmayan))
+                if kal == "COMPLETE":
+                    kal = "MOSTLY_COMPLETE"
 
         ust = d.get("kaynak", {}).get("ana") if isinstance(d.get("kaynak"), dict) else None
         kaynak, guv = kaynak_ozeti(key, sonuclu, src, ust)

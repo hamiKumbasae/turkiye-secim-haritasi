@@ -234,13 +234,22 @@ Yukarıdaki "hâlâ çözülemeyen" listesindeki her madde tek tek araştırıld
   yeniden işlenmemişti. Hepsi yeniden işlendi, düzeldi (tarayıcıda
   doğrulandı: Çağlayancerit 2023 → "AKP %42.52, 5.802 oy").
 
-## Bilinen kapsam sınırı
+## Eşlenemeyen Merkez ilçeleri — çözüldü (2026-10-05)
 
-~15-24 ilçe (seçime göre değişir), 2008-2017 büyükşehir/il bölünmeleri
-öncesi eski "Merkez" ID'lerinin karşılığı olmadığı için ilçe haritasında
-YOK — oyları kendi ilinin toplamında var, sadece ilçe kırılımında
-görünmüyor. Bu, projenin zaten 2007referandum için belgelediği aynı
-kategori bir sınırlama (geo/historical/ tarihsel geometri eksikliği).
+Denizli, Hatay ve Van'ın 2012'de bölünen eski Merkez ilçesi (2009 yerel, 2010 referandumu,
+2011 genel) bugünkü ilçe kimliğine eşlenemediği için aktarımda ilçe satırı olarak düşmüştü;
+oyları yalnız il toplamındaydı. `merkez_ilce_tamamla.py` bu satırları geri koyar (her içe
+aktarmadan sonra; `tarihsel_sinirlari_uret.py` de çağırır):
+
+- 2010 referandumu, 2011 genel: Merkez = il satırı − ildeki diğer ilçe satırları (aynı YSK
+  sandık verisinin toplamı; parti/seçenek, seçmen, sandık ve geçerli oy ayrı ayrı).
+- 2009 yerel başkanlık: il merkezi belediyesinin sonucu = il satırı (o tarihte büyükşehir
+  değil). Meclis sonuçları `data/raw/ysk/acikveri-belde-agrege/` içindeki "DENİZLİ MERKEZ",
+  "HATAY MERKEZ" satırlarından `build_meclis_harita.py` ile bağlanır.
+- Poligonlar: HIST-Denizli-Merkez (Merkezefendi + Pamukkale), HIST-Hatay-Merkez (Antakya +
+  Defne), HIST-Van-Merkez (`historical_geo/birlesim_2009_sonrasi.py`).
+- 2010 ve 2017 referandumunda henüz kurulmamış ilçelerin `{Evet: 0, Hayır: 0}` satırlarının oy
+  alanı boşaltılır (ön yüz bunları sonuçlu sayıp boyuyordu).
 
 ## 2026-10-04 bağımsız oy onarımı
 

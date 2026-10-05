@@ -37,6 +37,9 @@ baskanlik kaydinin ilce satirlarina baglanir:
     toplami tutmasa bile secmeni DIE il satirinkinden farkliysa DIE satiri baska ile ait sayilir
     ve kullanilmaz (1994'te 7 ilde DIE il satiri YSK ile tamamen farkli cikti).
 
+Elle dogrulanmis satir onarimlari (Tillo YSK meclis kayitlari vb.) duzeltmeler.json'da durur ve
+her calistirmada en son uygulanir; cikti dosyalari elle duzenlenmez.
+
 Cikti: data/normalized/meclis_harita/<yil>yerel_<igm|bm>.json
 
 Kullanim:
@@ -115,7 +118,7 @@ def kur(yil, kisa):
     kaynak_hedef = {}
     for r in ana["ilceler"]:
         g = r.get("geomId")
-        base = plan.get(g, {}).get("taban", g)
+        base = plan.get(g, {}).get("taban") or SENTETIK_TABAN.get(g, g)
         if base and r.get("oy"):
             if base in kaynak_hedef and kaynak_hedef[base] != g:
                 raise ValueError(f"{yil}: aynı kaynak ilçesi iki poligona bağlanıyor: {base}")
@@ -308,11 +311,36 @@ def kur_die(yil, kisa):
     return kayit, sayac
 
 
+DUZELTMELER = pathlib.Path(__file__).with_name("duzeltmeler.json")
+# birlesim_2009_sonrasi.py: ana ilcenin satiri sentetik birlesime baglaninca kaynaktaki (YSK) satir hala
+# ana ilcenin bugunku geomId'siyle gelir (ornek HIST-Artvin-Hopa <- TR-D-08-005)
+SENTETIK_TABAN = {
+    "HIST-Artvin-Hopa": "TR-D-08-005",
+    "HIST-Aksaray-Merkez": "TR-D-68-002",
+    "HIST-Hakkari-Semdinli": "TR-D-30-003",
+}
+
+
+def duzelt(ad, kayit):
+    """duzeltmeler.json'daki elle dogrulanmis satir onarimlarini en son uygular (idempotent)."""
+    for d in oku(DUZELTMELER)["duzeltmeler"]:
+        if d["dosya"] != ad:
+            continue
+        rows = [r for r in kayit["ilceler"] if r["plaka"] == d["plaka"] and r["ad"] == d["ad"]]
+        if len(rows) != 1:
+            raise SystemExit(f"duzeltme uygulanamadi: {ad} {d['plaka']} {d['ad']} ({len(rows)} satir)")
+        rows[0].update(d["alanlar"])
+        for k in d.get("sil", []):
+            rows[0].pop(k, None)
+    return kayit
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for yil in DIE_YILLARI:
         for kisa in TURLER:
             kayit, sayac = kur_die(yil, kisa)
+            duzelt(f"{yil}_{kisa}", kayit)
             (OUT / f"{yil}_{kisa}.json").write_text(json.dumps(kayit, ensure_ascii=False, separators=(",", ":"), sort_keys=True),
                                                   encoding="utf-8")
             print(f"{yil}_{kisa}: il {sum(1 for r in kayit['iller'] if r['oy'])}/{len(kayit['iller'])}, "
@@ -320,6 +348,7 @@ def main():
     for yil in YILLAR:
         for kisa in TURLER:
             kayit, rapor, hedef, bag = kur(yil, kisa)
+            duzelt(f"{yil}_{kisa}", kayit)
             (OUT / f"{yil}_{kisa}.json").write_text(json.dumps(kayit, ensure_ascii=False, separators=(",", ":"), sort_keys=True),
                                                   encoding="utf-8")
             veri = sum(1 for r in kayit["ilceler"] if r["oy"])

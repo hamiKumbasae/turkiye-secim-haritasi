@@ -263,9 +263,12 @@
     const allDataFeats = districtFeaturesForProvince(plaka);
     // Sadece GERCEKTEN sonucu olan ilceler tiklanabilir/etkilesimli olsun -
     // veri olmayan yerde yaniltici bir "tiklama alani" gorunmemeli.
-    const dataFeats = allDataFeats.filter(f => districtHasRealData(districtByGeomId[f.properties.id]));
+    const sonuclu = allDataFeats.filter(f => districtHasRealData(districtByGeomId[f.properties.id]));
+    const hiddenByMerge = hiddenModernIdsForProvince(plaka, new Set(sonuclu.map(f=>f.properties.id)));
+    // Birlesimin gizledigi modern ilcenin kendi satiri da sonuclu olabilir (2012 oncesi Pamukkale
+    // beldesi): alani birlesimde, ayrica ustune cizilmez; sonucu tabloda kalir.
+    const dataFeats = sonuclu.filter(f => !hiddenByMerge.has(f.properties.id));
     const dataGeomIds = new Set(dataFeats.map(f=>f.properties.id));
-    const hiddenByMerge = hiddenModernIdsForProvince(plaka, dataGeomIds);
     // Bu il/yil icin KISMI ilce verisi varsa (bazi ilceler biliniyor, bazilari
     // bilinmiyor), bilinmeyenleri notr/tiklanamaz bir alt katman olarak
     // gosteririz - gercek tarihsel sinirlari uydurmadan. HIC ilce verisi

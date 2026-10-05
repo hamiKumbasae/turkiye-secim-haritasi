@@ -6,7 +6,9 @@ tutarli sonuc verir:
 
   0. build_ilce_secim.py <secim> geri_al   secim katmanini (HIST<secim>-*) kaldirir; aksi halde 1. adim
                                            onun tabanindaki HISTK birlesimlerini kullanilmiyor sayip siler
+  -  election_import/merkez_ilce_tamamla.py  2009-2011'de YSK aktarimindan dusen Merkez ilce satirlari
   1. apply_idari_merges.py                 kanun kaynakli tek kaynakli birlesimler (HISTK-*)
+     birlesim_2009_sonrasi.py              2009+ secimlerde henuz kurulmamis ilceler (HIST-*)
   2. prepare_istanbul_historical_assignments.py + build_istanbul_1961_1992.py
                                            Istanbul 1961-1991 ilce sinirlari (HIST-Istanbul-*)
   3. build_ilce_secim.py <secim>           her secim icin kalan ilceler (HIST<secim>-*); secimler
@@ -15,7 +17,7 @@ tutarli sonuc verir:
                                            (Istanbul; haritada ilce icinde ortada biten cizgiler)
      build_il_sinirlari.py                 secim verisinden donem il sinirlari (era*.geojson)
   5. build_meclis_harita.py                meclis haritalari (baskanlik satirlarinin poligonlari)
-  6. harita_durum_raporu.py, checksum, scripts/build.py
+  6. harita_durum_raporu.py, kapsam_tablosu.py, checksum, scripts/build.py
 
 Betik idempotenttir: main uzerinde calistirildiginda hicbir dosya degismemelidir
 (tests/validate_elections.py bunu dogrudan denemez; elle: calistir, git status bos olmali).
@@ -50,10 +52,13 @@ def main():
     bilinmeyen = set(secimler) - set(SIRA)
     if bilinmeyen:
         raise SystemExit(f"SIRA listesinde olmayan secim: {sorted(bilinmeyen)}")
+    # 2009-2011'de YSK aktarimindan dusen Merkez ilce satirlari (veri; geometriden once)
+    calistir(ROOT / "scripts/pipelines/election_import/merkez_ilce_tamamla.py")
     # 0. secim katmanini geri al: apply_idari_merges.py tabandaki HISTK birlesimlerini gormeli
     for s in [s for s in SIRA if s in secimler]:
         calistir(HG / "build_ilce_secim.py", s, "geri_al")
     calistir(HG / "apply_idari_merges.py")
+    calistir(HG / "birlesim_2009_sonrasi.py")
     calistir("prepare_istanbul_historical_assignments.py", cwd=HG)
     calistir(HG / "build_istanbul_1961_1992.py")
     for s in [s for s in SIRA if s in secimler]:
@@ -62,6 +67,7 @@ def main():
     calistir(HG / "build_il_sinirlari.py")
     calistir(ROOT / "scripts/pipelines/meclis_harita/build_meclis_harita.py")
     calistir(ROOT / "scripts/rapor/harita_durum_raporu.py")
+    calistir(ROOT / "scripts/rapor/kapsam_tablosu.py")
     for klasor in ("geo/normalized", "geo/historical", "data/normalized"):
         calistir(ROOT / "scripts/regenerate_checksums.py", klasor)
     calistir(ROOT / "scripts/build.py")

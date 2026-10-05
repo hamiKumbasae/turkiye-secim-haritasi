@@ -184,6 +184,9 @@ kalite sınıfı, en iyi kaynağı ve araştırma önceliği: [`docs/rapor/KAPSA
   eksik (1984'te yaklaşık 190 ilçe boş); sınır değil, veri sorunu.
 - **Küçük kayıt sorunları:** 1991'de İstanbul'da iki "Bakırköy" satırı (muhtemelen seçim
   çevresi bölünmesi, aynı poligon); 2004 yerelde poligonsuz "Karadeniz Ereğli" satırı (seçmen 0).
-- **İncelenmeyenler:** 1950–1957 il sınırları (`era1950`, `era1954`) ve 2009 sonrası
-  seçimlerin ilçe haritaları bu çalışmada denetlenmedi.
+- **2009 sonrası:** haritada taralı ilçe kalmadı. Kaynakta olmayanlar: 2009 yerelde Ağın
+  (Elazığ) başkanlık ve Kadışehri (Yozgat) belediye meclisi sonucu. 2011 genelde BDP destekli
+  bağımsızların oyu Diyarbakır, Mardin, Muş, Van ve Batman'da bazı ilçe satırlarında "BDP", bazılarında
+  "Bağımsız" etiketli (kaynaktaki haliyle; il satırlarında "BDP").
+- **İncelenmeyenler:** 1950–1957 il sınırları (`era1950`, `era1954`) denetlenmedi.
 - 1950/1954/1957 genel seçimler il düzeyinde kalır (ülke çapında ilçe kaynağı yok).
