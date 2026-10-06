@@ -471,7 +471,7 @@ def adaylar(sol_v, sag_v, vis_sol, vis_sag):
 
 
 def _motorlar(kay):
-    """Bagimsiz okuma motorlari: metin katmani (izgara ve metin ayni OCR'dir), Vision, tesseract."""
+    """Bagimsiz okuma motorlari: metin katmani (izgara ve metin ayni OCR'dir), Vision, tesseract, goz okumasi."""
     return {("metin" if k in ("izgara", "metin") else k) for k in kay}
 
 
@@ -506,6 +506,60 @@ def _zayif(c, a):
     return out
 
 
+KABUL = ("tutarli", "toplamTutmuyor")
+TOPLAM_FARK = 0.02   # gevsek cozum: parti toplami ile gecerli oy arasindaki en buyuk fark (gecerli oyun orani)
+
+
+def _teyitli(a, alan, deger, taban=None, yuzde=None, tol=TOL):
+    """deger iki bagimsiz motorla okunmus ya da okunan yuzdesiyle tek tam sayiya sabitlenmis"""
+    if len(_motorlar(a[alan].get(deger, set()))) >= 2:
+        return True
+    return bool(taban) and _yuzde_sabitler(deger, yuzde, taban, tol)
+
+
+def gevsek_coz(a):
+    """Kitabin kendi tutarsizligi: DIE birlestirme tutanaklarini duzeltmeden basmis, 1984 belediye meclisi
+    tablosunda bircok satirda parti oylari toplami gecerli oydan birkac oy farkli. Toplam kisiti
+    saglanamayan satirda HER alan tek tek teyitliyse (iki bagimsiz motor ya da okunan yuzdesiyle tek
+    degere sabitlenmis), yuzdeler ve katilim tutuyorsa ve fark gecerli oyun %2'sini asmiyorsa satir
+    'toplamTutmuyor' olarak kabul edilir. Her alan icin teyitli deger TEK olmali; hicbir deger
+    hesaplanmaz. Dondurur (v, fark) ya da None."""
+    def tek(alan, kosul):
+        d = [v for v in a.get(alan, {}) if kosul(v)]
+        return d[0] if len(d) == 1 else None
+    g = tek("gecerliOy", lambda v: isinstance(v, int) and v > 0 and len(_motorlar(a["gecerliOy"][v])) >= 2)
+    s_ = tek("secmen", lambda v: isinstance(v, int) and v > 0 and len(_motorlar(a["secmen"][v])) >= 2)
+    k = tek("oyKullanan", lambda v: isinstance(v, int) and v > 0 and len(_motorlar(a["oyKullanan"][v])) >= 2)
+    if not (g and s_ and k) or not g <= k <= s_:
+        return None
+    kat = [y for y in a.get("katilim%", {}) if isinstance(y, float) and abs(100 * k / s_ - y) <= TOL_ON]
+    gy = [y for y in a.get("gecerli%", {}) if isinstance(y, float) and abs(100 * g / k - y) <= TOL_ON]
+    if len(set(kat)) != 1 or len(set(gy)) != 1:
+        return None
+    v = {"secmen": s_, "oyKullanan": k, "katilim%": kat[0], "gecerliOy": g, "gecerli%": gy[0]}
+    for p in PARTILER:
+        oylar = [o for o in a.get(p, {}) if isinstance(o, int) and o > 0]
+        yuzler = [y for y in a.get(p + "%", {}) if isinstance(y, float) and y > 0]
+        teyitli = [o for o in oylar if any(_uyar(o, y, g) for y in yuzler)
+                   and _teyitli(a, p, o, g, next(y for y in yuzler if _uyar(o, y, g)))]
+        if len(set(teyitli)) == 1:
+            o = teyitli[0]
+            v[p], v[p + "%"] = o, next(y for y in yuzler if _uyar(o, y, g))
+            continue
+        if teyitli:
+            return None
+        # sifir ('-'): hucrede iki motorun okudugu sifir disi deger ve sifir disi yuzde yok, tire okunmus
+        if 0 in a.get(p, {}) and not [o for o in oylar if len(_motorlar(a[p][o])) >= 2] \
+                and not [y for y in yuzler if len(_motorlar(a[p + "%"][y])) >= 2]:
+            v[p] = 0
+            continue
+        return None
+    fark = sum(v[p] for p in PARTILER) - g
+    if fark == 0 or abs(fark) > TOPLAM_FARK * g:
+        return None
+    return v, fark
+
+
 def satir_coz(sol, sag, vis_sol, vis_sag):
     """Dondurur (v, durum, adaylar).
 
@@ -521,6 +575,11 @@ def satir_coz(sol, sag, vis_sol, vis_sag):
     a = adaylar(sol["v"], sag["v"] if sag else None, vis_sol, vis_sag)
     cz = coz(a)
     if not cz:
+        gz = gevsek_coz(a) if sag else None
+        if gz and any("izgara" in a[f].get(gz[0][f], set()) for f in ("secmen", "oyKullanan", "gecerliOy")):
+            v, fark = gz
+            v = dict(v, sandik=sol["v"].get("sandik"), _toplamFarki=fark)
+            return v, "toplamTutmuyor", a
         return None, "tutarsiz", a
     # satir kimligi: oncu alanlardan en az biri bu satirin kendi metin katmani
     # izgarasinda okunmus olmali (goruntu OCR gozlemleri konumla atanir; komsu
@@ -577,6 +636,13 @@ def tablo_isle(pdf, ilk, son):
             # ofset her motor icin ayri: kutu kenarlari motordan motora farkli
             ekler += [(vs, goruntu_hucreler(vis[a][motor], pdf.pages[a - 1], KL, ys, SOL, motor)),
                       (vr, goruntu_hucreler(vis[b][motor], pdf.pages[b - 1], KR, yr, SAG, motor))]
+        for motor, no, page, K, yy, alan, hedef in (("gozle", a, pdf.pages[a - 1], KL, ys, SOL, vs),
+                                                     ("gozle", b, pdf.pages[b - 1], KR, yr, SAG, vr)):
+            # goz okumasi (gozle_1984.py): dorduncu bagimsiz motor, yalniz cozulemeyen satirlarda
+            gf = OCRDIR / f"gozle_p{no:03d}.json"
+            if gf.exists():
+                ekler.append((hedef, goruntu_hucreler(json.loads(gf.read_text(encoding="utf-8"))["gozlem"], page, K, yy,
+                                                      alan, motor)))
         for hedef, ek in ekler:
             for i, d in ek.items():
                 for alan, vals in d.items():
@@ -604,14 +670,14 @@ def tablo_isle(pdf, ilk, son):
         for i, s in enumerate(sol):
             j = esle.get(i)
             v, durum, _ = coz_ij(i, j)
-            if durum == "tutarli":
+            if durum in KABUL:
                 sonuc[i] = (v, durum, j, "hizalama")
                 kullanilan.add(j)
             else:
                 sonuc[i] = (None, durum, j, None)
         # cozulemeyenler: komsu sag satirlari dene
         for i, s in enumerate(sol):
-            if sonuc[i][1] == "tutarli":
+            if sonuc[i][1] in KABUL:
                 continue
             beklenen = _beklenen_sag(i, sonuc, len(sag))
             bulunan = []
@@ -619,11 +685,14 @@ def tablo_isle(pdf, ilk, son):
                 if j in kullanilan:
                     continue
                 v, durum, _ = coz_ij(i, j)
-                if durum == "tutarli":
-                    bulunan.append((j, v))
+                if durum in KABUL:
+                    bulunan.append((j, v, durum))
+            # once tam tutarli cozum; yoksa tek gevsek cozum
+            tam = [b for b in bulunan if b[2] == "tutarli"]
+            bulunan = tam or bulunan
             if len(bulunan) == 1:
-                j, v = bulunan[0]
-                sonuc[i] = (v, "tutarli", j, "yenidenHizalama")
+                j, v, durum = bulunan[0]
+                sonuc[i] = (v, durum, j, "yenidenHizalama")
                 kullanilan.add(j)
         for i, s in enumerate(sol):
             v, durum, j, yontem = sonuc[i]
@@ -714,6 +783,7 @@ def _sandik(a):
 
 DURUM_ACIKLAMA = {
     "tutarli": "toplam, parti yüzdeleri, katılım ve geçerli % tutuyor; sıfır olmayan oy alanlarından en fazla biri tek okumaya dayanıyor",
+    "toplamTutmuyor": "kitabın kendi tutarsızlığı: her alan iki bağımsız okumayla (ya da yüzdesiyle) teyitli, yüzdeler ve katılım tutuyor, ama parti oyları toplamı geçerli oydan farklı (en çok %2; fark kontrol.toplamFarki'nda)",
     "teyitsiz": "kısıtları sağlayan çözüm var ama oy alanlarından ikisi ya da fazlası yalnızca tek bir okumaya dayanıyor (dengeleyen OCR hatası dışlanamıyor)",
     "belirsiz": "kısıtları sağlayan birden çok farklı oy çözümü var",
     "tutarsiz": "okunan adaylardan kısıtları sağlayan çözüm yok",
@@ -741,7 +811,7 @@ def isle(tablolar):
         for s in satirlar:
             v, durum = s["v"], s["durum"]
             okuma = {"hizalama": s["hizalama"]} if s["hizalama"] else {}
-            if durum == "tutarli":
+            if durum in KABUL:
                 oy = {p: v[p] for p in PARTILER if v.get(p)}
                 on = {"secmen": v.get("secmen"), "oyKullanan": v.get("oyKullanan"), "katilim%": v.get("katilim%")}
                 g = v["gecerliOy"]
@@ -758,7 +828,9 @@ def isle(tablolar):
                  "katilim": on.get("katilim%"), "gecerliOy": g,
                  "oy": dict(sorted(oy.items(), key=lambda kv: -kv[1])), "yuzde": yuzde,
                  "kontrol": {"durum": durum}, "sayfa": s["sayfa"]}
-            if s["sagYok"] and durum != "tutarli":
+            if durum == "toplamTutmuyor":
+                r["kontrol"]["toplamFarki"] = v["_toplamFarki"]
+            if s["sagYok"] and durum not in KABUL:
                 r["kontrol"]["sagSayfaEslesmedi"] = True
             if okuma:
                 r["okuma"] = okuma
@@ -775,8 +847,9 @@ def isle(tablolar):
                        "okuyucu": "scripts/pipelines/tuik_arsiv/extract_mahalli_1984.py",
                        "ocr": f"data/kaynaklar/tuik/yerel/{SECIM}/ocr/",
                        "not": "DİE kitabındaki belediye/ilçe düzeyi değerler ilçe seçim kurullarının birleştirme tutanaklarından "
-                              "(kitabın açıklaması). Üç okuma (metin katmanı, macOS Vision, tesseract) aday verir; hiçbir değer "
-                              "hesaplanmaz. Durumlar: " + "; ".join(f"{k}: {v}" for k, v in DURUM_ACIKLAMA.items()) +
+                              "(kitabın açıklaması). Dört okuma (metin katmanı, macOS Vision, tesseract ve çözülemeyen satırlarda "
+                              "sayfa görüntüsünden görsel okuma, gozle_1984.py) aday verir; hiçbir değer hesaplanmaz ve hiçbir "
+                              "okuma tek başına bir alanı doğrulayamaz. Durumlar: " + "; ".join(f"{k}: {v}" for k, v in DURUM_ACIKLAMA.items()) +
                               ". Tutarlı olmayan satırda oy yazılmaz; seçmen/oy kullanan/katılım yalnızca katılım kısıtıyla tek "
                               "çözümse, sandık iki motor aynı okuduysa yazılır."},
             "partiler": PARTILER,

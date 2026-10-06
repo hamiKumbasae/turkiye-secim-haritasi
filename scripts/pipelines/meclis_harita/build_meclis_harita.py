@@ -25,7 +25,8 @@ Kurallar:
 1984-2004 (DIE "Mahalli Idareler Secimi Sonuclari" kitaplari, taranmis; bkz.
 data/raw/tuik/mahalli-kitap/PROVENANCE.md): ek/ dosyalarinda geomId yok, satirlar ad/secmen ile
 baskanlik kaydinin ilce satirlarina baglanir:
-  - Yalniz kontrol.durum = 'tutarli' ve kimligi cozulmus (kimlik.yontem != 'cozulemedi') satirlar
+  - Yalniz kontrol.durum = 'tutarli' (1984'te ayrica 'toplamTutmuyor': kitap parti toplamini gecerli
+    oydan <= %2 farkla basmis, her alan iki bagimsiz okumayla teyitli; satira veriNotu yazilir) ve kimligi cozulmus (kimlik.yontem != 'cozulemedi') satirlar
     haritaya islenir (kitap okuyucusunun kurali); digerleri 'dogrulanamadi' notuyla bos kalir.
   - Anahtarlar (ayni il icinde, tek aday): (a) secmen: bm'de satirin kendi secmeni, igm'de ilce
     satirinin altindaki sehir satiri (ilce merkezi belediyesi) - baskanlik satirinin secmeniyle
@@ -58,6 +59,7 @@ Kullanim:
   .venv/bin/python scripts/pipelines/meclis_harita/build_meclis_harita.py
 """
 import collections
+import difflib
 import json
 import pathlib
 import re
@@ -208,8 +210,25 @@ def ad_norm(s):
     return re.sub(r"[^a-zçğıöşü]", "", s) or None
 
 
+KABUL = ("tutarli", "toplamTutmuyor")
+NOT_TOPLAM = ("DİE kitabında bu satırın parti oylarının toplamı geçerli oydan {fark} oy ({oran}) farklı basılmış; "
+              "her alan en az iki bağımsız okumayla teyitli, rakamlar kitapta yazıldığı gibidir (oranlar geçerli oya göre).")
+
+
 def dogrulanmis(r):
-    return (r.get("kontrol") or {}).get("durum") == "tutarli" and (r.get("kimlik") or {}).get("yontem") != "cozulemedi"
+    """'tutarli' ya da 'toplamTutmuyor' (1984: kitap toplamı ≤ %2 farkla basılmış, her alan teyitli)"""
+    return (r.get("kontrol") or {}).get("durum") in KABUL and (r.get("kimlik") or {}).get("yontem") != "cozulemedi"
+
+
+def toplam_notu(r):
+    k = r.get("kontrol") or {}
+    if k.get("durum") != "toplamTutmuyor":
+        return {}
+    fark = k.get("toplamFarki")
+    if fark is None:
+        fark = sum(r["oy"].values()) - r["gecerliOy"]
+    oran = f"%{abs(fark) / r['gecerliOy'] * 100:.2f}".replace(".", ",")
+    return {"veriNotu": NOT_TOPLAM.format(fark=f"{fark:+d}", oran=oran)}
 
 
 YSK_KESIN = ROOT / "data" / "kaynaklar" / "ysk" / "mahalli-kesin"
@@ -300,6 +319,51 @@ def ysk_tumu(yil, kisa, ana, by_sec, by_ad):
     return iller, {g: v[0] for g, v in eslesen.items()}, sayac
 
 
+TR_SIRA = {c: i for i, c in enumerate("abcçdefgğhıijklmnoöprsştuüvyz")}
+BENZER_ESIK, BENZER_ARA = 0.7, 0.15
+
+
+def _alfabe(ad):
+    return [TR_SIRA.get(c, 99) for c in (ad_norm(ad) or "")]
+
+
+def benzer_ad(r, i, ana, eslesen, sira_kesin):
+    """Adi OCR'da bozulmus (ornek 'GöLBASl', 'HERKEZ-CENTRAL') ve secmeni eslesmeyen ilce satiri icin
+    ayni ildeki ilce adlariyla benzerlik (difflib). Uc kosulun hepsi gerekir, yoksa baglanmaz:
+      - en iyi benzerlik >= BENZER_ESIK ve ikinciden en az BENZER_ARA fazla;
+      - aday ilce kesin eslesmeyle (secmen/ad) baska satira baglanmamis;
+      - kitap sirasi: kitapta ilceler Merkez basta, alfabetik; aday, satirin kitapta onceki ve sonraki
+        kesin eslesmis komsularinin arasina dusmeli."""
+    n = ad_norm(r.get("adKaynakta")) or ""
+    if len(n) < 3:
+        return None
+    adaylar = {}
+    for a in ana["ilceler"]:
+        if a["plaka"] != r["plaka"]:
+            continue
+        for ad in (a["ad"], ((a.get("kaynak") or {}).get("tuik") or {}).get("adKaynakta")):
+            if ad_norm(ad):
+                s = difflib.SequenceMatcher(None, n, ad_norm(ad)).ratio()
+                adaylar[a["geomId"]] = max(adaylar.get(a["geomId"], 0), s)
+    sirali = sorted(adaylar.items(), key=lambda x: -x[1])
+    if not sirali or sirali[0][1] < BENZER_ESIK or (len(sirali) > 1 and sirali[0][1] - sirali[1][1] < BENZER_ARA):
+        return None
+    g = sirali[0][0]
+    if g in eslesen:
+        return None
+    ilceler = [a for a in ana["ilceler"] if a["plaka"] == r["plaka"]]
+
+    def anahtar(a):
+        merkez = "merkez" in (ad_norm(a["ad"]), ad_norm(((a.get("kaynak") or {}).get("tuik") or {}).get("adKaynakta")))
+        return (not merkez, _alfabe(a["ad"]))
+    sira = {a["geomId"]: k for k, a in enumerate(sorted(ilceler, key=anahtar))}
+    onceki = [sira[x] for j, x in sira_kesin[r["plaka"]] if j < i]
+    sonraki = [sira[x] for j, x in sira_kesin[r["plaka"]] if j > i]
+    if (onceki and sira[g] <= onceki[-1]) or (sonraki and sira[g] >= sonraki[0]):
+        return None
+    return g
+
+
 def kur_die(yil, kisa):
     dosya, adi = TURLER[kisa]
     ek = oku(NORM / "ek" / dosya / f"{yil}.json")
@@ -314,6 +378,7 @@ def kur_die(yil, kisa):
     B = ek["birimler"]
     eslesen = collections.defaultdict(list)
     sayac = collections.Counter()
+    bekleyen, sira_kesin = [], collections.defaultdict(list)
     for i, r in enumerate(B):
         if r.get("tip") != "ilce" or not r.get("plaka") or (r.get("kimlik") or {}).get("yontem") == "cozulemedi":
             continue
@@ -330,9 +395,17 @@ def kur_die(yil, kisa):
             continue
         g = a or b
         if not g:
-            sayac["eşleşmedi"] += 1
+            bekleyen.append((i, r))
             continue
         sayac["ikisi" if a and b else ("seçmen" if a else "ad")] += 1
+        eslesen[g].append(r)
+        sira_kesin[r["plaka"]].append((i, g))
+    for i, r in bekleyen:
+        g = benzer_ad(r, i, ana, eslesen, sira_kesin)
+        if not g:
+            sayac["eşleşmedi"] += 1
+            continue
+        sayac["ad (OCR'da bozulmuş, benzerlik + sıra)"] += 1
         eslesen[g].append(r)
     cift = [g for g, v in eslesen.items() if len(v) > 1]
     for g in cift:
@@ -370,7 +443,7 @@ def kur_die(yil, kisa):
         iller.append({"ad": a["ad"], "plaka": a["plaka"], "oy": oy_bicimi(r["oy"], r["gecerliOy"]),
                       "kazanan": r["kazanan"], "gecerliOy": r["gecerliOy"], "secmen": r["secmen"],
                       "sandik": r.get("sandik"), "katilim": r.get("katilim"), "ilceSayisi": a.get("ilceSayisi"),
-                      "vekil": {}, "toplamVekil": 0})
+                      "vekil": {}, "toplamVekil": 0, **toplam_notu(r)})
     ilceler = []
     for a in ana["ilceler"]:
         v = eslesen.get(a["geomId"])
@@ -389,7 +462,8 @@ def kur_die(yil, kisa):
         r = v[0]
         ilceler.append({"ad": a["ad"], "plaka": a["plaka"], "geomId": a["geomId"], "oy": oy_bicimi(r["oy"], r["gecerliOy"]),
                         "kazanan": r["kazanan"], "gecerliOy": r["gecerliOy"], "secmen": r["secmen"],
-                        "sandik": r.get("sandik"), "katilim": r.get("katilim"), "vekil": {}, "toplamVekil": 0})
+                        "sandik": r.get("sandik"), "katilim": r.get("katilim"), "vekil": {}, "toplamVekil": 0,
+                        **toplam_notu(r)})
 
     ulusal = collections.Counter()
     for r in iller:

@@ -177,8 +177,10 @@ kalite sınıfı, en iyi kaynağı ve araştırma önceliği: [`docs/rapor/KAPSA
 
 Aşağıdakiler depodaki veriyle çözülemiyor; her biri yeni bir kaynak gerektirir:
 
-- **Yerel meclis sonuçları (1984):** taranmış DİE kitabında okunamayan ya da toplamı tutmayan satırlar
-  boş (belediye meclisi %48, il genel meclisi %44 eksik; sayılar kapsam tablosunda). 1994, 1999 ve 2004
+- **Yerel meclis sonuçları (1984):** taranmış DİE kitabında okunamayan satırlar boş (belediye meclisi
+  %21, il genel meclisi %11 eksik; sayılar kapsam tablosunda). Kitabın ikinci taraması ilkiyle aynı;
+  boşluklar dördüncü bir okumayla (sayfa görüntüsünden görsel okuma) ve kitabın kendi toplam farkını
+  not ederek kabul etmeyle azaltıldı (`data/raw/tuik/mahalli-kitap/PROVENANCE.md`). 1994, 1999 ve 2004
   boşlukları YSK'nin dijital tablolarıyla dolduruldu; bu yıllarda kalan boş satırlar haritada sonradan
   bölünen il merkezleri (il genel meclisinde seçim çevresi bütün Merkez ilçesiydi) ve başkanlık
   haritasında birleştirilmiş beldeler. 1963–1977 meclis ve il genel meclisi sonuçlarının DİE kitapları

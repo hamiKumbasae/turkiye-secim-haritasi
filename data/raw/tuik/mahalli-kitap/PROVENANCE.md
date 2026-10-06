@@ -113,6 +113,32 @@ tek bir parti hücresi tutmayınca değeri toplamdan geri hesaplıyordu (`ocrDuz
 - Sonuç (satır / tutarlı): İGM 711 / 552, büyükşehir 27 / 21, belediye başkanlığı 1759 / 1027,
   belediye meclisi 1760 / 1044.
 
+## 1984 meclis — dördüncü okuma ve kitap toplamı (2026-10-06)
+
+Kitabın ikinci taraması (kullanıcının indirdiği kopya) ilkiyle bayt bayt aynı çıktı; yeni görüntü yok.
+Belediye meclisi ve il genel meclisi boşlukları iki yolla azaltıldı:
+
+- **Görsel okuma (dördüncü motor, `gozle_1984.py`):** çözülemeyen ilçe/il satırlarının (ve sağ yüzde
+  ±3 komşusunun) sayfa görüntüsü 400 dpi şeritler halinde kesilip okundu (Claude, görsel okuma);
+  okumalar `data/kaynaklar/tuik/yerel/1984yerel/gozle/*.txt`, hücre gözlemleri `ocr/gozle_p*.json`.
+  Görsel okuma diğer motorlarla aynı kurala tabidir: tek başına hiçbir alanı doğrulayamaz, aynı değeri
+  en az bir başka motor da okumuş olmalı (ya da alan kitaptaki yüzdesiyle tek değere sabitlenmeli).
+  Üstü çizili/kalemle düzeltilmiş ya da okunamayan hücreler '?' bırakıldı.
+- **`toplamTutmuyor` durumu:** DİE bazı tutanakları olduğu gibi basmış; parti oylarının toplamı geçerli
+  oydan az farklı. Her alan iki bağımsız okumayla (ya da yüzdesiyle) teyitli, yüzdeler, katılım ve
+  geçerli % tutuyor, fark ≤ %2 ise satır bu durumla kabul edilir (fark `kontrol.toplamFarki`'nda,
+  haritada satırın notunda). Değer düzeltilmez.
+- **Doğrulama:** kabul edilen il satırları YSK kesin sonuç il toplamlarıyla (Resmî Gazete) karşılaştırıldı:
+  belediye meclisi 30/31, il genel meclisi 43/44 il birebir aynı; iki fark YSK satırının kendisinin
+  tutarsız olduğu iller (Adana bm, Rize igm). Daha önce `tutarli` olan satırların hiçbiri değişmedi.
+- Sonuç (satır / kabul): belediye meclisi 1760 / 1339 (1044'ten), İGM 711 / 668 (552'den).
+- **Ad eşleşmesi:** 1984 İGM tablosunda şehir satırı yok, ilçeler yalnız adla bağlanabiliyor ve adlar
+  OCR'da bozulmuş ('GöLBASl', 'HERKEZ-CENTRAL'). `build_meclis_harita.py` seçmeni ve adı tutmayan
+  satırı aynı ildeki ilçe adlarıyla benzerlikle bağlar; benzerlik ≥ 0,7 ve ikinciden ≥ 0,15 fazla,
+  aday başka satıra bağlı değil ve kitap sırasında (Merkez başta, alfabetik) önceki/sonraki kesin
+  eşleşmiş komşuların arasında olmalı. 1984'te 187 satır (İGM 160, bm 27), 1989'da 1 satır.
+- Haritada ilçe kapsamı: belediye meclisi %52 → %79, il genel meclisi %56 → %89.
+
 ## 1999 il genel meclisi — parti sütunu düzeltmesi (2026-09-27)
 
 Tablonun sağ yüzünde DEHAP sütunu yok (15 sütun: DSP, DTP, DYP, DEPAR, EMEP, FP, HADEP, İP, LDP, MP,

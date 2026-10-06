@@ -71,8 +71,8 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 | Yerel seçim | 1977 | Belediye meclisi | 0 | Yok | 616 | – | 0 | 616 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
 | Yerel seçim | 1977 | İl genel meclisi | 0 | Yok | 616 | – | 0 | 616 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
 | Yerel seçim | 1984 | Belediye başkanlığı | 67/67 | Tam | 624 | 644 | 644 | 0 | 0,0 | COMPLETE | Wikipedia satırları, sayılar DİE kitabıyla teyitli (A) | Hayır |
-| Yerel seçim | 1984 | Belediye meclisi | 26/67 | Kısmi | 624 | 644 | 335 | 309 | 48,0 | PARTIAL | TÜİK/DİE (A) | Evet |
-| Yerel seçim | 1984 | İl genel meclisi | 56/67 | Kısmi | 624 | 644 | 359 | 285 | 44,3 | PARTIAL | TÜİK/DİE (A) | Evet |
+| Yerel seçim | 1984 | Belediye meclisi | 48/67 | Kısmi | 624 | 644 | 511 | 133 | 20,7 | PARTIAL | TÜİK/DİE (A) | Evet |
+| Yerel seçim | 1984 | İl genel meclisi | 61/67 | Kısmi | 624 | 644 | 572 | 72 | 11,2 | PARTIAL | TÜİK/DİE (A) | Evet |
 | Yerel seçim | 1989 | Belediye başkanlığı | 67/67 | Tam | 665 | 752 | 752 | 0 | 0,0 | COMPLETE | Wikipedia satırları, sayılar DİE kitabıyla teyitli (A) | Hayır |
 | Yerel seçim | 1989 | Belediye meclisi | 66/67 | Neredeyse tam | 665 | 752 | 742 | 10 | 1,3 | MOSTLY_COMPLETE | TÜİK/DİE (A) | Evet |
 | Yerel seçim | 1989 | İl genel meclisi | 66/67 | Tam | 665 | 752 | 748 | 4 | 0,5 | COMPLETE | TÜİK/DİE (A) | Hayır |
@@ -166,7 +166,7 @@ A tam veri (≥ %90) · B kısmi · C yalnız il/genel toplam · D sonuç veri s
 | 1968 | A (%100,0) | D | D |
 | 1973 | A (%100,0) | D | D |
 | 1977 | A (%100,0) | D | D |
-| 1984 | A (%100,0) | B (%52,0) | B (%55,7) |
+| 1984 | A (%100,0) | B (%79,3) | B (%88,8) |
 | 1989 | A (%100,0) | A (%98,7) | A (%99,5) |
 | 1994 | A (%100,0) | A (%98,6) | A (%95,9) |
 | 1999 | A (%100,0) | A (%98,4) | A (%95,9) |
@@ -192,8 +192,8 @@ teyitli. Bu yıllardaki boşluk meclis sonuçlarında (taranmış kitabın okuna
 | 1 — Tamamlanmaya çok yakın | Yerel seçim 2004 il genel meclisi | 36 birim (%3,8) | 909/945 birim; 20 il kısmi, 61 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 1 — Tamamlanmaya çok yakın | Yerel seçim 1994 il genel meclisi | 38 birim (%4,1) | 893/931 birim; 23 il kısmi, 53 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 1 — Tamamlanmaya çok yakın | Yerel seçim 1999 il genel meclisi | 39 birim (%4,1) | 904/943 birim; 21 il kısmi, 59 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
-| 2 — Kısmi veri mevcut | Yerel seçim 1984 il genel meclisi | 285 birim (%44,3) | 359/644 birim; 66 il kısmi, 1 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
-| 2 — Kısmi veri mevcut | Yerel seçim 1984 belediye meclisi | 309 birim (%48,0) | 335/644 birim; 2 il hiç yok, 65 il kısmi | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
+| 2 — Kısmi veri mevcut | Yerel seçim 1984 il genel meclisi | 72 birim (%11,2) | 572/644 birim; 36 il kısmi, 31 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
+| 2 — Kısmi veri mevcut | Yerel seçim 1984 belediye meclisi | 133 birim (%20,7) | 511/644 birim; 1 il hiç yok, 49 il kısmi, 17 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 3 — Dağınık veri mevcut | Yerel seçim 1950 belediye başkanlığı | 491 birim (%99,0) | 5/496 birim; 62 il hiç yok, 1 il tam | DİE 1950/1955 mahalli seçim yayınları, il yıllıkları, dönemin gazeteleri |
 | 3 — Dağınık veri mevcut | Genel seçim 1950 | 478 birim (%100,0) | il düzeyi tam (63/63) | Parçalı il çalışmaları (ACADEMIC-002), yerel gazeteler, BCA; ulusal kaynak araması kapandı |
 | 3 — Dağınık veri mevcut | Genel seçim 1954 | 506 birim (%100,0) | il düzeyi tam (64/64) | Parçalı il çalışmaları (ACADEMIC-002), yerel gazeteler, BCA; ulusal kaynak araması kapandı |

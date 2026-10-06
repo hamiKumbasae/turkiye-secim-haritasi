@@ -54,15 +54,17 @@ Sayılar ve il il kırılım: `docs/rapor/KAPSAM_TABLOSU.md`, `docs/rapor/kapsam
 |---|---|---|---|
 | 1950, 1955 | B: ilçelerde yalnız kazanan parti (SECONDARY-004) | D: aranmadı | D: aranmadı |
 | 1963–1977 | A, ama yalnız Wikipedia (SECONDARY-004); A kaynağıyla doğrulanmadı | D: aranmadı | D: aranmadı |
-| 1984 | A (DİE ile teyitli) | B: ~%52 | B: ~%56 |
+| 1984 | A (DİE ile teyitli) | B: ~%79 | B: ~%89 |
 | 1989 | A (DİE ile teyitli) | A: ~%99 | A: ~%99 |
-| 1994 | A | B: ~%70 | B: ~%69 |
-| 1999 | A | B: ~%80 | B: ~%88 |
-| 2004 | A | A: ~%95 | A: ~%93 |
+| 1994 | A | A: ~%99 (YSK tablosuyla) | A: ~%96 (YSK tablosuyla) |
+| 1999 | A | A: ~%98 (YSK tablosuyla) | A: ~%96 (YSK tablosuyla) |
+| 2004 | A | A: ~%99 | A: ~%96 |
 | 2009–2024 | A | A | A (2014'ten beri yalnız büyükşehir olmayan 51 il) |
 
 1984–2004 meclis boşluklarının nedeni kaynak yokluğu değil: DİE kitaplarında (PRIMARY-007) satırlar
-var, ama taranmış sayfaların bir kısmı okunamadı ya da toplamı tutmadı. Hiç ilçe/belediye verisi
+var, ama taranmış sayfaların bir kısmı okunamadı ya da toplamı tutmadı. 1994–2004'te boşluklar YSK'nin dijital
+tablolarıyla (PRIMARY-011) dolduruldu; 1984'te kitabın ikinci taraması ilkiyle aynı çıktı, boşluklar
+görsel okuma ve kitap toplam farkının notla kabulüyle azaldı (2026-10-06). Hiç ilçe/belediye verisi
 olmayan yerel seçim yılı yok; hiç verisi olmayanlar yalnız 1950–1977 meclis seçimleri.
 
 ## Kaynak günlüğü
