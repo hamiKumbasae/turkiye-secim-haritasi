@@ -15,6 +15,7 @@
     if(il) q.set('il', il);
     const ilce = view.level === 'mahalle' || view.level === 'meclis-ilce' ? view.geomId : (view.level === 'province' ? seciliIlce : null);
     if(il && ilce) q.set('ilce', ilce);
+    if(KARSI.acik && KARSI.yil) q.set('karsi', KARSI.yil);
     if(currentMapMode && currentMapMode !== 'winner'){
       q.set('mod', currentMapMode);
       if((currentMapMode === 'parti' || currentMapMode === 'degisim') && currentMapParty) q.set('parti', currentMapParty);
@@ -40,6 +41,12 @@
       currentOylama = ['igm', 'bm'].includes(oylama) ? oylama : 'baskan';
       await switchTur(tur, secim);
       if(currentYear !== secim) return; // yuklenemedi ya da bu arada baska secim secildi
+      const karsi = q.get('karsi');
+      if(karsi && karsi !== secim && (TUR_YEARS[tur] || []).includes(karsi)){
+        KARSI.yil = karsi; KARSI.kayit = null; karsiAcKapa(true);
+        try{ await karsiYukle(karsi); }catch(error){ /* sag harita kendi notunu gosterir */ }
+      } else if(KARSI.acik){ karsiAcKapa(false); }
+      karsiCiz();
       const parti = q.get('parti');
       if(parti && MAJOR.includes(parti)){ currentMapParty = parti; $('#partySelect').value = parti; }
       const mod = q.get('mod');

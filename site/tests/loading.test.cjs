@@ -371,3 +371,31 @@ test('general election panel shows the place history and local elections hide it
   await page.locator('#dName').filter({hasText: 'Ankara'}).waitFor();
   assert.equal(await page.locator('#dGecmis').isHidden(), true);
 });
+
+test('side-by-side comparison follows drill-down with a shared projection and survives a shared link', async t => {
+  const {page} = await setup(t);
+  await ready(page);
+  await page.locator('#btnKarsi').click();
+  await page.locator('#karsiSag:not([hidden]) #mapSvg2 path').first().waitFor();
+  assert.equal(await page.locator('#karsiYil').inputValue(), '2018'); // varsayilan: bir onceki secim
+  await page.locator('#karsiYil').selectOption('1977');
+  await page.waitForFunction(() => document.querySelectorAll('#mapSvg2 path').length === 67);
+  assert.equal(await page.locator('#mapSvg path.geo-path').count(), 81);
+  // sol harita ile inince sag da ayni ile iner; ortak izdusum: iki haritadaki ayni ilce ayni yerde
+  await page.locator('#mapSvg path[data-plaka="1"]').click();
+  await page.waitForFunction(() => document.querySelectorAll('#mapSvg2 path[data-geom-id]').length === 13);
+  const d = sel => page.locator(sel).getAttribute('d');
+  assert.equal(await d('#mapSvg path[data-geom-id="TR-D-01-002"]'), await d('#mapSvg2 path[data-geom-id="TR-D-01-002"]')); // Ceyhan
+  const hash = new URL(page.url()).hash;
+  assert.match(hash, /karsi=1977/);
+  // paylasilan baglanti ayni karsilastirmayi acar
+  await page.goto('about:blank');
+  await page.goto('http://atlas.test/' + hash);
+  await ready(page);
+  await page.waitForFunction(() => document.querySelectorAll('#mapSvg2 path[data-geom-id]').length === 13);
+  assert.equal(await page.locator('#karsiYil').inputValue(), '1977');
+  // kapatinca sag harita gizlenir ve adresten duser
+  await page.locator('#btnKarsi').click();
+  assert.equal(await page.locator('#karsiSag').isHidden(), true);
+  assert.doesNotMatch(new URL(page.url()).hash, /karsi=/);
+});

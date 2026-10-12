@@ -87,22 +87,34 @@
             <button data-mode="degisim" title="Seçilen partinin oy oranındaki değişim (önceki seçime göre, yüzde puan)">Değişim</button>
           </div>
           <select id="partySelect" style="display:none" aria-label="Parti"></select>
+          <button id="btnKarsi" class="toggle-btn" type="button" aria-pressed="false" title="Haritayı ikiye böler: sağda aynı türden başka bir seçim">Karşılaştır</button>
           <button id="btnRenkKoru" class="toggle-btn" type="button" aria-pressed="false" title="Partileri renk körlüğünde de ayırt edilebilen renklerle gösterir">Renk körü dostu</button>
           <div class="search-wrap">
             <span class="search-icon">⌕</span>
             <input id="searchBox" type="text" placeholder="İl ara…" autocomplete="off">
           </div>
         </div>
-        <svg id="mapSvg" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet"></svg>
-        <div id="seqLegendWrap" style="display:none">
-          <div class="seq-legend">
-            <span id="seqMin">0%</span>
-            <div class="seq-ramp" id="seqRamp"></div>
-            <span id="seqMax">100%</span>
+        <div class="harita-cift" id="haritaCift">
+          <div class="harita-yan">
+            <div class="karsi-baslik" id="karsiSolBaslik" hidden></div>
+            <svg id="mapSvg" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet"></svg>
+            <div id="seqLegendWrap" style="display:none">
+              <div class="seq-legend">
+                <span id="seqMin">0%</span>
+                <div class="seq-ramp" id="seqRamp"></div>
+                <span id="seqMax">100%</span>
+              </div>
+              <div class="seq-note" id="seqNote" hidden></div>
+            </div>
+            <div class="winner-legend" id="winnerLegend"></div>
           </div>
-          <div class="seq-note" id="seqNote" hidden></div>
+          <div class="harita-yan" id="karsiSag" hidden>
+            <div class="karsi-baslik"><select id="karsiYil" aria-label="Karşılaştırılan seçim"></select></div>
+            <svg id="mapSvg2" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet" aria-label="Karşılaştırılan seçimin haritası"></svg>
+            <div class="winner-legend karsi-lejant" id="winnerLegend2"></div>
+            <div class="karsi-not" id="karsiNot"></div>
+          </div>
         </div>
-        <div class="winner-legend" id="winnerLegend"></div>
       </div>
 
       <div class="panel" id="detailPanel">

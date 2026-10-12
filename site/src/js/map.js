@@ -280,7 +280,9 @@
     const noDataFeats = modernFeats.filter(f=>!dataGeomIds.has(f.properties.id) && !hiddenByMerge.has(f.properties.id));
     const fallbackFeats = GEO.features.filter(f=>f.properties.plaka===plaka);
     const allFeats = dataFeats.length ? [...dataFeats, ...noDataFeats] : fallbackFeats;
-    const project = computeProjection(allFeats.length?allFeats:fallbackFeats, PAD);
+    // karsilastirma aciksa iki secimin poligonlarinin ortak kutusu (bkz. karsilastir.js)
+    const project = computeProjection(karsiOrtakSinir(allFeats.length?allFeats:fallbackFeats, plaka), PAD);
+    ilProjeksiyonu = project;
     svg.innerHTML = '';
     pathByPlaka = {}; pathByGeomId = {};
     if(noDataFeats.some(f=>gecisNotu(f.properties.id))){
@@ -436,6 +438,7 @@
     return 'hsl('+hue+' '+s+'% '+l+'%)';
   }
   function applyMapMode(){
+    karsiCiz(); // sag (karsilastirma) haritasi ayni gorunum ve modla
     if(view.level==='meclis-ilce'){
       const m = MECLIS_2024[view.geomId], el = pathByGeomId[view.geomId];
       if(el) el.setAttribute('fill', m ? partyColor(m.kazanan) : 'var(--map-empty)');
