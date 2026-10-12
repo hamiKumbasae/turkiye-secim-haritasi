@@ -37,6 +37,9 @@ açılıştan harita çizilene dek): ~1,1 sn.
   seçim). Yakınlaştırma senkronize: ile inilince iki harita da o ili aynı izdüşümle çizer (dönem sınırları
   farklıysa da aynı yer aynı konumda); il/ilçe seçimi iki haritada birlikte işaretlenir. Renk modu
   soldakini izler; Parti/Katılım ölçeği her haritanın kendi aralığıdır. Bağlantıda `&karsi=<seçim>`.
+- **Göm:** "Göm" düğmesi o anki görünümün iframe kodunu verir (yükseklik ve tema seçilir). Gömülü
+  görünüm (`&gom=1`, isteğe bağlı `&tema=acik|koyu`) yalnız başlığı, haritayı, lejantı ve kaynak satırını
+  gösterir; "Haritanın tamamını aç" aynı görünümü sitede açar.
 - **Paylaşılabilir bağlantı:** seçim, il, ilçe/mahalle, mod, parti ve oylama türü adresin `#`
   kısmında (`#secim=1977&il=6&mod=parti&parti=CHP`); "Bağlantıyı kopyala" düğmesi.
 - **Kaynaklar ve yöntem:** [`yontem.html`](yontem.html) — kaynaklar, tarihsel sınırlar, harita

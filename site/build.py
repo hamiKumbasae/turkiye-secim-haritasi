@@ -37,7 +37,7 @@ GOMULU_YER = "<!--__GOMULU_VERI__-->"
 JS_FILES = [
     "data-loader.js", "election-config.js", "state.js", "result-utils.js", "seatbar.js",
     "summary.js", "map.js", "tooltip.js", "detail-panel.js", "gecmis.js", "karsilastir.js", "search.js", "nav.js",
-    "table.js", "link.js", "erisim.js", "app.js",
+    "table.js", "link.js", "gom.js", "erisim.js", "app.js",
 ]
 
 

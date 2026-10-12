@@ -313,3 +313,34 @@
 .load-status[hidden], #retryLoad[hidden] { display:none; }
 .load-status[data-state="error"] { border-color:#b45309; }
 #results[aria-busy="true"] { opacity:.45; pointer-events:none; }
+
+/* ---------------- gomme: Gom penceresi ve gomulu (sade) gorunum, bkz. gom.js ---------------- */
+.gom-pencere{max-width:560px; width:calc(100% - 32px); border:1px solid var(--line); border-radius:12px; padding:20px; background:var(--surface-1); color:var(--ink-1); box-shadow:var(--shadow);}
+.gom-pencere::backdrop{background:rgba(20,18,12,.45);}
+.gom-pencere h3{font-size:17px; margin:0 0 6px;}
+.gom-aciklama{font-size:13px; color:var(--ink-2); line-height:1.5; margin:0 0 12px;}
+.gom-secenekler{display:flex; flex-wrap:wrap; gap:10px 18px; margin-bottom:10px; font-size:12.5px; color:var(--ink-2);}
+.gom-secenekler label{display:flex; align-items:center; gap:6px;}
+.gom-secenekler select{font:inherit; color:var(--ink-1); background:var(--surface-0); border:1px solid var(--line); border-radius:6px; padding:3px 6px;}
+#gomKod{width:100%; font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace; color:var(--ink-1); background:var(--surface-0); border:1px solid var(--line); border-radius:8px; padding:8px; resize:vertical;}
+.gom-not{font-size:12px; color:var(--ink-3); margin:6px 0 0;}
+.gom-butonlar{display:flex; align-items:center; justify-content:flex-end; gap:10px; margin-top:12px;}
+.gom-butonlar .link-btn{margin-right:auto;}
+.gom-alt{display:none;}
+html.gomulu body{background:var(--surface-1);}
+html.gomulu .wrap{max-width:none; padding:10px 12px 8px;}
+html.gomulu .top, html.gomulu .tur-tabs, html.gomulu .year-timeline, html.gomulu .oylama-tabs,
+html.gomulu .national-summary, html.gomulu .view-toggle, html.gomulu #tableView, html.gomulu .seatbar-card,
+html.gomulu footer, html.gomulu #detailPanel, html.gomulu .election-bar-source, html.gomulu .map-controls{display:none !important;}
+html.gomulu #mapView{display:block !important;}
+html.gomulu .grid{grid-template-columns:1fr;}
+html.gomulu .election-bar{margin-bottom:6px;}
+html.gomulu .election-bar-main .eyebrow{font-size:10.5px; margin-bottom:2px;}
+html.gomulu .election-bar-main h1{font-size:18px;}
+html.gomulu .panel{padding:8px 4px 6px; border:none; background:none;}
+html.gomulu .gom-alt{display:flex; justify-content:space-between; flex-wrap:wrap; gap:4px 12px; margin-top:6px; padding-top:6px; border-top:1px solid var(--line-soft); font-size:11.5px; color:var(--ink-3);}
+html.gomulu .gom-alt a{color:var(--ink-2);}
+/* gomulu karsilastirma: haber sutunu genisliginde (~720 px) de iki harita yan yana kalir */
+@media (max-width:720px){ html.gomulu .harita-cift.acik{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px;} }
+@media (max-width:460px){ html.gomulu .harita-cift.acik{grid-template-columns:1fr;} }
+html.gomulu .drawer, html.gomulu .drawer-overlay{display:none !important;}

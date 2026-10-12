@@ -303,7 +303,8 @@ test('unresolved vote totals do not show invented percentages', async t => {
     await route.fulfill({contentType:'application/json',body:JSON.stringify(d)}); return true;
   });
   await ready(page); await page.locator('#mapSvg path[data-plaka="1"]').dispatchEvent('click');
-  assert.match(await page.locator('#dInfoNote').textContent(),/uyuşmuyor/);
+  // il, ilce sinirlari arka planda inince acilir: notu bekle (yoksa yaris, test ara sira duser)
+  await page.locator('#dInfoNote').filter({hasText: /uyuşmuyor/}).waitFor();
   assert(!/%\d/.test(await page.locator('#dParties').textContent()));
 });
 
@@ -398,4 +399,30 @@ test('side-by-side comparison follows drill-down with a shared projection and su
   await page.locator('#btnKarsi').click();
   assert.equal(await page.locator('#karsiSag').isHidden(), true);
   assert.doesNotMatch(new URL(page.url()).hash, /karsi=/);
+});
+
+test('embed button gives iframe code and the embed view shows only the map with a source line', async t => {
+  const {page} = await setup(t);
+  await ready(page);
+  await page.locator('#mapSvg path[data-plaka="6"]').click();
+  await page.locator('#mapSvg path[data-geom-id]').first().waitFor();
+  await page.locator('#btnGom').click();
+  const kod = await page.locator('#gomKod').inputValue();
+  assert.match(kod, /^<iframe src="[^"]+#secim=2023&amp;il=6&amp;gom=1&amp;tema=acik" width="100%" height="560"/);
+  assert.match(kod, /title="Türkiye Seçim Tarihi Atlası: Ankara · /);
+  await page.locator('#gomTema').selectOption('koyu');
+  assert.match(await page.locator('#gomKod').inputValue(), /tema=koyu/);
+  await page.locator('#gomKapat').click();
+  // gomulu gorunum: yalniz baslik, harita, lejant, kaynak satiri
+  await page.goto('about:blank');
+  await page.goto('http://atlas.test/#secim=2023&il=6&gom=1&tema=koyu');
+  await ready(page);
+  await page.locator('#mapSvg path[data-geom-id]').first().waitFor();
+  assert.equal(await page.evaluate(() => document.documentElement.getAttribute('data-theme')), 'dark');
+  for(const s of ['.top', '.tur-tabs', '#yearPicker', '#detailPanel', '.map-controls', 'footer', '.seatbar-card'])
+    assert.equal(await page.locator(s).first().isVisible(), false, s + ' gizli olmali');
+  assert.equal(await page.locator('#gomAlt').isVisible(), true);
+  const tam = await page.locator('#gomTamEkran').getAttribute('href');
+  assert.match(tam, /#secim=2023&il=6$/); // tam ekran baglantisi gomme parametrelerini tasimaz
+  assert.match(new URL(page.url()).hash, /gom=1&tema=koyu/); // gorunum degisse de gomulu kalir
 });

@@ -20,12 +20,14 @@
       q.set('mod', currentMapMode);
       if((currentMapMode === 'parti' || currentMapMode === 'degisim') && currentMapParty) q.set('parti', currentMapParty);
     }
+    if(GOMULU){ q.set('gom', '1'); if(GOM_TEMA) q.set('tema', GOM_TEMA); } // bkz. gom.js
     return q;
   }
   function durumuYaz(){
     if(baglantiUygulaniyor || !currentYear) return;
     const hash = '#' + durumParametreleri().toString();
     if(location.hash !== hash) history.replaceState(null, '', hash);
+    if(GOMULU) gomAltGuncelle();
   }
 
   // Acilista (ve adres elle degistirildiginde) baglantidaki gorunume gider; gecersiz ya da eksik
