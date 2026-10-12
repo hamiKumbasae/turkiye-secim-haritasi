@@ -79,6 +79,7 @@ def main():
         "__YAYIN_TARIHI__", datetime.date.today().strftime("%d.%m.%Y"))
     (out / "index.html").write_text(html, encoding="utf-8")
     shutil.copyfile(ROOT / "yontem.html", out / "yontem.html")
+    shutil.copyfile(ROOT / "onizleme.png", out / "onizleme.png")  # paylasim onizlemesi (og:image)
     from acik_veri import uret as acik_veri_uret  # noqa: E402  veri.html + veri/ (acik veri)
     acik = acik_veri_uret(files, out)
     (out / ".nojekyll").write_text("")
