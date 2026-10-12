@@ -1,7 +1,7 @@
 # Seçim verisi kapsam tablosu
 
 > `scripts/rapor/kapsam_tablosu.py` üretir, elle düzenlemeyin. Yalnız depodaki veriye dayanır.
-> Görev tanımı: `YAPILACAKLAR.md` (2., 3., 9. ve 10. maddeler). Kaynak günlüğü:
+> Görev tanımı (arşiv): `docs/arsiv/YAPILACAKLAR.md` (2., 3., 9. ve 10. maddeler). Kaynak günlüğü:
 > `data/kaynaklar/ARASTIRMA_KAYDI.md`. İl il kırılım: `kapsam_il_bazinda.csv`.
 
 **Sayım:** *Birim* kaynaktaki ilçe/belediye satırıdır; seçimden sonra kurulan ilçelerin boş satırları

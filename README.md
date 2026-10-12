@@ -4,6 +4,11 @@
 seçimi sonuçlarını gösteren interaktif harita — 15 seçimde mahalle/muhtarlık
 düzeyine kadar iniyor.
 
+> **Durum: tamamlandı (v1.0, 12 Ekim 2026).** Genel seçimler, referandumlar ve
+> cumhurbaşkanlığı seçimleri ilçe düzeyinde; yerel seçimlerde başkanlık sonuçları
+> büyük ölçüde tam. Bilinçli olarak kapsam dışı bırakılanlar
+> [aşağıda](#kapsam-dışı-bırakılanlar-ileride-yapılabilecekler) listeli.
+
 ## Nasıl açılır
 
 **Tek dosya.** Bu depoyu indirin (Code → Download ZIP, ya da `git clone`) ve
@@ -168,14 +173,15 @@ Kaynak başına ayrıştırılmış veri `data/kaynaklar/`, ham dosyalar `data/r
 
 Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
 
-## Bilinen eksikler
+## Kapsam dışı bırakılanlar (ileride yapılabilecekler)
 
 Her seçimin (yerel seçimlerde başkanlık, belediye meclisi, il genel meclisi ayrı) il/ilçe kapsamı,
 kalite sınıfı, en iyi kaynağı ve araştırma önceliği: [`docs/rapor/KAPSAM_TABLOSU.md`](docs/rapor/KAPSAM_TABLOSU.md)
 (`python3 scripts/rapor/kapsam_tablosu.py` üretir). Nerelere bakıldığı:
 [`data/kaynaklar/ARASTIRMA_KAYDI.md`](data/kaynaklar/ARASTIRMA_KAYDI.md).
 
-Aşağıdakiler depodaki veriyle çözülemiyor; her biri yeni bir kaynak gerektirir:
+Proje v1.0 ile kapandı. Aşağıdakiler bilinçli olarak kapsam dışı bırakıldı; çoğu yeni bir
+kaynak ya da taranmış kitaplardan uzun bir okuma işi gerektirir:
 
 - **Yerel meclis sonuçları (1984):** taranmış DİE kitabında okunamayan satırlar boş (belediye meclisi
   %21, il genel meclisi %11 eksik; sayılar kapsam tablosunda). Kitabın ikinci taraması ilkiyle aynı;
@@ -184,7 +190,7 @@ Aşağıdakiler depodaki veriyle çözülemiyor; her biri yeni bir kaynak gerekt
   boşlukları YSK'nin dijital tablolarıyla dolduruldu; bu yıllarda kalan boş satırlar haritada sonradan
   bölünen il merkezleri (il genel meclisinde seçim çevresi bütün Merkez ilçesiydi) ve başkanlık
   haritasında birleştirilmiş beldeler. 1963–1977 meclis ve il genel meclisi sonuçlarının DİE kitapları
-  depoda (`data/raw/tuik/mahalli-kitap/`) ama henüz okunmadı; 1950/1955 için DİE kitabı yok.
+  depoda (`data/raw/tuik/mahalli-kitap/`) ama okunmadı (kapsam dışı); 1950/1955 için DİE kitabı yok.
 - **1963–1977 belediye başkanlığı (Vikipedi):** DİE kitaplarıyla karşılaştırıldı
   ([`docs/rapor/KITAP_DOGRULAMA_1963_1977.md`](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)). Kitabın
   yüzdesi ya da toplamıyla desteklenen farklar ve oyları geniş ölçüde farklı satırlar orada listeli;

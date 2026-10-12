@@ -1,7 +1,7 @@
 """
 Kapsam tablosu: her secim (ve yerel secimde her oylama turu) icin il/ilce verisinin ne kadar
 tam oldugunu, en iyi kaynagi ve yeni arastirma gerekip gerekmedigini tek tabloda verir.
-YAPILACAKLAR.md 9. (ana tablo), 10. (arastirma onceligi), 2. (referandum alanlari) ve
+docs/arsiv/YAPILACAKLAR.md 9. (ana tablo), 10. (arastirma onceligi), 2. (referandum alanlari) ve
 3. (yerel secim A/B/C/D) maddelerinin ciktisi. Yalniz depodaki veriden uretilir, web'e cikmaz.
 
 Ciktilar (docs/rapor/):
@@ -18,7 +18,7 @@ Sayim yontemi:
   donemdeki ilce  election_admin_snapshots.json (Icisleri kurulus tarihleri + secim kaniti);
              yerel secimde birim belediye oldugu icin satir sayisi bundan farkli olabilir.
 
-Veri kalitesi (YAPILACAKLAR.md 9. madde):
+Veri kalitesi (docs/arsiv/YAPILACAKLAR.md 9. madde):
   COMPLETE >= %99,5 · MOSTLY_COMPLETE >= %90 · PARTIAL >= %50 · VERY_PARTIAL > 0
   NONE: arastirildi, kaynak yok (ARASTIRMA_KAYDI.md) · UNKNOWN: henuz arastirilmadi
 
@@ -352,7 +352,7 @@ def markdown(satirlar, il_satirlari, ref_alanlari):
     a("# Seçim verisi kapsam tablosu")
     a("")
     a("> `scripts/rapor/kapsam_tablosu.py` üretir, elle düzenlemeyin. Yalnız depodaki veriye dayanır.")
-    a("> Görev tanımı: `YAPILACAKLAR.md` (2., 3., 9. ve 10. maddeler). Kaynak günlüğü:")
+    a("> Görev tanımı (arşiv): `docs/arsiv/YAPILACAKLAR.md` (2., 3., 9. ve 10. maddeler). Kaynak günlüğü:")
     a("> `data/kaynaklar/ARASTIRMA_KAYDI.md`. İl il kırılım: `kapsam_il_bazinda.csv`.")
     a("")
     a("**Sayım:** *Birim* kaynaktaki ilçe/belediye satırıdır; seçimden sonra kurulan ilçelerin boş satırları")

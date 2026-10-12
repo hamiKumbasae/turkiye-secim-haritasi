@@ -1,5 +1,8 @@
 # Yapılacaklar — tarihsel seçim verisi durum tespiti ve kaynak envanteri
 
+> **Arşiv.** Proje v1.0 ile kapandı (2026-10-12); bu dosya artık güncellenmiyor.
+> Kalan işler: README'deki "Kapsam dışı bırakılanlar" bölümü.
+
 > Kullanıcının 2026-09-25 tarihli görev tanımı, değiştirilmeden kaydedildi.
 > Bir sonraki çalışma oturumu buradan başlar.
 

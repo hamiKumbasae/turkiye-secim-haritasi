@@ -2,7 +2,7 @@
 
 Nerelere bakıldığının kalıcı kaydı: bulunan **ve bulunamayan** kaynaklar.
 Amaç aynı kaynağa haftalar sonra yeniden dönmemek. Bu dosyada rakam yok;
-yalnız künye, kapsam ve sonuç var. Görev tanımı: `YAPILACAKLAR.md`.
+yalnız künye, kapsam ve sonuç var. Görev tanımı (arşiv): `docs/arsiv/YAPILACAKLAR.md`.
 
 Güvenilirlik: **A** birincil/resmî · **B** güçlü ikincil (akademik, dönemin
 ulusal gazetesi, yayımlanmış kitap) · **C** destekleyici ikincil (yerel tarih,
