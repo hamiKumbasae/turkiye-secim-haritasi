@@ -378,6 +378,7 @@ html.gomulu .drawer, html.gomulu .drawer-overlay{display:none !important;}
       <span class="brand-sub">1950–2024 Türkiye seçim sonuçları ve tarihsel seçim coğrafyası</span>
     </div>
     <nav class="brand-links">
+      <a href="veri.html">Açık veri</a>
       <a href="yontem.html">Kaynaklar ve yöntem</a>
       <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
@@ -525,6 +526,7 @@ html.gomulu .drawer, html.gomulu .drawer-overlay{display:none !important;}
         <div class="table-title" id="tableTitle">Türkiye · İl Sonuçları</div>
         <input id="tableSearch" type="text" placeholder="İl ara…" autocomplete="off">
         <button class="link-btn" id="btnCsv" type="button" title="Bu seçimin il ve ilçe sonuçlarını CSV olarak indirir">CSV indir ↓</button>
+        <a class="link-btn" href="veri.html">Tüm seçimler ↗</a>
       </div>
       <div class="table-scroll">
         <table class="data-table" id="ilTable">
@@ -564,10 +566,11 @@ html.gomulu .drawer, html.gomulu .drawer-overlay{display:none !important;}
     <div class="footer-links">
       <button class="link-btn" id="footerKaynaklar">Bu seçimin kaynakları</button>
       · <a class="link-btn" href="yontem.html">Kaynaklar, yöntem ve bilinen eksikler</a>
+      · <a class="link-btn" href="veri.html">Açık veri (CSV, JSON)</a>
       · <a href="https://github.com/hamiKumbasae/turkiye-secim-haritasi" target="_blank" rel="noopener">GitHub</a>
     </div>
     <div class="footer-disclaimer">Veriler YSK, TÜİK, TBMM ve belgelenmiş diğer kaynaklardan derlenmiştir. Resmî YSK yayını değildir.</div>
-    <div class="footer-disclaimer">Tek dosya sürümü · veri sürümü 4010db5961</div>
+    <div class="footer-disclaimer">Tek dosya sürümü · veri sürümü 058757bd5b</div>
   </footer>
 </div>
 
@@ -621,7 +624,7 @@ window.__EMBEDDED_GZ__ = {"data/elections/1950.json":"H4sIAAAAAAAC/7VbzW4bORJ+lY
   // VERI_SURUMU: build.py'nin data/ + geo/ iceriginden hesapladigi ozet. Her istege ?v= olarak
   // eklenir: GitHub Pages dosyalari max-age=600 ile verdigi icin, yeni yayindan sonra sayfa
   // yenilendiginde tarayici eski (onbellekteki) veriyi kullanmasin.
-  const VERI_SURUMU = '4010db5961';
+  const VERI_SURUMU = '058757bd5b';
   // Tek dosya surumu (turkiye-secim-haritasi/scripts/build.py) ayni dosyalari sayfaya gomer:
   // window.__EMBEDDED_GZ__ = {"data/elections/2023.json": "<gzip+base64>", ...}. Varsa veri fetch
   // yerine oradan acilir; boylece index.html file:// ile cift tiklayinca da calisir.
@@ -3032,6 +3035,8 @@ window.__EMBEDDED_GZ__ = {"data/elections/1950.json":"H4sIAAAAAAAC/7VbzW4bORJ+lY
     $('#gomKod').select();
   });
   $('#gomYukseklik').addEventListener('change', gomKoduYaz);
+  // Tek dosya surumunde (file://) veri.html ve veri/ yok: acik veri baglantilari yayindaki siteye gider
+  if(GOMULU_VERI) for(const a of $$('a[href="veri.html"]')) a.href = YAYIN_ADRESI + 'veri.html';
   $('#gomTema').addEventListener('change', gomKoduYaz);
   $('#gomKapat').addEventListener('click', () => $('#gomPencere').close());
   $('#gomKopyala').addEventListener('click', async () => {

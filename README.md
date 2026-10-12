@@ -40,6 +40,9 @@ açılıştan harita çizilene dek): ~1,1 sn.
 - **Göm:** "Göm" düğmesi o anki görünümün iframe kodunu verir (yükseklik ve tema seçilir). Gömülü
   görünüm (`&gom=1`, isteğe bağlı `&tema=acik|koyu`) yalnız başlığı, haritayı, lejantı ve kaynak satırını
   gösterir; "Haritanın tamamını aç" aynı görünümü sitede açar.
+- **Açık veri:** [`veri.html`](https://hamikumbasae.github.io/turkiye-secim-haritasi/veri.html), seçim başına bir
+  satır: il+ilçe CSV'si (sitedeki "CSV indir" ile bayt bayt aynı), JSON, varsa mahalle ve meclis CSV'leri;
+  toplu zip ve SHA256SUMS. Yalnız Pages sitesinde üretilir (`scripts/acik_veri.py`, `site/build.py` çağırır).
 - **Paylaşılabilir bağlantı:** seçim, il, ilçe/mahalle, mod, parti ve oylama türü adresin `#`
   kısmında (`#secim=1977&il=6&mod=parti&parti=CHP`); "Bağlantıyı kopyala" düğmesi.
 - **Kaynaklar ve yöntem:** [`yontem.html`](yontem.html) — kaynaklar, tarihsel sınırlar, harita

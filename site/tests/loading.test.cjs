@@ -426,3 +426,32 @@ test('embed button gives iframe code and the embed view shows only the map with 
   assert.match(tam, /#secim=2023&il=6$/); // tam ekran baglantisi gomme parametrelerini tasimaz
   assert.match(new URL(page.url()).hash, /gom=1&tema=koyu/); // gorunum degisse de gomulu kalir
 });
+
+test('open data CSVs are byte-identical to the in-page CSV download', async t => {
+  const {page} = await setup(t);
+  await ready(page);
+  for(const [hash, dosya] of [['secim=2023', '2023'], ['secim=1977', '1977'], ['secim=1955yerel', '1955yerel'],
+                             ['secim=1984yerel', '1984yerel'], ['secim=2019yerel&oylama=bm', 'meclis/2019yerel_bm'],
+                             ['secim=2017referandum', '2017referandum'], ['secim=2023cb2tur', '2023cb2tur']]){
+    await page.goto('http://atlas.test/#' + hash);
+    await ready(page);
+    await page.locator('#btnTableView').click();
+    const [download] = await Promise.all([page.waitForEvent('download'), page.locator('#btnCsv').click()]);
+    const tarayici = await fs.readFile(await download.path(), 'utf8');
+    const dosyadan = await fs.readFile(path.join(root, 'veri', dosya + '.csv'), 'utf8');
+    assert.equal(dosyadan, tarayici, dosya + '.csv sayfadaki CSV ile aynı olmalı');
+    await page.locator('#btnMapView').click();
+  }
+});
+
+test('open data page lists every election once and every link resolves', async t => {
+  const {page} = await setup(t);
+  await page.goto('http://atlas.test/veri.html');
+  const satirlar = await page.locator('table.tablo tbody tr[id]').evaluateAll(trs => trs.map(tr => tr.id));
+  const secimler = (await fs.readdir(path.join(root, 'data', 'elections'))).map(f => f.replace('.json', '')).sort();
+  assert.deepEqual([...satirlar].sort(), secimler);
+  const hrefs = await page.locator('a[download], a[href^="veri/"]').evaluateAll(as => as.map(a => a.getAttribute('href')));
+  assert(hrefs.length > secimler.length * 2);
+  for(const h of hrefs) await fs.access(path.join(root, h));
+  assert.match(await page.locator('a[rel="license"]').getAttribute('href'), /by-sa\/4\.0/);
+});

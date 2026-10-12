@@ -4,6 +4,7 @@ Yayinlanan siteyi (GitHub Pages) site/dist/ altina uretir:
   - index.html   : src/index.template.html + src/styles/main.css + src/js/*.js (veri gomulmez,
                    tarayici data/ ve geo/ dosyalarini fetch() ile okur; sayfa ~birkac yuz KB)
   - yontem.html, .nojekyll
+  - veri.html, veri/ : acik veri sayfasi ve CSV/zip dosyalari (scripts/acik_veri.py)
 
 Ayni on yuz (bu klasordeki src/) repo kokundeki tek dosyalik index.html'de de kullanilir:
 scripts/build.py ayni yayin dosyalarini ayni yollarla sayfaya gomer, data-loader.js gomulu veri
@@ -78,8 +79,11 @@ def main():
         "__YAYIN_TARIHI__", datetime.date.today().strftime("%d.%m.%Y"))
     (out / "index.html").write_text(html, encoding="utf-8")
     shutil.copyfile(ROOT / "yontem.html", out / "yontem.html")
+    from acik_veri import uret as acik_veri_uret  # noqa: E402  veri.html + veri/ (acik veri)
+    acik = acik_veri_uret(files, out)
     (out / ".nojekyll").write_text("")
-    print(f"yazıldı: {out} ({len(files)} veri dosyası, index.html {len(html) / 1024:.1f} KB, veri sürümü {surum})")
+    print(f"yazıldı: {out} ({len(files)} veri dosyası, index.html {len(html) / 1024:.1f} KB, veri sürümü {surum}; "
+          f"açık veri {len(acik)} dosya, {sum(map(len, acik.values())) / 1e6:.1f} MB)")
 
 
 if __name__ == "__main__":

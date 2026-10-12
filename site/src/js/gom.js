@@ -50,6 +50,8 @@
     $('#gomKod').select();
   });
   $('#gomYukseklik').addEventListener('change', gomKoduYaz);
+  // Tek dosya surumunde (file://) veri.html ve veri/ yok: acik veri baglantilari yayindaki siteye gider
+  if(GOMULU_VERI) for(const a of $$('a[href="veri.html"]')) a.href = YAYIN_ADRESI + 'veri.html';
   $('#gomTema').addEventListener('change', gomKoduYaz);
   $('#gomKapat').addEventListener('click', () => $('#gomPencere').close());
   $('#gomKopyala').addEventListener('click', async () => {
