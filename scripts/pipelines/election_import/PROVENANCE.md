@@ -263,3 +263,31 @@ aynı oylar "Bağımsız" geliyordu (ilçelerin BDP + Bağımsız toplamı il BD
 `etiket_2011_bdp.py` bu ilçelerde Bağımsız'ı BDP'ye ekler, oran ve kazananı yeniden hesaplar,
 satıra `etiketNotu` yazar. İl satırı "Bağımsız" olan illere dokunulmaz.
 
+
+## 2009–2024 yerel "Diğer" ayrıştırması (2026-10-12)
+
+`merge_yerel_v2.py` `majorPartiler` dışındaki partileri tek `Diğer` satırında toplar; `.work/`
+agregeleri depoya girmediği için ayrıntı kaybolmuştu (kazananı `Diğer` görünen 147 kayıt, ör. 2019'da
+İYİ Parti'nin kazandığı ya da ittifak adayı olduğu yerler). YSK portalı geliştirme ortamından
+açılmıyor; `fetch_yerel_v2.js` değiştirilmeden GitHub Actions'ta çalıştırıldı
+(`.github/workflows/ysk-yerel-cek.yml`) ve çıktılar `data/raw/ysk/yerel-v2-agrege/` altına alındı.
+
+`diger_ayristir_yerel.py` bir satırı yalnız şu koşullarda ayırır: geçerli oy aynı, YSK parti +
+bağımsız toplamı geçerli oya eşit, `Diğer` ve `Bağımsız` dışındaki her parti birebir aynı, eski
+`Diğer + Bağımsız` = YSK'deki kalan partiler + bağımsız toplamı. Eski çekimde bağımsız toplamı
+yoktu; `diger_tamamla.py` aradaki farkı `Diğer`e eklemiş, `wiki_bagimsiz.py` bazı yerlerde
+Vikipedi'den eklemişti. İkisi de YSK'nin bağımsız toplamıyla birebir açıklandı, bağımsız oyu artık
+YSK'nin sayısı (`kaynak.digerAyristirma.bagimsiz`, değiştiyse önceki/ysk).
+
+Kazanan alanı yer yer resmi sonucu taşıdığı için (itiraz/yeniden sayım; ör. 2024 Kütahya, Kilimli,
+Ardeşen; Vikipedi'den aday düzeyinde belirlenen kazananlar) yalnız `Diğer` olan kazanan yeniden
+hesaplandı. Bağımsızların TOPLAMI kayıttaki kazanandan fazla görünen 13 ilçe
+`fetch_bagimsiz_aday.js` ile aday aday çekildi (`.github/workflows/ysk-bagimsiz-aday.yml`): 10'unda tek
+bir bağımsız aday önde (kazanan `Bağımsız` oldu), Derepazarı 2009, Kaynaşlı 2009 ve Hacıbektaş 2014'te
+oylar adaylar arasında bölünmüş (kazanan değişmedi).
+
+Sonuç: 2009: 1.009, 2014: 1.045, 2019: 1.052, 2024: 1.052 satır ayrıldı; 157 kayıtta kazanan değişti;
+kazananı `Diğer` olan kayıt kalmadı. Eşleşmeyen 12 ve YSK toplamı geçerli oya eşit olmayan 6 satır
+(2009, 2014) olduğu gibi kaldı. 2024 Karaisalı'daki `DEVA PARTİSİ` anahtarı `DEVA` yapıldı.
+`merge_yerel_v2.py` yeniden çalıştırılırsa ardından `diger_ayristir_yerel.py uygula` çalıştırılmalıdır.
+Regresyon: `tests/data-integrity.test.cjs`.

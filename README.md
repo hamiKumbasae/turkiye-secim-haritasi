@@ -209,12 +209,21 @@ kaynak ya da taranmış kitaplardan uzun bir okuma işi gerektirir:
   ([`docs/rapor/KITAP_DOGRULAMA_1963_1977.md`](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)). Kitabın
   yüzdesi ya da toplamıyla desteklenen farklar ve oyları geniş ölçüde farklı satırlar orada listeli;
   veriye işlenmedi.
-- **Ayrıştırılmamış "Diğer" (2009–2024 yerel, 2011–2023 genel):** YSK verisi işlenirken o seçimin büyük
-  partiler listesinde olmayan partiler tek bir "Diğer" toplamında birleştirilmiş; ayrıntılı ara dosyalar
-  depoda yok. 147 yerel seçim kaydında kazanan bu yüzden "Diğer" görünür (sitede "Diğer (ayrıştırılmamış)"
-  ve açıklama notuyla). Çözümü YSK açık verisini bütün partilerle yeniden çekmek. 1994–2004'te "Diğer",
-  DİE kitabındaki dağılım YSK toplamıyla birebir tuttuğu yerlerde partilere ayrıldı
-  (`scripts/pipelines/tuik_arsiv/diger_ayristir.py`; 405 kayıt, 24'ünde kazanan düzeldi); 10 kayıt kaldı.
+- **Ayrıştırılmamış "Diğer":** YSK verisi işlenirken o seçimin büyük partiler listesinde olmayan
+  partiler tek bir "Diğer" toplamında birleştirilmişti; "Diğer" bu yüzden bazı yerlerde kazanan
+  görünüyordu (sitede "Diğer (ayrıştırılmamış)" ve açıklama notuyla).
+  - 2009–2024 yerel: YSK açık verisi bütün partilerle yeniden çekildi (GitHub Actions,
+    [`data/raw/ysk/yerel-v2-agrege/`](data/raw/ysk/yerel-v2-agrege/PROVENANCE.md)) ve "Diğer", eski
+    toplamla birebir tuttuğu her satırda partilere ayrıldı
+    (`scripts/pipelines/election_import/diger_ayristir_yerel.py`; 4.158 kayıt). Kazananı "Diğer" olan
+    147 kayıt düzeldi; 10 ilçede de tek bir bağımsız adayın kayıttaki kazanandan çok oy aldığı aday
+    düzeyinde doğrulandı. Diğer kazananlara dokunulmadı (resmi sonuç sandık toplamından farklı
+    olabiliyor). YSK satırı eşleşmeyen ya da eksik 18 kayıtta (2009, 2014) "Diğer" kaldı; hiçbiri kazanan değil.
+  - 1994–2004 yerel: DİE kitabındaki dağılım YSK toplamıyla birebir tuttuğu yerlerde ayrıldı
+    (`scripts/pipelines/tuik_arsiv/diger_ayristir.py`; 405 kayıt, 24'ünde kazanan düzeldi); 10 kayıtta
+    kazanan hâlâ "Diğer".
+  - 2011–2023 genel: küçük partiler hâlâ "Diğer"de (kazanan olduğu kayıt yok); aynı yöntemle
+    (`fetch_and_aggregate.js` + Actions) ayrılabilir.
 - **Kaba eşlemeler:** sonradan kurulan ve birden çok eski ilçeden pay alan bazı ilçeler (ör. Çukurova,
   Körfez, Aliağa, Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı
   (`geo/historical/idari/ilce_eslesme/*.csv`, güven `kaba`); köy düzeyinde kaynak bulunursa bölünebilir.

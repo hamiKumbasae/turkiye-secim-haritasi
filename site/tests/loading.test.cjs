@@ -468,10 +468,20 @@ test('Diğer is always the last row of the panel and opens to show the small par
   await grup.locator('summary').click();
   const ic = await grup.locator('.diger-ic .party-row .name').allTextContents();
   assert.deepEqual(ic, ['BBP', 'MP', 'ÖDP', 'DEMTP', 'İP', 'Ayrıştırılmamış']);
-  // kazanan 'Diğer' ise adi ve notu bunun bir toplam oldugunu soyler
+  // kazanan 'Diğer' ise adi ve notu bunun bir toplam oldugunu soyler (1999 Dörtdivan: DİE dagilimi tutmadi)
+  await page.goto('http://atlas.test/#secim=1999yerel&il=14&ilce=TR-D-14-002');
+  await ready(page);
+  await page.locator('#dName').filter({hasText: 'Dörtdivan'}).waitFor();
+  assert.equal(await page.locator('#dHeroName').textContent(), 'Diğer (ayrıştırılmamış)');
+  assert.match(await page.locator('#dInfoNote').textContent(), /ayrıştırılmamış/);
+  // 2019 Balıkesir eskiden 'Diğer' kazanan gorunuyordu; YSK verisiyle ayrildi, İYİ Parti kendi satirinda
   await page.goto('http://atlas.test/#secim=2019yerel&il=10');
   await ready(page);
   await page.locator('#dName').filter({hasText: 'Balıkesir'}).waitFor();
-  assert.equal(await page.locator('#dHeroName').textContent(), 'Diğer (ayrıştırılmamış)');
-  assert.match(await page.locator('#dInfoNote').textContent(), /ayrıştırılmamış/);
+  assert.equal(await page.locator('#dHeroName').textContent(), 'AKP');
+  assert.ok((await page.locator('#dParties > .party-row .name').allTextContents()).includes('İYİ'));
+  const grup19 = page.locator('#dParties > .diger-grup');
+  await grup19.locator('summary').click();
+  const ic19 = await grup19.locator('.diger-ic .party-row .name').allTextContents();
+  assert.ok(ic19.length > 0 && !ic19.includes('Ayrıştırılmamış'), ic19.join(','));
 });
