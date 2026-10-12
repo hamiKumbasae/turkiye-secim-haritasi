@@ -1,0 +1,76 @@
+name: ysk-yerel-cek
+
+# YSK acik veri portalindan 2009/2014/2019/2024 yerel secim (il genel/belediye baskanligi) il ve ilce
+# agregelerini BUTUN parti sutunlariyla ceker (fetch_yerel_v2.js). Portal bu depoyu gelistiren
+# ortamdan acilmiyor, GitHub sunucularindan aciliyor. Ciktilar data/raw/ysk/yerel-v2-agrege/ altina
+# yazilip "ysk-yerel-veri" dalina gonderilir; main'e incelendikten sonra alinir
+# (scripts/pipelines/election_import/diger_ayristir_yerel.py).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/ysk-yerel-cek.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { anahtar: 2009yerel, secimId: 4290,  baslik: baslik_2009yerel.json }
+          - { anahtar: 2014yerel, secimId: 11979, baslik: baslik_2014yerel.json }
+          - { anahtar: 2019yerel, secimId: 16400, baslik: baslik_2019yerel.json }
+          - { anahtar: 2024yerel, secimId: 20260, baslik: baslik_yerel_2024.json }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Playwright
+        working-directory: scripts/pipelines/mahalle_veri
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+      - name: Cek
+        run: |
+          node scripts/pipelines/election_import/fetch_yerel_v2.js ${{ matrix.anahtar }} ${{ matrix.secimId }} \
+            scripts/pipelines/mahalle_veri/parti-sutun-eslemeleri/${{ matrix.baslik }} | tee cikti.log
+          mkdir -p cikti
+          cp scripts/pipelines/election_import/.work/${{ matrix.anahtar }}_v2_agrege.json cikti/${{ matrix.anahtar }}.json
+          HATA=$(grep -c '^FAILED' cikti.log || true)
+          OZET=$(python3 -c "import json;d=json.load(open('cikti/${{ matrix.anahtar }}.json'));print(len(d['iller']),'il',len(d['ilceler']),'ilce',sum(1 for a in d['ilceler'].values() if a.get('sandikSayisi')),'dolu ilce')")
+          echo "::notice title=${{ matrix.anahtar }}::$OZET, basarisiz sorgu: $HATA"
+          grep '^FAILED' cikti.log | head -20 | sed 's/^/::warning title=${{ matrix.anahtar }} hata::/' || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.anahtar }}
+          path: cikti/${{ matrix.anahtar }}.json
+
+  kaydet:
+    needs: cek
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: indirilen
+      - name: ysk-yerel-veri dalina yaz
+        run: |
+          mkdir -p data/raw/ysk/yerel-v2-agrege
+          cp indirilen/*/*.json data/raw/ysk/yerel-v2-agrege/
+          ls -la data/raw/ysk/yerel-v2-agrege
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B ysk-yerel-veri
+          git add data/raw/ysk/yerel-v2-agrege
+          git commit -m "YSK yerel secim agregeleri (butun partiler), run ${{ github.run_id }}"
+          git push -f origin ysk-yerel-veri
+          echo "::notice title=kaydedildi::$(ls data/raw/ysk/yerel-v2-agrege | tr '\n' ' ')"
