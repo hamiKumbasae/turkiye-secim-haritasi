@@ -18,9 +18,10 @@ jobs:
     steps:
       - name: Düz HTTP isteği
         run: |
-          curl -sS -o /dev/null -w "ana sayfa: %{http_code} (%{time_total}s)\n" --max-time 30 https://acikveri.ysk.gov.tr/ || echo "ana sayfa: bağlanamadı"
-          curl -sS --max-time 30 "https://acikveri.ysk.gov.tr/api/getIlceList?ilId=62" | head -c 300 || echo "api: bağlanamadı"
-          echo
+          A=$(curl -sS -o /dev/null -w "%{http_code} %{time_total}s" --max-time 30 https://acikveri.ysk.gov.tr/ 2>&1 || true)
+          echo "::notice title=curl ana sayfa::$A"
+          B=$(curl -sS --max-time 30 "https://acikveri.ysk.gov.tr/api/getIlceList?ilId=62" 2>&1 | head -c 200 | tr -d '\n\r' || true)
+          echo "::notice title=curl api::${B:-bos yanit}"
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -35,14 +36,14 @@ jobs:
             const p = await b.newPage();
             try {
               const r = await p.goto('https://acikveri.ysk.gov.tr/', { waitUntil: 'networkidle', timeout: 60000 });
-              console.log('sayfa durumu:', r && r.status());
+              console.log('::notice title=tarayici sayfa::' + (r && r.status()));
               const sonuc = await p.evaluate(async () => {
                 const x = await fetch('/api/getIlceList?ilId=62', { credentials: 'include' });
                 const t = await x.text();
-                return x.status + ' ' + t.slice(0, 300);
+                return x.status + ' ' + t.slice(0, 200);
               });
-              console.log('api:', sonuc);
-            } catch (e) { console.log('HATA:', String(e)); }
+              console.log('::notice title=tarayici api::' + sonuc.replace(/[\r\n]/g,' '));
+            } catch (e) { console.log('::notice title=tarayici hata::' + String(e).replace(/[\r\n]/g,' ').slice(0,300)); }
             await b.close();
           })();
           EOF
