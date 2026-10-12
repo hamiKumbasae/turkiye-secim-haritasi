@@ -1,0 +1,49 @@
+name: ysk-deneme
+
+# Geçici erişim testi: YSK açık veri portalı GitHub'ın sunucularından açılıyor mu?
+# Açılıyorsa yerel seçim verisi bütün partilerle buradan yeniden çekilecek; açılmıyorsa dosya silinecek.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/ysk-deneme.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  deneme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Düz HTTP isteği
+        run: |
+          curl -sS -o /dev/null -w "ana sayfa: %{http_code} (%{time_total}s)\n" --max-time 30 https://acikveri.ysk.gov.tr/ || echo "ana sayfa: bağlanamadı"
+          curl -sS --max-time 30 "https://acikveri.ysk.gov.tr/api/getIlceList?ilId=62" | head -c 300 || echo "api: bağlanamadı"
+          echo
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Tarayıcıyla istek (mevcut betiklerin yöntemi)
+        run: |
+          mkdir deneme && cd deneme && npm init -y >/dev/null && npm i -s playwright@1 >/dev/null
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > d.js <<'EOF'
+          const { chromium } = require('playwright');
+          (async () => {
+            const b = await chromium.launch();
+            const p = await b.newPage();
+            try {
+              const r = await p.goto('https://acikveri.ysk.gov.tr/', { waitUntil: 'networkidle', timeout: 60000 });
+              console.log('sayfa durumu:', r && r.status());
+              const sonuc = await p.evaluate(async () => {
+                const x = await fetch('/api/getIlceList?ilId=62', { credentials: 'include' });
+                const t = await x.text();
+                return x.status + ' ' + t.slice(0, 300);
+              });
+              console.log('api:', sonuc);
+            } catch (e) { console.log('HATA:', String(e)); }
+            await b.close();
+          })();
+          EOF
+          node d.js
