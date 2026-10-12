@@ -56,7 +56,7 @@
       currentYear = year;
       currentOylama = kayit.oylama || 'baskan';
       DATA = kayit;
-      MAJOR = DATA.majorPartiler;
+      MAJOR = digerSona(DATA.majorPartiler);
       ilByPlaka = Object.fromEntries(DATA.iller.map(p => [p.plaka, p]));
       districtsByPlaka = {};
       for(const d of DATA.ilceler){ (districtsByPlaka[d.plaka] ||= []).push(d); }

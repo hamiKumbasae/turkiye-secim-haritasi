@@ -124,7 +124,7 @@
     const wins = {};
     for(const p of DATA.iller){ wins[p.kazanan] = (wins[p.kazanan]||0) + 1; }
     const total = DATA.iller.length;
-    const order = [...MAJOR];
+    const order = digerSona([...new Set([...MAJOR, ...Object.keys(wins).filter(p => p === DIGER)])]);
     $('#seatbarTitle').textContent = 'İl Bazında Kazanan Parti (Vekil Verisi Mevcut Değil)';
     $('#majoritySub').textContent = total+' il — bu dönem için parti bazında vekil dağılımı kaynakta yok';
     for(const party of order){
@@ -155,7 +155,7 @@
     const total=Object.values(totals).reduce((a,b)=>a+b,0);
     $('#seatbarTitle').textContent=DATA.oylama==='igm' ? 'İl Genel Meclisi Oy Dağılımı' : 'Belediye Meclisleri Oy Dağılımı';
     $('#majoritySub').textContent=eligible.length+' ilin oy toplamı tutarlı kayıtları · '+(DATA.oylama==='igm' ? '2014 sonrası büyükşehirler kapsam dışında' : 'İllerdeki tüm belediye meclisleri; sandalye dağılımı değildir');
-    for(const [party,n] of Object.entries(totals).sort((a,b)=>b[1]-a[1])){
+    for(const [party,n] of Object.entries(totals).sort((a,b)=>(a[0]===DIGER)-(b[0]===DIGER) || b[1]-a[1])){
       if(!n) continue;
       const pct=n/total*100, seg=document.createElement('div'); seg.className='seatbar-seg'; seg.style.width=pct+'%'; seg.style.background=partyColor(party); seg.title=party+': '+fmt(n)+' oy · %'+pct.toFixed(2); track.appendChild(seg);
       const item=document.createElement('div'); item.className='legend-item'; item.innerHTML='<span class="swatch" style="background:'+partyColor(party)+'"></span><span class="n">%'+pct.toFixed(2)+'</span><b>'+escapeHtml(partyShort(party))+'</b>'; legend.appendChild(item);
@@ -168,7 +168,7 @@
     const wins = {};
     for(const p of DATA.iller){ wins[p.kazanan] = (wins[p.kazanan]||0) + 1; }
     const total = DATA.iller.length;
-    const order = [...MAJOR];
+    const order = digerSona([...new Set([...MAJOR, ...Object.keys(wins).filter(p => p === DIGER)])]);
     // 1950/1955 (contestType=municipal_indirect): belediye baskani halk
     // tarafindan DOGRUDAN secilmiyordu - "belediye başkanlığı" ifadesi
     // modern dogrudan secimlerle ayni sekilde kullanilamaz.

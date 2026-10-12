@@ -141,7 +141,7 @@
   function renderWinnerLegend(entities){
     const counts = {};
     for(const e of entities){ if(e.kazanan) counts[e.kazanan] = (counts[e.kazanan]||0)+1; }
-    const names = Object.keys(counts).sort((a,b)=>counts[b]-counts[a]);
+    const names = Object.keys(counts).sort((a,b)=>(a===DIGER)-(b===DIGER) || counts[b]-counts[a]);
     const wrap = $('#winnerLegend');
     if(!names.length){ wrap.innerHTML=''; return; }
     wrap.innerHTML = names.map(n=>

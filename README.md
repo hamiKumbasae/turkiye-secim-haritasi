@@ -209,6 +209,12 @@ kaynak ya da taranmış kitaplardan uzun bir okuma işi gerektirir:
   ([`docs/rapor/KITAP_DOGRULAMA_1963_1977.md`](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)). Kitabın
   yüzdesi ya da toplamıyla desteklenen farklar ve oyları geniş ölçüde farklı satırlar orada listeli;
   veriye işlenmedi.
+- **Ayrıştırılmamış "Diğer" (2009–2024 yerel, 2011–2023 genel):** YSK verisi işlenirken o seçimin büyük
+  partiler listesinde olmayan partiler tek bir "Diğer" toplamında birleştirilmiş; ayrıntılı ara dosyalar
+  depoda yok. 147 yerel seçim kaydında kazanan bu yüzden "Diğer" görünür (sitede "Diğer (ayrıştırılmamış)"
+  ve açıklama notuyla). Çözümü YSK açık verisini bütün partilerle yeniden çekmek. 1994–2004'te "Diğer",
+  DİE kitabındaki dağılım YSK toplamıyla birebir tuttuğu yerlerde partilere ayrıldı
+  (`scripts/pipelines/tuik_arsiv/diger_ayristir.py`; 405 kayıt, 24'ünde kazanan düzeldi); 10 kayıt kaldı.
 - **Kaba eşlemeler:** sonradan kurulan ve birden çok eski ilçeden pay alan bazı ilçeler (ör. Çukurova,
   Körfez, Aliağa, Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı
   (`geo/historical/idari/ilce_eslesme/*.csv`, güven `kaba`); köy düzeyinde kaynak bulunursa bölünebilir.

@@ -147,3 +147,11 @@ kullandığı için DSP oyları DEMTP, DTP oyları DYP, DYP oyları DEHAP diye y
 sonuç il toplamlarıyla karşılaştırmada 72/72 ilde aynı kayma görüldü; `extract_mahalli_ocr.py`'ye
 tabloya özel sütun listesi eklenip tablo yeniden okundu (değerler aynı, 2.997/3.000 satır birebir;
 yalnız etiketler ve 5 satırın doğrulama durumu değişti). Düzeltmeden sonra YSK ile 72/72 il birebir.
+
+## 'Diğer' ayrıştırması (2026-10-12)
+
+YSK arşivinin 1994/1999/2004 satırlarındaki 'Diğer' toplamı, bu kitaplardaki dağılım
+(`kaynak.tuik.digerDagilimi`) YSK toplamıyla birebir tuttuğunda ve DİE satırı iç kontrolden geçtiğinde
+partilere ayrıldı: `scripts/pipelines/tuik_arsiv/diger_ayristir.py` (1994: 204, 1999: 190, 2004: 11 satır;
+24 satırda kazanan değişti, ör. 1994 Kiğı: bağımsız aday). Kontrolden geçmeyen satırlar sütun kayması
+olabileceği için ayrılmadı. Yerel import yeniden çalıştırılırsa bu betik de ardından çalıştırılmalıdır.

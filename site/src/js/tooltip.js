@@ -26,7 +26,7 @@
     if(mode==='winner'){
       const wOy = obj.oy[obj.kazanan];
       const wSeatBased = isSeatBased(wOy);
-      const partyLabel = obj.kazanan ? escapeHtml(partyShort(obj.kazanan)) : '—';
+      const partyLabel = obj.kazanan ? escapeHtml(kazananEtiketi(obj.kazanan)) : '—';
       const rowLabel = wSeatBased ? ('Meclis çoğunluğu: '+partyLabel) : (partyLabel+' önde');
       const seatInfo = wSeatBased ? (resultPercentLabel(wOy)+' meclis payı'+(wOy.sandalye!=null?' · '+wOy.sandalye+' sandalye':''))
         : isOranMode() ? (resultPercentLabel(wOy)+(wOy?' · '+resultQuantity(wOy):''))

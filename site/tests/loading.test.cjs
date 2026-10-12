@@ -455,3 +455,23 @@ test('open data page lists every election once and every link resolves', async t
   for(const h of hrefs) await fs.access(path.join(root, h));
   assert.match(await page.locator('a[rel="license"]').getAttribute('href'), /by-sa\/4\.0/);
 });
+
+test('Diğer is always the last row of the panel and opens to show the small parties inside', async t => {
+  const {page} = await setup(t);
+  await ready(page);
+  await page.goto('http://atlas.test/#secim=1999yerel&il=1&ilce=TR-D-01-008');
+  await ready(page);
+  const grup = page.locator('#dParties > .diger-grup');
+  await grup.waitFor();
+  assert.equal(await page.locator('#dParties > *').last().evaluate(el => el.classList.contains('diger-grup')), true);
+  assert.equal(await grup.locator('.diger-ic .party-row').first().isVisible(), false);
+  await grup.locator('summary').click();
+  const ic = await grup.locator('.diger-ic .party-row .name').allTextContents();
+  assert.deepEqual(ic, ['BBP', 'MP', 'ÖDP', 'DEMTP', 'İP', 'Ayrıştırılmamış']);
+  // kazanan 'Diğer' ise adi ve notu bunun bir toplam oldugunu soyler
+  await page.goto('http://atlas.test/#secim=2019yerel&il=10');
+  await ready(page);
+  await page.locator('#dName').filter({hasText: 'Balıkesir'}).waitFor();
+  assert.equal(await page.locator('#dHeroName').textContent(), 'Diğer (ayrıştırılmamış)');
+  assert.match(await page.locator('#dInfoNote').textContent(), /ayrıştırılmamış/);
+});

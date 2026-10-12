@@ -73,8 +73,9 @@
       ...(DATA.ilceler || []).filter(r => r.oy && Object.keys(r.oy).length || r.not).map(r => ['ilçe', r]),
     ];
     if(hasYurtdisiData()) satirlar.push(['yurt dışı', Object.assign({ad: 'Yurt dışı'}, DATA.yurtdisi)]);
-    const partiler = [...MAJOR];
+    let partiler = [...MAJOR];
     for(const [, r] of satirlar) for(const p of Object.keys(r.oy || {})) if(!partiler.includes(p)) partiler.push(p);
+    partiler = digerSona(partiler);
     const vekilVar = satirlar.some(([, r]) => r.vekil && Object.keys(r.vekil).length);
     const sandalyeVar = satirlar.some(([, r]) => Object.values(r.oy || {}).some(isSeatBased));
     const bas = ['seçim', 'düzey', 'plaka', 'il', 'ilçe', 'seçmen', 'sandık', 'geçerli oy', 'katılım %', 'kazanan'];

@@ -172,7 +172,7 @@
         el.setAttribute('fill', e.kazanan ? partyColor(e.kazanan) : 'var(--map-empty)');
         if(e.kazanan) sayi[e.kazanan] = (sayi[e.kazanan] || 0) + 1;
       }
-      lejant.innerHTML = Object.keys(sayi).sort((a, b) => sayi[b] - sayi[a]).map(n =>
+      lejant.innerHTML = Object.keys(sayi).sort((a, b) => (a === DIGER) - (b === DIGER) || sayi[b] - sayi[a]).map(n =>
         '<span class="wl-item"><span class="swatch" style="background:' + partyColor(n) + '"></span>' + escapeHtml(partyShort(n)) + '</span>').join('');
     } else {
       const key = mod === 'parti' ? currentMapParty : null;
@@ -199,7 +199,7 @@
     } else if(currentMapMode === 'katilim'){
       satir = ['Katılım', e.katilim != null ? '%' + e.katilim.toFixed(2) : '—'];
     } else {
-      satir = [e.kazanan ? partyShort(e.kazanan) + ' önde' : 'Kazanan yok', e.kazanan ? resultPercentLabel(e.oy[e.kazanan]) : ''];
+      satir = [e.kazanan ? kazananEtiketi(e.kazanan) + ' önde' : 'Kazanan yok', e.kazanan ? resultPercentLabel(e.oy[e.kazanan]) : ''];
     }
     tip.innerHTML = '<b>' + escapeHtml(e.ad) + '</b><div class="row"><span>' + escapeHtml(karsiEtiket(KARSI.yil)) + '</span></div>' +
       '<div class="row"><span>' + escapeHtml(satir[0]) + '</span><span>' + escapeHtml(satir[1]) + '</span></div>';

@@ -71,7 +71,7 @@
       : isIndirectElection ? 'Belediye Meclisi Seçiminde Birinci'
       : 'Kazanan';
     const heroPct = heroOy ? resultPercent(heroOy) : null;
-    setHero(heroLabel, p.kazanan && partyShort(p.kazanan), p.kazanan, heroPct);
+    setHero(heroLabel, p.kazanan && kazananEtiketi(p.kazanan), p.kazanan, heroPct);
 
     // council_seats (1950): TUM iller sandalye-bazli, tek aciklama yeterli.
     // mixed (1955): bazi illerde gercek oy sayisi da biliniyor - kullaniciya
@@ -86,6 +86,7 @@
 
     const note = [p.not, p.veriNotu, p.duzeltmeKaynagi && p.duzeltmeKaynagi.aciklama].filter(Boolean).join(' ');
     if(note){ $('#dInfoNote').style.display = 'flex'; $('#dInfoNote').textContent = (kaynaklaTutmuyor(p) ? '⚠ Kaynakla tam tutmuyor. ' : 'ⓘ ') + note; }
+    if(p.kazanan === DIGER && !note){ $('#dInfoNote').style.display = 'flex'; $('#dInfoNote').textContent = DIGER_KAZANAN_NOTU; }
     $('#dSeatsLabel').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? 'Vekil / Sandalye' : 'Milletvekili';
     $('#dSeats').textContent = (DATA.tur !== 'genel' || YEARS_NO_VEKIL.has(currentYear)) ? (p.toplamVekil || '—') : p.toplamVekil;
     $('#dTurnout').textContent = p.katilim!=null ? '%'+p.katilim.toFixed(2) : '—';
@@ -127,23 +128,61 @@
       : isSeatBased(r.oy) ? (r.oy.sandalye||0) : (r.oy.oy||0);
     const allNamed = Object.entries(entity.oy||{}).map(([name,oy])=>({name, oy, vekil:(entity.vekil&&entity.vekil[name])||0}))
       .filter(r=>r.oy && (r.oy.oy>0 || r.oy.sandalye>0));
+    // 'Diğer' (kaynakta ayrilmamis kucuk partiler toplami) siralamaya girmez: en sondaki gruba gider
+    const ayrilmamis = allNamed.find(r=>r.name===DIGER);
+    const adli = allNamed.filter(r=>r.name!==DIGER);
     const majorSet = new Set(MAJOR);
-    const primary = allNamed.filter(r=>majorSet.has(r.name)).sort((a,b)=> rank(b) - rank(a));
-    const extra = allNamed.filter(r=>!majorSet.has(r.name)).sort((a,b)=> rank(b) - rank(a));
+    const primary = adli.filter(r=>majorSet.has(r.name)).sort((a,b)=> rank(b) - rank(a));
+    const extra = adli.filter(r=>!majorSet.has(r.name)).sort((a,b)=> rank(b) - rank(a));
     // primary bossa (orn. yerel'de MAJOR il-kazananlari listesi bu ilde/ilcede hic
-    // gecmiyorsa) en cok oy alan birkac partiyi one al, kalanlari "digerleri"ne birak.
+    // gecmiyorsa) en cok oy alan birkac partiyi one al, kalanlari "Diğer" grubuna birak.
     const rows = primary.length ? primary : extra.splice(0, Math.min(5, extra.length));
-    if(DATA.tur !== 'yerel' && entity.digerOy>0) rows.push({name:'Diğer', oy:{oy:entity.digerOy, oran:entity.digerOran}, vekil:0});
+    // Kazanan ya da %10 ve ustu alan bir parti/aday "Diğer" grubunun icinde kalmasin: ust listeye
+    // alinir (ornek 1994 Hozat'ta kazanan bagimsiz aday; Bağımsız o yilin buyuk partileri arasinda degil).
+    for(let i = extra.length - 1; i >= 0; i--){
+      const r = extra.at(i), pct = resultPercent(r.oy);
+      if(r.name === entity.kazanan || (pct != null && pct >= 10)) rows.push(...extra.splice(i, 1));
+    }
+    rows.sort((a,b)=> rank(b) - rank(a));
     const wrap = $('#dParties'); wrap.innerHTML='';
     for(const r of rows) wrap.appendChild(partyRowEl(r));
-    if(extra.length){
-      const details = document.createElement('details'); details.className='party-more';
-      const summary = document.createElement('summary');
-      summary.textContent = 'Diğer partileri ve bağımsızları göster ('+extra.length+')';
-      details.appendChild(summary);
-      for(const r of extra) details.appendChild(partyRowEl(r));
-      wrap.appendChild(details);
+    const grup = [...extra];
+    if(ayrilmamis) grup.push(ayrilmamis);
+    if(DATA.tur !== 'yerel' && entity.digerOy>0 && !ayrilmamis) grup.push({name:DIGER, oy:{oy:entity.digerOy, oran:entity.digerOran}, vekil:0});
+    if(grup.length) wrap.appendChild(digerGrubuEl(grup));
+  }
+
+  // "Diğer" satiri: tiklaninca icindeki kucuk partiler (ve kaynagin ayirmadigi toplam) acilir.
+  // Satirdaki deger grubun toplamidir; dogrulanmamis bir yuzde varsa toplam yuzde de gosterilmez.
+  function digerGrubuEl(grup){
+    const koltuk = grup.some(r=>isSeatBased(r.oy));
+    const top = (alan) => grup.reduce((s,r)=>s+(r.oy[alan]||0), 0);
+    const yuzdeler = grup.map(r=>resultPercent(r.oy));
+    const toplamYuzde = yuzdeler.every(v=>v!=null) ? Math.round(yuzdeler.reduce((a,b)=>a+b,0)*100)/100 : null;
+    const ozet = koltuk
+      ? {sandalye: top('sandalye'), oranSandalye: toplamYuzde}
+      : {oy: top('oy'), oran: toplamYuzde, yuzdeDogrulanmadi: toplamYuzde==null || undefined};
+    const vekil = grup.reduce((s,r)=>s+(r.vekil||0), 0);
+    const details = document.createElement('details'); details.className='party-more diger-grup';
+    const summary = document.createElement('summary');
+    const satir = partyRowEl({name:DIGER, oy:ozet, vekil});
+    const ipucu = document.createElement('span'); ipucu.className='diger-ipucu';
+    ipucu.textContent = 'ayrıntı (' + grup.length + ')';
+    satir.title = 'Kaynakta ayrı sayılmayan ya da küçük partiler ve adaylar; içindekileri görmek için tıklayın';
+    satir.querySelector('.name').appendChild(ipucu);
+    summary.appendChild(satir);
+    details.appendChild(summary);
+    const ic = document.createElement('div'); ic.className='diger-ic';
+    for(const r of grup.filter(r=>r.name!==DIGER)) ic.appendChild(partyRowEl(r));
+    const ayr = grup.find(r=>r.name===DIGER);
+    if(ayr){
+      const el = partyRowEl(ayr);
+      el.querySelector('.name').textContent = 'Ayrıştırılmamış';
+      el.title = 'Kaynak bu küçük partileri tek bir toplam olarak veriyor; hangi partiye ait oldukları bu veride yok.';
+      ic.appendChild(el);
     }
+    details.appendChild(ic);
+    return details;
   }
 
   function selectMahalle(row, plaka, geomId){
@@ -170,7 +209,7 @@
 
     const allNamed = Object.entries(row.oy).map(([name,oy])=>({name, oy}))
       .filter(r=>r.oy && r.oy.oy>0)
-      .sort((a,b)=> b.oy.oy - a.oy.oy);
+      .sort((a,b)=> (a.name===DIGER)-(b.name===DIGER) || b.oy.oy - a.oy.oy);
     const wrap = $('#dParties'); wrap.innerHTML='';
     for(const r of allNamed) wrap.appendChild(partyRowEl(r));
     $('#districtSearch').style.display='none';
@@ -238,12 +277,13 @@
     $('#dInfoNote').style.display='none';
     const note = [d.not, d.veriNotu, d.duzeltmeKaynagi && d.duzeltmeKaynagi.aciklama].filter(Boolean).join(' ');
     if(note){ $('#dInfoNote').style.display='flex'; $('#dInfoNote').textContent=(kaynaklaTutmuyor(d) ? '⚠ Kaynakla tam tutmuyor. ' : 'ⓘ ')+note; }
+    if(d.kazanan === DIGER && !note){ $('#dInfoNote').style.display='flex'; $('#dInfoNote').textContent=DIGER_KAZANAN_NOTU; }
     $('#dName').textContent = d.ad;
     $('#dPlaka').textContent = p ? p.ad : '';
 
     const heroOy = d.kazanan ? d.oy[d.kazanan] : null;
     const heroLabel = DATA.tur==='referandum' ? 'Sonuç' : 'Kazanan';
-    setHero(heroLabel, d.kazanan && partyShort(d.kazanan), d.kazanan, heroOy ? resultPercent(heroOy) : null);
+    setHero(heroLabel, d.kazanan && kazananEtiketi(d.kazanan), d.kazanan, heroOy ? resultPercent(heroOy) : null);
 
     // Milletvekili sandalyesi il duzeyinde tahsis edilir (secim cevresi = il),
     // ilce kaydinin toplamVekil'i anlamsizdir (hep 0) - bunun yerine ilcenin

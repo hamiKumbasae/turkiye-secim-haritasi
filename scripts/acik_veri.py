@@ -115,6 +115,8 @@ def secim_csv(anahtar, kayit):
         for p in (r.get("oy") or {}):
             if p not in partiler:
                 partiler.append(p)
+    if "Diğer" in partiler:  # sitedeki digerSona ile ayni: toplam satir her zaman en sonda
+        partiler = [p for p in partiler if p != "Diğer"] + ["Diğer"]
     vekil_var = any(r.get("vekil") for _, r in satirlar)
     sandalye_var = any(_koltuk_bazli(o) for _, r in satirlar for o in (r.get("oy") or {}).values())
     bas = ["seçim", "düzey", "plaka", "il", "ilçe", "seçmen", "sandık", "geçerli oy", "katılım %", "kazanan"]
@@ -155,7 +157,7 @@ def mahalle_csv(anahtar, kayit, oylar, mahalle_geo):
         for v in satirlar.values():
             for p, o in (v.get("oy") or {}).items():
                 toplam[p] = toplam.get(p, 0) + (o.get("oy") or 0)
-    partiler = sorted(toplam, key=lambda p: (-toplam[p], p))
+    partiler = sorted(toplam, key=lambda p: (p == "Diğer", -toplam[p], p))
     bas = ["seçim", "plaka", "il", "ilçe", "ilçe geomId", "mahalle osm id", "mahalle", "seçmen", "sandık",
            "katılım %", "kazanan"]
     for p in partiler:

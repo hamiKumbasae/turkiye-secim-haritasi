@@ -38,6 +38,18 @@
 
   // Bir parti anahtarinin GOSTERIM adi ('PARTY[x] ? PARTY[x].short : x' -
   // eskiden 15 farkli yerde tekrar tekrar yazilmisti, artik TEK yerden).
+  // 'Diğer' bir parti degil: kaynakta ayri verilmeyen kucuk partilerin toplami. Hicbir siralamada
+  // partilerle yarismaz, her listede (panel, tablo, lejant, CSV) en sona konur; kazanan
+  // gorunuyorsa adi bunun bir toplam oldugunu soyler.
+  const DIGER = 'Diğer';
+  function digerSona(liste){
+    return liste.includes(DIGER) ? [...liste.filter(p => p !== DIGER), DIGER] : liste;
+  }
+  function kazananEtiketi(name){
+    return name === DIGER ? 'Diğer (ayrıştırılmamış)' : partyShort(name);
+  }
+  const DIGER_KAZANAN_NOTU = 'ⓘ En çok oyu \'Diğer\' alıyor: kaynakta ayrı verilmeyen küçük partilerin toplamı. Bu kayıtta kazanan parti ayrıştırılmamış.';
+
   function partyShort(name){
     return PARTY[name] ? PARTY[name].short : name;
   }

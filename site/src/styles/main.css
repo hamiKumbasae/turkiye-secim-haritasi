@@ -249,6 +249,16 @@
   .party-more>summary:before{content:'▸ '; }
   .party-more[open]>summary:before{content:'▾ '; }
   .party-more>summary:hover{color:var(--ink-1);}
+  .diger-grup>summary{padding:0;}
+  .diger-grup>summary:before, .diger-grup[open]>summary:before{content:none;}
+  .diger-grup>summary::marker{content:'';}
+  .diger-grup>summary .party-row{border-bottom:none;}
+  .diger-grup .diger-ipucu{font-weight:400; color:var(--ink-3); font-size:11.5px; margin-left:6px;}
+  .diger-grup .diger-ipucu:before{content:'▸ ';}
+  .diger-grup[open] .diger-ipucu:before{content:'▾ ';}
+  .diger-grup>summary:hover .name{text-decoration:underline; text-underline-offset:2px;}
+  .diger-ic{margin:2px 0 4px 17px; padding-left:10px; border-left:2px solid var(--line-soft);}
+  .diger-ic .party-row{font-size:12.5px;}
 
   .detail-districts-head{display:flex; justify-content:space-between; align-items:center; margin:16px 0 8px; padding-top:14px; border-top:1px solid var(--line-soft);}
   .district-search{width:110px; font:inherit; font-size:12px; padding:5px 9px; border-radius:6px; border:1px solid var(--line); background:var(--surface-2); color:var(--ink-1);}

@@ -31,3 +31,13 @@ test('Tillo is present in all eight modern council ballot files',()=>{
   assert.equal(Object.values(rows[0].oy).reduce((s,v)=>s+v.oy,0),rows[0].gecerliOy);
  }
 });
+test('1994-2004 Diğer totals are split only where the DİE breakdown matches YSK exactly',()=>{
+ const d=election('1994yerel'),kigi=d.ilceler.find(r=>r.plaka===12&&r.ad==='Kiğı');
+ assert.equal(kigi.kazanan,'Bağımsız');assert.equal(kigi.oy['Diğer'],undefined);
+ assert.deepEqual(kigi.kaynak.digerAyristirma.dagilim,{'Bağımsız':751,'DSP':77});
+ for(const y of ['1994yerel','1999yerel','2004yerel']) for(const r of [...election(y).iller,...election(y).ilceler]){
+  const a=r.kaynak&&r.kaynak.digerAyristirma; if(!a) continue;
+  assert.equal(Object.values(a.dagilim).reduce((s,v)=>s+v,0),a.digerOy,y+' '+r.ad);
+  assert.equal(r.kaynak.tuikKullanilmadi,undefined,y+' '+r.ad+': kontrolden geçmeyen DİE satırı kullanılmamalı');
+ }
+});
