@@ -29,6 +29,10 @@ açılıştan harita çizilene dek): ~1,1 sn.
 
 - **Harita modları:** Kazanan, Katılım, Parti (oy oranı) ve **Değişim** (seçilen partinin aynı
   türdeki önceki seçime göre oy oranı farkı, yüzde puan; sınırı değişen ilçe karşılaştırılmaz).
+- **Seçim geçmişi:** genel seçim görünümünde bir ile ya da ilçeye tıklayınca detay panelinde o yerin
+  1950–2023 (ilçede 1961–2023) genel seçimlerindeki parti oy oranları çizgi grafikle gösterilir. İlçe
+  serisi bugünkü ilçeye göredir: ilçe henüz ayrı değilken bağlı olduğu ilçenin sonucu içi boş noktayla
+  çizilir (`scripts/gecmis.py` → `data/gecmis/genel.json`).
 - **Paylaşılabilir bağlantı:** seçim, il, ilçe/mahalle, mod, parti ve oylama türü adresin `#`
   kısmında (`#secim=1977&il=6&mod=parti&parti=CHP`); "Bağlantıyı kopyala" düğmesi.
 - **Kaynaklar ve yöntem:** [`yontem.html`](yontem.html) — kaynaklar, tarihsel sınırlar, harita

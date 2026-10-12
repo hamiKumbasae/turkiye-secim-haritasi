@@ -20,6 +20,7 @@ Cikti (varsayilan: dist_static/, --out ile degistirilebilir):
   geo/harita_notlari.json            - 'veri yok' poligon aciklamalari (tarihsel idari katman)
   geo/meclis_2024.json
   geo/eras/<era>.geojson             - 9 tarihsel il-sinirlari donemi
+  data/gecmis/genel.json             - il/ilce basina genel secim gecmisi (scripts/gecmis.py)
 
 
 Kullanim:
@@ -32,6 +33,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from common.election_io import load_all_elections  # noqa: E402
+from gecmis import secim_gecmisi  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA_NORM = ROOT / "data" / "normalized"
@@ -82,6 +84,7 @@ def public_files(public=True) -> dict:
     ekle("geo/mahalle_coverage.json", mahalle_coverage)
     for name in ERA_ADLARI:
         ekle(f"geo/eras/{name}.geojson", load_json(GEO_HIST / f"turkiye_il_sinirlari_{name}.geojson"))
+    ekle("data/gecmis/genel.json", secim_gecmisi())
     return files
 
 

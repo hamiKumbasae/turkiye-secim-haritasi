@@ -210,6 +210,21 @@
 
   .detail-results-head, .detail-districts-head>span:first-child{font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-3); font-weight:700; margin-bottom:8px; display:block;}
 
+  .gecmis{margin-top:18px;}
+  .gecmis .gx-alt{font-weight:400; text-transform:none; letter-spacing:0; margin-left:4px;}
+  .gecmis-svg{width:100%; height:auto; display:block; overflow:visible;}
+  .gecmis-svg .gx-izgara{stroke:var(--line-soft); stroke-width:1;}
+  .gecmis-svg .gx-eksen{stroke:var(--line); stroke-width:1;}
+  .gecmis-svg .gx-etiket{fill:var(--ink-3); font-size:9.5px; font-variant-numeric:tabular-nums;}
+  .gecmis-svg .gx-simdi{stroke:var(--ink-3); stroke-width:1; stroke-dasharray:3 3;}
+  .gecmis-svg .gx-cizgi{fill:none; stroke-width:1.8; stroke-linejoin:round; stroke-linecap:round;}
+  .gecmis-svg .gx-nokta{stroke-width:1.2;}
+  .gx-lejantlar{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:6px; font-size:12px; color:var(--ink-2);}
+  .gx-lejant{display:inline-flex; align-items:center; gap:5px;}
+  .gx-lejant .dot{width:8px; height:8px; border-radius:50%; display:inline-block;}
+  .gx-son, .gx-son-baslik{color:var(--ink-3); font-variant-numeric:tabular-nums;}
+  .gx-son-baslik{font-size:11px; margin-right:-4px;}
+  .gx-not{margin:8px 0 0; font-size:11.5px; line-height:1.45; color:var(--ink-3);}
   .party-row{position:relative; padding:7px 0; font-size:13px; border-bottom:1px solid var(--line-soft);}
   .party-row:last-child{border-bottom:none;}
   .party-row .prow-top{display:flex; align-items:center; gap:8px; margin-bottom:5px;}

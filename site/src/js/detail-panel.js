@@ -111,6 +111,7 @@
     } else {
       $('#dDistrictList').innerHTML='';
     }
+    gecmisGoster({tur:'il', plaka});
   }
 
   // il (p) VEYA ilce (d) kaydinin oy['<parti>'] sozlugunu #dParties'e cizer -
@@ -174,6 +175,7 @@
     for(const r of allNamed) wrap.appendChild(partyRowEl(r));
     $('#districtSearch').style.display='none';
     $('#dDistrictList').style.display='none';
+    gecmisGizle();
   }
 
   // Bir ilce kaydinda GERCEK sonuc var mi (bos/hic olusturulmamis 'oy' sozlugu
@@ -255,6 +257,7 @@
 
     $('#dResultsHead').textContent = 'Sonuçlar';
     renderPartyResults(d);
+    gecmisGoster({tur:'ilce', geomId: d.geomId});
   }
 
   // ---------------- 2024 yerel: ilce meclisi ikincil gorunumu (sag panel) ----------------

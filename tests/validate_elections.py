@@ -509,6 +509,29 @@ def check_site_copy():
           (ROOT / "yontem.html").read_bytes() == (ROOT / "site" / "yontem.html").read_bytes())
 
 
+def check_secim_gecmisi():
+    """Detay panelindeki secim gecmisi grafigi (scripts/gecmis.py): her bugunku ilce 1961-2023
+    arasindaki 17 genel secimin hepsinde bir nokta alir, son nokta ilcenin kendisine aittir ve
+    sonradan kurulan ilce once bagli oldugu ilcenin adini tasir (ornek: Aladag -> Karaisali)."""
+    from gecmis import secim_gecmisi
+    v = secim_gecmisi()
+    anahtarlar = [s["k"] for s in v["secimler"]]
+    ilk_ilce = anahtarlar.index("1961")
+    bad = []
+    for g, seri in v["ilce"].items():
+        if [n[0] for n in seri] != list(range(ilk_ilce, len(anahtarlar))):
+            bad.append(f"{g}: {len(seri)} nokta")
+        elif len(seri[-1]) > 2:
+            bad.append(f"{g}: son secim baska ilceye ait")
+    if len(v["ilce"]) != len(v["adlar"]):
+        bad.append(f"{len(v['adlar']) - len(v['ilce'])} ilcenin gecmisi yok")
+    aladag = {anahtarlar[n[0]]: (n[2] if len(n) > 2 else None) for n in v["ilce"].get("TR-D-01-001", [])}
+    if aladag.get("1983") != "Karaisalı" or aladag.get("1991") is not None:
+        bad.append(f"Aladag eslemesi beklenmedik: 1983={aladag.get('1983')}, 1991={aladag.get('1991')}")
+    check(f"seçim geçmişi: {len(v['ilce'])} ilçe × {len(anahtarlar) - ilk_ilce} genel seçim, {len(v['il'])} il",
+          not bad, "; ".join(bad[:5]))
+
+
 def main():
     check_site_copy()
     check_completed_records()
@@ -522,6 +545,7 @@ def main():
     check_dtp_bdp_bagimsiz_attribution()
     check_historical_district_geometry()
     check_ilce_secim()
+    check_secim_gecmisi()
     check_dist_size()
     check_index_in_sync_with_sources()
     check_reproducibility()
