@@ -1,0 +1,40 @@
+name: ysk-bagimsiz-aday
+
+# Bagimsiz oy toplaminin onde gorundugu ilcelerde bagimsizlari aday aday ceker
+# (fetch_bagimsiz_aday.js). Cikti "ysk-yerel-veri" dalina eklenir.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/ysk-bagimsiz-aday.yml", "scripts/pipelines/election_import/bagimsiz_aday_sorgu.json"]
+
+permissions:
+  contents: write
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Playwright
+        working-directory: scripts/pipelines/mahalle_veri
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+      - name: Cek ve ysk-yerel-veri dalina ekle
+        run: |
+          node scripts/pipelines/election_import/fetch_bagimsiz_aday.js \
+            scripts/pipelines/election_import/bagimsiz_aday_sorgu.json /tmp/bagimsiz-aday.json | tee cikti.log
+          sed 's/^/::notice title=aday::/' cikti.log | head -40
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin ysk-yerel-veri
+          git checkout -B ysk-yerel-veri origin/ysk-yerel-veri
+          cp /tmp/bagimsiz-aday.json data/raw/ysk/yerel-v2-agrege/bagimsiz-aday.json
+          git add data/raw/ysk/yerel-v2-agrege/bagimsiz-aday.json
+          git commit -m "YSK bagimsiz aday oylari (aday aday), run ${{ github.run_id }}"
+          git push origin ysk-yerel-veri
