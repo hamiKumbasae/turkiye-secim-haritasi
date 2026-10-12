@@ -10,7 +10,7 @@ GÜNCEL sınırlardan geriye doğru sentezlenmiş.
 güncel sınır kümesi, burası ise "o yıl nasıl görünüyordu" sorusuna cevap
 veren BİRDEN FAZLA zaman dilimi (era) kümesi.
 
-Kaynak: `~/Desktop/2023_Secim_Verileri/` (bu depo dışı, önceki oturum),
+Kaynak: `2023_Secim_Verileri/` (bu depo dışı, önceki oturum),
 2026-09-22'de olduğu gibi kopyalandı. İçerik `index.html`'e gömülü
 karşılıklarıyla (JSON içerik düzeyinde, serileştirme farklı olsa da)
 doğrulandı — bkz. bu klasördeki `checksums.sha256` ve `../../data/

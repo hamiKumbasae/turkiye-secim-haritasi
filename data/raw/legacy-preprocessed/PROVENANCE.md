@@ -1,6 +1,6 @@
 # Kaynak
 
-Bu klasördeki dosyalar, `~/Desktop/2023_Secim_Verileri/` (bu depo DIŞINDA,
+Bu klasördeki dosyalar, `2023_Secim_Verileri/` (bu depo DIŞINDA,
 önceki bir oturumda çalışılan bir dış üretim klasörü) içinden 2026-09-22'de
 olduğu gibi kopyalandı.
 

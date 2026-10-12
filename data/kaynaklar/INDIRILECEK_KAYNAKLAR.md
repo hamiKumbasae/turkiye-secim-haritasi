@@ -34,7 +34,7 @@ YSK dosyaları dijital metin (arama sonucunda tablo başlığı metin olarak gö
 (474 URL, desenden üretildi, test edilmedi). Mac Terminal'de toplu indirme:
 
 ```sh
-mkdir -p ~/Desktop/"seçimlerimin kodları"/ysk-meclis && cd ~/Desktop/"seçimlerimin kodları"/ysk-meclis
+mkdir -p ysk-meclis && cd ysk-meclis
 curl -fsSL https://raw.githubusercontent.com/hamiKumbasae/turkiye-secim-haritasi/main/data/kaynaklar/ysk_meclis_1994_2004_url.txt \
   | grep '^https' | xargs -n1 curl -fsSO -A "Mozilla/5.0"
 ```

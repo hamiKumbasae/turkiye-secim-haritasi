@@ -37,7 +37,7 @@ tetiklenebilir.
 2011 sonrası genel/yerel/CB seçimleri ile 2010/2017 referandumlarının il/ilçe
 düzeyi verisinin birincil kaynağı `secim.haberturk.com`. Bu sitenin kendi ham
 sayfa çıktısı (HTML/JSON, hangi biçimde kazınmışsa) **hiçbir zaman bu depoda
-veya `~/Desktop/2023_Secim_Verileri/`'de ayrı dosyalar olarak saklanmamış** —
+veya `2023_Secim_Verileri/`'de ayrı dosyalar olarak saklanmamış** —
 dış üretim script'i muhtemelen sayfaları anlık işleyip doğrudan
 `data/raw/legacy-preprocessed/`'deki toparlanmış CSV'lere yazmış, ara ham
 çıktıyı tutmamış.

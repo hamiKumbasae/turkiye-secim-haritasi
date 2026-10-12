@@ -24,7 +24,7 @@ anahtarlarıyla birebir aynıdır, örn. `2023`, `2014yerel`, `2017referandum`,
 4. **mertnuhoglu/secim_verileri** (GitHub, memurlar.net kaynaklı) — 1991-2007
    genel seçimlerinin ilçe düzeyi kırılımı (Wikipedia sadece il düzeyi veriyor).
 
-> **Not:** `~/Desktop/2023_Secim_Verileri/OKUBENI.md` (bu projenin dışında,
+> **Not:** `2023_Secim_Verileri/OKUBENI.md` (bu projenin dışında,
 > önceki bir oturumun ürettiği dış üretim script'inin notu) 2026-09-19'da
 > "YSK'nin açık veri portalı sandık bazlı sonuçları toplu biçimde
 > yayımlamıyor" diyordu. Bu **yanlıştı** — YSK'nin `getSecimSandikSonucList`

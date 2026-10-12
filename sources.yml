@@ -16,13 +16,13 @@
 #   derived   — başka bir kaynaktan (örn. ilçe verisinden il'e toplanarak) türetilmiş
 #   estimated — gerçek veri yokluğunda varsayımla hesaplanmış
 #
-# "OKUBENI" = ~/Desktop/2023_Secim_Verileri/OKUBENI.md — bu dosyanın çoğu, o
+# "OKUBENI" = 2023_Secim_Verileri/OKUBENI.md — bu dosyanın çoğu, o
 # belgenin 2026-09-19/20 tarihli notlarının transkripsiyonudur. "session" =
 # bu depoya 2026-09-21/22'de eklenen mahalle-düzeyi YSK verisi.
 
 meta:
   transcribed_at: "2026-09-22"
-  transcribed_from: "~/Desktop/2023_Secim_Verileri/OKUBENI.md (repo dışı, dış üretim script'inin notu)"
+  transcribed_from: "2023_Secim_Verileri/OKUBENI.md (repo dışı, dış üretim script'inin notu)"
   verified_against_keys: >
     index.html'in window.__EMBEDDED_GZ__["secim_tarihi_data.json"].secimler
     sözlüğünün anahtar listesiyle python3 üzerinden karşılaştırıldı — bu dosyadaki
