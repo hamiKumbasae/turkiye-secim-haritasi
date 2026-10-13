@@ -4,9 +4,6 @@ name: ysk-bagimsiz-aday
 # (fetch_bagimsiz_aday.js). Cikti "ysk-yerel-veri" dalina eklenir.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: [".github/workflows/ysk-bagimsiz-aday.yml", "scripts/pipelines/election_import/bagimsiz_aday_sorgu.json"]
 
 permissions:
   contents: write

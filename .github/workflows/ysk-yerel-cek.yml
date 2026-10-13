@@ -4,12 +4,9 @@ name: ysk-yerel-cek
 # agregelerini BUTUN parti sutunlariyla ceker (fetch_yerel_v2.js). Portal bu depoyu gelistiren
 # ortamdan acilmiyor, GitHub sunucularindan aciliyor. Ciktilar data/raw/ysk/yerel-v2-agrege/ altina
 # yazilip "ysk-yerel-veri" dalina gonderilir; main'e incelendikten sonra alinir
-# (scripts/pipelines/election_import/diger_ayristir_yerel.py).
+# (scripts/pipelines/election_import/diger_ayristir_ysk.py).
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: [".github/workflows/ysk-yerel-cek.yml"]
 
 permissions:
   contents: read

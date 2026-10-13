@@ -26,7 +26,7 @@ sütunundadır (`ballot_votes.js`).
 ## Ne için kullanıldı
 
 `merge_yerel_v2.py` büyük partiler dışındaki partileri tek bir `Diğer` satırında topluyordu.
-`diger_ayristir_yerel.py` bu agregelerle `Diğer`i partilere ayırdı (kural ve sonuç sayıları
+`diger_ayristir_ysk.py` bu agregelerle `Diğer`i partilere ayırdı (kural ve sonuç sayıları
 betiğin başında ve `scripts/pipelines/election_import/PROVENANCE.md` içinde).
 
 ## Bilinen sınırlar

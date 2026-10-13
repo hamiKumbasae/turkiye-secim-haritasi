@@ -1,6 +1,6 @@
 // Verilen ilcelerde bagimsiz adaylarin oylarini ADAY ADAY toplar (fetch_yerel_v2.js bagimsizlari
 // tek toplamda birlestirir). Bir ilcede bagimsizlarin TOPLAMI en cok oyu almis gorunuyorsa kazananin
-// tek bir bagimsiz aday olup olmadigini anlamak icin kullanilir (diger_ayristir_yerel.py).
+// tek bir bagimsiz aday olup olmadigini anlamak icin kullanilir (diger_ayristir_ysk.py).
 // Ilce sorgusunda bagimsizN_ALDIGI_OY sutunlari o ilcenin oy pusulasindaki bagimsiz siralarina karsilik
 // gelir. Ayrica ilce baslik listesi (aday adlari) denenir ve oldugu gibi saklanir.
 //

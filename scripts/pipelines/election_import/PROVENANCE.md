@@ -272,7 +272,7 @@ agregeleri depoya girmediği için ayrıntı kaybolmuştu (kazananı `Diğer` g�
 açılmıyor; `fetch_yerel_v2.js` değiştirilmeden GitHub Actions'ta çalıştırıldı
 (`.github/workflows/ysk-yerel-cek.yml`) ve çıktılar `data/raw/ysk/yerel-v2-agrege/` altına alındı.
 
-`diger_ayristir_yerel.py` bir satırı yalnız şu koşullarda ayırır: geçerli oy aynı, YSK parti +
+`diger_ayristir_ysk.py` bir satırı yalnız şu koşullarda ayırır: geçerli oy aynı, YSK parti +
 bağımsız toplamı geçerli oya eşit, `Diğer` ve `Bağımsız` dışındaki her parti birebir aynı, eski
 `Diğer + Bağımsız` = YSK'deki kalan partiler + bağımsız toplamı. Eski çekimde bağımsız toplamı
 yoktu; `diger_tamamla.py` aradaki farkı `Diğer`e eklemiş, `wiki_bagimsiz.py` bazı yerlerde
@@ -289,5 +289,17 @@ oylar adaylar arasında bölünmüş (kazanan değişmedi).
 Sonuç: 2009: 1.009, 2014: 1.045, 2019: 1.052, 2024: 1.052 satır ayrıldı; 157 kayıtta kazanan değişti;
 kazananı `Diğer` olan kayıt kalmadı. Eşleşmeyen 12 ve YSK toplamı geçerli oya eşit olmayan 6 satır
 (2009, 2014) olduğu gibi kaldı. 2024 Karaisalı'daki `DEVA PARTİSİ` anahtarı `DEVA` yapıldı.
-`merge_yerel_v2.py` yeniden çalıştırılırsa ardından `diger_ayristir_yerel.py uygula` çalıştırılmalıdır.
+`merge_yerel_v2.py` yeniden çalıştırılırsa ardından `diger_ayristir_ysk.py uygula` çalıştırılmalıdır.
 Regresyon: `tests/data-integrity.test.cjs`.
+
+## 2011–2023 genel "Diğer" ayrıştırması (2026-10-14)
+
+Aynı kural genel seçimlere uygulandı (betik `diger_ayristir_yerel.py`'den `diger_ayristir_ysk.py`'ye
+yeniden adlandırıldı, iki türü birlikte işler). `fetch_and_aggregate.js` değiştirilmeden GitHub
+Actions'ta çalıştırıldı (`.github/workflows/ysk-genel-cek.yml`, secimTuru=8); çıktılar
+`data/raw/ysk/genel-agrege/`. 2011: 956, 2015 Haziran: 1.020, 2015 Kasım: 1.047, 2018: 1.051,
+2023: 1.053 satır ayrıldı; hiçbir kazanan değişmedi. 2011'de `etiket_2011_bdp.py`'nin BDP'ye
+yazdığı ve il satırı BDP olan 67 satıra (YSK'de bağımsız) dokunulmadı; 31 satırda eski toplam YSK'nin
+bugünkü verisinden 1–4 oy farklı, onlar da kaldı. Çekim iş akışları (ysk-yerel-cek, ysk-genel-cek,
+ysk-bagimsiz-aday) yalnız elle çalıştırılır (Actions → Run workflow); çıktıyı `ysk-yerel-veri`
+dalına yazar.

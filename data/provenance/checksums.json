@@ -95,11 +95,11 @@
     "elections/genel/1999.json": "873fc7281f6e54ec44f5d95a3fa2369d9b16f937e38f6036aa4ae5f13fb26925",
     "elections/genel/2002.json": "51ea162bc59c44ad00f25f8a437488c0e8c85703efe5a109fa1b4d4b781cc9f1",
     "elections/genel/2007.json": "5d094f218ae4788dc87ff159ddda739def9a84ecd5cbd2c6d406f5ecb4f3b659",
-    "elections/genel/2011.json": "a47797a0cd8e232e82579a6fdc942c3f2618b037dc7a688efa1d5a46e00a2eda",
-    "elections/genel/2015Haziran.json": "49b155ac8f21e64ba5ca01d2dbbf6804630c7884b82589c37bae0056922d18ff",
-    "elections/genel/2015Kasim.json": "db1d1616e7a7cf0726d2cdaa50569c00c0ffda83ab64213576bee8b99b9adc76",
-    "elections/genel/2018.json": "4c1b48b55a54dde8b5dcfa0fe6318cb1192eb143e7ce51a360040612deba01ee",
-    "elections/genel/2023.json": "eec4e989994a62cdd89985aa287eb8b0b238bdccbf4926d2e249388a665dc07f",
+    "elections/genel/2011.json": "f0982e43956268cbbf587b5db10b388fdbfbcffb0556812e84bb7524d816c637",
+    "elections/genel/2015Haziran.json": "3485dd7d54df2c956be01a79e76e1aa163c3f93c89ab0aa003346a33a1685249",
+    "elections/genel/2015Kasim.json": "e17a2f718520f64c40ed17e954485896a4022b58cdd9cb3fa9c3b01f4076471a",
+    "elections/genel/2018.json": "a807f6f5e9bf2122cd1b9bf0003453408e4db6b1ba099f5036b73deb02cd0782",
+    "elections/genel/2023.json": "27272ecdca3c5a25feac5abcdfaba11662c4dfed8d0e1c1dd22ca63927a744ac",
     "elections/referandum/1961referandum.json": "e5c12650e2686616eef10d85200818a84d7bb0f441ecbba4c7817d2c6f647edf",
     "elections/referandum/1982referandum.json": "941dce56dacd93ab99995751a91f20a57716b8329378f544c0090d7b56e4bdb3",
     "elections/referandum/1987referandum.json": "37c347e26b1ef0da9044a8478a4cbfda7746e7022b57aeb4940cc36d500c16df",
@@ -6427,6 +6427,17 @@
     "2019yerel.json": "2f1a91093d84675a9a900d1210c88a3df29fa6cde00fcf3a85878c399ffe6399",
     "2024yerel.json": "6387a3c3eb48c569deba5e916bbfa8a5d8ba34065d7978a3816d93c5ffe5a240",
     "bagimsiz-aday.json": "640c959b8523d8fc11e931c42817db6105c8cd011bd21bc3f7dd3fb9d3b07b26"
+   }
+  },
+  "data/raw/ysk/genel-agrege": {
+   "checksum_file": "data/raw/ysk/genel-agrege/checksums.sha256",
+   "file_count": 5,
+   "files": {
+    "2011.json": "abd7840267e789107c57f6c0dbb2ae8f8f19306d459f9633a5e8b4f16a55ee28",
+    "2015Haziran.json": "0446200c089e14ae6765f1324e12ab3026ef20044e3320239391e0703a630852",
+    "2015Kasim.json": "fb5bb86e75aa0fc7907aa5de9ba5d48ccbf2510dc2e453b5915fb3a86398e3af",
+    "2018.json": "67741d8f512a71860a93c5bc3a1a06bcce68bb8ef24896138e030a4b63691f22",
+    "2023.json": "3703c50c6b40609b9f276e6b16a91cdb0c7c6e70439cf8ee2925059052c72252"
    }
   }
  },

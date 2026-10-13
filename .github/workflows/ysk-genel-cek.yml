@@ -3,12 +3,9 @@ name: ysk-genel-cek
 # YSK acik veri portalindan 2011-2023 genel secim il/ilce agregelerini BUTUN parti sutunlariyla ceker
 # (fetch_and_aggregate.js, secimTuru=8). Portal gelistirme ortamindan acilmiyor, GitHub sunucularindan
 # aciliyor. Ciktilar data/raw/ysk/genel-agrege/ altina yazilip "ysk-yerel-veri" dalina gonderilir;
-# main'e incelendikten sonra alinir (diger_ayristir_yerel.py genel).
+# main'e incelendikten sonra alinir (diger_ayristir_ysk.py).
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: [".github/workflows/ysk-genel-cek.yml"]
 
 permissions:
   contents: read

@@ -215,15 +215,17 @@ kaynak ya da taranmış kitaplardan uzun bir okuma işi gerektirir:
   - 2009–2024 yerel: YSK açık verisi bütün partilerle yeniden çekildi (GitHub Actions,
     [`data/raw/ysk/yerel-v2-agrege/`](data/raw/ysk/yerel-v2-agrege/PROVENANCE.md)) ve "Diğer", eski
     toplamla birebir tuttuğu her satırda partilere ayrıldı
-    (`scripts/pipelines/election_import/diger_ayristir_yerel.py`; 4.158 kayıt). Kazananı "Diğer" olan
+    (`scripts/pipelines/election_import/diger_ayristir_ysk.py`; 4.158 kayıt). Kazananı "Diğer" olan
     147 kayıt düzeldi; 10 ilçede de tek bir bağımsız adayın kayıttaki kazanandan çok oy aldığı aday
     düzeyinde doğrulandı. Diğer kazananlara dokunulmadı (resmi sonuç sandık toplamından farklı
     olabiliyor). YSK satırı eşleşmeyen ya da eksik 18 kayıtta (2009, 2014) "Diğer" kaldı; hiçbiri kazanan değil.
   - 1994–2004 yerel: DİE kitabındaki dağılım YSK toplamıyla birebir tuttuğu yerlerde ayrıldı
     (`scripts/pipelines/tuik_arsiv/diger_ayristir.py`; 405 kayıt, 24'ünde kazanan düzeldi); 10 kayıtta
     kazanan hâlâ "Diğer".
-  - 2011–2023 genel: küçük partiler hâlâ "Diğer"de (kazanan olduğu kayıt yok); aynı yöntemle
-    (`fetch_and_aggregate.js` + Actions) ayrılabilir.
+  - 2011–2023 genel: aynı yöntemle ([`data/raw/ysk/genel-agrege/`](data/raw/ysk/genel-agrege/PROVENANCE.md))
+    5.127 kayıtta ayrıldı; "Diğer" genel seçimlerde hiçbir yerde kazanan değildi. 2011'de BDP destekli
+    bağımsızların "BDP" etiketli olduğu 67 satır ve YSK'nin bugünkü verisinden 1–4 oy farklı 31 satır
+    olduğu gibi kaldı.
 - **Kaba eşlemeler:** sonradan kurulan ve birden çok eski ilçeden pay alan bazı ilçeler (ör. Çukurova,
   Körfez, Aliağa, Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı
   (`geo/historical/idari/ilce_eslesme/*.csv`, güven `kaba`); köy düzeyinde kaynak bulunursa bölünebilir.

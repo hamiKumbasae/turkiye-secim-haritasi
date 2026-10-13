@@ -41,7 +41,7 @@ test('1994-2004 Diğer totals are split only where the DİE breakdown matches YS
   assert.equal(r.kaynak.tuikKullanilmadi,undefined,y+' '+r.ad+': kontrolden geçmeyen DİE satırı kullanılmamalı');
  }
 });
-test('2009-2024 local Diğer is split into YSK party columns without overriding official winners',()=>{
+test('2009-2024 local and 2011-2023 general Diğer is split into YSK party columns without overriding official winners',()=>{
  const il=(y,plaka)=>election(y).iller.find(r=>r.plaka===plaka), ilce=(y,plaka,ad)=>election(y).ilceler.find(r=>r.plaka===plaka&&r.ad===ad);
  // İYİ Parti eskiden 'Diğer' icindeydi ve 'Diğer' kazanan gorunuyordu
  const usak=il('2019yerel',64);assert.equal(usak.kazanan,'AK Parti');assert.equal(usak.oy['İYİ Parti'].oy,49229);assert.equal(usak.oy['Diğer'],undefined);
@@ -51,13 +51,16 @@ test('2009-2024 local Diğer is split into YSK party columns without overriding 
  // bagimsizlarin toplami onde ama tek aday degil: kazanan degismez; tek aday onde: Bağımsız
  assert.equal(ilce('2014yerel',50,'Hacıbektaş').kazanan,'CHP');
  assert.equal(ilce('2014yerel',37,'Devrekani').kazanan,'Bağımsız');
- for(const y of ['2009yerel','2014yerel','2019yerel','2024yerel']) for(const r of [...election(y).iller,...election(y).ilceler]){
+ // genel: kucuk partiler ayri (2023 Ankara: Zafer Partisi); kazanan degismez
+ const ankara=il('2023',6);assert.equal(ankara.oy['ZP'].oy,130407);assert.equal(ankara.oy['Diğer'],undefined);assert.equal(ankara.kazanan,'AK Parti');
+ for(const y of ['2009yerel','2014yerel','2019yerel','2024yerel','2011','2015Haziran','2015Kasim','2018','2023']) for(const r of [...election(y).iller,...election(y).ilceler]){
   assert.notEqual(r.kazanan,'Diğer',y+' '+r.ad);
   assert.equal(r.oy['DEVA PARTİSİ'],undefined,y+' '+r.ad);
   const a=r.kaynak&&r.kaynak.digerAyristirma; if(!a) continue;
   assert.equal(r.oy['Diğer'],undefined,y+' '+r.ad);
   assert.equal(Object.values(r.oy).reduce((s,v)=>s+v.oy,0),r.gecerliOy,y+' '+r.ad);
   if(a.oncekiKazanan!==undefined&&a.oncekiKazanan!=='Diğer'){
+   assert.ok(y.includes('yerel'),y+' '+r.ad+': genel seçimde kazanan değişmemeli');
    assert.equal(r.kazanan,'Bağımsız',y+' '+r.ad);assert.ok(a.enCokOyAlanBagimsizAday>r.oy[a.oncekiKazanan].oy,y+' '+r.ad);
   }
  }

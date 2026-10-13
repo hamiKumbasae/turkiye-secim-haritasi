@@ -1,13 +1,15 @@
 """
-2009, 2014, 2019 ve 2024 yerel secimlerinde 'Diğer' toplamini YSK'nin kendi parti sutunlarina ayirir.
+YSK acik veri donemindeki secimlerde 'Diğer' toplamini YSK'nin kendi parti sutunlarina ayirir:
+2009, 2014, 2019, 2024 yerel ve 2011, 2015 Haziran, 2015 Kasım, 2018, 2023 genel.
 
-merge_yerel_v2.py buyuk partiler disindaki butun partileri tek bir 'Diğer' satirinda topluyordu; bu
-yuzden 'Diğer' bazi ilcelerde kazanan gorunuyordu (ornek 2019: İYİ Parti'nin kazandigi ilceler).
-YSK agregeleri butun parti sutunlariyla yeniden cekildi (.github/workflows/ysk-yerel-cek.yml ->
-data/raw/ysk/yerel-v2-agrege/<secim>.json, fetch_yerel_v2.js ciktisi).
+merge_yerel_v2.py ve merge_genel_yerel.py buyuk partiler disindaki butun partileri tek bir 'Diğer'
+satirinda topluyordu; bu yuzden 'Diğer' bazi ilcelerde kazanan gorunuyordu (ornek 2019 yerel: İYİ
+Parti'nin kazandigi ilceler). YSK agregeleri butun parti sutunlariyla yeniden cekildi:
+  yerel: .github/workflows/ysk-yerel-cek.yml -> data/raw/ysk/yerel-v2-agrege/ (fetch_yerel_v2.js)
+  genel: .github/workflows/ysk-genel-cek.yml -> data/raw/ysk/genel-agrege/ (fetch_and_aggregate.js)
 
 Kural (tahmin yok, satir ancak yeni cekilen veri eskisiyle birebir tutarsa ayrilir):
-  - kayit ile taze agrege ayni il/ilce olmali (eslesme merge_yerel_v2.py ile ayni: plaka;
+  - kayit ile taze agrege ayni il/ilce olmali (eslesme merge betikleriyle ayni: plaka;
     acikveri-ilce-geomid-eslemesi.json, yoksa tarihsel merkez geomId'si),
   - gecerli oy birebir ayni olmali ve taze agregede parti + bagimsiz oylarinin toplami gecerli oya
     esit olmali (kaynak eksiksiz),
@@ -27,10 +29,11 @@ yuzden yalniz kazanan 'Diğer' ise yeniden hesaplanir. Baska bir kazanan, yalniz
 YSK oyu kayittaki kazanandan fazla (data/raw/ysk/yerel-v2-agrege/bagimsiz-aday.json,
 fetch_bagimsiz_aday.js). Bagimsizlarin toplami onde ama tek aday degilse kazanan degismez.
 Idempotent: ayrilmis satirda 'Diğer' kalmadigi icin ikinci calistirma bir sey degistirmez.
-merge_yerel_v2.py yeniden calistirilirsa bu betik de ardindan calistirilmalidir.
+merge_yerel_v2.py / merge_genel_yerel.py yeniden calistirilirsa bu betik de ardindan calistirilmalidir.
+Agregesi henuz depoda olmayan secim atlanir.
 
 Kullanim (repo kokunden):
-  python3 scripts/pipelines/election_import/diger_ayristir_yerel.py [kontrol|uygula]
+  python3 scripts/pipelines/election_import/diger_ayristir_ysk.py [kontrol|uygula]
 """
 import collections
 import json
@@ -43,11 +46,13 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from common.election_io import load_election, save_election  # noqa: E402
 from common.hist_geomid import resolve_historical_merkez  # noqa: E402
-from party_map_helper import PARTILER, build_party_mapping  # noqa: E402
+from party_map_helper import build_party_mapping  # noqa: E402
 
 AGREGE_DIR = ROOT / "data" / "raw" / "ysk" / "yerel-v2-agrege"
+GENEL_DIR = ROOT / "data" / "raw" / "ysk" / "genel-agrege"
 GEOMID_MAP = json.loads((ROOT / "data" / "raw" / "ysk" / "acikveri-ilce-geomid-eslemesi.json").read_text(encoding="utf-8"))
-SECIMLER = ["2009yerel", "2014yerel", "2019yerel", "2024yerel"]
+SECIMLER = {**{k: AGREGE_DIR / f"{k}.json" for k in ("2009yerel", "2014yerel", "2019yerel", "2024yerel")},
+            **{k: GENEL_DIR / f"{k}.json" for k in ("2011", "2015Haziran", "2015Kasim", "2018", "2023")}}
 ADAY_DOSYASI = AGREGE_DIR / "bagimsiz-aday.json"
 # partiler.json'da olmayan, ayni partinin ikinci adi (2024 Karaisalı'da tek kayit)
 ANAHTAR_DUZELTME = {"DEVA PARTİSİ": "DEVA"}
@@ -70,7 +75,7 @@ def taze_oylar(agg, col_to_key):
 
 
 def ilce_agregeleri(agrege, yil):
-    """merge_yerel_v2.py'deki ilce -> geomId eslemesinin aynisi."""
+    """merge_yerel_v2.py / merge_genel_yerel.py'deki ilce -> geomId eslemesinin aynisi."""
     out = {}
     for key, agg in agrege["ilceler"].items():
         geom = GEOMID_MAP.get(key)
@@ -142,7 +147,7 @@ def ayristir_satir(r, agg, col_to_key, dosya, tek_bagimsiz=None):
 
 
 def ayristir(anahtar, rec):
-    dosya = AGREGE_DIR / f"{anahtar}.json"
+    dosya = SECIMLER[anahtar]
     agrege = json.loads(dosya.read_text(encoding="utf-8"))
     mevcut = set()
     for lv in ("iller", "ilceler"):
@@ -154,7 +159,7 @@ def ayristir(anahtar, rec):
                 if r.get("kazanan") == eski_ad:
                     r["kazanan"] = yeni_ad
             mevcut.update(r["oy"])
-    col_to_key = build_party_mapping(agrege["colToName"], (mevcut & set(PARTILER)) - {DIGER, "Bağımsız"}, {})
+    col_to_key = build_party_mapping(agrege["colToName"], mevcut - {DIGER, "Bağımsız"}, {})
     adaylar = {}
     if ADAY_DOSYASI.exists():
         for a in json.loads(ADAY_DOSYASI.read_text(encoding="utf-8")):
@@ -185,8 +190,8 @@ def ayristir(anahtar, rec):
 
 if __name__ == "__main__":
     uygula = len(sys.argv) > 1 and sys.argv[1] == "uygula"
-    for anahtar in SECIMLER:
-        if not (AGREGE_DIR / f"{anahtar}.json").exists():
+    for anahtar, dosya in SECIMLER.items():
+        if not dosya.exists():
             print(f"{anahtar}: agrege yok, atlandı")
             continue
         rec = load_election(anahtar)
