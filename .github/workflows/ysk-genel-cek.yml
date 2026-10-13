@@ -1,0 +1,73 @@
+name: ysk-genel-cek
+
+# YSK acik veri portalindan 2011-2023 genel secim il/ilce agregelerini BUTUN parti sutunlariyla ceker
+# (fetch_and_aggregate.js, secimTuru=8). Portal gelistirme ortamindan acilmiyor, GitHub sunucularindan
+# aciliyor. Ciktilar data/raw/ysk/genel-agrege/ altina yazilip "ysk-yerel-veri" dalina gonderilir;
+# main'e incelendikten sonra alinir (diger_ayristir_yerel.py genel).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/ysk-genel-cek.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { anahtar: "2011",        secimId: 7468,  baslik: baslik_2011.json }
+          - { anahtar: "2015Haziran", secimId: 13884, baslik: baslik_2015Haziran.json }
+          - { anahtar: "2015Kasim",   secimId: 14868, baslik: baslik_2015Kasim.json }
+          - { anahtar: "2018",        secimId: 16300, baslik: baslik_2018.json }
+          - { anahtar: "2023",        secimId: 20230, baslik: baslik_genel_2023.json }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Playwright
+        working-directory: scripts/pipelines/mahalle_veri
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+      - name: Cek
+        run: |
+          node scripts/pipelines/election_import/fetch_and_aggregate.js ${{ matrix.anahtar }} ${{ matrix.secimId }} 8 \
+            scripts/pipelines/mahalle_veri/parti-sutun-eslemeleri/${{ matrix.baslik }} | tee cikti.log
+          mkdir -p cikti
+          cp scripts/pipelines/election_import/.work/${{ matrix.anahtar }}_agrege.json cikti/${{ matrix.anahtar }}.json
+          OZET=$(python3 -c "import json;d=json.load(open('cikti/${{ matrix.anahtar }}.json'));print(len(d['iller']),'il',len(d['ilceler']),'ilce',sum(1 for a in d['ilceler'].values() if a.get('sandikSayisi')),'dolu ilce, hata',len(d['errors']))")
+          echo "::notice title=${{ matrix.anahtar }}::$OZET"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: genel-${{ matrix.anahtar }}
+          path: cikti/${{ matrix.anahtar }}.json
+
+  kaydet:
+    needs: cek
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: indirilen
+      - name: ysk-yerel-veri dalina yaz
+        run: |
+          mkdir -p data/raw/ysk/genel-agrege
+          cp indirilen/*/*.json data/raw/ysk/genel-agrege/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B ysk-yerel-veri
+          git add data/raw/ysk/genel-agrege
+          git commit -m "YSK genel secim agregeleri (butun partiler), run ${{ github.run_id }}"
+          git push -f origin ysk-yerel-veri
+          echo "::notice title=kaydedildi::$(ls data/raw/ysk/genel-agrege | tr '\n' ' ')"
