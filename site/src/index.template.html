@@ -178,9 +178,15 @@
           <div id="dParties"></div>
           <div class="gecmis" id="dGecmis" hidden>
             <div class="detail-results-head">Seçim geçmişi <span class="gx-alt">genel seçimler, oy oranı</span></div>
+            <div class="gx-gorunum" id="dGecmisGorunum" role="group" aria-label="Geçmiş grafiğinin görünümü">
+              <button type="button" class="active" data-gorunum="parti" aria-pressed="true">Partiler</button>
+              <button type="button" data-gorunum="soy" aria-pressed="false" title="Kapatma, ad değişikliği ya da birleşmeyle devam eden partiler tek çizgide">Soy</button>
+              <button type="button" data-gorunum="gelenek" aria-pressed="false" title="Soy çizgileri ve onlardan ayrılan partilerin toplamı">Gelenek</button>
+            </div>
             <div id="dGecmisGrafik"></div>
             <div class="gx-lejantlar" id="dGecmisLejant"></div>
             <p class="gx-not" id="dGecmisNot" hidden></p>
+            <p class="gx-not" id="dGecmisSoyNot" hidden><span id="dGecmisSoyNotMetin"></span> Bu gruplama bir yorumdur: <a href="yontem.html#parti-soyu">hangi parti nereye bağlandı?</a></p>
           </div>
           <div class="detail-districts-head">
             <span id="dDistrictsLabel">İlçeler</span>

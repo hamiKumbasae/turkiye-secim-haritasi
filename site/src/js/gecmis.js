@@ -8,9 +8,16 @@
   const GECMIS_EN_COK = 7;  // en fazla bu kadar parti cizgisi
   let gecmisBileti = 0;
   const SVGNS = 'http://www.w3.org/2000/svg';
+  // Gorunum: parti (her parti kendi cizgisi) | soy | gelenek (data/parti_soy.yml, gecmis.py'nin
+  // urettigi veri.soy). Tercih tarayicida hatirlanir.
+  const GECMIS_GORUNUMLER = ['parti', 'soy', 'gelenek'];
+  let gecmisGorunum = 'parti';
+  try{ const g = localStorage.getItem('gecmisGorunum'); if(GECMIS_GORUNUMLER.includes(g)) gecmisGorunum = g; }catch(error){ /* depolama kapali */ }
+  let gecmisSon = null; // son cizim: gorunum degisince yeniden cizmek icin {veri, seri, notlar}
 
   function gecmisGizle(){
     gecmisBileti++;
+    gecmisSon = null;
     const kutu = $('#dGecmis');
     if(kutu) kutu.hidden = true;
   }
@@ -50,8 +57,11 @@
       }
       if(g && !veri.ilce[g] && veri.parcalar[g]){
         const adlar = veri.parcalar[g].map(x => veri.adlar[x]).filter(Boolean);
+        gecmisSon = null;
         $('#dGecmisGrafik').innerHTML = '';
         $('#dGecmisLejant').innerHTML = '';
+        $('#dGecmisGorunum').hidden = true;
+        $('#dGecmisSoyNot').hidden = true;
         gecmisNot('Bu ilçe bugün birden çok ilçeye bölünmüş durumda: ' + adlar.join(', ') +
           '. Geçmişlerini görmek için güncel bir seçimde bu ilçelere tıklayın.');
         kutu.hidden = false;
@@ -63,12 +73,78 @@
       notlar.push('1950–1957 genel seçimlerinde ilçe verisi yok.');
     }
     if(!seri || seri.length < 2){ gecmisGizle(); return; }
-    cizGecmis(veri.secimler, seri);
-    gecmisNot(notlar.join(' '));
+    gecmisSon = {veri, seri, notlar};
+    gecmisCiz();
     kutu.hidden = false;
   }
 
-  function cizGecmis(secimler, seri){
+  function gecmisCiz(){
+    if(!gecmisSon) return;
+    const {veri, seri, notlar} = gecmisSon;
+    const soyVar = !!veri.soy;
+    const gorunum = soyVar ? gecmisGorunum : 'parti';
+    $('#dGecmisGorunum').hidden = !soyVar;
+    for(const b of document.querySelectorAll('#dGecmisGorunum button')){
+      const secili = b.dataset.gorunum === gorunum;
+      b.classList.toggle('active', secili);
+      b.setAttribute('aria-pressed', secili ? 'true' : 'false');
+    }
+    cizGecmis(veri.secimler, gorunumSerisi(veri, seri, gorunum));
+    gecmisNot(notlar.join(' '));
+    const soyNot = $('#dGecmisSoyNot');
+    soyNot.hidden = gorunum === 'parti';
+    if(gorunum !== 'parti') $('#dGecmisSoyNotMetin').textContent = veri.soy[gorunum].aciklama +
+      ' Bağımsızlar ve “Diğer” hiçbir çizgiye eklenmez; AK Parti kendi çizgisindedir.';
+  }
+
+  for(const b of document.querySelectorAll('#dGecmisGorunum button'))
+    b.addEventListener('click', () => gecmisGorunumSec(b.dataset.gorunum));
+
+  function gecmisGorunumSec(g){
+    if(!GECMIS_GORUNUMLER.includes(g) || g === gecmisGorunum) return;
+    gecmisGorunum = g;
+    try{ localStorage.setItem('gecmisGorunum', g); }catch(error){ /* depolama kapali */ }
+    gecmisCiz();
+  }
+
+  // Seriyi secilen gorunume cevirir. Donen yapi: {seri, kisa(k), renk(k), uyeler(n, k)}; seri noktalari
+  // [secim, {anahtar: oran}, ust ilce adi ya da 0, {anahtar: [o secimdeki parti adlari]}].
+  // Soy/gelenek gruplarinin anahtari '~' ile baslar (parti anahtarlariyla karismaz).
+  function gorunumSerisi(veri, seri, gorunum){
+    if(gorunum === 'parti') return {seri, kisa: partyShort, renk: partyColor, uyeler: () => null};
+    const kt = veri.soy[gorunum];
+    const grup = Object.fromEntries(kt.gruplar.map(g => ['~' + g.id, g]));
+    const yeni = seri.map(n => {
+      const uye = kt.uye[n[0]] || {};
+      const oranlar = {}, kimler = {};
+      for(const [p, v] of Object.entries(n[1])){
+        const gid = uye[p];
+        if(!gid){ oranlar[p] = v; continue; }
+        const k = '~' + gid;
+        oranlar[k] = (oranlar[k] || 0) + v;
+        (kimler[k] = kimler[k] || []).push(p);
+      }
+      // gecmis.py'nin ham orandan hesapladigi toplam (esigin altinda kalan uye varsa)
+      const toplam = gorunum === 'gelenek' ? n[3] : null;
+      if(toplam) for(const [gid, v] of Object.entries(toplam)){
+        const k = '~' + gid;
+        oranlar[k] = v;
+        kimler[k] = Object.keys(uye).filter(p => uye[p] === gid);
+      }
+      for(const k of Object.keys(kimler)) oranlar[k] = Math.round(oranlar[k] * 10) / 10;
+      return [n[0], oranlar, n[2] || 0, kimler];
+    });
+    return {
+      seri: yeni,
+      kisa: k => grup[k] ? grup[k].kisa : partyShort(k),
+      // renk korlugu modunda gruplar sirayla Okabe-Ito paletini alir (bkz. erisim.js)
+      renk: k => !grup[k] ? partyColor(k) : renkKoruModu ? RENK_KORU_PALET[kt.gruplar.indexOf(grup[k]) % RENK_KORU_PALET.length] : partyColor(grup[k].renk),
+      uyeler: (n, k) => grup[k] ? (n[3][k] || []) : null,
+    };
+  }
+
+  function cizGecmis(secimler, gs){
+    const seri = gs.seri;
     // Partiler: bu yerde en yuksek orani GECMIS_ESIK'i gecenler
     // ve toplam agirligi (butun secimlerdeki oranlarin toplami) en cok olanlar: uzun omurlu
     // partiler (CHP, AP, AK Parti) tek secimlik buyuk partilerin onune gecer.
@@ -112,7 +188,7 @@
     }
     // parti cizgileri: yalniz ardisik iki secimde de bulunan noktalar birlesir (parti girmediyse kopar)
     for(const p of partiler.slice().reverse()){
-      const renk = partyColor(p);
+      const renk = gs.renk(p);
       const noktalar = seri.filter(n => n[1][p] != null);
       let parca = [];
       const bitir = () => {
@@ -130,7 +206,10 @@
         const c = svgEl('circle', {cx: X(s.t), cy: Y(n[1][p]), r: n[2] ? 2.6 : 2.4, class: n[2] ? 'gx-nokta bos' : 'gx-nokta',
           fill: n[2] ? 'var(--surface-1)' : renk, stroke: renk});
         const baslik = svgEl('title');
-        baslik.textContent = (YEAR_LABEL[s.k] || s.k) + ' · ' + partyShort(p) + ': %' + n[1][p].toLocaleString('tr-TR') +
+        const uyeler = gs.uyeler(n, p);
+        baslik.textContent = (YEAR_LABEL[s.k] || s.k) + ' · ' + gs.kisa(p) +
+          (uyeler && uyeler.length ? ' (' + uyeler.map(partyShort).join(' + ') + ')' : '') +
+          ': %' + n[1][p].toLocaleString('tr-TR') +
           (n[2] ? ' (' + n[2] + ' ilçesinin sonucu)' : '');
         c.appendChild(baslik);
         svg.appendChild(c);
@@ -143,7 +222,7 @@
     // lejant: parti adi + son secimdeki orani
     const son = seri[seri.length - 1];
     $('#dGecmisLejant').innerHTML = '<span class="gx-son-baslik">' + escapeHtml(YEAR_LABEL[secimler[son[0]].k] || secimler[son[0]].k) + '</span>' + partiler.map(p =>
-      '<span class="gx-lejant"><span class="dot" style="background:' + partyColor(p) + '"></span>' +
-      escapeHtml(partyShort(p)) + (son[1][p] != null ? ' <span class="gx-son">%' + son[1][p].toLocaleString('tr-TR') + '</span>' : '') + '</span>'
+      '<span class="gx-lejant"><span class="dot" style="background:' + gs.renk(p) + '"></span>' +
+      escapeHtml(gs.kisa(p)) + (son[1][p] != null ? ' <span class="gx-son">%' + son[1][p].toLocaleString('tr-TR') + '</span>' : '') + '</span>'
     ).join('');
   }

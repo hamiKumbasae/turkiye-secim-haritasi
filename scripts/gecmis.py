@@ -13,16 +13,25 @@ nokta o ilçenin adını taşır; site bunu içi boş nokta olarak çizer. Tahmi
 seçim nokta almaz.
 
 Yalnız sitede çizilecek kadarı tutulur: oranı %2 ve üstü partiler, bir ondalık; "Diğer" yok.
+
+Parti soyu (data/parti_soy.yml): "soy" katmanında her çizginin her seçimde en fazla bir üyesi
+olur, site çizgiyi parti oranlarından kurar. "gelenek" katmanında bir seçimde birden çok üyesi
+olan gruplar için toplam, eşikten ÖNCEKİ ham oranlardan hesaplanır. Site toplamı, eşiği geçen
+üyelerin oranlarını toplayarak kurar; bundan farklı çıkan toplamlar (ör. %2'nin altında kalan bir
+üye varsa) noktanın dördüncü öğesine yazılır: [seçim, oranlar, üst ilçe adı ya da 0, {grup: toplam}].
 """
 import csv
 import json
 import pathlib
 import unicodedata
 
+import yaml
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 GENEL = ROOT / "data" / "normalized" / "elections" / "genel"
 ESLEME = ROOT / "geo" / "historical" / "idari" / "ilce_eslesme"
 SPLITS = ROOT / "geo" / "historical" / "district_splits.json"
+SOY = ROOT / "data" / "parti_soy.yml"
 
 AYLAR = {"Ocak": 1, "Şubat": 2, "Mart": 3, "Nisan": 4, "Mayıs": 5, "Haziran": 6, "Temmuz": 7,
          "Ağustos": 8, "Eylül": 9, "Ekim": 10, "Kasım": 11, "Aralık": 12}
@@ -50,6 +59,85 @@ def _oranlar(kayit):
     return out
 
 
+def _yillar(metin):
+    a, _, b = str(metin).partition("-")
+    return int(a), int(b or a)
+
+
+def parti_soyu(anahtarlar):
+    """parti_soy.yml -> {katman: {ad, aciklama, gruplar, uye: {seçim sırası: {parti: grup}}}}.
+
+    Bir partinin aynı katmanda aynı seçimde iki gruba girmesi ve soy katmanında bir çizginin
+    aynı seçimde iki üyesi olması hatadır.
+    """
+    tanim = yaml.safe_load(SOY.read_text(encoding="utf-8"))["katmanlar"]
+    soy_uyeleri = {g["id"]: g["uyeler"] for g in tanim["soy"]["gruplar"]}
+    cikti = {}
+    for katman, kt in tanim.items():
+        uye = {}
+        for g in kt["gruplar"]:
+            liste = [u for s in g.get("soy", []) for u in soy_uyeleri[s]] + (g.get("uyeler") or [])
+            for u in liste:
+                a, b = _yillar(u["yillar"])
+                for i, k in enumerate(anahtarlar):
+                    if a <= int(k[:4]) <= b:
+                        onceki = uye.setdefault(i, {}).setdefault(u["parti"], g["id"])
+                        if onceki != g["id"]:
+                            raise ValueError(f"parti_soy.yml {katman}: {k} {u['parti']} iki grupta ({onceki}, {g['id']})")
+        if katman == "soy":
+            for i, m in uye.items():
+                gorulen = {}
+                for p, gid in m.items():
+                    if gid in gorulen:
+                        raise ValueError(f"parti_soy.yml soy: {anahtarlar[i]} {gid} iki üyeli ({gorulen[gid]}, {p})")
+                    gorulen[gid] = p
+        cikti[katman] = {
+            "ad": kt["ad"],
+            "aciklama": kt["aciklama"],
+            "gruplar": [{"id": g["id"], "ad": g["ad"], "kisa": g["kisa"], "renk": g["renk"]} for g in kt["gruplar"]],
+            "uye": {str(i): m for i, m in sorted(uye.items())},
+        }
+    return cikti
+
+
+def _coklu_gruplar(uye):
+    """{seçim sırası: {grup: [üyeler]}}: o seçimde birden çok üyesi olan gelenek grupları."""
+    out = {}
+    for i, m in uye.items():
+        gruplar = {}
+        for p, gid in m.items():
+            gruplar.setdefault(gid, []).append(p)
+        coklu = {gid: ps for gid, ps in gruplar.items() if len(ps) > 1}
+        if coklu:
+            out[int(i)] = coklu
+    return out
+
+
+def _gelenek_toplami(kayit, coklu):
+    """Birden çok üyeli grupların ham oran toplamı (eşik sonradan), bir ondalık."""
+    oy = kayit.get("oy") or {}
+    out = {}
+    for gid, partiler in coklu.items():
+        oranlar = [oy[p].get("oran") for p in partiler if isinstance(oy.get(p), dict) and oy[p].get("oran") is not None]
+        if oranlar and sum(oranlar) >= ESIK:
+            out[gid] = round(sum(oranlar), 1)
+    return out
+
+
+def _nokta(i, kayit, coklu, ust=None):
+    o = _oranlar(kayit)
+    g = {}
+    if i in coklu:
+        # Site, toplamı yoksa grubun eşiği geçen üyelerini toplar; yalnız bundan farklı
+        # çıkan (ör. %2'nin altında üyesi olan) toplamlar yazılır.
+        for gid, toplam in _gelenek_toplami(kayit, coklu[i]).items():
+            if round(sum(o.get(p, 0) for p in coklu[i][gid]), 1) != toplam:
+                g[gid] = toplam
+    if g:
+        return [i, o, ust or 0, g]
+    return [i, o, ust] if ust else [i, o]
+
+
 def _yukle(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -58,6 +146,8 @@ def secim_gecmisi():
     anahtarlar = sorted((p.stem for p in GENEL.glob("*.json")), key=lambda k: _tarih(_yukle(GENEL / f"{k}.json")["ad"]))
     secimler = [_yukle(GENEL / f"{k}.json") for k in anahtarlar]
     guncel = secimler[-1]["ilceler"]  # en son seçimin ilçeleri = bugünkü ilçeler
+    soy = parti_soyu(anahtarlar)
+    coklu = _coklu_gruplar(soy["gelenek"]["uye"])
 
     uye = {}
     for liste in _yukle(SPLITS).values():
@@ -68,9 +158,8 @@ def secim_gecmisi():
     il, ilce, tarihsel, parcalar = {}, {}, {}, {}
     for i, (anahtar, kayit) in enumerate(zip(anahtarlar, secimler)):
         for p in kayit["iller"]:
-            o = _oranlar(p)
-            if o:
-                il.setdefault(str(p["plaka"]), []).append([i, o])
+            if _oranlar(p):
+                il.setdefault(str(p["plaka"]), []).append(_nokta(i, p, coklu))
         if not kayit["ilceler"]:
             continue
         geomdan = {d["geomId"]: d for d in kayit["ilceler"] if d.get("geomId")}
@@ -92,10 +181,8 @@ def secim_gecmisi():
             hedef = next((a for a in adaylar if a is not None and _oranlar(a)), None)
             if hedef is None:
                 continue
-            o = _oranlar(hedef)
             kendisi = hedef.get("geomId") == g or _ad(hedef["ad"]) == _ad(d["ad"])
-            nokta = [i, o] if kendisi else [i, o, hedef["ad"]]
-            ilce.setdefault(g, []).append(nokta)
+            ilce.setdefault(g, []).append(_nokta(i, hedef, coklu, None if kendisi else hedef["ad"]))
             hg = hedef.get("geomId")
             if hg and hg != g:
                 # Tarihsel poligona tıklanınca açılacak geçmiş: kendi adını taşıyan bugünkü ilçe.
@@ -112,6 +199,7 @@ def secim_gecmisi():
         "tarihsel": tarihsel,
         "parcalar": {hg: sorted(gs) for hg, gs in sorted(parcalar.items()) if hg not in tarihsel},
         "adlar": {d["geomId"]: d["ad"] for d in guncel},
+        "soy": soy,
     }
 
 

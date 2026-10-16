@@ -373,6 +373,47 @@ test('general election panel shows the place history and local elections hide it
   assert.equal(await page.locator('#dGecmis').isHidden(), true);
 });
 
+test('history chart switches between parties, lineage and tradition views and remembers the choice', async t => {
+  const {page} = await setup(t);
+  await page.goto('http://atlas.test/#secim=2023&il=6');
+  await ready(page);
+  await page.locator('#dGecmis:not([hidden]) #dGecmisGrafik svg').waitFor();
+  const lejant = () => page.locator('#dGecmisLejant').textContent();
+  const basliklar = () => page.locator('#dGecmisGrafik circle title').allTextContents();
+  assert.match(await lejant(), /CHP/);
+  assert.doesNotMatch(await lejant(), /soyu/);
+  assert.equal(await page.locator('#dGecmisSoyNot').isHidden(), true);
+
+  // soy: SHP 1987-91 noktalari CHP soyu cizgisinde, kendi adiyla
+  await page.locator('#dGecmisGorunum [data-gorunum="soy"]').click();
+  assert.equal(await page.locator('#dGecmisGorunum [data-gorunum="soy"]').getAttribute('aria-pressed'), 'true');
+  assert.match(await lejant(), /CHP soyu/);
+  assert((await basliklar()).some(b => /^1987 · CHP soyu \(SHP\): %/.test(b)));
+  assert.equal(await page.locator('#dGecmisSoyNot a[href="yontem.html#parti-soyu"]').isVisible(), true);
+
+  // gelenek: 1991'de ANAP ve DYP tek "Merkez sağ" noktasinda toplanir
+  await page.locator('#dGecmisGorunum [data-gorunum="gelenek"]').click();
+  assert.match(await lejant(), /Sol-merkez/);
+  const b91 = (await basliklar()).find(b => b.startsWith('1991 · Merkez sağ'));
+  assert(b91 && /ANAP/.test(b91) && /DYP/.test(b91), b91);
+  const veri = JSON.parse(await fs.readFile(path.join(root, 'data/gecmis/genel.json'), 'utf8'));
+  const i91 = veri.secimler.findIndex(s => s.k === '1991');
+  const n91 = veri.il['6'].find(n => n[0] === i91);
+  const beklenen = (n91[3] && n91[3]['merkez-sag']) || Math.round(((n91[1].ANAP || 0) + (n91[1].DYP || 0)) * 10) / 10;
+  assert.equal(b91.split('%').pop(), beklenen.toLocaleString('tr-TR'));
+  // AK Parti hicbir gruba girmez
+  assert.match(await lejant(), /AKP/);
+
+  // tercih hatirlanir
+  await page.reload();
+  await ready(page);
+  await page.locator('#dGecmis:not([hidden]) #dGecmisGrafik svg').waitFor();
+  assert.equal(await page.locator('#dGecmisGorunum [data-gorunum="gelenek"]').getAttribute('aria-pressed'), 'true');
+  assert.match(await lejant(), /Sol-merkez/);
+  await page.locator('#dGecmisGorunum [data-gorunum="parti"]').click();
+  assert.doesNotMatch(await lejant(), /Sol-merkez/);
+});
+
 test('side-by-side comparison follows drill-down with a shared projection and survives a shared link', async t => {
   const {page} = await setup(t);
   await ready(page);

@@ -521,11 +521,11 @@ def check_secim_gecmisi():
     for g, seri in v["ilce"].items():
         if [n[0] for n in seri] != list(range(ilk_ilce, len(anahtarlar))):
             bad.append(f"{g}: {len(seri)} nokta")
-        elif len(seri[-1]) > 2:
+        elif len(seri[-1]) > 2 and seri[-1][2]:  # [secim, oranlar, ust ilce ya da 0, gelenek toplamlari]
             bad.append(f"{g}: son secim baska ilceye ait")
     if len(v["ilce"]) != len(v["adlar"]):
         bad.append(f"{len(v['adlar']) - len(v['ilce'])} ilcenin gecmisi yok")
-    aladag = {anahtarlar[n[0]]: (n[2] if len(n) > 2 else None) for n in v["ilce"].get("TR-D-01-001", [])}
+    aladag = {anahtarlar[n[0]]: (n[2] if len(n) > 2 and n[2] else None) for n in v["ilce"].get("TR-D-01-001", [])}
     if aladag.get("1983") != "Karaisalı" or aladag.get("1991") is not None:
         bad.append(f"Aladag eslemesi beklenmedik: 1983={aladag.get('1983')}, 1991={aladag.get('1991')}")
     check(f"seçim geçmişi: {len(v['ilce'])} ilçe × {len(anahtarlar) - ilk_ilce} genel seçim, {len(v['il'])} il",

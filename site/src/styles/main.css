@@ -220,6 +220,13 @@
 
   .gecmis{margin-top:18px;}
   .gecmis .gx-alt{font-weight:400; text-transform:none; letter-spacing:0; margin-left:4px;}
+  .gx-gorunum{display:inline-flex; margin:2px 0 8px; border:1px solid var(--line); border-radius:7px; overflow:hidden;}
+  .gx-gorunum button{font:inherit; font-size:11.5px; font-weight:600; padding:4px 10px; border:0; background:var(--surface-1); color:var(--ink-2); cursor:pointer;}
+  .gx-gorunum button + button{border-left:1px solid var(--line);}
+  .gx-gorunum button.active{background:var(--ink-1); color:var(--surface-0);}
+  .gx-gorunum button:hover:not(.active){background:var(--surface-2);}
+  .gx-gorunum button:focus-visible{outline:2px solid var(--ink-1); outline-offset:-2px;}
+  .gx-not a{color:inherit; text-decoration:underline;}
   .gecmis-svg{width:100%; height:auto; display:block; overflow:visible;}
   .gecmis-svg .gx-izgara{stroke:var(--line-soft); stroke-width:1;}
   .gecmis-svg .gx-eksen{stroke:var(--line); stroke-width:1;}

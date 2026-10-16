@@ -1,0 +1,176 @@
+# Parti soy çizgileri ve gelenekler (yalnız genel seçimler, 1950–2023)
+#
+# Sitenin "Seçim geçmişi" grafiğindeki "Soy" ve "Gelenek" görünümleri bu dosyayı okur
+# (scripts/gecmis.py -> data/gecmis/genel.json). Bu dosya bir YORUMDUR, resmî bir sınıflandırma değildir.
+#
+# İki katman var:
+#   soy     : Örgütsel devamlılık. Bir parti kapatılınca yerine kurulan ya da adını değiştiren ya da
+#             birleşerek devam eden parti aynı çizgide sayılır. Her seçimde her çizginin EN FAZLA BİR
+#             üyesi olabilir (gecmis.py bunu denetler); çizginin değeri o üyenin oy oranıdır.
+#   gelenek : Daha geniş ve daha tartışmalı gruplama. Soy çizgisinin bütün üyeleri, ayrıca o çizgiden
+#             ayrılan ya da aynı tabana yaslanan partiler. Aynı seçimdeki üyelerin oyları TOPLANIR.
+#
+# Kurallar:
+#   - Üyelik (seçim yılı, parti anahtarı) çiftiyle tanımlanır; aynı kısaltma farklı dönemlerde farklı
+#     partileri gösterebilir (ör. DP 1950–57 Demokrat Parti, DP 2007–11 DYP'nin yeni adı).
+#   - Parti anahtarları data/normalized/partiler.json'daki anahtarlardır.
+#   - Oy, sandıktaki listeye yazılır: ittifak ya da ortak liste oyları listeyi kuran partinin
+#     çizgisinde kalır, bileşenlere bölünmez (ör. 1991 RP listesindeki MÇP ve IDP adayları,
+#     1991 SHP listesindeki HEP adayları).
+#   - Bağımsız adaylar ve "Diğer" hiçbir çizgiye eklenmez; tahminle parti dağıtılmaz.
+#   - AK Parti her iki katmanda da kendi başına durur (Milli Görüş'ten mi, merkez sağdan mı
+#     sayılacağı yoruma açık olduğu için).
+#
+# yillar: "1950-1977" (iki uç dahil) ya da "1983" — seçim anahtarının ilk dört hanesi.
+
+surum: 1
+
+katmanlar:
+  soy:
+    ad: Soy
+    aciklama: Kapatma, ad değişikliği ya da birleşmeyle devam eden partiler tek çizgide.
+    gruplar:
+      - id: chp-soyu
+        ad: CHP soyu (CHP · HP · SHP)
+        kisa: CHP soyu
+        renk: CHP
+        uyeler:
+          - {parti: CHP, yillar: "1950-1977"}
+          - {parti: HP, yillar: "1983"}
+          - {parti: SHP, yillar: "1987-1991"}
+          - {parti: CHP, yillar: "1995-2023"}
+        gecisler:
+          - "1981: CHP, 12 Eylül sonrasında bütün partilerle birlikte kapatıldı."
+          - "1983: Halkçı Parti (HP) kuruldu; CHP kadrolarının kurduğu SODEP seçime sokulmadı."
+          - "1985: HP ile SODEP birleşerek SHP'yi kurdu."
+          - "1992: CHP yeniden açıldı; 1995'te SHP, CHP'ye katıldı."
+        kaynaklar:
+          - https://en.wikipedia.org/wiki/Populist_Party_(Turkey)
+          - https://en.wikipedia.org/wiki/Social_Democratic_Populist_Party_(Turkey)
+          - https://www.bpb.de/themen/europa/tuerkei/190437/sosyal-demokrat-halkci-parti-shp/
+
+      - id: dp-soyu
+        ad: DP soyu (DP · AP · DYP)
+        kisa: DP–AP–DYP
+        renk: AP
+        uyeler:
+          - {parti: DP, yillar: "1950-1957"}
+          - {parti: AP, yillar: "1961-1977"}
+          - {parti: DYP, yillar: "1987-2002"}
+          - {parti: DP, yillar: "2007-2011"}
+        gecisler:
+          - "1960: Demokrat Parti 27 Mayıs sonrasında kapatıldı; 1961'de AP, DP'nin devamı olarak kuruldu."
+          - "1981: AP kapatıldı; 1983'te AP kadrolarınca DYP kuruldu (1983 seçimine sokulmadı)."
+          - "2007: DYP adını Demokrat Parti olarak değiştirdi."
+        kaynaklar:
+          - https://en.wikipedia.org/wiki/Justice_Party_(Turkey)
+          - https://en.wikipedia.org/wiki/True_Path_Party
+          - https://en.wikipedia.org/wiki/Democrat_Party_(Turkey,_2007)
+
+      - id: milli-gorus
+        ad: Milli Görüş soyu (MSP · RP · FP · SP)
+        kisa: MSP–RP–SP
+        renk: RP
+        uyeler:
+          - {parti: MSP, yillar: "1973-1977"}
+          - {parti: RP, yillar: "1987-1995"}
+          - {parti: FP, yillar: "1999"}
+          - {parti: SP, yillar: "2002-2018"}
+        gecisler:
+          - "1981: MSP kapatıldı; 1983'te Refah Partisi kuruldu."
+          - "1991: RP; MÇP ve IDP ile ortak listeyle girdi, oy RP'ye yazılır."
+          - "1998: RP kapatıldı; yerine Fazilet Partisi (FP) geçti."
+          - "2001: FP kapatıldı; Saadet Partisi kuruldu. Aynı yıl AK Parti de bu gelenekten ayrılan kadrolarca kuruldu (AK Parti ayrı tutulur)."
+          - "2023: SP adayları CHP listesinden girdi; o seçimde SP'nin ayrı oyu yoktur."
+        kaynaklar:
+          - https://www.milligazete.com.tr/milli-gorus-hareketinin-ucuncu-siyasi-partisi-refah-partisi-iste-boyle-kapatildi
+          - https://medyascope.tv/2021/10/02/oguzhan-asilturk-sonrasi-milli-gorus-ve-saadet-partisi/
+
+      - id: mhp-soyu
+        ad: MHP soyu (CMP · CKMP · MHP)
+        kisa: MHP soyu
+        renk: MHP
+        uyeler:
+          - {parti: CMP, yillar: "1954-1957"}
+          - {parti: CKMP, yillar: "1961-1965"}
+          - {parti: MHP, yillar: "1969-1977"}
+          - {parti: MÇP, yillar: "1987"}
+          - {parti: MHP, yillar: "1995-2023"}
+        gecisler:
+          - "1958: CMP ile Türkiye Köylü Partisi birleşerek CKMP'yi kurdu."
+          - "1969: CKMP adını Milliyetçi Hareket Partisi olarak değiştirdi."
+          - "1981: MHP kapatıldı; 1983'te Milliyetçi Çalışma Partisi (MÇP) kuruldu."
+          - "1991: MÇP adayları RP listesinden girdi; o seçimde ayrı oyu yoktur."
+          - "1993: MÇP adını yeniden MHP olarak değiştirdi."
+        kaynaklar:
+          - https://en.wikipedia.org/wiki/Republican_Villagers_Nation_Party
+          - https://en.wikipedia.org/wiki/Nationalist_Movement_Party
+
+      - id: hadep-soyu
+        ad: HADEP–HDP soyu (HADEP · DEHAP · DTP · BDP · HDP · Yeşil Sol)
+        kisa: HADEP–HDP
+        renk: HDP
+        uyeler:
+          - {parti: HADEP, yillar: "1995-1999"}
+          - {parti: DEHAP, yillar: "2002"}
+          - {parti: DTP, yillar: "2007"}
+          - {parti: BDP, yillar: "2011"}
+          - {parti: HDP, yillar: "2015-2018"}
+          - {parti: YEŞİL SOL, yillar: "2023"}
+        gecisler:
+          - "1991: HEP adayları SHP listesinden girdi; oy SHP'ye yazılır."
+          - "1994'ten sonra kapatılan her partinin yerine bir sonraki kuruldu: HADEP, DEHAP, DTP, BDP, HDP."
+          - "2007 ve 2011: hareket büyük ölçüde bağımsız adaylarla girdi; bağımsız oylar bu çizgiye eklenmez, bu yüzden bu iki seçimdeki değer gerçek desteğin altındadır."
+          - "2023: HDP adayları Yeşil Sol Parti listesinden girdi."
+        kaynaklar:
+          - https://medyascope.tv/2023/10/12/kurt-siyasi-partileri-1991den-bugune-11-parti-kuruldu-5-partiyi-aym-kapatti-yesil-sol-parti-yonunu-ariyor/
+          - https://medyascope.tv/2018/02/09/hepten-hdpye-28-yilin-oykusu/
+
+  gelenek:
+    ad: Gelenek
+    aciklama: Soy çizgileri ile onlardan ayrılan ya da aynı tabana yaslanan partilerin toplamı.
+    gruplar:
+      - id: sol-merkez
+        ad: Sol-merkez (CHP soyu, DSP, Memleket)
+        kisa: Sol-merkez
+        renk: CHP
+        soy: [chp-soyu]
+        uyeler:
+          - {parti: DSP, yillar: "1987-2002", neden: "CHP kapalıyken Ecevit çevresince kuruldu."}
+          - {parti: MEMLEKET, yillar: "2023", neden: "CHP'den ayrılan kadrolarca kuruldu."}
+
+      - id: merkez-sag
+        ad: Merkez sağ (DP soyu, ANAP ve ayrılan partiler)
+        kisa: Merkez sağ
+        renk: AP
+        soy: [dp-soyu]
+        uyeler:
+          - {parti: HP57, yillar: "1957", neden: "Hürriyet Partisi; DP'den ayrılanlarca kuruldu."}
+          - {parti: YTP61, yillar: "1961-1969", neden: "Yeni Türkiye Partisi; DP tabanına yaslanan ikinci parti."}
+          - {parti: DEMP73, yillar: "1973", neden: "Demokratik Parti; AP'den ayrılanlarca kuruldu."}
+          - {parti: ANAP, yillar: "1983-2002", neden: "1983'te yeni kuruldu; 1980'ler–90'larda DYP ile birlikte merkez sağı oluşturdu."}
+
+      - id: milli-gorus-genis
+        ad: Milli Görüş (MSP–RP–FP–SP ve Yeniden Refah)
+        kisa: Milli Görüş
+        renk: RP
+        soy: [milli-gorus]
+        uyeler:
+          - {parti: YENİDEN REFAH, yillar: "2023", neden: "Refah Partisi mirasını üstlenerek kuruldu."}
+
+      - id: milliyetci
+        ad: Milliyetçi (MHP soyu, MP, BBP, İYİ Parti)
+        kisa: Milliyetçi
+        renk: MHP
+        soy: [mhp-soyu]
+        uyeler:
+          - {parti: MP62, yillar: "1965-1969", neden: "Millet Partisi; CKMP'den ayrılan Bölükbaşı çevresince kuruldu."}
+          - {parti: BBP, yillar: "1999-2023", neden: "MHP'den ayrılanlarca kuruldu (1995'te adayları ANAP listesindeydi)."}
+          - {parti: İYİ Parti, yillar: "2018-2023", neden: "MHP'den ayrılan kadrolarca kuruldu; kendini merkez sağ olarak da tanımlar."}
+
+      - id: kurt-hareketi
+        ad: Kürt siyasi hareketi (HADEP–HDP soyu)
+        kisa: Kürt siy. hareketi
+        renk: HDP
+        soy: [hadep-soyu]
+        uyeler: []
