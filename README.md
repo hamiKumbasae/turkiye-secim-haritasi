@@ -143,8 +143,8 @@ sırayla çalıştırır (seçim katmanını geri al → `apply_idari_merges.py`
 
 `.github/workflows/pages.yml`, main'e her birleştirmede `python3 site/build.py` ile siteyi
 `site/dist/` altında üretir ve GitHub Pages'e yayınlar (derlenen site commit'lenmez). Bir kez:
-Settings → Pages → Build and deployment → Source: **GitHub Actions**. Eski adres
-(`hamikumbasae.github.io/turkiye-secim-atlasi/`) buraya yönlendirir.
+Settings → Pages → Build and deployment → Source: **GitHub Actions**. Eski
+`turkiye-secim-atlasi` reposu ve adresi kaldırıldı; tek adres yukarıdaki.
 
 Yerelde: `python3 site/build.py && python3 -m http.server -d site/dist 8000`; site testleri
 `cd site && npm ci && npm test`.

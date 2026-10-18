@@ -73,7 +73,8 @@ karşılaştırır.
 
 ## 2026-10-04 — Atlas ile eşlenen kaynak onarımları
 
-Atlas düzeltmesi: https://github.com/hamiKumbasae/turkiye-secim-atlasi/pull/9
+Atlas düzeltmesi: eski `turkiye-secim-atlasi` reposunun #9 numaralı birleştirme isteği (o repo bu repoya
+taşındıktan sonra kaldırıldı; düzeltmeler buradaki veride).
 
 - 2004 başkanlık kayıtlarında 81 il ve 910 ilçe DİE yayın no.2935'in temiz tablo arşivinden onarıldı. İl merkezi, büyükşehir ve ilçe belediyesi kapsamı `oyKapsami` ile belirtilir; kullanılan PDF sayfaları `duzeltmeKaynagi` alanındadır.
 - Sakarya 1957 (DP8) ve 1961 (AP3, CHP2, YTP61:1) sandalyeleri ikincil arşivle tamamlandı. İl toplamlarını eksik kabul eden test istisnası kaldırıldı; 610 ve 450 toplamları artık gerçekten doğrulanır.
