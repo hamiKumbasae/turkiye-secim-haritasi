@@ -59,18 +59,18 @@ Dosyalara göre: elections/yerel/1984yerel.json 66, ek/belediye_meclisi/1999yere
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
-| ek/beldeler/1999yerel.json |  | seçmen 1777, geçerli 1850 |
-| ek/beldeler/1999yerel.json |  | seçmen 31, geçerli 2828 |
-| ek/beldeler/1999yerel.json |  | seçmen 13, geçerli 948 |
-| ek/beldeler/1999yerel.json |  | seçmen 14, geçerli 1059 |
-| ek/beldeler/1999yerel.json |  | seçmen 20, geçerli 1919 |
-| ek/beldeler/1999yerel.json |  | seçmen 60, geçerli 5837 |
-| ek/beldeler/1999yerel.json |  | seçmen 31, geçerli 2688 |
-| ek/beldeler/1999yerel.json |  | seçmen 19, geçerli 1083 |
-| ek/beldeler/1999yerel.json |  | seçmen 16, geçerli 1050 |
-| ek/beldeler/1999yerel.json |  | seçmen 17, geçerli 1028 |
-| ek/beldeler/1999yerel.json |  | seçmen 17, geçerli 1072 |
-| ek/beldeler/1999yerel.json |  | seçmen 54, geçerli 4928 |
+| ek/beldeler/1999yerel.json | Afyon / Afyon / Susuz | seçmen 1777, geçerli 1850 |
+| ek/beldeler/1999yerel.json | Afyon / Bolvadin / Dişli | seçmen 31, geçerli 2828 |
+| ek/beldeler/1999yerel.json | Afyon / Dinar / Yıprak | seçmen 13, geçerli 948 |
+| ek/beldeler/1999yerel.json | Afyon / İhsaniye / Gazlıgölakören | seçmen 14, geçerli 1059 |
+| ek/beldeler/1999yerel.json | Hatay / Antakya / Ovakent | seçmen 20, geçerli 1919 |
+| ek/beldeler/1999yerel.json | Hatay / Dörtyol / Kuzuculu | seçmen 60, geçerli 5837 |
+| ek/beldeler/1999yerel.json | Hatay / Samandağ / Tekebaşı | seçmen 31, geçerli 2688 |
+| ek/beldeler/1999yerel.json | Karaman / Karaman / Kılbasan | seçmen 19, geçerli 1083 |
+| ek/beldeler/1999yerel.json | Kayseri / Kocasinan / Güneşli | seçmen 16, geçerli 1050 |
+| ek/beldeler/1999yerel.json | Kayseri / Bünyan / Güllüce | seçmen 17, geçerli 1028 |
+| ek/beldeler/1999yerel.json | Kayseri / Tomarza / Emiruşağı | seçmen 17, geçerli 1072 |
+| ek/beldeler/1999yerel.json | Kocaeli / İzmit / Yuvacık | seçmen 54, geçerli 4928 |
 | … | 176 kayıt daha | |
 
 ## `OY_TOPLAMI_TUTMUYOR` (1203)
@@ -81,18 +81,18 @@ Dosyalara göre: ek/belediye_meclisi/1994yerel.json 195, ek/belediye_meclisi/199
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
-| ek/beldeler/1989yerel.json |  | parti toplamı 467, geçerli 844 (fark -377) |
-| ek/beldeler/1989yerel.json |  | parti toplamı 2058, geçerli 2053 (fark +5) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 1098, geçerli 1241 (fark -143) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 443, geçerli 919 (fark -476) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 711, geçerli 1420 (fark -709) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 1581, geçerli 1793 (fark -212) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 1222, geçerli 1617 (fark -395) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 1037, geçerli 1153 (fark -116) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 606, geçerli 983 (fark -377) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 994, geçerli 1318 (fark -324) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 826, geçerli 1044 (fark -218) |
-| ek/beldeler/1994yerel.json |  | parti toplamı 880, geçerli 885 (fark -5) |
+| ek/beldeler/1989yerel.json | Kırşehir / Kırşehir / Karahıdır | parti toplamı 467, geçerli 844 (fark -377) |
+| ek/beldeler/1989yerel.json | Tekirdağ / Tekirdağ / Karacakılavuz | parti toplamı 2058, geçerli 2053 (fark +5) |
+| ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Akören | parti toplamı 1098, geçerli 1241 (fark -143) |
+| ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Nuhköy | parti toplamı 443, geçerli 919 (fark -476) |
+| ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Serban | parti toplamı 711, geçerli 1420 (fark -709) |
+| ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Tınaztepe | parti toplamı 1581, geçerli 1793 (fark -212) |
+| ek/beldeler/1994yerel.json | Afyon / Sultandağı / Dereçine | parti toplamı 1222, geçerli 1617 (fark -395) |
+| ek/beldeler/1994yerel.json | Afyon / Sultandağı / Karapınar | parti toplamı 1037, geçerli 1153 (fark -116) |
+| ek/beldeler/1994yerel.json | Afyon / Sultandağı / Kırca | parti toplamı 606, geçerli 983 (fark -377) |
+| ek/beldeler/1994yerel.json | Afyon / Sultandağı / Yakasinek | parti toplamı 994, geçerli 1318 (fark -324) |
+| ek/beldeler/1994yerel.json | Aksaray / Ortaköy / Harmandalı | parti toplamı 826, geçerli 1044 (fark -218) |
+| ek/beldeler/1994yerel.json | Aksaray / Ortaköy / Ozancık | parti toplamı 880, geçerli 885 (fark -5) |
 | … | 1191 kayıt daha | |
 
 ## `ORAN_HESAPLA_TUTMUYOR` (200)

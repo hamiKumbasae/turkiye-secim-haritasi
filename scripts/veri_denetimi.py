@@ -31,9 +31,11 @@ Kullanim (repo kokunden):
   python3 scripts/veri_denetimi.py                      # ozet ekrana
   python3 scripts/veri_denetimi.py --md docs/rapor/VERI_DENETIMI.md --json /tmp/denetim.json
   python3 scripts/veri_denetimi.py --ornek 20           # her bulgu turu icin ornek sayisi
+  python3 scripts/veri_denetimi.py --csv-klasor docs/rapor/veri_denetimi   # her bulgu turu icin tam liste (CSV)
 """
 import argparse
 import collections
+import csv
 import json
 import pathlib
 
@@ -178,19 +180,21 @@ class Denetim:
             parcalar.insert(0, f"plaka {r['plaka']}")
         return " / ".join(str(p) for p in parcalar if p)
 
-    def genel_yapi(self, o, dosya, yol=""):
-        """Ek dosyalarda (meclis, belde, yenileme...) 'oy' alani olan her kaydi bulur."""
+    def genel_yapi(self, o, dosya, yol="", baglam=""):
+        """Ek dosyalarda (meclis, belde, yenileme...) 'oy' alani olan her kaydi bulur. Ic ice
+        kayitlarda (belde -> tuik) birim adi ust kayittan gelir."""
         if isinstance(o, dict):
+            ad = self.ad(o) or baglam or o.get("adKaynakta") or ""
             if isinstance(o.get("oy"), dict) and o["oy"]:
                 duzey = yol.rsplit("/", 1)[-1] if yol else "kayıt"
-                self.kayit(o, DUZEY_ADI.get(duzey, duzey), dosya, self.ad(o))
+                self.kayit(o, DUZEY_ADI.get(duzey, duzey), dosya, ad or baglam)
                 return
             for k, v in o.items():
                 if isinstance(v, (dict, list)):
-                    self.genel_yapi(v, dosya, f"{yol}/{k}")
+                    self.genel_yapi(v, dosya, f"{yol}/{k}", ad or baglam)
         elif isinstance(o, list):
             for v in o:
-                self.genel_yapi(v, dosya, yol)
+                self.genel_yapi(v, dosya, yol, baglam)
 
     # ---------------------------------------------------------------- calistir
     def calistir(self):
@@ -313,6 +317,7 @@ def main():
     ap.add_argument("--md", help="markdown rapor yolu")
     ap.add_argument("--json", help="bütün bulguların JSON dökümü")
     ap.add_argument("--ornek", type=int, default=15, help="her bulgu türü için rapora yazılan örnek sayısı")
+    ap.add_argument("--csv-klasor", help="her bulgu türünün tam listesi bu klasöre <TUR>.csv olarak yazılır")
     a = ap.parse_args()
     d = Denetim(a.ornek).calistir()
     print("Denetlenen kayıt:", dict(d.kayit_sayisi))
@@ -321,6 +326,21 @@ def main():
     if a.md:
         pathlib.Path(a.md).write_text(d.markdown(), encoding="utf-8")
         print("yazıldı:", a.md)
+    if a.csv_klasor:
+        klasor = pathlib.Path(a.csv_klasor)
+        klasor.mkdir(parents=True, exist_ok=True)
+        for eski in klasor.glob("*.csv"):
+            eski.unlink()
+        for tur in ACIKLAMA:
+            liste = d.bulgular.get(tur)
+            if not liste:
+                continue
+            with open(klasor / f"{tur}.csv", "w", newline="", encoding="utf-8") as f:
+                w = csv.writer(f)
+                w.writerow(["dosya", "duzey", "birim", "ayrinti", "belgeli"])
+                for b in sorted(liste, key=lambda b: (b["dosya"], b["birim"])):
+                    w.writerow([b["dosya"], b["duzey"], b["birim"], b["detay"], "evet" if b["bilinen"] else ""])
+        print("yazıldı:", klasor, f"({sum(1 for _ in klasor.glob('*.csv'))} CSV)")
     if a.json:
         pathlib.Path(a.json).write_text(json.dumps({"kayitSayisi": d.kayit_sayisi, "bulgular": d.bulgular},
                                                    ensure_ascii=False, indent=1), encoding="utf-8")
