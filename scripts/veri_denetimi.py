@@ -114,8 +114,9 @@ class Denetim:
         katilim = r.get("katilim")
 
         if katilim is not None and katilim > 100:
+            kul = kullanan if kullanan is not None else (round(katilim * secmen / 100) if secmen else None)
             self.ekle("KATILIM_100_USTU", duzey, dosya, birim,
-                      f"katılım %{katilim}, seçmen {secmen}, oy {kullanan if kullanan is not None else toplam}")
+                      f"katılım %{katilim}, seçmen {secmen}, oy kullanan {kul}, geçerli parti oyu {toplam}")
         elif secmen and kullanan and kullanan > secmen:
             self.ekle("KATILIM_100_USTU", duzey, dosya, birim, f"seçmen {secmen}, oy kullanan {kullanan}")
         if katilim is not None and katilim < 0:

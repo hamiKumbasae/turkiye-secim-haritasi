@@ -37,18 +37,18 @@ Dosyalara göre: mahalle/2023cb1tur.json 885, mahalle/2023.json 868, mahalle/201
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
-| mahalle/2009yerel.json | Akyurt / KARAYATAK MAH. | katılım %102.7, seçmen 37, oy 34 |
-| mahalle/2009yerel.json | Çubuk / KARAMAN MAH. | katılım %103.7, seçmen 27, oy 28 |
-| mahalle/2009yerel.json | Çubuk / KIZILÖZ MAH. | katılım %104.44, seçmen 45, oy 46 |
-| mahalle/2009yerel.json | Çubuk / TUĞLA MAH. | katılım %107.41, seçmen 27, oy 29 |
-| mahalle/2009yerel.json | Kahramankazan / GÜNBAŞI MAH. | katılım %101.59, seçmen 63, oy 64 |
-| mahalle/2009yerel.json | Kahramankazan / KIŞLA MAH. | katılım %100.78, seçmen 129, oy 129 |
-| mahalle/2009yerel.json | Kalecik / AKCATAŞ MAH. | katılım %102.53, seçmen 79, oy 79 |
-| mahalle/2009yerel.json | Kalecik / ŞEYHMAHMUT MAH. | katılım %117.65, seçmen 17, oy 20 |
-| mahalle/2009yerel.json | Kalecik / TAVŞANCIK MAH. | katılım %107.56, seçmen 119, oy 127 |
-| mahalle/2009yerel.json | Keçiören / BAĞLUM GÜZELYURT MAH. | katılım %100.57, seçmen 174, oy 168 |
-| mahalle/2009yerel.json | Pursaklar / KARAKÖY MAH. | katılım %105.56, seçmen 36, oy 38 |
-| mahalle/2009yerel.json | Sincan / ADALET MAH. | katılım %124.67, seçmen 2331, oy 2797 |
+| mahalle/2009yerel.json | Akyurt / KARAYATAK MAH. | katılım %102.7, seçmen 37, oy kullanan 38, geçerli parti oyu 34 |
+| mahalle/2009yerel.json | Çubuk / KARAMAN MAH. | katılım %103.7, seçmen 27, oy kullanan 28, geçerli parti oyu 28 |
+| mahalle/2009yerel.json | Çubuk / KIZILÖZ MAH. | katılım %104.44, seçmen 45, oy kullanan 47, geçerli parti oyu 46 |
+| mahalle/2009yerel.json | Çubuk / TUĞLA MAH. | katılım %107.41, seçmen 27, oy kullanan 29, geçerli parti oyu 29 |
+| mahalle/2009yerel.json | Kahramankazan / GÜNBAŞI MAH. | katılım %101.59, seçmen 63, oy kullanan 64, geçerli parti oyu 64 |
+| mahalle/2009yerel.json | Kahramankazan / KIŞLA MAH. | katılım %100.78, seçmen 129, oy kullanan 130, geçerli parti oyu 129 |
+| mahalle/2009yerel.json | Kalecik / AKCATAŞ MAH. | katılım %102.53, seçmen 79, oy kullanan 81, geçerli parti oyu 79 |
+| mahalle/2009yerel.json | Kalecik / ŞEYHMAHMUT MAH. | katılım %117.65, seçmen 17, oy kullanan 20, geçerli parti oyu 20 |
+| mahalle/2009yerel.json | Kalecik / TAVŞANCIK MAH. | katılım %107.56, seçmen 119, oy kullanan 128, geçerli parti oyu 127 |
+| mahalle/2009yerel.json | Keçiören / BAĞLUM GÜZELYURT MAH. | katılım %100.57, seçmen 174, oy kullanan 175, geçerli parti oyu 168 |
+| mahalle/2009yerel.json | Pursaklar / KARAKÖY MAH. | katılım %105.56, seçmen 36, oy kullanan 38, geçerli parti oyu 38 |
+| mahalle/2009yerel.json | Sincan / ADALET MAH. | katılım %124.67, seçmen 2331, oy kullanan 2906, geçerli parti oyu 2797 |
 | … | 8055 kayıt daha | |
 
 ## `GECERLI_SECMENDEN_FAZLA` (188)
