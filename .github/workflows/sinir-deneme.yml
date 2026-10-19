@@ -17,19 +17,26 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: TKGM
+        shell: bash
         run: |
+          set +e
           UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
           B=https://cbsapi.tkgm.gov.tr/megsiswebapi.v3/api/idariYapi
-          curl -sS --max-time 40 -A "$UA" "$B/ilceListe/46" -o ilce.json -w "%{http_code}" > kod.txt || echo hata > kod.txt
-          echo "::notice title=TKGM ilceListe/46::HTTP $(cat kod.txt), $(wc -c < ilce.json 2>/dev/null) bayt, $(python3 -c "import json;d=json.load(open('ilce.json'));print(len(d.get('features',[])),'ilce;', [ (f['properties'].get('text'),f['properties'].get('id'), (f.get('geometry') or {}).get('type')) for f in d['features'][:3]])" 2>&1 | head -c 400)"
-          ID=$(python3 -c "import json;d=json.load(open('ilce.json'));print([f['properties']['id'] for f in d['features'] if 'ONİKİŞUBAT' in str(f['properties'].get('text','')).upper() or 'ONIKISUBAT' in str(f['properties'].get('text','')).upper()][0])" 2>/dev/null)
-          echo "::notice title=TKGM Onikisubat id::$ID"
-          curl -sS --max-time 60 -A "$UA" "$B/mahalleListe/$ID" -o mah.json -w "%{http_code}" > kod2.txt || echo hata > kod2.txt
-          echo "::notice title=TKGM mahalleListe::HTTP $(cat kod2.txt), $(wc -c < mah.json 2>/dev/null) bayt, $(python3 -c "
-          import json;d=json.load(open('mah.json'));F=d.get('features',[])
-          import collections;t=collections.Counter((f.get('geometry') or {}).get('type') for f in F)
-          print(len(F),'birim; geometri',dict(t),'; ornek',[f['properties'] for f in F[:2]])" 2>&1 | head -c 600)"
+          curl -sS --max-time 40 -A "$UA" "$B/ilListe" -o il.json
+          IL=$(python3 -c "import json;d=json.load(open('il.json'));print([f['properties']['id'] for f in d['features'] if 'MARA' in f['properties']['text'].upper()][0])")
+          echo "::notice title=TKGM il::$(python3 -c "import json;d=json.load(open('il.json'));print(len(d['features']),'il; Kahramanmaras id', $IL)")"
+          curl -sS --max-time 40 -A "$UA" "$B/ilceListe/$IL" -o ilce.json
+          ID=$(python3 -c "import json;d=json.load(open('ilce.json'));print([f['properties']['id'] for f in d['features'] if 'ON' in f['properties']['text'].upper()[:2] and 'UBAT' in f['properties']['text'].upper()][0])")
+          echo "::notice title=TKGM ilce::$(python3 -c "import json;d=json.load(open('ilce.json'));print(len(d['features']),'ilce:',[f['properties']['text'] for f in d['features']])") Onikisubat id $ID"
+          curl -sS --max-time 90 -A "$UA" "$B/mahalleListe/$ID" -o mah.json -w "%{http_code}" > kod.txt
+          python3 - <<'PY'
+          import json,collections
+          d=json.load(open('mah.json'));F=d.get('features',[])
+          t=collections.Counter((f.get('geometry') or {}).get('type') for f in F)
+          print("::notice title=TKGM Onikisubat mahalleListe::HTTP",open('kod.txt').read(),len(F),"birim, geometri",dict(t),"; ozellikler",F[0]['properties'] if F else None,"; adlar",[f['properties'].get('text') for f in F[:12]])
+          PY
       - name: OpenStreetMap
+        if: always()
         run: |
           for L in 8 9 10; do
             Q="[out:json][timeout:60];area[\"ISO3166-2\"=\"TR-46\"][admin_level=4]->.a;rel(area.a)[boundary=administrative][admin_level=$L];out tags;"
