@@ -37,7 +37,7 @@ def al(url, deneme=4):
     for i in range(deneme):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
-            with urllib.request.urlopen(req, timeout=90) as r:
+            with urllib.request.urlopen(req, timeout=60) as r:
                 return json.loads(r.read().decode("utf-8"))
         except Exception as e:  # noqa: BLE001
             if i == deneme - 1:
@@ -91,6 +91,7 @@ def main():
             ozet[plaka] = {"hata": "il eslesmedi"}
             continue
         ozellikler, eslesmeyen_ilce, geometrisiz = [], [], []
+        t0 = time.time()
         for fi in al(f"{BASE}/ilceListe/{il_id}")["features"]:
             ilce_ad, ilce_id = fi["properties"]["text"], fi["properties"]["id"]
             geom_id = ilceler.get(plaka, {}).get(fold(ilce_ad))
@@ -108,11 +109,12 @@ def main():
         (cikti / f"{plaka:02d}.geojson").write_text(
             json.dumps({"type": "FeatureCollection", "features": ozellikler}, ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
+        sure = time.time() - t0
         ozet[plaka] = {"il": il_ad[plaka], "birim": len(ozellikler), "geometrisiz": len(geometrisiz),
-                       "eslesmeyen_ilce": eslesmeyen_ilce}
-        print(f"{plaka:02d} {il_ad[plaka]}: {len(ozellikler)} birim, geometrisiz {len(geometrisiz)}, "
-              f"eslesmeyen ilce {eslesmeyen_ilce}")
-    (cikti / "ozet.json").write_text(json.dumps(ozet, ensure_ascii=False, indent=1), encoding="utf-8")
+                       "eslesmeyen_ilce": eslesmeyen_ilce, "sure_sn": round(sure)}
+        print(f"::notice title=TKGM {plaka:02d} {il_ad[plaka]}::{len(ozellikler)} birim, geometrisiz {len(geometrisiz)}, "
+              f"eslesmeyen ilce {eslesmeyen_ilce}, {sure:.0f} sn", flush=True)
+        (cikti / f"ozet_{plaka:02d}.json").write_text(json.dumps({plaka: ozet[plaka]}, ensure_ascii=False), encoding="utf-8")
 
 
 if __name__ == "__main__":

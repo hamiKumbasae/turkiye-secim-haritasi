@@ -2,24 +2,26 @@ name: tkgm-mahalle-cek
 
 # TKGM idari yapi servisinden mahalle/koy sinirlarini ceker (fetch_tkgm_mahalle.py), sitedeki
 # yogunluga sadelestirir ve "tkgm-veri" dalina data/raw/tkgm/mahalle/ olarak yazar.
-# Servis gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor.
+# Servis gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor. Iller gruplara bolunur,
+# ayni anda en cok 3 grup (servise yuk bindirmemek icin); her grup kendi sonucunu yarim kalsa da saklar.
 on:
   workflow_dispatch:
-    inputs:
-      plakalar:
-        description: "virgulle plakalar"
-        required: true
   push:
     branches: [main]
     paths: [".github/workflows/tkgm-mahalle-cek.yml"]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   cek:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        grup: ["34,6,35,16,7", "1,33,31,46,65", "21,25,63,27,47", "45,55,26,38,41", "42,10,59,9,48", "54,20,44,52,61"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -27,19 +29,32 @@ jobs:
           python-version: "3.12"
       - run: pip install shapely==2.0.6
       - name: Cek
-        env:
-          # varsayilan: 30 buyuksehir
-          PLAKALAR: ${{ github.event.inputs.plakalar || '1,6,7,9,10,16,20,21,25,26,27,31,33,34,35,38,41,42,44,45,46,47,48,52,54,55,59,61,63,65' }}
-        run: |
-          python3 scripts/pipelines/mahalle_veri/fetch/fetch_tkgm_mahalle.py /tmp/tkgm "$PLAKALAR" | tee cikti.log
-          python3 -c "import json;o=json.load(open('/tmp/tkgm/ozet.json'));print('::notice title=TKGM ozet::'+'; '.join(f\"{k} {v.get('il')} {v.get('birim')} birim, geometrisiz {v.get('geometrisiz')}, eslesmeyen ilce {v.get('eslesmeyen_ilce')}\" for k,v in o.items())[:4000])"
-          du -sh /tmp/tkgm
+        run: python3 scripts/pipelines/mahalle_veri/fetch/fetch_tkgm_mahalle.py cikti "${{ matrix.grup }}"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tkgm-${{ strategy.job-index }}
+          path: cikti/
+          if-no-files-found: ignore
+
+  kaydet:
+    needs: cek
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: indirilen
       - name: tkgm-veri dalina yaz
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B tkgm-veri
-          mkdir -p data/raw/tkgm/mahalle && cp /tmp/tkgm/* data/raw/tkgm/mahalle/
+          mkdir -p data/raw/tkgm/mahalle && cp indirilen/*/* data/raw/tkgm/mahalle/
           git add data/raw/tkgm/mahalle
           git commit -m "TKGM mahalle sinirlari (sadelestirilmis), run ${{ github.run_id }}"
           git push -f origin tkgm-veri
+          echo "::notice title=kaydedildi::$(ls data/raw/tkgm/mahalle | grep -c geojson) il, $(du -sh data/raw/tkgm/mahalle | cut -f1)"
