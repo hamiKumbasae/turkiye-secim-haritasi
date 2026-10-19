@@ -375,7 +375,7 @@ SAYFA = """<!DOCTYPE html>
       <h3>Lisans</h3>
       <p>Veri <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.tr" rel="license">CC BY-SA 4.0</a> ile
       açıktır: kaynak gösterilerek ve aynı lisansla paylaşılarak her amaçla kullanılabilir. Mahalle sınırları
-      OpenStreetMap'ten türetilmiştir (ODbL, © OpenStreetMap katkıcıları). Kod MIT lisanslıdır.</p>
+      OpenStreetMap'ten türetilmiştir (ODbL, © OpenStreetMap katkıcıları); bir kısmı TKGM'den alınmıştır ve bu açık lisansların dışındadır (CSV'lerde geometri yoktur). Kod MIT lisanslıdır.</p>
       <p><b>Atıf:</b> Türkiye Seçim Tarihi Atlası, <a href="https://hamikumbasae.github.io/turkiye-secim-haritasi/">hamikumbasae.github.io/turkiye-secim-haritasi</a> (YSK, TÜİK/DİE ve diğer kaynaklardan derlenmiştir).</p>
     </div>
     <div class="kutu">
@@ -410,7 +410,7 @@ __BOLUMLER__
     <tr><td>&lt;parti&gt; oy, &lt;parti&gt; %</td><td>Partinin oyu ve geçerli oya oranı. Parti adları sitedeki kısaltmalardır.</td></tr>
     <tr><td>&lt;parti&gt; sandalye</td><td>Yalnız 1950 ve 1955 yerel seçimlerinde: belediye meclisi sandalyesi (başkanı meclis seçiyordu).</td></tr>
     <tr><td>not</td><td>Kaynağa ya da doğrulamaya dair not; boş değilse satırı kullanmadan önce okuyun.</td></tr>
-    <tr><td>ilçe geomId, mahalle osm id</td><td>Mahalle dosyalarında: haritadaki ilçe kimliği ve OpenStreetMap mahalle kimliği.</td></tr>
+    <tr><td>ilçe geomId, mahalle osm id</td><td>Mahalle dosyalarında: haritadaki ilçe kimliği ve mahalle kimliği (r: OpenStreetMap ilişki kimliği; t: ttezer/OSM türevi; k: TKGM birim kimliği).</td></tr>
   </tbody></table></div>
 
   <footer>Türkiye Seçim Tarihi Atlası · Veriler YSK, TÜİK, TBMM ve belgelenmiş diğer kaynaklardan derlenmiştir. Resmî YSK yayını değildir.</footer>

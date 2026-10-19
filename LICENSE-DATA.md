@@ -6,6 +6,7 @@ Bu depodaki **kaynak kodu** MIT lisanslıdır (bkz. [LICENSE](LICENSE)). **Veri*
 |---|---|
 | İşlenmiş seçim sonuçları ve tarihsel sınır çalışmaları (`data/normalized/`, `geo/historical/`, `geo/normalized/` ve `index.html`'e gömülü veri) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.tr) |
 | OpenStreetMap'ten türetilen mahalle sınırları (`geo/normalized/mahalle_geo.json` içindeki OSM kaynaklı poligonlar) | [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/) — © OpenStreetMap katkıcıları |
+| TKGM idari yapı servisinden alınan mahalle/köy sınırları (`data/raw/tkgm/` ve `geo/normalized/mahalle_geo.json` içindeki `k` ile başlayan poligonlar) | **Bu deponun açık veri lisansının dışındadır.** Kaynak: T.C. Tapu ve Kadastro Genel Müdürlüğü (TKGM); servisin yayımlanmış bir açık veri lisansı yoktur, sitede kaynak gösterilerek kullanılır. Yeniden kullanım için TKGM'nin koşullarına bakın. |
 
 ## Neden CC BY-SA 4.0
 
@@ -16,7 +17,7 @@ koşuluyla yayımlanır. Mahalle sınırlarının bir kısmı OpenStreetMap'ten 
 ## Nasıl atıf yapılır
 
 > Türkiye Seçim Tarihi Atlası (https://hamikumbasae.github.io/turkiye-secim-haritasi/), CC BY-SA 4.0. Asıl kaynaklar: YSK, TÜİK.
-> Mahalle sınırları: © OpenStreetMap katkıcıları (ODbL).
+> Mahalle sınırları: © OpenStreetMap katkıcıları (ODbL); bir kısmı T.C. Tapu ve Kadastro Genel Müdürlüğü (TKGM).
 
 Veriyi değiştirip yayımlarsanız aynı lisansla (CC BY-SA 4.0; OSM'den türeyen sınırlar için ODbL)
 paylaşmanız gerekir.
