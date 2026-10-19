@@ -5,7 +5,9 @@ eslestirip sitenin mahalle verisine yazar.
 Eslestirme ayni ilce (geomId) icinde yapilir:
   1. birebir: fold_mahalle(YSK muhtarlik adi) == fold_mahalle(TKGM adi)
   2. yakin: kalanlar icin ad benzerligi >= ESIK (difflib), en iyi aday tek ve karsiliksiz olmali
-  3. eslesmeyen muhtarlik ve TKGM birimi raporlanir (docs/rapor/mahalle_eslesme/<secim>.csv)
+  3. TKGM'de karsiligi olmayan ya da geometrisi bos olan muhtarlik: ayni ilcenin mevcut (OSM/ttezer)
+     poligonlarinda ayni adla aranir; varsa o poligon kullanilir ("eski sinir")
+  4. eslesmeyen muhtarlik ve TKGM birimi raporlanir (docs/rapor/mahalle_eslesme/<secim>.csv)
 Bir TKGM birimine birden cok muhtarlik duserse toplanir (raporda isaretlenir).
 
 Yazilanlar (yalniz TKGM sinirlari olan ilceler icin; digerlerine dokunulmaz):
@@ -30,7 +32,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "scripts" / "pipelines" / "election_import"))
 from common.election_io import load_election  # noqa: E402
-from common.turkish_text import fold_mahalle  # noqa: E402
+from common.turkish_text import fold, fold_mahalle  # noqa: E402
 from party_map_helper import build_party_mapping  # noqa: E402
 
 TKGM_DIR = ROOT / "data" / "raw" / "tkgm" / "mahalle"
@@ -40,6 +42,8 @@ MAHALLE = ROOT / "data" / "normalized" / "mahalle"
 GEOMID_MAP = json.loads((ROOT / "data/raw/ysk/acikveri-ilce-geomid-eslemesi.json").read_text(encoding="utf-8"))
 RAPOR = ROOT / "docs" / "rapor" / "mahalle_eslesme"
 ESIK = 0.85
+# TKGM ilce adi projedekinden farkli yazilan ilceler (fold edilmis TKGM adi -> geomId)
+ILCE_ALIAS = {"19 MAYIS": "TR-D-55-001"}   # Samsun Ondokuzmayıs
 BAGIMSIZ = re.compile(r"^bagimsiz\d+_ALDIGI_OY$")
 
 
@@ -47,7 +51,8 @@ def tkgm_yukle():
     birimler = collections.defaultdict(list)   # geomId -> [feature]
     for f in sorted(TKGM_DIR.glob("*.geojson")):
         for ft in json.loads(f.read_text(encoding="utf-8"))["features"]:
-            g = ft["properties"].get("geomId")
+            g = ft["properties"].get("geomId") or ILCE_ALIAS.get(fold(ft["properties"].get("ilce")))
+            ft["properties"]["geomId"] = g
             if g and ft.get("geometry"):
                 birimler[g].append(ft)
     return birimler
@@ -144,8 +149,19 @@ def isle(anahtar, birimler, geo, uygula):
                 rapor.append([anahtar, il, ilce["ilceAdi"], m["ad"], m["secmen"], "ilçenin TKGM sınırı yok", ""])
             continue
         es = esle(muh, birimler[g])
+        eski = collections.defaultdict(list)   # mevcut OSM/ttezer poligonlari, ada gore
+        for pid, pv in geo.get(g, {}).items():
+            if not pid.startswith("k"):
+                eski[fold_mahalle(pv.get("ad"))].append(pid)
         gruplar = collections.defaultdict(list)
+        eski_gruplar = collections.defaultdict(list)
         for mid, m in muh.items():
+            if mid not in es and len(eski.get(fold_mahalle(m["ad"]), [])) == 1:
+                eski_gruplar[eski[fold_mahalle(m["ad"])][0]].append(m)
+                sayac["eslesen_eski"] += 1
+                il_sayac[il]["eslesen_secmen"] += m["secmen"]
+                rapor.append([anahtar, il, ilce["ilceAdi"], m["ad"], m["secmen"], "TKGM'de sınır yok, eski sınır kullanıldı", ""])
+                continue
             if mid in es:
                 ft, yontem = es[mid]
                 gruplar[ft["properties"]["tkgm_id"]].append((m, ft, yontem))
@@ -170,6 +186,8 @@ def isle(anahtar, birimler, geo, uygula):
             if uygula:
                 ad = lst[0][0]["ad"] if len(lst) == 1 else ft["properties"]["ad"]
                 geo.setdefault(g, {})[k] = {"ad": ad, "geometry": ft["geometry"]}
+        for pid, lst in eski_gruplar.items():
+            ilce_kayit[pid] = kayit_yap(topla(lst), col_to_key)
         yeni_ilceler[g] = ilce_kayit
     eski_secmen = sum((r.get("secmen") or 0) for g in yeni_ilceler for r in veri.get(g, {}).values())
     yeni_secmen = sum(r["secmen"] for k in yeni_ilceler.values() for r in k.values())
@@ -196,7 +214,7 @@ def main():
         s, il_s, eski, yeni = isle(anahtar, birimler, geo, uygula)
         T = s["secmen"]
         print(f"\n{anahtar}: YSK seçmeni {T:,} | haritaya bağlanan {yeni:,} (%{yeni / T * 100:.1f}); önceki {eski:,} (%{eski / T * 100:.1f})")
-        print(f"   birebir {s['eslesen_birebir']}, yakın {s['eslesen_yakin']}, eşleşmeyen {s['eslesmeyen']} muhtarlık "
+        print(f"   birebir {s['eslesen_birebir']}, yakın {s['eslesen_yakin']}, eski sınır {s['eslesen_eski']}, eşleşmeyen {s['eslesmeyen']} muhtarlık "
               f"({s['eslesmeyen_secmen']:,} seçmen), muhtarlıksız sandık seçmeni {s['muhtarliksiz_secmen']:,}, "
               f"TKGM sınırı olmayan ilçelerde {s['sinirsiz_ilce_secmen']:,}, birleşen birim {s['birlesen_birim']}")
         kotu = sorted(il_s.items(), key=lambda x: x[1]["eslesen_secmen"] / max(x[1]["secmen"], 1))[:8]
