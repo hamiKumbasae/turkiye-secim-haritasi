@@ -1,7 +1,8 @@
 name: ysk-mahalle-cek
 
-# YSK acik veri: secilen illerde muhtarlik duzeyi sonuclar, BUTUN partilerle (fetch_muhtarlik_tum.js).
-# Ciktilar "tkgm-veri" dalina data/raw/ysk/muhtarlik/<secim>.json olarak eklenir.
+# YSK acik veri: secilen illerde muhtarlik duzeyi sonuclar, BUTUN parti/aday sutunlariyla
+# (fetch_muhtarlik_tum.js). Ciktilar "mahalle-veri-81" dalina data/raw/ysk/muhtarlik/<secim>.json olarak eklenir.
+# secimTuru: 8 genel (milletvekili), 9 cumhurbaskanligi, 2 yerel ilce/belediye baskanligi (sitenin ilce kaydi).
 on:
   workflow_dispatch:
   push:
@@ -12,7 +13,7 @@ permissions:
   contents: read
 
 env:
-  PLAKALAR: "1,6,7,9,10,16,20,21,25,26,27,31,33,34,35,38,41,42,44,45,46,47,48,52,54,55,59,61,63,65"
+  PLAKALAR: "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81"
 
 jobs:
   cek:
@@ -22,10 +23,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { anahtar: "2015Haziran", secimId: 13884, baslik: baslik_2015Haziran.json }
-          - { anahtar: "2015Kasim",   secimId: 14868, baslik: baslik_2015Kasim.json }
-          - { anahtar: "2018",        secimId: 16300, baslik: baslik_2018.json }
-          - { anahtar: "2023",        secimId: 20230, baslik: baslik_genel_2023.json }
+          - { anahtar: "2015Haziran", secimId: 13884, tur: 8, baslik: baslik_2015Haziran.json }
+          - { anahtar: "2015Kasim",   secimId: 14868, tur: 8, baslik: baslik_2015Kasim.json }
+          - { anahtar: "2018",        secimId: 16300, tur: 8, baslik: baslik_2018.json }
+          - { anahtar: "2023",        secimId: 20230, tur: 8, baslik: baslik_genel_2023.json }
+          - { anahtar: "2023cb1tur",  secimId: 20230, tur: 9, baslik: baslik_2023cb1tur.json }
+          - { anahtar: "2023cb2tur",  secimId: 20240, tur: 9, baslik: baslik_2023cb2tur.json }
+          - { anahtar: "2024yerel",   secimId: 20260, tur: 2, baslik: baslik_yerel_2024.json }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,7 +44,7 @@ jobs:
         run: |
           mkdir -p cikti
           NODE_PATH=scripts/pipelines/mahalle_veri/node_modules node scripts/pipelines/mahalle_veri/fetch/fetch_muhtarlik_tum.js \
-            ${{ matrix.anahtar }} ${{ matrix.secimId }} 8 scripts/pipelines/mahalle_veri/parti-sutun-eslemeleri/${{ matrix.baslik }} \
+            ${{ matrix.anahtar }} ${{ matrix.secimId }} ${{ matrix.tur }} scripts/pipelines/mahalle_veri/parti-sutun-eslemeleri/${{ matrix.baslik }} \
             "$PLAKALAR" cikti/${{ matrix.anahtar }}.json | tail -5
           python3 -c "
           import json;d=json.load(open('cikti/${{ matrix.anahtar }}.json'))
@@ -64,13 +68,13 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: indirilen
-      - name: tkgm-veri dalina ekle
+      - name: mahalle-veri-81 dalina ekle
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git ls-remote --exit-code origin tkgm-veri >/dev/null; then git fetch origin tkgm-veri && git checkout -B tkgm-veri origin/tkgm-veri; else git checkout -B tkgm-veri; fi
+          if git ls-remote --exit-code origin mahalle-veri-81 >/dev/null; then git fetch origin mahalle-veri-81 && git checkout -B mahalle-veri-81 origin/mahalle-veri-81; else git checkout -B mahalle-veri-81; fi
           mkdir -p data/raw/ysk/muhtarlik && cp indirilen/*/*.json data/raw/ysk/muhtarlik/
           git add data/raw/ysk/muhtarlik
           git commit -m "YSK muhtarlik sonuclari (butun partiler), run ${{ github.run_id }}"
-          for i in 1 2 3; do git push origin tkgm-veri && break; git pull --rebase origin tkgm-veri; done
+          for i in 1 2 3; do git push origin mahalle-veri-81 && break; git pull --rebase origin mahalle-veri-81; done
           echo "::notice title=kaydedildi::$(ls -la data/raw/ysk/muhtarlik | tail -n +2 | awk '{print $5, $9}' | tr '\n' ' ')"

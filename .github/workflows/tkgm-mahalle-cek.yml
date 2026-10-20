@@ -1,9 +1,10 @@
 name: tkgm-mahalle-cek
 
 # TKGM idari yapi servisinden mahalle/koy sinirlarini ceker (fetch_tkgm_mahalle.py), sitedeki
-# yogunluga sadelestirir ve "tkgm-veri" dalina data/raw/tkgm/mahalle/ olarak yazar.
+# yogunluga sadelestirir ve "mahalle-veri-81" dalina data/raw/tkgm/mahalle/ olarak ekler.
 # Servis gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor. Iller gruplara bolunur,
 # ayni anda en cok 3 grup (servise yuk bindirmemek icin); her grup kendi sonucunu yarim kalsa da saklar.
+# 30 buyuksehir 2026-10-19'da cekildi (main'de); bu matris kalan 51 il.
 on:
   workflow_dispatch:
   push:
@@ -21,7 +22,8 @@ jobs:
       fail-fast: false
       max-parallel: 3
       matrix:
-        grup: ["34,6,35,16,7", "1,33,31,46,65", "21,25,63,27,47", "45,55,26,38,41", "42,10,59,9,48", "54,20,44,52,61"]
+        grup: ["37,57,68,51,79", "3,24,67,49,76", "58,22,62,29,30", "28,14,50,80,74,69", "19,2,71,5,64",
+               "66,8,4,81,70", "32,15,11,13,72", "43,23,12,40,75", "17,53,36,56,77", "18,60,39,73,78"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -45,16 +47,19 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/download-artifact@v4
         with:
           path: indirilen
-      - name: tkgm-veri dalina yaz
+      - name: mahalle-veri-81 dalina ekle
         run: |
+          # ysk-mahalle-cek de ayni dala yazar: zorla itme yok, var olan dalin ustune eklenir
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B tkgm-veri
+          if git ls-remote --exit-code origin mahalle-veri-81 >/dev/null; then git fetch origin mahalle-veri-81 && git checkout -B mahalle-veri-81 origin/mahalle-veri-81; else git checkout -B mahalle-veri-81; fi
           mkdir -p data/raw/tkgm/mahalle && cp indirilen/*/* data/raw/tkgm/mahalle/
           git add data/raw/tkgm/mahalle
-          git commit -m "TKGM mahalle sinirlari (sadelestirilmis), run ${{ github.run_id }}"
-          git push -f origin tkgm-veri
+          git commit -m "TKGM mahalle sinirlari (sadelestirilmis, 51 il), run ${{ github.run_id }}"
+          for i in 1 2 3; do git push origin mahalle-veri-81 && break; git pull --rebase origin mahalle-veri-81; done
           echo "::notice title=kaydedildi::$(ls data/raw/tkgm/mahalle | grep -c geojson) il, $(du -sh data/raw/tkgm/mahalle | cut -f1)"
