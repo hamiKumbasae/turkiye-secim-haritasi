@@ -1,16 +1,26 @@
-# YSK Açık Veri — muhtarlık düzeyi genel seçim sonuçları (30 büyükşehir, bütün partiler)
+# YSK Açık Veri — muhtarlık düzeyi seçim sonuçları (81 il, bütün partiler/adaylar)
 
-**Kaynak:** `acikveri.ysk.gov.tr/api/getSecimSandikSonucList` (sandık düzeyi, secimTuru=8, yurt içi),
-parti sütunları `scripts/pipelines/mahalle_veri/parti-sutun-eslemeleri/baslik_*.json`.
+**Kaynak:** `acikveri.ysk.gov.tr/api/getSecimSandikSonucList` (sandık düzeyi, yurt içi; secimTuru 8 genel,
+9 cumhurbaşkanlığı, 2 yerel ilçe/belediye başkanlığı), parti/aday sütunları
+`scripts/pipelines/mahalle_veri/parti-sutun-eslemeleri/baslik_*.json`.
 **Script:** `scripts/pipelines/mahalle_veri/fetch/fetch_muhtarlik_tum.js`.
-**Çekildi:** 2026-10-19, GitHub Actions üzerinde (`.github/workflows/ysk-mahalle-cek.yml`). Başarısız sorgu: 0.
+**Çekildi:** 30 büyükşehir 2026-10-19; 81 il 2026-10-20, GitHub Actions üzerinde (`.github/workflows/ysk-mahalle-cek.yml`,
+run 39426266447). Başarısız sorgu: 0. 30 büyükşehrin 2015–2023 genel verisi iki çekimde birebir aynı.
 
-| Dosya | secimId | İlçe | Muhtarlık | Seçmen |
-|---|---|---|---|---|
-| 2015Haziran.json | 13884 | 544 | 25.699 | 41.683.822 |
-| 2015Kasim.json | 14868 | 544 | 25.701 | 41.999.670 |
-| 2018.json | 16300 | 544 | 25.621 | 43.869.807 |
-| 2023.json | 20230 | 544 | 25.829 | 47.518.673 |
+| Dosya | secimId | secimTuru | İlçe | Muhtarlık | Seçmen |
+|---|---|---|---|---|---|
+| 2015Haziran.json | 13884 | 8 | 998 | 50.015 | 53.772.719 |
+| 2015Kasim.json | 14868 | 8 | 998 | 50.020 | 54.084.541 |
+| 2018.json | 16300 | 8 | 998 | 49.302 | 56.406.836 |
+| 2023.json | 20230 | 8 | 998 | 49.931 | 60.774.566 |
+| 2023cb1tur.json | 20230 | 9 | 998 | 49.931 | 60.774.566 |
+| 2023cb2tur.json | 20240 | 9 | 998 | 49.931 | 60.823.248 |
+| 2024yerel.json | 20260 | 2 | 998 | 32.184 | 57.801.470 |
+
+2024 yerel ilçe belediye başkanlığı oyudur: büyükşehir olmayan illerde köyler bu oylamaya katılmaz, bu yüzden
+muhtarlık sayısı daha azdır. YSK listesindeki 998 ilçenin 25'i kaldırılmış eski birimler (büyükşehirlerin "X MERKEZ"i, Eminönü) ya da aynı
+ilçenin ikinci kaydıdır (Çağlayancerit, 19 Mayıs/Ondokuzmayıs); site 973 bugünkü ilçeyi kullanır
+(`data/raw/ysk/acikveri-ilce-geomid-eslemesi.json`).
 
 Seçmen toplamları sitenin ilçe kayıtlarıyla birebir aynı. Her ilçe için muhtarlık başına seçmen, oy kullanan,
 geçerli/geçersiz oy, sandık sayısı ve BÜTÜN parti/ittifak sütunları (küçük partiler "Diğer"e toplanmaz;
