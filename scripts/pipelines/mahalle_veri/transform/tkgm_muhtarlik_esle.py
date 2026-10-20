@@ -13,6 +13,8 @@ Eslestirme ayni ilce (geomId) icinde yapilir:
   5. Mevcut poligonlarla alaninin %25'inden fazlasi ortusen TKGM birimi cizilmez (ust uste binme).
   6. eslesmeyen muhtarliklar raporlanir (docs/rapor/mahalle_eslesme/<secim>.csv)
 Partiler: ulke genelinde %ANA_ESIK ustu olanlar ve o mahallenin kazanani ayri, gerisi 'Diğer'.
+Cumhurbaskanligi (secimTuru 9): sutunlar adaylardir (bagimsizN_ALDIGI_OY); her aday secim kaydindaki
+adiyla ayri tutulur, hicbiri 'Bağımsız'/'Diğer'e toplanmaz.
 Bir TKGM birimine birden cok muhtarlik duserse toplanir (raporda isaretlenir).
 
 Yazilanlar (yalniz TKGM sinirlari olan ilceler icin; digerlerine dokunulmaz):
@@ -179,13 +181,27 @@ def esle(muhtarliklar, birimler):
     return sonuc
 
 
+def aday_eslemesi(col_to_name, adaylar):
+    """Cumhurbaskanligi: bagimsizN_ALDIGI_OY sutunu -> secim kaydindaki aday adi (fold ile)."""
+    adlar = {fold(a): a for a in adaylar}
+    out = {}
+    for col, ad in col_to_name.items():
+        if BAGIMSIZ.match(col):
+            if fold(ad) not in adlar:
+                raise ValueError(f"aday eslesmedi: {col} {ad} (secim kaydi: {sorted(adaylar)})")
+            out[col] = adlar[fold(ad)]
+        else:   # 'bagimsiz_ALDIGI_OY': oy pusulasinda olmayan (sira_NO 0) basvurular
+            out[col] = "Diğer"
+    return out
+
+
 def kayit_yap(toplam, col_to_key, ana_partiler):
     """Ulke genelinde %ANA_ESIK ustu partiler ve o mahallenin kazanani ayri; gerisi 'Diğer'
     (sitenin onceki mahalle verisiyle ayni yogunluk). Kazanan toplanmamis oylara gore."""
     ham = collections.Counter()
     for col, v in toplam["oy"].items():
         if v:
-            ham["Bağımsız" if BAGIMSIZ.match(col) else col_to_key[col]] += v
+            ham[col_to_key[col] if col in col_to_key else "Bağımsız" if BAGIMSIZ.match(col) else col_to_key[col]] += v
     kazanan = max(ham, key=ham.get) if ham else None
     oy = collections.Counter()
     for p_, v in ham.items():
@@ -216,13 +232,19 @@ def isle(anahtar, birimler, geo, uygula):
     for lv in ("iller", "ilceler"):
         for r in secim[lv]:
             mevcut.update(r["oy"])
-    col_to_key = build_party_mapping(ham["colToName"], mevcut - {"Diğer", "Bağımsız"}, {})
+    aday_bazli = ham.get("secimTuru") == 9
+    if aday_bazli:
+        col_to_key = aday_eslemesi(ham["colToName"], mevcut)
+    else:
+        col_to_key = build_party_mapping(ham["colToName"], mevcut - {"Diğer", "Bağımsız"}, {})
     ulke = collections.Counter()
     for r in secim["iller"]:
         for p_, v in r["oy"].items():
             ulke[p_] += v["oy"] if isinstance(v, dict) else v
     ulke_top = sum(ulke.values()) or 1
     ana_partiler = {p_ for p_, v in ulke.items() if v / ulke_top * 100 >= ANA_ESIK and p_ not in ("Diğer", "Bağımsız")}
+    if aday_bazli:
+        ana_partiler = set(col_to_key.values())
     print(f"   {anahtar} ayrı tutulan partiler: {sorted(ana_partiler)}")
     yol = MAHALLE / f"{anahtar}.json"
     veri = json.loads(yol.read_text(encoding="utf-8"))
