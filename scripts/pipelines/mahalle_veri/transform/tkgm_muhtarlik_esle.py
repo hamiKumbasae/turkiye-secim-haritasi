@@ -51,7 +51,8 @@ RAPOR = ROOT / "docs" / "rapor" / "mahalle_eslesme"
 ESIK = 0.85
 ANA_ESIK = 1.5   # ulke geneli oy orani (%); altindaki partiler mahalle verisinde 'Diğer'e toplanir
 # TKGM ilce adi projedekinden farkli yazilan ilceler (fold edilmis TKGM adi -> geomId)
-ILCE_ALIAS = {"19 MAYIS": "TR-D-55-001"}   # Samsun Ondokuzmayıs
+ILCE_ALIAS = {"19 MAYIS": "TR-D-55-001",            # Samsun Ondokuzmayıs
+              "KEMALPASA (ARTVIN)": "TR-D-08-006"}  # Artvin Kemalpaşa (İzmir Kemalpaşa ile karışmasın diye)
 BAGIMSIZ = re.compile(r"^bagimsiz\d+_ALDIGI_OY$")
 
 
