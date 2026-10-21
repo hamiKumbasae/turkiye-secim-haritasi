@@ -25,6 +25,10 @@ jobs:
       - name: Hızlı yapısal doğrulama
         run: python3 scripts/validate.py
 
+      # Kayıtlı bulgu listesinde (docs/rapor/veri_denetimi/) olmayan yeni bir tutarsızlık çıkarsa başarısız olur.
+      - name: Veri denetimi (yeni bulgu yok)
+        run: python3 scripts/veri_denetimi.py --kontrol docs/rapor/veri_denetimi
+
       # Tek dosyalık index.html artık depoda tutulmuyor (100 MB dosya sınırı): burada üretilip boyutu ve
       # kaynaklarla senkronu denetlenir, sürüm yayımlanınca release-tek-dosya.yml sürüme ek olarak koyar.
       - name: Tek dosyalık index.html'i üret

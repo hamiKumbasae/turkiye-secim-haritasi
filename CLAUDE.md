@@ -13,7 +13,7 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 - Yayında mahalle oyları ve sınırları kompakt (`scripts/kompakt.py`: oy satır dizisi, oran/katılım istemcide; sınırlar kayıpsız TopoJSON); `data-loader.js` (`mahalleOyAc`, `topoAc`) açar. Kaynak biçimi değişmez. Tek dosya ~38 MB.
 - Mahallede katılım >%100 (YSK kaynaklı): `map.js` katılımı boşaltır, `katilimHesaplanamaz` + `KATILIM_ASIM_NOTU`; açık veri CSV'sinde "not" sütunu.
 - Kontroller: `scripts/validate.py`, `tests/validate_elections.py` (19), `node --test tests/*.test.cjs` (14; `kompakt.test.cjs` önce `site/build.py` ister), `cd site && node tests/loading.test.cjs` (30). Değişen veri klasörü için `scripts/regenerate_checksums.py <klasör>`.
-- Denetim: `python3 scripts/veri_denetimi.py --md docs/rapor/VERI_DENETIMI.md --csv-klasor docs/rapor/veri_denetimi`.
+- Denetim: `python3 scripts/veri_denetimi.py --md docs/rapor/VERI_DENETIMI.md --csv-klasor docs/rapor/veri_denetimi`. CI `--kontrol docs/rapor/veri_denetimi` ile kayıtlı listede olmayan yeni bulguda başarısız olur; veri düzeltince listeyi bu komutla yenile.
 
 ## Veri hattı (mahalle)
 - YSK açık veri yalnız GitHub Actions'tan erişilir; sonuç `::notice` ile okunur (`gh api .../check-runs/<job>/annotations`), dosyalar veri dalına itilir, `git fetch origin +dal:refs/remotes/origin/dal` + `git checkout origin/dal -- yol`.
@@ -25,7 +25,6 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 Claude Docs artifact `f24fac76-2c6f-4b0f-a2f3-dc33a09ee4ee` (eylem planı tablosu orada).
 
 ## Sıradaki işler (öncelik sırası)
-- D: `veri_denetimi.py`'yi validate.yml'e bağla (yeni bulguda başarısız).
 - E: Kocaeli 2002 il seçmeni ilçelerden 100.000 farklı.
 - F: İl toplamı ilçeleri tutmayan 54 kayıt (çoğu 1973; 1982 Van).
 - G: 1979 Senato'da iki kesirli oy.

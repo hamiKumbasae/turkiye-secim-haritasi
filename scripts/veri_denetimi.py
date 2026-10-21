@@ -32,12 +32,16 @@ Kullanim (repo kokunden):
   python3 scripts/veri_denetimi.py --md docs/rapor/VERI_DENETIMI.md --json /tmp/denetim.json
   python3 scripts/veri_denetimi.py --ornek 20           # her bulgu turu icin ornek sayisi
   python3 scripts/veri_denetimi.py --csv-klasor docs/rapor/veri_denetimi   # her bulgu turu icin tam liste (CSV)
+  python3 scripts/veri_denetimi.py --kontrol docs/rapor/veri_denetimi       # CI: kayitli listede olmayan
+                                   # yeni bulgu varsa 1 ile cikar (validate.yml). Veri duzeltilince giderilen
+                                   # bulgular yalniz bildirilir; listeyi --md/--csv-klasor ile yenileyin.
 """
 import argparse
 import collections
 import csv
 import json
 import pathlib
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 NORM = ROOT / "data" / "normalized"
@@ -312,14 +316,48 @@ class Denetim:
         return "\n".join(out) + "\n"
 
 
+def kontrol(d, klasor: pathlib.Path) -> int:
+    """Bulgulari kayitli taban listeyle (klasor/<TUR>.csv) karsilastirir. Anahtar (tur, dosya, duzey,
+    birim): ayrinti metnindeki sayilar degisse de ayni bulgu sayilir. Yeni bulgu varsa 1 doner."""
+    taban = collections.Counter()
+    for yol in sorted(klasor.glob("*.csv")):
+        with open(yol, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                taban[(yol.stem, r["dosya"], r["duzey"], r["birim"])] += 1
+    simdi, ayrinti = collections.Counter(), {}
+    for tur, liste in d.bulgular.items():
+        for b in liste:
+            k = (tur, b["dosya"], b["duzey"], b["birim"])
+            simdi[k] += 1
+            ayrinti.setdefault(k, b["detay"])
+    yeni, giden = simdi - taban, taban - simdi
+    if giden:
+        print(f"Bilgi: kayıtlı listedeki {sum(giden.values())} bulgu artık yok (giderilmiş); listeyi yenileyin:"
+              " --md docs/rapor/VERI_DENETIMI.md --csv-klasor docs/rapor/veri_denetimi")
+    if not yeni:
+        print(f"Veri denetimi: yeni bulgu yok ({sum(simdi.values())} bulgu kayıtlı listede).")
+        return 0
+    print(f"::error title=Veri denetimi::{sum(yeni.values())} yeni bulgu (kayıtlı listede yok)")
+    for (tur, dosya, duzey, birim) in sorted(yeni)[:40]:
+        print(f"  {tur}  {dosya}  {duzey}  {birim}: {ayrinti[(tur, dosya, duzey, birim)]}")
+    if len(yeni) > 40:
+        print(f"  … {len(yeni) - 40} tane daha")
+    print("Kaynaktan geliyorsa ve beklenense listeyi yenileyip commit'leyin; değilse veriyi düzeltin.")
+    return 1
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     ap.add_argument("--md", help="markdown rapor yolu")
     ap.add_argument("--json", help="bütün bulguların JSON dökümü")
     ap.add_argument("--ornek", type=int, default=15, help="her bulgu türü için rapora yazılan örnek sayısı")
     ap.add_argument("--csv-klasor", help="her bulgu türünün tam listesi bu klasöre <TUR>.csv olarak yazılır")
+    ap.add_argument("--kontrol", metavar="KLASOR",
+                    help="bu klasördeki kayıtlı listede olmayan yeni bulgu varsa 1 ile çık (CI)")
     a = ap.parse_args()
     d = Denetim(a.ornek).calistir()
+    if a.kontrol:
+        sys.exit(kontrol(d, pathlib.Path(a.kontrol)))
     print("Denetlenen kayıt:", dict(d.kayit_sayisi))
     for t, k, n, dg in d.ozet_tablosu():
         print(f"{t:28s} {k:12s} {n:6d}   {dg}")
