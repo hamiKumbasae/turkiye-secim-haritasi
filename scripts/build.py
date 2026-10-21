@@ -81,7 +81,7 @@ def main():
         if yer not in html:
             raise SystemExit(f"Yer tutucu şablonda yok: {yer!r} ({ab.TEMPLATE})")
     css = ab.STYLES.read_text(encoding="utf-8")
-    js = "\n".join((ab.JS_DIR / name).read_text(encoding="utf-8") for name in ab.JS_FILES)
+    js = ab.js_metni()
 
     gomulu = {rel: gzip_b64(yayin_nesnesi(rel, obj)) for rel, obj in public_files(public=True).items()}
     veri = json.dumps(gomulu, ensure_ascii=False, separators=(",", ":"), sort_keys=True)

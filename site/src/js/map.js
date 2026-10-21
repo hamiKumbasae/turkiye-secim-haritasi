@@ -156,21 +156,33 @@
     pathByPlaka = {}; pathByGeomId = {};
     for(const f of GEO.features){
       const plaka = f.properties.plaka;
-      const el = document.createElementNS(NS,'path');
-      el.setAttribute('d', geomToPath(countryProject, f.geometry));
-      el.setAttribute('class','geo-path');
-      el.dataset.plaka = plaka;
-      el.addEventListener('mousemove', e=>showTooltip(e, {kind:'il', plaka}));
-      el.addEventListener('mouseleave', hideTooltip);
-      el.addEventListener('click', ()=>goToProvince(plaka));
-      svg.appendChild(el);
-      pathByPlaka[plaka]=el;
+      pathByPlaka[plaka] = haritaYolu(svg, countryProject, f.geometry, {plaka}, {kind:'il', plaka}, ()=>goToProvince(plaka));
     }
     $('#mapBreadcrumb').style.display='none';
     $('#mapTitleCountry').style.display='block';
     $('#searchBox').placeholder='İl ara…';
     applyMapMode();
     durumuYaz();
+  }
+
+  // il gorunumunde oy kaydi olmayan ilce poligonlari: bos (ya da gecis) dolgusu
+  function verisizIlceleriBoya(){
+    if(view.level!=='province') return;
+    for(const [gid, el] of Object.entries(pathByGeomId)){
+      if(!districtByGeomId[gid]) el.setAttribute('fill', bosDolgu(gid));
+    }
+  }
+  // Haritaya poligon ekler; ipucu (mousemove/mouseleave) ve tiklama il, ilce ve mahallede ortak.
+  function haritaYolu(svg, project, geometry, veri, ipucu, tikla){
+    const el = document.createElementNS(NS,'path');
+    el.setAttribute('d', geomToPath(project, geometry));
+    el.setAttribute('class','geo-path');
+    Object.assign(el.dataset, veri);
+    el.addEventListener('mousemove', e=>showTooltip(e, ipucu));
+    el.addEventListener('mouseleave', hideTooltip);
+    if(tikla) el.addEventListener('click', tikla);
+    svg.appendChild(el);
+    return el;
   }
 
   async function mahalleDataForDistrict(geomId, year, oylama){
@@ -298,14 +310,8 @@
       // ilin kendi kazanan rengiyle goster.
       const p = ilByPlaka[plaka];
       for(const f of fallbackFeats){
-        const el = document.createElementNS(NS,'path');
-        el.setAttribute('d', geomToPath(project, f.geometry));
-        el.setAttribute('class','geo-path');
+        const el = haritaYolu(svg, project, f.geometry, {plaka}, {kind:'il', plaka});
         el.setAttribute('fill', p && p.kazanan ? partyColor(p.kazanan) : 'var(--map-empty)');
-        el.dataset.plaka = plaka;
-        el.addEventListener('mousemove', e=>showTooltip(e, {kind:'il', plaka}));
-        el.addEventListener('mouseleave', hideTooltip);
-        svg.appendChild(el);
         pathByPlaka[plaka]=el;
       }
     }
@@ -333,15 +339,7 @@
     }
     for(const f of dataFeats){
       const geomId = f.properties.id;
-      const el = document.createElementNS(NS,'path');
-      el.setAttribute('d', geomToPath(project, f.geometry));
-      el.setAttribute('class','geo-path');
-      el.dataset.geomId = geomId;
-      el.addEventListener('mousemove', e=>showTooltip(e, {kind:'ilce', plaka, geomId}));
-      el.addEventListener('mouseleave', hideTooltip);
-      el.addEventListener('click', ()=> openDistrict(plaka, geomId));
-      svg.appendChild(el);
-      pathByGeomId[geomId]=el;
+      pathByGeomId[geomId] = haritaYolu(svg, project, f.geometry, {geomId}, {kind:'ilce', plaka, geomId}, ()=>openDistrict(plaka, geomId));
     }
     const p = ilByPlaka[plaka];
     $('#mapBreadcrumb').style.display='flex';
@@ -408,15 +406,7 @@
     svg.innerHTML = '';
     pathByMahalleId = {};
     for(const r of rows){
-      const el = document.createElementNS(NS,'path');
-      el.setAttribute('d', geomToPath(project, r.geometry));
-      el.setAttribute('class','geo-path');
-      el.dataset.mahalleId = r.id;
-      el.addEventListener('mousemove', e=>showTooltip(e, {kind:'mahalle', mahalleId:r.id}));
-      el.addEventListener('mouseleave', hideTooltip);
-      el.addEventListener('click', ()=>selectMahalle(r, plaka, geomId));
-      svg.appendChild(el);
-      pathByMahalleId[r.id]=el;
+      pathByMahalleId[r.id] = haritaYolu(svg, project, r.geometry, {mahalleId: r.id}, {kind:'mahalle', mahalleId:r.id}, ()=>selectMahalle(r, plaka, geomId));
     }
     const d = districtByGeomId[geomId];
     const p = ilByPlaka[plaka];
@@ -465,11 +455,7 @@
         el.setAttribute('fill', e.kazanan ? partyColor(e.kazanan) : 'var(--map-empty)');
       }
       // districts with geometry but no matched vote row -> neutral fill
-      if(view.level==='province'){
-        for(const [gid, el] of Object.entries(pathByGeomId)){
-          if(!districtByGeomId[gid]) el.setAttribute('fill', bosDolgu(gid));
-        }
-      }
+      verisizIlceleriBoya();
       renderWinnerLegend(entities);
       return;
     }
@@ -493,11 +479,7 @@
       const t = vmax>vmin ? (v-vmin)/(vmax-vmin) : 0.5;
       el.setAttribute('fill', seqColor(t,hue));
     }
-    if(view.level==='province'){
-      for(const [gid, el] of Object.entries(pathByGeomId)){
-        if(!districtByGeomId[gid]) el.setAttribute('fill', bosDolgu(gid));
-      }
-    }
+    verisizIlceleriBoya();
   }
 
   // ---------------- degisim: onceki secime gore oy orani farki ----------------
@@ -576,11 +558,7 @@
       const el = pathFor(e); if(!el) continue;
       el.setAttribute('fill', vals.has(e) ? divColor(vals.get(e) / m, hue, hueEksi) : 'var(--map-empty)');
     }
-    if(view.level==='province'){
-      for(const [gid, el] of Object.entries(pathByGeomId)){
-        if(!districtByGeomId[gid]) el.setAttribute('fill', bosDolgu(gid));
-      }
-    }
+    verisizIlceleriBoya();
     const once = ONCEKI ? TUR_LABELS[currentTur][ONCEKI.year] : '';
     let not = escapeHtml(partyShort(key || '')) + ': ' + escapeHtml(once) + ' → ' + escapeHtml(TUR_LABELS[currentTur][currentYear]) + ' oy oranı farkı (yüzde puan).';
     if(view.level === 'mahalle') not = 'Mahalle düzeyinde önceki seçimle karşılaştırma yok.';

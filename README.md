@@ -1,243 +1,133 @@
 # Türkiye Seçim Haritası
 
-1950-2024 arası tüm genel seçim, yerel seçim, referandum ve cumhurbaşkanlığı
-seçimi sonuçlarını gösteren interaktif harita — 15 seçimde mahalle/muhtarlık
-düzeyine kadar iniyor.
+1950–2024 arasındaki bütün genel seçim, yerel seçim, referandum ve cumhurbaşkanlığı seçimi sonuçlarını
+il, ilçe ve 2009'dan sonra mahalle düzeyinde gösteren interaktif harita.
 
-> **Durum: tamamlandı (v1.0, 12 Ekim 2026).** Genel seçimler, referandumlar ve
-> cumhurbaşkanlığı seçimleri ilçe düzeyinde; yerel seçimlerde başkanlık sonuçları
-> büyük ölçüde tam. Bilinçli olarak kapsam dışı bırakılanlar
-> [aşağıda](#kapsam-dışı-bırakılanlar-ileride-yapılabilecekler) listeli.
+**Site:** https://hamikumbasae.github.io/turkiye-secim-haritasi/ · **Açık veri:** [veri.html](https://hamikumbasae.github.io/turkiye-secim-haritasi/veri.html) · **Yöntem:** [yontem.html](https://hamikumbasae.github.io/turkiye-secim-haritasi/yontem.html)
 
-## Nasıl açılır
+> **Durum: tamamlandı.** v1.0 12 Ekim 2026'da kapandı; son bakım 21 Ekim 2026. Yeni bir seçim olduğunda
+> eklenir; bilinçli olarak kapsam dışı bırakılanlar [aşağıda](#kapsam-sınırları).
 
-**İnternette:** https://hamikumbasae.github.io/turkiye-secim-haritasi/
+## Kapsam
 
-**Tek dosya (internetsiz).** [Sürümler](https://github.com/hamiKumbasae/turkiye-secim-haritasi/releases)
-sayfasından `turkiye-secim-haritasi-tek-dosya.zip`'i indirip açın ve `index.html`'e çift tıklayın —
-tüm veri dosyanın içine gömülü, sunucu gerekmez. Dosya (mahalle verisiyle ~65 MB) GitHub'ın 100 MB dosya
-sınırına yaklaştığı için depoda tutulmuyor; her sürümde otomatik üretilip eklenir
-(`.github/workflows/release-tek-dosya.yml`). Kendiniz üretmek için: `python3 scripts/build.py`.
+| | Seçim | Düzey |
+|---|---|---|
+| Genel | 20 (1950–2023) | il; ilçe 1961'den beri |
+| Yerel | 15 (1950–2024) | il, ilçe; 1984'ten beri belediye meclisi ve il genel meclisi |
+| Referandum | 7 (1961–2017) | il, ilçe |
+| Cumhurbaşkanlığı | 4 (2014–2023, 2023'te iki tur) | il, ilçe |
 
-(Not: Sayfa açılışta Google Fonts'tan bir yazı tipi çekmeye çalışır — internet
-yoksa bu sessizce atlanır, harita/veri işlevselliğini etkilemez.)
+Mahalle (muhtarlık) sonuçları 2009–2024 arasındaki 15 seçimde var. Mahalle sınırıyla haritaya yerleşen seçmen
+payı 2014–2024'te %93–94, 2009–2011'de %87–88. Her seçim, o tarihteki il ve ilçe sınırlarıyla çizilir.
 
-## Performans
+## Özellikler
 
-`index.html`'e her yayın dosyası (seçim, mahalle oyları, ilçe başına mahalle poligonları, dönem
-sınırları) ayrı gömülüdür ve yalnız gerektiğinde açılır: açılışta il sınırları ve gösterilen seçim,
-ilçe sınırları arka planda, mahalleler o ilçeye inilince. Ölçüm (yerel Chromium, `file://`,
-açılıştan harita çizilene dek): ~1,1 sn.
+- **Harita modları:** kazanan, katılım, parti oy oranı ve değişim (aynı türdeki önceki seçime göre yüzde puan).
+- **Seçim geçmişi:** genel seçimde bir il ya da ilçeye tıklayınca o yerin bütün genel seçimlerdeki eğrisi.
+- **Karşılaştır:** iki seçim yan yana, senkron yakınlaştırma.
+- **Göm:** o anki görünüm için iframe kodu (`&gom=1`, isteğe bağlı `&tema=acik|koyu`).
+- **Paylaşılabilir bağlantı:** seçim, il, ilçe, mahalle, mod ve parti adresin `#` kısmında.
+- **Açık veri:** seçim başına il+ilçe, mahalle ve meclis CSV'leri, JSON, toplu zip ve SHA256SUMS (CC BY-SA 4.0).
+- **Erişilebilirlik:** renk körü dostu palet (Okabe–Ito), klavyeyle gezinme, ekran okuyucu etiketleri.
 
-## Site özellikleri
+## İnternetsiz kullanım
 
-- **Harita modları:** Kazanan, Katılım, Parti (oy oranı) ve **Değişim** (seçilen partinin aynı
-  türdeki önceki seçime göre oy oranı farkı, yüzde puan; sınırı değişen ilçe karşılaştırılmaz).
-- **Seçim geçmişi:** genel seçim görünümünde bir ile ya da ilçeye tıklayınca detay panelinde o yerin
-  1950–2023 (ilçede 1961–2023) genel seçimlerindeki parti oy oranları çizgi grafikle gösterilir. İlçe
-  serisi bugünkü ilçeye göredir: ilçe henüz ayrı değilken bağlı olduğu ilçenin sonucu içi boş noktayla
-  çizilir (`scripts/gecmis.py` → `data/gecmis/genel.json`).
-- **Karşılaştır:** harita ikiye bölünür, sağda aynı türden ikinci bir seçim (varsayılan bir önceki
-  seçim). Yakınlaştırma senkronize: ile inilince iki harita da o ili aynı izdüşümle çizer (dönem sınırları
-  farklıysa da aynı yer aynı konumda); il/ilçe seçimi iki haritada birlikte işaretlenir. Renk modu
-  soldakini izler; Parti/Katılım ölçeği her haritanın kendi aralığıdır. Bağlantıda `&karsi=<seçim>`.
-- **Göm:** "Göm" düğmesi o anki görünümün iframe kodunu verir (yükseklik ve tema seçilir). Gömülü
-  görünüm (`&gom=1`, isteğe bağlı `&tema=acik|koyu`) yalnız başlığı, haritayı, lejantı ve kaynak satırını
-  gösterir; "Haritanın tamamını aç" aynı görünümü sitede açar.
-- **Açık veri:** [`veri.html`](https://hamikumbasae.github.io/turkiye-secim-haritasi/veri.html), seçim başına bir
-  satır: il+ilçe CSV'si (sitedeki "CSV indir" ile bayt bayt aynı), JSON, varsa mahalle ve meclis CSV'leri;
-  toplu zip ve SHA256SUMS. Yalnız Pages sitesinde üretilir (`scripts/acik_veri.py`, `site/build.py` çağırır).
-- **Paylaşılabilir bağlantı:** seçim, il, ilçe/mahalle, mod, parti ve oylama türü adresin `#`
-  kısmında (`#secim=1977&il=6&mod=parti&parti=CHP`); "Bağlantıyı kopyala" düğmesi.
-- **Kaynaklar ve yöntem:** [`yontem.html`](yontem.html) — kaynaklar, tarihsel sınırlar, harita
-  okuma, bilinen eksikler; sade dille.
-- **CSV indirme:** tablo görünümünde ve Kaynaklar çekmecesinde; açık seçimin il ve ilçe sonuçları.
-- **Erişilebilirlik:** renk körü dostu palet (Okabe–Ito), klavyeyle gezinme ve ekran okuyucu
-  etiketleri, telefonda yatay kayma yok.
+[Sürümler](https://github.com/hamiKumbasae/turkiye-secim-haritasi/releases) sayfasından
+`turkiye-secim-haritasi-tek-dosya.zip`'i indirip `index.html`'e çift tıklayın. Bütün veri dosyanın içinde (~38 MB),
+sunucu gerekmez. Dosya depoda tutulmaz; her sürüme otomatik eklenir. Kendiniz üretmek için:
+`python3 scripts/build.py`.
 
-## Veri mimarisi: raw → normalized → build
-
-Veri kaynağı ve uygulama kodu artık ayrı. Hiçbir sayı elle `index.html`
-içinde düzenlenmez:
+## Proje yapısı
 
 ```
-data/raw/          Dış kaynakların checksum'lı, pinlenmiş snapshot'ları
-                    (mertnuhoglu/secim_verileri, eski proje çıktısı) —
-                    canlı bağımlılık yok. Boşluklar NOTICE.md'de açık.
-geo/raw/            ttezer/OSM için pin bilgisi (dosyaların kendisi değil,
-                    çok büyükler — nasıl yeniden indirileceği belgeli)
-geo/historical/     Tarihsel il/ilçe sınır dönüşümleri (bu projenin kendi
-                    türetilmiş katmanı, kaynak geometri DEĞİL)
-
-data/normalized/    Seçim türüne göre ayrılmış, kayıpsız veri
-                    (cumhurbaskanligi/genel_secimler/yerel_secimler/
-                    referandumlar/mahalle/meclis_2024)
-geo/normalized/     Güncel, basitleştirilmiş il/ilçe/mahalle geometrisi
-
-site/                     Sitenin ön yüzü (src/), Pages derlemesi (build.py -> site/dist/), testleri
-scripts/export_static.py  Yayın dosyaları (data/elections/…, geo/…; public_files)
-scripts/build.py          site/ ön yüzü + aynı yayın dosyalarını gömerek tek dosyalık index.html üretir
-scripts/validate.py         build.py'ye gömülü hızlı yapısal kontrol (gate)
-tests/validate_elections.py Ayrı, yavaş/analitik kontrol seti
-.github/workflows/validate.yml  Her push/PR'da validate.py + build.py + validate_elections.py
-                                 (tek dosyanın boyutu ve kaynaklarla senkronu dahil)
-
-index.html, yontem.html (repo kökü)  build.py'nin çıktısı; commit'lenmez, sürümlere ek olarak konur
+data/raw/            Dış kaynakların checksum'lı ham kopyaları (YSK, TÜİK, Resmî Gazete, ikincil kaynaklar)
+data/kaynaklar/      Kaynak başına ayrıştırılmış veri (her değerin kökenini izlemek için)
+data/normalized/     Sitenin okuduğu veri: elections/<tür>/<seçim>.json, mahalle/, meclis_harita/, ek/
+geo/normalized/      Güncel il, ilçe ve mahalle sınırları
+geo/historical/      Tarihsel il/ilçe sınırları ve ilçe eşleme tabloları
+site/                Ön yüz (src/), Pages derlemesi (build.py → site/dist/), Playwright testleri
+scripts/             Yayın (export_static, kompakt, build, acik_veri), doğrulama, denetim ve veri hatları (pipelines/)
+tests/               Analitik doğrulama, Node ve tarayıcı testleri
+docs/rapor/          Kapsam tablosu, veri denetimi ve eşleştirme raporları
 ```
 
-**Tek repo, tek ön yüz.** Sitenin HTML/CSS/JS'i `site/src/` altındadır ve iki şekilde dağıtılır:
-GitHub Pages sitesi (`python3 site/build.py` → `site/dist/`, veriyi `data/`, `geo/` dosyalarından
-`fetch()` ile okur; `.github/workflows/pages.yml` main'e her birleştirmede yayınlar) ve repo
-kökündeki tek dosyalık `index.html` (`python3 scripts/build.py`; aynı dosyaları aynı yollarla gömer,
-çift tıklayınca açılır; depoda değil, sürüm eki olarak dağıtılır). Eskiden ayrı olan `turkiye-secim-atlasi` reposu buraya taşındı.
+Her veri klasörünün kendi `PROVENANCE.md`'si var. Kaynakların tam listesi: [`SOURCES.md`](SOURCES.md) (okunabilir)
+ve [`sources.yml`](sources.yml) (makine-okunur; her seçimin birincil kaynağı ve bilinen sorunları).
 
-Her klasörün kendi `PROVENANCE.md`'si var (nereden geldiği, nasıl
-doğrulandığı). Kaynakların tam listesi için bkz. [`SOURCES.md`](SOURCES.md)
-(okunabilir) ve [`sources.yml`](sources.yml) (makine-okunur, her seçimin
-birincil/yedek kaynağı + bilinen sorunlar).
+**Tek ön yüz, iki dağıtım.** `python3 site/build.py` GitHub Pages sitesini üretir; veri ayrı dosyalardan
+gerektikçe indirilir (`pages.yml` main'e her push'ta yayımlar). `python3 scripts/build.py` aynı dosyaları
+tek bir `index.html`'e gömer. Mahalle oyları ve sınırları yayında kompakt biçimdedir (`scripts/kompakt.py`;
+sınırlar kayıpsız TopoJSON), tarayıcı açarken eski biçime çevirir.
 
-## Veriyi güncellemek
+## Geliştirme
 
-1. `data/normalized/` ya da `geo/normalized/` altındaki ilgili dosyayı düzenleyin (ön yüz için
-   bkz. yukarıdaki "Tek ön yüz") (yeni bir
-   seçim ekliyorsanız yeni bir `data/normalized/mahalle/<yil>.json` gibi —
-   mahalle verisi için elle yerine `scripts/pipelines/mahalle_veri/transform/
-   import_mahalle.py` kullanın, aşağıya bakın).
-2. ```bash
-   pip install -r requirements.txt   # ilk kurulumda bir kez (pyyaml)
-   python3 scripts/build.py
-   ```
-   Bu, önce `scripts/validate.py`'nin yapısal kontrollerinden geçirir (hatalı
-   veri build'i durdurur), sonra tek dosyalık `index.html`'i yeniden üretir (commit'lenmez).
-   Deterministiktir: aynı veriden iki kez çalıştırınca bayt-bayt aynı çıktı.
-3. İsteğe bağlı, daha kapsamlı kontrol:
-   ```bash
-   python3 tests/validate_elections.py
-   ```
-4. Kaynak dosyaları commit'leyin. `.github/workflows/validate.yml` her push/PR'da aynı kontrolleri
-   çalıştırır; `pages.yml` siteyi yayımlar, sürüm yayımlanınca `release-tek-dosya.yml` tek dosyalık
-   sürümü ekler.
+```bash
+pip install -r requirements.txt          # pyyaml, shapely (Python 3.13)
+python3 site/build.py                    # site/dist/
+python3 -m http.server -d site/dist 8000 # http://localhost:8000
+```
 
-`scripts/pipelines/mahalle_veri/` klasörü, mahalle düzeyi verinin YSK Açık
-Veri Portalı'ndan nasıl çekildiğinin/işlendiğinin kaydı (kurulum: `cd
-scripts/pipelines/mahalle_veri && npm install && npx playwright install
-chromium`). Yeni bir seçim eklerken `transform/import_mahalle.py --year
-<yil> --input mahalle_<yil>.json --build` komutu veriyi doğru yerlere
-otomatik yerleştirip doğrular (bkz. o klasörün kendi README'si).
+| Kontrol | Komut |
+|---|---|
+| Yapısal doğrulama (build'i durdurur) | `python3 scripts/validate.py` |
+| Yayın verisi | `python3 scripts/validate_public_data.py` |
+| Veri denetimi (yeni bulguda başarısız) | `python3 scripts/veri_denetimi.py --kontrol docs/rapor/veri_denetimi` |
+| Analitik doğrulama, senkron, tekrarlanabilirlik | `python3 tests/validate_elections.py` |
+| Node testleri (önce `site/build.py`) | `node --test tests/*.test.cjs` |
+| Site testleri | `cd site && npm ci && npm test` |
 
-### Tarihsel ilçe sınırları
+Hepsi her push ve PR'da `.github/workflows/validate.yml` ile çalışır.
 
-Bir seçimden sonra kurulan ilçe, o seçimde bağlı olduğu ilçenin poligonuna katılır. Her ilçenin
-nereye ve neden bağlandığı `geo/historical/idari/ilce_eslesme/<seçim>.csv` tablosunda; güven
-sütunu `kesin` (kanun/sayım kaynağı), `yaklasik` (%70 ve üzeri birim çoğunluğu) ya da `kaba`
-(en büyük pay veya en uzun sınır komşusu). Dönem il sınırları (`geo/historical/turkiye_il_sinirlari_era*.geojson`) seçim
-verisindeki ilçe-il bağlılığından üretilir.
+**Veri güncellemek.** `data/normalized/` altındaki dosyayı değiştirin, değişen klasör için
+`python3 scripts/regenerate_checksums.py <klasör>` çalıştırın, sonra kontrolleri çalıştırıp commit'leyin.
+Veri düzeltildiyse denetim listesini yenileyin:
+`python3 scripts/veri_denetimi.py --md docs/rapor/VERI_DENETIMI.md --csv-klasor docs/rapor/veri_denetimi`.
 
-Tarihsel sınırları yeniden üretmek için yalnız
-`scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py` kullanın: bütün adımları doğru
-sırayla çalıştırır (seçim katmanını geri al → `apply_idari_merges.py` → İstanbul → her seçim için
-`build_ilce_secim.py` → `ortusmeleri_temizle.py` → il sınırları → meclis → rapor → checksum →
-`build.py`) ve idempotenttir. Tek tek betikleri elle ve başka sırayla çalıştırmayın. Ayrıntı:
-[`geo/historical/idari/README.md`](geo/historical/idari/README.md); güncel kapsam sayıları
-`docs/rapor/`.
+**Yeni seçim (mahalle).** YSK açık verisi yalnız GitHub Actions'tan erişilebilir; çekme ve eşleştirme adımları
+[`scripts/pipelines/mahalle_veri/`](scripts/pipelines/mahalle_veri/README.md) altında.
 
-## Web'e yayınlama (GitHub Pages)
+**Tarihsel sınırlar.** Yalnız `scripts/pipelines/historical_geo/tarihsel_sinirlari_uret.py` ile yeniden üretin;
+adımları doğru sırayla ve idempotent çalıştırır. Ayrıntı: [`geo/historical/idari/README.md`](geo/historical/idari/README.md).
 
-**Canlı site: https://hamikumbasae.github.io/turkiye-secim-haritasi/**
+**Bir değerin kaynağı.** `python3 scripts/kaynak.py 1995 İstanbul Fatih` (liste: `--liste`).
 
-`.github/workflows/pages.yml`, main'e her birleştirmede `python3 site/build.py` ile siteyi
-`site/dist/` altında üretir ve GitHub Pages'e yayınlar (derlenen site commit'lenmez). Bir kez:
-Settings → Pages → Build and deployment → Source: **GitHub Actions**. Eski
-`turkiye-secim-atlasi` reposu ve adresi kaldırıldı; tek adres yukarıdaki.
+## Veri kalitesi
 
-Yerelde: `python3 site/build.py && python3 -m http.server -d site/dist 8000`; site testleri
-`cd site && npm ci && npm test`.
+Değerler kaynaktaki gibi tutulur. Kaynak kendi içinde tutarsızsa değer değiştirilmez; sitede, CSV'nin "not"
+sütununda ve [`docs/rapor/VERI_DENETIMI.md`](docs/rapor/VERI_DENETIMI.md)'de açıklanır. Başlıcaları:
+
+- **Katılım %100'ü aşan mahalleler** (~26 bin kayıt, YSK verisinde): katılım "hesaplanamıyor" gösterilir, oylar aynen kalır.
+- **İl toplamı ilçe toplamını tutmayan 53 kayıt:** fark resmî yayının kendisinde (TÜİK tablosunun il satırı kendi
+  ilçe satırlarını tutmuyor); il kaydında `ilceFarki` ve not var.
+- **Elle düzeltmeler** yalnız kanıt kesinse yapılır ve eski değer kayıtta saklanır: Kocaeli 2002 il seçmeni
+  (yazım hatası, 100.000 fark), 1979 Senato'da Kütahya ve Manisa (PDF sütun kayması). Ayrıntı: `sources.yml`.
+
+## Kapsam sınırları
+
+Seçim başına kapsam, kalite ve en iyi kaynak: [`docs/rapor/KAPSAM_TABLOSU.md`](docs/rapor/KAPSAM_TABLOSU.md).
+Nerelere bakıldığı: [`data/kaynaklar/ARASTIRMA_KAYDI.md`](data/kaynaklar/ARASTIRMA_KAYDI.md).
+
+- **1950, 1954, 1957 genel seçimleri** yalnız il düzeyinde; ülke çapında ilçe kaynağı yok.
+- **1950–1977 yerel seçimleri** Vikipedi'ye dayanır. 1950 ve 1955'te başkanı meclis seçtiği için ilçede yalnız kazanan parti var.
+  1963–1977 başkanlık sonuçları DİE kitaplarıyla karşılaştırıldı ([rapor](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)); farklar işlenmedi.
+- **1984 yerel meclis sonuçları:** taranmış DİE kitabında okunamayan satırlar boş (belediye meclisi %21, il genel meclisi %11).
+  1963–1977 meclis kitapları depoda ama okunmadı.
+- **Ayrıştırılmamış "Diğer":** küçük partilerin kaynakta tek toplam olduğu yerler. 2009–2024 yerel ve 2011–2023 genel
+  seçimlerde YSK verisiyle, 1994–2004 yerelde DİE kitabıyla partilere ayrıldı; 10 kayıtta kazanan hâlâ "Diğer" (sitede notlu).
+- **Kaba eşlemeler:** birden çok eski ilçeden pay alan bazı yeni ilçeler (ör. Çukurova, Körfez) en büyük paya göre
+  tek ilçeye bağlı (`geo/historical/idari/ilce_eslesme/*.csv`, güven `kaba`).
+- **Ankara Merkez (1961–1983):** ayrı ilçeydi ama sınırı kaynakta yok; haritada poligonu yok.
+- **2009 yerel, Ağın ve Kadışehri:** haritada iptal edilen 29 Mart sonucu; 7 Haziran yenilemesi `data/normalized/ek/yenileme_ara/`'da.
+  Kadışehri ilçe merkezi belediye meclisinin yenileme sonucu YSK açık verisinde ve Vikipedi'de yok.
+- **2002 Siirt:** iptal edilip 9 Mart 2003'te yenilenen seçimin resmî sonucu (hata değil).
+- **2011:** BDP destekli bağımsızlar yedi ilde "BDP", diğer illerde "Bağımsız" içinde.
+- Bazı ham kaynakların orijinal çıktısı saklanmamış: [`NOTICE.md`](NOTICE.md).
+
+Seçim takvimi ve her seçimin bu projedeki durumu: [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md).
 
 ## Lisans
 
-- **Kod:** MIT — bkz. [LICENSE](LICENSE).
-- **Veri** (`data/normalized/`, `geo/`, `index.html`'e gömülü veri): CC BY-SA 4.0;
-  OpenStreetMap'ten türetilen mahalle sınırları ODbL (© OpenStreetMap katkıcıları) — bkz.
-  [LICENSE-DATA.md](LICENSE-DATA.md).
-
-## Veri kökeni
-
-Her seçimin il/ilçe kaynağı `sources.yml`'de; birden fazla kaynaktan beslenen
-satırlarda satırın kendi `kaynak` alanı var (hangi değer hangi kaynaktan, eski/yeni).
-Kaynak başına ayrıştırılmış veri `data/kaynaklar/`, ham dosyalar `data/raw/`.
-
-```bash
-.venv/bin/python scripts/kaynak.py --liste
-.venv/bin/python scripts/kaynak.py 1995 İstanbul Fatih
-```
-
-## Bilinen kapsam sınırları
-
-- 1950/1954/1957 genel seçimlerinde ilçe düzeyi veri yok, sadece il düzeyi —
-  resmî bir ilçe kaynağı bulunamadı. 1961–1987 genel seçimlerinin ve 1961/1982/1987/1988
-  referandumlarının ilçe düzeyi TÜİK yayınlarından (bkz. `scripts/pipelines/genel_ilce_1961_1987/`).
-- 1957/1961 Sakarya vekil dağılımı YSK'nin 1950–1977 arşivinde yok; ikincil arşivden tamamlandı
-  (bkz. `data/normalized/PROVENANCE.md`).
-- 2002 Siirt: il ve ilçe sonuçları, iptal edilip 9 Mart 2003'te yenilenen seçimin resmî sonucudur (YSK ve TÜİK aynı rakamı veriyor; hata değil — bkz. `sources.yml`).
-- `data/raw/{haberturk,wikipedia}/` ve `data/raw/ysk/`'nin mahalle-düzeyi
-  kısmı şu an boş — bu kaynakların orijinal ham çıktısı hiç saklanmamış veya
-  yeniden üretilmedi. Ayrıntı: [`NOTICE.md`](NOTICE.md).
-- 2009 yerelde Ağın ve Kadışehri başkanlık seçimi 29 Mart'ta iptal edilip 7 Haziran'da yenilendi:
-  haritada 29 Mart sonucu (2019 İstanbul gibi), yenileme `data/normalized/ek/yenileme_ara/`'da.
-- 1950 ve 1955 yerel seçimlerinde ilçeler için yalnız kazanan parti var (oy sayısı
-  yok); 1963–1977 yerel seçimlerinde ilçe belediye başkanlığı satırları var — bkz.
-  [`SECIM_TAKVIMI.md`](SECIM_TAKVIMI.md) (1950-2024 arası tüm seçimlerin tam
-  takvimi ve bu projedeki kapsam durumu).
-
-Tam liste ve her seçimin ayrıntısı için [`SOURCES.md`](SOURCES.md).
-
-## Kapsam dışı bırakılanlar (ileride yapılabilecekler)
-
-Her seçimin (yerel seçimlerde başkanlık, belediye meclisi, il genel meclisi ayrı) il/ilçe kapsamı,
-kalite sınıfı, en iyi kaynağı ve araştırma önceliği: [`docs/rapor/KAPSAM_TABLOSU.md`](docs/rapor/KAPSAM_TABLOSU.md)
-(`python3 scripts/rapor/kapsam_tablosu.py` üretir). Nerelere bakıldığı:
-[`data/kaynaklar/ARASTIRMA_KAYDI.md`](data/kaynaklar/ARASTIRMA_KAYDI.md).
-
-Proje v1.0 ile kapandı. Aşağıdakiler bilinçli olarak kapsam dışı bırakıldı; çoğu yeni bir
-kaynak ya da taranmış kitaplardan uzun bir okuma işi gerektirir:
-
-- **Yerel meclis sonuçları (1984):** taranmış DİE kitabında okunamayan satırlar boş (belediye meclisi
-  %21, il genel meclisi %11 eksik; sayılar kapsam tablosunda). Kitabın ikinci taraması ilkiyle aynı;
-  boşluklar dördüncü bir okumayla (sayfa görüntüsünden görsel okuma) ve kitabın kendi toplam farkını
-  not ederek kabul etmeyle azaltıldı (`data/raw/tuik/mahalli-kitap/PROVENANCE.md`). 1994, 1999 ve 2004
-  boşlukları YSK'nin dijital tablolarıyla dolduruldu; bu yıllarda kalan boş satırlar haritada sonradan
-  bölünen il merkezleri (il genel meclisinde seçim çevresi bütün Merkez ilçesiydi) ve başkanlık
-  haritasında birleştirilmiş beldeler. 1963–1977 meclis ve il genel meclisi sonuçlarının DİE kitapları
-  depoda (`data/raw/tuik/mahalli-kitap/`) ama okunmadı (kapsam dışı); 1950/1955 için DİE kitabı yok.
-- **1963–1977 belediye başkanlığı (Vikipedi):** DİE kitaplarıyla karşılaştırıldı
-  ([`docs/rapor/KITAP_DOGRULAMA_1963_1977.md`](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)). Kitabın
-  yüzdesi ya da toplamıyla desteklenen farklar ve oyları geniş ölçüde farklı satırlar orada listeli;
-  veriye işlenmedi.
-- **Ayrıştırılmamış "Diğer":** YSK verisi işlenirken o seçimin büyük partiler listesinde olmayan
-  partiler tek bir "Diğer" toplamında birleştirilmişti; "Diğer" bu yüzden bazı yerlerde kazanan
-  görünüyordu (sitede "Diğer (ayrıştırılmamış)" ve açıklama notuyla).
-  - 2009–2024 yerel: YSK açık verisi bütün partilerle yeniden çekildi (GitHub Actions,
-    [`data/raw/ysk/yerel-v2-agrege/`](data/raw/ysk/yerel-v2-agrege/PROVENANCE.md)) ve "Diğer", eski
-    toplamla birebir tuttuğu her satırda partilere ayrıldı
-    (`scripts/pipelines/election_import/diger_ayristir_ysk.py`; 4.158 kayıt). Kazananı "Diğer" olan
-    147 kayıt düzeldi; 10 ilçede de tek bir bağımsız adayın kayıttaki kazanandan çok oy aldığı aday
-    düzeyinde doğrulandı. Diğer kazananlara dokunulmadı (resmi sonuç sandık toplamından farklı
-    olabiliyor). YSK satırı eşleşmeyen ya da eksik 18 kayıtta (2009, 2014) "Diğer" kaldı; hiçbiri kazanan değil.
-  - 1994–2004 yerel: DİE kitabındaki dağılım YSK toplamıyla birebir tuttuğu yerlerde ayrıldı
-    (`scripts/pipelines/tuik_arsiv/diger_ayristir.py`; 405 kayıt, 24'ünde kazanan düzeldi); 10 kayıtta
-    kazanan hâlâ "Diğer".
-  - 2011–2023 genel: aynı yöntemle ([`data/raw/ysk/genel-agrege/`](data/raw/ysk/genel-agrege/PROVENANCE.md))
-    5.127 kayıtta ayrıldı; "Diğer" genel seçimlerde hiçbir yerde kazanan değildi. 2011'de BDP destekli
-    bağımsızların "BDP" etiketli olduğu 67 satır ve YSK'nin bugünkü verisinden 1–4 oy farklı 31 satır
-    olduğu gibi kaldı.
-- **Kaba eşlemeler:** sonradan kurulan ve birden çok eski ilçeden pay alan bazı ilçeler (ör. Çukurova,
-  Körfez, Aliağa, Ondokuzmayıs) en büyük paya ya da komşuluğa göre bütünüyle tek ilçeye bağlı
-  (`geo/historical/idari/ilce_eslesme/*.csv`, güven `kaba`); köy düzeyinde kaynak bulunursa bölünebilir.
-- **Ankara Merkez (1961–1983):** ayrı ilçeydi ama sınırı kaynakta yok; haritada poligonu yok.
-- **2009 yerel, Kadışehri belediye meclisi:** ilçede 29 Mart seçimi iptal edilip 7 Haziran'da
-  yenilendi; ilçe merkezi meclis sonucu YSK açık verisinde ve Vikipedi'de yok.
-- 1950/1954/1957 genel seçimler il düzeyinde kalır (ülke çapında ilçe kaynağı bulunamadı).
-
-Bilgi notu: 2011'de BDP adayları bağımsız girdi. İl satırı bu oyları "BDP" sayan yedi ilde
-(Diyarbakır, Hakkari, Mardin, Muş, Van, Batman, Şırnak) ilçe satırları da "BDP"
-(`election_import/etiket_2011_bdp.py`); diğer illerde blok adayları "Bağımsız" içinde.
+- **Kod:** MIT ([LICENSE](LICENSE)).
+- **Veri:** CC BY-SA 4.0. Mahalle sınırlarının OpenStreetMap'ten gelenleri ODbL (© OpenStreetMap katkıcıları), Bursa ve
+  Sakarya belediyelerinden gelenleri kendi açık veri lisanslarıyla; TKGM'den gelenler bu lisansın dışında.
+  Ayrıntı: [LICENSE-DATA.md](LICENSE-DATA.md).

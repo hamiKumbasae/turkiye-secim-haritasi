@@ -1,11 +1,22 @@
+  // sandalye cubugu ve lejanti: bosalt ve tek oge ekle (bes gorunumde ortak)
+  function seatBosalt(){
+    const track = $('#seatTrack'), legend = $('#seatLegend');
+    track.innerHTML = ''; legend.innerHTML = '';
+    return [track, legend];
+  }
+  function lejantOgesi(legend, anahtar, deger, etiket = partyShort(anahtar)){
+    const item = document.createElement('div'); item.className='legend-item';
+    item.innerHTML = '<span class="swatch" style="background:'+partyColor(anahtar)+'"></span>'+
+      '<span class="n">'+deger+'</span><b>'+escapeHtml(etiket)+'</b>';
+    legend.appendChild(item);
+  }
   // ---------------- national seat bar (genel secim) / evet-hayir bar (referandum) ----------------
   function renderSeatBar(){
     if(DATA.tur === 'referandum'){ renderRefBar(); return; }
     if(DATA.tur === 'yerel'){ renderYerelBar(); return; }
     if(DATA.tur === 'cumhurbaskanligi'){ renderCBBar(); return; }
     if(YEARS_NO_VEKIL.has(currentYear)){ renderGenelWinnerBar(); return; }
-    const track = $('#seatTrack'); track.innerHTML = '';
-    const legend = $('#seatLegend'); legend.innerHTML = '';
+    const [track, legend] = seatBosalt();
     const seatTotals = {};
     for(const p of DATA.iller){ for(const [party,n] of Object.entries(p.vekil)){ seatTotals[party]=(seatTotals[party]||0)+n; } }
     const order = [...new Set([...MAJOR,...Object.keys(seatTotals)])];
@@ -37,16 +48,12 @@
     for(const party of order){
       const n = seatTotals[party] || 0;
       if(n<=0) continue;
-      const item = document.createElement('div'); item.className='legend-item';
-      item.innerHTML = '<span class="swatch" style="background:'+partyColor(party)+'"></span>'+
-        '<span class="n">'+n+'</span><b>'+escapeHtml(partyShort(party))+'</b>';
-      legend.appendChild(item);
+      lejantOgesi(legend, party, n);
     }
   }
 
   function renderRefBar(){
-    const track = $('#seatTrack'); track.innerHTML = '';
-    const legend = $('#seatLegend'); legend.innerHTML = '';
+    const [track, legend] = seatBosalt();
     let evetPct, hayirPct;
     if(DATA.toplamSonuc){
       evetPct = DATA.toplamSonuc.evet_oran; hayirPct = DATA.toplamSonuc.hayir_oran;
@@ -72,16 +79,12 @@
     ml.innerHTML = '<span class="maj-label">%50</span>';
     track.appendChild(ml);
     for(const [name, pct] of [['Evet', evetPct], ['Hayır', hayirPct]]){
-      const item = document.createElement('div'); item.className='legend-item';
-      item.innerHTML = '<span class="swatch" style="background:'+partyColor(name)+'"></span>'+
-        '<span class="n">%'+pct.toFixed(2)+'</span><b>'+name+'</b>';
-      legend.appendChild(item);
+      lejantOgesi(legend, name, '%'+pct.toFixed(2), name);
     }
   }
 
   function renderCBBar(){
-    const track = $('#seatTrack'); track.innerHTML = '';
-    const legend = $('#seatLegend'); legend.innerHTML = '';
+    const [track, legend] = seatBosalt();
     const totals = {};
     for(const p of DATA.iller){ for(const [cand, info] of Object.entries(p.oy)){ totals[cand] = (totals[cand]||0) + info.oy; } }
     const grand = Object.values(totals).reduce((a,b)=>a+b, 0);
@@ -109,18 +112,14 @@
       const n = totals[cand] || 0;
       if(n<=0) continue;
       const pct = grand ? n/grand*100 : 0;
-      const item = document.createElement('div'); item.className='legend-item';
-      item.innerHTML = '<span class="swatch" style="background:'+partyColor(cand)+'"></span>'+
-        '<span class="n">%'+pct.toFixed(2)+'</span><b>'+escapeHtml(partyShort(cand))+'</b>';
-      legend.appendChild(item);
+      lejantOgesi(legend, cand, '%'+pct.toFixed(2));
     }
   }
 
   function renderGenelWinnerBar(){
     // 1950/1954/1957/1961: vekil verisi kaynakta guvenilir degil (bkz. YEARS_NO_VEKIL),
     // bu yuzden sandalye yerine il bazinda kazanan parti sayisini gosteriyoruz.
-    const track = $('#seatTrack'); track.innerHTML = '';
-    const legend = $('#seatLegend'); legend.innerHTML = '';
+    const [track, legend] = seatBosalt();
     const wins = {};
     for(const p of DATA.iller){ wins[p.kazanan] = (wins[p.kazanan]||0) + 1; }
     const total = DATA.iller.length;
@@ -140,15 +139,12 @@
     for(const party of order){
       const n = wins[party] || 0;
       if(n<=0) continue;
-      const item = document.createElement('div'); item.className='legend-item';
-      item.innerHTML = '<span class="swatch" style="background:'+partyColor(party)+'"></span>'+
-        '<span class="n">'+n+'</span><b>'+escapeHtml(partyShort(party))+'</b>';
-      legend.appendChild(item);
+      lejantOgesi(legend, party, n);
     }
   }
 
   function renderCouncilVoteBar(){
-    const track=$('#seatTrack'), legend=$('#seatLegend'); track.innerHTML=''; legend.innerHTML='';
+    const [track, legend] = seatBosalt();
     const eligible=DATA.iller.filter(r=>r.kazanan && !r.yuzdeDogrulanmadi);
     const totals={};
     for(const row of eligible) for(const [party,value] of Object.entries(row.oy||{})) totals[party]=(totals[party]||0)+(value.oy||0);
@@ -158,13 +154,12 @@
     for(const [party,n] of Object.entries(totals).sort((a,b)=>(a[0]===DIGER)-(b[0]===DIGER) || b[1]-a[1])){
       if(!n) continue;
       const pct=n/total*100, seg=document.createElement('div'); seg.className='seatbar-seg'; seg.style.width=pct+'%'; seg.style.background=partyColor(party); seg.title=party+': '+fmt(n)+' oy · %'+pct.toFixed(2); track.appendChild(seg);
-      const item=document.createElement('div'); item.className='legend-item'; item.innerHTML='<span class="swatch" style="background:'+partyColor(party)+'"></span><span class="n">%'+pct.toFixed(2)+'</span><b>'+escapeHtml(partyShort(party))+'</b>'; legend.appendChild(item);
+      lejantOgesi(legend, party, '%'+pct.toFixed(2));
     }
   }
   function renderYerelBar(){
     if(DATA.oylama){ renderCouncilVoteBar(); return; }
-    const track = $('#seatTrack'); track.innerHTML = '';
-    const legend = $('#seatLegend'); legend.innerHTML = '';
+    const [track, legend] = seatBosalt();
     const wins = {};
     for(const p of DATA.iller){ wins[p.kazanan] = (wins[p.kazanan]||0) + 1; }
     const total = DATA.iller.length;
@@ -190,10 +185,7 @@
     for(const party of order){
       const n = wins[party] || 0;
       if(n<=0) continue;
-      const item = document.createElement('div'); item.className='legend-item';
-      item.innerHTML = '<span class="swatch" style="background:'+partyColor(party)+'"></span>'+
-        '<span class="n">'+n+'</span><b>'+escapeHtml(partyShort(party))+'</b>';
-      legend.appendChild(item);
+      lejantOgesi(legend, party, n);
     }
   }
 
@@ -216,10 +208,7 @@
       track.appendChild(seg);
     }
     for(const [name, info] of entries){
-      const item = document.createElement('div'); item.className='legend-item';
-      item.innerHTML = '<span class="swatch" style="background:'+partyColor(name)+'"></span>'+
-        '<span class="n">%'+info.oran.toFixed(2)+'</span><b>'+escapeHtml(partyShort(name))+'</b>';
-      legend.appendChild(item);
+      lejantOgesi(legend, name, '%'+info.oran.toFixed(2));
     }
   }
 

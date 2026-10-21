@@ -23,7 +23,8 @@ tests/loading.test.cjs    Playwright testleri (site/dist/ üzerinde)
   tıklayınca (`file://`) açılır.
 
 Yayın dosyaları `scripts/export_static.py` (`public_files`) ile, kayıtlardaki `kaynak` alanları
-çıkarılarak üretilir.
+çıkarılarak üretilir. Mahalle oy ve sınır dosyaları `scripts/kompakt.py` biçimiyle yazılır;
+`src/js/data-loader.js` (`mahalleOyAc`, `topoAc`) açar.
 
 ## Yükleme
 
