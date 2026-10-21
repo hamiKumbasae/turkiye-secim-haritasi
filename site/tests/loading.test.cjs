@@ -369,7 +369,8 @@ test('general election panel shows the place history and local elections hide it
   // yerel secimde gecmis grafigi yok
   await page.goto('http://atlas.test/#secim=2024yerel&il=6');
   await ready(page);
-  await page.locator('#dName').filter({hasText: 'Ankara'}).waitFor();
+  // yerel secim dosyasi buyuk: yuklu makinede 10 sn yetmeyebiliyor
+  await page.locator('#dName').filter({hasText: 'Ankara'}).waitFor({timeout: 30000});
   assert.equal(await page.locator('#dGecmis').isHidden(), true);
 });
 

@@ -10,6 +10,8 @@ Eslestirme ayni ilce (geomId) icinde yapilir:
   3. TKGM parca: 'Eski/Yeni', 'Eski-Yeni', 'Ad (Eski ad)', 'X Merkez' yazimlarindan bir parca birebir
   4. TKGM yakin: kalanlar icin ad benzerligi >= ESIK (difflib), bire bir; ilk harf farkliysa >= 0.93.
      Bolumlere ayrilmis birimlerin ('Büyüktatlar/Aliçli', '/Fatih' ...) birlesimi de aday olur.
+  1b. guncel OSM (data/raw/osm/mahalle, fetch_osm_mahalle.py): sitede olmayan idari mahalle sinirlari,
+     2-4'teki ad kurallariyla; mevcut poligonlarla %25'ten fazla ortusen alinmaz. Anahtar 'r<osm_id>'.
   5. Mevcut poligonlarla alaninin %25'inden fazlasi ortusen TKGM birimi cizilmez (ust uste binme).
   6. eslesmeyen muhtarliklar raporlanir (docs/rapor/mahalle_eslesme/<secim>.csv)
 Partiler: ulke genelinde %ANA_ESIK ustu olanlar ve o mahallenin kazanani ayri, gerisi 'Diğer'.
@@ -43,6 +45,8 @@ from common.turkish_text import fold, fold_mahalle  # noqa: E402
 from party_map_helper import build_party_mapping  # noqa: E402
 
 TKGM_DIR = ROOT / "data" / "raw" / "tkgm" / "mahalle"
+OSM_DIR = ROOT / "data" / "raw" / "osm" / "mahalle"   # fetch_osm_mahalle.py (yoksa bu adim atlanir)
+ILCE_GEO = ROOT / "geo" / "normalized" / "turkiye_ilce_sinirlari.geojson"
 MUHTARLIK_DIR = ROOT / "data" / "raw" / "ysk" / "muhtarlik"
 GEO = ROOT / "geo" / "normalized" / "mahalle_geo.json"
 MAHALLE = ROOT / "data" / "normalized" / "mahalle"
@@ -110,6 +114,31 @@ def tkgm_yukle():
             if g and ft.get("geometry"):
                 birimler[g].append(ft)
     return birimler
+
+
+def osm_yukle():
+    """Guncel OSM mahalle/koy poligonlari, ilceye (geomId) poligonun icindeki bir noktayla atanir.
+    esle() ile ayni bicimde: properties {tkgm_id: 'r<osm_id>', ad}."""
+    if not OSM_DIR.exists():
+        return {}
+    from shapely.geometry import shape
+    from shapely.strtree import STRtree
+    ilceler = json.loads(ILCE_GEO.read_text(encoding="utf-8"))["features"]
+    sekiller = [shape(f["geometry"]) for f in ilceler]
+    agac = STRtree(sekiller)
+    sonuc = collections.defaultdict(list)
+    for f in sorted(OSM_DIR.glob("*.geojson")):
+        for ft in json.loads(f.read_text(encoding="utf-8"))["features"]:
+            p = ft["properties"]
+            if not p.get("ad") or not ft.get("geometry"):
+                continue
+            nokta = shape(ft["geometry"]).representative_point()
+            for i in agac.query(nokta):
+                if sekiller[i].contains(nokta):
+                    sonuc[ilceler[i]["properties"]["id"]].append({"type": "Feature", "geometry": ft["geometry"], "properties": {
+                        "tkgm_id": f"r{p['osm_id']}", "ad": p["ad"], "admin_level": p.get("admin_level")}})
+                    break
+    return sonuc
 
 
 def esle(muhtarliklar, birimler):
@@ -226,7 +255,7 @@ def topla(liste):
     return t
 
 
-def isle(anahtar, birimler, geo, uygula):
+def isle(anahtar, birimler, geo, uygula, osm=None):
     ham = json.loads((MUHTARLIK_DIR / f"{anahtar}.json").read_text(encoding="utf-8"))
     secim = load_election(anahtar)
     mevcut = set()
@@ -289,13 +318,38 @@ def isle(anahtar, birimler, geo, uygula):
                 il_sayac[il]["eslesen_secmen"] += m["secmen"]
             else:
                 tkgm_aday[mid] = m
+        # 1b) guncel OSM (fetch_osm_mahalle.py): sitede henuz olmayan idari mahalle sinirlari; ad eslemesi
+        #     TKGM ile ayni kurallarla. Mevcut poligonlarla %25'ten fazla ortusen OSM sinirlari alinmaz.
+        from shapely.geometry import shape
+        from shapely.ops import unary_union
+        from shapely.validation import make_valid
+        osm_yeni = {}
+        osm_aday = [ft for ft in (osm or {}).get(g, []) if ft["properties"]["tkgm_id"] not in geo.get(g, {})]
+        if osm_aday and tkgm_aday:
+            es_osm = esle(tkgm_aday, osm_aday)
+            mevcut_birlesik = unary_union([make_valid(shape(geo[g][pid]["geometry"])).buffer(0) for pid in eski_gruplar]) if eski_gruplar else None
+            alinan = set()
+            for mid, (ft, yontem) in sorted(es_osm.items(), key=lambda x: x[1][1] != "birebir"):
+                pid = ft["properties"]["tkgm_id"]
+                if pid in alinan:
+                    continue
+                og = make_valid(shape(ft["geometry"])).buffer(0)
+                if mevcut_birlesik is not None and og.area and og.intersection(mevcut_birlesik).area / og.area > 0.25:
+                    continue
+                alinan.add(pid)
+                m = tkgm_aday.pop(mid)
+                eski_gruplar[pid].append(m)
+                osm_yeni[pid] = (ft, m)
+                sayac["eslesen_osm"] += 1
+                il_sayac[il]["eslesen_secmen"] += m["secmen"]
+                rapor.append([anahtar, il, ilce["ilceAdi"], m["ad"], m["secmen"],
+                              "OSM sınırı" if yontem == "birebir" else "OSM sınırı, yakın ad",
+                              ft["properties"]["ad"] + ("" if yontem == "birebir" else f" ({yontem})")])
         es = esle(tkgm_aday, birimler[g])
         eski_birlesik = None
         if eski_gruplar and es:
-            from shapely.geometry import shape
-            from shapely.ops import unary_union
-            from shapely.validation import make_valid
-            eski_birlesik = unary_union([make_valid(shape(geo[g][pid]["geometry"])).buffer(0) for pid in eski_gruplar])
+            eski_birlesik = unary_union([make_valid(shape((geo[g][pid] if pid in geo.get(g, {}) else osm_yeni[pid][0])["geometry"])).buffer(0)
+                                         for pid in eski_gruplar])
         for mid, m in tkgm_aday.items():
             if mid in es and eski_birlesik is not None:
                 from shapely.geometry import shape
@@ -333,6 +387,8 @@ def isle(anahtar, birimler, geo, uygula):
                 geo.setdefault(g, {})[k] = {"ad": ad, "geometry": ft["geometry"]}
         for pid, lst in eski_gruplar.items():
             ilce_kayit[pid] = kayit_yap(topla(lst), col_to_key, ana_partiler)
+            if uygula and pid in osm_yeni:
+                geo.setdefault(g, {})[pid] = {"ad": osm_yeni[pid][1]["ad"], "geometry": osm_yeni[pid][0]["geometry"]}
         yeni_ilceler[g] = ilce_kayit
     eski_secmen = sum((r.get("secmen") or 0) for g in yeni_ilceler for r in veri.get(g, {}).values())
     yeni_secmen = sum(r["secmen"] for k in yeni_ilceler.values() for r in k.values())
@@ -355,11 +411,13 @@ def main():
     birimler = tkgm_yukle()
     geo = json.loads(GEO.read_text(encoding="utf-8"))
     print("TKGM: ilçe", len(birimler), "birim", sum(len(v) for v in birimler.values()))
+    osm = osm_yukle()
+    print("OSM: ilçe", len(osm), "poligon", sum(len(v) for v in osm.values()))
     for anahtar in secimler:
-        s, il_s, eski, yeni = isle(anahtar, birimler, geo, uygula)
+        s, il_s, eski, yeni = isle(anahtar, birimler, geo, uygula, osm)
         T = s["secmen"]
         print(f"\n{anahtar}: YSK seçmeni {T:,} | haritaya bağlanan {yeni:,} (%{yeni / T * 100:.1f}); önceki {eski:,} (%{eski / T * 100:.1f})")
-        print(f"   birebir {s['eslesen_birebir']}, yakın {s['eslesen_yakin']}, mevcut poligon {s['eslesen_eski']}, çakışma nedeniyle çizilmeyen {s['cakisan']}, eşleşmeyen {s['eslesmeyen']} muhtarlık "
+        print(f"   birebir {s['eslesen_birebir']}, yakın {s['eslesen_yakin']}, mevcut poligon {s['eslesen_eski']}, yeni OSM {s['eslesen_osm']}, çakışma nedeniyle çizilmeyen {s['cakisan']}, eşleşmeyen {s['eslesmeyen']} muhtarlık "
               f"({s['eslesmeyen_secmen']:,} seçmen), muhtarlıksız sandık seçmeni {s['muhtarliksiz_secmen']:,}, "
               f"TKGM sınırı olmayan ilçelerde {s['sinirsiz_ilce_secmen']:,}, birleşen birim {s['birlesen_birim']}")
         kotu = sorted(il_s.items(), key=lambda x: x[1]["eslesen_secmen"] / max(x[1]["secmen"], 1))[:8]
