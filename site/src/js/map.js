@@ -185,7 +185,9 @@
     for(const osmId in voteRows){
       const g = geoRows[osmId]; if(!g) continue;
       const v = voteRows[osmId];
-      rows.push({id:osmId, ad:g.ad, geometry:g.geometry, secmen:v.secmen, sandik:v.sandik, katilim:v.katilim, kazanan:v.kazanan, oy:v.oy});
+      const asim = v.katilim != null && v.katilim > 100;
+      rows.push({id:osmId, ad:g.ad, geometry:g.geometry, secmen:v.secmen, sandik:v.sandik, katilim: asim ? null : v.katilim,
+                 katilimHesaplanamaz: asim, veriNotu: asim ? KATILIM_ASIM_NOTU.slice(2) : undefined, kazanan:v.kazanan, oy:v.oy});
     }
     return rows.length ? rows : null;
   }
@@ -476,16 +478,18 @@
     let key, hue;
     if(mode==='parti'){ key = currentMapParty; hue = key ? colorToHue(partyColor(key)) : 210; }
     else { key=null; hue=210; }
-    const noKatilimData = !key && entities.every(e => e.katilim==null);
-    let vals = entities.map(e => key ? (resultPercent(e.oy[key]) ?? 0) : (e.katilim!=null?e.katilim:0));
-    const vmin = Math.min(...vals), vmax = Math.max(...vals);
+    // katilim haritasinda katilimi olmayan (ya da hesaplanamayan) birim en dusuk renk degil, bos renk alir
+    const katilimYok = e => !key && e.katilim==null;
+    const noKatilimData = !key && entities.every(katilimYok);
+    let vals = entities.filter(e => !katilimYok(e)).map(e => key ? (resultPercent(e.oy[key]) ?? 0) : e.katilim);
+    const vmin = vals.length ? Math.min(...vals) : 0, vmax = vals.length ? Math.max(...vals) : 0;
     $('#seqMin').textContent = noKatilimData ? '—' : (vmin||0).toFixed(2)+'%';
     $('#seqMax').textContent = noKatilimData ? '—' : (vmax||0).toFixed(2)+'%';
     $('#seqRamp').style.background = 'linear-gradient(90deg,'+seqColor(0,hue)+','+seqColor(1,hue)+')';
     for(const e of entities){
       const el = pathFor(e); if(!el) continue;
-      if(noKatilimData){ el.setAttribute('fill','var(--map-empty)'); continue; }
-      const v = key ? (resultPercent(e.oy[key]) ?? 0) : (e.katilim!=null?e.katilim:0);
+      if(noKatilimData || katilimYok(e)){ el.setAttribute('fill','var(--map-empty)'); continue; }
+      const v = key ? (resultPercent(e.oy[key]) ?? 0) : e.katilim;
       const t = vmax>vmin ? (v-vmin)/(vmax-vmin) : 0.5;
       el.setAttribute('fill', seqColor(t,hue));
     }

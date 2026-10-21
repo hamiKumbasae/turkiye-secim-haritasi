@@ -151,6 +151,9 @@ def secim_csv(anahtar, kayit):
     return _csv_baytlari(out)
 
 
+KATILIM_ASIM_NOTU = "Katılım hesaplanamıyor: oy kullanan kayıtlı seçmenden fazla (YSK kaydı)"
+
+
 def mahalle_csv(anahtar, kayit, oylar, mahalle_geo):
     ilce = {d["geomId"]: d for d in kayit.get("ilceler") or [] if d.get("geomId")}
     il_ad = {p["plaka"]: p["ad"] for p in kayit["iller"]}
@@ -164,17 +167,21 @@ def mahalle_csv(anahtar, kayit, oylar, mahalle_geo):
            "katılım %", "kazanan"]
     for p in partiler:
         bas += [p + " oy", p + " %"]
+    bas.append("not")
     out = [bas]
     for g in sorted(oylar):
         d = ilce.get(g, {})
         adlar = mahalle_geo.get(g, {})
         for osm in sorted(oylar[g]):
             v = oylar[g][osm]
+            asim = v.get("katilim") is not None and v["katilim"] > 100  # sitedeki gibi (map.js)
             satir = [anahtar, d.get("plaka"), il_ad.get(d.get("plaka"), ""), d.get("ad", ""), g, osm,
-                     (adlar.get(osm) or {}).get("ad", ""), v.get("secmen"), v.get("sandik"), v.get("katilim"), v.get("kazanan")]
+                     (adlar.get(osm) or {}).get("ad", ""), v.get("secmen"), v.get("sandik"),
+                     None if asim else v.get("katilim"), v.get("kazanan")]
             for p in partiler:
                 o = (v.get("oy") or {}).get(p)
                 satir += [o.get("oy") if o else None, o.get("oran") if o else None]
+            satir.append(KATILIM_ASIM_NOTU if asim else None)
             out.append(satir)
     return _csv_baytlari(out)
 
@@ -406,7 +413,7 @@ __BOLUMLER__
     <tr><td>düzey</td><td><code>il</code>, <code>ilçe</code> ya da <code>yurt dışı</code>.</td></tr>
     <tr><td>plaka, il, ilçe</td><td>O seçim tarihindeki il ve ilçe; sonradan kurulan ilçeler eski seçimlerde ayrı satır değildir.</td></tr>
     <tr><td>seçmen, sandık, geçerli oy</td><td>Kayıtlı seçmen, sandık sayısı ve geçerli oy; kaynakta yoksa boş.</td></tr>
-    <tr><td>katılım %</td><td>Kaynaktaki katılım oranı.</td></tr>
+    <tr><td>katılım %</td><td>Kaynaktaki katılım oranı. Mahallede oy kullanan kayıtlı seçmenden fazlaysa (YSK verisinde görülür) boştur ve nedeni "not" sütunundadır.</td></tr>
     <tr><td>kazanan</td><td>En çok oy (1950–1957 genel seçimlerinde ilde en çok vekil) alan parti.</td></tr>
     <tr><td>toplam vekil, &lt;parti&gt; vekil</td><td>Yalnız genel seçimlerde: ilin çıkardığı milletvekili.</td></tr>
     <tr><td>&lt;parti&gt; oy, &lt;parti&gt; %</td><td>Partinin oyu ve geçerli oya oranı. Parti adları sitedeki kısaltmalardır.</td></tr>

@@ -197,7 +197,7 @@
     if(currentMapMode === 'parti' && e.oy && e.oy[currentMapParty]){
       satir = [partyShort(currentMapParty), resultPercentLabel(e.oy[currentMapParty])];
     } else if(currentMapMode === 'katilim'){
-      satir = ['Katılım', e.katilim != null ? '%' + e.katilim.toFixed(2) : '—'];
+      satir = ['Katılım', katilimEtiketi(e)];
     } else {
       satir = [e.kazanan ? kazananEtiketi(e.kazanan) + ' önde' : 'Kazanan yok', e.kazanan ? resultPercentLabel(e.oy[e.kazanan]) : ''];
     }

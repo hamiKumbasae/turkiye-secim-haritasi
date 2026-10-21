@@ -48,6 +48,12 @@
   function kazananEtiketi(name){
     return name === DIGER ? 'Diğer (ayrıştırılmamış)' : partyShort(name);
   }
+  // Mahallede oy kullanan > kayitli secmen (YSK verisinde ~26 bin mahalle kaydi): oran anlamsiz,
+  // gosterilmez. Oy sayilari kaynaktaki gibi kalir.
+  const KATILIM_ASIM_NOTU = 'ⓘ Katılım hesaplanamıyor: YSK kaydında oy kullanan sayısı kayıtlı seçmenden fazla. Sandık görevlileri ve listede olmayan bazı seçmenler kayıtlı olmadıkları sandıkta oy kullanabildiği için küçük birimlerde görülür. Oy sayıları kaynaktaki gibidir.';
+  function katilimEtiketi(obj){
+    return obj.katilim != null ? '%' + obj.katilim.toFixed(2) : obj.katilimHesaplanamaz ? 'hesaplanamıyor' : '—';
+  }
   const DIGER_KAZANAN_NOTU = 'ⓘ En çok oyu \'Diğer\' alıyor: kaynakta ayrı verilmeyen küçük partilerin toplamı. Bu kayıtta kazanan parti ayrıştırılmamış.';
 
   function partyShort(name){

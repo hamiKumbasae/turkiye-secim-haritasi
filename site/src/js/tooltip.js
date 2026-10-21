@@ -43,7 +43,7 @@
       if(ONCEKI) html += '<div class="row"><span>'+escapeHtml(TUR_LABELS[currentTur][ONCEKI.year])+'</span><span>'+(o && o.oy ? resultPercentLabel(o.oy[key]) : '—')+'</span></div>';
       html += '<div class="row"><span>Değişim</span><span>'+(v==null ? 'karşılaştırılamıyor' : puan(v))+'</span></div>';
     } else {
-      html += '<div class="row"><span>Katılım</span><span>'+(obj.katilim!=null?'%'+obj.katilim.toFixed(2):'—')+'</span></div>';
+      html += '<div class="row"><span>Katılım</span><span>'+katilimEtiketi(obj)+'</span></div>';
     }
     if(kaynaklaTutmuyor(obj)) html += '<div class="row tip-not tip-uyari"><span>⚠ Kaynakla tam tutmuyor</span></div>';
     if(obj.veriNotu) html += '<div class="row tip-not"><span>'+escapeHtml(obj.veriNotu)+'</span></div>';

@@ -496,3 +496,18 @@ test('a historical district that was later split opens its neighborhood map (200
   assert(requests.some(r => r.startsWith('geo/mahalle/HIST-Kahramanmara')));
   assert(await page.locator('#mapSvg path[data-mahalle-id]').count() > 50);
 });
+
+test('neighborhood with turnout over 100% shows "hesaplanamıyor" and an empty turnout fill', async t => {
+  const {page} = await setup(t);
+  await ready(page);
+  await page.locator('#mapSvg path[data-plaka="1"]').click();
+  await page.locator('#dDistrictList [data-geom-id="TR-D-01-001"]').click();
+  const asim = page.locator('#mapSvg path[data-mahalle-id="r21060073"]');   // YSK: katilim %104,11
+  await asim.waitFor();
+  await page.locator('#modeGroup button[data-mode="katilim"]').click();
+  assert.equal(await asim.getAttribute('fill'), 'var(--map-empty)');
+  assert.notEqual(await page.locator('#mapSvg path[data-mahalle-id]:not([data-mahalle-id="r21060073"])').first().getAttribute('fill'), 'var(--map-empty)');
+  await asim.click();
+  assert.equal(await page.locator('#dTurnout').textContent(), 'hesaplanamıyor');
+  assert.match(await page.locator('#dInfoNote').textContent(), /Katılım hesaplanamıyor/);
+ });

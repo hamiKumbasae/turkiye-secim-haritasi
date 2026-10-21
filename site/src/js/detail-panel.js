@@ -202,7 +202,8 @@
     const gecerli = Object.values(row.oy||{}).reduce((s,o)=>s+(o.oy||0),0);
     $('#dSeatsLabel').textContent = 'Sandık';
     $('#dSeats').textContent = row.sandik!=null ? fmt(row.sandik) : '—';
-    $('#dTurnout').textContent = row.katilim!=null ? '%'+row.katilim.toFixed(2) : '—';
+    $('#dTurnout').textContent = katilimEtiketi(row);
+    if(row.katilimHesaplanamaz){ $('#dInfoNote').style.display = 'flex'; $('#dInfoNote').textContent = KATILIM_ASIM_NOTU; }
     $('#dSecmen').textContent = row.secmen!=null ? fmt(row.secmen) : '—';
     $('#dGecerli').textContent = gecerli ? fmt(gecerli) : '—';
     hideEmptyStatRows();
