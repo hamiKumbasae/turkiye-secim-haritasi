@@ -23,13 +23,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { anahtar: "2015Haziran", secimId: 13884, tur: 8, baslik: baslik_2015Haziran.json }
-          - { anahtar: "2015Kasim",   secimId: 14868, tur: 8, baslik: baslik_2015Kasim.json }
-          - { anahtar: "2018",        secimId: 16300, tur: 8, baslik: baslik_2018.json }
-          - { anahtar: "2023",        secimId: 20230, tur: 8, baslik: baslik_genel_2023.json }
-          - { anahtar: "2023cb1tur",  secimId: 20230, tur: 9, baslik: baslik_2023cb1tur.json }
-          - { anahtar: "2023cb2tur",  secimId: 20240, tur: 9, baslik: baslik_2023cb2tur.json }
-          - { anahtar: "2024yerel",   secimId: 20260, tur: 2, baslik: baslik_yerel_2024.json }
+          # 2015H, 2015K, 2018, 2023 genel, 2023 CB iki tur ve 2024 yerel 2026-10-20'de cekildi (main'de);
+          # bu calistirma eski yerel secimler (secimTuru 2: ilce/belediye baskanligi, 2024 yerel ile ayni)
+          - { anahtar: "2009yerel", secimId: 4290,  tur: 2, baslik: baslik_2009yerel.json }
+          - { anahtar: "2014yerel", secimId: 11979, tur: 2, baslik: baslik_2014yerel.json }
+          - { anahtar: "2019yerel", secimId: 16400, tur: 2, baslik: baslik_2019yerel.json }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
