@@ -55,6 +55,11 @@ GEO = ROOT / "geo" / "normalized" / "mahalle_geo.json"
 MAHALLE = ROOT / "data" / "normalized" / "mahalle"
 GEOMID_MAP = json.loads((ROOT / "data/raw/ysk/acikveri-ilce-geomid-eslemesi.json").read_text(encoding="utf-8"))
 RAPOR = ROOT / "docs" / "rapor" / "mahalle_eslesme"
+# Tarihsel ilceler: secim kaydi bugunku ilcelerin birlesimi olan sentetik bir kimlik kullanabilir
+# (orn. 2009'da HIST-Kahramanmaraş-Merkez = Dulkadiroğlu + Onikişubat). Sitenin genel secimlerde
+# kullandigi kayit: geo/historical/district_splits.json (syntheticId -> hideIds).
+SENTETIK = {e["syntheticId"]: e["hideIds"]
+            for v in json.loads((ROOT / "geo/historical/district_splits.json").read_text(encoding="utf-8")).values() for e in v}
 ESIK = 0.85
 ANA_ESIK = 1.5   # ulke geneli oy orani (%); altindaki partiler mahalle verisinde 'Diğer'e toplanir
 # TKGM ilce adi projedekinden farkli yazilan ilceler (fold edilmis TKGM adi -> geomId)
@@ -262,9 +267,16 @@ def aday_eslemesi(col_to_name, adaylar):
     out = {}
     for col, ad in col_to_name.items():
         if BAGIMSIZ.match(col):
-            if fold(ad) not in adlar:
+            if fold(ad) in adlar:
+                out[col] = adlar[fold(ad)]
+                continue
+            # YSK tam adi ('EKMELEDDİN MEHMET İHSANOĞLU') kayittakinden uzun olabilir: kayittaki adin
+            # butun sozcukleri YSK adinda geciyorsa ve tek aday buysa o
+            ysk = set(fold(ad).split())
+            uyan = [a for f, a in adlar.items() if set(f.split()) <= ysk]
+            if len(uyan) != 1:
                 raise ValueError(f"aday eslesmedi: {col} {ad} (secim kaydi: {sorted(adaylar)})")
-            out[col] = adlar[fold(ad)]
+            out[col] = uyan[0]
         else:   # 'bagimsiz_ALDIGI_OY': oy pusulasinda olmayan (sira_NO 0) basvurular
             out[col] = "Diğer"
     return out
@@ -300,6 +312,38 @@ def topla(liste):
     return t
 
 
+def ilce_hedefleri(ham, secim):
+    """YSK ilce kaydi -> o secimin site kaydindaki ilce kimligi. Bugunku kimlik (GEOMID_MAP) o secimde
+    kullaniliyorsa o; o secimde onu kapsayan sentetik bir ilce kullaniliyorsa o sentetik kimlik; bugune
+    eslenmeyen eski ilceler (2009 'X MERKEZ') icin ayni ildeki, baska YSK kaydina gitmeyen ve secmen
+    sayisi birebir tutan secim kaydi (Aydın Merkez -> Efeler, Kahramanmaraş Merkez -> HIST-...-Merkez)."""
+    kimlikler = {r["geomId"] for r in secim["ilceler"]}
+    gizleyen = {h: S for S in kimlikler & SENTETIK.keys() for h in SENTETIK[S]}
+    hedef, bos = {}, []
+    for key, ilce in ham["ilceler"].items():
+        g0 = GEOMID_MAP.get(key)
+        if g0 in kimlikler:
+            hedef[key] = g0
+        elif g0 in gizleyen:
+            hedef[key] = gizleyen[g0]
+        else:
+            hedef[key] = g0
+            bos.append(key)
+    dolu = {key for key, ilce in ham["ilceler"].items() if any(m["secmen"] for m in ilce["muhtarliklar"].values())}
+    kullanilan = {g for key, g in hedef.items() if key in dolu}   # o yil henuz kurulmamis (bos) ilceler sayilmaz
+    for key in bos:
+        ilce = ham["ilceler"][key]
+        top = sum(m["secmen"] for m in ilce["muhtarliklar"].values())
+        if not top:
+            continue
+        aday = [r["geomId"] for r in secim["ilceler"]
+                if r["plaka"] == int(ilce["ilId"]) and r["geomId"] not in kullanilan and r.get("secmen") == top]
+        if len(aday) == 1:
+            hedef[key] = aday[0]
+            kullanilan.add(aday[0])
+    return hedef
+
+
 def isle(anahtar, birimler, geo, uygula, osm=None, bel=None):
     ham = json.loads((MUHTARLIK_DIR / f"{anahtar}.json").read_text(encoding="utf-8"))
     secim = load_election(anahtar)
@@ -328,8 +372,21 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None):
     il_sayac = collections.defaultdict(collections.Counter)
     rapor = []
     yeni_ilceler = {}
+    hedefler = ilce_hedefleri(ham, secim)
     for key, ilce in ham["ilceler"].items():
-        g = GEOMID_MAP.get(key)
+        g = hedefler.get(key)
+        havuz = SENTETIK.get(g, [g])
+        if g in SENTETIK and any(h in birimler for h in havuz):
+            # sentetik ilce: halef ilcelerin butun sinir kaynaklari tek havuzda (ayni adli mahalle iki halefte
+            # varsa ad eslemesi tek olmadigi icin eslesmez)
+            birimler[g] = [ft for h in havuz for ft in birimler.get(h, [])]
+            for kaynak in (osm, bel):
+                if kaynak is not None:
+                    kaynak[g] = [ft for h in havuz for ft in kaynak.get(h, [])]
+            hedef_geo = geo.setdefault(g, {})
+            for h in havuz:
+                for pid, pv in geo.get(h, {}).items():
+                    hedef_geo.setdefault(pid, pv)
         muh = {mid: m for mid, m in ilce["muhtarliklar"].items() if mid != "_muhtarliksiz"}
         s_ilce = sum(m["secmen"] for m in ilce["muhtarliklar"].values())
         il = ilce["ilAdi"]
@@ -339,7 +396,7 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None):
             s = ilce["muhtarliklar"]["_muhtarliksiz"]["secmen"]
             sayac["muhtarliksiz_secmen"] += s
             il_sayac[il]["muhtarliksiz"] += s
-        if not g or g not in birimler:
+        if not g or g not in birimler:   # sentetik ilcede birimler[g] yukarida halef havuzundan kuruldu
             sayac["sinirsiz_ilce_secmen"] += s_ilce
             il_sayac[il]["sinirsiz"] += s_ilce
             for mid, m in muh.items():
@@ -467,6 +524,11 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None):
         for g, k in yeni_ilceler.items():
             if k:
                 veri[g] = k
+        # o secimin haritasinda olmayan ilce kimlikleri (orn. 2009'da sentetik ilceye giden veri eskiden
+        # bugunku kimlige yaziliyordu) cizilmez: kaldirilir
+        kimlikler = {r["geomId"] for r in secim["ilceler"]}
+        for g in [g for g in veri if g not in kimlikler]:
+            del veri[g]
         yol.write_text(json.dumps(veri, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
         RAPOR.mkdir(parents=True, exist_ok=True)
         with open(RAPOR / f"{anahtar}.csv", "w", newline="", encoding="utf-8") as f:
@@ -496,6 +558,16 @@ def main():
         kotu = sorted(il_s.items(), key=lambda x: x[1]["eslesen_secmen"] / max(x[1]["secmen"], 1))[:8]
         print("   en düşük iller:", ", ".join(f"{il} %{v['eslesen_secmen'] / max(v['secmen'], 1) * 100:.1f}" for il, v in kotu))
     if uygula:
+        # sentetik ilcelere halef havuzundan kopyalanan poligonlardan yalniz bir secimin kullandiklari kalir
+        kullanilan = collections.defaultdict(set)
+        for f in MAHALLE.glob("*.json"):
+            for g, kayit in json.loads(f.read_text(encoding="utf-8")).items():
+                if g in SENTETIK:
+                    kullanilan[g].update(kayit)
+        for g in [g for g in geo if g in SENTETIK]:
+            geo[g] = {pid: v for pid, v in geo[g].items() if pid in kullanilan[g]}
+            if not geo[g]:
+                del geo[g]
         GEO.write_text(json.dumps(geo, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
         print("\nyazıldı:", GEO)
     else:

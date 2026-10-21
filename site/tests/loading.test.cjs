@@ -21,7 +21,7 @@ async function setup(t, intercept = async () => false){
   await page.route('**/*', async route => {
     const url = new URL(route.request().url());
     if(url.hostname !== 'atlas.test') return route.abort();
-    const name = url.pathname === '/' ? 'index.html' : url.pathname.slice(1);
+    const name = url.pathname === '/' ? 'index.html' : decodeURIComponent(url.pathname.slice(1));   // GitHub Pages gibi
     requests.push(name);
     const serve = async () => route.fulfill({
       status: 200,
@@ -485,4 +485,14 @@ test('Diğer is always the last row of the panel and opens to show the small par
   await grup19.locator('summary').click();
   const ic19 = await grup19.locator('.diger-ic .party-row .name').allTextContents();
   assert.ok(ic19.length > 0 && !ic19.includes('Ayrıştırılmamış'), ic19.join(','));
+});
+
+test('a historical district that was later split opens its neighborhood map (2009 Kahramanmaras Merkez)', async t => {
+  const {page, requests} = await setup(t);
+  await ready(page);
+  await page.goto('http://atlas.test/#secim=2009yerel&il=46&ilce=HIST-Kahramanmara%C5%9F-Merkez');
+  await ready(page);
+  await page.locator('#mapSvg path[data-mahalle-id]').first().waitFor({timeout: 30000});
+  assert(requests.some(r => r.startsWith('geo/mahalle/HIST-Kahramanmara')));
+  assert(await page.locator('#mapSvg path[data-mahalle-id]').count() > 50);
 });
