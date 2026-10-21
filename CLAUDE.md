@@ -25,7 +25,6 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 Claude Docs artifact `f24fac76-2c6f-4b0f-a2f3-dc33a09ee4ee` (eylem planı tablosu orada).
 
 ## Sıradaki işler (öncelik sırası)
-- E: Kocaeli 2002 il seçmeni ilçelerden 100.000 farklı.
 - F: İl toplamı ilçeleri tutmayan 54 kayıt (çoğu 1973; 1982 Van).
 - G: 1979 Senato'da iki kesirli oy.
 - İsteğe bağlı: 1994–1999 meclis/belde oy toplamları, 1994/1999'da 10 ilçede kazanan "Diğer", 2009 Ağın/Kadışehri yenileme seçimi, Gaziantep belediye verisi (SSL hatası), Hatay/Van için TUCBS e-Devlet başvurusu (kullanıcı).

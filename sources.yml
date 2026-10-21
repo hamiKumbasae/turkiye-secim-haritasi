@@ -134,6 +134,13 @@ elections:
     ilce_provenance: "Satır/alan bazında: data/normalized/elections/genel/2002.json her ilçe satırının kaynak alanı (ana=mertnuhoglu|tuik, teyit=[tuik] ya da farklar=[{alan,eski,yeni}]). Sorgu: python3 scripts/kaynak.py 2002 <il> [ilçe]"
     verification: ["Toplam 550 vekil resmi sonuçla VE il toplamıyla birebir doğrulandı (81/81 il)."]
     known_issues:
+      - scope: "il: Kocaeli (seçmen)"
+        status: corrected
+        description: >
+          2026-10-21: YSK il özeti (ve TÜİK il satırı, Vikipedi) seçmeni 752.556 veriyor; 7 ilçenin seçmen toplamı
+          (memurlar.net ve TÜİK ilçe satırları) ile TÜİK'in aynı tablodaki şehir/köy dökümü 852.556. İl oy kullananı
+          673.467 ilçe toplamıyla birebir aynı; 752.556 ile katılım %89,5 çıkar, ilçelerin hepsi %70–83. Tam 100.000'lik
+          fark yazım hatası sayıldı: il seçmeni 852.556, katılım %78,99. Eski değerler kaydın kaynak.farklar alanında.
       - scope: "ilce: Siirt (tüm ilçeler)"
         status: explained
         description: >

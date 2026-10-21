@@ -26,7 +26,7 @@
 | `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 834 | il 26, ilçe 60, mahalle 748 |
 | `SECMEN_YOK_OY_VAR` | bilgi | 247 | birim 10, il 47, ilçe 190 |
 | `KATILIM_COK_DUSUK` | bilgi | 941 | birim 2, il 5, ilçe 12, mahalle 922 |
-| `IL_ILCE_TOPLAMI` | hata | 54 | il 54 |
+| `IL_ILCE_TOPLAMI` | hata | 53 | il 53 |
 | `MAHALLE_SECMEN_SICRAMASI` | bilgi | 174 | mahalle 174 |
 
 ## `KATILIM_100_USTU` (26308)
@@ -234,11 +234,11 @@ Dosyalara göre: mahalle/2010referandum.json 851, mahalle/2011.json 17, mahalle/
 | elections/yerel/1955yerel.json | plaka 39 / Kırklareli | katılım %16.8, seçmen 8440 |
 | … | 926 kayıt daha | |
 
-## `IL_ILCE_TOPLAMI` (54)
+## `IL_ILCE_TOPLAMI` (53)
 
 İl kaydı, ilçelerinin toplamından %1'den fazla farklı (seçmen ya da geçerli oy).
 
-Dosyalara göre: elections/genel/1973.json 11, elections/genel/1977.json 8, elections/genel/1995.json 7, elections/genel/1999.json 7, elections/referandum/1987referandum.json 5, elections/referandum/1988referandum.json 4, elections/genel/1987.json 3, elections/genel/2002.json 3, elections/referandum/1982referandum.json 3, elections/genel/1965.json 1, elections/genel/1969.json 1, elections/genel/1991.json 1
+Dosyalara göre: elections/genel/1973.json 11, elections/genel/1977.json 8, elections/genel/1995.json 7, elections/genel/1999.json 7, elections/referandum/1987referandum.json 5, elections/referandum/1988referandum.json 4, elections/genel/1987.json 3, elections/referandum/1982referandum.json 3, elections/genel/2002.json 2, elections/genel/1965.json 1, elections/genel/1969.json 1, elections/genel/1991.json 1
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -257,7 +257,7 @@ Dosyalara göre: elections/genel/1973.json 11, elections/genel/1977.json 8, elec
 | elections/genel/1973.json | Niğde | seçmen: il 183728, ilçeler toplamı 189114 (+2.9%) |
 | elections/genel/1977.json | Ankara | seçmen: il 1328719, ilçeler toplamı 1358336 (+2.2%) |
 | elections/genel/1977.json | Ankara | geçerli oy: il 897872, ilçeler toplamı 908521 (+1.2%) |
-| … | 39 kayıt daha | |
+| … | 38 kayıt daha | |
 
 ## `MAHALLE_SECMEN_SICRAMASI` (174)
 
