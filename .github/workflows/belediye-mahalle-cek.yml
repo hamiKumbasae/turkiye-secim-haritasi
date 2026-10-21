@@ -1,0 +1,32 @@
+name: belediye-mahalle-cek
+
+# Belediye acik veri portallarindaki mahalle sinirlarini indirir (fetch_belediye_mahalle.py) ve
+# "belediye-veri" dalina data/raw/belediye/mahalle/ olarak yazar (portallar gelistirme ortamindan acilmiyor).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/belediye-mahalle-cek.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Cek
+        run: python3 scripts/pipelines/mahalle_veri/fetch/fetch_belediye_mahalle.py data/raw/belediye/mahalle
+      - name: belediye-veri dalina yaz
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B belediye-veri
+          git add data/raw/belediye/mahalle
+          git commit -m "Belediye acik veri mahalle sinirlari, run ${{ github.run_id }}" || exit 0
+          git push -f origin belediye-veri
