@@ -7,7 +7,7 @@ public_files) ayni yollarla gzip+base64 olarak window.__EMBEDDED_GZ__ icine gome
 gomulu veri varsa fetch yerine onu okur. Yani iki dagitim tek kod.
 
 gzip mtime=0 ve tarih yerine icerik ozeti: ayni veriden iki calistirma bayt-bayt ayni cikti uretir
-(CI 'git diff --exit-code index.html yontem.html' ile kontrol eder).
+(CI iki taze build'i ve kaynaklarla senkronu tests/validate_elections.py ile denetler; cikti commit'lenmez, surum eki olur).
 
 Kullanim:
   python3 scripts/build.py

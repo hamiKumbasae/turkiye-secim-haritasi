@@ -18,3 +18,8 @@ scripts/pipelines/tuik_arsiv/vision_ocr
 site/dist/
 site/node_modules/
 site/test-results/
+
+# tek dosyalik surum: python3 scripts/build.py uretir; depoda tutulmaz (GitHub 100 MB dosya siniri),
+# her surumde Release'e ek olarak konur (.github/workflows/release-tek-dosya.yml)
+/index.html
+/yontem.html

@@ -11,9 +11,13 @@ düzeyine kadar iniyor.
 
 ## Nasıl açılır
 
-**Tek dosya.** Bu depoyu indirin (Code → Download ZIP, ya da `git clone`) ve
-`index.html`'e çift tıklayın — tüm veri (~21 MB, gzip sıkıştırılmış) doğrudan
-dosyanın içine gömülü, sunucu veya internet bağlantısı gerekmez.
+**İnternette:** https://hamikumbasae.github.io/turkiye-secim-haritasi/
+
+**Tek dosya (internetsiz).** [Sürümler](https://github.com/hamiKumbasae/turkiye-secim-haritasi/releases)
+sayfasından `turkiye-secim-haritasi-tek-dosya.zip`'i indirip açın ve `index.html`'e çift tıklayın —
+tüm veri dosyanın içine gömülü, sunucu gerekmez. Dosya (mahalle verisiyle ~65 MB) GitHub'ın 100 MB dosya
+sınırına yaklaştığı için depoda tutulmuyor; her sürümde otomatik üretilip eklenir
+(`.github/workflows/release-tek-dosya.yml`). Kendiniz üretmek için: `python3 scripts/build.py`.
 
 (Not: Sayfa açılışta Google Fonts'tan bir yazı tipi çekmeye çalışır — internet
 yoksa bu sessizce atlanır, harita/veri işlevselliğini etkilemez.)
@@ -75,17 +79,17 @@ scripts/export_static.py  Yayın dosyaları (data/elections/…, geo/…; public
 scripts/build.py          site/ ön yüzü + aynı yayın dosyalarını gömerek tek dosyalık index.html üretir
 scripts/validate.py         build.py'ye gömülü hızlı yapısal kontrol (gate)
 tests/validate_elections.py Ayrı, yavaş/analitik kontrol seti
-.github/workflows/validate.yml  Her push/PR'da validate.py + validate_elections.py +
-                                 build.py + "index.html güncel mi" kontrolü
+.github/workflows/validate.yml  Her push/PR'da validate.py + build.py + validate_elections.py
+                                 (tek dosyanın boyutu ve kaynaklarla senkronu dahil)
 
-index.html, yontem.html (repo kökü)  build.py'nin çıktısı, commit'lenir; çift tıklayınca açılır
+index.html, yontem.html (repo kökü)  build.py'nin çıktısı; commit'lenmez, sürümlere ek olarak konur
 ```
 
 **Tek repo, tek ön yüz.** Sitenin HTML/CSS/JS'i `site/src/` altındadır ve iki şekilde dağıtılır:
 GitHub Pages sitesi (`python3 site/build.py` → `site/dist/`, veriyi `data/`, `geo/` dosyalarından
 `fetch()` ile okur; `.github/workflows/pages.yml` main'e her birleştirmede yayınlar) ve repo
 kökündeki tek dosyalık `index.html` (`python3 scripts/build.py`; aynı dosyaları aynı yollarla gömer,
-çift tıklayınca açılır). Eskiden ayrı olan `turkiye-secim-atlasi` reposu buraya taşındı.
+çift tıklayınca açılır; depoda değil, sürüm eki olarak dağıtılır). Eskiden ayrı olan `turkiye-secim-atlasi` reposu buraya taşındı.
 
 Her klasörün kendi `PROVENANCE.md`'si var (nereden geldiği, nasıl
 doğrulandığı). Kaynakların tam listesi için bkz. [`SOURCES.md`](SOURCES.md)
@@ -104,15 +108,15 @@ birincil/yedek kaynağı + bilinen sorunlar).
    python3 scripts/build.py
    ```
    Bu, önce `scripts/validate.py`'nin yapısal kontrollerinden geçirir (hatalı
-   veri build'i durdurur), sonra `index.html`'i yeniden üretir.
+   veri build'i durdurur), sonra tek dosyalık `index.html`'i yeniden üretir (commit'lenmez).
    Deterministiktir: aynı veriden iki kez çalıştırınca bayt-bayt aynı çıktı.
 3. İsteğe bağlı, daha kapsamlı kontrol:
    ```bash
    python3 tests/validate_elections.py
    ```
-4. `index.html`'i commit'leyin. `.github/workflows/validate.yml` her push/PR'da
-   aynı kontrolleri + "commit'li `index.html` kaynaklarla senkron mu" kontrolünü
-   otomatik çalıştırır — eski/senkron olmayan bir `index.html` ana dala giremez.
+4. Kaynak dosyaları commit'leyin. `.github/workflows/validate.yml` her push/PR'da aynı kontrolleri
+   çalıştırır; `pages.yml` siteyi yayımlar, sürüm yayımlanınca `release-tek-dosya.yml` tek dosyalık
+   sürümü ekler.
 
 `scripts/pipelines/mahalle_veri/` klasörü, mahalle düzeyi verinin YSK Açık
 Veri Portalı'ndan nasıl çekildiğinin/işlendiğinin kaydı (kurulum: `cd

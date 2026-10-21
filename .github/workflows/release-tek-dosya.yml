@@ -1,0 +1,39 @@
+name: release-tek-dosya
+
+# Tek dosyalik (internetsiz acilan) index.html depoda tutulmuyor: GitHub'in 100 MB dosya siniri.
+# Her surum (Release) yayimlandiginda scripts/build.py ile uretilir ve surume ek olarak konur:
+#   turkiye-secim-haritasi-tek-dosya.zip  (index.html + yontem.html; zip'i acip index.html'e cift tiklayin)
+# Elle calistirma: Actions -> release-tek-dosya -> Run workflow -> etiket (orn. v1.2).
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      etiket:
+        description: "Eklenecek surumun etiketi (orn. v1.2)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  ekle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.etiket }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+      - run: pip install -r requirements.txt
+      - name: Tek dosyalik surumu uret
+        run: python3 scripts/build.py
+      - name: Surume ekle
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ETIKET: ${{ github.event.release.tag_name || inputs.etiket }}
+        run: |
+          zip -9 turkiye-secim-haritasi-tek-dosya.zip index.html yontem.html
+          gh release upload "$ETIKET" turkiye-secim-haritasi-tek-dosya.zip --clobber
+          echo "::notice title=eklendi::$ETIKET, $(du -h turkiye-secim-haritasi-tek-dosya.zip | cut -f1)"

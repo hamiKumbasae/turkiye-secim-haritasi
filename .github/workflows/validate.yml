@@ -25,14 +25,13 @@ jobs:
       - name: Hızlı yapısal doğrulama
         run: python3 scripts/validate.py
 
-      - name: Analitik doğrulama (checksum, ulusal toplamlar, senkron/reproducibility)
-        run: python3 tests/validate_elections.py
-
-      - name: index.html'i yeniden üret
+      # Tek dosyalık index.html artık depoda tutulmuyor (100 MB dosya sınırı): burada üretilip boyutu ve
+      # kaynaklarla senkronu denetlenir, sürüm yayımlanınca release-tek-dosya.yml sürüme ek olarak koyar.
+      - name: Tek dosyalık index.html'i üret
         run: python3 scripts/build.py
 
-      - name: Commit'li index.html ve yontem.html güncel mi (build sonrası fark olmamalı)
-        run: git diff --exit-code index.html yontem.html
+      - name: Analitik doğrulama (checksum, ulusal toplamlar, senkron/reproducibility, boyut)
+        run: python3 tests/validate_elections.py
 
       - uses: actions/setup-node@v4
         with:

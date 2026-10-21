@@ -463,7 +463,7 @@ def check_index_in_sync_with_sources():
     check(
         "index.html kaynaklarla (data/normalized/, geo/normalized/) senkron",
         ok,
-        "index.html eski — scripts/build.py çalıştırıp sonucu commit edin" if not ok else "",
+        "index.html eski — scripts/build.py çalıştırın" if not ok else "",
     )
 
 
