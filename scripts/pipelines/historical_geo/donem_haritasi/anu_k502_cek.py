@@ -25,14 +25,15 @@ API = "https://openresearch-repository.anu.edu.au/server/api"
 UA = {"User-Agent": "turkiye-secim-haritasi (github.com/hamiKumbasae/turkiye-secim-haritasi)"}
 
 
-def al(url, ikili=False, deneme=4):
+def al(url, ikili=False, deneme=3):
     for i in range(deneme):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
                 veri = r.read()
             return veri if ikili else json.loads(veri)
         except Exception as e:  # noqa: BLE001
             if i == deneme - 1:
+                print(f"::error title=istek::{e} {url}", flush=True)
                 raise
             print(f"  tekrar ({e}): {url}", flush=True)
             time.sleep(5 * (i + 1))
@@ -55,6 +56,8 @@ def ara():
             if "Turkey" in baslik and "K502" in baslik:
                 bulunan[it["uuid"]] = it
         sp = sr["page"]
+        if sayfa == 0:
+            print(f"::notice title=arama::{sp['totalElements']} sonuç, {sp['totalPages']} sayfa", flush=True)
         print(f"sayfa {sp['number'] + 1}/{sp['totalPages']} ({sp['totalElements']} sonuç)", flush=True)
         sayfa += 1
         if sayfa >= sp["totalPages"]:

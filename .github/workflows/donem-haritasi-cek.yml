@@ -27,9 +27,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Erisim testi
+        run: |
+          for u in "https://openresearch-repository.anu.edu.au/server/api" \
+                   "https://openresearch-repository.anu.edu.au/server/api/discover/search/objects?query=K502&dsoType=ITEM&size=5" \
+                   "https://openresearch-repository.anu.edu.au/bitstreams/cf021bdd-8953-4ab2-86ac-54cae2b4b9df/download"; do
+            r=$(curl -sS -L -m 60 -o /tmp/t -w "%{http_code} %{size_download} %{time_total}s" "$u" 2>&1 || true)
+            echo "::notice title=erisim::$r $u"
+          done
       - name: Cek
         run: python3 scripts/pipelines/historical_geo/donem_haritasi/anu_k502_cek.py cikti "${{ inputs.mod }}" "${{ inputs.paftalar }}"
-      - uses: actions/upload-artifact@v4
+      - if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: k502
           path: cikti/
