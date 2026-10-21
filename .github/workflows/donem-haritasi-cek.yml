@@ -1,0 +1,36 @@
+name: donem-haritasi-cek
+
+# 1950 il sinirlarini dogrulamak icin donem haritalarini (AMS K502, 1:250.000, 1953) ANU deposundan ceker
+# (scripts/pipelines/historical_geo/donem_haritasi/anu_k502_cek.py). Tarama dosyalari depoya yazilmaz;
+# is akisi eki (artifact) olarak 30 gun durur, "gh run download" ile alinir.
+on:
+  workflow_dispatch:
+    inputs:
+      mod:
+        description: "listele | indir"
+        default: listele
+      paftalar:
+        description: "indir icin pafta listesi (bos: hepsi), ornek: NJ 37-6,NJ 35-4"
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/pipelines/historical_geo/donem_haritasi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Cek
+        run: python3 scripts/pipelines/historical_geo/donem_haritasi/anu_k502_cek.py cikti "${{ inputs.mod }}" "${{ inputs.paftalar }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: k502
+          path: cikti/
+          retention-days: 30
