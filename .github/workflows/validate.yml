@@ -82,3 +82,6 @@ jobs:
       - name: Site testleri (yükleme, değişim, bağlantı, CSV, erişilebilirlik)
         working-directory: site
         run: npm test
+
+      - name: Kompakt mahalle dosyaları kaynakla aynı açılıyor
+        run: node --test tests/kompakt.test.cjs

@@ -9,7 +9,7 @@ Açık veri: sitenin veri.html sayfası ve indirilebilir dosyaları (site/build.
   veri/SHA256SUMS.txt              veri/ altındaki her dosyanın özeti
   veri.html                        seçim başına bir indirme satırı, lisans, atıf, sütun sözlüğü
 
-JSON dosyaları zaten yayında (data/elections/<seçim>.json, data/mahalle_votes/<yıl>.json);
+JSON dosyaları zaten yayında (data/elections/<seçim>.json, data/mahalle_votes/<yıl>.json — kompakt, scripts/kompakt.py);
 sayfa onlara bağlanır. CSV'ler sitedeki tarayıcı doğrulamasının (data-loader.js prepareElection)
 aynısından geçer: parti oyları toplamı geçerli oyla tutmayan satırda yüzde boş bırakılır ve
 nedeni "not" sütununa yazılır; hiçbir değer düzeltilmez ya da tahmin edilmez.
@@ -22,6 +22,8 @@ import io
 import json
 import pathlib
 import zipfile
+
+from kompakt import yayin_nesnesi
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KAPSAM = ROOT / "docs" / "rapor" / "kapsam_tablosu.csv"
@@ -252,7 +254,7 @@ def _sayfa(satirlar, kapsam, yazilan, files):
         return f'<a href="{e(rel)}" download>{e(etiket)}</a> <span class="boyut">{_boyut(boyut_bayt)}</span>'
 
     def json_boyut(rel):
-        return len(json.dumps(files[rel], ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
+        return len(json.dumps(yayin_nesnesi(rel, files[rel]), ensure_ascii=False, separators=(",", ":")).encode("utf-8"))
 
     bolumler = []
     toplam_secim = 0
@@ -411,6 +413,7 @@ __BOLUMLER__
     <tr><td>&lt;parti&gt; sandalye</td><td>Yalnız 1950 ve 1955 yerel seçimlerinde: belediye meclisi sandalyesi (başkanı meclis seçiyordu).</td></tr>
     <tr><td>not</td><td>Kaynağa ya da doğrulamaya dair not; boş değilse satırı kullanmadan önce okuyun.</td></tr>
     <tr><td>ilçe geomId, mahalle osm id</td><td>Mahalle dosyalarında: haritadaki ilçe kimliği ve mahalle kimliği (r: OpenStreetMap ilişki kimliği; t: ttezer/OSM türevi; k: TKGM birim kimliği; b: belediye açık verisi).</td></tr>
+    <tr><td>Mahalle JSON</td><td>Boyut için kompakt: <code>partiler</code> listesi ve ilçe → mahalle başına <code>[seçmen, oy kullanan, geçerli oy, sandık, kazanan sırası, parti oyları…]</code> (parti oyu <code>partiler</code> sırasıyla; boşsa o mahallede yok). Yüzdeler oy ÷ geçerli oy, katılım oy kullanan ÷ seçmen; CSV'de hesaplanmış olarak var.</td></tr>
   </tbody></table></div>
 
   <footer>Türkiye Seçim Tarihi Atlası · Veriler YSK, TÜİK, TBMM ve belgelenmiş diğer kaynaklardan derlenmiştir. Resmî YSK yayını değildir.</footer>

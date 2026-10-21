@@ -25,6 +25,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import validate as _validate  # noqa: E402
 from common.election_io import load_all_elections  # noqa: E402
 from export_static import public_files  # noqa: E402
+from kompakt import yayin_nesnesi  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
@@ -82,7 +83,7 @@ def main():
     css = ab.STYLES.read_text(encoding="utf-8")
     js = "\n".join((ab.JS_DIR / name).read_text(encoding="utf-8") for name in ab.JS_FILES)
 
-    gomulu = {rel: gzip_b64(obj) for rel, obj in public_files(public=True).items()}
+    gomulu = {rel: gzip_b64(yayin_nesnesi(rel, obj)) for rel, obj in public_files(public=True).items()}
     veri = json.dumps(gomulu, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
     surum = hashlib.sha256((veri + js + css).encode("utf-8")).hexdigest()[:10]
 

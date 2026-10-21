@@ -91,9 +91,64 @@
       }));
     }
   }
+  // Mahalle yayin dosyalari kompakt (scripts/kompakt.py): oy dosyasi satir dizisi, sinirlar TopoJSON.
+  // Burada mantiksal bicime ({mahalle: {secmen, katilim, oy: {parti: {oy, oran}}}} ve
+  // {mahalle: {ad, geometry}}) acilir; harita kodu ayni kalir. Oran ve katilim kaynakta da
+  // oy/gecerliOy ve oyKullanan/secmen'in 2 ondaliga yuvarlanmisi (yazarken denetlenir).
+  // Python round(x, 2) ile ayni: tam ortadaki (ikili gosterimde tam ...5 olan, orn. 243/480 -> 50.625)
+  // degerler cifte yuvarlanir; toFixed bunlari yukari yuvarlardi.
+  function yuvarla2(x){
+    const s3 = x.toFixed(3);
+    if(s3.endsWith('5') && /\.\d\d50*$/.test(x.toFixed(60)) && Number(s3[s3.length-2]) % 2 === 0) return Number(s3.slice(0, -1));
+    return Number(x.toFixed(2));
+  }
+  const yuzde2 = (pay, payda) => payda && pay!=null ? yuvarla2(pay/payda*100) : null;
+  function mahalleOyAc(k){
+    if(!k || k.bicim !== 'mahalle-oy/1') return k || {};
+    const P = k.partiler, out = {};
+    for(const g in k.ilceler){
+      const satirlar = k.ilceler[g], o = out[g] = {};
+      for(const m in satirlar){
+        const s = satirlar[m], oy = {};
+        for(let i = 5; i < s.length; i++) if(s[i] != null) oy[P[i-5]] = {oy: s[i], oran: yuzde2(s[i], s[2])};
+        o[m] = {secmen: s[0], oyKullanan: s[1], gecerliOy: s[2], sandik: s[3],
+                kazanan: s[4]==null ? null : P[s[4]], katilim: yuzde2(s[1], s[0]), oy};
+      }
+    }
+    return out;
+  }
+  function topoAc(t){
+    if(!t || t.type !== 'Topology') return t;
+    // koordinatlar 1e-4 derecelik tamsayi + delta: bolme tek adimda yapilir, kaynaktaki sayinin aynisi cikar
+    const tx = Math.round(t.transform.translate[0]*1e4), ty = Math.round(t.transform.translate[1]*1e4);
+    const arcs = t.arcs.map(a => { let x = 0, y = 0; return a.map(([dx, dy]) => [((x += dx) + tx)/1e4, ((y += dy) + ty)/1e4]); });
+    const cizgi = idx => {
+      const pts = [];
+      for(const i of idx){
+        const a = i >= 0 ? arcs[i] : arcs[~i].slice().reverse();
+        for(let j = pts.length ? 1 : 0; j < a.length; j++) pts.push(a[j]);
+      }
+      return pts;
+    };
+    const out = {};
+    for(const g of t.objects.mahalle.geometries){
+      const c = g.type === 'Polygon' ? g.arcs.map(cizgi) : g.type === 'MultiPolygon' ? g.arcs.map(p => p.map(cizgi)) : cizgi(g.arcs);
+      out[g.id] = {ad: g.properties.ad, geometry: {type: g.type, coordinates: c}};
+    }
+    return out;
+  }
+  // acilmis hali onbellege alinir; ham dosya acildiktan sonra bellekte tutulmaz
+  const ACIK_CACHE = {};
+  function fetchAcik(path, ac, fallback){
+    if(!(path in ACIK_CACHE)){
+      ACIK_CACHE[path] = fetchJSON(path, fallback).then(ham => { delete FETCH_CACHE[path]; return ac(ham); })
+        .catch(error => { delete ACIK_CACHE[path]; throw error; });
+    }
+    return ACIK_CACHE[path];
+  }
   // Mahalle poligonlari ilce basina ayri dosyada: yalniz inilen ilcenin poligonlari indirilir.
   function loadMahalleGeometry(geomId){
-    return fetchJSON("geo/mahalle/"+encodeURIComponent(geomId)+".json");
+    return fetchAcik("geo/mahalle/"+encodeURIComponent(geomId)+".json", topoAc);
   }
   function prepareElection(data){
     if(!data || data._validated) return data;
@@ -136,7 +191,7 @@
   function loadMahalleVotesForYear(year){
     // Mahalle verisi olmayan yillarda (ornegin 1968 yerel) istek hic atilmaz.
     if(!(year in MAHALLE_COVERAGE)) return Promise.resolve({});
-    return fetchJSON("data/mahalle_votes/"+year+".json", {});
+    return fetchAcik("data/mahalle_votes/"+year+".json", mahalleOyAc, {});
   }
   const geoFeatureById = {};
   let ilceGeoPromise = null;

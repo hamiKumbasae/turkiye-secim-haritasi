@@ -1,6 +1,7 @@
 """
 Yayinlanan siteyi (GitHub Pages) site/dist/ altina uretir:
-  - data/, geo/  : yayin verisi (scripts/export_static.py: public_files; 'kaynak' alanlari cikarilmis)
+  - data/, geo/  : yayin verisi (scripts/export_static.py: public_files; 'kaynak' alanlari cikarilmis;
+                   mahalle oy ve sinir dosyalari scripts/kompakt.py bicimiyle)
   - index.html   : src/index.template.html + src/styles/main.css + src/js/*.js (veri gomulmez,
                    tarayici data/ ve geo/ dosyalarini fetch() ile okur; sayfa ~birkac yuz KB)
   - yontem.html, .nojekyll
@@ -53,6 +54,7 @@ def main():
 
     sys.path.insert(0, str(REPO / "scripts"))
     from export_static import public_files  # noqa: E402
+    from kompakt import yayin_nesnesi  # noqa: E402  mahalle oy/sinir dosyalari kompakt yazilir
 
     if out.exists():
         shutil.rmtree(out)
@@ -61,7 +63,7 @@ def main():
     for rel in sorted(files):
         path = out / rel
         path.parent.mkdir(parents=True, exist_ok=True)
-        raw = json.dumps(files[rel], ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        raw = json.dumps(yayin_nesnesi(rel, files[rel]), ensure_ascii=False, separators=(",", ":")).encode("utf-8")
         path.write_bytes(raw)
         h.update(rel.encode())
         h.update(hashlib.sha256(raw).digest())

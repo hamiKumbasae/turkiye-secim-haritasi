@@ -10,7 +10,8 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 ## Yapı
 - Ön yüz `site/src/`; Pages `python3 site/build.py` → `site/dist/` (`pages.yml`, main'e push'ta).
 - Veri `data/normalized/` (seçimler, `mahalle/<seçim>.json`), geometri `geo/normalized/mahalle_geo.json`, tarihsel ilçeler `geo/historical/district_splits.json`.
-- Kontroller: `scripts/validate.py`, `tests/validate_elections.py` (19), `node --test tests/*.test.cjs` (12), `cd site && node tests/loading.test.cjs` (29). Değişen veri klasörü için `scripts/regenerate_checksums.py <klasör>`.
+- Yayında mahalle oyları ve sınırları kompakt (`scripts/kompakt.py`: oy satır dizisi, oran/katılım istemcide; sınırlar kayıpsız TopoJSON); `data-loader.js` (`mahalleOyAc`, `topoAc`) açar. Kaynak biçimi değişmez. Tek dosya ~38 MB.
+- Kontroller: `scripts/validate.py`, `tests/validate_elections.py` (19), `node --test tests/*.test.cjs` (14; `kompakt.test.cjs` önce `site/build.py` ister), `cd site && node tests/loading.test.cjs` (29). Değişen veri klasörü için `scripts/regenerate_checksums.py <klasör>`.
 - Denetim: `python3 scripts/veri_denetimi.py --md docs/rapor/VERI_DENETIMI.md --csv-klasor docs/rapor/veri_denetimi`.
 
 ## Veri hattı (mahalle)
@@ -23,7 +24,6 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 Claude Docs artifact `f24fac76-2c6f-4b0f-a2f3-dc33a09ee4ee` (eylem planı tablosu orada).
 
 ## Sıradaki işler (öncelik sırası)
-- B: Mahalle verisini sıkıştır (oranları istemcide hesapla, sınırları TopoJSON) — tek dosya ~66 MB.
 - C: Katılım >%100 kayıtlarda "hesaplanamıyor" notu (~26 bin mahalle kaydı, YSK kaynaklı).
 - D: `veri_denetimi.py`'yi validate.yml'e bağla (yeni bulguda başarısız).
 - E: Kocaeli 2002 il seçmeni ilçelerden 100.000 farklı.
