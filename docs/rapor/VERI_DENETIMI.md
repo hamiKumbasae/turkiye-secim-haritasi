@@ -26,7 +26,7 @@
 | `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 834 | il 26, ilçe 60, mahalle 748 |
 | `SECMEN_YOK_OY_VAR` | bilgi | 247 | birim 10, il 47, ilçe 190 |
 | `KATILIM_COK_DUSUK` | bilgi | 941 | birim 2, il 5, ilçe 12, mahalle 922 |
-| `IL_ILCE_TOPLAMI` | hata | 53 | il 53 |
+| `IL_ILCE_TOPLAMI` | hata | 53 | il 53 — 53 tanesi zaten belgeli |
 | `MAHALLE_SECMEN_SICRAMASI` | bilgi | 174 | mahalle 174 |
 
 ## `KATILIM_100_USTU` (26308)
@@ -242,21 +242,21 @@ Dosyalara göre: elections/genel/1973.json 11, elections/genel/1977.json 8, elec
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
-| elections/genel/1965.json | Mersin | seçmen: il 212437, ilçeler toplamı 207443 (-2.4%) |
-| elections/genel/1969.json | Hakkari | seçmen: il 38391, ilçeler toplamı 36392 (-5.2%) |
-| elections/genel/1973.json | Ankara | seçmen: il 786398, ilçeler toplamı 985132 (+25.3%) |
-| elections/genel/1973.json | Artvin | seçmen: il 102190, ilçeler toplamı 101053 (-1.1%) |
-| elections/genel/1973.json | Aydın | seçmen: il 283572, ilçeler toplamı 288250 (+1.6%) |
-| elections/genel/1973.json | Bitlis | seçmen: il 60300, ilçeler toplamı 67415 (+11.8%) |
-| elections/genel/1973.json | Gaziantep | seçmen: il 268722, ilçeler toplamı 239914 (-10.7%) |
-| elections/genel/1973.json | Gümüşhane | geçerli oy: il 78124, ilçeler toplamı 80132 (+2.6%) |
-| elections/genel/1973.json | Hatay | seçmen: il 251734, ilçeler toplamı 248906 (-1.1%) |
-| elections/genel/1973.json | Kastamonu | seçmen: il 285894, ilçeler toplamı 222934 (-22.0%) |
-| elections/genel/1973.json | Nevşehir | seçmen: il 106628, ilçeler toplamı 102140 (-4.2%) |
-| elections/genel/1973.json | Nevşehir | geçerli oy: il 60572, ilçeler toplamı 57866 (-4.5%) |
-| elections/genel/1973.json | Niğde | seçmen: il 183728, ilçeler toplamı 189114 (+2.9%) |
-| elections/genel/1977.json | Ankara | seçmen: il 1328719, ilçeler toplamı 1358336 (+2.2%) |
-| elections/genel/1977.json | Ankara | geçerli oy: il 897872, ilçeler toplamı 908521 (+1.2%) |
+| elections/genel/1965.json | Mersin | seçmen: il 212437, ilçeler toplamı 207443 (-2.4%) (belgeli) |
+| elections/genel/1969.json | Hakkari | seçmen: il 38391, ilçeler toplamı 36392 (-5.2%) (belgeli) |
+| elections/genel/1973.json | Ankara | seçmen: il 786398, ilçeler toplamı 985132 (+25.3%) (belgeli) |
+| elections/genel/1973.json | Artvin | seçmen: il 102190, ilçeler toplamı 101053 (-1.1%) (belgeli) |
+| elections/genel/1973.json | Aydın | seçmen: il 283572, ilçeler toplamı 288250 (+1.6%) (belgeli) |
+| elections/genel/1973.json | Bitlis | seçmen: il 60300, ilçeler toplamı 67415 (+11.8%) (belgeli) |
+| elections/genel/1973.json | Gaziantep | seçmen: il 268722, ilçeler toplamı 239914 (-10.7%) (belgeli) |
+| elections/genel/1973.json | Gümüşhane | geçerli oy: il 78124, ilçeler toplamı 80132 (+2.6%) (belgeli) |
+| elections/genel/1973.json | Hatay | seçmen: il 251734, ilçeler toplamı 248906 (-1.1%) (belgeli) |
+| elections/genel/1973.json | Kastamonu | seçmen: il 285894, ilçeler toplamı 222934 (-22.0%) (belgeli) |
+| elections/genel/1973.json | Nevşehir | seçmen: il 106628, ilçeler toplamı 102140 (-4.2%) (belgeli) |
+| elections/genel/1973.json | Nevşehir | geçerli oy: il 60572, ilçeler toplamı 57866 (-4.5%) (belgeli) |
+| elections/genel/1973.json | Niğde | seçmen: il 183728, ilçeler toplamı 189114 (+2.9%) (belgeli) |
+| elections/genel/1977.json | Ankara | seçmen: il 1328719, ilçeler toplamı 1358336 (+2.2%) (belgeli) |
+| elections/genel/1977.json | Ankara | geçerli oy: il 897872, ilçeler toplamı 908521 (+1.2%) (belgeli) |
 | … | 38 kayıt daha | |
 
 ## `MAHALLE_SECMEN_SICRAMASI` (174)

@@ -87,8 +87,8 @@ class Denetim:
         self.bilinen = set(json.loads(fx.read_text(encoding="utf-8"))) if fx.exists() else set()
         self._onek = None   # bilinen sorun anahtarinin kayda ait on eki
 
-    def ekle(self, tur, duzey, dosya, birim, detay):
-        bilinen = bool(self._onek and BILINEN_KOD.get(tur) and f"{self._onek}/{BILINEN_KOD[tur]}" in self.bilinen)
+    def ekle(self, tur, duzey, dosya, birim, detay, belgeli=False):
+        bilinen = belgeli or bool(self._onek and BILINEN_KOD.get(tur) and f"{self._onek}/{BILINEN_KOD[tur]}" in self.bilinen)
         self.sayac[(tur, duzey)] += 1
         if bilinen:
             self.sayac[(tur, "bilinen")] += 1
@@ -233,10 +233,14 @@ class Denetim:
                 t = ilce_top.get(r.get("plaka"))
                 if not t or not t[2]:
                     continue
-                for ad, il_deg, ilce_deg in (("seçmen", r.get("secmen"), t[0]), ("geçerli oy", r.get("gecerliOy"), t[1])):
+                # il kaydinda ilceFarki.<alan> = {il, ilceler} varsa fark kaynak yayinin kendisindedir (belgeli)
+                fark = r.get("ilceFarki") or {}
+                for ad, alan, il_deg, ilce_deg in (("seçmen", "secmen", r.get("secmen"), t[0]),
+                                                   ("geçerli oy", "gecerliOy", r.get("gecerliOy"), t[1])):
                     if il_deg and ilce_deg and abs(il_deg - ilce_deg) > il_deg * 0.01:
                         self.ekle("IL_ILCE_TOPLAMI", "il", str(yol.relative_to(NORM)), r.get("ad"),
-                                  f"{ad}: il {il_deg}, ilçeler toplamı {ilce_deg} ({(ilce_deg - il_deg) / il_deg * 100:+.1f}%)")
+                                  f"{ad}: il {il_deg}, ilçeler toplamı {ilce_deg} ({(ilce_deg - il_deg) / il_deg * 100:+.1f}%)",
+                                  belgeli=fark.get(alan) == {"il": il_deg, "ilceler": ilce_deg})
 
         # mahalle dosyalari
         onceki_secmen = {}
