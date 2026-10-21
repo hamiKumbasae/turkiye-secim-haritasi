@@ -14,6 +14,7 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 - Mahallede katılım >%100 (YSK kaynaklı): `map.js` katılımı boşaltır, `katilimHesaplanamaz` + `KATILIM_ASIM_NOTU`; açık veri CSV'sinde "not" sütunu.
 - Kontroller: `scripts/validate.py`, `tests/validate_elections.py` (19), `node --test tests/*.test.cjs` (14; `kompakt.test.cjs` önce `site/build.py` ister), `cd site && node tests/loading.test.cjs` (30). Değişen veri klasörü için `scripts/regenerate_checksums.py <klasör>`.
 - İl toplamı ilçeleri tutmayan 53 kayıt kaynak yayının kendisinde (TÜİK il satırı kendi ilçe satırlarını tutmuyor); il kaydında `ilceFarki` + `not`, denetimde belgeli. Kayda alan eklemek `tests/fixtures/known-validation-issues.json` parmak izini değiştirir.
+- Ek kayıtlar (`data/normalized/ek/`): `build_ek_kayitlar.py` yeniden çalıştırılırsa sonradan güncellenen geomId'leri eski haline döndürür; değişikliği dosyaya hedefli uygula. Senato PDF sütun kaymaları `extract_senato.py` `ELLE_DUZELTME` tablosunda.
 - Denetim: `python3 scripts/veri_denetimi.py --md docs/rapor/VERI_DENETIMI.md --csv-klasor docs/rapor/veri_denetimi`. CI `--kontrol docs/rapor/veri_denetimi` ile kayıtlı listede olmayan yeni bulguda başarısız olur; veri düzeltince listeyi bu komutla yenile.
 
 ## Veri hattı (mahalle)
@@ -26,5 +27,4 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 Claude Docs artifact `f24fac76-2c6f-4b0f-a2f3-dc33a09ee4ee` (eylem planı tablosu orada).
 
 ## Sıradaki işler (öncelik sırası)
-- G: 1979 Senato'da iki kesirli oy.
 - İsteğe bağlı: 1994–1999 meclis/belde oy toplamları, 1994/1999'da 10 ilçede kazanan "Diğer", 2009 Ağın/Kadışehri yenileme seçimi, Gaziantep belediye verisi (SSL hatası), Hatay/Van için TUCBS e-Devlet başvurusu (kullanıcı).

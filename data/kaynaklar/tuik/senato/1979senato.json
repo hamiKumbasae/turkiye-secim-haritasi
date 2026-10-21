@@ -51,8 +51,8 @@
   "ilce": 241,
   "kisitlaCozulen": 0,
   "ocrDuzeltilen": 2,
-  "satirIciTutarsiz": 54,
-  "ilceToplamiIlToplamiTutmayan": 91,
+  "satirIciTutarsiz": 52,
+  "ilceToplamiIlToplamiTutmayan": 87,
   "okunamayanSayfa": [
    "22: satir sayisi sol 44 / sag 45 (sirali hizalama)",
    "24: satir sayisi sol 40 / sag 42 (sirali hizalama)",
@@ -62,7 +62,7 @@
   ]
  },
  "wikipediaIlKarsilastirmasi": {
-  "tutan": 21,
+  "tutan": 23,
   "farkli": [
    {
     "il": "İstanbul",
@@ -74,32 +74,6 @@
      "Bağımsız": [
       27709,
       7494
-     ]
-    }
-   },
-   {
-    "il": "Kütahya",
-    "fark": {
-     "TBP73": [
-      1,
-      1123
-     ],
-     "TİP": [
-      0.7,
-      1025
-     ]
-    }
-   },
-   {
-    "il": "Manisa",
-    "fark": {
-     "TBP73": [
-      1,
-      1473
-     ],
-     "TİP": [
-      0.5,
-      2669
      ]
     }
    },
@@ -426,18 +400,6 @@
    "ilceToplami": 3199
   },
   {
-   "il": "Kütahya",
-   "alan": "TBP73",
-   "ilDegeri": 1,
-   "ilceToplami": 0
-  },
-  {
-   "il": "Kütahya",
-   "alan": "TİP",
-   "ilDegeri": 0.7,
-   "ilceToplami": 4.9
-  },
-  {
    "il": "Manisa",
    "alan": "secmen",
    "ilDegeri": 435317,
@@ -448,18 +410,6 @@
    "alan": "MSP",
    "ilDegeri": 17907,
    "ilceToplami": 17911
-  },
-  {
-   "il": "Manisa",
-   "alan": "TBP73",
-   "ilDegeri": 1,
-   "ilceToplami": 0
-  },
-  {
-   "il": "Manisa",
-   "alan": "TİP",
-   "ilDegeri": 0.5,
-   "ilceToplami": 1569.5
   },
   {
    "il": "Mardin",
@@ -4709,8 +4659,8 @@
     "MHP": 10888,
     "MSP": 14954,
     "SDP": null,
-    "TBP73": 1,
-    "TİP": 0.7,
+    "TBP73": 1123,
+    "TİP": 1025,
     "TSİP": 851
    },
    "Bağımsız": null,
@@ -4719,7 +4669,6 @@
    "ad": "Kütahya",
    "sayfa": 28,
    "y": 195.1,
-   "tutarsiz": "partiler+bagimsiz=167076.7 != muteber=169223",
    "ilceler": [
     {
      "secmen": 71172,
@@ -4733,7 +4682,7 @@
       "MSP": 5046,
       "SDP": null,
       "TBP73": null,
-      "TİP": 0.4,
+      "TİP": null,
       "TSİP": 270
      },
      "Bağımsız": null,
@@ -4743,7 +4692,11 @@
      "sayfa": 28,
      "y": 216.4,
      "tutarsiz": "partiler+bagimsiz=53517.4 != muteber=54047",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 12117,
@@ -4757,7 +4710,7 @@
       "MSP": 829,
       "SDP": null,
       "TBP73": null,
-      "TİP": 0.5,
+      "TİP": null,
       "TSİP": 57
      },
      "Bağımsız": null,
@@ -4767,7 +4720,11 @@
      "sayfa": 28,
      "y": 227.2,
      "tutarsiz": "partiler+bagimsiz=8930.5 != muteber=9090",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 9170,
@@ -4781,7 +4738,7 @@
       "MSP": 547,
       "SDP": 0,
       "TBP73": null,
-      "TİP": 0.7,
+      "TİP": null,
       "TSİP": 20
      },
      "Bağımsız": null,
@@ -4791,7 +4748,11 @@
      "sayfa": 28,
      "y": 238.0,
      "tutarsiz": "partiler+bagimsiz=7519.7 != muteber=7614",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 25303,
@@ -4805,7 +4766,7 @@
       "MSP": 1662,
       "SDP": 0,
       "TBP73": null,
-      "TİP": 0.9,
+      "TİP": null,
       "TSİP": 92
      },
      "Bağımsız": null,
@@ -4815,7 +4776,11 @@
      "sayfa": 28,
      "y": 248.6,
      "tutarsiz": "partiler+bagimsiz=17851.9 != muteber=18122",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 28174,
@@ -4829,7 +4794,7 @@
       "MSP": 1095,
       "SDP": 0,
       "TBP73": null,
-      "TİP": 0.9,
+      "TİP": null,
       "TSİP": 98
      },
      "Bağımsız": null,
@@ -4839,7 +4804,11 @@
      "sayfa": 28,
      "y": 259.4,
      "tutarsiz": "partiler+bagimsiz=22104.9 != muteber=22472",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 37116,
@@ -4853,7 +4822,7 @@
       "MSP": 1587,
       "SDP": 0,
       "TBP73": null,
-      "TİP": 1.0,
+      "TİP": null,
       "TSİP": 149
      },
      "Bağımsız": null,
@@ -4863,7 +4832,11 @@
      "sayfa": 28,
      "y": 269.8,
      "tutarsiz": "partiler+bagimsiz=27849.0 != muteber=28301",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 37565,
@@ -4877,7 +4850,7 @@
       "MSP": 4188,
       "SDP": null,
       "TBP73": null,
-      "TİP": 0.5,
+      "TİP": null,
       "TSİP": 165
      },
      "Bağımsız": null,
@@ -4887,15 +4860,29 @@
      "sayfa": 28,
      "y": 280.8,
      "tutarsiz": "partiler+bagimsiz=28812.5 != muteber=29577",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     }
    ],
    "dogrulanamayanAlanlar": [
     "secmen",
     "CHP",
-    "CGP",
-    "TBP73",
-    "TİP"
+    "CGP"
+   ],
+   "elleDuzeltme": [
+    {
+     "alan": "TBP73",
+     "okunan": 1,
+     "duzeltilen": 1123
+    },
+    {
+     "alan": "TİP",
+     "okunan": 0.7,
+     "duzeltilen": 1025
+    }
    ]
   },
   {
@@ -4909,8 +4896,8 @@
     "MHP": 14823,
     "MSP": 17907,
     "SDP": 2258,
-    "TBP73": 1,
-    "TİP": 0.5,
+    "TBP73": 1473,
+    "TİP": 2669,
     "TSİP": 1780
    },
    "Bağımsız": null,
@@ -4919,7 +4906,6 @@
    "ad": "Manisa",
    "sayfa": 28,
    "y": 323.5,
-   "tutarsiz": "partiler+bagimsiz=310887.5 != muteber=315028",
    "ilceler": [
     {
      "secmen": 71562,
@@ -4933,7 +4919,7 @@
       "MSP": 3271,
       "SDP": 305,
       "TBP73": null,
-      "TİP": 0.3,
+      "TİP": null,
       "TSİP": 277
      },
      "Bağımsız": null,
@@ -4943,7 +4929,11 @@
      "sayfa": 28,
      "y": 344.7,
      "tutarsiz": "partiler+bagimsiz=50797.3 != muteber=51382",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 66894,
@@ -4957,7 +4947,7 @@
       "MSP": 2505,
       "SDP": 484,
       "TBP73": null,
-      "TİP": 0.4,
+      "TİP": null,
       "TSİP": 212
      },
      "Bağımsız": null,
@@ -4967,7 +4957,11 @@
      "sayfa": 28,
      "y": 355.5,
      "tutarsiz": "partiler+bagimsiz=45159.4 != muteber=45687",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 34719,
@@ -4981,7 +4975,7 @@
       "MSP": 714,
       "SDP": 182,
       "TBP73": null,
-      "TİP": 0.6,
+      "TİP": null,
       "TSİP": 146
      },
      "Bağımsız": null,
@@ -4991,7 +4985,11 @@
      "sayfa": 28,
      "y": 366.1,
      "tutarsiz": "partiler+bagimsiz=26562.6 != muteber=26876",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 24489,
@@ -5005,7 +5003,7 @@
       "MSP": 1507,
       "SDP": 99,
       "TBP73": null,
-      "TİP": 0.6,
+      "TİP": null,
       "TSİP": 54
      },
      "Bağımsız": null,
@@ -5015,7 +5013,11 @@
      "sayfa": 28,
      "y": 376.9,
      "tutarsiz": "partiler+bagimsiz=19513.6 != muteber=19691",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 22,
@@ -5029,7 +5031,7 @@
       "MSP": 1196,
       "SDP": 81,
       "TBP73": null,
-      "TİP": 0.6,
+      "TİP": null,
       "TSİP": 90
      },
      "Bağımsız": null,
@@ -5039,7 +5041,11 @@
      "sayfa": 28,
      "y": 387.6,
      "tutarsiz": "partiler+bagimsiz=16721.6 != muteber=16929",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 19340,
@@ -5053,7 +5059,7 @@
       "MSP": 903,
       "SDP": 54,
       "TBP73": null,
-      "TİP": 82,
+      "TİP": null,
       "TSİP": 71
      },
      "Bağımsız": null,
@@ -5063,7 +5069,11 @@
      "sayfa": 28,
      "y": 398.4,
      "tutarsiz": "partiler+bagimsiz=14266 != muteber=14321",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 18419,
@@ -5077,7 +5087,7 @@
       "MSP": 529,
       "SDP": 106,
       "TBP73": null,
-      "TİP": 59,
+      "TİP": null,
       "TSİP": 36
      },
      "Bağımsız": null,
@@ -5087,7 +5097,11 @@
      "sayfa": 28,
      "y": 409.2,
      "tutarsiz": "partiler+bagimsiz=13718 != muteber=13806",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 50383,
@@ -5101,7 +5115,7 @@
       "MSP": 801,
       "SDP": 257,
       "TBP73": null,
-      "TİP": 710,
+      "TİP": null,
       "TSİP": 367
      },
      "Bağımsız": null,
@@ -5111,7 +5125,11 @@
      "sayfa": 28,
      "y": 419.8,
      "tutarsiz": "partiler+bagimsiz=35584 != muteber=35750",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 15043,
@@ -5125,7 +5143,7 @@
       "MSP": 266,
       "SDP": 119,
       "TBP73": null,
-      "TİP": 142,
+      "TİP": null,
       "TSİP": 95
      },
      "Bağımsız": null,
@@ -5135,7 +5153,11 @@
      "sayfa": 28,
      "y": 430.6,
      "tutarsiz": "partiler+bagimsiz=10947 != muteber=11019",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 29001,
@@ -5149,7 +5171,7 @@
       "MSP": 1689,
       "SDP": 164,
       "TBP73": null,
-      "TİP": 145,
+      "TİP": null,
       "TSİP": 112
      },
      "Bağımsız": null,
@@ -5159,7 +5181,11 @@
      "sayfa": 28,
      "y": 441.0,
      "tutarsiz": "partiler+bagimsiz=22330 != muteber=22437",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 10203,
@@ -5173,7 +5199,7 @@
       "MSP": 445,
       "SDP": 31,
       "TBP73": null,
-      "TİP": 30,
+      "TİP": null,
       "TSİP": 12
      },
      "Bağımsız": null,
@@ -5183,7 +5209,11 @@
      "sayfa": 28,
      "y": 451.8,
      "tutarsiz": "partiler+bagimsiz=7571 != muteber=7612",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 27014,
@@ -5197,7 +5227,7 @@
       "MSP": 1287,
       "SDP": 145,
       "TBP73": null,
-      "TİP": 184,
+      "TİP": null,
       "TSİP": 78
      },
      "Bağımsız": null,
@@ -5207,7 +5237,11 @@
      "sayfa": 28,
      "y": 462.4,
      "tutarsiz": "partiler+bagimsiz=19179 != muteber=19291",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     },
     {
      "secmen": 45592,
@@ -5221,7 +5255,7 @@
       "MSP": 2798,
       "SDP": 231,
       "TBP73": null,
-      "TİP": 215,
+      "TİP": null,
       "TSİP": 230
      },
      "Bağımsız": 0,
@@ -5231,14 +5265,28 @@
      "sayfa": 28,
      "y": 473.4,
      "tutarsiz": "partiler+bagimsiz=30110 != muteber=30227",
-     "adGuvenli": true
+     "adGuvenli": true,
+     "dogrulanamayanAlanlar": [
+      "TBP73",
+      "TİP"
+     ]
     }
    ],
    "dogrulanamayanAlanlar": [
     "secmen",
-    "MSP",
-    "TBP73",
-    "TİP"
+    "MSP"
+   ],
+   "elleDuzeltme": [
+    {
+     "alan": "TBP73",
+     "okunan": 1,
+     "duzeltilen": 1473
+    },
+    {
+     "alan": "TİP",
+     "okunan": 0.5,
+     "duzeltilen": 2669
+    }
    ]
   },
   {

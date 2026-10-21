@@ -21,7 +21,6 @@
 | `GECERLI_SECMENDEN_FAZLA` | hata/kaynak | 18437 | birim 56, ilçe 107, mahalle 18249, tuik 25 — 107 tanesi zaten belgeli |
 | `OY_TOPLAMI_TUTMUYOR` | hata | 1208 | birim 625, il 97, ilçe 321, mahalle 5, tuik 159, turkiye 1 — 374 tanesi zaten belgeli |
 | `ORAN_HESAPLA_TUTMUYOR` | hata | 198 | il 184, ilçe 14 — 119 tanesi zaten belgeli |
-| `OY_NEGATIF_YA_DA_KESIRLI` | hata | 2 | il 2 |
 | `KAZANAN_DIGER` | eksik | 10 | ilçe 10 |
 | `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 834 | il 26, ilçe 60, mahalle 748 |
 | `SECMEN_YOK_OY_VAR` | bilgi | 247 | birim 10, il 47, ilçe 190 |
@@ -128,17 +127,6 @@ Dosyalara göre: elections/genel/1954.json 49, elections/genel/1999.json 44, ele
 | elections/genel/1950.json | plaka 47 / Mardin | Bağımsız: yazılı %7.6, hesaplanan %34.68 |
 | elections/genel/1950.json | plaka 51 / Niğde | CHP: yazılı %41.6, hesaplanan %43.17 |
 | … | 183 kayıt daha | |
-
-## `OY_NEGATIF_YA_DA_KESIRLI` (2)
-
-Oy sayısı negatif ya da tam sayı değil.
-
-Dosyalara göre: ek/senato/1979senato.json 2
-
-| Dosya | Birim | Ayrıntı |
-|---|---|---|
-| ek/senato/1979senato.json | Kütahya | TİP: 0.7 |
-| ek/senato/1979senato.json | Manisa | TİP: 0.5 |
 
 ## `KAZANAN_DIGER` (10)
 

@@ -693,6 +693,34 @@ def wiki_kontrol(iller, secim):
     return {"tutan": tutan, "farkli": farkli}
 
 
+# Elle duzeltmeler: satirda bos ("—") bir sutun olunca ayristirici sonraki sutunlari kaydiriyor (oy yerine
+# yuzde okunuyor). Il degerleri sayfa metninden (metinKlasoru, 1979: s. 29) okundu; parti toplami muteberi
+# birebir tutar ve Vikipedi il degerleriyle aynidir. Ilce satirlarinda ayni kayma var: o sutunlar okunamadi.
+ELLE_DUZELTME = {
+    ("1979senato", "Kütahya"): {"TBP73": 1123, "TİP": 1025},
+    ("1979senato", "Manisa"): {"TBP73": 1473, "TİP": 2669},
+}
+
+
+def elle_duzelt(secim, iller, dik):
+    for il in iller:
+        d = ELLE_DUZELTME.get((secim, il["ad"]))
+        if not d:
+            continue
+        il["elleDuzeltme"] = [{"alan": p, "okunan": il["oy"].get(p), "duzeltilen": v} for p, v in d.items()]
+        il["oy"].update(d)
+        if sum(v or 0 for v in il["oy"].values()) + (il.get("Bağımsız") or 0) == il.get("muteber"):
+            il.pop("tutarsiz", None)
+        if il.get("dogrulanamayanAlanlar"):
+            il["dogrulanamayanAlanlar"] = [a for a in il["dogrulanamayanAlanlar"] if a not in d]
+        dik[:] = [x for x in dik if not (x["il"] == il["ad"] and x["alan"] in d)]
+        for r in il.get("ilceler", []):
+            for p in d:
+                r["oy"][p] = None
+            eski = r.get("dogrulanamayanAlanlar", [])
+            r["dogrulanamayanAlanlar"] = eski + [p for p in d if p not in eski]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pdf-dir", required=True)
@@ -737,6 +765,7 @@ def main():
                 for il in iller:
                     if il["ad"] == x["il"]:
                         il.setdefault("dogrulanamayanAlanlar", []).append(x["alan"])
+            elle_duzelt(secim, iller, dik)
             wk = wiki_kontrol(iller, secim) if secim.endswith("senato") else None
             # sayfa metinleri (depoya giren ham iz)
             (METIN / k["demirbas"]).mkdir(parents=True, exist_ok=True)
