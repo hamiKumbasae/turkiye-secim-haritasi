@@ -410,7 +410,7 @@ __BOLUMLER__
     <tr><td>&lt;parti&gt; oy, &lt;parti&gt; %</td><td>Partinin oyu ve geçerli oya oranı. Parti adları sitedeki kısaltmalardır.</td></tr>
     <tr><td>&lt;parti&gt; sandalye</td><td>Yalnız 1950 ve 1955 yerel seçimlerinde: belediye meclisi sandalyesi (başkanı meclis seçiyordu).</td></tr>
     <tr><td>not</td><td>Kaynağa ya da doğrulamaya dair not; boş değilse satırı kullanmadan önce okuyun.</td></tr>
-    <tr><td>ilçe geomId, mahalle osm id</td><td>Mahalle dosyalarında: haritadaki ilçe kimliği ve mahalle kimliği (r: OpenStreetMap ilişki kimliği; t: ttezer/OSM türevi; k: TKGM birim kimliği).</td></tr>
+    <tr><td>ilçe geomId, mahalle osm id</td><td>Mahalle dosyalarında: haritadaki ilçe kimliği ve mahalle kimliği (r: OpenStreetMap ilişki kimliği; t: ttezer/OSM türevi; k: TKGM birim kimliği; b: belediye açık verisi).</td></tr>
   </tbody></table></div>
 
   <footer>Türkiye Seçim Tarihi Atlası · Veriler YSK, TÜİK, TBMM ve belgelenmiş diğer kaynaklardan derlenmiştir. Resmî YSK yayını değildir.</footer>

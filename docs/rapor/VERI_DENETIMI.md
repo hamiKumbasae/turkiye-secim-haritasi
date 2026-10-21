@@ -6,7 +6,7 @@
 
 | Düzey | Kayıt |
 |---|---|
-| mahalle | 438.338 |
+| mahalle | 438.520 |
 | ilçe | 49.075 |
 | birim | 35.952 |
 | tuik | 7.639 |
@@ -17,7 +17,7 @@
 
 | Bulgu | Tür | Sayı | Düzeylere göre |
 |---|---|---|---|
-| `KATILIM_100_USTU` | hata/kaynak | 18285 | birim 72, il 6, mahalle 18180, tuik 27 |
+| `KATILIM_100_USTU` | hata/kaynak | 18289 | birim 72, il 6, mahalle 18184, tuik 27 |
 | `GECERLI_SECMENDEN_FAZLA` | hata/kaynak | 10648 | birim 56, ilçe 107, mahalle 10460, tuik 25 — 107 tanesi zaten belgeli |
 | `OY_TOPLAMI_TUTMUYOR` | hata | 1203 | birim 625, il 97, ilçe 321, tuik 159, turkiye 1 — 374 tanesi zaten belgeli |
 | `ORAN_HESAPLA_TUTMUYOR` | hata | 200 | il 184, ilçe 14, mahalle 2 — 119 tanesi zaten belgeli |
@@ -27,13 +27,13 @@
 | `SECMEN_YOK_OY_VAR` | bilgi | 247 | birim 10, il 47, ilçe 190 |
 | `KATILIM_COK_DUSUK` | bilgi | 181 | birim 2, il 5, ilçe 12, mahalle 162 |
 | `IL_ILCE_TOPLAMI` | hata | 54 | il 54 |
-| `MAHALLE_SECMEN_SICRAMASI` | bilgi | 197 | mahalle 197 |
+| `MAHALLE_SECMEN_SICRAMASI` | bilgi | 194 | mahalle 194 |
 
-## `KATILIM_100_USTU` (18285)
+## `KATILIM_100_USTU` (18289)
 
 Katılım %100'ü aşıyor: oy kullanan kayıtlı seçmenden fazla. YSK sandık verisinde de görülür (listede kayıtlı olmayan görevliler o sandıkta oy kullanabiliyor); küçük birimlerde oranı büyütür. Sitede katılım oranı anlamlı değil.
 
-Dosyalara göre: mahalle/2023cb1tur.json 2719, mahalle/2023.json 2692, mahalle/2018.json 2474, mahalle/2023cb2tur.json 2292, mahalle/2015Kasim.json 1867, mahalle/2015Haziran.json 1705, mahalle/2024yerel.json 893, mahalle/2014yerel.json 714, mahalle/2018cb.json 648, mahalle/2019yerel.json 562, mahalle/2011.json 541, mahalle/2017referandum.json 469 …
+Dosyalara göre: mahalle/2023cb1tur.json 2720, mahalle/2023.json 2693, mahalle/2018.json 2476, mahalle/2023cb2tur.json 2292, mahalle/2015Kasim.json 1867, mahalle/2015Haziran.json 1705, mahalle/2024yerel.json 893, mahalle/2014yerel.json 714, mahalle/2018cb.json 648, mahalle/2019yerel.json 562, mahalle/2011.json 541, mahalle/2017referandum.json 469 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -52,7 +52,7 @@ Dosyalara göre: mahalle/2023cb1tur.json 2719, mahalle/2023.json 2692, mahalle/2
 | mahalle/2009yerel.json | Sincan / ÇİÇEKTEPE MAH. | katılım %101.94, seçmen 103, oy kullanan 105, geçerli parti oyu 105 |
 | mahalle/2009yerel.json | Sincan / ESENLER MAH. | katılım %101.54, seçmen 65, oy kullanan 66, geçerli parti oyu 65 |
 | mahalle/2009yerel.json | Sincan / KESİKTAŞ MAH. | katılım %102.33, seçmen 86, oy kullanan 88, geçerli parti oyu 86 |
-| … | 18270 kayıt daha | |
+| … | 18274 kayıt daha | |
 
 ## `GECERLI_SECMENDEN_FAZLA` (10648)
 
@@ -265,11 +265,11 @@ Dosyalara göre: elections/genel/1973.json 11, elections/genel/1977.json 8, elec
 | elections/genel/1977.json | Ankara | geçerli oy: il 897872, ilçeler toplamı 908521 (+1.2%) |
 | … | 39 kayıt daha | |
 
-## `MAHALLE_SECMEN_SICRAMASI` (197)
+## `MAHALLE_SECMEN_SICRAMASI` (194)
 
 Aynı mahallenin seçmeni ardışık iki seçim arasında 5 kattan fazla değişiyor (eşleştirme hatası ya da gerçek nüfus değişimi).
 
-Dosyalara göre: mahalle/2014cb.json 34, mahalle/2019yerel.json 34, mahalle/2017referandum.json 24, mahalle/2024yerel.json 22, mahalle/2010referandum.json 20, mahalle/2018.json 18, mahalle/2018cb.json 14, mahalle/2023.json 14, mahalle/2014yerel.json 12, mahalle/2015Haziran.json 5
+Dosyalara göre: mahalle/2014cb.json 34, mahalle/2019yerel.json 34, mahalle/2017referandum.json 23, mahalle/2024yerel.json 22, mahalle/2010referandum.json 20, mahalle/2018.json 18, mahalle/2018cb.json 14, mahalle/2023.json 13, mahalle/2014yerel.json 12, mahalle/2015Haziran.json 4
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -288,4 +288,4 @@ Dosyalara göre: mahalle/2014cb.json 34, mahalle/2019yerel.json 34, mahalle/2017
 | mahalle/2010referandum.json | Kalkandere / SOĞUKSU MAH. | önceki seçimde 288, bu seçimde 53 |
 | mahalle/2010referandum.json | Divriği / DEMİRDAĞ MAH. | önceki seçimde 656, bu seçimde 52 |
 | mahalle/2010referandum.json | Merkez / DÖRTEYLÜL MAH. | önceki seçimde 4546, bu seçimde 48 |
-| … | 182 kayıt daha | |
+| … | 179 kayıt daha | |

@@ -127,16 +127,16 @@
     "mahalle/2011.json": "c9a1eeb95fd0691e753a9107ae48d30dc6d45fec9cc7a30cd608f148ca2b78aa",
     "mahalle/2014cb.json": "9fef4404047bf89e381e8a486719e042b67698346cc419529716009e2c0958d4",
     "mahalle/2014yerel.json": "24d20d39f24cc2cb9c0dcbf7082c42fdcf38c81bf427656cdc4fb5a75e9a6782",
-    "mahalle/2015Haziran.json": "136561158f3db8fa3f07de7aee5151b3b6b2561ddae403adfa6195da7dbeac83",
-    "mahalle/2015Kasim.json": "78ee74d3cb53e7e70b6d7ac6f0e10525e9f2a48ef6c3f0e40f7fbb26a6af9dcb",
+    "mahalle/2015Haziran.json": "ba8366dd003716d4c47f7b169fa58fe834c7a1d73cf250d6252b4411986556f3",
+    "mahalle/2015Kasim.json": "562edef5dfc1ac55dae76ce9643b2318c90fa4d6312bea7ba0e1ea491cebbc27",
     "mahalle/2017referandum.json": "408df8db3d8941a2d2766c5b92d7e16ce00940672666c72de1f3a055458578c8",
-    "mahalle/2018.json": "317c86aa8f933a03de10925eba327743b9dbe2be9255a5d03d11886fff71c9a5",
+    "mahalle/2018.json": "a1959c80fda49545b8b2fbcdae45fa8707e4de6d6af11c4495d7167e00b1aa13",
     "mahalle/2018cb.json": "3272dba3b2ed872943c2481589d9b658b64c6e2d6f3a7faf1600d6b64959b278",
     "mahalle/2019yerel.json": "1a9856c67376c2ff6f33e3137e0865bb4550a1a1d05bc397685ecbc1e9f0d6a4",
-    "mahalle/2023.json": "ce4cbbdd658534c56647d393f43fab302ceb3c6c5039951d8a9ba87773dec4c5",
-    "mahalle/2023cb1tur.json": "af010598538659289f3357107e2ca4c1e3c54135b7626e1e29d249aea829e0a9",
-    "mahalle/2023cb2tur.json": "1abc2a02362fddfdfe0e5341c3e7f72d673c9bdf15146d28f22998f505e62f0c",
-    "mahalle/2024yerel.json": "8df984086bc254709206794614691a8cf9402778727873b64aedb88c55987770",
+    "mahalle/2023.json": "419a60a536e87aa2cbccead92eadb18eeb2d86d61102a3747501202fa182180f",
+    "mahalle/2023cb1tur.json": "08bc853b4e8469e3314fcd3132f05e19d7fff7c44b81b412a58b9590e99af969",
+    "mahalle/2023cb2tur.json": "d50cf337f4c732c6bec3ad94a5490361dbc6273a830356027e25d5346268b0fe",
+    "mahalle/2024yerel.json": "fb77129d8afe8037234db841cd2a19ccea77e05205a0f9eae54aff17736eba18",
     "meclis_2024.json": "61cd860e5ba2d3602035dfd50652328d854a746e1223425704ee0b0f6de5182e",
     "meclis_harita/1984yerel_bm.json": "db5cf247afaf90998c93c66d9e84f8838ced012fa1fa4047348e00cd118e1a5a",
     "meclis_harita/1984yerel_igm.json": "6a2610debf9bf7690618c95d753c72c0f93155a7f84bdbdca69cca9be8b70641",
@@ -634,7 +634,7 @@
    "checksum_file": "geo/normalized/checksums.sha256",
    "file_count": 3,
    "files": {
-    "mahalle_geo.json": "a9772d19688eacb5fa82912e0b045f53faa2e3e6f1f419a345f7e3f41d1c80f2",
+    "mahalle_geo.json": "3ed01528cb44c15b4555a72c01c201c48e8513d15537ebd678314cd021afd3f3",
     "turkiye_il_sinirlari.geojson": "4e8aa349fbbbf1bc5ad63731820d91f7e9090f87d5eb00a95e1877fff2230e9d",
     "turkiye_ilce_sinirlari.geojson": "9741d7437bbb0fbe547296e00700ed032fc0acb800e0e90c57a22c29074869d6"
    }
@@ -6706,6 +6706,16 @@
     "mahalle/79.geojson": "aba1e44374c0be77f68648fad9749519804f9ca91c61d45ceedb6dc22091779d",
     "mahalle/80.geojson": "a4d2edf8acc0ad2c961fb200c71d8e75f7ed5631157a04f6ffd70e7336fb3f1a",
     "mahalle/81.geojson": "c93af0fa8ef1a934803b91b381be3b7642733af825b9fa285053c4cbfd05ad49"
+   }
+  },
+  "data/raw/belediye": {
+   "checksum_file": "data/raw/belediye/checksums.sha256",
+   "file_count": 4,
+   "files": {
+    "mahalle/16.geojson": "2409770678eee2457c467770c61abefa2d10e31597fe3c13bc54e6d938df762e",
+    "mahalle/16.meta.json": "772f23ca743210fbfd5d3320a043dc31dae2224a5ebae398247362a1c86d5d5d",
+    "mahalle/54.geojson": "32a7e5606579df78f10ae7b52fbf4baadce8034e5f703609228473be67d82123",
+    "mahalle/54.meta.json": "ca53327aa195df13236386253674b9abfbb1c8468df211c830dfa0d33a348663"
    }
   }
  },
