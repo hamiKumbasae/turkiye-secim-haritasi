@@ -460,7 +460,7 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None):
             ilce_kayit[pid] = kayit_yap(topla(lst), col_to_key, ana_partiler)
             if uygula and pid in osm_yeni:
                 geo.setdefault(g, {})[pid] = {"ad": osm_yeni[pid][1]["ad"], "geometry": osm_yeni[pid][0]["geometry"]}
-        yeni_ilceler[g] = ilce_kayit
+        yeni_ilceler.setdefault(g, {}).update(ilce_kayit)   # ayni ilceye iki YSK kaydi dusebilir (19 Mayis, Caglayancerit)
     eski_secmen = sum((r.get("secmen") or 0) for g in yeni_ilceler for r in veri.get(g, {}).values())
     yeni_secmen = sum(r["secmen"] for k in yeni_ilceler.values() for r in k.values())
     if uygula:

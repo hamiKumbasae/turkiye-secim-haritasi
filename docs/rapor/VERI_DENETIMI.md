@@ -6,7 +6,7 @@
 
 | Düzey | Kayıt |
 |---|---|
-| mahalle | 438.520 |
+| mahalle | 464.281 |
 | ilçe | 49.075 |
 | birim | 35.952 |
 | tuik | 7.639 |
@@ -17,26 +17,34 @@
 
 | Bulgu | Tür | Sayı | Düzeylere göre |
 |---|---|---|---|
-| `KATILIM_100_USTU` | hata/kaynak | 18289 | birim 72, il 6, mahalle 18184, tuik 27 |
-| `GECERLI_SECMENDEN_FAZLA` | hata/kaynak | 10648 | birim 56, ilçe 107, mahalle 10460, tuik 25 — 107 tanesi zaten belgeli |
-| `OY_TOPLAMI_TUTMUYOR` | hata | 1203 | birim 625, il 97, ilçe 321, tuik 159, turkiye 1 — 374 tanesi zaten belgeli |
-| `ORAN_HESAPLA_TUTMUYOR` | hata | 200 | il 184, ilçe 14, mahalle 2 — 119 tanesi zaten belgeli |
+| `KATILIM_100_USTU` | hata/kaynak | 19323 | birim 72, il 6, mahalle 19218, tuik 27 |
+| `GECERLI_SECMENDEN_FAZLA` | hata/kaynak | 11568 | birim 56, ilçe 107, mahalle 11380, tuik 25 — 107 tanesi zaten belgeli |
+| `OY_TOPLAMI_TUTMUYOR` | hata | 1207 | birim 625, il 97, ilçe 321, mahalle 4, tuik 159, turkiye 1 — 374 tanesi zaten belgeli |
+| `ORAN_HESAPLA_TUTMUYOR` | hata | 198 | il 184, ilçe 14 — 119 tanesi zaten belgeli |
 | `OY_NEGATIF_YA_DA_KESIRLI` | hata | 2 | il 2 |
-| `KAZANAN_DIGER` | eksik | 3099 | ilçe 10, mahalle 3089 |
-| `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 414 | il 26, ilçe 60, mahalle 328 |
+| `KAZANAN_DIGER` | eksik | 13 | ilçe 10, mahalle 3 |
+| `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 658 | il 26, ilçe 60, mahalle 572 |
 | `SECMEN_YOK_OY_VAR` | bilgi | 247 | birim 10, il 47, ilçe 190 |
-| `KATILIM_COK_DUSUK` | bilgi | 181 | birim 2, il 5, ilçe 12, mahalle 162 |
+| `KATILIM_COK_DUSUK` | bilgi | 183 | birim 2, il 5, ilçe 12, mahalle 164 |
 | `IL_ILCE_TOPLAMI` | hata | 54 | il 54 |
-| `MAHALLE_SECMEN_SICRAMASI` | bilgi | 194 | mahalle 194 |
+| `MAHALLE_SECMEN_SICRAMASI` | bilgi | 205 | mahalle 205 |
 
-## `KATILIM_100_USTU` (18289)
+## `KATILIM_100_USTU` (19323)
 
 Katılım %100'ü aşıyor: oy kullanan kayıtlı seçmenden fazla. YSK sandık verisinde de görülür (listede kayıtlı olmayan görevliler o sandıkta oy kullanabiliyor); küçük birimlerde oranı büyütür. Sitede katılım oranı anlamlı değil.
 
-Dosyalara göre: mahalle/2023cb1tur.json 2720, mahalle/2023.json 2693, mahalle/2018.json 2476, mahalle/2023cb2tur.json 2292, mahalle/2015Kasim.json 1867, mahalle/2015Haziran.json 1705, mahalle/2024yerel.json 893, mahalle/2014yerel.json 714, mahalle/2018cb.json 648, mahalle/2019yerel.json 562, mahalle/2011.json 541, mahalle/2017referandum.json 469 …
+Dosyalara göre: mahalle/2023cb1tur.json 2720, mahalle/2023.json 2693, mahalle/2018.json 2476, mahalle/2023cb2tur.json 2292, mahalle/2015Kasim.json 1867, mahalle/2015Haziran.json 1705, mahalle/2014yerel.json 1259, mahalle/2019yerel.json 1016, mahalle/2024yerel.json 893, mahalle/2018cb.json 648, mahalle/2011.json 541, mahalle/2017referandum.json 469 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
+| mahalle/2009yerel.json | Feke / KARACAUŞAĞI MAH. | katılım %101.72, seçmen 58, oy kullanan 59, geçerli parti oyu 58 |
+| mahalle/2009yerel.json | Feke / GÖKÇELİ MAH. | katılım %113.64, seçmen 22, oy kullanan 25, geçerli parti oyu 24 |
+| mahalle/2009yerel.json | Sarıçam / AYVALI MAH. | katılım %102.67, seçmen 75, oy kullanan 77, geçerli parti oyu 77 |
+| mahalle/2009yerel.json | Tut / BULANIK MAH. | katılım %142.86, seçmen 21, oy kullanan 30, geçerli parti oyu 29 |
+| mahalle/2009yerel.json | Tut / ÇAMLICA MAH. | katılım %101.43, seçmen 70, oy kullanan 71, geçerli parti oyu 70 |
+| mahalle/2009yerel.json | Çobanlar / GÖLCÜK MAH. | katılım %100.71, seçmen 140, oy kullanan 141, geçerli parti oyu 136 |
+| mahalle/2009yerel.json | İhsaniye / KAYIHAN-CUMHURİYET MAH. | katılım %102.94, seçmen 238, oy kullanan 245, geçerli parti oyu 216 |
+| mahalle/2009yerel.json | Akyurt / ÇAM MAH. | katılım %110.71, seçmen 56, oy kullanan 62, geçerli parti oyu 60 |
 | mahalle/2009yerel.json | Akyurt / KARAYATAK MAH. | katılım %102.7, seçmen 37, oy kullanan 38, geçerli parti oyu 34 |
 | mahalle/2009yerel.json | Çubuk / KARAMAN MAH. | katılım %103.7, seçmen 27, oy kullanan 28, geçerli parti oyu 28 |
 | mahalle/2009yerel.json | Çubuk / KIZILÖZ MAH. | katılım %104.44, seçmen 45, oy kullanan 47, geçerli parti oyu 46 |
@@ -44,42 +52,34 @@ Dosyalara göre: mahalle/2023cb1tur.json 2720, mahalle/2023.json 2693, mahalle/2
 | mahalle/2009yerel.json | Kahramankazan / GÜNBAŞI MAH. | katılım %101.59, seçmen 63, oy kullanan 64, geçerli parti oyu 64 |
 | mahalle/2009yerel.json | Kahramankazan / KIŞLA MAH. | katılım %100.78, seçmen 129, oy kullanan 130, geçerli parti oyu 129 |
 | mahalle/2009yerel.json | Kalecik / AKCATAŞ MAH. | katılım %102.53, seçmen 79, oy kullanan 81, geçerli parti oyu 79 |
-| mahalle/2009yerel.json | Kalecik / ŞEYHMAHMUT MAH. | katılım %117.65, seçmen 17, oy kullanan 20, geçerli parti oyu 20 |
-| mahalle/2009yerel.json | Kalecik / TAVŞANCIK MAH. | katılım %107.56, seçmen 119, oy kullanan 128, geçerli parti oyu 127 |
-| mahalle/2009yerel.json | Keçiören / BAĞLUM GÜZELYURT MAH. | katılım %100.57, seçmen 174, oy kullanan 175, geçerli parti oyu 168 |
-| mahalle/2009yerel.json | Pursaklar / KARAKÖY MAH. | katılım %105.56, seçmen 36, oy kullanan 38, geçerli parti oyu 38 |
-| mahalle/2009yerel.json | Sincan / ADALET MAH. | katılım %124.67, seçmen 2331, oy kullanan 2906, geçerli parti oyu 2797 |
-| mahalle/2009yerel.json | Sincan / ÇİÇEKTEPE MAH. | katılım %101.94, seçmen 103, oy kullanan 105, geçerli parti oyu 105 |
-| mahalle/2009yerel.json | Sincan / ESENLER MAH. | katılım %101.54, seçmen 65, oy kullanan 66, geçerli parti oyu 65 |
-| mahalle/2009yerel.json | Sincan / KESİKTAŞ MAH. | katılım %102.33, seçmen 86, oy kullanan 88, geçerli parti oyu 86 |
-| … | 18274 kayıt daha | |
+| … | 19308 kayıt daha | |
 
-## `GECERLI_SECMENDEN_FAZLA` (10648)
+## `GECERLI_SECMENDEN_FAZLA` (11568)
 
 Geçerli oy kayıtlı seçmenden fazla (katılım %100 üstüyle aynı kökten).
 
-Dosyalara göre: mahalle/2023cb1tur.json 1951, mahalle/2023cb2tur.json 1883, mahalle/2023.json 1835, mahalle/2018.json 1757, mahalle/2015Kasim.json 1455, mahalle/2015Haziran.json 1281, mahalle/2024yerel.json 298, elections/yerel/1984yerel.json 66, ek/belediye_meclisi/1999yerel.json 37, ek/beldeler/1999yerel.json 25, ek/il_genel_meclisi/1999yerel.json 12, elections/yerel/1963yerel.json 11 …
+Dosyalara göre: mahalle/2023cb1tur.json 1951, mahalle/2023cb2tur.json 1883, mahalle/2023.json 1835, mahalle/2018.json 1757, mahalle/2015Kasim.json 1455, mahalle/2015Haziran.json 1281, mahalle/2014yerel.json 524, mahalle/2019yerel.json 352, mahalle/2024yerel.json 298, elections/yerel/1984yerel.json 66, mahalle/2009yerel.json 44, ek/belediye_meclisi/1999yerel.json 37 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
-| mahalle/2015Haziran.json | Çukurova / MEMİŞLİ MAH. | seçmen 50, geçerli 52 |
-| mahalle/2015Haziran.json | Karaisalı / KARAHASANLI MAH. | seçmen 15, geçerli 18 |
-| mahalle/2015Haziran.json | Karaisalı / KARAKUYU MAH. | seçmen 34, geçerli 36 |
-| mahalle/2015Haziran.json | Karataş / İNNEPLİHÜYÜĞÜ MAH. | seçmen 128, geçerli 129 |
-| mahalle/2015Haziran.json | Karataş / DEVELİÖREN MAH. | seçmen 28, geçerli 30 |
-| mahalle/2015Haziran.json | Yüreğir / KÖPRÜGÖZÜ MAH. | seçmen 18, geçerli 26 |
-| mahalle/2015Haziran.json | Yüreğir / KAMIŞLI MAH. | seçmen 40, geçerli 44 |
-| mahalle/2015Haziran.json | Çelikhan / ALTINTAŞ KÖYÜ | seçmen 17, geçerli 18 |
-| mahalle/2015Haziran.json | Çelikhan / PINARBAŞI-ÇAMLIYAYLA MAH. | seçmen 24, geçerli 29 |
-| mahalle/2015Haziran.json | Çelikhan / BOZGEDİK KÖYÜ | seçmen 19, geçerli 21 |
-| mahalle/2015Haziran.json | Dinar / ELDERE KÖYÜ | seçmen 28, geçerli 29 |
-| mahalle/2015Haziran.json | Dinar / ALACAATLI KÖYÜ | seçmen 14, geçerli 16 |
-| mahalle/2015Haziran.json | Emirdağ / TOPDERE KÖYÜ | seçmen 23, geçerli 24 |
-| mahalle/2015Haziran.json | Emirdağ / DAĞINIK KÖYÜ | seçmen 23, geçerli 24 |
-| mahalle/2015Haziran.json | Emirdağ / LEYLEKLİ KÖYÜ | seçmen 19, geçerli 20 |
-| … | 10633 kayıt daha | |
+| mahalle/2009yerel.json | Feke / GÖKÇELİ MAH. | seçmen 22, geçerli 24 |
+| mahalle/2009yerel.json | Sarıçam / AYVALI MAH. | seçmen 75, geçerli 77 |
+| mahalle/2009yerel.json | Tut / BULANIK MAH. | seçmen 21, geçerli 29 |
+| mahalle/2009yerel.json | Akyurt / ÇAM MAH. | seçmen 56, geçerli 60 |
+| mahalle/2009yerel.json | Çubuk / KARAMAN MAH. | seçmen 27, geçerli 28 |
+| mahalle/2009yerel.json | Çubuk / KIZILÖZ MAH. | seçmen 45, geçerli 46 |
+| mahalle/2009yerel.json | Çubuk / TUĞLA MAH. | seçmen 27, geçerli 29 |
+| mahalle/2009yerel.json | Kahramankazan / GÜNBAŞI MAH. | seçmen 63, geçerli 64 |
+| mahalle/2009yerel.json | Kalecik / ŞEYHMAHMUT MAH. | seçmen 17, geçerli 20 |
+| mahalle/2009yerel.json | Kalecik / TAVŞANCIK MAH. | seçmen 119, geçerli 127 |
+| mahalle/2009yerel.json | Pursaklar / KARAKÖY MAH. | seçmen 36, geçerli 38 |
+| mahalle/2009yerel.json | Sincan / ADALET MAH. | seçmen 2331, geçerli 2797 |
+| mahalle/2009yerel.json | Sincan / ÇİÇEKTEPE MAH. | seçmen 103, geçerli 105 |
+| mahalle/2009yerel.json | Yedisu / KOŞAN MAH. | seçmen 15, geçerli 18 |
+| mahalle/2009yerel.json | Harmancık / ÇAMOĞLU MAH. | seçmen 58, geçerli 59 |
+| … | 11553 kayıt daha | |
 
-## `OY_TOPLAMI_TUTMUYOR` (1203)
+## `OY_TOPLAMI_TUTMUYOR` (1207)
 
 Parti oylarının toplamı geçerli oya eşit değil: bir partinin oyu eksik ya da fazla.
 
@@ -87,6 +87,10 @@ Dosyalara göre: ek/belediye_meclisi/1994yerel.json 195, ek/belediye_meclisi/199
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
+| mahalle/2009yerel.json | Yenimahalle / YENİ BATI MAH. | parti toplamı 11809, geçerli 11886 (fark -77) |
+| mahalle/2009yerel.json | Buldan / ÇAYBAŞI MAH. | parti toplamı 499, geçerli 700 (fark -201) |
+| mahalle/2009yerel.json | Kadıköy / CAFERAĞA MAH. | parti toplamı 15495, geçerli 15715 (fark -220) |
+| mahalle/2009yerel.json | İzmit / DOĞAN MAH. | parti toplamı 2427, geçerli 2607 (fark -180) |
 | ek/beldeler/1989yerel.json | Kırşehir / Kırşehir / Karahıdır | parti toplamı 467, geçerli 844 (fark -377) |
 | ek/beldeler/1989yerel.json | Tekirdağ / Tekirdağ / Karacakılavuz | parti toplamı 2058, geçerli 2053 (fark +5) |
 | ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Akören | parti toplamı 1098, geçerli 1241 (fark -143) |
@@ -98,17 +102,13 @@ Dosyalara göre: ek/belediye_meclisi/1994yerel.json 195, ek/belediye_meclisi/199
 | ek/beldeler/1994yerel.json | Afyon / Sultandağı / Kırca | parti toplamı 606, geçerli 983 (fark -377) |
 | ek/beldeler/1994yerel.json | Afyon / Sultandağı / Yakasinek | parti toplamı 994, geçerli 1318 (fark -324) |
 | ek/beldeler/1994yerel.json | Aksaray / Ortaköy / Harmandalı | parti toplamı 826, geçerli 1044 (fark -218) |
-| ek/beldeler/1994yerel.json | Aksaray / Ortaköy / Ozancık | parti toplamı 880, geçerli 885 (fark -5) |
-| ek/beldeler/1994yerel.json | Aksaray / Ortaköy / Sarıkaman | parti toplamı 711, geçerli 1187 (fark -476) |
-| ek/beldeler/1994yerel.json | Amasya / Amasya / Doğantepe | parti toplamı 782, geçerli 983 (fark -201) |
-| ek/beldeler/1994yerel.json | Amasya / Amasya / Ezinepazar | parti toplamı 795, geçerli 1125 (fark -330) |
-| … | 1188 kayıt daha | |
+| … | 1192 kayıt daha | |
 
-## `ORAN_HESAPLA_TUTMUYOR` (200)
+## `ORAN_HESAPLA_TUTMUYOR` (198)
 
 Yazılı oran, oy sayısından hesaplanan orandan farklı.
 
-Dosyalara göre: elections/genel/1954.json 49, elections/genel/1999.json 44, elections/genel/2002.json 25, elections/genel/1950.json 18, elections/genel/2007.json 16, elections/yerel/1977yerel.json 14, elections/genel/1957.json 10, elections/yerel/1999yerel.json 8, elections/genel/1995.json 4, elections/genel/1961.json 2, elections/yerel/1973yerel.json 2, mahalle/2009yerel.json 2 …
+Dosyalara göre: elections/genel/1954.json 49, elections/genel/1999.json 44, elections/genel/2002.json 25, elections/genel/1950.json 18, elections/genel/2007.json 16, elections/yerel/1977yerel.json 14, elections/genel/1957.json 10, elections/yerel/1999yerel.json 8, elections/genel/1995.json 4, elections/genel/1961.json 2, elections/yerel/1973yerel.json 2, elections/genel/1965.json 1 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -127,7 +127,7 @@ Dosyalara göre: elections/genel/1954.json 49, elections/genel/1999.json 44, ele
 | elections/genel/1950.json | plaka 46 / Kahramanmaraş | Bağımsız: yazılı %7.5, hesaplanan %22.14 |
 | elections/genel/1950.json | plaka 47 / Mardin | Bağımsız: yazılı %7.6, hesaplanan %34.68 |
 | elections/genel/1950.json | plaka 51 / Niğde | CHP: yazılı %41.6, hesaplanan %43.17 |
-| … | 185 kayıt daha | |
+| … | 183 kayıt daha | |
 
 ## `OY_NEGATIF_YA_DA_KESIRLI` (2)
 
@@ -140,11 +140,11 @@ Dosyalara göre: ek/senato/1979senato.json 2
 | ek/senato/1979senato.json | Kütahya | TİP: 0.7 |
 | ek/senato/1979senato.json | Manisa | TİP: 0.5 |
 
-## `KAZANAN_DIGER` (3099)
+## `KAZANAN_DIGER` (13)
 
 Kazanan 'Diğer' (ayrıştırılmamış küçük partiler toplamı).
 
-Dosyalara göre: mahalle/2019yerel.json 1996, mahalle/2014yerel.json 952, mahalle/2009yerel.json 138, elections/yerel/1999yerel.json 6, elections/yerel/1994yerel.json 4, mahalle/2011.json 3
+Dosyalara göre: elections/yerel/1999yerel.json 6, elections/yerel/1994yerel.json 4, mahalle/2011.json 3
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -158,18 +158,15 @@ Dosyalara göre: mahalle/2019yerel.json 1996, mahalle/2014yerel.json 952, mahall
 | elections/yerel/1999yerel.json | plaka 61 / Beşikdüzü |  |
 | elections/yerel/1999yerel.json | plaka 61 / Of |  |
 | elections/yerel/1999yerel.json | plaka 66 / Çayıralan |  |
-| mahalle/2009yerel.json | Merkez / SITKIYE MAH. |  |
-| mahalle/2009yerel.json | Elmadağ / YEŞİLDERE FATİH MAH. |  |
-| mahalle/2009yerel.json | Haymana / KAYABAŞI MAH. |  |
-| mahalle/2009yerel.json | Haymana / SEYRAN MAH. |  |
-| mahalle/2009yerel.json | Alanya / BÜYÜKHASBAHÇE MAH. |  |
-| … | 3084 kayıt daha | |
+| mahalle/2011.json | Mudanya / KAYMAKOBA MAH. |  |
+| mahalle/2011.json | Nizip / SAMANLI MAH. |  |
+| mahalle/2011.json | Of / ÇUKUROVA MAH. |  |
 
-## `KAZANAN_EN_COK_OY_DEGIL` (414)
+## `KAZANAN_EN_COK_OY_DEGIL` (658)
 
 Kazanan, en çok oy alan parti değil. Resmi sonuç sandık toplamından farklı olabilir (itiraz, yeniden sayım, aday düzeyinde belirlenen kazanan); tek tek bakılmalı.
 
-Dosyalara göre: mahalle/2024yerel.json 281, mahalle/2023.json 28, elections/yerel/1968yerel.json 19, elections/yerel/2024yerel.json 17, elections/yerel/1973yerel.json 11, mahalle/2015Haziran.json 11, elections/yerel/1963yerel.json 8, elections/yerel/1977yerel.json 7, mahalle/2018.json 6, elections/genel/1999.json 4, elections/genel/1995.json 3, elections/yerel/2009yerel.json 3 …
+Dosyalara göre: mahalle/2024yerel.json 282, mahalle/2019yerel.json 119, mahalle/2014yerel.json 90, mahalle/2009yerel.json 34, mahalle/2023.json 28, elections/yerel/1968yerel.json 19, elections/yerel/2024yerel.json 17, elections/yerel/1973yerel.json 11, mahalle/2015Haziran.json 11, elections/yerel/1963yerel.json 8, elections/yerel/1977yerel.json 7, mahalle/2018.json 6 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -188,7 +185,7 @@ Dosyalara göre: mahalle/2024yerel.json 281, mahalle/2023.json 28, elections/yer
 | elections/genel/1999.json | plaka 58 / Sivas | kazanan FP 88827, en çok oy Diğer 99246 |
 | elections/genel/1999.json | plaka 62 / Tunceli | kazanan Bağımsız 8052, en çok oy Diğer 9466 |
 | elections/yerel/1955yerel.json | plaka 11 / Bilecik | kazanan DP 7, en çok oy Bağımsız 11 |
-| … | 399 kayıt daha | |
+| … | 643 kayıt daha | |
 
 ## `SECMEN_YOK_OY_VAR` (247)
 
@@ -215,11 +212,11 @@ Dosyalara göre: elections/yerel/1984yerel.json 96, elections/yerel/1994yerel.js
 | elections/yerel/1955yerel.json | plaka 21 / Diyarbakır | seçmen None, oy 10647 |
 | … | 232 kayıt daha | |
 
-## `KATILIM_COK_DUSUK` (181)
+## `KATILIM_COK_DUSUK` (183)
 
 Katılım %20'nin altında; kaynak ya da eşleştirme hatası olabilir.
 
-Dosyalara göre: mahalle/2010referandum.json 123, elections/referandum/2010referandum.json 12, mahalle/2015Haziran.json 9, mahalle/2015Kasim.json 6, mahalle/2018.json 5, mahalle/2023.json 5, mahalle/2023cb1tur.json 5, elections/yerel/1955yerel.json 4, mahalle/2011.json 4, mahalle/2019yerel.json 2, mahalle/2014cb.json 1, mahalle/2018cb.json 1 …
+Dosyalara göre: mahalle/2010referandum.json 123, elections/referandum/2010referandum.json 12, mahalle/2015Haziran.json 9, mahalle/2015Kasim.json 6, mahalle/2018.json 5, mahalle/2023.json 5, mahalle/2023cb1tur.json 5, elections/yerel/1955yerel.json 4, mahalle/2011.json 4, mahalle/2019yerel.json 3, mahalle/2014cb.json 1, mahalle/2014yerel.json 1 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -238,7 +235,7 @@ Dosyalara göre: mahalle/2010referandum.json 123, elections/referandum/2010refer
 | elections/yerel/1955yerel.json | plaka 14 / Bolu | katılım %14.7, seçmen 5255 |
 | elections/yerel/1955yerel.json | plaka 35 / İzmir | katılım %12.17, seçmen 138114 |
 | elections/yerel/1955yerel.json | plaka 39 / Kırklareli | katılım %16.8, seçmen 8440 |
-| … | 166 kayıt daha | |
+| … | 168 kayıt daha | |
 
 ## `IL_ILCE_TOPLAMI` (54)
 
@@ -265,21 +262,16 @@ Dosyalara göre: elections/genel/1973.json 11, elections/genel/1977.json 8, elec
 | elections/genel/1977.json | Ankara | geçerli oy: il 897872, ilçeler toplamı 908521 (+1.2%) |
 | … | 39 kayıt daha | |
 
-## `MAHALLE_SECMEN_SICRAMASI` (194)
+## `MAHALLE_SECMEN_SICRAMASI` (205)
 
 Aynı mahallenin seçmeni ardışık iki seçim arasında 5 kattan fazla değişiyor (eşleştirme hatası ya da gerçek nüfus değişimi).
 
-Dosyalara göre: mahalle/2014cb.json 34, mahalle/2019yerel.json 34, mahalle/2017referandum.json 23, mahalle/2024yerel.json 22, mahalle/2010referandum.json 20, mahalle/2018.json 18, mahalle/2018cb.json 14, mahalle/2023.json 13, mahalle/2014yerel.json 12, mahalle/2015Haziran.json 4
+Dosyalara göre: mahalle/2014cb.json 34, mahalle/2019yerel.json 32, mahalle/2023.json 25, mahalle/2017referandum.json 23, mahalle/2024yerel.json 22, mahalle/2018.json 18, mahalle/2010referandum.json 15, mahalle/2018cb.json 14, mahalle/2014yerel.json 12, mahalle/2015Haziran.json 10
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
 | mahalle/2010referandum.json | Bolvadin / TAŞAĞIL MAH. | önceki seçimde 386, bu seçimde 56 |
 | mahalle/2010referandum.json | Merkez / MURAT MAH. | önceki seçimde 1987, bu seçimde 382 |
-| mahalle/2010referandum.json | Gemlik / HAMİDİYE MAH. | önceki seçimde 9461, bu seçimde 185 |
-| mahalle/2010referandum.json | İnegöl / HAMİDİYE MAH. | önceki seçimde 9348, bu seçimde 145 |
-| mahalle/2010referandum.json | İnegöl / OSMANİYE MAH. | önceki seçimde 3287, bu seçimde 105 |
-| mahalle/2010referandum.json | İnegöl / TURGUTALP MAH. | önceki seçimde 6976, bu seçimde 254 |
-| mahalle/2010referandum.json | Mustafakemalpaşa / HAMİDİYE MAH. | önceki seçimde 4530, bu seçimde 113 |
 | mahalle/2010referandum.json | Yenişehir / ÜÇKUYU MAH. | önceki seçimde 478, bu seçimde 3702 |
 | mahalle/2010referandum.json | Nizip / BELKIS MAH. | önceki seçimde 5365, bu seçimde 92 |
 | mahalle/2010referandum.json | Şehitkamil / BOYNO MAH. | önceki seçimde 8542, bu seçimde 151 |
@@ -288,4 +280,9 @@ Dosyalara göre: mahalle/2014cb.json 34, mahalle/2019yerel.json 34, mahalle/2017
 | mahalle/2010referandum.json | Kalkandere / SOĞUKSU MAH. | önceki seçimde 288, bu seçimde 53 |
 | mahalle/2010referandum.json | Divriği / DEMİRDAĞ MAH. | önceki seçimde 656, bu seçimde 52 |
 | mahalle/2010referandum.json | Merkez / DÖRTEYLÜL MAH. | önceki seçimde 4546, bu seçimde 48 |
-| … | 179 kayıt daha | |
+| mahalle/2010referandum.json | Merkez / KARAAĞAÇ MAH. | önceki seçimde 7244, bu seçimde 219 |
+| mahalle/2010referandum.json | Kurucaşile / ÖMERLER MAH. | önceki seçimde 244, bu seçimde 46 |
+| mahalle/2010referandum.json | Merkez / DEMİRCİLER MAH. | önceki seçimde 787, bu seçimde 50 |
+| mahalle/2010referandum.json | Merkez / ESENTEPE MAH. | önceki seçimde 2885, bu seçimde 277 |
+| mahalle/2010referandum.json | Yığılca / ORHANGAZİ MAH. | önceki seçimde 753, bu seçimde 84 |
+| … | 190 kayıt daha | |

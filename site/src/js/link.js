@@ -62,11 +62,18 @@
       }
     }finally{
       baglantiUygulaniyor = false;
-      durumuYaz();
+      // uygulanirken adres degistiyse (ör. bir mahalle haritasi yuklenirken yeni baglanti acildi) o
+      // degisiklik kaybolmasin: bitince yeni adresi uygula
+      const yeniden = bekleyenBaglanti && location.hash !== '#' + durumParametreleri().toString();
+      bekleyenBaglanti = false;
+      if(yeniden) setTimeout(baglantiyiUygula, 0);
+      else durumuYaz();
     }
   }
+  let bekleyenBaglanti = false;
   window.addEventListener('hashchange', () => {
-    if(!baglantiUygulaniyor && location.hash !== '#' + durumParametreleri().toString()) baglantiyiUygula();
+    if(baglantiUygulaniyor){ bekleyenBaglanti = true; return; }
+    if(location.hash !== '#' + durumParametreleri().toString()) baglantiyiUygula();
   });
 
   $('#btnPaylas').addEventListener('click', async () => {
