@@ -307,7 +307,7 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None):
     for lv in ("iller", "ilceler"):
         for r in secim[lv]:
             mevcut.update(r["oy"])
-    aday_bazli = ham.get("secimTuru") == 9
+    aday_bazli = ham.get("secimTuru") in (7, 9)   # halkoylamasi (Evet/Hayır) ve cumhurbaskanligi: sutunlar aday/secenek
     if aday_bazli:
         col_to_key = aday_eslemesi(ham["colToName"], mevcut)
     else:

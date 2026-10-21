@@ -23,11 +23,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # 2015H, 2015K, 2018, 2023 genel, 2023 CB iki tur ve 2024 yerel 2026-10-20'de cekildi (main'de);
-          # bu calistirma eski yerel secimler (secimTuru 2: ilce/belediye baskanligi, 2024 yerel ile ayni)
-          - { anahtar: "2009yerel", secimId: 4290,  tur: 2, baslik: baslik_2009yerel.json }
-          - { anahtar: "2014yerel", secimId: 11979, tur: 2, baslik: baslik_2014yerel.json }
-          - { anahtar: "2019yerel", secimId: 16400, tur: 2, baslik: baslik_2019yerel.json }
+          # 2009-2024 yerel, 2015H, 2015K, 2018, 2023 genel ve 2023 CB 2026-10-20/21'de cekildi (main'de);
+          # bu calistirma kalanlar (secimTuru 8 genel, 7 halkoylamasi, 9 cumhurbaskanligi)
+          - { anahtar: "2011",           secimId: 7468,  tur: 8, baslik: baslik_2011.json }
+          - { anahtar: "2010referandum", secimId: 6522,  tur: 7, baslik: baslik_2010referandum.json }
+          - { anahtar: "2014cb",         secimId: 13340, tur: 9, baslik: baslik_2014cb.json }
+          - { anahtar: "2017referandum", secimId: 15575, tur: 7, baslik: baslik_2017referandum.json }
+          - { anahtar: "2018cb",         secimId: 16300, tur: 9, baslik: baslik_2018cb.json }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
