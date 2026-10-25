@@ -12,6 +12,10 @@ on:
         description: "Yalniz bu iller (virgullu plaka, ornek 46,80); bos = hepsi"
         required: false
         default: ""
+      onceki_run:
+        description: "Verisi de kaydedilecek onceki calistirmanin kimligi (bos = yok)"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -54,19 +58,37 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           path: indirilen
+      - if: inputs.onceki_run != ''
+        uses: actions/download-artifact@v4
+        with:
+          path: onceki
+          run-id: ${{ inputs.onceki_run }}
+          github-token: ${{ github.token }}
       - name: osm-yer-veri dalina yaz
         run: |
+          set -o pipefail
+          trap 'echo "::error title=kaydet::satir $LINENO: $BASH_COMMAND"' ERR
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # dal varsa uzerine ekle (yalniz bazi illeri ceken calistirma digerlerini silmesin)
-          if git fetch origin osm-yer-veri; then git checkout -B osm-yer-veri FETCH_HEAD; else git checkout -B osm-yer-veri; fi
-          mkdir -p data/raw/osm/yer && cp indirilen/*/* data/raw/osm/yer/
+          # dal yalniz veriyi tasir (yetim dal): is akisi dosyalari ona hic itilmez
+          if git fetch origin osm-yer-veri; then git checkout -q -B osm-yer-veri FETCH_HEAD; else git checkout -q --orphan osm-yer-veri && git rm -rq --cached . && git clean -fdq -e indirilen -e onceki; fi
+          mkdir -p data/raw/osm/yer
+          # once onceki calistirma, sonra bu calistirma (yenisi ustune yazar); bos ([]) dosyalar alinmaz
+          for d in onceki indirilen; do
+            for f in $d/*/*.json; do
+              [ -f "$f" ] || continue
+              [ "$(head -c 2 "$f")" = "[]" ] && continue
+              cp "$f" data/raw/osm/yer/
+            done
+          done
           git add data/raw/osm/yer
-          git diff --cached --quiet || git commit -m "OSM koy/mahalle yer noktalari, run ${{ github.run_id }}"
-          git push origin osm-yer-veri
-          echo "::notice title=kaydedildi::$(ls data/raw/osm/yer | wc -l) il, $(du -sh data/raw/osm/yer | cut -f1)"
+          git diff --cached --quiet || git commit -q -m "OSM koy/mahalle yer noktalari, run ${{ github.run_id }}"
+          git push origin osm-yer-veri 2>&1 | tee push.log || { echo "::error title=push::$(tail -5 push.log | tr '\n' ' ')"; exit 1; }
+          echo "::notice title=kaydedildi::$(ls data/raw/osm/yer | wc -l) il: $(ls data/raw/osm/yer | tr '\n' ' ')"
