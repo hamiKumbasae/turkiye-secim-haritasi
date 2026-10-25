@@ -14,6 +14,10 @@ Eslestirme ayni ilce (geomId) icinde yapilir:
      ilk sirada, eski poligonlar ancak bunlarla %25'ten az ortusurse kalir. Anahtar 'b<plaka>-<kimlik>'.
   1b. guncel OSM (data/raw/osm/mahalle, fetch_osm_mahalle.py): sitede olmayan idari mahalle sinirlari,
      2-4'teki ad kurallariyla; mevcut poligonlarla %25'ten fazla ortusen alinmaz. Anahtar 'r<osm_id>'.
+  4b. OSM konumu (data/raw/osm/yer, fetch_osm_yer.py): adla eslesmeyen muhtarligin guncel adli OSM yer
+     noktasi tek bir TKGM biriminin icine dusuyorsa o birim (TKGM bircok koyu eski adiyla tutuyor:
+     Bismil 'Akbaş' ~ TKGM 'Alibociyan'). Birim baska bir muhtarligin adini tasiyorsa alinmaz; o muhtarlik
+     adla ayni birime eslesmisse birim paylasilir ve oylar toplanir. Sinir cizilmez.
   5. Mevcut poligonlarla alaninin %25'inden fazlasi ortusen TKGM birimi cizilmez (ust uste binme).
   6. eslesmeyen muhtarliklar raporlanir (docs/rapor/mahalle_eslesme/<secim>.csv)
 Partiler: ulke genelinde %ANA_ESIK ustu olanlar ve o mahallenin kazanani ayri, gerisi 'Diğer'.
@@ -49,6 +53,7 @@ from party_map_helper import build_party_mapping  # noqa: E402
 TKGM_DIR = ROOT / "data" / "raw" / "tkgm" / "mahalle"
 BELEDIYE_DIR = ROOT / "data" / "raw" / "belediye" / "mahalle"   # fetch_belediye_mahalle.py
 OSM_DIR = ROOT / "data" / "raw" / "osm" / "mahalle"   # fetch_osm_mahalle.py (yoksa bu adim atlanir)
+YER_DIR = ROOT / "data" / "raw" / "osm" / "yer"       # fetch_osm_yer.py (yoksa konum adimi atlanir)
 ILCE_GEO = ROOT / "geo" / "normalized" / "turkiye_ilce_sinirlari.geojson"
 MUHTARLIK_DIR = ROOT / "data" / "raw" / "ysk" / "muhtarlik"
 GEO = ROOT / "geo" / "normalized" / "mahalle_geo.json"
@@ -75,6 +80,17 @@ def ad_anahtari(ad):
     while len(p) > 1 and p[-1] in ("MAHALLE", "MAHALLESI", "KOYU", "KOY", "MAH"):
         p.pop()
     return " ".join(p)
+
+
+def koysuz(anahtar):
+    """YSK'nin bitisik yazdigi koy adi ('BESIKKOY', 'CIPKOY') -> 'BESIK'; degilse None."""
+    if anahtar.endswith("KOY") and len(anahtar) > 5 and " " not in anahtar[-4:]:
+        return anahtar[:-3].rstrip()
+    return None
+
+
+def koy_birimi(ft):
+    return "KOY" in fold(ft["properties"].get("ad") or "")
 
 
 def yuvarla4(o):
@@ -191,6 +207,78 @@ def osm_yukle():
     return sonuc
 
 
+def yer_yukle():
+    """OSM koy/mahalle yer noktalari (fetch_osm_yer.py), ilceye (geomId) ilce sinirlariyla atanir."""
+    if not YER_DIR.exists():
+        return {}
+    from shapely.geometry import Point, shape
+    from shapely.strtree import STRtree
+    ilceler = json.loads(ILCE_GEO.read_text(encoding="utf-8"))["features"]
+    sekiller = [shape(f["geometry"]) for f in ilceler]
+    agac = STRtree(sekiller)
+    sonuc = collections.defaultdict(list)
+    for f in sorted(YER_DIR.glob("*.json")):
+        for p in json.loads(f.read_text(encoding="utf-8")):
+            nokta = Point(p["lon"], p["lat"])
+            for i in agac.query(nokta):
+                if sekiller[i].contains(nokta):
+                    sonuc[ilceler[i]["properties"]["id"]].append(p)
+                    break
+    return sonuc
+
+
+# OSM noktasinin YSK adiyla karsilastirilan (guncel) ad etiketleri; eski ad ve baska dillerdeki adlar degil
+GUNCEL_AD = ("name", "name:tr", "official_name", "alt_name", "alt_name:tr", "short_name")
+
+
+def konumla_esle(muhtarliklar, noktalar, birimler, es, tum_muh, mevcut):
+    """muhtarliklar: adla eslesmeyenler {mid: kayit}; noktalar: ilcenin OSM yer noktalari; birimler: ilcenin
+    TKGM birimleri; es: adla eslesmeler {mid: (feature, yontem)}; tum_muh: ilcenin butun muhtarliklari;
+    mevcut: kullanilan mevcut poligonlarin birlesimi (ya da None). Doner {mid: (feature, osm kimligi)}.
+    Kosullar: muhtarligin adini tasiyan noktalarin hepsi ayni tek birimin icinde; birim baska bir muhtarligin
+    adini tasimiyor (o muhtarligin kendisi adla eslesmisse birim paylasilir, oylar toplanir); birim mevcut
+    poligonlarla alaninin %25'inden fazla ortusmuyor."""
+    if not muhtarliklar or not noktalar or not birimler:
+        return {}
+    from shapely.geometry import Point, shape
+    from shapely.strtree import STRtree
+    from shapely.validation import make_valid
+    sekil = [make_valid(shape(ft["geometry"])).buffer(0) for ft in birimler]
+    agac = STRtree(sekil)
+    ysk_adlari = {ad_anahtari(m["ad"]) for m in tum_muh.values()}
+    es_birim = {id(ft) for ft, _ in es.values()}
+    anahtar_nokta = collections.defaultdict(list)
+    for p in noktalar:
+        anahtarlar = set()
+        for etiket in GUNCEL_AD:
+            if p["adlar"].get(etiket):
+                k = ad_anahtari(p["adlar"][etiket])
+                anahtarlar.update(x for x in (k, koysuz(k)) if x)
+        for k in anahtarlar:
+            anahtar_nokta[k].append(p)
+    sonuc = {}
+    for mid, m in muhtarliklar.items():
+        k = ad_anahtari(m["ad"])
+        adaylar = anahtar_nokta.get(k) or (anahtar_nokta.get(koysuz(k)) if koysuz(k) else None)
+        if not adaylar:
+            continue
+        icinde = set()
+        for p in adaylar:
+            nokta = Point(p["lon"], p["lat"])
+            ic = [i for i in agac.query(nokta) if sekil[i].contains(nokta)]
+            icinde.add(ic[0] if len(ic) == 1 else None)
+        if len(icinde) != 1 or None in icinde:
+            continue
+        i = icinde.pop()
+        ft = birimler[i]
+        if id(ft) not in es_birim and ad_anahtari(ft["properties"]["ad"] or "") in ysk_adlari:
+            continue
+        if mevcut is not None and sekil[i].area and sekil[i].intersection(mevcut).area / sekil[i].area > 0.25:
+            continue
+        sonuc[mid] = (ft, f"{adaylar[0]['tur']}{adaylar[0]['osm']}")
+    return sonuc
+
+
 def esle(muhtarliklar, birimler):
     """muhtarliklar: {mid: kayit}; birimler: [feature]. Doner: {mid: (feature, yontem)}"""
     birlesik = bolum_birlesimleri(birimler)
@@ -203,6 +291,9 @@ def esle(muhtarliklar, birimler):
     sonuc, kalan = {}, {}
     for mid, m in muhtarliklar.items():
         aday = ad_birim.get(ad_anahtari(m["ad"]))
+        if not aday:   # YSK "BEŞİKKÖY" ~ TKGM "Beşik Köyü" (yalniz koy birimine)
+            k = koysuz(ad_anahtari(m["ad"]))
+            aday = [ft for ft in ad_birim.get(k, []) if koy_birimi(ft)] if k else None
         if aday and len(aday) == 1:
             sonuc[mid] = (aday[0], "birebir")
         else:
@@ -246,8 +337,11 @@ def esle(muhtarliklar, birimler):
     adaylar = []
     for mid, m in kalan.items():
         a = ad_anahtari(m["ad"])
+        a2 = koysuz(a)
         for ad, ft in serbest.items():
             p = difflib.SequenceMatcher(None, a, ad).ratio()
+            if a2 and koy_birimi(ft):
+                p = max(p, difflib.SequenceMatcher(None, a2, ad).ratio())
             # ilk harf farkliysa (Şanlıavşar / Kanlıavşar) cok daha yuksek benzerlik iste
             if p >= ESIK and (a[:1] == ad[:1] or p >= 0.93):
                 adaylar.append((p, mid, ad))
@@ -344,7 +438,7 @@ def ilce_hedefleri(ham, secim):
     return hedef
 
 
-def isle(anahtar, birimler, geo, uygula, osm=None, bel=None):
+def isle(anahtar, birimler, geo, uygula, osm=None, bel=None, yer=None):
     ham = json.loads((MUHTARLIK_DIR / f"{anahtar}.json").read_text(encoding="utf-8"))
     secim = load_election(anahtar)
     mevcut = set()
@@ -475,10 +569,23 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None):
                               ft["properties"]["ad"] + ("" if yontem == "birebir" else f" ({yontem})")])
         es = esle(tkgm_aday, birimler[g])
         eski_birlesik = None
-        if eski_gruplar and es:
+        if eski_gruplar:
             eski_birlesik = unary_union([make_valid(shape((geo[g][pid] if pid in geo.get(g, {}) else osm_yeni[pid][0])["geometry"])).buffer(0)
                                          for pid in eski_gruplar])
+        # 1c) OSM yer noktasi: adla eslesmeyen muhtarligin guncel adli OSM noktasi tek bir TKGM biriminin
+        #     icine dusuyorsa o birim kullanilir (TKGM bircok koyu eski adiyla tutuyor). Ayni birime birden
+        #     cok muhtarlik duserse oylari toplanir (adla eslesmis birim dahil).
+        konum = konumla_esle({mid: m for mid, m in tkgm_aday.items() if mid not in es},
+                             [p for h in havuz for p in (yer or {}).get(h, [])], birimler[g], es, muh, eski_birlesik)
         for mid, m in tkgm_aday.items():
+            if mid in konum:
+                ft, osm_id = konum[mid]
+                gruplar[ft["properties"]["tkgm_id"]].append((m, ft, "konum"))
+                sayac["eslesen_konum"] += 1
+                il_sayac[il]["eslesen_secmen"] += m["secmen"]
+                rapor.append([anahtar, il, ilce["ilceAdi"], m["ad"], m["secmen"], "TKGM sınırı, OSM konumu",
+                              f"{ft['properties']['ad']} (OSM {osm_id})"])
+                continue
             if mid in es and eski_birlesik is not None:
                 from shapely.geometry import shape
                 from shapely.validation import make_valid
@@ -548,11 +655,13 @@ def main():
     print("OSM: ilçe", len(osm), "poligon", sum(len(v) for v in osm.values()))
     bel = belediye_yukle()
     print("Belediye: ilçe", len(bel), "poligon", sum(len(v) for v in bel.values()))
+    yer = yer_yukle()
+    print("OSM yer noktası: ilçe", len(yer), "nokta", sum(len(v) for v in yer.values()))
     for anahtar in secimler:
-        s, il_s, eski, yeni = isle(anahtar, birimler, geo, uygula, osm, bel)
+        s, il_s, eski, yeni = isle(anahtar, birimler, geo, uygula, osm, bel, yer)
         T = s["secmen"]
         print(f"\n{anahtar}: YSK seçmeni {T:,} | haritaya bağlanan {yeni:,} (%{yeni / T * 100:.1f}); önceki {eski:,} (%{eski / T * 100:.1f})")
-        print(f"   birebir {s['eslesen_birebir']}, yakın {s['eslesen_yakin']}, mevcut poligon {s['eslesen_eski']}, yeni belediye {s['eslesen_belediye']}, yeni OSM {s['eslesen_osm']}, çakışma nedeniyle çizilmeyen {s['cakisan']}, eşleşmeyen {s['eslesmeyen']} muhtarlık "
+        print(f"   birebir {s['eslesen_birebir']}, yakın {s['eslesen_yakin']}, mevcut poligon {s['eslesen_eski']}, yeni belediye {s['eslesen_belediye']}, yeni OSM {s['eslesen_osm']}, OSM konumuyla {s['eslesen_konum']}, çakışma nedeniyle çizilmeyen {s['cakisan']}, eşleşmeyen {s['eslesmeyen']} muhtarlık "
               f"({s['eslesmeyen_secmen']:,} seçmen), muhtarlıksız sandık seçmeni {s['muhtarliksiz_secmen']:,}, "
               f"TKGM sınırı olmayan ilçelerde {s['sinirsiz_ilce_secmen']:,}, birleşen birim {s['birlesen_birim']}")
         kotu = sorted(il_s.items(), key=lambda x: x[1]["eslesen_secmen"] / max(x[1]["secmen"], 1))[:8]
