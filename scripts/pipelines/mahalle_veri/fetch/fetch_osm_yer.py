@@ -40,7 +40,11 @@ def al(sorgu, deneme=6):
             veri = urllib.parse.urlencode({"data": sorgu}).encode()
             req = urllib.request.Request(url, data=veri, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=960) as r:
-                return json.loads(r.read().decode("utf-8"))
+                d = json.loads(r.read().decode("utf-8"))
+            # Overpass zaman asiminda HTTP 200 ve bos sonuc + 'remark' doner: hata say, tekrar dene
+            if not d.get("elements") and "error" in (d.get("remark") or "").lower():
+                raise RuntimeError(d["remark"][:200])
+            return d
         except Exception as e:  # noqa: BLE001
             print("  tekrar:", url, str(e)[:150], flush=True)
             if i == deneme - 1:
@@ -51,9 +55,15 @@ def al(sorgu, deneme=6):
 def main():
     cikti = pathlib.Path(sys.argv[1])
     cikti.mkdir(parents=True, exist_ok=True)
+    hatali = []
     for plaka in [int(p) for p in sys.argv[2].split(",")]:
         t0 = time.time()
-        d = al(SORGU.format(plaka=plaka, yerler=YERLER))
+        try:
+            d = al(SORGU.format(plaka=plaka, yerler=YERLER))
+        except Exception as e:  # noqa: BLE001 - bir ilin hatasi digerlerini durdurmasin
+            print(f"::error title=OSM yer {plaka:02d}::{str(e)[:200]}", flush=True)
+            hatali.append(plaka)
+            continue
         yerler = []
         for el in d.get("elements", []):
             t = el.get("tags", {})
@@ -64,6 +74,10 @@ def main():
                 continue
             yerler.append({"osm": el["id"], "tur": el["type"][0], "lon": round(nokta[0], 5), "lat": round(nokta[1], 5),
                            "place": t.get("place"), "ad": t.get("name") or t.get("name:tr"), "adlar": adlar})
+        if not yerler:
+            print(f"::error title=OSM yer {plaka:02d}::hic yer donmedi", flush=True)
+            hatali.append(plaka)
+            continue
         yerler.sort(key=lambda y: (y["tur"], y["osm"]))
         (cikti / f"{plaka:02d}.json").write_text(json.dumps(yerler, ensure_ascii=False, separators=(",", ":")),
                                                 encoding="utf-8")
@@ -71,6 +85,8 @@ def main():
         print(f"::notice title=OSM yer {plaka:02d}::{len(yerler)} yer, eski adli {eski}, {time.time() - t0:.0f} sn",
               flush=True)
         time.sleep(5)
+    if hatali:
+        raise SystemExit(f"cekilemeyen iller: {hatali}")
 
 
 if __name__ == "__main__":

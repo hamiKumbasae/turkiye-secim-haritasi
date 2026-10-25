@@ -4,11 +4,14 @@ name: osm-yer-cek
 # Overpass'tan il il ceker (fetch_osm_yer.py) ve "osm-yer-veri" dalina data/raw/osm/yer/ olarak yazar.
 # Eski adli TKGM sinirlarini guncel muhtarliklara konumla baglamak icin (tkgm_muhtarlik_esle.py).
 # Overpass gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor. Ayni anda en cok 2 grup.
+# Elle calistirilir (workflow_dispatch); ilk tam cekim 2026-10-26.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: [".github/workflows/osm-yer-cek.yml"]
+    inputs:
+      iller:
+        description: "Yalniz bu iller (virgullu plaka, ornek 46,80); bos = hepsi"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -31,7 +34,13 @@ jobs:
         with:
           python-version: "3.12"
       - name: Cek
-        run: python3 scripts/pipelines/mahalle_veri/fetch/fetch_osm_yer.py cikti "${{ matrix.grup }}"
+        run: |
+          GRUP="${{ matrix.grup }}"
+          if [ -n "${{ inputs.iller }}" ]; then
+            # yalniz istenen iller: her grup kendi listesindekileri ceker
+            GRUP=$(python3 -c "import sys; g=sys.argv[1].split(','); i=sys.argv[2].split(','); print(','.join(x for x in g if x in i))" "$GRUP" "${{ inputs.iller }}")
+          fi
+          if [ -n "$GRUP" ]; then python3 scripts/pipelines/mahalle_veri/fetch/fetch_osm_yer.py cikti "$GRUP"; fi
       - if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -54,9 +63,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B osm-yer-veri
+          # dal varsa uzerine ekle (yalniz bazi illeri ceken calistirma digerlerini silmesin)
+          if git fetch origin osm-yer-veri; then git checkout -B osm-yer-veri FETCH_HEAD; else git checkout -B osm-yer-veri; fi
           mkdir -p data/raw/osm/yer && cp indirilen/*/* data/raw/osm/yer/
           git add data/raw/osm/yer
-          git commit -m "OSM koy/mahalle yer noktalari, run ${{ github.run_id }}"
-          git push -f origin osm-yer-veri
+          git diff --cached --quiet || git commit -m "OSM koy/mahalle yer noktalari, run ${{ github.run_id }}"
+          git push origin osm-yer-veri
           echo "::notice title=kaydedildi::$(ls data/raw/osm/yer | wc -l) il, $(du -sh data/raw/osm/yer | cut -f1)"
