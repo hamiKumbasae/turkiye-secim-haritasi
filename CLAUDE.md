@@ -24,7 +24,7 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 - Lisanslar: TKGM açık lisans dışı; OSM ODbL; Bursa/Sakarya belediye lisansı (atıf). Bkz. `LICENSE-DATA.md`.
 
 ## Yönetim raporu
-Claude Docs artifact `f24fac76-2c6f-4b0f-a2f3-dc33a09ee4ee` (eylem planı tablosu orada).
+`docs/rapor/VERI_DENETIMI_YONETIM.md` (eylem planı tablosu orada; Claude Docs artifact silindi). Veri ve yöntem raporu: `docs/rapor/VERI_VE_YONTEM.md`.
 
 ## Durum
 Proje kapandı (21 Ekim 2026). Yalnız yeni seçim (normal takvimde 2028 genel, 2029 yerel) ya da hata bildirimi olursa açılır.
