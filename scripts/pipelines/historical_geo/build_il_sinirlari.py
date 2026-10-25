@@ -78,6 +78,38 @@ def temiz(g):
     return g if g.is_valid else g.buffer(0)
 
 
+# Dikis boslugu dis sinira acildiginda delik degil centik olur ve haritada il icine giren ince bir
+# cizgi gibi gorunur (delikleri_doldur bunu yakalamaz). Yalniz bildirilen illerde doldurulur:
+# 40 Kirsehir (1950-1954 eski Kirsehir-Nevsehir dikisi; 1950-1987 iki Kirsehir ilcesi arasi).
+CENTIK_DOLDUR = {40}
+CENTIK_GENISLIK = 0.003  # derece (~300 m); bu genislikten dar centikler kapanir
+
+
+def centikleri_doldur(geom, komsular):
+    """Dar centikleri kapatir: kapama (buffer +e/-e) ile eklenen parcalardan baska ile ait olmayan
+    ve bugunku kara alani icinde kalanlar eklenir; geri kalan sinir degismez."""
+    e = CENTIK_GENISLIK
+    kapali = geom.buffer(e, join_style=2).buffer(-e, join_style=2)
+    eklenecek = []
+    for g in getattr(kapali.difference(geom), "geoms", [kapali.difference(geom)]):
+        if g.area < 1e-9 or g.intersection(komsular).area > 0.01 * g.area:
+            continue
+        if g.intersection(kara_alani()).area < 0.9 * g.area:
+            continue
+        eklenecek.append(g)
+    return temiz(unary_union([geom, *eklenecek])) if eklenecek else geom
+
+
+_KARA = []
+
+
+def kara_alani():
+    if not _KARA:
+        _KARA.append(unary_union([temiz(shape(f["geometry"])) for f in
+                                  oku(ROOT / "geo/normalized/turkiye_il_sinirlari.geojson")["features"]]))
+    return _KARA[0]
+
+
 def main():
     modern = {f["properties"]["id"]: temiz(shape(f["geometry"])) for f in oku(MODERN)["features"]}
     hide = {e["syntheticId"]: set(e["hideIds"]) for v in oku(SPLITS).values() for e in v}
@@ -123,10 +155,12 @@ def main():
         parcalar = collections.defaultdict(list)
         for g, p in il_of.items():
             parcalar[p].append(modern[g])
+        birlesim = {p: delikleri_doldur(unary_union(parcalar[p])) for p in parcalar}
+        for p in CENTIK_DOLDUR & birlesim.keys():
+            birlesim[p] = centikleri_doldur(birlesim[p], unary_union([u for q, u in birlesim.items() if q != p]))
         feats = []
-        for p in sorted(parcalar):
-            u = delikleri_doldur(unary_union(parcalar[p]))
-            u = shapely.set_precision(u, 1e-5)
+        for p in sorted(birlesim):
+            u = shapely.set_precision(birlesim[p], 1e-5)
             feats.append({"type": "Feature", "properties": {"plaka": p}, "geometry": mapping(u)})
         out = GEO_HIST / f"turkiye_il_sinirlari_{era}.geojson"
         out.write_text(json.dumps({"type": "FeatureCollection", "features": feats}, ensure_ascii=False,
