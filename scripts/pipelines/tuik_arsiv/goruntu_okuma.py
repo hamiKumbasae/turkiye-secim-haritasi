@@ -233,6 +233,12 @@ def coz(metin, partiler, oncu, gecerli=None, yedek=None):
             uyan = {(o, y) for o in oc for y in yc if o and abs(100 * o / g - y) <= 0.1}
             if len({o for o, _ in uyan}) == 1:
                 secilen = min(uyan)
+            elif uyan:
+                # birden cok aday yuzdeyi 0,1 icinde tutuyor (kucuk yuzdelerde olur: 3 567 ve 3 367, %1,4): yuvarlama
+                # siniri (0,05) icinde kalan TEK aday secilir
+                yakin = {(o, y) for o, y in uyan if abs(100 * o / g - y) <= 0.05}
+                if len({o for o, _ in yakin}) == 1:
+                    secilen = min(yakin)
         sifirdan_buyuk = [x for x in oc if x]
         yuzdeler = {y for y in yc if y > 0}
         if secilen:

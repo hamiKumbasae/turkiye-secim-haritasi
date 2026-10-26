@@ -31,12 +31,12 @@
   "il": 67,
   "ilce": 566,
   "belde": 688,
-  "tutarli": 622,
+  "tutarli": 623,
   "toplamTutmuyor": 153,
-  "tutarsiz": 699,
+  "tutarsiz": 698,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 0,
-  "goruntudenOkunan": 155,
+  "goruntudenOkunan": 156,
   "adlandirilan": 564,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
@@ -37330,18 +37330,36 @@
    "oy": {
     "CHP": 493,
     "AP": 437,
-    "CGP": 175,
+    "CGP": 125,
     "MP62": 30
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1135
+    "durum": "tutarli"
    },
    "sayfa": [
     1357
    ],
    "kodKaynakta": "10",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 1336,
+     "oyKullanan": 1223,
+     "gecerliOy": 1085,
+     "katilim%": 91.5,
+     "AP": 437,
+     "BP69": null,
+     "CHP": 493,
+     "CKMP": null,
+     "CGP": 175,
+     "MP62": 30,
+     "TİP": null,
+     "YTP61": null,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "CHP"
   },
   {

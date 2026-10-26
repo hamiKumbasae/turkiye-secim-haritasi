@@ -377,6 +377,17 @@ def tablo_oku(pdf, cfg, ilk, son):
         oran = _tutarli_sayisi(hiza, cfg["partiler"]) / len(so[0][0])
         if oran > en_iyi_oran:
             en_iyi_oran, sablon_sol, sablon_sag = oran, so[0][1], sa[0][1]
+    if (sablon_sol is None or sablon_sag is None) and cfg.get("sablonAralik"):
+        # bu tablonun sag yuzlerinden kenar cikmiyor (1973 baskanlik: sag yuzde kazanan adi sutunu, seyrek
+        # satirlar): ayni kitabin ayni sutun duzenli tablosundan (belediye meclisi) sablon
+        ilk2, son2 = cfg["sablonAralik"]
+        for a2 in range(ilk2, son2):
+            so, sa = yuz_secenekleri(pdf.pages[a2 - 1], cfg, True, None), yuz_secenekleri(pdf.pages[a2], cfg, False, None)
+            if so and sa and len(so[0][0]) >= 10 and not sag_yuz_mu(pdf.pages[a2 - 1]) and sag_yuz_mu(pdf.pages[a2]):
+                hiza = E._hizala(so[0][0], sa[0][0], cfg["partiler"])
+                oran = _tutarli_sayisi(hiza, cfg["partiler"]) / len(so[0][0])
+                if oran > en_iyi_oran:
+                    en_iyi_oran, sablon_sol, sablon_sag = oran, so[0][1], sa[0][1]
     for a, b in ciftler:
         # her yuz icin sayfanin kendi kenarlari ve sablon denenir; ciftin en cok tutarli satir veren birlesimi
         # secilir (secim satirlarin kendi ic tutarliligina dayanir)
@@ -1196,7 +1207,8 @@ def isle(secim, tablolar=None):
                     cfg["cetvel"][no] = [dict(c, sutun=None) for c in kayitlar]
         else:
             ilk, son = aralik
-            cfg = dict(cfg, sagIsimSutunu=tablo in KITAPLAR[secim].get("sagIsimSutunu", ()))
+            cfg = dict(cfg, sagIsimSutunu=tablo in KITAPLAR[secim].get("sagIsimSutunu", ()),
+                       sablonAralik=KITAPLAR[secim]["tablolar"]["belediye_meclisi"] if tablo == "belediye_baskanligi" else None)
             satirlar, eslesmeyen = tablo_oku(pdf, cfg, ilk, son)
         # ilk satir (adsiz) Turkiye toplami
         if satirlar and not fasikul and not karsilikli and not E._anahtar(satirlar[0]["etiket"]):
