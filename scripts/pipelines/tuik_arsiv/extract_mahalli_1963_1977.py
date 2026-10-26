@@ -60,7 +60,9 @@ P73_SAG = ["CGP", "DEMP73", "MP62", "MHP", "MSP", "TBP73", "Bağımsız"]
 
 KITAPLAR = {
     "1977yerel": {
-        "demirbas": "0015740", "tarih": "11 Aralık 1977", "yayin": "DİE, Yerel Seçim Sonuçları, 11 Aralık 1977 (1979)",
+        "demirbas": "0015740", "tarih": "11 Aralık 1977",
+        # basili gecerli oy parti toplamindan farkliysa (kitabin aciklamasi) iki okumada teyitli satir %2'ye kadar
+        "yuzdeliFarkIzni": 0.02, "yayin": "DİE, Yerel Seçim Sonuçları, 11 Aralık 1977 (1979)",
         "partiler": P77_SOL + P77_SAG, "genelIlce": "1977", "binlikBosluk": True,
         "sol": ONCU + [x for p in P77_SOL for x in (p, p + "%")],
         "sag": [x for p in P77_SAG for x in (p, p + "%")],
@@ -92,6 +94,8 @@ KITAPLAR = {
         # yuz (yatay sayfa). Il genel meclisinde her parti oy + %, belediye meclisinde yalniz oy. Ilce satiri
         # "NN Ad" (ilce kodu, kitap sirasi), belde satiri "B.KKK Ad" (bucak.koy kodu). Guven Partisi projede CGP.
         "demirbas": "0015244", "tarih": "2 Haziran 1968",
+        # basili gecerli oy parti toplamindan farkliysa (kitabin aciklamasi) iki okumada teyitli satir %2'ye kadar
+        "yuzdeliFarkIzni": 0.02,
         "yayin": "DİE, Mahalli Seçimler Sonuçları, 2 Haziran 1968 (yayın no. 555, 1969)",
         "duzen": "fasikul", "partiler": P68, "genelIlce": "1969", "binlikBosluk": True,
         "sutunlar": {"il_genel_meclisi": ONCU68 + [x for p in P68 for x in (p, p + "%")],
@@ -105,6 +109,8 @@ KITAPLAR = {
     },
     "1973yerel": {
         "demirbas": "0015468", "tarih": "9 Aralık 1973",
+        # basili gecerli oy parti toplamindan farkliysa (kitabin aciklamasi) iki okumada teyitli satir %2'ye kadar
+        "yuzdeliFarkIzni": 0.02,
         "yayin": "DİE, Mahalli Seçimler Sonuçları, 9 Aralık 1973 (yayın no. 716, 1974)",
         "partiler": P73_SOL + P73_SAG, "genelIlce": "1973", "binlikBosluk": True,
         # sol yuzde gecerli oy katilimdan once
@@ -141,6 +147,15 @@ def dogrula(v, partiler):
     sayilarin ayni bicimde bozulmasi: 1968 Dazkiri '9 981' -> '999 981', '6 703' -> '666 703') ya da yuzdesiz
     tabloda gecerli oy oy kullanandan buyukse satir tutarli sayilmaz (goruntuden ikinci okumaya gider)."""
     oy, kontrol, duz = E.dogrula(v, partiler)
+    if any(d["alan"] == "gecerliOy" for d in duz):
+        # extract_mahalli.dogrula basili gecerli oyu parti toplamina 'duzeltiyor' (okuma hatasi varsayimi). Bu
+        # kitaplarda kitabin kendisi farkli basabiliyor ve yuzdeler basili gecerli oya gore (bagimsiz kontrol:
+        # 1968 Boyabat 20 436, 1973 Gediz, Iskenderun; il toplamlari basili degerle tutuyor). Duzeltme yapilmaz:
+        # satir tutarsiz sayilir, goruntu okumasi basili degeri teyit ederse fark notuyla kabul edilir.
+        g0 = v.get("gecerliOy")
+        duz = [d for d in duz if d["alan"] != "gecerliOy"]
+        kontrol = {"durum": "tutarsiz", "partiToplami": sum(o for o in oy.values()), "gecerliOy": g0,
+                   "gecerliDuzeltilmedi": True}
     if kontrol["durum"] == "tutarli":
         g, k = kontrol.get("gecerliOy", v.get("gecerliOy")), v.get("oyKullanan")
         neden = []
@@ -496,14 +511,35 @@ def karsilikli_ciftler(cfg, tur):
         import subprocess
         subprocess.run(["pdftotext", "-layout", str(pdf_yolu(cfg)), str(yol)], check=True)
     sayfalar = yol.read_text(encoding="utf-8").split("\f")
-    tr = str.maketrans("İŞÜÖÇĞÎ", "ISUOCGI")
-    out = []
-    for i, p in enumerate(sayfalar, 1):
+    tr = str.maketrans("İŞÜÖÇĞÎÍ", "ISUOCGII")
+    turler = []
+    for p in sayfalar:
         h = re.sub(r"\s+", " ", p[:900]).upper().translate(tr)
-        k = ("G" if re.search(r"I ?L ?G ?E ?N ?E ?L", h) else
-             "M" if re.search(r"B ?E ?L ?E ?D ?I ?Y ?E ?M ?E ?C ?L", h) else
-             "B" if re.search(r"1963 ?B ?E ?L ?E ?D ?I ?Y ?E\b", h) else "")
-        if k == tur and i > 8:
+        turler.append("G" if re.search(r"\bI ?L ?G ?E ?N", h) else
+                      "M" if re.search(r"B ?E ?L ?E ?D ?I ?Y ?E ?M ?E ?C ?L", h) else
+                      "B" if re.search(r"1963 ?B ?E ?L ?E ?D ?I ?Y ?E\b", h) else
+                      "u" if re.search(r"M ?U ?H ?T ?A ?R", h) else
+                      "rM" if re.search(r"U ?Y ?E ?L ?E ?R ?I ?S ?E ?C", h) else
+                      "rG" if re.search(r"M ?E ?C ?L ?I ?S ?I ?S ?E ?C", h) else
+                      "rB" if re.search(r"B ?A ?S ?K ?A ?N", h) else "")
+    out = []
+    for i, k in enumerate(turler, 1):
+        if i <= 8:
+            continue
+        sonraki = turler[i] if i < len(turler) else ""
+        # basligi okunamayan sol sayfa: sag sayfasinin basligindan ('MECLİSİ SEÇİMİ' il genel meclisi, 'ÜYELERİ
+        # SEÇİMİ' belediye meclisi, 'BAŞKANLIĞI' baskanlik) ya da fasikul sirasindan (belediye meclisi cifti ile
+        # muhtarlik arasindaki cift il genel meclisi)
+        if not k:
+            if sonraki in ("rG", "rM", "rB"):
+                k = sonraki[1]
+            elif i >= 3 and turler[i - 3] == "M" and i + 1 < len(turler) and turler[i + 1] == "u":
+                k = "G"
+            # icerik: il genel meclisi satirlari 'X Şehir, Bucak ve Köyleri Toplamı' (sag sayfa basligi da hatali
+            # basilabiliyor: Yanlis-Dogru Cetveli, Urfa 63/5-63/7)
+            if len(re.findall(r"K\s*O\s*Y\s*L\s*E\s*R\s*I\s+T\s*O\s*P", sayfalar[i - 1].upper().translate(tr))) >= 3:
+                k = "G"
+        if k == tur:
             out.append((i, i + 1))
     return out
 
@@ -1046,6 +1082,14 @@ def goruntu_oku(pdf, cfg, s):
         if len(tutan) != 1:
             return None
         v = tutan[0]
+    if dogrula(v, cfg["partiler"])[1]["durum"] != "tutarli" and cfg.get("yuzdeliFarkIzni"):
+        # basili gecerli oy iki okumada ayni, her parti oyu kendi yuzdesiyle secildi, toplam yine tutmuyor: kitapta
+        # parti toplami gecerliden farkli basilmis (1984 kurali: en cok %2). Cagiran 'toplamTutmuyor' isaretler.
+        g = tv.get("gecerliOy")
+        oylar = [v.get(p) for p in cfg["partiler"]]
+        if isinstance(g, int) and g > 0 and g in G.sayi_adaylari(metin.get("gecerliOy")) and v.get("gecerliOy") == g \
+                and all(o is not None for o in oylar) and abs(sum(oylar) - g) <= cfg["yuzdeliFarkIzni"] * g:
+            v["_toplamFarki"] = sum(oylar) - g
     # kabul icin oncu alanlar eksiksiz ve katilim tutarli olmali
     if not all(isinstance(v.get(k), int) for k in ("secmen", "oyKullanan", "gecerliOy")) or not isinstance(v.get("katilim%"), float):
         return None
