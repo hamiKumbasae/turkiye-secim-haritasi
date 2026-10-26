@@ -36,8 +36,9 @@ Vikipedi il sayfalarının kaynakçasından). Dosyalar değiştirilmeden sakland
   belgelerine (Fon 030.01, Yer No 52.312.7 / 51.309.3 / 51.309.8) ve gazetelere dayanıyor.
 - Kullanım: depodaki 1963–1977 belediye başkanlığı kayıtları (Vikipedi) bu kitaplarla karşılaştırıldı —
   `scripts/pipelines/tuik_arsiv/kitap_dogrula_1963_1977.py` → `docs/rapor/KITAP_DOGRULAMA_1963_1977.md`.
-  1977 belediye meclisi ve il genel meclisi tabloları okundu (`extract_mahalli_1963_1977.py`); taramada kitabın
-  189–194. sayfaları (belediye meclisi, Sakarya sonu–Trabzon) yok. 1963–1973 meclis tabloları henüz okunmadı.
+  1973 ve 1977 belediye meclisi ve il genel meclisi tabloları okundu (`extract_mahalli_1963_1977.py`); 1977
+  taramasında kitabın 189–194. sayfaları (belediye meclisi, Sakarya sonu–Trabzon) yok. 1973 kitabının Yanlış–Doğru
+  Cetveli (PDF s.223) uygulandı. 1963–1968 meclis tabloları henüz okunmadı.
 
 Kitabın açıklamasına göre ilçe/belediye düzeyi değerler ilçe seçim kurullarının
 DİE'ye gönderdiği birleştirme tutanaklarından değiştirilmeden alınmış; Türkiye

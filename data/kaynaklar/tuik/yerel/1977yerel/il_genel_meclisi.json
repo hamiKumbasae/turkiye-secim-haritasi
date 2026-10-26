@@ -38,7 +38,7 @@
   "ocrDuzeltilen": 69,
   "yapisalOkunan": 0,
   "goruntudenOkunan": 111,
-  "adlandirilan": 632,
+  "adlandirilan": 633,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
   "eslesmeyenSayfa": [],
@@ -46,7 +46,7 @@
   "adlandirilamayanIller": {
    "6": [
     "ilçe secmen toplamı 1181630, il satırı 1370108",
-    "blok toplamı tutmadı; 17/21 doğrulanmış satır seçmenle tek tek bağlandı"
+    "blok toplamı tutmadı; 18/21 doğrulanmış satır seçmenle tek tek bağlandı"
    ]
   }
  },
@@ -2703,9 +2703,11 @@
    "kazanan": "AP",
    "katilimOkunan": 698,
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe secmen toplamı 1181630, il satırı 1370108"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 18151,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Keskin"
   },
   {
    "tip": "ilce",

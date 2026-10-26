@@ -298,6 +298,12 @@ def _ad_tutar(okunan, ad):
     return len(o) < 3 or o == a or E._benzer(o, a) >= 0.75
 
 
+def _ad_ayni(okunan, ad):
+    """Okunan ad (en az 3 harf) ilce adiyla birebir ayni (anahtar esit; benzerlik degil)."""
+    o = E._anahtar(okunan)
+    return len(o) >= 3 and o == E._anahtar(ad)
+
+
 def _sapma(sec, ref):
     return abs(sec / ref - 1) if sec and ref else 9.0
 
@@ -312,9 +318,11 @@ def ilce_adlandir(kayitlar, cfg):
     secmen toplami il satirina esit olmali (blok tam okunmus). Sonra:
       1. sira: satir sayisi donemin ilce listesine esit; liste kitap sirasinda (Merkez + alfabe); okunabilen her
          ad sirasindakiyle tutuyor (ya da satirin secmeni o ilcenin genel secim secmeninden %5'ten az sapiyor);
-         her satirin secmeni sirasindaki ilcenin genel secim secmeninden en fazla %20 sapiyor.
+         her satirin secmeni sirasindaki ilcenin genel secim secmeninden en fazla %20 sapiyor (adi kitapta birebir
+         okunan satir bu sapmadan muaf).
       2. secmen (sira tutmazsa; buyuksehirlerde merkez ilceler basta, Canakkale'de Imroz/Bozcaada satiri yok):
-         her satir genel secim secmeni en yakin ilceye; eslesme karsilikli ve tek, sapma <= %10, ikinci aday en az
+         adi okunan satir once adla (birebir ad: sapmadan muaf; benzer ad: sapma <= %10), kalanlar
+         genel secim secmeni en yakin ilceye; eslesme karsilikli ve tek, sapma <= %10, ikinci aday en az
          3 puan uzak; okunabilen ad baska bir ilceyi gosteriyorsa blok adlandirilmaz.
     Adlandirilamayan blogun satirlari adsiz kalir (haritaya islenmez), nedeni `kimlik.neden`'de."""
     liste = genel_ilce_listesi(cfg["genelIlce"])
@@ -338,9 +346,12 @@ def ilce_adlandir(kayitlar, cfg):
         atama, yontem = None, None
         if not neden:
             ref = kitap_sirasi(list(sec))
+            # kitapta adi birebir okunan satir secmen sapmasindan muaf (1973 Kozan: kitap secmeni 344 227 basmis,
+            # il toplami da onunla tutuyor; 1973 Cankaya: yerel secmen genel secimden %21 az)
             if len(ref) == len(satirlar) and all(
-                    (_ad_tutar(r["adKaynakta"], ad) or _sapma(r["secmen"], sec.get(ad)) < 0.05)
-                    and _sapma(r["secmen"], sec.get(ad)) <= SIRA_SAPMA for r, ad in zip(satirlar, ref)):
+                    _ad_ayni(r["adKaynakta"], ad) or (
+                        (_ad_tutar(r["adKaynakta"], ad) or _sapma(r["secmen"], sec.get(ad)) < 0.05)
+                        and _sapma(r["secmen"], sec.get(ad)) <= SIRA_SAPMA) for r, ad in zip(satirlar, ref)):
                 atama, yontem = list(zip(satirlar, ref)), "sira"
             else:
                 # once adi okunabilen satirlar: adi tek bir ilceyle tutan ve secmeni o ilceden <= %10 sapan satir
@@ -348,7 +359,8 @@ def ilce_adlandir(kayitlar, cfg):
                 aday, kalan = {}, dict(sec)
                 for i, r in enumerate(satirlar):
                     tutan = [ad for ad in sec if len(E._anahtar(r["adKaynakta"])) >= 3 and _ad_tutar(r["adKaynakta"], ad)]
-                    if len(tutan) == 1 and _sapma(r["secmen"], sec[tutan[0]]) <= SECMEN_SAPMA and tutan[0] in kalan:
+                    if len(tutan) == 1 and tutan[0] in kalan and (
+                            _ad_ayni(r["adKaynakta"], tutan[0]) or _sapma(r["secmen"], sec[tutan[0]]) <= SECMEN_SAPMA):
                         aday[i] = tutan[0]
                         del kalan[tutan[0]]
                 for i, r in enumerate(satirlar):
@@ -379,7 +391,8 @@ def ilce_adlandir(kayitlar, cfg):
             aday, kalan = {}, dict(sec)
             for r in uygun:
                 tutan = [ad for ad in sec if len(E._anahtar(r["adKaynakta"])) >= 3 and _ad_tutar(r["adKaynakta"], ad)]
-                if len(tutan) == 1 and _sapma(r["secmen"], sec[tutan[0]]) <= SECMEN_SAPMA and tutan[0] in kalan:
+                if len(tutan) == 1 and tutan[0] in kalan and (
+                        _ad_ayni(r["adKaynakta"], tutan[0]) or _sapma(r["secmen"], sec[tutan[0]]) <= SECMEN_SAPMA):
                     aday[id(r)] = (r, tutan[0])
                     del kalan[tutan[0]]
             for r in uygun:
@@ -532,13 +545,15 @@ def belediye_kimlik(kayitlar, secim):
     return eksik
 
 
-def cetvel_uygula(satirlar, cfg):
+def cetvel_uygula(satirlar, cfg, ilk, son):
     """Kitabin Yanlis-Dogru Cetveli (DIE'nin kendi duzeltmesi) dogrulamadan ONCE uygulanir. Kayit: PDF sayfasi,
     sutun (yuzun kendi sutun sirasi, 1'den), satir. Hucre o sayfa + sutundaki degeri cetveldeki yanlis degere
     esit olan TEK satirda degistirilir (satir sayimi OCR'da kayabilir; deger eslesmesi esastir). Dondurur:
     uygulanamayan kayitlar."""
     kalan = []
     for no, kayitlar in cfg.get("cetvel", {}).items():
+        if not ilk <= no <= son:
+            continue
         for c in kayitlar:
             aday = []
             for s in satirlar:
@@ -627,7 +642,13 @@ def isle(secim, tablolar=None):
         # ilk satir (adsiz) Turkiye toplami
         if satirlar and not E._anahtar(satirlar[0]["etiket"]):
             satirlar[0]["etiket"] = "GENEL TOPLAM"
-        cetvel_uygulanmayan = cetvel_uygula(satirlar, cfg)
+        for s in satirlar:
+            # kalin harfli satirda OCR her harfi iki kez yaziyor ("TTuunncceellii" -> "Tunceli")
+            s["etiket"] = " ".join(w[0::2] if len(w) >= 4 and len(w) % 2 == 0 and w[0::2] == w[1::2] else w
+                                   for w in (s["etiket"] or "").split())
+            # 1973: il satiri "ADANA İL TOPLAMI" (tiplendir il adini birebir arar; OCR "tL", "1L")
+            s["etiket"] = re.sub(r"\s+[İIi1lt|]\s*L\s+TOPLAM\w*\s*$", "", s["etiket"], flags=re.I)
+        cetvel_uygulanmayan = cetvel_uygula(satirlar, cfg, ilk, son)
         satirlar, eksik_il, ilsiz = E.tiplendir(satirlar, il_ad, ilce_kume, tablo)
         kayitlar = []
         for s in satirlar:

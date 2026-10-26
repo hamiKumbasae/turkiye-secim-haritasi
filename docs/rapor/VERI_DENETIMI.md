@@ -7,28 +7,28 @@
 | Düzey | Kayıt |
 |---|---|
 | mahalle | 601.941 |
-| ilçe | 50.087 |
-| birim | 38.126 |
+| ilçe | 51.164 |
+| birim | 40.391 |
 | tuik | 7.639 |
-| il | 6.416 |
-| turkiye | 10 |
+| il | 6.679 |
+| turkiye | 12 |
 
 ## Özet
 
 | Bulgu | Tür | Sayı | Düzeylere göre |
 |---|---|---|---|
-| `KATILIM_100_USTU` | hata/kaynak | 27362 | birim 86, il 6, mahalle 27243, tuik 27 |
-| `GECERLI_SECMENDEN_FAZLA` | hata/kaynak | 19231 | birim 73, ilçe 107, mahalle 19026, tuik 25 — 107 tanesi zaten belgeli |
-| `OY_TOPLAMI_TUTMUYOR` | hata | 1432 | birim 822, il 124, ilçe 321, mahalle 5, tuik 159, turkiye 1 — 374 tanesi zaten belgeli |
+| `KATILIM_100_USTU` | hata/kaynak | 27419 | birim 142, il 7, mahalle 27243, tuik 27 |
+| `GECERLI_SECMENDEN_FAZLA` | hata/kaynak | 19341 | birim 182, il 1, ilçe 107, mahalle 19026, tuik 25 — 107 tanesi zaten belgeli |
+| `OY_TOPLAMI_TUTMUYOR` | hata | 1702 | birim 1088, il 128, ilçe 321, mahalle 5, tuik 159, turkiye 1 — 374 tanesi zaten belgeli |
 | `ORAN_HESAPLA_TUTMUYOR` | hata | 198 | il 184, ilçe 14 — 119 tanesi zaten belgeli |
 | `KAZANAN_DIGER` | eksik | 10 | ilçe 10 |
 | `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 845 | il 26, ilçe 60, mahalle 759 |
-| `SECMEN_YOK_OY_VAR` | bilgi | 251 | birim 14, il 47, ilçe 190 |
-| `KATILIM_COK_DUSUK` | bilgi | 990 | birim 6, il 5, ilçe 13, mahalle 966 |
+| `SECMEN_YOK_OY_VAR` | bilgi | 254 | birim 16, il 47, ilçe 191 |
+| `KATILIM_COK_DUSUK` | bilgi | 995 | birim 9, il 5, ilçe 15, mahalle 966 |
 | `IL_ILCE_TOPLAMI` | hata | 53 | il 53 — 53 tanesi zaten belgeli |
 | `MAHALLE_SECMEN_SICRAMASI` | bilgi | 196 | mahalle 196 |
 
-## `KATILIM_100_USTU` (27362)
+## `KATILIM_100_USTU` (27419)
 
 Katılım %100'ü aşıyor: oy kullanan kayıtlı seçmenden fazla. YSK sandık verisinde de görülür (listede kayıtlı olmayan görevliler o sandıkta oy kullanabiliyor); küçük birimlerde oranı büyütür. Sitede katılım oranı anlamlı değil.
 
@@ -51,9 +51,9 @@ Dosyalara göre: mahalle/2023cb1tur.json 2836, mahalle/2023.json 2811, mahalle/2
 | mahalle/2009yerel.json | Kahramankazan / GÜNBAŞI MAH. | katılım %101.59, seçmen 63, oy kullanan 64, geçerli parti oyu 64 |
 | mahalle/2009yerel.json | Kahramankazan / KIŞLA MAH. | katılım %100.78, seçmen 129, oy kullanan 130, geçerli parti oyu 129 |
 | mahalle/2009yerel.json | Kalecik / AKCATAŞ MAH. | katılım %102.53, seçmen 79, oy kullanan 81, geçerli parti oyu 79 |
-| … | 27347 kayıt daha | |
+| … | 27404 kayıt daha | |
 
-## `GECERLI_SECMENDEN_FAZLA` (19231)
+## `GECERLI_SECMENDEN_FAZLA` (19341)
 
 Geçerli oy kayıtlı seçmenden fazla (katılım %100 üstüyle aynı kökten).
 
@@ -76,13 +76,13 @@ Dosyalara göre: mahalle/2023cb1tur.json 2038, mahalle/2023cb2tur.json 1962, mah
 | mahalle/2009yerel.json | Sincan / ÇİÇEKTEPE MAH. | seçmen 103, geçerli 105 |
 | mahalle/2009yerel.json | Yedisu / KOŞAN MAH. | seçmen 15, geçerli 18 |
 | mahalle/2009yerel.json | Harmancık / ÇAMOĞLU MAH. | seçmen 58, geçerli 59 |
-| … | 19216 kayıt daha | |
+| … | 19326 kayıt daha | |
 
-## `OY_TOPLAMI_TUTMUYOR` (1432)
+## `OY_TOPLAMI_TUTMUYOR` (1702)
 
 Parti oylarının toplamı geçerli oya eşit değil: bir partinin oyu eksik ya da fazla.
 
-Dosyalara göre: ek/belediye_meclisi/1994yerel.json 195, ek/belediye_meclisi/1999yerel.json 166, ek/belediye_meclisi/1977yerel.json 138, ek/il_genel_meclisi/1999yerel.json 133, elections/yerel/1984yerel.json 116, ek/beldeler/1999yerel.json 90, ek/il_genel_meclisi/1977yerel.json 86, ek/beldeler/1994yerel.json 67, elections/genel/1961.json 65, ek/il_genel_meclisi/1994yerel.json 56, elections/yerel/1994yerel.json 39, ek/belediye_meclisi/1984yerel.json 36 …
+Dosyalara göre: ek/belediye_meclisi/1973yerel.json 229, ek/belediye_meclisi/1994yerel.json 195, ek/belediye_meclisi/1999yerel.json 166, ek/belediye_meclisi/1977yerel.json 138, ek/il_genel_meclisi/1999yerel.json 133, elections/yerel/1984yerel.json 116, ek/beldeler/1999yerel.json 90, ek/il_genel_meclisi/1977yerel.json 86, ek/beldeler/1994yerel.json 67, elections/genel/1961.json 65, ek/il_genel_meclisi/1994yerel.json 56, ek/il_genel_meclisi/1973yerel.json 41 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -101,7 +101,7 @@ Dosyalara göre: ek/belediye_meclisi/1994yerel.json 195, ek/belediye_meclisi/199
 | ek/beldeler/1994yerel.json | Afyon / Sultandağı / Karapınar | parti toplamı 1037, geçerli 1153 (fark -116) |
 | ek/beldeler/1994yerel.json | Afyon / Sultandağı / Kırca | parti toplamı 606, geçerli 983 (fark -377) |
 | ek/beldeler/1994yerel.json | Afyon / Sultandağı / Yakasinek | parti toplamı 994, geçerli 1318 (fark -324) |
-| … | 1417 kayıt daha | |
+| … | 1687 kayıt daha | |
 
 ## `ORAN_HESAPLA_TUTMUYOR` (198)
 
@@ -172,11 +172,11 @@ Dosyalara göre: mahalle/2024yerel.json 284, mahalle/2011.json 176, mahalle/2019
 | elections/yerel/1955yerel.json | plaka 11 / Bilecik | kazanan DP 7, en çok oy Bağımsız 11 |
 | … | 830 kayıt daha | |
 
-## `SECMEN_YOK_OY_VAR` (251)
+## `SECMEN_YOK_OY_VAR` (254)
 
 Kayıtlı seçmen sayısı yok ya da 0, ama oy var; katılım hesaplanamaz.
 
-Dosyalara göre: elections/yerel/1984yerel.json 96, elections/yerel/1994yerel.json 79, elections/yerel/1955yerel.json 26, elections/yerel/1999yerel.json 14, ek/il_genel_meclisi/1984yerel.json 8, meclis_harita/1984yerel_igm.json 6, ek/belediye_meclisi/1977yerel.json 4, meclis_harita/1984yerel_bm.json 3, ek/belediye_meclisi/1984yerel.json 3, elections/yerel/1977yerel.json 2, elections/yerel/1989yerel.json 2, elections/genel/1957.json 1 …
+Dosyalara göre: elections/yerel/1984yerel.json 96, elections/yerel/1994yerel.json 79, elections/yerel/1955yerel.json 26, elections/yerel/1999yerel.json 14, ek/il_genel_meclisi/1984yerel.json 8, meclis_harita/1984yerel_igm.json 6, ek/belediye_meclisi/1977yerel.json 4, meclis_harita/1984yerel_bm.json 3, ek/belediye_meclisi/1984yerel.json 3, elections/yerel/1977yerel.json 2, elections/yerel/1989yerel.json 2, ek/belediye_meclisi/1973yerel.json 2 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -195,9 +195,9 @@ Dosyalara göre: elections/yerel/1984yerel.json 96, elections/yerel/1994yerel.js
 | elections/yerel/1955yerel.json | plaka 17 / Çanakkale | seçmen None, oy 1800 |
 | elections/yerel/1955yerel.json | plaka 18 / Çankırı | seçmen None, oy 22 |
 | elections/yerel/1955yerel.json | plaka 21 / Diyarbakır | seçmen None, oy 10647 |
-| … | 236 kayıt daha | |
+| … | 239 kayıt daha | |
 
-## `KATILIM_COK_DUSUK` (990)
+## `KATILIM_COK_DUSUK` (995)
 
 Katılım %20'nin altında; kaynak ya da eşleştirme hatası olabilir.
 
@@ -220,7 +220,7 @@ Dosyalara göre: mahalle/2010referandum.json 890, mahalle/2011.json 18, mahalle/
 | elections/yerel/1955yerel.json | plaka 14 / Bolu | katılım %14.7, seçmen 5255 |
 | elections/yerel/1955yerel.json | plaka 35 / İzmir | katılım %12.17, seçmen 138114 |
 | elections/yerel/1955yerel.json | plaka 39 / Kırklareli | katılım %16.8, seçmen 8440 |
-| … | 975 kayıt daha | |
+| … | 980 kayıt daha | |
 
 ## `IL_ILCE_TOPLAMI` (53)
 

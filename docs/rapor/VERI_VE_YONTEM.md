@@ -15,9 +15,9 @@ Veri tek yönde akar: **kaynak belge → ham kopya (`data/raw/`) → kaynak baş
 | Cumhurbaşkanlığı | 4 | 4 | — |
 | Yerel seçim (başkanlık, belediye meclisi, il genel meclisi ayrı) | 45 | 22 | Çoğu 1950–1984 meclis sonuçları |
 
-Kaynak: `docs/rapor/KAPSAM_TABLOSU.md` (`scripts/rapor/kapsam_tablosu.py` üretir). Toplam 76 satırın 50'si tam, 7'si büyük ölçüde tam (≥ %90), 3'ünün kaynağı yok. Tabloda "araştırılmadı" görünen 10 satırın hepsi yerel seçim meclis sonuçlarıdır (belediye meclisi ve il genel meclisi):
+Kaynak: `docs/rapor/KAPSAM_TABLOSU.md` (`scripts/rapor/kapsam_tablosu.py` üretir). Toplam 76 satırın 50'si tam, 8'i büyük ölçüde tam (≥ %90), 3'ünün kaynağı yok. Tabloda "araştırılmadı" görünen 8 satırın hepsi yerel seçim meclis sonuçlarıdır (belediye meclisi ve il genel meclisi):
 
-- **1963, 1968, 1973 (6 satır):** DİE kitapları bulundu ve depoda duruyor, ama okunmadı. v1.0'da bilinçli olarak kapsam dışı bırakıldı. 1977 kitabı okundu (aşağıda, "1977 meclis kitabı").
+- **1963, 1968 (4 satır):** DİE kitapları bulundu ve depoda duruyor, ama okunmadı. v1.0'da bilinçli olarak kapsam dışı bırakıldı. 1973 ve 1977 kitapları okundu (aşağıda, "1973 ve 1977 meclis kitapları").
 - **1950 ve 1955 (4 satır):** Bu yıllar için DİE kitabı yok; kaynak ancak Cumhuriyet Arşivi belgelerinde aranabilir.
 
 Bu seçimlerin belediye başkanlığı sonuçları haritada var; eksik olan yalnız meclis haritalarıdır.
@@ -55,7 +55,7 @@ Veri altı farklı yolla çekildi; kaynak dijitalleştikçe yöntem basitleşir.
 | YSK açık veri API'si | 2009–2024 genel, yerel, CB; 2010 ve 2017 referandum | `scripts/pipelines/election_import/` (`fetch_and_aggregate.js`, `fetch_yerel_v2.js`) | `data/raw/ysk/` |
 | YSK arşiv PDF'leri (metin katmanı) | 1950–2007 genel seçim il sonuçları; 1994–2004 yerel il ve ilçe | `genel_1950_1977/parse_ysk_pdfs.py`, `genel_1983_2007/`, `yerel_1994_1999_2004/` | `data/raw/ysk/1950-1977/`, `1983-2007/` |
 | TÜİK Seçim Dağıtım uygulaması (HTML rapor) | 1961–1987 genel seçim ilçe sonuçları | `genel_ilce_1961_1987/fetch_tuik_ilce.py` (7 seçim × 67 il = 469 dosya) | `data/raw/tuik/secimdagitimapp-ilce-1961-1987/` |
-| DİE taranmış kitapları | 1984, 1989, 1994, 1999, 2004 yerel (başkanlık, meclis, il genel meclisi); 1977 yerel (meclis, il genel meclisi); 1961–1988 referandumlar | `scripts/pipelines/tuik_arsiv/` (`extract_mahalli*.py`, `extract_halkoylamasi.py`) | `data/raw/tuik/mahalli-kitap/`, `halkoylamasi-0018260/` |
+| DİE taranmış kitapları | 1984, 1989, 1994, 1999, 2004 yerel (başkanlık, meclis, il genel meclisi); 1973 ve 1977 yerel (meclis, il genel meclisi); 1961–1988 referandumlar | `scripts/pipelines/tuik_arsiv/` (`extract_mahalli*.py`, `extract_halkoylamasi.py`) | `data/raw/tuik/mahalli-kitap/`, `halkoylamasi-0018260/` |
 | Vikipedi il sayfaları | 1950–1989 yerel başkanlık sonuçları | `wikipedia_arsiv/fetch_wikipedia.py`, `extract_yerel.py` | `data/raw/wikipedia/` |
 | YSK API, sandık → mahalle | 15 seçimde mahalle/muhtarlık düzeyi | `mahalle_veri/` (Node + Playwright) | `data/normalized/mahalle/` |
 
@@ -78,7 +78,7 @@ Her kitabın farklı bir sorunu var: 2004 dijital dizgi, 1989 ve 1994/1999 OCR m
 
 **1984 için üç, sonra dört bağımsız okuma** kuruldu: PDF metin katmanı, macOS Vision ve tesseract. Her hücre için üç aday değer çıkar; satırdaki sıfır olmayan oy alanlarından en fazla biri tek okumaya dayanabilir. Bu kural, iki yanlış okumanın birbirini dengelediği durumu dışlar: 1984 Van belediye meclisinde geçerli oy ve ANAP ikisi de 2.000 eksik okunmuştu, toplam yine de tutuyordu. Dördüncü okuma, sayfa görüntüsünden kırpılan şeritlerin gözle okunmasıdır.
 
-**1977 meclis kitabı** (DİE 0015740, `extract_mahalli_1963_1977.py`): tablolar iki yüzlü (sol: sandık, seçmen, katılım, geçerli, AP, CHP, CGP; sağ: diğer partiler). Metin katmanı (ABBYY) rakamların arasına boşluk koyduğu ve bazı sayfalarda tamamen bozuk olduğu için tutmayan satırlar sayfa görüntüsünden tesseract'la hücre hücre yeniden okunur (`goruntu_okuma.py`); bir parti oyu yalnız kitabın aynı satırdaki yüzdesini tutuyorsa seçilir, satır yine toplam, yüzde ve katılım şartından geçmelidir. İl genel meclisi satırları kitap sırası ve Haziran 1977 genel seçiminin ilçe seçmeniyle, belediye meclisi satırları başkanlık kaydındaki sandık ve seçmenle (ya da kitapta okunan ad ve %3 içinde seçmenle) tanınır. Kitabın Yanlış–Doğru Cetveli uygulandı. Taramada kitabın 189–194. sayfaları yok: belediye meclisinde Sakarya'nın sonu–Trabzon (8 il) boş. Sonuç: il genel meclisi 539/621, belediye meclisi 473/621 ilçe.
+**1973 ve 1977 meclis kitapları** (DİE 0015468 ve 0015740, `extract_mahalli_1963_1977.py`): tablolar iki yüzlü (sol: sandık, seçmen, oy kullanan, katılım, geçerli ve ilk partiler; sağ: diğer partiler). Metin katmanı (ABBYY) rakamların arasına boşluk koyduğu ve bazı sayfalarda tamamen bozuk olduğu için tutmayan satırlar sayfa görüntüsünden tesseract'la hücre hücre yeniden okunur (`goruntu_okuma.py`); bir parti oyu yalnız kitabın aynı satırdaki yüzdesini tutuyorsa seçilir, satır yine toplam, yüzde ve katılım şartından geçmelidir. İl genel meclisi satırları kitap sırası ve Haziran 1977 genel seçiminin ilçe seçmeniyle, belediye meclisi satırları başkanlık kaydındaki sandık ve seçmenle (ya da kitapta okunan ad ve %3 içinde seçmenle) tanınır. Kitabın Yanlış–Doğru Cetveli uygulandı. Kitapta adı birebir okunan ilçe satırı genel seçim seçmeniyle karşılaştırmadan muaftır (1973 Kozan'da kitap 344 227 seçmen basmış, il toplamı da onunla tutuyor). 1977 taramasında kitabın 189–194. sayfaları yok: belediye meclisinde Sakarya'nın sonu–Trabzon (8 il) boş. Sonuç: 1973 il genel meclisi 571/620, belediye meclisi 505/620 ilçe; 1977 il genel meclisi 540/621, belediye meclisi 473/621 ilçe.
 
 Eski tek okumalı yöntem, tutmayan hücreyi toplamdan hesaplıyordu. Yeni okumayla karşılaştırınca bu yolla "tutarlı" sayılan 328 satırın 75'inin yanlış olduğu çıktı (ör. Savaştepe ANAP 1.476 değil 1.478).
 
