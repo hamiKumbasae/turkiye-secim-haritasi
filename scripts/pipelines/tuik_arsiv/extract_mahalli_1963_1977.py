@@ -61,6 +61,8 @@ P73_SAG = ["CGP", "DEMP73", "MP62", "MHP", "MSP", "TBP73", "Bağımsız"]
 KITAPLAR = {
     "1977yerel": {
         "demirbas": "0015740", "tarih": "11 Aralık 1977",
+        # baskanlik tablosu sonradan okundu: goruntu okumasi sayfa basina tek cagriyla (hucre hucre okuma yavas)
+        "tamSayfaOcr": {"belediye_baskanligi"},
         # basili gecerli oy parti toplamindan farkliysa (kitabin aciklamasi) iki okumada teyitli satir %2'ye kadar
         "yuzdeliFarkIzni": 0.02, "yayin": "DİE, Yerel Seçim Sonuçları, 11 Aralık 1977 (1979)",
         "partiler": P77_SOL + P77_SAG, "genelIlce": "1977", "binlikBosluk": True,
@@ -94,6 +96,8 @@ KITAPLAR = {
         # yuz (yatay sayfa). Il genel meclisinde her parti oy + %, belediye meclisinde yalniz oy. Ilce satiri
         # "NN Ad" (ilce kodu, kitap sirasi), belde satiri "B.KKK Ad" (bucak.koy kodu). Guven Partisi projede CGP.
         "demirbas": "0015244", "tarih": "2 Haziran 1968",
+        # baskanlik tablosu sonradan okundu: goruntu okumasi sayfa basina tek cagriyla (hucre hucre okuma yavas)
+        "tamSayfaOcr": {"belediye_baskanligi"},
         # basili gecerli oy parti toplamindan farkliysa (kitabin aciklamasi) iki okumada teyitli satir %2'ye kadar
         "yuzdeliFarkIzni": 0.02,
         "yayin": "DİE, Mahalli Seçimler Sonuçları, 2 Haziran 1968 (yayın no. 555, 1969)",
@@ -109,6 +113,8 @@ KITAPLAR = {
     },
     "1973yerel": {
         "demirbas": "0015468", "tarih": "9 Aralık 1973",
+        # baskanlik tablosu sonradan okundu: goruntu okumasi sayfa basina tek cagriyla (hucre hucre okuma yavas)
+        "tamSayfaOcr": {"belediye_baskanligi"},
         # basili gecerli oy parti toplamindan farkliysa (kitabin aciklamasi) iki okumada teyitli satir %2'ye kadar
         "yuzdeliFarkIzni": 0.02,
         "yayin": "DİE, Mahalli Seçimler Sonuçları, 9 Aralık 1973 (yayın no. 716, 1974)",
@@ -554,6 +560,63 @@ def sayfa_kodu_bul(cfg, kod):
     return None
 
 
+BASLIK_63 = [("gecerliOy", r"^MUTEBER"), ("AP", r"^A[PR]\.?$"), ("CHP", r"^C\W?H\W?P"), ("CKMP", r"^C\W?[IÎİ]?K\W?M"),
+             ("MP62", r"^M\W?P\.?$"), ("TİP", r"^T\W?[İIÎ1T]?\W?P\.?$"), ("YTP61", r"^Y?\W?T\W?P\.?$"), ("Bağımsız", r"^BA[ĞG]")]
+
+
+def baslik_kenarlari(page, cfg=None, no=None):
+    """1963 sag yuz: sutun kenarlari tablo basligindan ('Muteber oy sayısı', 'AP.', 'CHP.' ... 'Bağımsızlar').
+    Seyrek tabloda (cogu hucre tire) sayilardan uydurulan kenar bir sutun kayabiliyor ve toplam denetimi bunu
+    yakalamaz (yuzde yok): parti oyu yanlis partiye yazilir (bagimsiz kontrol: Gemerek YTP 758 Bagimsiz'a).
+    Kenar = komsu iki baslik merkezinin ortasi (sayilar sutunun sagina dayali). Baslik bulunamazsa None."""
+    ws = [w for w in page.extract_words() if w["top"] < page.height * 0.4]
+    merkez = _baslik_bul(ws)
+    if len(merkez) < len(BASLIK_63) and cfg and no:
+        # metin katmaninda baslik bozuk: sayfa goruntusunun okumasindan (goruntu -> metin koordinati)
+        s_ = getattr(page, "_s", 1)
+        img = G.goruntu(str(pdf_yolu(cfg)), no, str(PNG / cfg["demirbas"]), round(G.DPI / s_))
+        png = PNG / cfg["demirbas"] / f"{no:04d}.png"
+        d = G.kayma(page, img, (cfg["demirbas"], no), png)
+        if d:
+            sc = img.size[0] / float(page.width)
+            ax, bx, ay, by = d
+            ws2 = [{"text": m, "x0": (x0 / sc - bx) / ax, "x1": (x1 / sc - bx) / ax, "top": (y0 / sc - by) / ay}
+                   for m, x0, y0, x1, y1 in G.sayfa_kelimeleri(img, (cfg["demirbas"], no), png)]
+            m2 = _baslik_bul([w for w in ws2 if w["top"] < page.height * 0.4])
+            for k, v in m2.items():
+                merkez.setdefault(k, v)
+    # icteki tek eksik parti basligi komsularinin ortasina (parti sutunlari esit aralikli)
+    adlar = [a for a, _ in BASLIK_63]
+    for i in range(2, len(adlar) - 2):
+        if adlar[i] not in merkez and adlar[i - 1] in merkez and adlar[i + 1] in merkez:
+            merkez[adlar[i]] = ((merkez[adlar[i - 1]][0] + merkez[adlar[i + 1]][0]) / 2, None)
+    if len(merkez) < len(BASLIK_63):
+        return None
+    xs = [merkez[a][0] for a, _ in BASLIK_63]
+    if any(b <= a for a, b in zip(xs, xs[1:])):
+        return None
+    kenar = [(a + b) / 2 for a, b in zip(xs, xs[1:])]
+    return [float(x) for x in kenar + [xs[-1] + (xs[-1] - xs[-2])]]
+
+
+def _baslik_bul(ws):
+    merkez = {}
+    for w in ws:
+        m = w["text"]
+        for k in (3, 2):  # kalin harfte iki / uc kez yazilmis harfler
+            if len(m) >= 2 * k and len(m) % k == 0 and all(m[i::k] == m[0::k] for i in range(k)):
+                m = m[0::k]
+                break
+        m = m.upper().replace("İ", "I") if not m.startswith("İ") else m.upper()
+        for alan, desen in BASLIK_63:
+            if alan not in merkez and re.match(desen, m.replace("İ", "I")):
+                if alan == "YTP61" and not m.startswith("Y") and "TİP" not in merkez:
+                    continue
+                merkez[alan] = ((w["x0"] + w["x1"]) / 2, w["top"])
+                break
+    return merkez
+
+
 def tablo_oku_karsilikli(pdf, cfg, tur):
     """1963 karsilikli sayfalar: sol yuz satirlari (ad + kimlik sutunlari) ile sag yuz satirlari (sonuc) dikey
     konumla eslenir: iki yuzun baslik satiri farki kadar kaydirilmis y, en yakin satir (4 pt icinde, karsilikli
@@ -572,7 +635,13 @@ def tablo_oku_karsilikli(pdf, cfg, tur):
     for a, b in ciftler:
         L, R = pdf.pages[a - 1], pdf.pages[b - 1]
         so = yuz_secenekleri(L, cfg, True, sablon_sol)
-        sa = yuz_secenekleri(R, cfg, False, sablon_sag)
+        bk = baslik_kenarlari(R, cfg, b)
+        if bk:
+            rr, kk = _yuz(R, cfg, False, bk)
+            sa = [(rr, kk, "başlık")] if rr is not None else []
+        else:
+            sa = yuz_secenekleri(R, cfg, False, sablon_sag)
+            eslesmeyen.append({"sayfa": b, "neden": "sağ yüz başlığı okunamadı; sütunlar sayılardan (parti ataması denetlenemiyor)"})
         if not so or not sa:
             eslesmeyen.append({"sayfa": [a, b], "neden": "sütunlar bulunamadı"})
             continue
@@ -639,7 +708,7 @@ def tablo_oku_karsilikli(pdf, cfg, tur):
                               and not re.fullmatch(r"[\d.,]+", w["text"])), key=lambda w: (round(w["top"] / 4), w["x0"]))
                 etiket = " ".join(w["text"] for w in ust) + " " + etiket
             satirlar.append({"etiket": etiket.strip(), "v": {**s["v"], **(r["v"] if r else {})}, "sagYok": r is None,
-                             "sayfa": [a, b], "sira": sira, "karakterDuzeltme": [],
+                             "sayfa": [a, b], "sira": sira, "karakterDuzeltme": [], "sutunBasliksiz": not bk,
                              "tokSol": ts.get(s["y"]), "tokSag": tr_.get(r["y"]) if r else None,
                              "kenarSol": kl, "kenarSag": kr, "ySol": s["y"],
                              "ySag": r["y"] if r else s["y"] + dy})
@@ -1107,10 +1176,14 @@ def isle(secim, tablolar=None):
     for tablo, aralik in cfg["tablolar"].items():
         if tablolar and tablo not in tablolar:
             continue
+        cfg = dict(KITAPLAR[secim])
+        tso = cfg.get("tamSayfaOcr")
+        # sayfa basina tek tesseract okumasi: butun kitapta (1963) ya da yalniz verilen tablolarda
+        cfg["tamSayfaOcr"] = tso is True or (bool(tso) and tablo in tso)
         fasikul = cfg.get("duzen") == "fasikul"
         karsilikli = cfg.get("duzen") == "karsilikli"
         if fasikul:
-            cfg = dict(KITAPLAR[secim], sol=KITAPLAR[secim]["sutunlar"][tablo], sag=[])
+            cfg = dict(cfg, sol=KITAPLAR[secim]["sutunlar"][tablo], sag=[])
             satirlar, eslesmeyen = tablo_oku_fasikul(pdf, cfg, aralik)
             ilk, son = 0, 0
         elif karsilikli:
@@ -1123,7 +1196,7 @@ def isle(secim, tablolar=None):
                     cfg["cetvel"][no] = [dict(c, sutun=None) for c in kayitlar]
         else:
             ilk, son = aralik
-            cfg = dict(KITAPLAR[secim], sagIsimSutunu=tablo in KITAPLAR[secim].get("sagIsimSutunu", ()))
+            cfg = dict(cfg, sagIsimSutunu=tablo in KITAPLAR[secim].get("sagIsimSutunu", ()))
             satirlar, eslesmeyen = tablo_oku(pdf, cfg, ilk, son)
         # ilk satir (adsiz) Turkiye toplami
         if satirlar and not fasikul and not karsilikli and not E._anahtar(satirlar[0]["etiket"]):
@@ -1191,6 +1264,10 @@ def isle(secim, tablolar=None):
                                              "hücre satır toplamıyla seçildi")}
                         s = dict(s, v=v3)
                         oy, kontrol, duz = oy3, kontrol3, duz3
+            if s.get("sutunBasliksiz") and kontrol["durum"] in ("tutarli", "toplamTutmuyor"):
+                # yuzdesiz tabloda parti sutunu yalniz baslikla dogrulanabiliyor; baslik okunamadi
+                kontrol = {"durum": "tutarsiz", "partiSutunuDogrulanamadi": True,
+                           "not": "sağ yüzün sütun başlığı okunamadı; toplam tutsa da oyların hangi partiye ait olduğu denetlenemiyor"}
             v = s["v"]
             r = {"tip": s["tip"], "plaka": s["plaka"], "adKaynakta": s["etiket"], "ustIlce": s["ustIlce"],
                  "sandik": v.get("sandik"), "secmen": v.get("secmen"), "oyKullanan": v.get("oyKullanan"),
