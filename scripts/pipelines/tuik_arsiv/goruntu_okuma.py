@@ -240,3 +240,44 @@ def coz(metin, partiler, oncu, gecerli=None, yedek=None):
         else:
             v[p], v[p + "%"] = None, (yuzdeler.pop() if len(yuzdeler) == 1 else None)
     return v
+
+
+def coz_yuzdesiz(metin, partiler, yedek, gecerli=None):
+    """Parti yuzdesi basilmamis tablo (1968 belediye meclisi). Bir hucrenin degeri iki bagimsiz okumanin (metin
+    katmani `yedek` + goruntu adaylari) ortak oldugu degerdir. Sifirdan buyuk oy alanlarindan en fazla BIRI tek
+    okumaya dayanabilir; o hucre adaylari arasindan satir toplamini (parti toplami == gecerli oy) TEK tutturan
+    degerle secilir. Oncu alanlar coz() kuraliyla (katilim yuzdesi). Tutmazsa None."""
+    v = coz(metin, [], None, gecerli, yedek)
+    g = v["gecerliOy"]
+    if not isinstance(g, int) or g <= 0:
+        return None
+    kesin, belirsiz = {}, []
+    for p in partiler:
+        a = yedek.get(p)
+        im = [x for x in sayi_adaylari(metin.get(p)) if x is not None]
+        if isinstance(a, int) and (a in im or (a == 0 and not im)):
+            kesin[p] = a
+        elif a is None and im == [0]:
+            kesin[p] = 0           # metin katmaninda bos, goruntude tire
+        elif not im and a is None:
+            kesin[p] = None
+        else:
+            belirsiz.append((p, sorted({x for x in im + ([a] if isinstance(a, int) else [])})))
+    sifirdan_buyuk = [(p, c) for p, c in belirsiz if any(c)]
+    for p, c in belirsiz:
+        if not any(c):
+            kesin[p] = 0
+    if len(sifirdan_buyuk) > 1 or any(x is None for x in kesin.values()):
+        return None
+    toplam = sum(kesin.values())
+    if not sifirdan_buyuk:
+        if toplam != g:
+            return None
+    else:
+        p, c = sifirdan_buyuk[0]
+        uyan = [x for x in c if toplam + x == g]
+        if len(uyan) != 1:
+            return None
+        kesin[p] = uyan[0]
+    v.update(kesin)
+    return v

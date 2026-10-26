@@ -52,6 +52,9 @@ PNG = ROOT / ".cache" / "tuik" / "png"
 P77_SOL = ["AP", "CHP", "CGP"]
 P77_SAG = ["DEMP73", "MSP", "MHP", "SDP", "TBP73", "TİP", "TSİP", "Bağımsız"]
 ONCU = ["sandik", "secmen", "oyKullanan", "katilim%", "gecerliOy"]
+P63 = ["AP", "CHP", "CKMP", "MP62", "TİP", "YTP61", "Bağımsız"]
+P68 = ["AP", "BP69", "CHP", "CKMP", "CGP", "MP62", "TİP", "YTP61", "Bağımsız"]
+ONCU68 = ["sandik", "secmen", "oyKullanan", "gecerliOy", "katilim%"]
 P73_SOL = ["AP", "CHP"]
 P73_SAG = ["CGP", "DEMP73", "MP62", "MHP", "MSP", "TBP73", "Bağımsız"]
 
@@ -65,6 +68,31 @@ KITAPLAR = {
         # Yanlis-Dogru Cetveli (kitap s. son, PDF s.235): bu iki tablodaki tek kayit kitap s.21 (PDF 27, IGM sag
         # yuz) sutun 15 satir 1 = Kars il satiri Bagimsiz oyu. Digerleri baskanlik tablosunda (s.51-78).
         "cetvel": {27: [{"sutun": 15, "satir": 1, "yanlis": 50678, "dogru": 50679}]},
+    },
+    "1963yerel": {
+        # il fasikulleri (A baskanlik, B belediye meclisi, C il genel meclisi, D muhtarlik); her tablo karsilikli
+        # iki sayfa: sol ad, 1960 nufusu, sandik, secmen, oy kullanan; sag muteber (gecerli) oy ve partiler.
+        # Yuzde ve katilim basilmamis: tek denetim parti toplami == gecerli oy. Kitap iki parca (kitap_birlestir).
+        # Yanlis-Dogru Cetveli (s.5): basliklarda AP/CHP sirasi duzeltmeleri (veri sirasi AP, CHP; okuma konumla
+        # oldugu icin etkisiz) ve Malatya 44/6 il genel meclisi sol sayfa (kod -> PDF sayfasi calisirken bulunur).
+        "demirbas": "0015160", "tarih": "17 Kasım 1963",
+        "yayin": "DİE, Mahalli Seçimler Sonuçları, 17 Kasım 1963 (yayın no. 474, 1965)",
+        "duzen": "karsilikli", "partiler": P63, "genelIlce": "1965", "binlikBosluk": True,
+        "sol": ["nufus", "sandik", "secmen", "oyKullanan"], "sag": ["gecerliOy"] + P63,
+        "tablolar": {"il_genel_meclisi": "G", "belediye_meclisi": "M"},
+        "cetvelKod": {"44/6": [{"satir": 1, "yanlis": 17475, "dogru": 174715}, {"satir": 2, "yanlis": 31487, "dogru": 61487},
+                               {"satir": 3, "yanlis": 20795, "dogru": 10795}, {"satir": 8, "yanlis": 18264, "dogru": 18624}]},
+    },
+    "1968yerel": {
+        # il fasikulleri (her ilde A il genel meclisi, B baskanlik, C belediye meclisi, D muhtarlik); tablolar tek
+        # yuz (yatay sayfa). Il genel meclisinde her parti oy + %, belediye meclisinde yalniz oy. Ilce satiri
+        # "NN Ad" (ilce kodu, kitap sirasi), belde satiri "B.KKK Ad" (bucak.koy kodu). Guven Partisi projede CGP.
+        "demirbas": "0015244", "tarih": "2 Haziran 1968",
+        "yayin": "DİE, Mahalli Seçimler Sonuçları, 2 Haziran 1968 (yayın no. 555, 1969)",
+        "duzen": "fasikul", "partiler": P68, "genelIlce": "1969", "binlikBosluk": True,
+        "sutunlar": {"il_genel_meclisi": ONCU68 + [x for p in P68 for x in (p, p + "%")],
+                     "belediye_meclisi": ONCU68 + P68},
+        "tablolar": {"il_genel_meclisi": "G", "belediye_meclisi": "M"},
     },
     "1973yerel": {
         "demirbas": "0015468", "tarih": "9 Aralık 1973",
@@ -86,6 +114,21 @@ KITAPLAR = {
                    187: [{"sutun": 1, "satir": 38, "yanlis": 89, "dogru": 29}]},
     },
 }
+
+
+def kelime_duzelt(w):
+    """extract_mahalli.kelime_duzelt + kalin satirda her rakamin UC kez yazilmasi ('111333999' -> '139'). Binligi
+    bosluklu kitapta 4+ haneli parca olamaz; 6+ karakterli tamamen uclu parca yalniz bu OCR hatasi olabilir."""
+    t = w["text"]
+    if E.BINLIK_BOSLUK and len(t) >= 6 and len(t) % 3 == 0 and re.fullmatch(r"[\d.,]+", t) and t[0::3] == t[1::3] == t[2::3]:
+        return t[0::3]
+    return E.kelime_duzelt(w)
+
+
+def pdf_yolu(cfg):
+    """Kitabin PDF'i (bolunmus kitap .cache'te birlestirilir: kitap_birlestir.py)."""
+    from kitap_birlestir import kitap_yolu
+    return pathlib.Path(kitap_yolu(cfg["demirbas"]))
 
 
 def sag_yuz_mu(page):
@@ -130,7 +173,7 @@ def kenar_uydur(page, sablon, x_min):
     import numpy as np
     words = page.extract_words(keep_blank_chars=False, use_text_flow=False)
     for w in words:
-        y = E.kelime_duzelt(w)
+        y = kelime_duzelt(w)
         if y is not None:
             w["text"] = y
     x1 = [g[-1][2] for sat in die_tablo._satirlar(words) for g in die_tablo._gruplar(die_tablo._tokenler(sat, x_min), 9.0)]
@@ -153,26 +196,28 @@ def _yuz(page, cfg, sol, kenar=None):
     n = len(cfg["sol"] if sol else cfg["sag"])
     ek = dict(hazir_kenarlar=kenar, kenar_zorla=True, ofset_ara=False) if kenar else {}
     if sol:
-        L, k = die_tablo.sayfa_tablosu(page, 160, n, None, kelime_duzelt=E.kelime_duzelt, etiket_zorunlu=False, **ek)
+        L, k = die_tablo.sayfa_tablosu(page, 160, n, None, kelime_duzelt=kelime_duzelt, etiket_zorunlu=False, **ek)
         if L is None:
             return None, k
         satir = []
-        ilk_y = min((y for e, v, y, h in L if isinstance(v[0], int) and isinstance(v[1], int) and v[1] >= max(v[0], 50)),
+        i_s, i_m = cfg["sol"].index("sandik"), cfg["sol"].index("secmen")
+        L = [(e, v, y, h, (v[i_s], v[i_m])) for e, v, y, h in L]
+        ilk_y = min((y for e, v, y, h, (a, b) in L if isinstance(a, int) and isinstance(b, int) and b >= max(a, 50)),
                     default=None)
-        for e, v, y, h in L:
+        for e, v, y, h, (a, b) in L:
             # veri satiri: sandik ve secmen tam sayi, secmen >= sandik (baslik/sayfa no satirlari elenir). Metin
             # katmani bozuk satir (ad okunur ya da en az 3 hucre sayi, ilk veri satirinin altinda) de alinir:
             # degerleri goruntuden ikinci okumayla bulunur, tutmazsa satir dogrulanmamis kalir.
-            if isinstance(v[0], int) and isinstance(v[1], int) and v[1] >= max(v[0], 50):
+            if isinstance(a, int) and isinstance(b, int) and b >= max(a, 50):
                 satir.append({"etiket": e, "v": dict(zip(cfg["sol"], v)), "y": y, "ham": h})
-            elif ilk_y is not None and y > ilk_y + 3 and v[1] != 0 and (
+            elif ilk_y is not None and y > ilk_y + 3 and b != 0 and (
                     re.search(r"[^\W\d_]{3,}", e or "") or
-                    (sum(isinstance(x, int) for x in v) >= 3 and any(isinstance(x, int) and x for x in v[1:3]))):
+                    (sum(isinstance(x, int) for x in v) >= 3 and any(isinstance(x, int) and x for x in v[i_m:i_m + 2]))):
                 # secmen 0: kitapta (*) dipnotlu, secim yapilmayan birim (Bozcaada, Gokceada); adsiz ve secmen /
                 # oy kullanan okunmayan parca: bolunmus satirin artigi
                 satir.append({"etiket": e, "v": dict(zip(cfg["sol"], v)), "y": y, "ham": h, "bozuk": True})
         return satir, k
-    R, k = die_tablo.sayfa_tablosu(page, 120, n, None, etiketsiz=True, kelime_duzelt=E.kelime_duzelt, **ek)
+    R, k = die_tablo.sayfa_tablosu(page, 120, n, None, etiketsiz=True, kelime_duzelt=kelime_duzelt, **ek)
     if R is None:
         return None, k
     return [{"v": dict(zip(cfg["sag"], v)), "y": y, "ham": h} for e, v, y, h in R], k
@@ -272,6 +317,194 @@ def tablo_oku(pdf, cfg, ilk, son):
     return satirlar, eslesmeyen
 
 
+def fasikul_sayfalari(cfg):
+    """Il fasikulu kitabinda (1968) her ilin tablo sayfalari: {plaka: {"G": [...], "B": [...], "M": [...]}}.
+    Sayfa turu basliktan (pdftotext; .cache/tuik/<demirbas>.txt): G il genel meclisi, B belediye baskanligi, M
+    belediye meclisi, u muhtarlik. Il, fasikulun ilk (G) sayfasindaki "NN — IL" basligindan; okunmazsa sira."""
+    yol = ROOT / ".cache" / "tuik" / f"{cfg['demirbas']}.txt"
+    if not yol.exists():
+        yol.parent.mkdir(parents=True, exist_ok=True)
+        import subprocess
+        subprocess.run(["pdftotext", "-layout", str(pdf_yolu(cfg)), str(yol)], check=True)
+    sayfalar = yol.read_text(encoding="utf-8").split("\f")
+    tr = str.maketrans("İŞÜÖÇĞ", "ISUOCG")
+    turler = []
+    for p in sayfalar:
+        h = re.sub(r"\s+", " ", p[:1200]).upper().translate(tr)
+        turler.append("G" if re.search(r"G ?E ?N ?E ?L ?M ?E ?C ?L", h) else
+                      "M" if re.search(r"M ?E ?C ?L ?I ?S ?I ?U ?Y ?E ?L ?E ?R", h) else
+                      "B" if re.search(r"B ?A ?S ?K ?A ?N", h) else "u" if re.search(r"M ?U ?H ?T ?A ?R", h) else ".")
+    out, plaka = {}, 0
+    for i, (tur, p) in enumerate(zip(turler, sayfalar), 1):
+        if tur == "G" and re.search(r"(?:^|\s)(\d\s*\d)\s*[—–-]+\s*[A-ZÇĞİÖŞÜ]", p[:1500]):
+            m = re.search(r"(?:^|\s)(\d\s*\d)\s*[—–-]+\s*[A-ZÇĞİÖŞÜ]", p[:1500])
+            kod = int(re.sub(r"\s", "", m.group(1)))
+            plaka = kod if kod == plaka + 1 else plaka + 1
+            out[plaka] = {"G": [i], "B": [], "M": []}
+        elif plaka and tur in ("B", "M"):
+            out[plaka][tur].append(i)
+    return out
+
+
+KOD = re.compile(r"^\s*(\d{1,2})\s+(?=\D)|^\s*(\d)\s*[.,]\s*(\d{3})\b")
+
+
+def tablo_oku_fasikul(pdf, cfg, tur):
+    """Tek yuzlu fasikul tablolari: her ilin sayfalari; satir etiketi bastaki koddan ayrilir (kod: 'NN' ilce,
+    'B.KKK' belde). Ilk satir il toplami. Sutun kenarlari sayfanin kendisinden; bulunamazsa ya da satirlarin
+    cogu tutarsizsa en iyi sayfanin kenarlari olcek+kaydirmayla oturtulur (kenar_uydur)."""
+    fas = fasikul_sayfalari(cfg)
+    n = len(cfg["sol"])
+    secenek = {}
+    for pl, d in fas.items():
+        for no in d[tur]:
+            secenek[no] = yuz_secenekleri(pdf.pages[no - 1], cfg, True, None)
+    en_iyi = (-1, None)
+    for no, so in secenek.items():
+        if so and len(so[0][0]) >= 6:
+            oran = sum(1 for s in so[0][0] if E.dogrula(s["v"], cfg["partiler"])[1]["durum"] == "tutarli") / len(so[0][0])
+            if oran > en_iyi[0]:
+                en_iyi = (oran, so[0][1])
+    sablon = en_iyi[1]
+    satirlar, eslesmeyen = [], []
+    for pl, d in sorted(fas.items()):
+        if not d[tur]:
+            eslesmeyen.append({"plaka": pl, "neden": "fasikülde bu tablonun sayfası bulunamadı"})
+            continue
+        ilk = True
+        for no in d[tur]:
+            pg = pdf.pages[no - 1]
+            so = yuz_secenekleri(pg, cfg, True, sablon)
+            if not so:
+                eslesmeyen.append({"sayfa": no, "neden": "sütunlar bulunamadı"})
+                continue
+            sol, kl, _ = max(so, key=lambda x: (sum(1 for s in x[0] if E.dogrula(s["v"], cfg["partiler"])[1]["durum"] == "tutarli"), len(x[0])))
+            ts = E._sayfa_tokenleri(pg, True)
+            kd = E._duzeltmeler(pg)
+            words = pg.extract_words()
+            for sira, s in enumerate(sorted(sol, key=lambda s: s["y"]), 1):
+                # satirin solundaki kod (etiketten once; sayi oldugu icin etikete girmez)
+                sol_w = sorted((w for w in words if abs(w["top"] - s["y"]) < 4 and w["x1"] < 130), key=lambda w: w["x0"])
+                bas = " ".join(w["text"] for w in sol_w)
+                m = KOD.match(bas)
+                kod = (m.group(1) if m and m.group(1) else f"{m.group(2)}.{m.group(3)}") if m else None
+                etiket = re.sub(r"[.…\s]{2,}$", "", s["etiket"] or "").strip(" .")
+                tip = "il" if ilk else ("ilce" if kod and "." not in kod else "belde" if kod else None)
+                ilk = False
+                satirlar.append({"etiket": etiket, "kod": kod, "tipOn": tip, "plaka": pl, "v": s["v"],
+                                 "sagYok": False, "sayfa": [no], "sira": sira,
+                                 "karakterDuzeltme": [(tt, yy) for y_, tt, yy in kd if abs(y_ - s["y"]) < 5],
+                                 "tokSol": ts.get(s["y"]), "tokSag": None, "kenarSol": kl, "kenarSag": None,
+                                 "ySol": s["y"], "ySag": None})
+    return satirlar, eslesmeyen
+
+
+def karsilikli_ciftler(cfg, tur):
+    """1963: tur ('G' il genel meclisi, 'M' belediye meclisi) tablosunun sol sayfalari (basliktan) ve hemen
+    ardindaki sag sayfa, PDF sirasinda. Il, satirlardaki il toplami etiketinden (tiplendir)."""
+    yol = ROOT / ".cache" / "tuik" / f"{cfg['demirbas']}.txt"
+    if not yol.exists():
+        yol.parent.mkdir(parents=True, exist_ok=True)
+        import subprocess
+        subprocess.run(["pdftotext", "-layout", str(pdf_yolu(cfg)), str(yol)], check=True)
+    sayfalar = yol.read_text(encoding="utf-8").split("\f")
+    tr = str.maketrans("İŞÜÖÇĞÎ", "ISUOCGI")
+    out = []
+    for i, p in enumerate(sayfalar, 1):
+        h = re.sub(r"\s+", " ", p[:900]).upper().translate(tr)
+        k = ("G" if re.search(r"I ?L ?G ?E ?N ?E ?L", h) else
+             "M" if re.search(r"B ?E ?L ?E ?D ?I ?Y ?E ?M ?E ?C ?L", h) else "")
+        if k == tur and i > 8:
+            out.append((i, i + 1))
+    return out
+
+
+def sayfa_kodu_bul(cfg, kod):
+    """Fasikul sayfa kodunu ('44/6') tasiyan PDF sayfasi (sayfanin ust kismi)."""
+    yol = ROOT / ".cache" / "tuik" / f"{cfg['demirbas']}.txt"
+    il, no = kod.split("/")
+    for i, p in enumerate(yol.read_text(encoding="utf-8").split("\f"), 1):
+        if re.search(rf"(?<!\d){il}\s*/\s*{no}(?!\d)", p[:700]):
+            return i
+    return None
+
+
+def tablo_oku_karsilikli(pdf, cfg, tur):
+    """1963 karsilikli sayfalar: sol yuz satirlari (ad + kimlik sutunlari) ile sag yuz satirlari (sonuc) dikey
+    konumla eslenir: iki yuzun baslik satiri farki kadar kaydirilmis y, en yakin satir (4 pt icinde, karsilikli
+    tek). Eslesme denetimi: gecerli oy, oy kullanandan buyuk olamaz. Ad iki satira bolunmusse ('Adana Sehir,
+    Bucak ve' / 'Koyleri Toplami') ust satir eklenir."""
+    ciftler = karsilikli_ciftler(cfg, tur)
+    satirlar, eslesmeyen = [], []
+    sablon_sol = sablon_sag = None
+    en_iyi = -1
+    for a, b in ciftler:
+        so, sa = yuz_secenekleri(pdf.pages[a - 1], cfg, True, None), yuz_secenekleri(pdf.pages[b - 1], cfg, False, None)
+        if so and sa and len(sa[0][0]) >= 6:
+            oran = sum(1 for r in sa[0][0] if E.dogrula(r["v"], cfg["partiler"])[1]["durum"] == "tutarli") / len(sa[0][0])
+            if oran > en_iyi:
+                en_iyi, sablon_sol, sablon_sag = oran, so[0][1], sa[0][1]
+    for a, b in ciftler:
+        L, R = pdf.pages[a - 1], pdf.pages[b - 1]
+        so = yuz_secenekleri(L, cfg, True, sablon_sol)
+        sa = yuz_secenekleri(R, cfg, False, sablon_sag)
+        if not so or not sa:
+            eslesmeyen.append({"sayfa": [a, b], "neden": "sütunlar bulunamadı"})
+            continue
+        dy = baslik_farki(L, R) or 0.0
+        en = None
+        for sol, kl, _ in so:
+            for sag, kr, _ in sa:
+                hiza = []
+                kullanilan = set()
+                for s in sorted(sol, key=lambda s: s["y"]):
+                    ad = sorted((abs(r["y"] - s["y"] - dy), j) for j, r in enumerate(sag) if j not in kullanilan)
+                    r = None
+                    if ad and ad[0][0] < 4 and (len(ad) < 2 or ad[1][0] >= 4):
+                        r = sag[ad[0][1]]
+                        g, k = r["v"].get("gecerliOy"), s["v"].get("oyKullanan")
+                        if isinstance(g, int) and isinstance(k, int) and g > k:
+                            r = None
+                        else:
+                            kullanilan.add(ad[0][1])
+                    hiza.append((s, r))
+                puan = (sum(1 for s, r in hiza if r and E.dogrula(r["v"], cfg["partiler"])[1]["durum"] == "tutarli"),
+                        sum(1 for s, r in hiza if r))
+                if en is None or puan > en[0]:
+                    en = (puan, hiza, kl, kr)
+        _, hiza, kl, kr = en
+        words = L.extract_words()
+        ts, tr_ = E._sayfa_tokenleri(L, True), E._sayfa_tokenleri(R, False)
+        for sira, (s, r) in enumerate(hiza, 1):
+            etiket = s["etiket"] or ""
+            if re.match(r"^\W*(K\s*[öo]\s*y|TOPLAM)", etiket, re.I):
+                ust = sorted((w for w in words if 3 < s["y"] - w["top"] < 16 and w["x1"] < 260
+                              and not re.fullmatch(r"[\d.,]+", w["text"])), key=lambda w: w["x0"])
+                etiket = " ".join(w["text"] for w in ust) + " " + etiket
+            satirlar.append({"etiket": etiket.strip(), "v": {**s["v"], **(r["v"] if r else {})}, "sagYok": r is None,
+                             "sayfa": [a, b], "sira": sira, "karakterDuzeltme": [],
+                             "tokSol": ts.get(s["y"]), "tokSag": tr_.get(r["y"]) if r else None,
+                             "kenarSol": kl, "kenarSag": kr, "ySol": s["y"],
+                             "ySag": r["y"] if r else s["y"] + dy})
+    return satirlar, eslesmeyen
+
+
+def fasikul_tiplendir(satirlar, tablo):
+    """Fasikul satirlarina tip / ust ilce: il toplami, kodlu ilce satiri; belediye meclisinde kodsuz satir
+    sayfadaki konumuna gore belde (kimlik sonra baskanlik kaydiyla kurulur)."""
+    ust = None
+    for s in satirlar:
+        tip = s["tipOn"]
+        if tip is None:
+            tip = "ilce" if tablo == "il_genel_meclisi" else "belde"
+        if tip == "il":
+            ust = None
+        elif tip == "ilce":
+            ust = s["etiket"]
+        s.update(tip=tip, ustIlce=ust if tip == "belde" else None)
+    return satirlar
+
+
 def genel_ilce_listesi(yil):
     """{plaka: [(ilce adi, secmen)]} TUIK genel secim kaynak katmanindan (ayni yil)."""
     d = json.loads((ROOT / f"data/kaynaklar/tuik/genel/{yil}.json").read_text(encoding="utf-8"))
@@ -294,14 +527,19 @@ def kitap_sirasi(adlar):
 
 
 def _ad_tutar(okunan, ad):
-    o, a = E._anahtar(okunan), E._anahtar(ad)
-    return len(o) < 3 or o == a or E._benzer(o, a) >= 0.75
+    """Okunan ad (bos/kisa: tutar sayilir) ilce adiyla ya da parantez icindeki diger adiyla ('Sinanpasa
+    (Sincanli)' <- 'Sincanli') ayni ya da benzer (>= 0,75)."""
+    o = E._anahtar(okunan)
+    if len(o) < 3:
+        return True
+    adlar = [E._anahtar(ad)] + [E._anahtar(x) for x in re.findall(r"\(([^)]*)\)", ad or "")]
+    return any(a and (o == a or E._benzer(o, a) >= 0.75) for a in adlar)
 
 
 def _ad_ayni(okunan, ad):
-    """Okunan ad (en az 3 harf) ilce adiyla birebir ayni (anahtar esit; benzerlik degil)."""
+    """Okunan ad (en az 3 harf) ilce adiyla ya da parantez icindeki adiyla birebir ayni (benzerlik degil)."""
     o = E._anahtar(okunan)
-    return len(o) >= 3 and o == E._anahtar(ad)
+    return len(o) >= 3 and o in [E._anahtar(ad)] + [E._anahtar(x) for x in re.findall(r"\(([^)]*)\)", ad or "")]
 
 
 def _sapma(sec, ref):
@@ -384,9 +622,10 @@ def ilce_adlandir(kayitlar, cfg):
                         neden.append("iki satır aynı ilçeye düştü")
                     if okunan_celisir:
                         neden.append(f"okunan ad başka ilçeyi gösteriyor: {okunan_celisir}")
-        if not atama and il and any("toplamı" in n for n in neden):
-            # blok tam okunamadi (bir satirin secmeni yanlis okunmus): yalniz dogrulanmis satirlar tek tek secmenle
-            # baglanir (ad-oncelikli, karsilikli tek, sapma <= %10, ikinci aday en az 3 puan uzak); celisen satir adsiz
+        if not atama and il:
+            # blok bir butun olarak adlandirilamadi (toplam tutmadi ya da bir satir baglanamadi): yalniz dogrulanmis
+            # satirlar tek tek baglanir (ad-oncelikli, karsilikli tek, sapma <= %10, ikinci aday en az 3 puan uzak);
+            # celisen satir adsiz
             uygun = [r for r in satirlar if r["kontrol"]["durum"] == "tutarli" and not r["kontrol"].get("katilimUyumsuz")]
             aday, kalan = {}, dict(sec)
             for r in uygun:
@@ -409,12 +648,19 @@ def ilce_adlandir(kayitlar, cfg):
             atama = [(r, ad) for r, ad in aday.values() if sayac[ad] == 1]
             yontem = "secmen (blok eksik)"
             if atama:
-                rapor[p] = neden + [f"blok toplamı tutmadı; {len(atama)}/{len(satirlar)} doğrulanmış satır seçmenle tek tek bağlandı"]
+                rapor[p] = neden + [f"blok bir bütün olarak adlandırılamadı; {len(atama)}/{len(satirlar)} doğrulanmış satır "
+                                    "adla ya da seçmenle tek tek bağlandı"]
                 for r in satirlar:
                     r["kimlik"] = {"yontem": "cozulemedi", "neden": "; ".join(neden)}
+        if cfg.get("duzen") == "fasikul":
+            atama = kod_ile_tamamla(satirlar, atama or [], sec)
+            if atama and yontem is None:
+                yontem = "kod"
         if atama:
             for r, ad in atama:
                 r["ad"] = ad
+                if (r.get("kimlik") or {}).get("yontem") == "kod":
+                    continue
                 r["kimlik"] = {"yontem": yontem, "genelSecimSecmeni": sec.get(ad),
                                "not": "kitap sırası ve okunabilen adlar" if yontem == "sira"
                                else "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"}
@@ -423,6 +669,31 @@ def ilce_adlandir(kayitlar, cfg):
             for r in satirlar:
                 r["kimlik"] = {"yontem": "cozulemedi", "neden": "; ".join(rapor[p])}
     return rapor
+
+
+def kod_ile_tamamla(satirlar, atama, sec):
+    """1968 fasikulu: ilce satiri kitapta 'NN Ad' (NN: kitap sirasi, 00 Merkez, sonra alfabe). Adi okunamayan ya da
+    baglanamayan dogrulanmis satir, koduyla kitap sirasindaki ilceye baglanir; yalniz blokta adla baglanan her
+    satirin kodu o sirayla tutuyorsa (liste ile kitap sirasi ayni) ve okunan ad (varsa) o ilceyle celismiyorsa."""
+    ref = kitap_sirasi(list(sec))
+    sira = {ad: i for i, ad in enumerate(ref)}
+    adli = [(r, ad) for r, ad in atama if r.get("kodKaynakta") and "." not in r["kodKaynakta"]]
+    if not adli or any(int(r["kodKaynakta"]) != sira.get(ad) for r, ad in adli):
+        return atama
+    alinan = {ad for _, ad in atama}
+    bagli = {id(r) for r, _ in atama}
+    yeni = list(atama)
+    for r in satirlar:
+        k = r.get("kodKaynakta")
+        if id(r) in bagli or not k or "." in k or r["kontrol"]["durum"] != "tutarli" or int(k) >= len(ref):
+            continue
+        ad = ref[int(k)]
+        if ad in alinan or not _ad_tutar(r["adKaynakta"], ad):
+            continue
+        r["kimlik"] = {"yontem": "kod", "not": f"kitaptaki ilçe kodu {k} = kitap sırasında {ad}"}
+        yeni.append((r, ad))
+        alinan.add(ad)
+    return yeni
 
 
 def _ad_norm(s):
@@ -559,10 +830,11 @@ def cetvel_uygula(satirlar, cfg, ilk, son):
             for s in satirlar:
                 if no not in s["sayfa"]:
                     continue
-                alan = (cfg["sol"] if no == s["sayfa"][0] else cfg["sag"])[c["sutun"] - 1]
-                x = s["v"].get(alan)
-                if isinstance(x, (int, float)) and abs(x - c["yanlis"]) < 0.01:
-                    aday.append((s, alan))
+                yuz = cfg["sol"] if no == s["sayfa"][0] else cfg["sag"]
+                for alan in (yuz if c.get("sutun") is None else [yuz[c["sutun"] - 1]]):
+                    x = s["v"].get(alan)
+                    if isinstance(x, (int, float)) and abs(x - c["yanlis"]) < 0.01:
+                        aday.append((s, alan))
             if len(aday) == 1:
                 s, alan = aday[0]
                 s["v"] = dict(s["v"], **{alan: c["dogru"]})
@@ -576,7 +848,7 @@ def cetvel_gec(v, s, kalan, cfg):
     """Metin katmaninda okunamayan (cetvel_uygula'da eslesmeyen) kayit, ikinci okumanin degerine uygulanir:
     satirin sayfasi ve sayfadaki sirasi kayittakiyle ayni, hucre degeri cetveldeki yanlis deger olmali."""
     for c in list(kalan):
-        if c["sayfa"] not in s["sayfa"] or s.get("sira") != c["satir"]:
+        if c["sayfa"] not in s["sayfa"] or s.get("sira") != c["satir"] or c.get("sutun") is None:
             continue
         alan = (cfg["sol"] if c["sayfa"] == s["sayfa"][0] else cfg["sag"])[c["sutun"] - 1]
         x = v.get(alan)
@@ -591,26 +863,45 @@ def cetvel_gec(v, s, kalan, cfg):
 def goruntu_oku(pdf, cfg, s):
     """Tutarsiz satirin ikinci okumasi (goruntu_okuma.py). Sol yuzun oncu alanlari (sandik, secmen, oy kullanan,
     katilim, gecerli) metin katmanindan alinir, katilim kendi yuzdesini tutuyorsa; yoksa goruntuden."""
-    a, b = s["sayfa"]
-    if s.get("ySag") is None:
+    a, b = s["sayfa"][0], s["sayfa"][-1]
+    if cfg["sag"] and s.get("ySag") is None:
         return None
+    yuzdeli = all(p + "%" in cfg["sol"] + cfg["sag"] for p in cfg["partiler"])
     metin = {}
     for no, kenar, y, alanlar in ((a, s["kenarSol"], s["ySol"], cfg["sol"]), (b, s["kenarSag"], s["ySag"], cfg["sag"])):
+        if not alanlar:
+            continue
         if not kenar or not all(isinstance(x, float) for x in kenar):
             return None
         pg = pdf.pages[no - 1]
-        img = G.goruntu(str(RAW / f"{cfg['demirbas']}.pdf"), no, str(PNG / cfg["demirbas"]))
+        img = G.goruntu(str(pdf_yolu(cfg)), no, str(PNG / cfg["demirbas"]))
         donusum = G.kayma(pg, img, (cfg["demirbas"], no), PNG / cfg["demirbas"] / f"{no:04d}.png")
         if donusum is None:
             return None
         metin.update(zip(alanlar, G.satir_metinleri(img, pg, kenar, y, donusum)))
     tv = s["v"]
+    if not yuzdeli:
+        # yuzdesiz tablo (1968 belediye meclisi): iki okumanin ortak degerleri, en fazla bir hucre toplamla
+        adaylar = {x for x in G.sayi_adaylari(metin.get("gecerliOy")) + [tv.get("gecerliOy")] if isinstance(x, int) and x > 0}
+        tutan = [v for v in (G.coz_yuzdesiz(metin, cfg["partiler"], tv, g) for g in sorted(adaylar)) if v
+                 and E.dogrula(v, cfg["partiler"])[1]["durum"] == "tutarli"]
+        if len(tutan) != 1:
+            return None
+        v = tutan[0]
+        if "katilim%" not in cfg["sol"]:
+            # 1963: katilim basilmamis, secmen / oy kullanan denetlenemez; metin katmaninin okudugu (sonra akla
+            # yatkinlik: gecerli <= oy kullanan <= secmen)
+            v.update({k: tv.get(k) for k in ("sandik", "secmen", "oyKullanan")})
+            return v if isinstance(v.get("gecerliOy"), int) else None
+        if not all(isinstance(v.get(k), int) for k in ("secmen", "oyKullanan", "gecerliOy")) or not isinstance(v.get("katilim%"), float):
+            return None
+        return v
     oncu_ok = not E.dogrula(tv, cfg["partiler"])[1].get("katilimUyumsuz") and all(
         isinstance(tv.get(k), int) for k in ("secmen", "oyKullanan", "gecerliOy")) and \
         isinstance(tv.get("katilim%"), float) and tv["secmen"] and abs(100 * tv["oyKullanan"] / tv["secmen"] - tv["katilim%"]) <= 0.1
     if oncu_ok:
         v = G.coz(metin, cfg["partiler"], ONCU, tv["gecerliOy"], yedek=tv)
-        v.update({k: tv[k] for k in ONCU})
+        v.update({k: tv.get(k) for k in ONCU})
     else:
         # gecerli oy iki okumada farkliysa her aday denenir; satiri tutarli yapan TEK aday kabul edilir
         adaylar = {x for x in G.sayi_adaylari(metin.get("gecerliOy")) + [tv.get("gecerliOy")] if isinstance(x, int) and x > 0}
@@ -631,25 +922,54 @@ def goruntu_oku(pdf, cfg, s):
 def isle(secim, tablolar=None):
     cfg = KITAPLAR[secim]
     E.BINLIK_BOSLUK = cfg.get("binlikBosluk", False)
-    pdf = die_tablo.ac(RAW / f"{cfg['demirbas']}.pdf")
+    pdf = die_tablo.ac(pdf_yolu(cfg))
     G.onbellek_ac(PNG.parent / f"ocr_{cfg['demirbas']}.json")
     il_ad = E.il_adlari()
     ilce_kume = E.genel_ilceler(cfg["genelIlce"])
-    for tablo, (ilk, son) in cfg["tablolar"].items():
+    for tablo, aralik in cfg["tablolar"].items():
         if tablolar and tablo not in tablolar:
             continue
-        satirlar, eslesmeyen = tablo_oku(pdf, cfg, ilk, son)
+        fasikul = cfg.get("duzen") == "fasikul"
+        karsilikli = cfg.get("duzen") == "karsilikli"
+        if fasikul:
+            cfg = dict(KITAPLAR[secim], sol=KITAPLAR[secim]["sutunlar"][tablo], sag=[])
+            satirlar, eslesmeyen = tablo_oku_fasikul(pdf, cfg, aralik)
+            ilk, son = 0, 0
+        elif karsilikli:
+            satirlar, eslesmeyen = tablo_oku_karsilikli(pdf, cfg, aralik)
+            ilk, son = 0, len(pdf.pages)
+            cfg = dict(cfg, cetvel={})
+            for kod, kayitlar in KITAPLAR[secim].get("cetvelKod", {}).items():
+                no = sayfa_kodu_bul(cfg, kod)
+                if no and any(no == s["sayfa"][0] for s in satirlar):
+                    cfg["cetvel"][no] = [dict(c, sutun=None) for c in kayitlar]
+        else:
+            ilk, son = aralik
+            satirlar, eslesmeyen = tablo_oku(pdf, cfg, ilk, son)
         # ilk satir (adsiz) Turkiye toplami
-        if satirlar and not E._anahtar(satirlar[0]["etiket"]):
+        if satirlar and not fasikul and not karsilikli and not E._anahtar(satirlar[0]["etiket"]):
             satirlar[0]["etiket"] = "GENEL TOPLAM"
         for s in satirlar:
             # kalin harfli satirda OCR her harfi iki kez yaziyor ("TTuunncceellii" -> "Tunceli")
             s["etiket"] = " ".join(w[0::2] if len(w) >= 4 and len(w) % 2 == 0 and w[0::2] == w[1::2] else w
                                    for w in (s["etiket"] or "").split())
-            # 1973: il satiri "ADANA İL TOPLAMI" (tiplendir il adini birebir arar; OCR "tL", "1L")
-            s["etiket"] = re.sub(r"\s+[İIi1lt|]\s*L\s+TOPLAM\w*\s*$", "", s["etiket"], flags=re.I)
+            # 1973: il satiri "ADANA İL TOPLAMI" (tiplendir il adini birebir arar; OCR "tL", "1L"); 1963 "ADANA ÎLÎ
+            # BELEDİYELERİ TOPLAMI", "Adana Şehir, Bucak ve Köyleri Toplamı" (ilce), "Bahçe Şehir" (ilce belediyesi)
+            s["etiket"] = re.sub(r"\s+[İIÎi1lt|]\s*L\s*[İIÎi1l]?\s+BELED\S*\s+TOPLAM\w*\s*$", "", s["etiket"], flags=re.I)
+            s["etiket"] = re.sub(r"\s+[İIÎi1lt|]\s*L\s+TOPLAM\w*\s*$", "", s["etiket"], flags=re.I)
+            if karsilikli:
+                s["etiket"] = re.sub(r"\s+[ŞS]\s*e\s*h\s*i\s*r\b.*$", "", s["etiket"], flags=re.I).strip(" ,.^")
         cetvel_uygulanmayan = cetvel_uygula(satirlar, cfg, ilk, son)
-        satirlar, eksik_il, ilsiz = E.tiplendir(satirlar, il_ad, ilce_kume, tablo)
+        if fasikul:
+            satirlar, eksik_il, ilsiz = fasikul_tiplendir(satirlar, tablo), [], []
+            eksik_il = sorted(set(range(1, 68)) - {s["plaka"] for s in satirlar if s["tip"] == "il"})
+        else:
+            satirlar, eksik_il, ilsiz = E.tiplendir(satirlar, il_ad, ilce_kume, tablo)
+            if karsilikli and tablo == "il_genel_meclisi":
+                # 1963: il merkezi ilcesi sehrin adiyla ("Adana Şehir, Bucak ve Köyleri Toplamı")
+                for s in satirlar:
+                    if s["tip"] == "ilce" and il_ad.get(E._anahtar(s["etiket"])) == s["plaka"]:
+                        s["etiket"] = "Merkez"
         kayitlar = []
         for s in satirlar:
             oy, kontrol, duz = E.dogrula(s["v"], cfg["partiler"])
@@ -664,15 +984,23 @@ def isle(secim, tablolar=None):
                         s = dict(s, v=v2)
                         oy, kontrol, duz = oy2, kontrol2, duz2
             goruntu = None
-            if kontrol["durum"] != "tutarli" or kontrol.get("katilimUyumsuz"):
+            # kodu belde gosteren satir (1968 'B.KKK') haritada yok: goruntu okumasi (yavas) yapilmaz
+            belde_kodlu = "." in (s.get("kod") or "")
+            if (kontrol["durum"] != "tutarli" or kontrol.get("katilimUyumsuz")) and not belde_kodlu:
                 v3 = goruntu_oku(pdf, cfg, s)
+                okunan_goruntu = locals().get("okunan_goruntu", 0) + 1
+                if okunan_goruntu % 25 == 0:
+                    G.onbellek_kaydet()  # uzun calismada kesilirse tesseract sonuclari kaybolmasin
                 if v3:
                     v3 = cetvel_gec(v3, s, cetvel_uygulanmayan, cfg)
                     oy3, kontrol3, duz3 = E.dogrula(v3, cfg["partiler"])
                     if kontrol3["durum"] == "tutarli" and not kontrol3.get("katilimUyumsuz"):
                         goruntu = {"metinKatmani": {k: x for k, x in s["v"].items() if k in cfg["partiler"] or k in ONCU},
                                    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, "
-                                          "her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"}
+                                          + ("her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+                                             if all(p + "%" in cfg["sol"] + cfg["sag"] for p in cfg["partiler"]) else
+                                             "her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir "
+                                             "hücre satır toplamıyla seçildi")}
                         s = dict(s, v=v3)
                         oy, kontrol, duz = oy3, kontrol3, duz3
             v = s["v"]
@@ -682,6 +1010,8 @@ def isle(secim, tablolar=None):
                  "oy": dict(sorted(oy.items(), key=lambda kv: -kv[1])),
                  "yuzde": {p: v[p + "%"] for p in cfg["partiler"] if isinstance(v.get(p + "%"), float) and v[p + "%"]},
                  "kontrol": kontrol, "sayfa": s["sayfa"]}
+            if s.get("kod"):
+                r["kodKaynakta"] = s["kod"]
             if duz:
                 r["ocrDuzeltme"] = duz
             if yapisal:
@@ -698,6 +1028,13 @@ def isle(secim, tablolar=None):
             kayitlar.append(r)
         for r in kayitlar:
             katilim_duzelt(r)
+            if "katilim%" not in cfg["sol"]:
+                g, k, s_ = r.get("gecerliOy"), r.get("oyKullanan"), r.get("secmen")
+                if not (isinstance(g, int) and isinstance(k, int) and isinstance(s_, int) and g <= k <= s_):
+                    # 1963: katilim basilmamis; secmen / oy kullanan ancak gecerli <= oy kullanan <= secmen ise
+                    if s_ is not None or k is not None:
+                        r["secmenOkunan"] = {"secmen": s_, "oyKullanan": k}
+                    r["secmen"] = r["oyKullanan"] = None
         if tablo == "il_genel_meclisi":
             adlandirma = ilce_adlandir(kayitlar, cfg)
             for c in yerel_adlarina_cevir(kayitlar, secim):

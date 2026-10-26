@@ -406,7 +406,7 @@ def _birim(d, il_adlari):
             "kontrol": d["kontrol"], "sayfa": d["sayfa"],
             **{a: d[a] for a in ("ad", "ilce", "kimlik", "dogrulama", "yuzde", "yapi", "karakter",
                                  # 1963-1977 okuyucusu (extract_mahalli_1963_1977.py): ikinci okuma, resmi duzeltme
-                                 "goruntuOkuma", "cetvelDuzeltme", "katilimOkunan") if d.get(a)}}
+                                 "goruntuOkuma", "cetvelDuzeltme", "katilimOkunan", "secmenOkunan", "kodKaynakta") if d.get(a)}}
 
 
 def ek_meclis(secim, tablo, alt, il_adlari):
