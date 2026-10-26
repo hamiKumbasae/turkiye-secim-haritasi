@@ -270,14 +270,19 @@ test('phone width has no horizontal page scroll', async t => {
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth), 390);
 });
 
-test('council votes have an accurate national chart and no mayor fallback in 1984', async t => {
+test('council votes have an accurate national chart and 1984 compares with 1977 council votes', async t => {
   const {page,requests}=await setup(t); await ready(page); await page.locator('#btnTurYerel').click(); await ready(page);
   await page.locator('#oylamaToggle [data-oylama="bm"]').click(); await ready(page);
   assert.equal(await page.locator('#seatbarTitle').textContent(),'Belediye Meclisleri Oy Dağılımı');
   assert(!/başkanlığı/.test(await page.locator('#majoritySub').textContent()));
   await year(page,'1984'); await ready(page);
-  assert.equal(await page.locator('#modeGroup [data-mode="degisim"]').isHidden(),true);
-  assert(!requests.includes('data/elections/1977yerel.json'));
+  // 1977 belediye meclisi de var: degisim ayni oy pusulasiyla (1977 BM) karsilastirir, baskanliga dusmez
+  assert.equal(await page.locator('#modeGroup [data-mode="degisim"]').isHidden(),false);
+  await page.locator('#modeGroup [data-mode="degisim"]').click(); await ready(page);
+  // onceki secim arka planda yuklenir (istek tiklamadan once de baslayabilir): istek listesinde bekle
+  for(let i = 0; i < 100 && !requests.includes('data/meclis_harita/1977yerel_bm.json'); i++) await page.waitForTimeout(100);
+  assert(requests.includes('data/meclis_harita/1977yerel_bm.json'));
+  assert(!requests.includes('data/meclis_harita/1977yerel_igm.json'));
 });
 
 test('district council tooltips and accessible palette retain council seats', async t => {

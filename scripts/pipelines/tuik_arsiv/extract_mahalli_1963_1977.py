@@ -5,6 +5,7 @@ katmanina cikarir (extract_mahalli.py ile ayni bicim):
   data/kaynaklar/tuik/yerel/<secim>/{il_genel_meclisi,belediye_meclisi}.json
 
   1977yerel  kutuphane.tuik.gov.tr/pdf/0015740.pdf  DIE, Yerel Secim Sonuclari, 11 Aralik 1977 (1979)
+  1973yerel  kutuphane.tuik.gov.tr/pdf/0015468.pdf  DIE, Mahalli Secimler Sonuclari, 9 Aralik 1973 (1974)
 
 Neden ayri okuyucu: bu kitaplarin tarama metin katmaninda (ABBYY, 2009) ilce/belediye adlarinin cogu yok
 (sayfada basili, OCR almamis; ornek 1977 IGM Adana'nin 14 satirindan yalniz Kadirli ve Osmaniye'nin adi
@@ -51,6 +52,8 @@ PNG = ROOT / ".cache" / "tuik" / "png"
 P77_SOL = ["AP", "CHP", "CGP"]
 P77_SAG = ["DEMP73", "MSP", "MHP", "SDP", "TBP73", "TİP", "TSİP", "Bağımsız"]
 ONCU = ["sandik", "secmen", "oyKullanan", "katilim%", "gecerliOy"]
+P73_SOL = ["AP", "CHP"]
+P73_SAG = ["CGP", "DEMP73", "MP62", "MHP", "MSP", "TBP73", "Bağımsız"]
 
 KITAPLAR = {
     "1977yerel": {
@@ -62,6 +65,25 @@ KITAPLAR = {
         # Yanlis-Dogru Cetveli (kitap s. son, PDF s.235): bu iki tablodaki tek kayit kitap s.21 (PDF 27, IGM sag
         # yuz) sutun 15 satir 1 = Kars il satiri Bagimsiz oyu. Digerleri baskanlik tablosunda (s.51-78).
         "cetvel": {27: [{"sutun": 15, "satir": 1, "yanlis": 50678, "dogru": 50679}]},
+    },
+    "1973yerel": {
+        "demirbas": "0015468", "tarih": "9 Aralık 1973",
+        "yayin": "DİE, Mahalli Seçimler Sonuçları, 9 Aralık 1973 (yayın no. 716, 1974)",
+        "partiler": P73_SOL + P73_SAG, "genelIlce": "1973", "binlikBosluk": True,
+        # sol yuzde gecerli oy katilimdan once
+        "sol": ["sandik", "secmen", "oyKullanan", "gecerliOy", "katilim%"] + [x for p in P73_SOL for x in (p, p + "%")],
+        "sag": [x for p in P73_SAG for x in (p, p + "%")],
+        "tablolar": {"il_genel_meclisi": (10, 47), "belediye_meclisi": (138, 221)},
+        # Yanlis-Dogru Cetveli (PDF s.223; kitap sayfasi + 6 = PDF). s.49-96 kayitlari baskanlik tablosunda.
+        "cetvel": {10: [{"sutun": 5, "satir": 2, "yanlis": 63.4, "dogru": 38.8}],
+                   11: [{"sutun": 2, "satir": 2, "yanlis": 7.7, "dogru": 5.9},
+                        {"sutun": 4, "satir": 2, "yanlis": 14.2, "dogru": 16.0}],
+                   18: [{"sutun": 5, "satir": 12, "yanlis": 36.9, "dogru": 72.2}],
+                   29: [{"sutun": 1, "satir": 17, "yanlis": 345, "dogru": 945}],
+                   34: [{"sutun": 6, "satir": 1, "yanlis": 87214, "dogru": 67214}],
+                   38: [{"sutun": 6, "satir": 17, "yanlis": 35544, "dogru": 3544},
+                        {"sutun": 7, "satir": 34, "yanlis": 32.7, "dogru": 23.7}],
+                   187: [{"sutun": 1, "satir": 38, "yanlis": 89, "dogru": 29}]},
     },
 }
 
@@ -238,14 +260,14 @@ def tablo_oku(pdf, cfg, ilk, son):
         # ciftlerde medyan farkla 1,5 pt icinde). Yanlis satira denk gelen okuma toplam/yuzde kontrolunden gecemez.
         farklar = sorted(r["y"] - s["y"] for s, r in hiza if r)
         dy_cift = farklar[len(farklar) // 2] if farklar else baslik_farki(pdf.pages[a - 1], pdf.pages[b - 1])
-        for s, r in hiza:
+        for sira, (s, r) in enumerate(sorted(hiza, key=lambda sr: sr[0]["y"]), 1):
             k = [(t, y) for yy, t, y in kd[0] if abs(yy - s["y"]) < 5]
             if r:
                 k += [(t, y) for yy, t, y in kd[1] if abs(yy - r["y"]) < 5]
             satirlar.append({"etiket": s["etiket"], "v": {**s["v"], **(r["v"] if r else {})},
                              "sagYok": r is None, "sayfa": [a, b], "karakterDuzeltme": k,
                              "tokSol": ts.get(s["y"]), "tokSag": tr.get(r["y"]) if r else None,
-                             "kenarSol": kl, "kenarSag": kr, "ySol": s["y"],
+                             "kenarSol": kl, "kenarSag": kr, "ySol": s["y"], "sira": sira,
                              "ySag": r["y"] if r else (s["y"] + dy_cift if dy_cift is not None else None)})
     return satirlar, eslesmeyen
 
@@ -510,6 +532,47 @@ def belediye_kimlik(kayitlar, secim):
     return eksik
 
 
+def cetvel_uygula(satirlar, cfg):
+    """Kitabin Yanlis-Dogru Cetveli (DIE'nin kendi duzeltmesi) dogrulamadan ONCE uygulanir. Kayit: PDF sayfasi,
+    sutun (yuzun kendi sutun sirasi, 1'den), satir. Hucre o sayfa + sutundaki degeri cetveldeki yanlis degere
+    esit olan TEK satirda degistirilir (satir sayimi OCR'da kayabilir; deger eslesmesi esastir). Dondurur:
+    uygulanamayan kayitlar."""
+    kalan = []
+    for no, kayitlar in cfg.get("cetvel", {}).items():
+        for c in kayitlar:
+            aday = []
+            for s in satirlar:
+                if no not in s["sayfa"]:
+                    continue
+                alan = (cfg["sol"] if no == s["sayfa"][0] else cfg["sag"])[c["sutun"] - 1]
+                x = s["v"].get(alan)
+                if isinstance(x, (int, float)) and abs(x - c["yanlis"]) < 0.01:
+                    aday.append((s, alan))
+            if len(aday) == 1:
+                s, alan = aday[0]
+                s["v"] = dict(s["v"], **{alan: c["dogru"]})
+                s.setdefault("cetvel", []).append(dict(c, alan=alan, sayfa=no))
+            else:
+                kalan.append(dict(c, sayfa=no, neden=f"sayfada bu değer {len(aday)} satırda"))
+    return kalan
+
+
+def cetvel_gec(v, s, kalan, cfg):
+    """Metin katmaninda okunamayan (cetvel_uygula'da eslesmeyen) kayit, ikinci okumanin degerine uygulanir:
+    satirin sayfasi ve sayfadaki sirasi kayittakiyle ayni, hucre degeri cetveldeki yanlis deger olmali."""
+    for c in list(kalan):
+        if c["sayfa"] not in s["sayfa"] or s.get("sira") != c["satir"]:
+            continue
+        alan = (cfg["sol"] if c["sayfa"] == s["sayfa"][0] else cfg["sag"])[c["sutun"] - 1]
+        x = v.get(alan)
+        if isinstance(x, (int, float)) and abs(x - c["yanlis"]) < 0.01:
+            v = dict(v, **{alan: c["dogru"]})
+            s.setdefault("cetvel", []).append({k: c[k] for k in ("sutun", "satir", "yanlis", "dogru", "sayfa")} |
+                                              {"alan": alan, "not": "ikinci okumada"})
+            kalan.remove(c)
+    return v
+
+
 def goruntu_oku(pdf, cfg, s):
     """Tutarsiz satirin ikinci okumasi (goruntu_okuma.py). Sol yuzun oncu alanlari (sandik, secmen, oy kullanan,
     katilim, gecerli) metin katmanindan alinir, katilim kendi yuzdesini tutuyorsa; yoksa goruntuden."""
@@ -564,6 +627,7 @@ def isle(secim, tablolar=None):
         # ilk satir (adsiz) Turkiye toplami
         if satirlar and not E._anahtar(satirlar[0]["etiket"]):
             satirlar[0]["etiket"] = "GENEL TOPLAM"
+        cetvel_uygulanmayan = cetvel_uygula(satirlar, cfg)
         satirlar, eksik_il, ilsiz = E.tiplendir(satirlar, il_ad, ilce_kume, tablo)
         kayitlar = []
         for s in satirlar:
@@ -582,6 +646,7 @@ def isle(secim, tablolar=None):
             if kontrol["durum"] != "tutarli" or kontrol.get("katilimUyumsuz"):
                 v3 = goruntu_oku(pdf, cfg, s)
                 if v3:
+                    v3 = cetvel_gec(v3, s, cetvel_uygulanmayan, cfg)
                     oy3, kontrol3, duz3 = E.dogrula(v3, cfg["partiler"])
                     if kontrol3["durum"] == "tutarli" and not kontrol3.get("katilimUyumsuz"):
                         goruntu = {"metinKatmani": {k: x for k, x in s["v"].items() if k in cfg["partiler"] or k in ONCU},
@@ -590,22 +655,6 @@ def isle(secim, tablolar=None):
                         s = dict(s, v=v3)
                         oy, kontrol, duz = oy3, kontrol3, duz3
             v = s["v"]
-            cetvel = []
-            for no in s["sayfa"]:
-                for c in cfg.get("cetvel", {}).get(no, []):
-                    alan = [k for k, x in v.items() if x == c["yanlis"] and not k.endswith("%")]
-                    if len(alan) == 1:
-                        v = dict(v, **{alan[0]: c["dogru"]})
-                        cetvel.append(dict(c, alan=alan[0], sayfa=no))
-            if cetvel:
-                # resmi duzeltme sonrasi yeniden kontrol (duzeltme yapmadan: kitabin bastigi gecerli oy korunur)
-                oy = {p: v[p] for p in cfg["partiler"] if isinstance(v.get(p), int) and v[p]}
-                toplam = sum(oy.values())
-                kontrol = {"durum": "tutarli" if toplam == v.get("gecerliOy") else "tutarsiz"}
-                if toplam != v.get("gecerliOy"):
-                    kontrol["partiToplami"] = toplam
-                    kontrol["not"] = "kitabın Yanlış-Doğru Cetveli uygulandıktan sonra parti toplamı basılı geçerli oyu tutmuyor"
-                duz = []
             r = {"tip": s["tip"], "plaka": s["plaka"], "adKaynakta": s["etiket"], "ustIlce": s["ustIlce"],
                  "sandik": v.get("sandik"), "secmen": v.get("secmen"), "oyKullanan": v.get("oyKullanan"),
                  "katilim": v.get("katilim%"), "gecerliOy": kontrol.pop("gecerliOy", v.get("gecerliOy")),
@@ -618,8 +667,8 @@ def isle(secim, tablolar=None):
                 r["yapisalOkuma"] = yapisal
             if goruntu:
                 r["goruntuOkuma"] = goruntu
-            if cetvel:
-                r["cetvelDuzeltme"] = cetvel
+            if s.get("cetvel"):
+                r["cetvelDuzeltme"] = s["cetvel"]
             if s["karakterDuzeltme"]:
                 r["karakterDuzeltme"] = [f"{a}→{b}" for a, b in s["karakterDuzeltme"]]
             if s["sagYok"]:
@@ -651,13 +700,14 @@ def isle(secim, tablolar=None):
                      "goruntudenOkunan": say(lambda r: r.get("goruntuOkuma")),
                      "adlandirilan": say(lambda r: r.get("ad")),
                      "eksikIl": eksik_il, "ilSatiriTaramadaYok": ilsiz, "eslesmeyenSayfa": eslesmeyen,
+                     "cetvelUygulanamayan": cetvel_uygulanmayan,
                      ("adlandirilamayanIller" if tablo == "il_genel_meclisi" else "baskanliktaEslesmeyenIlceler"): adlandirma},
             "satirlar": kayitlar,
         }
         G.onbellek_kaydet()
         (OUT / secim).mkdir(parents=True, exist_ok=True)
         (OUT / secim / f"{tablo}.json").write_text(json.dumps(veri, ensure_ascii=False, indent=1), encoding="utf-8")
-        oz = {k: v for k, v in veri["ozet"].items() if k not in ("eslesmeyenSayfa", "adlandirilamayanIller", "baskanliktaEslesmeyenIlceler")}
+        oz = {k: v for k, v in veri["ozet"].items() if k not in ("eslesmeyenSayfa", "adlandirilamayanIller", "baskanliktaEslesmeyenIlceler", "cetvelUygulanamayan")}
         print(secim, tablo, oz, "| adlandırılamayan il / eşleşmeyen başkanlık ilçesi:", sum(len(v) if tablo != "il_genel_meclisi" else 1 for v in (adlandirma or {}).values()),
               "| eşleşmeyen sayfa:", len(eslesmeyen))
 

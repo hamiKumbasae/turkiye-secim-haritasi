@@ -670,10 +670,20 @@ async function scenario_yerelOylama(browser) {
     const b89 = await page.textContent('#pageTitle');
     const renkli89 = await page.$$eval('path[data-plaka]', (els) => els.filter((e) => e.getAttribute('fill') && e.getAttribute('fill') !== 'var(--map-empty)').length);
     check('1989 il genel meclisi (DİE): başlık ve renkli iller', b89.includes('İl Genel Meclisi') && renkli89 >= 60, b89 + ' / ' + renkli89);
+    const sekmeler = () => page.$$eval('#oylamaToggle button', (bs) => bs.map((b) => b.dataset.oylama + (b.disabled ? ':kapali' : '') + (b.classList.contains('active') ? ':aktif' : '')));
+    // 1977 il genel meclisi DİE kitabından (2026-10-26)
     check('1977 yerel: yıl seçilebildi', await clickYear(page, '1977'));
+    await page.waitForTimeout(700);
+    const d77 = await sekmeler();
+    const b77 = await page.textContent('#pageTitle');
+    const renkli77 = await page.$$eval('path[data-plaka]', (els) => els.filter((e) => e.getAttribute('fill') && e.getAttribute('fill') !== 'var(--map-empty)').length);
+    check('1977 il genel meclisi (DİE): sekme açık, başlık ve renkli iller',
+      JSON.stringify(d77) === JSON.stringify(['baskan', 'igm:aktif', 'bm']) && b77.includes('İl Genel Meclisi') && renkli77 >= 45,
+      JSON.stringify(d77) + ' / ' + b77 + ' / ' + renkli77);
+    check('1963 yerel: yıl seçilebildi', await clickYear(page, '1963'));
     await page.waitForTimeout(600);
-    const durum = await page.$$eval('#oylamaToggle button', (bs) => bs.map((b) => b.dataset.oylama + (b.disabled ? ':kapali' : '') + (b.classList.contains('active') ? ':aktif' : '')));
-    check('1977 yerel: meclis sekmeleri pasif, başkanlık seçili',
+    const durum = await sekmeler();
+    check('1963 yerel: meclis sekmeleri pasif, başkanlık seçili',
       JSON.stringify(durum) === JSON.stringify(['baskan:aktif', 'igm:kapali', 'bm:kapali']), JSON.stringify(durum));
     await page.click('#btnTurGenel');
     await page.waitForTimeout(500);
