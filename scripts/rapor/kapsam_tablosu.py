@@ -45,8 +45,8 @@ OYLAMA_ADI = {"baskan": "Belediye başkanlığı", "bm": "Belediye meclisi", "ig
 ILCE_KAYNAGI_YOK = {"1950", "1954", "1957"}
 
 # Projede hic kaydi olmayan yerel meclis secimleri (1984 oncesi). Belediye meclisi ve il genel
-# meclisi bu yillarda da secildi; 1963 DIE kitabi depoda, henuz okunmadi (1968-1977 okundu).
-KAYITSIZ_MECLIS = ["1950yerel", "1955yerel", "1963yerel"]
+# meclisi bu yillarda da secildi (1963-1977 DIE kitaplarindan okundu; 1950 ve 1955 kitabi yok).
+KAYITSIZ_MECLIS = ["1950yerel", "1955yerel"]
 
 KAYNAK_ADI = {
     "ysk": ("YSK", "A"), "tuik": ("TÜİK/DİE", "A"), "wikipedia": ("Türkçe Wikipedia", "D"),
@@ -106,7 +106,8 @@ def kaynak_ozeti(key, sonuclu_satirlar, src, ust_kaynak):
         if ana in (None, "il satırı"):
             continue
         c[ana] += 1
-        if ana == "wikipedia" and "tuik" in k:
+        if ana == "wikipedia" and "tuik" in k and "tuikKullanilmadi" not in k:
+            # DIE satiri bulundu ve ic kontrolden gecti (tutmayan satir teyit sayilmaz)
             teyit += 1
     if ust_kaynak:
         ad, guv = KAYNAK_ADI.get(ust_kaynak, (ust_kaynak, "?"))
@@ -115,14 +116,19 @@ def kaynak_ozeti(key, sonuclu_satirlar, src, ust_kaynak):
         top = sum(c.values())
         parcalar = []
         guvler = []
+        kalemler = []
         for ana, n in c.most_common():
+            if ana == "wikipedia" and teyit:
+                # DIE kitabiyla teyitli Wikipedia satirlari A; teyit edilemeyenler (kitapta satir okunamadi ya da
+                # ic kontrolden gecmedi) yalniz Wikipedia (D)
+                kalemler.append(("Wikipedia satırları, sayılar DİE kitabıyla teyitli", "A", teyit))
+                if n - teyit:
+                    kalemler.append(("yalnız Türkçe Wikipedia", "D", n - teyit))
+            else:
+                kalemler.append((*KAYNAK_ADI.get(ana, (ana, "?")), n))
+        for ad, guv, n in kalemler:
             if n / top < 0.01:
                 continue
-            ad, guv = KAYNAK_ADI.get(ana, (ana, "?"))
-            if ana == "wikipedia" and teyit:
-                ad, guv = "Wikipedia satırları, sayılar DİE kitabıyla teyitli", "A"
-                if teyit < n:
-                    ad += f" ({teyit}/{n})"
             parcalar.append(f"{ad} %{round(100 * n / top)}" if n < top * 0.99 else ad)
             guvler.append(guv)
         guv = "A" if all(g == "A" for g in guvler) else ("A/D" if "A" in guvler else guvler[0])

@@ -32,19 +32,19 @@ secim,tur,yil,oylama,il_verisi,ilce_verisi,donemdeki_ilce,birim,sonuclu,eksik,ek
 1955yerel,Yerel seçim,1955,Belediye başkanlığı,40/66 (+25 yalnız kazanan),Çok kısmi,539,547,0,547,100.0,VERY_PARTIAL,Türkçe Wikipedia (D),D,Evet,547 satırda yalnız kazanan parti (oy yok); 25 ilde yalnız kazanan / sandalye dağılımı
 1955yerel_bm,Yerel seçim,1955,Belediye meclisi,0,Yok,539,,0,539,100.0,UNKNOWN,-,-,Evet (araştırılmadı),projede kayıt yok; 1950/1955'te başkanlık satırları zaten meclis sandalyesi
 1955yerel_igm,Yerel seçim,1955,İl genel meclisi,0,Yok,539,,0,539,100.0,UNKNOWN,-,-,Evet (araştırılmadı),projede kayıt yok; 1950/1955'te başkanlık satırları zaten meclis sandalyesi
-1963yerel,Yerel seçim,1963,Belediye başkanlığı,67/67,Tam,615,620,620,0,0.0,COMPLETE,Türkçe Wikipedia (D),D,Doğrulama (D kaynaklı satırlar A kaynağıyla),bazı satırlarda katılım yok
-1963yerel_bm,Yerel seçim,1963,Belediye meclisi,0,Yok,615,,0,615,100.0,UNKNOWN,-,-,Evet (araştırılmadı),projede kayıt yok
-1963yerel_igm,Yerel seçim,1963,İl genel meclisi,0,Yok,615,,0,615,100.0,UNKNOWN,-,-,Evet (araştırılmadı),projede kayıt yok
-1968yerel,Yerel seçim,1968,Belediye başkanlığı,67/67,Tam,615,619,619,0,0.0,COMPLETE,Türkçe Wikipedia (D),D,Doğrulama (D kaynaklı satırlar A kaynağıyla),bazı satırlarda katılım yok
-1968yerel_bm,Yerel seçim,1968,Belediye meclisi,20/67,Kısmi,615,619,381,238,38.4,PARTIAL,TÜİK/DİE (A),A,Evet,
-1968yerel_igm,Yerel seçim,1968,İl genel meclisi,62/67,Kısmi,615,619,516,103,16.6,PARTIAL,TÜİK/DİE (A),A,Evet,
-1973yerel,Yerel seçim,1973,Belediye başkanlığı,67/67,Tam,616,620,620,0,0.0,COMPLETE,Türkçe Wikipedia (D),D,Doğrulama (D kaynaklı satırlar A kaynağıyla),bazı satırlarda katılım yok
-1973yerel_bm,Yerel seçim,1973,Belediye meclisi,65/67,Kısmi,616,620,528,92,14.8,PARTIAL,TÜİK/DİE (A),A,Evet,
-1973yerel_igm,Yerel seçim,1973,İl genel meclisi,65/67,Neredeyse tam,616,620,572,48,7.7,MOSTLY_COMPLETE,TÜİK/DİE (A),A,Evet,
-1977yerel,Yerel seçim,1977,Belediye başkanlığı,67/67,Tam,616,621,621,0,0.0,COMPLETE,Türkçe Wikipedia (D),D,Doğrulama (D kaynaklı satırlar A kaynağıyla),bazı satırlarda katılım yok
-1977yerel_bm,Yerel seçim,1977,Belediye meclisi,44/67,Kısmi,616,621,471,150,24.2,PARTIAL,TÜİK/DİE (A),A,Evet,
-1977yerel_igm,Yerel seçim,1977,İl genel meclisi,54/67,Kısmi,616,621,542,79,12.7,PARTIAL,TÜİK/DİE (A),A,Evet,
-1984yerel,Yerel seçim,1984,Belediye başkanlığı,67/67,Tam,624,644,644,0,0.0,COMPLETE,"Wikipedia satırları, sayılar DİE kitabıyla teyitli (A)",A,Hayır,"bazı satırlarda seçmen, katılım yok"
+1963yerel,Yerel seçim,1963,Belediye başkanlığı,67/67,Tam,615,620,620,0,0.0,COMPLETE,"Wikipedia satırları, sayılar DİE kitabıyla teyitli %25; yalnız Türkçe Wikipedia %75 (A/D)",A/D,Doğrulama (D kaynaklı satırlar A kaynağıyla),bazı satırlarda katılım yok
+1963yerel_bm,Yerel seçim,1963,Belediye meclisi,23/67,Çok kısmi,615,620,180,440,71.0,VERY_PARTIAL,TÜİK/DİE (A),A,Evet,"bazı satırlarda seçmen, katılım yok"
+1963yerel_igm,Yerel seçim,1963,İl genel meclisi,49/67,Kısmi,615,620,380,240,38.7,PARTIAL,TÜİK/DİE (A),A,Evet,bazı satırlarda katılım yok
+1968yerel,Yerel seçim,1968,Belediye başkanlığı,67/67,Tam,615,619,619,0,0.0,COMPLETE,"Wikipedia satırları, sayılar DİE kitabıyla teyitli %50; yalnız Türkçe Wikipedia %50 (A/D)",A/D,Doğrulama (D kaynaklı satırlar A kaynağıyla),bazı satırlarda katılım yok
+1968yerel_bm,Yerel seçim,1968,Belediye meclisi,56/67,Kısmi,615,619,407,212,34.2,PARTIAL,TÜİK/DİE (A),A,Evet,
+1968yerel_igm,Yerel seçim,1968,İl genel meclisi,50/67,Kısmi,615,619,477,142,22.9,PARTIAL,TÜİK/DİE (A),A,Evet,
+1973yerel,Yerel seçim,1973,Belediye başkanlığı,67/67,Tam,616,620,620,0,0.0,COMPLETE,"Wikipedia satırları, sayılar DİE kitabıyla teyitli %75; yalnız Türkçe Wikipedia %25 (A/D)",A/D,Doğrulama (D kaynaklı satırlar A kaynağıyla),bazı satırlarda katılım yok
+1973yerel_bm,Yerel seçim,1973,Belediye meclisi,62/67,Kısmi,616,620,508,112,18.1,PARTIAL,TÜİK/DİE (A),A,Evet,
+1973yerel_igm,Yerel seçim,1973,İl genel meclisi,49/67,Kısmi,616,620,522,98,15.8,PARTIAL,TÜİK/DİE (A),A,Evet,
+1977yerel,Yerel seçim,1977,Belediye başkanlığı,67/67,Tam,616,621,621,0,0.0,COMPLETE,"Wikipedia satırları, sayılar DİE kitabıyla teyitli %65; yalnız Türkçe Wikipedia %35 (A/D)",A/D,Doğrulama (D kaynaklı satırlar A kaynağıyla),
+1977yerel_bm,Yerel seçim,1977,Belediye meclisi,48/67,Kısmi,616,621,457,164,26.4,PARTIAL,TÜİK/DİE (A),A,Evet,
+1977yerel_igm,Yerel seçim,1977,İl genel meclisi,53/67,Kısmi,616,621,501,120,19.3,PARTIAL,TÜİK/DİE (A),A,Evet,
+1984yerel,Yerel seçim,1984,Belediye başkanlığı,67/67,Tam,624,644,644,0,0.0,COMPLETE,"Wikipedia satırları, sayılar DİE kitabıyla teyitli %56; yalnız Türkçe Wikipedia %44 (A/D)",A/D,Doğrulama (D kaynaklı satırlar A kaynağıyla),"bazı satırlarda seçmen, katılım yok"
 1984yerel_bm,Yerel seçim,1984,Belediye meclisi,48/67,Kısmi,624,644,511,133,20.7,PARTIAL,TÜİK/DİE (A),A,Evet,
 1984yerel_igm,Yerel seçim,1984,İl genel meclisi,61/67,Kısmi,624,644,572,72,11.2,PARTIAL,TÜİK/DİE (A),A,Evet,
 1989yerel,Yerel seçim,1989,Belediye başkanlığı,67/67,Tam,665,752,752,0,0.0,COMPLETE,"Wikipedia satırları, sayılar DİE kitabıyla teyitli (A)",A,Hayır,
@@ -53,7 +53,7 @@ secim,tur,yil,oylama,il_verisi,ilce_verisi,donemdeki_ilce,birim,sonuclu,eksik,ek
 1994yerel,Yerel seçim,1994,Belediye başkanlığı,76/76,Tam,891,931,931,0,0.0,COMPLETE,"TÜİK/DİE %46; YSK %34; Wikipedia satırları, sayılar DİE kitabıyla teyitli %20 (A)",A,Hayır,"9 satırda ilçe belediyesi yerine büyükşehir/ilçe geneli toplamı; bazı satırlarda seçmen, katılım yok"
 1994yerel_bm,Yerel seçim,1994,Belediye meclisi,76/76,Neredeyse tam,891,931,918,13,1.4,MOSTLY_COMPLETE,TÜİK/DİE (A),A,Evet,bazı satırlarda katılım yok
 1994yerel_igm,Yerel seçim,1994,İl genel meclisi,75/76,Neredeyse tam,891,931,893,38,4.1,MOSTLY_COMPLETE,TÜİK/DİE (A),A,Evet,bazı satırlarda katılım yok
-1999yerel,Yerel seçim,1999,Belediye başkanlığı,80/80,Tam,904,943,943,0,0.0,COMPLETE,"TÜİK/DİE %42; YSK %34; Wikipedia satırları, sayılar DİE kitabıyla teyitli %23 (A)",A,Hayır,41 satırda ilçe belediyesi yerine büyükşehir/ilçe geneli toplamı
+1999yerel,Yerel seçim,1999,Belediye başkanlığı,80/80,Tam,904,943,943,0,0.0,COMPLETE,"TÜİK/DİE %42; YSK %34; Wikipedia satırları, sayılar DİE kitabıyla teyitli %20; yalnız Türkçe Wikipedia %4 (A/D)",A/D,Doğrulama (D kaynaklı satırlar A kaynağıyla),41 satırda ilçe belediyesi yerine büyükşehir/ilçe geneli toplamı
 1999yerel_bm,Yerel seçim,1999,Belediye meclisi,77/80,Neredeyse tam,904,943,928,15,1.6,MOSTLY_COMPLETE,TÜİK/DİE (A),A,Evet,
 1999yerel_igm,Yerel seçim,1999,İl genel meclisi,79/80,Neredeyse tam,904,943,904,39,4.1,MOSTLY_COMPLETE,TÜİK/DİE (A),A,Evet,
 2004yerel,Yerel seçim,2004,Belediye başkanlığı,81/81,Tam,906,945,945,0,0.0,COMPLETE,"TÜİK/DİE %50; YSK %26; Wikipedia satırları, sayılar DİE kitabıyla teyitli %25 (A)",A,Hayır,24 satırda ilçe belediyesi yerine büyükşehir/ilçe geneli toplamı

@@ -29,15 +29,15 @@
  "ozet": {
   "satir": 1701,
   "il": 67,
-  "ilce": 587,
-  "belde": 1046,
-  "tutarli": 1522,
-  "toplamTutmuyor": 5,
-  "tutarsiz": 179,
-  "ocrDuzeltilen": 141,
-  "yapisalOkunan": 73,
-  "goruntudenOkunan": 259,
-  "adlandirilan": 585,
+  "ilce": 588,
+  "belde": 1045,
+  "tutarli": 1489,
+  "toplamTutmuyor": 7,
+  "tutarsiz": 212,
+  "ocrDuzeltilen": 0,
+  "yapisalOkunan": 159,
+  "goruntudenOkunan": 263,
+  "adlandirilan": 586,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
   "eslesmeyenSayfa": [
@@ -79,9 +79,6 @@
    ],
    "29": [
     "Torul"
-   ],
-   "30": [
-    "Uludere"
    ],
    "32": [
     "Atabey"
@@ -1082,8 +1079,8 @@
     "MHP": 205,
     "CHP": 197,
     "DEMP73": 196,
+    "CGP": 114,
     "MSP": 16,
-    "CGP": 14,
     "Bağımsız": 14
    },
    "yuzde": {
@@ -1095,19 +1092,15 @@
     "Bağımsız": 1.4
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 1107,
+    "ocrDuzeltilmedi": [
+     "CGP"
+    ]
    },
    "sayfa": [
     138,
     139
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CGP",
-     "okunan": 114,
-     "duzeltilen": 14,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "AP"
   },
@@ -1337,8 +1330,8 @@
     "AP": 3750,
     "MSP": 3035,
     "Bağımsız": 1474,
-    "CHP": 1102,
-    "MHP": 303
+    "MHP": 303,
+    "CHP": 1
    },
    "yuzde": {
     "CHP": 11.4,
@@ -1347,20 +1340,15 @@
     "Bağımsız": 15.3
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarsiz",
+    "partiToplami": 8563,
+    "ocrDuzeltilmedi": [
+     "CHP"
+    ]
    },
    "sayfa": [
     138,
     139
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1102,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "AP",
    "ad": "Merkez",
@@ -1381,28 +1369,23 @@
    "gecerliOy": 3797,
    "oy": {
     "AP": 2079,
-    "CHP": 1609,
-    "MSP": 109
+    "MSP": 109,
+    "CHP": 1
    },
    "yuzde": {
     "CHP": 42.4,
     "MSP": 2.9
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarsiz",
+    "partiToplami": 2189,
+    "ocrDuzeltilmedi": [
+     "CHP"
+    ]
    },
    "sayfa": [
     138,
     139
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1609,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "AP",
    "ad": "Besni",
@@ -3479,14 +3462,25 @@
     142,
     143
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1027,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 39,
+     "secmen": 10325,
+     "oyKullanan": 6015,
+     "gecerliOy": 4158,
+     "katilim%": 58.3,
+     "AP": 1,
+     "CHP": 974,
+     "CGP": 431,
+     "DEMP73": 946,
+     "MP62": 0,
+     "MHP": 129,
+     "MSP": 260,
+     "TBP73": 0,
+     "Bağımsız": 391
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Merkez",
    "kimlik": {
@@ -3814,14 +3808,25 @@
     142,
     143
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 3,
-     "duzeltilen": 3755,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 54,
+     "secmen": 16728,
+     "oyKullanan": 10585,
+     "gecerliOy": 8346,
+     "katilim%": 63.3,
+     "AP": 3967,
+     "CHP": 3,
+     "CGP": 4,
+     "DEMP73": 131,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 283,
+     "TBP73": 206,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -4016,14 +4021,25 @@
     142,
     143
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1282,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 21,
+     "secmen": 6093,
+     "oyKullanan": 4752,
+     "gecerliOy": 3837,
+     "katilim%": 78.0,
+     "AP": 952,
+     "CHP": 1,
+     "CGP": 199,
+     "DEMP73": 387,
+     "MP62": null,
+     "MHP": 72,
+     "MSP": 456,
+     "TBP73": null,
+     "Bağımsız": 489
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Gümüşhacıköy",
    "kimlik": {
@@ -4609,14 +4625,14 @@
    "gecerliOy": 110161,
    "oy": {
     "CHP": 73086,
+    "DEMP73": 22032,
     "AP": 20146,
     "Bağımsız": 4655,
     "MSP": 3600,
     "TBP73": 2483,
-    "DEMP73": 2032,
     "MHP": 2023,
-    "CGP": 1484,
-    "MP62": 652
+    "MP62": 652,
+    "CGP": 1
    },
    "yuzde": {
     "AP": 18.3,
@@ -4630,39 +4646,17 @@
     "Bağımsız": 4.2
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 128678,
+    "yuzdeUyumsuz": [
+     "CGP",
+     "DEMP73"
+    ]
    },
    "sayfa": [
     144,
     145
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CGP",
-     "okunan": null,
-     "duzeltilen": 1484,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 1011,
-     "secmen": 328057,
-     "oyKullanan": 144149,
-     "gecerliOy": 110161,
-     "katilim%": 43.9,
-     "AP": 20146,
-     "CHP": 73086,
-     "CGP": 1,
-     "DEMP73": 22032,
-     "MP62": 652,
-     "MHP": 2023,
-     "MSP": 3600,
-     "TBP73": 2483,
-     "Bağımsız": 4655
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "karakterDuzeltme": [
     "003322→032",
     "11..88→1.8"
@@ -4706,14 +4700,25 @@
     144,
     145
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 11,
-     "duzeltilen": 11355,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 198,
+     "secmen": 72379,
+     "oyKullanan": 25763,
+     "gecerliOy": 20618,
+     "katilim%": 35.6,
+     "AP": 6367,
+     "CHP": 11,
+     "CGP": 502,
+     "DEMP73": 755,
+     "MP62": 113,
+     "MHP": 258,
+     "MSP": 882,
+     "TBP73": 386,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "775555→755",
     "33..77→3.7"
@@ -5130,14 +5135,25 @@
     144,
     145
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1974,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 20,
+     "secmen": 6385,
+     "oyKullanan": 3757,
+     "gecerliOy": 3197,
+     "katilim%": 58.8,
+     "AP": 1,
+     "CHP": 228,
+     "CGP": null,
+     "DEMP73": 847,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 116,
+     "TBP73": null,
+     "Bağımsız": 32
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "884477→847",
     "2266..55→26.5"
@@ -6184,14 +6200,25 @@
     146,
     147
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1540,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 24,
+     "secmen": 7166,
+     "oyKullanan": 5428,
+     "gecerliOy": 3953,
+     "katilim%": 75.7,
+     "AP": 2312,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 101,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Şereflikoçhisar",
    "kimlik": {
@@ -7396,8 +7423,8 @@
    "goruntuOkuma": {
     "metinKatmani": {
      "sandik": 4,
-     "secmen": 1,
-     "oyKullanan": 1551,
+     "secmen": 1155,
+     "oyKullanan": 1,
      "gecerliOy": 52958,
      "katilim%": 91.1,
      "AP": 544,
@@ -7436,14 +7463,25 @@
     148,
     149
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "Bağımsız",
-     "okunan": 1,
-     "duzeltilen": 1074,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 11,
+     "secmen": 4943,
+     "oyKullanan": 3856,
+     "gecerliOy": 2183,
+     "katilim%": 78.0,
+     "AP": 818,
+     "CHP": 234,
+     "CGP": 0,
+     "DEMP73": 57,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 1
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "Bağımsız",
    "ad": "Serik",
    "kimlik": {
@@ -7546,14 +7584,25 @@
     148,
     149
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1806,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 21,
+     "secmen": 5173,
+     "oyKullanan": 3700,
+     "gecerliOy": 3221,
+     "katilim%": 71.5,
+     "AP": 1415,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 0,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": null,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -7590,25 +7639,6 @@
     148,
     149
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 4,
-     "secmen": 1,
-     "oyKullanan": 250920,
-     "gecerliOy": 524,
-     "katilim%": 73.6,
-     "AP": 77,
-     "CHP": 197,
-     "CGP": 200,
-     "DEMP73": null,
-     "MP62": null,
-     "MHP": null,
-     "MSP": 50,
-     "TBP73": null,
-     "Bağımsız": null
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "CGP",
    "ad": "Ardanuç",
    "kimlik": {
@@ -7683,25 +7713,6 @@
     148,
     149
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 7,
-     "secmen": 1,
-     "oyKullanan": 6361258,
-     "gecerliOy": 980,
-     "katilim%": 76.9,
-     "AP": 263,
-     "CHP": 330,
-     "CGP": 358,
-     "DEMP73": 29,
-     "MP62": 0,
-     "MHP": 0,
-     "MSP": 0,
-     "TBP73": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "CGP",
    "ad": "Borçka",
    "kimlik": {
@@ -7810,14 +7821,25 @@
     148,
     149
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1177,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 11,
+     "secmen": 3740,
+     "oyKullanan": 2754,
+     "gecerliOy": 2174,
+     "katilim%": 73.6,
+     "AP": 951,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 0,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 30,
+     "TBP73": 16,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Hopa",
    "kimlik": {
@@ -8018,14 +8040,25 @@
     148,
     149
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1181,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 18,
+     "secmen": 5248,
+     "oyKullanan": 3609,
+     "gecerliOy": 2918,
+     "katilim%": 68.8,
+     "AP": 1,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 670,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": null,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -8307,14 +8340,25 @@
     148,
     149
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1493,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 18,
+     "secmen": 5326,
+     "oyKullanan": 2779,
+     "gecerliOy": 2779,
+     "katilim%": 52.2,
+     "AP": 1,
+     "CHP": 734,
+     "CGP": 0,
+     "DEMP73": 552,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Çine",
    "kimlik": {
@@ -8524,14 +8568,25 @@
     148,
     149
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1188,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 13,
+     "secmen": 3455,
+     "oyKullanan": 2714,
+     "gecerliOy": 2464,
+     "katilim%": 78.6,
+     "AP": 762,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 514,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -8653,25 +8708,6 @@
     148,
     149
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 4,
-     "secmen": 1,
-     "oyKullanan": 31882,
-     "gecerliOy": 770,
-     "katilim%": 85.5,
-     "AP": 325,
-     "CHP": 445,
-     "CGP": 0,
-     "DEMP73": 0,
-     "MP62": 0,
-     "MHP": 0,
-     "MSP": 0,
-     "TBP73": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "CHP"
   },
   {
@@ -8851,25 +8887,6 @@
     148,
     149
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 4,
-     "secmen": 1,
-     "oyKullanan": 784,
-     "gecerliOy": 777,
-     "katilim%": 78.4,
-     "AP": 477,
-     "CHP": 150,
-     "CGP": null,
-     "DEMP73": 150,
-     "MP62": 0,
-     "MHP": 0,
-     "MSP": 0,
-     "TBP73": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP"
   },
   {
@@ -9121,14 +9138,25 @@
     150,
     151
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 111819,
-     "duzeltilen": 1819,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 94,
+     "secmen": 25902,
+     "oyKullanan": 13170,
+     "gecerliOy": 9204,
+     "katilim%": 50.8,
+     "AP": 2650,
+     "CHP": 4076,
+     "CGP": null,
+     "DEMP73": 111819,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 659,
+     "TBP73": 0,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Nazilli",
    "kimlik": {
@@ -9600,14 +9628,25 @@
     150,
     151
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "Bağımsız",
-     "okunan": 1,
-     "duzeltilen": 1008,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 555,
+     "secmen": 171427,
+     "oyKullanan": 99869,
+     "gecerliOy": 84902,
+     "katilim%": 58.3,
+     "AP": 43155,
+     "CHP": 37288,
+     "CGP": 285,
+     "DEMP73": 1877,
+     "MP62": 0,
+     "MHP": 463,
+     "MSP": 826,
+     "TBP73": 0,
+     "Bağımsız": 1
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -9993,14 +10032,25 @@
     150,
     151
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1387,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 13,
+     "secmen": 3794,
+     "oyKullanan": 2329,
+     "gecerliOy": 2057,
+     "katilim%": 61.4,
+     "AP": 620,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 50,
+     "MP62": null,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Bigadiç",
    "kimlik": {
@@ -10061,14 +10111,18 @@
     150,
     151
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1676,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 20,
+     "secmen": 6045,
+     "oyKullanan": 2585,
+     "gecerliOy": 2477,
+     "katilim%": 42.8,
+     "AP": 801,
+     "CHP": 1
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Burhaniye",
    "kimlik": {
@@ -10344,14 +10398,18 @@
     150,
     151
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1250,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 14,
+     "secmen": 4792,
+     "oyKullanan": 3718,
+     "gecerliOy": 3365,
+     "katilim%": 77.6,
+     "AP": 2115,
+     "CHP": 1
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "AP",
    "ad": "Erdek",
    "kimlik": {
@@ -10464,41 +10522,26 @@
    "katilim": 59.9,
    "gecerliOy": 2320,
    "oy": {
-    "AP": 1316,
-    "CHP": 1004
+    "AP": 1,
+    "CHP": 1
    },
    "yuzde": {
     "AP": 56.7,
     "CHP": 43.3
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 2,
+    "yuzdeUyumsuz": [
+     "AP",
+     "CHP"
+    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     152,
     153
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": null,
-     "duzeltilen": 1316,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 17,
-     "secmen": 4439,
-     "oyKullanan": 2659,
-     "gecerliOy": 2320,
-     "katilim%": 59.9,
-     "AP": 1,
-     "CHP": 1
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP",
    "ad": "Havran",
    "kimlik": {
@@ -10878,41 +10921,26 @@
    "katilim": 82.3,
    "gecerliOy": 2945,
    "oy": {
-    "AP": 1525,
-    "CHP": 1420
+    "AP": 1,
+    "CHP": 1
    },
    "yuzde": {
     "AP": 51.8,
     "CHP": 48.2
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 2,
+    "yuzdeUyumsuz": [
+     "AP",
+     "CHP"
+    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     152,
     153
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": null,
-     "duzeltilen": 1420,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 13,
-     "secmen": 3992,
-     "oyKullanan": 3285,
-     "gecerliOy": 2945,
-     "katilim%": 82.3,
-     "AP": 1,
-     "CHP": 1
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP",
    "ad": "Sındırgı",
    "kimlik": {
@@ -10931,41 +10959,26 @@
    "katilim": 59.3,
    "gecerliOy": 2989,
    "oy": {
-    "AP": 1780,
-    "CHP": 1209
+    "AP": 1,
+    "CHP": 1
    },
    "yuzde": {
     "AP": 59.6,
     "CHP": 40.4
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 2,
+    "yuzdeUyumsuz": [
+     "AP",
+     "CHP"
+    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     152,
     153
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": null,
-     "duzeltilen": 1209,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 23,
-     "secmen": 6819,
-     "oyKullanan": 4046,
-     "gecerliOy": 2989,
-     "katilim%": 59.3,
-     "AP": 1,
-     "CHP": 1
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP",
    "ad": "Susurluk",
    "kimlik": {
@@ -11123,14 +11136,25 @@
     152,
     153
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1239,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 15,
+     "secmen": 5225,
+     "oyKullanan": 3057,
+     "gecerliOy": 2297,
+     "katilim%": 58.5,
+     "AP": 926,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 0,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 132,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -11500,14 +11524,25 @@
     152,
     153
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "Bağımsız",
-     "okunan": 1,
-     "duzeltilen": 1367,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 21,
+     "secmen": 7540,
+     "oyKullanan": 3076,
+     "gecerliOy": 3061,
+     "katilim%": 40.8,
+     "AP": 342,
+     "CHP": 806,
+     "CGP": 67,
+     "DEMP73": 138,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 341,
+     "TBP73": null,
+     "Bağımsız": 1
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "Bağımsız",
    "ad": "Merkez",
    "kimlik": {
@@ -11884,7 +11919,8 @@
     "CHP": 1085
    },
    "yuzde": {
-    "CHP": 46.6
+    "CHP": 46.6,
+    "DEMP73": 53.4
    },
    "kontrol": {
     "durum": "tutarli"
@@ -11893,14 +11929,25 @@
     154,
     155
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1085,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 17,
+     "secmen": 2879,
+     "oyKullanan": 2472,
+     "gecerliOy": 2327,
+     "katilim%": 85.9,
+     "AP": 0,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 1242,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "DEMP73",
    "ad": "Ahlat",
    "kimlik": {
@@ -12103,14 +12150,25 @@
     154,
     155
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1557,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 14,
+     "secmen": 4077,
+     "oyKullanan": 3040,
+     "gecerliOy": 2345,
+     "katilim%": 74.6,
+     "AP": 323,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 0,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 268,
+     "TBP73": 0,
+     "Bağımsız": 197
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Akçakoca",
    "kimlik": {
@@ -12140,6 +12198,7 @@
     "AP": 48.1,
     "CHP": 22.8,
     "CGP": 13.1,
+    "DEMP73": 2.2,
     "MSP": 11.7,
     "Bağımsız": 2.2
    },
@@ -12150,14 +12209,25 @@
     154,
     155
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1300,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 45,
+     "secmen": 14192,
+     "oyKullanan": 6928,
+     "gecerliOy": 5700,
+     "katilim%": 48.8,
+     "AP": 2741,
+     "CHP": 1,
+     "CGP": 744,
+     "DEMP73": 123,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 667,
+     "TBP73": 0,
+     "Bağımsız": 125
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "774444→744"
    ],
@@ -12714,7 +12784,8 @@
    "yuzde": {
     "AP": 32.3,
     "CHP": 50.7,
-    "CGP": 5.7
+    "CGP": 5.7,
+    "DEMP73": 11.3
    },
    "kontrol": {
     "durum": "tutarli"
@@ -12723,14 +12794,25 @@
     154,
     155
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 3,
-     "duzeltilen": 3540,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 58,
+     "secmen": 15790,
+     "oyKullanan": 9304,
+     "gecerliOy": 6982,
+     "katilim%": 58.9,
+     "AP": 2254,
+     "CHP": 3,
+     "CGP": 397,
+     "DEMP73": 791,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -12936,6 +13018,7 @@
     "AP": 18.6,
     "CHP": 36.9,
     "CGP": 3.5,
+    "DEMP73": 12.4,
     "MHP": 24.1,
     "MSP": 4.5
    },
@@ -12946,14 +13029,25 @@
     154,
     155
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1506,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 21,
+     "secmen": 6411,
+     "oyKullanan": 4984,
+     "gecerliOy": 4080,
+     "katilim%": 77.7,
+     "AP": 760,
+     "CHP": 1,
+     "CGP": 143,
+     "DEMP73": 505,
+     "MP62": 0,
+     "MHP": 984,
+     "MSP": 182,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Bucak",
    "kimlik": {
@@ -14568,14 +14662,25 @@
     158,
     159
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1300,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 11,
+     "secmen": 3519,
+     "oyKullanan": 2415,
+     "gecerliOy": 2078,
+     "katilim%": 68.6,
+     "AP": 597,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 73,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 108,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Bayramiç",
    "kimlik": {
@@ -14857,14 +14962,25 @@
     158,
     159
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1515,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 13,
+     "secmen": 3639,
+     "oyKullanan": 2843,
+     "gecerliOy": 2548,
+     "katilim%": 78.1,
+     "AP": 1,
+     "CHP": 675,
+     "CGP": null,
+     "DEMP73": 311,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 47,
+     "TBP73": 0,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "331111→311"
    ],
@@ -15253,14 +15369,25 @@
     158,
     159
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1403,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 39,
+     "secmen": 12112,
+     "oyKullanan": 5826,
+     "gecerliOy": 5498,
+     "katilim%": 48.1,
+     "AP": 2778,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 389,
+     "MP62": 117,
+     "MHP": 0,
+     "MSP": 811,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Merkez",
    "kimlik": {
@@ -15755,27 +15882,22 @@
    "katilim": 82.3,
    "gecerliOy": 239,
    "oy": {
-    "Bağımsız": 128,
-    "AP": 111
+    "Bağımsız": 128
    },
    "yuzde": {
     "AP": 46.4,
     "Bağımsız": 53.6
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 128,
+    "ocrDuzeltilmedi": [
+     "AP"
+    ]
    },
    "sayfa": [
     158,
     159
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": null,
-     "duzeltilen": 111,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "Bağımsız",
    "ad": "Ovacık",
@@ -15957,20 +16079,30 @@
     160,
     161
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": 1,
-     "duzeltilen": 1127,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 74,
+     "secmen": 27022,
+     "oyKullanan": 15472,
+     "gecerliOy": 11262,
+     "katilim%": 573,
+     "AP": 2151,
+     "CHP": 4897,
+     "CGP": null,
+     "DEMP73": 2888,
+     "MP62": null,
+     "MHP": 199,
+     "MSP": 1,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "2277→27",
     "002222→022"
    ],
    "kazanan": "CHP",
-   "katilimOkunan": 573,
    "ad": "Merkez",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -16467,8 +16599,7 @@
    "gecerliOy": 474,
    "oy": {
     "CHP": 262,
-    "DEMP73": 124,
-    "Bağımsız": 88
+    "DEMP73": 124
    },
    "yuzde": {
     "CHP": 55.3,
@@ -16476,19 +16607,15 @@
     "Bağımsız": 18.6
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 386,
+    "ocrDuzeltilmedi": [
+     "Bağımsız"
+    ]
    },
    "sayfa": [
     160,
     161
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "Bağımsız",
-     "okunan": null,
-     "duzeltilen": 88,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "CHP",
    "katilimOkunan": 573
@@ -16552,16 +16679,26 @@
     160,
     161
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": null,
-     "duzeltilen": 36055,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "kazanan": "AP",
-   "katilimOkunan": 710
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 480,
+     "secmen": 141184,
+     "oyKullanan": 100185,
+     "gecerliOy": 87884,
+     "katilim%": 710,
+     "AP": 39003,
+     "CHP": null,
+     "CGP": null,
+     "DEMP73": 11546,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 471,
+     "TBP73": null,
+     "Bağımsız": 809
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "ilce",
@@ -16750,16 +16887,26 @@
     160,
     161
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": null,
-     "duzeltilen": 2,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "kazanan": "DEMP73",
-   "katilimOkunan": 803
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 9,
+     "secmen": 2405,
+     "oyKullanan": 1932,
+     "gecerliOy": 1559,
+     "katilim%": 803,
+     "AP": 504,
+     "CHP": 355,
+     "CGP": null,
+     "DEMP73": 698,
+     "MP62": null,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
+   "kazanan": "DEMP73"
   },
   {
    "tip": "belde",
@@ -17385,14 +17532,25 @@
     162,
     163
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1017,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 11,
+     "secmen": 2975,
+     "oyKullanan": 2213,
+     "gecerliOy": 1990,
+     "katilim%": 74.4,
+     "AP": 946,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": 27
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -17742,14 +17900,25 @@
     162,
     163
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1058,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 13,
+     "secmen": 3800,
+     "oyKullanan": 2366,
+     "gecerliOy": 2242,
+     "katilim%": 62.3,
+     "AP": 1061,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 123,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 0,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Çivril",
    "kimlik": {
@@ -18245,14 +18414,25 @@
     162,
     163
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1952,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 14,
+     "secmen": 4965,
+     "oyKullanan": 3351,
+     "gecerliOy": 3006,
+     "katilim%": 67.5,
+     "AP": 1,
+     "CHP": 617,
+     "CGP": null,
+     "DEMP73": 376,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 29,
+     "TBP73": null,
+     "Bağımsız": 32
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Tavas",
    "kimlik": {
@@ -18611,14 +18791,25 @@
     164,
     165
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1228,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 10,
+     "secmen": 2606,
+     "oyKullanan": 2034,
+     "gecerliOy": 1836,
+     "katilim%": 78.1,
+     "AP": null,
+     "CHP": 1,
+     "CGP": 336,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 272,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Çermik",
    "kimlik": {
@@ -18924,6 +19115,7 @@
     "AP": 35
    },
    "yuzde": {
+    "AP": 1.5,
     "CHP": 62.3,
     "DEMP73": 31.7,
     "Bağımsız": 4.6
@@ -18935,14 +19127,25 @@
     164,
     165
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1495,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 17,
+     "secmen": 3372,
+     "oyKullanan": 2406,
+     "gecerliOy": 2401,
+     "katilim%": 71.4,
+     "AP": 35,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 760,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 111
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Lice",
    "kimlik": {
@@ -19276,44 +19479,20 @@
    "gecerliOy": 635,
    "oy": {
     "AP": 176,
-    "MSP": 169,
-    "Bağımsız": 149,
     "CHP": 141
    },
    "yuzde": {
-    "AP": 27.7,
-    "CHP": 22.2,
-    "MSP": 26.6,
-    "Bağımsız": 23.5
+    "CHP": 22.2
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 317,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     164,
     165
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": null,
-     "duzeltilen": 169,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 3,
-     "secmen": 1036,
-     "oyKullanan": 682,
-     "gecerliOy": 635,
-     "katilim%": 65.8,
-     "AP": 176,
-     "CHP": 141
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP"
   },
   {
@@ -20237,14 +20416,6 @@
    "sayfa": [
     166,
     167
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MHP",
-     "okunan": 1,
-     "duzeltilen": 1053,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "karakterDuzeltme": [
     "1177→17",
@@ -21261,14 +21432,25 @@
     166,
     167
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1055,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 10,
+     "secmen": 3227,
+     "oyKullanan": 2206,
+     "gecerliOy": 2088,
+     "katilim%": 68.4,
+     "AP": 1,
+     "CHP": 798,
+     "CGP": 200,
+     "DEMP73": null,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": 35
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Oltu",
    "kimlik": {
@@ -21606,14 +21788,25 @@
     168,
     169
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": 1,
-     "duzeltilen": 1986,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 374,
+     "secmen": 117395,
+     "oyKullanan": 54607,
+     "gecerliOy": 44648,
+     "katilim%": 46.5,
+     "AP": 14795,
+     "CHP": 18465,
+     "CGP": 123,
+     "DEMP73": 7561,
+     "MP62": 205,
+     "MHP": 339,
+     "MSP": 1,
+     "TBP73": 652,
+     "Bağımsız": 522
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -22120,14 +22313,25 @@
     168,
     169
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1035,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 15,
+     "secmen": 4008,
+     "oyKullanan": 2755,
+     "gecerliOy": 2349,
+     "katilim%": 68.7,
+     "AP": 1240,
+     "CHP": 1,
+     "CGP": 74,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "7744→74"
    ],
@@ -22239,32 +22443,46 @@
     "CGP": 5187,
     "MSP": 1914,
     "MHP": 1514,
-    "Bağımsız": 468
+    "Bağımsız": 468,
+    "TBP73": 3
    },
    "yuzde": {
     "AP": 21.1,
     "CHP": 57.6,
-    "CGP": 7.5,
+    "CGP": 7.4,
     "DEMP73": 8.2,
     "MHP": 2.2,
     "MSP": 2.8,
     "Bağımsız": 0.7
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "toplamTutmuyor",
+    "toplamFarki": 3,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     168,
     169
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CGP",
-     "okunan": 55187,
-     "duzeltilen": 5187,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 568,
+     "secmen": 165161,
+     "oyKullanan": 83065,
+     "gecerliOy": 69160,
+     "katilim%": 50.3,
+     "AP": 14595,
+     "CHP": 39813,
+     "CGP": 55187,
+     "DEMP73": 5669,
+     "MP62": null,
+     "MHP": 1514,
+     "MSP": 1914,
+     "TBP73": null,
+     "Bağımsız": 468
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "karakterDuzeltme": [
     "118877→187"
    ],
@@ -22284,10 +22502,10 @@
     "CHP": 27154,
     "AP": 5726,
     "CGP": 2668,
-    "DEMP73": 1226,
     "MSP": 920,
     "MHP": 366,
-    "Bağımsız": 360
+    "Bağımsız": 360,
+    "DEMP73": 1
    },
    "yuzde": {
     "AP": 14.9,
@@ -22299,20 +22517,15 @@
     "Bağımsız": 0.9
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarsiz",
+    "partiToplami": 37195,
+    "ocrDuzeltilmedi": [
+     "DEMP73"
+    ]
    },
    "sayfa": [
     168,
     169
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 1,
-     "duzeltilen": 1226,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "CHP",
    "ad": "Merkez",
@@ -22488,14 +22701,25 @@
     168,
     169
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1384,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 23,
+     "secmen": 6431,
+     "oyKullanan": 4528,
+     "gecerliOy": 4315,
+     "katilim%": 70.4,
+     "AP": 793,
+     "CHP": 1,
+     "CGP": 613,
+     "DEMP73": 549,
+     "MP62": 0,
+     "MHP": 617,
+     "MSP": 359,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "İslahiye",
    "kimlik": {
@@ -23109,14 +23333,25 @@
     170,
     171
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 1,
-     "duzeltilen": 1448,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 18,
+     "secmen": 5682,
+     "oyKullanan": 4207,
+     "gecerliOy": 3778,
+     "katilim%": 74.0,
+     "AP": 495,
+     "CHP": 1717,
+     "CGP": 0,
+     "DEMP73": 1,
+     "MP62": null,
+     "MHP": 0,
+     "MSP": 118,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Bulancak",
    "kimlik": {
@@ -23224,14 +23459,25 @@
     170,
     171
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1194,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 11,
+     "secmen": 3417,
+     "oyKullanan": 2846,
+     "gecerliOy": 2412,
+     "katilim%": 83.3,
+     "AP": 1,
+     "CHP": 953,
+     "CGP": 0,
+     "DEMP73": 265,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Espiye",
    "kimlik": {
@@ -23693,14 +23939,25 @@
     170,
     171
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1342,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 16,
+     "secmen": 4063,
+     "oyKullanan": 2651,
+     "gecerliOy": 2295,
+     "katilim%": 65.2,
+     "AP": 839,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 0,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 114,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -24162,7 +24419,7 @@
    "katilim": 61.8,
    "gecerliOy": 564,
    "oy": {
-    "AP": 262,
+    "AP": 263,
     "CGP": 260,
     "CHP": 42
    },
@@ -24172,20 +24429,15 @@
     "CGP": 46.1
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarsiz",
+    "partiToplami": 565,
+    "ocrDuzeltilmedi": [
+     "AP"
+    ]
    },
    "sayfa": [
     170,
     171
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 263,
-     "duzeltilen": 262,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "AP",
    "ad": "Beytüşşebap",
@@ -24284,13 +24536,13 @@
    }
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 30,
    "adKaynakta": "Uludere (Kılıban)",
    "ustIlce": "Şemdinli",
    "sandik": 8,
-   "secmen": 1,
-   "oyKullanan": 870431,
+   "secmen": 1870,
+   "oyKullanan": 431,
    "katilim": 23.0,
    "gecerliOy": 431,
    "oy": {
@@ -24300,14 +24552,37 @@
     "CHP": 100.0
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarli"
    },
    "sayfa": [
     170,
     171
    ],
-   "kazanan": "CHP"
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 8,
+     "secmen": 1,
+     "oyKullanan": 870431,
+     "gecerliOy": 431,
+     "katilim%": 23.0,
+     "AP": 0,
+     "CHP": 431,
+     "CGP": 0,
+     "DEMP73": null,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 0,
+     "TBP73": null,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
+   "kazanan": "CHP",
+   "ad": "Uludere",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",
@@ -24664,14 +24939,18 @@
     172,
     173
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1879,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 20,
+     "secmen": 6337,
+     "oyKullanan": 3631,
+     "gecerliOy": 3280,
+     "katilim%": 57.3,
+     "AP": 1401,
+     "CHP": 1
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP"
   },
   {
@@ -24732,14 +25011,25 @@
     172,
     173
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1658,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 18,
+     "secmen": 4844,
+     "oyKullanan": 4397,
+     "gecerliOy": 4070,
+     "katilim%": 90.8,
+     "AP": 2169,
+     "CHP": 1,
+     "CGP": 127,
+     "DEMP73": null,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 116,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -24896,14 +25186,25 @@
     172,
     173
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 44495,
-     "duzeltilen": 4495,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 103,
+     "secmen": 36427,
+     "oyKullanan": 18666,
+     "gecerliOy": 17053,
+     "katilim%": 51.2,
+     "AP": 4993,
+     "CHP": 5880,
+     "CGP": 297,
+     "DEMP73": 44495,
+     "MP62": 66,
+     "MHP": 213,
+     "MSP": 164,
+     "TBP73": 780,
+     "Bağımsız": 165
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "karakterDuzeltme": [
     "449955→495",
     "2266..44→26.4"
@@ -25133,14 +25434,18 @@
     172,
     173
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1800,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 22,
+     "secmen": 7411,
+     "oyKullanan": 4933,
+     "gecerliOy": 4759,
+     "katilim%": 66.6,
+     "AP": 1,
+     "CHP": 2959
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Samandağ",
    "kimlik": {
@@ -25244,14 +25549,25 @@
     172,
     173
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": 11737,
-     "duzeltilen": 1737,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 347,
+     "secmen": 86022,
+     "oyKullanan": 54306,
+     "gecerliOy": 45745,
+     "katilim%": 63.1,
+     "AP": 22875,
+     "CHP": 12905,
+     "CGP": 556,
+     "DEMP73": 5330,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 11737,
+     "TBP73": 0,
+     "Bağımsız": 2342
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "karakterDuzeltme": [
     "773377→737"
    ],
@@ -25898,14 +26214,25 @@
     172,
     173
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1382,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 14,
+     "secmen": 3929,
+     "oyKullanan": 2755,
+     "gecerliOy": 2226,
+     "katilim%": 70.1,
+     "AP": 1,
+     "CHP": 271,
+     "CGP": 0,
+     "DEMP73": 573,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Senirkent",
    "kimlik": {
@@ -26107,46 +26434,29 @@
    "ustIlce": "Sütçüler",
    "sandik": 8,
    "secmen": 2114,
-   "oyKullanan": 1587,
+   "oyKullanan": 1,
    "katilim": 75.1,
-   "gecerliOy": 1349,
+   "gecerliOy": 5871,
    "oy": {
-    "DEMP73": 917,
     "CHP": 432
    },
    "yuzde": {
-    "CHP": 32.0,
-    "DEMP73": 68.0
+    "CHP": 32.0
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 432,
+    "yuzdeUyumsuz": [
+     "CHP"
+    ],
+    "katilimUyumsuz": true,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     174,
     175
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": null,
-     "duzeltilen": 917,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 8,
-     "secmen": 2114,
-     "oyKullanan": 1,
-     "gecerliOy": 5871,
-     "katilim%": 75.1,
-     "AP": 0,
-     "CHP": 432
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
-   "kazanan": "DEMP73",
+   "kazanan": "CHP",
    "ad": "Şarkikaraağaç",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -26740,14 +27050,25 @@
     174,
     175
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 11,
-     "duzeltilen": 11158,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 167,
+     "secmen": 59769,
+     "oyKullanan": 33251,
+     "gecerliOy": 16694,
+     "katilim%": 55.6,
+     "AP": 4829,
+     "CHP": 11,
+     "CGP": 0,
+     "DEMP73": 408,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 165,
+     "TBP73": 134,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -27042,14 +27363,25 @@
     174,
     175
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1163,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 27,
+     "secmen": 7048,
+     "oyKullanan": 6167,
+     "gecerliOy": 5638,
+     "katilim%": 87.5,
+     "AP": 2847,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 975,
+     "MP62": 0,
+     "MHP": 283,
+     "MSP": 276,
+     "TBP73": 0,
+     "Bağımsız": 94
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Erdemli",
    "kimlik": {
@@ -27905,6 +28237,7 @@
    },
    "yuzde": {
     "AP": 21.5,
+    "CHP": 63.2,
     "CGP": 2.0,
     "DEMP73": 3.1,
     "MP62": 0.3,
@@ -27919,14 +28252,25 @@
     176,
     177
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": 1,
-     "duzeltilen": 1016,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 203,
+     "secmen": 66235,
+     "oyKullanan": 15713,
+     "gecerliOy": 14919,
+     "katilim%": 23.7,
+     "AP": 3208,
+     "CHP": 9423,
+     "CGP": 301,
+     "DEMP73": 463,
+     "MP62": 47,
+     "MHP": 192,
+     "MSP": 1,
+     "TBP73": 98,
+     "Bağımsız": 171
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -28047,6 +28391,7 @@
    },
    "yuzde": {
     "AP": 26.2,
+    "CHP": 53.9,
     "CGP": 3.0,
     "DEMP73": 7.8,
     "MP62": 0.1,
@@ -28060,14 +28405,25 @@
     176,
     177
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 1,
-     "duzeltilen": 1064,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 129,
+     "secmen": 46273,
+     "oyKullanan": 17853,
+     "gecerliOy": 13706,
+     "katilim%": 38.6,
+     "AP": 3592,
+     "CHP": 7391,
+     "CGP": 418,
+     "DEMP73": 1,
+     "MP62": 12,
+     "MHP": 95,
+     "MSP": 647,
+     "TBP73": 0,
+     "Bağımsız": 487
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -28091,6 +28447,7 @@
    },
    "yuzde": {
     "AP": 20.8,
+    "CHP": 69.7,
     "CGP": 1.9,
     "DEMP73": 2.6,
     "MHP": 0.1,
@@ -28104,14 +28461,25 @@
     176,
     177
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 1,
-     "duzeltilen": 1316,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 598,
+     "secmen": 172921,
+     "oyKullanan": 58071,
+     "gecerliOy": 50432,
+     "katilim%": 33.6,
+     "AP": 10513,
+     "CHP": 35134,
+     "CGP": 947,
+     "DEMP73": 1,
+     "MP62": 0,
+     "MHP": 65,
+     "MSP": 2165,
+     "TBP73": 292,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -28477,6 +28845,7 @@
    },
    "yuzde": {
     "AP": 37.6,
+    "CHP": 36.5,
     "DEMP73": 17.3,
     "MHP": 1.8,
     "MSP": 4.6
@@ -28488,14 +28857,25 @@
     176,
     177
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 1,
-     "duzeltilen": 1004,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 49,
+     "secmen": 14756,
+     "oyKullanan": 7849,
+     "gecerliOy": 5819,
+     "katilim%": 53.2,
+     "AP": 2189,
+     "CHP": 2124,
+     "CGP": 130,
+     "DEMP73": 1,
+     "MP62": 2,
+     "MHP": 103,
+     "MSP": 267,
+     "TBP73": 0,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -28574,6 +28954,7 @@
    },
    "yuzde": {
     "AP": 18.4,
+    "CHP": 55.5,
     "DEMP73": 9.5,
     "MHP": 3.9,
     "TBP73": 0.1
@@ -28585,14 +28966,25 @@
     176,
     177
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1392,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 56,
+     "secmen": 17473,
+     "oyKullanan": 10143,
+     "gecerliOy": 7572,
+     "katilim%": 58.0,
+     "AP": 1,
+     "CHP": 4205,
+     "CGP": 595,
+     "DEMP73": 716,
+     "MP62": 0,
+     "MHP": 293,
+     "MSP": 0,
+     "TBP73": 6,
+     "Bağımsız": 365
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -28616,6 +29008,7 @@
    },
    "yuzde": {
     "AP": 50.0,
+    "CHP": 24.3,
     "CGP": 0.1,
     "DEMP73": 4.5,
     "MSP": 9.7,
@@ -28628,14 +29021,25 @@
     176,
     177
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1632,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 25,
+     "secmen": 7703,
+     "oyKullanan": 4117,
+     "gecerliOy": 3264,
+     "katilim%": 53.4,
+     "AP": 1,
+     "CHP": 793,
+     "CGP": 3,
+     "DEMP73": 148,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 318,
+     "TBP73": 296,
+     "Bağımsız": 74
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -28831,6 +29235,7 @@
    },
    "yuzde": {
     "AP": 12.4,
+    "CHP": 32.5,
     "CGP": 2.7,
     "DEMP73": 9.3,
     "MHP": 0.6,
@@ -28844,14 +29249,25 @@
     176,
     177
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": 1,
-     "duzeltilen": 1503,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 204,
+     "secmen": 60531,
+     "oyKullanan": 29546,
+     "gecerliOy": 21624,
+     "katilim%": 48.8,
+     "AP": 2682,
+     "CHP": 7024,
+     "CGP": 583,
+     "DEMP73": 2009,
+     "MP62": 0,
+     "MHP": 131,
+     "MSP": 1,
+     "TBP73": 1449,
+     "Bağımsız": 6243
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -29062,6 +29478,7 @@
    },
    "yuzde": {
     "AP": 48.4,
+    "CHP": 28.7,
     "DEMP73": 8.0,
     "MSP": 4.2
    },
@@ -29072,14 +29489,25 @@
     176,
     177
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1667,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 27,
+     "secmen": 7304,
+     "oyKullanan": 4363,
+     "gecerliOy": 3443,
+     "katilim%": 59.7,
+     "AP": 1,
+     "CHP": 989,
+     "CGP": null,
+     "DEMP73": 275,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 146,
+     "TBP73": 0,
+     "Bağımsız": 366
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -29531,8 +29959,9 @@
     "MSP": 5035,
     "Bağımsız": 4804,
     "MHP": 326,
-    "CGP": 257,
-    "TBP73": 222
+    "CGP": 241,
+    "TBP73": 222,
+    "MP62": 17
    },
    "yuzde": {
     "AP": 44.7,
@@ -29545,40 +29974,16 @@
     "Bağımsız": 1.9
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 253584,
+    "gecerliDuzeltilmedi": true
    },
    "sayfa": [
     178,
     179
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CGP",
-     "okunan": null,
-     "duzeltilen": 257,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 1877,
-     "secmen": 598689,
-     "oyKullanan": 312278,
-     "gecerliOy": 253583,
-     "katilim%": 522,
-     "AP": 113297,
-     "CHP": 114361,
-     "CGP": 241,
-     "DEMP73": 15281,
-     "MP62": 17,
-     "MHP": 326,
-     "MSP": 5035,
-     "TBP73": 222,
-     "Bağımsız": 4804
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
-   "kazanan": "CHP"
+   "kazanan": "CHP",
+   "katilimOkunan": 522
   },
   {
    "tip": "belde",
@@ -29594,8 +29999,7 @@
     "CHP": 35870,
     "AP": 33540,
     "MSP": 2277,
-    "DEMP73": 2048,
-    "Bağımsız": 231
+    "DEMP73": 2048
    },
    "yuzde": {
     "AP": 45.3,
@@ -29605,19 +30009,15 @@
     "Bağımsız": 0.3
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 73735,
+    "ocrDuzeltilmedi": [
+     "Bağımsız"
+    ]
    },
    "sayfa": [
     178,
     179
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "Bağımsız",
-     "okunan": null,
-     "duzeltilen": 231,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "CHP",
    "katilimOkunan": 397
@@ -31465,7 +31865,7 @@
    },
    "yuzde": {
     "AP": 38.1,
-    "CHP": 35.5,
+    "CHP": 35.4,
     "CGP": 2.9,
     "DEMP73": 13.4,
     "MP62": 0.5,
@@ -31480,14 +31880,25 @@
     180,
     181
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 44490,
-     "duzeltilen": 4490,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 211,
+     "secmen": 60647,
+     "oyKullanan": 41415,
+     "gecerliOy": 33503,
+     "katilim%": 68.3,
+     "AP": 12756,
+     "CHP": 11880,
+     "CGP": 983,
+     "DEMP73": 44490,
+     "MP62": 155,
+     "MHP": 599,
+     "MSP": 2171,
+     "TBP73": null,
+     "Bağımsız": 469
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "karakterDuzeltme": [
     "449900→490",
     "1133..44→13.4"
@@ -31622,42 +32033,21 @@
    "gecerliOy": 625,
    "oy": {
     "AP": 296,
-    "CGP": 228,
     "CHP": 101
    },
    "yuzde": {
     "AP": 47.4,
-    "CHP": 16.2,
-    "CGP": 36.5
+    "CHP": 16.2
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 397,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     180,
     181
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CGP",
-     "okunan": null,
-     "duzeltilen": 228,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 3,
-     "secmen": 857,
-     "oyKullanan": 678,
-     "gecerliOy": 625,
-     "katilim%": 79.1,
-     "AP": 296,
-     "CHP": 101
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP",
    "ad": "Arpaçay",
    "kimlik": {
@@ -32146,7 +32536,8 @@
    },
    "yuzde": {
     "AP": 30.7,
-    "CHP": 63.6
+    "CHP": 63.6,
+    "MSP": 5.7
    },
    "kontrol": {
     "durum": "tutarli"
@@ -32155,14 +32546,25 @@
     182,
     183
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1402,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 15,
+     "secmen": 3615,
+     "oyKullanan": 2339,
+     "gecerliOy": 2205,
+     "katilim%": 64.7,
+     "AP": 677,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 126,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "karakterDuzeltme": [
     "112266→126"
    ],
@@ -32446,14 +32848,25 @@
     182,
     183
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1551,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 45,
+     "secmen": 15008,
+     "oyKullanan": 7377,
+     "gecerliOy": 4630,
+     "katilim%": 49.2,
+     "AP": 1,
+     "CHP": 2390,
+     "CGP": 0,
+     "DEMP73": 186,
+     "MP62": 0,
+     "MHP": 215,
+     "MSP": 288,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -33003,14 +33416,25 @@
     182,
     183
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1741,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 30,
+     "secmen": 8478,
+     "oyKullanan": 4022,
+     "gecerliOy": 3068,
+     "katilim%": 47.4,
+     "AP": 1,
+     "CHP": 112,
+     "CGP": 689,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": 269,
+     "MSP": 129,
+     "TBP73": null,
+     "Bağımsız": 128
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "112288→128",
     "44..22→4.2"
@@ -33096,14 +33520,25 @@
     182,
     183
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 11,
-     "duzeltilen": 11698,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 283,
+     "secmen": 81615,
+     "oyKullanan": 35368,
+     "gecerliOy": 27072,
+     "katilim%": 43.3,
+     "AP": 9865,
+     "CHP": 11,
+     "CGP": 906,
+     "DEMP73": 1024,
+     "MP62": null,
+     "MHP": 1353,
+     "MSP": 2107,
+     "TBP73": 119,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -33518,14 +33953,18 @@
     184,
     185
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1592,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 4871,
+     "oyKullanan": 4058,
+     "gecerliOy": 3624,
+     "katilim%": 83.3,
+     "AP": 1,
+     "CHP": 2032
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Bünyan",
    "kimlik": {
@@ -33960,14 +34399,25 @@
     184,
     185
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1005,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 12,
+     "secmen": 3658,
+     "oyKullanan": 1498,
+     "gecerliOy": 1498,
+     "katilim%": 41.0,
+     "AP": 440,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 53,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Pınarbaşı",
    "kimlik": {
@@ -34231,14 +34681,25 @@
     184,
     185
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1398,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 17,
+     "secmen": 5241,
+     "oyKullanan": 4462,
+     "gecerliOy": 3660,
+     "katilim%": 85.1,
+     "AP": 1,
+     "CHP": 588,
+     "CGP": 486,
+     "DEMP73": 445,
+     "MP62": 0,
+     "MHP": 239,
+     "MSP": 504,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Yahyalı",
    "kimlik": {
@@ -34301,14 +34762,25 @@
     184,
     185
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1356,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 15,
+     "secmen": 4070,
+     "oyKullanan": 2994,
+     "gecerliOy": 2994,
+     "katilim%": 73.6,
+     "AP": 1,
+     "CHP": 699,
+     "CGP": 580,
+     "DEMP73": 0,
+     "MP62": 0,
+     "MHP": 359,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Yeşilhisar",
    "kimlik": {
@@ -34405,14 +34877,25 @@
     184,
     185
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 11306,
-     "duzeltilen": 1306,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 43,
+     "secmen": 12604,
+     "oyKullanan": 8334,
+     "gecerliOy": 7115,
+     "katilim%": 66.1,
+     "AP": 2947,
+     "CHP": 2752,
+     "CGP": 56,
+     "DEMP73": 11306,
+     "MP62": 0,
+     "MHP": 54,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "karakterDuzeltme": [
     "330066→306",
     "1188..44→18.4"
@@ -35005,14 +35488,25 @@
     186,
     187
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1121,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 10,
+     "secmen": 3369,
+     "oyKullanan": 2355,
+     "gecerliOy": 2015,
+     "katilim%": 69.9,
+     "AP": 1,
+     "CHP": 894,
+     "CGP": 0,
+     "DEMP73": 0,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Vize",
    "kimlik": {
@@ -35672,14 +36166,25 @@
     186,
     187
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": 1,
-     "duzeltilen": 1720,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 195,
+     "secmen": 61557,
+     "oyKullanan": 29041,
+     "gecerliOy": 23905,
+     "katilim%": 47.2,
+     "AP": 7443,
+     "CHP": 12562,
+     "CGP": 375,
+     "DEMP73": 926,
+     "MP62": 0,
+     "MHP": 158,
+     "MSP": 1,
+     "TBP73": null,
+     "Bağımsız": 721
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -35929,14 +36434,25 @@
     186,
     187
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1783,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 28,
+     "secmen": 8752,
+     "oyKullanan": 5616,
+     "gecerliOy": 4835,
+     "katilim%": 64.2,
+     "AP": 1,
+     "CHP": 2512,
+     "CGP": null,
+     "DEMP73": 0,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 540,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -36060,14 +36576,25 @@
     186,
     187
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1234,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 15,
+     "secmen": 4054,
+     "oyKullanan": 3058,
+     "gecerliOy": 2297,
+     "katilim%": 75.4,
+     "AP": 1,
+     "CHP": 875,
+     "CGP": 0,
+     "DEMP73": 159,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": null,
+     "Bağımsız": 29
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -36097,14 +36624,25 @@
     186,
     187
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1065,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 16,
+     "secmen": 4022,
+     "oyKullanan": 2747,
+     "gecerliOy": 2467,
+     "katilim%": 68.3,
+     "AP": 924,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 478,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -36140,14 +36678,25 @@
     186,
     187
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1936,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 44,
+     "secmen": 12610,
+     "oyKullanan": 7039,
+     "gecerliOy": 5513,
+     "katilim%": 55.8,
+     "AP": 1,
+     "CHP": 2308,
+     "CGP": 247,
+     "DEMP73": 172,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 246,
+     "TBP73": 0,
+     "Bağımsız": 604
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -36264,14 +36813,25 @@
     186,
     187
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1132,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 11,
+     "secmen": 3156,
+     "oyKullanan": 2526,
+     "gecerliOy": 2170,
+     "katilim%": 80.0,
+     "AP": 920,
+     "CHP": 1,
+     "CGP": 29,
+     "DEMP73": 88,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 1,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "cetvelDuzeltme": [
     {
      "sutun": 1,
@@ -38056,14 +38616,25 @@
     190,
     191
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1628,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 23,
+     "secmen": 7000,
+     "oyKullanan": 5000,
+     "gecerliOy": 3609,
+     "katilim%": 71.4,
+     "AP": 848,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 606,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 527,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Çumra",
    "kimlik": {
@@ -38697,14 +39268,25 @@
     190,
     191
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1512,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 17,
+     "secmen": 4140,
+     "oyKullanan": 3212,
+     "gecerliOy": 2856,
+     "katilim%": 77.6,
+     "AP": 777,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 567,
+     "MP62": null,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Ermenek",
    "kimlik": {
@@ -39159,14 +39741,25 @@
     190,
     191
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CGP",
-     "okunan": 1,
-     "duzeltilen": 1084,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 15,
+     "secmen": 4973,
+     "oyKullanan": 3987,
+     "gecerliOy": 3512,
+     "katilim%": 80.2,
+     "AP": 986,
+     "CHP": 878,
+     "CGP": 1,
+     "DEMP73": 88,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 476,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CGP",
    "ad": "Ilgın",
    "kimlik": {
@@ -39897,7 +40490,7 @@
    "katilim": 74.9,
    "gecerliOy": 737,
    "oy": {
-    "CHP": 505,
+    "CHP": 500,
     "AP": 232
    },
    "yuzde": {
@@ -39905,20 +40498,16 @@
     "CHP": 68.5
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 732,
+    "ocrDuzeltilmedi": [
+     "CHP"
+    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     192,
     193
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 500,
-     "duzeltilen": 505,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "CHP"
   },
@@ -40054,7 +40643,7 @@
    "katilim": 41.8,
    "gecerliOy": 2919,
    "oy": {
-    "DEMP73": 1195,
+    "DEMP73": 1105,
     "CHP": 1079,
     "AP": 316,
     "MSP": 206,
@@ -40068,20 +40657,15 @@
     "MSP": 7.1
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarsiz",
+    "partiToplami": 2829,
+    "ocrDuzeltilmedi": [
+     "DEMP73"
+    ]
    },
    "sayfa": [
     192,
     193
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 1105,
-     "duzeltilen": 1195,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "DEMP73",
    "ad": "Seydişehir",
@@ -40793,10 +41377,10 @@
    "katilim": 73.7,
    "gecerliOy": 2831,
    "oy": {
-    "AP": 1390,
     "DEMP73": 711,
     "CHP": 600,
-    "MSP": 130
+    "MSP": 130,
+    "AP": 1
    },
    "yuzde": {
     "AP": 49.1,
@@ -40805,22 +41389,17 @@
     "MSP": 4.6
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarsiz",
+    "partiToplami": 1442,
+    "ocrDuzeltilmedi": [
+     "AP"
+    ]
    },
    "sayfa": [
     194,
     195
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1390,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "kazanan": "AP",
+   "kazanan": "DEMP73",
    "ad": "Gediz",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -40972,14 +41551,25 @@
     194,
     195
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1237,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 16,
+     "secmen": 4734,
+     "oyKullanan": 3463,
+     "gecerliOy": 2003,
+     "katilim%": 73.2,
+     "AP": 1,
+     "CHP": 766,
+     "CGP": null,
+     "DEMP73": 0,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 0,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Simav",
    "kimlik": {
@@ -43983,14 +44573,25 @@
     198,
     199
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1185,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 14,
+     "secmen": 3616,
+     "oyKullanan": 2911,
+     "gecerliOy": 2455,
+     "katilim%": 80.5,
+     "AP": 1,
+     "CHP": 568,
+     "CGP": 0,
+     "DEMP73": 702,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -44019,14 +44620,25 @@
     198,
     199
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1136,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 11,
+     "secmen": 2714,
+     "oyKullanan": 2103,
+     "gecerliOy": 1955,
+     "katilim%": 77.5,
+     "AP": 1,
+     "CHP": 396,
+     "CGP": null,
+     "DEMP73": 0,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 423
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP"
   },
   {
@@ -44101,14 +44713,25 @@
     198,
     199
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MHP",
-     "okunan": 1,
-     "duzeltilen": 1815,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 118,
+     "secmen": 42647,
+     "oyKullanan": 22845,
+     "gecerliOy": 19199,
+     "katilim%": 53.6,
+     "AP": 6383,
+     "CHP": 4770,
+     "CGP": 56,
+     "DEMP73": 1131,
+     "MP62": 0,
+     "MHP": 1,
+     "MSP": 4912,
+     "TBP73": null,
+     "Bağımsız": 132
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Merkez",
    "kimlik": {
@@ -44592,14 +45215,25 @@
     198,
     199
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1578,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 11,
+     "secmen": 3848,
+     "oyKullanan": 2938,
+     "gecerliOy": 2640,
+     "katilim%": 76.4,
+     "AP": 1,
+     "CHP": 665,
+     "CGP": 0,
+     "DEMP73": 133,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 264,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Pazarcık",
    "kimlik": {
@@ -44877,45 +45511,26 @@
    "katilim": 74.3,
    "gecerliOy": 4040,
    "oy": {
-    "AP": 1566,
-    "DEMP73": 1244,
-    "CHP": 1063,
-    "Bağımsız": 167
+    "AP": 1,
+    "CHP": 1
    },
    "yuzde": {
     "AP": 38.8,
-    "CHP": 26.3,
-    "DEMP73": 30.8,
-    "Bağımsız": 4.1
+    "CHP": 26.3
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 2,
+    "yuzdeUyumsuz": [
+     "AP",
+     "CHP"
+    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     200,
     201
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "Bağımsız",
-     "okunan": null,
-     "duzeltilen": 167,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 18,
-     "secmen": 5442,
-     "oyKullanan": 4045,
-     "gecerliOy": 4040,
-     "katilim%": 74.3,
-     "AP": 1,
-     "CHP": 1
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP",
    "ad": "Cizre",
    "kimlik": {
@@ -44979,48 +45594,23 @@
    "katilim": 80.7,
    "gecerliOy": 953,
    "oy": {
-    "MHP": 475,
-    "CGP": 208,
     "CHP": 199,
-    "Bağımsız": 46,
     "AP": 25
    },
    "yuzde": {
     "AP": 2.6,
-    "CHP": 20.9,
-    "CGP": 21.8,
-    "MHP": 49.8,
-    "Bağımsız": 4.8
+    "CHP": 20.9
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 224,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     200,
     201
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "Bağımsız",
-     "okunan": null,
-     "duzeltilen": 46,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 5,
-     "secmen": 1261,
-     "oyKullanan": 1018,
-     "gecerliOy": 953,
-     "katilim%": 80.7,
-     "AP": 25,
-     "CHP": 199
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
-   "kazanan": "MHP",
+   "kazanan": "CHP",
    "ad": "Gercüş",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -45547,14 +46137,18 @@
     200,
     201
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1964,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 34,
+     "secmen": 11195,
+     "oyKullanan": 7187,
+     "gecerliOy": 6455,
+     "katilim%": 64.2,
+     "AP": 1,
+     "CHP": 4491
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -45761,42 +46355,21 @@
    "gecerliOy": 663,
    "oy": {
     "AP": 433,
-    "CHP": 189,
-    "DEMP73": 41
+    "CHP": 189
    },
    "yuzde": {
     "AP": 65.3,
-    "CHP": 28.5,
-    "DEMP73": 6.2
+    "CHP": 28.5
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 622,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     200,
     201
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": null,
-     "duzeltilen": 41,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 4,
-     "secmen": 782,
-     "oyKullanan": 736,
-     "gecerliOy": 663,
-     "katilim%": 94.1,
-     "AP": 433,
-     "CHP": 189
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP"
   },
   {
@@ -45810,7 +46383,7 @@
    "katilim": 84.7,
    "gecerliOy": 782,
    "oy": {
-    "AP": 466,
+    "AP": 666,
     "CHP": 316
    },
    "yuzde": {
@@ -45818,20 +46391,16 @@
     "CHP": 40.4
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 982,
+    "ocrDuzeltilmedi": [
+     "AP"
+    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     200,
     201
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 666,
-     "duzeltilen": 466,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "AP",
    "ad": "Datça",
@@ -46362,14 +46931,18 @@
     200,
     201
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1246,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 12,
+     "secmen": 3023,
+     "oyKullanan": 2464,
+     "gecerliOy": 2177,
+     "katilim%": 81.5,
+     "AP": 931,
+     "CHP": 1
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Ula",
    "kimlik": {
@@ -47112,28 +47685,37 @@
    "ustIlce": "Merkez",
    "sandik": 6,
    "secmen": 1731,
-   "oyKullanan": 1,
+   "oyKullanan": 1333,
    "katilim": 77.0,
-   "gecerliOy": 3331332,
+   "gecerliOy": 1332,
    "oy": {
-    "AP": 744
+    "AP": 744,
+    "MSP": 588
    },
    "yuzde": {
-    "AP": 55.9
+    "AP": 55.9,
+    "MSP": 44.1
    },
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 744,
-    "yuzdeUyumsuz": [
-     "AP"
-    ],
-    "katilimUyumsuz": true,
+    "durum": "tutarli",
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     202,
     203
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 1731,
+     "oyKullanan": 1,
+     "gecerliOy": 3331332,
+     "katilim%": 77.0,
+     "AP": 744,
+     "CHP": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "AP"
   },
   {
@@ -47998,8 +48580,8 @@
     "DEMP73": 9420,
     "CGP": 5493,
     "MSP": 2751,
-    "Bağımsız": 1869,
-    "MHP": 1096
+    "MHP": 1096,
+    "Bağımsız": 1
    },
    "yuzde": {
     "AP": 40.2,
@@ -48011,20 +48593,15 @@
     "Bağımsız": 3.1
    },
    "kontrol": {
-    "durum": "tutarli",
-    "katilimUyumsuz": true
+    "durum": "tutarsiz",
+    "partiToplami": 57991,
+    "ocrDuzeltilmedi": [
+     "Bağımsız"
+    ]
    },
    "sayfa": [
     204,
     205
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "Bağımsız",
-     "okunan": 1,
-     "duzeltilen": 1869,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "AP"
   },
@@ -48448,14 +49025,25 @@
     204,
     205
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CGP",
-     "okunan": 1,
-     "duzeltilen": 1780,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 58,
+     "secmen": 16920,
+     "oyKullanan": 10620,
+     "gecerliOy": 10517,
+     "katilim%": 62.8,
+     "AP": 7156,
+     "CHP": 907,
+     "CGP": 1,
+     "DEMP73": 257,
+     "MP62": 0,
+     "MHP": 417,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "225577→257",
     "22..44→2.4"
@@ -48596,14 +49184,25 @@
     204,
     205
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1174,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 12,
+     "secmen": 4361,
+     "oyKullanan": 3487,
+     "gecerliOy": 3142,
+     "katilim%": 80.0,
+     "AP": 1,
+     "CHP": 641,
+     "CGP": 417,
+     "DEMP73": 908,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 2
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "karakterDuzeltme": [
     "990088→908",
     "2288..99→28.9"
@@ -50874,14 +51473,25 @@
     206,
     207
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1095,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 15,
+     "secmen": 3309,
+     "oyKullanan": 2292,
+     "gecerliOy": 2211,
+     "katilim%": 69.3,
+     "AP": 797,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 319,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Ardeşen",
    "kimlik": {
@@ -51193,14 +51803,25 @@
     208,
     209
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1068,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 14,
+     "secmen": 3627,
+     "oyKullanan": 2411,
+     "gecerliOy": 2304,
+     "katilim%": 66.5,
+     "AP": 240,
+     "CHP": 1,
+     "CGP": 444,
+     "DEMP73": 290,
+     "MP62": null,
+     "MHP": 76,
+     "MSP": 131,
+     "TBP73": null,
+     "Bağımsız": 55
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Pazar",
    "kimlik": {
@@ -51544,14 +52165,25 @@
     208,
     209
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1184,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 18,
+     "secmen": 5419,
+     "oyKullanan": 3899,
+     "gecerliOy": 2845,
+     "katilim%": 72.0,
+     "AP": 1,
+     "CHP": 834,
+     "CGP": null,
+     "DEMP73": 675,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 152,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Akyazı",
    "kimlik": {
@@ -51694,14 +52326,25 @@
     208,
     209
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CGP",
-     "okunan": 1,
-     "duzeltilen": 1235,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 10,
+     "secmen": 3407,
+     "oyKullanan": 2855,
+     "gecerliOy": 2383,
+     "katilim%": 83.8,
+     "AP": 658,
+     "CHP": 329,
+     "CGP": 1,
+     "DEMP73": 161,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CGP",
    "ad": "Geyve",
    "kimlik": {
@@ -51887,14 +52530,25 @@
     208,
     209
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1108,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 13,
+     "secmen": 3758,
+     "oyKullanan": 2895,
+     "gecerliOy": 2454,
+     "katilim%": 77.0,
+     "AP": 733,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 490,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 123
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Karasu",
    "kimlik": {
@@ -51913,48 +52567,21 @@
    "katilim": 71.5,
    "gecerliOy": 493,
    "oy": {
-    "AP": 254,
-    "DEMP73": 239
+    "DEMP73": 710,
+    "AP": 254
    },
    "yuzde": {
-    "AP": 51.5,
-    "DEMP73": 48.5
+    "AP": 51.5
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 964
    },
    "sayfa": [
     208,
     209
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": null,
-     "duzeltilen": 239,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 3,
-     "secmen": 789,
-     "oyKullanan": 564,
-     "gecerliOy": 493,
-     "katilim%": 71.5,
-     "AP": 254,
-     "CHP": 0,
-     "CGP": null,
-     "DEMP73": 710,
-     "MP62": null,
-     "MHP": null,
-     "MSP": null,
-     "TBP73": null,
-     "Bağımsız": null
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
-   "kazanan": "AP"
+   "kazanan": "DEMP73"
   },
   {
    "tip": "belde",
@@ -52105,14 +52732,25 @@
     208,
     209
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1080,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 12,
+     "secmen": 3870,
+     "oyKullanan": 3098,
+     "gecerliOy": 2559,
+     "katilim%": 80.1,
+     "AP": 1,
+     "CHP": 426,
+     "CGP": null,
+     "DEMP73": 918,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 135,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Sapanca",
    "kimlik": {
@@ -52199,9 +52837,9 @@
     "AP": 7122,
     "DEMP73": 3055,
     "Bağımsız": 2131,
-    "MSP": 1665,
     "MHP": 517,
-    "CGP": 417
+    "CGP": 417,
+    "MSP": 1
    },
    "yuzde": {
     "AP": 31.0,
@@ -52213,19 +52851,15 @@
     "Bağımsız": 9.3
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 21313,
+    "ocrDuzeltilmedi": [
+     "MSP"
+    ]
    },
    "sayfa": [
     208,
     209
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": 1,
-     "duzeltilen": 1665,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "CHP",
    "ad": "Merkez",
@@ -53200,29 +53834,25 @@
    "katilim": 78.5,
    "gecerliOy": 2148,
    "oy": {
-    "AP": 1450,
-    "CHP": 698
+    "CHP": 698,
+    "AP": 1
    },
    "yuzde": {
     "AP": 67.5
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 699,
+    "ocrDuzeltilmedi": [
+     "AP"
+    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     210,
     211
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1450,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "kazanan": "AP",
+   "kazanan": "CHP",
    "ad": "Şırnak",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -54456,14 +55086,25 @@
     212,
     213
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1389,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 15,
+     "secmen": 3621,
+     "oyKullanan": 2376,
+     "gecerliOy": 2274,
+     "katilim%": 65.6,
+     "AP": 829,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 56,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Zara",
    "kimlik": {
@@ -54971,7 +55612,8 @@
    },
    "yuzde": {
     "AP": 42.7,
-    "CHP": 53.2
+    "CHP": 53.2,
+    "CGP": 4.1
    },
    "kontrol": {
     "durum": "tutarli"
@@ -54980,14 +55622,25 @@
     212,
     213
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1039,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 10,
+     "secmen": 2923,
+     "oyKullanan": 2244,
+     "gecerliOy": 1953,
+     "katilim%": 76.8,
+     "AP": 834,
+     "CHP": 1,
+     "CGP": 80,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Saray",
    "kimlik": {
@@ -55443,45 +56096,28 @@
    "ustIlce": "Erbaa",
    "sandik": 5,
    "secmen": 1163,
-   "oyKullanan": 1107,
+   "oyKullanan": 1,
    "katilim": 95.2,
-   "gecerliOy": 844,
+   "gecerliOy": 107844,
    "oy": {
-    "CHP": 446,
-    "MHP": 398
+    "CHP": 446
    },
    "yuzde": {
-    "CHP": 52.8,
-    "MHP": 47.2
+    "CHP": 52.8
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 446,
+    "yuzdeUyumsuz": [
+     "CHP"
+    ],
+    "katilimUyumsuz": true,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     214,
     215
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MHP",
-     "okunan": null,
-     "duzeltilen": 398,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 5,
-     "secmen": 1163,
-     "oyKullanan": 1,
-     "gecerliOy": 107844,
-     "katilim%": 95.2,
-     "AP": 0,
-     "CHP": 446
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "CHP"
   },
   {
@@ -55491,49 +56127,31 @@
    "ustIlce": "Erbaa",
    "sandik": 7,
    "secmen": 1857,
-   "oyKullanan": 1560,
+   "oyKullanan": 1,
    "katilim": 84.0,
-   "gecerliOy": 1375,
+   "gecerliOy": 5601,
    "oy": {
     "AP": 793,
-    "CHP": 380,
-    "Bağımsız": 107,
-    "DEMP73": 95
+    "CHP": 380
    },
    "yuzde": {
     "AP": 57.7,
-    "CHP": 27.6,
-    "DEMP73": 6.9,
-    "Bağımsız": 7.8
+    "CHP": 27.6
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 1173,
+    "yuzdeUyumsuz": [
+     "AP",
+     "CHP"
+    ],
+    "katilimUyumsuz": true,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     214,
     215
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": null,
-     "duzeltilen": 95,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 7,
-     "secmen": 1857,
-     "oyKullanan": 1,
-     "gecerliOy": 5601,
-     "katilim%": 84.0,
-     "AP": 793,
-     "CHP": 380
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "AP"
   },
   {
@@ -56313,32 +56931,35 @@
    "ustIlce": "Akçaabat",
    "sandik": 6,
    "secmen": 1821,
-   "oyKullanan": 1,
+   "oyKullanan": 1214,
    "katilim": 66.7,
-   "gecerliOy": 214514,
+   "gecerliOy": 514,
    "oy": {
-    "CHP": 214514
+    "CHP": 514
    },
    "yuzde": {
     "CHP": 100.0
    },
    "kontrol": {
     "durum": "tutarli",
-    "katilimUyumsuz": true,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     214,
     215
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 514,
-     "duzeltilen": 214514,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 1821,
+     "oyKullanan": 1,
+     "gecerliOy": 214514,
+     "katilim%": 66.7,
+     "AP": 0,
+     "CHP": 514
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP"
   },
   {
@@ -56426,47 +57047,31 @@
    "ustIlce": "Araklı",
    "sandik": 7,
    "secmen": 1715,
-   "oyKullanan": 1336,
+   "oyKullanan": 1,
    "katilim": 77.9,
-   "gecerliOy": 1209,
+   "gecerliOy": 3361,
    "oy": {
     "CHP": 603,
-    "AP": 529,
-    "MSP": 77
+    "AP": 529
    },
    "yuzde": {
     "AP": 43.8,
-    "CHP": 49.9,
-    "MSP": 6.4
+    "CHP": 49.9
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 1132,
+    "yuzdeUyumsuz": [
+     "AP",
+     "CHP"
+    ],
+    "katilimUyumsuz": true,
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     214,
     215
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "MSP",
-     "okunan": null,
-     "duzeltilen": 77,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 7,
-     "secmen": 1715,
-     "oyKullanan": 1,
-     "gecerliOy": 3361,
-     "katilim%": 77.9,
-     "AP": 529,
-     "CHP": 603
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "CHP",
    "ad": "Arsin",
    "kimlik": {
@@ -57042,14 +57647,25 @@
     216,
     217
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1024,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 12,
+     "secmen": 3822,
+     "oyKullanan": 2427,
+     "gecerliOy": 2085,
+     "katilim%": 63.5,
+     "AP": 1043,
+     "CHP": 1,
+     "CGP": 0,
+     "DEMP73": 0,
+     "MP62": 18,
+     "MHP": 0,
+     "MSP": 0,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Tonya",
    "kimlik": {
@@ -58007,14 +58623,25 @@
     218,
     219
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1092,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 41,
+     "secmen": 14754,
+     "oyKullanan": 3744,
+     "gecerliOy": 3744,
+     "katilim%": 25.4,
+     "AP": 1,
+     "CHP": 2652,
+     "CGP": 0,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": 0,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Siverek",
    "kimlik": {
@@ -58051,14 +58678,25 @@
     218,
     219
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1356,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 17,
+     "secmen": 5803,
+     "oyKullanan": 3573,
+     "gecerliOy": 3377,
+     "katilim%": 61.6,
+     "AP": 878,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 950,
+     "MP62": 0,
+     "MHP": null,
+     "MSP": 193,
+     "TBP73": 0,
+     "Bağımsız": 0
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Suruç",
    "kimlik": {
@@ -58195,14 +58833,25 @@
     218,
     219
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 5,
-     "duzeltilen": 5188,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 82,
+     "secmen": 24377,
+     "oyKullanan": 12434,
+     "gecerliOy": 9686,
+     "katilim%": 51.0,
+     "AP": 3962,
+     "CHP": 5,
+     "CGP": null,
+     "DEMP73": 525,
+     "MP62": 0,
+     "MHP": 0,
+     "MSP": 11,
+     "TBP73": 0,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -58237,14 +58886,25 @@
     218,
     219
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1160,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 10,
+     "secmen": 2851,
+     "oyKullanan": 2177,
+     "gecerliOy": 1921,
+     "katilim%": 76.4,
+     "AP": 1,
+     "CHP": 669,
+     "CGP": null,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": null,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": 92
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Banaz",
    "kimlik": {
@@ -58440,14 +59100,25 @@
     218,
     219
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1072,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 8,
+     "secmen": 2737,
+     "oyKullanan": 2137,
+     "gecerliOy": 2073,
+     "katilim%": 78.1,
+     "AP": 1,
+     "CHP": 958,
+     "CGP": 0,
+     "DEMP73": 43,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 0,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "AP",
    "ad": "Karahallı",
    "kimlik": {
@@ -58848,14 +59519,18 @@
     218,
     219
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1219,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 20,
+     "secmen": 6760,
+     "oyKullanan": 4740,
+     "gecerliOy": 3895,
+     "katilim%": 70.1,
+     "AP": 1,
+     "CHP": 2676
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Erciş",
    "kimlik": {
@@ -59134,14 +59809,25 @@
     218,
     219
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "DEMP73",
-     "okunan": 1,
-     "duzeltilen": 1426,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 49,
+     "secmen": 13399,
+     "oyKullanan": 7846,
+     "gecerliOy": 5706,
+     "katilim%": 58.6,
+     "AP": 442,
+     "CHP": 3023,
+     "CGP": 229,
+     "DEMP73": 1,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 586,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -59312,14 +59998,25 @@
     218,
     219
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1481,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 14,
+     "secmen": 3900,
+     "oyKullanan": 2966,
+     "gecerliOy": 2676,
+     "katilim%": 76.1,
+     "AP": 860,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": 263,
+     "MP62": null,
+     "MHP": 72,
+     "MSP": null,
+     "TBP73": null,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP",
    "ad": "Boğazlıyan",
    "kimlik": {
@@ -59765,7 +60462,7 @@
    "katilim": 78.3,
    "gecerliOy": 3166,
    "oy": {
-    "CHP": 1448,
+    "CHP": 1447,
     "AP": 1079,
     "DEMP73": 246,
     "MSP": 131,
@@ -59783,20 +60480,33 @@
     "Bağımsız": 2.3
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -1,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     220,
     221
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1448,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 17,
+     "secmen": 4816,
+     "oyKullanan": 3773,
+     "gecerliOy": 3166,
+     "katilim%": 78.3,
+     "AP": 1079,
+     "CHP": 1,
+     "CGP": 75,
+     "DEMP73": 246,
+     "MP62": 0,
+     "MHP": 114,
+     "MSP": 131,
+     "TBP73": 0,
+     "Bağımsız": 73
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
+   },
    "kazanan": "CHP",
    "ad": "Sorgun",
    "kimlik": {
@@ -60188,14 +60898,25 @@
     220,
     221
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "CHP",
-     "okunan": 1,
-     "duzeltilen": 1073,
-     "yontem": "toplam + yüzde"
-    }
-   ],
+   "yapisalOkuma": {
+    "sutunOkumasi": {
+     "sandik": 13,
+     "secmen": 4808,
+     "oyKullanan": 3429,
+     "gecerliOy": 2257,
+     "katilim%": 71.3,
+     "AP": 870,
+     "CHP": 1,
+     "CGP": null,
+     "DEMP73": null,
+     "MP62": null,
+     "MHP": null,
+     "MSP": 314,
+     "TBP73": 0,
+     "Bağımsız": null
+    },
+    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
+   },
    "kazanan": "CHP"
   },
   {
@@ -60210,42 +60931,24 @@
    "gecerliOy": 4989,
    "oy": {
     "CHP": 3358,
-    "AP": 1521,
-    "MHP": 110
+    "AP": 1
    },
    "yuzde": {
     "AP": 30.5,
-    "CHP": 67.3,
-    "MHP": 2.2
+    "CHP": 67.3
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
+    "partiToplami": 3359,
+    "yuzdeUyumsuz": [
+     "AP"
+    ],
     "sagSayfaEslesmedi": true
    },
    "sayfa": [
     220,
     221
    ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": null,
-     "duzeltilen": 1521,
-     "yontem": "toplam + yüzde"
-    }
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 27,
-     "secmen": 9194,
-     "oyKullanan": 6296,
-     "gecerliOy": 4989,
-     "katilim%": 68.5,
-     "AP": 1,
-     "CHP": 3358
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
-   },
    "kazanan": "CHP"
   },
   {
@@ -60831,9 +61534,9 @@
    "gecerliOy": 4083,
    "oy": {
     "CHP": 2476,
-    "AP": 1353,
     "MSP": 170,
-    "DEMP73": 84
+    "DEMP73": 84,
+    "AP": 1
    },
    "yuzde": {
     "AP": 33.1,
@@ -60842,19 +61545,15 @@
     "MSP": 4.2
    },
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 2731,
+    "ocrDuzeltilmedi": [
+     "AP"
+    ]
    },
    "sayfa": [
     220,
     221
-   ],
-   "ocrDuzeltme": [
-    {
-     "alan": "AP",
-     "okunan": 1,
-     "duzeltilen": 1353,
-     "yontem": "toplam + yüzde"
-    }
    ],
    "kazanan": "CHP",
    "ad": "Safranbolu",

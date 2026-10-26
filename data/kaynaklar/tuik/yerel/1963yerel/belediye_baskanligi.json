@@ -29,12 +29,12 @@
   "il": 63,
   "ilce": 467,
   "belde": 623,
-  "tutarli": 241,
-  "toplamTutmuyor": 223,
-  "tutarsiz": 912,
+  "tutarli": 242,
+  "toplamTutmuyor": 224,
+  "tutarsiz": 911,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 4,
-  "goruntudenOkunan": 279,
+  "goruntudenOkunan": 295,
   "adlandirilan": 0,
   "eksikIl": [
    18,
@@ -201,7 +201,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     10,
@@ -1837,7 +1842,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     86,
@@ -5843,25 +5853,42 @@
    "adKaynakta": "Kızıska Bucağı",
    "ustIlce": "Manyas",
    "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1230,
+   "oyKullanan": 920,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 838,
+   "oy": {
+    "AP": 604,
+    "CHP": 171,
+    "Bağımsız": 3
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -60,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     266,
     267
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1230,
-    "oyKullanan": 920
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 4,
+     "secmen": 1230,
+     "oyKullanan": 920,
+     "gecerliOy": 838,
+     "AP": 604,
+     "CHP": 171,
+     "CKMP": null,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": null,
+     "Bağımsız": 3
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "ilce",
@@ -5895,41 +5922,25 @@
    "adKaynakta": "Sındırgı",
    "ustIlce": null,
    "sandik": 10,
-   "secmen": 2803,
-   "oyKullanan": 2403,
+   "secmen": null,
+   "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 1115,
-   "oy": {
-    "AP": 560,
-    "CHP": 529
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -26,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     266,
     267
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 10,
-     "secmen": 2803,
-     "oyKullanan": 2403,
-     "gecerliOy": 1115,
-     "AP": 560,
-     "CHP": 529,
-     "CKMP": null,
-     "MP62": null,
-     "TİP": null,
-     "YTP61": null,
-     "Bağımsız": null
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
-   "kazanan": "AP"
+   "kazanan": null,
+   "secmenOkunan": {
+    "secmen": 2803,
+    "oyKullanan": 2403
+   }
   },
   {
    "tip": "ilce",
@@ -6304,26 +6315,44 @@
    "adKaynakta": "TOPT, A.MI",
    "ustIlce": "Söğüt",
    "sandik": 25,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 6039,
+   "oyKullanan": 4670,
    "katilim": null,
-   "gecerliOy": null,
+   "gecerliOy": 4332,
    "oy": {
-    "CHP": 11
+    "CHP": 1684,
+    "AP": 813,
+    "Bağımsız": 810,
+    "MP62": 491,
+    "YTP61": 334
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi"
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -200,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     326,
     327
    ],
-   "kazanan": "CHP",
-   "secmenOkunan": {
-    "secmen": 6039,
-    "oyKullanan": 4670
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 25,
+     "secmen": 6039,
+     "oyKullanan": 4670,
+     "gecerliOy": 4332,
+     "AP": 813,
+     "CHP": 1684,
+     "CKMP": null,
+     "MP62": 491,
+     "TİP": 0,
+     "YTP61": 334,
+     "Bağımsız": 810
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
   },
   {
    "tip": "il",
@@ -6331,8 +6360,34 @@
    "adKaynakta": "Bingöl",
    "ustIlce": null,
    "sandik": 12,
-   "secmen": 3321,
-   "oyKullanan": 2469,
+   "secmen": null,
+   "oyKullanan": null,
+   "katilim": null,
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
+   "kontrol": {
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
+   },
+   "sayfa": [
+    326,
+    327
+   ],
+   "kazanan": null,
+   "secmenOkunan": {
+    "secmen": 3321,
+    "oyKullanan": 2469
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 12,
+   "adKaynakta": "Genç",
+   "ustIlce": null,
+   "sandik": 6,
+   "secmen": 1016,
+   "oyKullanan": 843,
    "katilim": null,
    "gecerliOy": 784,
    "oy": {
@@ -6352,11 +6407,11 @@
   {
    "tip": "ilce",
    "plaka": 12,
-   "adKaynakta": "Genç",
+   "adKaynakta": "Karlıova",
    "ustIlce": null,
-   "sandik": 6,
-   "secmen": 1016,
-   "oyKullanan": 843,
+   "sandik": 2,
+   "secmen": 507,
+   "oyKullanan": 406,
    "katilim": null,
    "gecerliOy": 341,
    "oy": {
@@ -6375,54 +6430,27 @@
   {
    "tip": "ilce",
    "plaka": 12,
-   "adKaynakta": "Karlıova",
-   "ustIlce": null,
-   "sandik": 2,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    326,
-    327
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 507,
-    "oyKullanan": 406
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 12,
    "adKaynakta": "Kığı",
    "ustIlce": null,
    "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 648,
+   "oyKullanan": 460,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 430,
+   "oy": {
+    "YTP61": 205,
+    "CHP": 191,
+    "AP": 34
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     326,
     327
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 648,
-    "oyKullanan": 460
-   }
+   "kazanan": "YTP61"
   },
   {
    "tip": "ilce",
@@ -6430,27 +6458,42 @@
    "adKaynakta": "Solhan",
    "ustIlce": null,
    "sandik": 2,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 547,
+   "oyKullanan": 492,
    "katilim": null,
-   "gecerliOy": null,
+   "gecerliOy": 477,
    "oy": {
-    "YTP61": 1,
-    "Bağımsız": 1
+    "CHP": 167,
+    "MP62": 121,
+    "Bağımsız": 39
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi"
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -150,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     326,
     327
    ],
-   "kazanan": "YTP61",
-   "secmenOkunan": {
-    "secmen": 547,
-    "oyKullanan": 492
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 2,
+     "secmen": 547,
+     "oyKullanan": 492,
+     "gecerliOy": 477,
+     "AP": null,
+     "CHP": 167,
+     "CKMP": null,
+     "MP62": 121,
+     "TİP": 0,
+     "YTP61": null,
+     "Bağımsız": 39
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
   },
   {
    "tip": "belde",
@@ -8240,25 +8283,42 @@
    "adKaynakta": "BELEDİYELER",
    "ustIlce": "Yenişehir",
    "sandik": 137,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 42513,
+   "oyKullanan": 30851,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 28733,
+   "oy": {
+    "AP": 16194,
+    "CHP": 8646,
+    "Bağımsız": 3410
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -483,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     442,
     443
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 42513,
-    "oyKullanan": 30851
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 137,
+     "secmen": 42513,
+     "oyKullanan": 30851,
+     "gecerliOy": 28733,
+     "AP": 16194,
+     "CHP": 8646,
+     "CKMP": null,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": null,
+     "Bağımsız": 3410
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "il",
@@ -8266,25 +8326,40 @@
    "adKaynakta": "Çanakkale",
    "ustIlce": null,
    "sandik": 26,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 8560,
+   "oyKullanan": 5552,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 5152,
+   "oy": {
+    "AP": 2842,
+    "CHP": 1966,
+    "Bağımsız": 344
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     442,
     443
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 8560,
-    "oyKullanan": 5552
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 26,
+     "secmen": 8560,
+     "oyKullanan": 5552,
+     "gecerliOy": 5152,
+     "AP": 2842,
+     "CHP": 1966,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": null,
+     "YTP61": 0,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -8321,48 +8396,6 @@
    "secmen": 2401,
    "oyKullanan": 1877,
    "katilim": null,
-   "gecerliOy": 907,
-   "oy": {
-    "AP": 441,
-    "CHP": 423
-   },
-   "yuzde": {},
-   "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -43,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
-   },
-   "sayfa": [
-    442,
-    443
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 7,
-     "secmen": 2401,
-     "oyKullanan": 1877,
-     "gecerliOy": 907,
-     "AP": 441,
-     "CHP": 423,
-     "CKMP": null,
-     "MP62": 0,
-     "TİP": null,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
-   "kazanan": "AP"
-  },
-  {
-   "tip": "ilce",
-   "plaka": 17,
-   "adKaynakta": "Biga",
-   "ustIlce": null,
-   "sandik": 16,
-   "secmen": 5683,
-   "oyKullanan": 3282,
-   "katilim": null,
    "gecerliOy": 1736,
    "oy": {
     "Bağımsız": 850,
@@ -8381,9 +8414,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 16,
-     "secmen": 5683,
-     "oyKullanan": 3282,
+     "sandik": 7,
+     "secmen": 2401,
+     "oyKullanan": 1877,
      "gecerliOy": 1736,
      "AP": 400,
      "CHP": 467,
@@ -8398,30 +8431,53 @@
    "kazanan": "Bağımsız"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 17,
-   "adKaynakta": "Dimetoko B. M",
-   "ustIlce": "Biga",
-   "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
+   "adKaynakta": "Biga",
+   "ustIlce": null,
+   "sandik": 16,
+   "secmen": 5683,
+   "oyKullanan": 3282,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 3018,
+   "oy": {
+    "AP": 2058,
+    "CHP": 585,
+    "Bağımsız": 375
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     442,
     443
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1366,
-    "oyKullanan": 1043
-   }
+   "kazanan": "AP"
+  },
+  {
+   "tip": "belde",
+   "plaka": 17,
+   "adKaynakta": "Dimetoko B. M",
+   "ustIlce": "Biga",
+   "sandik": 4,
+   "secmen": 1366,
+   "oyKullanan": 1043,
+   "katilim": null,
+   "gecerliOy": 973,
+   "oy": {
+    "AP": 647,
+    "Bağımsız": 326
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    442,
+    443
+   ],
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -8432,10 +8488,11 @@
    "secmen": 1800,
    "oyKullanan": 1422,
    "katilim": null,
-   "gecerliOy": 973,
+   "gecerliOy": 1328,
    "oy": {
-    "AP": 647,
-    "Bağımsız": 326
+    "AP": 901,
+    "Bağımsız": 359,
+    "CHP": 68
    },
    "yuzde": {},
    "kontrol": {
@@ -8479,40 +8536,25 @@
    "adKaynakta": "• •",
    "ustIlce": "oBzcaada",
    "sandik": 7,
-   "secmen": 2329,
-   "oyKullanan": 1912,
+   "secmen": null,
+   "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 650,
-   "oy": {
-    "Bağımsız": 336
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -314,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     442,
     443
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 7,
-     "secmen": 2329,
-     "oyKullanan": 1912,
-     "gecerliOy": 650,
-     "AP": 0,
-     "CHP": 0,
-     "CKMP": null,
-     "MP62": 0,
-     "TİP": 0,
-     "YTP61": null,
-     "Bağımsız": 336
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
-   "kazanan": "Bağımsız"
+   "kazanan": null,
+   "secmenOkunan": {
+    "secmen": 2329,
+    "oyKullanan": 1912
+   }
   },
   {
    "tip": "ilce",
@@ -8546,34 +8588,8 @@
    "adKaynakta": "Ezine",
    "ustIlce": null,
    "sandik": 10,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    442,
-    443
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 2978,
-    "oyKullanan": 2331
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 17,
-   "adKaynakta": "Gelibolu",
-   "ustIlce": null,
-   "sandik": 19,
-   "secmen": 5405,
-   "oyKullanan": 3985,
+   "secmen": 2978,
+   "oyKullanan": 2331,
    "katilim": null,
    "gecerliOy": 2211,
    "oy": {
@@ -8593,9 +8609,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 19,
-     "secmen": 5405,
-     "oyKullanan": 3985,
+     "sandik": 10,
+     "secmen": 2978,
+     "oyKullanan": 2331,
      "gecerliOy": 2211,
      "AP": 1478,
      "CHP": 620,
@@ -8610,15 +8626,15 @@
    "kazanan": "AP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 17,
-   "adKaynakta": "Bolayır B. M",
-   "ustIlce": "Gelibolu",
-   "sandik": 3,
-   "secmen": 847,
-   "oyKullanan": 707,
+   "adKaynakta": "Gelibolu",
+   "ustIlce": null,
+   "sandik": 19,
+   "secmen": 5405,
+   "oyKullanan": 3985,
    "katilim": null,
-   "gecerliOy": 689,
+   "gecerliOy": 3689,
    "oy": {
     "AP": 2163,
     "CHP": 1382,
@@ -8626,23 +8642,38 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 3689
+    "durum": "tutarli"
    },
    "sayfa": [
     442,
     443
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 19,
+     "secmen": 5405,
+     "oyKullanan": 3985,
+     "gecerliOy": 689,
+     "AP": 2163,
+     "CHP": 1382,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": null,
+     "YTP61": 0,
+     "Bağımsız": 144
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
    "tip": "belde",
    "plaka": 17,
-   "adKaynakta": "Evrese B.M",
+   "adKaynakta": "Bolayır B. M",
    "ustIlce": "Gelibolu",
-   "sandik": 4,
-   "secmen": 1009,
-   "oyKullanan": 910,
+   "sandik": 3,
+   "secmen": 847,
+   "oyKullanan": 707,
    "katilim": null,
    "gecerliOy": 637,
    "oy": {
@@ -8661,13 +8692,13 @@
    "kazanan": "AP"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 17,
-   "adKaynakta": "îmroz",
-   "ustIlce": null,
+   "adKaynakta": "Evrese B.M",
+   "ustIlce": "Gelibolu",
    "sandik": 4,
-   "secmen": 1123,
-   "oyKullanan": 949,
+   "secmen": 1009,
+   "oyKullanan": 910,
    "katilim": null,
    "gecerliOy": 870,
    "oy": {
@@ -8687,11 +8718,11 @@
   {
    "tip": "ilce",
    "plaka": 17,
-   "adKaynakta": "Lapseki",
+   "adKaynakta": "îmroz",
    "ustIlce": null,
-   "sandik": 6,
-   "secmen": 1638,
-   "oyKullanan": 1214,
+   "sandik": 4,
+   "secmen": 1123,
+   "oyKullanan": 949,
    "katilim": null,
    "gecerliOy": 918,
    "oy": {
@@ -8708,9 +8739,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 6,
-     "secmen": 1638,
-     "oyKullanan": 1214,
+     "sandik": 4,
+     "secmen": 1123,
+     "oyKullanan": 949,
      "gecerliOy": 918,
      "AP": 486,
      "CHP": 0,
@@ -8725,13 +8756,13 @@
    "kazanan": "AP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 17,
-   "adKaynakta": "Umurbey B. M",
-   "ustIlce": "Lapseki",
-   "sandik": 5,
-   "secmen": 1336,
-   "oyKullanan": 1097,
+   "adKaynakta": "Lapseki",
+   "ustIlce": null,
+   "sandik": 6,
+   "secmen": 1638,
+   "oyKullanan": 1214,
    "katilim": null,
    "gecerliOy": 972,
    "oy": {
@@ -8751,11 +8782,11 @@
   {
    "tip": "belde",
    "plaka": 17,
-   "adKaynakta": "Çardak Köyü",
+   "adKaynakta": "Umurbey B. M",
    "ustIlce": "Lapseki",
    "sandik": 5,
-   "secmen": 1410,
-   "oyKullanan": 1028,
+   "secmen": 1336,
+   "oyKullanan": 1097,
    "katilim": null,
    "gecerliOy": 997,
    "oy": {
@@ -8775,8 +8806,8 @@
    "goruntuOkuma": {
     "metinKatmani": {
      "sandik": 5,
-     "secmen": 1410,
-     "oyKullanan": 1028,
+     "secmen": 1336,
+     "oyKullanan": 1097,
      "gecerliOy": 997,
      "AP": 539,
      "CHP": 441,
@@ -8791,30 +8822,53 @@
    "kazanan": "AP"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 17,
-   "adKaynakta": "Yenice",
-   "ustIlce": null,
-   "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "adKaynakta": "Çardak Köyü",
+   "ustIlce": "Lapseki",
+   "sandik": 5,
+   "secmen": 1410,
+   "oyKullanan": 1028,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 922,
+   "oy": {
+    "AP": 699,
+    "CHP": 223
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     442,
     443
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1060,
-    "oyKullanan": 892
-   }
+   "kazanan": "AP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 17,
+   "adKaynakta": "Yenice",
+   "ustIlce": null,
+   "sandik": 3,
+   "secmen": 1060,
+   "oyKullanan": 892,
+   "katilim": null,
+   "gecerliOy": 831,
+   "oy": {
+    "AP": 414,
+    "CHP": 307
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarsiz",
+    "partiToplami": 721
+   },
+   "sayfa": [
+    442,
+    443
+   ],
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -9703,25 +9757,23 @@
    "adKaynakta": "Denizli",
    "ustIlce": null,
    "sandik": 68,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 20564,
+   "oyKullanan": 15632,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 14316,
+   "oy": {
+    "AP": 8182,
+    "CHP": 6134
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 20564,
-    "oyKullanan": 15632
-   }
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -9729,34 +9781,8 @@
    "adKaynakta": "Başkarcı",
    "ustIlce": null,
    "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    526,
-    527
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 995,
-    "oyKullanan": 918
-   }
-  },
-  {
-   "tip": "belde",
-   "plaka": 20,
-   "adKaynakta": "Honaz",
-   "ustIlce": null,
-   "sandik": 6,
-   "secmen": 2059,
-   "oyKullanan": 1616,
+   "secmen": 995,
+   "oyKullanan": 918,
    "katilim": null,
    "gecerliOy": 811,
    "oy": {
@@ -9774,13 +9800,13 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Acıpayam",
+   "adKaynakta": "Honaz",
    "ustIlce": null,
-   "sandik": 7,
-   "secmen": 1968,
-   "oyKullanan": 1610,
+   "sandik": 6,
+   "secmen": 2059,
+   "oyKullanan": 1616,
    "katilim": null,
    "gecerliOy": 1346,
    "oy": {
@@ -9799,9 +9825,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 7,
-     "secmen": 1968,
-     "oyKullanan": 1610,
+     "sandik": 6,
+     "secmen": 2059,
+     "oyKullanan": 1616,
      "gecerliOy": 1346,
      "AP": 752,
      "CHP": 548,
@@ -9816,13 +9842,13 @@
    "kazanan": "AP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 20,
-   "adKaynakta": "Akalan",
-   "ustIlce": "Acıpayam",
-   "sandik": 5,
-   "secmen": null,
-   "oyKullanan": null,
+   "adKaynakta": "Acıpayam",
+   "ustIlce": null,
+   "sandik": 7,
+   "secmen": 1968,
+   "oyKullanan": 1610,
    "katilim": null,
    "gecerliOy": 1544,
    "oy": {
@@ -9841,9 +9867,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 5,
-     "secmen": null,
-     "oyKullanan": null,
+     "sandik": 7,
+     "secmen": 1968,
+     "oyKullanan": 1610,
      "gecerliOy": 1544,
      "AP": 683,
      "CHP": 789,
@@ -9860,37 +9886,58 @@
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Darıvelen",
+   "adKaynakta": "Akalan",
    "ustIlce": "Acıpayam",
-   "sandik": 4,
+   "sandik": 5,
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 978,
+   "oy": {
+    "AP": 537,
+    "Bağımsız": 401
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -40,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1000,
-    "oyKullanan": 851
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 5,
+     "secmen": null,
+     "oyKullanan": null,
+     "gecerliOy": 978,
+     "AP": 537,
+     "CHP": 0,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": null,
+     "YTP61": 0,
+     "Bağımsız": 401
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Kızılhisar",
+   "adKaynakta": "Darıvelen",
    "ustIlce": "Acıpayam",
-   "sandik": 14,
-   "secmen": 4104,
-   "oyKullanan": 3310,
+   "sandik": 4,
+   "secmen": 1000,
+   "oyKullanan": 851,
    "katilim": null,
    "gecerliOy": 794,
    "oy": {
@@ -9912,37 +9959,53 @@
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Yatağan",
+   "adKaynakta": "Kızılhisar",
    "ustIlce": "Acıpayam",
-   "sandik": 5,
-   "secmen": null,
-   "oyKullanan": null,
+   "sandik": 14,
+   "secmen": 4104,
+   "oyKullanan": 3310,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 3079,
+   "oy": {
+    "CHP": 1636,
+    "AP": 1360
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -83,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1614,
-    "oyKullanan": 1378
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 14,
+     "secmen": 4104,
+     "oyKullanan": 3310,
+     "gecerliOy": 3079,
+     "AP": 1360,
+     "CHP": 1636,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": null,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
   },
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Yeşiyuva",
+   "adKaynakta": "Yatağan",
    "ustIlce": "Acıpayam",
-   "sandik": 10,
-   "secmen": 2358,
-   "oyKullanan": 1939,
+   "sandik": 5,
+   "secmen": 1614,
+   "oyKullanan": 1378,
    "katilim": null,
    "gecerliOy": 1314,
    "oy": {
@@ -9962,9 +10025,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 10,
-     "secmen": 2358,
-     "oyKullanan": 1939,
+     "sandik": 5,
+     "secmen": 1614,
+     "oyKullanan": 1378,
      "gecerliOy": 1314,
      "AP": 965,
      "CHP": 4,
@@ -9979,13 +10042,13 @@
    "kazanan": "AP"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Buldan",
-   "ustIlce": null,
-   "sandik": 19,
-   "secmen": 5365,
-   "oyKullanan": 4624,
+   "adKaynakta": "Yeşiyuva",
+   "ustIlce": "Acıpayam",
+   "sandik": 10,
+   "secmen": 2358,
+   "oyKullanan": 1939,
    "katilim": null,
    "gecerliOy": 1858,
    "oy": {
@@ -10004,9 +10067,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 19,
-     "secmen": 5365,
-     "oyKullanan": 4624,
+     "sandik": 10,
+     "secmen": 2358,
+     "oyKullanan": 1939,
      "gecerliOy": 1858,
      "AP": 1107,
      "CHP": 0,
@@ -10021,39 +10084,55 @@
    "kazanan": "AP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 20,
-   "adKaynakta": "Çal tlcesi",
-   "ustIlce": "Buldan",
-   "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
+   "adKaynakta": "Buldan",
+   "ustIlce": null,
+   "sandik": 19,
+   "secmen": 5365,
+   "oyKullanan": 4624,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 4377,
+   "oy": {
+    "AP": 2626,
+    "CHP": 1681
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -70,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1521,
-    "oyKullanan": 1296
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 19,
+     "secmen": 5365,
+     "oyKullanan": 4624,
+     "gecerliOy": 4377,
+     "AP": 2626,
+     "CHP": 1681,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Akkent",
+   "adKaynakta": "Çal tlcesi",
    "ustIlce": "Buldan",
-   "sandik": 5,
-   "secmen": 1889,
-   "oyKullanan": 1608,
+   "sandik": 4,
+   "secmen": 1521,
+   "oyKullanan": 1296,
    "katilim": null,
    "gecerliOy": 1163,
    "oy": {
@@ -10072,9 +10151,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 5,
-     "secmen": 1889,
-     "oyKullanan": 1608,
+     "sandik": 4,
+     "secmen": 1521,
+     "oyKullanan": 1296,
      "gecerliOy": 1163,
      "AP": 537,
      "CHP": 637,
@@ -10091,11 +10170,11 @@
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Bekilli",
+   "adKaynakta": "Akkent",
    "ustIlce": "Buldan",
-   "sandik": 8,
-   "secmen": 2886,
-   "oyKullanan": 2554,
+   "sandik": 5,
+   "secmen": 1889,
+   "oyKullanan": 1608,
    "katilim": null,
    "gecerliOy": 1512,
    "oy": {
@@ -10115,9 +10194,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 8,
-     "secmen": 2886,
-     "oyKullanan": 2554,
+     "sandik": 5,
+     "secmen": 1889,
+     "oyKullanan": 1608,
      "gecerliOy": 1512,
      "AP": 549,
      "CHP": 823,
@@ -10134,37 +10213,53 @@
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Boğaziçi",
+   "adKaynakta": "Bekilli",
    "ustIlce": "Buldan",
-   "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "sandik": 8,
+   "secmen": 2886,
+   "oyKullanan": 2554,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 2542,
+   "oy": {
+    "AP": 1255,
+    "CHP": 1176
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -111,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1027,
-    "oyKullanan": 883
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 8,
+     "secmen": 2886,
+     "oyKullanan": 2554,
+     "gecerliOy": 2542,
+     "AP": 1255,
+     "CHP": 1176,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": null,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Dedeköy",
+   "adKaynakta": "Boğaziçi",
    "ustIlce": "Buldan",
-   "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
+   "sandik": 3,
+   "secmen": 1027,
+   "oyKullanan": 883,
    "katilim": null,
    "gecerliOy": 821,
    "oy": {
@@ -10184,9 +10279,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 4,
-     "secmen": 1424,
-     "oyKullanan": null,
+     "sandik": 3,
+     "secmen": 1027,
+     "oyKullanan": 883,
      "gecerliOy": 821,
      "AP": 115,
      "CHP": 387,
@@ -10198,7 +10293,55 @@
     },
     "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
    },
-   "kazanan": "CHP",
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "belde",
+   "plaka": 20,
+   "adKaynakta": "Dedeköy",
+   "ustIlce": "Buldan",
+   "sandik": 4,
+   "secmen": null,
+   "oyKullanan": null,
+   "katilim": null,
+   "gecerliOy": 1161,
+   "oy": {
+    "Bağımsız": 553,
+    "AP": 429,
+    "CHP": 169
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -10,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
+   },
+   "sayfa": [
+    526,
+    527
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 4,
+     "secmen": 1424,
+     "oyKullanan": null,
+     "gecerliOy": 1161,
+     "AP": 429,
+     "CHP": 169,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 553
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "Bağımsız",
    "secmenOkunan": {
     "secmen": 1424,
     "oyKullanan": null
@@ -10214,17 +10357,18 @@
    "oyKullanan": null,
    "katilim": null,
    "gecerliOy": null,
-   "oy": {},
+   "oy": {
+    "AP": 11
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "gecerliOyOkunamadi"
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
+   "kazanan": "AP",
    "secmenOkunan": {
     "secmen": 1059,
     "oyKullanan": 987
@@ -10236,34 +10380,8 @@
    "adKaynakta": "Hançalar",
    "ustIlce": "Buldan",
    "sandik": 5,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    526,
-    527
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1529,
-    "oyKullanan": 1295
-   }
-  },
-  {
-   "tip": "belde",
-   "plaka": 20,
-   "adKaynakta": "Isabey",
-   "ustIlce": "Buldan",
-   "sandik": 5,
-   "secmen": 1471,
-   "oyKullanan": 1284,
+   "secmen": 1529,
+   "oyKullanan": 1295,
    "katilim": null,
    "gecerliOy": 1248,
    "oy": {
@@ -10284,8 +10402,8 @@
    "goruntuOkuma": {
     "metinKatmani": {
      "sandik": 5,
-     "secmen": 1471,
-     "oyKullanan": 1284,
+     "secmen": 1529,
+     "oyKullanan": 1295,
      "gecerliOy": 1248,
      "AP": 736,
      "CHP": 443,
@@ -10302,37 +10420,53 @@
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Ortaköy",
+   "adKaynakta": "Isabey",
    "ustIlce": "Buldan",
-   "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
+   "sandik": 5,
+   "secmen": 1471,
+   "oyKullanan": 1284,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1150,
+   "oy": {
+    "CHP": 629,
+    "AP": 473
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -48,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1201,
-    "oyKullanan": 1092
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 5,
+     "secmen": 1471,
+     "oyKullanan": 1284,
+     "gecerliOy": 1150,
+     "AP": 473,
+     "CHP": 629,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
   },
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Süller",
+   "adKaynakta": "Ortaköy",
    "ustIlce": "Buldan",
    "sandik": 4,
-   "secmen": 1529,
-   "oyKullanan": 1281,
+   "secmen": 1201,
+   "oyKullanan": 1092,
    "katilim": null,
    "gecerliOy": 1028,
    "oy": {
@@ -10353,8 +10487,8 @@
    "goruntuOkuma": {
     "metinKatmani": {
      "sandik": 4,
-     "secmen": 1529,
-     "oyKullanan": 1281,
+     "secmen": 1201,
+     "oyKullanan": 1092,
      "gecerliOy": 1028,
      "AP": 430,
      "CHP": 441,
@@ -10369,39 +10503,38 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "Çameli",
-   "ustIlce": null,
+   "adKaynakta": "Süller",
+   "ustIlce": "Buldan",
    "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1529,
+   "oyKullanan": 1281,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1182,
+   "oy": {
+    "CHP": 646,
+    "AP": 480
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 1126
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 4735,
-    "oyKullanan": 610
-   }
+   "kazanan": "CHP"
   },
   {
    "tip": "ilce",
    "plaka": 20,
-   "adKaynakta": "Çardak",
+   "adKaynakta": "Çameli",
    "ustIlce": null,
-   "sandik": 3,
-   "secmen": 804,
-   "oyKullanan": 702,
+   "sandik": 4,
+   "secmen": 4735,
+   "oyKullanan": 610,
    "katilim": null,
    "gecerliOy": 590,
    "oy": {
@@ -10419,39 +10552,55 @@
    "kazanan": "AP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 20,
-   "adKaynakta": "Bozkurt",
-   "ustIlce": "Çardak",
+   "adKaynakta": "Çardak",
+   "ustIlce": null,
    "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 804,
+   "oyKullanan": 702,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 673,
+   "oy": {
+    "AP": 356,
+    "CHP": 288
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -29,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     526,
     527
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 763,
-    "oyKullanan": 651
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 3,
+     "secmen": 804,
+     "oyKullanan": 702,
+     "gecerliOy": 673,
+     "AP": 356,
+     "CHP": 288,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
    "plaka": 20,
-   "adKaynakta": "İnceler",
+   "adKaynakta": "Bozkurt",
    "ustIlce": "Çardak",
-   "sandik": 4,
-   "secmen": 1138,
-   "oyKullanan": 881,
+   "sandik": 3,
+   "secmen": 763,
+   "oyKullanan": 651,
    "katilim": null,
    "gecerliOy": 634,
    "oy": {
@@ -10470,15 +10619,57 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 4,
-     "secmen": 1138,
-     "oyKullanan": 881,
+     "sandik": 3,
+     "secmen": 763,
+     "oyKullanan": 651,
      "gecerliOy": 634,
      "AP": 300,
      "CHP": 319,
      "CKMP": null,
      "MP62": 0,
      "TİP": null,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "belde",
+   "plaka": 20,
+   "adKaynakta": "İnceler",
+   "ustIlce": "Çardak",
+   "sandik": 4,
+   "secmen": 1138,
+   "oyKullanan": 881,
+   "katilim": null,
+   "gecerliOy": 810,
+   "oy": {
+    "CHP": 404,
+    "AP": 367
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -39,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+   },
+   "sayfa": [
+    526,
+    527
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 4,
+     "secmen": 1138,
+     "oyKullanan": 881,
+     "gecerliOy": 810,
+     "AP": 367,
+     "CHP": 404,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": 0,
      "YTP61": 0,
      "Bağımsız": 0
     },
@@ -10774,7 +10965,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     528,
@@ -11919,25 +12115,23 @@
    "adKaynakta": "ELAZIĞ",
    "ustIlce": null,
    "sandik": 70,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 25848,
+   "oyKullanan": 16129,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 14750,
+   "oy": {
+    "AP": 8703,
+    "CHP": 6047
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     602,
     603
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 25848,
-    "oyKullanan": 16129
-   }
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -11945,34 +12139,8 @@
    "adKaynakta": "Şehir Toplamı",
    "ustIlce": null,
    "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    602,
-    603
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1016,
-    "oyKullanan": 651
-   }
-  },
-  {
-   "tip": "belde",
-   "plaka": 23,
-   "adKaynakta": "tçme Bucağı",
-   "ustIlce": null,
-   "sandik": 3,
-   "secmen": 974,
-   "oyKullanan": 622,
+   "secmen": 1016,
+   "oyKullanan": 651,
    "katilim": null,
    "gecerliOy": 611,
    "oy": {
@@ -11990,8 +12158,8 @@
    "goruntuOkuma": {
     "metinKatmani": {
      "sandik": 3,
-     "secmen": 974,
-     "oyKullanan": 622,
+     "secmen": 1016,
+     "oyKullanan": 651,
      "gecerliOy": 611,
      "AP": 0,
      "CHP": 122,
@@ -12008,11 +12176,11 @@
   {
    "tip": "belde",
    "plaka": 23,
-   "adKaynakta": "-j^\" Harput Bucağı",
+   "adKaynakta": "tçme Bucağı",
    "ustIlce": null,
-   "sandik": 5,
-   "secmen": 1076,
-   "oyKullanan": 910,
+   "sandik": 3,
+   "secmen": 974,
+   "oyKullanan": 622,
    "katilim": null,
    "gecerliOy": 590,
    "oy": {
@@ -12032,11 +12200,11 @@
   {
    "tip": "belde",
    "plaka": 23,
-   "adKaynakta": "Ağm",
+   "adKaynakta": "-j^\" Harput Bucağı",
    "ustIlce": null,
    "sandik": 5,
-   "secmen": 991,
-   "oyKullanan": 960,
+   "secmen": 1076,
+   "oyKullanan": 910,
    "katilim": null,
    "gecerliOy": 868,
    "oy": {
@@ -12055,13 +12223,13 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 23,
-   "adKaynakta": "Baskil",
+   "adKaynakta": "Ağm",
    "ustIlce": null,
-   "sandik": 4,
-   "secmen": 1152,
-   "oyKullanan": 953,
+   "sandik": 5,
+   "secmen": 991,
+   "oyKullanan": 960,
    "katilim": null,
    "gecerliOy": 719,
    "oy": {
@@ -12071,8 +12239,56 @@
    },
    "yuzde": {},
    "kontrol": {
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -5,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
+   },
+   "sayfa": [
+    602,
+    603
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 5,
+     "secmen": 991,
+     "oyKullanan": 960,
+     "gecerliOy": 719,
+     "AP": 361,
+     "CHP": 335,
+     "CKMP": 18,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 23,
+   "adKaynakta": "Baskil",
+   "ustIlce": null,
+   "sandik": 4,
+   "secmen": 1152,
+   "oyKullanan": 953,
+   "katilim": null,
+   "gecerliOy": 896,
+   "oy": {
+    "AP": 514,
+    "CHP": 324,
+    "YTP61": 28
+   },
+   "yuzde": {},
+   "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -5,
+    "toplamFarki": -30,
     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
@@ -12084,13 +12300,13 @@
      "sandik": 4,
      "secmen": 1152,
      "oyKullanan": 953,
-     "gecerliOy": 719,
-     "AP": 361,
-     "CHP": 335,
-     "CKMP": 18,
+     "gecerliOy": 896,
+     "AP": 514,
+     "CHP": 324,
+     "CKMP": 0,
      "MP62": 0,
      "TİP": 0,
-     "YTP61": 0,
+     "YTP61": 28,
      "Bağımsız": 0
     },
     "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
@@ -12129,41 +12345,25 @@
    "adKaynakta": "Keban",
    "ustIlce": null,
    "sandik": 16,
-   "secmen": 4724,
-   "oyKullanan": 3380,
+   "secmen": null,
+   "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 768,
-   "oy": {
-    "AP": 477,
-    "CHP": 287
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -4,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     602,
     603
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 16,
-     "secmen": 4724,
-     "oyKullanan": 3380,
-     "gecerliOy": 768,
-     "AP": 477,
-     "CHP": 287,
-     "CKMP": 0,
-     "MP62": 0,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
-   "kazanan": "AP"
+   "kazanan": null,
+   "secmenOkunan": {
+    "secmen": 4724,
+    "oyKullanan": 3380
+   }
   },
   {
    "tip": "ilce",
@@ -12171,25 +12371,24 @@
    "adKaynakta": "Maden",
    "ustIlce": null,
    "sandik": 12,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1584,
+   "oyKullanan": 1206,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1176,
+   "oy": {
+    "YTP61": 477,
+    "CHP": 437,
+    "AP": 262
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     602,
     603
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1584,
-    "oyKullanan": 1206
-   }
+   "kazanan": "YTP61"
   },
   {
    "tip": "ilce",
@@ -12197,25 +12396,25 @@
    "adKaynakta": "Palu",
    "ustIlce": null,
    "sandik": 2,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 500,
+   "oyKullanan": 431,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 382,
+   "oy": {
+    "AP": 137,
+    "CHP": 127,
+    "CKMP": 71,
+    "Bağımsız": 47
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     602,
     603
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 500,
-    "oyKullanan": 431
-   }
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -12368,7 +12567,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     630,
@@ -15516,7 +15720,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     830,
@@ -15980,25 +16189,26 @@
    "adKaynakta": "ÎÇEL",
    "ustIlce": null,
    "sandik": 242,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 74439,
+   "oyKullanan": 55432,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 51027,
+   "oy": {
+    "AP": 28225,
+    "CHP": 18837,
+    "Bağımsız": 1878,
+    "TİP": 443
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 49383
    },
    "sayfa": [
     846,
     847
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 74439,
-    "oyKullanan": 55432
-   }
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -16008,6 +16218,33 @@
    "sandik": 91,
    "secmen": 31037,
    "oyKullanan": 20271,
+   "katilim": null,
+   "gecerliOy": 18065,
+   "oy": {
+    "AP": 10927,
+    "CHP": 5409,
+    "Bağımsız": 635,
+    "TİP": 443
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarsiz",
+    "partiToplami": 17414
+   },
+   "sayfa": [
+    846,
+    847
+   ],
+   "kazanan": "AP"
+  },
+  {
+   "tip": "belde",
+   "plaka": 33,
+   "adKaynakta": "Aslanköy",
+   "ustIlce": null,
+   "sandik": 4,
+   "secmen": 1204,
+   "oyKullanan": 967,
    "katilim": null,
    "gecerliOy": 912,
    "oy": {
@@ -16028,11 +16265,11 @@
   {
    "tip": "belde",
    "plaka": 33,
-   "adKaynakta": "Aslanköy",
+   "adKaynakta": "Göme Bucağı",
    "ustIlce": null,
-   "sandik": 4,
-   "secmen": 1204,
-   "oyKullanan": 967,
+   "sandik": 3,
+   "secmen": 600,
+   "oyKullanan": 552,
    "katilim": null,
    "gecerliOy": 520,
    "oy": {
@@ -16051,9 +16288,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 4,
-     "secmen": 1204,
-     "oyKullanan": 967,
+     "sandik": 3,
+     "secmen": 600,
+     "oyKullanan": 552,
      "gecerliOy": 520,
      "AP": 189,
      "CHP": 323,
@@ -16068,56 +16305,30 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "belde",
-   "plaka": 33,
-   "adKaynakta": "Göme Bucağı",
-   "ustIlce": null,
-   "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    846,
-    847
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 600,
-    "oyKullanan": 552
-   }
-  },
-  {
    "tip": "ilce",
    "plaka": 33,
    "adKaynakta": "Anamur",
    "ustIlce": null,
    "sandik": 8,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 2340,
+   "oyKullanan": 2072,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1951,
+   "oy": {
+    "AP": 965,
+    "CHP": 822,
+    "Bağımsız": 115
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 1902
    },
    "sayfa": [
     846,
     847
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 2340,
-    "oyKullanan": 2072
-   }
+   "kazanan": "AP"
   },
   {
    "tip": "ilce",
@@ -16128,11 +16339,10 @@
    "secmen": 3045,
    "oyKullanan": 2756,
    "katilim": null,
-   "gecerliOy": 1437,
+   "gecerliOy": 2520,
    "oy": {
-    "CHP": 600,
-    "AP": 577,
-    "Bağımsız": 260
+    "AP": 1697,
+    "CHP": 823
    },
    "yuzde": {},
    "kontrol": {
@@ -16142,7 +16352,7 @@
     846,
     847
    ],
-   "kazanan": "CHP"
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -16153,17 +16363,26 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1437,
+   "oy": {
+    "CHP": 600,
+    "AP": 577,
+    "Bağımsız": 260
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     846,
     847
    ],
-   "kazanan": null
+   "kazanan": "CHP"
   },
   {
    "tip": "belde",
@@ -16226,6 +16445,31 @@
    "secmen": 4563,
    "oyKullanan": 3820,
    "katilim": null,
+   "gecerliOy": 3591,
+   "oy": {
+    "CHP": 1859,
+    "AP": 1584
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarsiz",
+    "partiToplami": 3443
+   },
+   "sayfa": [
+    846,
+    847
+   ],
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "belde",
+   "plaka": 33,
+   "adKaynakta": "Taşucu",
+   "ustIlce": "Silifke",
+   "sandik": 4,
+   "secmen": 855,
+   "oyKullanan": 795,
+   "katilim": null,
    "gecerliOy": 768,
    "oy": {
     "AP": 433,
@@ -16243,32 +16487,6 @@
    "kazanan": "AP"
   },
   {
-   "tip": "belde",
-   "plaka": 33,
-   "adKaynakta": "Taşucu",
-   "ustIlce": "Silifke",
-   "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    846,
-    847
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 855,
-    "oyKullanan": 795
-   }
-  },
-  {
    "tip": "ilce",
    "plaka": 33,
    "adKaynakta": "Tarsus",
@@ -16276,6 +16494,49 @@
    "sandik": 80,
    "secmen": 22962,
    "oyKullanan": 17624,
+   "katilim": null,
+   "gecerliOy": 16574,
+   "oy": {
+    "AP": 8714,
+    "CHP": 7042,
+    "Bağımsız": 204
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -614,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+   },
+   "sayfa": [
+    846,
+    847
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 80,
+     "secmen": 22962,
+     "oyKullanan": 17624,
+     "gecerliOy": 16574,
+     "AP": 8714,
+     "CHP": 7042,
+     "CKMP": 0,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": 0,
+     "Bağımsız": 204
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
+  },
+  {
+   "tip": "belde",
+   "plaka": 33,
+   "adKaynakta": "Panzinçukuru",
+   "ustIlce": "Tarsus",
+   "sandik": 4,
+   "secmen": 1056,
+   "oyKullanan": 968,
    "katilim": null,
    "gecerliOy": 894,
    "oy": {
@@ -16297,11 +16558,11 @@
   {
    "tip": "belde",
    "plaka": 33,
-   "adKaynakta": "Panzinçukuru",
+   "adKaynakta": "Namrun",
    "ustIlce": "Tarsus",
    "sandik": 4,
-   "secmen": 1056,
-   "oyKullanan": 968,
+   "secmen": 810,
+   "oyKullanan": 647,
    "katilim": null,
    "gecerliOy": 599,
    "oy": {
@@ -16322,54 +16583,28 @@
   {
    "tip": "belde",
    "plaka": 33,
-   "adKaynakta": "Namrun",
-   "ustIlce": "Tarsus",
-   "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    846,
-    847
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 810,
-    "oyKullanan": 647
-   }
-  },
-  {
-   "tip": "belde",
-   "plaka": 33,
    "adKaynakta": "Yenice Bucağı",
    "ustIlce": "Tarsus",
    "sandik": 5,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1361,
+   "oyKullanan": 1233,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1162,
+   "oy": {
+    "AP": 671,
+    "CHP": 434,
+    "MP62": 1
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 1106
    },
    "sayfa": [
     846,
     847
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1361,
-    "oyKullanan": 1233
-   }
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -16786,9 +17021,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -652,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -652,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     872,
@@ -19316,7 +19556,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     938,
@@ -19594,25 +19839,42 @@
    "adKaynakta": "Kastamonu",
    "ustIlce": null,
    "sandik": 34,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 10638,
+   "oyKullanan": 6850,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 5938,
+   "oy": {
+    "Bağımsız": 2731,
+    "AP": 1536,
+    "CHP": 1394
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -277,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     974,
     975
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 10638,
-    "oyKullanan": 6850
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 34,
+     "secmen": 10638,
+     "oyKullanan": 6850,
+     "gecerliOy": 5938,
+     "AP": 1536,
+     "CHP": 1394,
+     "CKMP": 0,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": null,
+     "Bağımsız": 2731
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "Bağımsız"
   },
   {
    "tip": "ilce",
@@ -19620,25 +19882,24 @@
    "adKaynakta": "Araç",
    "ustIlce": null,
    "sandik": 5,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1236,
+   "oyKullanan": 973,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 863,
+   "oy": {
+    "CHP": 501,
+    "YTP61": 229,
+    "Bağımsız": 133
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     974,
     975
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1236,
-    "oyKullanan": 973
-   }
+   "kazanan": "CHP"
   },
   {
    "tip": "ilce",
@@ -19646,34 +19907,8 @@
    "adKaynakta": "Azdavay",
    "ustIlce": null,
    "sandik": 2,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    974,
-    975
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 416,
-    "oyKullanan": 289
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 37,
-   "adKaynakta": "Bozkurt",
-   "ustIlce": null,
-   "sandik": 8,
-   "secmen": 1380,
-   "oyKullanan": 1059,
+   "secmen": 416,
+   "oyKullanan": 289,
    "katilim": null,
    "gecerliOy": 249,
    "oy": {
@@ -19691,39 +19926,38 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 37,
-   "adKaynakta": "Abana Bucağı",
-   "ustIlce": "Bozkurt",
-   "sandik": 6,
-   "secmen": null,
-   "oyKullanan": null,
+   "adKaynakta": "Bozkurt",
+   "ustIlce": null,
+   "sandik": 8,
+   "secmen": 1380,
+   "oyKullanan": 1059,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 968,
+   "oy": {
+    "Bağımsız": 800,
+    "YTP61": 1
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 801
    },
    "sayfa": [
     974,
     975
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 958,
-    "oyKullanan": 763
-   }
+   "kazanan": "Bağımsız"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 37,
-   "adKaynakta": "Cide",
-   "ustIlce": null,
+   "adKaynakta": "Abana Bucağı",
+   "ustIlce": "Bozkurt",
    "sandik": 6,
-   "secmen": 1115,
-   "oyKullanan": 800,
+   "secmen": 958,
+   "oyKullanan": 763,
    "katilim": null,
    "gecerliOy": 720,
    "oy": {},
@@ -19741,37 +19975,36 @@
   {
    "tip": "ilce",
    "plaka": 37,
-   "adKaynakta": "Çatalzeytin",
+   "adKaynakta": "Cide",
    "ustIlce": null,
-   "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "sandik": 6,
+   "secmen": 1115,
+   "oyKullanan": 800,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 692,
+   "oy": {
+    "Bağımsız": 382,
+    "CHP": 265,
+    "CKMP": 45
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     974,
     975
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 751,
-    "oyKullanan": 502
-   }
+   "kazanan": "Bağımsız"
   },
   {
    "tip": "ilce",
    "plaka": 37,
-   "adKaynakta": "Daday",
+   "adKaynakta": "Çatalzeytin",
    "ustIlce": null,
-   "sandik": 5,
-   "secmen": 872,
-   "oyKullanan": 670,
+   "sandik": 3,
+   "secmen": 751,
+   "oyKullanan": 502,
    "katilim": null,
    "gecerliOy": 492,
    "oy": {
@@ -19790,9 +20023,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 5,
-     "secmen": 872,
-     "oyKullanan": 670,
+     "sandik": 3,
+     "secmen": 751,
+     "oyKullanan": 502,
      "gecerliOy": 492,
      "AP": 0,
      "CHP": 315,
@@ -19809,11 +20042,11 @@
   {
    "tip": "ilce",
    "plaka": 37,
-   "adKaynakta": "Devrekani",
+   "adKaynakta": "Daday",
    "ustIlce": null,
    "sandik": 5,
-   "secmen": 1132,
-   "oyKullanan": 938,
+   "secmen": 872,
+   "oyKullanan": 670,
    "katilim": null,
    "gecerliOy": 648,
    "oy": {
@@ -19835,11 +20068,11 @@
   {
    "tip": "ilce",
    "plaka": 37,
-   "adKaynakta": "İnebolu",
+   "adKaynakta": "Devrekani",
    "ustIlce": null,
-   "sandik": 11,
-   "secmen": 3050,
-   "oyKullanan": 1816,
+   "sandik": 5,
+   "secmen": 1132,
+   "oyKullanan": 938,
    "katilim": null,
    "gecerliOy": 879,
    "oy": {
@@ -19859,9 +20092,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 11,
-     "secmen": 3050,
-     "oyKullanan": 1816,
+     "sandik": 5,
+     "secmen": 1132,
+     "oyKullanan": 938,
      "gecerliOy": 879,
      "AP": 0,
      "CHP": 211,
@@ -19878,37 +20111,35 @@
   {
    "tip": "ilce",
    "plaka": 37,
-   "adKaynakta": "Küre",
+   "adKaynakta": "İnebolu",
    "ustIlce": null,
-   "sandik": 4,
-   "secmen": null,
-   "oyKullanan": null,
+   "sandik": 11,
+   "secmen": 3050,
+   "oyKullanan": 1816,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1816,
+   "oy": {
+    "YTP61": 911,
+    "Bağımsız": 905
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     974,
     975
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 877,
-    "oyKullanan": 675
-   }
+   "kazanan": "YTP61"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 37,
-   "adKaynakta": "Ağıl B. M",
-   "ustIlce": "Küre",
-   "sandik": 10,
-   "secmen": 1883,
-   "oyKullanan": 1569,
+   "adKaynakta": "Küre",
+   "ustIlce": null,
+   "sandik": 4,
+   "secmen": 877,
+   "oyKullanan": 675,
    "katilim": null,
    "gecerliOy": 630,
    "oy": {
@@ -19927,6 +20158,32 @@
    "kazanan": "Bağımsız"
   },
   {
+   "tip": "belde",
+   "plaka": 37,
+   "adKaynakta": "Ağıl B. M",
+   "ustIlce": "Küre",
+   "sandik": 10,
+   "secmen": null,
+   "oyKullanan": null,
+   "katilim": null,
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
+   "kontrol": {
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
+   },
+   "sayfa": [
+    974,
+    975
+   ],
+   "kazanan": null,
+   "secmenOkunan": {
+    "secmen": 1883,
+    "oyKullanan": 1569
+   }
+  },
+  {
    "tip": "ilce",
    "plaka": 37,
    "adKaynakta": "Taşköprü",
@@ -19935,15 +20192,14 @@
    "secmen": 3210,
    "oyKullanan": 2432,
    "katilim": null,
-   "gecerliOy": 1411,
+   "gecerliOy": 2317,
    "oy": {
-    "Bağımsız": 411,
-    "AP": 1
+    "Bağımsız": 1695,
+    "AP": 622
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 412
+    "durum": "tutarli"
    },
    "sayfa": [
     974,
@@ -19960,10 +20216,10 @@
    "secmen": 7930,
    "oyKullanan": 5564,
    "katilim": null,
-   "gecerliOy": 2317,
+   "gecerliOy": 4589,
    "oy": {
-    "Bağımsız": 1695,
-    "AP": 622
+    "AP": 3175,
+    "Bağımsız": 1414
    },
    "yuzde": {},
    "kontrol": {
@@ -19973,7 +20229,7 @@
     974,
     975
    ],
-   "kazanan": "Bağımsız"
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -22870,9 +23126,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -14,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -14,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1096,
@@ -22916,9 +23177,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -2,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -2,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1096,
@@ -27103,21 +27369,18 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 832,
-   "oy": {
-    "AP": 341,
-    "CKMP": 1
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 342
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     1332,
     1333
    ],
-   "kazanan": "AP",
+   "kazanan": null,
    "secmenOkunan": {
     "secmen": 1102,
     "oyKullanan": null
@@ -27156,20 +27419,18 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 926,
-   "oy": {
-    "AP": 580
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 580
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     1332,
     1333
    ],
-   "kazanan": "AP",
+   "kazanan": null,
    "secmenOkunan": {
     "secmen": 18,
     "oyKullanan": 1024
@@ -27262,24 +27523,25 @@
    "adKaynakta": "Avanos",
    "ustIlce": null,
    "sandik": 10,
-   "secmen": 2986,
-   "oyKullanan": 2426,
+   "secmen": null,
+   "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 2290,
-   "oy": {
-    "AP": 1216,
-    "CHP": 1048,
-    "Bağımsız": 26
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     1332,
     1333
    ],
-   "kazanan": "AP"
+   "kazanan": null,
+   "secmenOkunan": {
+    "secmen": 2986,
+    "oyKullanan": 2426
+   }
   },
   {
    "tip": "belde",
@@ -27313,25 +27575,40 @@
    "adKaynakta": "Derînkuyü",
    "ustIlce": null,
    "sandik": 6,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1623,
+   "oyKullanan": 1333,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1180,
+   "oy": {
+    "Bağımsız": 1158
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -22,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1332,
     1333
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1623,
-    "oyKullanan": 1333
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 1623,
+     "oyKullanan": 1333,
+     "gecerliOy": 1180,
+     "AP": 0,
+     "CHP": 0,
+     "CKMP": null,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 1158
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "Bağımsız"
   },
   {
    "tip": "ilce",
@@ -27348,12 +27625,21 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarli",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     1332,
     1333
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 4,
+     "secmen": 1161,
+     "oyKullanan": 889
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "Bağımsız"
   },
   {
@@ -27423,7 +27709,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1332,
@@ -27441,25 +27732,24 @@
    "adKaynakta": "Ürgüp",
    "ustIlce": null,
    "sandik": 15,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 2846,
+   "oyKullanan": 2304,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 2040,
+   "oy": {
+    "Bağımsız": 997,
+    "AP": 893
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 1890
    },
    "sayfa": [
     1332,
     1333
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 2846,
-    "oyKullanan": 2304
-   }
+   "kazanan": "Bağımsız"
   },
   {
    "tip": "belde",
@@ -27477,9 +27767,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -47,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -47,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1332,
@@ -27620,9 +27915,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -133,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -133,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1348,
@@ -28422,6 +28722,51 @@
    "secmen": 30974,
    "oyKullanan": 24581,
    "katilim": null,
+   "gecerliOy": 22228,
+   "oy": {
+    "CHP": 9156,
+    "AP": 7334,
+    "Bağımsız": 3098,
+    "YTP61": 2431,
+    "CKMP": 53
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -156,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+   },
+   "sayfa": [
+    1370,
+    1371
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 108,
+     "secmen": 30974,
+     "oyKullanan": 24581,
+     "gecerliOy": 22228,
+     "AP": 7334,
+     "CHP": 9156,
+     "CKMP": 53,
+     "MP62": null,
+     "TİP": 0,
+     "YTP61": 2431,
+     "Bağımsız": 3098
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "il",
+   "plaka": 52,
+   "adKaynakta": "Ordu",
+   "ustIlce": null,
+   "sandik": 27,
+   "secmen": 9170,
+   "oyKullanan": 7020,
+   "katilim": null,
    "gecerliOy": 6306,
    "oy": {
     "AP": 2458,
@@ -28438,32 +28783,6 @@
     1371
    ],
    "kazanan": "AP"
-  },
-  {
-   "tip": "il",
-   "plaka": 52,
-   "adKaynakta": "Ordu",
-   "ustIlce": null,
-   "sandik": 27,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1370,
-    1371
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 9170,
-    "oyKullanan": 7020
-   }
   },
   {
    "tip": "ilce",
@@ -28497,25 +28816,24 @@
    "adKaynakta": "Aybastı",
    "ustIlce": null,
    "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1041,
+   "oyKullanan": 904,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 785,
+   "oy": {
+    "CHP": 334,
+    "Bağımsız": 307,
+    "YTP61": 144
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     1370,
     1371
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1041,
-    "oyKullanan": 904
-   }
+   "kazanan": "CHP"
   },
   {
    "tip": "ilce",
@@ -28525,6 +28843,30 @@
    "sandik": 11,
    "secmen": 3998,
    "oyKullanan": 3052,
+   "katilim": null,
+   "gecerliOy": 2801,
+   "oy": {
+    "CHP": 1630,
+    "AP": 1171
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    1370,
+    1371
+   ],
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 52,
+   "adKaynakta": "Gölköy",
+   "ustIlce": null,
+   "sandik": 8,
+   "secmen": 2107,
+   "oyKullanan": 1655,
    "katilim": null,
    "gecerliOy": 1525,
    "oy": {
@@ -28544,13 +28886,13 @@
    "kazanan": "YTP61"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 52,
-   "adKaynakta": "Gölköy",
-   "ustIlce": null,
-   "sandik": 8,
-   "secmen": 2107,
-   "oyKullanan": 1655,
+   "adKaynakta": "Gürgentepe",
+   "ustIlce": "Gölköy",
+   "sandik": 6,
+   "secmen": 1559,
+   "oyKullanan": 1458,
    "katilim": null,
    "gecerliOy": 1312,
    "oy": {
@@ -28569,9 +28911,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 8,
-     "secmen": 2107,
-     "oyKullanan": 1655,
+     "sandik": 6,
+     "secmen": 1559,
+     "oyKullanan": 1458,
      "gecerliOy": 1312,
      "AP": null,
      "CHP": 842,
@@ -28586,13 +28928,13 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 52,
-   "adKaynakta": "Gürgentepe",
-   "ustIlce": "Gölköy",
-   "sandik": 6,
-   "secmen": 1559,
-   "oyKullanan": 1458,
+   "adKaynakta": "Korgan",
+   "ustIlce": null,
+   "sandik": 4,
+   "secmen": 1060,
+   "oyKullanan": 907,
    "katilim": null,
    "gecerliOy": 803,
    "oy": {
@@ -28612,13 +28954,13 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "ilce",
+   "tip": "belde",
    "plaka": 52,
-   "adKaynakta": "Korgan",
-   "ustIlce": null,
-   "sandik": 4,
-   "secmen": 1060,
-   "oyKullanan": 907,
+   "adKaynakta": "Kumru îlcesi",
+   "ustIlce": "Korgan",
+   "sandik": 1,
+   "secmen": 210,
+   "oyKullanan": 186,
    "katilim": null,
    "gecerliOy": 179,
    "oy": {
@@ -28637,32 +28979,6 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "belde",
-   "plaka": 52,
-   "adKaynakta": "Kumru îlcesi",
-   "ustIlce": "Korgan",
-   "sandik": 1,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1370,
-    1371
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 210,
-    "oyKullanan": 186
-   }
-  },
-  {
    "tip": "ilce",
    "plaka": 52,
    "adKaynakta": "Mesudiye",
@@ -28671,10 +28987,10 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 597,
+   "gecerliOy": 905,
    "oy": {
-    "Bağımsız": 499,
-    "CHP": 98
+    "Bağımsız": 667,
+    "CHP": 238
    },
    "yuzde": {},
    "kontrol": {
@@ -28699,6 +29015,34 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
+   "gecerliOy": 597,
+   "oy": {
+    "Bağımsız": 499,
+    "CHP": 98
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    1370,
+    1371
+   ],
+   "kazanan": "Bağımsız",
+   "secmenOkunan": {
+    "secmen": null,
+    "oyKullanan": 673
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 52,
+   "adKaynakta": "Perşembe",
+   "ustIlce": null,
+   "sandik": 9,
+   "secmen": null,
+   "oyKullanan": null,
+   "katilim": null,
    "gecerliOy": null,
    "oy": {},
    "yuzde": {},
@@ -28712,34 +29056,9 @@
    ],
    "kazanan": null,
    "secmenOkunan": {
-    "secmen": null,
-    "oyKullanan": 673
+    "secmen": 1704,
+    "oyKullanan": 1392
    }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 52,
-   "adKaynakta": "Perşembe",
-   "ustIlce": null,
-   "sandik": 9,
-   "secmen": 1704,
-   "oyKullanan": 1392,
-   "katilim": null,
-   "gecerliOy": 1179,
-   "oy": {
-    "CHP": 647,
-    "AP": 430,
-    "YTP61": 102
-   },
-   "yuzde": {},
-   "kontrol": {
-    "durum": "tutarli"
-   },
-   "sayfa": [
-    1370,
-    1371
-   ],
-   "kazanan": "CHP"
   },
   {
    "tip": "ilce",
@@ -28777,17 +29096,19 @@
    "oyKullanan": null,
    "katilim": null,
    "gecerliOy": null,
-   "oy": {},
+   "oy": {
+    "TİP": 4,
+    "Bağımsız": 1
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "gecerliOyOkunamadi"
    },
    "sayfa": [
     1370,
     1371
    ],
-   "kazanan": null,
+   "kazanan": "TİP",
    "secmenOkunan": {
     "secmen": 5977,
     "oyKullanan": 4455
@@ -29238,7 +29559,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1414,
@@ -29277,24 +29603,25 @@
    "adKaynakta": "Serdivan Köyü",
    "ustIlce": null,
    "sandik": null,
-   "secmen": 33073,
-   "oyKullanan": 22335,
+   "secmen": null,
+   "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 1864,
-   "oy": {
-    "AP": 1431,
-    "CHP": 330,
-    "YTP61": 103
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     1414,
     1415
    ],
-   "kazanan": "AP"
+   "kazanan": null,
+   "secmenOkunan": {
+    "secmen": 33073,
+    "oyKullanan": 22335
+   }
   },
   {
    "tip": "belde",
@@ -29352,34 +29679,8 @@
    "adKaynakta": "",
    "ustIlce": null,
    "sandik": null,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1414,
-    1415
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 2777,
-    "oyKullanan": 1961
-   }
-  },
-  {
-   "tip": "belde",
-   "plaka": 54,
-   "adKaynakta": "Erenler Köyü",
-   "ustIlce": null,
-   "sandik": 11,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 2777,
+   "oyKullanan": 1961,
    "katilim": null,
    "gecerliOy": 1878,
    "oy": {
@@ -29395,6 +29696,28 @@
     1415
    ],
    "kazanan": "Bağımsız"
+  },
+  {
+   "tip": "belde",
+   "plaka": 54,
+   "adKaynakta": "Erenler Köyü",
+   "ustIlce": null,
+   "sandik": 11,
+   "secmen": null,
+   "oyKullanan": null,
+   "katilim": null,
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
+   "kontrol": {
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
+   },
+   "sayfa": [
+    1414,
+    1415
+   ],
+   "kazanan": null
   },
   {
    "tip": "ilce",
@@ -29519,7 +29842,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1414,
@@ -29562,33 +29890,6 @@
    "oyKullanan": null,
    "katilim": null,
    "gecerliOy": null,
-   "oy": {
-    "AP": 1
-   },
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi"
-   },
-   "sayfa": [
-    1414,
-    1415
-   ],
-   "kazanan": "AP",
-   "secmenOkunan": {
-    "secmen": 4868,
-    "oyKullanan": 3084
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 54,
-   "adKaynakta": "Karasu",
-   "ustIlce": null,
-   "sandik": 9,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
    "oy": {},
    "yuzde": {},
    "kontrol": {
@@ -29601,9 +29902,36 @@
    ],
    "kazanan": null,
    "secmenOkunan": {
-    "secmen": 2911,
-    "oyKullanan": 2395
+    "secmen": 4868,
+    "oyKullanan": 3084
    }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 54,
+   "adKaynakta": "Karasu",
+   "ustIlce": null,
+   "sandik": 9,
+   "secmen": 2911,
+   "oyKullanan": 2395,
+   "katilim": null,
+   "gecerliOy": 2181,
+   "oy": {
+    "AP": 1304,
+    "CHP": 804,
+    "YTP61": 34,
+    "Bağımsız": 27,
+    "MP62": 12
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    1414,
+    1415
+   ],
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -31515,9 +31843,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -578,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -578,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1564,
@@ -32345,7 +32678,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1614,
@@ -32423,7 +32761,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1614,
@@ -32478,7 +32821,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1614,
@@ -33004,7 +33352,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1664,
@@ -33178,9 +33531,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -171,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -171,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1694,
@@ -33386,9 +33744,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -51,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -51,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1694,
@@ -33559,7 +33922,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1710,
@@ -34248,9 +34616,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -239,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -239,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1764,

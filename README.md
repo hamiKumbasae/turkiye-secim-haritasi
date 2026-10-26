@@ -108,12 +108,14 @@ Seçim başına kapsam, kalite ve en iyi kaynak: [`docs/rapor/KAPSAM_TABLOSU.md`
 Nerelere bakıldığı: [`data/kaynaklar/ARASTIRMA_KAYDI.md`](data/kaynaklar/ARASTIRMA_KAYDI.md).
 
 - **1950, 1954, 1957 genel seçimleri** yalnız il düzeyinde; ülke çapında ilçe kaynağı yok.
-- **1950–1977 yerel seçimleri** Vikipedi'ye dayanır. 1950 ve 1955'te başkanı meclis seçtiği için ilçede yalnız kazanan parti var.
-  1963–1977 başkanlık sonuçları DİE kitaplarıyla karşılaştırıldı ([rapor](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)); farklar işlenmedi.
-- **1968–1984 yerel meclis sonuçları:** taranmış DİE kitabında okunamayan satırlar boş (1984: belediye meclisi %21,
-  il genel meclisi %11; 1977: %24 ve %13, belediye meclisinde 8 ilin sayfaları taramada yok; 1973: %15 ve %8; 1968: %38
-  ve %17). 1968 belediye meclisinde parti oyları toplamı çoğu yerde geçerli oydan az basılmış; bu satırlar notlu.
-  1963 meclis kitabı depoda ama okunmadı.
+- **1950–1977 yerel başkanlık sonuçları** Vikipedi'ye dayanır. 1950 ve 1955'te başkanı meclis seçtiği için ilçede yalnız kazanan parti var.
+  1963–1977'de DİE kitabının başkanlık tablosunda okunup iç kontrolden geçen satırlar kayda işlendi (sayılar kitaptan; teyitli
+  satır payı 1963 %25, 1968 %50, 1973 %75, 1977 %65). Kalanlar yalnız Vikipedi. Kitapta "Bağımsızlar" bütün bağımsız
+  adayların toplamıdır; kazanan oy sırasından değil, 1973'te kitabın kazanan sütunundan, öteki yıllarda aday bazında belirlenir.
+- **1963–1984 yerel meclis sonuçları:** taranmış DİE kitabında okunamayan ya da doğrulanamayan satırlar boş (1984: belediye
+  meclisi %21, il genel meclisi %11; 1977: %26 ve %19, belediye meclisinde 8 ilin sayfaları taramada yok; 1973: %18 ve %16;
+  1968: %34 ve %23; 1963: %71 ve %39). 1963 ve 1968 belediye meclisinde parti oyları toplamı çoğu yerde geçerli oydan az
+  basılmış; bu satırlar notlu.
 - **Ayrıştırılmamış "Diğer":** küçük partilerin kaynakta tek toplam olduğu yerler. 2009–2024 yerel ve 2011–2023 genel
   seçimlerde YSK verisiyle, 1994–2004 yerelde DİE kitabıyla partilere ayrıldı; 10 kayıtta kazanan hâlâ "Diğer" (sitede notlu).
 - **Kaba eşlemeler:** birden çok eski ilçeden pay alan bazı yeni ilçeler (ör. Çukurova, Körfez) en büyük paya göre

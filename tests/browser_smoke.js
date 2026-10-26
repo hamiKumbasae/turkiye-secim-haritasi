@@ -680,11 +680,17 @@ async function scenario_yerelOylama(browser) {
     check('1977 il genel meclisi (DİE): sekme açık, başlık ve renkli iller',
       JSON.stringify(d77) === JSON.stringify(['baskan', 'igm:aktif', 'bm']) && b77.includes('İl Genel Meclisi') && renkli77 >= 45,
       JSON.stringify(d77) + ' / ' + b77 + ' / ' + renkli77);
+    // 1963 il genel meclisi DİE kitabından (karşılıklı sayfalar; yüzde basılmamış)
     check('1963 yerel: yıl seçilebildi', await clickYear(page, '1963'));
+    await page.waitForTimeout(700);
+    const d63 = await sekmeler();
+    const renkli63 = await page.$$eval('path[data-plaka]', (els) => els.filter((e) => e.getAttribute('fill') && e.getAttribute('fill') !== 'var(--map-empty)').length);
+    check('1963 il genel meclisi (DİE): sekme açık, renkli iller',
+      JSON.stringify(d63) === JSON.stringify(['baskan', 'igm:aktif', 'bm']) && renkli63 >= 30, JSON.stringify(d63) + ' / ' + renkli63);
+    // 1950 ve 1955'te belediye başkanını meclis seçerdi; meclis oyları kaynakta yok: sekmeler gizli
+    check('1955 yerel: yıl seçilebildi', await clickYear(page, '1955'));
     await page.waitForTimeout(600);
-    const durum = await sekmeler();
-    check('1963 yerel: meclis sekmeleri pasif, başkanlık seçili',
-      JSON.stringify(durum) === JSON.stringify(['baskan:aktif', 'igm:kapali', 'bm:kapali']), JSON.stringify(durum));
+    check('1955 yerel: oylama sekmeleri gizli', await page.$eval('#oylamaToggle', (e) => e.hidden));
     await page.click('#btnTurGenel');
     await page.waitForTimeout(500);
     check('genel seçim: oylama sekmeleri gizli', await page.$eval('#oylamaToggle', (e) => e.hidden));

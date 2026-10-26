@@ -27,15 +27,15 @@
  "ozet": {
   "satir": 1111,
   "il": 62,
-  "ilce": 498,
-  "belde": 551,
-  "tutarli": 265,
-  "toplamTutmuyor": 211,
-  "tutarsiz": 846,
+  "ilce": 500,
+  "belde": 549,
+  "tutarli": 175,
+  "toplamTutmuyor": 193,
+  "tutarsiz": 936,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 0,
-  "goruntudenOkunan": 254,
-  "adlandirilan": 335,
+  "goruntudenOkunan": 258,
+  "adlandirilan": 340,
   "eksikIl": [
    15,
    22,
@@ -114,7 +114,7 @@
     "Merkez"
    ],
    "8": [
-    "Arhavi",
+    "Borçka",
     "Hopa",
     "Merkez"
    ],
@@ -173,12 +173,9 @@
     "Merkez"
    ],
    "21": [
-    "Çınar",
+    "Çermik",
     "Çüngüş",
-    "Dicle",
     "Hani",
-    "Hazro",
-    "Kulp",
     "Merkez"
    ],
    "22": [
@@ -322,7 +319,6 @@
     "Kızıltepe",
     "Mazıdağı",
     "Nusaybin",
-    "Ömerli",
     "Savur",
     "Silopi",
     "Merkez"
@@ -409,7 +405,6 @@
     "Akçaabat",
     "Maçka",
     "Of",
-    "Sürmene",
     "Merkez"
    ],
    "62": [
@@ -704,7 +699,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     12,
@@ -1484,9 +1484,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -54,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -54,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     64,
@@ -1532,7 +1537,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     64,
@@ -1563,7 +1573,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     64,
@@ -2447,7 +2462,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     88,
@@ -2498,9 +2518,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -1299,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -1299,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     114,
@@ -2686,7 +2711,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     114,
@@ -2779,7 +2809,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     114,
@@ -2808,7 +2843,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     114,
@@ -4145,9 +4185,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -2581,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -2581,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     190,
@@ -4219,7 +4264,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     190,
@@ -4588,7 +4638,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     190,
@@ -4664,25 +4719,25 @@
    "adKaynakta": "Artvin",
    "ustIlce": null,
    "sandik": 15,
-   "secmen": 3543,
-   "oyKullanan": 2616,
+   "secmen": null,
+   "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 2087,
-   "oy": {
-    "CHP": 1394,
-    "Bağımsız": 1005,
-    "AP": 738
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 3137
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     218,
     219
    ],
-   "kazanan": "CHP"
+   "kazanan": null,
+   "secmenOkunan": {
+    "secmen": 3543,
+    "oyKullanan": 2616
+   }
   },
   {
    "tip": "ilce",
@@ -4733,11 +4788,62 @@
    }
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 8,
    "adKaynakta": "",
    "ustIlce": "Ardanuç",
    "sandik": 7,
+   "secmen": 1879,
+   "oyKullanan": 1457,
+   "katilim": null,
+   "gecerliOy": 1391,
+   "oy": {
+    "AP": 722,
+    "CHP": 669
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    218,
+    219
+   ],
+   "kazanan": "AP",
+   "ad": "Arhavi",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 8,
+   "adKaynakta": "Arhavi",
+   "ustIlce": null,
+   "sandik": 111,
+   "secmen": null,
+   "oyKullanan": null,
+   "katilim": null,
+   "gecerliOy": null,
+   "oy": {},
+   "yuzde": {},
+   "kontrol": {
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
+   },
+   "sayfa": [
+    218,
+    219
+   ],
+   "kazanan": null
+  },
+  {
+   "tip": "ilce",
+   "plaka": 8,
+   "adKaynakta": "Borçka",
+   "ustIlce": null,
+   "sandik": 6,
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
@@ -4754,62 +4860,8 @@
    ],
    "kazanan": null,
    "secmenOkunan": {
-    "secmen": 1879,
-    "oyKullanan": 1457
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 8,
-   "adKaynakta": "Arhavi",
-   "ustIlce": null,
-   "sandik": 111,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": 1391,
-   "oy": {
-    "AP": 722,
-    "CHP": 669
-   },
-   "yuzde": {},
-   "kontrol": {
-    "durum": "tutarli"
-   },
-   "sayfa": [
-    218,
-    219
-   ],
-   "kazanan": "AP"
-  },
-  {
-   "tip": "ilce",
-   "plaka": 8,
-   "adKaynakta": "Borçka",
-   "ustIlce": null,
-   "sandik": 6,
-   "secmen": 1496,
-   "oyKullanan": 1186,
-   "katilim": null,
-   "gecerliOy": 1111,
-   "oy": {
-    "CHP": 641,
-    "AP": 370
-   },
-   "yuzde": {},
-   "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1011
-   },
-   "sayfa": [
-    218,
-    219
-   ],
-   "kazanan": "CHP",
-   "ad": "Borçka",
-   "kimlik": {
-    "yontem": "baskanlikSecmeni",
-    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+    "secmen": 1496,
+    "oyKullanan": 1186
    }
   },
   {
@@ -4903,18 +4955,17 @@
    "oyKullanan": null,
    "katilim": null,
    "gecerliOy": null,
-   "oy": {
-    "CHP": 1
-   },
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi"
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     218,
     219
    ],
-   "kazanan": "CHP",
+   "kazanan": null,
    "secmenOkunan": {
     "secmen": 765,
     "oyKullanan": 615
@@ -5799,7 +5850,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     268,
@@ -6018,7 +6074,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     268,
@@ -6282,7 +6343,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     268,
@@ -6916,8 +6982,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 3981
+    "durum": "toplamTutmuyor",
+    "partiToplami": 3981,
+    "gecerliOy": 3461,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 3981
+    }
    },
    "sayfa": [
     328,
@@ -6943,7 +7015,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     328,
@@ -7030,7 +7107,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     328,
@@ -7490,7 +7572,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     366,
@@ -7643,7 +7730,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     366,
@@ -7967,9 +8059,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -276,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -276,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     412,
@@ -8086,7 +8183,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     412,
@@ -8113,7 +8215,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     412,
@@ -8481,9 +8588,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -16,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -16,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     412,
@@ -8578,9 +8690,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -417,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -417,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     412,
@@ -8721,7 +8838,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     444,
@@ -8775,7 +8897,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     444,
@@ -8803,7 +8930,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     444,
@@ -9466,7 +9598,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     472,
@@ -9644,7 +9781,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     472,
@@ -9731,7 +9873,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     496,
@@ -9842,7 +9989,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     496,
@@ -10011,7 +10163,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     496,
@@ -10116,7 +10273,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     530,
@@ -10858,7 +11020,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     532,
@@ -10944,7 +11111,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     532,
@@ -11051,7 +11223,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     532,
@@ -11114,25 +11291,45 @@
    "adKaynakta": "BELEDİYELERİ",
    "ustIlce": "Güney",
    "sandik": 175,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 52607,
+   "oyKullanan": 34489,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 31279,
+   "oy": {
+    "CHP": 10134,
+    "AP": 7642,
+    "YTP61": 6562,
+    "CKMP": 1531,
+    "TİP": 1501,
+    "Bağımsız": 455
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -3454,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     556,
     557
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 52607,
-    "oyKullanan": 34489
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 175,
+     "secmen": 52607,
+     "oyKullanan": 34489,
+     "gecerliOy": 31279,
+     "AP": 7642,
+     "CHP": 10134,
+     "CKMP": 1531,
+     "MP62": null,
+     "TİP": 1501,
+     "YTP61": 6562,
+     "Bağımsız": 455
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
   },
   {
    "tip": "il",
@@ -11140,25 +11337,44 @@
    "adKaynakta": "Diyarbakır",
    "ustIlce": null,
    "sandik": 86,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 29429,
+   "oyKullanan": 16171,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 14335,
+   "oy": {
+    "CHP": 4394,
+    "AP": 3505,
+    "YTP61": 2521,
+    "TİP": 1501,
+    "CKMP": 445
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -1969,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     556,
     557
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 29429,
-    "oyKullanan": 16171
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 86,
+     "secmen": 29429,
+     "oyKullanan": 16171,
+     "gecerliOy": 14335,
+     "AP": 3505,
+     "CHP": 4394,
+     "CKMP": 445,
+     "MP62": null,
+     "TİP": 1501,
+     "YTP61": 2521,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
   },
   {
    "tip": "belde",
@@ -11195,53 +11411,6 @@
    "secmen": 1850,
    "oyKullanan": 1648,
    "katilim": null,
-   "gecerliOy": 909,
-   "oy": {
-    "CHP": 527,
-    "AP": 353
-   },
-   "yuzde": {},
-   "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -29,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
-   },
-   "sayfa": [
-    556,
-    557
-   ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 7,
-     "secmen": 1850,
-     "oyKullanan": 1648,
-     "gecerliOy": 909,
-     "AP": 353,
-     "CHP": 527,
-     "CKMP": null,
-     "MP62": null,
-     "TİP": null,
-     "YTP61": null,
-     "Bağımsız": null
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
-   "kazanan": "CHP",
-   "ad": "Bismil",
-   "kimlik": {
-    "yontem": "baskanlikAdi",
-    "not": "kitapta okunan ad başkanlık kaydındaki ilçe belediyesiyle aynı, seçmen %3 içinde"
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 21,
-   "adKaynakta": "",
-   "ustIlce": "Bismil",
-   "sandik": 9,
-   "secmen": 2390,
-   "oyKullanan": 2027,
-   "katilim": null,
    "gecerliOy": 1479,
    "oy": {
     "CHP": 632,
@@ -11257,18 +11426,18 @@
     557
    ],
    "kazanan": "CHP",
-   "ad": "Çermik",
+   "ad": "Bismil",
    "kimlik": {
-    "yontem": "baskanlikSecmeni",
-    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+    "yontem": "baskanlikAdi",
+    "not": "kitapta okunan ad başkanlık kaydındaki ilçe belediyesiyle aynı, seçmen %3 içinde"
    }
   },
   {
    "tip": "belde",
    "plaka": 21,
-   "adKaynakta": "Çmar",
+   "adKaynakta": "",
    "ustIlce": "Bismil",
-   "sandik": 3,
+   "sandik": 9,
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
@@ -11285,8 +11454,38 @@
    ],
    "kazanan": null,
    "secmenOkunan": {
-    "secmen": 803,
-    "oyKullanan": 668
+    "secmen": 2390,
+    "oyKullanan": 2027
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 21,
+   "adKaynakta": "Çmar",
+   "ustIlce": "Bismil",
+   "sandik": 3,
+   "secmen": 803,
+   "oyKullanan": 668,
+   "katilim": null,
+   "gecerliOy": 631,
+   "oy": {
+    "Bağımsız": 455,
+    "AP": 28
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarsiz",
+    "partiToplami": 483
+   },
+   "sayfa": [
+    556,
+    557
+   ],
+   "kazanan": "Bağımsız",
+   "ad": "Çınar",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    }
   },
   {
@@ -11321,34 +11520,8 @@
    "adKaynakta": "Dicle",
    "ustIlce": null,
    "sandik": null,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    556,
-    557
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1418,
-    "oyKullanan": 1208
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 21,
-   "adKaynakta": "Ergani",
-   "ustIlce": null,
-   "sandik": 12,
-   "secmen": 4120,
-   "oyKullanan": 3315,
+   "secmen": 1418,
+   "oyKullanan": 1208,
    "katilim": null,
    "gecerliOy": 1184,
    "oy": {
@@ -11368,9 +11541,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 12,
-     "secmen": 4120,
-     "oyKullanan": 3315,
+     "sandik": null,
+     "secmen": 1418,
+     "oyKullanan": 1208,
      "gecerliOy": 1184,
      "AP": 166,
      "CHP": 562,
@@ -11382,6 +11555,37 @@
     },
     "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
    },
+   "kazanan": "CHP",
+   "ad": "Dicle",
+   "kimlik": {
+    "yontem": "baskanlikAdi",
+    "not": "kitapta okunan ad başkanlık kaydındaki ilçe belediyesiyle aynı, seçmen %3 içinde"
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 21,
+   "adKaynakta": "Ergani",
+   "ustIlce": null,
+   "sandik": 12,
+   "secmen": 4120,
+   "oyKullanan": 3315,
+   "katilim": null,
+   "gecerliOy": 2711,
+   "oy": {
+    "CHP": 1178,
+    "CKMP": 718,
+    "AP": 577,
+    "YTP61": 238
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    556,
+    557
+   ],
    "kazanan": "CHP",
    "ad": "Ergani",
    "kimlik": {
@@ -11421,24 +11625,27 @@
    "adKaynakta": "Hazro",
    "ustIlce": null,
    "sandik": 5,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1462,
+   "oyKullanan": 1040,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1011,
+   "oy": {
+    "AP": 682,
+    "YTP61": 329
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     556,
     557
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1462,
-    "oyKullanan": 1040
+   "kazanan": "AP",
+   "ad": "Hazro",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    }
   },
   {
@@ -11447,34 +11654,8 @@
    "adKaynakta": "Kulp",
    "ustIlce": null,
    "sandik": 7,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    556,
-    557
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 892,
-    "oyKullanan": 771
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 21,
-   "adKaynakta": "Lice",
-   "ustIlce": null,
-   "sandik": 17,
-   "secmen": 3446,
-   "oyKullanan": 2653,
+   "secmen": 892,
+   "oyKullanan": 771,
    "katilim": null,
    "gecerliOy": 754,
    "oy": {
@@ -11486,6 +11667,37 @@
    "kontrol": {
     "durum": "tutarsiz",
     "partiToplami": 419
+   },
+   "sayfa": [
+    556,
+    557
+   ],
+   "kazanan": "CHP",
+   "ad": "Kulp",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 21,
+   "adKaynakta": "Lice",
+   "ustIlce": null,
+   "sandik": 17,
+   "secmen": 3446,
+   "oyKullanan": 2653,
+   "katilim": null,
+   "gecerliOy": 2520,
+   "oy": {
+    "CHP": 950,
+    "YTP61": 595,
+    "AP": 41
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarsiz",
+    "partiToplami": 1586
    },
    "sayfa": [
     556,
@@ -11507,22 +11719,39 @@
    "secmen": 3169,
    "oyKullanan": 2630,
    "katilim": null,
-   "gecerliOy": 2520,
+   "gecerliOy": 2452,
    "oy": {
-    "CHP": 950,
-    "YTP61": 595,
-    "AP": 41
+    "YTP61": 1165,
+    "AP": 1026,
+    "CKMP": 116
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1586
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -145,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     556,
     557
    ],
-   "kazanan": "CHP",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 10,
+     "secmen": 3169,
+     "oyKullanan": 2630,
+     "gecerliOy": 2452,
+     "AP": 1026,
+     "CHP": null,
+     "CKMP": 116,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": 1165,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "YTP61",
    "ad": "Silvan",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -11643,9 +11872,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -263,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -263,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     586,
@@ -11719,9 +11953,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -139,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -139,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     586,
@@ -11766,7 +12005,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     586,
@@ -12003,9 +12247,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -170,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -170,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     586,
@@ -12286,7 +12535,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     604,
@@ -13047,7 +13301,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     658,
@@ -13201,7 +13460,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     658,
@@ -13300,7 +13564,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     658,
@@ -14759,7 +15028,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     798,
@@ -16411,7 +16685,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     848,
@@ -16491,9 +16770,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -59,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -59,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     848,
@@ -17016,7 +17300,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     876,
@@ -17044,7 +17333,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     876,
@@ -18153,7 +18447,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     902,
@@ -18230,7 +18529,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     902,
@@ -18278,7 +18582,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     902,
@@ -18739,7 +19048,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     904,
@@ -19736,7 +20050,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     976,
@@ -19847,7 +20166,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     976,
@@ -20036,7 +20360,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     976,
@@ -20080,7 +20409,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     976,
@@ -20289,9 +20623,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -62,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -62,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1020,
@@ -20331,9 +20670,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -76,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -76,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1020,
@@ -20534,7 +20878,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1020,
@@ -20641,7 +20990,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1020,
@@ -21122,7 +21476,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1046,
@@ -21237,7 +21596,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1046,
@@ -21339,7 +21703,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1046,
@@ -22156,7 +22525,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1100,
@@ -22226,7 +22600,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1100,
@@ -22333,7 +22712,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1100,
@@ -22855,12 +23239,12 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 1094,
+   "gecerliOy": null,
    "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 0
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     1102,
@@ -22963,25 +23347,24 @@
    "adKaynakta": "Elmasun",
    "ustIlce": "Çumra",
    "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 830,
+   "oyKullanan": 658,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 608,
+   "oy": {
+    "AP": 270,
+    "CHP": 29
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 299
    },
    "sayfa": [
     1102,
     1103
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 830,
-    "oyKullanan": 658
-   }
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -23014,25 +23397,24 @@
    "adKaynakta": "Karkın",
    "ustIlce": "Çumra",
    "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1020,
+   "oyKullanan": 950,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 888,
+   "oy": {
+    "AP": 440,
+    "CHP": 438
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 878
    },
    "sayfa": [
     1102,
     1103
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1020,
-    "oyKullanan": 950
-   }
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -23436,7 +23818,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1102,
@@ -23881,7 +24268,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1104,
@@ -24064,9 +24456,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -61,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -61,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1146,
@@ -24221,7 +24618,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1146,
@@ -24365,7 +24767,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1146,
@@ -24768,9 +25175,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -24,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -24,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1172,
@@ -25287,7 +25699,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1198,
@@ -25363,7 +25780,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1198,
@@ -25508,9 +25930,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -427,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -427,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1198,
@@ -25630,7 +26057,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1198,
@@ -25742,9 +26174,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -151,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -151,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1198,
@@ -26495,7 +26932,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1260,
@@ -26550,7 +26992,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1260,
@@ -26626,24 +27073,27 @@
    "adKaynakta": "Ömerli",
    "ustIlce": null,
    "sandik": 3,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 892,
+   "oyKullanan": 822,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 797,
+   "oy": {
+    "CHP": 462,
+    "YTP61": 335
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     1260,
     1261
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 892,
-    "oyKullanan": 822
+   "kazanan": "CHP",
+   "ad": "Ömerli",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    }
   },
   {
@@ -27012,7 +27462,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1292,
@@ -27275,18 +27730,40 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 2860,
+   "oy": {
+    "CHP": 1499,
+    "YTP61": 384,
+    "MP62": 252,
+    "AP": 170
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -555,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1314,
     1315
    ],
-   "kazanan": null,
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 15,
+     "secmen": 606,
+     "oyKullanan": 3194,
+     "gecerliOy": 2860,
+     "AP": 170,
+     "CHP": 1499,
+     "CKMP": 0,
+     "MP62": 252,
+     "TİP": 0,
+     "YTP61": 384,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP",
    "secmenOkunan": {
     "secmen": 606,
     "oyKullanan": 3194
@@ -27467,7 +27944,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1334,
@@ -27562,7 +28044,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1334,
@@ -27585,7 +28072,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1334,
@@ -27610,7 +28102,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1334,
@@ -27668,7 +28165,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1334,
@@ -27752,7 +28254,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1334,
@@ -28096,18 +28603,24 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 5975,
+   "oy": {
+    "CHP": 2196,
+    "AP": 2064,
+    "YTP61": 572,
+    "CKMP": 244,
+    "MP62": 63
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 5139
    },
    "sayfa": [
     1352,
     1353
    ],
-   "kazanan": null,
+   "kazanan": "CHP",
    "secmenOkunan": {
     "secmen": 8700,
     "oyKullanan": 16633
@@ -28122,18 +28635,22 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 949,
+   "oy": {
+    "CHP": 437,
+    "AP": 414,
+    "CKMP": 42
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 893
    },
    "sayfa": [
     1352,
     1353
    ],
-   "kazanan": null,
+   "kazanan": "CHP",
    "secmenOkunan": {
     "secmen": null,
     "oyKullanan": 1007
@@ -28200,22 +28717,18 @@
    "secmen": null,
    "oyKullanan": null,
    "katilim": null,
-   "gecerliOy": 653,
-   "oy": {
-    "AP": 298,
-    "CHP": 192,
-    "Bağımsız": 1
-   },
+   "gecerliOy": null,
+   "oy": {},
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 491
+    "durum": "gecerliOyOkunamadi",
+    "sagSayfaEslesmedi": true
    },
    "sayfa": [
     1352,
     1353
    ],
-   "kazanan": "AP",
+   "kazanan": null,
    "secmenOkunan": {
     "secmen": 945,
     "oyKullanan": 1720
@@ -28300,25 +28813,41 @@
    "adKaynakta": "Sultanhanı",
    "ustIlce": "Aksaray",
    "sandik": 6,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1424,
+   "oyKullanan": 1313,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1212,
+   "oy": {
+    "AP": 699,
+    "CHP": 491
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiSutunuDogrulanamadi": true,
+    "not": "sağ yüzün sütun başlığı okunamadı; toplam tutsa da oyların hangi partiye ait olduğu denetlenemiyor"
    },
    "sayfa": [
     1352,
     1353
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1424,
-    "oyKullanan": 1313
-   }
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 1424,
+     "oyKullanan": 1313,
+     "gecerliOy": 1212,
+     "AP": 699,
+     "CHP": 491,
+     "CKMP": null,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": null,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -28947,7 +29476,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1372,
@@ -29274,7 +29808,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1398,
@@ -29536,9 +30075,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -40,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -40,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1398,
@@ -29642,7 +30186,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1398,
@@ -29757,7 +30306,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1416,
@@ -30000,7 +30554,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1416,
@@ -30050,7 +30609,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1416,
@@ -30311,7 +30875,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1438,
@@ -30463,7 +31032,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1438,
@@ -30609,7 +31183,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1472,
@@ -31074,9 +31653,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -912,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -912,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1496,
@@ -31501,7 +32085,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1518,
@@ -31903,7 +32492,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1518,
@@ -32400,7 +32994,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1584,
@@ -32424,7 +33023,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1584,
@@ -32809,9 +33413,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -59,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -59,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1616,
@@ -33056,9 +33665,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -9,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -9,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1616,
@@ -33102,9 +33716,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -25,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -25,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1616,
@@ -33147,7 +33766,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1616,
@@ -33189,29 +33813,33 @@
    }
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 61,
    "adKaynakta": "",
    "ustIlce": "Of",
    "sandik": 7,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 1818,
+   "oyKullanan": 1491,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 1429,
+   "oy": {
+    "CHP": 798,
+    "AP": 498
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 1296
    },
    "sayfa": [
     1616,
     1617
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 1818,
-    "oyKullanan": 1491
+   "kazanan": "CHP",
+   "ad": "Sürmene",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    }
   },
   {
@@ -33314,7 +33942,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1616,
@@ -33374,9 +34007,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -442,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -442,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1644,
@@ -33440,7 +34078,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1644,
@@ -33584,7 +34227,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1644,
@@ -33986,7 +34634,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1666,
@@ -34157,7 +34810,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1696,
@@ -34834,7 +35492,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1738,
@@ -34920,7 +35583,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1738,
@@ -35022,7 +35690,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1738,

@@ -4,6 +4,8 @@
 
 Karşılaştırılan: belediye başkanlığı seçimi, il satırı (il merkezi belediyesi) ve ilçe satırları (ilçe merkezi belediyesi). Depodaki bu yılların verisi Vikipedi il sayfalarından; o sayfalar bu kitapları kaynak gösteriyor. İl genel meclisi ve belediye meclisi depoda yok, karşılaştırılmadı.
 
+> **Not (26 Ekim 2026):** Bu rapor kitapların metin katmanında arama yapan ilk karşılaştırmadır ve birleştirmeden önceki kayıtları anlatır. Sonra başkanlık tabloları tam okuyucuyla (sayfa görüntüsünden ikinci okuma) okundu ve iç kontrolden geçen satırlar kayda işlendi: `merge_baskanlik_1963_1977.py`, satır satır sonuç `data/kaynaklar/tuik/yerel/<seçim>/baskanlik_birlestirme.json`, yöntem `docs/rapor/VERI_VE_YONTEM.md`.
+
 ## Özet
 
 | Seçim | Kitap | Satır | birebir | kitap_ic_tutarsizlik | fark | farkli | kismi | bulunamadi |

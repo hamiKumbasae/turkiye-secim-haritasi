@@ -31,12 +31,12 @@
   "il": 67,
   "ilce": 566,
   "belde": 688,
-  "tutarli": 623,
-  "toplamTutmuyor": 153,
-  "tutarsiz": 698,
+  "tutarli": 622,
+  "toplamTutmuyor": 228,
+  "tutarsiz": 699,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 0,
-  "goruntudenOkunan": 156,
+  "goruntudenOkunan": 199,
   "adlandirilan": 564,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
@@ -195,12 +195,38 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 84788
+    "durum": "toplamTutmuyor",
+    "partiToplami": 84788,
+    "gecerliOy": 97032,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -12244,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     17
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 627,
+     "secmen": 193952,
+     "oyKullanan": 109629,
+     "gecerliOy": 97032,
+     "katilim%": 56.5,
+     "AP": 37385,
+     "BP69": 3565,
+     "CHP": 36282,
+     "CKMP": 1724,
+     "CGP": 3656,
+     "MP62": 0,
+     "TİP": 1430,
+     "YTP61": 0,
+     "Bağımsız": 746
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -224,13 +250,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 43598
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -10452,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     17
    ],
    "kodKaynakta": "00",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 405,
+     "secmen": 125418,
+     "oyKullanan": 61937,
+     "gecerliOy": 54050,
+     "katilim%": 49.3,
+     "AP": 18700,
+     "BP69": 2686,
+     "CHP": 18638,
+     "CKMP": 542,
+     "CGP": 1235,
+     "MP62": 0,
+     "TİP": 1198,
+     "YTP61": 0,
+     "Bağımsız": 599
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -874,8 +920,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 20438
+    "durum": "toplamTutmuyor",
+    "partiToplami": 20438,
+    "gecerliOy": 21503,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 20438
+    }
    },
    "sayfa": [
     45
@@ -1028,34 +1080,15 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -63,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 1208
    },
    "sayfa": [
     45
    ],
    "kodKaynakta": "02",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 6,
-     "secmen": 1631,
-     "oyKullanan": 1368,
-     "gecerliOy": 1271,
-     "katilim%": 838,
-     "AP": 740,
-     "BP69": 0,
-     "CHP": 468,
-     "CKMP": 0,
-     "CGP": 0,
-     "MP62": 0,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "AP",
+   "katilimOkunan": 838,
    "ad": "Çelikhan",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -1267,22 +1300,48 @@
    "katilim": 70.5,
    "gecerliOy": 58165,
    "oy": {
-    "MP62": 8893033,
     "AP": 25303,
     "CHP": 13289,
-    "CGP": 4016,
-    "Bağımsız": 1072,
-    "CKMP": 1
+    "CGP": 6889,
+    "MP62": 3033,
+    "CKMP": 1401,
+    "Bağımsız": 1072
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 8936714
+    "durum": "toplamTutmuyor",
+    "partiToplami": 50987,
+    "gecerliOy": 58165,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -7178,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     61
    ],
-   "kazanan": "MP62"
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 335,
+     "secmen": 91060,
+     "oyKullanan": 64241,
+     "gecerliOy": 58165,
+     "katilim%": 70.5,
+     "AP": 25303,
+     "BP69": 0,
+     "CHP": 13289,
+     "CKMP": 1401,
+     "CGP": 6889,
+     "MP62": 3033,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 1072
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "ilce",
@@ -1331,7 +1390,7 @@
    "oy": {
     "CHP": 268,
     "AP": 246,
-    "TİP": 172,
+    "MP62": 172,
     "CGP": 117
    },
    "yuzde": {},
@@ -1409,7 +1468,7 @@
    "oy": {
     "CGP": 899,
     "AP": 500,
-    "TİP": 138
+    "MP62": 138
    },
    "yuzde": {},
    "kontrol": {
@@ -1434,15 +1493,16 @@
    "katilim": 63.2,
    "gecerliOy": 4357,
    "oy": {
-    "CGP": 183450,
     "AP": 1862,
+    "CGP": 450,
     "Bağımsız": 341,
-    "CHP": 234
+    "CHP": 234,
+    "CKMP": 183
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 185887
+    "partiToplami": 3070
    },
    "sayfa": [
     61
@@ -1450,7 +1510,7 @@
    "karakterDuzeltme": [
     "113388→138"
    ],
-   "kazanan": "CGP",
+   "kazanan": "AP",
    "katilimOkunan": 632,
    "ad": "Bolvadin",
    "kimlik": {
@@ -1519,19 +1579,20 @@
    "katilim": 84.5,
    "gecerliOy": 917,
    "oy": {
-    "CGP": 140252,
-    "AP": 468
+    "AP": 468,
+    "CGP": 252,
+    "CKMP": 140
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 140720
+    "partiToplami": 860
    },
    "sayfa": [
     61
    ],
    "kodKaynakta": "0.010",
-   "kazanan": "CGP"
+   "kazanan": "AP"
   },
   {
    "tip": "ilce",
@@ -1574,21 +1635,22 @@
    "katilim": 79.9,
    "gecerliOy": 531,
    "oy": {
-    "CGP": 5344,
     "AP": 171,
     "MP62": 91,
     "CHP": 88,
-    "Bağımsız": 78
+    "Bağımsız": 78,
+    "CKMP": 53,
+    "CGP": 44
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 5772
+    "partiToplami": 525
    },
    "sayfa": [
     61
    ],
-   "kazanan": "CGP"
+   "kazanan": "AP"
   },
   {
    "tip": "ilce",
@@ -1790,14 +1852,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2503
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -831,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     61
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 17,
+     "secmen": 4949,
+     "oyKullanan": 3529,
+     "gecerliOy": 3334,
+     "katilim%": 713,
+     "AP": 1105,
+     "BP69": 0,
+     "CHP": 1123,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 275,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "CHP",
-   "katilimOkunan": 713,
    "ad": "Emirdağ",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -2114,13 +2195,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2820
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -63,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     61
    ],
    "kodKaynakta": "09",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 12,
+     "secmen": 3338,
+     "oyKullanan": 2949,
+     "gecerliOy": 2883,
+     "katilim%": 88.3,
+     "AP": 1536,
+     "BP69": 0,
+     "CHP": 1284,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Sultandağı",
    "kimlik": {
@@ -2194,7 +2295,7 @@
    "oy": {
     "CHP": 548,
     "AP": 405,
-    "TİP": 125
+    "MP62": 125
    },
    "yuzde": {},
    "kontrol": {
@@ -2311,8 +2412,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -698,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 11800,
+    "gecerliOy": 12498,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -698,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     83
@@ -3012,7 +3119,6 @@
    "katilim": 52.3,
    "gecerliOy": 229173,
    "oy": {
-    "Bağımsız": 1171555,
     "AP": 92483,
     "CHP": 81892,
     "MP62": 18585,
@@ -3020,17 +3126,18 @@
     "TİP": 6176,
     "CGP": 5741,
     "CKMP": 5539,
-    "YTP61": 1
+    "Bağımsız": 1555,
+    "YTP61": 1117
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 1394414
+    "partiToplami": 225530
    },
    "sayfa": [
     122
    ],
-   "kazanan": "Bağımsız"
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -3050,16 +3157,36 @@
     "BP69": 456,
     "TİP": 455,
     "CKMP": 436,
-    "Bağımsız": 132
+    "YTP61": 132
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 19134
+    "durum": "toplamTutmuyor",
+    "toplamFarki": 44,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     122
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 138,
+     "secmen": 50468,
+     "oyKullanan": 24265,
+     "gecerliOy": 19090,
+     "katilim%": 48.0,
+     "AP": 9708,
+     "BP69": 456,
+     "CHP": 6011,
+     "CKMP": 436,
+     "CGP": 545,
+     "MP62": 1391,
+     "TİP": 455,
+     "YTP61": 132,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -3084,12 +3211,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 42670
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -4,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     122
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 304,
+     "secmen": 102387,
+     "oyKullanan": 55999,
+     "gecerliOy": 42674,
+     "katilim%": 54.6,
+     "AP": 19472,
+     "BP69": 4953,
+     "CHP": 12754,
+     "CKMP": 697,
+     "CGP": 988,
+     "MP62": 2639,
+     "TİP": 958,
+     "YTP61": 209,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -3127,25 +3274,25 @@
    "katilim": 45.4,
    "gecerliOy": 92121,
    "oy": {
-    "MP62": 4385503,
     "CHP": 39631,
     "AP": 31956,
     "BP69": 6325,
+    "MP62": 5503,
     "TİP": 4016,
+    "CGP": 2438,
     "CKMP": 1407,
     "Bağımsız": 472,
-    "YTP61": 389,
-    "CGP": 2
+    "YTP61": 389
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 4469701
+    "partiToplami": 92137
    },
    "sayfa": [
     122
    ],
-   "kazanan": "MP62",
+   "kazanan": "CHP",
    "katilimOkunan": 454
   },
   {
@@ -3340,12 +3487,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2300
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -477,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     122
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 18,
+     "secmen": 5071,
+     "oyKullanan": 2981,
+     "gecerliOy": 2777,
+     "katilim%": 58.7,
+     "AP": 1339,
+     "BP69": 0,
+     "CHP": 157,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 24,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 780
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Beypazarı",
    "kimlik": {
@@ -3448,14 +3615,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2460
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -13,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     122
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 10,
+     "secmen": 3721,
+     "oyKullanan": 2564,
+     "gecerliOy": 2473,
+     "katilim%": 689,
+     "AP": 1456,
+     "BP69": 0,
+     "CHP": 986,
+     "CKMP": 0,
+     "CGP": 18,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
-   "katilimOkunan": 689,
    "ad": "Çubuk",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -3838,13 +4024,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1319
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -187,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     123
    ],
    "kodKaynakta": "17",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 7,
+     "secmen": 2056,
+     "oyKullanan": 1653,
+     "gecerliOy": 1506,
+     "katilim%": 80.3,
+     "AP": 667,
+     "BP69": 0,
+     "CHP": 652,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Nallıhan",
    "kimlik": {
@@ -3959,7 +4165,7 @@
     "MP62": 292,
     "AP": 284,
     "CHP": 116,
-    "YTP61": 14,
+    "TİP": 14,
     "Bağımsız": 13
    },
    "yuzde": {},
@@ -4063,8 +4269,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -5260,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 33453,
+    "gecerliOy": 38713,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -5260,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     167
@@ -4109,15 +4321,34 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 13732
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -3455,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     167
    ],
    "kodKaynakta": "00",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 111,
+     "secmen": 33875,
+     "oyKullanan": 19102,
+     "gecerliOy": 17187,
+     "katilim%": 563,
+     "AP": 7449,
+     "BP69": 0,
+     "CHP": 5082,
+     "CKMP": 0,
+     "CGP": 136,
+     "MP62": 0,
+     "TİP": 174,
+     "YTP61": 0,
+     "Bağımsız": 891
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
-   "katilimOkunan": 563,
    "ad": "Merkez",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -4140,33 +4371,13 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -34,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 633
    },
    "sayfa": [
     167
    ],
    "kodKaynakta": "01",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 4,
-     "secmen": 1077,
-     "oyKullanan": 736,
-     "gecerliOy": 667,
-     "katilim%": 68.3,
-     "AP": 261,
-     "BP69": null,
-     "CHP": 372,
-     "CKMP": 0,
-     "CGP": 0,
-     "MP62": 0,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "CHP",
    "ad": "Akseki",
    "kimlik": {
@@ -4691,12 +4902,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2436
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -225,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     167
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 9,
+     "secmen": 3838,
+     "oyKullanan": 2883,
+     "gecerliOy": 2661,
+     "katilim%": 75.1,
+     "AP": 726,
+     "BP69": 0,
+     "CHP": 407,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 1303
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "Bağımsız",
    "ad": "Serik",
    "kimlik": {
@@ -4721,8 +4952,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 10293
+    "durum": "toplamTutmuyor",
+    "partiToplami": 10293,
+    "gecerliOy": 11897,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 10293
+    }
    },
    "sayfa": [
     193
@@ -5099,21 +5336,48 @@
    "katilim": 55.9,
    "gecerliOy": 54503,
    "oy": {
-    "CGP": 191149,
     "AP": 32835,
     "CHP": 17471,
     "Bağımsız": 1377,
-    "YTP61": 740
+    "TİP": 740,
+    "CKMP": 191,
+    "CGP": 149
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 243572
+    "durum": "toplamTutmuyor",
+    "partiToplami": 52763,
+    "gecerliOy": 54503,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -1740,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     209
    ],
-   "kazanan": "CGP"
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 396,
+     "secmen": 114559,
+     "oyKullanan": 64116,
+     "gecerliOy": 54503,
+     "katilim%": 55.9,
+     "AP": 32835,
+     "BP69": 0,
+     "CHP": 17471,
+     "CKMP": 191,
+     "CGP": 149,
+     "MP62": 0,
+     "TİP": 740,
+     "YTP61": 0,
+     "Bağımsız": 1377
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "ilce",
@@ -5158,7 +5422,7 @@
    "gecerliOy": 734,
    "oy": {
     "AP": 590,
-    "MP62": 144
+    "CGP": 144
    },
    "yuzde": {},
    "kontrol": {
@@ -5261,13 +5525,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2032
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -121,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     209
    ],
    "kodKaynakta": "01",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 12,
+     "secmen": 3513,
+     "oyKullanan": 2321,
+     "gecerliOy": 2153,
+     "katilim%": 66.0,
+     "AP": 1139,
+     "BP69": 0,
+     "CHP": 378,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 515
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Bozdoğan",
    "kimlik": {
@@ -5317,13 +5601,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2065
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -635,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     209
    ],
    "kodKaynakta": "02",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 16,
+     "secmen": 4159,
+     "oyKullanan": 2911,
+     "gecerliOy": 2700,
+     "katilim%": 69.9,
+     "AP": 1387,
+     "BP69": 0,
+     "CHP": 678,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Çine",
    "kimlik": {
@@ -5347,13 +5651,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2010
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -270,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     209
    ],
    "kodKaynakta": "03",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 14,
+     "secmen": 3926,
+     "oyKullanan": 2682,
+     "gecerliOy": 2280,
+     "katilim%": 68.3,
+     "AP": 1148,
+     "BP69": 0,
+     "CHP": 862,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Germencik",
    "kimlik": {
@@ -5719,8 +6043,8 @@
    "oy": {
     "AP": 2441,
     "CHP": 1340,
-    "YTP61": 346,
-    "CGP": 191
+    "TİP": 346,
+    "CKMP": 191
    },
    "yuzde": {},
    "kontrol": {
@@ -5941,8 +6265,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 55935
+    "durum": "toplamTutmuyor",
+    "partiToplami": 55935,
+    "gecerliOy": 69187,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 55935
+    }
    },
    "sayfa": [
     231
@@ -6455,14 +6785,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1478
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -168,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     231
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 14,
+     "secmen": 4010,
+     "oyKullanan": 1822,
+     "gecerliOy": 1646,
+     "katilim%": 454,
+     "AP": 1009,
+     "BP69": 0,
+     "CHP": 469,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
-   "katilimOkunan": 454,
    "ad": "Havran",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -6618,12 +6967,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1412
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -257,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     231
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 7,
+     "secmen": 2389,
+     "oyKullanan": 1822,
+     "gecerliOy": 1669,
+     "katilim%": 76.2,
+     "AP": 648,
+     "BP69": 0,
+     "CHP": 537,
+     "CKMP": 227,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Savaştepe",
    "kimlik": {
@@ -6781,8 +7150,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 11276
+    "durum": "toplamTutmuyor",
+    "partiToplami": 11276,
+    "gecerliOy": 12506,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 11276
+    }
    },
    "sayfa": [
     269
@@ -7248,8 +7623,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -335,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 9419,
+    "gecerliOy": 9754,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -335,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     299
@@ -7502,12 +7883,38 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 23973
+    "durum": "toplamTutmuyor",
+    "partiToplami": 23973,
+    "gecerliOy": 27031,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -3058,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     313
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 131,
+     "secmen": 41322,
+     "oyKullanan": 28228,
+     "gecerliOy": 27031,
+     "katilim%": 68.3,
+     "AP": 12187,
+     "BP69": 0,
+     "CHP": 9905,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 930,
+     "TİP": 0,
+     "YTP61": 796,
+     "Bağımsız": 155
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -7528,12 +7935,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 5233
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -581,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     313
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 30,
+     "secmen": 9840,
+     "oyKullanan": 6119,
+     "gecerliOy": 5814,
+     "katilim%": 62.1,
+     "AP": 2677,
+     "BP69": 0,
+     "CHP": 2367,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 99,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 90
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Merkez",
    "kimlik": {
@@ -7760,12 +8187,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 806
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -157,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     313
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 4,
+     "secmen": 1376,
+     "oyKullanan": 1001,
+     "gecerliOy": 963,
+     "katilim%": 72.7,
+     "AP": 524,
+     "BP69": 0,
+     "CHP": 282,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -7786,12 +8233,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1744
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -301,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     313
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 3434,
+     "oyKullanan": 2078,
+     "gecerliOy": 2045,
+     "katilim%": 60.5,
+     "AP": 729,
+     "BP69": 0,
+     "CHP": 244,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 64,
+     "TİP": 0,
+     "YTP61": 707,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -7810,12 +8277,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 477
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -46,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     313
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 2,
+     "secmen": 719,
+     "oyKullanan": 553,
+     "gecerliOy": 523,
+     "katilim%": 76.9,
+     "AP": 297,
+     "BP69": 0,
+     "CHP": 180,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -7919,12 +8406,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 496
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -37,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     313
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 3,
+     "secmen": 835,
+     "oyKullanan": 598,
+     "gecerliOy": 533,
+     "katilim%": 71.6,
+     "AP": 126,
+     "BP69": 0,
+     "CHP": 156,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 154,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 60
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "CHP",
    "ad": "Mengen",
    "kimlik": {
@@ -7949,12 +8456,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1216
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -141,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     313
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 9,
+     "secmen": 2054,
+     "oyKullanan": 1403,
+     "gecerliOy": 1357,
+     "katilim%": 68.3,
+     "AP": 760,
+     "BP69": 0,
+     "CHP": 265,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 191,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -8003,13 +8530,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 476
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -14,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     313
    ],
    "kodKaynakta": "09",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 3,
+     "secmen": 669,
+     "oyKullanan": 527,
+     "gecerliOy": 490,
+     "katilim%": 78.7,
+     "AP": 193,
+     "BP69": 0,
+     "CHP": 153,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 111,
+     "TİP": 0,
+     "YTP61": 19,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Yığılca",
    "kimlik": {
@@ -8035,8 +8582,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 21918
+    "durum": "toplamTutmuyor",
+    "partiToplami": 21918,
+    "gecerliOy": 23063,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 21918
+    }
    },
    "sayfa": [
     343
@@ -8532,14 +9085,20 @@
     "AP": 58180,
     "CHP": 22838,
     "CGP": 963,
-    "YTP61": 962,
+    "TİP": 962,
     "CKMP": 627,
     "Bağımsız": 152
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 83722
+    "durum": "toplamTutmuyor",
+    "partiToplami": 83722,
+    "gecerliOy": 87634,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 83722
+    }
    },
    "sayfa": [
     355
@@ -8560,7 +9119,7 @@
    "oy": {
     "AP": 29765,
     "CHP": 8145,
-    "YTP61": 962,
+    "TİP": 962,
     "CGP": 825,
     "CKMP": 395
    },
@@ -8840,12 +9399,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 5969
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -971,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     355
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 50,
+     "secmen": 14985,
+     "oyKullanan": 7426,
+     "gecerliOy": 6940,
+     "katilim%": 49.5,
+     "AP": 4864,
+     "BP69": 0,
+     "CHP": 1105,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "İnegöl",
    "kimlik": {
@@ -9288,8 +9867,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 24600
+    "durum": "toplamTutmuyor",
+    "partiToplami": 24600,
+    "gecerliOy": 27145,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 24600
+    }
    },
    "sayfa": [
     383
@@ -9620,12 +10205,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1296
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -919,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     383
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 10,
+     "secmen": 3108,
+     "oyKullanan": 2361,
+     "gecerliOy": 2215,
+     "katilim%": 75.9,
+     "AP": 574,
+     "BP69": 0,
+     "CHP": 566,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 156
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Ezine",
    "kimlik": {
@@ -9750,12 +10355,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 887
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -98,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     383
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 1488,
+     "oyKullanan": 1017,
+     "gecerliOy": 985,
+     "katilim%": 68.3,
+     "AP": 664,
+     "BP69": 0,
+     "CHP": 138,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 85
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "İmroz (Gökçeada)",
    "kimlik": {
@@ -9933,8 +10558,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -816,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 14380,
+    "gecerliOy": 15196,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -816,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     407
@@ -10210,15 +10841,34 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 773
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -126,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     407
    ],
    "kodKaynakta": "06",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 4,
+     "secmen": 1320,
+     "oyKullanan": 948,
+     "gecerliOy": 899,
+     "katilim%": 718,
+     "AP": 394,
+     "BP69": 0,
+     "CHP": 33,
+     "CKMP": 297,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 49
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
-   "katilimOkunan": 718,
    "ad": "Orta",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -10588,12 +11238,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2982
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -916,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     427
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 24,
+     "secmen": 6867,
+     "oyKullanan": 4197,
+     "gecerliOy": 3898,
+     "katilim%": 61.1,
+     "AP": 1839,
+     "BP69": 0,
+     "CHP": 925,
+     "CKMP": 0,
+     "CGP": 36,
+     "MP62": 182,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "İskilip",
    "kimlik": {
@@ -10892,21 +11562,28 @@
    "katilim": 75.9,
    "gecerliOy": 70785,
    "oy": {
-    "CHP": 1627273,
     "AP": 37177,
+    "CHP": 27273,
     "CGP": 2370,
     "Bağımsız": 1564,
-    "TİP": 96
+    "TİP": 96,
+    "BP69": 16
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1668480
+    "durum": "toplamTutmuyor",
+    "partiToplami": 68496,
+    "gecerliOy": 70785,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 68496
+    }
    },
    "sayfa": [
     455
    ],
-   "kazanan": "CHP",
+   "kazanan": "AP",
    "katilimOkunan": 759
   },
   {
@@ -11026,7 +11703,7 @@
    "oy": {
     "AP": 843,
     "CHP": 527,
-    "MP62": 33
+    "CGP": 33
    },
    "yuzde": {},
    "kontrol": {
@@ -11506,19 +12183,20 @@
    "katilim": 81.5,
    "gecerliOy": 664,
    "oy": {
-    "CHP": 16227,
-    "AP": 394
+    "AP": 394,
+    "CHP": 227,
+    "BP69": 16
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 16621
+    "partiToplami": 637
    },
    "sayfa": [
     455
    ],
    "kodKaynakta": "04",
-   "kazanan": "CHP",
+   "kazanan": "AP",
    "katilimOkunan": 815,
    "ad": "Çameli",
    "kimlik": {
@@ -11727,7 +12405,7 @@
    "oy": {
     "AP": 456,
     "CHP": 232,
-    "MP62": 143
+    "CGP": 143
    },
    "yuzde": {},
    "kontrol": {
@@ -11811,19 +12489,38 @@
    "oy": {
     "AP": 1459,
     "CHP": 1414,
-    "MP62": 15
+    "CGP": 15
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2888
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -280,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     455
    ],
    "kodKaynakta": "09",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 12,
+     "secmen": 4190,
+     "oyKullanan": 3417,
+     "gecerliOy": 3168,
+     "katilim%": 815,
+     "AP": 1459,
+     "BP69": 0,
+     "CHP": 1414,
+     "CKMP": 0,
+     "CGP": 15,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
-   "katilimOkunan": 815,
    "ad": "Sarayköy",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -12006,8 +12703,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 31465
+    "durum": "toplamTutmuyor",
+    "partiToplami": 31465,
+    "gecerliOy": 36437,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 31465
+    }
    },
    "sayfa": [
     475
@@ -12035,12 +12738,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 13145
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -4714,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     475
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 111,
+     "secmen": 44492,
+     "oyKullanan": 19626,
+     "gecerliOy": 17859,
+     "katilim%": 44.1,
+     "AP": 3663,
+     "BP69": 0,
+     "CHP": 5302,
+     "CKMP": 181,
+     "CGP": 0,
+     "MP62": 2286,
+     "TİP": 678,
+     "YTP61": 810,
+     "Bağımsız": 225
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "CHP"
   },
   {
@@ -12414,8 +13137,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 24006
+    "durum": "toplamTutmuyor",
+    "partiToplami": 24006,
+    "gecerliOy": 27244,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 24006
+    }
    },
    "sayfa": [
     501
@@ -12670,7 +13399,7 @@
    "oy": {
     "AP": 1963,
     "CHP": 1711,
-    "MP62": 141,
+    "CGP": 141,
     "TİP": 71
    },
    "yuzde": {},
@@ -12789,15 +13518,34 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 4604
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -319,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     501
    ],
    "kodKaynakta": "07",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 31,
+     "secmen": 9570,
+     "oyKullanan": 7039,
+     "gecerliOy": 4923,
+     "katilim%": 735,
+     "AP": 2012,
+     "BP69": 0,
+     "CHP": 1849,
+     "CKMP": 0,
+     "CGP": 453,
+     "MP62": 197,
+     "TİP": 46,
+     "YTP61": 0,
+     "Bağımsız": 47
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
-   "katilimOkunan": 735,
    "ad": "Uzunköprü",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -12926,8 +13674,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -36,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 22220,
+    "gecerliOy": 22256,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -36,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     515
@@ -13305,8 +14059,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 13289
+    "durum": "toplamTutmuyor",
+    "partiToplami": 13289,
+    "gecerliOy": 13625,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 13289
+    }
    },
    "sayfa": [
     537
@@ -13655,8 +14415,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 32554
+    "durum": "toplamTutmuyor",
+    "partiToplami": 32554,
+    "gecerliOy": 37741,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 32554
+    }
    },
    "sayfa": [
     559
@@ -14231,8 +14997,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -7300,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 48824,
+    "gecerliOy": 56124,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -7300,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     597
@@ -14825,8 +15597,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 46658
+    "durum": "toplamTutmuyor",
+    "partiToplami": 46658,
+    "gecerliOy": 49568,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 46658
+    }
    },
    "sayfa": [
     615
@@ -14852,15 +15630,34 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 27576
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -155,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     615
    ],
    "kodKaynakta": "00",
-   "kazanan": "AP",
-   "katilimOkunan": 347
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 234,
+     "secmen": 79883,
+     "oyKullanan": 27731,
+     "gecerliOy": 27731,
+     "katilim%": 347,
+     "AP": 10163,
+     "BP69": 0,
+     "CHP": 10073,
+     "CKMP": 0,
+     "CGP": 5416,
+     "MP62": 358,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 1566
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -14938,13 +15735,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2087
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -1270,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     615
    ],
    "kodKaynakta": "02",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 15,
+     "secmen": 4983,
+     "oyKullanan": 3554,
+     "gecerliOy": 3357,
+     "katilim%": 71.3,
+     "AP": 986,
+     "BP69": 180,
+     "CHP": 536,
+     "CKMP": 0,
+     "CGP": 218,
+     "MP62": 167,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "İslahiye",
    "kimlik": {
@@ -15330,15 +16147,34 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 2084
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -1265,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     637
    ],
    "kodKaynakta": "02",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 14,
+     "secmen": 4485,
+     "oyKullanan": 3542,
+     "gecerliOy": 3349,
+     "katilim%": 789,
+     "AP": 1752,
+     "BP69": 0,
+     "CHP": 223,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 48,
+     "TİP": 61,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
-   "katilimOkunan": 789,
    "ad": "Bulancak",
    "kimlik": {
     "yontem": "baskanlikAdi",
@@ -15774,8 +16610,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -406,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 11109,
+    "gecerliOy": 11515,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -406,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     659
@@ -16083,8 +16925,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 3517
+    "durum": "toplamTutmuyor",
+    "partiToplami": 3517,
+    "gecerliOy": 3690,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 3517
+    }
    },
    "sayfa": [
     679
@@ -16142,13 +16990,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 443
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -137,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     679
    ],
    "kodKaynakta": "01",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 3,
+     "secmen": 722,
+     "oyKullanan": 590,
+     "gecerliOy": 580,
+     "katilim%": 81.7,
+     "AP": 268,
+     "BP69": 0,
+     "CHP": 145,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 30,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Beytüşşebap",
    "kimlik": {
@@ -16314,31 +17182,17 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -70,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 60990,
+    "gecerliOy": 61060,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 60990
+    }
    },
    "sayfa": [
     689
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 312,
-     "secmen": 103226,
-     "oyKullanan": 69876,
-     "gecerliOy": 61060,
-     "katilim%": 67.6,
-     "AP": 26238,
-     "BP69": 2325,
-     "CHP": 25208,
-     "CKMP": 538,
-     "CGP": 2135,
-     "MP62": 63,
-     "TİP": 1378,
-     "YTP61": 0,
-     "Bağımsız": 3105
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "AP"
   },
   {
@@ -18448,15 +19302,34 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 9592
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -2282,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     741
    ],
    "kodKaynakta": "07",
-   "kazanan": "AP",
-   "katilimOkunan": 392
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 114,
+     "secmen": 34212,
+     "oyKullanan": 13419,
+     "gecerliOy": 11874,
+     "katilim%": 392,
+     "AP": 4177,
+     "BP69": 230,
+     "CHP": 2256,
+     "CKMP": 276,
+     "CGP": 189,
+     "MP62": 448,
+     "TİP": 625,
+     "YTP61": null,
+     "Bağımsız": 1391
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -19190,17 +20063,17 @@
    "oy": {
     "AP": 109534,
     "CHP": 54644,
-    "CGP": 45630,
     "TİP": 6519,
+    "CGP": 5630,
     "MP62": 4381,
+    "CKMP": 1004,
     "BP69": 981,
-    "Bağımsız": 43,
-    "CKMP": 1
+    "Bağımsız": 43
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 221733
+    "partiToplami": 182736
    },
    "sayfa": [
     759
@@ -19219,23 +20092,24 @@
    "katilim": 56.3,
    "gecerliOy": 69776,
    "oy": {
-    "MP62": 386800,
     "AP": 38345,
     "CHP": 15143,
-    "CGP": 4621,
     "TİP": 2479,
+    "CGP": 1386,
+    "MP62": 800,
+    "CKMP": 462,
     "BP69": 441
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 447829,
+    "partiToplami": 59056,
     "katilimUyumsuz": true
    },
    "sayfa": [
     759
    ],
-   "kazanan": "MP62"
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -19274,17 +20148,17 @@
    "gecerliOy": 6494,
    "oy": {
     "AP": 3581,
-    "TİP": 1121,
+    "TİP": 1284,
     "CHP": 813,
     "Bağımsız": 310,
     "BP69": 285,
-    "YTP61": 284,
+    "MP62": 112,
     "CGP": 97
    },
    "yuzde": {},
    "kontrol": {
     "durum": "tutarsiz",
-    "partiToplami": 6491,
+    "partiToplami": 6482,
     "katilimUyumsuz": true
    },
    "sayfa": [
@@ -19472,14 +20346,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 18183
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -3744,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     759
    ],
-   "kazanan": "AP",
-   "katilimOkunan": 517
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 161,
+     "secmen": 45291,
+     "oyKullanan": 23458,
+     "gecerliOy": 21927,
+     "katilim%": 517,
+     "AP": 10599,
+     "BP69": 22,
+     "CHP": 5833,
+     "CKMP": 60,
+     "CGP": 430,
+     "MP62": 16,
+     "TİP": 1223,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "belde",
@@ -20166,12 +21059,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1403
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -232,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     760
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 7,
+     "secmen": 2104,
+     "oyKullanan": 1705,
+     "gecerliOy": 1635,
+     "katilim%": 81.0,
+     "AP": 688,
+     "BP69": 0,
+     "CHP": 408,
+     "CKMP": 0,
+     "CGP": 230,
+     "MP62": 0,
+     "TİP": 77,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Kiraz",
    "kimlik": {
@@ -20192,7 +21105,7 @@
    "oy": {
     "AP": 2299,
     "CHP": 921,
-    "MP62": 170
+    "CGP": 170
    },
    "yuzde": {},
    "kontrol": {
@@ -20567,7 +21480,7 @@
    "oy": {
     "AP": 4266,
     "CHP": 957,
-    "YTP61": 108
+    "TİP": 108
    },
    "yuzde": {},
    "kontrol": {
@@ -20714,31 +21627,17 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -1628,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 30263,
+    "gecerliOy": 31891,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 30263
+    }
    },
    "sayfa": [
     791
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 155,
-     "secmen": 48024,
-     "oyKullanan": 34481,
-     "gecerliOy": 31891,
-     "katilim%": 71.7,
-     "AP": 13365,
-     "BP69": 0,
-     "CHP": 14104,
-     "CKMP": 682,
-     "CGP": 833,
-     "MP62": 176,
-     "TİP": 458,
-     "YTP61": 149,
-     "Bağımsız": 496
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "CHP"
   },
   {
@@ -20759,33 +21658,13 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -839,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 10744
    },
    "sayfa": [
     791
    ],
    "kodKaynakta": "00",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 55,
-     "secmen": 17759,
-     "oyKullanan": 12297,
-     "gecerliOy": 11583,
-     "katilim%": 69.2,
-     "AP": 4747,
-     "BP69": 0,
-     "CHP": 5866,
-     "CKMP": 0,
-     "CGP": 35,
-     "MP62": 0,
-     "TİP": 96,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "CHP",
    "ad": "Merkez",
    "kimlik": {
@@ -20909,12 +21788,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 501
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -159,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     791
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 3,
+     "secmen": 867,
+     "oyKullanan": 686,
+     "gecerliOy": 660,
+     "katilim%": 79.1,
+     "AP": 317,
+     "BP69": 0,
+     "CHP": 136,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 48
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Arpaçay",
    "kimlik": {
@@ -20938,33 +21837,13 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -29,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 431
    },
    "sayfa": [
     791
    ],
    "kodKaynakta": "04",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 2,
-     "secmen": 701,
-     "oyKullanan": 476,
-     "gecerliOy": 460,
-     "katilim%": 67.9,
-     "AP": 212,
-     "BP69": 0,
-     "CHP": 219,
-     "CKMP": 0,
-     "CGP": 0,
-     "MP62": 0,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "CHP",
    "ad": "Çıldır",
    "kimlik": {
@@ -21338,14 +22217,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 18758
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -1066,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     821
    ],
-   "kazanan": "AP",
-   "katilimOkunan": 578
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 151,
+     "secmen": 40412,
+     "oyKullanan": 23379,
+     "gecerliOy": 19824,
+     "katilim%": 578,
+     "AP": 9676,
+     "BP69": 0,
+     "CHP": 5231,
+     "CKMP": 25,
+     "CGP": 820,
+     "MP62": 1140,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 1866
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP"
   },
   {
    "tip": "ilce",
@@ -21364,33 +22262,13 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -1000,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 3959
    },
    "sayfa": [
     821
    ],
    "kodKaynakta": "00",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 36,
-     "secmen": 12484,
-     "oyKullanan": 6311,
-     "gecerliOy": 4959,
-     "katilim%": 50.5,
-     "AP": 2919,
-     "BP69": 0,
-     "CHP": 646,
-     "CKMP": 0,
-     "CGP": 0,
-     "MP62": 394,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "AP",
    "ad": "Merkez",
    "kimlik": {
@@ -21837,8 +22715,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 46368
+    "durum": "toplamTutmuyor",
+    "partiToplami": 46368,
+    "gecerliOy": 59250,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 46368
+    }
    },
    "sayfa": [
     859
@@ -21864,33 +22748,13 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -12518,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 9003
    },
    "sayfa": [
     859
    ],
    "kodKaynakta": "00",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 193,
-     "secmen": 58372,
-     "oyKullanan": 27668,
-     "gecerliOy": 21521,
-     "katilim%": 47.3,
-     "AP": 1390,
-     "BP69": 0,
-     "CHP": 4590,
-     "CKMP": 471,
-     "CGP": 2124,
-     "MP62": 428,
-     "TİP": null,
-     "YTP61": null,
-     "Bağımsız": null
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "CHP"
   },
   {
@@ -22571,14 +23435,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1401
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -10,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     859
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 3,
+     "secmen": 1807,
+     "oyKullanan": 1483,
+     "gecerliOy": 1411,
+     "katilim%": 820,
+     "AP": 767,
+     "BP69": 0,
+     "CHP": 634,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
-   "katilimOkunan": 820,
    "ad": "Tomarza",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -23165,12 +24048,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1434
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -337,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     881
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 9,
+     "secmen": 3000,
+     "oyKullanan": 1951,
+     "gecerliOy": 1771,
+     "katilim%": 65.0,
+     "AP": 873,
+     "BP69": null,
+     "CHP": 543,
+     "CKMP": 0,
+     "CGP": 17,
+     "MP62": 0,
+     "TİP": 1,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Vize",
    "kimlik": {
@@ -23196,8 +24099,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 12084
+    "durum": "toplamTutmuyor",
+    "partiToplami": 12084,
+    "gecerliOy": 12088,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 12084
+    }
    },
    "sayfa": [
     893
@@ -23537,31 +24446,17 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -2894,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 39659,
+    "gecerliOy": 42553,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 39659
+    }
    },
    "sayfa": [
     905
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 256,
-     "secmen": 76113,
-     "oyKullanan": 48897,
-     "gecerliOy": 42553,
-     "katilim%": 64.2,
-     "AP": 18678,
-     "BP69": 89,
-     "CHP": 17852,
-     "CKMP": 498,
-     "CGP": 544,
-     "MP62": 962,
-     "TİP": 575,
-     "YTP61": 0,
-     "Bağımsız": 461
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "AP"
   },
   {
@@ -24027,32 +24922,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -7146,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 132529
    },
    "sayfa": [
     920
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 875,
-     "secmen": 243349,
-     "oyKullanan": 154673,
-     "gecerliOy": 139675,
-     "katilim%": 63.5,
-     "AP": 65484,
-     "BP69": 0,
-     "CHP": 33122,
-     "CKMP": 1659,
-     "CGP": 18983,
-     "MP62": 8522,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 4759
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "AP"
   },
   {
@@ -26369,8 +27244,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 26545
+    "durum": "toplamTutmuyor",
+    "partiToplami": 26545,
+    "gecerliOy": 27171,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 26545
+    }
    },
    "sayfa": [
     959
@@ -26395,13 +27276,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 5442
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -120,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     959
    ],
    "kodKaynakta": "00",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 67,
+     "secmen": 21783,
+     "oyKullanan": 7032,
+     "gecerliOy": 5562,
+     "katilim%": 32.2,
+     "AP": 4468,
+     "BP69": 0,
+     "CHP": 711,
+     "CKMP": 148,
+     "CGP": 0,
+     "MP62": 115,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Merkez",
    "kimlik": {
@@ -26907,8 +27808,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -1774,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 47847,
+    "gecerliOy": 49621,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -1774,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     983
@@ -27800,8 +28707,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 77292
+    "durum": "toplamTutmuyor",
+    "partiToplami": 77292,
+    "gecerliOy": 83309,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 77292
+    }
    },
    "sayfa": [
     1005
@@ -28061,14 +28974,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1868
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -116,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1005
    ],
-   "kazanan": "CHP",
-   "katilimOkunan": 636
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 12,
+     "secmen": 3344,
+     "oyKullanan": 2130,
+     "gecerliOy": 1984,
+     "katilim%": 636,
+     "AP": 653,
+     "BP69": 0,
+     "CHP": 1109,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 106,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
   },
   {
    "tip": "belde",
@@ -28726,32 +29658,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -404,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 182
    },
    "sayfa": [
     1005
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 3,
-     "secmen": 953,
-     "oyKullanan": 601,
-     "gecerliOy": 586,
-     "katilim%": 63.0,
-     "AP": 56,
-     "BP69": 0,
-     "CHP": 0,
-     "CKMP": 0,
-     "CGP": 0,
-     "MP62": 0,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 126
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "Bağımsız"
   },
   {
@@ -29027,8 +29939,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 34409
+    "durum": "toplamTutmuyor",
+    "partiToplami": 34409,
+    "gecerliOy": 35721,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 34409
+    }
    },
    "sayfa": [
     1037
@@ -29054,15 +29972,34 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 18282
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -40,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1037
    ],
    "kodKaynakta": "00",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 107,
+     "secmen": 36214,
+     "oyKullanan": 20261,
+     "gecerliOy": 18322,
+     "katilim%": 559,
+     "AP": 8504,
+     "BP69": 225,
+     "CHP": 9214,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 337,
+     "TİP": 2,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "CHP",
-   "katilimOkunan": 559,
    "ad": "Merkez",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
@@ -29434,12 +30371,38 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 25797
+    "durum": "toplamTutmuyor",
+    "partiToplami": 25797,
+    "gecerliOy": 29368,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -3571,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1057
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 135,
+     "secmen": 41099,
+     "oyKullanan": 30420,
+     "gecerliOy": 29368,
+     "katilim%": 74.0,
+     "AP": 10233,
+     "BP69": 0,
+     "CHP": 5734,
+     "CKMP": 206,
+     "CGP": 6142,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 3337,
+     "Bağımsız": 145
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -29668,12 +30631,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 3636
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -9,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1057
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 16,
+     "secmen": 4699,
+     "oyKullanan": 3658,
+     "gecerliOy": 3645,
+     "katilim%": 77.8,
+     "AP": 1682,
+     "BP69": 0,
+     "CHP": 983,
+     "CKMP": 0,
+     "CGP": 971,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -29835,8 +30818,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 28217
+    "durum": "toplamTutmuyor",
+    "partiToplami": 28217,
+    "gecerliOy": 29227,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 28217
+    }
    },
    "sayfa": [
     1085
@@ -30429,8 +31418,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 7983
+    "durum": "toplamTutmuyor",
+    "partiToplami": 7983,
+    "gecerliOy": 7619,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 7983
+    }
    },
    "sayfa": [
     1103
@@ -31174,13 +32169,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1247
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -243,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1119
    ],
    "kodKaynakta": "05",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 7,
+     "secmen": 1758,
+     "oyKullanan": 1526,
+     "gecerliOy": 1490,
+     "katilim%": 86.8,
+     "AP": 388,
+     "BP69": 0,
+     "CHP": 202,
+     "CKMP": 0,
+     "CGP": 275,
+     "MP62": 382,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Kozaklı",
    "kimlik": {
@@ -31385,8 +32400,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -6247,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 42547,
+    "gecerliOy": 48794,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -6247,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1131
@@ -32312,8 +33333,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -2187,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 25420,
+    "gecerliOy": 27607,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -2187,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1147
@@ -32833,12 +33860,38 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 24821
+    "durum": "toplamTutmuyor",
+    "partiToplami": 24821,
+    "gecerliOy": 24823,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -2,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1169
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 174,
+     "secmen": 41263,
+     "oyKullanan": 27850,
+     "gecerliOy": 24823,
+     "katilim%": 67.4,
+     "AP": 12259,
+     "BP69": 0,
+     "CHP": 7979,
+     "CKMP": 1059,
+     "CGP": 1044,
+     "MP62": 1996,
+     "TİP": 83,
+     "YTP61": 0,
+     "Bağımsız": 401
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -33126,33 +34179,13 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -2,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 852
    },
    "sayfa": [
     1169
    ],
    "kodKaynakta": "05",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 8,
-     "secmen": 1481,
-     "oyKullanan": 888,
-     "gecerliOy": 854,
-     "katilim%": 59.9,
-     "AP": 279,
-     "BP69": 0,
-     "CHP": 497,
-     "CKMP": 0,
-     "CGP": 0,
-     "MP62": 76,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "CHP",
    "ad": "İkizdere",
    "kimlik": {
@@ -33293,8 +34326,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 38468
+    "durum": "toplamTutmuyor",
+    "partiToplami": 38468,
+    "gecerliOy": 43419,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 38468
+    }
    },
    "sayfa": [
     1183
@@ -33322,33 +34361,13 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -2723,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 15604
    },
    "sayfa": [
     1183
    ],
    "kodKaynakta": "00",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 145,
-     "secmen": 42853,
-     "oyKullanan": 20120,
-     "gecerliOy": 18327,
-     "katilim%": 46.9,
-     "AP": 8588,
-     "BP69": 0,
-     "CHP": 4469,
-     "CKMP": 361,
-     "CGP": 549,
-     "MP62": 1234,
-     "TİP": 403,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "AP"
   },
   {
@@ -33658,32 +34677,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -267,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 2279
    },
    "sayfa": [
     1183
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 12,
-     "secmen": 3438,
-     "oyKullanan": 2699,
-     "gecerliOy": 2546,
-     "katilim%": 78.5,
-     "AP": 988,
-     "BP69": 0,
-     "CHP": 1126,
-     "CKMP": 0,
-     "CGP": 0,
-     "MP62": 165,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "CHP",
    "ad": "Karasu",
    "kimlik": {
@@ -33881,8 +34880,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -7564,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 49327,
+    "gecerliOy": 56891,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -7564,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1203
@@ -34353,8 +35358,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 22202
+    "durum": "toplamTutmuyor",
+    "partiToplami": 22202,
+    "gecerliOy": 24142,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 22202
+    }
    },
    "sayfa": [
     1233
@@ -34756,8 +35767,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 10311
+    "durum": "toplamTutmuyor",
+    "partiToplami": 10311,
+    "gecerliOy": 11809,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 10311
+    }
    },
    "sayfa": [
     1255
@@ -35006,8 +36023,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -1522,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 42570,
+    "gecerliOy": 44092,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -1522,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1273
@@ -35478,12 +36501,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 499
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -6,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1273
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 3,
+     "secmen": 992,
+     "oyKullanan": 539,
+     "gecerliOy": 505,
+     "katilim%": 54.3,
+     "AP": 276,
+     "BP69": 0,
+     "CHP": 223,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -35793,8 +36836,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 22900
+    "durum": "toplamTutmuyor",
+    "partiToplami": 22900,
+    "gecerliOy": 23214,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 22900
+    }
    },
    "sayfa": [
     1317
@@ -36022,13 +37071,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1844
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -83,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1317
    ],
    "kodKaynakta": "05",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 12,
+     "secmen": 3278,
+     "oyKullanan": 2327,
+     "gecerliOy": 1927,
+     "katilim%": 70.9,
+     "AP": 1030,
+     "BP69": 0,
+     "CHP": 148,
+     "CKMP": 0,
+     "CGP": 299,
+     "MP62": 307,
+     "TİP": 60,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "kimlik": {
     "yontem": "cozulemedi",
@@ -36154,8 +37223,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -2405,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 40513,
+    "gecerliOy": 42918,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -2405,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1331
@@ -36230,32 +37305,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -206,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 621
    },
    "sayfa": [
     1331
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 5,
-     "secmen": 1395,
-     "oyKullanan": 920,
-     "gecerliOy": 827,
-     "katilim%": 65.9,
-     "AP": 275,
-     "BP69": 125,
-     "CHP": 102,
-     "CKMP": 0,
-     "CGP": 119,
-     "MP62": 0,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "AP",
    "ad": "Almus",
    "kimlik": {
@@ -37330,36 +38385,18 @@
    "oy": {
     "CHP": 493,
     "AP": 437,
-    "CGP": 125,
+    "CGP": 175,
     "MP62": 30
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "partiToplami": 1135
    },
    "sayfa": [
     1357
    ],
    "kodKaynakta": "10",
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 6,
-     "secmen": 1336,
-     "oyKullanan": 1223,
-     "gecerliOy": 1085,
-     "katilim%": 91.5,
-     "AP": 437,
-     "BP69": null,
-     "CHP": 493,
-     "CKMP": null,
-     "CGP": 175,
-     "MP62": 30,
-     "TİP": null,
-     "YTP61": null,
-     "Bağımsız": null
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "CHP"
   },
   {
@@ -37383,8 +38420,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 5682
+    "durum": "toplamTutmuyor",
+    "partiToplami": 5682,
+    "gecerliOy": 5805,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 5682
+    }
    },
    "sayfa": [
     1381
@@ -38034,12 +39077,38 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 15005
+    "durum": "toplamTutmuyor",
+    "partiToplami": 15005,
+    "gecerliOy": 16196,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -1191,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1427
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 100,
+     "secmen": 29914,
+     "oyKullanan": 18392,
+     "gecerliOy": 16196,
+     "katilim%": 61.4,
+     "AP": 7954,
+     "BP69": 0,
+     "CHP": 5701,
+     "CKMP": 793,
+     "CGP": 368,
+     "MP62": 0,
+     "TİP": 96,
+     "YTP61": 0,
+     "Bağımsız": 93
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -38059,13 +39128,33 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 5550
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -1000,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1427
    ],
    "kodKaynakta": "00",
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 55,
+     "secmen": 16390,
+     "oyKullanan": 7446,
+     "gecerliOy": 6550,
+     "katilim%": 45.4,
+     "AP": 3051,
+     "BP69": 0,
+     "CHP": 1706,
+     "CKMP": 793,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP",
    "ad": "Merkez",
    "kimlik": {
@@ -38251,12 +39340,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1447
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -77,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1427
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 6,
+     "secmen": 1961,
+     "oyKullanan": 1610,
+     "gecerliOy": 1524,
+     "katilim%": 82.1,
+     "AP": 459,
+     "BP69": 0,
+     "CHP": 524,
+     "CKMP": 0,
+     "CGP": 368,
+     "MP62": 0,
+     "TİP": 96,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "CHP",
    "ad": "Sivaslı",
    "kimlik": {
@@ -38313,8 +39422,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 12190
+    "durum": "toplamTutmuyor",
+    "partiToplami": 12190,
+    "gecerliOy": 14302,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 12190
+    }
    },
    "sayfa": [
     1439
@@ -38620,12 +39735,38 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 29223
+    "durum": "toplamTutmuyor",
+    "partiToplami": 29223,
+    "gecerliOy": 29628,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -405,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     1461
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 156,
+     "secmen": 45968,
+     "oyKullanan": 34089,
+     "gecerliOy": 29628,
+     "katilim%": 74.1,
+     "AP": 14058,
+     "BP69": 0,
+     "CHP": 11476,
+     "CKMP": 106,
+     "CGP": 783,
+     "MP62": 2521,
+     "TİP": 234,
+     "YTP61": 0,
+     "Bağımsız": 45
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -38870,12 +40011,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 1418
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -40,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1461
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 8,
+     "secmen": 2005,
+     "oyKullanan": 1612,
+     "gecerliOy": 1458,
+     "katilim%": 80.3,
+     "AP": 699,
+     "BP69": 0,
+     "CHP": 719,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "CHP"
   },
   {
@@ -38919,32 +40080,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -21,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "partiToplami": 1050
    },
    "sayfa": [
     1461
    ],
-   "goruntuOkuma": {
-    "metinKatmani": {
-     "sandik": 6,
-     "secmen": 1419,
-     "oyKullanan": 1090,
-     "gecerliOy": 1071,
-     "katilim%": 76.8,
-     "AP": 557,
-     "BP69": 0,
-     "CHP": 493,
-     "CKMP": 0,
-     "CGP": 0,
-     "MP62": 0,
-     "TİP": 0,
-     "YTP61": 0,
-     "Bağımsız": 0
-    },
-    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
-   },
    "kazanan": "AP"
   },
   {
@@ -38993,12 +40134,32 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 499
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -121,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     1461
    ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 2,
+     "secmen": 745,
+     "oyKullanan": 649,
+     "gecerliOy": 620,
+     "katilim%": 87.1,
+     "AP": 251,
+     "BP69": 0,
+     "CHP": 177,
+     "CKMP": 0,
+     "CGP": 0,
+     "MP62": 71,
+     "TİP": 0,
+     "YTP61": 0,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
    "kazanan": "AP"
   },
   {
@@ -39300,15 +40461,20 @@
     "AP": 24493,
     "CHP": 23005,
     "Bağımsız": 2939,
-    "TİP": 458,
+    "MP62": 1458,
     "CGP": 457,
-    "CKMP": 290,
-    "MP62": 1
+    "CKMP": 290
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 51643
+    "durum": "toplamTutmuyor",
+    "partiToplami": 52642,
+    "gecerliOy": 53497,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 52642
+    }
    },
    "sayfa": [
     1485

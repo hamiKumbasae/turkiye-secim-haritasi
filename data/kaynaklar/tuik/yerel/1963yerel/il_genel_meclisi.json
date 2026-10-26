@@ -29,13 +29,13 @@
   "il": 66,
   "ilce": 671,
   "belde": 0,
-  "tutarli": 395,
-  "toplamTutmuyor": 103,
-  "tutarsiz": 345,
+  "tutarli": 406,
+  "toplamTutmuyor": 109,
+  "tutarsiz": 334,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 0,
-  "goruntudenOkunan": 127,
-  "adlandirilan": 404,
+  "goruntudenOkunan": 132,
+  "adlandirilan": 416,
   "eksikIl": [
    22
   ],
@@ -83,7 +83,7 @@
    "6": [
     "ilçe sandik toplamı 3317, il satırı 2446",
     "ilçe secmen toplamı 776124, il satırı 610692",
-    "blok bir bütün olarak adlandırılamadı; 15/22 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
+    "blok bir bütün olarak adlandırılamadı; 14/22 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "7": [
     "ilçe sandik toplamı 1092, il satırı 185",
@@ -98,12 +98,12 @@
    "9": [
     "ilçe sandik toplamı 2482, il satırı 973",
     "ilçe secmen toplamı 558044, il satırı 237367",
-    "blok bir bütün olarak adlandırılamadı; 6/14 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
+    "blok bir bütün olarak adlandırılamadı; 5/14 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "10": [
     "ilçe sandik toplamı 1633, il satırı 245",
     "ilçe secmen toplamı 288316, il satırı 64322",
-    "blok bir bütün olarak adlandırılamadı; 9/20 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
+    "blok bir bütün olarak adlandırılamadı; 8/20 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "11": [
     "ilçe sandik toplamı 285, il satırı 71",
@@ -155,8 +155,8 @@
    ],
    "23": [
     "ilçe sandik toplamı 1146, il satırı 236",
-    "ilçe secmen toplamı 150855, il satırı 53851",
-    "blok bir bütün olarak adlandırılamadı; 3/8 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
+    "ilçe secmen toplamı 171572, il satırı 53851",
+    "blok bir bütün olarak adlandırılamadı; 4/8 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "24": [
     "ilçe sandik toplamı 799, il satırı 175",
@@ -189,13 +189,13 @@
    ],
    "30": [
     "ilçe sandik toplamı 899, il satırı 39",
-    "ilçe secmen toplamı 22645, il satırı 6337",
+    "ilçe secmen toplamı 214271, il satırı 6337",
     "blok bir bütün olarak adlandırılamadı; 5/8 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "31": [
     "ilçe sandik toplamı 538, il satırı 190",
-    "ilçe secmen toplamı 79049, il satırı None",
-    "blok bir bütün olarak adlandırılamadı; 2/8 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
+    "ilçe secmen toplamı 143113, il satırı 48513",
+    "blok bir bütün olarak adlandırılamadı; 6/8 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "32": [
     "ilçe secmen toplamı 100951, il satırı 116150",
@@ -248,14 +248,10 @@
    ],
    "44": [
     "ilçe secmen toplamı 165561, il satırı 174715",
-    "blok bir bütün olarak adlandırılamadı; 8/9 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
+    "blok bir bütün olarak adlandırılamadı; 7/9 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "46": [
     "ilçe secmen toplamı 129821, il satırı 175924"
-   ],
-   "47": [
-    "ilçe secmen toplamı 109760, il satırı 157748",
-    "blok bir bütün olarak adlandırılamadı; 6/12 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "48": [
     "ilçe secmen toplamı 157210, il satırı 157211",
@@ -329,8 +325,8 @@
    ],
    "65": [
     "ilçe sandik toplamı 1365, il satırı 633",
-    "ilçe secmen toplamı 217247, il satırı None",
-    "blok bir bütün olarak adlandırılamadı; 2/9 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
+    "ilçe secmen toplamı 266986, il satırı 85772",
+    "blok bir bütün olarak adlandırılamadı; 7/9 doğrulanmış satır adla ya da seçmenle tek tek bağlandı"
    ],
    "66": [
     "ilçe sandik toplamı 1818, il satırı 146",
@@ -2437,7 +2433,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     142,
@@ -2445,11 +2446,9 @@
    ],
    "kazanan": "CHP",
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 8521,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Güdül"
+    "yontem": "cozulemedi",
+    "neden": "ilçe sandik toplamı 3317, il satırı 2446; ilçe secmen toplamı 776124, il satırı 610692"
+   }
   },
   {
    "tip": "ilce",
@@ -3498,9 +3497,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -7000,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -7000,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     242,
@@ -3528,11 +3532,9 @@
     "oyKullanan": 62712
    },
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 16064,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Bozdoğan"
+    "yontem": "cozulemedi",
+    "neden": "ilçe sandik toplamı 2482, il satırı 973; ilçe secmen toplamı 558044, il satırı 237367"
+   }
   },
   {
    "tip": "ilce",
@@ -3942,7 +3944,12 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarli"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "tutarli"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     272,
@@ -3954,11 +3961,9 @@
     "oyKullanan": 712664
    },
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 16140,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Ayvalık"
+    "yontem": "cozulemedi",
+    "neden": "ilçe sandik toplamı 1633, il satırı 245; ilçe secmen toplamı 288316, il satırı 64322"
+   }
   },
   {
    "tip": "ilce",
@@ -7602,8 +7607,14 @@
    "yuzde": {},
    "kontrol": {
     "durum": "toplamTutmuyor",
-    "toplamFarki": -112,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "partiToplami": 156438,
+    "gecerliOy": 156550,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -112,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
    },
    "sayfa": [
     534,
@@ -8841,7 +8852,7 @@
    "kazanan": "AP",
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 150855, il satırı 53851"
+    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 171572, il satırı 53851"
    }
   },
   {
@@ -8850,28 +8861,27 @@
    "adKaynakta": "Baskil",
    "ustIlce": null,
    "sandik": 68,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 8802,
+   "oyKullanan": 8032,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 6468,
+   "oy": {
+    "AP": 4181,
+    "CHP": 2296
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 6477
    },
    "sayfa": [
     606,
     607
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 8802,
-    "oyKullanan": 8032
-   },
+   "kazanan": "AP",
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 150855, il satırı 53851"
+    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 171572, il satırı 53851"
    }
   },
   {
@@ -8880,30 +8890,31 @@
    "adKaynakta": "Karakoçar",
    "ustIlce": null,
    "sandik": 92,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 11915,
+   "oyKullanan": 9592,
    "katilim": null,
-   "gecerliOy": null,
+   "gecerliOy": 9391,
    "oy": {
-    "CHP": 1
+    "AP": 4156,
+    "CHP": 3893,
+    "Bağımsız": 930,
+    "YTP61": 412
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi"
+    "durum": "tutarli"
    },
    "sayfa": [
     606,
     607
    ],
-   "kazanan": "CHP",
-   "secmenOkunan": {
-    "secmen": 11915,
-    "oyKullanan": 9592
-   },
+   "kazanan": "AP",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 150855, il satırı 53851"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 12554,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Karakoçan"
   },
   {
    "tip": "ilce",
@@ -9040,7 +9051,7 @@
    "kazanan": "CHP",
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 150855, il satırı 53851"
+    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 171572, il satırı 53851"
    }
   },
   {
@@ -9070,7 +9081,7 @@
    "kazanan": "CHP",
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 150855, il satırı 53851"
+    "neden": "ilçe sandik toplamı 1146, il satırı 236; ilçe secmen toplamı 171572, il satırı 53851"
    }
   },
   {
@@ -11335,7 +11346,7 @@
    },
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 899, il satırı 39; ilçe secmen toplamı 22645, il satırı 6337"
+    "neden": "ilçe sandik toplamı 899, il satırı 39; ilçe secmen toplamı 214271, il satırı 6337"
    }
   },
   {
@@ -11361,7 +11372,7 @@
    "kazanan": null,
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 899, il satırı 39; ilçe secmen toplamı 22645, il satırı 6337"
+    "neden": "ilçe sandik toplamı 899, il satırı 39; ilçe secmen toplamı 214271, il satırı 6337"
    }
   },
   {
@@ -11370,28 +11381,46 @@
    "adKaynakta": "HATAY tT,t",
    "ustIlce": null,
    "sandik": 728,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 191626,
+   "oyKullanan": 146172,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 135062,
+   "oy": {
+    "AP": 60809,
+    "CHP": 56052,
+    "YTP61": 15998,
+    "CKMP": 2036
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -167,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
    },
    "sayfa": [
     814,
     815
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 191626,
-    "oyKullanan": 146172
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 728,
+     "secmen": 191626,
+     "oyKullanan": 146172,
+     "gecerliOy": 135062,
+     "AP": 60809,
+     "CHP": 56052,
+     "CKMP": 2036,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 15998,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
    },
+   "kazanan": "AP",
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 899, il satırı 39; ilçe secmen toplamı 22645, il satırı 6337"
+    "neden": "ilçe sandik toplamı 899, il satırı 39; ilçe secmen toplamı 214271, il satırı 6337"
    }
   },
   {
@@ -11400,25 +11429,24 @@
    "adKaynakta": "Hatay",
    "ustIlce": null,
    "sandik": 190,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 48513,
+   "oyKullanan": 37460,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 34561,
+   "oy": {
+    "CHP": 16991,
+    "AP": 12743,
+    "YTP61": 4827
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     814,
     815
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 48513,
-    "oyKullanan": 37460
-   }
+   "kazanan": "CHP"
   },
   {
    "tip": "ilce",
@@ -11426,29 +11454,29 @@
    "adKaynakta": "Altmözü",
    "ustIlce": null,
    "sandik": 63,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 16165,
+   "oyKullanan": 11412,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 10874,
+   "oy": {
+    "AP": 5473,
+    "CHP": 5401
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     814,
     815
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 16165,
-    "oyKullanan": 11412
-   },
+   "kazanan": "AP",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 538, il satırı 190; ilçe secmen toplamı 79049, il satırı None"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 16411,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Altınözü"
   },
   {
    "tip": "ilce",
@@ -11459,10 +11487,10 @@
    "secmen": 18130,
    "oyKullanan": 15582,
    "katilim": null,
-   "gecerliOy": 10874,
+   "gecerliOy": 14478,
    "oy": {
-    "AP": 5473,
-    "CHP": 5401
+    "AP": 8672,
+    "CHP": 5806
    },
    "yuzde": {},
    "kontrol": {
@@ -11486,29 +11514,31 @@
    "adKaynakta": "Hassa",
    "ustIlce": null,
    "sandik": 38,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 9111,
+   "oyKullanan": 7392,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 7070,
+   "oy": {
+    "AP": 4149,
+    "CKMP": 2036,
+    "CHP": 711,
+    "Bağımsız": 174
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     814,
     815
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 9111,
-    "oyKullanan": 7392
-   },
+   "kazanan": "AP",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 538, il satırı 190; ilçe secmen toplamı 79049, il satırı None"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 9251,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Hassa"
   },
   {
    "tip": "ilce",
@@ -11519,12 +11549,11 @@
    "secmen": 41206,
    "oyKullanan": 31303,
    "katilim": null,
-   "gecerliOy": 7070,
+   "gecerliOy": 28341,
    "oy": {
-    "AP": 4149,
-    "CKMP": 2036,
-    "CHP": 711,
-    "Bağımsız": 174
+    "AP": 15701,
+    "CHP": 10406,
+    "YTP61": 2234
    },
    "yuzde": {},
    "kontrol": {
@@ -11548,29 +11577,29 @@
    "adKaynakta": "Kırıkhan",
    "ustIlce": null,
    "sandik": 74,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 17132,
+   "oyKullanan": 13465,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 12247,
+   "oy": {
+    "AP": 6674,
+    "CHP": 5573
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     814,
     815
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 17132,
-    "oyKullanan": 13465
-   },
+   "kazanan": "AP",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 538, il satırı 190; ilçe secmen toplamı 79049, il satırı None"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 17409,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Kırıkhan"
   },
   {
    "tip": "ilce",
@@ -11578,38 +11607,8 @@
    "adKaynakta": "veKöyleri",
    "ustIlce": null,
    "sandik": 51,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    814,
-    815
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 12396,
-    "oyKullanan": 9708
-   },
-   "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 538, il satırı 190; ilçe secmen toplamı 79049, il satırı None"
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 31,
-   "adKaynakta": "Samandağı",
-   "ustIlce": null,
-   "sandik": 68,
-   "secmen": 19713,
-   "oyKullanan": 12060,
+   "secmen": 12396,
+   "oyKullanan": 9708,
    "katilim": null,
    "gecerliOy": 8482,
    "oy": {
@@ -11628,7 +11627,36 @@
    "kazanan": "CHP",
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 538, il satırı 190; ilçe secmen toplamı 79049, il satırı None"
+    "neden": "ilçe sandik toplamı 538, il satırı 190; ilçe secmen toplamı 143113, il satırı 48513"
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 31,
+   "adKaynakta": "Samandağı",
+   "ustIlce": null,
+   "sandik": 68,
+   "secmen": 19713,
+   "oyKullanan": 12060,
+   "katilim": null,
+   "gecerliOy": 11539,
+   "oy": {
+    "YTP61": 7209,
+    "CHP": 4331
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarsiz",
+    "partiToplami": 11540
+   },
+   "sayfa": [
+    814,
+    815
+   ],
+   "kazanan": "YTP61",
+   "kimlik": {
+    "yontem": "cozulemedi",
+    "neden": "ilçe sandik toplamı 538, il satırı 190; ilçe secmen toplamı 143113, il satırı 48513"
    }
   },
   {
@@ -11637,29 +11665,30 @@
    "adKaynakta": "Yayladağı",
    "ustIlce": null,
    "sandik": 44,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 9260,
+   "oyKullanan": 7790,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 7470,
+   "oy": {
+    "AP": 4257,
+    "YTP61": 1718,
+    "CHP": 1495
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     814,
     815
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 9260,
-    "oyKullanan": 7790
-   },
+   "kazanan": "AP",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 538, il satırı 190; ilçe secmen toplamı 79049, il satırı None"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 9055,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Yayladağı"
   },
   {
    "tip": "il",
@@ -14780,8 +14809,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 164028
+    "durum": "toplamTutmuyor",
+    "partiToplami": 164028,
+    "gecerliOy": 164132,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 164028
+    }
    },
    "sayfa": [
     1024,
@@ -16908,9 +16943,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "toplamFarki": -47,
-    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    "durum": "tutarsiz",
+    "eslesmeDogrulanamadi": true,
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -47,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    },
+    "not": "sol ve sağ sayfa satırının eşleşmesi doğrulanamadı (geçerli oy, oy kullananın %80–100'ü değil ya da oy kullanan okunamadı)"
    },
    "sayfa": [
     1174,
@@ -16938,11 +16978,9 @@
     "oyKullanan": 17848
    },
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 9429,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Arguvan"
+    "yontem": "cozulemedi",
+    "neden": "ilçe secmen toplamı 165561, il satırı 174715"
+   }
   },
   {
    "tip": "ilce",
@@ -17967,6 +18005,57 @@
    "secmen": 157748,
    "oyKullanan": 125977,
    "katilim": null,
+   "gecerliOy": 121753,
+   "oy": {
+    "CHP": 48963,
+    "YTP61": 38031,
+    "Bağımsız": 16463,
+    "CKMP": 8618,
+    "AP": 7707
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "toplamTutmuyor",
+    "partiToplami": 119782,
+    "gecerliOy": 121753,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "toplamTutmuyor",
+     "toplamFarki": -1971,
+     "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+    }
+   },
+   "sayfa": [
+    1262,
+    1263
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 913,
+     "secmen": 157748,
+     "oyKullanan": 125977,
+     "gecerliOy": 121753,
+     "AP": 7707,
+     "CHP": 48963,
+     "CKMP": 8618,
+     "MP62": 0,
+     "TİP": 0,
+     "YTP61": 38031,
+     "Bağımsız": 16463
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 47,
+   "adKaynakta": "Merkez",
+   "ustIlce": null,
+   "sandik": 112,
+   "secmen": 23916,
+   "oyKullanan": 15923,
+   "katilim": null,
    "gecerliOy": 15039,
    "oy": {
     "CHP": 7486,
@@ -17981,16 +18070,22 @@
     1262,
     1263
    ],
-   "kazanan": "CHP"
+   "kazanan": "CHP",
+   "ad": "Merkez",
+   "kimlik": {
+    "yontem": "sira",
+    "genelSecimSecmeni": 24940,
+    "not": "kitap sırası ve okunabilen adlar"
+   }
   },
   {
    "tip": "ilce",
    "plaka": 47,
-   "adKaynakta": "Merkez",
+   "adKaynakta": "Cizre",
    "ustIlce": null,
-   "sandik": 112,
-   "secmen": 23916,
-   "oyKullanan": 15923,
+   "sandik": 40,
+   "secmen": 5964,
+   "oyKullanan": 5081,
    "katilim": null,
    "gecerliOy": 4740,
    "oy": {
@@ -18007,41 +18102,11 @@
     1263
    ],
    "kazanan": "YTP61",
+   "ad": "Cizre",
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 24940,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Merkez"
-  },
-  {
-   "tip": "ilce",
-   "plaka": 47,
-   "adKaynakta": "Cizre",
-   "ustIlce": null,
-   "sandik": 40,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1262,
-    1263
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 5964,
-    "oyKullanan": 5081
-   },
-   "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe secmen toplamı 109760, il satırı 157748"
+    "yontem": "sira",
+    "genelSecimSecmeni": 7922,
+    "not": "kitap sırası ve okunabilen adlar"
    }
   },
   {
@@ -18050,28 +18115,28 @@
    "adKaynakta": "Derik",
    "ustIlce": null,
    "sandik": 75,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 11116,
+   "oyKullanan": 9212,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 8852,
+   "oy": {
+    "YTP61": 4628,
+    "CHP": 4224
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     1262,
     1263
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 11116,
-    "oyKullanan": 9212
-   },
+   "kazanan": "YTP61",
+   "ad": "Derik",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe secmen toplamı 109760, il satırı 157748"
+    "yontem": "sira",
+    "genelSecimSecmeni": 11626,
+    "not": "kitap sırası ve okunabilen adlar"
    }
   },
   {
@@ -18082,6 +18147,37 @@
    "sandik": 98,
    "secmen": 16337,
    "oyKullanan": 12496,
+   "katilim": null,
+   "gecerliOy": 12432,
+   "oy": {
+    "CHP": 8080,
+    "YTP61": 3889,
+    "CKMP": 463
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    1262,
+    1263
+   ],
+   "kazanan": "CHP",
+   "ad": "Gercüş",
+   "kimlik": {
+    "yontem": "sira",
+    "genelSecimSecmeni": 17262,
+    "not": "kitap sırası ve okunabilen adlar"
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 47,
+   "adKaynakta": "İdil",
+   "ustIlce": null,
+   "sandik": 73,
+   "secmen": 8693,
+   "oyKullanan": 7796,
    "katilim": null,
    "gecerliOy": 7685,
    "oy": {
@@ -18099,41 +18195,11 @@
     1263
    ],
    "kazanan": "Bağımsız",
+   "ad": "İdil",
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 17262,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Gercüş"
-  },
-  {
-   "tip": "ilce",
-   "plaka": 47,
-   "adKaynakta": "İdil",
-   "ustIlce": null,
-   "sandik": 73,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1262,
-    1263
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 8693,
-    "oyKullanan": 7796
-   },
-   "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe secmen toplamı 109760, il satırı 157748"
+    "yontem": "sira",
+    "genelSecimSecmeni": 9483,
+    "not": "kitap sırası ve okunabilen adlar"
    }
   },
   {
@@ -18144,6 +18210,56 @@
    "sandik": 113,
    "secmen": 14728,
    "oyKullanan": 12673,
+   "katilim": null,
+   "gecerliOy": 12343,
+   "oy": {
+    "AP": 4435,
+    "CHP": 3055,
+    "YTP61": 2461,
+    "Bağımsız": 402
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "toplamTutmuyor",
+    "toplamFarki": -1990,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+   },
+   "sayfa": [
+    1262,
+    1263
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 113,
+     "secmen": 14728,
+     "oyKullanan": 12673,
+     "gecerliOy": 12343,
+     "AP": 4435,
+     "CHP": 3055,
+     "CKMP": null,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": 2461,
+     "Bağımsız": 402
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "AP",
+   "ad": "Kızıltepe",
+   "kimlik": {
+    "yontem": "sira",
+    "genelSecimSecmeni": 15785,
+    "not": "kitap sırası ve okunabilen adlar"
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 47,
+   "adKaynakta": "Mazıdağı",
+   "ustIlce": null,
+   "sandik": 53,
+   "secmen": 7749,
+   "oyKullanan": 6729,
    "katilim": null,
    "gecerliOy": 6627,
    "oy": {
@@ -18162,9 +18278,9 @@
    ],
    "goruntuOkuma": {
     "metinKatmani": {
-     "sandik": 113,
-     "secmen": 14728,
-     "oyKullanan": 12673,
+     "sandik": 53,
+     "secmen": 7749,
+     "oyKullanan": 6729,
      "gecerliOy": 6627,
      "AP": null,
      "CHP": 2653,
@@ -18177,41 +18293,11 @@
     "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
    },
    "kazanan": "YTP61",
+   "ad": "Mazıdağı",
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 15785,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Kızıltepe"
-  },
-  {
-   "tip": "ilce",
-   "plaka": 47,
-   "adKaynakta": "Mazıdağı",
-   "ustIlce": null,
-   "sandik": 53,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1262,
-    1263
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 7749,
-    "oyKullanan": 6729
-   },
-   "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe secmen toplamı 109760, il satırı 157748"
+    "yontem": "sira",
+    "genelSecimSecmeni": 7773,
+    "not": "kitap sırası ve okunabilen adlar"
    }
   },
   {
@@ -18222,6 +18308,55 @@
    "sandik": 127,
    "secmen": 28280,
    "oyKullanan": 20767,
+   "katilim": null,
+   "gecerliOy": 19980,
+   "oy": {
+    "CHP": 7615,
+    "CKMP": 6288,
+    "YTP61": 6095
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "toplamTutmuyor",
+    "toplamFarki": 18,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+   },
+   "sayfa": [
+    1262,
+    1263
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 127,
+     "secmen": 28280,
+     "oyKullanan": 20767,
+     "gecerliOy": 19980,
+     "AP": null,
+     "CHP": 7615,
+     "CKMP": 6288,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": 6095,
+     "Bağımsız": 0
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP",
+   "ad": "Midyat",
+   "kimlik": {
+    "yontem": "sira",
+    "genelSecimSecmeni": 28161,
+    "not": "kitap sırası ve okunabilen adlar"
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 47,
+   "adKaynakta": "Nusaybin",
+   "ustIlce": null,
+   "sandik": 80,
+   "secmen": 12718,
+   "oyKullanan": 11153,
    "katilim": null,
    "gecerliOy": 10463,
    "oy": {
@@ -18238,21 +18373,21 @@
     1263
    ],
    "kazanan": "CHP",
+   "ad": "Nusaybin",
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 28161,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Midyat"
+    "yontem": "sira",
+    "genelSecimSecmeni": 13632,
+    "not": "kitap sırası ve okunabilen adlar"
+   }
   },
   {
    "tip": "ilce",
    "plaka": 47,
-   "adKaynakta": "Nusaybin",
+   "adKaynakta": "Ömerli",
    "ustIlce": null,
-   "sandik": 80,
-   "secmen": 12718,
-   "oyKullanan": 11153,
+   "sandik": 45,
+   "secmen": 7735,
+   "oyKullanan": 6336,
    "katilim": null,
    "gecerliOy": 6258,
    "oy": {
@@ -18268,41 +18403,11 @@
     1263
    ],
    "kazanan": "CHP",
+   "ad": "Ömerli",
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 13632,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Nusaybin"
-  },
-  {
-   "tip": "ilce",
-   "plaka": 47,
-   "adKaynakta": "Ömerli",
-   "ustIlce": null,
-   "sandik": 45,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1262,
-    1263
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 7735,
-    "oyKullanan": 6336
-   },
-   "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe secmen toplamı 109760, il satırı 157748"
+    "yontem": "sira",
+    "genelSecimSecmeni": 7422,
+    "not": "kitap sırası ve okunabilen adlar"
    }
   },
   {
@@ -18313,6 +18418,37 @@
    "sandik": 60,
    "secmen": 13781,
    "oyKullanan": 11898,
+   "katilim": null,
+   "gecerliOy": 11559,
+   "oy": {
+    "Bağımsız": 6251,
+    "CHP": 3441,
+    "CKMP": 1867
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    1262,
+    1263
+   ],
+   "kazanan": "Bağımsız",
+   "ad": "Savur",
+   "kimlik": {
+    "yontem": "sira",
+    "genelSecimSecmeni": 13413,
+    "not": "kitap sırası ve okunabilen adlar"
+   }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 47,
+   "adKaynakta": "Silopi",
+   "ustIlce": null,
+   "sandik": 37,
+   "secmen": 6731,
+   "oyKullanan": 5913,
    "katilim": null,
    "gecerliOy": 5775,
    "oy": {
@@ -18328,41 +18464,11 @@
     1263
    ],
    "kazanan": "YTP61",
+   "ad": "Silopi",
    "kimlik": {
-    "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 13413,
-    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
-   },
-   "ad": "Savur"
-  },
-  {
-   "tip": "ilce",
-   "plaka": 47,
-   "adKaynakta": "Silopi",
-   "ustIlce": null,
-   "sandik": 37,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1262,
-    1263
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 6731,
-    "oyKullanan": 5913
-   },
-   "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe secmen toplamı 109760, il satırı 157748"
+    "yontem": "sira",
+    "genelSecimSecmeni": 6868,
+    "not": "kitap sırası ve okunabilen adlar"
    }
   },
   {
@@ -18382,8 +18488,14 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiToplami": 115339
+    "durum": "toplamTutmuyor",
+    "partiToplami": 115339,
+    "gecerliOy": 115309,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiToplami": 115339
+    }
    },
    "sayfa": [
     1294,
@@ -23265,9 +23377,15 @@
    },
    "yuzde": {},
    "kontrol": {
-    "durum": "tutarsiz",
-    "partiSutunuDogrulanamadi": true,
-    "not": "sağ yüzün sütun başlığı okunamadı; toplam tutsa da oyların hangi partiye ait olduğu denetlenemiyor"
+    "durum": "toplamTutmuyor",
+    "partiToplami": 128413,
+    "gecerliOy": 128270,
+    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
+    "onceki": {
+     "durum": "tutarsiz",
+     "partiSutunuDogrulanamadi": true,
+     "not": "sağ yüzün sütun başlığı okunamadı; toplam tutsa da oyların hangi partiye ait olduğu denetlenemiyor"
+    }
    },
    "sayfa": [
     1668,
@@ -23863,25 +23981,26 @@
    "adKaynakta": "VAN",
    "ustIlce": null,
    "sandik": 633,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 85772,
+   "oyKullanan": 75422,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 72742,
+   "oy": {
+    "CHP": 38763,
+    "YTP61": 20552,
+    "AP": 9563,
+    "Bağımsız": 3875
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarsiz",
+    "partiToplami": 72753
    },
    "sayfa": [
     1714,
     1715
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 85772,
-    "oyKullanan": 75422
-   }
+   "kazanan": "CHP"
   },
   {
    "tip": "ilce",
@@ -23889,29 +24008,29 @@
    "adKaynakta": "Merkez",
    "ustIlce": null,
    "sandik": 134,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 21248,
+   "oyKullanan": 17652,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 16638,
+   "oy": {
+    "CHP": 10084,
+    "YTP61": 6554
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     1714,
     1715
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 21248,
-    "oyKullanan": 17652
-   },
+   "kazanan": "CHP",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 217247, il satırı None"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 22525,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Merkez"
   },
   {
    "tip": "ilce",
@@ -23919,29 +24038,29 @@
    "adKaynakta": "Başkale",
    "ustIlce": null,
    "sandik": 65,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 7219,
+   "oyKullanan": 6663,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 6515,
+   "oy": {
+    "CHP": 3682,
+    "AP": 2833
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     1714,
     1715
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 7219,
-    "oyKullanan": 6663
-   },
+   "kazanan": "CHP",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 217247, il satırı None"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 7781,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Başkale"
   },
   {
    "tip": "ilce",
@@ -23949,38 +24068,8 @@
    "adKaynakta": "Çatak",
    "ustIlce": null,
    "sandik": 28,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1714,
-    1715
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 4686,
-    "oyKullanan": 3621
-   },
-   "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 217247, il satırı None"
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 65,
-   "adKaynakta": "Erciş",
-   "ustIlce": null,
-   "sandik": 107,
-   "secmen": 15740,
-   "oyKullanan": 13873,
+   "secmen": 4686,
+   "oyKullanan": 3621,
    "katilim": null,
    "gecerliOy": 3579,
    "oy": {
@@ -24000,8 +24089,56 @@
    "kazanan": "CHP",
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 217247, il satırı None"
+    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 266986, il satırı 85772"
    }
+  },
+  {
+   "tip": "ilce",
+   "plaka": 65,
+   "adKaynakta": "Erciş",
+   "ustIlce": null,
+   "sandik": 107,
+   "secmen": 15740,
+   "oyKullanan": 13873,
+   "katilim": null,
+   "gecerliOy": 13281,
+   "oy": {
+    "CHP": 8716,
+    "YTP61": 4576
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "toplamTutmuyor",
+    "toplamFarki": 11,
+    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin katmanı ile sayfa görüntüsünde aynı okundu"
+   },
+   "sayfa": [
+    1714,
+    1715
+   ],
+   "goruntuOkuma": {
+    "metinKatmani": {
+     "sandik": 107,
+     "secmen": 15740,
+     "oyKullanan": 13873,
+     "gecerliOy": 13281,
+     "AP": 0,
+     "CHP": 8716,
+     "CKMP": null,
+     "MP62": null,
+     "TİP": null,
+     "YTP61": 4576,
+     "Bağımsız": null
+    },
+    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, her hücre iki okumanın ortak değeri (kitapta parti yüzdesi yok), en fazla bir hücre satır toplamıyla seçildi"
+   },
+   "kazanan": "CHP",
+   "kimlik": {
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 16301,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Erciş"
   },
   {
    "tip": "ilce",
@@ -24009,38 +24146,8 @@
    "adKaynakta": "Gevaş",
    "ustIlce": null,
    "sandik": 40,
-   "secmen": null,
-   "oyKullanan": null,
-   "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
-   "yuzde": {},
-   "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
-   },
-   "sayfa": [
-    1714,
-    1715
-   ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 5527,
-    "oyKullanan": 5092
-   },
-   "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 217247, il satırı None"
-   }
-  },
-  {
-   "tip": "ilce",
-   "plaka": 65,
-   "adKaynakta": "Gürpmar",
-   "ustIlce": null,
-   "sandik": 68,
-   "secmen": 7716,
-   "oyKullanan": 6530,
+   "secmen": 5527,
+   "oyKullanan": 5092,
    "katilim": null,
    "gecerliOy": 4906,
    "oy": {
@@ -24060,19 +24167,19 @@
    "kazanan": "AP",
    "kimlik": {
     "yontem": "secmen (blok eksik)",
-    "genelSecimSecmeni": 8512,
+    "genelSecimSecmeni": 9384,
     "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
    },
-   "ad": "Gürpınar"
+   "ad": "Gevaş"
   },
   {
    "tip": "ilce",
    "plaka": 65,
-   "adKaynakta": "Muradiye",
+   "adKaynakta": "Gürpmar",
    "ustIlce": null,
-   "sandik": null,
-   "secmen": 12577,
-   "oyKullanan": 11672,
+   "sandik": 68,
+   "secmen": 7716,
+   "oyKullanan": 6530,
    "katilim": null,
    "gecerliOy": 6494,
    "oy": {
@@ -24090,6 +24197,37 @@
    "kazanan": "CHP",
    "kimlik": {
     "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 8512,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Gürpınar"
+  },
+  {
+   "tip": "ilce",
+   "plaka": 65,
+   "adKaynakta": "Muradiye",
+   "ustIlce": null,
+   "sandik": null,
+   "secmen": 12577,
+   "oyKullanan": 11672,
+   "katilim": null,
+   "gecerliOy": 11358,
+   "oy": {
+    "YTP61": 4662,
+    "CHP": 4448,
+    "AP": 2248
+   },
+   "yuzde": {},
+   "kontrol": {
+    "durum": "tutarli"
+   },
+   "sayfa": [
+    1714,
+    1715
+   ],
+   "kazanan": "YTP61",
+   "kimlik": {
+    "yontem": "secmen (blok eksik)",
     "genelSecimSecmeni": 13356,
     "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
    },
@@ -24101,29 +24239,31 @@
    "adKaynakta": "Özalp",
    "ustIlce": null,
    "sandik": 81,
-   "secmen": null,
-   "oyKullanan": null,
+   "secmen": 11059,
+   "oyKullanan": 10279,
    "katilim": null,
-   "gecerliOy": null,
-   "oy": {},
+   "gecerliOy": 9971,
+   "oy": {
+    "CHP": 4418,
+    "YTP61": 2347,
+    "Bağımsız": 1844,
+    "AP": 1362
+   },
    "yuzde": {},
    "kontrol": {
-    "durum": "gecerliOyOkunamadi",
-    "sagSayfaEslesmedi": true
+    "durum": "tutarli"
    },
    "sayfa": [
     1714,
     1715
    ],
-   "kazanan": null,
-   "secmenOkunan": {
-    "secmen": 11059,
-    "oyKullanan": 10279
-   },
+   "kazanan": "CHP",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 217247, il satırı None"
-   }
+    "yontem": "secmen (blok eksik)",
+    "genelSecimSecmeni": 11500,
+    "not": "genel seçim (aynı yıl) ilçe seçmeniyle karşılıklı tek eşleşme"
+   },
+   "ad": "Özalp"
   },
   {
    "tip": "ilce",
@@ -24171,7 +24311,7 @@
    "kazanan": "AP",
    "kimlik": {
     "yontem": "cozulemedi",
-    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 217247, il satırı None"
+    "neden": "ilçe sandik toplamı 1365, il satırı 633; ilçe secmen toplamı 266986, il satırı 85772"
    }
   },
   {
