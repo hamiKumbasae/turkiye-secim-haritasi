@@ -18,6 +18,10 @@ ODbL kapsamının **dışındadır**; sitede kaynak gösterilerek kullanılır (
   eşleştirme scriptinde alias).
 - `ozet_<plaka>.json`: il başına birim / geometrisiz birim sayısı, eşleşmeyen ilçe, süre.
 - 81 il, 49.825 birim; 47.057'sinin geometrisi var (geri kalanı serviste boş döner).
+  2026-10-26'da boş dönen 2.768 birim yeniden soruldu (`fetch/fetch_tkgm_eksik.py`,
+  `.github/workflows/tkgm-eksik-cek.yml`, run 40263180652): tamamlanan 20 ilin 947 biriminin hiçbirinin
+  sınırı gelmedi (Ankara 370 dahil), çalıştırma bu yüzden yarıda durduruldu. Servis bu birimlerin sınırını
+  tutmuyor; geçici hata değil. Bu birimlere düşen muhtarlıklar haritada boş kalır.
 
 Geometri sadeleştirildi: Douglas-Peucker 0.0001° (~10 m, topoloji korunarak), 4 ondalık basamak.
 
