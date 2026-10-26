@@ -19,8 +19,8 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 
 ## Veri hattı (mahalle)
 - YSK açık veri yalnız GitHub Actions'tan erişilir; sonuç `::notice` ile okunur (`gh api .../check-runs/<job>/annotations`), dosyalar veri dalına itilir, `git fetch origin +dal:refs/remotes/origin/dal` + `git checkout origin/dal -- yol`.
-- İş akışları: `ysk-mahalle-cek.yml` (muhtarlık), `tkgm-mahalle-cek.yml`, `osm-mahalle-cek.yml`, `belediye-mahalle-cek.yml`.
-- Eşleştirme: `scripts/pipelines/mahalle_veri/transform/tkgm_muhtarlik_esle.py [kontrol|uygula] <seçimler>`; sıra belediye → mevcut → OSM → TKGM; sentetik (tarihsel) ilçeler halef havuzuyla. 15 seçimin hepsi işlendi (2009–2024).
+- İş akışları: `ysk-mahalle-cek.yml` (muhtarlık), `tkgm-mahalle-cek.yml`, `osm-mahalle-cek.yml`, `belediye-mahalle-cek.yml`, `osm-yer-cek.yml` (OSM köy/mahalle noktaları; elle, `iller` girdisiyle kısmi; `osm-yer-veri` dalına ekler).
+- Eşleştirme: `scripts/pipelines/mahalle_veri/transform/tkgm_muhtarlik_esle.py [kontrol|uygula] <seçimler>`; sıra belediye → mevcut → OSM → TKGM → OSM konumu (eski adlı TKGM birimi, yalnız bire bir ve ad destekli); sentetik (tarihsel) ilçeler halef havuzuyla. 15 seçimin hepsi işlendi (2009–2024). Eşleşmeyen muhtarlık haritada boş kalır (kullanıcı kararı; toplu "konumu belirsiz" alan yok). Yeniden çalıştırma tekrarlanabilir: daha önce verilmiş OSM sınırı yalnız aynı adlı muhtarlığa gider.
 - Lisanslar: TKGM açık lisans dışı; OSM ODbL; Bursa/Sakarya belediye lisansı (atıf). Bkz. `LICENSE-DATA.md`.
 
 ## Yönetim raporu

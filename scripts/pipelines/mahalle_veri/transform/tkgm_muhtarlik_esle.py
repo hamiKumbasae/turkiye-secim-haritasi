@@ -565,7 +565,10 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None, yer=None):
         # 1b) guncel OSM (fetch_osm_mahalle.py): sitede henuz olmayan idari mahalle sinirlari; ad eslemesi
         #     TKGM ile ayni kurallarla. Mevcut poligonlarla %25'ten fazla ortusen OSM sinirlari alinmaz.
         for kaynak_adi, kaynak in (("OSM", osm),):
-            aday_ft = [ft for ft in (kaynak or {}).get(g, []) if ft["properties"]["tkgm_id"] not in geo.get(g, {})]
+            # yalniz bu secimde zaten kullanilan sinirlar dislanir: onceki bir calistirmada eklenmis OSM siniri
+            # yeniden aday olabilmeli (yoksa ayni adli baska mahallesi olan ilcede ikinci calistirmada adla
+            # eslesemeyip duser; betik tekrar calistirilinca ayni sonucu vermeli)
+            aday_ft = [ft for ft in (kaynak or {}).get(g, []) if ft["properties"]["tkgm_id"] not in eski_gruplar]
             if not (aday_ft and tkgm_aday):
                 continue
             es_k = esle(tkgm_aday, aday_ft)
@@ -575,6 +578,11 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None, yer=None):
             for mid, (ft, yontem) in sorted(es_k.items(), key=lambda x: x[1][1] != "birebir"):
                 pid = ft["properties"]["tkgm_id"]
                 if pid in alinan:
+                    continue
+                # daha once bir muhtarliga verilmis OSM siniri yalniz ayni adli muhtarliga verilir (2009'da koy
+                # oldugu icin listede olmayan BOYALI'nin siniri yakin adla BOYALICA'ya gecip sonraki secimlere
+                # tasinmasin)
+                if pid in geo.get(g, {}) and ad_anahtari(geo[g][pid].get("ad") or "") != ad_anahtari(tkgm_aday[mid]["ad"]):
                     continue
                 og = make_valid(shape(ft["geometry"])).buffer(0)
                 if mevcut_birlesik is not None and og.area and og.intersection(mevcut_birlesik).area / og.area > 0.25:
