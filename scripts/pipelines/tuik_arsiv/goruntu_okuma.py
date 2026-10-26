@@ -242,7 +242,7 @@ def coz(metin, partiler, oncu, gecerli=None, yedek=None):
     return v
 
 
-def coz_yuzdesiz(metin, partiler, yedek, gecerli=None):
+def coz_yuzdesiz(metin, partiler, yedek, gecerli=None, fark_izni=None):
     """Parti yuzdesi basilmamis tablo (1968 belediye meclisi). Bir hucrenin degeri iki bagimsiz okumanin (metin
     katmani `yedek` + goruntu adaylari) ortak oldugu degerdir. Sifirdan buyuk oy alanlarindan en fazla BIRI tek
     okumaya dayanabilir; o hucre adaylari arasindan satir toplamini (parti toplami == gecerli oy) TEK tutturan
@@ -272,6 +272,15 @@ def coz_yuzdesiz(metin, partiler, yedek, gecerli=None):
     toplam = sum(kesin.values())
     if not sifirdan_buyuk:
         if toplam != g:
+            # kitapta toplam tutmuyor (1968 kitabinin aciklamasi: tutanaklardaki kucuk farklar duzeltilmeden
+            # basildi). Her hucre ve gecerli oy iki okumada ayniysa ve fark gecerli oyun fark_izni'nden kucukse
+            # degerler kitaptaki gibi kabul edilir; cagiran 'toplamTutmuyor' isaretler.
+            # fark_izni = (az, fazla): parti toplaminin gecerli oydan en fazla ne oranda az / fazla olabilecegi
+            g_teyit = g == yedek.get("gecerliOy") and g in sayi_adaylari(metin.get("gecerliOy"))
+            if fark_izni and g_teyit and -fark_izni[0] * g <= toplam - g <= fark_izni[1] * g:
+                v.update(kesin)
+                v["_toplamFarki"] = toplam - g
+                return v
             return None
     else:
         p, c = sifirdan_buyuk[0]

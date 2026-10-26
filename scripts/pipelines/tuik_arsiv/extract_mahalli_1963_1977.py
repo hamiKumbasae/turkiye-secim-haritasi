@@ -93,6 +93,11 @@ KITAPLAR = {
         "sutunlar": {"il_genel_meclisi": ONCU68 + [x for p in P68 for x in (p, p + "%")],
                      "belediye_meclisi": ONCU68 + P68},
         "tablolar": {"il_genel_meclisi": "G", "belediye_meclisi": "M"},
+        # Belediye meclisi tablosunda parti oylari toplami cogu satirda gecerli oydan AZ (cogunlukla %10-30; kitabin
+        # aciklamasi (4) farklari tutanaktaki gibi basildigini soyluyor). Yuzde basilmadigi icin bu satirlar ancak
+        # her hucre ve gecerli oy metin katmani ile goruntude AYNI okunduysa kabul ('toplamTutmuyor', fark notlu):
+        # toplam gecerliden az ise sinirsiz, fazla ise en cok %2 (fazla olmasi baski/okuma hatasi isareti).
+        "toplamFarkIzni": (1.0, 0.02),
     },
     "1973yerel": {
         "demirbas": "0015468", "tarih": "9 Aralık 1973",
@@ -123,6 +128,23 @@ def kelime_duzelt(w):
     if E.BINLIK_BOSLUK and len(t) >= 6 and len(t) % 3 == 0 and re.fullmatch(r"[\d.,]+", t) and t[0::3] == t[1::3] == t[2::3]:
         return t[0::3]
     return E.kelime_duzelt(w)
+
+
+def dogrula(v, partiler):
+    """extract_mahalli.dogrula + akla yatkinlik: toplam tutsa da en az iki partinin yuzdesi tutmuyorsa (butun
+    sayilarin ayni bicimde bozulmasi: 1968 Dazkiri '9 981' -> '999 981', '6 703' -> '666 703') ya da yuzdesiz
+    tabloda gecerli oy oy kullanandan buyukse satir tutarli sayilmaz (goruntuden ikinci okumaya gider)."""
+    oy, kontrol, duz = E.dogrula(v, partiler)
+    if kontrol["durum"] == "tutarli":
+        g, k = kontrol.get("gecerliOy", v.get("gecerliOy")), v.get("oyKullanan")
+        neden = []
+        if len(kontrol.get("yuzdeUyumsuz", [])) >= 2:
+            neden.append("en az iki partinin yüzdesi tutmuyor")
+        if not any(p + "%" in v for p in partiler) and isinstance(g, int) and isinstance(k, int) and g > k:
+            neden.append("geçerli oy, oy kullanandan büyük")
+        if neden:
+            kontrol = dict(kontrol, durum="tutarsiz", makulDegil=neden)
+    return oy, kontrol, duz
 
 
 def pdf_yolu(cfg):
@@ -239,7 +261,7 @@ def yuz_secenekleri(page, cfg, sol, sablon):
 
 
 def _tutarli_sayisi(hiza, partiler):
-    return sum(1 for s, r in hiza if r and E.dogrula({**s["v"], **r["v"]}, partiler)[1]["durum"] == "tutarli")
+    return sum(1 for s, r in hiza if r and dogrula({**s["v"], **r["v"]}, partiler)[1]["durum"] == "tutarli")
 
 
 def tablo_oku(pdf, cfg, ilk, son):
@@ -334,15 +356,20 @@ def fasikul_sayfalari(cfg):
         turler.append("G" if re.search(r"G ?E ?N ?E ?L ?M ?E ?C ?L", h) else
                       "M" if re.search(r"M ?E ?C ?L ?I ?S ?I ?U ?Y ?E ?L ?E ?R", h) else
                       "B" if re.search(r"B ?A ?S ?K ?A ?N", h) else "u" if re.search(r"M ?U ?H ?T ?A ?R", h) else ".")
+    # her sayfanin il basligi ("35 — İZMİR"); ciltte sira bozuk olabiliyor (1968 Izmir: baskanlik ve meclis
+    # sayfalari il genel meclisi sayfasindan once)
     out, plaka = {}, 0
     for i, (tur, p) in enumerate(zip(turler, sayfalar), 1):
-        if tur == "G" and re.search(r"(?:^|\s)(\d\s*\d)\s*[—–-]+\s*[A-ZÇĞİÖŞÜ]", p[:1500]):
-            m = re.search(r"(?:^|\s)(\d\s*\d)\s*[—–-]+\s*[A-ZÇĞİÖŞÜ]", p[:1500])
-            kod = int(re.sub(r"\s", "", m.group(1)))
-            plaka = kod if kod == plaka + 1 else plaka + 1
-            out[plaka] = {"G": [i], "B": [], "M": []}
-        elif plaka and tur in ("B", "M"):
-            out[plaka][tur].append(i)
+        m = re.search(r"(?:^|\s)(\d\s*\d)\s*[—–-]+\s*[A-ZÇĞİÖŞÜ]", p[:1500])
+        kod = int(re.sub(r"\s", "", m.group(1))) if m else None
+        if kod and not 1 <= kod <= 67:
+            kod = None
+        if tur == "G" and i > 14:
+            plaka = kod or plaka + 1
+        elif kod and tur in ("B", "M"):
+            plaka = kod
+        if plaka and tur in ("G", "B", "M") and (tur != "G" or i > 14):
+            out.setdefault(plaka, {"G": [], "B": [], "M": []})[tur].append(i)
     return out
 
 
@@ -362,7 +389,7 @@ def tablo_oku_fasikul(pdf, cfg, tur):
     en_iyi = (-1, None)
     for no, so in secenek.items():
         if so and len(so[0][0]) >= 6:
-            oran = sum(1 for s in so[0][0] if E.dogrula(s["v"], cfg["partiler"])[1]["durum"] == "tutarli") / len(so[0][0])
+            oran = sum(1 for s in so[0][0] if dogrula(s["v"], cfg["partiler"])[1]["durum"] == "tutarli") / len(so[0][0])
             if oran > en_iyi[0]:
                 en_iyi = (oran, so[0][1])
     sablon = en_iyi[1]
@@ -378,7 +405,7 @@ def tablo_oku_fasikul(pdf, cfg, tur):
             if not so:
                 eslesmeyen.append({"sayfa": no, "neden": "sütunlar bulunamadı"})
                 continue
-            sol, kl, _ = max(so, key=lambda x: (sum(1 for s in x[0] if E.dogrula(s["v"], cfg["partiler"])[1]["durum"] == "tutarli"), len(x[0])))
+            sol, kl, _ = max(so, key=lambda x: (sum(1 for s in x[0] if dogrula(s["v"], cfg["partiler"])[1]["durum"] == "tutarli"), len(x[0])))
             ts = E._sayfa_tokenleri(pg, True)
             kd = E._duzeltmeler(pg)
             words = pg.extract_words()
@@ -441,7 +468,7 @@ def tablo_oku_karsilikli(pdf, cfg, tur):
     for a, b in ciftler:
         so, sa = yuz_secenekleri(pdf.pages[a - 1], cfg, True, None), yuz_secenekleri(pdf.pages[b - 1], cfg, False, None)
         if so and sa and len(sa[0][0]) >= 6:
-            oran = sum(1 for r in sa[0][0] if E.dogrula(r["v"], cfg["partiler"])[1]["durum"] == "tutarli") / len(sa[0][0])
+            oran = sum(1 for r in sa[0][0] if dogrula(r["v"], cfg["partiler"])[1]["durum"] == "tutarli") / len(sa[0][0])
             if oran > en_iyi:
                 en_iyi, sablon_sol, sablon_sag = oran, so[0][1], sa[0][1]
     for a, b in ciftler:
@@ -468,7 +495,7 @@ def tablo_oku_karsilikli(pdf, cfg, tur):
                         else:
                             kullanilan.add(ad[0][1])
                     hiza.append((s, r))
-                puan = (sum(1 for s, r in hiza if r and E.dogrula(r["v"], cfg["partiler"])[1]["durum"] == "tutarli"),
+                puan = (sum(1 for s, r in hiza if r and dogrula(r["v"], cfg["partiler"])[1]["durum"] == "tutarli"),
                         sum(1 for s, r in hiza if r))
                 if en is None or puan > en[0]:
                     en = (puan, hiza, kl, kr)
@@ -884,7 +911,10 @@ def goruntu_oku(pdf, cfg, s):
         # yuzdesiz tablo (1968 belediye meclisi): iki okumanin ortak degerleri, en fazla bir hucre toplamla
         adaylar = {x for x in G.sayi_adaylari(metin.get("gecerliOy")) + [tv.get("gecerliOy")] if isinstance(x, int) and x > 0}
         tutan = [v for v in (G.coz_yuzdesiz(metin, cfg["partiler"], tv, g) for g in sorted(adaylar)) if v
-                 and E.dogrula(v, cfg["partiler"])[1]["durum"] == "tutarli"]
+                 and dogrula(v, cfg["partiler"])[1]["durum"] == "tutarli"]
+        if not tutan and cfg.get("toplamFarkIzni"):
+            v = G.coz_yuzdesiz(metin, cfg["partiler"], tv, tv.get("gecerliOy"), cfg["toplamFarkIzni"])
+            tutan = [v] if v and "_toplamFarki" in v else []
         if len(tutan) != 1:
             return None
         v = tutan[0]
@@ -896,7 +926,7 @@ def goruntu_oku(pdf, cfg, s):
         if not all(isinstance(v.get(k), int) for k in ("secmen", "oyKullanan", "gecerliOy")) or not isinstance(v.get("katilim%"), float):
             return None
         return v
-    oncu_ok = not E.dogrula(tv, cfg["partiler"])[1].get("katilimUyumsuz") and all(
+    oncu_ok = not dogrula(tv, cfg["partiler"])[1].get("katilimUyumsuz") and all(
         isinstance(tv.get(k), int) for k in ("secmen", "oyKullanan", "gecerliOy")) and \
         isinstance(tv.get("katilim%"), float) and tv["secmen"] and abs(100 * tv["oyKullanan"] / tv["secmen"] - tv["katilim%"]) <= 0.1
     if oncu_ok:
@@ -908,7 +938,7 @@ def goruntu_oku(pdf, cfg, s):
         tutan = []
         for g in sorted(adaylar):
             vg = G.coz(metin, cfg["partiler"], ONCU, g, yedek=tv)
-            if E.dogrula(vg, cfg["partiler"])[1]["durum"] == "tutarli":
+            if dogrula(vg, cfg["partiler"])[1]["durum"] == "tutarli":
                 tutan.append(vg)
         if len(tutan) != 1:
             return None
@@ -972,12 +1002,12 @@ def isle(secim, tablolar=None):
                         s["etiket"] = "Merkez"
         kayitlar = []
         for s in satirlar:
-            oy, kontrol, duz = E.dogrula(s["v"], cfg["partiler"])
+            oy, kontrol, duz = dogrula(s["v"], cfg["partiler"])
             yapisal = None
             if kontrol["durum"] != "tutarli" and s["tokSol"]:
                 v2 = E.yapisal_oku(s, cfg)
                 if v2:
-                    oy2, kontrol2, duz2 = E.dogrula(v2, cfg["partiler"])
+                    oy2, kontrol2, duz2 = dogrula(v2, cfg["partiler"])
                     if kontrol2["durum"] == "tutarli":
                         yapisal = {"sutunOkumasi": {k: x for k, x in s["v"].items() if k in cfg["partiler"] or k in ONCU},
                                    "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"}
@@ -993,8 +1023,14 @@ def isle(secim, tablolar=None):
                     G.onbellek_kaydet()  # uzun calismada kesilirse tesseract sonuclari kaybolmasin
                 if v3:
                     v3 = cetvel_gec(v3, s, cetvel_uygulanmayan, cfg)
-                    oy3, kontrol3, duz3 = E.dogrula(v3, cfg["partiler"])
-                    if kontrol3["durum"] == "tutarli" and not kontrol3.get("katilimUyumsuz"):
+                    fark = v3.pop("_toplamFarki", None)
+                    oy3, kontrol3, duz3 = dogrula(v3, cfg["partiler"])
+                    if fark is not None and kontrol3["durum"] == "tutarsiz" and not kontrol3.get("katilimUyumsuz"):
+                        kontrol3 = {"durum": "toplamTutmuyor", "toplamFarki": fark, "gecerliOy": kontrol3.get("gecerliOy"),
+                                    "not": "kitapta parti oyları toplamı geçerli oydan farklı basılmış (kitabın açıklaması: "
+                                           "tutanaklardaki farklar düzeltilmeden alındı); her hücre ve geçerli oy metin "
+                                           "katmanı ile sayfa görüntüsünde aynı okundu"}
+                    if kontrol3["durum"] in ("tutarli", "toplamTutmuyor") and not kontrol3.get("katilimUyumsuz"):
                         goruntu = {"metinKatmani": {k: x for k, x in s["v"].items() if k in cfg["partiler"] or k in ONCU},
                                    "not": "metin katmanı tutarsızdı; hücreler sayfa görüntüsünden (tesseract) ayrıca okundu, "
                                           + ("her parti oyu kitabın yüzdesiyle seçildi, satır toplam ve yüzdelerle tutuyor"
@@ -1052,6 +1088,8 @@ def isle(secim, tablolar=None):
             "partiler": cfg["partiler"],
             "ozet": {"satir": len(kayitlar), **{t: say(lambda r, t=t: r["tip"] == t) for t in ("il", "ilce", "belde")},
                      "tutarli": say(lambda r: r["kontrol"]["durum"] == "tutarli"),
+                     **({"toplamTutmuyor": say(lambda r: r["kontrol"]["durum"] == "toplamTutmuyor")}
+                        if any(r["kontrol"]["durum"] == "toplamTutmuyor" for r in kayitlar) else {}),
                      "tutarsiz": say(lambda r: r["kontrol"]["durum"] != "tutarli"),
                      "ocrDuzeltilen": say(lambda r: r.get("ocrDuzeltme")),
                      "yapisalOkunan": say(lambda r: r.get("yapisalOkuma")),

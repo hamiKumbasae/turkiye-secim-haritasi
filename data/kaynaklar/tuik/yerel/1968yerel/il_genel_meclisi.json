@@ -31,12 +31,12 @@
   "il": 67,
   "ilce": 638,
   "belde": 0,
-  "tutarli": 621,
-  "tutarsiz": 84,
+  "tutarli": 616,
+  "tutarsiz": 89,
   "ocrDuzeltilen": 92,
   "yapisalOkunan": 0,
   "goruntudenOkunan": 32,
-  "adlandirilan": 560,
+  "adlandirilan": 557,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
   "eslesmeyenSayfa": [],
@@ -1249,10 +1249,13 @@
     "CHP": 32.8
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
     "yuzdeUyumsuz": [
      "AP",
      "CHP"
+    ],
+    "makulDegil": [
+     "en az iki partinin yüzdesi tutmuyor"
     ]
    },
    "sayfa": [
@@ -10666,10 +10669,13 @@
     "CGP": 31.6
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
     "yuzdeUyumsuz": [
      "AP",
      "CGP"
+    ],
+    "makulDegil": [
+     "en az iki partinin yüzdesi tutmuyor"
     ]
    },
    "sayfa": [
@@ -10679,10 +10685,9 @@
    "kazanan": "CHP",
    "katilimOkunan": 756,
    "kimlik": {
-    "yontem": "kod",
-    "not": "kitaptaki ilçe kodu 09 = kitap sırasında Olur"
-   },
-   "ad": "Olur"
+    "yontem": "cozulemedi",
+    "neden": "ilçe sandik toplamı 983, il satırı 1403; ilçe secmen toplamı 1233234, il satırı 263234"
+   }
   },
   {
    "tip": "ilce",
@@ -20077,12 +20082,15 @@
     "CHP": 41.9
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
     "yuzdeUyumsuz": [
      "AP",
      "CHP"
     ],
-    "katilimUyumsuz": true
+    "katilimUyumsuz": true,
+    "makulDegil": [
+     "en az iki partinin yüzdesi tutmuyor"
+    ]
    },
    "sayfa": [
     1055
@@ -20101,10 +20109,9 @@
    ],
    "kazanan": "AP",
    "kimlik": {
-    "yontem": "kod",
-    "not": "kitaptaki ilçe kodu 01 = kitap sırasında Cizre"
-   },
-   "ad": "Cizre"
+    "yontem": "cozulemedi",
+    "neden": "ilçe secmen toplamı 329539, il satırı 179536"
+   }
   },
   {
    "tip": "ilce",
@@ -23652,12 +23659,15 @@
     "CHP": 40.5
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
     "yuzdeUyumsuz": [
      "AP",
      "CHP"
     ],
-    "katilimUyumsuz": true
+    "katilimUyumsuz": true,
+    "makulDegil": [
+     "en az iki partinin yüzdesi tutmuyor"
+    ]
    },
    "sayfa": [
     1231
@@ -23676,10 +23686,9 @@
    ],
    "kazanan": "AP",
    "kimlik": {
-    "yontem": "kod",
-    "not": "kitaptaki ilçe kodu 07 = kitap sırasında Pervari"
-   },
-   "ad": "Pervari"
+    "yontem": "cozulemedi",
+    "neden": "ilçe secmen toplamı 304501, il satırı 114501"
+   }
   },
   {
    "tip": "ilce",
@@ -25866,12 +25875,15 @@
     "CHP": 38.5
    },
    "kontrol": {
-    "durum": "tutarli",
+    "durum": "tutarsiz",
     "yuzdeUyumsuz": [
      "AP",
      "CHP"
     ],
-    "katilimUyumsuz": true
+    "katilimUyumsuz": true,
+    "makulDegil": [
+     "en az iki partinin yüzdesi tutmuyor"
+    ]
    },
    "sayfa": [
     1355

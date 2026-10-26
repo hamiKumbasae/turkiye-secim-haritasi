@@ -45,8 +45,8 @@ OYLAMA_ADI = {"baskan": "Belediye başkanlığı", "bm": "Belediye meclisi", "ig
 ILCE_KAYNAGI_YOK = {"1950", "1954", "1957"}
 
 # Projede hic kaydi olmayan yerel meclis secimleri (1984 oncesi). Belediye meclisi ve il genel
-# meclisi bu yillarda da secildi; 1963-1968 DIE kitaplari depoda, henuz okunmadi (1973-1977 okundu).
-KAYITSIZ_MECLIS = ["1950yerel", "1955yerel", "1963yerel", "1968yerel"]
+# meclisi bu yillarda da secildi; 1963 DIE kitabi depoda, henuz okunmadi (1968-1977 okundu).
+KAYITSIZ_MECLIS = ["1950yerel", "1955yerel", "1963yerel"]
 
 KAYNAK_ADI = {
     "ysk": ("YSK", "A"), "tuik": ("TÜİK/DİE", "A"), "wikipedia": ("Türkçe Wikipedia", "D"),
