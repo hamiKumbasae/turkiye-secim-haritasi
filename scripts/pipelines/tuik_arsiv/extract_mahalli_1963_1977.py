@@ -1507,6 +1507,9 @@ def dikey_teyit(kayitlar):
         if g != sum(x["gecerliOy"] for x in a) or any(r["oy"].get(p, 0) != sum(x["oy"].get(p, 0) for x in a)
                                                        for p in partiler):
             continue
+        if sum(r["oy"].values()) > g * 1.02:
+            # parti toplami gecerliden fazla: tek satirdaki kural gibi en cok %2 (fazlasi baski/okuma hatasi isareti)
+            continue
         r["kontrol"] = {"durum": "toplamTutmuyor", "partiToplami": sum(r["oy"].values()), "gecerliOy": g,
                         "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
                         "onceki": r["kontrol"]}

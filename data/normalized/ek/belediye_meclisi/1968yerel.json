@@ -30,15 +30,15 @@
  "ozet": {
   "satir": 1321,
   "il": 67,
-  "ilce": 566,
-  "belde": 688,
+  "ilce": 570,
+  "belde": 684,
   "tutarli": 622,
-  "toplamTutmuyor": 228,
+  "toplamTutmuyor": 227,
   "tutarsiz": 699,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 0,
   "goruntudenOkunan": 199,
-  "adlandirilan": 564,
+  "adlandirilan": 568,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
   "eslesmeyenSayfa": [],
@@ -79,9 +79,6 @@
    "39": [
     "Demirköy"
    ],
-   "44": [
-    "Akçadağ"
-   ],
    "45": [
     "Turgutlu"
    ],
@@ -103,10 +100,6 @@
     "Divriği",
     "İmranlı",
     "Merkez"
-   ],
-   "59": [
-    "Muratlı",
-    "Şarköy"
    ],
    "61": [
     "Araklı",
@@ -132,7 +125,6 @@
    ],
    "33": [
     "Erdemli",
-    "Mut",
     "Tarsus",
     "Merkez"
    ],
@@ -2070,14 +2062,8 @@
    },
    "kazanan": "AP",
    "kontrol": {
-    "durum": "toplamTutmuyor",
-    "partiToplami": 7983,
-    "gecerliOy": 7619,
-    "dikeyTeyit": "parti oyları ve geçerli oy ilin ilçe/belde satırlarının toplamına birebir eşit",
-    "onceki": {
-     "durum": "tutarsiz",
-     "partiToplami": 7983
-    }
+    "durum": "tutarsiz",
+    "partiToplami": 7983
    },
    "sayfa": [
     1103
@@ -20104,7 +20090,7 @@
   {
    "il": "Mersin",
    "plaka": 33,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "Mut",
    "ustIlce": null,
    "sandik": 11,
@@ -20125,6 +20111,11 @@
    "sayfa": [
     719
    ],
+   "ad": "Mut",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   },
    "kodKaynakta": "04"
   },
   {
@@ -28622,7 +28613,7 @@
    "ad": "Simav",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
-    "not": "seçmen başkanlık kaydındaki ilçe belediyesiyle birebir ve il içinde tek (sandık farklı okunmuş)"
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    },
    "katilimOkunan": 736
   },
@@ -28949,7 +28940,7 @@
   {
    "il": "Malatya",
    "plaka": 44,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "Akçadağ",
    "ustIlce": null,
    "sandik": 6,
@@ -28971,6 +28962,11 @@
    "sayfa": [
     983
    ],
+   "ad": "Akçadağ",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   },
    "goruntuOkuma": {
     "metinKatmani": {
      "sandik": 6,
@@ -35386,7 +35382,7 @@
    "ad": "Merkez",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
-    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+    "not": "seçmen başkanlık kaydındaki ilçe belediyesiyle birebir ve il içinde tek (sandık farklı okunmuş)"
    },
    "goruntuOkuma": {
     "metinKatmani": {
@@ -37337,7 +37333,7 @@
   {
    "il": "Tekirdağ",
    "plaka": 59,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "Muratlı",
    "ustIlce": null,
    "sandik": 12,
@@ -37361,9 +37357,10 @@
    "sayfa": [
     1317
    ],
+   "ad": "Muratlı",
    "kimlik": {
-    "yontem": "cozulemedi",
-    "neden": "seçmen birden çok başkanlık satırıyla tutuyor"
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    },
    "goruntuOkuma": {
     "metinKatmani": {
@@ -37439,7 +37436,7 @@
   {
    "il": "Tekirdağ",
    "plaka": 59,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "",
    "ustIlce": "Muratlı",
    "sandik": 7,
@@ -37458,7 +37455,12 @@
    },
    "sayfa": [
     1317
-   ]
+   ],
+   "ad": "Şarköy",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "il": "Tekirdağ",

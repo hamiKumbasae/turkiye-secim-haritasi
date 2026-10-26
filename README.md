@@ -113,7 +113,7 @@ Nerelere bakıldığı: [`data/kaynaklar/ARASTIRMA_KAYDI.md`](data/kaynaklar/ARA
   satır payı 1963 %25, 1968 %50, 1973 %75, 1977 %65). Kalanlar yalnız Vikipedi. Kitapta "Bağımsızlar" bütün bağımsız
   adayların toplamıdır; kazanan oy sırasından değil, 1973'te kitabın kazanan sütunundan, öteki yıllarda aday bazında belirlenir.
 - **1963–1984 yerel meclis sonuçları:** taranmış DİE kitabında okunamayan ya da doğrulanamayan satırlar boş (1984: belediye
-  meclisi %21, il genel meclisi %11; 1977: %26 ve %19, belediye meclisinde 8 ilin sayfaları taramada yok; 1973: %18 ve %16;
+  meclisi %21, il genel meclisi %11; 1977: %26 ve %19, belediye meclisinde 8 ilin sayfaları taramada yok; 1973: %17 ve %16;
   1968: %34 ve %23; 1963: %71 ve %39). 1963 ve 1968 belediye meclisinde parti oyları toplamı çoğu yerde geçerli oydan az
   basılmış; bu satırlar notlu.
 - **Ayrıştırılmamış "Diğer":** küçük partilerin kaynakta tek toplam olduğu yerler. 2009–2024 yerel ve 2011–2023 genel

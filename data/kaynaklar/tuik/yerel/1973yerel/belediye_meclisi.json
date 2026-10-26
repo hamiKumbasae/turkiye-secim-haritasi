@@ -29,15 +29,15 @@
  "ozet": {
   "satir": 1701,
   "il": 67,
-  "ilce": 588,
-  "belde": 1045,
+  "ilce": 593,
+  "belde": 1040,
   "tutarli": 1489,
   "toplamTutmuyor": 7,
   "tutarsiz": 212,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 159,
   "goruntudenOkunan": 263,
-  "adlandirilan": 586,
+  "adlandirilan": 591,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
   "eslesmeyenSayfa": [
@@ -61,8 +61,7 @@
     "Ankara (il merkezi belediyesi)"
    ],
    "7": [
-    "Finike",
-    "Kumluca"
+    "Finike"
    ],
    "4": [
     "Tutak"
@@ -86,12 +85,6 @@
    "46": [
     "Andırın"
    ],
-   "36": [
-    "Posof"
-   ],
-   "41": [
-    "Gölcük"
-   ],
    "42": [
     "Bozkır",
     "Hadim"
@@ -109,18 +102,12 @@
     "Kozluk",
     "Kurtalan"
    ],
-   "58": [
-    "Gürün"
-   ],
    "65": [
     "Başkale",
     "Gevaş"
    ],
    "66": [
     "Çekerek"
-   ],
-   "5": [
-    "Merkez"
    ],
    "14": [
     "Merkez"
@@ -3777,7 +3764,7 @@
    "kazanan": "AP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 5,
    "adKaynakta": "Merkez",
    "ustIlce": null,
@@ -3827,7 +3814,12 @@
     },
     "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
    },
-   "kazanan": "AP"
+   "kazanan": "AP",
+   "ad": "Merkez",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",
@@ -7295,7 +7287,7 @@
    "kazanan": "DEMP73"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 7,
    "adKaynakta": "Kumluca",
    "ustIlce": null,
@@ -7325,7 +7317,12 @@
     146,
     147
    ],
-   "kazanan": "AP"
+   "kazanan": "AP",
+   "ad": "Kumluca",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",
@@ -24147,8 +24144,8 @@
    "kazanan": "AP",
    "ad": "Kelkit",
    "kimlik": {
-    "yontem": "baskanlikAdi",
-    "not": "kitapta okunan ad başkanlık kaydındaki ilçe belediyesiyle aynı, seçmen %3 içinde"
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    }
   },
   {
@@ -32576,7 +32573,7 @@
    }
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 36,
    "adKaynakta": "Posof",
    "ustIlce": null,
@@ -32602,7 +32599,12 @@
     182,
     183
    ],
-   "kazanan": "CHP"
+   "kazanan": "CHP",
+   "ad": "Posof",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "ilce",
@@ -36646,7 +36648,7 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 41,
    "adKaynakta": "Gölcük",
    "ustIlce": null,
@@ -36697,7 +36699,12 @@
     },
     "not": "sütun kenarı okuması tutarsızdı; sayı parçaları katılım/yüzde/toplam kısıtlarıyla yeniden ayrıştırıldı"
    },
-   "kazanan": "CHP"
+   "kazanan": "CHP",
+   "ad": "Gölcük",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",
@@ -54526,7 +54533,7 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 58,
    "adKaynakta": "Gürün",
    "ustIlce": null,
@@ -54554,7 +54561,12 @@
     212,
     213
    ],
-   "kazanan": "CHP"
+   "kazanan": "CHP",
+   "ad": "Gürün",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",

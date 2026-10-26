@@ -7,10 +7,10 @@
 | Düzey | Kayıt |
 |---|---|
 | mahalle | 601.941 |
-| ilçe | 52.507 |
+| ilçe | 52.518 |
 | birim | 43.728 |
 | tuik | 7.639 |
-| il | 7.087 |
+| il | 7.085 |
 | turkiye | 12 |
 
 ## Özet
@@ -19,7 +19,7 @@
 |---|---|---|---|
 | `KATILIM_100_USTU` | hata/kaynak | 27440 | birim 163, il 7, mahalle 27243, tuik 27 |
 | `GECERLI_SECMENDEN_FAZLA` | hata/kaynak | 19338 | birim 191, il 1, ilçe 95, mahalle 19026, tuik 25 — 95 tanesi zaten belgeli |
-| `OY_TOPLAMI_TUTMUYOR` | hata | 3533 | birim 2504, il 325, ilçe 539, mahalle 5, tuik 159, turkiye 1 — 350 tanesi zaten belgeli |
+| `OY_TOPLAMI_TUTMUYOR` | hata | 3533 | birim 2504, il 323, ilçe 541, mahalle 5, tuik 159, turkiye 1 — 664 tanesi zaten belgeli |
 | `ORAN_HESAPLA_TUTMUYOR` | hata | 190 | il 180, ilçe 10 — 111 tanesi zaten belgeli |
 | `KAZANAN_DIGER` | eksik | 10 | ilçe 10 |
 | `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 857 | il 29, ilçe 69, mahalle 759 |
@@ -82,7 +82,7 @@ Dosyalara göre: mahalle/2023cb1tur.json 2038, mahalle/2023cb2tur.json 1962, mah
 
 Parti oylarının toplamı geçerli oya eşit değil: bir partinin oyu eksik ya da fazla.
 
-Dosyalara göre: ek/belediye_meclisi/1968yerel.json 676, ek/belediye_meclisi/1963yerel.json 597, ek/belediye_meclisi/1994yerel.json 195, ek/belediye_meclisi/1973yerel.json 188, meclis_harita/1968yerel_bm.json 178, ek/belediye_meclisi/1999yerel.json 166, ek/belediye_meclisi/1977yerel.json 160, ek/il_genel_meclisi/1999yerel.json 133, ek/il_genel_meclisi/1977yerel.json 129, ek/il_genel_meclisi/1963yerel.json 119, elections/yerel/1984yerel.json 116, ek/il_genel_meclisi/1968yerel.json 95 …
+Dosyalara göre: ek/belediye_meclisi/1968yerel.json 676, ek/belediye_meclisi/1963yerel.json 597, ek/belediye_meclisi/1994yerel.json 195, ek/belediye_meclisi/1973yerel.json 188, meclis_harita/1968yerel_bm.json 179, ek/belediye_meclisi/1999yerel.json 166, ek/belediye_meclisi/1977yerel.json 160, ek/il_genel_meclisi/1999yerel.json 133, ek/il_genel_meclisi/1977yerel.json 129, ek/il_genel_meclisi/1963yerel.json 119, elections/yerel/1984yerel.json 116, ek/il_genel_meclisi/1968yerel.json 95 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -91,16 +91,16 @@ Dosyalara göre: ek/belediye_meclisi/1968yerel.json 676, ek/belediye_meclisi/196
 | mahalle/2009yerel.json | Buldan / ÇAYBAŞI MAH. | parti toplamı 499, geçerli 700 (fark -201) |
 | mahalle/2009yerel.json | Kadıköy / CAFERAĞA MAH. | parti toplamı 15495, geçerli 15715 (fark -220) |
 | mahalle/2009yerel.json | İzmit / DOĞAN MAH. | parti toplamı 2427, geçerli 2607 (fark -180) |
-| meclis_harita/1963yerel_bm.json | plaka 3 / Afyonkarahisar | parti toplamı 44351, geçerli 48132 (fark -3781) |
-| meclis_harita/1963yerel_bm.json | plaka 4 / Ağrı | parti toplamı 8565, geçerli 8747 (fark -182) |
-| meclis_harita/1963yerel_bm.json | plaka 6 / Ankara | parti toplamı 25597, geçerli 29544 (fark -3947) |
-| meclis_harita/1963yerel_bm.json | plaka 12 / Bingöl | parti toplamı 3981, geçerli 3461 (fark +520) |
-| meclis_harita/1963yerel_bm.json | plaka 14 / Bolu | parti toplamı 4053, geçerli 4785 (fark -732) |
-| meclis_harita/1963yerel_bm.json | plaka 16 / Bursa | parti toplamı 44241, geçerli 53835 (fark -9594) |
-| meclis_harita/1963yerel_bm.json | plaka 21 / Diyarbakır | parti toplamı 12366, geçerli 14335 (fark -1969) |
-| meclis_harita/1963yerel_bm.json | plaka 24 / Erzincan | parti toplamı 5740, geçerli 7280 (fark -1540) |
-| meclis_harita/1963yerel_bm.json | plaka 25 / Erzurum | parti toplamı 17771, geçerli 20793 (fark -3022) |
-| meclis_harita/1963yerel_bm.json | plaka 35 / İzmir | parti toplamı 71006, geçerli 85180 (fark -14174) |
+| ek/beldeler/1989yerel.json | Kırşehir / Kırşehir / Karahıdır | parti toplamı 467, geçerli 844 (fark -377) |
+| ek/beldeler/1989yerel.json | Tekirdağ / Tekirdağ / Karacakılavuz | parti toplamı 2058, geçerli 2053 (fark +5) |
+| ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Akören | parti toplamı 1098, geçerli 1241 (fark -143) |
+| ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Nuhköy | parti toplamı 443, geçerli 919 (fark -476) |
+| ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Serban | parti toplamı 711, geçerli 1420 (fark -709) |
+| ek/beldeler/1994yerel.json | Afyon / Sincanlı (Sinanpaşa) / Tınaztepe | parti toplamı 1581, geçerli 1793 (fark -212) |
+| ek/beldeler/1994yerel.json | Afyon / Sultandağı / Dereçine | parti toplamı 1222, geçerli 1617 (fark -395) |
+| ek/beldeler/1994yerel.json | Afyon / Sultandağı / Karapınar | parti toplamı 1037, geçerli 1153 (fark -116) |
+| ek/beldeler/1994yerel.json | Afyon / Sultandağı / Kırca | parti toplamı 606, geçerli 983 (fark -377) |
+| ek/beldeler/1994yerel.json | Afyon / Sultandağı / Yakasinek | parti toplamı 994, geçerli 1318 (fark -324) |
 | … | 3518 kayıt daha | |
 
 ## `ORAN_HESAPLA_TUTMUYOR` (190)

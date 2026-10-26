@@ -30,15 +30,15 @@
  "ozet": {
   "satir": 1701,
   "il": 67,
-  "ilce": 588,
-  "belde": 1045,
+  "ilce": 593,
+  "belde": 1040,
   "tutarli": 1489,
   "toplamTutmuyor": 7,
   "tutarsiz": 212,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 159,
   "goruntudenOkunan": 263,
-  "adlandirilan": 586,
+  "adlandirilan": 591,
   "eksikIl": [],
   "ilSatiriTaramadaYok": [],
   "eslesmeyenSayfa": [
@@ -62,8 +62,7 @@
     "Ankara (il merkezi belediyesi)"
    ],
    "7": [
-    "Finike",
-    "Kumluca"
+    "Finike"
    ],
    "4": [
     "Tutak"
@@ -87,12 +86,6 @@
    "46": [
     "Andırın"
    ],
-   "36": [
-    "Posof"
-   ],
-   "41": [
-    "Gölcük"
-   ],
    "42": [
     "Bozkır",
     "Hadim"
@@ -110,18 +103,12 @@
     "Kozluk",
     "Kurtalan"
    ],
-   "58": [
-    "Gürün"
-   ],
    "65": [
     "Başkale",
     "Gevaş"
    ],
    "66": [
     "Çekerek"
-   ],
-   "5": [
-    "Merkez"
    ],
    "14": [
     "Merkez"
@@ -6388,7 +6375,7 @@
   {
    "il": "Amasya",
    "plaka": 5,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "Merkez",
    "ustIlce": null,
    "sandik": 54,
@@ -6412,6 +6399,11 @@
     142,
     143
    ],
+   "ad": "Merkez",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   },
    "yuzde": {
     "AP": 47.5,
     "CHP": 45.0,
@@ -9673,7 +9665,7 @@
   {
    "il": "Antalya",
    "plaka": 7,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "Kumluca",
    "ustIlce": null,
    "sandik": 9,
@@ -9699,6 +9691,11 @@
     146,
     147
    ],
+   "ad": "Kumluca",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   },
    "yuzde": {
     "AP": 41.4,
     "CHP": 32.5
@@ -25025,8 +25022,8 @@
    ],
    "ad": "Kelkit",
    "kimlik": {
-    "yontem": "baskanlikAdi",
-    "not": "kitapta okunan ad başkanlık kaydındaki ilçe belediyesiyle aynı, seçmen %3 içinde"
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    },
    "yuzde": {
     "AP": 52.4,
@@ -32757,7 +32754,7 @@
   {
    "il": "Kars",
    "plaka": 36,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "Posof",
    "ustIlce": null,
    "sandik": 3,
@@ -32778,6 +32775,11 @@
     182,
     183
    ],
+   "ad": "Posof",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   },
    "yuzde": {
     "AP": 41.2,
     "CHP": 50.2,
@@ -36349,7 +36351,7 @@
   {
    "il": "Kocaeli",
    "plaka": 41,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "Gölcük",
    "ustIlce": null,
    "sandik": 44,
@@ -36373,6 +36375,11 @@
     186,
     187
    ],
+   "ad": "Gölcük",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   },
    "yuzde": {
     "AP": 35.1,
     "CHP": 41.9,
@@ -53223,7 +53230,7 @@
   {
    "il": "Sivas",
    "plaka": 58,
-   "tip": "belde",
+   "tip": "ilce",
    "adKaynakta": "Gürün",
    "ustIlce": null,
    "sandik": 14,
@@ -53245,6 +53252,11 @@
     212,
     213
    ],
+   "ad": "Gürün",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   },
    "yuzde": {
     "AP": 39.1,
     "CHP": 44.4,

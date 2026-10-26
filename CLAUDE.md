@@ -28,5 +28,5 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 `docs/rapor/VERI_DENETIMI_YONETIM.md` (eylem planı tablosu orada; Claude Docs artifact silindi). Veri ve yöntem raporu: `docs/rapor/VERI_VE_YONTEM.md`.
 
 ## Durum
-Proje kapandı (21 Ekim 2026). Yalnız yeni seçim (normal takvimde 2028 genel, 2029 yerel) ya da hata bildirimi olursa açılır.
+Proje kapandı (21 Ekim 2026; 1963–1977 meclis ve başkanlık işi 26 Ekim 2026'da tamamlandı, kullanıcı bundan sonra çalışma istemiyor). Yalnız yeni seçim (normal takvimde 2028 genel, 2029 yerel) ya da hata bildirimi olursa açılır.
 - İsteğe bağlı, yapılmadı: 1994–1999 meclis/belde oy toplamları, 10 kayıtta kazanan "Diğer", 2009 Ağın/Kadışehri yenilemesi haritada, Gaziantep belediye sınırları (SSL hatası), Hatay/Van için TUCBS e-Devlet başvurusu (kullanıcı).

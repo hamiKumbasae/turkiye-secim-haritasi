@@ -31,15 +31,15 @@
  "ozet": {
   "satir": 1607,
   "il": 59,
-  "ilce": 520,
-  "belde": 1027,
+  "ilce": 524,
+  "belde": 1023,
   "tutarli": 1434,
   "toplamTutmuyor": 6,
   "tutarsiz": 173,
   "ocrDuzeltilen": 0,
   "yapisalOkunan": 0,
   "goruntudenOkunan": 120,
-  "adlandirilan": 520,
+  "adlandirilan": 524,
   "eksikIl": [
    54,
    55,
@@ -91,18 +91,12 @@
   ],
   "cetvelUygulanamayan": [],
   "baskanliktaEslesmeyenIlceler": {
-   "2": [
-    "Besni"
-   ],
    "10": [
     "Gönen",
     "İvrindi",
     "Kepsut",
     "Manyas",
     "Savaştepe"
-   ],
-   "15": [
-    "Bucak"
    ],
    "24": [
     "Tercan"
@@ -121,9 +115,6 @@
    "38": [
     "Develi",
     "Felahiye"
-   ],
-   "45": [
-    "Alaşehir"
    ],
    "48": [
     "Ula",
@@ -229,9 +220,6 @@
    ],
    "64": [
     "Sivaslı"
-   ],
-   "35": [
-    "Torbalı"
    ],
    "42": [
     "Merkez"
@@ -1374,7 +1362,7 @@
    }
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 2,
    "adKaynakta": "",
    "ustIlce": null,
@@ -1402,7 +1390,12 @@
     128,
     129
    ],
-   "kazanan": "AP"
+   "kazanan": "AP",
+   "ad": "Besni",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",
@@ -4228,7 +4221,7 @@
    "ad": "Suluova",
    "kimlik": {
     "yontem": "baskanlikSecmeni",
-    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+    "not": "seçmen başkanlık kaydındaki ilçe belediyesiyle birebir ve il içinde tek (sandık farklı okunmuş)"
    }
   },
   {
@@ -12840,7 +12833,7 @@
    "kazanan": "AP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 15,
    "adKaynakta": "Bucak",
    "ustIlce": null,
@@ -12868,7 +12861,12 @@
     144,
     145
    ],
-   "kazanan": "MHP"
+   "kazanan": "MHP",
+   "ad": "Bucak",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",
@@ -30756,7 +30754,7 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 35,
    "adKaynakta": "",
    "ustIlce": "Tire",
@@ -30782,7 +30780,12 @@
     168,
     169
    ],
-   "kazanan": "CHP"
+   "kazanan": "CHP",
+   "ad": "Torbalı",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",
@@ -33515,8 +33518,8 @@
    "kazanan": "CHP",
    "ad": "Sarıoğlan",
    "kimlik": {
-    "yontem": "baskanlikAdi",
-    "not": "kitapta okunan ad başkanlık kaydındaki ilçe belediyesiyle aynı, seçmen %3 içinde"
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
    }
   },
   {
@@ -41613,7 +41616,7 @@
    "kazanan": "CHP"
   },
   {
-   "tip": "belde",
+   "tip": "ilce",
    "plaka": 45,
    "adKaynakta": "Alaşehir",
    "ustIlce": null,
@@ -41639,7 +41642,12 @@
     182,
     183
    ],
-   "kazanan": "AP"
+   "kazanan": "AP",
+   "ad": "Alaşehir",
+   "kimlik": {
+    "yontem": "baskanlikSecmeni",
+    "not": "sandık + seçmen başkanlık kaydındaki ilçe belediyesiyle birebir"
+   }
   },
   {
    "tip": "belde",
