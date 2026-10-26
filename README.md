@@ -13,7 +13,7 @@ il, ilçe ve 2009'dan sonra mahalle düzeyinde gösteren interaktif harita.
 | | Seçim | Düzey |
 |---|---|---|
 | Genel | 20 (1950–2023) | il; ilçe 1961'den beri |
-| Yerel | 15 (1950–2024) | il, ilçe; 1984'ten beri belediye meclisi ve il genel meclisi |
+| Yerel | 15 (1950–2024) | il, ilçe; 1977 ve 1984'ten beri belediye meclisi ve il genel meclisi |
 | Referandum | 7 (1961–2017) | il, ilçe |
 | Cumhurbaşkanlığı | 4 (2014–2023, 2023'te iki tur) | il, ilçe |
 
@@ -110,8 +110,9 @@ Nerelere bakıldığı: [`data/kaynaklar/ARASTIRMA_KAYDI.md`](data/kaynaklar/ARA
 - **1950, 1954, 1957 genel seçimleri** yalnız il düzeyinde; ülke çapında ilçe kaynağı yok.
 - **1950–1977 yerel seçimleri** Vikipedi'ye dayanır. 1950 ve 1955'te başkanı meclis seçtiği için ilçede yalnız kazanan parti var.
   1963–1977 başkanlık sonuçları DİE kitaplarıyla karşılaştırıldı ([rapor](docs/rapor/KITAP_DOGRULAMA_1963_1977.md)); farklar işlenmedi.
-- **1984 yerel meclis sonuçları:** taranmış DİE kitabında okunamayan satırlar boş (belediye meclisi %21, il genel meclisi %11).
-  1963–1977 meclis kitapları depoda ama okunmadı.
+- **1977 ve 1984 yerel meclis sonuçları:** taranmış DİE kitabında okunamayan satırlar boş (1984: belediye meclisi %21,
+  il genel meclisi %11; 1977: %24 ve %13, belediye meclisinde 8 ilin sayfaları taramada yok). 1963–1973 meclis
+  kitapları depoda ama okunmadı.
 - **Ayrıştırılmamış "Diğer":** küçük partilerin kaynakta tek toplam olduğu yerler. 2009–2024 yerel ve 2011–2023 genel
   seçimlerde YSK verisiyle, 1994–2004 yerelde DİE kitabıyla partilere ayrıldı; 10 kayıtta kazanan hâlâ "Diğer" (sitede notlu).
 - **Kaba eşlemeler:** birden çok eski ilçeden pay alan bazı yeni ilçeler (ör. Çukurova, Körfez) en büyük paya göre

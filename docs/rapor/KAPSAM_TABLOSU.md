@@ -13,11 +13,11 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 
 ## Genel durum özeti
 
-76 satır (46 seçim; yerel seçimlerde başkanlık, belediye meclisi ve il genel meclisi ayrı): COMPLETE 50, MOSTLY_COMPLETE 7, PARTIAL 2, VERY_PARTIAL 2, NONE 3, UNKNOWN 12.
+76 satır (46 seçim; yerel seçimlerde başkanlık, belediye meclisi ve il genel meclisi ayrı): COMPLETE 50, MOSTLY_COMPLETE 7, PARTIAL 4, VERY_PARTIAL 2, NONE 3, UNKNOWN 10.
 
 - **Genel seçim:** 20 satırdan 17 tam; eksik olanlar: 1950 (NONE), 1954 (NONE), 1957 (NONE).
 - **Referandum:** 7 satırın hepsi ilçe düzeyinde tam.
-- **Yerel seçim:** 45 satırdan 22 tam; eksik olanlar: 1950 (VERY_PARTIAL), 1950 BM (UNKNOWN), 1950 İGM (UNKNOWN), 1955 (VERY_PARTIAL), 1955 BM (UNKNOWN), 1955 İGM (UNKNOWN), 1963 BM (UNKNOWN), 1963 İGM (UNKNOWN), 1968 BM (UNKNOWN), 1968 İGM (UNKNOWN), 1973 BM (UNKNOWN), 1973 İGM (UNKNOWN), 1977 BM (UNKNOWN), 1977 İGM (UNKNOWN), 1984 BM (PARTIAL), 1984 İGM (PARTIAL), 1989 BM (MOSTLY_COMPLETE), 1994 BM (MOSTLY_COMPLETE), 1994 İGM (MOSTLY_COMPLETE), 1999 BM (MOSTLY_COMPLETE), 1999 İGM (MOSTLY_COMPLETE), 2004 BM (MOSTLY_COMPLETE), 2004 İGM (MOSTLY_COMPLETE).
+- **Yerel seçim:** 45 satırdan 22 tam; eksik olanlar: 1950 (VERY_PARTIAL), 1950 BM (UNKNOWN), 1950 İGM (UNKNOWN), 1955 (VERY_PARTIAL), 1955 BM (UNKNOWN), 1955 İGM (UNKNOWN), 1963 BM (UNKNOWN), 1963 İGM (UNKNOWN), 1968 BM (UNKNOWN), 1968 İGM (UNKNOWN), 1973 BM (UNKNOWN), 1973 İGM (UNKNOWN), 1977 BM (PARTIAL), 1977 İGM (PARTIAL), 1984 BM (PARTIAL), 1984 İGM (PARTIAL), 1989 BM (MOSTLY_COMPLETE), 1994 BM (MOSTLY_COMPLETE), 1994 İGM (MOSTLY_COMPLETE), 1999 BM (MOSTLY_COMPLETE), 1999 İGM (MOSTLY_COMPLETE), 2004 BM (MOSTLY_COMPLETE), 2004 İGM (MOSTLY_COMPLETE).
 - **Cumhurbaşkanlığı:** 4 satırın hepsi ilçe düzeyinde tam.
 - **Tam ama zayıf kaynaklı:** 1963 yerel, 1968 yerel, 1973 yerel, 1977 yerel, 2009 yerel — sayılar tam, ancak satırların bir kısmı ya da tamamı yalnız Wikipedia'dan; A kaynağıyla doğrulanmadı.
 
@@ -68,8 +68,8 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 | Yerel seçim | 1973 | Belediye meclisi | 0 | Yok | 616 | – | 0 | 616 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
 | Yerel seçim | 1973 | İl genel meclisi | 0 | Yok | 616 | – | 0 | 616 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
 | Yerel seçim | 1977 | Belediye başkanlığı | 67/67 | Tam | 616 | 621 | 621 | 0 | 0,0 | COMPLETE | Türkçe Wikipedia (D) | Doğrulama (D kaynaklı satırlar A kaynağıyla) |
-| Yerel seçim | 1977 | Belediye meclisi | 0 | Yok | 616 | – | 0 | 616 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
-| Yerel seçim | 1977 | İl genel meclisi | 0 | Yok | 616 | – | 0 | 616 | 100,0 | UNKNOWN | - | Evet (araştırılmadı) |
+| Yerel seçim | 1977 | Belediye meclisi | 45/67 | Kısmi | 616 | 621 | 473 | 148 | 23,8 | PARTIAL | TÜİK/DİE (A) | Evet |
+| Yerel seçim | 1977 | İl genel meclisi | 54/67 | Kısmi | 616 | 621 | 539 | 82 | 13,2 | PARTIAL | TÜİK/DİE (A) | Evet |
 | Yerel seçim | 1984 | Belediye başkanlığı | 67/67 | Tam | 624 | 644 | 644 | 0 | 0,0 | COMPLETE | Wikipedia satırları, sayılar DİE kitabıyla teyitli (A) | Hayır |
 | Yerel seçim | 1984 | Belediye meclisi | 48/67 | Kısmi | 624 | 644 | 511 | 133 | 20,7 | PARTIAL | TÜİK/DİE (A) | Evet |
 | Yerel seçim | 1984 | İl genel meclisi | 61/67 | Kısmi | 624 | 644 | 572 | 72 | 11,2 | PARTIAL | TÜİK/DİE (A) | Evet |
@@ -120,8 +120,6 @@ Güvenilirlik: A birincil/resmî · D zayıf/keşif (Wikipedia).
 - Yerel seçim 1973 — Belediye meclisi: projede kayıt yok.
 - Yerel seçim 1973 — İl genel meclisi: projede kayıt yok.
 - Yerel seçim 1977 — Belediye başkanlığı: bazı satırlarda katılım yok.
-- Yerel seçim 1977 — Belediye meclisi: projede kayıt yok.
-- Yerel seçim 1977 — İl genel meclisi: projede kayıt yok.
 - Yerel seçim 1984 — Belediye başkanlığı: bazı satırlarda seçmen, katılım yok.
 - Yerel seçim 1994 — Belediye başkanlığı: 9 satırda ilçe belediyesi yerine büyükşehir/ilçe geneli toplamı; bazı satırlarda seçmen, katılım yok.
 - Yerel seçim 1994 — Belediye meclisi: bazı satırlarda katılım yok.
@@ -165,7 +163,7 @@ A tam veri (≥ %90) · B kısmi · C yalnız il/genel toplam · D sonuç veri s
 | 1963 | A (%100,0) | D | D |
 | 1968 | A (%100,0) | D | D |
 | 1973 | A (%100,0) | D | D |
-| 1977 | A (%100,0) | D | D |
+| 1977 | A (%100,0) | B (%76,2) | B (%86,8) |
 | 1984 | A (%100,0) | B (%79,3) | B (%88,8) |
 | 1989 | A (%100,0) | A (%98,7) | A (%99,5) |
 | 1994 | A (%100,0) | A (%98,6) | A (%95,9) |
@@ -193,7 +191,9 @@ teyitli. Bu yıllardaki boşluk meclis sonuçlarında (taranmış kitabın okuna
 | 1 — Tamamlanmaya çok yakın | Yerel seçim 1994 il genel meclisi | 38 birim (%4,1) | 893/931 birim; 23 il kısmi, 53 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 1 — Tamamlanmaya çok yakın | Yerel seçim 1999 il genel meclisi | 39 birim (%4,1) | 904/943 birim; 21 il kısmi, 59 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 2 — Kısmi veri mevcut | Yerel seçim 1984 il genel meclisi | 72 birim (%11,2) | 572/644 birim; 36 il kısmi, 31 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
+| 2 — Kısmi veri mevcut | Yerel seçim 1977 il genel meclisi | 82 birim (%13,2) | 539/621 birim; 29 il kısmi, 38 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 2 — Kısmi veri mevcut | Yerel seçim 1984 belediye meclisi | 133 birim (%20,7) | 511/644 birim; 1 il hiç yok, 49 il kısmi, 17 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
+| 2 — Kısmi veri mevcut | Yerel seçim 1977 belediye meclisi | 148 birim (%23,8) | 473/621 birim; 8 il hiç yok, 30 il kısmi, 29 il tam | Basılı DİE kitabının okunamayan sayfaları elle/yeniden OCR; YSK il kurulu tutanakları |
 | 3 — Dağınık veri mevcut | Yerel seçim 1950 belediye başkanlığı | 491 birim (%99,0) | 5/496 birim; 62 il hiç yok, 1 il tam | DİE 1950/1955 mahalli seçim yayınları, il yıllıkları, dönemin gazeteleri |
 | 3 — Dağınık veri mevcut | Genel seçim 1950 | 478 birim (%100,0) | il düzeyi tam (63/63) | Parçalı il çalışmaları (ACADEMIC-002), yerel gazeteler, BCA; ulusal kaynak araması kapandı |
 | 3 — Dağınık veri mevcut | Genel seçim 1954 | 506 birim (%100,0) | il düzeyi tam (64/64) | Parçalı il çalışmaları (ACADEMIC-002), yerel gazeteler, BCA; ulusal kaynak araması kapandı |
@@ -209,6 +209,4 @@ teyitli. Bu yıllardaki boşluk meclis sonuçlarında (taranmış kitabın okuna
 | 4 — Neredeyse hiç veri yok | Yerel seçim 1968 il genel meclisi | 615 birim (%100,0) | yok | DİE Mahalli İdareler Seçimi Sonuçları kitapları (TÜİK kütüphanesi katalog kontrolü), dönemin gazeteleri |
 | 4 — Neredeyse hiç veri yok | Yerel seçim 1973 belediye meclisi | 616 birim (%100,0) | yok | DİE Mahalli İdareler Seçimi Sonuçları kitapları (TÜİK kütüphanesi katalog kontrolü), dönemin gazeteleri |
 | 4 — Neredeyse hiç veri yok | Yerel seçim 1973 il genel meclisi | 616 birim (%100,0) | yok | DİE Mahalli İdareler Seçimi Sonuçları kitapları (TÜİK kütüphanesi katalog kontrolü), dönemin gazeteleri |
-| 4 — Neredeyse hiç veri yok | Yerel seçim 1977 belediye meclisi | 616 birim (%100,0) | yok | DİE Mahalli İdareler Seçimi Sonuçları kitapları (TÜİK kütüphanesi katalog kontrolü), dönemin gazeteleri |
-| 4 — Neredeyse hiç veri yok | Yerel seçim 1977 il genel meclisi | 616 birim (%100,0) | yok | DİE Mahalli İdareler Seçimi Sonuçları kitapları (TÜİK kütüphanesi katalog kontrolü), dönemin gazeteleri |
 

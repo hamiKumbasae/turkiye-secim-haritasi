@@ -404,7 +404,9 @@ def _birim(d, il_adlari):
             "ustIlce": d.get("ustIlce"), "sandik": d["sandik"], "secmen": d["secmen"], "oyKullanan": d["oyKullanan"],
             "katilim": d["katilim"], "gecerliOy": d["gecerliOy"], "oy": d["oy"], "kazanan": d["kazanan"],
             "kontrol": d["kontrol"], "sayfa": d["sayfa"],
-            **{a: d[a] for a in ("ad", "ilce", "kimlik", "dogrulama", "yuzde", "yapi", "karakter") if d.get(a)}}
+            **{a: d[a] for a in ("ad", "ilce", "kimlik", "dogrulama", "yuzde", "yapi", "karakter",
+                                 # 1963-1977 okuyucusu (extract_mahalli_1963_1977.py): ikinci okuma, resmi duzeltme
+                                 "goruntuOkuma", "cetvelDuzeltme", "katilimOkunan") if d.get(a)}}
 
 
 def ek_meclis(secim, tablo, alt, il_adlari):
