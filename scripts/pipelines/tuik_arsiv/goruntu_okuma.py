@@ -26,21 +26,22 @@ IZIN = "0123456789.—-"
 
 
 @functools.lru_cache(maxsize=6)
-def goruntu(pdf_yolu, no, onbellek):
-    """Sayfanin 300 dpi gri goruntusu (onbellekte PNG)."""
+def goruntu(pdf_yolu, no, onbellek, dpi=DPI):
+    """Sayfanin gri goruntusu (onbellekte PNG). Varsayilan 300 dpi; buyuk boyutlu taranmis sayfada (1963) A4'te
+    300 dpi'ye denk gelecek kadar dusuk dpi verilir."""
     d = pathlib.Path(onbellek)
     d.mkdir(parents=True, exist_ok=True)
     yol = d / f"{no:04d}.png"
     if not yol.exists():
         kok = d / f"_{no:04d}"
-        subprocess.run(["pdftoppm", "-f", str(no), "-l", str(no), "-r", str(DPI), "-gray", "-png", "-singlefile",
+        subprocess.run(["pdftoppm", "-f", str(no), "-l", str(no), "-r", str(dpi), "-gray", "-png", "-singlefile",
                         str(pdf_yolu), str(kok)], check=True)
         pathlib.Path(str(kok) + ".png").rename(yol)
     return Image.open(yol).convert("L")
 
 
 _KAYMA = {}
-_ONBELLEK = {"yol": None, "hucre": {}, "kayma": {}}
+_ONBELLEK = {"yol": None, "hucre": {}, "kayma": {}, "tsv": {}}
 
 
 def onbellek_ac(yol):
@@ -49,14 +50,17 @@ def onbellek_ac(yol):
     _ONBELLEK["yol"] = pathlib.Path(yol)
     if _ONBELLEK["yol"].exists():
         d = json.loads(_ONBELLEK["yol"].read_text(encoding="utf-8"))
-        _ONBELLEK["hucre"], _ONBELLEK["kayma"] = d.get("hucre", {}), d.get("kayma", {})
+        _ONBELLEK["hucre"], _ONBELLEK["kayma"], _ONBELLEK["tsv"] = d.get("hucre", {}), d.get("kayma", {}), d.get("tsv", {})
 
 
 def onbellek_kaydet():
     import json
     if _ONBELLEK["yol"]:
         _ONBELLEK["yol"].parent.mkdir(parents=True, exist_ok=True)
-        _ONBELLEK["yol"].write_text(json.dumps({"hucre": _ONBELLEK["hucre"], "kayma": _ONBELLEK["kayma"]}), encoding="utf-8")
+        d = {"hucre": _ONBELLEK["hucre"], "kayma": _ONBELLEK["kayma"]}
+        if _ONBELLEK["tsv"]:
+            d["tsv"] = _ONBELLEK["tsv"]
+        _ONBELLEK["yol"].write_text(json.dumps(d), encoding="utf-8")
 
 
 def kayma(page, img, anahtar, png_yolu=None):
@@ -78,9 +82,8 @@ def kayma(page, img, anahtar, png_yolu=None):
         with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as f:
             img.save(f.name)
             png_yolu = f.name
-    out = subprocess.run(["tesseract", str(png_yolu), "-", "--psm", "6", "tsv"], capture_output=True, text=True).stdout
-    tw = [(re.sub(r"\D", "", r["text"]), (int(r["left"]) + int(r["width"]) / 2) / sc, (int(r["top"]) + int(r["height"]) / 2) / sc)
-          for r in csv.DictReader(io.StringIO(out), delimiter="\t", quoting=csv.QUOTE_NONE) if r.get("text")]
+    tw = [(re.sub(r"\D", "", m), (x0 + x1) / 2 / sc, (y0 + y1) / 2 / sc) for m, x0, y0, x1, y1 in sayfa_kelimeleri(img, anahtar, png_yolu)]
+    out = None
     pw = [(re.sub(r"\D", "", w["text"]), (w["x0"] + w["x1"]) / 2, (w["top"] + w["bottom"]) / 2) for w in page.extract_words()]
     tc = collections.Counter(t for t, _, _ in tw if len(t) >= 3)
     pc = collections.Counter(t for t, _, _ in pw if len(t) >= 3)
@@ -99,21 +102,17 @@ def kayma(page, img, anahtar, png_yolu=None):
             ay, by = np.polyfit(ys[m, 0], ys[m, 1], 1)
             sonuc = (float(ax), float(bx), float(ay), float(by))
     if sonuc is None:
-        sonuc = _geometrik_kayma(out, sc, page)
+        sonuc = _geometrik_kayma(sayfa_kelimeleri(img, anahtar, png_yolu), sc, page)
     _KAYMA[anahtar] = sonuc
     _ONBELLEK["kayma"][ak] = list(sonuc) if sonuc else None
     return sonuc
 
 
-def _geometrik_kayma(tsv, sc, page):
+def _geometrik_kayma(kelimeler, sc, page):
     """Metin katmani rakamlari okunamayacak kadar bozuksa (ortak sayi < 6): sozcuk kutularinin konumlari yine
     dogrudur (ABBYY karakteri yanlis tanimis ama yerini bulmus). Tesseract ve metin katmani kutu merkezleri
     arasinda en cok cifti 1,5 pt icinde ortusturen oteleme (olcek 1) aranir; sozcuklerin en az %30'u ortusmeli."""
-    import csv
-    import io
-    T = np.array([((int(r["left"]) + int(r["width"]) / 2) / sc, (int(r["top"]) + int(r["height"]) / 2) / sc)
-                  for r in csv.DictReader(io.StringIO(tsv), delimiter="\t", quoting=csv.QUOTE_NONE)
-                  if (r.get("text") or "").strip() and int(r.get("conf", "0").split(".")[0] or 0) >= 0])
+    T = np.array([((x0 + x1) / 2 / sc, (y0 + y1) / 2 / sc) for m, x0, y0, x1, y1 in kelimeler])
     P = np.array([((w["x0"] + w["x1"]) / 2, (w["top"] + w["bottom"]) / 2) for w in page.extract_words()])
     if len(T) < 30 or len(P) < 30:
         return None
@@ -160,13 +159,16 @@ def satir_metinleri(img, page, kenarlar, y, donusum, ilk_genislik=48):
     return sonuc
 
 
+GENIS_TIRE = False  # 1963: sayfa okumasi tireyi '=', '_', '~' okuyabiliyor
+
+
 def sayi_adaylari(t):
     """Hucre metninden tam sayi adaylari. '—' / '-' tek basina = 0 (kitapta sifir); bos = None."""
     if not t:
         return [None]
     r = re.sub(r"[^\d]", "", t)
     if not r:
-        return [0] if re.search(r"[—-]", t) else [None]
+        return [0] if re.search(r"[—–\-=_~]" if GENIS_TIRE else r"[—-]", t) else [None]
     out = [r]
     if len(r) > 1 and r[0] == "1":
         out.append(r[1:])
@@ -251,7 +253,7 @@ def coz_yuzdesiz(metin, partiler, yedek, gecerli=None, fark_izni=None):
     g = v["gecerliOy"]
     if not isinstance(g, int) or g <= 0:
         return None
-    kesin, belirsiz = {}, []
+    kesin, belirsiz, bos = {}, [], []
     for p in partiler:
         a = yedek.get(p)
         im = [x for x in sayi_adaylari(metin.get(p)) if x is not None]
@@ -260,7 +262,8 @@ def coz_yuzdesiz(metin, partiler, yedek, gecerli=None, fark_izni=None):
         elif a is None and im == [0]:
             kesin[p] = 0           # metin katmaninda bos, goruntude tire
         elif not im and a is None:
-            kesin[p] = None
+            kesin[p] = 0           # iki okumada da bos: tire/bos hucre; yalniz toplam birebir tutarsa gecer
+            bos.append(p)
         else:
             belirsiz.append((p, sorted({x for x in im + ([a] if isinstance(a, int) else [])})))
     sifirdan_buyuk = [(p, c) for p, c in belirsiz if any(c)]
@@ -277,7 +280,7 @@ def coz_yuzdesiz(metin, partiler, yedek, gecerli=None, fark_izni=None):
             # degerler kitaptaki gibi kabul edilir; cagiran 'toplamTutmuyor' isaretler.
             # fark_izni = (az, fazla): parti toplaminin gecerli oydan en fazla ne oranda az / fazla olabilecegi
             g_teyit = g == yedek.get("gecerliOy") and g in sayi_adaylari(metin.get("gecerliOy"))
-            if fark_izni and g_teyit and -fark_izni[0] * g <= toplam - g <= fark_izni[1] * g:
+            if fark_izni and g_teyit and not bos and -fark_izni[0] * g <= toplam - g <= fark_izni[1] * g:
                 v.update(kesin)
                 v["_toplamFarki"] = toplam - g
                 return v
@@ -290,3 +293,46 @@ def coz_yuzdesiz(metin, partiler, yedek, gecerli=None, fark_izni=None):
         kesin[p] = uyan[0]
     v.update(kesin)
     return v
+
+
+def sayfa_kelimeleri(img, anahtar, png_yolu):
+    """Sayfanin tamami tek tesseract cagrisiyla (psm 6) okunur: [(metin, sol, ust, sag, alt)] goruntu pikseli.
+    Hucre hucre okumanin (satir_metinleri) hizli karsiligi; 1963 kitabinda satir basina 12 cagri yerine sayfa
+    basina bir cagri. Onbellekte."""
+    import csv
+    import io
+    ak = str(anahtar)
+    if ak in _ONBELLEK["tsv"]:
+        return _ONBELLEK["tsv"][ak]
+    out = subprocess.run(["tesseract", str(png_yolu), "-", "--psm", "6", "tsv"], capture_output=True, text=True).stdout
+    k = [(r["text"], int(r["left"]), int(r["top"]), int(r["left"]) + int(r["width"]), int(r["top"]) + int(r["height"]))
+         for r in csv.DictReader(io.StringIO(out), delimiter="\t", quoting=csv.QUOTE_NONE) if (r.get("text") or "").strip()]
+    _ONBELLEK["tsv"][ak] = k
+    return k
+
+
+_RAKAMLAS = str.maketrans({"O": "0", "o": "0", "D": "0", "l": "1", "I": "1", "|": "1", "i": "1", "S": "5", "B": "8"})
+
+
+def satir_metinleri_sayfadan(img, page, kenarlar, y, donusum, kelimeler, ilk_genislik=48, ust=6, alt=16):
+    """satir_metinleri gibi hucre kutulari (dikeyde daha genis: satirin y'si satirdaki bir lekeden gelebiliyor;
+    1963 satir araligi ~40 pt); metin sayfa okumasindaki (sayfa_kelimeleri) merkezi kutuya dusen sozcuklerden.
+    Rakam agirlikli sozcukte tipik harf/rakam karisikligi cevrilir."""
+    sc = img.size[0] / float(page.width)
+    ax, bx, ay, by = donusum
+    X = lambda x: (ax * x + bx) * sc  # noqa: E731
+    Y = lambda v: (ay * v + by) * sc  # noqa: E731
+    out = []
+    for k, e in enumerate(kenarlar):
+        x0 = kenarlar[k - 1] + 3 if k else e - ilk_genislik
+        b = (X(x0), Y(y - ust), X(e + 1.5), Y(y + alt))
+        ic = sorted((w for w in kelimeler if b[0] <= (w[1] + w[3]) / 2 <= b[2] and b[1] <= (w[2] + w[4]) / 2 <= b[3]),
+                    key=lambda w: w[1])
+        parca = []
+        for w in ic:
+            m = w[0]
+            if sum(c.isdigit() for c in m) >= max(1, len(m) / 2):
+                m = m.translate(_RAKAMLAS)
+            parca.append(m)
+        out.append(" ".join(parca))
+    return out

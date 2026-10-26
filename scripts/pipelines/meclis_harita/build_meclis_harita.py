@@ -339,7 +339,9 @@ def benzer_ad(r, i, ana, eslesen, sira_kesin):
         return None
     adaylar = {}
     for a in ana["ilceler"]:
-        if a["plaka"] != r["plaka"]:
+        # 1963-1977 buyuk kent il merkezi (birden cok ilcenin poligonu) tek ilce satiriyla baglanmaz
+        # ('Çankaya' ~ 'Ankara (il merkezi belediyesi)'); buyuk_kent_toplami'na bakiniz
+        if a["plaka"] != r["plaka"] or "il merkezi belediyesi" in a["ad"]:
             continue
         for ad in (a["ad"], ((a.get("kaynak") or {}).get("tuik") or {}).get("adKaynakta")):
             if ad_norm(ad):
@@ -362,6 +364,38 @@ def benzer_ad(r, i, ana, eslesen, sira_kesin):
     if (onceki and sira[g] <= onceki[-1]) or (sonraki and sira[g] >= sonraki[0]):
         return None
     return g
+
+
+def buyuk_kent_toplami(a, birimler):
+    """1963-1977 Ankara / Istanbul / Izmir: baskanlik haritasinda il merkezi belediyesi tek birim ve poligonu
+    birden cok ilcenin sinirlariyla cizilir (kaydin notunda adlari). Il genel meclisi ilce sonucu ilcenin
+    tamamidir; poligonun ilcelerinin HEPSI kitapta dogrulanmis (toplam ve yuzdelerle tutan) birer satirla
+    adlandirilmissa bu satirlarin toplami yazilir. Biri eksikse birim bos kalir (tahmin yok)."""
+    if "il merkezi belediyesi" not in a["ad"]:
+        return None
+    m = re.search(r"seçimindeki (.+?) ilçe sınırlarıyla", (a.get("kaynak") or {}).get("not", ""))
+    if not m:
+        return None
+    adlar = [x.strip() for x in m.group(1).split(",") if x.strip()]
+    satir = {}
+    for ad in adlar:
+        aday = [r for r in birimler if r.get("tip") == "ilce" and r.get("plaka") == a["plaka"]
+                and ad_norm(r.get("ad")) == ad_norm(ad)]
+        if len(aday) != 1 or (aday[0].get("kontrol") or {}).get("durum") != "tutarli" \
+                or (aday[0].get("kimlik") or {}).get("yontem") == "cozulemedi":
+            return None
+        satir[ad] = aday[0]
+    oy = collections.Counter()
+    for r in satir.values():
+        oy.update(r["oy"])
+    top = lambda alan: sum(r.get(alan) or 0 for r in satir.values()) if all(isinstance(r.get(alan), int) for r in satir.values()) else None  # noqa: E731
+    g, s, k = top("gecerliOy"), top("secmen"), top("oyKullanan")
+    return {"ad": a["ad"], "plaka": a["plaka"], "geomId": a["geomId"], "oy": oy_bicimi(dict(oy), g),
+            "kazanan": birinci(dict(oy)), "gecerliOy": g, "secmen": s, "sandik": top("sandik"),
+            "katilim": round(k / s * 100, 2) if s and k is not None else None, "vekil": {}, "toplamVekil": 0,
+            "veriNotu": "DİE kitabında il merkezi tek satır değil: " + ", ".join(adlar) + " ilçelerinin doğrulanmış "
+                        "il genel meclisi satırlarının toplamı (her satır toplam ve yüzdelerle tutuyor; ilçe sonucu "
+                        "ilçenin tamamı, harita bu ilçelerin sınırlarıyla çizer)."}
 
 
 def kur_die(yil, kisa):
@@ -446,6 +480,11 @@ def kur_die(yil, kisa):
                       "vekil": {}, "toplamVekil": 0, **toplam_notu(r)})
     ilceler = []
     for a in ana["ilceler"]:
+        t = buyuk_kent_toplami(a, B) if kisa == "igm" else None
+        if t:
+            sayac["il merkezi: ilçe satırları toplamı"] += 1
+            ilceler.append(t)
+            continue
         v = eslesen.get(a["geomId"])
         if not v or not dogrulanmis(v[0]):
             t = ysk_ilce.get(a["geomId"])

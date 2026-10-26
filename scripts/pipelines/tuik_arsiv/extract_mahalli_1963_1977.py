@@ -64,7 +64,7 @@ KITAPLAR = {
         "partiler": P77_SOL + P77_SAG, "genelIlce": "1977", "binlikBosluk": True,
         "sol": ONCU + [x for p in P77_SOL for x in (p, p + "%")],
         "sag": [x for p in P77_SAG for x in (p, p + "%")],
-        "tablolar": {"il_genel_meclisi": (8, 43), "belediye_meclisi": (128, 201)},
+        "tablolar": {"il_genel_meclisi": (8, 43), "belediye_meclisi": (128, 201), "belediye_baskanligi": (46, 126)},
         # Yanlis-Dogru Cetveli (kitap s. son, PDF s.235): bu iki tablodaki tek kayit kitap s.21 (PDF 27, IGM sag
         # yuz) sutun 15 satir 1 = Kars il satiri Bagimsiz oyu. Digerleri baskanlik tablosunda (s.51-78).
         "cetvel": {27: [{"sutun": 15, "satir": 1, "yanlis": 50678, "dogru": 50679}]},
@@ -78,8 +78,12 @@ KITAPLAR = {
         "demirbas": "0015160", "tarih": "17 Kasım 1963",
         "yayin": "DİE, Mahalli Seçimler Sonuçları, 17 Kasım 1963 (yayın no. 474, 1965)",
         "duzen": "karsilikli", "partiler": P63, "genelIlce": "1965", "binlikBosluk": True,
+        # goruntu okumasi sayfa basina tek tesseract cagrisiyla (hucre hucre okuma bu kitapta saatler suruyor)
+        "tamSayfaOcr": True, "genisTire": True,
+        # kitabin aciklamasi (4): parti toplami ile muteber oy arasinda farklar tutanaktaki gibi basildi (1968 gibi)
+        "toplamFarkIzni": (1.0, 0.02),
         "sol": ["nufus", "sandik", "secmen", "oyKullanan"], "sag": ["gecerliOy"] + P63,
-        "tablolar": {"il_genel_meclisi": "G", "belediye_meclisi": "M"},
+        "tablolar": {"il_genel_meclisi": "G", "belediye_meclisi": "M", "belediye_baskanligi": "B"},
         "cetvelKod": {"44/6": [{"satir": 1, "yanlis": 17475, "dogru": 174715}, {"satir": 2, "yanlis": 31487, "dogru": 61487},
                                {"satir": 3, "yanlis": 20795, "dogru": 10795}, {"satir": 8, "yanlis": 18264, "dogru": 18624}]},
     },
@@ -91,8 +95,8 @@ KITAPLAR = {
         "yayin": "DİE, Mahalli Seçimler Sonuçları, 2 Haziran 1968 (yayın no. 555, 1969)",
         "duzen": "fasikul", "partiler": P68, "genelIlce": "1969", "binlikBosluk": True,
         "sutunlar": {"il_genel_meclisi": ONCU68 + [x for p in P68 for x in (p, p + "%")],
-                     "belediye_meclisi": ONCU68 + P68},
-        "tablolar": {"il_genel_meclisi": "G", "belediye_meclisi": "M"},
+                     "belediye_meclisi": ONCU68 + P68, "belediye_baskanligi": ONCU68 + P68},
+        "tablolar": {"il_genel_meclisi": "G", "belediye_meclisi": "M", "belediye_baskanligi": "B"},
         # Belediye meclisi tablosunda parti oylari toplami cogu satirda gecerli oydan AZ (cogunlukla %10-30; kitabin
         # aciklamasi (4) farklari tutanaktaki gibi basildigini soyluyor). Yuzde basilmadigi icin bu satirlar ancak
         # her hucre ve gecerli oy metin katmani ile goruntude AYNI okunduysa kabul ('toplamTutmuyor', fark notlu):
@@ -106,7 +110,9 @@ KITAPLAR = {
         # sol yuzde gecerli oy katilimdan once
         "sol": ["sandik", "secmen", "oyKullanan", "gecerliOy", "katilim%"] + [x for p in P73_SOL for x in (p, p + "%")],
         "sag": [x for p in P73_SAG for x in (p, p + "%")],
-        "tablolar": {"il_genel_meclisi": (10, 47), "belediye_meclisi": (138, 221)},
+        "tablolar": {"il_genel_meclisi": (10, 47), "belediye_meclisi": (138, 221), "belediye_baskanligi": (52, 133)},
+        # baskanlik tablosunun sag yuzunun sonunda kazanan baskanin adi soyadi ve partisi
+        "sagIsimSutunu": {"belediye_baskanligi"},
         # Yanlis-Dogru Cetveli (PDF s.223; kitap sayfasi + 6 = PDF). s.49-96 kayitlari baskanlik tablosunda.
         "cetvel": {10: [{"sutun": 5, "satir": 2, "yanlis": 63.4, "dogru": 38.8}],
                    11: [{"sutun": 2, "satir": 2, "yanlis": 7.7, "dogru": 5.9},
@@ -145,6 +151,61 @@ def dogrula(v, partiler):
         if neden:
             kontrol = dict(kontrol, durum="tutarsiz", makulDegil=neden)
     return oy, kontrol, duz
+
+
+class OlcekliSayfa:
+    """Buyuk taranmis sayfa (1963 kitabi ~1900 x 2680 pt; die_tablo esikleri A4 olcegine gore): sozcuk
+    koordinatlari A4'e olceklenir. Normal boyutlu sayfaya dokunulmaz (olcek 1)."""
+
+    def __init__(self, page, s):
+        self._p, self._s = page, s
+        self.width, self.height = page.width / s, page.height / s
+
+    def extract_words(self, *a, **k):
+        out = []
+        for w in self._p.extract_words(*a, **k):
+            w = dict(w)
+            for alan in ("x0", "x1", "top", "bottom", "doctop"):
+                if alan in w:
+                    w[alan] = w[alan] / self._s
+            out.append(w)
+        return out
+
+    def __getattr__(self, ad):
+        return getattr(self._p, ad)
+
+
+class OlcekliPDF:
+    def __init__(self, pdf):
+        self._pdf = pdf
+        self.pages = [OlcekliSayfa(p, max(p.width, p.height) / 842.0) if max(p.width, p.height) > 1000 else p
+                      for p in pdf.pages]
+
+
+class KesikSayfa:
+    """1973 baskanlik tablosunun sag yuzunde son sutunlar kazanan baskanin adi ve partisi: sayi tablosu o
+    sutunlardan once biter. 'Seçimi kazanan' basliginin solundan sonraki sozcukler atilir."""
+
+    def __init__(self, page):
+        self._p = page
+        ws = page.extract_words()
+        kaz = [w for w in ws if w["text"].lower().startswith("kazanan")]
+        self._xmax = None
+        if kaz:
+            k = kaz[0]
+            once = [w for w in ws if abs(w["top"] - k["top"]) < 3 and w["x1"] <= k["x0"] + 1 and w["x0"] > k["x0"] - 60]
+            self._xmax = (min(w["x0"] for w in once) if once else k["x0"]) - 3
+
+    def extract_words(self, *a, **k):
+        ws = self._p.extract_words(*a, **k)
+        return ws if self._xmax is None else [w for w in ws if w["x0"] < self._xmax]
+
+    def __getattr__(self, ad):
+        return getattr(self._p, ad)
+
+
+def sag_sayfa(pdf, cfg, b):
+    return KesikSayfa(pdf.pages[b - 1]) if cfg.get("sagIsimSutunu") else pdf.pages[b - 1]
 
 
 def pdf_yolu(cfg):
@@ -288,7 +349,7 @@ def tablo_oku(pdf, cfg, ilk, son):
     sablon_sol = sablon_sag = None
     en_iyi_oran = -1
     for a, b in ciftler:
-        so, sa = yuz_secenekleri(pdf.pages[a - 1], cfg, True, None), yuz_secenekleri(pdf.pages[b - 1], cfg, False, None)
+        so, sa = yuz_secenekleri(pdf.pages[a - 1], cfg, True, None), yuz_secenekleri(sag_sayfa(pdf, cfg, b), cfg, False, None)
         if not so or not sa or len(so[0][0]) < 10:
             continue
         hiza = E._hizala(so[0][0], sa[0][0], cfg["partiler"])
@@ -299,7 +360,7 @@ def tablo_oku(pdf, cfg, ilk, son):
         # her yuz icin sayfanin kendi kenarlari ve sablon denenir; ciftin en cok tutarli satir veren birlesimi
         # secilir (secim satirlarin kendi ic tutarliligina dayanir)
         so = yuz_secenekleri(pdf.pages[a - 1], cfg, True, sablon_sol)
-        sa = yuz_secenekleri(pdf.pages[b - 1], cfg, False, sablon_sag)
+        sa = yuz_secenekleri(sag_sayfa(pdf, cfg, b), cfg, False, sablon_sag)
         if not so or not sa:
             eslesmeyen.append({"sayfa": [a, b], "neden": "sütunlar bulunamadı"})
             continue
@@ -311,8 +372,8 @@ def tablo_oku(pdf, cfg, ilk, son):
                 if en_iyi is None or puan > en_iyi[0]:
                     en_iyi = (puan, sol, kl, sag, kr, hiza, ks, kk)
         (dogru, _), sol, kl, sag, kr, hiza, ks, kk = en_iyi
-        ts, tr = E._sayfa_tokenleri(pdf.pages[a - 1], True), E._sayfa_tokenleri(pdf.pages[b - 1], False)
-        kd = E._duzeltmeler(pdf.pages[a - 1]), E._duzeltmeler(pdf.pages[b - 1])
+        ts, tr = E._sayfa_tokenleri(pdf.pages[a - 1], True), E._sayfa_tokenleri(sag_sayfa(pdf, cfg, b), False)
+        kd = E._duzeltmeler(pdf.pages[a - 1]), E._duzeltmeler(sag_sayfa(pdf, cfg, b))
         if sum(1 for _, r in hiza if r) < 0.5 * len(sol):
             # yuzdelerle hizalanamadi (sag yuz metni cok bozuk): satir sayilari esitse sirayla eslenir (yanlis eslesen
             # satir toplam/yuzde kontrolunden gecemez); degilse sol yuz satirlari sag yuz olmadan alinir.
@@ -440,7 +501,8 @@ def karsilikli_ciftler(cfg, tur):
     for i, p in enumerate(sayfalar, 1):
         h = re.sub(r"\s+", " ", p[:900]).upper().translate(tr)
         k = ("G" if re.search(r"I ?L ?G ?E ?N ?E ?L", h) else
-             "M" if re.search(r"B ?E ?L ?E ?D ?I ?Y ?E ?M ?E ?C ?L", h) else "")
+             "M" if re.search(r"B ?E ?L ?E ?D ?I ?Y ?E ?M ?E ?C ?L", h) else
+             "B" if re.search(r"1963 ?B ?E ?L ?E ?D ?I ?Y ?E\b", h) else "")
         if k == tur and i > 8:
             out.append((i, i + 1))
     return out
@@ -478,10 +540,41 @@ def tablo_oku_karsilikli(pdf, cfg, tur):
         if not so or not sa:
             eslesmeyen.append({"sayfa": [a, b], "neden": "sütunlar bulunamadı"})
             continue
-        dy = baslik_farki(L, R) or 0.0
+        # sol: iki satirlik adin ilk satiri ('Bahçe Şehir, Bucak ve') ayri satir sayilmasin (alttaki 'Köyleri
+        # Toplamı' satirina eklenir); sag: OCR'in ikiye boldugu satir (8 pt icinde, alanlari cakismayan) birlesir
+        def ad_parcasi_degil(sol):
+            sol = sorted(sol, key=lambda s: s["y"])
+            out = []
+            for i, s in enumerate(sol):
+                sonraki = sol[i + 1] if i + 1 < len(sol) else None
+                parca = re.search(r"([ŞS]ehir\W*,?\s*(Bucak(\s+ve)?)?|Bucak(\s+ve)?)\W*$", s["etiket"] or "")
+                devam = sonraki and sonraki["y"] - s["y"] < 34 and re.match(r"^\W*(K\s*[öo]\s*y|ve\b|TOPLAM)", sonraki["etiket"] or "", re.I)
+                if parca and devam:
+                    continue
+                out.append(s)
+            return out
+        so = [(ad_parcasi_degil(sol), kl, src) for sol, kl, src in so]
+        sa2 = []
+        for sag, kr, src in sa:
+            birlesik = []
+            for r in sorted(sag, key=lambda r: r["y"]):
+                o = birlesik[-1] if birlesik else None
+                if o and r["y"] - o["y"] < 8 and all(o["v"].get(k) is None or r["v"].get(k) is None for k in r["v"]):
+                    o["v"] = {k: (o["v"].get(k) if o["v"].get(k) is not None else r["v"].get(k)) for k in r["v"]}
+                else:
+                    birlesik.append({**r, "v": dict(r["v"])})
+            sa2.append((birlesik, kr, src))
+        sa = sa2
+        dy0 = baslik_farki(L, R) or 0.0
         en = None
         for sol, kl, _ in so:
             for sag, kr, _ in sa:
+                # iki yuzun dikey kaymasi: sol satirlarinin en coguna (3 pt icinde) bir sag satir dusuren kayma
+                # (baslik satiri bu taramalarda guvenilmez: sayfadaki leke en ustteki sozcuk olabiliyor)
+                sy, ry = [s["y"] for s in sol], [r["y"] for r in sag]
+                puanlar = [(sum(1 for y in sy if any(abs(r - y - d / 2) < 3 for r in ry)), -abs(d / 2 - dy0), d / 2)
+                           for d in range(-120, 121)]
+                dy = max(puanlar)[2] if puanlar else dy0
                 hiza = []
                 kullanilan = set()
                 for s in sorted(sol, key=lambda s: s["y"]):
@@ -504,9 +597,10 @@ def tablo_oku_karsilikli(pdf, cfg, tur):
         ts, tr_ = E._sayfa_tokenleri(L, True), E._sayfa_tokenleri(R, False)
         for sira, (s, r) in enumerate(hiza, 1):
             etiket = s["etiket"] or ""
-            if re.match(r"^\W*(K\s*[öo]\s*y|TOPLAM)", etiket, re.I):
-                ust = sorted((w for w in words if 3 < s["y"] - w["top"] < 16 and w["x1"] < 260
-                              and not re.fullmatch(r"[\d.,]+", w["text"])), key=lambda w: w["x0"])
+            if re.match(r"^\W*(K\s*[öo]\s*y|TOPLAM|ve\b|Bucak|[ŞS]ehir)", etiket, re.I):
+                # adin ust satir(lar)i: en cok 2 satir yukari (sayi sutunlarina girmeyen sozcukler)
+                ust = sorted((w for w in words if 3 < s["y"] - w["top"] < 34 and w["x1"] < 260
+                              and not re.fullmatch(r"[\d.,]+", w["text"])), key=lambda w: (round(w["top"] / 4), w["x0"]))
                 etiket = " ".join(w["text"] for w in ust) + " " + etiket
             satirlar.append({"etiket": etiket.strip(), "v": {**s["v"], **(r["v"] if r else {})}, "sagYok": r is None,
                              "sayfa": [a, b], "sira": sira, "karakterDuzeltme": [],
@@ -653,7 +747,7 @@ def ilce_adlandir(kayitlar, cfg):
             # blok bir butun olarak adlandirilamadi (toplam tutmadi ya da bir satir baglanamadi): yalniz dogrulanmis
             # satirlar tek tek baglanir (ad-oncelikli, karsilikli tek, sapma <= %10, ikinci aday en az 3 puan uzak);
             # celisen satir adsiz
-            uygun = [r for r in satirlar if r["kontrol"]["durum"] == "tutarli" and not r["kontrol"].get("katilimUyumsuz")]
+            uygun = [r for r in satirlar if r["kontrol"]["durum"] in ("tutarli", "toplamTutmuyor") and not r["kontrol"].get("katilimUyumsuz")]
             aday, kalan = {}, dict(sec)
             for r in uygun:
                 tutan = [ad for ad in sec if len(E._anahtar(r["adKaynakta"])) >= 3 and _ad_tutar(r["adKaynakta"], ad)]
@@ -712,7 +806,7 @@ def kod_ile_tamamla(satirlar, atama, sec):
     yeni = list(atama)
     for r in satirlar:
         k = r.get("kodKaynakta")
-        if id(r) in bagli or not k or "." in k or r["kontrol"]["durum"] != "tutarli" or int(k) >= len(ref):
+        if id(r) in bagli or not k or "." in k or r["kontrol"]["durum"] not in ("tutarli", "toplamTutmuyor") or int(k) >= len(ref):
             continue
         ad = ref[int(k)]
         if ad in alinan or not _ad_tutar(r["adKaynakta"], ad):
@@ -815,15 +909,18 @@ def belediye_kimlik(kayitlar, secim):
     # secmen %3 icinde, ya da (b) secmen birebir ayni (>= 1000; sandik iki tablodan birinde farkli okunmus) ve iki
     # tarafta da il icinde tek. Buyuksehir satiri kitapta "<il> Belediyesi Toplami".
     def ad_anahtari(x):
-        return re.sub(r"BELEDIYES[I]?TOPLAMI?$", "", E._anahtar(x))
+        # parantez ici atilir ('Ankara (il merkezi belediyesi)' -> ANKARA; E._anahtar yalniz '(' isaretini atiyor)
+        return re.sub(r"BELEDIYES[I]?TOPLAMI?$", "", E._anahtar(re.sub(r"\([^)]*\)", "", x or "")))
     for a in ana["ilceler"]:
         if a["geomId"] in bulunan or not a.get("secmen"):
             continue
         havuz = [r for r in kayitlar if r["plaka"] == a["plaka"] and r["tip"] == "belde" and r.get("secmen")
                  and not r.get("kimlik")]
         aa = ad_anahtari(a["ad"])
+        # buyuk kentin il merkezi belediyesi kitapta 'Merkez' (1973) ya da sehrin adiyla
+        aalar = {aa} | ({"MERKEZ"} if "il merkezi" in a["ad"] else set())
         ada = [r for r in havuz if len(ad_anahtari(r["adKaynakta"])) >= 3
-               and (ad_anahtari(r["adKaynakta"]) == aa or E._benzer(ad_anahtari(r["adKaynakta"]), aa) >= 0.85)
+               and any(ad_anahtari(r["adKaynakta"]) == x or E._benzer(ad_anahtari(r["adKaynakta"]), x) >= 0.85 for x in aalar)
                and abs(r["secmen"] - a["secmen"]) <= 0.03 * a["secmen"]]
         sec = [r for r in havuz if r["secmen"] == a["secmen"]] if a["secmen"] >= 1000 and \
             len(by.get((a["plaka"], a["secmen"]), [])) == 1 and \
@@ -901,11 +998,17 @@ def goruntu_oku(pdf, cfg, s):
         if not kenar or not all(isinstance(x, float) for x in kenar):
             return None
         pg = pdf.pages[no - 1]
-        img = G.goruntu(str(pdf_yolu(cfg)), no, str(PNG / cfg["demirbas"]))
+        s_ = getattr(pg, "_s", 1)
+        img = G.goruntu(str(pdf_yolu(cfg)), no, str(PNG / cfg["demirbas"])) if s_ == 1 else \
+            G.goruntu(str(pdf_yolu(cfg)), no, str(PNG / cfg["demirbas"]), round(G.DPI / s_))
         donusum = G.kayma(pg, img, (cfg["demirbas"], no), PNG / cfg["demirbas"] / f"{no:04d}.png")
         if donusum is None:
             return None
-        metin.update(zip(alanlar, G.satir_metinleri(img, pg, kenar, y, donusum)))
+        if cfg.get("tamSayfaOcr"):
+            kel = G.sayfa_kelimeleri(img, (cfg["demirbas"], no), PNG / cfg["demirbas"] / f"{no:04d}.png")
+            metin.update(zip(alanlar, G.satir_metinleri_sayfadan(img, pg, kenar, y, donusum, kel)))
+        else:
+            metin.update(zip(alanlar, G.satir_metinleri(img, pg, kenar, y, donusum)))
     tv = s["v"]
     if not yuzdeli:
         # yuzdesiz tablo (1968 belediye meclisi): iki okumanin ortak degerleri, en fazla bir hucre toplamla
@@ -952,8 +1055,9 @@ def goruntu_oku(pdf, cfg, s):
 def isle(secim, tablolar=None):
     cfg = KITAPLAR[secim]
     E.BINLIK_BOSLUK = cfg.get("binlikBosluk", False)
-    pdf = die_tablo.ac(pdf_yolu(cfg))
+    pdf = OlcekliPDF(die_tablo.ac(pdf_yolu(cfg)))
     G.onbellek_ac(PNG.parent / f"ocr_{cfg['demirbas']}.json")
+    G.GENIS_TIRE = bool(cfg.get("genisTire"))
     il_ad = E.il_adlari()
     ilce_kume = E.genel_ilceler(cfg["genelIlce"])
     for tablo, aralik in cfg["tablolar"].items():
@@ -975,6 +1079,7 @@ def isle(secim, tablolar=None):
                     cfg["cetvel"][no] = [dict(c, sutun=None) for c in kayitlar]
         else:
             ilk, son = aralik
+            cfg = dict(KITAPLAR[secim], sagIsimSutunu=tablo in KITAPLAR[secim].get("sagIsimSutunu", ()))
             satirlar, eslesmeyen = tablo_oku(pdf, cfg, ilk, son)
         # ilk satir (adsiz) Turkiye toplami
         if satirlar and not fasikul and not karsilikli and not E._anahtar(satirlar[0]["etiket"]):
@@ -986,9 +1091,12 @@ def isle(secim, tablolar=None):
             # 1973: il satiri "ADANA İL TOPLAMI" (tiplendir il adini birebir arar; OCR "tL", "1L"); 1963 "ADANA ÎLÎ
             # BELEDİYELERİ TOPLAMI", "Adana Şehir, Bucak ve Köyleri Toplamı" (ilce), "Bahçe Şehir" (ilce belediyesi)
             s["etiket"] = re.sub(r"\s+[İIÎi1lt|]\s*L\s*[İIÎi1l]?\s+BELED\S*\s+TOPLAM\w*\s*$", "", s["etiket"], flags=re.I)
+            s["etiket"] = re.sub(r"\s+[İIÎi1lt|]\s*L\s*[İIÎi1l]\s+T(OPLAM\w*)?\s*$", "", s["etiket"], flags=re.I)
             s["etiket"] = re.sub(r"\s+[İIÎi1lt|]\s*L\s+TOPLAM\w*\s*$", "", s["etiket"], flags=re.I)
             if karsilikli:
-                s["etiket"] = re.sub(r"\s+[ŞS]\s*e\s*h\s*i\s*r\b.*$", "", s["etiket"], flags=re.I).strip(" ,.^")
+                s["etiket"] = re.sub(r"\s+[İIÎi1l]\s*L\s*[İIÎi1l]?(\s+BELED\S*)?\s*$", "", s["etiket"], flags=re.I)
+            if karsilikli:
+                s["etiket"] = re.sub(r"\s+[ŞS]\S{0,2}h\s*[iîı]\s*r\b.*$", "", s["etiket"], flags=re.I).strip(" ,.^*")
         cetvel_uygulanmayan = cetvel_uygula(satirlar, cfg, ilk, son)
         if fasikul:
             satirlar, eksik_il, ilsiz = fasikul_tiplendir(satirlar, tablo), [], []
@@ -1075,6 +1183,10 @@ def isle(secim, tablolar=None):
             adlandirma = ilce_adlandir(kayitlar, cfg)
             for c in yerel_adlarina_cevir(kayitlar, secim):
                 print("  ad:", *c)
+        elif tablo == "belediye_baskanligi":
+            # kimlik ve karsilastirma birlestirme adiminda (merge_baskanlik_1963_1977.py): depodaki baskanlik
+            # kaydi (Vikipedi) burada kimlik icin kullanilmaz, cunku dogrulanacak olan o
+            adlandirma = {}
         else:
             adlandirma = belediye_kimlik(kayitlar, secim)
         say = lambda f: sum(1 for r in kayitlar if f(r))  # noqa: E731
@@ -1097,7 +1209,8 @@ def isle(secim, tablolar=None):
                      "adlandirilan": say(lambda r: r.get("ad")),
                      "eksikIl": eksik_il, "ilSatiriTaramadaYok": ilsiz, "eslesmeyenSayfa": eslesmeyen,
                      "cetvelUygulanamayan": cetvel_uygulanmayan,
-                     ("adlandirilamayanIller" if tablo == "il_genel_meclisi" else "baskanliktaEslesmeyenIlceler"): adlandirma},
+                     **({} if tablo == "belediye_baskanligi" else
+                        {("adlandirilamayanIller" if tablo == "il_genel_meclisi" else "baskanliktaEslesmeyenIlceler"): adlandirma})},
             "satirlar": kayitlar,
         }
         G.onbellek_kaydet()
