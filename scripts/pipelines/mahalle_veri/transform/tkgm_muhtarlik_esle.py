@@ -16,8 +16,10 @@ Eslestirme ayni ilce (geomId) icinde yapilir:
      2-4'teki ad kurallariyla; mevcut poligonlarla %25'ten fazla ortusen alinmaz. Anahtar 'r<osm_id>'.
   4b. OSM konumu (data/raw/osm/yer, fetch_osm_yer.py): adla eslesmeyen muhtarligin guncel adli OSM yer
      noktasi tek bir TKGM biriminin icine dusuyorsa o birim (TKGM bircok koyu eski adiyla tutuyor:
-     Bismil 'Akbaş' ~ TKGM 'Alibociyan'). Birim baska bir muhtarligin adini tasiyorsa alinmaz; o muhtarlik
-     adla ayni birime eslesmisse birim paylasilir ve oylar toplanir. Sinir cizilmez.
+     Bismil 'Akbaş' ~ TKGM 'Alibociyan'). Yalniz bosta duran birime ve bire bir: birim adla baska muhtarliga
+     eslesmisse, baska muhtarligin adini tasiyorsa ya da icine ikinci bir muhtarligin noktasi dusuyorsa
+     alinmaz; ayrica noktanin eski/guncel adlarindan biri birimin adini tutmali (ad destegi). Belirsiz
+     durumda muhtarlik bos kalir. Sinir cizilmez.
   5. Mevcut poligonlarla alaninin %25'inden fazlasi ortusen TKGM birimi cizilmez (ust uste binme).
   6. eslesmeyen muhtarliklar raporlanir (docs/rapor/mahalle_eslesme/<secim>.csv)
 Partiler: ulke genelinde %ANA_ESIK ustu olanlar ve o mahallenin kazanani ayri, gerisi 'Diğer'.
@@ -231,13 +233,28 @@ def yer_yukle():
 GUNCEL_AD = ("name", "name:tr", "official_name", "alt_name", "alt_name:tr", "short_name")
 
 
+KONUM_AD_ESIK = 0.7
+
+
+def ad_destegi(birim_adi, adlar):
+    """Konumla bulunan birimin adi, noktanin adlarindan birine (';' ile ayrilmis coklu degerler dahil) ya da
+    YSK adina benziyor mu (TKGM 'Eski (Yeni)', 'A/B' yazimlarinin parcalari da karsilastirilir)."""
+    birim = {ad_anahtari(birim_adi)} | {ad_anahtari(x) for x in re.split(r"[()/]", birim_adi) if x.strip()}
+    aday = {ad_anahtari(x) for v in adlar for x in v.split(";") if x.strip()}
+    return any(difflib.SequenceMatcher(None, a, b).ratio() >= KONUM_AD_ESIK for a in aday for b in birim if a and b)
+
+
 def konumla_esle(muhtarliklar, noktalar, birimler, es, tum_muh, mevcut):
     """muhtarliklar: adla eslesmeyenler {mid: kayit}; noktalar: ilcenin OSM yer noktalari; birimler: ilcenin
     TKGM birimleri; es: adla eslesmeler {mid: (feature, yontem)}; tum_muh: ilcenin butun muhtarliklari;
     mevcut: kullanilan mevcut poligonlarin birlesimi (ya da None). Doner {mid: (feature, osm kimligi)}.
-    Kosullar: muhtarligin adini tasiyan noktalarin hepsi ayni tek birimin icinde; birim baska bir muhtarligin
-    adini tasimiyor (o muhtarligin kendisi adla eslesmisse birim paylasilir, oylar toplanir); birim mevcut
-    poligonlarla alaninin %25'inden fazla ortusmuyor."""
+    Kosullar (belirsizse eslesme yapilmaz, muhtarlik haritada bos kalir): muhtarligin adini tasiyan noktalarin
+    hepsi ayni tek birimin icinde; birim adla baska bir muhtarliga eslesmemis ve baska bir muhtarligin adini
+    tasimiyor; birime konumla tek bir muhtarlik dusuyor (ikinci bir nokta da dusuyorsa ikisi de alinmaz);
+    birim mevcut poligonlarla alaninin %25'inden fazla ortusmuyor; ad destegi var: noktanin adlarindan biri
+    (guncel, eski ya da baska dildeki) ya da YSK adi birimin adina (veya parantez/bolu ile ayrilmis bir
+    parcasina) >= KONUM_AD_ESIK benziyor. Ad destegi olmayan konum (sehir icinde kadastro birimi birkac idari
+    mahalleyi kapsayabilir) kabul edilmez."""
     if not muhtarliklar or not noktalar or not birimler:
         return {}
     from shapely.geometry import Point, shape
@@ -257,6 +274,7 @@ def konumla_esle(muhtarliklar, noktalar, birimler, es, tum_muh, mevcut):
         for k in anahtarlar:
             anahtar_nokta[k].append(p)
     sonuc = {}
+    birime_dusen = collections.Counter()
     for mid, m in muhtarliklar.items():
         k = ad_anahtari(m["ad"])
         adaylar = anahtar_nokta.get(k) or (anahtar_nokta.get(koysuz(k)) if koysuz(k) else None)
@@ -271,12 +289,15 @@ def konumla_esle(muhtarliklar, noktalar, birimler, es, tum_muh, mevcut):
             continue
         i = icinde.pop()
         ft = birimler[i]
-        if id(ft) not in es_birim and ad_anahtari(ft["properties"]["ad"] or "") in ysk_adlari:
+        birime_dusen[i] += 1
+        if id(ft) in es_birim or ad_anahtari(ft["properties"]["ad"] or "") in ysk_adlari:
             continue
         if mevcut is not None and sekil[i].area and sekil[i].intersection(mevcut).area / sekil[i].area > 0.25:
             continue
-        sonuc[mid] = (ft, f"{adaylar[0]['tur']}{adaylar[0]['osm']}")
-    return sonuc
+        if not ad_destegi(ft["properties"]["ad"] or "", [m["ad"]] + [v for p in adaylar for v in p["adlar"].values()]):
+            continue
+        sonuc[mid] = (i, ft, f"{adaylar[0]['tur']}{adaylar[0]['osm']}")
+    return {mid: (ft, osm) for mid, (i, ft, osm) in sonuc.items() if birime_dusen[i] == 1}
 
 
 def esle(muhtarliklar, birimler):
@@ -572,9 +593,9 @@ def isle(anahtar, birimler, geo, uygula, osm=None, bel=None, yer=None):
         if eski_gruplar:
             eski_birlesik = unary_union([make_valid(shape((geo[g][pid] if pid in geo.get(g, {}) else osm_yeni[pid][0])["geometry"])).buffer(0)
                                          for pid in eski_gruplar])
-        # 1c) OSM yer noktasi: adla eslesmeyen muhtarligin guncel adli OSM noktasi tek bir TKGM biriminin
-        #     icine dusuyorsa o birim kullanilir (TKGM bircok koyu eski adiyla tutuyor). Ayni birime birden
-        #     cok muhtarlik duserse oylari toplanir (adla eslesmis birim dahil).
+        # 1c) OSM yer noktasi: adla eslesmeyen muhtarligin guncel adli OSM noktasi bosta duran tek bir TKGM
+        #     biriminin icine dusuyorsa o birim kullanilir (TKGM bircok koyu eski adiyla tutuyor). Yalniz bire
+        #     bir; belirsiz durumda muhtarlik bos kalir.
         konum = konumla_esle({mid: m for mid, m in tkgm_aday.items() if mid not in es},
                              [p for h in havuz for p in (yer or {}).get(h, [])], birimler[g], es, muh, eski_birlesik)
         for mid, m in tkgm_aday.items():
