@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:8082}
+  # Gateway X-Forwarded-For başlığını ekler; adres HizSiniri içinde okunur.
+  forward-headers-strategy: none
+
+spring:
+  application:
+    name: chatbot
+  jackson:
+    default-property-inclusion: non_null
+
+sohbet:
+  anthropic-api-key: ${ANTHROPIC_API_KEY:}
+  model: ${ANTHROPIC_MODEL:claude-sonnet-5-5}
+  election-api-url: ${ELECTION_API_URL:http://localhost:8081}
+  harita-url: ${HARITA_URL:https://hamikumbasae.github.io/turkiye-secim-haritasi/}
+  dakikada-istek: ${SOHBET_DAKIKADA_ISTEK:10}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

@@ -9,9 +9,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 
 /**
- * Dışarıya açılan tek kapı. Yalnız GET /api/** election-api'ye geçer; başka yöntem ya da yol 404 döner.
- * Rotalar Java ile tanımlı (Spring Cloud Gateway sürümleri arasında özellik adları değiştiği için).
- * Chatbot servisi eklendiğinde buraya ikinci bir rota gelecek.
+ * Dışarıya açılan tek kapı:
+ * <ul>
+ *   <li>POST /api/sohbet ve sohbet sayfası (GET /sohbet) → chatbot</li>
+ *   <li>GET/HEAD /api/** → election-api</li>
+ * </ul>
+ * Başka yöntem ya da yol 404 döner. Rotalar Java ile tanımlı (Spring Cloud Gateway sürümleri arasında özellik
+ * adları değiştiği için).
  */
 @Configuration
 class Rotalar {
@@ -21,6 +25,16 @@ class Rotalar {
     @Bean
     RouteLocator electionApiRotasi(RouteLocatorBuilder builder, GecitOzellikleri ozellikler) {
         return builder.routes()
+                .route("chatbot-api", r -> r
+                        .path("/api/sohbet")
+                        .and().method(HttpMethod.POST)
+                        .filters(f -> f.addResponseHeader("X-Kaynak-Servis", "chatbot"))
+                        .uri(ozellikler.chatbotUrl()))
+                .route("chatbot-sayfa", r -> r
+                        .path("/sohbet", "/sohbet/", "/sohbet.html")
+                        .and().method(HttpMethod.GET, HttpMethod.HEAD)
+                        .filters(f -> f.addResponseHeader("X-Kaynak-Servis", "chatbot"))
+                        .uri(ozellikler.chatbotUrl()))
                 .route("election-api", r -> r
                         .path("/api/**")
                         .and().method(HttpMethod.GET, HttpMethod.HEAD)

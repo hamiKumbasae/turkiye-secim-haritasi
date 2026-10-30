@@ -15,6 +15,7 @@ docker run --rm \
   -v secim-haritasi-maven:/root/.m2 \
   -e TESTCONTAINERS_HOST_OVERRIDE=host.docker.internal \
   -e DOCKER_API_VERSION="$DOCKER_JAVA_API" \
+  -e DEGERLENDIRME_URL="${DEGERLENDIRME_URL:-}" \
   --add-host=host.docker.internal:host-gateway \
   maven:3.9-eclipse-temurin-21 \
   sh -c 'echo "api.version='"$DOCKER_JAVA_API"'" > /root/.docker-java.properties && exec mvn -B verify -Dapi.version='"$DOCKER_JAVA_API"' "$@"' mvn "$@"
