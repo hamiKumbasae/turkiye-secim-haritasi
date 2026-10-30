@@ -21,6 +21,7 @@ import tr.secimharitasi.api.depo.SecimDeposu;
 import tr.secimharitasi.api.depo.SonucIlDeposu;
 import tr.secimharitasi.api.varlik.Parti;
 import tr.secimharitasi.common.GecisTuru;
+import tr.secimharitasi.common.OylamaTuru;
 import tr.secimharitasi.common.SecenekTipi;
 import tr.secimharitasi.common.SecimTuru;
 import tr.secimharitasi.common.dto.PartiDto;
@@ -62,10 +63,12 @@ public class PartiServisi {
      *
      * @param plaka  verilirse o ilin sonucu; verilmezse Türkiye geneli (il satırlarının toplamı, yurt dışı hariç;
      *               oran = parti oyu / il geçerli oylarının toplamı)
+     * @param oylama verilmezse yalnız ana seçimlerin oylaması (meclisler hariç; tür de verilmezse Senato ve ara
+     *               seçimler de hariç); ör. belediye_meclisi
      * @param zincir true ise onceki_parti_id zincirindeki partilerin sonuçları da (kendi adlarıyla) eklenir
      */
-    public List<PartiSonucDto> sonuclar(int partiId, String tur, Integer yilBaslangic, Integer yilBitis,
-                                        Integer plaka, boolean zincir) {
+    public List<PartiSonucDto> sonuclar(int partiId, String tur, String oylama, Integer yilBaslangic,
+                                        Integer yilBitis, Integer plaka, boolean zincir) {
         PartiSozlugu s = PartiSozlugu.of(partiler.findAll());
         Parti p = bul(s, partiId);
         Set<Integer> kimlikler = new LinkedHashSet<>();
@@ -74,15 +77,16 @@ public class PartiServisi {
             oncekiler(s, p).forEach(o -> kimlikler.add(o.getPartiId()));
         }
         String turKodu = tur == null ? null : SecimTuru.fromKod(tur).kod();
+        String oylamaKodu = oylama == null ? null : OylamaTuru.fromKod(oylama).kod();
 
         if (plaka != null) {
-            return oyIl.ildekiSonuclar(kimlikler, plaka, turKodu, yilBaslangic, yilBitis).stream()
+            return oyIl.ildekiSonuclar(kimlikler, plaka, turKodu, oylamaKodu, yilBaslangic, yilBitis).stream()
                     .map(r -> new PartiSonucDto(r.secimId(), SecimTuru.fromKod(r.tur()), r.yil(), r.partiId(),
                             s.ad(r.partiId()), r.plaka(), r.yer(), r.oy(), r.gecerliOy(), r.oran()))
                     .toList();
         }
 
-        List<PartiToplami> toplamlar = oyIl.turkiyeToplamlari(kimlikler, turKodu, yilBaslangic, yilBitis);
+        List<PartiToplami> toplamlar = oyIl.turkiyeToplamlari(kimlikler, turKodu, oylamaKodu, yilBaslangic, yilBitis);
         List<String> secimIdleri = toplamlar.stream().map(PartiToplami::secimId).distinct().toList();
         Map<String, Long> gecerli = secimIdleri.isEmpty() ? Map.of()
                 : sonucIl.yurtIciGecerliOy(secimIdleri).stream()
@@ -93,8 +97,12 @@ public class PartiServisi {
             Long g = gecerli.get(t.secimId());
             BigDecimal oran = t.oy() == null || g == null || g == 0 ? null
                     : BigDecimal.valueOf(t.oy()).multiply(YUZ).divide(BigDecimal.valueOf(g), 2, RoundingMode.HALF_UP);
-            sonuc.add(new PartiSonucDto(t.secimId(), SecimTuru.fromKod(t.tur()), t.yil(), t.partiId(),
-                    s.ad(t.partiId()), null, "Türkiye (yurt içi)", t.oy(), g, oran));
+            SecimTuru st = SecimTuru.fromKod(t.tur());
+            // Senato ve ara seçimler yalnız bazı illerde yapıldı: toplam Türkiye geneli değildir.
+            String yer = st == SecimTuru.SENATO || st == SecimTuru.ARA ? "Toplam (yalnız seçim yapılan iller)"
+                    : "Türkiye (yurt içi)";
+            sonuc.add(new PartiSonucDto(t.secimId(), st, t.yil(), t.partiId(), s.ad(t.partiId()), null, yer, t.oy(),
+                    g, oran));
         }
         return sonuc;
     }

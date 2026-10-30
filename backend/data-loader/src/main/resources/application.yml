@@ -14,5 +14,7 @@ spring:
 veri:
   dizin: ${VERI_DIZINI:../../data/normalized}
   kaynaklar: ${KAYNAKLAR_DOSYASI:../../sources.yml}
+  mahalle-geo: ${MAHALLE_GEO:../../geo/normalized/mahalle_geo.json}
   ilce-toleransi: ${ILCE_TOLERANSI:0.005}
   parti-toplam-toleransi: ${PARTI_TOPLAM_TOLERANSI:0}
+  zorla-yukle: ${ZORLA_YUKLE:false}

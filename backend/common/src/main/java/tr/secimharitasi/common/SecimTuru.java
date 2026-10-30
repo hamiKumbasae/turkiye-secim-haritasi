@@ -2,12 +2,19 @@ package tr.secimharitasi.common;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Seçim türü. Kod değerleri data/normalized/elections/&lt;tur&gt;/ klasör adlarıyla aynıdır. */
+/**
+ * Seçim türü. İlk dördü data/normalized/elections/&lt;tur&gt;/ klasör adlarıyla aynıdır; SENATO ve ARA
+ * data/normalized/ek/ altındaki kayıtlardan gelir.
+ */
 public enum SecimTuru {
     GENEL("genel"),
     YEREL("yerel"),
     REFERANDUM("referandum"),
-    CUMHURBASKANLIGI("cumhurbaskanligi");
+    CUMHURBASKANLIGI("cumhurbaskanligi"),
+    /** Cumhuriyet Senatosu üye seçimi (1961-1979). */
+    SENATO("senato"),
+    /** Ara ve yenileme seçimleri (milletvekili ara seçimi, belediye yenileme seçimi). */
+    ARA("ara");
 
     private final String kod;
 
@@ -40,6 +47,9 @@ public enum SecimTuru {
         }
         if (k.endsWith("referandum")) {
             return REFERANDUM;
+        }
+        if (k.endsWith("senato")) {
+            return SENATO;
         }
         if (k.matches("\\d{4}cb.*")) {
             return CUMHURBASKANLIGI;

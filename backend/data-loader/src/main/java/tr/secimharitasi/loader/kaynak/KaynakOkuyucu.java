@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+import tr.secimharitasi.common.OylamaTuru;
 import tr.secimharitasi.common.SecimTuru;
 
 /**
@@ -32,6 +33,10 @@ public class KaynakOkuyucu {
      * @param normalizeDizin   data/normalized
      * @param kaynaklarDosyasi sources.yml (yoksa ya da null ise kaynak alanları boş kalır)
      */
+    public Path normalizeDizin() {
+        return normalizeDizin;
+    }
+
     public KaynakOkuyucu(Path normalizeDizin, Path kaynaklarDosyasi) {
         this.normalizeDizin = normalizeDizin;
         this.kaynaklarDosyasi = kaynaklarDosyasi;
@@ -70,6 +75,48 @@ public class KaynakOkuyucu {
         JsonNode birincil = kaynaklar.path("elections").path(secimId).path("primary");
         return new KaynakSecim(secimId, Integer.parseInt(m.group(1)), tur, d,
                 metin(birincil.path("authority")), metin(birincil.path("status")));
+    }
+
+    /**
+     * meclis_harita/&lt;secim&gt;_bm.json ve _igm.json: belediye meclisi ve il genel meclisi. Ana seçimle aynı
+     * biçim; her biri ayrı bir oylama, ana seçime bağlı ('2024yerel_bm' -> '2024yerel').
+     */
+    public List<KaynakSecim> meclisler() {
+        Path dizin = normalizeDizin.resolve("meclis_harita");
+        if (!Files.isDirectory(dizin)) {
+            return List.of();
+        }
+        try (Stream<Path> dosyalar = Files.list(dizin)) {
+            return dosyalar
+                    .filter(p -> p.getFileName().toString().endsWith(".json"))
+                    .sorted()
+                    .map(this::meclisOku)
+                    .toList();
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
+    private KaynakSecim meclisOku(Path dosya) {
+        String secimId = dosya.getFileName().toString().replaceFirst("\\.json$", "");
+        int ayrac = secimId.lastIndexOf('_');
+        String ana = secimId.substring(0, ayrac);
+        OylamaTuru oylama = switch (secimId.substring(ayrac + 1)) {
+            case "bm" -> OylamaTuru.BELEDIYE_MECLISI;
+            case "igm" -> OylamaTuru.IL_GENEL_MECLISI;
+            default -> throw new IllegalStateException("Bilinmeyen meclis dosyası: " + dosya);
+        };
+        SecimDosyasi d;
+        try {
+            d = json.readValue(dosya.toFile(), SecimDosyasi.class);
+        } catch (IOException e) {
+            throw new UncheckedIOException("Okunamadı: " + dosya, e);
+        }
+        Matcher m = YIL.matcher(secimId);
+        m.find();
+        String aciklama = d.aciklama() != null ? d.aciklama() : d.oylamaAdi();
+        return new KaynakSecim(secimId, Integer.parseInt(m.group(1)), SecimTuru.YEREL, oylama, ana, aciklama, d,
+                null, null);
     }
 
     private JsonNode kaynaklariOku() {

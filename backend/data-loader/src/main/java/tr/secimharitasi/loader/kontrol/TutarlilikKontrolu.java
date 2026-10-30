@@ -21,7 +21,8 @@ import tr.secimharitasi.loader.kaynak.YurtDisi;
  *   <li>Seçeneklerin oy toplamı = geçerli oy (il, ilçe, yurt dışı). Oyu boş seçeneği olan ya da yalnız kazananı
  *       bilinen satırlar karşılaştırılamaz, atlanır.</li>
  *   <li>İlçe geçerli oy toplamı ≈ il geçerli oyu (genel, referandum, cumhurbaşkanlığı). Yerel seçimde il satırı
- *       il/büyükşehir belediye başkanlığıdır, ilçe satırları ilçe belediyeleridir: karşılaştırılmaz.</li>
+ *       il/büyükşehir belediye başkanlığıdır, ilçe satırları ilçe belediyeleridir; Senato ve ara seçimlerde ilçe
+ *       kırılımı eksiktir: karşılaştırılmaz.</li>
  *   <li>Katılım ≤ %100; kazanan oy listesinde.</li>
  *   <li>Anahtar kontrolleri (HATA): ilçenin plakası il satırlarında var; aynı il/ilçe bir seçimde bir kez.</li>
  * </ul>
@@ -29,6 +30,13 @@ import tr.secimharitasi.loader.kaynak.YurtDisi;
 public class TutarlilikKontrolu {
 
     private static final BigDecimal YUZ = BigDecimal.valueOf(100);
+
+    /**
+     * İlçe toplamı ≈ il toplamı yalnız bu türlerde anlamlı: yerel seçimde il satırı başka bir yarışmadır
+     * (il/büyükşehir belediyesi), Senato ve ara seçimlerde ilçe kırılımı yalnız bazı illerde vardır.
+     */
+    private static final java.util.Set<SecimTuru> ILCE_TOPLAMI_KARSILASTIRILIR =
+            java.util.EnumSet.of(SecimTuru.GENEL, SecimTuru.REFERANDUM, SecimTuru.CUMHURBASKANLIGI);
 
     private final double ilceToleransi;
     private final long partiToplamToleransi;
@@ -79,7 +87,7 @@ public class TutarlilikKontrolu {
             partiToplami(b, id, "Yurt Dışı", yd.gecerliOy(), yd.oy(), false);
         }
 
-        if (s.tur() != SecimTuru.YEREL) {
+        if (ILCE_TOPLAMI_KARSILASTIRILIR.contains(s.tur())) {
             ilceToplamlari(b, s, ilceGecerli);
         }
         return b;

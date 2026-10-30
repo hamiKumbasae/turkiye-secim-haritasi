@@ -22,6 +22,7 @@ import tr.secimharitasi.api.varlik.SonucIl;
 import tr.secimharitasi.api.varlik.SonucIlId;
 import tr.secimharitasi.api.varlik.SonucIlce;
 import tr.secimharitasi.api.varlik.SonucIlceId;
+import tr.secimharitasi.common.OylamaTuru;
 import tr.secimharitasi.common.SecimTuru;
 import tr.secimharitasi.common.dto.IlDto;
 import tr.secimharitasi.common.dto.IlSonucDto;
@@ -61,14 +62,22 @@ public class SecimServisi {
     }
 
     /**
-     * @param tur          genel | yerel | referandum | cumhurbaskanligi (null: hepsi)
-     * @param yil          tek yıl; verilirse aralık parametreleri yok sayılır
+     * @param tur    genel | yerel | referandum | cumhurbaskanligi | senato | ara (null: hepsi)
+     * @param oylama milletvekili | baskanlik | belediye_meclisi | il_genel_meclisi | ... (null: hepsi)
+     * @param yil    tek yıl; verilirse aralık parametreleri yok sayılır
      */
-    public List<SecimDto> secimler(String tur, Integer yil, Integer yilBaslangic, Integer yilBitis) {
+    public List<SecimDto> secimler(String tur, String oylama, Integer yil, Integer yilBaslangic, Integer yilBitis) {
         String turKodu = tur == null ? null : SecimTuru.fromKod(tur).kod();
+        String oylamaKodu = oylama == null ? null : OylamaTuru.fromKod(oylama).kod();
         Integer bas = yil != null ? yil : yilBaslangic;
         Integer bit = yil != null ? yil : yilBitis;
-        return secimler.ara(turKodu, bas, bit).stream().map(SecimServisi::dto).toList();
+        return secimler.ara(turKodu, oylamaKodu, bas, bit).stream().map(SecimServisi::dto).toList();
+    }
+
+    /** Bir ana seçime bağlı ikincil oylamalar ('2024yerel' -> belediye meclisi, il genel meclisi, yenileme). */
+    public List<SecimDto> bagliOylamalar(String secimId) {
+        secimBul(secimId);
+        return secimler.findByAnaSecimIdOrderBySecimId(secimId).stream().map(SecimServisi::dto).toList();
     }
 
     public SecimDto secim(String secimId) {
@@ -120,14 +129,16 @@ public class SecimServisi {
         return ilceler.ildekiler(plaka, yil).stream().map(SecimServisi::ilceDto).toList();
     }
 
-    private Secim secimBul(String secimId) {
+    /** Seçim yoksa 404 (KayitBulunamadiException). */
+    public Secim secimBul(String secimId) {
         return secimler.findById(secimId)
                 .orElseThrow(() -> new KayitBulunamadiException("Seçim bulunamadı: " + secimId));
     }
 
     static SecimDto dto(Secim s) {
-        return new SecimDto(s.getSecimId(), SecimTuru.fromKod(s.getTur()), s.getYil(), s.getTarihMetni(),
-                s.getToplamSandalye(), s.getBirincilKaynak(), s.getKaynakDurumu());
+        return new SecimDto(s.getSecimId(), SecimTuru.fromKod(s.getTur()), OylamaTuru.fromKod(s.getOylama()),
+                s.getAnaSecimId(), s.getYil(), s.getTarihMetni(), s.getAciklama(), s.getToplamSandalye(),
+                s.getBirincilKaynak(), s.getKaynakDurumu());
     }
 
     private static IlceDto ilceDto(Ilce i) {

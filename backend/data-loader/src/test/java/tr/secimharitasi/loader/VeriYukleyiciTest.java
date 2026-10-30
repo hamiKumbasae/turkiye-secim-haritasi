@@ -22,7 +22,8 @@ import tr.secimharitasi.loader.yukleme.YuklemeOzeti;
 @SpringBootTest(properties = {
         "veri.otomatik-calistir=false",
         "veri.dizin=src/test/resources/veri/normalized",
-        "veri.kaynaklar=src/test/resources/veri/sources.yml"})
+        "veri.kaynaklar=src/test/resources/veri/sources.yml",
+        "veri.mahalle-geo=src/test/resources/veri/mahalle_geo.json"})
 @Testcontainers(disabledWithoutDocker = true)
 class VeriYukleyiciTest {
 
@@ -52,15 +53,67 @@ class VeriYukleyiciTest {
 
     @Test
     void satirSayilari() {
-        assertThat(say("SELECT count(*) FROM secim")).isEqualTo(3);
+        // 3 ana seçim + 2099 belediye meclisi + 2098 Senato
+        assertThat(say("SELECT count(*) FROM secim")).isEqualTo(5);
         assertThat(say("SELECT count(*) FROM il")).isEqualTo(3);
         assertThat(say("SELECT count(*) FROM ilce")).isEqualTo(3);
-        assertThat(say("SELECT count(*) FROM sonuc_il")).isEqualTo(5);
-        assertThat(say("SELECT count(*) FROM oy_il")).isEqualTo(9);
-        assertThat(say("SELECT count(*) FROM sonuc_ilce")).isEqualTo(5);
-        assertThat(say("SELECT count(*) FROM oy_ilce")).isEqualTo(7);
+        assertThat(say("SELECT count(*) FROM sonuc_il")).isEqualTo(7);
+        assertThat(say("SELECT count(*) FROM oy_il")).isEqualTo(14);
+        assertThat(say("SELECT count(*) FROM sonuc_ilce")).isEqualTo(8);
+        assertThat(say("SELECT count(*) FROM oy_ilce")).isEqualTo(12);
         assertThat(say("SELECT count(*) FROM sandalye_il")).isEqualTo(3);
+        assertThat(say("SELECT count(*) FROM mahalle")).isEqualTo(2);
+        assertThat(say("SELECT count(*) FROM sonuc_mahalle")).isEqualTo(2);
+        assertThat(say("SELECT count(*) FROM oy_mahalle")).isEqualTo(4);
+        assertThat(say("SELECT count(*) FROM sonuc_belde")).isEqualTo(3);
+        assertThat(say("SELECT count(*) FROM oy_belde")).isEqualTo(6);
+        assertThat(say("SELECT count(*) FROM secilen")).isEqualTo(3);
+        assertThat(say("SELECT count(*) FROM kaynak_kapsami")).isEqualTo(4);
         assertThat(ozet.atlananSatir()).isEqualTo(1);
+        assertThat(ozet.mahalleSatiri()).isEqualTo(2);
+        assertThat(ozet.beldeSatiri()).isEqualTo(3);
+        assertThat(ozet.secilenSayisi()).isEqualTo(3);
+    }
+
+    @Test
+    void meclisVeSenatoOylamalari() {
+        assertThat(jdbc.queryForMap("SELECT tur, oylama, ana_secim_id FROM secim WHERE secim_id='2099yerel_bm'"))
+                .containsEntry("tur", "yerel").containsEntry("oylama", "belediye_meclisi")
+                .containsEntry("ana_secim_id", "2099yerel");
+        assertThat(jdbc.queryForMap("SELECT tur, oylama, ana_secim_id FROM secim WHERE secim_id='2098senato'"))
+                .containsEntry("tur", "senato").containsEntry("oylama", "senato");
+        // Senato il oyları: bağımsız aday satırı 'Bağımsız' seçeneğine
+        assertThat(say("SELECT o.oy FROM oy_il o JOIN parti p USING (parti_id)"
+                + " WHERE secim_id='2098senato' AND p.ad='Bağımsız'")).isEqualTo(10);
+        // TÜİK ilçe satırı: doğrulanamayan seçmen boş, not düşülmüş; muteber geçerli oy
+        assertThat(jdbc.queryForMap("SELECT secmen, gecerli_oy, not_metni FROM sonuc_ilce"
+                + " WHERE secim_id='2098senato' AND ilce_id='TR-D-01-001'"))
+                .containsEntry("secmen", null).containsEntry("gecerli_oy", 40)
+                .containsEntry("not_metni", "Kaynakta doğrulanamayan alanlar boş bırakıldı: secmen");
+        // Vikipedi ilçe birincisi adından eşlendi, yalnız kazanan
+        assertThat(jdbc.queryForMap("SELECT sadece_kazanan, kazanan_parti_id FROM sonuc_ilce"
+                + " WHERE secim_id='2098senato' AND ilce_id='TR-D-01-002'"))
+                .containsEntry("sadece_kazanan", true).containsEntry("kazanan_parti_id", 38);
+    }
+
+    @Test
+    void mahalleBeldeSecilen() {
+        assertThat(jdbc.queryForList("SELECT mahalle_id, ad FROM mahalle ORDER BY mahalle_id"))
+                .extracting(r -> r.get("mahalle_id") + "=" + r.get("ad")).containsExactly("k1=MERKEZ MAH.", "r2=null");
+        assertThat(jdbc.queryForObject("SELECT katilim FROM sonuc_mahalle WHERE mahalle_id='r2'",
+                java.math.BigDecimal.class)).isEqualByComparingTo("105.00");
+        // Belde: adından ilçeye bağlandı; takma ad (Yeniden Refah) aynı partide toplandı
+        assertThat(say("SELECT count(*) FROM sonuc_belde WHERE ilce_id IS NOT NULL")).isEqualTo(3);
+        assertThat(say("SELECT o.oy FROM oy_belde o JOIN sonuc_belde b USING (sonuc_belde_id)"
+                + " WHERE b.belde_ad='Tüik Belde' AND o.parti_id=102")).isEqualTo(3);
+        assertThat(jdbc.queryForMap("SELECT secmen, not_metni, kontrol FROM sonuc_belde WHERE secim_id='2099yerel_bm'"))
+                .containsEntry("secmen", null).containsEntry("kontrol", "tutarsiz")
+                .containsEntry("not_metni", "Okunamayan değer boş bırakıldı: secmen");
+        assertThat(say("SELECT count(*) FROM secilen WHERE gorev='senator'")).isEqualTo(1);
+        assertThat(say("SELECT count(*) FROM secilen WHERE parti_id IS NULL")).isEqualTo(1);
+        assertThat(jdbc.queryForMap("SELECT bulunan, beklenen, durum FROM kaynak_kapsami"
+                + " WHERE secim_id='2098' AND veri='milletvekilleri'"))
+                .containsEntry("bulunan", 2).containsEntry("beklenen", 3).containsEntry("durum", "eksik");
     }
 
     @Test
@@ -102,17 +155,30 @@ class VeriYukleyiciTest {
     @Test
     void yenidenYuklemeAyniSonucuVerir() {
         yukleyici.yukle();
-        assertThat(say("SELECT count(*) FROM oy_ilce")).isEqualTo(7);
+        assertThat(say("SELECT count(*) FROM oy_ilce")).isEqualTo(12);
+        assertThat(say("SELECT count(*) FROM oy_mahalle")).isEqualTo(4);
+        assertThat(say("SELECT count(*) FROM sonuc_belde")).isEqualTo(3);
         assertThat(say("SELECT count(*) FROM veri_yukleme")).isGreaterThanOrEqualTo(2);
     }
 
     @Test
+    void kaynakDegismediyseYuklemeAtlanir() {
+        int once = say("SELECT count(*) FROM veri_yukleme");
+        assertThat(yukleyici.gerekirseYukle(false)).isEmpty();
+        assertThat(say("SELECT count(*) FROM veri_yukleme")).isEqualTo(once);
+        assertThat(yukleyici.gerekirseYukle(true)).isPresent();
+        assertThat(say("SELECT count(*) FROM veri_yukleme")).isEqualTo(once + 1);
+        assertThat(jdbc.queryForObject("SELECT kaynak_ozeti FROM veri_yukleme ORDER BY yukleme_id DESC LIMIT 1",
+                String.class)).hasSize(64);
+    }
+
+    @Test
     void tohumdaOlmayanPartiYuklemeyiDurdururVeEskiVeriKalir() {
-        VeriOzellikleri eksik = new VeriOzellikleri(Fikstur.EKSIK_PARTI_DIZINI, null, 0.005, 0, false, 5000);
+        VeriOzellikleri eksik = new VeriOzellikleri(Fikstur.EKSIK_PARTI_DIZINI, null, null, 0.005, 0, false, false, 5000);
         assertThatThrownBy(() -> new VeriYukleyici(jdbc, tx, eksik).yukle())
                 .isInstanceOf(EksikPartiException.class)
                 .hasMessageContaining("Uydurma Parti")
                 .hasMessageContaining("parti_tohumu.py --eksikler");
-        assertThat(say("SELECT count(*) FROM secim")).isEqualTo(3);
+        assertThat(say("SELECT count(*) FROM secim")).isEqualTo(5);
     }
 }

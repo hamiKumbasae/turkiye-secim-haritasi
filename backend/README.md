@@ -11,13 +11,14 @@ Seçim verisini MySQL'e yükleyen ve salt okunur bir REST API olarak sunan servi
                       ┌──────────────┐      ┌──────────┐
                       │ election-api │ ───▶ │ MySQL 8  │ ◀── data-loader (tek seferlik: Flyway + yükleme)
                       └──────────────┘      └──────────┘          ▲
-                         SELECT yetkili kullanıcı                 └── ../data/normalized, ../sources.yml (salt okunur)
+                         SELECT yetkili kullanıcı                 └── ../data/normalized, ../sources.yml,
+                                                                       ../geo/normalized/mahalle_geo.json (salt okunur)
 ```
 
 | Modül | Görevi |
 |---|---|
-| `common` | Ortak DTO'lar ve enum'lar (`SecimTuru`, `SecenekTipi`, `GecisTuru`) |
-| `data-loader` | Flyway şeması (`db/migration`), `data/normalized/elections` + `sources.yml` → MySQL, tutarlılık kontrolleri |
+| `common` | Ortak DTO'lar ve enum'lar (`SecimTuru`, `OylamaTuru`, `SecenekTipi`, `GecisTuru`) |
+| `data-loader` | Flyway şeması (`db/migration`), `data/normalized` (seçimler, meclisler, mahalle, ek kayıtlar) + `sources.yml` → MySQL, tutarlılık kontrolleri |
 | `election-api` | Spring Data JPA, yalnız GET uç noktaları, salt okunur veritabanı kullanıcısı |
 | `gateway` | Spring Cloud Gateway: `/api/**` → election-api; CORS yalnız GitHub Pages için, yalnız GET/HEAD (`CorsFiltresi`) |
 
@@ -31,16 +32,21 @@ cp .env.example .env          # şifreleri değiştirin; .env depoya girmez
 docker compose up --build
 ```
 
-Sıra: MySQL sağlıklı olunca `data-loader` şemayı kurar ve veriyi yükleyip çıkar (birkaç dakika), ardından
-`election-api` ve `gateway` açılır. Deneme:
+Sıra: MySQL sağlıklı olunca `data-loader` şemayı kurar ve veriyi yükleyip çıkar, ardından `election-api` ve
+`gateway` açılır. İlk yükleme 2,4 milyon mahalle oy satırıyla birlikte 3-5 dakika sürer. Yükleyici kaynak
+dosyaların SHA-256 özetini kaydeder; veri değişmediyse sonraki açılışlarda yükleme atlanır ve servisler hemen
+açılır. Deneme:
 
 ```bash
 curl http://localhost:8080/api/secimler?tur=genel
 curl http://localhost:8080/api/secimler/2023/iller/34
 curl "http://localhost:8080/api/partiler/107/sonuclar?zincir=true"
+curl http://localhost:8080/api/secimler/2023/ilceler/TR-D-34-037/mahalleler
+curl http://localhost:8080/api/secimler/2023/secilenler?plaka=34
 ```
 
-Veriyi yeniden yüklemek için: `docker compose run --rm data-loader`.
+Veri değiştiyse yeniden yüklemek için: `docker compose run --rm data-loader`; değişmemiş veriyi zorla
+yüklemek için: `ZORLA_YUKLE=true docker compose run --rm data-loader`.
 Her şeyi silmek için (veritabanı dahil): `docker compose down -v`.
 
 ## Testler
@@ -53,9 +59,9 @@ cd backend
 
 | Modül | Test | Kapsam |
 |---|---|---|
-| common | 14 | enum dönüşümleri, DTO'ların JSON gidiş-dönüşü |
-| data-loader | 20 | kaynak okuma, tutarlılık kuralları, ilçe yılları (birim); MySQL'de uçtan uca yükleme, veri düzeltilmeden yüklenir mi, tohumda olmayan parti, yeniden yükleme (Testcontainers) |
-| election-api | 16 | kontrolcüler, hata yanıtları, yalnız GET (MockMvc); servis mantığı (Mockito); MySQL'de bütün uç noktalar (Testcontainers) |
+| common | 17 | enum dönüşümleri, DTO'ların JSON gidiş-dönüşü |
+| data-loader | 34 | kaynak okuma, meclis/Senato/ara seçim/belde/mahalle okuyucuları, ilçe adı eşleme, tutarlılık kuralları, ilçe yılları, kaynak özeti (birim); MySQL'de uçtan uca yükleme, veri düzeltilmeden yüklenir mi, tohumda olmayan parti, yeniden yükleme ve değişmeyen veride atlama (Testcontainers) |
+| election-api | 18 | kontrolcüler, hata yanıtları, yalnız GET (MockMvc); servis mantığı (Mockito); MySQL'de bütün uç noktalar (Testcontainers) |
 | gateway | 10 | CORS filtresi (birim); sahte bir arka servisle yönlendirme, yöntem kısıtı, CORS, sağlık ucu |
 
 Docker yoksa MySQL testleri atlanır (başarısız sayılmaz). Docker 29 ve sonrası eski Docker API sürümlerini
@@ -67,28 +73,36 @@ aynı sorun çıkarsa: `echo api.version=1.44 > ~/.docker-java.properties`.
 
 | GET | Açıklama |
 |---|---|
-| `/api/secimler?tur=&yil=&yilBaslangic=&yilBitis=` | Seçimler (`tur`: genel, yerel, referandum, cumhurbaskanligi) |
-| `/api/secimler/{secimId}` | Tek seçim (`2023`, `2024yerel`, `2017referandum`, `2023cb2tur`) |
+| `/api/secimler?tur=&oylama=&yil=&yilBaslangic=&yilBitis=` | Oylamalar (`tur`: genel, yerel, referandum, cumhurbaskanligi, senato, ara; `oylama`: milletvekili, baskanlik, belediye_meclisi, il_genel_meclisi, referandum, cumhurbaskanligi, senato) |
+| `/api/secimler/{secimId}` | Tek oylama (`2023`, `2024yerel`, `2024yerel_bm`, `1961senato`, `2019istanbul_bb_yenileme`) |
+| `/api/secimler/{secimId}/bagli-oylamalar` | Ana seçime bağlı ikincil oylamalar (meclisler, yenileme seçimleri) |
 | `/api/secimler/{secimId}/iller` | Bütün il sonuçları, oylarla (plaka 0 = yurt dışı) |
 | `/api/secimler/{secimId}/iller/{plaka}` | Bir il |
 | `/api/secimler/{secimId}/iller/{plaka}/ilceler` | Bir ilin ilçeleri |
 | `/api/secimler/{secimId}/ilceler/{ilceId}` | Bir ilçe (`TR-D-34-037`) |
+| `/api/secimler/{secimId}/ilceler/{ilceId}/mahalleler` | Bir ilçenin mahalle/köy sonuçları (2009-2024), seçmene göre sıralı |
+| `/api/secimler/{secimId}/beldeler?plaka=&ilceId=` | Belde belediyeleri |
+| `/api/secimler/{secimId}/secilenler?plaka=` | Seçilen milletvekilleri / senatörler (eksik olabilir) |
+| `/api/secimler/{secimId}/sandalyeler?plaka=&ilceId=` | Parti başına sandalye: il (milletvekili), ilçe (2024 belediye meclisi) |
+| `/api/secimler/{secimId}/kapsam` | Kaynakta kaç kayıt bulundu / beklendi |
 | `/api/iller` | İller |
 | `/api/iller/{plaka}/ilceler?yil=` | İlçe birimleri; `yil` verilirse o yıl veride olanlar |
 | `/api/partiler?tip=` | Partiler ve öteki seçenekler (`tip`: parti, aday, referandum, diger) |
 | `/api/partiler/{partiId}` | Parti ve öncülleri (`onceki_parti_id` zinciri) |
-| `/api/partiler/{partiId}/sonuclar?tur=&yil=&yilBaslangic=&yilBitis=&plaka=&zincir=` | Seçimlere göre sonuç; `plaka` yoksa Türkiye geneli, `zincir=true` öncül partileri de katar |
+| `/api/partiler/{partiId}/sonuclar?tur=&oylama=&yil=&yilBaslangic=&yilBitis=&plaka=&zincir=` | Seçimlere göre sonuç; `plaka` yoksa Türkiye geneli, `zincir=true` öncül partileri de katar. `oylama` verilmezse yalnız ana seçimler (meclis, Senato, ara seçim hariç; bunlar yalnız bazı illerde yapıldığı için toplamları "Türkiye geneli" sayılmaz) |
 | `/api/partiler/{partiId}/secimler/{secimId}/en-guclu-iller?limit=` | Partinin en yüksek oranı aldığı iller |
 
 Hatalar: bulunamayan kayıt 404, geçersiz parametre 400, `{"durum", "hata", "mesaj"}` biçiminde.
 
 ## Veri modeli ve kararlar
 
-- **Şemanın sahibi data-loader'dır** (Flyway `V1__sema.sql`). election-api şemayı değiştirmez, yalnız `SELECT`
+- **Şemanın sahibi data-loader'dır** (Flyway `V1__sema.sql`, ek veri için `V4__ek_veri.sql`). election-api şemayı değiştirmez, yalnız `SELECT`
   yetkili ayrı bir kullanıcıyla bağlanır (`mysql/init/01-okuma-kullanicisi.sh`).
 - **Sabit `parti_id`.** Kimlikler `V2__partiler.sql` tohumunda bir kez verildi, yeniden yüklemede değişmez.
   Veriye yeni bir parti adı gelirse data-loader durur ve şu komutu önerir; çıkan dosya yeni bir migration olur:
-  `python3 backend/tools/parti_tohumu.py --eksikler > backend/data-loader/src/main/resources/db/migration/V4__yeni_partiler.sql`
+  `python3 backend/tools/parti_tohumu.py --eksikler > backend/data-loader/src/main/resources/db/migration/V<sıradaki>__yeni_partiler.sql`
+  (`V5__ek_veri_partileri.sql` böyle üretildi: 2026 ara seçimindeki 8 yeni parti.) Yalnız büyük/küçük harfi farklı
+  yazımlar ('Yeniden Refah' / 'YENİDEN REFAH') `parti_takma_ad` tablosuyla aynı `parti_id`'ye bağlanır.
 - **Parti devamlılığı:** `onceki_parti_id` + `gecis_turu` (`ad_degisikligi`, `halef`, `birlesme`) + `gecis_yili` +
   `gecis_kaynagi`. `V3__parti_gecisleri.sql` yalnız belgelenebilen bir geçiş içerir (Yeşil Sol Parti → DEM Parti,
   aynı tüzel kişilik). Yorum gerektiren "devamı sayılır" ilişkileri bilerek girilmedi; eklemek için yeni bir
@@ -110,7 +124,34 @@ Hatalar: bulunamayan kayıt 404, geçersiz parametre 400, `{"durum", "hata", "me
   | `ILCENIN_ILI_YOK`, `YINELENEN_SATIR` | anahtar ihlali: satır yazılamaz, atlanır ve hata olarak loglanır |
 
   Toleranslar `.env`/ortam ile değiştirilebilir: `ILCE_TOLERANSI` (göreli), `PARTI_TOPLAM_TOLERANSI` (oy).
-  Gerçek veride beklenen: ~700 parti toplamı ve ~90 ilçe toplamı bulgusu (çoğu taranmış eski yayınlarda, kaynak
-  kökenli; ayrıntı için `docs/rapor/VERI_DENETIMI.md`).
-- **Kapsam:** il ve ilçe düzeyindeki 46 ana seçim. Mahalle sonuçları, meclis seçimleri, Senato, ara seçimler,
-  beldeler ve milletvekili listeleri henüz yüklenmiyor.
+  Gerçek veride beklenen: ~1.600 parti toplamı ve ~90 ilçe toplamı bulgusu (çoğu taranmış eski yayınlarda, kaynak
+  kökenli; ayrıntı için `docs/rapor/VERI_DENETIMI.md`). Mahalle satırları kontrol edilmez.
+
+### Yüklenen veri
+
+| Kaynak | Nereye | Satır |
+|---|---|---|
+| `elections/<tür>/*.json` | `secim`, `sonuc_il`/`oy_il`/`sandalye_il`, `sonuc_ilce`/`oy_ilce` | 46 seçim |
+| `meclis_harita/*_bm.json`, `*_igm.json` | aynı tablolar; ayrı `secim` satırı (`oylama`: belediye_meclisi / il_genel_meclisi), `ana_secim_id` ile ana seçime bağlı | 26 oylama |
+| `ek/senato/*.json` | `secim` (`tur='senato'`), il oyları, TÜİK ilçe oyları ya da yalnız ilçe birincisi, `secilen` (senatör) | 8 seçim, 510 senatör |
+| `ek/yenileme_ara/*.json` | `secim` (`tur='ara'`); milletvekili ara seçimleri, belediye yenileme/ara seçimleri | 11 oylama |
+| `mahalle/*.json` + `geo/normalized/mahalle_geo.json` (yalnız adlar) | `mahalle`, `sonuc_mahalle`, `oy_mahalle` | 602.285 sonuç, 2,4 milyon oy |
+| `ek/beldeler/*.json`, `ek/belediye_meclisi/*.json` (belde satırları) | `sonuc_belde`, `oy_belde` | 30.019 |
+| `ek/milletvekilleri/*.json` | `secilen` (milletvekili) | 9.279 |
+| `meclis_2024.json` | `sandalye_ilce` | 110 ilçe |
+| ek dosyalardaki kapsam/özet | `kaynak_kapsami` | 80 |
+
+Bu sayılar, kaynakla satır satır doğrulanmış SQLite veritabanıyla (`scripts/veritabani/`, `veritabani` dalı)
+tablo tablo karşılaştırıldı: satır sayıları ve oy toplamları bütün tablolarda aynı.
+
+- **Ek kayıtlarda değiştirilen tek şey:** kaynakta "doğrulanamayan" diye işaretli alanlar (Senato ve ara seçim
+  TÜİK satırlarında `dogrulanamayanAlanlar`) ve INT'e sığmayan, taranmış kitapta okuma hatası olduğu belli sayılar
+  boş bırakılır; satırın `not_metni`'nde hangi alanın boşaltıldığı yazar.
+- **Belde kimliği yoktur.** Kaynaklar arasında ortak belde anahtarı bulunmadığı için her `sonuc_belde` satırı bir
+  seçimdeki bir beldedir. İlçeye adından bağlanır (aynı ilde aynı adla, istenen yıla en yakın seçimdeki birim);
+  bağlanamayanlarda `ilce_id` boştur (30.019'un 28.365'i bağlandı). Taranmış kitaptan okunan satırlar `kontrol`
+  sütununda doğrulama sonucunu taşır (`tutarli`, `tutarsiz`, `toplamTutmuyor` ...).
+- **Senato ilçeleri:** TÜİK yayını yalnız bazı illerin ilçe oylarını veriyor; öteki ilçelerde yalnız birinci gelen
+  parti (Vikipedi) bilinir (`sadece_kazanan`). 16 ilçe adı hiçbir ilçe birimine eşlenemedi, yüklenmedi.
+- **1986 milletvekili ara seçimi:** Manisa'nın iki seçim çevresi il satırında toplanır.
+- **Seçilen listeleri eksik:** ör. 2023'te 600 milletvekilinin 405'i (`/api/secimler/2023/kapsam`).

@@ -84,6 +84,6 @@ class TutarlilikKontroluTest {
 
     private static KaynakSecim secim(List<SonucSatiri> iller, List<SonucSatiri> ilceler) {
         return new KaynakSecim("2000", 2000, SecimTuru.GENEL,
-                new SecimDosyasi("x", "genel", null, null, null, iller, ilceler, null), null, null);
+                new SecimDosyasi("x", "genel", null, null, null, null, null, iller, ilceler, null), null, null);
     }
 }

@@ -24,7 +24,8 @@ services:
       retries: 40
       start_period: 30s
 
-  # Tek seferlik: Flyway şemayı kurar, data/normalized'ı yükler, tutarlılık bulgularını logs/'a yazar, çıkar.
+  # Tek seferlik: Flyway şemayı kurar, data/normalized'ı yükler (ilk seferde 3-5 dk; mahalle sonuçları dahil),
+  # tutarlılık bulgularını logs/'a yazar, çıkar. Veri değişmediyse sonraki açılışlarda yükleme atlanır.
   data-loader:
     build:
       context: .
@@ -37,10 +38,14 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       VERI_DIZINI: /veri/normalized
       KAYNAKLAR_DOSYASI: /veri/sources.yml
+      MAHALLE_GEO: /veri/mahalle_geo.json
       LOG_DIZINI: /logs
+      # Kaynak son yüklemeden beri değişmediyse yükleme atlanır; yine de yüklemek için: ZORLA_YUKLE=true
+      ZORLA_YUKLE: ${ZORLA_YUKLE:-false}
     volumes:
       - ../data/normalized:/veri/normalized:ro
       - ../sources.yml:/veri/sources.yml:ro
+      - ../geo/normalized/mahalle_geo.json:/veri/mahalle_geo.json:ro
       - ./logs:/logs
     depends_on:
       mysql:

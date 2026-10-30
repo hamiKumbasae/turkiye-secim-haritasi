@@ -19,6 +19,15 @@ public class Secim {
     @Column(name = "tur")
     private String tur;
 
+    @Column(name = "oylama")
+    private String oylama;
+
+    @Column(name = "ana_secim_id")
+    private String anaSecimId;
+
+    @Column(name = "aciklama")
+    private String aciklama;
+
     @Column(name = "yil")
     private Integer yil;
 
@@ -61,6 +70,18 @@ public class Secim {
 
     public String getTur() {
         return tur;
+    }
+
+    public String getOylama() {
+        return oylama;
+    }
+
+    public String getAnaSecimId() {
+        return anaSecimId;
+    }
+
+    public String getAciklama() {
+        return aciklama;
     }
 
     public Integer getYil() {

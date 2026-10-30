@@ -35,11 +35,13 @@ public class PartiKontrolcusu {
 
     /**
      * GET /api/partiler/2/sonuclar?tur=genel&amp;yilBaslangic=1950&amp;plaka=34&amp;zincir=true
-     * plaka yoksa Türkiye geneli; zincir=true öncül partilerin sonuçlarını da ekler.
+     * plaka yoksa Türkiye geneli; zincir=true öncül partilerin sonuçlarını da ekler. oylama=belediye_meclisi gibi
+     * verilmezse yalnız ana seçimler (meclis, Senato ve ara seçimler hariç).
      */
     @GetMapping("/{partiId}/sonuclar")
     public List<PartiSonucDto> sonuclar(@PathVariable int partiId,
                                         @RequestParam(required = false) String tur,
+                                        @RequestParam(required = false) String oylama,
                                         @RequestParam(required = false) Integer yil,
                                         @RequestParam(required = false) Integer yilBaslangic,
                                         @RequestParam(required = false) Integer yilBitis,
@@ -47,7 +49,7 @@ public class PartiKontrolcusu {
                                         @RequestParam(defaultValue = "false") boolean zincir) {
         Integer bas = yil != null ? yil : yilBaslangic;
         Integer bit = yil != null ? yil : yilBitis;
-        return servis.sonuclar(partiId, tur, bas, bit, plaka, zincir);
+        return servis.sonuclar(partiId, tur, oylama, bas, bit, plaka, zincir);
     }
 
     /** GET /api/partiler/2/secimler/2023/en-guclu-iller?limit=10 */

@@ -15,7 +15,10 @@ public interface OyIlDeposu extends JpaRepository<OyIl, OyIlId> {
 
     List<OyIl> findBySecimIdAndPlaka(String secimId, Integer plaka);
 
-    /** Partinin (ve verilirse öncüllerinin) bir ildeki sonuçları, seçimlere göre. */
+    /**
+     * Partinin (ve verilirse öncüllerinin) bir ildeki sonuçları, seçimlere göre. oylama verilmezse yalnız ana
+     * seçimlerin oylaması (meclisler hariç); tür de verilmezse Senato ve ara seçimler de hariç.
+     */
     @Query("""
             select new tr.secimharitasi.api.depo.PartiOySatiri(s.secimId, s.tur, s.yil, o.partiId, o.plaka, si.ad,
                    cast(o.oy as Long), cast(si.gecerliOy as Long), o.oran)
@@ -23,25 +26,33 @@ public interface OyIlDeposu extends JpaRepository<OyIl, OyIlId> {
             where s.secimId = o.secimId and si.secimId = o.secimId and si.plaka = o.plaka
               and o.partiId in :partiler and o.plaka = :plaka
               and (:tur is null or s.tur = :tur)
+              and (:oylama is null or s.oylama = :oylama)
+              and (:oylama is not null or s.anaSecimId is null)
+              and (:tur is not null or :oylama is not null or s.tur not in ('senato', 'ara'))
               and (:yilBas is null or s.yil >= :yilBas)
               and (:yilBit is null or s.yil <= :yilBit)
             order by s.yil, s.secimId""")
     List<PartiOySatiri> ildekiSonuclar(@Param("partiler") Collection<Integer> partiler, @Param("plaka") int plaka,
-                                      @Param("tur") String tur, @Param("yilBas") Integer yilBaslangic,
+                                      @Param("tur") String tur, @Param("oylama") String oylama,
+                                      @Param("yilBas") Integer yilBaslangic,
                                       @Param("yilBit") Integer yilBitis);
 
-    /** Partinin yurt içi oy toplamı (il satırları, plaka > 0), seçimlere göre. */
+    /** Partinin yurt içi oy toplamı (il satırları, plaka > 0), seçimlere göre. Süzme kuralı ildekiSonuclar ile aynı. */
     @Query("""
             select new tr.secimharitasi.api.depo.PartiToplami(s.secimId, s.tur, s.yil, o.partiId, sum(o.oy))
             from OyIl o, Secim s
             where s.secimId = o.secimId and o.plaka > 0 and o.partiId in :partiler
               and (:tur is null or s.tur = :tur)
+              and (:oylama is null or s.oylama = :oylama)
+              and (:oylama is not null or s.anaSecimId is null)
+              and (:tur is not null or :oylama is not null or s.tur not in ('senato', 'ara'))
               and (:yilBas is null or s.yil >= :yilBas)
               and (:yilBit is null or s.yil <= :yilBit)
             group by s.secimId, s.tur, s.yil, o.partiId
             order by s.yil, s.secimId""")
     List<PartiToplami> turkiyeToplamlari(@Param("partiler") Collection<Integer> partiler,
-                                         @Param("tur") String tur, @Param("yilBas") Integer yilBaslangic,
+                                         @Param("tur") String tur, @Param("oylama") String oylama,
+                                         @Param("yilBas") Integer yilBaslangic,
                                          @Param("yilBit") Integer yilBitis);
 
     /** Bir seçimde partinin en yüksek oranı aldığı iller (yurt dışı hariç). */

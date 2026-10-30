@@ -38,6 +38,14 @@ public record SonucSatiri(
         vekil = vekil == null ? Map.of() : new LinkedHashMap<>(vekil);
     }
 
+    /** Ek kayıtlardan elle kurulan satır (alan adları kaynak JSON'unkiyle aynı anlamda). */
+    public static SonucSatiri yeni(Integer plaka, String ad, String geomId, Integer secmen, Integer oyKullanan,
+                                   Integer gecerliOy, Integer gecersizOy, Integer sandik, BigDecimal katilim,
+                                   String kazanan, boolean sadeceKazanan, String not, Map<String, OyKaydi> oy) {
+        return new SonucSatiri(plaka, ad, geomId, secmen, oyKullanan, gecerliOy, gecersizOy, sandik, katilim, kazanan,
+                null, null, sadeceKazanan, not, null, null, oy, null);
+    }
+
     /** İlçe kimliği: geomId; kaynakta geomId yoksa plaka ve addan türetilen sabit bir anahtar. */
     public String ilceId() {
         return geomId != null ? geomId : "YOK-%02d-%s".formatted(plaka, ad);

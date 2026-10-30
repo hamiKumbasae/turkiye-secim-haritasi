@@ -46,6 +46,64 @@ def adlar():
     return sonuc
 
 
+def butun_adlar():
+    """--eksikler için: ana seçimler + meclis haritaları + mahalle + ek kayıtlar + 2024 meclis dağılımı.
+    ad -> (ilk görüldüğü yıl, türler)"""
+    sonuc = dict(adlar())
+
+    def ekle(ad, k, tur):
+        if not ad:
+            return
+        ilk, turler = sonuc.get(ad, (9999, set()))
+        sonuc[ad] = (min(ilk, yil(k)), turler | {tur})
+
+    def oku(f):
+        return json.loads(pathlib.Path(f).read_text(encoding="utf-8"))
+
+    for f in glob.glob(str(NORM / "meclis_harita" / "*.json")):
+        d, k = oku(f), pathlib.Path(f).stem
+        for r in d["iller"] + d["ilceler"]:
+            for a in list(r["oy"]) + [r.get("kazanan")]:
+                ekle(a, k, "yerel")
+    for f in glob.glob(str(NORM / "mahalle" / "*.json")):
+        k = pathlib.Path(f).stem
+        for ilce in oku(f).values():
+            for r in ilce.values():
+                for a in list(r["oy"]) + [r.get("kazanan")]:
+                    ekle(a, k, "mahalle")
+    for f in glob.glob(str(NORM / "ek" / "**" / "*.json"), recursive=True):
+        k = pathlib.Path(f).stem
+
+        def gez(o):
+            if isinstance(o, dict):
+                for anahtar in ("parti", "kazanan", "birinciParti"):
+                    if isinstance(o.get(anahtar), str):
+                        ekle(o[anahtar], k, "ek")
+                if isinstance(o.get("oy"), dict):
+                    for a in o["oy"]:
+                        ekle(a, k, "ek")
+                for v in o.values():
+                    gez(v)
+            elif isinstance(o, list):
+                for v in o:
+                    gez(v)
+        d = oku(f)
+        gez(d.get("kayitlar") or [])
+        gez(d.get("iller") or [])
+        gez(d.get("birimler") or [])
+        gez(d.get("ilceBirincileri") or [])
+        gez(d.get("secilenler") or [])
+        gez((d.get("ilceOylariTuik") or {}).get("iller") or [])
+    for v in oku(NORM / "meclis_2024.json").values():
+        for a in list(v["partiler"]) + [v.get("kazanan")]:
+            ekle(a, "2024yerel", "yerel")
+    return sonuc
+
+
+def katla(ad):
+    return ad.replace("İ", "i").replace("I", "ı").lower()
+
+
 def tip(ad, turler):
     if ad in DIGER:
         return "diger"
@@ -66,11 +124,15 @@ def satir(pid, ad, turler, partiler):
 
 
 def mevcut_tohum():
-    ids = {}
+    """(parti adı -> id, takma ad -> id) bütün migration'lardan."""
+    ids, takma = {}, {}
     for f in sorted(MIG.glob("V*.sql")):
-        for m in re.finditer(r"^\((\d+), '((?:[^']|'')*)'", f.read_text(encoding="utf-8"), re.M):
+        metin = f.read_text(encoding="utf-8")
+        for m in re.finditer(r"^\((\d+), '((?:[^']|'')*)'", metin, re.M):
             ids[m.group(2).replace("''", "'")] = int(m.group(1))
-    return ids
+        for m in re.finditer(r"^\('((?:[^']|'')*)', (\d+)\)", metin, re.M):
+            takma[m.group(1).replace("''", "'")] = int(m.group(2))
+    return ids, takma
 
 
 def main():
@@ -82,15 +144,25 @@ def main():
     sira = sorted(hepsi, key=lambda ad: (hepsi[ad][0], ad))
 
     if a.eksikler:
-        var = mevcut_tohum()
-        eksik = [ad for ad in sira if ad not in var]
-        if not eksik:
+        var, takma = mevcut_tohum()
+        hepsi = butun_adlar()
+        sira = sorted(hepsi, key=lambda ad: (hepsi[ad][0], ad))
+        katlanmis = {katla(ad): pid for ad, pid in var.items()}
+        yeni_takma = [(ad, katlanmis[katla(ad)]) for ad in sira
+                      if ad not in var and ad not in takma and katla(ad) in katlanmis]
+        eksik = [ad for ad in sira if ad not in var and ad not in takma and katla(ad) not in katlanmis]
+        if not eksik and not yeni_takma:
             print("-- tohumda eksik ad yok", file=sys.stderr)
             return
-        bas = max(var.values()) + 1
         print("-- Yeni seçenek adları (backend/tools/parti_tohumu.py --eksikler)")
-        print("INSERT INTO parti (parti_id, ad, kisa, tip, renk) VALUES")
-        print(",\n".join(satir(bas + i, ad, hepsi[ad][1], partiler) for i, ad in enumerate(eksik)) + ";")
+        if eksik:
+            bas = max(var.values()) + 1
+            print("INSERT INTO parti (parti_id, ad, kisa, tip, renk) VALUES")
+            print(",\n".join(satir(bas + i, ad, hepsi[ad][1], partiler) for i, ad in enumerate(eksik)) + ";")
+        if yeni_takma:
+            print("\n-- Yalnız büyük/küçük harfi farklı yazımlar: aynı parti")
+            print("INSERT INTO parti_takma_ad (ad, parti_id) VALUES")
+            print(",\n".join(f"({q(ad)}, {pid})" for ad, pid in yeni_takma) + ";")
         return
 
     print("-- Parti ve öteki oy seçenekleri; SABİT kimlikler (Flyway V2).")

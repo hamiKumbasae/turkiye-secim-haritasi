@@ -6,16 +6,16 @@ on:
   push:
     paths:
       - "backend/**"
-      - "data/normalized/elections/**"
-      - "data/normalized/partiler.json"
+      - "data/normalized/**"
+      - "geo/normalized/mahalle_geo.json"
       - "sources.yml"
       - ".github/workflows/backend.yml"
   pull_request:
     branches: [main]
     paths:
       - "backend/**"
-      - "data/normalized/elections/**"
-      - "data/normalized/partiler.json"
+      - "data/normalized/**"
+      - "geo/normalized/mahalle_geo.json"
       - "sources.yml"
       - ".github/workflows/backend.yml"
   workflow_dispatch:
@@ -68,7 +68,7 @@ jobs:
     name: docker compose duman testi (gerçek veriyle)
     needs: testler
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 40
     defaults:
       run:
         working-directory: backend
@@ -77,8 +77,8 @@ jobs:
         with:
           sparse-checkout: |
             backend
-            data/normalized/elections
-            data/normalized/partiler.json
+            data/normalized
+            geo/normalized/mahalle_geo.json
             sources.yml
 
       - name: .env (rastgele şifreler)
@@ -97,7 +97,13 @@ jobs:
           echo "data-loader: $kod"
           test "$kod" = "0 exited"
           docker compose logs --no-color data-loader | grep "Yükleme tamam"
+          docker compose logs --no-color data-loader | grep "Ek veri"
           docker compose logs --no-color data-loader | grep "Tutarlılık bulguları"
+
+      - name: veri değişmediyse yükleme atlanır
+        run: |
+          docker compose run --rm data-loader 2>&1 | tee /tmp/ikinci.log | tail -5
+          grep "yükleme atlandı" /tmp/ikinci.log
 
       - name: gateway hazır mı
         run: |
@@ -111,9 +117,19 @@ jobs:
         run: |
           set -euo pipefail
           api=http://localhost:8080/api
-          # 20 genel seçim, 46 seçim toplam
+          # 20 genel seçim; 91 oylama (46 ana seçim + 26 meclis + 8 Senato + 11 ara/yenileme)
           test "$(curl -sf "$api/secimler?tur=genel" | jq length)" = "20"
-          test "$(curl -sf "$api/secimler" | jq length)" = "46"
+          test "$(curl -sf "$api/secimler" | jq length)" = "91"
+          test "$(curl -sf "$api/secimler?oylama=belediye_meclisi" | jq length)" = "15"
+          test "$(curl -sf "$api/secimler/2024yerel/bagli-oylamalar" | jq -c '[.[].secimId]')" = '["2024yenileme_belediye_baskanligi","2024yerel_bm","2024yerel_igm"]'
+          test "$(curl -sf "$api/secimler/1961senato/iller" | jq length)" = "67"
+          # Ek veri: Ümraniye'nin 2023 mahalleleri, 2023 milletvekilleri ve kapsamı, Çankaya 2024 meclisi
+          test "$(curl -sf "$api/secimler/2023/ilceler/TR-D-34-037/mahalleler" | jq length)" = "35"
+          test "$(curl -sf "$api/secimler/2023/ilceler/TR-D-34-037/mahalleler" | jq '[.[] | select(.ad != null)] | length')" = "35"
+          test "$(curl -sf "$api/secimler/2023/secilenler" | jq length)" = "405"
+          test "$(curl -sf "$api/secimler/2023/kapsam" | jq -c '.[0] | [.bulunan, .beklenen, .durum]')" = '[405,600,"eksik"]'
+          test "$(curl -sf "$api/secimler/2024yerel_bm/sandalyeler?ilceId=TR-D-06-007" | jq '[.[].sandalye] | add')" = "90"
+          test "$(curl -sf "$api/secimler/2024yerel/beldeler" | jq length)" -gt 300
           # 2023: 81 il + yurt dışı; İstanbul'un oyları dolu
           test "$(curl -sf "$api/secimler/2023/iller" | jq length)" = "82"
           test "$(curl -sf "$api/secimler/2023/iller/34" | jq '.oylar | length')" -gt 5

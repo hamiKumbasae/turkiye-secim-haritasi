@@ -48,12 +48,12 @@ class PartiServisiTest {
     @Test
     void turkiyeGeneliOranGecerliOyToplamindan() {
         when(partiler.findAll()).thenReturn(List.of(parti(2, "CHP", null)));
-        when(oyIl.turkiyeToplamlari(any(), any(), any(), any()))
+        when(oyIl.turkiyeToplamlari(any(), any(), any(), any(), any()))
                 .thenReturn(List.of(new PartiToplami("2023", "genel", 2023, 2, 650L),
                         new PartiToplami("1950", "genel", 1950, 2, 100L)));
         when(sonucIl.yurtIciGecerliOy(any()))
                 .thenReturn(List.of(new GecerliOyToplami("2023", 1500L), new GecerliOyToplami("1950", null)));
-        List<PartiSonucDto> s = servis.sonuclar(2, null, null, null, null, false);
+        List<PartiSonucDto> s = servis.sonuclar(2, null, null, null, null, null, false);
         assertThat(s.get(0).oran()).isEqualByComparingTo("43.33");
         assertThat(s.get(1).oran()).isNull();   // geçerli oy bilinmiyor: oran hesaplanmaz
         assertThat(s.get(0).yer()).isEqualTo("Türkiye (yurt içi)");
@@ -62,7 +62,17 @@ class PartiServisiTest {
     @Test
     void ilBazindaSorguIlSorgusunaGider() {
         when(partiler.findAll()).thenReturn(List.of(parti(2, "CHP", null)));
-        when(oyIl.ildekiSonuclar(any(), eq(34), any(), any(), any())).thenReturn(List.of());
-        assertThat(servis.sonuclar(2, "genel", null, null, 34, false)).isEmpty();
+        when(oyIl.ildekiSonuclar(any(), eq(34), any(), any(), any(), any())).thenReturn(List.of());
+        assertThat(servis.sonuclar(2, "genel", null, null, null, 34, false)).isEmpty();
+    }
+
+    @Test
+    void senatoToplamiTurkiyeGeneliDiyeGosterilmez() {
+        when(partiler.findAll()).thenReturn(List.of(parti(2, "CHP", null)));
+        when(oyIl.turkiyeToplamlari(any(), any(), any(), any(), any()))
+                .thenReturn(List.of(new PartiToplami("1961senato", "senato", 1961, 2, 100L)));
+        when(sonucIl.yurtIciGecerliOy(any())).thenReturn(List.of(new GecerliOyToplami("1961senato", 400L)));
+        assertThat(servis.sonuclar(2, "senato", null, null, null, null, false).get(0).yer())
+                .isEqualTo("Toplam (yalnız seçim yapılan iller)");
     }
 }

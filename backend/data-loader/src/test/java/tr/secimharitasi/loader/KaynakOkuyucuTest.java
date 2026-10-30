@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import java.nio.file.Path;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import tr.secimharitasi.common.OylamaTuru;
 import tr.secimharitasi.common.SecimTuru;
 import tr.secimharitasi.loader.kaynak.KaynakOkuyucu;
 import tr.secimharitasi.loader.kaynak.KaynakSecim;
@@ -39,6 +40,21 @@ class KaynakOkuyucuTest {
         KaynakSecim yerel = Fikstur.secim("2099yerel");
         assertThat(yerel.birincilKaynak()).isNull();
         assertThat(yerel.dosya().ilceler().get(0).oy().get("CHP").aday()).isEqualTo("Ayşe Yılmaz");
+    }
+
+    @Test
+    void meclisOylamalariAnaSecimeBaglanir() {
+        List<KaynakSecim> m = new KaynakOkuyucu(Fikstur.DIZIN, Fikstur.KAYNAKLAR).meclisler();
+        assertThat(m).hasSize(1);
+        assertThat(m.get(0)).satisfies(s -> {
+            assertThat(s.secimId()).isEqualTo("2099yerel_bm");
+            assertThat(s.anaSecimId()).isEqualTo("2099yerel");
+            assertThat(s.oylama()).isEqualTo(OylamaTuru.BELEDIYE_MECLISI);
+            assertThat(s.tur()).isEqualTo(SecimTuru.YEREL);
+            assertThat(s.aciklama()).isEqualTo("Test: belediye meclisi oyları");
+            assertThat(s.dosya().ilceler()).hasSize(1);
+        });
+        assertThat(Fikstur.secim("2098").oylama()).isEqualTo(OylamaTuru.MILLETVEKILI);
     }
 
     @Test

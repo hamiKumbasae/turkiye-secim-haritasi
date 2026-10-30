@@ -46,7 +46,13 @@ class ApiEntegrasyonTest {
                 .andExpect(jsonPath("$[0].tur").value("genel"))
                 .andExpect(jsonPath("$[0].birincilKaynak").value("YSK"));
         mvc.perform(get("/api/secimler").param("yil", "2024"))
-                .andExpect(jsonPath("$[*].secimId", contains("2024yerel")));
+                .andExpect(jsonPath("$[*].secimId", contains("2024yerel", "2024yerel_bm")));
+        mvc.perform(get("/api/secimler").param("oylama", "belediye_meclisi"))
+                .andExpect(jsonPath("$[*].secimId", contains("2024yerel_bm")))
+                .andExpect(jsonPath("$[0].anaSecimId").value("2024yerel"))
+                .andExpect(jsonPath("$[0].oylama").value("belediye_meclisi"));
+        mvc.perform(get("/api/secimler/2024yerel/bagli-oylamalar"))
+                .andExpect(jsonPath("$[*].secimId", contains("2024yerel_bm")));
         mvc.perform(get("/api/secimler").param("yilBaslangic", "2019").param("yilBitis", "2023"))
                 .andExpect(jsonPath("$[*].secimId", contains("2023")));
     }
@@ -117,10 +123,53 @@ class ApiEntegrasyonTest {
     }
 
     @Test
+    void mahalleler() throws Exception {
+        // seçmene göre büyükten küçüğe; ad yoksa null; katılım %100 üstü olduğu gibi
+        mvc.perform(get("/api/secimler/2023/ilceler/TR-D-34-037/mahalleler")).andExpect(status().isOk())
+                .andExpect(jsonPath("$[*].mahalleId", contains("r2", "k1")))
+                .andExpect(jsonPath("$[0].ad").doesNotExist())
+                .andExpect(jsonPath("$[0].katilim").value(101.5))
+                .andExpect(jsonPath("$[0].kazanan").value("AK Parti"))
+                .andExpect(jsonPath("$[1].ad").value("FİNANSKENT MAH."))
+                .andExpect(jsonPath("$[1].oylar[0].parti").value("CHP"));
+        mvc.perform(get("/api/secimler/2018/ilceler/TR-D-34-037/mahalleler")).andExpect(jsonPath("$", hasSize(0)));
+    }
+
+    @Test
+    void beldelerSecilenlerSandalyelerKapsam() throws Exception {
+        mvc.perform(get("/api/secimler/2024yerel/beldeler").param("plaka", "34")).andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].beldeAd").value("Deneme Beldesi"))
+                .andExpect(jsonPath("$[0].kazanan").value("CHP"))
+                .andExpect(jsonPath("$[0].oylar[*].oy", contains(60, 40)));
+        mvc.perform(get("/api/secimler/2024yerel/beldeler"))
+                .andExpect(jsonPath("$[?(@.beldeAd=='Öteki Belde')].sadeceKazanan").value(true));
+        mvc.perform(get("/api/secimler/2023/secilenler").param("plaka", "34"))
+                .andExpect(jsonPath("$[*].ad", contains("Bir Vekil", "İki Vekil")))
+                .andExpect(jsonPath("$[0].parti").value("CHP"))
+                .andExpect(jsonPath("$[0].il").value("İstanbul"))
+                .andExpect(jsonPath("$[1].parti").doesNotExist());
+        mvc.perform(get("/api/secimler/2023/secilenler")).andExpect(jsonPath("$", hasSize(3)));
+        mvc.perform(get("/api/secimler/2023/sandalyeler").param("plaka", "34"))
+                .andExpect(jsonPath("$[*].sandalye", contains(50, 48)));
+        mvc.perform(get("/api/secimler/2024yerel_bm/sandalyeler").param("ilceId", "TR-D-34-037"))
+                .andExpect(jsonPath("$[*].parti", contains("AK Parti", "CHP")))
+                .andExpect(jsonPath("$[0].ilceId").value("TR-D-34-037"));
+        mvc.perform(get("/api/secimler/2024yerel_bm/sandalyeler").param("plaka", "34"))
+                .andExpect(jsonPath("$", hasSize(2)));
+        mvc.perform(get("/api/secimler/2023/kapsam"))
+                .andExpect(jsonPath("$[0].veri").value("milletvekilleri"))
+                .andExpect(jsonPath("$[0].durum").value("eksik"))
+                .andExpect(jsonPath("$[0].beklenen").value(600));
+        mvc.perform(get("/api/secimler/9999/beldeler")).andExpect(status().isNotFound());
+    }
+
+    @Test
     void hatalarVeSaltOkunurluk() throws Exception {
         mvc.perform(get("/api/secimler/9999")).andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.mesaj").value("Seçim bulunamadı: 9999"));
-        mvc.perform(get("/api/secimler").param("tur", "senato")).andExpect(status().isBadRequest());
+        mvc.perform(get("/api/secimler").param("tur", "muhtarlik")).andExpect(status().isBadRequest());
+        mvc.perform(get("/api/secimler").param("oylama", "yok")).andExpect(status().isBadRequest());
         mvc.perform(get("/api/partiler/99999")).andExpect(status().isNotFound());
         mvc.perform(delete("/api/secimler/2023")).andExpect(status().isMethodNotAllowed());
     }

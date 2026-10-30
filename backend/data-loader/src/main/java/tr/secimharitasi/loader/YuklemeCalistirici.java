@@ -10,13 +10,15 @@ import tr.secimharitasi.loader.yukleme.VeriYukleyici;
 class YuklemeCalistirici implements CommandLineRunner {
 
     private final VeriYukleyici yukleyici;
+    private final VeriOzellikleri ozellikler;
 
-    YuklemeCalistirici(VeriYukleyici yukleyici) {
+    YuklemeCalistirici(VeriYukleyici yukleyici, VeriOzellikleri ozellikler) {
         this.yukleyici = yukleyici;
+        this.ozellikler = ozellikler;
     }
 
     @Override
     public void run(String... args) {
-        yukleyici.yukle();
+        yukleyici.gerekirseYukle(ozellikler.zorlaYukle());
     }
 }
