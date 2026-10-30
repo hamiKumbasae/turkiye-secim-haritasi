@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: data-loader
+  main:
+    web-application-type: none
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:secimler}?rewriteBatchedStatements=true&characterEncoding=UTF-8&connectionCollation=utf8mb4_0900_as_cs&serverTimezone=UTC
+    username: ${DB_USER:secim}
+    password: ${DB_PASSWORD:}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+veri:
+  dizin: ${VERI_DIZINI:../../data/normalized}
+  kaynaklar: ${KAYNAKLAR_DOSYASI:../../sources.yml}
+  ilce-toleransi: ${ILCE_TOLERANSI:0.005}
+  parti-toplam-toleransi: ${PARTI_TOPLAM_TOLERANSI:0}
