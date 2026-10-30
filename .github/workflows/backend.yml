@@ -130,6 +130,8 @@ jobs:
       - name: uç noktalar
         run: |
           set -euo pipefail
+          # Hangi kontrolün tutmadığı ek açıklama (annotation) olarak görünsün
+          trap 'echo "::error title=uç noktalar::başarısız komut: $BASH_COMMAND"' ERR
           api=http://localhost:8080/api
           # 20 genel seçim; 91 oylama (46 ana seçim + 26 meclis + 8 Senato + 11 ara/yenileme)
           test "$(curl -sf "$api/secimler?tur=genel" | jq length)" = "20"
@@ -163,7 +165,8 @@ jobs:
             curl -sf http://localhost:8080/sohbet -o /dev/null && break
             sleep 2
           done
-          curl -sf http://localhost:8080/sohbet | grep -q "Seçim Sohbeti"
+          curl -sf http://localhost:8080/sohbet -o /tmp/sohbet.html
+          grep -q "Seçim Sohbeti" /tmp/sohbet.html
           test "$(curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Content-Type: application/json' \
             -d '{"soru":"2023 Ankara?"}' http://localhost:8080/api/sohbet)" = "503"
           test "$(curl -s -o /dev/null -w '%{http_code}' -X POST -H 'Content-Type: application/json' \
