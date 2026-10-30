@@ -93,11 +93,11 @@ jobs:
 
       - name: data-loader bitti mi
         run: |
-          kod=$(docker compose wait data-loader)
-          echo "data-loader çıkış kodu: $kod"
-          test "$kod" = "0"
-          grep "Yükleme tamam" logs/data-loader.log
-          grep "Tutarlılık bulguları" logs/data-loader.log
+          kod=$(docker inspect -f '{{.State.ExitCode}} {{.State.Status}}' "$(docker compose ps -a -q data-loader)")
+          echo "data-loader: $kod"
+          test "$kod" = "0 exited"
+          docker compose logs --no-color data-loader | grep "Yükleme tamam"
+          docker compose logs --no-color data-loader | grep "Tutarlılık bulguları"
 
       - name: gateway hazır mı
         run: |
@@ -132,7 +132,14 @@ jobs:
 
       - name: Servis logları
         if: failure()
-        run: docker compose logs --no-color --tail=300
+        run: |
+          docker compose logs --no-color --tail=300
+          # Ham log dosyalarına erişilemeyen ortamlar için özet, iş ek açıklaması (annotation) olarak
+          ozet() { sed -e 's/%/%25/g' | awk '{printf "%s%%0A", $0}'; }
+          echo "::error title=compose ps::$(docker compose ps -a --format '{{.Service}} {{.State}} {{.Status}}' | ozet)"
+          for s in mysql data-loader election-api gateway; do
+            echo "::error title=$s log::$(docker compose logs --no-color --no-log-prefix --tail=25 $s 2>&1 | cut -c1-300 | ozet)"
+          done
 
       - name: Tutarlılık logu
         if: always()
