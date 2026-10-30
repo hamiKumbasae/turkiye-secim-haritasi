@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8081}
+
+spring:
+  application:
+    name: election-api
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:secimler}?characterEncoding=UTF-8&serverTimezone=UTC
+    username: ${DB_READ_USER:secim_okuma}
+    password: ${DB_READ_PASSWORD:}
+    hikari:
+      read-only: true
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none          # şemanın sahibi data-loader (Flyway); API yalnız okur
+  flyway:
+    enabled: false
+  jackson:
+    default-property-inclusion: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
