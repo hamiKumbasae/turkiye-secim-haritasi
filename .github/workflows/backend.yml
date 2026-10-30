@@ -1,0 +1,147 @@
+# Backend (Spring Boot mikroservisleri): testler + docker compose ile uçtan uca duman testi.
+# Yalnız backend'i ya da yüklediği veriyi değiştiren push/PR'larda çalışır; GitHub Pages sitesini etkilemez.
+name: backend
+
+on:
+  push:
+    paths:
+      - "backend/**"
+      - "data/normalized/elections/**"
+      - "data/normalized/partiler.json"
+      - "sources.yml"
+      - ".github/workflows/backend.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "backend/**"
+      - "data/normalized/elections/**"
+      - "data/normalized/partiler.json"
+      - "sources.yml"
+      - ".github/workflows/backend.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  testler:
+    name: Maven testleri (MySQL 8.4 Testcontainers dahil)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            backend
+            data/normalized/partiler.json
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+          cache-dependency-path: backend/**/pom.xml
+
+      # Docker 29+ eski API sürümlerini reddediyor; Testcontainers'a sürüm açıkça verilir (bkz. backend/README.md).
+      - name: Testcontainers için Docker API sürümü
+        run: echo "api.version=1.44" > ~/.docker-java.properties
+
+      - name: mvn verify
+        run: mvn -B -ntp verify
+
+      - name: Test raporları
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-raporlari
+          path: backend/*/target/surefire-reports/
+          if-no-files-found: ignore
+
+  compose:
+    name: docker compose duman testi (gerçek veriyle)
+    needs: testler
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            backend
+            data/normalized/elections
+            data/normalized/partiler.json
+            sources.yml
+
+      - name: .env (rastgele şifreler)
+        run: |
+          rastgele() { openssl rand -hex 16; }
+          sed -e "s/degistir-kok-sifresi/$(rastgele)/" \
+              -e "s/degistir-yukleme-sifresi/$(rastgele)/" \
+              -e "s/degistir-okuma-sifresi/$(rastgele)/" .env.example > .env
+
+      - name: docker compose up
+        run: docker compose up --build -d
+
+      - name: data-loader bitti mi
+        run: |
+          kod=$(docker compose wait data-loader)
+          echo "data-loader çıkış kodu: $kod"
+          test "$kod" = "0"
+          grep "Yükleme tamam" logs/data-loader.log
+          grep "Tutarlılık bulguları" logs/data-loader.log
+
+      - name: gateway hazır mı
+        run: |
+          for i in $(seq 1 60); do
+            curl -sf "http://localhost:8080/api/secimler?tur=genel" -o /dev/null && exit 0
+            sleep 3
+          done
+          echo "gateway 3 dakikada yanıt vermedi"; exit 1
+
+      - name: uç noktalar
+        run: |
+          set -euo pipefail
+          api=http://localhost:8080/api
+          # 20 genel seçim, 46 seçim toplam
+          test "$(curl -sf "$api/secimler?tur=genel" | jq length)" = "20"
+          test "$(curl -sf "$api/secimler" | jq length)" = "46"
+          # 2023: 81 il + yurt dışı; İstanbul'un oyları dolu
+          test "$(curl -sf "$api/secimler/2023/iller" | jq length)" = "82"
+          test "$(curl -sf "$api/secimler/2023/iller/34" | jq '.oylar | length')" -gt 5
+          # İstanbul'un 39 ilçesi
+          test "$(curl -sf "$api/secimler/2023/iller/34/ilceler" | jq length)" = "39"
+          # Parti devamlılığı: DEM Parti'nin öncülü YEŞİL SOL
+          test "$(curl -sf "$api/partiler/107" | jq -r '.oncekiler[0].ad')" = "YEŞİL SOL"
+          # Bulunamayan kayıt 404, yazma isteği geçmez
+          test "$(curl -s -o /dev/null -w '%{http_code}' "$api/secimler/9999")" = "404"
+          test "$(curl -s -o /dev/null -w '%{http_code}' -X DELETE "$api/secimler/2023")" = "404"
+          # CORS: GitHub Pages ön kontrolü
+          curl -s -D - -o /dev/null -X OPTIONS "$api/secimler" \
+            -H "Origin: https://hamikumbasae.github.io" -H "Access-Control-Request-Method: GET" \
+            | tee /dev/stderr | grep -i "access-control-allow-origin: https://hamikumbasae.github.io"
+          echo "bütün kontroller geçti"
+
+      - name: Servis logları
+        if: failure()
+        run: docker compose logs --no-color --tail=300
+
+      - name: Tutarlılık logu
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tutarlilik-logu
+          path: backend/logs/
+          if-no-files-found: ignore
+
+      - name: Kapat
+        if: always()
+        run: docker compose down -v
