@@ -1,0 +1,18 @@
+# Example: run the API in Docker against the Raspberry Pi database.
+#   cp .env.example .env   # put the real DB_PASSWORD in .env (never commit it)
+#   docker compose up --build
+#   open http://localhost:8080/swagger-ui.html
+services:
+  election-api-lite:
+    build: .
+    image: election-api-lite:latest
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-pi}
+      DB_HOST: ${DB_HOST:-192.168.1.2}   # use host.docker.internal for a MariaDB on this machine
+      DB_PORT: ${DB_PORT:-3306}
+      DB_USER: ${DB_USER:-hami}
+      DB_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env}
+    mem_limit: 512m
+    restart: unless-stopped
