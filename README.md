@@ -51,7 +51,12 @@ site/                Ön yüz (src/), Pages derlemesi (build.py → site/dist/),
 scripts/             Yayın (export_static, kompakt, build, acik_veri), doğrulama, denetim ve veri hatları (pipelines/)
 tests/               Analitik doğrulama, Node ve tarayıcı testleri
 docs/rapor/          Kapsam tablosu, veri denetimi ve eşleştirme raporları
+backend/             Spring Boot mikroservisleri + MySQL 8, Docker (data-loader, election-api, gateway)
+backend/election-api-lite/  Tek servislik Spring Boot API, MariaDB üzerinde (ör. Raspberry Pi ev sunucusu)
+chatbot/             Türkçe soru → SQL sohbet botu (yerel LLM ya da Claude, SQL güvenlik katmanı, değerlendirme seti)
 ```
+
+Harita sunucu istemez. Aynı veri `scripts/db_yukle.py` ile MariaDB/MySQL'e yüklenir; API ve sohbet botu oradan okur.
 
 Her veri klasörünün kendi `PROVENANCE.md`'si var. Kaynakların tam listesi: [`SOURCES.md`](SOURCES.md) (okunabilir)
 ve [`sources.yml`](sources.yml) (makine-okunur; her seçimin birincil kaynağı ve bilinen sorunları).

@@ -18,6 +18,8 @@ Yanıtlar Türkçe, kısa. Site: https://hamikumbasae.github.io/turkiye-secim-ha
 - Ek kayıtlar (`data/normalized/ek/`): `build_ek_kayitlar.py` yeniden çalıştırılırsa sonradan güncellenen geomId'leri eski haline döndürür; değişikliği dosyaya hedefli uygula. Senato PDF sütun kaymaları `extract_senato.py` `ELLE_DUZELTME` tablosunda.
 - Denetim: `python3 scripts/veri_denetimi.py --md docs/rapor/VERI_DENETIMI.md --csv-klasor docs/rapor/veri_denetimi`. CI `--kontrol docs/rapor/veri_denetimi` ile kayıtlı listede olmayan yeni bulguda başarısız olur; veri düzeltince listeyi bu komutla yenile.
 
+- Servisler (1 Kasım 2026'da main'e girdi): `backend/` (#14; Docker, MySQL 8, data-loader/election-api/gateway, CI `backend.yml`), `backend/election-api-lite/` (#17; tek servis, MariaDB, CI `election-api-lite.yml`), `chatbot/` (#16; Python FastAPI, text-to-SQL, `pytest`), `scripts/db_yukle.py` (MariaDB'ye yükleme; Pi `evnas`, db `secim`). Açık PR: #21 SQLite (`scripts/veritabani/`), #22 backend chatbot modülü (Claude API).
+
 ## Veri hattı (mahalle)
 - YSK açık veri yalnız GitHub Actions'tan erişilir; sonuç `::notice` ile okunur (`gh api .../check-runs/<job>/annotations`), dosyalar veri dalına itilir, `git fetch origin +dal:refs/remotes/origin/dal` + `git checkout origin/dal -- yol`.
 - İş akışları: `ysk-mahalle-cek.yml` (muhtarlık), `tkgm-mahalle-cek.yml`, `osm-mahalle-cek.yml`, `belediye-mahalle-cek.yml`, `osm-yer-cek.yml` (OSM köy/mahalle noktaları; elle, `iller` girdisiyle kısmi; `osm-yer-veri` dalına ekler).
