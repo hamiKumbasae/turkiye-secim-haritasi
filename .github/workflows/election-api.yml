@@ -1,0 +1,73 @@
+# election-api (Spring Boot REST API, backend/election-api): build + unit/web tests on every change.
+# Integration tests (*IT) need the real MariaDB `secim` database and skip themselves here.
+# Does not touch the GitHub Pages site.
+name: election-api
+
+on:
+  push:
+    paths:
+      - "backend/election-api/**"
+      - ".github/workflows/election-api.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "backend/election-api/**"
+      - ".github/workflows/election-api.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: election-api-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: mvn verify (Java 21)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: backend/election-api
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: backend/election-api
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+          cache-dependency-path: backend/election-api/pom.xml
+
+      - name: mvn verify
+        run: mvn -B -ntp verify
+
+      - name: Docker image builds
+        run: docker build -t election-api:ci .
+
+      - name: Failed test summary
+        if: failure()
+        run: |
+          esc() { sed -e 's/%/%25/g' | awk '{printf "%s%%0A", $0}'; }
+          for f in target/surefire-reports/*.txt target/failsafe-reports/*.txt; do
+            [ -f "$f" ] || continue
+            if grep -qE "FAILURE|ERROR" "$f"; then
+              echo "::error title=$(basename "$f" .txt)::$(grep -E -A12 '<<< (FAILURE|ERROR)' "$f" | head -40 | cut -c1-300 | esc)"
+            fi
+          done
+          mvn -B -ntp -q -DskipTests test-compile 2>&1 | grep -E "ERROR" | head -30 | cut -c1-300 > /tmp/compile.txt || true
+          [ -s /tmp/compile.txt ] && echo "::error title=compile::$(esc < /tmp/compile.txt)" || true
+
+      - name: Test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: election-api-test-reports
+          path: |
+            backend/election-api/target/surefire-reports/
+            backend/election-api/target/site/jacoco/
+          if-no-files-found: ignore
+          retention-days: 7
