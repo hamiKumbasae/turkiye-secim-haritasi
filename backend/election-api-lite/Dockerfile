@@ -7,7 +7,7 @@ COPY pom.xml .
 RUN --mount=type=cache,target=/root/.m2 mvn -B -ntp -q dependency:go-offline
 COPY src ./src
 RUN --mount=type=cache,target=/root/.m2 mvn -B -ntp -q -DskipTests package \
- && java -Djarmode=tools -jar target/election-api.jar extract --layers --launcher --destination /extracted
+ && java -Djarmode=tools -jar target/election-api-lite.jar extract --layers --launcher --destination /extracted
 
 # ---- runtime: JRE only, non-root ----
 FROM eclipse-temurin:21-jre

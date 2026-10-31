@@ -3,9 +3,9 @@
 #   docker compose up --build
 #   open http://localhost:8080/swagger-ui.html
 services:
-  election-api:
+  election-api-lite:
     build: .
-    image: election-api:latest
+    image: election-api-lite:latest
     ports:
       - "8080:8080"
     environment:

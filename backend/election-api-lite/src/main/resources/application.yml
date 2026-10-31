@@ -2,7 +2,7 @@
 # Credentials always come from the environment: DB_USER (default hami) and DB_PASSWORD.
 spring:
   application:
-    name: election-api
+    name: election-api-lite
   profiles:
     default: local
   datasource:

@@ -1,25 +1,25 @@
-# election-api (Spring Boot REST API, backend/election-api): build + unit/web tests on every change.
+# election-api-lite (Spring Boot REST API, backend/election-api-lite): build + unit/web tests on every change.
 # Integration tests (*IT) need the real MariaDB `secim` database and skip themselves here.
 # Does not touch the GitHub Pages site.
-name: election-api
+name: election-api-lite
 
 on:
   push:
     paths:
-      - "backend/election-api/**"
-      - ".github/workflows/election-api.yml"
+      - "backend/election-api-lite/**"
+      - ".github/workflows/election-api-lite.yml"
   pull_request:
     branches: [main]
     paths:
-      - "backend/election-api/**"
-      - ".github/workflows/election-api.yml"
+      - "backend/election-api-lite/**"
+      - ".github/workflows/election-api-lite.yml"
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: election-api-${{ github.ref }}
+  group: election-api-lite-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -29,24 +29,24 @@ jobs:
     timeout-minutes: 20
     defaults:
       run:
-        working-directory: backend/election-api
+        working-directory: backend/election-api-lite
     steps:
       - uses: actions/checkout@v4
         with:
-          sparse-checkout: backend/election-api
+          sparse-checkout: backend/election-api-lite
 
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "21"
           cache: maven
-          cache-dependency-path: backend/election-api/pom.xml
+          cache-dependency-path: backend/election-api-lite/pom.xml
 
       - name: mvn verify
         run: mvn -B -ntp verify
 
       - name: Docker image builds
-        run: docker build -t election-api:ci .
+        run: docker build -t election-api-lite:ci .
 
       - name: Failed test summary
         if: failure()
@@ -65,9 +65,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: election-api-test-reports
+          name: election-api-lite-test-reports
           path: |
-            backend/election-api/target/surefire-reports/
-            backend/election-api/target/site/jacoco/
+            backend/election-api-lite/target/surefire-reports/
+            backend/election-api-lite/target/site/jacoco/
           if-no-files-found: ignore
           retention-days: 7

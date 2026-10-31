@@ -8,6 +8,9 @@ province, district and neighbourhood results, a party's history in one place, to
 and neighbourhood boundaries as GeoJSON.
 
 **Stack:** Java 21, Spring Boot 3.5 (Web MVC, Data JPA, JdbcTemplate, Validation, Cache, Actuator),
+
+> **election-api-lite vs. `backend/`:** `backend/` is the full Docker setup (MySQL 8, data-loader, gateway, election-api microservices). This module is a single, standalone service that reads the same data from a MariaDB database (e.g. on a Raspberry Pi, loaded with `scripts/db_yukle.py`). The two are built and tested separately.
+
 Caffeine, springdoc-openapi (Swagger UI), MariaDB, JUnit 5, Mockito, MockMvc, JaCoCo, Docker, GitHub Actions.
 
 ```bash
@@ -227,10 +230,10 @@ Credentials are always read from the environment (`DB_PASSWORD`, optional `DB_US
 `DB_HOST`, `DB_PORT`, `DB_NAME` and `PORT` override any of these.
 
 ```bash
-cd backend/election-api
+cd backend/election-api-lite
 export DB_PASSWORD='...'
 mvn spring-boot:run -Dspring-boot.run.profiles=pi
-# or: mvn -DskipTests package && java -jar target/election-api.jar --spring.profiles.active=pi
+# or: mvn -DskipTests package && java -jar target/election-api-lite.jar --spring.profiles.active=pi
 open http://localhost:8080/swagger-ui.html
 ```
 
@@ -276,7 +279,7 @@ DB_HOST=192.168.1.2 DB_PASSWORD='...' mvn verify   # + integration tests against
 84 unit and web tests plus 10 integration tests; all pass. Integration tests run only when `DB_PASSWORD`
 is set and the database port answers (custom JUnit 5 `ExecutionCondition`), so CI and fresh clones stay
 green. Testcontainers was not used because the tests need the real 2.8 M-row dataset, not an empty schema.
-CI (`.github/workflows/election-api.yml`) runs `mvn verify` and builds the Docker image on every change.
+CI (`.github/workflows/election-api-lite.yml`) runs `mvn verify` and builds the Docker image on every change.
 
 ## Technical decisions
 
@@ -337,8 +340,8 @@ java -version   # 21 görünmeli
 # 2) Kod
 git clone https://github.com/hamiKumbasae/turkiye-secim-haritasi.git
 cd turkiye-secim-haritasi
-git checkout feature/election-api   # PR birleşene kadar
-cd backend/election-api
+git checkout feature/election-api   # until the PR is merged
+cd backend/election-api-lite
 
 # 3) (İsteğe bağlı, bir kez) hız için indeksler; db_yukle.py her yeniden yüklemeden sonra tekrar
 #    mariadb istemcisi yoksa: brew install mariadb
