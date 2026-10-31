@@ -1,5 +1,7 @@
 # Türkiye Seçim Haritası
 
+*Türkçe | [English](README.en.md)*
+
 1950–2024 arasındaki bütün genel seçim, yerel seçim, referandum ve cumhurbaşkanlığı seçimi sonuçlarını
 il, ilçe ve 2009'dan sonra mahalle düzeyinde gösteren interaktif harita.
 
