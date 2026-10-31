@@ -60,7 +60,7 @@ flowchart LR
 | `secim_chatbot/pipeline.py` | Orchestration, one retry, fallbacks, timing and token accounting. |
 | `secim_chatbot/web/` | FastAPI backend + single-page chat UI (vanilla JS/CSS, no build step). |
 | `secim_chatbot/cli.py` | Terminal chat with follow-up questions. |
-| `eval/` | Gold set (32 questions), frozen expected results, eval runner. |
+| `eval/` | Gold set (32 questions), question bank (287), frozen expected results, eval runner. |
 
 ### How the model is called
 
@@ -117,6 +117,21 @@ All gold queries were executed on the real database; the results are frozen in
 [`eval/gold_results.json`](eval/gold_results.json) so data changes are detected (`--freeze` re-creates it).
 The 7 few-shot examples in the prompt are deliberately different questions (a test enforces no overlap),
 so the eval measures generalisation, not recall.
+
+### Question bank (realistic traffic)
+[`eval/soru_bankasi.yaml`](eval/soru_bankasi.yaml) adds **287 questions** modelled on what people actually ask
+(news result pages, FAQ boxes, election-analysis pieces; see [docs/RESEARCH.md](docs/RESEARCH.md)): casual
+phrasings, follow-ups with `history`, ambiguous questions with a documented default, and 43 questions the data
+cannot answer (ballot boxes, MPs' names, demographics, polls, council votes), where the correct behaviour is a
+refusal. 244 have verified SQL (results frozen in `eval/soru_bankasi_results.json`); 23 of them are *partial*
+and carry the caveat the answer must mention. A `split` field keeps a held-out `test` set (216) apart from a
+`dev` pool (71) that few-shot examples may be drawn from — `tests/test_soru_bankasi.py` enforces it.
+Ranked question patterns for a future template layer: [docs/SORU_KALIPLARI.md](docs/SORU_KALIPLARI.md).
+
+```bash
+python eval/run_eval.py --set bank               # held-out test split; refusals count as correct for 'no' items
+python eval/run_eval.py --set bank --split all --freeze
+```
 
 ### Metric: execution accuracy
 SQL text is not compared — many different queries are correct. Both the gold SQL and the model's SQL are executed
@@ -179,7 +194,7 @@ anything else. The UI shows a "demo modu" badge. This is what the screenshots an
 
 ```bash
 cd chatbot
-python -m pytest                       # 154 tests; DB-backed ones skip automatically without a database
+python -m pytest                       # 648 tests; DB-backed ones skip automatically without a database
 python scripts/screenshots.py          # UI end-to-end in Chromium (server must be running in demo mode)
 ```
 

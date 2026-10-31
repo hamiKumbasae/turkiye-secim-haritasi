@@ -52,7 +52,7 @@ SEÇİM KODLARI (secim.kod):
   cumhurbaskanligi: 2014cb 2018cb 2023cb1tur 2023cb2tur
   referandum: 1961referandum 1982referandum 1987referandum 1988referandum 2007referandum
               2010referandum 2017referandum
-Mahalle sonuçları yalnız 2009yerel ve sonrası seçimler için var.
+Mahalle sonuçları yalnız 2009yerel ve sonrası seçimler için var. 1950, 1954, 1957 genel seçimlerinde ilçe satırı yok.
 """
 
 DOMAIN_NOTES = """\
@@ -60,8 +60,11 @@ ALAN BİLGİSİ (önemli):
 - Seçimi her zaman secim.kod ile seç (JOIN secim s ON s.id = b.secim_id ... WHERE s.kod = '2023').
   "2015 seçimi" belirsizdir (Haziran ve Kasım): ikisini de getir ya da soruda belirtileni al.
   "2023 seçimi" milletvekili seçimi = '2023'; cumhurbaşkanlığı ise '2023cb1tur' / '2023cb2tur'.
+  Varsayılanlar: parti sorulursa genel seçim, aday adı geçerse cumhurbaşkanlığı; "ikinci tur" = '2023cb2tur';
+  tur belirtilmeden 2023 aday sorusu → iki turu birlikte getir; yıl yoksa en son seçimi al.
 - Türkiye ulusal satırı YOK. Türkiye geneli = seviye IN ('il','yurtdisi') satırlarının toplamı
-  (yurt dışı yalnız 2014 sonrası genel/cb/referandumlarda var; yerel seçimde yok).
+  (yurt dışı satırı 2015Haziran'dan bu yana genel/cb seçimlerinde ve 2017 referandumunda var; 2014cb'de ve
+  yerel seçimlerde YOK). Yurt dışı tek satırdır: ülke ya da gümrük kırılımı yok.
   Asla il + ilçe + mahalle satırlarını birlikte toplama: aynı oyu birden çok kez sayarsın.
 - Ulusal oran: 100 * SUM(partinin oyu) / SUM(aynı birimlerdeki tüm oy satırları). Paydayı
   gecerli_oy ile değil oy tablosunun toplamıyla kur (eski seçimlerde gecerli_oy NULL) ve paydayı
@@ -77,20 +80,40 @@ ALAN BİLGİSİ (önemli):
 - Parti adları (aday_parti) tam olarak şöyle yazılır: 'AK Parti', 'CHP', 'MHP', 'İYİ Parti',
   'HDP' (2014–2019), 'YEŞİL SOL' (2023, HDP'nin yerine), 'DEM Parti' (2024), 'YENİDEN REFAH',
   'ZP' (Zafer Partisi), 'TİP', 'MEMLEKET', 'SP' (Saadet), 'BBP', 'DSP', 'DYP', 'ANAP', 'RP', 'FP',
-  'SHP', 'DP', 'AP', 'MSP', 'HADEP', 'DEHAP', 'DTP', 'BDP', 'HÜDAPAR', 'Bağımsız' (yerel 2014/2019:
-  'BĞMSZ'), küçük partiler bazen 'Diğer' altında. 2018/2023'te 'Cumhur İttifakı', 'Millet İttifakı'
-  satırları yalnız ittifaka verilen (partiye dağıtılmamış) oylardır.
+  'SHP', 'DP', 'AP', 'MSP', 'HADEP', 'DEHAP', 'DTP', 'BDP', 'HÜDAPAR', 'Bağımsız'. Eski partilerde sonekli
+  kodlar var ('YTP61', 'MP62', 'MP92'); 'DP' 1950'lerde Demokrat Parti, 1973'te Demokratik Parti.
+  'Diğer' küçük partilerin TOPLAMIDIR: sıralamada ve birinci parti tespitinde kullanma.
+  2018/2023'te 'Cumhur İttifakı', 'Millet İttifakı' satırları yalnız ittifaka verilen (partiye dağıtılmamış)
+  oylardır; bu yüzden parti oy/oranları YSK'nın resmî rakamından biraz düşüktür (2018 AK Parti %41,84,
+  resmî %42,56) — oran verirken bunu belirt. İttifak üyeliği veride yok (2023 Cumhur: AK Parti, MHP,
+  YENİDEN REFAH; Millet: CHP, İYİ Parti; DEVA/Gelecek/SP/DP adayları CHP listesinden girdi, ayrı satırları yok).
+  HDP 2023'te 'YEŞİL SOL', 2024'te 'DEM Parti'. 2007/2011'de DTP/BDP destekli bağımsızların bir kısmı
+  'DTP'/'BDP', bir kısmı 'Bağımsız' adıyla kayıtlı.
 - Cumhurbaşkanı adayları tam adla: 'Recep Tayyip Erdoğan', 'Kemal Kılıçdaroğlu', 'Muharrem İnce',
   'Sinan Oğan', 'Selahattin Demirtaş', 'Meral Akşener', 'Temel Karamollaoğlu', 'Doğu Perinçek',
   'Ekmeleddin İhsanoğlu'. Kısmi ad için aday_parti LIKE '%Kılıçdaroğlu%'.
 - Referandum: aday_parti 'Evet' / 'Hayır'; birim.kazanan da 'Evet' / 'Hayır'.
-- Yerel seçim il satırı = il / büyükşehir belediye başkanlığı, ilçe satırı = ilçe belediye
-  başkanlığı. "Kaç il kazandı" → seviye='il' AND kazanan='CHP' sayısı. Yerel seçimlerde ulusal
-  oy toplamı resmi bir sayı değildir; sorulursa il satırları toplamı olduğunu belirt.
+- "Kim kazandı / birinci kim" için birim.kazanan kullan (kesin sonuç). Oy sırası nadiren kazananla çelişir
+  (mazbata/yeniden sayım: 1963 İstanbul, 2024 Kütahya/Kırklareli/Hakkari); çelişkiyi yanıtta belirt.
+- Yerel seçimde YALNIZ belediye başkanlığı var: il satırı = büyükşehir ya da il merkezi belediyesi, ilçe
+  satırı = ilçe belediyesi, mahalle satırı = o mahallenin ilçe belediye başkanlığı oyu. Belediye meclisi,
+  il genel meclisi, belde ve muhtarlık YOK. "Kaç il kazandı" → seviye='il' AND kazanan='CHP' sayısı.
+  Resmî "Türkiye geneli yerel oy oranı" meclis oyudur; il satırları toplamı bunun yerine geçmez, belirt.
+  2019 İstanbul satırı iptal edilen 31 Mart seçimidir; 23 Haziran 2019 yenilemesi yok. Aday adı (oy.aday)
+  yalnız 1950–1989 yerel seçimlerinde var. Büyükşehir işareti yok; 30 büyükşehrin plakaları:
+  1,6,7,9,10,16,20,21,25,26,27,31,33,34,35,38,41,42,44,45,46,47,48,52,54,55,59,61,63,65.
+  Deprem bölgesi (11 il): 1,2,21,23,27,31,44,46,63,79,80. Coğrafi bölge sütunu yok.
 - Milletvekili: oy.vekil (il satırları), Türkiye toplamı SUM(o.vekil) WHERE seviye='il'.
   Bir ilin toplamı birim.toplam_vekil. Meclis büyüklüğü secim.toplam_sandalye.
-- Katılım: birim.katilim (yüzde). Ulusal katılım için oy_kullanan il satırlarında boş olduğundan
-  hesaplama yapma; il bazında katilim değerlerini kullan ya da yapılamayacağını söyle.
+- Katılım: birim.katilim (yüzde). Ulusal katılım satırı yok ve oy_kullanan il satırlarında boş: yaklaşık
+  değer SUM(secmen*katilim)/SUM(secmen) (il + yurtdisi), yaklaşık olduğunu belirt. Mahalle katılımı
+  güvenilmez (binlerce mahallede %100'ü aşar). Geçersiz oy sayısı saklanmıyor.
+- İlçe adı zamanla değişebilir (Eyüp → Eyüpsultan); ilçe zaman serisinde ad IN (eski, yeni) ya da geom_id.
+  Aynı adlı ilçe/mahalle (Yenişehir 3 ilde, Atakent 13 mahalle) için il belirtilmemişse hepsini il/ilçe
+  adıyla listele.
+- Veride YOK (cannot_answer): sandık sonuçları, seçim bölgesi (İstanbul 1. bölge), milletvekili/aday
+  listeleri ve adları, yaş/cinsiyet/etnik köken gibi seçmen profili, anketler, geçersiz oy, ara seçimler,
+  senato, 1950 öncesi.
 - Zaman serisi sorularında ORDER BY s.yil, s.id kullan (2015Haziran, 2015Kasim'dan önce gelir).
 - Sonuç tablosunu okunur tut: anlamlı sütun takma adları (il, ilce, mahalle, oy, oran, vekil),
   yalnız gereken sütunlar, top-N sorularında ORDER BY + LIMIT. SELECT * kullanma.
