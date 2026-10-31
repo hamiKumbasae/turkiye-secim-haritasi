@@ -1,0 +1,358 @@
+# Altın değerlendirme kümesi (gold eval set).
+# Her soru için SQL elle yazıldı ve yerel MariaDB'de çalıştırılıp sonucu doğrulandı.
+# expected_answer: doğru cevabın insan tarafından yazılmış kısa özeti (sayılar DB'den).
+# ordered: true ise sonuç sırası da karşılaştırılır (top-N, zaman serisi).
+# Gold SQL yalnız sorunun gerektirdiği sütunları döndürür; modelin fazladan sütunu sorun değildir.
+# Karşılaştırma kuralları için bkz. secim_chatbot/evaluation.py.
+
+- id: g01
+  category: ulusal-toplam
+  expected_answer: "AK Parti 2023 genel seçiminde yurt dışı dahil 19.127.097 oy aldı."
+  question: 2023 genel seçiminde AK Parti Türkiye genelinde kaç oy aldı?
+  ordered: false
+  sql: |
+    SELECT SUM(o.oy) AS oy
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye IN ('il','yurtdisi') AND o.aday_parti = 'AK Parti'
+
+- id: g02
+  category: ulusal-toplam
+  expected_answer: "AK Parti %35,23, CHP %25,12, MHP %9,96, İYİ Parti %9,61, YEŞİL SOL %8,83."
+  question: 2023 genel seçiminde Türkiye genelinde en çok oy alan 5 partinin oy oranları neydi?
+  ordered: true
+  sql: |
+    SELECT o.aday_parti,
+           ROUND(100 * SUM(o.oy) / (SELECT SUM(o2.oy) FROM oy o2 JOIN birim b2 ON b2.id = o2.birim_id
+                                    WHERE b2.secim_id = s.id AND b2.seviye IN ('il','yurtdisi')), 2) AS oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye IN ('il','yurtdisi')
+    GROUP BY o.aday_parti ORDER BY SUM(o.oy) DESC LIMIT 5
+
+- id: g03
+  category: vekil
+  expected_answer: "AK Parti 268, CHP 169, YEŞİL SOL 61, MHP 50, İYİ Parti 43, YENİDEN REFAH 5, TİP 4 (toplam 600)."
+  question: 2023 genel seçiminde partiler kaçar milletvekili çıkardı?
+  ordered: false
+  sql: |
+    SELECT o.aday_parti, SUM(o.vekil) AS vekil
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye = 'il' AND o.vekil > 0
+    GROUP BY o.aday_parti ORDER BY vekil DESC
+
+- id: g04
+  category: vekil
+  expected_answer: "CHP İstanbul'dan 31 milletvekili çıkardı."
+  question: 2023'te CHP İstanbul'dan kaç milletvekili çıkardı?
+  ordered: false
+  sql: |
+    SELECT o.vekil
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye = 'il' AND b.plaka = 34 AND o.aday_parti = 'CHP'
+
+- id: g05
+  category: il
+  expected_answer: "İzmir'de birinci parti %41,75 ile CHP oldu."
+  question: 2018 genel seçiminde İzmir'de birinci parti hangisiydi ve oy oranı kaçtı?
+  ordered: false
+  sql: |
+    SELECT o.aday_parti, o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2018' AND b.seviye = 'il' AND b.plaka = 35
+    ORDER BY o.oy DESC LIMIT 1
+
+- id: g06
+  category: cumhurbaskanligi
+  expected_answer: "Erdoğan 27.834.701 oy (%52,18), Kılıçdaroğlu 25.504.734 oy (%47,82)."
+  question: 2023 cumhurbaşkanlığı seçiminin ikinci turunda adaylar Türkiye genelinde kaç oy ve yüzde kaç aldı?
+  ordered: false
+  sql: |
+    SELECT o.aday_parti, SUM(o.oy) AS oy,
+           ROUND(100 * SUM(o.oy) / (SELECT SUM(o2.oy) FROM oy o2 JOIN birim b2 ON b2.id = o2.birim_id
+                                    WHERE b2.secim_id = s.id AND b2.seviye IN ('il','yurtdisi')), 2) AS oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023cb2tur' AND b.seviye IN ('il','yurtdisi')
+    GROUP BY o.aday_parti
+
+- id: g07
+  category: cumhurbaskanligi
+  expected_answer: "Kılıçdaroğlu ikinci turda 29 ilde birinci oldu."
+  question: 2023 cumhurbaşkanlığı ikinci turunda Kılıçdaroğlu kaç ilde birinci oldu?
+  ordered: false
+  sql: |
+    SELECT COUNT(*) AS il_sayisi
+    FROM birim b JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023cb2tur' AND b.seviye = 'il' AND b.kazanan = 'Kemal Kılıçdaroğlu'
+
+- id: g08
+  category: cumhurbaskanligi
+  expected_answer: "Tunceli %82,81, Şırnak %76,30, Hakkari %72,11, Diyarbakır %71,66, Kırklareli %68,42."
+  question: 2023 ikinci turda Kılıçdaroğlu'nun en yüksek oy oranına ulaştığı 5 il hangileri?
+  ordered: true
+  sql: |
+    SELECT b.ad AS il, o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023cb2tur' AND b.seviye = 'il' AND o.aday_parti = 'Kemal Kılıçdaroğlu'
+    ORDER BY o.oran DESC LIMIT 5
+
+- id: g09
+  category: referandum
+  expected_answer: "Tunceli %80,41, Şırnak %71,70, Kırklareli %71,33, Edirne %70,50, Muğla %69,33."
+  question: 2017 anayasa referandumunda Hayır oranının en yüksek olduğu 5 il hangileri?
+  ordered: true
+  sql: |
+    SELECT b.ad AS il, o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2017referandum' AND b.seviye = 'il' AND o.aday_parti = 'Hayır'
+    ORDER BY o.oran DESC LIMIT 5
+
+- id: g10
+  category: referandum
+  expected_answer: "Yurt dışı dahil Evet oranı %51,40."
+  question: 2017 referandumunda yurt dışı dahil Türkiye genelinde Evet oranı kaçtı?
+  ordered: false
+  sql: |
+    SELECT ROUND(100 * SUM(CASE WHEN o.aday_parti = 'Evet' THEN o.oy ELSE 0 END) / SUM(o.oy), 2) AS evet_orani
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2017referandum' AND b.seviye IN ('il','yurtdisi')
+
+- id: g11
+  category: referandum
+  expected_answer: "2010 referandumunda 62 ilde Evet çıktı."
+  question: 2010 referandumunda kaç ilde Evet çıktı?
+  ordered: false
+  sql: |
+    SELECT COUNT(*) AS il_sayisi
+    FROM birim b JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2010referandum' AND b.seviye = 'il' AND b.kazanan = 'Evet'
+
+- id: g12
+  category: zaman-serisi
+  expected_answer: "2002 %37,20; 2007 %45,20; 2011 %49,35; Haziran 2015 %40,91; Kasım 2015 %48,75; 2018 %41,74; 2023 %35,43."
+  question: 2002'den bu yana genel seçimlerde AK Parti'nin İstanbul'daki oy oranı nasıl değişti?
+  ordered: true
+  sql: |
+    SELECT s.kod, o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.tur = 'genel' AND s.yil >= 2002 AND b.seviye = 'il' AND b.plaka = 34 AND o.aday_parti = 'AK Parti'
+    ORDER BY s.yil, s.id
+
+- id: g13
+  category: zaman-serisi
+  expected_answer: "DP (1950, 1954), CHP (1957–1961, 1973–1977), AP (1965–1969), ANAP (1983–1987, 1995), SHP (1991), DSP (1999), 2002'den beri her seçimde AK Parti."
+  question: 1950'den bu yana her genel seçimde Ankara'da hangi parti birinci oldu?
+  ordered: true
+  sql: |
+    SELECT s.kod, b.kazanan
+    FROM birim b JOIN secim s ON s.id = b.secim_id
+    WHERE s.tur = 'genel' AND b.seviye = 'il' AND b.plaka = 6
+    ORDER BY s.yil, s.id
+
+- id: g14
+  category: zaman-serisi
+  expected_answer: "1950'de 487, 1954'te 541, 1957'de 610, 1961–1977 arası 450, 1983'te 399, 1987–1991'de 450, 1995–2015 arası 550, 2018 ve 2023'te 600."
+  question: Genel seçimlerde mecliste toplam kaç sandalye vardı, yıllara göre?
+  ordered: true
+  sql: |
+    SELECT kod, toplam_sandalye FROM secim WHERE tur = 'genel' ORDER BY yil, id
+
+- id: g15
+  category: katilim
+  expected_answer: "Düzce %92,26, Amasya %92,15, Manisa %91,98, Bilecik %91,97, Kütahya %91,97."
+  question: 2023 genel seçiminde katılımın en yüksek olduğu 5 il hangileri?
+  ordered: true
+  sql: |
+    SELECT b.ad AS il, b.katilim
+    FROM birim b JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye = 'il'
+    ORDER BY b.katilim DESC LIMIT 5
+
+- id: g16
+  category: katilim
+  expected_answer: "En düşük katılım %72,84 ile Ağrı'da."
+  question: 2023 genel seçiminde katılımın en düşük olduğu il hangisiydi?
+  ordered: false
+  sql: |
+    SELECT b.ad AS il, b.katilim
+    FROM birim b JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye = 'il'
+    ORDER BY b.katilim ASC LIMIT 1
+
+- id: g17
+  category: katilim
+  expected_answer: "Yurt dışında katılım %52,04, Erdoğan'ın oy oranı %59,57."
+  question: Yurt dışında 2023 cumhurbaşkanlığı ikinci turunda katılım ve Erdoğan'ın oy oranı kaçtı?
+  ordered: false
+  sql: |
+    SELECT b.katilim, o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023cb2tur' AND b.seviye = 'yurtdisi' AND o.aday_parti = 'Recep Tayyip Erdoğan'
+
+- id: g18
+  category: yerel
+  expected_answer: "CHP 2024'te 35 il belediye başkanlığını kazandı."
+  question: 2024 yerel seçimlerinde CHP kaç il belediye başkanlığını kazandı?
+  ordered: false
+  sql: |
+    SELECT COUNT(*) AS il_sayisi
+    FROM birim b JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2024yerel' AND b.seviye = 'il' AND b.kazanan = 'CHP'
+
+- id: g19
+  category: yerel
+  expected_answer: "Adıyaman, Afyonkarahisar, Balıkesir, Bursa, Denizli, Giresun, Kırıkkale, Kilis, Uşak, Zonguldak (10 il)."
+  question: 2019'da AK Parti'nin kazanıp 2024 yerel seçimlerinde CHP'nin kazandığı iller hangileri?
+  ordered: false
+  sql: |
+    SELECT b24.ad AS il
+    FROM birim b24 JOIN secim s24 ON s24.id = b24.secim_id
+    JOIN birim b19 ON b19.plaka = b24.plaka AND b19.seviye = 'il'
+    JOIN secim s19 ON s19.id = b19.secim_id
+    WHERE s24.kod = '2024yerel' AND s19.kod = '2019yerel' AND b24.seviye = 'il'
+      AND b19.kazanan = 'AK Parti' AND b24.kazanan = 'CHP'
+    ORDER BY b24.ad
+
+- id: g20
+  category: ilce
+  expected_answer: "CHP 26 ilçe, AK Parti 13 ilçe."
+  question: 2024 yerel seçimlerinde İstanbul'un 39 ilçesinden kaçını hangi parti kazandı?
+  ordered: false
+  sql: |
+    SELECT b.kazanan, COUNT(*) AS ilce_sayisi
+    FROM birim b JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2024yerel' AND b.seviye = 'ilce' AND b.plaka = 34
+    GROUP BY b.kazanan ORDER BY ilce_sayisi DESC
+
+- id: g21
+  category: ilce
+  expected_answer: "AK Parti %39,95, CHP %26,30, İYİ Parti %7,55, MHP %6,24, YEŞİL SOL %5,43."
+  question: Ümraniye'de 2023 genel seçiminde partilerin oy oranları neydi? İlk 5'i göster.
+  ordered: true
+  sql: |
+    SELECT o.aday_parti, o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye = 'ilce' AND b.plaka = 34 AND b.ad = 'Ümraniye'
+    ORDER BY o.oy DESC LIMIT 5
+
+- id: g22
+  category: ilce
+  expected_answer: "Kadıköy'de Hayır oranı %80,60."
+  question: Kadıköy'de 2017 referandumunda Hayır oranı kaçtı?
+  ordered: false
+  sql: |
+    SELECT o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2017referandum' AND b.seviye = 'ilce' AND b.plaka = 34 AND b.ad = 'Kadıköy'
+      AND o.aday_parti = 'Hayır'
+
+- id: g23
+  category: ilce
+  expected_answer: "Esenyurt 643.366, Küçükçekmece 572.709, Pendik 547.235, Ümraniye 534.091, Bağcılar 517.237 seçmen."
+  question: 2023 genel seçiminde İstanbul'un en çok seçmeni olan 5 ilçesi hangileri?
+  ordered: true
+  sql: |
+    SELECT b.ad AS ilce, b.secmen
+    FROM birim b JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye = 'ilce' AND b.plaka = 34
+    ORDER BY b.secmen DESC LIMIT 5
+
+- id: g24
+  category: mahalle
+  expected_answer: "Finanskent %73,28, Tatlısu %71,61, Site %69,67."
+  question: 2023 ikinci turda Ümraniye'de Kılıçdaroğlu'nun en yüksek oy oranı aldığı 3 mahalle hangileri?
+  ordered: true
+  sql: |
+    SELECT m.ad AS mahalle, o.oran
+    FROM oy o JOIN birim m ON m.id = o.birim_id JOIN secim s ON s.id = m.secim_id
+    JOIN birim i ON i.secim_id = m.secim_id AND i.seviye = 'ilce' AND i.geom_id = m.ust_geom_id
+    WHERE s.kod = '2023cb2tur' AND m.seviye = 'mahalle' AND i.plaka = 34 AND i.ad = 'Ümraniye'
+      AND o.aday_parti = 'Kemal Kılıçdaroğlu'
+    ORDER BY o.oran DESC LIMIT 3
+
+- id: g25
+  category: mahalle
+  expected_answer: "Diyarbakır Bağlar'daki Bağcılar Mahallesi, 95.072 seçmen."
+  question: 2023 genel seçiminde Türkiye'de en çok seçmeni olan mahalle hangisi, hangi ilçede?
+  ordered: false
+  sql: |
+    SELECT m.ad AS mahalle, i.ad AS ilce
+    FROM birim m JOIN secim s ON s.id = m.secim_id
+    JOIN birim i ON i.secim_id = m.secim_id AND i.seviye = 'ilce' AND i.geom_id = m.ust_geom_id
+    WHERE s.kod = '2023' AND m.seviye = 'mahalle'
+    ORDER BY m.secmen DESC LIMIT 1
+
+- id: g26
+  category: mahalle
+  expected_answer: "AK Parti 22 mahallede, CHP 13 mahallede birinci."
+  question: 2024 yerel seçimlerinde Ümraniye'de mahallelerin kaçında hangi parti birinci çıktı?
+  ordered: false
+  sql: |
+    SELECT m.kazanan, COUNT(*) AS mahalle_sayisi
+    FROM birim m JOIN secim s ON s.id = m.secim_id
+    JOIN birim i ON i.secim_id = m.secim_id AND i.seviye = 'ilce' AND i.geom_id = m.ust_geom_id
+    WHERE s.kod = '2024yerel' AND m.seviye = 'mahalle' AND i.plaka = 34 AND i.ad = 'Ümraniye'
+    GROUP BY m.kazanan ORDER BY mahalle_sayisi DESC
+
+- id: g27
+  category: il
+  expected_answer: "Şırnak, %64,43."
+  question: 2023 genel seçiminde YEŞİL SOL Parti'nin en yüksek oy oranı aldığı il hangisi?
+  ordered: false
+  sql: |
+    SELECT b.ad AS il, o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye = 'il' AND o.aday_parti = 'YEŞİL SOL'
+    ORDER BY o.oran DESC LIMIT 1
+
+- id: g28
+  category: ulusal-toplam
+  expected_answer: "Haziran 2015 %13,13, Kasım 2015 %10,76."
+  question: HDP'nin Haziran ve Kasım 2015 seçimlerindeki Türkiye geneli oy oranları neydi?
+  ordered: true
+  sql: |
+    SELECT s.kod,
+           ROUND(100 * SUM(CASE WHEN o.aday_parti = 'HDP' THEN o.oy ELSE 0 END) / SUM(o.oy), 2) AS hdp_orani
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod IN ('2015Haziran','2015Kasim') AND b.seviye IN ('il','yurtdisi')
+    GROUP BY s.kod, s.id ORDER BY s.id
+
+- id: g29
+  category: vekil
+  expected_answer: "ANAP 1983'te 211 milletvekili kazandı."
+  question: 1983 genel seçiminde ANAP kaç milletvekili kazandı?
+  ordered: false
+  sql: |
+    SELECT SUM(o.vekil) AS vekil
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '1983' AND b.seviye = 'il' AND o.aday_parti = 'ANAP'
+
+- id: g30
+  category: cumhurbaskanligi
+  expected_answer: "Kırklareli, %58,44."
+  question: 2018 cumhurbaşkanlığı seçiminde Muharrem İnce en yüksek oy oranını hangi ilde aldı?
+  ordered: false
+  sql: |
+    SELECT b.ad AS il, o.oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2018cb' AND b.seviye = 'il' AND o.aday_parti = 'Muharrem İnce'
+    ORDER BY o.oran DESC LIMIT 1
+
+- id: g31
+  category: cumhurbaskanligi
+  expected_answer: "Sinan Oğan %5,17 aldı."
+  question: 2023 cumhurbaşkanlığı ilk turunda Sinan Oğan Türkiye genelinde yüzde kaç oy aldı?
+  ordered: false
+  sql: |
+    SELECT ROUND(100 * SUM(CASE WHEN o.aday_parti = 'Sinan Oğan' THEN o.oy ELSE 0 END) / SUM(o.oy), 2) AS oran
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023cb1tur' AND b.seviye IN ('il','yurtdisi')
+
+- id: g32
+  category: vekil
+  expected_answer: "AK Parti 4, CHP 1, İYİ Parti 1."
+  question: 2023 seçiminde Trabzon'un milletvekilleri partilere nasıl dağıldı?
+  ordered: false
+  sql: |
+    SELECT o.aday_parti, o.vekil
+    FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+    WHERE s.kod = '2023' AND b.seviye = 'il' AND b.plaka = 61 AND o.vekil > 0
+    ORDER BY o.vekil DESC

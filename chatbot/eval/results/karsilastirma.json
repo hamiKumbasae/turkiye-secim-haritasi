@@ -1,0 +1,214 @@
+{
+ "bank/test/template": {
+  "accuracy": 0.5509,
+  "answerable": {
+   "correct": 86,
+   "n": 183
+  },
+  "avg_ms": 9,
+  "by_answerable": {
+   "no": {
+    "correct": 33,
+    "n": 33
+   },
+   "partial": {
+    "correct": 4,
+    "n": 17
+   },
+   "yes": {
+    "correct": 82,
+    "n": 166
+   }
+  },
+  "by_category": {
+   "bolge": {
+    "correct": 0,
+    "n": 6
+   },
+   "capraz": {
+    "correct": 0,
+    "n": 6
+   },
+   "cumhurbaskanligi": {
+    "correct": 10,
+    "n": 12
+   },
+   "degisim": {
+    "correct": 4,
+    "n": 12
+   },
+   "fark": {
+    "correct": 4,
+    "n": 8
+   },
+   "il": {
+    "correct": 12,
+    "n": 17
+   },
+   "ilce": {
+    "correct": 10,
+    "n": 18
+   },
+   "katilim": {
+    "correct": 8,
+    "n": 10
+   },
+   "mahalle": {
+    "correct": 5,
+    "n": 11
+   },
+   "referandum": {
+    "correct": 5,
+    "n": 9
+   },
+   "rekor-siralama": {
+    "correct": 0,
+    "n": 7
+   },
+   "takip-belirsiz": {
+    "correct": 3,
+    "n": 10
+   },
+   "turlar-arasi": {
+    "correct": 0,
+    "n": 6
+   },
+   "ulusal-toplam": {
+    "correct": 8,
+    "n": 14
+   },
+   "vekil": {
+    "correct": 5,
+    "n": 14
+   },
+   "veri-yok": {
+    "correct": 32,
+    "n": 32
+   },
+   "yerel": {
+    "correct": 7,
+    "n": 14
+   },
+   "zaman-serisi": {
+    "correct": 6,
+    "n": 10
+   }
+  },
+  "cache_read_tokens": 0,
+  "correct": 119,
+  "data_drift": [],
+  "date": "2026-10-31T06:39:54",
+  "est_cost_usd": null,
+  "failed": 0,
+  "false_refusals": 88,
+  "mode": "template",
+  "model": "template",
+  "n": 216,
+  "p50_ms": 7,
+  "p95_ms": 20,
+  "provider": "-",
+  "refusal": {
+   "correct": 33,
+   "n": 33
+  },
+  "refused": 121,
+  "run": "template",
+  "set": "bank",
+  "split": "test",
+  "template": {
+   "answered": 108,
+   "correct": 99,
+   "share": 0.5
+  },
+  "tokens_in": 0,
+  "tokens_out": 0,
+  "wall_s": 4.6,
+  "with_retry": 0
+ },
+ "gold/all/template": {
+  "accuracy": 0.8125,
+  "answerable": {
+   "correct": 26,
+   "n": 32
+  },
+  "avg_ms": 14,
+  "by_answerable": {
+   "yes": {
+    "correct": 26,
+    "n": 32
+   }
+  },
+  "by_category": {
+   "cumhurbaskanligi": {
+    "correct": 5,
+    "n": 5
+   },
+   "il": {
+    "correct": 2,
+    "n": 2
+   },
+   "ilce": {
+    "correct": 3,
+    "n": 4
+   },
+   "katilim": {
+    "correct": 2,
+    "n": 3
+   },
+   "mahalle": {
+    "correct": 2,
+    "n": 3
+   },
+   "referandum": {
+    "correct": 3,
+    "n": 3
+   },
+   "ulusal-toplam": {
+    "correct": 2,
+    "n": 3
+   },
+   "vekil": {
+    "correct": 4,
+    "n": 4
+   },
+   "yerel": {
+    "correct": 1,
+    "n": 2
+   },
+   "zaman-serisi": {
+    "correct": 2,
+    "n": 3
+   }
+  },
+  "cache_read_tokens": 0,
+  "correct": 26,
+  "data_drift": [],
+  "date": "2026-10-31T06:39:55",
+  "est_cost_usd": null,
+  "failed": 0,
+  "false_refusals": 6,
+  "mode": "template",
+  "model": "template",
+  "n": 32,
+  "p50_ms": 14,
+  "p95_ms": 24,
+  "provider": "-",
+  "refusal": {
+   "correct": 0,
+   "n": 0
+  },
+  "refused": 6,
+  "run": "template",
+  "set": "gold",
+  "split": "all",
+  "template": {
+   "answered": 26,
+   "correct": 26,
+   "share": 0.8125
+  },
+  "tokens_in": 0,
+  "tokens_out": 0,
+  "wall_s": 0.9,
+  "with_retry": 0
+ }
+}
