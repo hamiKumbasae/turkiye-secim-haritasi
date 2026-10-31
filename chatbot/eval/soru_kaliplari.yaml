@@ -1,0 +1,793 @@
+# Soru kalıpları: soru bankasındaki (soru_bankasi.yaml) soruların parametreli kalıplara ayrılmış hali.
+# Şablon katmanının (secim_chatbot/templates.py) kaynak listesidir. Bkz. docs/SORU_KALIPLARI.md.
+# sira: ağırlığa göre (ağırlık = kalıba düşen soruların sıklık puanı toplamı; yüksek 3, orta 2, düşük 1).
+# yuvalar: kalıptaki {yuva} adları ve beklenen değer türü. sql_sablonu: {yuva}'lar tırnaklı değerle doldurulur;
+# '...' içeren şablonlar yalnız iskelettir (tam sorgu için ornekler'deki gold SQL'e bakın).
+# Bu dosyayı scripts/build_soru_kaliplari.py soru bankasından üretir; banka değişince yeniden üretin.
+
+kaliplar:
+- sira: 1
+  id: birim-sonucu
+  kalip: '{secim}''de {birim}de kim kazandı / partiler yüzde kaç aldı'
+  yuvalar:
+    secim: seçim
+    birim: il | ilçe | mahalle
+    il: 'il (ilçe için zorunlu: aynı adlı ilçeler)'
+  agirlik: 77
+  soru_sayisi: 45
+  siklik:
+    yüksek: 6
+    orta: 20
+    düşük: 19
+  yanitlanabilir: kısmen
+  kaynaklar:
+  - S01
+  - S03
+  - S05
+  - S06
+  - S08
+  - S10
+  - S12
+  - S14
+  - S16
+  - S17
+  - S19
+  - S20
+  - S23
+  - S24
+  - S26
+  - S27
+  - S30
+  - S33
+  - S36
+  - S38
+  ornekler:
+  - b035
+  - b036
+  - b037
+  - b038
+  - b044
+  - b045
+  - b046
+  - b047
+  sql_sablonu: SELECT o.aday_parti, o.oy, o.oran FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id WHERE
+    s.kod = {secim} AND b.seviye = {seviye} AND b.plaka = {plaka} [AND b.ad = {ilce}] ORDER BY o.oy DESC
+- sira: 2
+  id: ulusal-oy
+  kalip: '{secim}''de {parti/aday} Türkiye genelinde kaç oy / yüzde kaç aldı'
+  yuvalar:
+    secim: seçim
+    parti: 'parti | aday (ops.: tüm partiler)'
+  agirlik: 49
+  soru_sayisi: 25
+  siklik:
+    yüksek: 6
+    orta: 12
+    düşük: 7
+  yanitlanabilir: kısmen
+  kaynaklar:
+  - S02
+  - S03
+  - S06
+  - S09
+  - S10
+  - S11
+  - S12
+  - S15
+  - S17
+  - S18
+  - S20
+  - S21
+  - S26
+  - S32
+  - S34
+  ornekler:
+  - b001
+  - b002
+  - b003
+  - b004
+  - b005
+  - b006
+  - b007
+  - b008
+  sql_sablonu: SELECT ROUND(100 * SUM(CASE WHEN o.aday_parti = {parti} THEN o.oy ELSE 0 END) / SUM(o.oy), 2) AS oran FROM oy o JOIN
+    birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id WHERE s.kod = {secim} AND b.seviye IN ('il','yurtdisi')
+- sira: 3
+  id: kac-yerde-birinci
+  kalip: '{secim}''de {parti/aday} kaç {seviye}de birinci oldu / kazandı'
+  yuvalar:
+    secim: seçim
+    parti: parti | aday
+    seviye: il | ilçe | mahalle
+    il: il (ilçe/mahalle için)
+  agirlik: 41
+  soru_sayisi: 22
+  siklik:
+    yüksek: 8
+    orta: 3
+    düşük: 11
+  yanitlanabilir: kısmen
+  kaynaklar:
+  - S01
+  - S03
+  - S05
+  - S06
+  - S07
+  - S09
+  - S19
+  - S20
+  - S21
+  - S23
+  - S24
+  - S26
+  - S32
+  - S38
+  ornekler:
+  - b039
+  - b041
+  - b048
+  - b054
+  - b065
+  - b076
+  - b082
+  - b084
+  sql_sablonu: SELECT COUNT(*) FROM birim b JOIN secim s ON s.id = b.secim_id WHERE s.kod = {secim} AND b.seviye = {seviye} AND b.kazanan
+    = {parti}
+- sira: 4
+  id: en-yuksek-dusuk
+  kalip: '{secim}''de {parti/aday}''ın en yüksek / en düşük oy aldığı N {seviye}'
+  yuvalar:
+    secim: seçim
+    parti: parti | aday
+    seviye: il | ilçe | mahalle
+    n: sayı
+    il: il (ops.)
+  agirlik: 32
+  soru_sayisi: 18
+  siklik:
+    yüksek: 2
+    orta: 10
+    düşük: 6
+  yanitlanabilir: kısmen
+  kaynaklar:
+  - S02
+  - S03
+  - S09
+  - S15
+  - S17
+  - S19
+  - S27
+  - S32
+  - S35
+  - S38
+  ornekler:
+  - b042
+  - b043
+  - b051
+  - b052
+  - b053
+  - b067
+  - b068
+  - b073
+  sql_sablonu: SELECT b.ad, o.oran FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id WHERE s.kod = {secim}
+    AND b.seviye = {seviye} AND o.aday_parti = {parti} ORDER BY o.oran DESC LIMIT {n}
+- sira: 5
+  id: vekil
+  kalip: '{secim}''de {parti} ({il}den) kaç milletvekili çıkardı'
+  yuvalar:
+    secim: genel seçim
+    parti: parti (ops.)
+    il: il (ops.)
+  agirlik: 31
+  soru_sayisi: 18
+  siklik:
+    yüksek: 2
+    orta: 9
+    düşük: 7
+  yanitlanabilir: kısmen
+  kaynaklar:
+  - S02
+  - S06
+  - S10
+  - S11
+  - S18
+  - S20
+  - S21
+  - S24
+  - S26
+  - S34
+  ornekler:
+  - b019
+  - b020
+  - b021
+  - b022
+  - b023
+  - b024
+  - b025
+  - b026
+  sql_sablonu: SELECT o.aday_parti, SUM(o.vekil) FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id WHERE
+    s.kod = {secim} AND b.seviye = 'il' AND o.vekil > 0 GROUP BY o.aday_parti
+- sira: 6
+  id: referandum
+  kalip: '{secim} referandumunda {birim}de Evet/Hayır oranı; Hayır çıkan {seviye}ler'
+  yuvalar:
+    secim: referandum
+    birim: Türkiye | il | ilçe | mahalle
+    seviye: il | ilçe
+  agirlik: 24
+  soru_sayisi: 15
+  siklik:
+    yüksek: 3
+    orta: 3
+    düşük: 9
+  yanitlanabilir: evet
+  kaynaklar:
+  - S04
+  - S06
+  - S13
+  - S25
+  - S29
+  ornekler:
+  - b078
+  - b085
+  - b117
+  - b118
+  - b119
+  - b120
+  - b121
+  - b122
+  sql_sablonu: SELECT o.aday_parti, o.oran FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id WHERE s.kod
+    = {secim} AND b.seviye = {seviye} AND o.aday_parti IN ('Evet','Hayır')
+- sira: 7
+  id: fark
+  kalip: '{secim}''de {birim}de birinci ile ikinci arasındaki oy / puan farkı; en çekişmeli {seviye}ler'
+  yuvalar:
+    secim: seçim
+    birim: Türkiye | il | ilçe
+    seviye: il | ilçe
+  agirlik: 19
+  soru_sayisi: 10
+  siklik:
+    yüksek: 1
+    orta: 7
+    düşük: 2
+  yanitlanabilir: evet
+  kaynaklar:
+  - S04
+  - S05
+  - S13
+  - S14
+  - S21
+  - S27
+  - S31
+  - S33
+  - S38
+  ornekler:
+  - b189
+  - b190
+  - b191
+  - b192
+  - b193
+  - b194
+  - b195
+  - b196
+  sql_sablonu: SELECT MAX(o.oy) - (SELECT o2.oy FROM oy o2 WHERE o2.birim_id = b.id ORDER BY o2.oy DESC LIMIT 1 OFFSET 1) FROM oy o
+    JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id WHERE s.kod = {secim} AND b.seviye = {seviye} GROUP BY b.id
+- sira: 8
+  id: veri-yok-diger
+  kalip: yorum, süreç, takvim, konu dışı ya da netleştirme gereken soru
+  yuvalar: {}
+  agirlik: 19
+  soru_sayisi: 12
+  siklik:
+    yüksek: 0
+    orta: 7
+    düşük: 5
+  yanitlanabilir: hayır
+  kaynaklar:
+  - S15
+  - S18
+  - S21
+  - S22
+  - S27
+  - S31
+  - S34
+  - S37
+  - S38
+  ornekler:
+  - b236
+  - b255
+  - b268
+  - b271
+  - b275
+  - b276
+  - b279
+  - b280
+- sira: 9
+  id: katilim
+  kalip: '{secim}''de {birim}de katılım kaçtı / en yüksek-düşük katılımlı {seviye}ler'
+  yuvalar:
+    secim: seçim
+    birim: Türkiye | il | ilçe
+    seviye: il | ilçe
+  agirlik: 18
+  soru_sayisi: 11
+  siklik:
+    yüksek: 2
+    orta: 3
+    düşük: 6
+  yanitlanabilir: kısmen
+  kaynaklar:
+  - S06
+  - S12
+  - S13
+  - S23
+  - S31
+  ornekler:
+  - b146
+  - b147
+  - b148
+  - b149
+  - b153
+  - b154
+  - b156
+  - b157
+  sql_sablonu: SELECT b.ad, b.katilim FROM birim b JOIN secim s ON s.id = b.secim_id WHERE s.kod = {secim} AND b.seviye = {seviye} ORDER
+    BY b.katilim
+- sira: 10
+  id: veri-yok-demografi-anket
+  kalip: '{grup} kime oy verdi / anketlerde kim önde'
+  yuvalar:
+    grup: yaş | cinsiyet | etnik köken | eğitim | anket
+  agirlik: 18
+  soru_sayisi: 8
+  siklik:
+    yüksek: 4
+    orta: 2
+    düşük: 2
+  yanitlanabilir: hayır
+  kaynaklar:
+  - S28
+  - S29
+  - S31
+  ornekler:
+  - b250
+  - b251
+  - b252
+  - b253
+  - b254
+  - b273
+  - b277
+  - b278
+- sira: 11
+  id: zaman-serisi-oran
+  kalip: '{parti}''ın {birim}de {tur} seçimlerindeki oyu yıllara göre'
+  yuvalar:
+    parti: parti | aday
+    birim: Türkiye | il | ilçe
+    tur: genel | yerel | cb | referandum
+  agirlik: 17
+  soru_sayisi: 9
+  siklik:
+    yüksek: 2
+    orta: 4
+    düşük: 3
+  yanitlanabilir: evet
+  kaynaklar:
+  - S01
+  - S04
+  - S06
+  - S08
+  - S09
+  - S11
+  - S12
+  - S17
+  - S18
+  - S20
+  - S21
+  - S32
+  - S38
+  ornekler:
+  - b159
+  - b160
+  - b163
+  - b164
+  - b166
+  - b168
+  - b169
+  - b170
+  sql_sablonu: SELECT s.kod, o.oran FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id WHERE s.tur = {tur}
+    AND b.seviye = {seviye} AND o.aday_parti = {parti} ORDER BY s.yil, s.id
+- sira: 12
+  id: nerede-birinci
+  kalip: '{secim}''de {parti/aday}''ın birinci olduğu {seviye}ler hangileri'
+  yuvalar:
+    secim: seçim
+    parti: parti | aday
+    seviye: il | ilçe
+  agirlik: 16
+  soru_sayisi: 9
+  siklik:
+    yüksek: 1
+    orta: 5
+    düşük: 3
+  yanitlanabilir: evet
+  kaynaklar:
+  - S01
+  - S05
+  - S06
+  - S09
+  - S14
+  - S35
+  - S38
+  ornekler:
+  - b040
+  - b049
+  - b060
+  - b066
+  - b099
+  - b132
+  - b133
+  - b134
+  sql_sablonu: SELECT b.ad FROM birim b JOIN secim s ON s.id = b.secim_id WHERE s.kod = {secim} AND b.seviye = {seviye} AND b.kazanan
+    = {parti}
+- sira: 13
+  id: oy-degisimi
+  kalip: '{parti}''nin oyu {secim1}''den {secim2}''ye ({birim}de) nasıl değişti / en çok nerede düştü'
+  yuvalar:
+    parti: parti
+    secim1: seçim
+    secim2: seçim
+    birim: Türkiye | il | ilçe
+  agirlik: 16
+  soru_sayisi: 10
+  siklik:
+    yüksek: 0
+    orta: 6
+    düşük: 4
+  yanitlanabilir: evet
+  kaynaklar:
+  - S01
+  - S04
+  - S08
+  - S09
+  - S11
+  - S17
+  - S21
+  ornekler:
+  - b176
+  - b177
+  - b178
+  - b179
+  - b180
+  - b182
+  - b183
+  - b185
+  sql_sablonu: SELECT b2.ad, o2.oran - o1.oran AS fark ... JOIN birim b1 ON b1.plaka = b2.plaka ... ORDER BY fark
+- sira: 14
+  id: veri-yok-kapsam
+  kalip: kapsam dışı seçim/oylama (meclis, belde, muhtar, ara seçim, senato, 1950 öncesi, yenileme)
+  yuvalar:
+    secim: seçim
+  agirlik: 16
+  soru_sayisi: 11
+  siklik:
+    yüksek: 1
+    orta: 3
+    düşük: 7
+  yanitlanabilir: hayır
+  kaynaklar:
+  - S06
+  - S07
+  - S12
+  - S19
+  - S20
+  - S22
+  - S23
+  - S30
+  - S37
+  ornekler:
+  - b256
+  - b259
+  - b260
+  - b261
+  - b262
+  - b265
+  - b266
+  - b267
+- sira: 15
+  id: belirsiz-varsayilan
+  kalip: belirsiz soru ('2015', '2023 seçimi', 'Erdoğan 2023', aynı adlı birim) → belgeli varsayılan
+  yuvalar:
+    secim: seçim (belirsiz)
+    birim: ilçe/mahalle adı (belirsiz)
+  agirlik: 15
+  soru_sayisi: 7
+  siklik:
+    yüksek: 2
+    orta: 4
+    düşük: 1
+  yanitlanabilir: evet
+  kaynaklar:
+  - S03
+  - S07
+  - S09
+  - S11
+  - S15
+  - S19
+  - S24
+  - S32
+  - S38
+  ornekler:
+  - b225
+  - b229
+  - b230
+  - b231
+  - b233
+  - b234
+  - b237
+- sira: 16
+  id: veri-yok-sandik-bolge
+  kalip: '{birim} için sandık / seçim bölgesi / ülke bazında sonuç'
+  yuvalar:
+    birim: sandık | seçim bölgesi | yurt dışı ülke
+  agirlik: 15
+  soru_sayisi: 8
+  siklik:
+    yüksek: 2
+    orta: 3
+    düşük: 3
+  yanitlanabilir: hayır
+  kaynaklar:
+  - S10
+  - S13
+  - S19
+  - S25
+  - S26
+  - S29
+  - S34
+  ornekler:
+  - b246
+  - b247
+  - b249
+  - b257
+  - b258
+  - b269
+  - b270
+  - b283
+- sira: 17
+  id: el-degistiren
+  kalip: '{secim1}''den {secim2}''ye el değiştiren {seviye}ler'
+  yuvalar:
+    secim1: seçim
+    secim2: seçim
+    seviye: il | ilçe | mahalle
+    il: il (ilçe/mahalle için)
+  agirlik: 13
+  soru_sayisi: 6
+  siklik:
+    yüksek: 2
+    orta: 3
+    düşük: 1
+  yanitlanabilir: evet
+  kaynaklar:
+  - S01
+  - S05
+  - S23
+  ornekler:
+  - b173
+  - b174
+  - b175
+  - b181
+  - b184
+  - b187
+  sql_sablonu: SELECT b2.ad, b1.kazanan, b2.kazanan FROM birim b2 JOIN secim s2 ON s2.id = b2.secim_id JOIN secim s1 ON s1.kod = {secim1}
+    JOIN birim b1 ON b1.secim_id = s1.id AND b1.seviye = b2.seviye AND b1.geom_id = b2.geom_id WHERE s2.kod = {secim2} AND b2.seviye
+    = {seviye} AND b1.kazanan <> b2.kazanan
+- sira: 18
+  id: tur-karsilastirma
+  kalip: cumhurbaşkanlığı 1. ve 2. tur arasında {aday} oyu / katılım {birim}de nasıl değişti
+  yuvalar:
+    aday: aday
+    birim: il | Türkiye
+  agirlik: 13
+  soru_sayisi: 8
+  siklik:
+    yüksek: 0
+    orta: 5
+    düşük: 3
+  yanitlanabilir: evet
+  kaynaklar:
+  - S12
+  - S13
+  - S15
+  - S27
+  - S31
+  ornekler:
+  - b109
+  - b110
+  - b111
+  - b112
+  - b113
+  - b114
+  - b115
+  - b116
+  sql_sablonu: '... s1.kod = ''2023cb1tur'' ... JOIN secim s2 ON s2.kod = ''2023cb2tur'' ... o2.oran - o1.oran'
+- sira: 19
+  id: capraz
+  kalip: aynı birimde farklı seçimlerin karşılaştırması (aday vs parti, referandum vs cumhurbaşkanlığı, genel vs yerel)
+  yuvalar:
+    secim1: seçim
+    secim2: seçim
+    birim: Türkiye | il | ilçe
+  agirlik: 12
+  soru_sayisi: 8
+  siklik:
+    yüksek: 0
+    orta: 4
+    düşük: 4
+  yanitlanabilir: evet
+  kaynaklar:
+  - S04
+  - S09
+  - S15
+  - S17
+  - S20
+  - S23
+  ornekler:
+  - b209
+  - b210
+  - b211
+  - b212
+  - b213
+  - b214
+  - b215
+  - b216
+  sql_sablonu: '... JOIN secim s2 ON s2.kod = {secim2} JOIN birim b2 ON b2.secim_id = s2.id AND b2.plaka = b1.plaka ...'
+- sira: 20
+  id: takip
+  kalip: 'önceki soruyu değiştiren takip: ''peki {il}?'', ''ya {secim}?'', ''{parti}?'''
+  yuvalar:
+    il: il
+    secim: seçim
+    parti: parti
+  agirlik: 12
+  soru_sayisi: 5
+  siklik:
+    yüksek: 2
+    orta: 3
+    düşük: 0
+  yanitlanabilir: evet
+  kaynaklar:
+  - S07
+  - S14
+  - S38
+  ornekler:
+  - b226
+  - b227
+  - b228
+  - b232
+  - b235
+- sira: 21
+  id: secmen-sayisi
+  kalip: '{secim}''de {birim}de kaç seçmen / sandık vardı'
+  yuvalar:
+    secim: seçim
+    birim: Türkiye | il | ilçe | yurt dışı
+  agirlik: 11
+  soru_sayisi: 6
+  siklik:
+    yüksek: 1
+    orta: 3
+    düşük: 2
+  yanitlanabilir: evet
+  kaynaklar:
+  - S06
+  - S12
+  - S13
+  - S19
+  - S25
+  - S28
+  - S36
+  ornekler:
+  - b150
+  - b151
+  - b152
+  - b155
+  - b165
+  - b204
+  sql_sablonu: SELECT SUM(b.secmen) FROM birim b JOIN secim s ON s.id = b.secim_id WHERE s.kod = {secim} AND b.seviye IN ('il','yurtdisi')
+- sira: 22
+  id: veri-yok-aday
+  kalip: '{secim}''de seçilen vekil / başkan adı, aday listesi, biyografi'
+  yuvalar:
+    secim: seçim
+  agirlik: 10
+  soru_sayisi: 4
+  siklik:
+    yüksek: 2
+    orta: 2
+    düşük: 0
+  yanitlanabilir: hayır
+  kaynaklar:
+  - S05
+  - S10
+  - S11
+  - S14
+  - S30
+  ornekler:
+  - b248
+  - b263
+  - b264
+  - b274
+- sira: 23
+  id: bolge-toplami
+  kalip: '{bolge}de {secim}''de {parti} toplam oyu / kazandığı il sayısı'
+  yuvalar:
+    bolge: coğrafi bölge | deprem bölgesi | Trakya (plaka listesi)
+    secim: seçim
+    parti: parti
+  agirlik: 7
+  soru_sayisi: 4
+  siklik:
+    yüksek: 0
+    orta: 3
+    düşük: 1
+  yanitlanabilir: kısmen
+  kaynaklar:
+  - S04
+  - S09
+  - S26
+  - S31
+  ornekler:
+  - b218
+  - b220
+  - b221
+  - b222
+  sql_sablonu: '... WHERE s.kod = {secim} AND b.seviye = ''il'' AND b.plaka IN ({plakalar})'
+- sira: 24
+  id: zaman-serisi-kazanan
+  kalip: '{birim}de yıllar içinde {tur} seçimlerini kim kazandı'
+  yuvalar:
+    birim: il | ilçe
+    tur: genel | yerel
+  agirlik: 7
+  soru_sayisi: 4
+  siklik:
+    yüksek: 0
+    orta: 3
+    düşük: 1
+  yanitlanabilir: evet
+  kaynaklar:
+  - S06
+  - S14
+  - S30
+  - S38
+  ornekler:
+  - b161
+  - b162
+  - b167
+  - b171
+  sql_sablonu: SELECT s.kod, b.kazanan FROM birim b JOIN secim s ON s.id = b.secim_id WHERE s.tur = {tur} AND b.seviye = {seviye} AND
+    b.plaka = {plaka} ORDER BY s.yil, s.id
+- sira: 25
+  id: rekor
+  kalip: tarihin en yüksek / en düşük / en çok … (tüm seçimler üzerinde sıralama)
+  yuvalar:
+    olcu: oy oranı | oy | il sayısı | parti sayısı
+  agirlik: 5
+  soru_sayisi: 4
+  siklik:
+    yüksek: 0
+    orta: 1
+    düşük: 3
+  yanitlanabilir: kısmen
+  kaynaklar:
+  - S10
+  - S18
+  - S21
+  ornekler:
+  - b199
+  - b201
+  - b202
+  - b205

@@ -1,0 +1,13 @@
+{"secim": "2098senato", "tur": "senato", "aciklama": "Test: Cumhuriyet Senatosu üye seçimi",
+ "kapsam": {"senator": {"bulunan": 1, "beklenen": 1, "durum": "tam", "not": null}},
+ "iller": [{"il": "Adana", "plaka": 1, "gecerliOy": 100, "secmen": null,
+            "adaylar": [{"parti": "CHP", "oy": 60}, {"parti": "AK Parti", "oy": 30},
+                        {"parti": null, "kisaltma": "BĞMZ", "partiAdi": "Bir Kişi", "oy": 10}]}],
+ "ilceOylariTuik": {"iller": [{"il": "Adana", "plaka": 1, "ilceler": [
+   {"ilce": "Aladağ", "geomId": "TR-D-01-001", "secmen": 50, "oyKullanan": 45, "muteber": 40,
+    "oy": {"CHP": 25, "AK Parti": 10}, "Bağımsız": 5, "dogrulanamayanAlanlar": ["secmen"]}]}]},
+ "ilceBirincileri": [
+   {"il": "Adana", "plaka": 1, "ilce": "Aladağ", "birinciParti": "CHP"},
+   {"il": "Adana", "plaka": 1, "ilce": "CEYHAN", "birinciParti": "AK Parti"},
+   {"il": "Adana", "plaka": 1, "ilce": "Olmayan İlçe", "birinciParti": "CHP"}],
+ "secilenler": [{"ad": "Senatör Bir", "plaka": 1, "il": "Adana", "parti": "CHP", "partiAdiKaynakta": "CHP"}]}

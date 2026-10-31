@@ -98,6 +98,8 @@ Yan etkiler: bu dört seçimde mahallede kazananı "Diğer" görünen kayıt kal
 
 **21 Ekim 2026 — bütün seçimler ve eski ilçeler:** 2011 genel, 2010 ve 2017 halkoylaması, 2014 ve 2018 cumhurbaşkanlığı da YSK'den muhtarlık düzeyinde yenilendi; artık 2009–2024 arasındaki 15 seçimin hepsi aynı yöntemle. Sonradan bölünen eski ilçeler (2009 Kahramanmaraş Merkez = Dulkadiroğlu + Onikişubat gibi) genel seçimlerde kullanılan tarihsel ilçe kaydı üzerinden halef ilçelerin sınırlarıyla çiziliyor. Haritaya bağlanan seçmen: 2009 %87,3; 2010 ve 2011 %88,3; 2014–2024 %93,5–94,3. Mahallede kazananı "Diğer" görünen kayıt kalmadı (3.089 → 0).
 
+**31 Ekim 2026 — harita geometrisi:** Geometri denetiminin bulduğu sorunlar düzeltildi (ayrıntı: [`HARITA_DUZELTME_2026-10-31.md`](HARITA_DUZELTME_2026-10-31.md)). Başka ilçede çizilen mahalleler (Mazgirt Ayvatlı Kayseri'de, Bigadiç Camii Eskişehir'de gibi) artık alınmıyor: 2 km'den uzak çizilen poligon 84 → 58; kalanlarda TKGM de alanı aynı yerde gösteriyor, yani ilçe sınırı yanlış. Bursa belediye verisinde Harmancık ile Keles'in yer değiştirdiği bulundu ve düzeltildi. Üst üste çizilen TKGM birimleri ayrıldı (2.653 çift → 10), aynı sınırı paylaşan muhtarlıklar tek kayıtta toplandı, bozuk ve kullanılmayan poligonlar onarıldı ya da silindi. Yanlış sınırları kaldırılan muhtarlıklar boş kaldığı için haritaya bağlanan seçmen 2023 genelde %94,61'den %94,56'ya indi (27.759 seçmen). Tillo (eski adı Aydınlar) 1991'den beri bütün seçimlerde kendi sonucuyla görünüyor; eski raporlardaki "Tillo eksik" notları güncellendi.
+
 ## Eylem planı
 
 Yedi iş var; ilk üçü yüksek öncelikli. Süreler tahmini.

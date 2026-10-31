@@ -221,6 +221,14 @@ Yukarıdaki "hâlâ çözülemeyen" listesindeki her madde tek tek araştırıld
   sadece 6 ilçe var (Baykan/Eruh/Kurtalan/Merkez/Pervari/Şirvan),
   Aydınlar/Tillo hiç yok. Kaynak haritanın kendisinde eksik bir poligon —
   yeni geometri bulunup eklenmadıkça çözülemez.
+  *31.10.2026 güncellemesi: çözüldü.* İlçe katmanında artık `TR-D-56-007`
+  (Tillo) poligonu var ve 1991'den beri bütün seçim kayıtları ona bağlı
+  (1991–2007 "Aydınlar"/"Aydınlar (Tillo)", 2009'dan beri "Tillo"; YSK
+  2009–2024 kayıtları `duzeltmeKaynagi` ile sandık toplamından). İlçe 3647
+  sayılı Kanunla (RG 18.05.1990, sayı 20522) Merkez'den "Aydınlar" adıyla
+  kuruldu; eski adı Tillo, TBMM'nin 30.10.2013'te kabul ettiği kanunla geri
+  verildi. 1990 öncesi seçimlerde alan Merkez ile birleşim poligonunda
+  (`HISTK-56-005-5bd2a1`).
 - **Kahramanmaraş/Çağlayancerit + Samsun/Ondokuzmayıs (TÜM yıllarda sıfır)
   — kök neden bulundu, ÇÖZÜLDÜ.** `acikveri-il-ilce-listesi.json`
   incelendiğinde YSK'nin KENDİ ilçe listesinde bu 2 ilçe için İKİŞER farklı

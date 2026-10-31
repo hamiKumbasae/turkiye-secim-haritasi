@@ -1,0 +1,16 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  application:
+    name: gateway
+
+gecit:
+  election-api-url: ${ELECTION_API_URL:http://localhost:8081}
+  izinli-kokenler: ${IZINLI_KOKENLER:https://hamikumbasae.github.io}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

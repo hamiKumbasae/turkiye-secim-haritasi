@@ -1,0 +1,103 @@
+# Shared settings. Pick a database profile: `local` (default, 127.0.0.1) or `pi` (Raspberry Pi, 192.168.1.2).
+# Credentials always come from the environment: DB_USER (default hami) and DB_PASSWORD.
+spring:
+  application:
+    name: election-api-lite
+  profiles:
+    default: local
+  datasource:
+    url: jdbc:mariadb://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:secim}?connectTimeout=5000
+    username: ${DB_USER:hami}
+    password: ${DB_PASSWORD:}
+    hikari:
+      # Read-only, low-traffic API in front of a small database server: keep the pool small.
+      maximum-pool-size: ${DB_POOL_SIZE:5}
+      minimum-idle: 1
+      connection-timeout: 5000
+      read-only: true
+      pool-name: secim-pool
+      # Do not fail startup when the database is down; /actuator/health reports it instead.
+      initialization-fail-timeout: -1
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none   # the schema belongs to scripts/db_yukle.py; never touch it
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    properties:
+      hibernate:
+        boot.allow_jdbc_metadata_access: false
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+  mvc:
+    problemdetails:
+      enabled: true
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  port: ${PORT:8080}
+  compression:
+    enabled: true
+    mime-types: application/json,application/geo+json,application/problem+json
+    min-response-size: 2KB
+  shutdown: graceful
+
+app:
+  cors:
+    allowed-origins:
+      - https://hamikumbasae.github.io
+      - http://localhost:5173
+      - http://localhost:8000
+  cache:
+    ttl: 12h
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  default-produces-media-type: application/json
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,caches,metrics
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  info:
+    build:
+      enabled: true
+    java:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mariadb://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:secim}?connectTimeout=5000
+
+---
+# Raspberry Pi 3 on the home network (MariaDB 11.8). The API runs on the Mac, the Pi only serves SQL.
+spring:
+  config:
+    activate:
+      on-profile: pi
+  datasource:
+    url: jdbc:mariadb://${DB_HOST:192.168.1.2}:${DB_PORT:3306}/${DB_NAME:secim}?connectTimeout=5000
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:3}

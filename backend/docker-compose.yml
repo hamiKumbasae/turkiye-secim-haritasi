@@ -1,0 +1,87 @@
+# Türkiye Seçim Haritası — backend
+#   cd backend && cp .env.example .env && docker compose up --build
+# Dışarıya yalnız gateway açılır (varsayılan http://localhost:8080). Mevcut GitHub Pages sitesi bundan bağımsızdır.
+name: secim-haritasi
+
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?backend/.env dosyasını oluşturun (cp .env.example .env)}
+      MYSQL_DATABASE: ${DB_NAME:-secimler}
+      MYSQL_USER: ${DB_USER:?backend/.env eksik}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?backend/.env eksik}
+      DB_READ_USER: ${DB_READ_USER:?backend/.env eksik}
+      DB_READ_PASSWORD: ${DB_READ_PASSWORD:?backend/.env eksik}
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_as_cs"]
+    volumes:
+      - mysql-verisi:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p\"$$MYSQL_ROOT_PASSWORD\" --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 30s
+
+  # Tek seferlik: Flyway şemayı kurar, data/normalized'ı yükler (ilk seferde 3-5 dk; mahalle sonuçları dahil),
+  # tutarlılık bulgularını logs/'a yazar, çıkar. Veri değişmediyse sonraki açılışlarda yükleme atlanır.
+  data-loader:
+    build:
+      context: .
+      args:
+        MODUL: data-loader
+    environment:
+      DB_HOST: mysql
+      DB_NAME: ${DB_NAME:-secimler}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      VERI_DIZINI: /veri/normalized
+      KAYNAKLAR_DOSYASI: /veri/sources.yml
+      MAHALLE_GEO: /veri/mahalle_geo.json
+      LOG_DIZINI: /logs
+      # Kaynak son yüklemeden beri değişmediyse yükleme atlanır; yine de yüklemek için: ZORLA_YUKLE=true
+      ZORLA_YUKLE: ${ZORLA_YUKLE:-false}
+    volumes:
+      - ../data/normalized:/veri/normalized:ro
+      - ../sources.yml:/veri/sources.yml:ro
+      - ../geo/normalized/mahalle_geo.json:/veri/mahalle_geo.json:ro
+      - ./logs:/logs
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: "no"
+
+  election-api:
+    build:
+      context: .
+      args:
+        MODUL: election-api
+    environment:
+      DB_HOST: mysql
+      DB_NAME: ${DB_NAME:-secimler}
+      DB_READ_USER: ${DB_READ_USER}
+      DB_READ_PASSWORD: ${DB_READ_PASSWORD}
+    expose:
+      - "8081"
+    depends_on:
+      data-loader:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  gateway:
+    build:
+      context: .
+      args:
+        MODUL: gateway
+    environment:
+      ELECTION_API_URL: http://election-api:8081
+      IZINLI_KOKENLER: ${IZINLI_KOKENLER:-https://hamikumbasae.github.io}
+    ports:
+      - "${GATEWAY_PORT:-8080}:8080"
+    depends_on:
+      - election-api
+    restart: unless-stopped
+
+volumes:
+  mysql-verisi:

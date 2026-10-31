@@ -1,0 +1,724 @@
+{
+ "g01": {
+  "columns": [
+   "oy"
+  ],
+  "rows": [
+   [
+    19127097
+   ]
+  ]
+ },
+ "g02": {
+  "columns": [
+   "aday_parti",
+   "oran"
+  ],
+  "rows": [
+   [
+    "AK Parti",
+    35.23
+   ],
+   [
+    "CHP",
+    25.12
+   ],
+   [
+    "MHP",
+    9.96
+   ],
+   [
+    "İYİ Parti",
+    9.61
+   ],
+   [
+    "YEŞİL SOL",
+    8.83
+   ]
+  ]
+ },
+ "g03": {
+  "columns": [
+   "aday_parti",
+   "vekil"
+  ],
+  "rows": [
+   [
+    "AK Parti",
+    268
+   ],
+   [
+    "CHP",
+    169
+   ],
+   [
+    "YEŞİL SOL",
+    61
+   ],
+   [
+    "MHP",
+    50
+   ],
+   [
+    "İYİ Parti",
+    43
+   ],
+   [
+    "YENİDEN REFAH",
+    5
+   ],
+   [
+    "TİP",
+    4
+   ]
+  ]
+ },
+ "g04": {
+  "columns": [
+   "vekil"
+  ],
+  "rows": [
+   [
+    31
+   ]
+  ]
+ },
+ "g05": {
+  "columns": [
+   "aday_parti",
+   "oran"
+  ],
+  "rows": [
+   [
+    "CHP",
+    41.75
+   ]
+  ]
+ },
+ "g06": {
+  "columns": [
+   "aday_parti",
+   "oy",
+   "oran"
+  ],
+  "rows": [
+   [
+    "Kemal Kılıçdaroğlu",
+    25504734,
+    47.82
+   ],
+   [
+    "Recep Tayyip Erdoğan",
+    27834701,
+    52.18
+   ]
+  ]
+ },
+ "g07": {
+  "columns": [
+   "il_sayisi"
+  ],
+  "rows": [
+   [
+    29
+   ]
+  ]
+ },
+ "g08": {
+  "columns": [
+   "il",
+   "oran"
+  ],
+  "rows": [
+   [
+    "Tunceli",
+    82.81
+   ],
+   [
+    "Şırnak",
+    76.3
+   ],
+   [
+    "Hakkari",
+    72.11
+   ],
+   [
+    "Diyarbakır",
+    71.66
+   ],
+   [
+    "Kırklareli",
+    68.42
+   ]
+  ]
+ },
+ "g09": {
+  "columns": [
+   "il",
+   "oran"
+  ],
+  "rows": [
+   [
+    "Tunceli",
+    80.41
+   ],
+   [
+    "Şırnak",
+    71.7
+   ],
+   [
+    "Kırklareli",
+    71.33
+   ],
+   [
+    "Edirne",
+    70.5
+   ],
+   [
+    "Muğla",
+    69.33
+   ]
+  ]
+ },
+ "g10": {
+  "columns": [
+   "evet_orani"
+  ],
+  "rows": [
+   [
+    51.4
+   ]
+  ]
+ },
+ "g11": {
+  "columns": [
+   "il_sayisi"
+  ],
+  "rows": [
+   [
+    62
+   ]
+  ]
+ },
+ "g12": {
+  "columns": [
+   "kod",
+   "oran"
+  ],
+  "rows": [
+   [
+    "2002",
+    37.2
+   ],
+   [
+    "2007",
+    45.2
+   ],
+   [
+    "2011",
+    49.35
+   ],
+   [
+    "2015Haziran",
+    40.91
+   ],
+   [
+    "2015Kasim",
+    48.75
+   ],
+   [
+    "2018",
+    41.74
+   ],
+   [
+    "2023",
+    35.43
+   ]
+  ]
+ },
+ "g13": {
+  "columns": [
+   "kod",
+   "kazanan"
+  ],
+  "rows": [
+   [
+    "1950",
+    "DP"
+   ],
+   [
+    "1954",
+    "DP"
+   ],
+   [
+    "1957",
+    "CHP"
+   ],
+   [
+    "1961",
+    "CHP"
+   ],
+   [
+    "1965",
+    "AP"
+   ],
+   [
+    "1969",
+    "AP"
+   ],
+   [
+    "1973",
+    "CHP"
+   ],
+   [
+    "1977",
+    "CHP"
+   ],
+   [
+    "1983",
+    "ANAP"
+   ],
+   [
+    "1987",
+    "ANAP"
+   ],
+   [
+    "1991",
+    "SHP"
+   ],
+   [
+    "1995",
+    "ANAP"
+   ],
+   [
+    "1999",
+    "DSP"
+   ],
+   [
+    "2002",
+    "AK Parti"
+   ],
+   [
+    "2007",
+    "AK Parti"
+   ],
+   [
+    "2011",
+    "AK Parti"
+   ],
+   [
+    "2015Haziran",
+    "AK Parti"
+   ],
+   [
+    "2015Kasim",
+    "AK Parti"
+   ],
+   [
+    "2018",
+    "AK Parti"
+   ],
+   [
+    "2023",
+    "AK Parti"
+   ]
+  ]
+ },
+ "g14": {
+  "columns": [
+   "kod",
+   "toplam_sandalye"
+  ],
+  "rows": [
+   [
+    "1950",
+    487
+   ],
+   [
+    "1954",
+    541
+   ],
+   [
+    "1957",
+    610
+   ],
+   [
+    "1961",
+    450
+   ],
+   [
+    "1965",
+    450
+   ],
+   [
+    "1969",
+    450
+   ],
+   [
+    "1973",
+    450
+   ],
+   [
+    "1977",
+    450
+   ],
+   [
+    "1983",
+    399
+   ],
+   [
+    "1987",
+    450
+   ],
+   [
+    "1991",
+    450
+   ],
+   [
+    "1995",
+    550
+   ],
+   [
+    "1999",
+    550
+   ],
+   [
+    "2002",
+    550
+   ],
+   [
+    "2007",
+    550
+   ],
+   [
+    "2011",
+    550
+   ],
+   [
+    "2015Haziran",
+    550
+   ],
+   [
+    "2015Kasim",
+    550
+   ],
+   [
+    "2018",
+    600
+   ],
+   [
+    "2023",
+    600
+   ]
+  ]
+ },
+ "g15": {
+  "columns": [
+   "il",
+   "katilim"
+  ],
+  "rows": [
+   [
+    "Düzce",
+    92.26
+   ],
+   [
+    "Amasya",
+    92.15
+   ],
+   [
+    "Manisa",
+    91.98
+   ],
+   [
+    "Bilecik",
+    91.97
+   ],
+   [
+    "Kütahya",
+    91.97
+   ]
+  ]
+ },
+ "g16": {
+  "columns": [
+   "il",
+   "katilim"
+  ],
+  "rows": [
+   [
+    "Ağrı",
+    72.84
+   ]
+  ]
+ },
+ "g17": {
+  "columns": [
+   "katilim",
+   "oran"
+  ],
+  "rows": [
+   [
+    52.04,
+    59.57
+   ]
+  ]
+ },
+ "g18": {
+  "columns": [
+   "il_sayisi"
+  ],
+  "rows": [
+   [
+    35
+   ]
+  ]
+ },
+ "g19": {
+  "columns": [
+   "il"
+  ],
+  "rows": [
+   [
+    "Adıyaman"
+   ],
+   [
+    "Afyonkarahisar"
+   ],
+   [
+    "Balıkesir"
+   ],
+   [
+    "Bursa"
+   ],
+   [
+    "Denizli"
+   ],
+   [
+    "Giresun"
+   ],
+   [
+    "Kırıkkale"
+   ],
+   [
+    "Kilis"
+   ],
+   [
+    "Uşak"
+   ],
+   [
+    "Zonguldak"
+   ]
+  ]
+ },
+ "g20": {
+  "columns": [
+   "kazanan",
+   "ilce_sayisi"
+  ],
+  "rows": [
+   [
+    "CHP",
+    26
+   ],
+   [
+    "AK Parti",
+    13
+   ]
+  ]
+ },
+ "g21": {
+  "columns": [
+   "aday_parti",
+   "oran"
+  ],
+  "rows": [
+   [
+    "AK Parti",
+    39.95
+   ],
+   [
+    "CHP",
+    26.3
+   ],
+   [
+    "İYİ Parti",
+    7.55
+   ],
+   [
+    "MHP",
+    6.24
+   ],
+   [
+    "YEŞİL SOL",
+    5.43
+   ]
+  ]
+ },
+ "g22": {
+  "columns": [
+   "oran"
+  ],
+  "rows": [
+   [
+    80.6
+   ]
+  ]
+ },
+ "g23": {
+  "columns": [
+   "ilce",
+   "secmen"
+  ],
+  "rows": [
+   [
+    "Esenyurt",
+    643366
+   ],
+   [
+    "Küçükçekmece",
+    572709
+   ],
+   [
+    "Pendik",
+    547235
+   ],
+   [
+    "Ümraniye",
+    534091
+   ],
+   [
+    "Bağcılar",
+    517237
+   ]
+  ]
+ },
+ "g24": {
+  "columns": [
+   "mahalle",
+   "oran"
+  ],
+  "rows": [
+   [
+    "FİNANSKENT MAH.",
+    73.28
+   ],
+   [
+    "TATLISU MAH.",
+    71.61
+   ],
+   [
+    "SİTE MAH.",
+    69.67
+   ]
+  ]
+ },
+ "g25": {
+  "columns": [
+   "mahalle",
+   "ilce"
+  ],
+  "rows": [
+   [
+    "BAĞCILAR MAH.",
+    "Bağlar"
+   ]
+  ]
+ },
+ "g26": {
+  "columns": [
+   "kazanan",
+   "mahalle_sayisi"
+  ],
+  "rows": [
+   [
+    "AK Parti",
+    22
+   ],
+   [
+    "CHP",
+    13
+   ]
+  ]
+ },
+ "g27": {
+  "columns": [
+   "il",
+   "oran"
+  ],
+  "rows": [
+   [
+    "Şırnak",
+    64.43
+   ]
+  ]
+ },
+ "g28": {
+  "columns": [
+   "kod",
+   "hdp_orani"
+  ],
+  "rows": [
+   [
+    "2015Haziran",
+    13.13
+   ],
+   [
+    "2015Kasim",
+    10.76
+   ]
+  ]
+ },
+ "g29": {
+  "columns": [
+   "vekil"
+  ],
+  "rows": [
+   [
+    211
+   ]
+  ]
+ },
+ "g30": {
+  "columns": [
+   "il",
+   "oran"
+  ],
+  "rows": [
+   [
+    "Kırklareli",
+    58.44
+   ]
+  ]
+ },
+ "g31": {
+  "columns": [
+   "oran"
+  ],
+  "rows": [
+   [
+    5.17
+   ]
+  ]
+ },
+ "g32": {
+  "columns": [
+   "aday_parti",
+   "vekil"
+  ],
+  "rows": [
+   [
+    "AK Parti",
+    4
+   ],
+   [
+    "CHP",
+    1
+   ],
+   [
+    "İYİ Parti",
+    1
+   ]
+  ]
+ }
+}

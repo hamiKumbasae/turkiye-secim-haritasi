@@ -366,7 +366,7 @@ beldesi) haritada ayrıca çizilmez, tabloda kalır.
 - **2010 referandumu ve 2011 genel seçimi**: kaynak, sonuçları 2012 ve sonrasında
   kurulan 22 ilçeye göre yeniden toplamış (`kaynakSonrakiIlcelereGoreToplamis`);
   idari çelişki değil.
-- **Tillo (Siirt)**: 2007'den sonraki 12 seçimde satırı yok (veri boşluğu).
+- **Tillo (Siirt)**: ~~2007'den sonraki 12 seçimde satırı yok (veri boşluğu).~~ 31.10.2026: 2009–2024 YSK kayıtları eklendi; 1991'den beri her seçimde satırı var.
 - İçişleri listesi yalnızca 2018'de var olan birimleri içerir; kaldırılmış
   ilçeler (ör. Eminönü) ve kaldırılmış adlar bu kaynakta yok.
 
