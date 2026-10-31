@@ -22,7 +22,7 @@
   :root {
     --paper: #161514; --card: #1e1d1b; --ink: #f1ece4; --ink-2: #b9b2a8; --ink-3: #847d74;
     --line: #2f2c29; --accent: #e5534b; --accent-soft: #3a1f1d; --bar: #5c5247;
-    --code-bg: #0f0e0d; --code-ink: #efe8dd; color-scheme: dark;
+    --code-bg: #0f0e0d; --code-ink: #efe8dd; --ok: #5cb784; color-scheme: dark;
   }
 }
 
@@ -49,6 +49,13 @@ h1 { font: 600 1.35rem/1.1 var(--serif); margin: 0; letter-spacing: -0.01em; }
   display: inline-flex; align-items: center; gap: 7px; font-size: .78rem; color: var(--ink-2);
   border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; white-space: nowrap; background: var(--card);
 }
+.top-right { display: flex; align-items: center; gap: 8px; flex: none; }
+.mode select {
+  font: inherit; font-size: .78rem; color: var(--ink-2); background: var(--card); border: 1px solid var(--line);
+  border-radius: 999px; padding: 4px 8px; cursor: pointer;
+}
+.meta .via { color: var(--ink-2); }
+.meta .via.tpl { color: var(--ok); font-weight: 600; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-3); }
 .dot.ok { background: var(--ok); } .dot.demo { background: var(--warn); } .dot.err { background: var(--accent); }
 
@@ -134,5 +141,6 @@ textarea:focus { border-color: var(--ink-3); outline: none; }
 @media (max-width: 560px) {
   .sub { display: none; }
   .msg.user { max-width: 92%; }
+  .mode select { max-width: 120px; }
   .status span#status-text { max-width: 110px; overflow: hidden; text-overflow: ellipsis; }
 }

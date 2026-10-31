@@ -152,7 +152,7 @@ for k, r in enumerate(rows, 1):
     rows[k - 1] = {key: r[key] for key in order if r.get(key) is not None}
 
 head = """# Soru kalıpları: soru bankasındaki (soru_bankasi.yaml) soruların parametreli kalıplara ayrılmış hali.
-# Gelecekteki bir şablon katmanı için veri dosyasıdır; şablon motoru henüz yok. Bkz. docs/SORU_KALIPLARI.md.
+# Şablon katmanının (secim_chatbot/templates.py) kaynak listesidir. Bkz. docs/SORU_KALIPLARI.md.
 # sira: ağırlığa göre (ağırlık = kalıba düşen soruların sıklık puanı toplamı; yüksek 3, orta 2, düşük 1).
 # yuvalar: kalıptaki {yuva} adları ve beklenen değer türü. sql_sablonu: {yuva}'lar tırnaklı değerle doldurulur;
 # '...' içeren şablonlar yalnız iskelettir (tam sorgu için ornekler'deki gold SQL'e bakın).

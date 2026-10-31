@@ -18,8 +18,18 @@
         <p class="sub">Türkiye seçimleri 1950–2024 · il, ilçe, mahalle · doğal dilde soru → SQL</p>
       </div>
     </div>
-    <div class="status" id="status" title="Model ve veritabanı durumu">
-      <span class="dot" id="status-dot"></span><span id="status-text">bağlanıyor…</span>
+    <div class="top-right">
+      <label class="mode" id="mode-wrap" hidden title="Yanıt yolu: şablon (dil modelsiz), dil modeli ya da önce şablon">
+        <span class="sr-only">Mod</span>
+        <select id="mode">
+          <option value="hybrid">şablon + model</option>
+          <option value="template">yalnız şablon</option>
+          <option value="llm">yalnız model</option>
+        </select>
+      </label>
+      <div class="status" id="status" title="Model ve veritabanı durumu">
+        <span class="dot" id="status-dot"></span><span id="status-text">bağlanıyor…</span>
+      </div>
     </div>
   </header>
 

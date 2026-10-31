@@ -1,7 +1,7 @@
 "use strict";
 (() => {
   const $ = (s, el = document) => el.querySelector(s);
-  const chat = $("#chat"), form = $("#composer"), input = $("#q"), send = $("#send");
+  const chat = $("#chat"), form = $("#composer"), input = $("#q"), send = $("#send"), modeSel = $("#mode");
   const history = []; // last turns, sent back for follow-up questions
   const fmtInt = new Intl.NumberFormat("tr-TR");
   const fmtDec = new Intl.NumberFormat("tr-TR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -16,9 +16,17 @@
   // ---------------------------------------------------------------- status + examples
   fetch("/api/health").then(r => r.json()).then(h => {
     const dot = $("#status-dot"), txt = $("#status-text");
+    const modes = h.modes || [];
+    if (modes.length > 1) {
+      [...modeSel.options].forEach(o => { o.hidden = o.disabled = !modes.includes(o.value); });
+      let saved = null; try { saved = localStorage.getItem("secim-mode"); } catch (e) { /* storage blocked */ }
+      modeSel.value = modes.includes(saved) ? saved : h.mode;
+      $("#mode-wrap").hidden = false;
+    }
+    if (!h.model) { dot.className = "dot ok"; txt.textContent = "şablon"; if (!h.db) { dot.className = "dot err"; txt.textContent = "veritabanı yok"; } return; }
     if (!h.db) { dot.className = "dot err"; txt.textContent = "veritabanı yok"; return; }
     if (h.demo) { dot.className = "dot demo"; txt.textContent = "demo modu"; $("#status").title = "Gerçek model bağlı değil: yalnız örnek sorular yanıtlanır."; }
-    else { dot.className = "dot ok"; txt.textContent = h.model.replace("anthropic:", ""); }
+    else { dot.className = "dot ok"; txt.textContent = h.model.replace("anthropic:", "").replace("ollama:", ""); }
   }).catch(() => { $("#status-dot").className = "dot err"; $("#status-text").textContent = "sunucu yok"; });
 
   fetch("/api/examples").then(r => r.json()).then(({ examples }) => {
@@ -98,8 +106,13 @@
     const meta = $(".meta", node), bits = [];
     if (data.status === "ok") bits.push(`${data.rows.length} satır`);
     bits.push(data.elapsed_ms < 1000 ? `${data.elapsed_ms} ms` : `${(data.elapsed_ms / 1000).toLocaleString("tr-TR", { maximumFractionDigits: 1 })} sn`);
-    if (data.model) bits.push(data.model === "fake" ? "demo" : data.model.replace("anthropic:", ""));
-    bits.forEach(b => { const s = document.createElement("span"); s.textContent = b; meta.appendChild(s); });
+    const by = data.answered_by || (data.route === "none" ? "" : data.model);
+    if (by) bits.push(by === "fake" ? "demo" : by.replace("anthropic:", "").replace("ollama:", ""));
+    bits.forEach((b, i) => {
+      const s = document.createElement("span"); s.textContent = b;
+      if (b === by || (by === "fake" && b === "demo")) { s.className = data.route === "template" ? "via tpl" : "via"; s.title = data.route === "template" ? `Dil modeli kullanılmadı (şablon: ${data.template})` : "SQL'i dil modeli yazdı"; }
+      meta.appendChild(s);
+    });
     if (data.status === "ok" && data.attempts.length) {
       const s = document.createElement("span"); s.className = "fix";
       s.textContent = "ilk sorgu hata verdi, model düzeltti"; meta.appendChild(s);
@@ -137,7 +150,7 @@
     try {
       const res = await fetch("/api/ask", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, history: history.slice(-3) }),
+        body: JSON.stringify({ question, history: history.slice(-3), ...(modeSel && !$("#mode-wrap").hidden ? { mode: modeSel.value } : {}) }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.detail || res.statusText);
@@ -156,5 +169,6 @@
     if (e.key === "Enter" && !e.shiftKey && !e.isComposing) { e.preventDefault(); ask(input.value); }
   });
   form.addEventListener("submit", (e) => { e.preventDefault(); ask(input.value); });
+  modeSel?.addEventListener("change", () => { try { localStorage.setItem("secim-mode", modeSel.value); } catch (e) { /* ignore */ } });
   window.secimAsk = ask; // handy for demos / screenshots
 })();

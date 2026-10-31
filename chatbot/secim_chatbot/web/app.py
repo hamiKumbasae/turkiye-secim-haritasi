@@ -2,6 +2,7 @@
 
     uvicorn secim_chatbot.web.app:app --port 8000          # real model (ANTHROPIC_API_KEY)
     LLM_PROVIDER=fake uvicorn secim_chatbot.web.app:app      # demo mode, no key needed
+    CHATBOT_MODE=hybrid LLM_PROVIDER=ollama uvicorn secim_chatbot.web.app:app   # templates + local model
 """
 from __future__ import annotations
 
@@ -13,6 +14,8 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 from .. import build_pipeline, get_settings
@@ -33,6 +36,7 @@ class HistoryItem(BaseModel):
 class AskRequest(BaseModel):
     question: str = Field(min_length=1, max_length=1000)
     history: list[HistoryItem] = Field(default_factory=list, max_length=10)
+    mode: Literal["llm", "template", "hybrid"] | None = None   # per-request override of CHATBOT_MODE
 
 
 class RateLimiter:
@@ -67,7 +71,10 @@ def create_app(pipeline: ChatPipeline | None = None, rate_per_minute: int = 20) 
     def health():
         pipe = get_pipeline()
         db_ok = pipe.db.ping() if hasattr(pipe.db, "ping") else True
-        return {"ok": True, "model": pipe.llm.name, "demo": pipe.llm.name == "fake", "db": db_ok}
+        model = pipe.llm.name if pipe.llm is not None else ""
+        modes = [m for m in ("hybrid", "template", "llm")
+                 if (m == "llm" or pipe.templates is not None) and (m == "template" or pipe.llm is not None)]
+        return {"ok": True, "model": model, "demo": model == "fake", "db": db_ok, "mode": pipe.mode, "modes": modes}
 
     @app.get("/api/examples")
     def examples():
@@ -79,8 +86,8 @@ def create_app(pipeline: ChatPipeline | None = None, rate_per_minute: int = 20) 
         if not limiter.check(client):
             raise HTTPException(status_code=429, detail="Çok fazla istek; bir dakika sonra tekrar deneyin.")
         history = [Turn(question=h.question, sql=h.sql, answer=h.answer) for h in req.history]
-        resp = get_pipeline().ask(req.question, history)
-        log.info("ask status=%s ms=%s q=%r", resp.status, resp.elapsed_ms, req.question[:80])
+        resp = get_pipeline().ask(req.question, history, mode=req.mode)
+        log.info("ask status=%s route=%s ms=%s q=%r", resp.status, resp.route, resp.elapsed_ms, req.question[:80])
         return resp.to_dict()
 
     @app.get("/")

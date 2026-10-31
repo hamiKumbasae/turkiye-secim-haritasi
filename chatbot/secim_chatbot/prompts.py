@@ -240,3 +240,60 @@ EXAMPLE_QUESTIONS = [
     "2023 genel seçiminde partiler kaçar milletvekili çıkardı?",
     "2023 ikinci turda Ümraniye'de Kılıçdaroğlu'nun en yüksek oy oranı aldığı 3 mahalle hangileri?",
 ]
+
+
+# --------------------------------------------------------------------------- local (small) models
+# A 7B/14B model gets a much shorter prompt: the schema without commentary, the pitfalls that cause
+# most wrong answers, a strict JSON output format, and k retrieved examples (fewshot.py) as chat turns.
+SCHEMA_COMPACT = """\
+TABLOLAR (MariaDB, harmanlama utf8mb4_turkish_ci, metin karşılaştırması büyük/küçük harf duyarsız):
+secim(id, kod, tur['genel'|'yerel'|'cumhurbaskanligi'|'referandum'], ad, yil, toplam_sandalye)
+birim(id, secim_id->secim.id, seviye['il'|'ilce'|'mahalle'|'yurtdisi'], plaka, ad, geom_id, ust_geom_id,
+      secmen, gecerli_oy, sandik, katilim, kazanan, toplam_vekil)
+oy(birim_id->birim.id, aday_parti, oy, oran, vekil, aday)
+Standart birleştirme: FROM oy o JOIN birim b ON b.id = o.birim_id JOIN secim s ON s.id = b.secim_id
+"""
+
+PITFALLS_COMPACT = """\
+KURALLAR:
+1. Seçimi s.kod ile seç. Kodlar: genel '1950'…'2011','2015Haziran','2015Kasim','2018','2023';
+   yerel '<yıl>yerel' (2024yerel); cumhurbaşkanlığı '2014cb','2018cb','2023cb1tur','2023cb2tur';
+   referandum '<yıl>referandum' (2017referandum). Parti sorusu → genel seçim; aday adı → cumhurbaşkanlığı;
+   "ikinci tur" → '2023cb2tur'.
+2. Türkiye satırı YOK. Türkiye geneli = b.seviye IN ('il','yurtdisi') toplamı. il/ilçe/mahalle satırlarını
+   birlikte toplama. Ulusal oran = 100*SUM(partinin oyu)/SUM(tüm oylar), payda partiyle filtrelenmemeli:
+   ROUND(100*SUM(CASE WHEN o.aday_parti='CHP' THEN o.oy ELSE 0 END)/SUM(o.oy),2).
+3. Tek il/ilçe/mahallede o.oran hazır yüzdedir. İl: b.seviye='il' AND b.plaka=<plaka> (İstanbul 34, Ankara 6,
+   İzmir 35). İlçe: b.seviye='ilce' AND b.plaka=<il plakası> AND b.ad='Kadıköy' (ilçe adları iller arasında tekrar eder).
+4. Mahalle → ilçe: JOIN birim i ON i.secim_id=m.secim_id AND i.seviye='ilce' AND i.geom_id=m.ust_geom_id.
+   Mahalle verisi yalnız 2009 sonrası.
+5. Parti yazımı: 'AK Parti','CHP','MHP','İYİ Parti','HDP'(2015–2019),'YEŞİL SOL'(2023),'DEM Parti'(2024),
+   'YENİDEN REFAH','ZP','SP','DSP','ANAP','DYP','RP','Bağımsız'. Adaylar tam adla: 'Recep Tayyip Erdoğan',
+   'Kemal Kılıçdaroğlu','Muharrem İnce','Sinan Oğan','Selahattin Demirtaş'. Referandum: 'Evet'/'Hayır'.
+   'Diğer' ve '... İttifakı' satırları parti değildir.
+6. Kazanan için b.kazanan; kaç ilde birinci → COUNT(*) WHERE b.seviye='il' AND b.kazanan='CHP'.
+   Vekil: SUM(o.vekil) yalnız il satırlarında. Katılım: b.katilim. Zaman serisinde ORDER BY s.yil, s.id.
+7. Veride YOK → cannot_answer: sandık sonuçları, seçim bölgesi, aday/vekil isimleri, yaş/cinsiyet, anketler,
+   geçersiz oy, belediye meclisi, muhtarlık, ara seçim, 1950 öncesi, konu dışı sorular.
+8. Yalnız tek bir SELECT; anlamlı takma adlar (il, ilce, oy, oran); SELECT * yok; top-N için ORDER BY + LIMIT.
+"""
+
+OLLAMA_SQL_SYSTEM = f"""Türkiye seçim veritabanı için SQL yazıyorsun. Kullanıcının Türkçe sorusunu tek bir MariaDB
+SELECT sorgusuna çevir. YALNIZCA şu biçimde JSON döndür, başka metin yazma:
+{{"action": "run_sql", "sql": "SELECT ...", "explanation": "tek cümle"}}
+ya da veri yoksa / soru seçimlerle ilgili değilse:
+{{"action": "cannot_answer", "reason": "kısa Türkçe gerekçe"}}
+
+{SCHEMA_COMPACT}
+{PITFALLS_COMPACT}"""
+
+OLLAMA_OUTPUT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "action": {"type": "string", "enum": ["run_sql", "cannot_answer"]},
+        "sql": {"type": "string"},
+        "explanation": {"type": "string"},
+        "reason": {"type": "string"},
+    },
+    "required": ["action"],
+}

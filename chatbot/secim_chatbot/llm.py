@@ -67,6 +67,7 @@ class SqlDecision:
     explanation: str = ""
     refusal: str | None = None
     usage: Usage = field(default_factory=Usage)
+    error: str | None = None          # the model output could not be parsed; sent back for the one retry
 
 
 @dataclass
@@ -248,8 +249,20 @@ class FakeLLM:
         return AnswerText(text=template_answer(result))
 
 
+PROVIDERS = ("anthropic", "claude", "ollama", "fake")
+
+
 def make_llm(settings) -> LLM:
     provider = (settings.llm_provider or "anthropic").lower()
-    if provider == "fake" or (provider == "anthropic" and not settings.anthropic_api_key):
+    if provider not in PROVIDERS:
+        raise ValueError(f"LLM_PROVIDER must be one of {PROVIDERS}, got {provider!r}")
+    if provider == "ollama":
+        from .ollama import OllamaLLM
+
+        return OllamaLLM(model=settings.ollama_model, host=settings.ollama_host,
+                         temperature=settings.ollama_temperature, timeout=settings.ollama_timeout_s,
+                         num_ctx=settings.ollama_num_ctx, k=settings.fewshot_k,
+                         answer_with_model=settings.ollama_answer != "sablon")
+    if provider == "fake" or not settings.anthropic_api_key:
         return FakeLLM()
     return AnthropicLLM(model=settings.model, api_key=settings.anthropic_api_key)
