@@ -266,9 +266,12 @@ class Denetim:
                     if o and s and min(o, s) >= 20 and max(o, s) / min(o, s) > 5:
                         self.ekle("MAHALLE_SECMEN_SICRAMASI", "mahalle", dosya, birim, f"önceki seçimde {o}, bu seçimde {s}")
                 ik = ilce_kaydi.get(g)
-                if ik and ik.get("secmen") and s_top > ik["secmen"] * 1.01:
+                # Ilce kaydi ilce belediyesinin kendi yarisina indirildiyse (belde sandiklari haric),
+                # mahalle dosyasi ilcenin butun sandiklarini kapsar: kaynak.yskSatiri'ndaki ilce toplamiyla karsilastir.
+                ik_secmen = (((ik or {}).get("kaynak") or {}).get("yskSatiri") or {}).get("secmen") or (ik or {}).get("secmen")
+                if ik and ik_secmen and s_top > ik_secmen * 1.01:
                     self.ekle("MAHALLE_ILCEDEN_BUYUK", "mahalle", dosya, ilce_adi.get(g, g),
-                              f"mahalleler toplamı {s_top}, ilçe kaydı {ik['secmen']}")
+                              f"mahalleler toplamı {s_top}, ilçe kaydı {ik_secmen}")
             onceki_secmen = simdiki
 
         # ek dosyalar (meclis haritalari, belde, yenileme/ara, il genel meclisi, belediye meclisi...)
