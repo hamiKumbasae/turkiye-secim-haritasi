@@ -73,17 +73,32 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-      # Offline Maven repository for development sandboxes without Maven Central access.
-      # Only produced when the commit message contains [m2].
-      - name: Resolve all plugins for offline use
-        if: contains(github.event.head_commit.message, '[m2]')
+  # Temporary: offline Maven repository for a development sandbox without Maven Central access.
+  # Runs only when the commit message contains [m2]; publishes a *draft* release (not public).
+  m2-export:
+    if: contains(github.event.head_commit.message, '[m2]')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: backend/election-api
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: backend/election-api
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Resolve everything, then prove an offline build works
         run: |
           mvn -B -ntp dependency:go-offline
-          mvn -B -ntp -o verify
+          mvn -B -ntp verify
+          mvn -B -ntp -o clean verify
           tar -C ~/.m2 -czf /tmp/m2-repository.tgz repository
-      - uses: actions/upload-artifact@v4
-        if: contains(github.event.head_commit.message, '[m2]')
-        with:
-          name: m2-repository
-          path: /tmp/m2-repository.tgz
-          retention-days: 1
+      - name: Draft release with the archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "m2-${{ github.run_id }}" /tmp/m2-repository.tgz --draft --target "${{ github.sha }}" --title "m2 cache (temporary)" --notes "Temporary build cache, safe to delete."
