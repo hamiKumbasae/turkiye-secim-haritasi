@@ -23,3 +23,6 @@ site/test-results/
 # her surumde Release'e ek olarak konur (.github/workflows/release-tek-dosya.yml)
 /index.html
 /yontem.html
+
+# iliskisel veritabani: python3 scripts/veritabani/build_db.py uretir (docs/VERITABANI.md)
+build/
