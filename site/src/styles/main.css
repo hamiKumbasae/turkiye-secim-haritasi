@@ -153,7 +153,8 @@
   .karsi-not:empty{display:none;}
   .karsi-lejant{margin-top:8px; padding-top:8px;}
   .karsi-lejant .karsi-seq{width:100%;}
-  .geo-path{stroke:var(--map-stroke); stroke-width:1; cursor:pointer; transition:filter .1s;}
+  /* evenodd: delikli poligonlarda delik, halka yonunden bagimsiz bos kalir (SVG varsayilani nonzero) */
+  .geo-path{stroke:var(--map-stroke); stroke-width:1; cursor:pointer; transition:filter .1s; fill-rule:evenodd;}
   .geo-path:hover{filter:brightness(1.12); stroke-width:1.6;}
   .geo-path.selected{stroke:var(--ink-1); stroke-width:2.2;}
   .geo-path:focus{outline:none;}

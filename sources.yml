@@ -350,7 +350,7 @@ elections:
     primary: {authority: YSK, url: "acikveri.ysk.gov.tr (getSecimSandikSonucList, secimId=15575/secimTuru=7, 998 ilcenin TAMAMI sandik-duzeyinde cekilip agrege edildi)", retrieved_at: "2026-09-22", level: [il, ilce], status: official}
     legacy_source: {source: Habertürk, url: "secim.haberturk.com", level: [il, ilce], status: reported}
     verification: ["Ulusal: Evet %51.18 (81/81 il agrege) — bilinen resmi sonuçla (%51,41) tutarli, kucuk fark yuvarlama/kesin sayimdan kaynaklaniyor olabilir, yeniden dogrulanabilir."]
-    coverage: ["81 il, 997/998 ilce geomId'ye eslendi — sadece Siirt/Tillo eksik (bkz. genel not)"]
+    coverage: ["81 il, 997/998 ilce geomId'ye eslendi — sadece Siirt/Tillo eksik (bkz. genel not)", "2026-10-31 notu: Tillo (TR-D-56-007) sonradan YSK sandik toplamindan eklendi (kayitta duzeltmeKaynagi); haritada bagli"]
     notes:
       - >
         Mahalle örnekleminde Hayır önde çıkıyor (%51.08) — ulusal sonuç Evet
@@ -381,7 +381,8 @@ elections:
           ve Antakya+Defne+Arsuz+Payas, sentetik birlesim poligonu gerekiyor;
           Siirt'in Tillo/Aydınlar ilcesi — proje genelinde kullanilan temel
           il/ilce sinir GeoJSON'unda bu ilce hic yok, isim eslemesiyle
-          cozulemez) hala haritada eksik. Oy verisi o ilin IL TOPLAMINDA
+          cozulemez) hala haritada eksik. 2026-10-31: Tillo artik ilce
+          katmaninda (TR-D-56-007) ve bu secimde kendi satiriyla bagli. Oy verisi o ilin IL TOPLAMINDA
           mevcut, sadece ilce-duzeyi haritada goruntulenmiyor. Ayrintı:
           scripts/pipelines/election_import/PROVENANCE.md.
 

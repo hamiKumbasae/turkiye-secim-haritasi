@@ -4,6 +4,10 @@
 > düzeltmelerinden sonra güncel durum `ozet.json`, `poligon_durumu.csv` ve
 > `eksik_secim_verisi.csv` dosyalarındadır. 2007 referandumu 923 ilçeye
 > tamamlandı; İstanbul 1989/1991 ve Tillo meclis eşleşmeleri düzeltildi.
+> 31.10.2026: Tillo (eski adı Aydınlar, TR-D-56-007) bütün seçimlerde bağlı: 1991'den beri her
+> genel, yerel, referandum ve CB kaydında kendi satırı var ("Aydınlar", "Aydınlar (Tillo)", "Tillo");
+> 1990 öncesinde Siirt Merkez ile birleşim poligonunda (`HISTK-56-005-5bd2a1`, 3647 sayılı Kanun,
+> RG 18.05.1990). Aşağıdaki "Tillo'nun satırı yok" notları eskidir (`docs/rapor/HARITA_DUZELTME_2026-10-31.md`).
 
 Tarih: 27.09.2026 · Depo durumu: `801483a` sonrası · Kapsam: 46 seçim (genel, yerel başkanlık,
 referandum, cumhurbaşkanlığı) + 18 yerel meclis kaydı (il genel meclisi, belediye meclisi)
@@ -294,7 +298,7 @@ Adana 41, Samsun 39, Elazığ 38, Tokat 38, Konya 29, Antalya 27, Hakkari 27.
 
 ### 4.4 Gri alanlar (sonuç yok)
 
-- **Tillo (Siirt, TR-D-56-007):** Başkanlık, genel, referandum ve CB kayıtlarında hiç satırı
+- **Tillo (Siirt, TR-D-56-007)** *(31.10.2026: çözüldü, bkz. baştaki not)*: Başkanlık, genel, referandum ve CB kayıtlarında hiç satırı
   yok. YSK meclis verisinde (2009–2024) "Tillo" satırı var ama `geomId`'siz geliyor, yani
   ilçe–poligon eşleme tablosunda eksik. Başkanlık verisinin çekildiği hatta da aynı eksik
   olabilir. Kolayca düzeltilebilir.
