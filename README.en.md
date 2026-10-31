@@ -139,10 +139,11 @@ source exists, and are cross-checked wherever possible. Boundaries come from **O
 ## Tech stack
 
 - **Data processing:** Python 3.13 (`pyyaml`, `shapely`), Tesseract OCR, Node.js scripts for the YSK API
-- **Automation:** 14 GitHub Actions workflows (data fetchers, validation, Pages deploy, single-file release)
+- **Automation:** 16 GitHub Actions workflows (data fetchers, validation, back-end builds, Pages deploy, single-file release)
 - **Front end:** plain JavaScript and SVG, no map library; lossless TopoJSON boundaries and compact vote arrays
   decoded in the browser with `DecompressionStream`
-- **Testing:** Python analytical checks, `node --test`, Playwright browser tests
+- **Back end:** Java 21, Spring Boot 3.5, MariaDB/MySQL, Docker; Python FastAPI chatbot
+- **Testing:** Python analytical checks, `node --test`, Playwright browser tests, JUnit 5
 - **Hosting:** GitHub Pages; offline single-file build attached to every release
 
 ## Repository layout
@@ -157,6 +158,9 @@ site/                Front end (src/), Pages build (build.py -> site/dist/), bro
 scripts/             Publishing, validation, audits and data pipelines (pipelines/)
 tests/               Analytical validation, Node and browser tests
 docs/rapor/          Coverage table, data audit, matching and methodology reports
+backend/             Spring Boot microservices + MySQL 8 in Docker (data-loader, election-api, gateway)
+backend/election-api-lite/  Single-service Spring Boot API over MariaDB (e.g. a Raspberry Pi home server)
+chatbot/             Turkish text-to-SQL chatbot (local LLM or Claude, SQL safety layer, eval set)
 ```
 
 Every data folder has its own `PROVENANCE.md`.
@@ -170,13 +174,15 @@ python3 -m http.server -d site/dist 8000 # http://localhost:8000
 python3 scripts/build.py                 # optional: single-file offline index.html
 ```
 
-## Roadmap
+## Services on top of the data
 
-v1.0 of the map and dataset is complete. Work in progress, not yet merged into `main`:
+The map itself is static and needs no server. The same data also powers:
 
-- **Database:** loading all election data into MariaDB on a Raspberry Pi home server.
-- **REST API:** a Spring Boot backend serving the data.
-- **Chatbot:** an LLM assistant that turns natural-language questions into SQL over the database.
+- **Database:** `scripts/db_yukle.py` loads everything (about 640,000 result units, 2.8 million vote rows) into
+  MariaDB/MySQL; it runs on a Raspberry Pi home server.
+- **REST API:** [`backend/`](backend/) (Docker microservices) and
+  [`backend/election-api-lite/`](backend/election-api-lite/) (one Spring Boot service, Swagger UI).
+- **Chatbot:** [`chatbot/`](chatbot/) turns Turkish questions into read-only SQL and answers from the data.
 
 New elections are added when they happen (next scheduled: 2028 general, 2029 local).
 
