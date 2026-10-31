@@ -69,6 +69,24 @@ services:
         condition: service_completed_successfully
     restart: unless-stopped
 
+  # Soru-cevap: soruyu Claude'a (Anthropic API) gönderir, model yalnız election-api'yi araç olarak çağırır.
+  # ANTHROPIC_API_KEY boşsa servis yine açılır, POST /api/sohbet 503 döner.
+  chatbot:
+    build:
+      context: .
+      args:
+        MODUL: chatbot
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-sonnet-5-5}
+      SOHBET_DAKIKADA_ISTEK: ${SOHBET_DAKIKADA_ISTEK:-10}
+      ELECTION_API_URL: http://election-api:8081
+    expose:
+      - "8082"
+    depends_on:
+      - election-api
+    restart: unless-stopped
+
   gateway:
     build:
       context: .
@@ -76,11 +94,13 @@ services:
         MODUL: gateway
     environment:
       ELECTION_API_URL: http://election-api:8081
+      CHATBOT_URL: http://chatbot:8082
       IZINLI_KOKENLER: ${IZINLI_KOKENLER:-https://hamikumbasae.github.io}
     ports:
       - "${GATEWAY_PORT:-8080}:8080"
     depends_on:
       - election-api
+      - chatbot
     restart: unless-stopped
 
 volumes:

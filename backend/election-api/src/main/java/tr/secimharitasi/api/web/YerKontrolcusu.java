@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tr.secimharitasi.api.servis.SecimServisi;
 import tr.secimharitasi.common.dto.IlDto;
 import tr.secimharitasi.common.dto.IlceDto;
+import tr.secimharitasi.common.dto.YerAramaDto;
 
 /** İl ve ilçe sözlükleri. */
 @RestController
@@ -19,6 +20,12 @@ public class YerKontrolcusu {
 
     public YerKontrolcusu(SecimServisi servis) {
         this.servis = servis;
+    }
+
+    /** GET /api/iller/ara?ad=umraniye&amp;yil=2023 — il ve ilçe adı araması */
+    @GetMapping("/ara")
+    public YerAramaDto ara(@RequestParam String ad, @RequestParam(required = false) Integer yil) {
+        return servis.yerAra(ad, yil);
     }
 
     @GetMapping

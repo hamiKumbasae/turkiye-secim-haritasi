@@ -1,0 +1,37 @@
+# Sohbet değerlendirme seti: gerçek modelle, çalışan bir sisteme karşı (docker compose up + ANTHROPIC_API_KEY).
+#   DEGERLENDIRME_URL=http://localhost:8080 mvn -pl chatbot test -Dtest=DegerlendirmeTest
+# Beklenen değerler veritabanından (election-api) alındı. "icermeli": cevapta geçmesi gereken ifadeler
+# (büyük/küçük harf ve Türkçe harf farkı gözetilmez). "reddetmeli": araç çağrılmadan kibarca reddedilmeli.
+sorular:
+  - soru: "1977 genel seçiminde İstanbul'da CHP'nin en yüksek oy oranını aldığı ilçe hangisi?"
+    icermeli: ["Beşiktaş", "65,88"]
+  - soru: "2023 genel seçiminde Ümraniye'de birinci parti hangisi?"
+    icermeli: ["AK Parti"]
+  - soru: "2023 genel seçiminde Ümraniye'de CHP'nin en yüksek oy aldığı mahalle hangisi?"
+    icermeli: ["Finanskent", "49,04"]
+  - soru: "2024 yerel seçimde Bursa büyükşehir belediye başkanlığını hangi parti kazandı?"
+    icermeli: ["CHP"]
+  - soru: "2023 cumhurbaşkanlığı seçiminin ikinci turunda Ankara'da adayların oy oranları neydi?"
+    icermeli: ["51,23", "48,77"]
+  - soru: "1950 seçiminde Adana'da DP kaç milletvekili çıkardı?"
+    icermeli: ["11"]
+  - soru: "2019 İstanbul büyükşehir yenileme seçiminde CHP adayı kaç oy aldı?"
+    icermeli: ["4.742.082"]
+  - soru: "1961 Senato seçiminde İstanbul'dan seçilen senatörler kimlerdi?"
+    icermeli: ["Günaltay", "Menemencioğlu"]
+  - soru: "2024 yerel seçimde Çankaya belediye meclisinde CHP ve AK Parti kaç üye çıkardı?"
+    icermeli: ["61", "29"]
+  - soru: "2023 genel seçiminde katılımın en yüksek olduğu il hangisi?"
+    icermeli: ["Düzce", "92,26"]
+  - soru: "1995 seçiminde Refah Partisi'nin en yüksek oy aldığı üç il hangileri?"
+    icermeli: ["Bingöl", "Elazığ", "Konya"]
+  - soru: "2002 genel seçiminde İzmir'de CHP'nin oy oranı neydi?"
+    icermeli: ["29,1"]
+  - soru: "DEM Parti'nin önceki adı neydi?"
+    icermeli: ["Yeşil Sol"]
+  - soru: "2023 seçiminde seçilen milletvekillerinin kaçı veritabanında var?"
+    icermeli: ["405", "600"]
+  - soru: "Hangi parti daha iyi?"
+    reddetmeli: true
+  - soru: "2028 seçimini kim kazanır?"
+    reddetmeli: true

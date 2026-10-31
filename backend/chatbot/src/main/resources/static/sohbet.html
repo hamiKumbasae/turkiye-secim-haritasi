@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seçim Sohbeti</title>
+<style>
+  :root {
+    --zemin: #f6f5f2; --kart: #ffffff; --metin: #1d1d1b; --soluk: #6b6a66; --cizgi: #dedcd6;
+    --vurgu: #b3261e; --vurgu-metin: #ffffff; --kullanici: #efe9df; --hata: #8a1c14;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --zemin: #151514; --kart: #1f1f1d; --metin: #ecebe7; --soluk: #a09e98; --cizgi: #34332f;
+      --vurgu: #e2574c; --vurgu-metin: #151514; --kullanici: #2a2925; --hata: #ff8a80;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--zemin); color: var(--metin);
+         font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { max-width: 760px; margin: 0 auto; padding: 24px 16px 8px; }
+  h1 { margin: 0 0 4px; font-size: 1.4rem; }
+  header p { margin: 0; color: var(--soluk); font-size: .92rem; }
+  header a { color: inherit; }
+  main { max-width: 760px; margin: 0 auto; padding: 8px 16px 140px; }
+  .ornekler { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .ornekler button { border: 1px solid var(--cizgi); background: var(--kart); color: var(--metin);
+                     border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .88rem; cursor: pointer; }
+  .ornekler button:hover { border-color: var(--vurgu); }
+  .mesaj { margin: 14px 0; padding: 12px 14px; border-radius: 12px; background: var(--kart);
+           border: 1px solid var(--cizgi); overflow-wrap: anywhere; }
+  .mesaj.kullanici { background: var(--kullanici); margin-left: 15%; }
+  .mesaj.hata { color: var(--hata); }
+  .mesaj ul { margin: 6px 0; padding-left: 20px; }
+  .mesaj p { margin: 6px 0; }
+  .ek { margin-top: 10px; font-size: .85rem; color: var(--soluk); }
+  .ek details { margin-top: 6px; }
+  .ek li { margin: 2px 0; }
+  .ek a { color: inherit; }
+  .harita { display: inline-block; margin-top: 10px; padding: 6px 12px; border-radius: 8px; text-decoration: none;
+            background: var(--vurgu); color: var(--vurgu-metin); font-size: .9rem; }
+  form { position: fixed; left: 0; right: 0; bottom: 0; background: var(--zemin); border-top: 1px solid var(--cizgi); }
+  .giris { max-width: 760px; margin: 0 auto; padding: 12px 16px 16px; display: flex; gap: 8px; }
+  textarea { flex: 1; resize: none; min-height: 48px; max-height: 160px; padding: 12px; border-radius: 10px;
+             border: 1px solid var(--cizgi); background: var(--kart); color: var(--metin); font: inherit; }
+  textarea:focus { outline: 2px solid var(--vurgu); outline-offset: -1px; }
+  form button { padding: 0 18px; border: 0; border-radius: 10px; background: var(--vurgu); color: var(--vurgu-metin);
+                font: inherit; font-weight: 600; cursor: pointer; }
+  form button:disabled { opacity: .5; cursor: default; }
+  .bekliyor { color: var(--soluk); font-style: italic; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Seçim Sohbeti</h1>
+  <p>1950–2024 Türkiye seçim sonuçları hakkında soru sorun. Cevaplar yalnız
+    <a href="https://hamikumbasae.github.io/turkiye-secim-haritasi/" target="_blank" rel="noopener">Türkiye Seçim Haritası</a>
+    veritabanındaki sayılara dayanır; yorum ve tahmin yapılmaz.</p>
+</header>
+<main id="akis">
+  <div class="ornekler" id="ornekler">
+    <button type="button">1977'de İstanbul'da CHP'nin en yüksek oy aldığı ilçe hangisi?</button>
+    <button type="button">2023'te katılımın en yüksek olduğu il?</button>
+    <button type="button">2024 yerel seçimde Bursa'yı kim kazandı?</button>
+    <button type="button">1995'te Refah Partisi'nin en güçlü olduğu iller</button>
+    <button type="button">2023'te Ümraniye'de CHP'nin en yüksek oy aldığı mahalle</button>
+  </div>
+</main>
+<form id="form">
+  <div class="giris">
+    <textarea id="soru" maxlength="500" placeholder="Sorunuzu yazın…" rows="1" aria-label="Soru"></textarea>
+    <button id="gonder" type="submit">Sor</button>
+  </div>
+</form>
+<script>
+  const akis = document.getElementById('akis');
+  const form = document.getElementById('form');
+  const soruAlani = document.getElementById('soru');
+  const gonder = document.getElementById('gonder');
+
+  function kacis(s) {
+    return s.replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+  }
+
+  // Yalnız **kalın** ve "- " maddeleri; geri kalan düz metin (önce HTML kaçışı yapılır).
+  function bicimle(metin) {
+    const satirlar = kacis(metin).split('\n');
+    let html = '', liste = false, paragraf = [];
+    const kalin = s => s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    const paragrafiBitir = () => { if (paragraf.length) { html += '<p>' + kalin(paragraf.join('<br>')) + '</p>'; paragraf = []; } };
+    for (const satir of satirlar) {
+      const m = satir.match(/^\s*[-•*]\s+(.*)$/);
+      if (m) {
+        paragrafiBitir();
+        if (!liste) { html += '<ul>'; liste = true; }
+        html += '<li>' + kalin(m[1]) + '</li>';
+      } else {
+        if (liste) { html += '</ul>'; liste = false; }
+        if (satir.trim() === '') paragrafiBitir(); else paragraf.push(satir);
+      }
+    }
+    paragrafiBitir();
+    if (liste) html += '</ul>';
+    return html;
+  }
+
+  function ekle(sinif, html) {
+    const d = document.createElement('div');
+    d.className = 'mesaj ' + sinif;
+    d.innerHTML = html;
+    akis.appendChild(d);
+    d.scrollIntoView({behavior: 'smooth', block: 'end'});
+    return d;
+  }
+
+  function guvenliHarita(url) {
+    return typeof url === 'string' && url.startsWith('https://hamikumbasae.github.io/turkiye-secim-haritasi/');
+  }
+
+  async function sor(soru) {
+    document.getElementById('ornekler')?.remove();
+    ekle('kullanici', kacis(soru));
+    const bekleyen = ekle('bekliyor', 'Veriler sorgulanıyor…');
+    gonder.disabled = true;
+    try {
+      const yanit = await fetch('/api/sohbet', {
+        method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({soru})
+      });
+      const veri = await yanit.json().catch(() => ({}));
+      bekleyen.remove();
+      if (!yanit.ok) {
+        ekle('hata', kacis(veri.mesaj || ('Bir hata oluştu (HTTP ' + yanit.status + ').')));
+        return;
+      }
+      let html = bicimle(veri.cevap || '');
+      if (guvenliHarita(veri.haritaBaglantisi)) {
+        html += '<a class="harita" target="_blank" rel="noopener" href="' + kacis(veri.haritaBaglantisi) + '">Haritada göster</a>';
+      }
+      const kaynaklar = (veri.kaynaklar || []).filter(k => k.sorgu);
+      if (kaynaklar.length) {
+        html += '<div class="ek"><details><summary>Kaynak sorgular (' + kaynaklar.length + ')</summary><ul>'
+          + kaynaklar.map(k => '<li><a target="_blank" rel="noopener" href="' + kacis(k.sorgu) + '">'
+            + kacis(k.sorgu) + '</a></li>').join('') + '</ul></details></div>';
+      }
+      ekle('', html);
+    } catch (e) {
+      bekleyen.remove();
+      ekle('hata', 'Sunucuya ulaşılamadı.');
+    } finally {
+      gonder.disabled = false;
+      soruAlani.focus();
+    }
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const soru = soruAlani.value.trim();
+    if (!soru || gonder.disabled) return;
+    soruAlani.value = '';
+    sor(soru);
+  });
+  soruAlani.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); }
+  });
+  document.querySelectorAll('#ornekler button').forEach(b => b.addEventListener('click', () => sor(b.textContent)));
+</script>
+</body>
+</html>

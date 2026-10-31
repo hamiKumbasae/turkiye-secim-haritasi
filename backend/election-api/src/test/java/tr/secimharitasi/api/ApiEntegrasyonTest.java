@@ -91,6 +91,21 @@ class ApiEntegrasyonTest {
     }
 
     @Test
+    void yerArama() throws Exception {
+        // Türkçe harf ve büyük/küçük farkı yok; ilçe ve il ayrı listelerde
+        mvc.perform(get("/api/iller/ara").param("ad", "UMRANIYE")).andExpect(status().isOk())
+                .andExpect(jsonPath("$.ilceler[*].ilceId", containsInAnyOrder("TR-D-34-037", "HIST-Istanbul-Umraniye-fb42ce")))
+                .andExpect(jsonPath("$.iller", hasSize(0)));
+        mvc.perform(get("/api/iller/ara").param("ad", "ümraniye").param("yil", "2023"))
+                .andExpect(jsonPath("$.ilceler[*].ilceId", contains("TR-D-34-037")));
+        mvc.perform(get("/api/iller/ara").param("ad", "istanbul"))
+                .andExpect(jsonPath("$.iller[0].plaka").value(34));
+        mvc.perform(get("/api/iller/ara").param("ad", "dal"))
+                .andExpect(jsonPath("$.ilceler[*].ad", contains("Adalar")));
+        mvc.perform(get("/api/iller/ara").param("ad", "a")).andExpect(status().isBadRequest());
+    }
+
+    @Test
     void partiDevamliligi() throws Exception {
         mvc.perform(get("/api/partiler/107")).andExpect(status().isOk())
                 .andExpect(jsonPath("$.ad").value("DEM Parti"))

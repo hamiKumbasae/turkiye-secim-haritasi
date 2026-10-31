@@ -5,9 +5,14 @@ Seçim verisini MySQL'e yükleyen ve salt okunur bir REST API olarak sunan servi
 
 ```
                       ┌──────────────┐
-  tarayıcı / site ──▶ │   gateway    │ :8080  (dışarıya açık tek port; yalnız GET /api/**)
-                      └──────┬───────┘
-                             ▼
+  tarayıcı / site ──▶ │   gateway    │ :8080  (dışarıya açık tek port; GET /api/**, POST /api/sohbet, /sohbet)
+                      └──┬────────┬──┘
+                         │        ▼
+                         │   ┌──────────┐  araç çağrıları (GET)   ┌────────────────┐
+                         │   │ chatbot  │ ──────────────────────▶ │ election-api   │
+                         │   └────┬─────┘                         └────────────────┘
+                         │        └──▶ Anthropic API (Claude Sonnet)
+                         ▼
                       ┌──────────────┐      ┌──────────┐
                       │ election-api │ ───▶ │ MySQL 8  │ ◀── data-loader (tek seferlik: Flyway + yükleme)
                       └──────────────┘      └──────────┘          ▲
@@ -20,7 +25,8 @@ Seçim verisini MySQL'e yükleyen ve salt okunur bir REST API olarak sunan servi
 | `common` | Ortak DTO'lar ve enum'lar (`SecimTuru`, `OylamaTuru`, `SecenekTipi`, `GecisTuru`) |
 | `data-loader` | Flyway şeması (`db/migration`), `data/normalized` (seçimler, meclisler, mahalle, ek kayıtlar) + `sources.yml` → MySQL, tutarlılık kontrolleri |
 | `election-api` | Spring Data JPA, yalnız GET uç noktaları, salt okunur veritabanı kullanıcısı |
-| `gateway` | Spring Cloud Gateway: `/api/**` → election-api; CORS yalnız GitHub Pages için, yalnız GET/HEAD (`CorsFiltresi`) |
+| `gateway` | Spring Cloud Gateway: `/api/**` → election-api, `POST /api/sohbet` ve `/sohbet` → chatbot; CORS yalnız GitHub Pages için, yalnız GET/HEAD (`CorsFiltresi`) |
+| `chatbot` | Türkçe soru-cevap: Claude soruyu anlar, sayıları yalnız election-api araçlarıyla okur (aşağıda) |
 
 ## Çalıştırma
 
@@ -48,6 +54,33 @@ curl http://localhost:8080/api/secimler/2023/secilenler?plaka=34
 Veri değiştiyse yeniden yüklemek için: `docker compose run --rm data-loader`; değişmemiş veriyi zorla
 yüklemek için: `ZORLA_YUKLE=true docker compose run --rm data-loader`.
 Her şeyi silmek için (veritabanı dahil): `docker compose down -v`.
+
+## Sohbet (chatbot)
+
+`http://localhost:8080/sohbet` sayfasından ya da doğrudan API'den soru sorulur:
+
+```bash
+curl -s -X POST localhost:8080/api/sohbet -H 'Content-Type: application/json' \
+  -d '{"soru":"1977de İstanbulda CHPnin en yüksek oy aldığı ilçe hangisi?"}' | jq
+# {"cevap": "...", "kaynaklar": [{"arac": "ilce_sonuclari", "sorgu": "/api/secimler/1977/iller/34/ilceler", ...}],
+#  "haritaBaglantisi": "https://hamikumbasae.github.io/turkiye-secim-haritasi/#secim=1977&il=34&mod=parti&parti=CHP", ...}
+```
+
+- **Anahtar:** `.env` içinde `ANTHROPIC_API_KEY=...` (console.anthropic.com). Boşsa diğer servisler çalışır,
+  `POST /api/sohbet` 503 döner. Model `ANTHROPIC_MODEL` ile değişir (varsayılan `claude-sonnet-5-5`).
+- **Sayılar uydurulmaz:** Model veritabanına doğrudan erişmez ve sayı üretmez; soruyu anlayıp 13 aracı çağırır
+  (`yer_ara`, `parti_ara`, `secimleri_listele`, `il_sonuclari`, `ilce_sonuclari`, `ilce_sonucu`,
+  `mahalle_sonuclari`, `parti_sonuclari`, `en_guclu_iller`, `secilenler`, `beldeler`, `sandalyeler`,
+  `harita_baglantisi`). Her araç bir election-api GET sorgusudur; yanıttaki `kaynaklar` bu sorguları listeler,
+  sayfada açılıp kontrol edilebilir.
+- **Tarafsızlık:** "Hangi parti daha iyi?", gelecek tahmini, yorum istekleri kibarca reddedilir ve veriyle
+  cevaplanabilecek bir soru önerilir. Yalnız Türkçe.
+- **Sınırlar:** soru en çok 500 karakter; bir soruda en çok 8 model turu; IP başına dakikada 10 soru
+  (`SOHBET_DAKIKADA_ISTEK`). Her soru tek başınadır (konuşma geçmişi tutulmaz).
+- **Değerlendirme:** `chatbot/src/test/resources/degerlendirme/sorular.yaml` veritabanından doğrulanmış
+  beklenen cevaplarla 16 soru içerir. Gerçek modelle (ücretli, yaklaşık 16 soru × birkaç tur) çalıştırmak
+  için sistem `docker compose up` ile açıkken başka bir terminalde: `./degerlendir.sh`.
+  Birim testleri ve CI gerçek modeli çağırmaz.
 
 ## Testler
 

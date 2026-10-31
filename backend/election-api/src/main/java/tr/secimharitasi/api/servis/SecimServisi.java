@@ -22,6 +22,7 @@ import tr.secimharitasi.api.varlik.SonucIl;
 import tr.secimharitasi.api.varlik.SonucIlId;
 import tr.secimharitasi.api.varlik.SonucIlce;
 import tr.secimharitasi.api.varlik.SonucIlceId;
+import tr.secimharitasi.common.Metin;
 import tr.secimharitasi.common.OylamaTuru;
 import tr.secimharitasi.common.SecimTuru;
 import tr.secimharitasi.common.dto.IlDto;
@@ -30,6 +31,7 @@ import tr.secimharitasi.common.dto.IlceDto;
 import tr.secimharitasi.common.dto.IlceSonucDto;
 import tr.secimharitasi.common.dto.OyDto;
 import tr.secimharitasi.common.dto.SecimDto;
+import tr.secimharitasi.common.dto.YerAramaDto;
 
 @Service
 @Transactional(readOnly = true)
@@ -116,6 +118,35 @@ public class SecimServisi {
         SonucIlce s = sonucIlce.findById(new SonucIlceId(secimId, ilceId))
                 .orElseThrow(() -> new KayitBulunamadiException(secimId + " seçiminde " + ilceId + " ilçesi yok"));
         return ilceDto(s, oyIlce.findBySecimIdAndIlceId(secimId, ilceId), PartiSozlugu.of(partiler.findAll()));
+    }
+
+    /**
+     * Ada göre il ve ilçe arar (Türkçe harf ve büyük/küçük farkı yok sayılır). Önce tam eşleşme, yoksa adın
+     * içinde geçenler. yil verilirse yalnız o yıl veride bulunan ilçe birimleri.
+     */
+    public YerAramaDto yerAra(String ad, Integer yil) {
+        String k = Metin.katla(ad);
+        if (k.length() < 2) {
+            throw new IllegalArgumentException("Aranacak ad en az 2 harf olmalı");
+        }
+        List<IlDto> il = iller.findAllByOrderByPlaka().stream()
+                .filter(i -> i.getPlaka() > 0)
+                .map(i -> new IlDto(i.getPlaka(), i.getAd())).toList();
+        List<IlDto> ilEslesen = eslesenler(il, IlDto::ad, k);
+        List<IlceDto> ilce = ilceler.findAll().stream()
+                .filter(i -> yil == null || (i.getBaslangicYili() <= yil && (i.getBitisYili() == null || i.getBitisYili() >= yil)))
+                .map(SecimServisi::ilceDto)
+                .sorted(java.util.Comparator.comparing(IlceDto::plaka).thenComparing(IlceDto::ad))
+                .toList();
+        return new YerAramaDto(ad, ilEslesen, eslesenler(ilce, IlceDto::ad, k));
+    }
+
+    private static <T> List<T> eslesenler(List<T> liste, java.util.function.Function<T, String> ad, String k) {
+        List<T> tam = liste.stream().filter(x -> Metin.katla(ad.apply(x)).equals(k)).toList();
+        if (!tam.isEmpty()) {
+            return tam;
+        }
+        return liste.stream().filter(x -> Metin.katla(ad.apply(x)).contains(k)).limit(30).toList();
     }
 
     public List<IlDto> butunIller() {

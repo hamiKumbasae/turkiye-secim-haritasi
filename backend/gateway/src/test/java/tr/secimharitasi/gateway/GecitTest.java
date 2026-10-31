@@ -52,6 +52,8 @@ class GecitTest {
     @DynamicPropertySource
     static void ozellikler(DynamicPropertyRegistry r) {
         r.add("gecit.election-api-url", () -> "http://127.0.0.1:" + sahteApi.getAddress().getPort());
+        // Aynı sahte sunucu chatbot yerine de geçer; hangi servise gittiği X-Kaynak-Servis başlığından anlaşılır.
+        r.add("gecit.chatbot-url", () -> "http://127.0.0.1:" + sahteApi.getAddress().getPort());
     }
 
     @AfterAll
@@ -87,6 +89,36 @@ class GecitTest {
         web.delete().uri("/api/secimler/2023").exchange().expectStatus().isNotFound();
         web.get().uri("/baska-bir-yol").exchange().expectStatus().isNotFound();
         assertThat(sonIstek.get()).isNull();
+    }
+
+    @Test
+    void sohbetChatbotaGider() {
+        web.post().uri("/api/sohbet").header(HttpHeaders.CONTENT_TYPE, "application/json")
+                .bodyValue("{\"soru\":\"x\"}").exchange()
+                .expectStatus().isOk()
+                .expectHeader().valueEquals("X-Kaynak-Servis", "chatbot");
+        assertThat(sonIstek.get()).isEqualTo("POST /api/sohbet");
+
+        web.get().uri("/sohbet").exchange()
+                .expectStatus().isOk()
+                .expectHeader().valueEquals("X-Kaynak-Servis", "chatbot");
+        assertThat(sonIstek.get()).isEqualTo("GET /sohbet");
+
+        // Sohbet dışındaki yazma istekleri yine geçmez; başka sayfa yolları da
+        sonIstek.set(null);
+        web.post().uri("/api/sohbet/baska").exchange().expectStatus().isNotFound();
+        web.put().uri("/api/sohbet").exchange().expectStatus().isNotFound();
+        web.get().uri("/sohbet-yok").exchange().expectStatus().isNotFound();
+        assertThat(sonIstek.get()).isNull();
+    }
+
+    @Test
+    void sohbetBaskaSitedenCagrilamaz() {
+        web.options().uri("/api/sohbet")
+                .header(HttpHeaders.ORIGIN, "https://hamikumbasae.github.io")
+                .header(HttpHeaders.ACCESS_CONTROL_REQUEST_METHOD, HttpMethod.POST.name())
+                .exchange()
+                .expectStatus().isForbidden();
     }
 
     @Test
