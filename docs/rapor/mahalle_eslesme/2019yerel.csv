@@ -1342,6 +1342,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,ANTALYA,ALANYA,BUCAK MAH.,137,TKGM sınırı,Bucak Köyü
 2019yerel,ANTALYA,ALANYA,DERE MAH.,877,"TKGM sınırı, OSM konumu",Deretürbelinas Köyü (OSM w733552322)
 2019yerel,ANTALYA,ALANYA,GÜNEY MAH.,298,"TKGM sınırı, OSM konumu",Güneyköy Köyü (OSM n1744239491)
+2019yerel,ANTALYA,ALANYA,HACIMEHMETLİ MAH.,1497,TKGM sınırı,Hacimehmetli Köyü
 2019yerel,ANTALYA,ALANYA,ORHAN MAH.,191,"TKGM sınırı, OSM konumu",Orhanköy Köyü (OSM n1744239530)
 2019yerel,ANTALYA,ALANYA,İSBATLI MAH.,282,TKGM sınırı,Isbatli Köyü
 2019yerel,ANTALYA,ELMALI,DÜDEN MAH.,461,"TKGM sınırı, OSM konumu",Düdenköy Köyü (OSM n1411523400)
@@ -1529,7 +1530,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,AĞRI,TUTAK,YENİ MAH.,1120,"TKGM sınırı, OSM konumu",Yeniköy Köyü (OSM n2292198383)
 2019yerel,BALIKESİR,ALTIEYLÜL,ASLIHANTEPECİĞİ MAH.,852,"TKGM sınırı, yakın ad",Aslihantepecik (yakin 0.90)
 2019yerel,BALIKESİR,BALYA,KOCA CAMİİ MAH.,589,"TKGM sınırı, yakın ad",Kocacami (yakin 0.89)
-2019yerel,BALIKESİR,BİGADİÇ,CAMİİ MAH.,254,"TKGM sınırı, yakın ad",Cami (yakin 0.89)
+2019yerel,BALIKESİR,BİGADİÇ,CAMİİ MAH.,254,eşleşmedi,
 2019yerel,BALIKESİR,DURSUNBEY,AŞAĞIMUSALAR MAH.,217,TKGM sınırı,Aşağimusalar
 2019yerel,BALIKESİR,DURSUNBEY,AŞAĞIYAĞCILAR MAH.,129,TKGM sınırı,Aşağiyağcilar
 2019yerel,BALIKESİR,DURSUNBEY,BAYIRYÜZÜGÜNEY MAH.,207,TKGM sınırı,Bayiryüzügüney
@@ -1619,6 +1620,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,BATMAN,GERCÜŞ,KAYAPINAR-YEŞİLYURT MAH.,763,TKGM sınırı,Kayapinar Yeşilyurt
 2019yerel,BATMAN,GERCÜŞ,YOLAĞZI MAH.,1021,TKGM sınırı,Yolagzi
 2019yerel,BATMAN,HASANKEYF,BAHÇELİEVLER MAH.,1390,eşleşmedi,
+2019yerel,BATMAN,HASANKEYF,EYYUBİ MAH.,116,eşleşmedi,
 2019yerel,BATMAN,HASANKEYF,KALE MAH.,726,eşleşmedi,
 2019yerel,BATMAN,KOZLUK,AĞAÇLIK MAH.,210,TKGM sınırı,Ağaçlik
 2019yerel,BATMAN,KOZLUK,BAHÇELİ MAH.,40,TKGM sınırı,Bahçeli
@@ -1885,8 +1887,37 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,BURSA,GÜRSU,İPEKYOLU MAH.,2868,Belediye sınırı,İPEKYOLU
 2019yerel,BURSA,GÜRSU,İSTİKLAL MAH.,10245,Belediye sınırı,İSTİKLAL
 2019yerel,BURSA,GÜRSU,İĞDİRKÖYÜ MAH.,465,Belediye sınırı,İĞDİRKÖYÜ
-2019yerel,BURSA,HARMANCIK,AKPINAR MAH.,69,"Belediye sınırı, yakın ad",AKÇAPINAR (yakin 0.88)
-2019yerel,BURSA,HARMANCIK,HARMANCIK AKALAN MAH.,170,eşleşmedi,
+2019yerel,BURSA,HARMANCIK,AKPINAR MAH.,69,Belediye sınırı,AKPINAR
+2019yerel,BURSA,HARMANCIK,ALUTCA MAH.,33,Belediye sınırı,ALUTCA
+2019yerel,BURSA,HARMANCIK,BALATDANİŞMENT MAH.,105,Belediye sınırı,BALATDANİŞMENT
+2019yerel,BURSA,HARMANCIK,BALLISARAY MAH.,262,Belediye sınırı,BALLISARAY
+2019yerel,BURSA,HARMANCIK,BEKDEMİRLER MAH.,130,Belediye sınırı,BEKDEMİRLER
+2019yerel,BURSA,HARMANCIK,DEDEBALİ MAH.,102,Belediye sınırı,DEDEBALİ
+2019yerel,BURSA,HARMANCIK,DELİCEGÜNEY MAH.,35,Belediye sınırı,DELİCEGÜNEY
+2019yerel,BURSA,HARMANCIK,DUTLUCA MAH.,157,Belediye sınırı,DUTLUCA
+2019yerel,BURSA,HARMANCIK,ECE MAH.,159,Belediye sınırı,ECE
+2019yerel,BURSA,HARMANCIK,GEDİKÖREN MAH.,190,Belediye sınırı,GEDİKÖREN
+2019yerel,BURSA,HARMANCIK,GÖKÇELER MAH.,117,Belediye sınırı,GÖKÇELER
+2019yerel,BURSA,HARMANCIK,GÜLÖZÜ MAH.,250,Belediye sınırı,GÜLÖZÜ
+2019yerel,BURSA,HARMANCIK,HARMANCIK AKALAN MAH.,170,Belediye sınırı,HARMANCIK AKALAN
+2019yerel,BURSA,HARMANCIK,HOPANDANİŞMENT MAH.,169,Belediye sınırı,HOPANDANİŞMENT
+2019yerel,BURSA,HARMANCIK,ILICAKSU MAH.,66,Belediye sınırı,ILICAKSU
+2019yerel,BURSA,HARMANCIK,KARACA MAH.,172,Belediye sınırı,KARACA
+2019yerel,BURSA,HARMANCIK,KEPEKDERE MAH.,167,Belediye sınırı,KEPEKDERE
+2019yerel,BURSA,HARMANCIK,KILAVUZLAR MAH.,73,Belediye sınırı,KILAVUZLAR
+2019yerel,BURSA,HARMANCIK,KIŞMANLAR MAH.,160,Belediye sınırı,KIŞMANLAR
+2019yerel,BURSA,HARMANCIK,KOCAPINAR MAH.,30,Belediye sınırı,KOCAPINAR
+2019yerel,BURSA,HARMANCIK,KOZLUCA MAH.,79,Belediye sınırı,KOZLUCA
+2019yerel,BURSA,HARMANCIK,MERKEZ MAH.,1765,Belediye sınırı,MERKEZ
+2019yerel,BURSA,HARMANCIK,NALBANT MAH.,150,Belediye sınırı,NALBANT
+2019yerel,BURSA,HARMANCIK,OKÇULAR MAH.,65,Belediye sınırı,OKÇULAR
+2019yerel,BURSA,HARMANCIK,SAÇAKLI MAH.,27,Belediye sınırı,SAÇAKLI
+2019yerel,BURSA,HARMANCIK,YAYABAŞI MAH.,128,Belediye sınırı,YAYABAŞI
+2019yerel,BURSA,HARMANCIK,YEŞİLYURT MAH.,92,Belediye sınırı,YEŞİLYURT
+2019yerel,BURSA,HARMANCIK,ÇAKMAK MAH.,193,Belediye sınırı,ÇAKMAK
+2019yerel,BURSA,HARMANCIK,ÇAMOĞLU MAH.,58,Belediye sınırı,ÇAMOĞLU
+2019yerel,BURSA,HARMANCIK,ÇATALSÖĞÜT MAH.,310,Belediye sınırı,ÇATALSÖĞÜT
+2019yerel,BURSA,HARMANCIK,İSHAKLAR MAH.,81,Belediye sınırı,İSHAKLAR
 2019yerel,BURSA,KARACABEY,ABDULLAHPAŞA MAH.,848,Belediye sınırı,ABDULLAHPAŞA
 2019yerel,BURSA,KARACABEY,AKHİSAR MAH.,306,Belediye sınırı,AKHİSAR
 2019yerel,BURSA,KARACABEY,AKÇAKOYUN MAH.,266,Belediye sınırı,AKÇAKOYUN
@@ -1972,12 +2003,48 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,BURSA,KARACABEY,İSMETPAŞA MAH.,455,Belediye sınırı,İSMETPAŞA
 2019yerel,BURSA,KARACABEY,ŞAHMELEK MAH.,151,Belediye sınırı,ŞAHMELEK
 2019yerel,BURSA,KARACABEY,ŞAHİNKÖY MAH.,283,Belediye sınırı,ŞAHİNKÖY
-2019yerel,BURSA,KELES,AKÇAPINAR MAH.,160,"Belediye sınırı, yakın ad",AKPINAR (yakin 0.88)
-2019yerel,BURSA,KELES,DAĞ DEMİRCİLER MAH.,56,"TKGM sınırı, yakın ad",Dağdemirciler Köyü (yakin 0.96)
-2019yerel,BURSA,KELES,HARMANCIK DEMİRCİ MAH.,217,"TKGM sınırı, yakın ad",Harmancikdemirci Köyü (yakin 0.97)
-2019yerel,BURSA,KELES,HAYDAR MAH.,116,TKGM sınırı,Haydar Köyü
-2019yerel,BURSA,KELES,KIRAN IŞIKLAR MAH.,414,"TKGM sınırı, yakın ad",Kiranişiklar Köyü (yakin 0.96)
-2019yerel,BURSA,KELES,KOCA KOVACIK MAH.,278,"TKGM sınırı, yakın ad",Kocakovacik Köyü (yakin 0.96)
+2019yerel,BURSA,KELES,AKÇAPINAR MAH.,160,Belediye sınırı,AKÇAPINAR
+2019yerel,BURSA,KELES,ALPAĞUT MAH.,186,Belediye sınırı,ALPAĞUT
+2019yerel,BURSA,KELES,AVDAN MAH.,118,Belediye sınırı,AVDAN
+2019yerel,BURSA,KELES,BARAKLI MAH.,476,Belediye sınırı,BARAKLI
+2019yerel,BURSA,KELES,BASAK MAH.,305,Belediye sınırı,BASAK
+2019yerel,BURSA,KELES,BELENÖREN MAH.,296,Belediye sınırı,BELENÖREN
+2019yerel,BURSA,KELES,BIYIKLIALANI MAH.,192,Belediye sınırı,BIYIKLIALANI
+2019yerel,BURSA,KELES,CUMA MAH.,839,Belediye sınırı,CUMA
+2019yerel,BURSA,KELES,DAVUTLAR MAH.,343,Belediye sınırı,DAVUTLAR
+2019yerel,BURSA,KELES,DAĞ DEMİRCİLER MAH.,56,Belediye sınırı,DAĞ DEMİRCİLER
+2019yerel,BURSA,KELES,DAĞDİBİ MAH.,278,Belediye sınırı,DAĞDİBİ
+2019yerel,BURSA,KELES,DEDELER MAH.,184,Belediye sınırı,DEDELER
+2019yerel,BURSA,KELES,DELİCE MAH.,254,Belediye sınırı,DELİCE
+2019yerel,BURSA,KELES,DENİZLER MAH.,134,Belediye sınırı,DENİZLER
+2019yerel,BURSA,KELES,DURAK MAH.,248,Belediye sınırı,DURAK
+2019yerel,BURSA,KELES,DÜVENLİ MAH.,185,Belediye sınırı,DÜVENLİ
+2019yerel,BURSA,KELES,EPÇELER MAH.,434,Belediye sınırı,EPÇELER
+2019yerel,BURSA,KELES,ERTUĞRULGAZİ MAH.,698,Belediye sınırı,ERTUĞRULGAZİ
+2019yerel,BURSA,KELES,GELEMİÇ MAH.,349,Belediye sınırı,GELEMİÇ
+2019yerel,BURSA,KELES,GÖKÖZ MAH.,125,Belediye sınırı,GÖKÖZ
+2019yerel,BURSA,KELES,HARMANALANI MAH.,154,Belediye sınırı,HARMANALANI
+2019yerel,BURSA,KELES,HARMANCIK DEMİRCİ MAH.,217,Belediye sınırı,HARMANCIK DEMİRCİ
+2019yerel,BURSA,KELES,HAYDAR MAH.,116,Belediye sınırı,HAYDAR
+2019yerel,BURSA,KELES,HEREKE MAH.,82,Belediye sınırı,HEREKE
+2019yerel,BURSA,KELES,ISSIZÖREN MAH.,230,Belediye sınırı,ISSIZÖREN
+2019yerel,BURSA,KELES,KARAARDIÇ MAH.,247,Belediye sınırı,KARAARDIÇ
+2019yerel,BURSA,KELES,KEMALİYE MAH.,210,Belediye sınırı,KEMALİYE
+2019yerel,BURSA,KELES,KIRAN IŞIKLAR MAH.,414,Belediye sınırı,KIRAN IŞIKLAR
+2019yerel,BURSA,KELES,KOCA KOVACIK MAH.,278,Belediye sınırı,KOCA KOVACIK
+2019yerel,BURSA,KELES,KOZBUDAKLAR MAH.,305,Belediye sınırı,KOZBUDAKLAR
+2019yerel,BURSA,KELES,KÜÇÜK KOVACIK MAH.,188,Belediye sınırı,KÜÇÜK KOVACIK
+2019yerel,BURSA,KELES,KİRAZLI MAH.,56,Belediye sınırı,KİRAZLI
+2019yerel,BURSA,KELES,MENTEŞE MAH.,244,Belediye sınırı,MENTEŞE
+2019yerel,BURSA,KELES,PINARCIK MAH.,253,Belediye sınırı,PINARCIK
+2019yerel,BURSA,KELES,SOFULAR MAH.,190,Belediye sınırı,SOFULAR
+2019yerel,BURSA,KELES,SORGUN MAH.,351,Belediye sınırı,SORGUN
+2019yerel,BURSA,KELES,UZUNÖZ MAH.,199,Belediye sınırı,UZUNÖZ
+2019yerel,BURSA,KELES,YAZIBAŞI MAH.,175,Belediye sınırı,YAZIBAŞI
+2019yerel,BURSA,KELES,YAĞCILAR MAH.,186,Belediye sınırı,YAĞCILAR
+2019yerel,BURSA,KELES,YENİCE MAH.,204,Belediye sınırı,YENİCE
+2019yerel,BURSA,KELES,YUNUSLAR MAH.,132,Belediye sınırı,YUNUSLAR
+2019yerel,BURSA,KELES,ÇUKUR MAH.,221,Belediye sınırı,ÇUKUR
 2019yerel,BURSA,KESTEL,AHMETVEFİKPAŞA MAH.,7797,Belediye sınırı,AHMETVEFİKPAŞA
 2019yerel,BURSA,KESTEL,AKSU MAH.,367,Belediye sınırı,AKSU
 2019yerel,BURSA,KESTEL,ALAÇAM MAH.,454,Belediye sınırı,ALAÇAM
@@ -2076,7 +2143,6 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,BURSA,MUSTAFAKEMALPAŞA,BAHARİYE MAH.,186,Belediye sınırı,BAHARİYE
 2019yerel,BURSA,MUSTAFAKEMALPAŞA,BARIŞ MAH.,2581,Belediye sınırı,BARIŞ
 2019yerel,BURSA,MUSTAFAKEMALPAŞA,BEHRAM MAH.,215,Belediye sınırı,BEHRAM
-2019yerel,BURSA,MUSTAFAKEMALPAŞA,BOSTANDERE MAH.,205,Belediye sınırı,BOSTANDERE
 2019yerel,BURSA,MUSTAFAKEMALPAŞA,BOĞAZ MAH.,78,Belediye sınırı,BOĞAZ
 2019yerel,BURSA,MUSTAFAKEMALPAŞA,BÜK MAH.,197,Belediye sınırı,BÜK
 2019yerel,BURSA,MUSTAFAKEMALPAŞA,CAMANDAR MAH.,149,Belediye sınırı,CAMANDAR
@@ -3305,7 +3371,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,DİYARBAKIR,ERGANİ,ÖZBİLEK MAH.,357,TKGM sınırı,Özbilek
 2019yerel,DİYARBAKIR,ERGANİ,ÜZÜMLÜ MAH.,132,TKGM sınırı,Üzümlü
 2019yerel,DİYARBAKIR,ERGANİ,ÜÇKARDEŞ MAH.,142,TKGM sınırı,Üçkardeş
-2019yerel,DİYARBAKIR,ERGANİ,İNCEHIDIR MAH.,931,TKGM sınırı,Incehidir
+2019yerel,DİYARBAKIR,ERGANİ,İNCEHIDIR MAH.,931,eşleşmedi,
 2019yerel,DİYARBAKIR,ERGANİ,İSTASYON MAH.,3819,eşleşmedi,
 2019yerel,DİYARBAKIR,ERGANİ,ŞÖLEN MAH.,1040,TKGM sınırı,Şölen
 2019yerel,DİYARBAKIR,ERGANİ,ŞİRİNEVLER MAH.,5185,TKGM sınırı,Şirinevler
@@ -5569,7 +5635,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,ESKİŞEHİR,MİHALIÇÇIK,ÜÇBAŞLI MAH.,46,TKGM sınırı,Üçbaşli
 2019yerel,ESKİŞEHİR,MİHALIÇÇIK,İKİZAFER MAH.,86,TKGM sınırı,Ikizafer
 2019yerel,ESKİŞEHİR,MİHALIÇÇIK,İĞDECİK MAH.,30,TKGM sınırı,Iğdecik
-2019yerel,ESKİŞEHİR,ODUNPAZARI,71 EVLER MAH.,16977,TKGM sınırı,71 Evler
+2019yerel,ESKİŞEHİR,ODUNPAZARI,71 EVLER MAH.,16977,eşleşmedi,
 2019yerel,ESKİŞEHİR,ODUNPAZARI,75.YIL (SULTANDERE) MAH.,8280,eşleşmedi,
 2019yerel,ESKİŞEHİR,ODUNPAZARI,AKKAYA MAH.,62,TKGM sınırı,Akkaya
 2019yerel,ESKİŞEHİR,ODUNPAZARI,AKPINAR MAH.,662,TKGM sınırı,Akpinar
@@ -5807,7 +5873,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,ESKİŞEHİR,İNÖNÜ,ÇARŞI MAH.,797,TKGM sınırı,Çarşi
 2019yerel,ESKİŞEHİR,İNÖNÜ,İSMETPAŞA MAH.,1237,TKGM sınırı,Ismetpaşa
 2019yerel,GAZİANTEP,NİZİP,KALEKÖY MAH.,104,"TKGM sınırı, OSM konumu",Kale (OSM n1457051689)
-2019yerel,GAZİANTEP,OĞUZELİ,MİMAR SİNAN MAH.,149,"TKGM sınırı, yakın ad",Mimarsinan (yakin 0.95)
+2019yerel,GAZİANTEP,OĞUZELİ,MİMAR SİNAN MAH.,149,eşleşmedi,
 2019yerel,GAZİANTEP,OĞUZELİ,İNÖNÜ MAH.,535,"TKGM sınırı mevcut poligonlarla çakışıyor, çizilmedi",Inönü
 2019yerel,GAZİANTEP,OĞUZELİ,ŞAHİNBEY MAH.,967,TKGM sınırı,Şahinbey
 2019yerel,GAZİANTEP,İSLAHİYE,HAYDARKENLİ MAH.,465,"TKGM sınırı, OSM konumu",Yolbaşi (OSM n961207987)
@@ -6771,6 +6837,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,BOZTOPRAKLI MAH.,589,TKGM sınırı,Boztoprakli Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,BOĞAZÖREN MAH.,312,TKGM sınırı,Boğazören Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,BULGURKAYA MAH.,424,TKGM sınırı,Bulgurkaya Köyü
+2019yerel,KAHRAMANMARAŞ,ANDIRIN,BULGURKAYA MAH. + GÖKGEDİK MAH.,738,aynı sınırlı TKGM birimleri tek kayıtta toplandı,Bulgurkaya Köyü = Gökgedik Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,CAMBAZ MAH.,481,"TKGM sınırı, OSM konumu",Canbaz Köyü (OSM n1420213670)
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,CAMUZLUK MAH.,294,TKGM sınırı,Camuzluk Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,DARIOVASI MAH.,545,"TKGM sınırı, yakın ad",Dari Ovasi Köyü (yakin 0.95)
@@ -6795,6 +6862,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,KÖLELİ MAH.,143,TKGM sınırı,Köleli Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,ORHANİYE MAH.,342,TKGM sınırı,Orhaniye Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,OSMANCIK MAH.,201,TKGM sınırı,Osmancik Köyü
+2019yerel,KAHRAMANMARAŞ,ANDIRIN,OSMANCIK MAH. + HACIVELİUŞAĞI MAH.,493,aynı sınırlı TKGM birimleri tek kayıtta toplandı,Haciveliuşaği Köyü = Osmancik Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,RİFATİYE MAH.,373,TKGM sınırı,Rifatiye Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,SUMAKLI MAH.,406,TKGM sınırı,Sumakli Köyü
 2019yerel,KAHRAMANMARAŞ,ANDIRIN,TATARLI MAH.,564,"TKGM sınırı, OSM konumu",Torlar Köyü (OSM n1420213700)
@@ -7010,7 +7078,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,KAHRAMANMARAŞ,ELBİSTAN,İĞDE MAH.,1381,TKGM sınırı,Iğde Köyü
 2019yerel,KAHRAMANMARAŞ,GÖKSUN,ACIELMA MAH.,81,eşleşmedi,
 2019yerel,KAHRAMANMARAŞ,GÖKSUN,AHMETCİK MAH.,74,TKGM sınırı,Ahmetcik
-2019yerel,KAHRAMANMARAŞ,GÖKSUN,ALIÇLIBUCAK MAH.,177,TKGM sınırı,Aliçlibucak
+2019yerel,KAHRAMANMARAŞ,GÖKSUN,ALIÇLIBUCAK MAH.,177,eşleşmedi,
 2019yerel,KAHRAMANMARAŞ,GÖKSUN,ALTINOBA MAH.,55,TKGM sınırı,Altinoba
 2019yerel,KAHRAMANMARAŞ,GÖKSUN,APIKLAR MAH.,382,eşleşmedi,
 2019yerel,KAHRAMANMARAŞ,GÖKSUN,ASLANBEYÇİFTLİĞİ MAH.,263,eşleşmedi,
@@ -7690,6 +7758,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,KIRKLARELİ,LÜLEBURGAZ,AHMETBEY-DERE MAH.,754,"TKGM sınırı, yakın ad",Ahmetbey/Dere (yakin 0.92)
 2019yerel,KIRKLARELİ,LÜLEBURGAZ,AHMETBEY-GÜNDOĞU MAH.,1853,"TKGM sınırı, yakın ad",Ahmetbey/Gündoğu (yakin 0.94)
 2019yerel,KIRKLARELİ,LÜLEBURGAZ,AHMETBEY-KARŞIYAKA MAH.,687,"TKGM sınırı, yakın ad",Ahmetbey/Karşiyaka (yakin 0.94)
+2019yerel,KIRKLARELİ,LÜLEBURGAZ,AHMETBEY-KARŞIYAKA MAH. + AHMETBEY-GÜNDOĞU MAH.,2540,aynı sınırlı TKGM birimleri tek kayıtta toplandı,Ahmetbey/Gündoğu = Ahmetbey/Karşiyaka
 2019yerel,KIRKLARELİ,LÜLEBURGAZ,BÜYÜKKARIŞTIRAN-FATİH MAH.,1812,"TKGM sınırı, yakın ad",Büyükkariştiran/Fatih (yakin 0.95)
 2019yerel,KIRKLARELİ,LÜLEBURGAZ,BÜYÜKKARIŞTIRAN-KÜÇÜKKARIŞTIRAN MAH.,318,eşleşmedi,
 2019yerel,KIRKLARELİ,LÜLEBURGAZ,BÜYÜKKARIŞTIRAN-YENİ MAH.,634,"TKGM sınırı, yakın ad",Büyükkariştiran/Yeni (yakin 0.95)
@@ -9042,6 +9111,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,MARDİN,DERİK,ALANLI MAH.,438,TKGM sınırı,Alanli
 2019yerel,MARDİN,DERİK,ALİBEY MAH.,375,TKGM sınırı,Alibey
 2019yerel,MARDİN,DERİK,AMBARLI MAH.,554,TKGM sınırı,Ambarli
+2019yerel,MARDİN,DERİK,AMBARLI MAH. + ORTACA MAH.,630,aynı sınırlı TKGM birimleri tek kayıtta toplandı,Ambarli = Ortaca Köyü
 2019yerel,MARDİN,DERİK,ATLI MAH.,1086,TKGM sınırı,Atli
 2019yerel,MARDİN,DERİK,AYDINLAR MAH.,196,eşleşmedi,
 2019yerel,MARDİN,DERİK,BALLI MAH.,217,TKGM sınırı,Balli
@@ -9647,7 +9717,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,MERSİN,AYDINCIK,YENİYÜRÜK MAH.,183,"TKGM sınırı, yakın ad",Yeniyörük (yakin 0.89)
 2019yerel,MERSİN,AYDINCIK,YENİYÜRÜKKAŞ MAH.,55,"TKGM sınırı, yakın ad",Yeniyörükkaş (yakin 0.92)
 2019yerel,MERSİN,BOZYAZI,AKCAMİ MAH.,56,TKGM sınırı,Akcami Köyü
-2019yerel,MERSİN,BOZYAZI,ARDIÇLITAŞ MAH.,116,TKGM sınırı,Ardiçlitaş Köyü
+2019yerel,MERSİN,BOZYAZI,ARDIÇLITAŞ MAH.,116,eşleşmedi,
 2019yerel,MERSİN,BOZYAZI,BAHÇEKOYAĞI MAH.,118,TKGM sınırı,Bahçekoyaği Köyü
 2019yerel,MERSİN,BOZYAZI,BEYRELİ MAH.,862,TKGM sınırı,Beyreli
 2019yerel,MERSİN,BOZYAZI,DENİZCİLER MAH.,822,TKGM sınırı,Denizciler
@@ -10654,6 +10724,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,OSMANİYE,OSMANİYE MERKEZ,MEVLANA MAH.,3178,TKGM sınırı,Mevlana
 2019yerel,OSMANİYE,OSMANİYE MERKEZ,MİMAR SİNAN MAH.,8769,"TKGM sınırı, yakın ad",Eyüpsultan/Mimar Sinan (yakin parca)
 2019yerel,OSMANİYE,OSMANİYE MERKEZ,RAHİME HATUN MAH.,8130,"TKGM sınırı, yakın ad",Rizaiye/Rahime Hatun (yakin parca)
+2019yerel,OSMANİYE,OSMANİYE MERKEZ,RAHİME HATUN MAH. + KAZIM KARABEKİR MAH.,11359,aynı sınırlı TKGM birimleri tek kayıtta toplandı,Rizaiye/Kazim Karabekir = Rizaiye/Rahime Hatun
 2019yerel,OSMANİYE,OSMANİYE MERKEZ,RAUFBEY MAH.,9982,TKGM sınırı,Raufbey
 2019yerel,OSMANİYE,OSMANİYE MERKEZ,RIZAİYE MAH.,4081,TKGM sınırı,Rizaiye
 2019yerel,OSMANİYE,OSMANİYE MERKEZ,SELİMİYE MAH.,2836,"TKGM sınırı, yakın ad",Selimiye Köyü (yakin 1.00)
@@ -11512,7 +11583,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,SAMSUN,ATAKUM,KAMALI MAH.,699,TKGM sınırı,Kamali
 2019yerel,SAMSUN,ATAKUM,KARAKAVUK MAH.,297,TKGM sınırı,Karakavuk
 2019yerel,SAMSUN,ATAKUM,KARAOYUMCA MAH.,336,TKGM sınırı,Karaoyumca
-2019yerel,SAMSUN,ATAKUM,KASNAKÇIMERMER MAH.,231,"TKGM sınırı, yakın ad",Kasnakçi Mermer (yakin 0.97)
+2019yerel,SAMSUN,ATAKUM,KASNAKÇIMERMER MAH.,231,eşleşmedi,
 2019yerel,SAMSUN,ATAKUM,KAYAGÜNEY MAH.,713,TKGM sınırı,Kayagüney
 2019yerel,SAMSUN,ATAKUM,KESİLİ MAH.,141,"TKGM sınırı, yakın ad",Kesilli (yakin 0.92)
 2019yerel,SAMSUN,ATAKUM,KULACADAĞ MAH.,504,TKGM sınırı,Kulacadağ
@@ -13325,6 +13396,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,VAN,GEVAŞ,KURULTU MAH.,369,TKGM sınırı,Kurultu
 2019yerel,VAN,GEVAŞ,KUŞLUK MAH.,529,eşleşmedi,
 2019yerel,VAN,GEVAŞ,ORTA MAH.,1253,TKGM sınırı,Orta
+2019yerel,VAN,GEVAŞ,ORTA MAH. + KAZANÇ MAH.,1545,aynı sınırlı TKGM birimleri tek kayıtta toplandı,Kazanç = Orta
 2019yerel,VAN,GEVAŞ,PINARBAŞI MAH.,305,TKGM sınırı,Pinarbaşi
 2019yerel,VAN,GEVAŞ,SELİMİYE MAH.,1410,eşleşmedi,
 2019yerel,VAN,GEVAŞ,TÖRELİ MAH.,67,eşleşmedi,
@@ -13925,6 +13997,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,YOZGAT,ÇEKEREK,SEYİT AHMET MAH.,871,TKGM sınırı,Seyit Ahmet
 2019yerel,YOZGAT,ÇEKEREK,YENİYOL MAH.,921,TKGM sınırı,Yeniyol
 2019yerel,YOZGAT,ÇEKEREK,YUNUS EMRE MAH.,772,TKGM sınırı,Yunus Emre
+2019yerel,YOZGAT,ÇEKEREK,YUNUS EMRE MAH. + SEYİT AHMET MAH.,1643,aynı sınırlı TKGM birimleri tek kayıtta toplandı,Seyit Ahmet = Yunus Emre
 2019yerel,YOZGAT,ÇEKEREK,ÖZÜKAVAK-BAĞLARBAŞI MAH.,466,TKGM sınırı,Özükavak-Bağlarbaşi
 2019yerel,YOZGAT,ÇEKEREK,ÖZÜKAVAK-GÜLTEPE MAH.,502,TKGM sınırı,Özükavak-Gültepe
 2019yerel,ZONGULDAK,ALAPLI,GÜMELİ-ERENKÖY MAH.,458,"TKGM sınırı, yakın ad",Gümeli/Erenköy (yakin 0.93)
@@ -14694,7 +14767,7 @@ secim,il,ilce,ysk_muhtarlik,secmen,durum,tkgm_birimi
 2019yerel,ŞANLIURFA,HİLVAN,AKÇAKEBİR MAH.,108,TKGM sınırı,Akçakebir
 2019yerel,ŞANLIURFA,HİLVAN,AKÇAÖREN MAH.,429,eşleşmedi,
 2019yerel,ŞANLIURFA,HİLVAN,ALPI MAH.,126,TKGM sınırı,Alpi
-2019yerel,ŞANLIURFA,HİLVAN,ARABUK MAH.,96,TKGM sınırı,Arabuk
+2019yerel,ŞANLIURFA,HİLVAN,ARABUK MAH.,96,eşleşmedi,
 2019yerel,ŞANLIURFA,HİLVAN,ARICA MAH.,219,TKGM sınırı,Arica
 2019yerel,ŞANLIURFA,HİLVAN,ARINIK MAH.,142,TKGM sınırı,Arinik
 2019yerel,ŞANLIURFA,HİLVAN,ARPALI MAH.,60,TKGM sınırı,Arpali
