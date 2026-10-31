@@ -532,8 +532,110 @@ def check_secim_gecmisi():
           not bad, "; ".join(bad[:5]))
 
 
+def check_mahalle_eslestirme_kurallari():
+    """tkgm_muhtarlik_esle.py geometri kurallari (2026-10-31 geometri denetimi), yapay poligonlarla:
+    konum kurali (ilce kapsami disindaki aday alinmaz; baska kaynakca ayni ilceye verilen ayni sekil alinir;
+    poligon olmayan aday alinmaz), ayni sinirli TKGM birimlerinin toplanmasi, TKGM x TKGM ortusmesinin
+    kucuk birime birakilmasi ve geometri onarimi (delik yonu)."""
+    ad = "mahalle eşleştirme geometri kuralları (konum, aynı sınır, örtüşme, onarım)"
+    try:
+        import shapely  # noqa: F401
+        import pyproj  # noqa: F401
+        from shapely.geometry import Polygon, box, mapping, shape
+    except ImportError:
+        check(ad + " (shapely/pyproj kurulu değil, ATLANDI)", True)
+        return
+    import tempfile
+    sys.path.insert(0, str(ROOT / "scripts" / "pipelines" / "mahalle_veri" / "transform"))
+    import tkgm_muhtarlik_esle as E
+    sorun = []
+    gj = lambda g: {"type": mapping(g)["type"], "coordinates": E.yuvarla4(mapping(g)["coordinates"])}  # noqa: E731
+    with tempfile.TemporaryDirectory() as d:
+        yol = pathlib.Path(d) / "ilce.geojson"
+        ilce = box(35.0, 39.0, 35.2, 39.2)   # ~17 x 22 km
+        yol.write_text(json.dumps({"type": "FeatureCollection", "features": [
+            {"type": "Feature", "properties": {"id": "TEST-1"}, "geometry": mapping(ilce)}]}))
+        k = E.Konum(ilce_geo=yol)
+        k.tkgm_ekle({"TEST-1": []})
+        ic = gj(box(35.05, 39.05, 35.1, 39.1))
+        uzak = gj(box(36.0, 40.0, 36.05, 40.05))          # ~100 km uzakta (Mazgirt 'Ayvatlı' gibi)
+        kenar = gj(box(35.19, 39.05, 35.215, 39.1))         # sinirda, 2 km bandinda
+        if not k.uygun("TEST-1", ic, ("TKGM", 1), "A"):
+            sorun.append("ilçe içindeki aday reddedildi")
+        if k.uygun("TEST-1", uzak, ("TKGM", 2), "B"):
+            sorun.append("100 km uzaktaki aday alındı")
+        if not k.uygun("TEST-1", kenar, ("TKGM", 3), "C"):
+            sorun.append("2 km bandındaki aday reddedildi")
+        if k.uygun("TEST-1", {"type": "LineString", "coordinates": [[35.05, 39.05], [35.1, 39.1]]}, ("TKGM", 4), "D"):
+            sorun.append("çizgi (LineString) aday alındı")
+        k.dogrulayici_ekle("TEST-1", "Belediye", "B Köyü", k.izd(uzak))
+        if not k.uygun("TEST-1", uzak, ("TKGM", 5), "B"):
+            sorun.append("belediyenin aynı ilçeye verdiği aynı şekil doğrulanmadı")
+        if k.uygun("TEST-1", uzak, ("Belediye", 6), "B"):
+            sorun.append("kaynak kendi kendini doğruladı")
+    # ayni sinir: iki birim ayni kare -> kucuk kimlikte toplanir
+    kare = gj(box(35.0, 39.0, 35.01, 39.01))
+    gr = {"20": [({"ad": "X"}, {"geometry": kare, "properties": {"ad": "x"}}, "birebir")],
+          "10": [({"ad": "Y"}, {"geometry": kare, "properties": {"ad": "y"}}, "birebir")],
+          "30": [({"ad": "Z"}, {"geometry": gj(box(35.02, 39.0, 35.03, 39.01)), "properties": {"ad": "z"}}, "birebir")]}
+    yeni, birlesen = E.ayni_sinirlilari_birlestir(gr)
+    if sorted(yeni) != ["10", "30"] or birlesen != {"10"} or len(yeni["10"]) != 2:
+        sorun.append(f"aynı sınırlı birimler toplanmadı: {sorted(yeni)} {birlesen}")
+    # ortusme: buyuk k2 kucuk k1'i iceriyor; birlikte cizildikleri icin k1 k2'den cikarilir
+    buyuk, kucuk = box(35.0, 39.0, 35.02, 39.02), box(35.005, 39.005, 35.01, 39.01)
+    geo = {"G": {"k1": {"ad": "k", "geometry": gj(kucuk)}, "k2": {"ad": "b", "geometry": gj(buyuk)},
+                 "k3": {"ad": "c", "geometry": gj(box(35.03, 39.0, 35.05, 39.02))},
+                 "k4": {"ad": "d", "geometry": gj(box(35.035, 39.005, 35.04, 39.01))}}}
+    E.tkgm_ortusmelerini_coz(geo, {}, {"G": {"s1": {"k1", "k2", "k3"}, "s2": {"k4"}}})
+    k2 = shape(geo["G"]["k2"]["geometry"])
+    if abs(k2.area - (buyuk.area - kucuk.area)) > 1e-9 or not k2.is_valid or len(k2.interiors) != 1:
+        sorun.append("içteki küçük birim büyükten çıkarılmadı")
+    if shape(geo["G"]["k1"]["geometry"]).area != kucuk.area:
+        sorun.append("küçük birim değişti")
+    if shape(geo["G"]["k3"]["geometry"]).area != box(35.03, 39.0, 35.05, 39.02).area:
+        sorun.append("birlikte çizilmeyen birim kırpıldı")
+    # onarim: delik dis halkayla ayni yonde -> ters yone cevrilir, gecersiz poligon gecerli olur
+    dis = [[35.0, 39.0], [35.02, 39.0], [35.02, 39.02], [35.0, 39.02], [35.0, 39.0]]
+    delik = [[35.005, 39.005], [35.01, 39.005], [35.01, 39.01], [35.005, 39.01], [35.005, 39.005]]
+    p = {"type": "Polygon", "coordinates": [dis, delik]}   # ikisi de saat yonu tersi
+    if not E.onarim_gerekli(p):
+        sorun.append("aynı yönlü delik onarım gerektirmiyor sayıldı")
+    o = E.onar(shape(p))
+    if o.interiors[0].is_ccw == o.exterior.is_ccw:
+        sorun.append("delik yönü düzeltilmedi")
+    kelebek = {"type": "Polygon", "coordinates": [[[35.0, 39.0], [35.01, 39.01], [35.01, 39.0], [35.0, 39.01], [35.0, 39.0]]]}
+    if not E.onar(shape(kelebek)).is_valid:
+        sorun.append("kendini kesen halka onarılmadı")
+    check(ad, not sorun, "; ".join(sorun))
+
+
+def check_mahalle_geometri():
+    """mahalle_geo.json: her poligon gecerli ve poligon (LineString/bos yok), delikler dis halkanin tersi yonde,
+    hicbir secimde kullanilmayan poligon yok (tarihsel Istanbul betiklerinin okudugu TR-D-34-* haric)."""
+    ad = "mahalle_geo.json: geçerli poligon, delik yönü, kullanılmayan poligon yok"
+    try:
+        import shapely  # noqa: F401
+    except ImportError:
+        check(ad + " (shapely kurulu değil, ATLANDI)", True)
+        return
+    sys.path.insert(0, str(ROOT / "scripts" / "pipelines" / "mahalle_veri" / "transform"))
+    import tkgm_muhtarlik_esle as E
+    geo = load_json(ROOT / "geo" / "normalized" / "mahalle_geo.json")
+    kul = {}
+    for f in sorted((DATA_NORM / "mahalle").glob("*.json")):
+        for g, kayit in load_json(f).items():
+            kul.setdefault(g, set()).update(kayit)
+    bozuk = [f"{g}/{k}" for g in sorted(geo) for k in sorted(geo[g]) if E.onarim_gerekli(geo[g][k]["geometry"])]
+    bos = [f"{g}/{k}" for g in sorted(geo) if not g.startswith(E.KORUNAN_ONEK)
+           for k in sorted(geo[g]) if k not in kul.get(g, set())]
+    check(ad, not bozuk and not bos,
+          (f"onarım gereken {len(bozuk)}: {bozuk[:5]} " if bozuk else "") + (f"kullanılmayan {len(bos)}: {bos[:5]}" if bos else ""))
+
+
 def main():
     check_site_copy()
+    check_mahalle_eslestirme_kurallari()
+    check_mahalle_geometri()
     check_completed_records()
     check_vote_completion()
     check_checksums()
