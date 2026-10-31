@@ -22,7 +22,7 @@
 | `OY_TOPLAMI_TUTMUYOR` | hata | 3533 | birim 2504, il 323, ilçe 541, mahalle 5, tuik 159, turkiye 1 — 664 tanesi zaten belgeli |
 | `ORAN_HESAPLA_TUTMUYOR` | hata | 190 | il 180, ilçe 10 — 111 tanesi zaten belgeli |
 | `KAZANAN_DIGER` | eksik | 10 | ilçe 10 |
-| `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 857 | il 29, ilçe 69, mahalle 759 |
+| `KAZANAN_EN_COK_OY_DEGIL` | bilgi | 838 | il 26, ilçe 53, mahalle 759 |
 | `SECMEN_YOK_OY_VAR` | bilgi | 522 | birim 253, il 57, ilçe 212 |
 | `KATILIM_COK_DUSUK` | bilgi | 1007 | birim 19, il 5, ilçe 18, mahalle 965 |
 | `IL_ILCE_TOPLAMI` | hata | 53 | il 53 — 53 tanesi zaten belgeli |
@@ -147,11 +147,11 @@ Dosyalara göre: elections/yerel/1999yerel.json 6, elections/yerel/1994yerel.jso
 | elections/yerel/1999yerel.json | plaka 61 / Of |  |
 | elections/yerel/1999yerel.json | plaka 66 / Çayıralan |  |
 
-## `KAZANAN_EN_COK_OY_DEGIL` (857)
+## `KAZANAN_EN_COK_OY_DEGIL` (838)
 
 Kazanan, en çok oy alan parti değil. Resmi sonuç sandık toplamından farklı olabilir (itiraz, yeniden sayım, aday düzeyinde belirlenen kazanan); tek tek bakılmalı.
 
-Dosyalara göre: mahalle/2024yerel.json 284, mahalle/2011.json 176, mahalle/2019yerel.json 119, mahalle/2014yerel.json 92, mahalle/2009yerel.json 39, mahalle/2023.json 30, elections/yerel/1973yerel.json 24, elections/yerel/1968yerel.json 19, elections/yerel/2024yerel.json 17, mahalle/2015Haziran.json 11, elections/yerel/1963yerel.json 8, elections/yerel/1977yerel.json 6 …
+Dosyalara göre: mahalle/2024yerel.json 284, mahalle/2011.json 176, mahalle/2019yerel.json 119, mahalle/2014yerel.json 92, mahalle/2009yerel.json 39, mahalle/2023.json 30, elections/yerel/1973yerel.json 24, elections/yerel/1968yerel.json 19, mahalle/2015Haziran.json 11, elections/yerel/1963yerel.json 8, elections/yerel/1977yerel.json 6, mahalle/2018.json 6 …
 
 | Dosya | Birim | Ayrıntı |
 |---|---|---|
@@ -170,7 +170,7 @@ Dosyalara göre: mahalle/2024yerel.json 284, mahalle/2011.json 176, mahalle/2019
 | elections/genel/1999.json | plaka 58 / Sivas | kazanan FP 88827, en çok oy Diğer 99246 |
 | elections/genel/1999.json | plaka 62 / Tunceli | kazanan Bağımsız 8052, en çok oy Diğer 9466 |
 | elections/yerel/1955yerel.json | plaka 11 / Bilecik | kazanan DP 7, en çok oy Bağımsız 11 |
-| … | 842 kayıt daha | |
+| … | 823 kayıt daha | |
 
 ## `SECMEN_YOK_OY_VAR` (522)
 
