@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seçim Sohbeti</title>
+  <meta name="description" content="Türkiye seçim sonuçlarına (1950–2024) Türkçe soru sorun; yanıt, SQL ve sonuç tablosu birlikte gelir.">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><rect x="3" y="17" width="5" height="12" rx="1"/><rect x="11" y="9" width="5" height="20" rx="1"/><rect x="19" y="13" width="5" height="16" rx="1"/><circle cx="27" cy="6" r="3"/></svg>
+      </span>
+      <div>
+        <h1>Seçim Sohbeti</h1>
+        <p class="sub">Türkiye seçimleri 1950–2024 · il, ilçe, mahalle · doğal dilde soru → SQL</p>
+      </div>
+    </div>
+    <div class="status" id="status" title="Model ve veritabanı durumu">
+      <span class="dot" id="status-dot"></span><span id="status-text">bağlanıyor…</span>
+    </div>
+  </header>
+
+  <div class="scroller" id="scroller">
+  <main id="chat" class="chat" aria-live="polite">
+    <section class="intro" id="intro">
+      <h2>Seçim verisine bir soru sorun.</h2>
+      <p>46 seçim, 81 il, 973 ilçe ve 46 bine yakın mahalle. Sorunuz bir SQL sorgusuna çevrilir,
+        güvenlik katmanından geçip salt-okunur veritabanında çalıştırılır; yanıtla birlikte sorguyu ve
+        sonuç tablosunu görürsünüz.</p>
+      <div class="chips" id="chips" aria-label="Örnek sorular"></div>
+    </section>
+  </main>
+  </div>
+
+  <form class="composer" id="composer" autocomplete="off">
+    <label for="q" class="sr-only">Soru</label>
+    <textarea id="q" rows="1" maxlength="1000" placeholder="Örn. 2024 yerel seçimlerinde CHP kaç il kazandı?"></textarea>
+    <button type="submit" id="send" aria-label="Gönder">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12h13M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </form>
+  <p class="foot">Yanıtlar yalnız veritabanındaki sayılara dayanır; sorgu her zaman görünür. Kaynak: YSK, TÜİK ·
+    <a href="https://hamikumbasae.github.io/turkiye-secim-haritasi/" target="_blank" rel="noopener">Seçim Haritası</a></p>
+
+  <template id="tpl-bot">
+    <article class="msg bot">
+      <div class="answer"></div>
+      <div class="meta"></div>
+      <div class="table-wrap" hidden></div>
+      <details class="sql" hidden>
+        <summary>SQL sorgusu</summary>
+        <div class="sql-body"><button type="button" class="copy">Kopyala</button><pre><code></code></pre></div>
+        <div class="retry" hidden></div>
+      </details>
+    </article>
+  </template>
+  <script src="/static/app.js"></script>
+</body>
+</html>
