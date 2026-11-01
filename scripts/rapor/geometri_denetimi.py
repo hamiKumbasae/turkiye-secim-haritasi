@@ -72,7 +72,7 @@ _TR = Transformer.from_crs("EPSG:4326", IZDUSUM, always_xy=True)
 
 KM2 = 1e6
 DISARI_PAY, DISARI_KM2 = 0.05, 1.0         # kontrol 2 esikleri
-BANT_M = 2000   # ilce katmani ~%8 noktaya sadelestirildi: sinirdan bu kadar icerisi 'sadelestirme bandi' sayilir
+BANT_M = 2000   # ilce siniri kaynaklar arasinda 1-2 km farkli olabiliyor: sinirdan bu kadar icerisi 'bant' sayilir
 ORTUSME_MIN_M2 = 1000                       # kontrol 3: bundan kucuk ortusme (sayisallastirma gurultusu) yazilmaz
 ANLAMLI_M2, ANLAMLI_PAY = 10_000, 0.01      # 'anlamli ortusme': >= 1 ha ve kucuk poligonun >= %1'i
 KIYMIK_PP, KIYMIK_KM2 = 0.02, 1.0
@@ -278,6 +278,8 @@ def hesapla(bosluk_secimleri, img_klasor=None):
     }
     kul_bayt = sum(len(json.dumps(m_list[i][3], separators=(",", ":"))) for i in range(len(m_list)) if i not in kullanim)
     S["envanter"]["hic_kullanilmayan_mb"] = r(kul_bayt / 1e6, 1)
+    S["envanter"]["ilce_nokta_ortalama"] = r(sum(int(shapely.get_num_coordinates(shape(f["geometry"])))
+                                                 for f in D["ilce_fc"]) / len(D["ilce_fc"]), 0)
 
     # ---------------- 1. gecerlilik
     print(f"1. Geçerlilik ({time.time() - T0:.0f} sn) ...", flush=True)
@@ -888,11 +890,14 @@ def rapor_yaz(S, csvler, csv_klasor):
     w("## 1. Kısa özet\n")
     w(f"Haritada {sayi(len(csvler['tkgm_ilce_karsilastirma.csv'][1]))} bugünkü ilçe, 81 il, {sayi(T['toplam'])} tarihsel ilçe ve "
       f"{sayi(E['ilce_kimligi'])} ilçe kimliğine bağlı {sayi(E['poligon'])} mahalle poligonu var. Sonuç:\n")
+    uzak = sorted((x for x in satirlar("mahalle_yanlis_ilce.csv") if (x["kendi_ilcesine_uzaklik_km"] or 0) > 2
+                   and x["cizildigi_secim_sayisi"]), key=lambda x: -x["kendi_ilcesine_uzaklik_km"])
+    uzak_ornek = ", ".join(f"{x['ilce']} {x['mahalle']} → {x['noktanin_ilcesi']} ({sayi(x['kendi_ilcesine_uzaklik_km'], 1)} km)"
+                           for x in uzak[:3]) or "yok"
     w("**Gerçek sorunlar (düzeltilmesi gerekenler)**\n")
     w(f"1. **Yanlış yere çizilen mahalleler.** {sayi(MI['yanlis_ilce_uzak'])} mahalle poligonu kendi ilçesinin 2 km'den daha "
-      f"dışında duruyor; {sayi(MI['yanlis_ilce_uzak_kullanilan'])}'i en az bir seçimde çiziliyor. Örnekler: Tunceli Mazgirt'in Ayvatlı "
-      "köyü Kayseri Pınarbaşı'nda, Balıkesir Bigadiç'in Camii mahallesi Eskişehir Çifteler'de, Çorum Sungurlu'nun Ekmekçi köyü Ankara "
-      "Nallıhan'da çiziliyor. Bu mahallelerin oyu yanlış yerde boyanıyor ve ilçe haritası gereksiz yere uzaklaşıyor (bölüm 4.2).")
+      f"dışında duruyor; {sayi(MI['yanlis_ilce_uzak_kullanilan'])}'i en az bir seçimde çiziliyor. En uzak örnekler: {uzak_ornek}. "
+      "Bu mahallelerin oyu yanlış yerde boyanıyor ve ilçe haritası gereksiz yere uzaklaşıyor (bölüm 4.2).")
     w(f"2. **Üst üste çizilen TKGM birimleri.** Aynı seçimde birlikte çizilen ve anlamlı ölçüde (≥ 1 ha ve küçüğün ≥ %1'i) örtüşen "
       f"{sayi(birlikte_top)} mahalle çifti var ({sayi(birlikte_km2, 0)} km²). Bunların {sayi(birlikte_tt.get('birlikte_cizilen', 0))}'i "
       f"({sayi(birlikte_tt.get('birlikte_km2', 0), 0)} km²) TKGM × TKGM. TKGM ham verisi kendi içinde örtüşüyor "
@@ -909,13 +914,13 @@ def rapor_yaz(S, csvler, csv_klasor):
     w(f"5. {yon_ayni} mahalle poligonunda delik, dış halkayla aynı yönde yazılmış. Site SVG'yi varsayılan `nonzero` kuralıyla dolduruyor; "
       f"bu deliklerin içi dolu çiziliyor. {gm.get('poligon değil (LineString)', 0)} kayıt poligon değil, çizgi (LineString); "
       f"{gm.get('boş ya da dejenere (alan < 1 m²)', 0)} kaydın alanı sıfır.")
-    w(f"6. İlçe katmanı kaba sadeleştirilmiş (ilçe başına ortalama ~75 nokta). Komşu ilçeler arasında {sayi(K['delik_dikis'])} dikiş "
-      f"boşluğu ({sayi(K['delik_dikis_km2'], 0)} km²) ve {sayi(K['ilce_ortusme_cift'])} örtüşme ({sayi(K['ilce_ortusme_km2'], 0)} km²) var. "
-      "Toplam alanın %0,05'i; haritada kıl inceliğinde çizgiler olarak görünür.")
+    w(f"6. İlçe katmanı: ilçe başına ortalama {sayi(E.get('ilce_nokta_ortalama', 0))} nokta. Komşu ilçeler arasında {sayi(K['delik_dikis'])} dikiş "
+      f"boşluğu ({sayi(K['delik_dikis_km2'], 0)} km²) ve {sayi(K['ilce_ortusme_cift'])} örtüşme ({sayi(K['ilce_ortusme_km2'], 1)} km²) var; "
+      "haritada kıl inceliğinde çizgiler olarak görünür.")
     w(f"7. {sayi(E['hic_kullanilmayan'])} mahalle poligonu hiçbir seçimde çizilmiyor ({sayi(E['hic_kullanilmayan_mb'], 1)} MB ham GeoJSON).\n")
     w("**Sorun olmayanlar**\n")
     w(f"- Mahalle poligonlarının ilçe sınırından taşan alanı {sayi(MI['disari_toplam_km2'], 0)} km² (%{sayi(MI['disari_toplam_pay'], 1)}). "
-      f"Bunun çoğu ilçe katmanının kaba sadeleştirilmesinden geliyor: ilçe sınırına 2 km'lik pay verilince taşma "
+      f"Bunun çoğu sınırdaki çizim farkı (kaynaklar sınırı farklı ayrıntıda çiziyor): ilçe sınırına 2 km'lik pay verilince taşma "
       f"{sayi(MI['disari_bant_km2'], 0)} km²'ye (%{sayi(MI['disari_bant_pay'], 1)}) iniyor.")
     w(f"- Eşleştirme betiğinin \"mevcut poligonlarla %25'ten fazla örtüşen TKGM birimi çizilmez\" kuralı tutuyor: "
       f"{S['tkgm_kurali']['ihlal_satir']} ihlal.")
@@ -943,8 +948,8 @@ def rapor_yaz(S, csvler, csv_klasor):
         ["`b…`", "Belediye açık verisi (Bursa, Sakarya)", sayi(E["kaynak"].get("Belediye", 0))],
         ["`k…`, `kb…`", f"TKGM kadastro mahallesi (`kb`: bölümlü birimlerin birleşimi, {E['kb_birlesik']})", sayi(E["kaynak"].get("TKGM", 0))],
     ]) + "\n")
-    w("**Sadeleştirme bandı.** İlçe katmanı ham veriden %8 noktayla sadeleştirildi (`geo/normalized/PROVENANCE.md`); sınırı "
-      "gerçek sınırdan 1–2 km sapabiliyor. Ayrıntılı mahalle poligonları bu yüzden kenarda ilçe dışına taşıyor. Gerçek hatayı "
+    w("**Sınır bandı.** İlçe sınırı ile mahalle kaynakları (TKGM, belediye, OSM) sınırı farklı ayrıntıda ve kaynakta çiziyor "
+      "(`geo/normalized/PROVENANCE.md`); iki çizgi 1–2 km ayrılabiliyor. Mahalle poligonları bu yüzden kenarda ilçe dışına taşıyor. Gerçek hatayı "
       "gürültüden ayırmak için ilçe sınırına 2 km pay verilmiş hâli de ölçüldü (\"2 km bandı dışında\").\n")
     w("**Birlikte çizilme.** Site bir seçimde yalnız o seçimin verisi olan mahalle poligonlarını çizer. İki poligon hiçbir seçimde "
       "birlikte çizilmiyorsa örtüşmeleri haritada görünmez; bu yüzden her örtüşme için ortak seçim sayısı hesaplandı.\n")
@@ -1004,7 +1009,7 @@ def rapor_yaz(S, csvler, csv_klasor):
     w("### 4.2 Mahalle ile ilçesi\n")
     w(tablo(["Ölçü", "Değer"], [
         ["İlçe dışına taşan toplam mahalle alanı", f"{sayi(MI['disari_toplam_km2'], 0)} km² (%{sayi(MI['disari_toplam_pay'], 2)})"],
-        ["… 2 km sadeleştirme bandı dışında kalan", f"{sayi(MI['disari_bant_km2'], 0)} km² (%{sayi(MI['disari_bant_pay'], 2)})"],
+        ["… 2 km sınır bandı dışında kalan", f"{sayi(MI['disari_bant_km2'], 0)} km² (%{sayi(MI['disari_bant_pay'], 2)})"],
         ["> %5 ve > 1 km² taşan mahalle", f"{sayi(MI['isaretli'])} (çizilen {sayi(MI['isaretli_kullanilan'])}); " +
          ", ".join(f"{k} {sayi(v)}" for k, v in MI["isaretli_kaynak"].items())],
         ["… 2 km bandı dışında da > %5 ve > 1 km²", f"{sayi(MI['bant_disi'])} (çizilen {sayi(MI['bant_disi_kullanilan'])}); " +
@@ -1084,8 +1089,8 @@ def rapor_yaz(S, csvler, csv_klasor):
         ["İl ↔ ilçelerinin birleşimi, simetrik fark", f"medyan %{sayi(K['il_fark_medyan'], 2)}, en çok %{sayi(K['il_fark_max'], 2)}; %2'yi aşan il {K['il_fark_2_ustu']}"],
         ["Tarihsel ilçeler", ", ".join(f"{k}: {v}" for k, v in T["tur"].items())],
     ]) + "\n")
-    w("İl ve ilçe katmanları ayrı ayrı sadeleştirildiği için sınırları birebir üst üste binmiyor (kıyıda ve il sınırında ~1 km'ye kadar "
-      "sapma); ilçe katmanının kendi içinde de komşu sınırlar ayrı sadeleştirilmiş. Görünüm etkisi kıl inceliğinde beyaz/çift çizgiler.\n")
+    w("İl ile ilçe katmanının ve komşu ilçelerin sınırları birebir üst üste binmediğinde (ayrı ayrı sadeleştirilmiş katmanlar) "
+      "görünüm etkisi kıl inceliğinde beyaz/çift çizgilerdir; yukarıdaki dikiş boşluğu, örtüşme ve simetrik fark bunu ölçer.\n")
     il_ = satirlar("il_ilce_tutarlilik.csv")
     w("**İl ile ilçelerinin birleşimi en farklı 10 il:**\n")
     w(tablo(["İl", "İl km²", "İlçeler km²", "İlde var, ilçede yok km²", "İlçede var, ilde yok km²", "Simetrik fark"],
@@ -1132,7 +1137,7 @@ def rapor_yaz(S, csvler, csv_klasor):
         ["2 km bandı dışında > 10 km² TKGM alanı olan ilçe", sayi(TK["bant_disi_10km2"])],
         ["2 km bandı dışında > 1 km² ve > %5", sayi(TK["bant_disi_1km2_5yuzde"])],
     ]) + "\n")
-    w("Medyan ilçede iki sınır 1–2 km içinde aynı; fark sitenin ilçe katmanının kaba sadeleştirilmesinden geliyor. Sistematik "
+    w("Medyan ilçede iki sınır 1–2 km içinde aynı; fark çoğunlukla iki kaynağın sınırı farklı ayrıntıda çizmesinden. Sistematik "
       f"öteleme yok: TKGM'si eksiksiz ({TK['kayma_ilce']} ilçe, alan oranı %95–105) ilçelerde ağırlık merkezleri arasındaki "
       f"uzaklığın medyanı {sayi(TK['kayma_uzaklik_medyan_m'])} m, ortak yön (doğu {sayi(TK['kayma_dx_medyan_m'])} m, kuzey "
       f"{sayi(TK['kayma_dy_medyan_m'])} m) ihmal edilebilir. Aşağıdaki ilçelerde "
@@ -1156,6 +1161,8 @@ def rapor_yaz(S, csvler, csv_klasor):
 
     # ---------------- oneriler
     w("## 6. Öneriler (etki / iş sırasıyla)\n")
+    w("İlk denetimin (PR #19) önerileri; sayılar bu çalıştırmanın. 1–4 ve 7 `HARITA_DUZELTME_2026-10-31.md`, 5 ve 6 "
+      "`ILCE_KATMANI_2026-11-01.md` ile uygulandı.\n")
     w(tablo(["#", "Öneri", "Etki", "İş"], [
         [1, f"Eşleştirmede (`tkgm_muhtarlik_esle.py`) aday sınırı ilçe poligonuyla sına: alanının çoğu ilçenin 2 km bandı dışında "
             f"kalan TKGM/OSM/belediye birimi alınmasın. Önce `mahalle_yanlis_ilce.csv`'deki uzak {MI['yanlis_ilce_uzak_kullanilan']} "
