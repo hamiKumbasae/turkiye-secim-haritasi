@@ -5,12 +5,10 @@ name: ysk-yenileme-2009-cek
 # yenileme secimi var mi bakar (secim_listesi.js), varsa o secimin belediye baskanligi sandiklarini
 # il/ilce/belde bazinda ceker (fetch_belde_agrege.js --ham). 2) Ikinci kaynak icin Vikipedi'nin
 # gosterdigi haber sayfalarinin arsiv kopyalarini indirir. Ciktilar "ysk-belde-baskan-veri" dalina
-# eklenir. Ilk calistirma fix/belde-ayrimi dalinda (push tetigi yalniz bu dosya degisince).
+# eklenir.
+# Ilk calistirma: 2026-11-01, run 41258728603 (YSK'de 7 Haziran 2009 secimi yok; haber kopyalari indirildi).
 on:
   workflow_dispatch:
-  push:
-    branches: [fix/belde-ayrimi]
-    paths: [.github/workflows/ysk-yenileme-2009-cek.yml]
 
 permissions:
   contents: write

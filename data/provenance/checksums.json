@@ -78,7 +78,7 @@
     "ek/yenileme_ara/1975mv_ara.json": "2848c52e98f6f61cd0d083c54eeed9a0e68a012b684e6317c89d1c1a03f269e6",
     "ek/yenileme_ara/1979mv_ara.json": "ed49cc5c12ea31a578359ea1e73ce74585a14b2b870e470fac37c0956820bcbb",
     "ek/yenileme_ara/1986mv_ara.json": "592264b7bda2d013a291b6530328ebe708cf770c91e6278dff75bd48c6b866ca",
-    "ek/yenileme_ara/2009yenileme_belediye_baskanligi.json": "19dd5c80762920295c740ee59717864231aa08f972fb8b541f6162141f4b12c9",
+    "ek/yenileme_ara/2009yenileme_belediye_baskanligi.json": "4905e85e2a9320564dd1e86ac10357ebe0b8870ff9750d4ca732c173db7a229a",
     "ek/yenileme_ara/2019istanbul_bb_yenileme.json": "a04e5c48f6030b4fd525f7f419617187c7ce9be96aded17facc2d53de8f6186c",
     "ek/yenileme_ara/2024yenileme_belediye_baskanligi.json": "f6a0315cfc3ac14740ad88592594e0995075d2cc71381c556082e9330f799208",
     "ek/yenileme_ara/2024yenileme_belediye_meclisi.json": "cb39c9bc1f49766d2f66c648abd1da767bee0cecb81871f83cf5917202f4d13c",
@@ -126,7 +126,7 @@
     "elections/yerel/1994yerel.json": "f8b3b01ce38ae4c4bc8d4d81906a3fab0b78220a5d55c915db65177e00fed707",
     "elections/yerel/1999yerel.json": "6439a08256ac9aba6e815e2a4ac3c9df9df399ff1cbe3adfd1bf455437a1b542",
     "elections/yerel/2004yerel.json": "be9572f54a0fdb7cce17e38c9a89560e39a4378edddc6dffd19630e68972c317",
-    "elections/yerel/2009yerel.json": "5c87f86dfdb46a585671c2e7400dea818f8b961789c4874d9de6d4ab71e29e25",
+    "elections/yerel/2009yerel.json": "a337f01e039ba6c6154f15edaddf208db55be267a82e197db1e0f544cbc78ea3",
     "elections/yerel/2014yerel.json": "165a245ea210109fe59189aae4007da054993e0bfe61d9d02f5b971316e11e4a",
     "elections/yerel/2019yerel.json": "c2fde3f634e5b3c68bccefa22ee4065fcb0bce59f35da09064afab99cb6f3a8d",
     "elections/yerel/2024yerel.json": "9f179fdc251bb58a8400e15cd2f4c02ba9c092986c6379217c513ce0c4c1db37",
@@ -6841,6 +6841,21 @@
     "mahalle/16.meta.json": "772f23ca743210fbfd5d3320a043dc31dae2224a5ebae398247362a1c86d5d5d",
     "mahalle/54.geojson": "32a7e5606579df78f10ae7b52fbf4baadce8034e5f703609228473be67d82123",
     "mahalle/54.meta.json": "ca53327aa195df13236386253674b9abfbb1c8468df211c830dfa0d33a348663"
+   }
+  },
+  "data/raw/third-party/haber-2009-yenileme": {
+   "checksum_file": "data/raw/third-party/haber-2009-yenileme/checksums.sha256",
+   "file_count": 2,
+   "files": {
+    "cnnturk_yenileme_2009.html": "36c5489a31130d1aa34443777f04f53a5274293f817d65d0e58d18b86c68e3bc",
+    "ntv_yenileme_2009.html": "5ea33bfb8c3fd5cf7e66dac91a9bd504e90aafd2113c29937176e178ba6315b9"
+   }
+  },
+  "data/raw/ysk/yenileme-2009": {
+   "checksum_file": "data/raw/ysk/yenileme-2009/checksums.sha256",
+   "file_count": 1,
+   "files": {
+    "secim_listesi.json": "a2ad27ef519356952368d12ac62b014f6cd0f2ba3759d0df58a8e13196cf4606"
    }
   }
  },

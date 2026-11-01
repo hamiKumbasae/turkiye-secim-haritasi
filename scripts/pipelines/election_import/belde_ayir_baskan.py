@@ -244,7 +244,12 @@ def isle(secim, rapor, uygula):
             sayac["merkez_birimi_yok"] += 1
             satir("ilce", r, "merkez_birimi_yok", kayitSandik=r.get("sandik"), v2Sandik=v.get("sandikSayisi"))
             if r.get("sandik") == v.get("sandikSayisi") and r.get("gecerliOy") == v.get("gecerli"):
-                r["ilceGeneliSonuc"] = SADECE_BELDE
+                if yenileme_2009(secim, r, v2_dosya, len(bl), bsandik, ik):
+                    sayac["yenileme_2009"] += 1
+                    satir("ilce", r, "yenileme_2009", kazanan=r["kazanan"])
+                    duzeltilen_ik[ik] = ("onceki", r)
+                else:
+                    r["ilceGeneliSonuc"] = SADECE_BELDE
             continue
         s = birim_sonucu(m, col_to_key)
         kazanan, fark = aday_kazanan(s)
@@ -276,13 +281,25 @@ def isle(secim, rapor, uygula):
             satir("ilce", r, "kayit_v2_toplami_degil", kayitSandik=r.get("sandik"), v2Sandik=v.get("sandikSayisi"),
                   kayitGecerli=r.get("gecerliOy"), v2Gecerli=v.get("gecerli"))
             continue
-        if not s["tutarli"]:
-            sayac["ysk_tutarsiz"] += 1
-            satir("ilce", r, "ysk_parti_toplami_gecerliye_esit_degil", bilinmeyenSutun=sum(s["bilinmeyen"].values()))
-            r["ilceGeneliSonuc"] = TOPLAM_BIRIM
-            continue
-        eski_kaz = r.get("kazanan")
         ek = None
+        if not s["tutarli"]:
+            kalan = s["gecerli"] - sum(s["oy"].values())
+            if s["bilinmeyen"] and 0 < kalan < sum(s["bilinmeyen"].values()) and kalan < 0.03 * s["gecerli"]:
+                # Baslik listesinde adi olmayan sutunlar (2009: parti21-26) toplami tutmuyor; adlandirilmis
+                # partiler aynen, gecerli oya kalan fark 'Diğer' (digerTamamlama duzeni). Kazanan farki kalandan buyuk olmali.
+                kazanan, fark = aday_kazanan(s)
+                if fark > kalan:
+                    s["oy"]["Diğer"] = kalan
+                    ek = {"digerTamamlama": {
+                        "oy": kalan, "bilinmeyenSutunlar": dict(sorted(s["bilinmeyen"].items())),
+                        "not": "YSK başlık listesinde adı olmayan sütunlar toplamı tutmuyor; adlandırılmış parti oyları aynen, "
+                               "geçerli oya kalan fark 'Diğer'. Kazananla ikinci arasındaki fark bu kalandan büyük."}}
+            if ek is None:
+                sayac["ysk_tutarsiz"] += 1
+                satir("ilce", r, "ysk_parti_toplami_gecerliye_esit_degil", bilinmeyenSutun=sum(s["bilinmeyen"].values()))
+                r["ilceGeneliSonuc"] = TOPLAM_BIRIM
+                continue
+        eski_kaz = r.get("kazanan")
         durum = "duzeltildi"
         if kazanan != eski_kaz:
             v2oy = v2_oylar(v, col_to_key_v2)
@@ -293,11 +310,11 @@ def isle(secim, rapor, uygula):
             karisik_bagimsiz = eski_kaz == "Bağımsız" and "oncekiKazanan" in (k.get("digerAyristirma") or {})
             if (eski_kaz in (karisik_birinci, kayit_birinci) and eski_kaz != "Bağımsız") or karisik_bagimsiz:
                 durum = "duzeltildi_kazanan_degisti"
-                ek = {"oncekiKazanan": eski_kaz,
+                ek = {**(ek or {}), "oncekiKazanan": eski_kaz,
                       "kazananNotu": "Önceki kazanan ilçe merkezi + belde toplamının birincisiydi; ilçe belediyesinin kendi sandıklarında birinci değil"}
             else:
                 durum = "duzeltildi_kazanan_korundu"
-                ek = {"yskKazanan": kazanan, "yskFark": fark,
+                ek = {**(ek or {}), "yskKazanan": kazanan, "yskFark": fark,
                       "kazananNotu": "Kayıttaki kazanan YSK sandık toplamının birincisinden farklı; kayıttaki kazanan başka kaynaktan (aday düzeyinde) geldiği için korundu"}
                 kazanan = eski_kaz
         satir("ilce", r, durum, eskiKazanan=eski_kaz, kazanan=kazanan, fark=fark, eskiGecerli=r.get("gecerliOy"),
@@ -406,6 +423,95 @@ def yenileme_uygula(secim, rec, rapor):
     return n
 
 
+# 29 Mart 2009'da iptal edilip 7 Haziran 2009'da yenilenen ilçe belediyeleri. YSK açık verisinde yenileme seçimi
+# yok (getSecimDetayList'te 2009'dan yalnız 4290; ysk-yenileme-2009-cek.yml, data/raw/ysk/yenileme-2009/).
+# Değerler Vikipedi il sayfasının "7 Haziran Sonuçları" sütunundan (yenileme_2009.tablo); her parti oyu iki haber
+# kaynağıyla (NTV ve CNN Türk, 7 Haziran 2009, arşiv kopyaları data/raw/web/yenileme-2009/) birebir karşılaştırılır.
+# 29 Mart değerleri de Vikipedi'den; sandık ve seçmen YSK belediye meclisi verisindeki ilçe merkezi birimiyle eşleşmeli.
+NTV_2009 = "https://web.archive.org/web/20220529224532/https://www.ntv.com.tr/turkiye/yenileme-secimleri-sonuclari,gkFPxeKiz0C80_Z42bJPtw"
+CNNTURK_2009 = "https://web.archive.org/web/20090611085753/https://www.cnnturk.com/2009/turkiye/06/07/turkiye.yine.sandik.basindaydi/529889.0/index.html"
+YENILEME_2009 = {  # ilce anahtari: (Vikipedi dosyasi, ilce, kazanan aday, haberdeki parti oylari, haberdeki oy kullanan, geçersiz)
+    "54-23": ("sakaryada-2009-turkiye-yerel-secimleri.wiki", "Akyazı", "Yaşar Yazıcı",
+              {"AK Parti": 11081, "SP": 10026, "MHP": 1553, "CHP": 154, "DP": 43, "DSP": 30, "BTP": 50}, 23184, 247),
+    "9-373": ("aydinda-2009-turkiye-yerel-secimleri.wiki", "Koçarlı", "Cengiz Şen",
+              {"MHP": 34, "CHP": 1745, "DP": 1217, "SP": 5, "AK Parti": 1512, "BTP": 1}, 4577, 63),
+    "19-413": ("corumda-2009-turkiye-yerel-secimleri.wiki", "Mecitözü", "Selçuk Aksoy",
+               {"MHP": 21, "CHP": 1918, "SP": 18, "AK Parti": 1649, "DSP": 4}, 3673, 63),
+    "32-544": ("ispartada-2009-turkiye-yerel-secimleri.wiki", "Şarkikaraağaç", "Mevlüt Özdemir",
+               {"MHP": 2878, "CHP": 42, "DP": 27, "SP": 78, "AK Parti": 2968, "BTP": 10}, 6237, 234),
+}
+UYGULA = False  # main() ayarlar; ek/yenileme_ara dosyası yalnız 'uygula'da yazılır
+YENILEME_2009_EK = ROOT / "data" / "normalized" / "ek" / "yenileme_ara" / "2009yenileme_belediye_baskanligi.json"
+
+
+def yenileme_2009(secim, r, v2_dosya, belde_sayisi, belde_sandik, ik):
+    if secim != "2009yerel" or ik not in YENILEME_2009:
+        return False
+    from yenileme_2009 import WIKI, tablo  # noqa: E402
+    dosya, ilce, aday, haber, haber_oyk, haber_gecersiz = YENILEME_2009[ik]
+    secmen, sandik, t = tablo(dosya, ilce)
+    m, h = t["mart"], t["haziran"]
+    h["oy"] = {p: o for p, o in h["oy"].items() if o}
+    m["oy"] = {p: o for p, o in m["oy"].items() if o}
+    if h["oy"] != haber or h["gecerliOy"] + h["gecersizOy"] != haber_oyk or h["gecersizOy"] != haber_gecersiz:
+        raise SystemExit(f"{ilce}: Vikipedi 7 Haziran sütunu haberle tutmuyor: {h['oy']} / {haber}")
+    meclis = json.loads((BELDE_DIR / "2009yerel_belediye_meclisi.json").read_text(encoding="utf-8"))["birimler"][ik + "-0"]
+    if meclis["sandik"] != sandik or meclis["toplam"]["secmen_SAYISI"] != secmen:
+        raise SystemExit(f"{ilce}: Vikipedi sandık/seçmen YSK meclis ilçe merkezi birimiyle tutmuyor")
+    idx = json.loads((WIKI / "_index.json").read_text(encoding="utf-8"))["sayfalar"]
+    url = next(v["url"] for v in idx.values() if v["dosya"] == dosya)
+    eski = {"birim": "yalnız bağlı beldelerin toplamı (ilçe merkezinin 29 Mart başkanlık sandıkları YSK açık verisinde yok)",
+            "oy": {p: (v.get("oy") if isinstance(v, dict) else v) for p, v in r["oy"].items()}, "kazanan": r.get("kazanan")}
+    for alan in ("gecerliOy", "secmen", "sandik", "katilim"):
+        eski[alan] = r.get(alan)
+    eski["kaynak"] = v2_dosya
+    if isinstance(r.get("kaynak"), dict) and r["kaynak"]:
+        eski["oncekiKaynak"] = copy.deepcopy(r["kaynak"])
+    for alan in ("veriNotu", "not"):
+        if r.get(alan):
+            eski[alan] = r.pop(alan)
+    r.pop("ilceGeneliSonuc", None)
+    kazanan = max(h["oy"], key=h["oy"].get)
+    mk = max(m["oy"], key=m["oy"].get)
+    g = h["gecerliOy"]
+    r["oy"] = {p: {"oran": round(100 * o / g, 2), "oy": o, **({"aday": h["adaylar"][p]} if h["adaylar"].get(p) else {})}
+               for p, o in sorted(h["oy"].items()) if o}
+    r.update({"kazanan": kazanan, "gecerliOy": g, "secmen": secmen, "sandik": sandik, "katilim": h["katilim"]})
+    r["kaynak"] = {"ana": "wikipedia", "yenileme": {
+        "tarih": "7 Haziran 2009", "kaynak": f"Vikipedi il sayfası, {url} (7 Haziran Sonuçları sütunu)",
+        "ikinciKaynak": [NTV_2009, CNNTURK_2009],
+        "kontrol": "her parti oyu, oy kullanan ve geçersiz oy iki haberle birebir; sandık ve seçmen YSK belediye meclisi "
+                   f"ilçe merkezi birimiyle (data/raw/ysk/acikveri-belde-agrege/2009yerel_belediye_meclisi.json, birim {ik}-0) birebir",
+        "oyKullanan": g + h["gecersizOy"], "gecersizOy": h["gecersizOy"],
+        "ek": str(YENILEME_2009_EK.relative_to(ROOT)),
+        "ilkSecim": {"tarih": "29 Mart 2009", "kaynak": "Vikipedi il sayfası (29 Mart Sonuçları sütunu)",
+                     "kazanan": mk, "oy": dict(sorted(m["oy"].items())), "gecerliOy": m["gecerliOy"],
+                     "gecersizOy": m["gecersizOy"], "katilim": m["katilim"], "sandik": sandik, "secmen": secmen}},
+        "yskSatiri": eski}
+    r["kaynak"]["yenileme"]["beldeSayisi"], r["kaynak"]["yenileme"]["beldeSandik"] = belde_sayisi, belde_sandik
+    r["not"] = (f"29 Mart 2009 seçimi iptal edildi ve 7 Haziran 2009'da yenilendi; gösterilen yenileme sonucudur "
+                f"({kazanan}, {aday}). 29 Mart'ta ilçe belediyesinde birinci {mk} idi. YSK açık verisinde bu seçim yok; "
+                f"kaynak Vikipedi, NTV ve CNN Türk ile birebir.")
+    if kazanan in r["oy"]:
+        r["oy"][kazanan]["aday"] = aday
+    # ek/yenileme_ara dosyasina birim (yoksa)
+    ek = json.loads(YENILEME_2009_EK.read_text(encoding="utf-8"))
+    if UYGULA and not any(b.get("geomId") == r["geomId"] for b in ek["birimler"]):
+        il = {54: "Sakarya", 9: "Aydın", 19: "Çorum", 32: "Isparta"}[r["plaka"]]
+        ek["birimler"].append({"il": il, "plaka": r["plaka"], "ilce": ilce, "geomId": r["geomId"], "beldeId": None,
+                               "belde": None, "sandik": sandik, "secmen": secmen, "gecerliOy": g,
+                               "gecersizOy": h["gecersizOy"], "katilim": h["katilim"],
+                               "oy": dict(sorted(h["oy"].items(), key=lambda x: -x[1])),
+                               "adaylar": h["adaylar"], "kazanan": kazanan, "kaynakUrl": url,
+                               "ikinciKaynak": [NTV_2009, CNNTURK_2009]})
+        ek["aciklama"] = ("7 Haziran 2009 yenileme seçimi — belediye başkanlığı (29 Mart'ta iptal edilen Ağın, Kadışehri, "
+                          "Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç)")
+        ek["ozet"]["birim"] = ek["ozet"]["il"] = len(ek["birimler"])
+        ek["kaynak"]["not"] += " Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç: belde_ayir_baskan.py (NTV ve CNN Türk ile birebir)."
+        YENILEME_2009_EK.write_text(json.dumps(ek, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return True
+
+
 def sandik_denetimi(secim, rec=None):
     """Beldesi olan her ilcede ilce belediye baskanligi kaydinin sandik sayisi YSK'deki ilce merkezi
     belediyesinin sandik sayisina esit olmali (merkez + belde degil). Donus: (kontrol edilen, hatalar)."""
@@ -446,7 +552,8 @@ def sandik_denetimi(secim, rec=None):
 
 
 def main():
-    uygula = len(sys.argv) > 1 and sys.argv[1] == "uygula"
+    global UYGULA
+    uygula = UYGULA = len(sys.argv) > 1 and sys.argv[1] == "uygula"
     rapor_yolu = sys.argv[sys.argv.index("--rapor") + 1] if "--rapor" in sys.argv else None
     rapor = []
     for secim in SECIMLER:

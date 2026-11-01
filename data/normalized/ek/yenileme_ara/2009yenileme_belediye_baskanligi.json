@@ -1,15 +1,15 @@
 {
  "secim": "2009yenileme_belediye_baskanligi",
  "tur": "yenileme_ara",
- "aciklama": "7 Haziran 2009 yenileme seçimi — belediye başkanlığı (29 Mart'ta iptal edilen Ağın ve Kadışehri)",
+ "aciklama": "7 Haziran 2009 yenileme seçimi — belediye başkanlığı (29 Mart'ta iptal edilen Ağın, Kadışehri, Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç)",
  "kaynak": {
   "ana": "wikipedia",
-  "not": "Vikipedi il sayfaları (gazetevatan.com, ntv.com.tr kaynaklı); YSK açık verisinde yok. scripts/pipelines/election_import/yenileme_2009.py"
+  "not": "Vikipedi il sayfaları (gazetevatan.com, ntv.com.tr kaynaklı); YSK açık verisinde yok. scripts/pipelines/election_import/yenileme_2009.py Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç: belde_ayir_baskan.py (NTV ve CNN Türk ile birebir). Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç: belde_ayir_baskan.py (NTV ve CNN Türk ile birebir). Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç: belde_ayir_baskan.py (NTV ve CNN Türk ile birebir). Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç: belde_ayir_baskan.py (NTV ve CNN Türk ile birebir)."
  },
  "ozet": {
-  "birim": 2,
+  "birim": 6,
   "belde": 0,
-  "il": 2
+  "il": 6
  },
  "birimler": [
   {
@@ -75,6 +75,147 @@
    },
    "kazanan": "AK Parti",
    "kaynakUrl": "https://tr.wikipedia.org/w/index.php?oldid=37778156"
+  },
+  {
+   "il": "Aydın",
+   "plaka": 9,
+   "ilce": "Koçarlı",
+   "geomId": "TR-D-09-010",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 17,
+   "secmen": 5021,
+   "gecerliOy": 4514,
+   "gecersizOy": 63,
+   "katilim": 91.16,
+   "oy": {
+    "CHP": 1745,
+    "AK Parti": 1512,
+    "DP": 1217,
+    "MHP": 34,
+    "SP": 5,
+    "BTP": 1
+   },
+   "adaylar": {
+    "CHP": "Cengiz Şen",
+    "AK Parti": "Nedim Kaplan",
+    "DP": "Hayrettin Erdinç Bosnalı",
+    "MHP": "Mehmet Evin",
+    "SP": "Harun Özdemir",
+    "BTP": "Kamil Öztürk",
+    "DSP": "Gürbüz Görgülü"
+   },
+   "kazanan": "CHP",
+   "kaynakUrl": "https://tr.wikipedia.org/w/index.php?oldid=37768371",
+   "ikinciKaynak": [
+    "https://web.archive.org/web/20220529224532/https://www.ntv.com.tr/turkiye/yenileme-secimleri-sonuclari,gkFPxeKiz0C80_Z42bJPtw",
+    "https://web.archive.org/web/20090611085753/https://www.cnnturk.com/2009/turkiye/06/07/turkiye.yine.sandik.basindaydi/529889.0/index.html"
+   ]
+  },
+  {
+   "il": "Çorum",
+   "plaka": 19,
+   "ilce": "Mecitözü",
+   "geomId": "TR-D-19-009",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 15,
+   "secmen": 3997,
+   "gecerliOy": 3610,
+   "gecersizOy": 63,
+   "katilim": 91.89,
+   "oy": {
+    "CHP": 1918,
+    "AK Parti": 1649,
+    "MHP": 21,
+    "SP": 18,
+    "DSP": 4
+   },
+   "adaylar": {
+    "CHP": "Selçuk Aksoy",
+    "AK Parti": "Nihat Özarslan",
+    "MHP": "Erdal Eken",
+    "SP": "Kadir Özönal",
+    "DSP": "Mehmet Ali Yatar"
+   },
+   "kazanan": "CHP",
+   "kaynakUrl": "https://tr.wikipedia.org/w/index.php?oldid=37768353",
+   "ikinciKaynak": [
+    "https://web.archive.org/web/20220529224532/https://www.ntv.com.tr/turkiye/yenileme-secimleri-sonuclari,gkFPxeKiz0C80_Z42bJPtw",
+    "https://web.archive.org/web/20090611085753/https://www.cnnturk.com/2009/turkiye/06/07/turkiye.yine.sandik.basindaydi/529889.0/index.html"
+   ]
+  },
+  {
+   "il": "Isparta",
+   "plaka": 32,
+   "ilce": "Şarkikaraağaç",
+   "geomId": "TR-D-32-010",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 27,
+   "secmen": 7134,
+   "gecerliOy": 6003,
+   "gecersizOy": 234,
+   "katilim": 87.43,
+   "oy": {
+    "AK Parti": 2968,
+    "MHP": 2878,
+    "SP": 78,
+    "CHP": 42,
+    "DP": 27,
+    "BTP": 10
+   },
+   "adaylar": {
+    "AK Parti": "Mevlüt Özdemir",
+    "MHP": "Ramazan Bayram Kabalak",
+    "SP": "Dinçer Demirezen",
+    "CHP": "Mehmet Ali Gürdallı",
+    "DP": "Vedat Gürakan",
+    "BTP": "Cemal Kaplan"
+   },
+   "kazanan": "AK Parti",
+   "kaynakUrl": "https://tr.wikipedia.org/w/index.php?oldid=37768329",
+   "ikinciKaynak": [
+    "https://web.archive.org/web/20220529224532/https://www.ntv.com.tr/turkiye/yenileme-secimleri-sonuclari,gkFPxeKiz0C80_Z42bJPtw",
+    "https://web.archive.org/web/20090611085753/https://www.cnnturk.com/2009/turkiye/06/07/turkiye.yine.sandik.basindaydi/529889.0/index.html"
+   ]
+  },
+  {
+   "il": "Sakarya",
+   "plaka": 54,
+   "ilce": "Akyazı",
+   "geomId": "TR-D-54-002",
+   "beldeId": null,
+   "belde": null,
+   "sandik": 101,
+   "secmen": 27843,
+   "gecerliOy": 22937,
+   "gecersizOy": 247,
+   "katilim": 83.27,
+   "oy": {
+    "AK Parti": 11081,
+    "SP": 10026,
+    "MHP": 1553,
+    "CHP": 154,
+    "BTP": 50,
+    "DP": 43,
+    "DSP": 30
+   },
+   "adaylar": {
+    "AK Parti": "Yaşar Yazıcı",
+    "SP": "Hasan Akcan",
+    "MHP": "Rahmi Aktürk",
+    "CHP": "Okan Karaağaç",
+    "BTP": "Şenol Yıldız",
+    "DP": "Bedri Yıldırım",
+    "DSP": "Caner Kaya"
+   },
+   "kazanan": "AK Parti",
+   "kaynakUrl": "https://tr.wikipedia.org/w/index.php?oldid=37768286",
+   "ikinciKaynak": [
+    "https://web.archive.org/web/20220529224532/https://www.ntv.com.tr/turkiye/yenileme-secimleri-sonuclari,gkFPxeKiz0C80_Z42bJPtw",
+    "https://web.archive.org/web/20090611085753/https://www.cnnturk.com/2009/turkiye/06/07/turkiye.yine.sandik.basindaydi/529889.0/index.html"
+   ]
   }
  ]
 }
