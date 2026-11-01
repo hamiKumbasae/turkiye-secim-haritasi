@@ -365,6 +365,9 @@ def isle(secim, rapor, uygula):
         r["kaynak"]["ilceBelediyesi"]["not"] = "il merkezi belediyesi; il merkezi ilçesinin satırıyla aynı"
         sayac["il_duzeltildi"] += 1
         satir("il", r, "duzeltildi", eskiKazanan=eski["kazanan"], kazanan=r["kazanan"])
+    yv = yenileme_2009_vikipedi(secim, rec, rapor)
+    if yv:
+        sayac["yenileme_2009_vikipedi"] += yv
     yn = yenileme_uygula(secim, rec, rapor)
     if yn:
         sayac["yenileme_sonucu"] += yn
@@ -510,6 +513,96 @@ def yenileme_2009(secim, r, v2_dosya, belde_sayisi, belde_sandik, ik):
         ek["kaynak"]["not"] += " Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç: belde_ayir_baskan.py (NTV ve CNN Türk ile birebir)."
         YENILEME_2009_EK.write_text(json.dumps(ek, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return True
+
+
+# Beldesi olmayan (ya da kaydı zaten Vikipedi'den gelen) 2009 yenileme ilçeleri: Ağın ve Kadışehri. Kayıt
+# yenileme_2009.py ile 29 Mart sonucunu gösteriyordu; aynı yöntemle 7 Haziran sonucuna çevrilir, 29 Mart
+# değerleri kaynak.yenileme.ilkSecim altında kalır.
+# geomId: (Vikipedi dosyasi, ilce, kazanan aday, YSK meclis ilce merkezi birimi ya da None,
+#          [(kaynak adi, URL, parti oylari, oy kullanan ya da None, gecersiz ya da None)], bilinen fark notu)
+YENILEME_2009_VIKIPEDI = {
+    "TR-D-23-001": ("elazigda-2009-turkiye-yerel-secimleri.wiki", "Ağın", "Mustafa Yentür", "23-10-0",
+                    [("NTV", NTV_2009, {"MHP": 529, "DSP": 1, "CHP": 10, "DP": 1, "SP": 14, "AK Parti": 649, "BTP": 4}, None, None),
+                     ("CNN Türk", CNNTURK_2009, {"AK Parti": 649, "MHP": 529, "SP": 14, "CHP": 10, "BTP": 4, "DSP": 1, "DP": 1}, 1236, 28)],
+                    None),
+    "TR-D-66-007": ("yozgatta-2009-turkiye-yerel-secimleri.wiki", "Kadışehri", "Davut Karadavut", None,
+                    [("NTV", NTV_2009, {"AK Parti": 1195, "SP": 1000, "MHP": 9}, None, None)],
+                    "NTV aynı toplamı (2.215) veriyor ama CHP 11 yazıyor ve DSP'yi yazmıyor (Vikipedi CHP 10, DSP 1); "
+                    "AK Parti, SP ve MHP oyları birebir. CNN Türk haberinde Kadışehri yok. YSK açık verisinde Kadışehri "
+                    "ilçe merkezinin 2009 başkanlık ve meclis sandıkları yok (yalnız Halıköy beldesi), sandık/seçmen "
+                    "karşılaştırılamadı."),
+}
+
+
+def yenileme_2009_vikipedi(secim, rec, rapor):
+    if secim != "2009yerel":
+        return 0
+    from yenileme_2009 import WIKI, tablo  # noqa: E402
+    idx = json.loads((WIKI / "_index.json").read_text(encoding="utf-8"))["sayfalar"]
+    meclis = json.loads((BELDE_DIR / "2009yerel_belediye_meclisi.json").read_text(encoding="utf-8"))["birimler"]
+    n = 0
+    for geom, (dosya, ilce, aday, birim, haberler, fark_notu) in YENILEME_2009_VIKIPEDI.items():
+        r = next(x for x in rec["ilceler"] if x.get("geomId") == geom)
+        k = r.get("kaynak") if isinstance(r.get("kaynak"), dict) else {}
+        if k.get("yenileme"):
+            continue
+        secmen, sandik, t = tablo(dosya, ilce)
+        m, h = t["mart"], t["haziran"]
+        h["oy"] = {p: o for p, o in h["oy"].items() if o}
+        m["oy"] = {p: o for p, o in m["oy"].items() if o}
+        # 29 Mart kaydi bu sayfadan gelmis olmali
+        if {p: v["oy"] for p, v in r["oy"].items()} != m["oy"] or r.get("gecerliOy") != m["gecerliOy"]:
+            raise SystemExit(f"{ilce}: kayıttaki 29 Mart değerleri Vikipedi'yle aynı değil")
+        for ad, url_h, oy, oyk, gecersiz in haberler:
+            tam = fark_notu is None
+            if (tam and oy != h["oy"]) or any(h["oy"].get(p) != v for p, v in oy.items()):
+                raise SystemExit(f"{ilce}: {ad} parti oyları Vikipedi 7 Haziran sütunuyla tutmuyor")
+            if oyk is not None and oyk != h["gecerliOy"] + h["gecersizOy"] or gecersiz is not None and gecersiz != h["gecersizOy"]:
+                raise SystemExit(f"{ilce}: {ad} oy kullanan/geçersiz tutmuyor")
+        kontrol = []
+        if birim:
+            mb = meclis[birim]
+            if mb["sandik"] != sandik or mb["toplam"]["secmen_SAYISI"] != secmen:
+                raise SystemExit(f"{ilce}: sandık/seçmen YSK meclis ilçe merkezi birimiyle tutmuyor")
+            kontrol.append("sandık ve seçmen YSK belediye meclisi ilçe merkezi birimiyle "
+                           f"(data/raw/ysk/acikveri-belde-agrege/2009yerel_belediye_meclisi.json, birim {birim}) birebir")
+        kontrol.append(("her parti oyu" if fark_notu is None else "AK Parti, SP ve MHP oyları") + " "
+                       + " ve ".join(a for a, *_ in haberler) + " haberiyle birebir")
+        url = next(v["url"] for v in idx.values() if v["dosya"] == dosya)
+        mk = max(m["oy"], key=m["oy"].get)
+        ilk = {"tarih": "29 Mart 2009", "kaynak": "Vikipedi il sayfası (29 Mart Sonuçları sütunu)", "kazanan": r.get("kazanan"),
+               "oy": {p: v["oy"] for p, v in r["oy"].items()}, "adaylar": {p: v.get("aday") for p, v in r["oy"].items() if v.get("aday")}}
+        for alan in ("gecerliOy", "gecersizOy", "secmen", "sandik", "katilim"):
+            if r.get(alan) is not None:
+                ilk[alan] = r.get(alan)
+        if k:
+            ilk["oncekiKaynak"] = copy.deepcopy(k)
+        for alan in ("veriNotu", "not"):
+            if r.get(alan):
+                ilk[alan] = r.pop(alan)
+        kazanan = max(h["oy"], key=h["oy"].get)
+        g = h["gecerliOy"]
+        r["oy"] = {p: {"aday": h["adaylar"].get(p), "oran": round(100 * o / g, 2), "oy": o} if h["adaylar"].get(p)
+                   else {"oran": round(100 * o / g, 2), "oy": o} for p, o in sorted(h["oy"].items())}
+        r["oy"][kazanan]["aday"] = aday
+        r.update({"kazanan": kazanan, "gecerliOy": g, "secmen": secmen, "sandik": sandik, "katilim": h["katilim"]})
+        if "gecersizOy" in r:
+            r["gecersizOy"] = h["gecersizOy"]
+        y = {"tarih": "7 Haziran 2009", "kaynak": f"Vikipedi il sayfası, {url} (7 Haziran Sonuçları sütunu)",
+             "ikinciKaynak": [u for _, u, *_ in haberler], "kontrol": "; ".join(kontrol),
+             "oyKullanan": g + h["gecersizOy"], "gecersizOy": h["gecersizOy"],
+             "ek": str(YENILEME_2009_EK.relative_to(ROOT)), "ilkSecim": ilk}
+        if fark_notu:
+            y["haberFarki"] = fark_notu
+        r["kaynak"] = {"ana": "wikipedia", "yenileme": y}
+        r["not"] = (f"29 Mart 2009 seçimi iptal edildi ve 7 Haziran 2009'da yenilendi; gösterilen yenileme sonucudur "
+                    f"({kazanan}, {aday}). 29 Mart'ta birinci {mk} idi. YSK açık verisinde bu seçim yok; kaynak Vikipedi"
+                    + (", NTV ve CNN Türk ile birebir." if fark_notu is None else
+                       "; NTV kazananı ve ilk iki partinin oylarını doğruluyor, küçük partilerde 1 oy fark var."))
+        rapor.append({"secim": secim, "duzey": "ilce", "plaka": r["plaka"], "ad": r["ad"], "geomId": geom,
+                      "durum": "yenileme_2009", "eskiKazanan": ilk["kazanan"], "kazanan": kazanan})
+        n += 1
+    return n
 
 
 def sandik_denetimi(secim, rec=None):

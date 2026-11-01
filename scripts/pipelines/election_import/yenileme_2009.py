@@ -17,6 +17,10 @@ veriNotu ile yenileme sonucu yazılır.
 Kadışehri belediye meclisi: YSK açık verisinde yalnız Halıköy beldesinin meclis satırı var, ilçe
 merkezininki yok; Vikipedi'de de yok. Haritada boş, notu build_meclis_harita.py düzeltmelerinde.
 
+2026-11-01: belde_ayir_baskan.py bu iki kaydı (ve Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç'ı) 7 Haziran
+yenileme sonucuna çevirdi; 29 Mart değerleri kaynak.yenileme.ilkSecim altında. Bu betik yeniden çalıştırılırsa
+kayıtlar 29 Mart'a döner; ardından belde_ayir_baskan.py uygula çalıştırılmalı.
+
 Idempotent. Kullanım:
   python3 scripts/pipelines/election_import/yenileme_2009.py
 """
