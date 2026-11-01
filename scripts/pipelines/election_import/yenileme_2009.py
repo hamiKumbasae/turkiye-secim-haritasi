@@ -17,6 +17,10 @@ veriNotu ile yenileme sonucu yazılır.
 Kadışehri belediye meclisi: YSK açık verisinde yalnız Halıköy beldesinin meclis satırı var, ilçe
 merkezininki yok; Vikipedi'de de yok. Haritada boş, notu build_meclis_harita.py düzeltmelerinde.
 
+2026-11-01: belde_ayir_baskan.py bu iki kaydı (ve Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç'ı) 7 Haziran
+yenileme sonucuna çevirdi; 29 Mart değerleri kaynak.yenileme.ilkSecim altında. Bu betik yeniden çalıştırılırsa
+kayıtlar 29 Mart'a döner; ardından belde_ayir_baskan.py uygula çalıştırılmalı.
+
 Idempotent. Kullanım:
   python3 scripts/pipelines/election_import/yenileme_2009.py
 """
@@ -50,7 +54,10 @@ def oran(s):
 
 def tablo(dosya, ilce):
     metin = (WIKI / dosya).read_text(encoding="utf-8")
-    i = metin.index(f"==[[{ilce}]]==")
+    m = re.search(rf"^=+\s*(?:\[\[)?{re.escape(ilce)}(?:\]\])?\s*=+\s*$", metin, re.M)
+    if not m:
+        raise ValueError(f"{ilce}: başlık yok")
+    i = m.start()
     j = metin.index("\n==", i + 5)
     blok = metin[i:j]
     hucre = lambda satir: satir.split("|")[-1].strip() if satir.startswith(("|", "!")) else None

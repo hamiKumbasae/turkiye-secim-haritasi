@@ -27,6 +27,13 @@ Yeniden indirmek için:
 curl -sL https://codeload.github.com/ttezer/turkiye-harita-verisi/tar.gz/83eeb7a1e0a476dde81ada1a62f803231cf16e61 -o ttezer.tar.gz
 ```
 
+- **İl/ilçe katmanının asıl kaynağı:** depodaki `source/hdx/cod-ab-tur/` (HDX COD-AB-TUR, OCHA, lisans
+  CC BY-IGO; HDX meta veri tarihi 2026-04-07, indirme 2026-04-10) ve ondan üretilen
+  `dist/geojson/districts.geojson`. 2026-11-01'de bu commit'ten yeniden indirildi; dosyanın sha256'sı
+  `16fb6b98e6ce800b43334326a7d737d172beb1c2fecb4dca71a61c5d2af067ad` (973 ilçe, 663.098 nokta, komşu
+  ilçeler birebir ortak sınırlı). `scripts/pipelines/ilce_katmani/build_ilce_katmani.py --ham <bu dosya>`
+  sha256'yı sınar. Bkz. `../normalized/PROVENANCE.md`.
+
 ## OpenStreetMap Türkiye (mahalle poligonları için)
 
 - `osadikoglu/turkey-admin-units-osm` (`https://github.com/osadikoglu/turkey-admin-units-osm`)

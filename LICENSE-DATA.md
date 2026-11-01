@@ -6,6 +6,7 @@ Bu depodaki **kaynak kodu** MIT lisanslıdır (bkz. [LICENSE](LICENSE)). **Veri*
 |---|---|
 | İşlenmiş seçim sonuçları ve tarihsel sınır çalışmaları (`data/normalized/`, `geo/historical/`, `geo/normalized/` ve `index.html`'e gömülü veri) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.tr) |
 | OpenStreetMap'ten türetilen mahalle sınırları (`geo/normalized/mahalle_geo.json` içindeki OSM kaynaklı poligonlar) | [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/) — © OpenStreetMap katkıcıları |
+| Güncel il/ilçe sınırları (`geo/normalized/turkiye_il_sinirlari.geojson`, `turkiye_ilce_sinirlari.geojson`) ve onlardan türeyen tarihsel il/ilçe birleşimleri (`geo/historical/`) | 2026-11-01'den beri: ilçelerin çoğu OpenStreetMap'ten — [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/), © OpenStreetMap katkıcıları (`data/raw/osm/ilce/`); kalanı HDX COD-AB-TUR (OCHA, [CC BY-IGO](https://creativecommons.org/licenses/by/3.0/igo/)). Hangi ilçenin hangi kaynaktan geldiği `geo/normalized/ilce_duzeltme.json`'da. |
 | OpenStreetMap köy/mahalle yer noktaları (`data/raw/osm/yer/`; yalnız eşleştirmede kullanılır) | [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/) — © OpenStreetMap katkıcıları |
 | Bursa ve Sakarya büyükşehir belediyelerinin açık veri portallarından alınan mahalle sınırları (`data/raw/belediye/`, haritada `b` ile başlayan poligonlar) | Bursa Açık Veri Lisansı, Sakarya Açık Veri Lisansı — kullanım, değiştirme ve yeniden yayımlama serbest, kaynak gösterilmesi şartıyla |
 | TKGM idari yapı servisinden alınan mahalle/köy sınırları (`data/raw/tkgm/` ve `geo/normalized/mahalle_geo.json` içindeki `k` ile başlayan poligonlar) | **Bu deponun açık veri lisansının dışındadır.** Kaynak: T.C. Tapu ve Kadastro Genel Müdürlüğü (TKGM); servisin yayımlanmış bir açık veri lisansı yoktur, sitede kaynak gösterilerek kullanılır. Yeniden kullanım için TKGM'nin koşullarına bakın. |
@@ -20,6 +21,7 @@ koşuluyla yayımlanır. Mahalle sınırlarının bir kısmı OpenStreetMap'ten 
 
 > Türkiye Seçim Tarihi Atlası (https://hamikumbasae.github.io/turkiye-secim-haritasi/), CC BY-SA 4.0. Asıl kaynaklar: YSK, TÜİK.
 > Mahalle sınırları: © OpenStreetMap katkıcıları (ODbL); bir kısmı T.C. Tapu ve Kadastro Genel Müdürlüğü (TKGM), Bursa ve Sakarya büyükşehir belediyeleri.
+> İl/ilçe sınırları: © OpenStreetMap katkıcıları (ODbL); OCHA/HDX COD-AB-TUR (CC BY-IGO).
 
 Veriyi değiştirip yayımlarsanız aynı lisansla (CC BY-SA 4.0; OSM'den türeyen sınırlar için ODbL)
 paylaşmanız gerekir.
@@ -28,5 +30,5 @@ paylaşmanız gerekir.
 
 Resmî seçim sonuçları kamuya açık kaynaklardan derlenmiştir (YSK, TÜİK, TBMM). Bu lisans yalnız bu
 depodaki derleme, düzeltme ve dönüştürme çalışmasını kapsar; asıl kaynakların kendi koşulları
-(ör. il/ilçe sınırlarının alındığı `ttezer/turkiye-harita-verisi`, belediye açık verisi) ayrıca
+(ör. il/ilçe sınırlarının bir kısmının alındığı HDX COD-AB-TUR — `ttezer/turkiye-harita-verisi` kopyası —, belediye açık verisi) ayrıca
 geçerlidir. Ayrıntılı kaynak listesi: [SOURCES.md](SOURCES.md), [sources.yml](sources.yml).

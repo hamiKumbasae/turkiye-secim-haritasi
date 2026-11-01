@@ -167,7 +167,7 @@ def tkgm_yukle(konum=None):
 
 # ---------------------------------------------------------------- konum kurali (5b)
 IZDUSUM = "+proj=aea +lat_0=39 +lon_0=35 +lat_1=37 +lat_2=41 +ellps=GRS80 +units=m +no_defs"
-KONUM_BANT_M = 2000      # ilce katmani ~%8 noktaya sadelestirildi: siniri 1-2 km sapabiliyor
+KONUM_BANT_M = 2000      # ilce siniri kaynaklar arasinda (HDX/OSM/TKGM) 1-2 km farkli olabiliyor
 KONUM_DISI_ESIK = 0.5    # alaninin bundan fazlasi kapsam disindaysa aday alinmaz
 DOGRULAMA_IOU = 0.5      # baska kaynagin ayni ilceye verdigi ayni adli poligonla bu kadar ortusen aday dogrulanmis sayilir
 
