@@ -1,0 +1,41 @@
+name: osm-ilce-cek
+
+# OpenStreetMap'teki guncel ilce sinirlarini (admin_level=6) Overpass'tan il il ceker (fetch_osm_ilce.py) ve
+# artifact olarak yukler (osm-ilce-<n>); sonuc depoya data/raw/osm/ilce/ olarak elle alinir
+# (gh api .../actions/artifacts). Overpass gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor.
+# Ayni anda en cok 2 grup (Overpass kullanim kurali). Ilk cekim 2026-11-01 (ilce katmani duzeltmesi).
+on:
+  workflow_dispatch:
+  push:
+    branches: [fix/ilce-katmani]
+    paths: [".github/workflows/osm-ilce-cek.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        grup: ["46,31,65,34,1,33,27,38", "6,35,16,7,42,41,21,55,45,63,44,20,9,10,61",
+               "2,3,4,5,8,11,12,13,14,15,17,18,19,22,23,24,25,26,28,29",
+               "30,32,36,37,39,40,43,47,48,49,50,51,52,53,54,56,57,58,59,60",
+               "62,64,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install shapely==2.0.6
+      - name: Cek
+        run: python3 scripts/pipelines/mahalle_veri/fetch/fetch_osm_ilce.py cikti "${{ matrix.grup }}"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: osm-ilce-${{ strategy.job-index }}
+          path: cikti/
+          if-no-files-found: ignore
