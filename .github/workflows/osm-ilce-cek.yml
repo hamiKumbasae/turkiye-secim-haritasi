@@ -3,7 +3,8 @@ name: osm-ilce-cek
 # OpenStreetMap'teki guncel ilce sinirlarini (admin_level=6) Overpass'tan il il ceker (fetch_osm_ilce.py) ve
 # "osm-ilce-veri" dalina data/raw/osm/ilce/ olarak yazar (artifact deposu gelistirme ortamindan acilmiyor).
 # Overpass gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor. Ayni anda en cok 2 grup.
-# Elle calistirilir; ilk cekim 2026-11-01 (ilce katmani duzeltmesi, docs/rapor/ILCE_KATMANI_2026-11-01.md).
+# Elle calistirilir. Ilk cekim 2026-11-01 (runs 41256334588, 41260386202, 41260576861; Overpass ilk denemede
+# Bursa, Gumushane ve Samsun icin bos dondu, yeniden cekildi); bkz. docs/rapor/ILCE_KATMANI_2026-11-01.md.
 on:
   workflow_dispatch:
     inputs:
@@ -15,17 +16,13 @@ on:
         description: "Verisi de kaydedilecek onceki calistirmanin kimligi (bos = yok)"
         required: false
         default: ""
-  push:
-    branches: [fix/ilce-katmani]
-    paths: [".github/workflows/osm-ilce-cek.yml"]
 
 permissions:
   contents: read
 
 env:
-  # push ile tetiklenen calistirma (gecici; 2026-11-01): ilk calistirmalarda bos donen Gumushane ve Samsun
-  ILLER: ${{ inputs.iller || (github.event_name == 'push' && '29,55' || '') }}
-  ONCEKI: ${{ inputs.onceki_run || (github.event_name == 'push' && '' || '') }}
+  ILLER: ${{ inputs.iller }}
+  ONCEKI: ${{ inputs.onceki_run }}
 
 jobs:
   cek:

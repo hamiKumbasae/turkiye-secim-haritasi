@@ -45,3 +45,21 @@ birçok köyü eski adıyla tutuyor (Bismil "Akbaş" ~ TKGM "Alibociyan"). Adla 
 adlı OSM noktası boşta duran tek bir TKGM biriminin içine düşüyor ve noktanın eski/güncel adlarından biri
 birimin adını tutuyorsa (ad desteği) o birim kullanılır. Bire bir değilse ya da ad desteği yoksa muhtarlık
 haritada boş kalır. Sınır çizilmez; çizilen poligon TKGM'nin kendi birimidir.
+
+# OpenStreetMap — güncel ilçe sınırları (`ilce/`, 81 il)
+
+**Kaynak:** OpenStreetMap, Overpass API (`overpass-api.de`, yedek `overpass.kumi.systems`): her il alanında
+(`ISO3166-2=TR-<plaka>`) `boundary=administrative`, `admin_level=6` ilişkileri, `out geom`.
+**Script:** `scripts/pipelines/mahalle_veri/fetch/fetch_osm_ilce.py` (poligon kurma `fetch_osm_mahalle.py` ile aynı).
+**Çekildi:** 2026-11-01, GitHub Actions üzerinde (`.github/workflows/osm-ilce-cek.yml`; runs 41256334588,
+41260386202, 41260576861 — Overpass ilk çalıştırmada Bursa, ikincide Gümüşhane ve Samsun için boş döndü, yeniden
+çekildi). Ham veri ayrıca `osm-ilce-veri` dalında.
+
+**Lisans:** [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/) — © OpenStreetMap katkıcıları.
+
+## İçerik
+
+- `<plaka>.geojson`: her poligon için `{osm_id, ad, admin_level, ref, wikidata}`; Douglas-Peucker 0.0001°
+  (topoloji korunarak), 4 ondalık. 975 ilişki (973 ilçe ile birebir eşleşti).
+- Kullanım: `scripts/pipelines/ilce_katmani/` — ilçe katmanının çoğu bu sınırlardan (bkz.
+  `geo/normalized/PROVENANCE.md`, `docs/rapor/ILCE_KATMANI_2026-11-01.md`).

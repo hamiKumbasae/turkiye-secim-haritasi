@@ -165,8 +165,10 @@ sayılar güvenilmez çıktı (ayrıntı `sources.yml`'deki known_issue).
 
 ## Harita geometrisi
 
-- **İl/ilçe sınırları:** `ttezer/turkiye-harita-verisi` (HDX kaynaklı),
-  basitleştirilmiş.
+- **İl/ilçe sınırları (2026-11-01'den beri):** ilçelerin çoğu OpenStreetMap `admin_level=6` (ODbL,
+  `data/raw/osm/ilce/`), kalanı HDX COD-AB-TUR (OCHA, CC BY-IGO; `ttezer/turkiye-harita-verisi` commit
+  `83eeb7a1` kopyası); iki kaynağın ayrıldığı yerde TKGM birimleri hakem. Ortak yaylı (topolojik) sadeleştirme,
+  il = ilçelerin birleşimi. Bkz. `geo/normalized/PROVENANCE.md`, `docs/rapor/ILCE_KATMANI_2026-11-01.md`.
 - **Mahalle sınırları:** `ttezer/turkiye-harita-verisi` (25 il, belediye açık
   verisi/MAKS kaynaklı) + `osadikoglu/turkey-admin-units-osm` üzerinden
   OpenStreetMap (kalan 56 il).

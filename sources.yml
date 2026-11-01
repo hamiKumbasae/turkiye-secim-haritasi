@@ -506,10 +506,11 @@ ek_kayitlar:
 
 geometry:
   il_ilce_sinirlari:
-    source: "ttezer/turkiye-harita-verisi (HDX kaynaklı)"
-    url: "https://github.com/ttezer/turkiye-harita-verisi"
+    source: "OpenStreetMap admin_level=6 (ODbL; data/raw/osm/ilce/, 803 ilçe) + HDX COD-AB-TUR (OCHA, CC BY-IGO; ttezer/turkiye-harita-verisi 83eeb7a1 kopyası, 131 ilçe + OSM'in bıraktığı alanlar) + önceki İstanbul ilçeleri (39); TKGM birimleri hakem"
+    url: "https://data.humdata.org/dataset/cod-ab-tur"
     status: reported
-    note: "Basitleştirilmiş (il: 387k→15k nokta, ilçe: 663k→73.5k nokta). Commit pinlenmedi — geo/raw/ttezer-commit.txt'de kayıt altına alınacak."
+    retrieved_at: "2026-11-01"
+    note: "scripts/pipelines/ilce_katmani/build_ilce_katmani.py; topolojik (ortak yay) sadeleştirme 0,001°, il = ilçelerin birleşimi (ilçe 170.023 nokta). 2026-11-01 öncesi: ttezer/HDX, il ve ilçe ayrı ayrı mapshaper visvalingam %8. Bkz. docs/rapor/ILCE_KATMANI_2026-11-01.md."
   mahalle_sinirlari:
     sources:
       - {name: "ttezer/turkiye-harita-verisi", coverage: "25 il (belediye açık verisi/MAKS kaynaklı)", status: reported}
