@@ -1,0 +1,91 @@
+name: ysk-yenileme-2009-cek
+
+# 7 Haziran 2009 yenileme secimleri (29 Mart'ta iptal edilen ilce belediye baskanliklari: Akyazi,
+# Kocarli, Mecitozu, Sarkikaraagac). 1) YSK acik veri secim listesinde (getSecimDetayList) 2009
+# yenileme secimi var mi bakar (secim_listesi.js), varsa o secimin belediye baskanligi sandiklarini
+# il/ilce/belde bazinda ceker (fetch_belde_agrege.js --ham). 2) Ikinci kaynak icin Vikipedi'nin
+# gosterdigi haber sayfalarinin arsiv kopyalarini indirir. Ciktilar "ysk-belde-baskan-veri" dalina
+# eklenir. Ilk calistirma fix/belde-ayrimi dalinda (push tetigi yalniz bu dosya degisince).
+on:
+  workflow_dispatch:
+  push:
+    branches: [fix/belde-ayrimi]
+    paths: [.github/workflows/ysk-yenileme-2009-cek.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Playwright
+        working-directory: scripts/pipelines/mahalle_veri
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+      - name: YSK secim listesi
+        run: |
+          mkdir -p cikti/ysk cikti/web
+          node scripts/pipelines/election_import/secim_listesi.js cikti/ysk/secim_listesi.json '2009' | tee liste.log
+          head -c 2500 liste.log | tr '\n' ' ' | sed 's/^/::notice title=liste::/'; echo
+          python3 - <<'EOF'
+          import json, re
+          d = json.load(open("cikti/ysk/secim_listesi.json"))
+          ids = []
+          for s in d["eslesen"]:
+              t = json.dumps(s, ensure_ascii=False)
+              if re.search(r"06\.2009|2009-06|Haziran 2009|yenile", t, re.I):
+                  sid = next(v for k, v in s.items() if re.search(r"secim.?id", k, re.I))
+                  ids.append(sid)
+                  print(f"::notice title=aday secim::{t[:400]}")
+          open("ids.txt", "w").write("\n".join(str(i) for i in sorted(set(ids))))
+          print(f"::notice title=aday sayisi::{len(set(ids))}")
+          EOF
+      - name: YSK yenileme sandiklari (bulunduysa)
+        run: |
+          for id in $(cat ids.txt); do
+            node scripts/pipelines/election_import/fetch_belde_agrege.js 2009yenileme_${id}_baskan $id 2 --iller 54,9,19,32 --ham | tail -2
+            f=data/raw/ysk/acikveri-belde-agrege/2009yenileme_${id}_baskan.json
+            [ -f $f ] && cp $f cikti/ysk/ && python3 -c "
+          import json;d=json.load(open('$f'));print('::notice title=$id::'+'; '.join(k+' '+str(v['sandik'])+' sandik gecerli '+str(v['toplam'].get('gecerli_OY_TOPLAMI')) for k,v in d['birimler'].items())[:900])"
+          done
+      - name: Web kaynaklari (arsiv kopyalari)
+        run: |
+          al() { curl -sSL --max-time 60 -A "Mozilla/5.0" -o "cikti/web/$1" "$2" && echo "::notice title=$1::$(wc -c < cikti/web/$1) bayt" || echo "::warning title=$1::indirilemedi"; }
+          al ntv_yenileme_2009.html "https://web.archive.org/web/20220529224532/https://www.ntv.com.tr/turkiye/yenileme-secimleri-sonuclari,gkFPxeKiz0C80_Z42bJPtw"
+          al ntv_yenileme_2009_b.html "https://web.archive.org/web/20220526180706/https://www.ntv.com.tr/turkiye/yenileme-secimleri-sonuclari,gkFPxeKiz0C80_Z42bJPtw"
+          al cnnturk_yenileme_2009.html "https://web.archive.org/web/20090611085753/https://www.cnnturk.com/2009/turkiye/06/07/turkiye.yine.sandik.basindaydi/529889.0/index.html"
+          for ilce in akyazi kocarli mecitozu sarkikaraagac buldan malatya; do
+            al haberler_${ilce}_2009.html "https://www.haberler.com/secim/2009/${ilce}-secim-sonuclari/"
+          done
+          al esehir_buldan_2009.html "https://www.e-sehir.com/secim/denizli-buldan-2009-belediye-secim-sonuclari.html"
+          al esehir_malatya_2009.html "https://www.e-sehir.com/secim/malatya-malatya-merkez-2009-belediye-secim-sonuclari.html"
+          for f in cikti/web/*.html; do
+            python3 - "$f" <<'EOF'
+          import re, sys, html
+          t = open(sys.argv[1], encoding="utf-8", errors="replace").read()
+          t = html.unescape(re.sub(r"<script.*?</script>|<style.*?</style>", " ", t, flags=re.S))
+          t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", t))
+          for ad in ("Akyazı", "Koçarlı", "Mecitözü", "Şarkikaraağaç", "Buldan", "Malatya"):
+              for m in list(re.finditer(ad, t))[:2]:
+                  print(f"::notice title={sys.argv[1].split('/')[-1]} {ad}::{t[max(0, m.start()-100):m.start()+500]}")
+          EOF
+          done
+      - name: ysk-belde-baskan-veri dalina ekle
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin ysk-belde-baskan-veri
+          git checkout -B ysk-belde-baskan-veri origin/ysk-belde-baskan-veri
+          mkdir -p data/raw/ysk/yenileme-2009 data/raw/web/yenileme-2009
+          cp cikti/ysk/* data/raw/ysk/yenileme-2009/ 2>/dev/null || true
+          cp cikti/web/* data/raw/web/yenileme-2009/ 2>/dev/null || true
+          git add data/raw/ysk/yenileme-2009 data/raw/web/yenileme-2009
+          git commit -m "2009 yenileme: YSK secim listesi ve web kaynaklari, run ${{ github.run_id }}" || true
+          git push origin ysk-belde-baskan-veri
