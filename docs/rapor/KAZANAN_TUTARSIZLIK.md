@@ -15,6 +15,8 @@
 
 Sonuç: düzeltmeden sonra kazanan ile en çok oy arasında **80 kayıtta** fark kalıyor. Hepsi (a) ya da (d) ve her birinin notu var. Haritada **14 ilçenin rengi değişti** (2024). 19 düzeltilen kaydın (c) rengi aynı, çünkü kazanan zaten doğruydu. Değişen ipucu ve detay paneli: oylar, yüzdeler ve katılım.
 
+**Güncelleme (1 Kasım 2026):** Kök neden kalıcı olarak düzeltildi. YSK'nin belde ayrımlı başkanlık verisiyle 1.095 ilçe ve 164 il satırı ilçe belediyesinin kendi sonucuna çevrildi; 188 ilçede (2009: 131, 2014: 28, 2019: 26, 2024: 3) ve 7 il satırında kazanan da değişti. PR #18'in 33 kaydı YSK ile birebir tuttu. Ayrıntı: "Kalıcı düzeltme" bölümü.
+
 ## Kök neden: belde oyları ilçe toplamına karışmış (2009–2024 yerel)
 
 `data/raw/ysk/yerel-v2-agrege/` (`fetch_yerel_v2.js`) ilçe toplamını, belde sandıkları da dahil olmak üzere ilçedeki bütün belediye başkanlığı sandıklarından topluyor. Bir belde belediyesi kendi başkanını ayrı bir yarışta seçer; bu sandıklardaki oylar başka adaylara verilmiştir. Belde ayrımlı YSK meclis verisiyle (`data/raw/ysk/acikveri-belde-agrege/<yıl>yerel_belediye_meclisi.json`) karşılaştırıldığında, beldesi olan her ilçede v2 toplamının sandık sayısı "ilçe merkezi + beldeler" ile birebir aynı çıkıyor: 2009'da 560 ilçe, 2014–2024'te her yıl 184 ilçe. Beldesiz ilçelerde (2024'te 789) sandık sayısı birebir tutuyor, yani sorun yok.
@@ -25,7 +27,7 @@ Belde oyları kazananı çoğu yerde değiştirmiyor. Değiştirdiği yerde iki 
 - **Görünür (c):** Kayıttaki kazanan aday bazlı doğru kaynaktan gelmiş, oylar karışık toplam. Tutarsızlık bu yüzden görünüyordu (Kırklareli, Kütahya, Hakkari...).
 - **Gizli (b):** Kazanan da karışık toplamdan seçilmiş. Kayıt kendi içinde tutarlı, ama kazanan yanlış. Bu ilçeler denetimde görünmüyordu. 2024'te 14 tane bulundu ve düzeltildi.
 
-Aynı nedenle beldesi olan öteki ilçelerin oy ve oranları da şişkin. Bu ilçelerde kazanan değişmiyor, oranlar yanlış. Bu kayıtlar bu işte düzeltilmedi (açık işler, madde 1).
+Aynı nedenle beldesi olan öteki ilçelerin oy ve oranları da şişkindi. 1 Kasım 2026'da bunların hepsi YSK'nin belde ayrımlı başkanlık verisiyle düzeltildi (aşağıda "Kalıcı düzeltme"); bu sırada 2009–2019'da 185 gizli kazanan hatası daha bulundu.
 
 ### Düzeltme yöntemi ve doğrulama
 - **Yeni değerler:** Vikipedi il sayfasındaki ilçe belediyesi tablosu (sayfalar YSK sonuçlarını kaynak gösteriyor; arşivdeki revizyon `data/raw/wikipedia/il-sayfalari/yerel/<yıl>/`). Mevcut ayrıştırıcı (`data/kaynaklar/wikipedia`) içinde `<ref>` olan satırları atlıyordu, bu yüzden tablo yeniden okundu.
@@ -63,7 +65,37 @@ Aynı nedenle beldesi olan öteki ilçelerin oy ve oranları da şişkin. Bu il�
 
 AA'yla kontrol edilen üç örnekte (Uzunköprü, Almus, Kadışehri) kazanan doğrulandı. Uzunköprü'de DHA haberi de var: İYİ Parti'den seçilen başkan Ediz Martin sonradan CHP'ye geçti. Öteki 11 ilçe yalnız Vikipedi ve YSK tutarlılığına dayanıyor. Vikipedi tablosunda kazanan işaretli ve oy kullanan YSK ile birebir tutuyor.
 
-Taramada kontrolden geçmeyen üç gizli aday düzeltilmedi: Muş Hasköy (oy kullanan farkı %0,6), Şırnak Güçlükonak (%2,1) ve Aksaray Güzelyurt. Güzelyurt'ta 31 Mart seçimi yenilendi; 2 Haziran 2024 yenilemesini AK Parti kazandı (`data/raw/ysk/acikveri-belde-agrege/2024yenileme_baskan.json`), kayıtta MHP yazıyor. Bunlar açık işlere yazıldı.
+Taramada kontrolden geçmeyen üç gizli aday (Muş Hasköy, Şırnak Güçlükonak, Aksaray Güzelyurt) 1 Kasım 2026'da YSK'nin ilçe merkezi başkanlık sandıklarıyla çözüldü (aşağıda).
+
+## Kalıcı düzeltme: belde ayrımlı YSK başkanlık verisi (1 Kasım 2026)
+
+**Veri:** `.github/workflows/ysk-belde-baskan-cek.yml` (`fetch_belde_agrege.js`, `secimTuru=2`) dört seçimin belediye başkanlığı sandıklarını (il, ilçe, belde) birimlerinde topladı: `data/raw/ysk/acikveri-belde-agrege/<yıl>yerel_belediye_baskanligi.json` (run 41255410827, başarısız sorgu 0). Her ilçede ilçe merkezi + belde birimlerinin toplamı eski `yerel-v2-agrege` ilçe toplamıyla (sandık, geçerli oy, seçmen) birebir aynı; yani yeni veri eskisini yalnız böldü.
+
+**Uygulama:** `scripts/pipelines/election_import/belde_ayir_baskan.py uygula`. Beldesi olan ilçede kayıt eski v2 toplamıysa (sandık ve geçerli oy aynı) oy, oran, geçerli oy, seçmen, sandık, katılım ve kazanan ilçe merkezi biriminden alındı. Kazanan aday düzeyinde (her bağımsız aday ayrı). Eski değerler `kaynak.yskSatiri`, yeni değerlerin kaynağı `kaynak.ilceBelediyesi` altında (PR #18 düzeni; oy kullanan, geçersiz, belde sayısı ve belde sandığı da orada). Büyükşehir olmayan illerde il satırı il merkezi ilçesinin satırını aldı; büyükşehir il satırları (ayrı yarış) değişmedi. Her kaydın durumu: `docs/rapor/belde_ayrimi_baskanlik.csv`.
+
+| Seçim | Beldeli ilçe | İlçe düzeltildi | Kazananı değişen ilçe | İl satırı | Önceden düzeltilmiş (PR #18) | Düzeltilemeyen |
+|---|---|---|---|---|---|---|
+| 2009 | 580 | 572 | 131 | 55 | 1 | 6 (+ Kadışehri, Vikipedi kaydı) |
+| 2014 | 184 | 184 | 28 | 38 | 0 | 0 |
+| 2019 | 184 | 182 | 26 | 37 | 2 | 0 |
+| 2024 | 184 | 157 | 3 | 34 | 27 ilçe + 3 il | 0 |
+
+Toplam 1.095 ilçe ve 164 il satırı; 188 ilçede ve 7 il satırında (2009 Aydın, Gümüşhane, Hatay, Zonguldak; 2014 Zonguldak, Yalova; 2019 Karaman) kazanan değişti. Kazanan yalnız eski kazanan karışık toplamın birincisiyse değiştirildi (ya da 2009 Yazıhan'da olduğu gibi bağımsız kazanan karışık toplamdan seçilmişse); bunun dışında kalan kayıt çıkmadı. Bilinen sonuçlarla örnek kontrol: 2009 Alanya ANAP, Bodrum DP, Aydın CHP, Antakya (Hatay merkez) AK Parti; 2014 Yalova CHP; 2019 Karaman MHP. e-sehir.com'daki 2014 Hopa (AK Parti 4.546, CHP 4.523), 2009 Zonguldak merkez (CHP 27.319, AK Parti 20.916) ve 2009 Gümüşhane merkez (MHP 5.803, AK Parti 5.768) oyları yeni değerlerle birebir aynı.
+
+Fark 10 oy ya da daha az olan kazanan değişiklikleri (sandık toplamı, itiraz sonrası kesin sonuçtan farklı olabilir): 2009 Göynücek (DP, 2), Akseki (CHP, 4), Gemerek (AK Parti, 4), Ulaş (MHP, 3); 2014 Avanos (CHP, 7), Yalova merkez (CHP, 6); 2024 Güzelyurt 31 Mart (İYİ Parti, 1; seçim iptal edildi).
+
+**PR #18'in 33 kaydıyla karşılaştırma:** 30 ilçe ve 3 il satırının hepsinde YSK ilçe merkezi verisi Vikipedi'den alınan değerlerle birebir aynı (her parti oyu, geçerli oy, seçmen, sandık, oy kullanan, kazanan). Kırklareli'de YSK de MHP 21.287 / MP92 123 veriyor. Bu kayıtlar değiştirilmedi.
+
+**Açık kalan üç 2024 kaydı:**
+- **Muş Hasköy:** MHP 2.827, AK Parti 2.666 (29 sandık, belde hariç). Eski kayıtta AK Parti (bir beldenin oyları dahil). Vikipedi tablosu da MHP 2.827, geçerli oy 6.591. Kazanan MHP.
+- **Şırnak Güçlükonak:** BBP 825, AK Parti 750, CHP 619 (10 sandık). Eski kayıtta AK Parti. Vikipedi de aynı. Kazanan BBP.
+- **Aksaray Güzelyurt:** 31 Mart'ta ilçe belediyesinde İYİ Parti 549, AK Parti 548, MHP 537; seçim iptal edildi. Kayıt artık 2 Haziran 2024 yenilemesini gösteriyor: AK Parti 874 (Ünal Demircioğlu), İYİ Parti 580, MHP 287 (`2024yenileme_baskan.json`, birim 68-754-0; NTV). 31 Mart değerleri `kaynak.yenileme.ilkSecim`, belde dahil eski toplam `kaynak.yskSatiri` altında; `not` ipucunda görünüyor. (2024'te yenilenen Pınarbaşı ve Hilvan'da kazanan aynı kaldığı için kayıtlar 31 Mart sonucunu göstermeye devam ediyor.)
+
+**Düzeltilemeyen 2009 kayıtları** (`ilceGeneliSonuc` alanı ipucunda gösterilir, değerlere dokunulmadı):
+- Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç: 29 Mart'ta ilçe belediyesi seçimi iptal edildi ve 7 Haziran 2009'da yenilendi (bianet, "Local elections repeated in 30 places"). Açık veride ilçe merkezinin başkanlık sandıkları yok, kayıt yalnız beldelerin toplamı. Yenileme sonuçları depoda yok (`ek/yenileme_ara/2009yenileme_belediye_baskanligi.json` yalnız Ağın ve Kadışehri).
+- Buldan, Malatya Merkez: ilçe merkezi biriminde başlık listesinde adı olmayan `parti21`–`parti26` sütunları 222 oy taşıyor ve parti + bağımsız toplamı geçerli oyu tutmuyor. Kayıt ilçe + belde toplamı olarak kaldı.
+
+**Regresyon kontrolü:** `tests/validate_elections.py` "beldeli ilçede başkanlık sandığı = ilçe merkezi sandığı" (1.125 ilçe; eski veride 1.085 kayıt bu kontrolden kalıyordu). Belde başkanlık sonuçları ham dosyada var ama API belde adını vermediği için `ek/beldeler` dosyalarına eklenmedi.
 
 ## Tam liste (ilk tarama, 99 kayıt)
 
@@ -173,14 +205,18 @@ Oy ve fark ilk taramadaki (düzeltme öncesi) değerlerdir. Sınıf: a açıklan
 
 ## Açık işler (kullanıcı)
 
-1. **Beldesi olan öteki ilçeler (2009–2024):** Oy ve oranlar hâlâ ilçe + belde toplamı. Etkilenen ilçe sayısı: 2009'da yaklaşık 560, 2014–2024'te yılda 184; bu işte düzeltilenler hariç. Kalıcı çözüm `fetch_yerel_v2.js`'i belde ayrımlı (`fetch_belde_agrege.js` gibi `beldeId` ile) GitHub Actions'ta yeniden çalıştırmak; başkanlık için `secimTuru=2`, belde sandıkları ayrı. Bu iş akışı tetiklenmedi. Geçici çözüm olarak bu kayıtlara `ilceGeneliSonuc: "ilçe merkezi ve bağlı beldelerin toplamı"` eklenebilir (1994–2004'teki düzen; ipucunda gösterilir).
-2. **Gizli kazanan hataları, 2009/2014/2019:** 2024'teki tarama eski yıllarda yapılmadı. Bu yılların Vikipedi tabloları başka bir şablon kullanıyor. Eski ayrıştırıcıyla yapılan kaba karşılaştırma şüpheli ilçe veriyor (2009'da 19, 2014'te 10, 2019'da 29). Bu ayrıştırıcı kazananın satırını sık sık atladığı için liste güvenilir değil. Her yıl için yeni bir ayrıştırıcı ve YSK tutarlılık kontrolü gerekiyor.
-3. **2024 Hasköy, Güçlükonak, Güzelyurt:** Yukarıdaki bölümde. Güzelyurt'ta haritanın 31 Mart sonucunu mu yoksa yenilemeyi mi göstereceği kullanıcı kararı.
+1. ~~**Beldesi olan öteki ilçeler (2009–2024)**~~ **Yapıldı (1 Kasım 2026):** "Kalıcı düzeltme" bölümü. Kalan: 2009 Akyazı, Koçarlı, Mecitözü, Şarkikaraağaç (7 Haziran 2009 yenileme sonuçları bir kaynaktan eklenebilir, `yenileme_2009.py` düzeni) ve Buldan, Malatya Merkez (YSK sütunları tutarsız; DİE/TÜİK 2009 kitabıyla çözülebilir).
+2. ~~**Gizli kazanan hataları, 2009/2014/2019**~~ **Yapıldı:** YSK ilçe merkezi verisiyle 2009'da 131, 2014'te 28, 2019'da 26 ilçenin kazananı düzeltildi. Fark 10 oy ya da daha az olan altı kayıt itiraz sonrası kesin sonuçla karşılaştırılmadı.
+3. ~~**2024 Hasköy, Güçlükonak, Güzelyurt**~~ **Yapıldı:** Hasköy MHP, Güçlükonak BBP; Güzelyurt 2 Haziran 2024 yenilemesini (AK Parti) gösteriyor.
 4. **1963 Tortum, 1977 Haymana:** Kazananı belirlemek için ilçe seçim kurulu tutanağı ya da dönemin gazetesi gerekiyor.
 5. **Kırklareli MP92 / MHP ayrımı:** YSK kesin sonuç ilanı GitHub Actions üzerinden (`sonuc.ysk.gov.tr` ya da açık veri kesin sonuç) teyit edilebilir.
 6. **1994 Uşak Merkez:** `Diğer` DİE satırındaki partilere ayrılabilir (kitap satırı tutarlı). Bu iş kapsamında yapılmadı.
 
 ## Kontroller
+
+1 Kasım 2026 (kalıcı düzeltme): `validate_public_data.py` (1.126 belgeli bulgu), `scripts/validate.py`, `tests/validate_elections.py` 22/22 (yeni belde sandığı kontrolüyle), `node --test tests/*.test.cjs` 14/14, `site/tests/loading.test.cjs` 30/30, `veri_denetimi.py --kontrol` geçti; denetim listesi yenilendi (değişiklik yok). `data/normalized` ve `data/raw/ysk/acikveri-belde-agrege` checksum'ları yenilendi.
+
+Önceki iş (31 Ekim 2026):
 
 `scripts/validate_public_data.py` (1.126 belgeli bulgu; 1999 Sivas parmak izi not eklendiği için yenilendi), `scripts/validate.py`, `tests/validate_elections.py` 19/19, `node --test tests/*.test.cjs` 14/14, `site/tests/loading.test.cjs` 30/30 ve `veri_denetimi.py --kontrol` geçti. Denetim listesi belgelenen komutla yenilendi: `KAZANAN_EN_COK_OY_DEGIL`'den 19 satır çıktı, yeni bulgu yok. `data/normalized` checksum'ları yenilendi.
 
@@ -192,3 +228,6 @@ Oy ve fark ilk taramadaki (düzeltme öncesi) değerlerdir. Sınıf: a açıklan
 - Ürgüp: https://www.ntv.com.tr/turkiye/ysk-siverek-halfeti-ve-urgupte-secim-yenilenmeyecek,tXG4C6T5m0W3gzxCWb-mjQ
 - Uzunköprü: https://www.dha.com.tr/politika/iyi-partiden-istifa-eden-uzunkopru-belediye-baskani-martin-chpye-katildi-2507840
 - Kayıt başına öteki AA bağlantıları ilgili kaydın `kaynak.ilceBelediyesi.ikinciKaynak` alanında.
+- Güzelyurt yenilemesi: https://www.ntv.com.tr/turkiye/yenilenen-secimlerin-kesin-sonuclari-aciklandiak-parti-3-dem-parti-1-chp-2-mhp-1-belediye-kazandi,Jb0Dhi40fUm575vHcN9rhw
+- 2009 yenilenen seçimler: https://bianet.org/haber/local-elections-repeated-in-30-places-115070
+- Örnek karşılaştırma: https://www.e-sehir.com/secim/artvin-hopa-2014-belediye-secim-sonuclari.html · https://www.e-sehir.com/secim/zonguldak-zonguldak-merkez-2009-belediye-secim-sonuclari.html · https://www.e-sehir.com/secim/gumushane-gumushane-merkez-2009-belediye-secim-sonuclari.html

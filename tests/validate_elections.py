@@ -503,6 +503,21 @@ def check_vote_completion():
           and ilce[(43, "Merkez")]["kazanan"] == "CHP")
 
 
+def check_belde_ayrimi():
+    """2009-2024 yerel: beldesi olan ilcede ilce belediye baskanligi kaydinin sandik sayisi YSK'deki
+    ilce merkezi belediyesinin sandiklari olmali, belde sandiklari karismamali
+    (scripts/pipelines/election_import/belde_ayir_baskan.py, docs/rapor/KAZANAN_TUTARSIZLIK.md)."""
+    sys.path.insert(0, str(ROOT / "scripts" / "pipelines" / "election_import"))
+    from belde_ayir_baskan import SECIMLER, sandik_denetimi
+    toplam, hatalar = 0, []
+    for secim in SECIMLER:
+        n, h = sandik_denetimi(secim)
+        toplam += n
+        hatalar += h
+    check(f"yerel 2009-2024: beldeli {toplam} ilçede başkanlık sandığı = ilçe merkezi sandığı",
+          toplam > 0 and not hatalar, f"{len(hatalar)} kayıt: " + "; ".join(hatalar[:5]))
+
+
 def check_site_copy():
     """Kokteki yontem.html site/yontem.html'in kopyasi olmali (scripts/build.py)."""
     check("kökteki yontem.html site/yontem.html ile aynı (scripts/build.py)",
@@ -638,6 +653,7 @@ def main():
     check_mahalle_geometri()
     check_completed_records()
     check_vote_completion()
+    check_belde_ayrimi()
     check_checksums()
     check_raw_checksum_coverage()
     check_sandalye_totals()

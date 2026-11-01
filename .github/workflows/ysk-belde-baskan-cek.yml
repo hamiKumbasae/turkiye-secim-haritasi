@@ -8,11 +8,9 @@ name: ysk-belde-baskan-cek
 # data/raw/ysk/acikveri-belde-agrege/<yil>yerel_belediye_baskanligi.json olarak
 # "ysk-belde-baskan-veri" dalina yazilir; main'e incelendikten sonra alinir
 # (scripts/pipelines/election_import/belde_ayir_baskan.py).
+# Ilk calistirma: 2026-11-01, run 41255410827 (fix/belde-ayrimi dalinda).
 on:
   workflow_dispatch:
-  push:
-    branches: [fix/belde-ayrimi]
-    paths: [.github/workflows/ysk-belde-baskan-cek.yml]
 
 permissions:
   contents: read

@@ -18,6 +18,7 @@ olmayan alanlarıyla sandık satırları da `hamSandik` altında saklanır.
 | 2026ara_baskan | 21272 | 2 | 7 Haziran 2026 mahalli ara seçimi; 5 birim |
 | 2026ara_meclis | 21272 | 3 | 5 birim |
 | <yıl>yerel_belediye_meclisi | 4290, 11979, 16400, 20260 | 3 | 2009: 2.924 birim (1.968 belde), 2014: 1.364, 2019: 1.359, 2024: 1.363 |
+| <yıl>yerel_belediye_baskanligi | 4290, 11979, 16400, 20260 | 2 (belediye başkanlığı) | 2026-11-01, `.github/workflows/ysk-belde-baskan-cek.yml` (run 41255410827, `ysk-belde-baskan-veri` dalı); 2009: 2.905 birim (951 ilçe merkezi, 1.954 belde), 2014: 1.364 (970 + 394), 2019: 1.359 (973 + 386), 2024: 1.363 (973 + 390); başarısız sorgu 0. Bütün ilçelerde birim toplamı `yerel-v2-agrege` ilçe toplamıyla (sandık, geçerli oy, seçmen) birebir aynı. Kullanım: `scripts/pipelines/election_import/belde_ayir_baskan.py` |
 | <yıl>yerel_il_genel_meclisi | aynı | 4 | 2009: 81 il / 2.929 birim; 2014 sonrası 51 il (büyükşehirlerde İGM yok) |
 
 Meclis dosyalarında ham sandık satırı saklanmadı (seçim başına yüz binlerce
@@ -32,3 +33,7 @@ ilçelerinin YSK kimlikleri; ana veride de bilinen durum).
   4.741.868 / 3.935.453).
 - API belde adını vermiyor; beldeler yalnızca `beldeId` ile tanımlı.
 - Bağımsız adayların adları API'de yok; oyları `bagimsizN` sütunlarında.
+- 2009 belediye başkanlığı: başlık listesinde adı olmayan `parti21`–`parti26` sütunları beş ilçe merkezinde
+  (Yenimahalle, Buldan, Kadıköy, İzmit, Malatya Merkez) toplam 222 ya da 79 oy taşıyor; bu birimlerde
+  parti + bağımsız toplamı geçerli oyu tutmuyor. Koçarlı, Mecitözü, Şarkikaraağaç ve Akyazı'nın ilçe
+  merkezi başkanlık sandıkları açık veride yok (yalnız beldeleri var; meclis verisinde merkez var).
