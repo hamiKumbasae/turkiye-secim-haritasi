@@ -23,9 +23,9 @@ permissions:
   contents: read
 
 env:
-  # push ile tetiklenen calistirma (gecici; 2026-11-01): ilk calistirmada bos donen Bursa + onceki calistirma
-  ILLER: ${{ inputs.iller || (github.event_name == 'push' && '16' || '') }}
-  ONCEKI: ${{ inputs.onceki_run || (github.event_name == 'push' && '41256334588' || '') }}
+  # push ile tetiklenen calistirma (gecici; 2026-11-01): ilk calistirmalarda bos donen Gumushane ve Samsun
+  ILLER: ${{ inputs.iller || (github.event_name == 'push' && '29,55' || '') }}
+  ONCEKI: ${{ inputs.onceki_run || (github.event_name == 'push' && '' || '') }}
 
 jobs:
   cek:
