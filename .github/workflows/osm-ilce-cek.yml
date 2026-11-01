@@ -1,17 +1,31 @@
 name: osm-ilce-cek
 
 # OpenStreetMap'teki guncel ilce sinirlarini (admin_level=6) Overpass'tan il il ceker (fetch_osm_ilce.py) ve
-# artifact olarak yukler (osm-ilce-<n>); sonuc depoya data/raw/osm/ilce/ olarak elle alinir
-# (gh api .../actions/artifacts). Overpass gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor.
-# Ayni anda en cok 2 grup (Overpass kullanim kurali). Ilk cekim 2026-11-01 (ilce katmani duzeltmesi).
+# "osm-ilce-veri" dalina data/raw/osm/ilce/ olarak yazar (artifact deposu gelistirme ortamindan acilmiyor).
+# Overpass gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor. Ayni anda en cok 2 grup.
+# Elle calistirilir; ilk cekim 2026-11-01 (ilce katmani duzeltmesi, docs/rapor/ILCE_KATMANI_2026-11-01.md).
 on:
   workflow_dispatch:
+    inputs:
+      iller:
+        description: "Yalniz bu iller (virgullu plaka, ornek 16,34); bos = hepsi"
+        required: false
+        default: ""
+      onceki_run:
+        description: "Verisi de kaydedilecek onceki calistirmanin kimligi (bos = yok)"
+        required: false
+        default: ""
   push:
     branches: [fix/ilce-katmani]
     paths: [".github/workflows/osm-ilce-cek.yml"]
 
 permissions:
   contents: read
+
+env:
+  # push ile tetiklenen calistirma (gecici; 2026-11-01): ilk calistirmada bos donen Bursa + onceki calistirma
+  ILLER: ${{ inputs.iller || (github.event_name == 'push' && '16' || '') }}
+  ONCEKI: ${{ inputs.onceki_run || (github.event_name == 'push' && '41256334588' || '') }}
 
 jobs:
   cek:
@@ -32,10 +46,55 @@ jobs:
           python-version: "3.12"
       - run: pip install shapely==2.0.6
       - name: Cek
-        run: python3 scripts/pipelines/mahalle_veri/fetch/fetch_osm_ilce.py cikti "${{ matrix.grup }}"
+        run: |
+          GRUP="${{ matrix.grup }}"
+          if [ -n "$ILLER" ]; then
+            GRUP=$(python3 -c "import sys; g=sys.argv[1].split(','); i=sys.argv[2].split(','); print(','.join(x for x in g if x in i))" "$GRUP" "$ILLER")
+          fi
+          if [ -n "$GRUP" ]; then python3 scripts/pipelines/mahalle_veri/fetch/fetch_osm_ilce.py cikti "$GRUP"; fi
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: osm-ilce-${{ strategy.job-index }}
           path: cikti/
           if-no-files-found: ignore
+
+  kaydet:
+    needs: cek
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: indirilen
+      - if: env.ONCEKI != ''
+        uses: actions/download-artifact@v4
+        with:
+          path: onceki
+          run-id: ${{ env.ONCEKI }}
+          github-token: ${{ github.token }}
+      - name: osm-ilce-veri dalina yaz
+        run: |
+          set -o pipefail
+          trap 'echo "::error title=kaydet::satir $LINENO: $BASH_COMMAND"' ERR
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # yetim veri dali; varsa uzerine ekler (kismi calistirma digerlerini silmez)
+          if git fetch origin osm-ilce-veri; then git checkout -q -B osm-ilce-veri FETCH_HEAD; else git checkout -q --orphan osm-ilce-veri && git rm -rq --cached . && git clean -fdq -e indirilen -e onceki; fi
+          mkdir -p data/raw/osm/ilce
+          # once onceki calistirma, sonra bu calistirma; ozelligi olmayan dosyalar alinmaz
+          for d in onceki indirilen; do
+            for f in $d/*/*.geojson; do
+              [ -f "$f" ] || continue
+              python3 -c "import json,sys; sys.exit(0 if json.load(open(sys.argv[1]))['features'] else 1)" "$f" || continue
+              cp "$f" data/raw/osm/ilce/
+            done
+          done
+          git add data/raw/osm/ilce
+          git diff --cached --quiet || git commit -q -m "OSM ilce sinirlari (admin_level=6), run ${{ github.run_id }}"
+          git push origin osm-ilce-veri 2>&1 | tee push.log || { echo "::error title=push::$(tail -5 push.log | tr '\n' ' ')"; exit 1; }
+          echo "::notice title=kaydedildi::$(ls data/raw/osm/ilce | wc -l) il: $(ls data/raw/osm/ilce | tr '\n' ' ')"
