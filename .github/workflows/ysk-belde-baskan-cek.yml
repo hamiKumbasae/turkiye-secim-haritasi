@@ -1,0 +1,79 @@
+name: ysk-belde-baskan-cek
+
+# YSK acik veri portalindan 2009/2014/2019/2024 yerel secimlerinin BELEDIYE BASKANLIGI
+# (secimTuru=2) sonuclarini sandik duzeyinde ceker ve (il, ilce, belde) bazinda toplar
+# (fetch_belde_agrege.js). fetch_yerel_v2.js ilce toplamina belde sandiklarini da
+# katiyordu; burada ilce merkezi belediyesi (beldeId=0) ile her belde ayri birimdir.
+# Portal gelistirme ortamindan acilmiyor, GitHub sunucularindan aciliyor. Ciktilar
+# data/raw/ysk/acikveri-belde-agrege/<yil>yerel_belediye_baskanligi.json olarak
+# "ysk-belde-baskan-veri" dalina yazilir; main'e incelendikten sonra alinir
+# (scripts/pipelines/election_import/belde_ayir_baskan.py).
+on:
+  workflow_dispatch:
+  push:
+    branches: [fix/belde-ayrimi]
+    paths: [.github/workflows/ysk-belde-baskan-cek.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  cek:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { anahtar: 2009yerel_belediye_baskanligi, secimId: 4290 }
+          - { anahtar: 2014yerel_belediye_baskanligi, secimId: 11979 }
+          - { anahtar: 2019yerel_belediye_baskanligi, secimId: 16400 }
+          - { anahtar: 2024yerel_belediye_baskanligi, secimId: 20260 }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Playwright
+        working-directory: scripts/pipelines/mahalle_veri
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium >/dev/null 2>&1
+      - name: Cek
+        run: |
+          node scripts/pipelines/election_import/fetch_belde_agrege.js ${{ matrix.anahtar }} ${{ matrix.secimId }} 2 | tee cikti.log
+          mkdir -p cikti
+          cp data/raw/ysk/acikveri-belde-agrege/${{ matrix.anahtar }}.json cikti/
+          OZET=$(python3 -c "
+          import json
+          d=json.load(open('cikti/${{ matrix.anahtar }}.json'))
+          b=d['birimler'].values()
+          print(len(d['birimler']),'birim,',sum(1 for x in b if x['beldeId']==0),'ilce merkezi,',sum(x['sandik'] for x in d['birimler'].values()),'sandik, hata',len(d['hatalar']))")
+          echo "::notice title=${{ matrix.anahtar }}::$OZET"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.anahtar }}
+          path: cikti/${{ matrix.anahtar }}.json
+
+  kaydet:
+    needs: cek
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: indirilen
+      - name: ysk-belde-baskan-veri dalina yaz
+        run: |
+          mkdir -p data/raw/ysk/acikveri-belde-agrege
+          cp indirilen/*/*.json data/raw/ysk/acikveri-belde-agrege/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B ysk-belde-baskan-veri
+          git add data/raw/ysk/acikveri-belde-agrege
+          git commit -m "YSK belde ayrimli belediye baskanligi agregeleri, run ${{ github.run_id }}"
+          git push -f origin ysk-belde-baskan-veri
+          echo "::notice title=kaydedildi::$(ls indirilen/*/*.json | xargs -n1 basename | tr '\n' ' ')"
