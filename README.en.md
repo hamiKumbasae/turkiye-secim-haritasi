@@ -122,6 +122,17 @@ above a similarity threshold and in book order.
 Known limits (e.g. 1950–1957 general elections exist only at province level) are listed in the
 [Turkish README](README.md#kapsam-sınırları) and in [`docs/rapor/KAPSAM_TABLOSU.md`](docs/rapor/KAPSAM_TABLOSU.md).
 
+## Data sources and reliability report
+
+A report (in Turkish) breaks down, per election and level, where each value comes from, how reliable the boundary and
+village-level layers are, and what is still missing:
+[`docs/rapor/VERI_KAYNAKLARI_VE_GUVENILIRLIK.md`](docs/rapor/VERI_KAYNAKLARI_VE_GUVENILIRLIK.md). Headlines: 70.6% of
+the 34,927 district-level records come directly from official sources (YSK, TÜİK/DİE) and a further 23.1% are
+secondary sources cross-checked against them; 4.7% are unverified (mostly 1950–1989 local elections). Neighbourhood and
+village votes (2009–2024) are all YSK data; 94.6% of district voters are tied to a boundary polygon in 2023, and the rest
+sit in urban neighbourhoods with no open boundary source. The ratings are rule-based source/consistency indicators, not an
+accuracy percentage, and nothing was re-compared against live YSK data.
+
 ## Sources and licensing
 
 Primary sources are official: **YSK** (Supreme Election Council) open data and archive PDFs, and **TÜİK/DİE**

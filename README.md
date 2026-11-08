@@ -109,6 +109,25 @@ sütununda ve [`docs/rapor/VERI_DENETIMI.md`](docs/rapor/VERI_DENETIMI.md)'de a�
 - **Elle düzeltmeler** yalnız kanıt kesinse yapılır ve eski değer kayıtta saklanır: Kocaeli 2002 il seçmeni
   (yazım hatası, 100.000 fark), 1979 Senato'da Kütahya ve Manisa (PDF sütun kayması). Ayrıntı: `sources.yml`.
 
+## Veri kaynakları ve güvenilirlik
+
+Hangi seçimin hangi düzeyinin hangi kaynaktan geldiği, sınır ve köy kırılımının güvenilirliği ve bilinen eksikler:
+**[Veri kaynakları ve güvenilirlik raporu](docs/rapor/VERI_KAYNAKLARI_VE_GUVENILIRLIK.md)** (8 Kasım 2026; yüzdeler
+depodaki veri dosyalarından hesaplandı). Özet:
+
+- **Oy verisi:** 46 seçimin 34.927 ilçe kaydında resmî birincil kaynak (YSK, TÜİK/DİE) %70,6; resmî kaynakla teyitli ya da
+  düzeltilmiş ikincil kaynak %23,1; hiçbir resmî kaynakla karşılaştırılmamış kayıt %4,7 (ağırlıkla 1950–1989 yerel seçimleri).
+  2009 sonrası seçimler YSK verisidir.
+- **Mahalle ve köy:** oylar tamamen YSK'dan; asıl sınırlama sınır poligonunda. 2023'te ilçe seçmeninin %94,6'sı bir poligona
+  bağlı. Kalan %5,4 şehir merkezlerindeki yeni ya da bölünmüş mahallelerde (Hatay, Kahramanmaraş, Van, Aksaray, Yozgat ve
+  başka iller); bu mahalleler haritada boş kalır, oy verisi vardır.
+- **Tarihsel sınırlar:** 1961–1987'de seçmenin yaklaşık %54–70'i bugünkü ilçelerin birleştirilmesiyle türetilmiş poligonlarda
+  gösterilir; 973 ilçenin 191'inde kuruluş öncesi köy düzeyi soy bilgisi eksik ya da kısmi.
+- **İlçe sınırı:** TKGM'ye göre medyan örtüşme (IoU) 0,886.
+- **Güvenilirlik "yüzde doğruluk" değildir:** gerçek değer olmadığından kaynak payı, iç tutarlılık ve geometri uyumu ayrı
+  verilir; seçim bazında Yüksek/Orta/Düşük notları kurala bağlıdır ve rapordaki eşiklerle üretilmiştir.
+- **Sınırlama:** YSK'ya canlı karşılaştırma yapılmadı; ölçülen, depodaki verinin kendi etiketleri ve iç tutarlılığıdır.
+
 ## Kapsam sınırları
 
 Seçim başına kapsam, kalite ve en iyi kaynak: [`docs/rapor/KAPSAM_TABLOSU.md`](docs/rapor/KAPSAM_TABLOSU.md).
