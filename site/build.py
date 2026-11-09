@@ -38,7 +38,7 @@ GOMULU_YER = "<!--__GOMULU_VERI__-->"
 # calisir; ilk calisan top-level kod olan data-loader.js en basta olmali).
 JS_FILES = [
     "data-loader.js", "election-config.js", "state.js", "result-utils.js", "seatbar.js",
-    "summary.js", "map.js", "tooltip.js", "detail-panel.js", "gecmis.js", "karsilastir.js", "search.js", "nav.js",
+    "summary.js", "map.js", "tooltip.js", "detail-panel.js", "karsilastir.js", "search.js", "nav.js",
     "table.js", "link.js", "gom.js", "erisim.js", "app.js",
 ]
 

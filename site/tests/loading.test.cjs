@@ -355,30 +355,6 @@ test('records that do not match their source carry a visible warning', async t =
   assert.doesNotMatch(await page.locator('#tooltip').textContent(), /Kaynakla tam tutmuyor/);
 });
 
-test('general election panel shows the place history and local elections hide it', async t => {
-  const {page, requests} = await setup(t);
-  await ready(page);
-  // tarihsel poligon: 1977 Karaisali (bugun Karaisali + Aladag) bugunku Karaisali'nin gecmisini acar
-  await page.goto('http://atlas.test/#secim=1977&il=1&ilce=HISTK-01-006-bb0ee2');
-  await ready(page);
-  await page.locator('#dGecmis:not([hidden]) #dGecmisGrafik svg').waitFor();
-  assert(requests.includes('data/gecmis/genel.json'));
-  assert(await page.locator('#dGecmisGrafik circle').count() > 17);
-  assert.match(await page.locator('#dGecmisNot').textContent(), /bugünkü Karaisalı/);
-  // sonradan kurulan ilce: eski secimlerde bagli oldugu ilcenin adi notta
-  await page.goto('http://atlas.test/#secim=2023&il=1&ilce=TR-D-01-001');
-  await ready(page);
-  await page.locator('#dGecmis:not([hidden]) #dGecmisGrafik svg').waitFor();
-  assert.match(await page.locator('#dGecmisNot').textContent(), /Karaisalı/);
-  assert(await page.locator('#dGecmisGrafik circle.bos').count() > 0);
-  // yerel secimde gecmis grafigi yok
-  await page.goto('http://atlas.test/#secim=2024yerel&il=6');
-  await ready(page);
-  // yerel secim dosyasi buyuk: yuklu makinede 10 sn yetmeyebiliyor
-  await page.locator('#dName').filter({hasText: 'Ankara'}).waitFor({timeout: 30000});
-  assert.equal(await page.locator('#dGecmis').isHidden(), true);
-});
-
 test('side-by-side comparison follows drill-down with a shared projection and survives a shared link', async t => {
   const {page} = await setup(t);
   await ready(page);

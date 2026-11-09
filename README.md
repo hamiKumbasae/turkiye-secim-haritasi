@@ -25,7 +25,6 @@ payı 2014–2024'te %93–94, 2009–2011'de %87–88. Her seçim, o tarihteki 
 ## Özellikler
 
 - **Harita modları:** kazanan, katılım, parti oy oranı ve değişim (aynı türdeki önceki seçime göre yüzde puan).
-- **Seçim geçmişi:** genel seçimde bir il ya da ilçeye tıklayınca o yerin bütün genel seçimlerdeki eğrisi.
 - **Karşılaştır:** iki seçim yan yana, senkron yakınlaştırma.
 - **Göm:** o anki görünüm için iframe kodu (`&gom=1`, isteğe bağlı `&tema=acik|koyu`).
 - **Paylaşılabilir bağlantı:** seçim, il, ilçe, mahalle, mod ve parti adresin `#` kısmında.

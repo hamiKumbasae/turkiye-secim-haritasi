@@ -241,6 +241,8 @@ Aynı gün beş özellik eklendi; hiçbiri veriyi değiştirmez, hepsi mevcut no
 
 ### Seçim geçmişi grafiği
 
+> **Kaldırıldı (2026-11-09).** Bu grafik siteden, `scripts/gecmis.py`/`gecmis.js` dosyalarından ve `data/gecmis/genel.json` çıktısından çıkarıldı. Aşağıdaki bölüm tarihsel kayıt olarak durur.
+
 Grafiğin verisi derlemede bir kez hesaplanır: `scripts/gecmis.py`, `data/gecmis/genel.json` dosyasını üretir (218 KB sıkıştırılmış). Dosyada her il için plakaya göre, her bugünkü ilçe için `geomId`'ye göre genel seçim oranları vardır.
 
 1. **İlçe eşlemesi.** Bugünkü bir ilçenin eski seçimdeki karşılığı sırayla aranır: önce seçim kaydının kendi `geomId`'si, sonra `ilce_eslesme/<seçim>.csv` tablosu (önce poligon kimliğiyle, sonra o dönemdeki ilçe adıyla), en son `district_splits.json`'daki birleşim poligonu. Oyu olmayan kayıt atlanır ve sıradaki aday denenir. Böylece 973 ilçenin hepsi 1961–2023 arasındaki 17 genel seçimin hepsinde bir nokta alır.
